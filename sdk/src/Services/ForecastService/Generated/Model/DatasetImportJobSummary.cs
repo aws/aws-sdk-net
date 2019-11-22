@@ -30,7 +30,7 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Provides a summary of the dataset import job properties used in the <a>ListDatasetImportJobs</a>
     /// operation. To get the complete set of properties, call the <a>DescribeDatasetImportJob</a>
-    /// operation, and provide the listed <code>DatasetImportJobArn</code>.
+    /// operation, and provide the <code>DatasetImportJobArn</code>.
     /// </summary>
     public partial class DatasetImportJobSummary
     {
@@ -101,7 +101,14 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The location of the Amazon S3 bucket that contains the training data.
+        /// The location of the training data to import and an AWS Identity and Access Management
+        /// (IAM) role that Amazon Forecast can assume to access the data. The training data must
+        /// be stored in an Amazon S3 bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// If encryption is used, <code>DataSource</code> includes an AWS Key Management Service
+        /// (KMS) key.
         /// </para>
         /// </summary>
         public DataSource DataSource
@@ -119,19 +126,20 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property LastModificationTime. 
         /// <para>
-        /// Dependent on the status as follows:
+        /// The last time that the dataset was modified. The time depends on the status of the
+        /// job, as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE_PENDING</code> - same as <code>CreationTime</code> 
+        ///  <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_IN_PROGRESS</code> - the current timestamp
+        ///  <code>CREATE_IN_PROGRESS</code> - The current timestamp.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or failed
+        ///  <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
         /// </para>
         ///  </li> </ul>
         /// </summary>

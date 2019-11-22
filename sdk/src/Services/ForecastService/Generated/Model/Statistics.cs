@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// Provides statistics for each data field imported to an Amazon Forecast dataset with
-    /// the <a>CreateDatasetImportJob</a> operation.
+    /// Provides statistics for each data field imported into to an Amazon Forecast dataset
+    /// with the <a>CreateDatasetImportJob</a> operation.
     /// </summary>
     public partial class Statistics
     {

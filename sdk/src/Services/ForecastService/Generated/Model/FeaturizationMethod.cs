@@ -28,14 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// Provides information about a method that featurizes (transforms) a dataset field.
+    /// Provides information about the method that featurizes (transforms) a dataset field.
     /// The method is part of the <code>FeaturizationPipeline</code> of the <a>Featurization</a>
-    /// object. If <code>FeaturizationMethodParameters</code> isn't specified, Amazon Forecast
+    /// object. If you don't specify <code>FeaturizationMethodParameters</code>, Amazon Forecast
     /// uses default parameters.
     /// 
     ///  
     /// <para>
-    /// For example:
+    /// The following is an example of how you specify a <code>FeaturizationMethod</code>
+    /// object.
     /// </para>
     ///  
     /// <para>
@@ -63,7 +64,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property FeaturizationMethodName. 
         /// <para>
-        /// The name of the method. In this release, "filling" is the only supported method.
+        /// The name of the method. The "filling" method is the only supported method.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,9 +83,9 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property FeaturizationMethodParameters. 
         /// <para>
-        /// The method parameters (key-value pairs). Specify these to override the default values.
-        /// The following list shows the parameters and their valid values. Bold signifies the
-        /// default value.
+        /// The method parameters (key-value pairs). Specify these parameters to override the
+        /// default values. The following list shows the parameters and their valid values. Bold
+        /// signifies the default value.
         /// </para>
         ///  <ul> <li> 
         /// <para>

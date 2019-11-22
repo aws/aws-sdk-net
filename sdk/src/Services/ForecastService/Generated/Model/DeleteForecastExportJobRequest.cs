@@ -30,8 +30,8 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Container for the parameters to the DeleteForecastExportJob operation.
     /// Deletes a forecast export job created using the <a>CreateForecastExportJob</a> operation.
-    /// To be deleted, the export job must have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
-    /// Use the <a>DescribeForecastExportJob</a> operation to get the status.
+    /// You can delete only export jobs that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
+    /// To get the status, use the <a>DescribeForecastExportJob</a> operation.
     /// </summary>
     public partial class DeleteForecastExportJobRequest : AmazonForecastServiceRequest
     {

@@ -264,8 +264,7 @@ namespace Amazon.ForecastService
         ///  <ul> <li> 
         /// <para>
         ///  <i> <code>DataFrequency</code> </i> - How frequently your historical time-series
-        /// data is collected. Amazon Forecast uses this information when training the model and
-        /// generating a forecast.
+        /// data is collected.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -277,18 +276,23 @@ namespace Amazon.ForecastService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i> <code>Schema</code> </i> - A schema specifies the fields of the dataset, including
+        ///  <i> <code>Schema</code> </i> - A schema specifies the fields in the dataset, including
         /// the field name and data type.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// After creating a dataset, you import your training data into the dataset and add the
-        /// dataset to a dataset group. You then use the dataset group to create a predictor.
-        /// For more information, see <a>howitworks-datasets-groups</a>.
+        /// After creating a dataset, you import your training data into it and add the dataset
+        /// to a dataset group. You use the dataset group to create a predictor. For more information,
+        /// see <a>howitworks-datasets-groups</a>.
         /// </para>
         ///  
         /// <para>
         /// To get a list of all your datasets, use the <a>ListDatasets</a> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples/tree/master/data">Amazon
+        /// Forecast Sample GitHub repository</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -308,11 +312,10 @@ namespace Amazon.ForecastService
         /// exceeds the valid range.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
-        /// The limit on the number of requests per second has been exceeded.
+        /// The limit on the number of resources per account has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
-        /// There is already a resource with that Amazon Resource Name (ARN). Try again with a
-        /// different ARN.
+        /// There is already a resource with this name. Try again with a different name.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -340,9 +343,9 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Creates an Amazon Forecast dataset group, which holds a collection of related datasets.
-        /// You can add datasets to the dataset group when you create the dataset group, or you
-        /// can add datasets later with the <a>UpdateDatasetGroup</a> operation.
+        /// Creates a dataset group, which holds a collection of related datasets. You can add
+        /// datasets to the dataset group when you create the dataset group, or later by using
+        /// the <a>UpdateDatasetGroup</a> operation.
         /// 
         ///  
         /// <para>
@@ -356,8 +359,8 @@ namespace Amazon.ForecastService
         ///  <note> 
         /// <para>
         /// The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you
-        /// can create a predictor using the dataset group. Use the <a>DescribeDatasetGroup</a>
-        /// operation to get the status.
+        /// can create use the dataset group to create a predictor. To get the status, use the
+        /// <a>DescribeDatasetGroup</a> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -372,11 +375,10 @@ namespace Amazon.ForecastService
         /// exceeds the valid range.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
-        /// The limit on the number of requests per second has been exceeded.
+        /// The limit on the number of resources per account has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
-        /// There is already a resource with that Amazon Resource Name (ARN). Try again with a
-        /// different ARN.
+        /// There is already a resource with this name. Try again with a different name.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -423,42 +425,18 @@ namespace Amazon.ForecastService
         /// </para>
         ///  
         /// <para>
-        /// Two properties of the training data are optionally specified:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The delimiter that separates the data fields.
+        /// The training data must be in CSV format. The delimiter must be a comma (,).
         /// </para>
         ///  
         /// <para>
-        /// The default delimiter is a comma (,), which is the only supported delimiter in this
-        /// release.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The format of timestamps.
+        /// You can specify the path to a specific CSV file, the S3 bucket, or to a folder in
+        /// the S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the
+        /// limit of 10,000 files.
         /// </para>
         ///  
         /// <para>
-        /// If the format is not specified, Amazon Forecast expects the format to be "yyyy-MM-dd
-        /// HH:mm:ss".
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When Amazon Forecast uploads your training data, it verifies that the data was collected
-        /// at the <code>DataFrequency</code> specified when the target dataset was created. For
-        /// more information, see <a>CreateDataset</a> and <a>howitworks-datasets-groups</a>.
-        /// Amazon Forecast also verifies the delimiter and timestamp format.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use the <a>ListDatasetImportJobs</a> operation to get a list of all your dataset
-        /// import jobs, filtered by specified criteria.
-        /// </para>
-        ///  
-        /// <para>
-        /// To get a list of all your dataset import jobs, filtered by the specified criteria,
-        /// use the <a>ListDatasetGroups</a> operation.
+        /// To get a list of all your dataset import jobs, filtered by specified criteria, use
+        /// the <a>ListDatasetImportJobs</a> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetImportJob service method.</param>
@@ -472,11 +450,10 @@ namespace Amazon.ForecastService
         /// exceeds the valid range.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
-        /// The limit on the number of requests per second has been exceeded.
+        /// The limit on the number of resources per account has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
-        /// There is already a resource with that Amazon Resource Name (ARN). Try again with a
-        /// different ARN.
+        /// There is already a resource with this name. Try again with a different name.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -514,15 +491,15 @@ namespace Amazon.ForecastService
         /// Creates a forecast for each item in the <code>TARGET_TIME_SERIES</code> dataset that
         /// was used to train the predictor. This is known as inference. To retrieve the forecast
         /// for a single item at low latency, use the operation. To export the complete forecast
-        /// into your Amazon Simple Storage Service (Amazon S3), use the <a>CreateForecastExportJob</a>
+        /// into your Amazon Simple Storage Service (Amazon S3) bucket, use the <a>CreateForecastExportJob</a>
         /// operation.
         /// 
         ///  
         /// <para>
-        /// The range of the forecast is determined by the <code>ForecastHorizon</code>, specified
-        /// in the <a>CreatePredictor</a> request, multiplied by the <code>DataFrequency</code>,
-        /// specified in the <a>CreateDataset</a> request. When you query a forecast, you can
-        /// request a specific date range within the complete forecast.
+        /// The range of the forecast is determined by the <code>ForecastHorizon</code> value,
+        /// which you specify in the <a>CreatePredictor</a> request, multiplied by the <code>DataFrequency</code>
+        /// value, which you specify in the <a>CreateDataset</a> request. When you query a forecast,
+        /// you can request a specific date range within the forecast.
         /// </para>
         ///  
         /// <para>
@@ -530,7 +507,7 @@ namespace Amazon.ForecastService
         /// </para>
         ///  <note> 
         /// <para>
-        /// The forecasts generated by Amazon Forecast are in the same timezone as the dataset
+        /// The forecasts generated by Amazon Forecast are in the same time zone as the dataset
         /// that was used to create the predictor.
         /// </para>
         ///  </note> 
@@ -556,11 +533,10 @@ namespace Amazon.ForecastService
         /// exceeds the valid range.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
-        /// The limit on the number of requests per second has been exceeded.
+        /// The limit on the number of resources per account has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
-        /// There is already a resource with that Amazon Resource Name (ARN). Try again with a
-        /// different ARN.
+        /// There is already a resource with this name. Try again with a different name.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -596,8 +572,17 @@ namespace Amazon.ForecastService
 
         /// <summary>
         /// Exports a forecast created by the <a>CreateForecast</a> operation to your Amazon Simple
-        /// Storage Service (Amazon S3) bucket.
+        /// Storage Service (Amazon S3) bucket. The forecast file name will match the following
+        /// conventions:
         /// 
+        ///  
+        /// <para>
+        /// &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PageNumber&gt;
+        /// </para>
+        ///  
+        /// <para>
+        /// where the &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
+        /// </para>
         ///  
         /// <para>
         /// You must specify a <a>DataDestination</a> object that includes an AWS Identity and
@@ -616,8 +601,8 @@ namespace Amazon.ForecastService
         ///  <note> 
         /// <para>
         /// The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
-        /// you can access the forecast in your Amazon S3 bucket. Use the <a>DescribeForecastExportJob</a>
-        /// operation to get the status.
+        /// you can access the forecast in your Amazon S3 bucket. To get the status, use the <a>DescribeForecastExportJob</a>
+        /// operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -632,11 +617,10 @@ namespace Amazon.ForecastService
         /// exceeds the valid range.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
-        /// The limit on the number of requests per second has been exceeded.
+        /// The limit on the number of resources per account has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
-        /// There is already a resource with that Amazon Resource Name (ARN). Try again with a
-        /// different ARN.
+        /// There is already a resource with this name. Try again with a different name.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -693,9 +677,16 @@ namespace Amazon.ForecastService
         /// </para>
         ///  
         /// <para>
-        /// Optionally, you can specify a featurization configuration to fill and aggragate the
+        /// Optionally, you can specify a featurization configuration to fill and aggregate the
         /// data fields in the <code>TARGET_TIME_SERIES</code> dataset to improve model training.
         /// For more information, see <a>FeaturizationConfig</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For RELATED_TIME_SERIES datasets, <code>CreatePredictor</code> verifies that the <code>DataFrequency</code>
+        /// specified when the dataset was created matches the <code>ForecastFrequency</code>.
+        /// TARGET_TIME_SERIES datasets don't have this restriction. Amazon Forecast also verifies
+        /// the delimiter and timestamp format. For more information, see <a>howitworks-datasets-groups</a>.
         /// </para>
         ///  
         /// <para>
@@ -703,8 +694,8 @@ namespace Amazon.ForecastService
         /// </para>
         ///  
         /// <para>
-        /// If you set <code>PerformAutoML</code> to <code>true</code>, Amazon Forecast evaluates
-        /// each algorithm and chooses the one that minimizes the <code>objective function</code>.
+        /// If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes
+        /// the <code>objective function</code>, set <code>PerformAutoML</code> to <code>true</code>.
         /// The <code>objective function</code> is defined as the mean of the weighted p10, p50,
         /// and p90 quantile losses. For more information, see <a>EvaluationResult</a>.
         /// </para>
@@ -730,13 +721,13 @@ namespace Amazon.ForecastService
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get a list of all your predictors, use the <a>ListPredictors</a> operation.
+        /// To get a list of all of your predictors, use the <a>ListPredictors</a> operation.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Status</code> of the predictor must be <code>ACTIVE</code>, signifying that
-        /// training has completed, before you can use the predictor to create a forecast. Use
-        /// the <a>DescribePredictor</a> operation to get the status.
+        /// Before you can use the predictor to create a forecast, the <code>Status</code> of
+        /// the predictor must be <code>ACTIVE</code>, signifying that training has completed.
+        /// To get the status, use the <a>DescribePredictor</a> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -751,11 +742,10 @@ namespace Amazon.ForecastService
         /// exceeds the valid range.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
-        /// The limit on the number of requests per second has been exceeded.
+        /// The limit on the number of resources per account has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
-        /// There is already a resource with that Amazon Resource Name (ARN). Try again with a
-        /// different ARN.
+        /// There is already a resource with this name. Try again with a different name.
         /// </exception>
         /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -790,9 +780,9 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes an Amazon Forecast dataset created using the <a>CreateDataset</a> operation.
-        /// To be deleted, the dataset must have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
-        /// Use the <a>DescribeDataset</a> operation to get the status.
+        /// Deletes an Amazon Forecast dataset that was created using the <a>CreateDataset</a>
+        /// operation. You can only delete datasets that have a status of <code>ACTIVE</code>
+        /// or <code>CREATE_FAILED</code>. To get the status use the <a>DescribeDataset</a> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// <param name="cancellationToken">
@@ -837,14 +827,14 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes a dataset group created using the <a>CreateDatasetGroup</a> operation. To
-        /// be deleted, the dataset group must have a status of <code>ACTIVE</code>, <code>CREATE_FAILED</code>,
-        /// or <code>UPDATE_FAILED</code>. Use the <a>DescribeDatasetGroup</a> operation to get
-        /// the status.
+        /// Deletes a dataset group created using the <a>CreateDatasetGroup</a> operation. You
+        /// can only delete dataset groups that have a status of <code>ACTIVE</code>, <code>CREATE_FAILED</code>,
+        /// or <code>UPDATE_FAILED</code>. To get the status, use the <a>DescribeDatasetGroup</a>
+        /// operation.
         /// 
         ///  
         /// <para>
-        /// The operation deletes only the dataset group, not the datasets in the group.
+        /// This operation deletes only the dataset group, not the datasets in the group.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDatasetGroup service method.</param>
@@ -891,8 +881,9 @@ namespace Amazon.ForecastService
 
         /// <summary>
         /// Deletes a dataset import job created using the <a>CreateDatasetImportJob</a> operation.
-        /// To be deleted, the import job must have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
-        /// Use the <a>DescribeDatasetImportJob</a> operation to get the status.
+        /// You can delete only dataset import jobs that have a status of <code>ACTIVE</code>
+        /// or <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeDatasetImportJob</a>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDatasetImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -937,13 +928,14 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes a forecast created using the <a>CreateForecast</a> operation. To be deleted,
-        /// the forecast must have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
-        /// Use the <a>DescribeForecast</a> operation to get the status.
+        /// Deletes a forecast created using the <a>CreateForecast</a> operation. You can delete
+        /// only forecasts that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
+        /// To get the status, use the <a>DescribeForecast</a> operation.
         /// 
         ///  
         /// <para>
-        /// You can't delete a forecast while it is being exported.
+        /// You can't delete a forecast while it is being exported. After a forecast is deleted,
+        /// you can no longer query the forecast.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteForecast service method.</param>
@@ -990,8 +982,8 @@ namespace Amazon.ForecastService
 
         /// <summary>
         /// Deletes a forecast export job created using the <a>CreateForecastExportJob</a> operation.
-        /// To be deleted, the export job must have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
-        /// Use the <a>DescribeForecastExportJob</a> operation to get the status.
+        /// You can delete only export jobs that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
+        /// To get the status, use the <a>DescribeForecastExportJob</a> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteForecastExportJob service method.</param>
         /// <param name="cancellationToken">
@@ -1036,14 +1028,9 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes a predictor created using the <a>CreatePredictor</a> operation. To be deleted,
-        /// the predictor must have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
-        /// Use the <a>DescribePredictor</a> operation to get the status.
-        /// 
-        ///  
-        /// <para>
-        /// Any forecasts generated by the predictor will no longer be available.
-        /// </para>
+        /// Deletes a predictor created using the <a>CreatePredictor</a> operation. You can delete
+        /// only predictor that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
+        /// To get the status, use the <a>DescribePredictor</a> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePredictor service method.</param>
         /// <param name="cancellationToken">
@@ -1092,8 +1079,8 @@ namespace Amazon.ForecastService
         /// 
         ///  
         /// <para>
-        /// In addition to listing the properties provided by the user in the <code>CreateDataset</code>
-        /// request, this operation includes the following properties:
+        /// In addition to listing the parameters specified in the <code>CreateDataset</code>
+        /// request, this operation includes the following dataset properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1153,7 +1140,7 @@ namespace Amazon.ForecastService
         /// 
         ///  
         /// <para>
-        /// In addition to listing the properties provided by the user in the <code>CreateDatasetGroup</code>
+        /// In addition to listing the parameters provided in the <code>CreateDatasetGroup</code>
         /// request, this operation includes the following properties:
         /// </para>
         ///  <ul> <li> 
@@ -1218,7 +1205,7 @@ namespace Amazon.ForecastService
         /// 
         ///  
         /// <para>
-        /// In addition to listing the properties provided by the user in the <code>CreateDatasetImportJob</code>
+        /// In addition to listing the parameters provided in the <code>CreateDatasetImportJob</code>
         /// request, this operation includes the following properties:
         /// </para>
         ///  <ul> <li> 
@@ -1291,8 +1278,8 @@ namespace Amazon.ForecastService
         /// 
         ///  
         /// <para>
-        /// In addition to listing the properties provided by the user in the <code>CreateForecast</code>
-        /// request, this operation includes the following properties:
+        /// In addition to listing the properties provided in the <code>CreateForecast</code>
+        /// request, this operation lists the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1361,7 +1348,7 @@ namespace Amazon.ForecastService
         ///  
         /// <para>
         /// In addition to listing the properties provided by the user in the <code>CreateForecastExportJob</code>
-        /// request, this operation includes the following properties:
+        /// request, this operation lists the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1425,8 +1412,8 @@ namespace Amazon.ForecastService
         /// 
         ///  
         /// <para>
-        /// In addition to listing the properties provided by the user in the <code>CreatePredictor</code>
-        /// request, this operation includes the following properties:
+        /// In addition to listing the properties provided in the <code>CreatePredictor</code>
+        /// request, this operation lists the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1435,7 +1422,8 @@ namespace Amazon.ForecastService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AutoMLAlgorithmArns</code> - If AutoML is performed, the algorithms evaluated.
+        ///  <code>AutoMLAlgorithmArns</code> - If AutoML is performed, the algorithms that were
+        /// evaluated.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1497,24 +1485,30 @@ namespace Amazon.ForecastService
         /// <summary>
         /// Provides metrics on the accuracy of the models that were trained by the <a>CreatePredictor</a>
         /// operation. Use metrics to see how well the model performed and to decide whether to
-        /// use the predictor to generate a forecast.
+        /// use the predictor to generate a forecast. For more information, see <a>metrics</a>.
         /// 
         ///  
         /// <para>
-        /// Metrics are generated for each backtest window evaluated. For more information, see
-        /// <a>EvaluationParameters</a>.
+        /// This operation generates metrics for each backtest window that was evaluated. The
+        /// number of backtest windows (<code>NumberOfBacktestWindows</code>) is specified using
+        /// the <a>EvaluationParameters</a> object, which is optionally included in the <code>CreatePredictor</code>
+        /// request. If <code>NumberOfBacktestWindows</code> isn't specified, the number defaults
+        /// to one.
         /// </para>
         ///  
         /// <para>
         /// The parameters of the <code>filling</code> method determine which items contribute
-        /// to the metrics. If <code>zero</code> is specified, all items contribute. If <code>nan</code>
-        /// is specified, only those items that have complete data in the range being evaluated
-        /// contribute. For more information, see <a>FeaturizationMethod</a>.
+        /// to the metrics. If you want all items to contribute, specify <code>zero</code>. If
+        /// you want only those items that have complete data in the range being evaluated to
+        /// contribute, specify <code>nan</code>. For more information, see <a>FeaturizationMethod</a>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// For an example of how to train a model and review metrics, see <a>getting-started</a>.
+        /// Before you can get accuracy metrics, the <code>Status</code> of the predictor must
+        /// be <code>ACTIVE</code>, signifying that training has completed. To get the status,
+        /// use the <a>DescribePredictor</a> operation.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccuracyMetrics service method.</param>
         /// <param name="cancellationToken">
@@ -1560,9 +1554,9 @@ namespace Amazon.ForecastService
 
         /// <summary>
         /// Returns a list of dataset groups created using the <a>CreateDatasetGroup</a> operation.
-        /// For each dataset group, a summary of its properties, including its Amazon Resource
-        /// Name (ARN), is returned. You can retrieve the complete set of properties by using
-        /// the ARN with the <a>DescribeDatasetGroup</a> operation.
+        /// For each dataset group, this operation returns a summary of its properties, including
+        /// its Amazon Resource Name (ARN). You can retrieve the complete set of properties by
+        /// using the dataset group ARN with the <a>DescribeDatasetGroup</a> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetGroups service method.</param>
         /// <param name="cancellationToken">
@@ -1600,8 +1594,8 @@ namespace Amazon.ForecastService
 
         /// <summary>
         /// Returns a list of dataset import jobs created using the <a>CreateDatasetImportJob</a>
-        /// operation. For each import job, a summary of its properties, including its Amazon
-        /// Resource Name (ARN), is returned. You can retrieve the complete set of properties
+        /// operation. For each import job, this operation returns a summary of its properties,
+        /// including its Amazon Resource Name (ARN). You can retrieve the complete set of properties
         /// by using the ARN with the <a>DescribeDatasetImportJob</a> operation. You can filter
         /// the list by providing an array of <a>Filter</a> objects.
         /// </summary>
@@ -1646,8 +1640,8 @@ namespace Amazon.ForecastService
         /// <summary>
         /// Returns a list of datasets created using the <a>CreateDataset</a> operation. For each
         /// dataset, a summary of its properties, including its Amazon Resource Name (ARN), is
-        /// returned. You can retrieve the complete set of properties by using the ARN with the
-        /// <a>DescribeDataset</a> operation.
+        /// returned. To retrieve the complete set of properties, use the ARN with the <a>DescribeDataset</a>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
         /// <param name="cancellationToken">
@@ -1685,10 +1679,10 @@ namespace Amazon.ForecastService
 
         /// <summary>
         /// Returns a list of forecast export jobs created using the <a>CreateForecastExportJob</a>
-        /// operation. For each forecast export job, a summary of its properties, including its
-        /// Amazon Resource Name (ARN), is returned. You can retrieve the complete set of properties
-        /// by using the ARN with the <a>DescribeForecastExportJob</a> operation. The list can
-        /// be filtered using an array of <a>Filter</a> objects.
+        /// operation. For each forecast export job, this operation returns a summary of its properties,
+        /// including its Amazon Resource Name (ARN). To retrieve the complete set of properties,
+        /// use the ARN with the <a>DescribeForecastExportJob</a> operation. You can filter the
+        /// list using an array of <a>Filter</a> objects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListForecastExportJobs service method.</param>
         /// <param name="cancellationToken">
@@ -1730,10 +1724,10 @@ namespace Amazon.ForecastService
 
         /// <summary>
         /// Returns a list of forecasts created using the <a>CreateForecast</a> operation. For
-        /// each forecast, a summary of its properties, including its Amazon Resource Name (ARN),
-        /// is returned. You can retrieve the complete set of properties by using the ARN with
-        /// the <a>DescribeForecast</a> operation. The list can be filtered using an array of
-        /// <a>Filter</a> objects.
+        /// each forecast, this operation returns a summary of its properties, including its Amazon
+        /// Resource Name (ARN). To retrieve the complete set of properties, specify the ARN with
+        /// the <a>DescribeForecast</a> operation. You can filter the list using an array of <a>Filter</a>
+        /// objects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListForecasts service method.</param>
         /// <param name="cancellationToken">
@@ -1775,10 +1769,10 @@ namespace Amazon.ForecastService
 
         /// <summary>
         /// Returns a list of predictors created using the <a>CreatePredictor</a> operation. For
-        /// each predictor, a summary of its properties, including its Amazon Resource Name (ARN),
-        /// is returned. You can retrieve the complete set of properties by using the ARN with
-        /// the <a>DescribePredictor</a> operation. The list can be filtered using an array of
-        /// <a>Filter</a> objects.
+        /// each predictor, this operation returns a summary of its properties, including its
+        /// Amazon Resource Name (ARN). You can retrieve the complete set of properties by using
+        /// the ARN with the <a>DescribePredictor</a> operation. You can filter the list using
+        /// an array of <a>Filter</a> objects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPredictors service method.</param>
         /// <param name="cancellationToken">
@@ -1819,13 +1813,13 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Replaces any existing datasets in the dataset group with the specified datasets.
+        /// Replaces the datasets in a dataset group with the specified datasets.
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before creating
-        /// a predictor using the dataset group. Use the <a>DescribeDatasetGroup</a> operation
-        /// to get the status.
+        /// The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you
+        /// can use the dataset group to create a predictor. Use the <a>DescribeDatasetGroup</a>
+        /// operation to get the status.
         /// </para>
         ///  </note>
         /// </summary>

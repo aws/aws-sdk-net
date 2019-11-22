@@ -98,9 +98,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property ScalingType. 
         /// <para>
-        /// The scale that hyperparameter tuning uses to search the hyperparameter range. For
-        /// information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
-        /// Scaling</a>. One of the following values:
+        /// The scale that hyperparameter tuning uses to search the hyperparameter range. Valid
+        /// values:
         /// </para>
         ///  <dl> <dt>Auto</dt> <dd> 
         /// <para>
@@ -118,7 +117,7 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// Logarithmic scaling works only for ranges that have only values greater than 0.
+        /// Logarithmic scaling works only for ranges that have values greater than 0.
         /// </para>
         ///  </dd> <dt>ReverseLogarithmic</dt> <dd> 
         /// <para>
@@ -129,7 +128,11 @@ namespace Amazon.ForecastService.Model
         /// Reverse logarithmic scaling works only for ranges that are entirely within the range
         /// 0 &lt;= x &lt; 1.0.
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> 
+        /// <para>
+        /// For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
+        /// Scaling</a>. One of the following values:
+        /// </para>
         /// </summary>
         public ScalingType ScalingType
         {

@@ -30,9 +30,9 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Container for the parameters to the ListDatasetGroups operation.
     /// Returns a list of dataset groups created using the <a>CreateDatasetGroup</a> operation.
-    /// For each dataset group, a summary of its properties, including its Amazon Resource
-    /// Name (ARN), is returned. You can retrieve the complete set of properties by using
-    /// the ARN with the <a>DescribeDatasetGroup</a> operation.
+    /// For each dataset group, this operation returns a summary of its properties, including
+    /// its Amazon Resource Name (ARN). You can retrieve the complete set of properties by
+    /// using the dataset group ARN with the <a>DescribeDatasetGroup</a> operation.
     /// </summary>
     public partial class ListDatasetGroupsRequest : AmazonForecastServiceRequest
     {

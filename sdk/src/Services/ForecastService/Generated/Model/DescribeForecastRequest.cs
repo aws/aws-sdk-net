@@ -33,8 +33,8 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    /// In addition to listing the properties provided by the user in the <code>CreateForecast</code>
-    /// request, this operation includes the following properties:
+    /// In addition to listing the properties provided in the <code>CreateForecast</code>
+    /// request, this operation lists the following properties:
     /// </para>
     ///  <ul> <li> 
     /// <para>

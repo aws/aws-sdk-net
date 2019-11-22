@@ -33,8 +33,8 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    /// In addition to listing the properties provided by the user in the <code>CreatePredictor</code>
-    /// request, this operation includes the following properties:
+    /// In addition to listing the properties provided in the <code>CreatePredictor</code>
+    /// request, this operation lists the following properties:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -43,7 +43,8 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>AutoMLAlgorithmArns</code> - If AutoML is performed, the algorithms evaluated.
+    ///  <code>AutoMLAlgorithmArns</code> - If AutoML is performed, the algorithms that were
+    /// evaluated.
     /// </para>
     ///  </li> <li> 
     /// <para>

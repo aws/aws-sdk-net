@@ -30,7 +30,7 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Provides a summary of the dataset group properties used in the <a>ListDatasetGroups</a>
     /// operation. To get the complete set of properties, call the <a>DescribeDatasetGroup</a>
-    /// operation, and provide the listed <code>DatasetGroupArn</code>.
+    /// operation, and provide the <code>DatasetGroupArn</code>.
     /// </summary>
     public partial class DatasetGroupSummary
     {
@@ -42,7 +42,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// When the datase group was created.
+        /// When the dataset group was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -100,7 +100,7 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a>
         /// operation. While the dataset group is being updated, <code>LastModificationTime</code>
-        /// is the current query time.
+        /// is the current time of the <code>ListDatasetGroups</code> call.
         /// </para>
         /// </summary>
         public DateTime LastModificationTime

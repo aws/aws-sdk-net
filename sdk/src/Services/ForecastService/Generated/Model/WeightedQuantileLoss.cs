@@ -39,8 +39,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property LossValue. 
         /// <para>
-        /// The difference between the predicted value and actual value over the quantile, weighted
-        /// (normalized) by dividing by the sum over all quantiles.
+        /// The difference between the predicted value and the actual value over the quantile,
+        /// weighted (normalized) by dividing by the sum over all quantiles.
         /// </para>
         /// </summary>
         public double LossValue

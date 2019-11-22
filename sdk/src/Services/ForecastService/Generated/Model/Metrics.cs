@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// Provides metrics used to evaluate the performance of a predictor. This object is part
-    /// of the <a>WindowSummary</a> object.
+    /// Provides metrics that are used to evaluate the performance of a predictor. This object
+    /// is part of the <a>WindowSummary</a> object.
     /// </summary>
     public partial class Metrics
     {

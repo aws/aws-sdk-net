@@ -28,91 +28,70 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// The metrics for a time range within the evaluation portion of a dataset. This object
-    /// is part of the <a>EvaluationResult</a> object.
-    /// 
-    ///  
-    /// <para>
-    /// The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are determined
-    /// by the <code>BackTestWindowOffset</code> parameter of the <a>EvaluationParameters</a>
-    /// object.
-    /// </para>
+    /// The status, start time, and end time of a backtest, as well as a failure reason if
+    /// applicable.
     /// </summary>
-    public partial class WindowSummary
+    public partial class TestWindowSummary
     {
-        private EvaluationType _evaluationType;
-        private int? _itemCount;
-        private Metrics _metrics;
+        private string _message;
+        private string _status;
         private DateTime? _testWindowEnd;
         private DateTime? _testWindowStart;
 
         /// <summary>
-        /// Gets and sets the property EvaluationType. 
+        /// Gets and sets the property Message. 
         /// <para>
-        /// The type of evaluation.
+        /// If the test failed, the reason why it failed.
+        /// </para>
+        /// </summary>
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the test. Possible status values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUMMARY</code> - The average metrics across all windows.
+        ///  <code>ACTIVE</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPUTED</code> - The metrics for the specified window.
+        ///  <code>CREATE_IN_PROGRESS</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATE_FAILED</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public EvaluationType EvaluationType
+        [AWSProperty(Max=256)]
+        public string Status
         {
-            get { return this._evaluationType; }
-            set { this._evaluationType = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if EvaluationType property is set
-        internal bool IsSetEvaluationType()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._evaluationType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ItemCount. 
-        /// <para>
-        /// The number of data points within the window.
-        /// </para>
-        /// </summary>
-        public int ItemCount
-        {
-            get { return this._itemCount.GetValueOrDefault(); }
-            set { this._itemCount = value; }
-        }
-
-        // Check to see if ItemCount property is set
-        internal bool IsSetItemCount()
-        {
-            return this._itemCount.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Metrics. 
-        /// <para>
-        /// Provides metrics used to evaluate the performance of a predictor.
-        /// </para>
-        /// </summary>
-        public Metrics Metrics
-        {
-            get { return this._metrics; }
-            set { this._metrics = value; }
-        }
-
-        // Check to see if Metrics property is set
-        internal bool IsSetMetrics()
-        {
-            return this._metrics != null;
+            return this._status != null;
         }
 
         /// <summary>
         /// Gets and sets the property TestWindowEnd. 
         /// <para>
-        /// The timestamp that defines the end of the window.
+        /// The time at which the test ended.
         /// </para>
         /// </summary>
         public DateTime TestWindowEnd
@@ -130,7 +109,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property TestWindowStart. 
         /// <para>
-        /// The timestamp that defines the start of the window.
+        /// The time at which the test began.
         /// </para>
         /// </summary>
         public DateTime TestWindowStart

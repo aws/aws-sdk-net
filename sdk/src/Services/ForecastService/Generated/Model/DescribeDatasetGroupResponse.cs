@@ -118,12 +118,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain associated with the dataset group. The <code>Domain</code> and <code>DatasetType</code>
-        /// that you choose determine the fields that must be present in the training data that
-        /// you import to the dataset. For example, if you choose the <code>RETAIL</code> domain
-        /// and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast
-        /// requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields
-        /// to be present in your data. For more information, see <a>howitworks-datasets-groups</a>.
+        /// The domain associated with the dataset group.
         /// </para>
         /// </summary>
         public Domain Domain
@@ -143,7 +138,7 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a>
         /// operation. While the dataset group is being updated, <code>LastModificationTime</code>
-        /// is the current query time.
+        /// is the current time of the <code>DescribeDatasetGroup</code> call.
         /// </para>
         /// </summary>
         public DateTime LastModificationTime
@@ -184,13 +179,12 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a> operation
-        /// is called.
+        /// The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before creating
-        /// a predictor using the dataset group.
+        /// The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you
+        /// can use the dataset group to create a predictor.
         /// </para>
         ///  </note>
         /// </summary>

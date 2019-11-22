@@ -30,8 +30,17 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Container for the parameters to the CreateForecastExportJob operation.
     /// Exports a forecast created by the <a>CreateForecast</a> operation to your Amazon Simple
-    /// Storage Service (Amazon S3) bucket.
+    /// Storage Service (Amazon S3) bucket. The forecast file name will match the following
+    /// conventions:
     /// 
+    ///  
+    /// <para>
+    /// &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PageNumber&gt;
+    /// </para>
+    ///  
+    /// <para>
+    /// where the &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
+    /// </para>
     ///  
     /// <para>
     /// You must specify a <a>DataDestination</a> object that includes an AWS Identity and
@@ -50,8 +59,8 @@ namespace Amazon.ForecastService.Model
     ///  <note> 
     /// <para>
     /// The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
-    /// you can access the forecast in your Amazon S3 bucket. Use the <a>DescribeForecastExportJob</a>
-    /// operation to get the status.
+    /// you can access the forecast in your Amazon S3 bucket. To get the status, use the <a>DescribeForecastExportJob</a>
+    /// operation.
     /// </para>
     ///  </note>
     /// </summary>
@@ -64,8 +73,15 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The path to the Amazon S3 bucket where you want to save the forecast and an AWS Identity
-        /// and Access Management (IAM) role that Amazon Forecast can assume to access the bucket.
+        /// The location where you want to save the forecast and an AWS Identity and Access Management
+        /// (IAM) role that Amazon Forecast can assume to access the location. The forecast must
+        /// be exported to an Amazon S3 bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// If encryption is used, <code>Destination</code> must include an AWS Key Management
+        /// Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the
+        /// key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

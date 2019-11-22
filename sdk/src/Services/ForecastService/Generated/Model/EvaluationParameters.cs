@@ -30,18 +30,7 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Parameters that define how to split a dataset into training data and testing data,
     /// and the number of iterations to perform. These parameters are specified in the predefined
-    /// algorithms and can be overridden in the <a>CreatePredictor</a> request.
-    /// 
-    ///  
-    /// <para>
-    /// For example, suppose that you have a dataset with data collection frequency set to
-    /// every day and you have 200 days worth of data (that is, 200 data points). Now suppose
-    /// that you set the <code>NumberOfBacktestWindows</code> to 2 and the <code>BackTestWindowOffset</code>
-    /// parameter to 20. The algorithm splits the data twice. The first time, the algorithm
-    /// trains the model using the first 180 data points and uses the last 20 data points
-    /// for evaluation. The second time, the algorithm trains the model using the first 160
-    /// data points and uses the last 40 data points for evaluation.
-    /// </para>
+    /// algorithms but you can override them in the <a>CreatePredictor</a> request.
     /// </summary>
     public partial class EvaluationParameters
     {
@@ -52,7 +41,15 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property BackTestWindowOffset. 
         /// <para>
         /// The point from the end of the dataset where you want to split the data for model training
-        /// and evaluation. The value is specified as the number of data points.
+        /// and testing (evaluation). Specify the value as the number of data points. The default
+        /// is the value of the forecast horizon. <code>BackTestWindowOffset</code> can be used
+        /// to mimic a past virtual forecast start date. This value must be greater than or equal
+        /// to the forecast horizon and less than half of the TARGET_TIME_SERIES dataset length.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ForecastHorizon</code> &lt;= <code>BackTestWindowOffset</code> &lt; 1/2 * TARGET_TIME_SERIES
+        /// dataset length
         /// </para>
         /// </summary>
         public int BackTestWindowOffset
@@ -70,8 +67,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property NumberOfBacktestWindows. 
         /// <para>
-        /// The number of times to split the input data. The default is 1. The range is 1 through
-        /// 5.
+        /// The number of times to split the input data. The default is 1. Valid values are 1
+        /// through 5.
         /// </para>
         /// </summary>
         public int NumberOfBacktestWindows

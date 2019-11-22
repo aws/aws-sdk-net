@@ -51,9 +51,16 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  
     /// <para>
-    /// Optionally, you can specify a featurization configuration to fill and aggragate the
+    /// Optionally, you can specify a featurization configuration to fill and aggregate the
     /// data fields in the <code>TARGET_TIME_SERIES</code> dataset to improve model training.
     /// For more information, see <a>FeaturizationConfig</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For RELATED_TIME_SERIES datasets, <code>CreatePredictor</code> verifies that the <code>DataFrequency</code>
+    /// specified when the dataset was created matches the <code>ForecastFrequency</code>.
+    /// TARGET_TIME_SERIES datasets don't have this restriction. Amazon Forecast also verifies
+    /// the delimiter and timestamp format. For more information, see <a>howitworks-datasets-groups</a>.
     /// </para>
     ///  
     /// <para>
@@ -61,8 +68,8 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  
     /// <para>
-    /// If you set <code>PerformAutoML</code> to <code>true</code>, Amazon Forecast evaluates
-    /// each algorithm and chooses the one that minimizes the <code>objective function</code>.
+    /// If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes
+    /// the <code>objective function</code>, set <code>PerformAutoML</code> to <code>true</code>.
     /// The <code>objective function</code> is defined as the mean of the weighted p10, p50,
     /// and p90 quantile losses. For more information, see <a>EvaluationResult</a>.
     /// </para>
@@ -88,13 +95,13 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To get a list of all your predictors, use the <a>ListPredictors</a> operation.
+    /// To get a list of all of your predictors, use the <a>ListPredictors</a> operation.
     /// </para>
     ///  <note> 
     /// <para>
-    /// The <code>Status</code> of the predictor must be <code>ACTIVE</code>, signifying that
-    /// training has completed, before you can use the predictor to create a forecast. Use
-    /// the <a>DescribePredictor</a> operation to get the status.
+    /// Before you can use the predictor to create a forecast, the <code>Status</code> of
+    /// the predictor must be <code>ACTIVE</code>, signifying that training has completed.
+    /// To get the status, use the <a>DescribePredictor</a> operation.
     /// </para>
     ///  </note>
     /// </summary>
@@ -118,7 +125,7 @@ namespace Amazon.ForecastService.Model
         /// The Amazon Resource Name (ARN) of the algorithm to use for model training. Required
         /// if <code>PerformAutoML</code> is not set to <code>true</code>.
         /// </para>
-        ///  <p class="title"> <b>Supported algorithms</b> 
+        ///  <p class="title"> <b>Supported algorithms:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -130,7 +137,7 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>- supports hyperparameter optimization (HPO)</code> 
+        /// Supports hyperparameter optimization (HPO)
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -230,6 +237,11 @@ namespace Amazon.ForecastService.Model
         /// parameter of the <a>CreateDataset</a> operation) and set the forecast horizon to 10,
         /// the model returns predictions for 10 days.
         /// </para>
+        ///  
+        /// <para>
+        /// The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES
+        /// dataset length.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int ForecastHorizon
@@ -251,6 +263,11 @@ namespace Amazon.ForecastService.Model
         /// parameter, Amazon Forecast uses default values. The individual algorithms specify
         /// which hyperparameters support hyperparameter optimization (HPO). For more information,
         /// see <a>aws-forecast-choosing-recipes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code>
+        /// to true.
         /// </para>
         /// </summary>
         public HyperParameterTuningJobConfig HPOConfig
@@ -287,15 +304,20 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property PerformAutoML. 
         /// <para>
-        /// Whether to perform AutoML. The default value is <code>false</code>. In this case,
-        /// you are required to specify an algorithm.
+        /// Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the
+        /// algorithms it provides and chooses the best algorithm and configuration for your training
+        /// dataset.
         /// </para>
         ///  
         /// <para>
-        /// If you want Amazon Forecast to evaluate the algorithms it provides and choose the
-        /// best algorithm and configuration for your training dataset, set <code>PerformAutoML</code>
-        /// to <code>true</code>. This is a good option if you aren't sure which algorithm is
-        /// suitable for your application.
+        /// The default value is <code>false</code>. In this case, you are required to specify
+        /// an algorithm.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform
+        /// AutoML. This is a good option if you aren't sure which algorithm is suitable for your
+        /// training data. In this case, <code>PerformHPO</code> must be false.
         /// </para>
         /// </summary>
         public bool PerformAutoML
@@ -314,8 +336,8 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property PerformHPO. 
         /// <para>
         /// Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter
-        /// values for your training data. The process of performing HPO is known as a hyperparameter
-        /// tuning job.
+        /// values for your training data. The process of performing HPO is known as running a
+        /// hyperparameter tuning job.
         /// </para>
         ///  
         /// <para>
@@ -324,13 +346,15 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// To override the default values, set <code>PerformHPO</code> to <code>true</code> and
-        /// supply the <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies an
-        /// objective metric, the hyperparameters to optimize, and the valid range for each hyperparameter.
+        /// To override the default values, set <code>PerformHPO</code> to <code>true</code> and,
+        /// optionally, supply the <a>HyperParameterTuningJobConfig</a> object. The tuning job
+        /// specifies a metric to optimize, which hyperparameters participate in tuning, and the
+        /// valid range for each tunable hyperparameter. In this case, you are required to specify
+        /// an algorithm and <code>PerformAutoML</code> must be false.
         /// </para>
         ///  
         /// <para>
-        /// The following algorithms support HPO:
+        /// The following algorithm supports HPO:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -372,8 +396,9 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property TrainingParameters. 
         /// <para>
-        /// The training parameters to override for model training. The parameters that you can
-        /// override are listed in the individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+        /// The hyperparameters to override for model training. The hyperparameters that you can
+        /// override are listed in the individual algorithms. For the list of supported algorithms,
+        /// see <a>aws-forecast-choosing-recipes</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

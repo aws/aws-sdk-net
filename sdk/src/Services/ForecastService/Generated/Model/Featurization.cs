@@ -73,10 +73,10 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The name of the schema attribute specifying the data field to be featurized. In this
-        /// release, only the <code>target</code> field of the <code>TARGET_TIME_SERIES</code>
-        /// dataset type is supported. For example, for the <code>RETAIL</code> domain, the target
-        /// is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>.
+        /// The name of the schema attribute that specifies the data field to be featurized. Only
+        /// the <code>target</code> field of the <code>TARGET_TIME_SERIES</code> dataset type
+        /// is supported. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>,
+        /// and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -95,8 +95,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property FeaturizationPipeline. 
         /// <para>
-        /// An array <code>FeaturizationMethod</code> objects that specifies the feature transformation
-        /// methods. For this release, the number of methods is limited to one.
+        /// An array of one <code>FeaturizationMethod</code> object that specifies the feature
+        /// transformation method.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

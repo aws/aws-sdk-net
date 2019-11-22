@@ -63,7 +63,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The path to the S3 bucket where the forecast is stored.
+        /// The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast
+        /// is exported.
         /// </para>
         /// </summary>
         public DataDestination Destination
@@ -155,7 +156,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the forecast export job. One of the following states:
+        /// The status of the forecast export job. States include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -174,7 +175,7 @@ namespace Amazon.ForecastService.Model
         ///  </li> </ul> <note> 
         /// <para>
         /// The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
-        /// you can access the forecast in your Amazon S3 bucket.
+        /// you can access the forecast in your S3 bucket.
         /// </para>
         ///  </note>
         /// </summary>

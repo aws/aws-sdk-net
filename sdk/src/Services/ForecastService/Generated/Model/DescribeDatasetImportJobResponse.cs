@@ -123,7 +123,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property DataSize. 
         /// <para>
-        /// The size of the dataset in gigabytes (GB) after completion of the import job.
+        /// The size of the dataset in gigabytes (GB) after the import job has finished.
         /// </para>
         /// </summary>
         public double DataSize
@@ -141,8 +141,13 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The location of the training data to import. The training data must be stored in an
-        /// Amazon S3 bucket.
+        /// The location of the training data to import and an AWS Identity and Access Management
+        /// (IAM) role that Amazon Forecast can assume to access the data.
+        /// </para>
+        ///  
+        /// <para>
+        /// If encryption is used, <code>DataSource</code> includes an AWS Key Management Service
+        /// (KMS) key.
         /// </para>
         /// </summary>
         public DataSource DataSource
@@ -178,19 +183,20 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property LastModificationTime. 
         /// <para>
-        /// Dependent on the status as follows:
+        /// The last time that the dataset was modified. The time depends on the status of the
+        /// job, as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE_PENDING</code> - same as <code>CreationTime</code> 
+        ///  <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_IN_PROGRESS</code> - the current timestamp
+        ///  <code>CREATE_IN_PROGRESS</code> - The current timestamp.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or failed
+        ///  <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -263,8 +269,9 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property TimestampFormat. 
         /// <para>
-        /// The format of timestamps in the dataset. Two formats are supported dependent on the
-        /// <code>DataFrequency</code> specified when the dataset was created.
+        /// The format of timestamps in the dataset. The format that you specify depends on the
+        /// <code>DataFrequency</code> specified when the dataset was created. The following formats
+        /// are supported
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -272,7 +279,7 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// For data frequencies: Y, M, W, and D
+        /// For the following data frequencies: Y, M, W, and D
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -280,8 +287,8 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// For data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and
-        /// D
+        /// For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for:
+        /// Y, M, W, and D
         /// </para>
         ///  </li> </ul>
         /// </summary>

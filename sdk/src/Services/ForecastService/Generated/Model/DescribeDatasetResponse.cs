@@ -144,7 +144,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The dataset domain.
+        /// The domain associated with the dataset.
         /// </para>
         /// </summary>
         public Domain Domain
@@ -162,7 +162,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfig. 
         /// <para>
-        /// An AWS Key Management Service (KMS) key and the AWS Identity and Access Management
+        /// The AWS Key Management Service (KMS) key and the AWS Identity and Access Management
         /// (IAM) role that Amazon Forecast can assume to access the key.
         /// </para>
         /// </summary>
@@ -181,10 +181,11 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property LastModificationTime. 
         /// <para>
-        /// When the dataset is created, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
-        /// After a <a>CreateDatasetImportJob</a> operation is called, <code>LastModificationTime</code>
-        /// is when the import job finished or failed. While data is being imported to the dataset,
-        /// <code>LastModificationTime</code> is the current query time.
+        /// When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
+        /// While data is being imported to the dataset, <code>LastModificationTime</code> is
+        /// the current time of the <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a>
+        /// operation has finished, <code>LastModificationTime</code> is when the import job completed
+        /// or failed.
         /// </para>
         /// </summary>
         public DateTime LastModificationTime
@@ -245,9 +246,9 @@ namespace Amazon.ForecastService.Model
         ///  </li> </ul> 
         /// <para>
         /// The <code>UPDATE</code> states apply while data is imported to the dataset from a
-        /// call to the <a>CreateDatasetImportJob</a> operation. During this time, the status
-        /// reflects the status of the dataset import job. For example, when the import job status
-        /// is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.
+        /// call to the <a>CreateDatasetImportJob</a> operation and reflect the status of the
+        /// dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>,
+        /// the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.
         /// </para>
         ///  <note> 
         /// <para>

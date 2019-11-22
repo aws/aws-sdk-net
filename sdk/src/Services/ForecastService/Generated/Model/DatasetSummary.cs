@@ -30,7 +30,7 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Provides a summary of the dataset properties used in the <a>ListDatasets</a> operation.
     /// To get the complete set of properties, call the <a>DescribeDataset</a> operation,
-    /// and provide the listed <code>DatasetArn</code>.
+    /// and provide the <code>DatasetArn</code>.
     /// </summary>
     public partial class DatasetSummary
     {
@@ -136,10 +136,11 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property LastModificationTime. 
         /// <para>
-        /// When the dataset is created, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
-        /// After a <a>CreateDatasetImportJob</a> operation is called, <code>LastModificationTime</code>
-        /// is when the import job finished or failed. While data is being imported to the dataset,
-        /// <code>LastModificationTime</code> is the current query time.
+        /// When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
+        /// While data is being imported to the dataset, <code>LastModificationTime</code> is
+        /// the current time of the <code>ListDatasets</code> call. After a <a>CreateDatasetImportJob</a>
+        /// operation has finished, <code>LastModificationTime</code> is when the import job completed
+        /// or failed.
         /// </para>
         /// </summary>
         public DateTime LastModificationTime

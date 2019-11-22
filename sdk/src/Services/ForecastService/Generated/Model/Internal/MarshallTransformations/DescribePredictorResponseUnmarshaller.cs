@@ -141,6 +141,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.PredictorArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PredictorExecutionDetails", targetDepth))
+                {
+                    var unmarshaller = PredictorExecutionDetailsUnmarshaller.Instance;
+                    response.PredictorExecutionDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PredictorName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
