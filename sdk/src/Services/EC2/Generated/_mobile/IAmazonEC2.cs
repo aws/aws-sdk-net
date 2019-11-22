@@ -4468,6 +4468,13 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the events for the specified EC2 Fleet during the specified time.
+        /// 
+        ///  
+        /// <para>
+        /// EC2 Fleet events are delayed by up to 30 seconds before they can be described. This
+        /// ensures that you can query by the last evaluated time and not miss a recorded event.
+        /// EC2 Fleet events are available for 48 hours.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetHistory service method.</param>
         /// <param name="cancellationToken">
@@ -5095,6 +5102,45 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">REST API Reference for DescribeInstanceStatus Operation</seealso>
         Task<DescribeInstanceStatusResponse> DescribeInstanceStatusAsync(DescribeInstanceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeInstanceTypeOfferings
+
+
+
+        /// <summary>
+        /// Returns a list of all instance types offered. The results can be filtered by location
+        /// (Region or Availability Zone). If no location is specified, the instance types offered
+        /// in the current Region are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypeOfferings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstanceTypeOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings">REST API Reference for DescribeInstanceTypeOfferings Operation</seealso>
+        Task<DescribeInstanceTypeOfferingsResponse> DescribeInstanceTypeOfferingsAsync(DescribeInstanceTypeOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeInstanceTypes
+
+
+
+        /// <summary>
+        /// Returns a list of all instance types offered in your current AWS Region. The results
+        /// can be filtered by the attributes of the instance types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstanceTypes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">REST API Reference for DescribeInstanceTypes Operation</seealso>
+        Task<DescribeInstanceTypesResponse> DescribeInstanceTypesAsync(DescribeInstanceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

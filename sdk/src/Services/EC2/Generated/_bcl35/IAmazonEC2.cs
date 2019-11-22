@@ -7810,6 +7810,13 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the events for the specified EC2 Fleet during the specified time.
+        /// 
+        ///  
+        /// <para>
+        /// EC2 Fleet events are delayed by up to 30 seconds before they can be described. This
+        /// ensures that you can query by the last evaluated time and not miss a recorded event.
+        /// EC2 Fleet events are available for 48 hours.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetHistory service method.</param>
         /// 
@@ -8866,6 +8873,89 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeInstanceStatusResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">REST API Reference for DescribeInstanceStatus Operation</seealso>
         DescribeInstanceStatusResponse EndDescribeInstanceStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeInstanceTypeOfferings
+
+
+        /// <summary>
+        /// Returns a list of all instance types offered. The results can be filtered by location
+        /// (Region or Availability Zone). If no location is specified, the instance types offered
+        /// in the current Region are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypeOfferings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceTypeOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings">REST API Reference for DescribeInstanceTypeOfferings Operation</seealso>
+        DescribeInstanceTypeOfferingsResponse DescribeInstanceTypeOfferings(DescribeInstanceTypeOfferingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceTypeOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypeOfferings operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceTypeOfferings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings">REST API Reference for DescribeInstanceTypeOfferings Operation</seealso>
+        IAsyncResult BeginDescribeInstanceTypeOfferings(DescribeInstanceTypeOfferingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceTypeOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceTypeOfferings.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceTypeOfferingsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings">REST API Reference for DescribeInstanceTypeOfferings Operation</seealso>
+        DescribeInstanceTypeOfferingsResponse EndDescribeInstanceTypeOfferings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeInstanceTypes
+
+
+        /// <summary>
+        /// Returns a list of all instance types offered in your current AWS Region. The results
+        /// can be filtered by the attributes of the instance types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceTypes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">REST API Reference for DescribeInstanceTypes Operation</seealso>
+        DescribeInstanceTypesResponse DescribeInstanceTypes(DescribeInstanceTypesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypes operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">REST API Reference for DescribeInstanceTypes Operation</seealso>
+        IAsyncResult BeginDescribeInstanceTypes(DescribeInstanceTypesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceTypes.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceTypesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">REST API Reference for DescribeInstanceTypes Operation</seealso>
+        DescribeInstanceTypesResponse EndDescribeInstanceTypes(IAsyncResult asyncResult);
 
         #endregion
         

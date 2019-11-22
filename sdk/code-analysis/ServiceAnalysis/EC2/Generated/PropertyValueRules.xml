@@ -118,6 +118,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeInstanceTypeOfferingsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeInstanceTypesRequest.MaxResults</property>
+    <min>5</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeInternetGatewaysRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>

@@ -4066,6 +4066,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeInstanceTypeOfferingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeInstanceTypeOfferings");
+
+            var request = InstantiateClassGenerator.Execute<DescribeInstanceTypeOfferingsRequest>();
+            var marshaller = new DescribeInstanceTypeOfferingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeInstanceTypeOfferingsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeInstanceTypeOfferingsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeInstanceTypesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeInstanceTypes");
+
+            var request = InstantiateClassGenerator.Execute<DescribeInstanceTypesRequest>();
+            var marshaller = new DescribeInstanceTypesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeInstanceTypesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeInstanceTypesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeInternetGatewaysMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeInternetGateways");
