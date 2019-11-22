@@ -57,7 +57,11 @@ namespace Amazon.SimpleNotificationService.Model
         /// app and mobile device. This is returned from the notification service when an app
         /// and mobile device are registered with the notification service.
         /// </para>
-        ///  </li> </ul>
+        ///  <note> 
+        /// <para>
+        /// The device token for the iOS platform is returned in lowercase.
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
         public Dictionary<string, string> Attributes
         {

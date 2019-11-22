@@ -56,8 +56,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// Instantiates SubscribeRequest with the parameterized properties
         /// </summary>
         /// <param name="topicArn">The ARN of the topic you want to subscribe to.</param>
-        /// <param name="protocol">The protocol you want to use. Supported protocols include: <ul> <li>  <code>http</code> – delivery of JSON-encoded message via HTTP POST </li> <li>  <code>https</code> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <code>email</code> – delivery of message via SMTP </li> <li>  <code>email-json</code> – delivery of JSON-encoded message via SMTP </li> <li>  <code>sms</code> – delivery of message via SMS </li> <li>  <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device. </li> <li>  <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function. </li> </ul></param>
-        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <code>http</code> protocol, the endpoint is an URL beginning with "https://" </li> <li> For the <code>https</code> protocol, the endpoint is a URL beginning with "https://" </li> <li> For the <code>email</code> protocol, the endpoint is an email address </li> <li> For the <code>email-json</code> protocol, the endpoint is an email address </li> <li> For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device </li> <li> For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue </li> <li> For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function. </li> </ul></param>
+        /// <param name="protocol">The protocol you want to use. Supported protocols include: <ul> <li>  <code>http</code> – delivery of JSON-encoded message via HTTP POST </li> <li>  <code>https</code> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <code>email</code> – delivery of message via SMTP </li> <li>  <code>email-json</code> – delivery of JSON-encoded message via SMTP </li> <li>  <code>sms</code> – delivery of message via SMS </li> <li>  <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device. </li> <li>  <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function. </li> </ul></param>
+        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>  </li> <li> For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>  </li> <li> For the <code>email</code> protocol, the endpoint is an email address </li> <li> For the <code>email-json</code> protocol, the endpoint is an email address </li> <li> For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device </li> <li> For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue </li> <li> For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function. </li> </ul></param>
         public SubscribeRequest(string topicArn, string protocol, string endpoint)
         {
             _topicArn = topicArn;
@@ -91,6 +91,14 @@ namespace Amazon.SimpleNotificationService.Model
         /// delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints
         /// to process JSON formatting, which is otherwise created for Amazon SNS metadata.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the
+        /// specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client
+        /// errors (for example, when the subscribed endpoint is unreachable) or server errors
+        /// (for example, when the service that powers the subscribed endpoint becomes unavailable)
+        /// are held in the dead-letter queue for further analysis or reprocessing.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -112,11 +120,13 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
+        /// For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>https</code> protocol, the endpoint is a URL beginning with "https://"
+        /// For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -142,7 +152,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+        /// For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda
+        /// function.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -194,7 +205,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
+        ///  <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -217,17 +228,22 @@ namespace Amazon.SimpleNotificationService.Model
         /// Sets whether the response from the <code>Subscribe</code> request includes the subscription
         /// ARN, even if the subscription is not yet confirmed.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// If you set this parameter to <code>false</code>, the response includes the ARN for
-        /// confirmed subscriptions, but it includes an ARN value of "pending subscription" for
-        /// subscriptions that are not yet confirmed. A subscription becomes confirmed when the
-        /// subscriber calls the <code>ConfirmSubscription</code> action with a confirmation token.
+        /// If you have the subscription ARN returned, the response includes the ARN in all cases,
+        /// even if the subscription is not yet confirmed.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// If you set this parameter to <code>true</code>, the response includes the ARN in all
-        /// cases, even if the subscription is not yet confirmed.
+        /// If you don't have the subscription ARN returned, in addition to the ARN for confirmed
+        /// subscriptions, the response also includes the <code>pending subscription</code> ARN
+        /// value for subscriptions that aren't yet confirmed. A subscription becomes confirmed
+        /// when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
+        /// token.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you set this parameter to <code>true</code>, .
         /// </para>
         ///  
         /// <para>
