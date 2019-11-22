@@ -110,9 +110,9 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property PackedPolicySize. 
         /// <para>
-        /// A percentage value that indicates the size of the policy in packed form. The service
-        /// rejects any policy with a packed size greater than 100 percent, which means the policy
-        /// exceeded the allowed space.
+        /// A percentage value that indicates the packed size of the session policies and session
+        /// tags combined passed in the request. The request fails if the packed size is greater
+        /// than 100 percent, which means the policies and tags exceeded the allowed space.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

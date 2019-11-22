@@ -94,9 +94,34 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SerialNumber", StringUtils.FromString(publicRequest.SerialNumber));
                 }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
+                    {
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetTokenCode())
                 {
                     request.Parameters.Add("TokenCode", StringUtils.FromString(publicRequest.TokenCode));
+                }
+                if(publicRequest.IsSetTransitiveTagKeys())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.TransitiveTagKeys)
+                    {
+                        request.Parameters.Add("TransitiveTagKeys" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
             return request;

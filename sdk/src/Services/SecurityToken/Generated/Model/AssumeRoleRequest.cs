@@ -55,6 +55,10 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
+    ///  <b>Session Duration</b> 
+    /// </para>
+    ///  
+    /// <para>
     /// By default, the temporary security credentials created by <code>AssumeRole</code>
     /// last for one hour. However, you can use the optional <code>DurationSeconds</code>
     /// parameter to specify the duration of your session. You can provide a value from 900
@@ -70,6 +74,10 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
+    ///  <b>Permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
     /// The temporary security credentials created by <code>AssumeRole</code> can be used
     /// to make API calls to any AWS service with the following exception: You cannot call
     /// the AWS STS <code>GetFederationToken</code> or <code>GetSessionToken</code> API operations.
@@ -80,7 +88,7 @@ namespace Amazon.SecurityToken.Model
     /// policies</a> to this operation. You can pass a single JSON policy document to use
     /// as an inline session policy. You can also specify up to 10 managed policies to use
     /// as managed session policies. The plain text that you use for both inline and managed
-    /// session policies shouldn't exceed 2048 characters. Passing policies to this operation
+    /// session policies can't exceed 2,048 characters. Passing policies to this operation
     /// returns new temporary credentials. The resulting session's permissions are the intersection
     /// of the role's identity-based policy and the session policies. You can use the role's
     /// temporary credentials in subsequent AWS API calls to access resources in the account
@@ -118,6 +126,29 @@ namespace Amazon.SecurityToken.Model
     /// same account as the role do not need explicit permission to assume the role. For more
     /// information about trust policies and resource-based policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
     /// Policies</a> in the <i>IAM User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Tags</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// (Optional) You can pass tag key-value pairs to your session. These tags are called
+    /// session tags. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+    /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// An administrator must grant you the permissions necessary to pass session tags. The
+    /// administrator can also create granular permissions to allow you to pass only specific
+    /// session tags. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial:
+    /// Using Tags for Attribute-Based Access Control</a> in the <i>IAM User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can set the session tags as transitive. Transitive tags persist during role chaining.
+    /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">Chaining
+    /// Roles with Session Tags</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -159,7 +190,9 @@ namespace Amazon.SecurityToken.Model
         private string _roleArn;
         private string _roleSessionName;
         private string _serialNumber;
+        private List<Tag> _tags = new List<Tag>();
         private string _tokenCode;
+        private List<string> _transitiveTagKeys = new List<string>();
 
         /// <summary>
         /// Gets and sets the property DurationSeconds. 
@@ -253,19 +286,18 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// The plain text that you use for both inline and managed session policies shouldn't
-        /// exceed 2048 characters. The JSON policy characters can be any ASCII character from
-        /// the space character to the end of the valid character list (\u0020 through \u00FF).
-        /// It can also include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-        /// characters.
+        /// The plain text that you use for both inline and managed session policies can't exceed
+        /// 2,048 characters. The JSON policy characters can be any ASCII character from the space
+        /// character to the end of the valid character list (\u0020 through \u00FF). It can also
+        /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The characters in this parameter count towards the 2048 character session policy guideline.
-        /// However, an AWS conversion compresses the session policies into a packed binary format
-        /// that has a separate limit. This is the enforced limit. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policy is to the upper size
-        /// limit.
+        /// An AWS conversion compresses the passed session policies and session tags into a packed
+        /// binary format that has a separate limit. Your request can fail for this limit even
+        /// if your plain text meets the other requirements. The <code>PackedPolicySize</code>
+        /// response element indicates by percentage how close the policies and tags for your
+        /// request are to the upper size limit. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -291,17 +323,17 @@ namespace Amazon.SecurityToken.Model
         ///  
         /// <para>
         /// This parameter is optional. You can provide up to 10 managed policy ARNs. However,
-        /// the plain text that you use for both inline and managed session policies shouldn't
-        /// exceed 2048 characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// the plain text that you use for both inline and managed session policies can't exceed
+        /// 2,048 characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The characters in this parameter count towards the 2048 character session policy guideline.
-        /// However, an AWS conversion compresses the session policies into a packed binary format
-        /// that has a separate limit. This is the enforced limit. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policy is to the upper size
-        /// limit.
+        /// An AWS conversion compresses the passed session policies and session tags into a packed
+        /// binary format that has a separate limit. Your request can fail for this limit even
+        /// if your plain text meets the other requirements. The <code>PackedPolicySize</code>
+        /// response element indicates by percentage how close the policies and tags for your
+        /// request are to the upper size limit. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -410,6 +442,65 @@ namespace Amazon.SecurityToken.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of session tags that you want to pass. Each session tag consists of a key name
+        /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
+        /// AWS STS Sessions</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is optional. You can pass up to 50 session tags. The plain text session
+        /// tag keys can’t exceed 128 characters, and the values can’t exceed 256 characters.
+        /// For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
+        /// and STS Character Limits</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// An AWS conversion compresses the passed session policies and session tags into a packed
+        /// binary format that has a separate limit. Your request can fail for this limit even
+        /// if your plain text meets the other requirements. The <code>PackedPolicySize</code>
+        /// response element indicates by percentage how close the policies and tags for your
+        /// request are to the upper size limit. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can pass a session tag with the same key as a tag that is already attached to
+        /// the role. When you do, session tags override a role tag with the same key. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Tag key–value pairs are not case sensitive, but case is preserved. This means that
+        /// you cannot have separate <code>Department</code> and <code>department</code> tag keys.
+        /// Assume that the role has the <code>Department</code>=<code>Marketing</code> tag and
+        /// you pass the <code>department</code>=<code>engineering</code> session tag. <code>Department</code>
+        /// and <code>department</code> are not saved as separate tags, and the session tag passed
+        /// in the request takes precedence over the role tag.
+        /// </para>
+        ///  
+        /// <para>
+        /// Additionally, if you used temporary credentials to perform this operation, the new
+        /// session inherits any transitive session tags from the calling session. If you pass
+        /// a session tag with the same key as an inherited tag, the operation fails. To view
+        /// the inherited tags for a session, see the AWS CloudTrail logs. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+        /// Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TokenCode. 
         /// <para>
         /// The value provided by the MFA device, if the trust policy of the role being assumed
@@ -434,6 +525,38 @@ namespace Amazon.SecurityToken.Model
         internal bool IsSetTokenCode()
         {
             return this._tokenCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitiveTagKeys. 
+        /// <para>
+        /// A list of keys for session tags that you want to set as transitive. If you set a tag
+        /// key as transitive, the corresponding key and value passes to subsequent sessions in
+        /// a role chain. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">Chaining
+        /// Roles with Session Tags</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is optional. When you set session tags as transitive, the session policy
+        /// and session tags packed binary limit is not affected.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose not to specify a transitive tag key, then no tags are passed from this
+        /// session to any subsequent sessions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<string> TransitiveTagKeys
+        {
+            get { return this._transitiveTagKeys; }
+            set { this._transitiveTagKeys = value; }
+        }
+
+        // Check to see if TransitiveTagKeys property is set
+        internal bool IsSetTransitiveTagKeys()
+        {
+            return this._transitiveTagKeys != null && this._transitiveTagKeys.Count > 0; 
         }
 
     }
