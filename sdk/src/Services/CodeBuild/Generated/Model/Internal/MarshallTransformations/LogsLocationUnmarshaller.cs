@@ -70,6 +70,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudWatchLogs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cloudWatchLogsArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CloudWatchLogsArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("deepLink", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = S3LogsConfigUnmarshaller.Instance;
                     unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("s3LogsArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3LogsArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("streamName", targetDepth))

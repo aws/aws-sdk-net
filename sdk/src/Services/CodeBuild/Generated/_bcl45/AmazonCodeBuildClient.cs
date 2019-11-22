@@ -74,6 +74,14 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>BatchGetReportGroups</code>: Returns an array of report groups. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>BatchGetReports</code>: Returns an array of reports. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>CreateProject</code>: Creates a build project.
     /// </para>
     ///  </li> <li> 
@@ -132,6 +140,22 @@ namespace Amazon.CodeBuild
     ///  <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code>
     /// objects. Each <code>SourceCredentialsInfo</code> object includes the authentication
     /// type, token ARN, and type of source provider for one set of credentials.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>StartBuild</code>: Starts running a build.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>StopBuild</code>: Attempts to stop running a build.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UpdateProject</code>: Changes the settings of an existing build project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -652,7 +676,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Deletes a build project.
+        /// Deletes a build project. When you delete a project, its builds are not deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
         /// 
@@ -672,7 +696,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Deletes a build project.
+        /// Deletes a build project. When you delete a project, its builds are not deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
         /// <param name="cancellationToken">

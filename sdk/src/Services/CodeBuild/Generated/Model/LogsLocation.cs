@@ -33,10 +33,12 @@ namespace Amazon.CodeBuild.Model
     public partial class LogsLocation
     {
         private CloudWatchLogsConfig _cloudWatchLogs;
+        private string _cloudWatchLogsArn;
         private string _deepLink;
         private string _groupName;
         private string _s3DeepLink;
         private S3LogsConfig _s3Logs;
+        private string _s3LogsArn;
         private string _streamName;
 
         /// <summary>
@@ -55,6 +57,26 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetCloudWatchLogs()
         {
             return this._cloudWatchLogs != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLogsArn. 
+        /// <para>
+        ///  The ARN of Amazon CloudWatch Logs for a build project. Its format is <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
+        /// Defined by Amazon CloudWatch Logs</a>. 
+        /// </para>
+        /// </summary>
+        public string CloudWatchLogsArn
+        {
+            get { return this._cloudWatchLogsArn; }
+            set { this._cloudWatchLogsArn = value; }
+        }
+
+        // Check to see if CloudWatchLogsArn property is set
+        internal bool IsSetCloudWatchLogsArn()
+        {
+            return this._cloudWatchLogsArn != null;
         }
 
         /// <summary>
@@ -127,6 +149,26 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetS3Logs()
         {
             return this._s3Logs != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3LogsArn. 
+        /// <para>
+        ///  The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources
+        /// Defined by Amazon S3</a>. 
+        /// </para>
+        /// </summary>
+        public string S3LogsArn
+        {
+            get { return this._s3LogsArn; }
+            set { this._s3LogsArn = value; }
+        }
+
+        // Check to see if S3LogsArn property is set
+        internal bool IsSetS3LogsArn()
+        {
+            return this._s3LogsArn != null;
         }
 
         /// <summary>
