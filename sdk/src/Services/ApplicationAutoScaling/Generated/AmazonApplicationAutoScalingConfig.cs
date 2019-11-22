@@ -51,7 +51,7 @@ namespace Amazon.ApplicationAutoScaling
         {
             get
             {
-                return "autoscaling";
+                return "application-autoscaling";
             }
         }
 

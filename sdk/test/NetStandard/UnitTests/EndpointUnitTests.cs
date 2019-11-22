@@ -32,9 +32,9 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "Core")]
         public void V2RegressionTest()
         {
-            Assert.Equal("autoscaling.us-east-1.amazonaws.com", RegionEndpoint.USEast1.GetEndpointForService("application-autoscaling").Hostname);
-            Assert.Equal("autoscaling.us-west-2.amazonaws.com", RegionEndpoint.USWest2.GetEndpointForService("application-autoscaling").Hostname);
-            Assert.Equal("autoscaling.eu-west-1.amazonaws.com", RegionEndpoint.EUWest1.GetEndpointForService("application-autoscaling").Hostname);
+            Assert.Equal("application-autoscaling.us-east-1.amazonaws.com", RegionEndpoint.USEast1.GetEndpointForService("application-autoscaling").Hostname);
+            Assert.Equal("application-autoscaling.us-west-2.amazonaws.com", RegionEndpoint.USWest2.GetEndpointForService("application-autoscaling").Hostname);
+            Assert.Equal("application-autoscaling.eu-west-1.amazonaws.com", RegionEndpoint.EUWest1.GetEndpointForService("application-autoscaling").Hostname);
 
             Assert.Equal("sts.ap-northeast-2.amazonaws.com", RegionEndpoint.APNortheast2.GetEndpointForService("sts").Hostname);
         }
