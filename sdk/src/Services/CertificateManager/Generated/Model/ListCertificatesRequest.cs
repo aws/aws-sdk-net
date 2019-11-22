@@ -31,7 +31,8 @@ namespace Amazon.CertificateManager.Model
     /// Container for the parameters to the ListCertificates operation.
     /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
     /// that match a specific status be listed. You can also filter by specific attributes
-    /// of the certificate.
+    /// of the certificate. Default filtering returns only <code>RSA_2048</code> certificates.
+    /// For more information, see <a>Filters</a>.
     /// </summary>
     public partial class ListCertificatesRequest : AmazonCertificateManagerRequest
     {
