@@ -173,7 +173,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The maximum length constraint listed below includes capacity for additional system
         /// attributes that are not part of the name. The maximum length for the fully qualified
-        /// parameter name is 1011 characters. 
+        /// parameter name is 1011 characters, including the full length of the parameter ARN.
+        /// For example, the following fully qualified parameter name is 65 characters, not 20
+        /// characters:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code> 
         /// </para>
         ///  </note>
         /// </summary>

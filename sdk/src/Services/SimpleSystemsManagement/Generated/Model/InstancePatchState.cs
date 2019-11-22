@@ -38,9 +38,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         private int? _failedCount;
         private int? _installedCount;
         private int? _installedOtherCount;
+        private int? _installedPendingRebootCount;
         private int? _installedRejectedCount;
         private string _installOverrideList;
         private string _instanceId;
+        private DateTime? _lastNoRebootInstallOperationTime;
         private int? _missingCount;
         private int? _notApplicableCount;
         private PatchOperationType _operation;
@@ -48,6 +50,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _operationStartTime;
         private string _ownerInformation;
         private string _patchGroup;
+        private RebootOption _rebootOption;
         private string _snapshotId;
         private int? _unreportedNotApplicableCount;
 
@@ -127,6 +130,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstalledPendingRebootCount. 
+        /// <para>
+        /// The number of patches installed since the last time the instance was rebooted.
+        /// </para>
+        /// </summary>
+        public int InstalledPendingRebootCount
+        {
+            get { return this._installedPendingRebootCount.GetValueOrDefault(); }
+            set { this._installedPendingRebootCount = value; }
+        }
+
+        // Check to see if InstalledPendingRebootCount property is set
+        internal bool IsSetInstalledPendingRebootCount()
+        {
+            return this._installedPendingRebootCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property InstalledRejectedCount. 
         /// <para>
         /// The number of instances with patches installed that are specified in a RejectedPatches
@@ -198,6 +219,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastNoRebootInstallOperationTime. 
+        /// <para>
+        /// The time of the last attempt to patch the instance with <code>NoReboot</code> specified
+        /// as the reboot option.
+        /// </para>
+        /// </summary>
+        public DateTime LastNoRebootInstallOperationTime
+        {
+            get { return this._lastNoRebootInstallOperationTime.GetValueOrDefault(); }
+            set { this._lastNoRebootInstallOperationTime = value; }
+        }
+
+        // Check to see if LastNoRebootInstallOperationTime property is set
+        internal bool IsSetLastNoRebootInstallOperationTime()
+        {
+            return this._lastNoRebootInstallOperationTime.HasValue; 
         }
 
         /// <summary>
@@ -335,6 +375,42 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetPatchGroup()
         {
             return this._patchGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RebootOption. 
+        /// <para>
+        /// Indicates the reboot option specified in the patch baseline.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Reboot options apply to <code>Install</code> operations only. Reboots are not attempted
+        /// for Patch Manager <code>Scan</code> operations.
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        ///  <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed
+        /// any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying
+        /// to reboot the system. Patches installed with this option are assigned a status of
+        /// <code>InstalledPendingReboot</code>. These patches might not be in effect until a
+        /// reboot is performed.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public RebootOption RebootOption
+        {
+            get { return this._rebootOption; }
+            set { this._rebootOption = value; }
+        }
+
+        // Check to see if RebootOption property is set
+        internal bool IsSetRebootOption()
+        {
+            return this._rebootOption != null;
         }
 
         /// <summary>
