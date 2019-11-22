@@ -1,3 +1,36 @@
+### 3.3.636.0 (2019-11-21 22:52 UTC)
+* Amplify (3.3.104.0)
+	* This release of AWS Amplify Console introduces support for backend environments. Backend environments are containers for AWS deployments. Each environment is a collection of AWS resources.
+* AppSync (3.3.103.0)
+	* AppSync: AWS AppSync now supports the ability to add, configure, and maintain caching for your AWS AppSync GraphQL API.
+* AWSMarketplaceMetering (3.3.101.3)
+	* Documentation updates for the AWS Marketplace Metering Service.
+* ConfigService (3.3.106.0)
+	* AWS Config launches Custom Configuration Items. A new feature which allows customers to publish resource configuration for third-party resources, custom, or on-premises servers.
+* Connect (3.3.103.0)
+	* This release adds a new API: StartChatContact. You can use it to programmatically start a chat on the specified Amazon Connect instance. Learn more here: https://docs.aws.amazon.com/connect/latest/APIReference/Welcome.html 
+* ConnectParticipant (3.3.100.0)
+	* This release adds 5 new APIs: CreateParticipantConnection, DisconnectParticipant, GetTranscript, SendEvent, and SendMessage. For Amazon Connect chat, you can use them to programmatically perform participant actions on the configured Amazon Connect instance. Learn more here: https://docs.aws.amazon.com/connect-participant/latest/APIReference/Welcome.html
+* DynamoDBv2 (3.3.103.0)
+	* With this release, you can convert an existing Amazon DynamoDB table to a global table by adding replicas in other AWS Regions.
+* EC2 (3.3.138.0)
+	* This release adds support for attaching AWS License Manager Configurations to Amazon Machine Image (AMI) using ImportImage API; and adds support for running different instance sizes on EC2 Dedicated Hosts
+* Glue (3.3.112.0)
+	* This release adds support for Glue 1.0 compatible ML Transforms.
+* Lex (3.3.103.0)
+	* Amazon Lex now supports Sentiment Analysis
+* LexModelBuildingService (3.3.101.0)
+	* Amazon Lex now supports Sentiment Analysis
+* SimpleSystemsManagement (3.3.111.0)
+	* The release contains new API and API changes for AWS Systems Manager Explorer product.
+* TranscribeService (3.3.111.0)
+	* With this release, Amazon Transcribe now supports transcriptions from audio sources in Hebrew (he-IL), Swiss German (de-CH), Japanese (ja-JP), Turkish (tr-TR), Arabic-Gulf (ar-AE), Malay (ms-MY), Telugu (te-IN)
+* Core 3.3.103.67
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.635.0 (2019-11-20 19:24 UTC)
 * ApplicationDiscoveryService (3.3.102.0)
 	* New exception type for use with Migration Hub home region
