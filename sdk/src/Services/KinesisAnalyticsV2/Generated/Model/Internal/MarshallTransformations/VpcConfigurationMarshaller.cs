@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RunConfiguration Marshaller
+    /// VpcConfiguration Marshaller
     /// </summary>       
-    public class RunConfigurationMarshaller : IRequestMarshaller<RunConfiguration, JsonMarshallerContext> 
+    public class VpcConfigurationMarshaller : IRequestMarshaller<VpcConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,42 +43,26 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RunConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(VpcConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetApplicationRestoreConfiguration())
+            if(requestObject.IsSetSecurityGroupIds())
             {
-                context.Writer.WritePropertyName("ApplicationRestoreConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ApplicationRestoreConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ApplicationRestoreConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetFlinkRunConfiguration())
-            {
-                context.Writer.WritePropertyName("FlinkRunConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = FlinkRunConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.FlinkRunConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSqlRunConfigurations())
-            {
-                context.Writer.WritePropertyName("SqlRunConfigurations");
+                context.Writer.WritePropertyName("SecurityGroupIds");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectSqlRunConfigurationsListValue in requestObject.SqlRunConfigurations)
+                foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                    context.Writer.WriteObjectStart();
+                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
 
-                    var marshaller = SqlRunConfigurationMarshaller.Instance;
-                    marshaller.Marshall(requestObjectSqlRunConfigurationsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetSubnetIds())
+            {
+                context.Writer.WritePropertyName("SubnetIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
+                {
+                        context.Writer.Write(requestObjectSubnetIdsListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }
@@ -88,7 +72,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static RunConfigurationMarshaller Instance = new RunConfigurationMarshaller();
+        public readonly static VpcConfigurationMarshaller Instance = new VpcConfigurationMarshaller();
 
     }
 }

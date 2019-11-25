@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RunConfigurationUpdate Marshaller
+    /// FlinkRunConfiguration Marshaller
     /// </summary>       
-    public class RunConfigurationUpdateMarshaller : IRequestMarshaller<RunConfigurationUpdate, JsonMarshallerContext> 
+    public class FlinkRunConfigurationMarshaller : IRequestMarshaller<FlinkRunConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RunConfigurationUpdate requestObject, JsonMarshallerContext context)
+        public void Marshall(FlinkRunConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetApplicationRestoreConfiguration())
+            if(requestObject.IsSetAllowNonRestoredState())
             {
-                context.Writer.WritePropertyName("ApplicationRestoreConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ApplicationRestoreConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ApplicationRestoreConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetFlinkRunConfiguration())
-            {
-                context.Writer.WritePropertyName("FlinkRunConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = FlinkRunConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.FlinkRunConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("AllowNonRestoredState");
+                context.Writer.Write(requestObject.AllowNonRestoredState);
             }
 
         }
@@ -72,7 +56,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static RunConfigurationUpdateMarshaller Instance = new RunConfigurationUpdateMarshaller();
+        public readonly static FlinkRunConfigurationMarshaller Instance = new FlinkRunConfigurationMarshaller();
 
     }
 }

@@ -123,6 +123,28 @@
     <max>999999999</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationVpcConfigurationRequest.ApplicationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationVpcConfigurationRequest.CurrentApplicationVersionId</property>
+    <min>1</min>
+    <max>999999999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationVpcConfigurationResponse.ApplicationARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationVpcConfigurationResponse.ApplicationVersionId</property>
+    <min>1</min>
+    <max>999999999</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CreateApplicationRequest.ApplicationDescription</property>
     <min>0</min>
     <max>1024</max>
@@ -148,7 +170,7 @@
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CreateApplicationSnapshotRequest.SnapshotName</property>
     <min>1</min>
-    <max>128</max>
+    <max>256</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -278,8 +300,36 @@
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationSnapshotRequest.SnapshotName</property>
     <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationVpcConfigurationRequest.ApplicationName</property>
+    <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationVpcConfigurationRequest.CurrentApplicationVersionId</property>
+    <min>1</min>
+    <max>999999999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationVpcConfigurationRequest.VpcConfigurationId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationVpcConfigurationResponse.ApplicationARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationVpcConfigurationResponse.ApplicationVersionId</property>
+    <min>1</min>
+    <max>999999999</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DescribeApplicationRequest.ApplicationName</property>
@@ -296,7 +346,7 @@
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DescribeApplicationSnapshotRequest.SnapshotName</property>
     <min>1</min>
-    <max>128</max>
+    <max>256</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -424,7 +474,7 @@
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationRestoreConfiguration.SnapshotName</property>
     <min>1</min>
-    <max>128</max>
+    <max>256</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -446,7 +496,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CheckpointConfiguration.CheckpointInterval</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CheckpointConfiguration.MinPauseBetweenCheckpoints</property>
@@ -454,7 +504,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CheckpointConfigurationDescription.CheckpointInterval</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CheckpointConfigurationDescription.MinPauseBetweenCheckpoints</property>
@@ -462,7 +512,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CheckpointConfigurationUpdate.CheckpointIntervalUpdate</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CheckpointConfigurationUpdate.MinPauseBetweenCheckpointsUpdate</property>
@@ -919,7 +969,7 @@
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.SnapshotDetails.SnapshotName</property>
     <min>1</min>
-    <max>128</max>
+    <max>256</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -941,5 +991,17 @@
     <property>Amazon.KinesisAnalyticsV2.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.VpcConfigurationDescription.VpcConfigurationId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.VpcConfigurationUpdate.VpcConfigurationId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
 </property-value-rules>

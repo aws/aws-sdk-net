@@ -28,13 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeApplicationSnapshot operation.
-    /// Returns information about a snapshot of application state data.
+    /// Container for the parameters to the DeleteApplicationVpcConfiguration operation.
+    /// Removes a VPC configuration from a Kinesis Data Analytics application.
     /// </summary>
-    public partial class DescribeApplicationSnapshotRequest : AmazonKinesisAnalyticsV2Request
+    public partial class DeleteApplicationVpcConfigurationRequest : AmazonKinesisAnalyticsV2Request
     {
         private string _applicationName;
-        private string _snapshotName;
+        private long? _currentApplicationVersionId;
+        private string _vpcConfigurationId;
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -56,22 +57,42 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SnapshotName. 
+        /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
-        /// The identifier of an application snapshot. You can retrieve this value using .
+        /// The current application version ID. You can retrieve the application version ID using
+        /// <a>DescribeApplication</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string SnapshotName
+        [AWSProperty(Required=true, Min=1, Max=999999999)]
+        public long CurrentApplicationVersionId
         {
-            get { return this._snapshotName; }
-            set { this._snapshotName = value; }
+            get { return this._currentApplicationVersionId.GetValueOrDefault(); }
+            set { this._currentApplicationVersionId = value; }
         }
 
-        // Check to see if SnapshotName property is set
-        internal bool IsSetSnapshotName()
+        // Check to see if CurrentApplicationVersionId property is set
+        internal bool IsSetCurrentApplicationVersionId()
         {
-            return this._snapshotName != null;
+            return this._currentApplicationVersionId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfigurationId. 
+        /// <para>
+        /// The ID of the VPC configuration to delete.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
+        public string VpcConfigurationId
+        {
+            get { return this._vpcConfigurationId; }
+            set { this._vpcConfigurationId = value; }
+        }
+
+        // Check to see if VpcConfigurationId property is set
+        internal bool IsSetVpcConfigurationId()
+        {
+            return this._vpcConfigurationId != null;
         }
 
     }

@@ -63,7 +63,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// for the <code>ApplicationRestoreType</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=256)]
         public string SnapshotName
         {
             get { return this._snapshotName; }

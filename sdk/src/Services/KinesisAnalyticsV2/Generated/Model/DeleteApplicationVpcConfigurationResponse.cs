@@ -28,50 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateApplicationSnapshot operation.
-    /// Creates a snapshot of the application's state data.
+    /// This is the response object from the DeleteApplicationVpcConfiguration operation.
     /// </summary>
-    public partial class CreateApplicationSnapshotRequest : AmazonKinesisAnalyticsV2Request
+    public partial class DeleteApplicationVpcConfigurationResponse : AmazonWebServiceResponse
     {
-        private string _applicationName;
-        private string _snapshotName;
+        private string _applicationARN;
+        private long? _applicationVersionId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationName. 
+        /// Gets and sets the property ApplicationARN. 
         /// <para>
-        /// The name of an existing application
+        /// The ARN of the Kinesis Data Analytics application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string ApplicationName
+        [AWSProperty(Min=1, Max=2048)]
+        public string ApplicationARN
         {
-            get { return this._applicationName; }
-            set { this._applicationName = value; }
+            get { return this._applicationARN; }
+            set { this._applicationARN = value; }
         }
 
-        // Check to see if ApplicationName property is set
-        internal bool IsSetApplicationName()
+        // Check to see if ApplicationARN property is set
+        internal bool IsSetApplicationARN()
         {
-            return this._applicationName != null;
+            return this._applicationARN != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SnapshotName. 
+        /// Gets and sets the property ApplicationVersionId. 
         /// <para>
-        /// An identifier for the application snapshot.
+        /// The updated version ID of the application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string SnapshotName
+        [AWSProperty(Min=1, Max=999999999)]
+        public long ApplicationVersionId
         {
-            get { return this._snapshotName; }
-            set { this._snapshotName = value; }
+            get { return this._applicationVersionId.GetValueOrDefault(); }
+            set { this._applicationVersionId = value; }
         }
 
-        // Check to see if SnapshotName property is set
-        internal bool IsSetSnapshotName()
+        // Check to see if ApplicationVersionId property is set
+        internal bool IsSetApplicationVersionId()
         {
-            return this._snapshotName != null;
+            return this._applicationVersionId.HasValue; 
         }
 
     }

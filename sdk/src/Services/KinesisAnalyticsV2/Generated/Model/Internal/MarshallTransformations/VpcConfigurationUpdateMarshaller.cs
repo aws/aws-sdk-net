@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RunConfiguration Marshaller
+    /// VpcConfigurationUpdate Marshaller
     /// </summary>       
-    public class RunConfigurationMarshaller : IRequestMarshaller<RunConfiguration, JsonMarshallerContext> 
+    public class VpcConfigurationUpdateMarshaller : IRequestMarshaller<VpcConfigurationUpdate, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,44 +43,34 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RunConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(VpcConfigurationUpdate requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetApplicationRestoreConfiguration())
+            if(requestObject.IsSetSecurityGroupIdUpdates())
             {
-                context.Writer.WritePropertyName("ApplicationRestoreConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ApplicationRestoreConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ApplicationRestoreConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetFlinkRunConfiguration())
-            {
-                context.Writer.WritePropertyName("FlinkRunConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = FlinkRunConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.FlinkRunConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSqlRunConfigurations())
-            {
-                context.Writer.WritePropertyName("SqlRunConfigurations");
+                context.Writer.WritePropertyName("SecurityGroupIdUpdates");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectSqlRunConfigurationsListValue in requestObject.SqlRunConfigurations)
+                foreach(var requestObjectSecurityGroupIdUpdatesListValue in requestObject.SecurityGroupIdUpdates)
                 {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SqlRunConfigurationMarshaller.Instance;
-                    marshaller.Marshall(requestObjectSqlRunConfigurationsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.Write(requestObjectSecurityGroupIdUpdatesListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetSubnetIdUpdates())
+            {
+                context.Writer.WritePropertyName("SubnetIdUpdates");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSubnetIdUpdatesListValue in requestObject.SubnetIdUpdates)
+                {
+                        context.Writer.Write(requestObjectSubnetIdUpdatesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetVpcConfigurationId())
+            {
+                context.Writer.WritePropertyName("VpcConfigurationId");
+                context.Writer.Write(requestObject.VpcConfigurationId);
             }
 
         }
@@ -88,7 +78,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static RunConfigurationMarshaller Instance = new RunConfigurationMarshaller();
+        public readonly static VpcConfigurationUpdateMarshaller Instance = new VpcConfigurationUpdateMarshaller();
 
     }
 }
