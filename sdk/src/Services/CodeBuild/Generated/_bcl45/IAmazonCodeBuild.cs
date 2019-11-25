@@ -79,6 +79,11 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>CreateReportGroup</code>: Creates a report group. A report group contains a
+    /// collection of reports. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has
     /// its source code stored in a GitHub or Bitbucket repository, enables AWS CodeBuild
     /// to start rebuilding the source code every time a code change is pushed to the repository.
@@ -86,6 +91,14 @@ namespace Amazon.CodeBuild
     ///  </li> <li> 
     /// <para>
     ///  <code>DeleteProject</code>: Deletes a build project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DeleteReport</code>: Deletes a report. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DeleteReportGroup</code>: Deletes a report group. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -97,6 +110,11 @@ namespace Amazon.CodeBuild
     ///  <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has
     /// its source code stored in a GitHub or Bitbucket repository, stops AWS CodeBuild from
     /// rebuilding the source code every time a code change is pushed to the repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DescribeTestCases</code>: Returns a list of details about test cases for a
+    /// report. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -130,6 +148,21 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>ListReportGroups</code>: Gets a list ARNs for the report groups in the current
+    /// AWS account. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ListReports</code>: Gets a list ARNs for the reports in the current AWS account.
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ListReportsForReportGroup</code>: Returns a list of ARNs for the reports that
+    /// belong to a <code>ReportGroup</code>. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code>
     /// objects. Each <code>SourceCredentialsInfo</code> object includes the authentication
     /// type, token ARN, and type of source provider for one set of credentials.
@@ -148,19 +181,7 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>StartBuild</code>: Starts running a build.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>StopBuild</code>: Attempts to stop running a build.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>UpdateProject</code>: Changes the settings of an existing build project.
+    ///  <code>UpdateReportGroup</code>: Changes a report group.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -274,6 +295,74 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  BatchGetReportGroups
+
+
+        /// <summary>
+        /// Returns an array of report groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetReportGroups service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetReportGroups service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetReportGroups">REST API Reference for BatchGetReportGroups Operation</seealso>
+        BatchGetReportGroupsResponse BatchGetReportGroups(BatchGetReportGroupsRequest request);
+
+
+
+        /// <summary>
+        /// Returns an array of report groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetReportGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetReportGroups service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetReportGroups">REST API Reference for BatchGetReportGroups Operation</seealso>
+        Task<BatchGetReportGroupsResponse> BatchGetReportGroupsAsync(BatchGetReportGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchGetReports
+
+
+        /// <summary>
+        /// Returns an array of reports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetReports service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetReports service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetReports">REST API Reference for BatchGetReports Operation</seealso>
+        BatchGetReportsResponse BatchGetReports(BatchGetReportsRequest request);
+
+
+
+        /// <summary>
+        /// Returns an array of reports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetReports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetReports service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetReports">REST API Reference for BatchGetReports Operation</seealso>
+        Task<BatchGetReportsResponse> BatchGetReportsAsync(BatchGetReportsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateProject
 
 
@@ -319,6 +408,54 @@ namespace Amazon.CodeBuild
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
         Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateReportGroup
+
+
+        /// <summary>
+        /// Creates a report group. A report group contains a collection of reports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReportGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateReportGroup service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
+        /// An AWS service limit was exceeded for the calling AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceAlreadyExistsException">
+        /// The specified AWS resource cannot be created, because an AWS resource with the same
+        /// settings already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateReportGroup">REST API Reference for CreateReportGroup Operation</seealso>
+        CreateReportGroupResponse CreateReportGroup(CreateReportGroupRequest request);
+
+
+
+        /// <summary>
+        /// Creates a report group. A report group contains a collection of reports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReportGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateReportGroup service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
+        /// An AWS service limit was exceeded for the calling AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceAlreadyExistsException">
+        /// The specified AWS resource cannot be created, because an AWS resource with the same
+        /// settings already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateReportGroup">REST API Reference for CreateReportGroup Operation</seealso>
+        Task<CreateReportGroupResponse> CreateReportGroupAsync(CreateReportGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -440,6 +577,82 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  DeleteReport
+
+
+        /// <summary>
+        /// Deletes a report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReport service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReport service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReport">REST API Reference for DeleteReport Operation</seealso>
+        DeleteReportResponse DeleteReport(DeleteReportRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteReport service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReport">REST API Reference for DeleteReport Operation</seealso>
+        Task<DeleteReportResponse> DeleteReportAsync(DeleteReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteReportGroup
+
+
+        /// <summary>
+        /// <code>DeleteReportGroup</code>: Deletes a report group. Before you delete a report
+        /// group, you must delete its reports. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a>
+        /// to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a>
+        /// to delete the reports. If you call <code>DeleteReportGroup</code> for a report group
+        /// that contains one or more reports, an exception is thrown.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReportGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReportGroup service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReportGroup">REST API Reference for DeleteReportGroup Operation</seealso>
+        DeleteReportGroupResponse DeleteReportGroup(DeleteReportGroupRequest request);
+
+
+
+        /// <summary>
+        /// <code>DeleteReportGroup</code>: Deletes a report group. Before you delete a report
+        /// group, you must delete its reports. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a>
+        /// to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a>
+        /// to delete the reports. If you call <code>DeleteReportGroup</code> for a report group
+        /// that contains one or more reports, an exception is thrown.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReportGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteReportGroup service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReportGroup">REST API Reference for DeleteReportGroup Operation</seealso>
+        Task<DeleteReportGroupResponse> DeleteReportGroupAsync(DeleteReportGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteSourceCredentials
 
 
@@ -527,6 +740,46 @@ namespace Amazon.CodeBuild
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
         Task<DeleteWebhookResponse> DeleteWebhookAsync(DeleteWebhookRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeTestCases
+
+
+        /// <summary>
+        /// Returns a list of details about test cases for a report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTestCases service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTestCases service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeTestCases">REST API Reference for DescribeTestCases Operation</seealso>
+        DescribeTestCasesResponse DescribeTestCases(DescribeTestCasesRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of details about test cases for a report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTestCases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTestCases service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeTestCases">REST API Reference for DescribeTestCases Operation</seealso>
+        Task<DescribeTestCasesResponse> DescribeTestCasesAsync(DescribeTestCasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -760,6 +1013,114 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  ListReportGroups
+
+
+        /// <summary>
+        /// Gets a list ARNs for the report groups in the current AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReportGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListReportGroups service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportGroups">REST API Reference for ListReportGroups Operation</seealso>
+        ListReportGroupsResponse ListReportGroups(ListReportGroupsRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list ARNs for the report groups in the current AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReportGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReportGroups service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportGroups">REST API Reference for ListReportGroups Operation</seealso>
+        Task<ListReportGroupsResponse> ListReportGroupsAsync(ListReportGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListReports
+
+
+        /// <summary>
+        /// Returns a list of ARNs for the reports in the current AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReports service method.</param>
+        /// 
+        /// <returns>The response from the ListReports service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReports">REST API Reference for ListReports Operation</seealso>
+        ListReportsResponse ListReports(ListReportsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of ARNs for the reports in the current AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReports service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReports">REST API Reference for ListReports Operation</seealso>
+        Task<ListReportsResponse> ListReportsAsync(ListReportsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListReportsForReportGroup
+
+
+        /// <summary>
+        /// Returns a list of ARNs for the reports that belong to a <code>ReportGroup</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReportsForReportGroup service method.</param>
+        /// 
+        /// <returns>The response from the ListReportsForReportGroup service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportsForReportGroup">REST API Reference for ListReportsForReportGroup Operation</seealso>
+        ListReportsForReportGroupResponse ListReportsForReportGroup(ListReportsForReportGroupRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of ARNs for the reports that belong to a <code>ReportGroup</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReportsForReportGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReportsForReportGroup service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportsForReportGroup">REST API Reference for ListReportsForReportGroup Operation</seealso>
+        Task<ListReportsForReportGroupResponse> ListReportsForReportGroupAsync(ListReportsForReportGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListSourceCredentials
 
 
@@ -911,6 +1272,46 @@ namespace Amazon.CodeBuild
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateReportGroup
+
+
+        /// <summary>
+        /// Updates a report group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReportGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateReportGroup service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateReportGroup">REST API Reference for UpdateReportGroup Operation</seealso>
+        UpdateReportGroupResponse UpdateReportGroup(UpdateReportGroupRequest request);
+
+
+
+        /// <summary>
+        /// Updates a report group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReportGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateReportGroup service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateReportGroup">REST API Reference for UpdateReportGroup Operation</seealso>
+        Task<UpdateReportGroupResponse> UpdateReportGroupAsync(UpdateReportGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

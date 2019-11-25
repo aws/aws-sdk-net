@@ -67,7 +67,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PLAINTEXT</code>: An environment variable in plaintext format.
+        ///  <code>PLAINTEXT</code>: An environment variable in plain text format.
         /// </para>
         ///  </li> <li> 
         /// <para>

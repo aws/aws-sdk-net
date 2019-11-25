@@ -30,6 +30,11 @@
     <max>480</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CreateReportGroupRequest.Name</property>
+    <min>2</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateWebhookRequest.ProjectName</property>
     <min>2</min>
     <max>255</max>
@@ -37,6 +42,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.DeleteProjectRequest.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.DeleteReportRequest.Arn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.DeleteReportGroupRequest.Arn</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -52,6 +65,11 @@
     <min>2</min>
     <max>255</max>
     <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.DescribeTestCasesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.ImportSourceCredentialsRequest.Token</property>
@@ -76,6 +94,21 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.ListProjectsRequest.NextToken</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListReportGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListReportsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListReportsForReportGroupRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.StartBuildRequest.GitCloneDepthOverride</property>
@@ -133,6 +166,10 @@
     <property>Amazon.CodeBuild.Model.UpdateProjectRequest.TimeoutInMinutes</property>
     <min>5</min>
     <max>480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.UpdateReportGroupRequest.Arn</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.UpdateWebhookRequest.ProjectName</property>
@@ -230,6 +267,31 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Report.Arn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Report.ReportGroupArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ReportGroup.Arn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ReportGroup.Name</property>
+    <min>2</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.S3ReportExportConfig.Bucket</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.S3ReportExportConfig.EncryptionKey</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.SourceCredentialsInfo.Arn</property>
     <min>1</min>
   </property-value-rule>
@@ -244,6 +306,10 @@
     <min>1</min>
     <max>255</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.TestCase.ReportArn</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.VpcConfig.VpcId</property>

@@ -50,6 +50,7 @@ namespace Amazon.CodeBuild.Model
         private List<BuildPhase> _phases = new List<BuildPhase>();
         private string _projectName;
         private int? _queuedTimeoutInMinutes;
+        private List<string> _reportArns = new List<string>();
         private string _resolvedSourceVersion;
         private List<BuildArtifacts> _secondaryArtifacts = new List<BuildArtifacts>();
         private List<ProjectSource> _secondarySources = new List<ProjectSource>();
@@ -444,6 +445,24 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReportArns. 
+        /// <para>
+        ///  An array of the ARNs associated with this build's reports. 
+        /// </para>
+        /// </summary>
+        public List<string> ReportArns
+        {
+            get { return this._reportArns; }
+            set { this._reportArns = value; }
+        }
+
+        // Check to see if ReportArns property is set
+        internal bool IsSetReportArns()
+        {
+            return this._reportArns != null && this._reportArns.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ResolvedSourceVersion. 
         /// <para>
         ///  An identifier for the version of this build's source code. 
@@ -521,7 +540,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For AWS CodeCommit: the commit ID to use.
+        /// For AWS CodeCommit: the commit ID, branch, or Git tag to use.
         /// </para>
         ///  </li> <li> 
         /// <para>
