@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeNodeConfigurationOptions Request Marshaller
+    /// DescribeScheduledActions Request Marshaller
     /// </summary>       
-    public class DescribeNodeConfigurationOptionsRequestMarshaller : IMarshaller<IRequest, DescribeNodeConfigurationOptionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeScheduledActionsRequestMarshaller : IMarshaller<IRequest, DescribeScheduledActionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeNodeConfigurationOptionsRequest)input);
+            return this.Marshall((DescribeScheduledActionsRequest)input);
         }
     
         /// <summary>
@@ -50,21 +50,21 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeNodeConfigurationOptionsRequest publicRequest)
+        public IRequest Marshall(DescribeScheduledActionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
-            request.Parameters.Add("Action", "DescribeNodeConfigurationOptions");
+            request.Parameters.Add("Action", "DescribeScheduledActions");
             request.Parameters.Add("Version", "2012-12-01");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetActionType())
+                if(publicRequest.IsSetActive())
                 {
-                    request.Parameters.Add("ActionType", StringUtils.FromString(publicRequest.ActionType));
+                    request.Parameters.Add("Active", StringUtils.FromBool(publicRequest.Active));
                 }
-                if(publicRequest.IsSetClusterIdentifier())
+                if(publicRequest.IsSetEndTime())
                 {
-                    request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTime));
                 }
                 if(publicRequest.IsSetFilters())
                 {
@@ -73,18 +73,14 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     {
                         if(publicRequestlistValue.IsSetName())
                         {
-                            request.Parameters.Add("Filter" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
-                        }
-                        if(publicRequestlistValue.IsSetOperator())
-                        {
-                            request.Parameters.Add("Filter" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Operator", StringUtils.FromString(publicRequestlistValue.Operator));
+                            request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
                             foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
                             {
-                                request.Parameters.Add("Filter" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Values" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
@@ -99,20 +95,24 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
-                if(publicRequest.IsSetOwnerAccount())
+                if(publicRequest.IsSetScheduledActionName())
                 {
-                    request.Parameters.Add("OwnerAccount", StringUtils.FromString(publicRequest.OwnerAccount));
+                    request.Parameters.Add("ScheduledActionName", StringUtils.FromString(publicRequest.ScheduledActionName));
                 }
-                if(publicRequest.IsSetSnapshotIdentifier())
+                if(publicRequest.IsSetStartTime())
                 {
-                    request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(publicRequest.SnapshotIdentifier));
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTime));
+                }
+                if(publicRequest.IsSetTargetActionType())
+                {
+                    request.Parameters.Add("TargetActionType", StringUtils.FromString(publicRequest.TargetActionType));
                 }
             }
             return request;
         }
-                    private static DescribeNodeConfigurationOptionsRequestMarshaller _instance = new DescribeNodeConfigurationOptionsRequestMarshaller();        
+                    private static DescribeScheduledActionsRequestMarshaller _instance = new DescribeScheduledActionsRequestMarshaller();        
 
-        internal static DescribeNodeConfigurationOptionsRequestMarshaller GetInstance()
+        internal static DescribeScheduledActionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -120,7 +120,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeNodeConfigurationOptionsRequestMarshaller Instance
+        public static DescribeScheduledActionsRequestMarshaller Instance
         {
             get
             {

@@ -28,66 +28,65 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeNodeConfigurationOptions operation.
-    /// Returns properties of possible node configurations such as node type, number of nodes,
-    /// and disk usage for the specified action type.
+    /// Container for the parameters to the DescribeScheduledActions operation.
+    /// Describes properties of scheduled actions.
     /// </summary>
-    public partial class DescribeNodeConfigurationOptionsRequest : AmazonRedshiftRequest
+    public partial class DescribeScheduledActionsRequest : AmazonRedshiftRequest
     {
-        private ActionType _actionType;
-        private string _clusterIdentifier;
-        private List<NodeConfigurationOptionsFilter> _filters = new List<NodeConfigurationOptionsFilter>();
+        private bool? _active;
+        private DateTime? _endTime;
+        private List<ScheduledActionFilter> _filters = new List<ScheduledActionFilter>();
         private string _marker;
         private int? _maxRecords;
-        private string _ownerAccount;
-        private string _snapshotIdentifier;
+        private string _scheduledActionName;
+        private DateTime? _startTime;
+        private ScheduledActionTypeValues _targetActionType;
 
         /// <summary>
-        /// Gets and sets the property ActionType. 
+        /// Gets and sets the property Active. 
         /// <para>
-        /// The action type to evaluate for possible node configurations. Specify "restore-cluster"
-        /// to get configuration combinations based on an existing snapshot. Specify "recommend-node-config"
-        /// to get configuration recommendations based on an existing cluster or snapshot. 
+        /// If true, retrieve only active scheduled actions. If false, retrieve only disabled
+        /// scheduled actions. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public ActionType ActionType
+        public bool Active
         {
-            get { return this._actionType; }
-            set { this._actionType = value; }
+            get { return this._active.GetValueOrDefault(); }
+            set { this._active = value; }
         }
 
-        // Check to see if ActionType property is set
-        internal bool IsSetActionType()
+        // Check to see if Active property is set
+        internal bool IsSetActive()
         {
-            return this._actionType != null;
+            return this._active.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property ClusterIdentifier. 
+        /// Gets and sets the property EndTime. 
         /// <para>
-        /// The identifier of the cluster to evaluate for possible node configurations.
+        /// The end time in UTC of the scheduled action to retrieve. Only active scheduled actions
+        /// that have invocations before this time are retrieved.
         /// </para>
         /// </summary>
-        public string ClusterIdentifier
+        public DateTime EndTime
         {
-            get { return this._clusterIdentifier; }
-            set { this._clusterIdentifier = value; }
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
         }
 
-        // Check to see if ClusterIdentifier property is set
-        internal bool IsSetClusterIdentifier()
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
         {
-            return this._clusterIdentifier != null;
+            return this._endTime.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A set of name, operator, and value items to filter the results.
+        /// List of scheduled action filters. 
         /// </para>
         /// </summary>
-        public List<NodeConfigurationOptionsFilter> Filters
+        public List<ScheduledActionFilter> Filters
         {
             get { return this._filters; }
             set { this._filters = value; }
@@ -103,8 +102,8 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional parameter that specifies the starting point to return a set of response
-        /// records. When the results of a <a>DescribeNodeConfigurationOptions</a> request exceed
-        /// the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
+        /// records. When the results of a <a>DescribeScheduledActions</a> request exceed the
+        /// value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
         /// field of the response. You can retrieve the next set of response records by providing
         /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
         /// 
@@ -132,11 +131,11 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>500</code> 
+        /// Default: <code>100</code> 
         /// </para>
         ///  
         /// <para>
-        /// Constraints: minimum 100, maximum 500.
+        /// Constraints: minimum 20, maximum 100.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -152,40 +151,58 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OwnerAccount. 
+        /// Gets and sets the property ScheduledActionName. 
         /// <para>
-        /// The AWS customer account used to create or copy the snapshot. Required if you are
-        /// restoring a snapshot you do not own, optional if you own the snapshot.
+        /// The name of the scheduled action to retrieve. 
         /// </para>
         /// </summary>
-        public string OwnerAccount
+        public string ScheduledActionName
         {
-            get { return this._ownerAccount; }
-            set { this._ownerAccount = value; }
+            get { return this._scheduledActionName; }
+            set { this._scheduledActionName = value; }
         }
 
-        // Check to see if OwnerAccount property is set
-        internal bool IsSetOwnerAccount()
+        // Check to see if ScheduledActionName property is set
+        internal bool IsSetScheduledActionName()
         {
-            return this._ownerAccount != null;
+            return this._scheduledActionName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SnapshotIdentifier. 
+        /// Gets and sets the property StartTime. 
         /// <para>
-        /// The identifier of the snapshot to evaluate for possible node configurations.
+        /// The start time in UTC of the scheduled actions to retrieve. Only active scheduled
+        /// actions that have invocations after this time are retrieved.
         /// </para>
         /// </summary>
-        public string SnapshotIdentifier
+        public DateTime StartTime
         {
-            get { return this._snapshotIdentifier; }
-            set { this._snapshotIdentifier = value; }
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
         }
 
-        // Check to see if SnapshotIdentifier property is set
-        internal bool IsSetSnapshotIdentifier()
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
         {
-            return this._snapshotIdentifier != null;
+            return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetActionType. 
+        /// <para>
+        /// The type of the scheduled actions to retrieve. 
+        /// </para>
+        /// </summary>
+        public ScheduledActionTypeValues TargetActionType
+        {
+            get { return this._targetActionType; }
+            set { this._targetActionType = value; }
+        }
+
+        // Check to see if TargetActionType property is set
+        internal bool IsSetTargetActionType()
+        {
+            return this._targetActionType != null;
         }
 
     }

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeNodeConfigurationOptions operation
+    /// Response Unmarshaller for DeleteScheduledAction operation
     /// </summary>  
-    public class DescribeNodeConfigurationOptionsResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DeleteScheduledActionResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            DescribeNodeConfigurationOptionsResponse response = new DescribeNodeConfigurationOptionsResponse();
+            DeleteScheduledActionResponse response = new DeleteScheduledActionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("DescribeNodeConfigurationOptionsResult", 2))
+                    if(context.TestExpression("DeleteScheduledActionResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeNodeConfigurationOptionsResponse response)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DeleteScheduledActionResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,19 +82,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("Marker", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.Marker = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("NodeConfigurationOptionList/NodeConfigurationOption", targetDepth))
-                    {
-                        var unmarshaller = NodeConfigurationOptionUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.NodeConfigurationOptionList.Add(item);
-                        continue;
-                    }
                 } 
            }
 
@@ -111,27 +99,19 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AccessToSnapshotDenied"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ScheduledActionNotFound"))
             {
-                return new AccessToSnapshotDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new ScheduledActionNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterNotFound"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedOperation"))
             {
-                return new ClusterNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterSnapshotNotFound"))
-            {
-                return new ClusterSnapshotNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterSnapshotState"))
-            {
-                return new InvalidClusterSnapshotStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new UnauthorizedOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static DescribeNodeConfigurationOptionsResponseUnmarshaller _instance = new DescribeNodeConfigurationOptionsResponseUnmarshaller();        
+        private static DeleteScheduledActionResponseUnmarshaller _instance = new DeleteScheduledActionResponseUnmarshaller();        
 
-        internal static DescribeNodeConfigurationOptionsResponseUnmarshaller GetInstance()
+        internal static DeleteScheduledActionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -139,7 +119,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeNodeConfigurationOptionsResponseUnmarshaller Instance
+        public static DeleteScheduledActionResponseUnmarshaller Instance
         {
             get
             {

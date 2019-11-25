@@ -1257,6 +1257,60 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CreateScheduledAction
+
+        internal virtual CreateScheduledActionResponse CreateScheduledAction(CreateScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateScheduledActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift
+        /// API action. For example, you can create a schedule of when to run the <code>ResizeCluster</code>
+        /// API operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduledAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateScheduledAction service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduledActionException">
+        /// The scheduled action is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduleException">
+        /// The schedule you submitted isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionAlreadyExistsException">
+        /// The scheduled action already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionQuotaExceededException">
+        /// The quota for scheduled actions exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionTypeUnsupportedException">
+        /// The action type specified for a scheduled action is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
+        public virtual Task<CreateScheduledActionResponse> CreateScheduledActionAsync(CreateScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduledActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateScheduledActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSnapshotCopyGrant
 
         internal virtual CreateSnapshotCopyGrantResponse CreateSnapshotCopyGrant(CreateSnapshotCopyGrantRequest request)
@@ -1810,6 +1864,46 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = DeleteHsmConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteHsmConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteScheduledAction
+
+        internal virtual DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScheduledActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteScheduledAction service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionNotFoundException">
+        /// The scheduled action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
+        public virtual Task<DeleteScheduledActionResponse> DeleteScheduledActionAsync(DeleteScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteScheduledActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3194,6 +3288,13 @@ namespace Amazon.Redshift
         /// </param>
         /// 
         /// <returns>The response from the DescribeNodeConfigurationOptions service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AccessToSnapshotDeniedException">
+        /// The owner of the specified snapshot has not authorized your account to access the
+        /// snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
@@ -3487,6 +3588,46 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = DescribeResizeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeResizeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeScheduledActions
+
+        internal virtual DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScheduledActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScheduledActionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes properties of scheduled actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeScheduledActions service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionNotFoundException">
+        /// The scheduled action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
+        public virtual Task<DescribeScheduledActionsResponse> DescribeScheduledActionsAsync(DescribeScheduledActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScheduledActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeScheduledActionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4574,6 +4715,55 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyEventSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyScheduledAction
+
+        internal virtual ModifyScheduledActionResponse ModifyScheduledAction(ModifyScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyScheduledActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modify a scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyScheduledAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyScheduledAction service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduledActionException">
+        /// The scheduled action is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduleException">
+        /// The schedule you submitted isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionNotFoundException">
+        /// The scheduled action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionTypeUnsupportedException">
+        /// The action type specified for a scheduled action is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyScheduledAction">REST API Reference for ModifyScheduledAction Operation</seealso>
+        public virtual Task<ModifyScheduledActionResponse> ModifyScheduledActionAsync(ModifyScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyScheduledActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyScheduledActionResponse>(request, options, cancellationToken);
         }
 
         #endregion

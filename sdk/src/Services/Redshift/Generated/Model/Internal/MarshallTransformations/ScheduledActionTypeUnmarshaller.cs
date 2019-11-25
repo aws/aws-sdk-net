@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NodeConfigurationOption Object
+    /// Response Unmarshaller for ScheduledActionType Object
     /// </summary>  
-    public class NodeConfigurationOptionUnmarshaller : IUnmarshaller<NodeConfigurationOption, XmlUnmarshallerContext>, IUnmarshaller<NodeConfigurationOption, JsonUnmarshallerContext>
+    public class ScheduledActionTypeUnmarshaller : IUnmarshaller<ScheduledActionType, XmlUnmarshallerContext>, IUnmarshaller<ScheduledActionType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NodeConfigurationOption Unmarshall(XmlUnmarshallerContext context)
+        public ScheduledActionType Unmarshall(XmlUnmarshallerContext context)
         {
-            NodeConfigurationOption unmarshalledObject = new NodeConfigurationOption();
+            ScheduledActionType unmarshalledObject = new ScheduledActionType();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,28 +54,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("EstimatedDiskUtilizationPercent", targetDepth))
+                    if (context.TestExpression("ResizeCluster", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        unmarshalledObject.EstimatedDiskUtilizationPercent = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Mode", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("NodeType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.NodeType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("NumberOfNodes", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.NumberOfNodes = unmarshaller.Unmarshall(context);
+                        var unmarshaller = ResizeClusterMessageUnmarshaller.Instance;
+                        unmarshalledObject.ResizeCluster = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -93,18 +75,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NodeConfigurationOption Unmarshall(JsonUnmarshallerContext context)
+        public ScheduledActionType Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static NodeConfigurationOptionUnmarshaller _instance = new NodeConfigurationOptionUnmarshaller();        
+        private static ScheduledActionTypeUnmarshaller _instance = new ScheduledActionTypeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NodeConfigurationOptionUnmarshaller Instance
+        public static ScheduledActionTypeUnmarshaller Instance
         {
             get
             {

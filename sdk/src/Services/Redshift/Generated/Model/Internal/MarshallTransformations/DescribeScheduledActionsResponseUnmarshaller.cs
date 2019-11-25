@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeNodeConfigurationOptions operation
+    /// Response Unmarshaller for DescribeScheduledActions operation
     /// </summary>  
-    public class DescribeNodeConfigurationOptionsResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DescribeScheduledActionsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            DescribeNodeConfigurationOptionsResponse response = new DescribeNodeConfigurationOptionsResponse();
+            DescribeScheduledActionsResponse response = new DescribeScheduledActionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("DescribeNodeConfigurationOptionsResult", 2))
+                    if(context.TestExpression("DescribeScheduledActionsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeNodeConfigurationOptionsResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeScheduledActionsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -87,11 +87,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         response.Marker = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("NodeConfigurationOptionList/NodeConfigurationOption", targetDepth))
+                    if (context.TestExpression("ScheduledActions/ScheduledAction", targetDepth))
                     {
-                        var unmarshaller = NodeConfigurationOptionUnmarshaller.Instance;
+                        var unmarshaller = ScheduledActionUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
-                        response.NodeConfigurationOptionList.Add(item);
+                        response.ScheduledActions.Add(item);
                         continue;
                     }
                 } 
@@ -111,27 +111,19 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AccessToSnapshotDenied"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ScheduledActionNotFound"))
             {
-                return new AccessToSnapshotDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new ScheduledActionNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterNotFound"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedOperation"))
             {
-                return new ClusterNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterSnapshotNotFound"))
-            {
-                return new ClusterSnapshotNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterSnapshotState"))
-            {
-                return new InvalidClusterSnapshotStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new UnauthorizedOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static DescribeNodeConfigurationOptionsResponseUnmarshaller _instance = new DescribeNodeConfigurationOptionsResponseUnmarshaller();        
+        private static DescribeScheduledActionsResponseUnmarshaller _instance = new DescribeScheduledActionsResponseUnmarshaller();        
 
-        internal static DescribeNodeConfigurationOptionsResponseUnmarshaller GetInstance()
+        internal static DescribeScheduledActionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -139,7 +131,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeNodeConfigurationOptionsResponseUnmarshaller Instance
+        public static DescribeScheduledActionsResponseUnmarshaller Instance
         {
             get
             {

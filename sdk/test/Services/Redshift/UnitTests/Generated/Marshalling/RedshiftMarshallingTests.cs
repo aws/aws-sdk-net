@@ -404,6 +404,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void CreateScheduledActionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateScheduledAction");
+
+            var request = InstantiateClassGenerator.Execute<CreateScheduledActionRequest>();
+            var marshaller = new CreateScheduledActionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateScheduledActionResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateScheduledActionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void CreateSnapshotCopyGrantMarshallTest()
         {
             var operation = service_model.FindOperation("CreateSnapshotCopyGrant");
@@ -620,6 +644,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var request = InstantiateClassGenerator.Execute<DeleteHsmConfigurationRequest>();
             var marshaller = new DeleteHsmConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DeleteScheduledActionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteScheduledAction");
+
+            var request = InstantiateClassGenerator.Execute<DeleteScheduledActionRequest>();
+            var marshaller = new DeleteScheduledActionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();
@@ -1218,6 +1261,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void DescribeScheduledActionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeScheduledActions");
+
+            var request = InstantiateClassGenerator.Execute<DescribeScheduledActionsRequest>();
+            var marshaller = new DescribeScheduledActionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeScheduledActionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeScheduledActionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void DescribeSnapshotCopyGrantsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeSnapshotCopyGrants");
@@ -1684,6 +1751,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ModifyEventSubscriptionResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyEventSubscriptionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ModifyScheduledActionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyScheduledAction");
+
+            var request = InstantiateClassGenerator.Execute<ModifyScheduledActionRequest>();
+            var marshaller = new ModifyScheduledActionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyScheduledActionResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyScheduledActionResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

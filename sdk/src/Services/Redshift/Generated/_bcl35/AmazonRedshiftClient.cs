@@ -1550,6 +1550,80 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CreateScheduledAction
+
+        /// <summary>
+        /// Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift
+        /// API action. For example, you can create a schedule of when to run the <code>ResizeCluster</code>
+        /// API operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduledAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateScheduledAction service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduledActionException">
+        /// The scheduled action is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduleException">
+        /// The schedule you submitted isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionAlreadyExistsException">
+        /// The scheduled action already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionQuotaExceededException">
+        /// The quota for scheduled actions exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionTypeUnsupportedException">
+        /// The action type specified for a scheduled action is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
+        public virtual CreateScheduledActionResponse CreateScheduledAction(CreateScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateScheduledActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduledAction operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateScheduledAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
+        public virtual IAsyncResult BeginCreateScheduledAction(CreateScheduledActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduledActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateScheduledAction.</param>
+        /// 
+        /// <returns>Returns a  CreateScheduledActionResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
+        public virtual CreateScheduledActionResponse EndCreateScheduledAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateScheduledActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateSnapshotCopyGrant
 
         /// <summary>
@@ -2323,6 +2397,66 @@ namespace Amazon.Redshift
         public virtual DeleteHsmConfigurationResponse EndDeleteHsmConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteHsmConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteScheduledAction
+
+        /// <summary>
+        /// Deletes a scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteScheduledAction service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionNotFoundException">
+        /// The scheduled action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
+        public virtual DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScheduledActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteScheduledAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
+        public virtual IAsyncResult BeginDeleteScheduledAction(DeleteScheduledActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteScheduledAction.</param>
+        /// 
+        /// <returns>Returns a  DeleteScheduledActionResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
+        public virtual DeleteScheduledActionResponse EndDeleteScheduledAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteScheduledActionResponse>(asyncResult);
         }
 
         #endregion
@@ -4005,6 +4139,13 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeNodeConfigurationOptions service method.</param>
         /// 
         /// <returns>The response from the DescribeNodeConfigurationOptions service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AccessToSnapshotDeniedException">
+        /// The owner of the specified snapshot has not authorized your account to access the
+        /// snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
@@ -4388,6 +4529,66 @@ namespace Amazon.Redshift
         public virtual DescribeResizeResponse EndDescribeResize(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeResizeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeScheduledActions
+
+        /// <summary>
+        /// Describes properties of scheduled actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeScheduledActions service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionNotFoundException">
+        /// The scheduled action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
+        public virtual DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScheduledActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScheduledActionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeScheduledActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScheduledActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeScheduledActions(DescribeScheduledActionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScheduledActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeScheduledActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScheduledActions.</param>
+        /// 
+        /// <returns>Returns a  DescribeScheduledActionsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
+        public virtual DescribeScheduledActionsResponse EndDescribeScheduledActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeScheduledActionsResponse>(asyncResult);
         }
 
         #endregion
@@ -5875,6 +6076,75 @@ namespace Amazon.Redshift
         public virtual ModifyEventSubscriptionResponse EndModifyEventSubscription(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyEventSubscriptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyScheduledAction
+
+        /// <summary>
+        /// Modify a scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyScheduledAction service method.</param>
+        /// 
+        /// <returns>The response from the ModifyScheduledAction service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduledActionException">
+        /// The scheduled action is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduleException">
+        /// The schedule you submitted isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionNotFoundException">
+        /// The scheduled action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionTypeUnsupportedException">
+        /// The action type specified for a scheduled action is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyScheduledAction">REST API Reference for ModifyScheduledAction Operation</seealso>
+        public virtual ModifyScheduledActionResponse ModifyScheduledAction(ModifyScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyScheduledActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyScheduledAction operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyScheduledAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyScheduledAction">REST API Reference for ModifyScheduledAction Operation</seealso>
+        public virtual IAsyncResult BeginModifyScheduledAction(ModifyScheduledActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyScheduledActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyScheduledAction.</param>
+        /// 
+        /// <returns>Returns a  ModifyScheduledActionResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyScheduledAction">REST API Reference for ModifyScheduledAction Operation</seealso>
+        public virtual ModifyScheduledActionResponse EndModifyScheduledAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyScheduledActionResponse>(asyncResult);
         }
 
         #endregion

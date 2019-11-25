@@ -28,55 +28,78 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// A list of node configurations.
+    /// 
     /// </summary>
-    public partial class NodeConfigurationOption
+    public partial class ResizeClusterMessage
     {
-        private double? _estimatedDiskUtilizationPercent;
-        private Mode _mode;
+        private bool? _classic;
+        private string _clusterIdentifier;
+        private string _clusterType;
         private string _nodeType;
         private int? _numberOfNodes;
 
         /// <summary>
-        /// Gets and sets the property EstimatedDiskUtilizationPercent. 
+        /// Gets and sets the property Classic. 
         /// <para>
-        /// The estimated disk utilizaton percentage.
+        /// A boolean value indicating whether the resize operation is using the classic resize
+        /// process. If you don't provide this parameter or set the value to <code>false</code>,
+        /// the resize type is elastic. 
         /// </para>
         /// </summary>
-        public double EstimatedDiskUtilizationPercent
+        public bool Classic
         {
-            get { return this._estimatedDiskUtilizationPercent.GetValueOrDefault(); }
-            set { this._estimatedDiskUtilizationPercent = value; }
+            get { return this._classic.GetValueOrDefault(); }
+            set { this._classic = value; }
         }
 
-        // Check to see if EstimatedDiskUtilizationPercent property is set
-        internal bool IsSetEstimatedDiskUtilizationPercent()
+        // Check to see if Classic property is set
+        internal bool IsSetClassic()
         {
-            return this._estimatedDiskUtilizationPercent.HasValue; 
+            return this._classic.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Mode. 
+        /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        /// The category of the node configuration recommendation.
+        /// The unique identifier for the cluster to resize.
         /// </para>
         /// </summary>
-        public Mode Mode
+        [AWSProperty(Required=true)]
+        public string ClusterIdentifier
         {
-            get { return this._mode; }
-            set { this._mode = value; }
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
         }
 
-        // Check to see if Mode property is set
-        internal bool IsSetMode()
+        // Check to see if ClusterIdentifier property is set
+        internal bool IsSetClusterIdentifier()
         {
-            return this._mode != null;
+            return this._clusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterType. 
+        /// <para>
+        /// The new cluster type for the specified cluster.
+        /// </para>
+        /// </summary>
+        public string ClusterType
+        {
+            get { return this._clusterType; }
+            set { this._clusterType = value; }
+        }
+
+        // Check to see if ClusterType property is set
+        internal bool IsSetClusterType()
+        {
+            return this._clusterType != null;
         }
 
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        /// The node type, such as, "ds2.8xlarge".
+        /// The new node type for the nodes you are adding. If not specified, the cluster's current
+        /// node type is used.
         /// </para>
         /// </summary>
         public string NodeType
@@ -94,9 +117,10 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        /// The number of nodes.
+        /// The new number of nodes for the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int NumberOfNodes
         {
             get { return this._numberOfNodes.GetValueOrDefault(); }
