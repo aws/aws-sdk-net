@@ -58,6 +58,206 @@ namespace Amazon.CostExplorer
     {
 
         
+        #region  CreateCostCategoryDefinition
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Creates a new Cost Category with the requested name and rules.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCostCategoryDefinition service method.</param>
+        /// 
+        /// <returns>The response from the CreateCostCategoryDefinition service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
+        /// You've reached the limit on the number of resources you can create, or exceeded the
+        /// size of an individual resources.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">REST API Reference for CreateCostCategoryDefinition Operation</seealso>
+        CreateCostCategoryDefinitionResponse CreateCostCategoryDefinition(CreateCostCategoryDefinitionRequest request);
+
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Creates a new Cost Category with the requested name and rules.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCostCategoryDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCostCategoryDefinition service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
+        /// You've reached the limit on the number of resources you can create, or exceeded the
+        /// size of an individual resources.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">REST API Reference for CreateCostCategoryDefinition Operation</seealso>
+        Task<CreateCostCategoryDefinitionResponse> CreateCostCategoryDefinitionAsync(CreateCostCategoryDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteCostCategoryDefinition
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Deletes a Cost Category. Expenses from this month going forward will no longer be
+        /// categorized with this Cost Category.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCostCategoryDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCostCategoryDefinition service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteCostCategoryDefinition">REST API Reference for DeleteCostCategoryDefinition Operation</seealso>
+        DeleteCostCategoryDefinitionResponse DeleteCostCategoryDefinition(DeleteCostCategoryDefinitionRequest request);
+
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Deletes a Cost Category. Expenses from this month going forward will no longer be
+        /// categorized with this Cost Category.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCostCategoryDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCostCategoryDefinition service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteCostCategoryDefinition">REST API Reference for DeleteCostCategoryDefinition Operation</seealso>
+        Task<DeleteCostCategoryDefinitionResponse> DeleteCostCategoryDefinitionAsync(DeleteCostCategoryDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeCostCategoryDefinition
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's
+        /// defined in the account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You have the option to use <code>EffectiveOn</code> to return a Cost Category that
+        /// is active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll
+        /// see a Cost Category that is effective on the current date. If Cost Category is still
+        /// effective, <code>EffectiveEnd</code> is omitted in the response. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCostCategoryDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCostCategoryDefinition service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DescribeCostCategoryDefinition">REST API Reference for DescribeCostCategoryDefinition Operation</seealso>
+        DescribeCostCategoryDefinitionResponse DescribeCostCategoryDefinition(DescribeCostCategoryDefinitionRequest request);
+
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's
+        /// defined in the account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You have the option to use <code>EffectiveOn</code> to return a Cost Category that
+        /// is active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll
+        /// see a Cost Category that is effective on the current date. If Cost Category is still
+        /// effective, <code>EffectiveEnd</code> is omitted in the response. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCostCategoryDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCostCategoryDefinition service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DescribeCostCategoryDefinition">REST API Reference for DescribeCostCategoryDefinition Operation</seealso>
+        Task<DescribeCostCategoryDefinitionResponse> DescribeCostCategoryDefinitionAsync(DescribeCostCategoryDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetCostAndUsage
 
 
@@ -1057,6 +1257,140 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast">REST API Reference for GetUsageForecast Operation</seealso>
         Task<GetUsageForecastResponse> GetUsageForecastAsync(GetUsageForecastRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCostCategoryDefinitions
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Returns the name, ARN and effective dates of all Cost Categories defined in the account.
+        /// You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories
+        /// that were active on a specific date. If there is no <code>EffectiveOn</code> specified,
+        /// you’ll see Cost Categories that are effective on the current date. If Cost Category
+        /// is still effective, <code>EffectiveEnd</code> is omitted in the response. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCostCategoryDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListCostCategoryDefinitions service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions">REST API Reference for ListCostCategoryDefinitions Operation</seealso>
+        ListCostCategoryDefinitionsResponse ListCostCategoryDefinitions(ListCostCategoryDefinitionsRequest request);
+
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Returns the name, ARN and effective dates of all Cost Categories defined in the account.
+        /// You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories
+        /// that were active on a specific date. If there is no <code>EffectiveOn</code> specified,
+        /// you’ll see Cost Categories that are effective on the current date. If Cost Category
+        /// is still effective, <code>EffectiveEnd</code> is omitted in the response. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCostCategoryDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCostCategoryDefinitions service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions">REST API Reference for ListCostCategoryDefinitions Operation</seealso>
+        Task<ListCostCategoryDefinitionsResponse> ListCostCategoryDefinitionsAsync(ListCostCategoryDefinitionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateCostCategoryDefinition
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Updates an existing Cost Category. Changes made to the Cost Category rules will be
+        /// used to categorize the current month’s expenses and future expenses. This won’t change
+        /// categorization for the previous months.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCostCategoryDefinition service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCostCategoryDefinition service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
+        /// You've reached the limit on the number of resources you can create, or exceeded the
+        /// size of an individual resources.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostCategoryDefinition">REST API Reference for UpdateCostCategoryDefinition Operation</seealso>
+        UpdateCostCategoryDefinitionResponse UpdateCostCategoryDefinition(UpdateCostCategoryDefinitionRequest request);
+
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Updates an existing Cost Category. Changes made to the Cost Category rules will be
+        /// used to categorize the current month’s expenses and future expenses. This won’t change
+        /// categorization for the previous months.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCostCategoryDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCostCategoryDefinition service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
+        /// You've reached the limit on the number of resources you can create, or exceeded the
+        /// size of an individual resources.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostCategoryDefinition">REST API Reference for UpdateCostCategoryDefinition Operation</seealso>
+        Task<UpdateCostCategoryDefinitionResponse> UpdateCostCategoryDefinitionAsync(UpdateCostCategoryDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

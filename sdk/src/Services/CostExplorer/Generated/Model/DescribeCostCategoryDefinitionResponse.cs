@@ -28,28 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Details on the modification recommendation.
+    /// This is the response object from the DescribeCostCategoryDefinition operation.
     /// </summary>
-    public partial class ModifyRecommendationDetail
+    public partial class DescribeCostCategoryDefinitionResponse : AmazonWebServiceResponse
     {
-        private List<TargetInstance> _targetInstances = new List<TargetInstance>();
+        private CostCategory _costCategory;
 
         /// <summary>
-        /// Gets and sets the property TargetInstances. 
-        /// <para>
-        /// Identifies whether this instance type is the Amazon Web Services default recommendation.
-        /// </para>
+        /// Gets and sets the property CostCategory.
         /// </summary>
-        public List<TargetInstance> TargetInstances
+        public CostCategory CostCategory
         {
-            get { return this._targetInstances; }
-            set { this._targetInstances = value; }
+            get { return this._costCategory; }
+            set { this._costCategory = value; }
         }
 
-        // Check to see if TargetInstances property is set
-        internal bool IsSetTargetInstances()
+        // Check to see if CostCategory property is set
+        internal bool IsSetCostCategory()
         {
-            return this._targetInstances != null && this._targetInstances.Count > 0; 
+            return this._costCategory != null;
         }
 
     }

@@ -87,6 +87,7 @@ namespace Amazon.CostExplorer.Model
     public partial class Expression
     {
         private List<Expression> _and = new List<Expression>();
+        private CostCategoryValues _costCategories;
         private DimensionValues _dimensions;
         private Expression _not;
         private List<Expression> _or = new List<Expression>();
@@ -108,6 +109,31 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetAnd()
         {
             return this._and != null && this._and.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CostCategories. 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The specific <code>CostCategory</code> used for <code>Expression</code>.
+        /// </para>
+        /// </summary>
+        public CostCategoryValues CostCategories
+        {
+            get { return this._costCategories; }
+            set { this._costCategories = value; }
+        }
+
+        // Check to see if CostCategories property is set
+        internal bool IsSetCostCategories()
+        {
+            return this._costCategories != null;
         }
 
         /// <summary>
