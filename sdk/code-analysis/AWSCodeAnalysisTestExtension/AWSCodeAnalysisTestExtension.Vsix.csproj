@@ -828,6 +828,10 @@
       <Project>{12DBC502-3D1B-41A6-82D4-9E60DD32FC41}</Project>
       <Name>AWSSDK.WAFRegional.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/WAFV2/AWSSDK.WAFV2.CodeAnalysis.csproj">
+      <Project>{60F420B2-103E-4074-8F8F-A85AF3295E66}</Project>
+      <Name>AWSSDK.WAFV2.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/WorkDocs/AWSSDK.WorkDocs.CodeAnalysis.csproj">
       <Project>{386E816F-4EA7-413F-BA4B-4D02226A2856}</Project>
       <Name>AWSSDK.WorkDocs.CodeAnalysis</Name>
