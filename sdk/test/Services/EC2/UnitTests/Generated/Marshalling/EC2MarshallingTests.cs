@@ -6258,6 +6258,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void GetDefaultCreditSpecificationMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDefaultCreditSpecification");
+
+            var request = InstantiateClassGenerator.Execute<GetDefaultCreditSpecificationRequest>();
+            var marshaller = new GetDefaultCreditSpecificationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetDefaultCreditSpecificationResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetDefaultCreditSpecificationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void GetEbsDefaultKmsKeyIdMarshallTest()
         {
             var operation = service_model.FindOperation("GetEbsDefaultKmsKeyId");
@@ -6657,6 +6681,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ModifyClientVpnEndpointResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyClientVpnEndpointResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyDefaultCreditSpecificationMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDefaultCreditSpecification");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDefaultCreditSpecificationRequest>();
+            var marshaller = new ModifyDefaultCreditSpecificationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyDefaultCreditSpecificationResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyDefaultCreditSpecificationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

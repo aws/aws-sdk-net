@@ -28,49 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the burstable performance instance whose credit option for CPU usage was
-    /// not modified.
+    /// Describes the default credit option for CPU usage of a burstable performance instance
+    /// family.
     /// </summary>
-    public partial class UnsuccessfulInstanceCreditSpecificationItem
+    public partial class InstanceFamilyCreditSpecification
     {
-        private UnsuccessfulInstanceCreditSpecificationItemError _error;
-        private string _instanceId;
+        private string _cpuCredits;
+        private UnlimitedSupportedInstanceFamily _instanceFamily;
 
         /// <summary>
-        /// Gets and sets the property Error. 
+        /// Gets and sets the property CpuCredits. 
         /// <para>
-        /// The applicable error for the burstable performance instance whose credit option for
-        /// CPU usage was not modified.
+        /// The default credit option for CPU usage of the instance family. Valid values are <code>standard</code>
+        /// and <code>unlimited</code>.
         /// </para>
         /// </summary>
-        public UnsuccessfulInstanceCreditSpecificationItemError Error
+        public string CpuCredits
         {
-            get { return this._error; }
-            set { this._error = value; }
+            get { return this._cpuCredits; }
+            set { this._cpuCredits = value; }
         }
 
-        // Check to see if Error property is set
-        internal bool IsSetError()
+        // Check to see if CpuCredits property is set
+        internal bool IsSetCpuCredits()
         {
-            return this._error != null;
+            return this._cpuCredits != null;
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId. 
+        /// Gets and sets the property InstanceFamily. 
         /// <para>
-        /// The ID of the instance.
+        /// The instance family.
         /// </para>
         /// </summary>
-        public string InstanceId
+        public UnlimitedSupportedInstanceFamily InstanceFamily
         {
-            get { return this._instanceId; }
-            set { this._instanceId = value; }
+            get { return this._instanceFamily; }
+            set { this._instanceFamily = value; }
         }
 
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
+        // Check to see if InstanceFamily property is set
+        internal bool IsSetInstanceFamily()
         {
-            return this._instanceId != null;
+            return this._instanceFamily != null;
         }
 
     }

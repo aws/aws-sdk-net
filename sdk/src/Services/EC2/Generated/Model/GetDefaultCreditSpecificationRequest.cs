@@ -28,29 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the burstable performance instance whose credit option for CPU usage was
-    /// successfully modified.
+    /// Container for the parameters to the GetDefaultCreditSpecification operation.
+    /// Describes the default credit option for CPU usage of a burstable performance instance
+    /// family.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+    /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
-    public partial class SuccessfulInstanceCreditSpecificationItem
+    public partial class GetDefaultCreditSpecificationRequest : AmazonEC2Request
     {
-        private string _instanceId;
+        private UnlimitedSupportedInstanceFamily _instanceFamily;
 
         /// <summary>
-        /// Gets and sets the property InstanceId. 
+        /// Gets and sets the property InstanceFamily. 
         /// <para>
-        /// The ID of the instance.
+        /// The instance family.
         /// </para>
         /// </summary>
-        public string InstanceId
+        [AWSProperty(Required=true)]
+        public UnlimitedSupportedInstanceFamily InstanceFamily
         {
-            get { return this._instanceId; }
-            set { this._instanceId = value; }
+            get { return this._instanceFamily; }
+            set { this._instanceFamily = value; }
         }
 
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
+        // Check to see if InstanceFamily property is set
+        internal bool IsSetInstanceFamily()
         {
-            return this._instanceId != null;
+            return this._instanceFamily != null;
         }
 
     }

@@ -28,29 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the burstable performance instance whose credit option for CPU usage was
-    /// successfully modified.
+    /// This is the response object from the ModifyDefaultCreditSpecification operation.
     /// </summary>
-    public partial class SuccessfulInstanceCreditSpecificationItem
+    public partial class ModifyDefaultCreditSpecificationResponse : AmazonWebServiceResponse
     {
-        private string _instanceId;
+        private InstanceFamilyCreditSpecification _instanceFamilyCreditSpecification;
 
         /// <summary>
-        /// Gets and sets the property InstanceId. 
+        /// Gets and sets the property InstanceFamilyCreditSpecification. 
         /// <para>
-        /// The ID of the instance.
+        /// The default credit option for CPU usage of the instance family.
         /// </para>
         /// </summary>
-        public string InstanceId
+        public InstanceFamilyCreditSpecification InstanceFamilyCreditSpecification
         {
-            get { return this._instanceId; }
-            set { this._instanceId = value; }
+            get { return this._instanceFamilyCreditSpecification; }
+            set { this._instanceFamilyCreditSpecification = value; }
         }
 
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
+        // Check to see if InstanceFamilyCreditSpecification property is set
+        internal bool IsSetInstanceFamilyCreditSpecification()
         {
-            return this._instanceId != null;
+            return this._instanceFamilyCreditSpecification != null;
         }
 
     }

@@ -8325,14 +8325,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the credit option for CPU usage of the specified T2 or T3 instances. The
-        /// credit options are <code>standard</code> and <code>unlimited</code>.
+        /// Describes the credit option for CPU usage of the specified burstable performance instances.
+        /// The credit options are <code>standard</code> and <code>unlimited</code>.
         /// 
         ///  
         /// <para>
-        /// If you do not specify an instance ID, Amazon EC2 returns T2 and T3 instances with
-        /// the <code>unlimited</code> credit option, as well as instances that were previously
-        /// configured as T2 or T3 with the <code>unlimited</code> credit option. For example,
+        /// If you do not specify an instance ID, Amazon EC2 returns burstable performance instances
+        /// with the <code>unlimited</code> credit option, as well as instances that were previously
+        /// configured as T2, T3, and T3a with the <code>unlimited</code> credit option. For example,
         /// if you resize a T2 instance, while it is configured as <code>unlimited</code>, to
         /// an M4 instance, Amazon EC2 returns the M4 instance.
         /// </para>
@@ -8340,7 +8340,8 @@ namespace Amazon.EC2
         /// <para>
         /// If you specify one or more instance IDs, Amazon EC2 returns the credit option (<code>standard</code>
         /// or <code>unlimited</code>) of those instances. If you specify an instance ID that
-        /// is not valid, such as an instance that is not a T2 or T3 instance, an error is returned.
+        /// is not valid, such as an instance that is not a burstable performance instance, an
+        /// error is returned.
         /// </para>
         ///  
         /// <para>
@@ -8368,14 +8369,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the credit option for CPU usage of the specified T2 or T3 instances. The
-        /// credit options are <code>standard</code> and <code>unlimited</code>.
+        /// Describes the credit option for CPU usage of the specified burstable performance instances.
+        /// The credit options are <code>standard</code> and <code>unlimited</code>.
         /// 
         ///  
         /// <para>
-        /// If you do not specify an instance ID, Amazon EC2 returns T2 and T3 instances with
-        /// the <code>unlimited</code> credit option, as well as instances that were previously
-        /// configured as T2 or T3 with the <code>unlimited</code> credit option. For example,
+        /// If you do not specify an instance ID, Amazon EC2 returns burstable performance instances
+        /// with the <code>unlimited</code> credit option, as well as instances that were previously
+        /// configured as T2, T3, and T3a with the <code>unlimited</code> credit option. For example,
         /// if you resize a T2 instance, while it is configured as <code>unlimited</code>, to
         /// an M4 instance, Amazon EC2 returns the M4 instance.
         /// </para>
@@ -8383,7 +8384,8 @@ namespace Amazon.EC2
         /// <para>
         /// If you specify one or more instance IDs, Amazon EC2 returns the credit option (<code>standard</code>
         /// or <code>unlimited</code>) of those instances. If you specify an instance ID that
-        /// is not valid, such as an instance that is not a T2 or T3 instance, an error is returned.
+        /// is not valid, such as an instance that is not a burstable performance instance, an
+        /// error is returned.
         /// </para>
         ///  
         /// <para>
@@ -13569,6 +13571,48 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetDefaultCreditSpecification
+
+
+        /// <summary>
+        /// Describes the default credit option for CPU usage of a burstable performance instance
+        /// family.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+        /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultCreditSpecification service method.</param>
+        /// 
+        /// <returns>The response from the GetDefaultCreditSpecification service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">REST API Reference for GetDefaultCreditSpecification Operation</seealso>
+        GetDefaultCreditSpecificationResponse GetDefaultCreditSpecification(GetDefaultCreditSpecificationRequest request);
+
+
+
+        /// <summary>
+        /// Describes the default credit option for CPU usage of a burstable performance instance
+        /// family.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+        /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultCreditSpecification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDefaultCreditSpecification service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">REST API Reference for GetDefaultCreditSpecification Operation</seealso>
+        Task<GetDefaultCreditSpecificationResponse> GetDefaultCreditSpecificationAsync(GetDefaultCreditSpecificationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetEbsDefaultKmsKeyId
 
 
@@ -14235,6 +14279,70 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyDefaultCreditSpecification
+
+
+        /// <summary>
+        /// Modifies the default credit option for CPU usage of burstable performance instances.
+        /// The default credit option is set at the account level per AWS Region, and is specified
+        /// per instance family. All new burstable performance instances in the account launch
+        /// using the default credit option.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which
+        /// works at an AWS Region level and modifies the credit option for each Availability
+        /// Zone. All zones in a Region are updated within five minutes. But if instances are
+        /// launched during this operation, they might not get the new credit option until the
+        /// zone is updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code>
+        /// and check <code>DefaultCreditSpecification</code> for updates.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+        /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDefaultCreditSpecification service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDefaultCreditSpecification service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">REST API Reference for ModifyDefaultCreditSpecification Operation</seealso>
+        ModifyDefaultCreditSpecificationResponse ModifyDefaultCreditSpecification(ModifyDefaultCreditSpecificationRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the default credit option for CPU usage of burstable performance instances.
+        /// The default credit option is set at the account level per AWS Region, and is specified
+        /// per instance family. All new burstable performance instances in the account launch
+        /// using the default credit option.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which
+        /// works at an AWS Region level and modifies the credit option for each Availability
+        /// Zone. All zones in a Region are updated within five minutes. But if instances are
+        /// launched during this operation, they might not get the new credit option until the
+        /// zone is updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code>
+        /// and check <code>DefaultCreditSpecification</code> for updates.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+        /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDefaultCreditSpecification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyDefaultCreditSpecification service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">REST API Reference for ModifyDefaultCreditSpecification Operation</seealso>
+        Task<ModifyDefaultCreditSpecificationResponse> ModifyDefaultCreditSpecificationAsync(ModifyDefaultCreditSpecificationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyEbsDefaultKmsKeyId
 
 
@@ -14821,8 +14929,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the credit option for CPU usage on a running or stopped T2 or T3 instance.
-        /// The credit options are <code>standard</code> and <code>unlimited</code>.
+        /// Modifies the credit option for CPU usage on a running or stopped burstable performance
+        /// instance. The credit options are <code>standard</code> and <code>unlimited</code>.
         /// 
         ///  
         /// <para>
@@ -14839,8 +14947,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the credit option for CPU usage on a running or stopped T2 or T3 instance.
-        /// The credit options are <code>standard</code> and <code>unlimited</code>.
+        /// Modifies the credit option for CPU usage on a running or stopped burstable performance
+        /// instance. The credit options are <code>standard</code> and <code>unlimited</code>.
         /// 
         ///  
         /// <para>
