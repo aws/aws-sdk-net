@@ -97,10 +97,14 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                             continue;
                         }
 
-                        var childMember = this.Operation.RequestBodyMembers.Single(m => m.PropertyName == property.Name);
-                        var childValue = property.GetValue(this.Request);
-                        var childMarshalledData = GetMarshalledProperty(marshalledData, childMember.MarshallName);
-                        Visit(childValue, childMember, childMarshalledData, new TypeCircularReference<Type>());
+
+                        var childMember = this.Operation.RequestBodyMembers.FirstOrDefault(m => m.PropertyName == property.Name);
+                        if (childMember != null)
+                        {
+                            var childValue = property.GetValue(this.Request);
+                            var childMarshalledData = GetMarshalledProperty(marshalledData, childMember.MarshallName);
+                            Visit(childValue, childMember, childMarshalledData, new TypeCircularReference<Type>());
+                        }
                     }
                 }
             }

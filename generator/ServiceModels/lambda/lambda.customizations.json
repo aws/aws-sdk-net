@@ -78,8 +78,11 @@
         }
     },
     "emitIsSetProperties": {
-        "Environment": [
-            "Variables"
-        ]
+      "Environment": [
+        "Variables"
+      ],
+      "UpdateFunctionConfigurationRequest": [
+        "Layers"
+      ]
     }
 }
