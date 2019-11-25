@@ -46,6 +46,7 @@ namespace Amazon.MediaConvert.Model
         private int? _shadowOpacity;
         private int? _shadowXOffset;
         private int? _shadowYOffset;
+        private DvbSubtitlingType _subtitlingType;
         private DvbSubtitleTeletextSpacing _teletextSpacing;
         private int? _xPosition;
         private int? _yPosition;
@@ -299,6 +300,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetShadowYOffset()
         {
             return this._shadowYOffset.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubtitlingType. Specify whether your DVB subtitles are
+        /// standard or for hearing impaired. Choose hearing impaired if your subtitles include
+        /// audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
+        /// </summary>
+        public DvbSubtitlingType SubtitlingType
+        {
+            get { return this._subtitlingType; }
+            set { this._subtitlingType = value; }
+        }
+
+        // Check to see if SubtitlingType property is set
+        internal bool IsSetSubtitlingType()
+        {
+            return this._subtitlingType != null;
         }
 
         /// <summary>

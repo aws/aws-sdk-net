@@ -847,6 +847,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type AlphaBehavior.
+    /// </summary>
+    public class AlphaBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISCARD for AlphaBehavior
+        /// </summary>
+        public static readonly AlphaBehavior DISCARD = new AlphaBehavior("DISCARD");
+        /// <summary>
+        /// Constant REMAP_TO_LUMA for AlphaBehavior
+        /// </summary>
+        public static readonly AlphaBehavior REMAP_TO_LUMA = new AlphaBehavior("REMAP_TO_LUMA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AlphaBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AlphaBehavior FindValue(string value)
+        {
+            return FindValue<AlphaBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AlphaBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AncillaryConvert608To708.
     /// </summary>
     public class AncillaryConvert608To708 : ConstantClass
@@ -4012,6 +4062,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DvbSubtitleTeletextSpacing(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DvbSubtitlingType.
+    /// </summary>
+    public class DvbSubtitlingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HEARING_IMPAIRED for DvbSubtitlingType
+        /// </summary>
+        public static readonly DvbSubtitlingType HEARING_IMPAIRED = new DvbSubtitlingType("HEARING_IMPAIRED");
+        /// <summary>
+        /// Constant STANDARD for DvbSubtitlingType
+        /// </summary>
+        public static readonly DvbSubtitlingType STANDARD = new DvbSubtitlingType("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DvbSubtitlingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DvbSubtitlingType FindValue(string value)
+        {
+            return FindValue<DvbSubtitlingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DvbSubtitlingType(string value)
         {
             return FindValue(value);
         }

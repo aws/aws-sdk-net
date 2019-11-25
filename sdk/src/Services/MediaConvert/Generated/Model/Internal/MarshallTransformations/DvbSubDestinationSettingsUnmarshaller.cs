@@ -148,6 +148,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.ShadowYOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("subtitlingType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubtitlingType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("teletextSpacing", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

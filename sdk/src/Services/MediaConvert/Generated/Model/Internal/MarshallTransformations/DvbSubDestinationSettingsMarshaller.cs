@@ -129,6 +129,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ShadowYOffset);
             }
 
+            if(requestObject.IsSetSubtitlingType())
+            {
+                context.Writer.WritePropertyName("subtitlingType");
+                context.Writer.Write(requestObject.SubtitlingType);
+            }
+
             if(requestObject.IsSetTeletextSpacing())
             {
                 context.Writer.WritePropertyName("teletextSpacing");
