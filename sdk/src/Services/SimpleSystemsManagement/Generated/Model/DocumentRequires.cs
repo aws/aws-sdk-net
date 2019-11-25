@@ -28,39 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDocumentVersions operation.
-    /// List all versions for a document.
+    /// An SSM document required by the current document.
     /// </summary>
-    public partial class ListDocumentVersionsRequest : AmazonSimpleSystemsManagementRequest
+    public partial class DocumentRequires
     {
-        private int? _maxResults;
         private string _name;
-        private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of items to return for this call. The call also returns a token
-        /// that you can specify in a subsequent call to get the next set of results.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
-        }
+        private string _version;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the document. You can specify an Amazon Resource Name (ARN).
+        /// The name of the required SSM document. The name can be an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,22 +55,21 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Version. 
         /// <para>
-        /// The token for the next set of items to return. (You received this token from a previous
-        /// call.)
+        /// The document version required by the current document.
         /// </para>
         /// </summary>
-        public string NextToken
+        public string Version
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._version; }
+            set { this._version = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
         {
-            return this._nextToken != null;
+            return this._version != null;
         }
 
     }

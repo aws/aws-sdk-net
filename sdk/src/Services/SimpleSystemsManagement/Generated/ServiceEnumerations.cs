@@ -1543,6 +1543,14 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant ApplicationConfiguration for DocumentType
+        /// </summary>
+        public static readonly DocumentType ApplicationConfiguration = new DocumentType("ApplicationConfiguration");
+        /// <summary>
+        /// Constant ApplicationConfigurationSchema for DocumentType
+        /// </summary>
+        public static readonly DocumentType ApplicationConfigurationSchema = new DocumentType("ApplicationConfigurationSchema");
+        /// <summary>
         /// Constant Automation for DocumentType
         /// </summary>
         public static readonly DocumentType Automation = new DocumentType("Automation");
@@ -1550,6 +1558,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Command for DocumentType
         /// </summary>
         public static readonly DocumentType Command = new DocumentType("Command");
+        /// <summary>
+        /// Constant DeploymentStrategy for DocumentType
+        /// </summary>
+        public static readonly DocumentType DeploymentStrategy = new DocumentType("DeploymentStrategy");
         /// <summary>
         /// Constant Package for DocumentType
         /// </summary>

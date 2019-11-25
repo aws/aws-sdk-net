@@ -38,6 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DocumentType _documentType;
         private string _documentVersion;
         private string _name;
+        private List<DocumentRequires> _requires = new List<DocumentRequires>();
         private DocumentStatus _status;
         private string _statusInformation;
         private string _versionName;
@@ -149,6 +150,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Requires. 
+        /// <para>
+        /// A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
+        /// document requires an <code>ApplicationConfigurationSchema</code> document.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<DocumentRequires> Requires
+        {
+            get { return this._requires; }
+            set { this._requires = value; }
+        }
+
+        // Check to see if Requires property is set
+        internal bool IsSetRequires()
+        {
+            return this._requires != null && this._requires.Count > 0; 
         }
 
         /// <summary>

@@ -38,6 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _name;
         private string _owner;
         private List<string> _platformTypes = new List<string>();
+        private List<DocumentRequires> _requires = new List<DocumentRequires>();
         private string _schemaVersion;
         private List<Tag> _tags = new List<Tag>();
         private string _targetType;
@@ -163,6 +164,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetPlatformTypes()
         {
             return this._platformTypes != null && this._platformTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Requires. 
+        /// <para>
+        /// A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
+        /// document requires an <code>ApplicationConfigurationSchema</code> document.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<DocumentRequires> Requires
+        {
+            get { return this._requires; }
+            set { this._requires = value; }
+        }
+
+        // Check to see if Requires property is set
+        internal bool IsSetRequires()
+        {
+            return this._requires != null && this._requires.Count > 0; 
         }
 
         /// <summary>

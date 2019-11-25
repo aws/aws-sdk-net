@@ -39,6 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<string> _accountIdsToRemove = new List<string>();
         private string _name;
         private DocumentPermissionType _permissionType;
+        private string _sharedDocumentVersion;
 
         /// <summary>
         /// Gets and sets the property AccountIdsToAdd. 
@@ -118,6 +119,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetPermissionType()
         {
             return this._permissionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharedDocumentVersion. 
+        /// <para>
+        /// (Optional) The version of the document to share. If it's not specified, the system
+        /// choose the <code>Default</code> version to share.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=8)]
+        public string SharedDocumentVersion
+        {
+            get { return this._sharedDocumentVersion; }
+            set { this._sharedDocumentVersion = value; }
+        }
+
+        // Check to see if SharedDocumentVersion property is set
+        internal bool IsSetSharedDocumentVersion()
+        {
+            return this._sharedDocumentVersion != null;
         }
 
     }
