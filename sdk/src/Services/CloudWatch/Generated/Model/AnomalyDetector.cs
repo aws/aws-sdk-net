@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// An anomaly detection model associated with a particular CloudWatch metric athresnd
-    /// statistic. You can use the model to display a band of expected normal values when
-    /// the metric is graphed.
+    /// An anomaly detection model associated with a particular CloudWatch metric and statistic.
+    /// You can use the model to display a band of expected normal values when the metric
+    /// is graphed.
     /// </summary>
     public partial class AnomalyDetector
     {

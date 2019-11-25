@@ -190,6 +190,58 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  DeleteInsightRules
+
+
+        /// <summary>
+        /// Permanently deletes the specified Contributor Insights rules.
+        /// 
+        ///  
+        /// <para>
+        /// If you create a rule, delete it, and then re-create it with the same name, historical
+        /// data from the first time the rule was created may or may not be available.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInsightRules service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">REST API Reference for DeleteInsightRules Operation</seealso>
+        DeleteInsightRulesResponse DeleteInsightRules(DeleteInsightRulesRequest request);
+
+
+
+        /// <summary>
+        /// Permanently deletes the specified Contributor Insights rules.
+        /// 
+        ///  
+        /// <para>
+        /// If you create a rule, delete it, and then re-create it with the same name, historical
+        /// data from the first time the rule was created may or may not be available.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInsightRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">REST API Reference for DeleteInsightRules Operation</seealso>
+        Task<DeleteInsightRulesResponse> DeleteInsightRulesAsync(DeleteInsightRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeAlarmHistory
 
 
@@ -428,6 +480,54 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  DescribeInsightRules
+
+
+        /// <summary>
+        /// Returns a list of all the Contributor Insights rules in your account. All rules in
+        /// your account are returned with a single operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about Contributor Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
+        /// Contributor Insights to Analyze High-Cardinality Data</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsightRules service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeInsightRules">REST API Reference for DescribeInsightRules Operation</seealso>
+        DescribeInsightRulesResponse DescribeInsightRules(DescribeInsightRulesRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of all the Contributor Insights rules in your account. All rules in
+        /// your account are returned with a single operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about Contributor Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
+        /// Contributor Insights to Analyze High-Cardinality Data</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsightRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeInsightRules">REST API Reference for DescribeInsightRules Operation</seealso>
+        Task<DescribeInsightRulesResponse> DescribeInsightRulesAsync(DescribeInsightRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisableAlarmActions
 
 
@@ -458,6 +558,48 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  DisableInsightRules
+
+
+        /// <summary>
+        /// Disables the specified Contributor Insights rules. When rules are disabled, they do
+        /// not analyze log groups and do not incur costs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableInsightRules service method.</param>
+        /// 
+        /// <returns>The response from the DisableInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableInsightRules">REST API Reference for DisableInsightRules Operation</seealso>
+        DisableInsightRulesResponse DisableInsightRules(DisableInsightRulesRequest request);
+
+
+
+        /// <summary>
+        /// Disables the specified Contributor Insights rules. When rules are disabled, they do
+        /// not analyze log groups and do not incur costs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableInsightRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableInsightRules">REST API Reference for DisableInsightRules Operation</seealso>
+        Task<DisableInsightRulesResponse> DisableInsightRulesAsync(DisableInsightRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  EnableAlarmActions
 
 
@@ -483,6 +625,54 @@ namespace Amazon.CloudWatch
         /// <returns>The response from the EnableAlarmActions service method, as returned by CloudWatch.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">REST API Reference for EnableAlarmActions Operation</seealso>
         Task<EnableAlarmActionsResponse> EnableAlarmActionsAsync(EnableAlarmActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableInsightRules
+
+
+        /// <summary>
+        /// Enables the specified Contributor Insights rules. When rules are enabled, they immediately
+        /// begin analyzing log data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableInsightRules service method.</param>
+        /// 
+        /// <returns>The response from the EnableInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The operation exceeded one or more limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableInsightRules">REST API Reference for EnableInsightRules Operation</seealso>
+        EnableInsightRulesResponse EnableInsightRules(EnableInsightRulesRequest request);
+
+
+
+        /// <summary>
+        /// Enables the specified Contributor Insights rules. When rules are enabled, they immediately
+        /// begin analyzing log data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableInsightRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The operation exceeded one or more limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableInsightRules">REST API Reference for EnableInsightRules Operation</seealso>
+        Task<EnableInsightRulesResponse> EnableInsightRulesAsync(EnableInsightRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -546,12 +736,156 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  GetInsightRuleReport
+
+
+        /// <summary>
+        /// This operation returns the time series data collected by a Contributor Insights rule.
+        /// The data includes the identity and number of contributors to the log group.
+        /// 
+        ///  
+        /// <para>
+        /// You can also optionally return one or more statistics about each data point in the
+        /// time series. These statistics can include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>UniqueContributors</code> -- the number of unique contributors for each data
+        /// point.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MaxContributorValue</code> -- the value of the top contributor for each data
+        /// point. The identity of the contributor may change for each data point in the graph.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this rule aggregates by COUNT, the top contributor for each data point is the contributor
+        /// with the most occurrences in that period. If the rule aggregates by SUM, the top contributor
+        /// is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>,
+        /// during that period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SampleCount</code> -- the number of data points matched by the rule.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Sum</code> -- the sum of the values from all contributors during the time period
+        /// represented by that data point.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Minimum</code> -- the minimum value from a single observation during the time
+        /// period represented by that data point.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Maximum</code> -- the maximum value from a single observation during the time
+        /// period represented by that data point.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Average</code> -- the average value from all contributors during the time period
+        /// represented by that data point.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightRuleReport service method.</param>
+        /// 
+        /// <returns>The response from the GetInsightRuleReport service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetInsightRuleReport">REST API Reference for GetInsightRuleReport Operation</seealso>
+        GetInsightRuleReportResponse GetInsightRuleReport(GetInsightRuleReportRequest request);
+
+
+
+        /// <summary>
+        /// This operation returns the time series data collected by a Contributor Insights rule.
+        /// The data includes the identity and number of contributors to the log group.
+        /// 
+        ///  
+        /// <para>
+        /// You can also optionally return one or more statistics about each data point in the
+        /// time series. These statistics can include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>UniqueContributors</code> -- the number of unique contributors for each data
+        /// point.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MaxContributorValue</code> -- the value of the top contributor for each data
+        /// point. The identity of the contributor may change for each data point in the graph.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this rule aggregates by COUNT, the top contributor for each data point is the contributor
+        /// with the most occurrences in that period. If the rule aggregates by SUM, the top contributor
+        /// is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>,
+        /// during that period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SampleCount</code> -- the number of data points matched by the rule.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Sum</code> -- the sum of the values from all contributors during the time period
+        /// represented by that data point.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Minimum</code> -- the minimum value from a single observation during the time
+        /// period represented by that data point.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Maximum</code> -- the maximum value from a single observation during the time
+        /// period represented by that data point.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Average</code> -- the average value from all contributors during the time period
+        /// represented by that data point.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightRuleReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInsightRuleReport service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetInsightRuleReport">REST API Reference for GetInsightRuleReport Operation</seealso>
+        Task<GetInsightRuleReportResponse> GetInsightRuleReportAsync(GetInsightRuleReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetMetricData
 
 
         /// <summary>
         /// You can use the <code>GetMetricData</code> API to retrieve as many as 100 different
-        /// metrics in a single request, with a total of as many as 100,800 datapoints. You can
+        /// metrics in a single request, with a total of as many as 100,800 data points. You can
         /// also optionally perform math expressions on the values of the returned statistics,
         /// to create new time series that represent new insights into your data. For example,
         /// using Lambda metrics, you could divide the Errors metric by the Invocations metric
@@ -620,7 +954,7 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// You can use the <code>GetMetricData</code> API to retrieve as many as 100 different
-        /// metrics in a single request, with a total of as many as 100,800 datapoints. You can
+        /// metrics in a single request, with a total of as many as 100,800 data points. You can
         /// also optionally perform math expressions on the values of the returned statistics,
         /// to create new time series that represent new insights into your data. For example,
         /// using Lambda metrics, you could divide the Errors metric by the Invocations metric
@@ -1359,6 +1693,70 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  PutInsightRule
+
+
+        /// <summary>
+        /// Creates a Contributor Insights rule. Rules evaluate log events in a CloudWatch Logs
+        /// log group, enabling you to find contributor data for the log events in that log group.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
+        /// Contributor Insights to Analyze High-Cardinality Data</a>.
+        /// 
+        ///  
+        /// <para>
+        /// If you create a rule, delete it, and then re-create it with the same name, historical
+        /// data from the first time the rule was created may or may not be available.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutInsightRule service method.</param>
+        /// 
+        /// <returns>The response from the PutInsightRule service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The operation exceeded one or more limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">REST API Reference for PutInsightRule Operation</seealso>
+        PutInsightRuleResponse PutInsightRule(PutInsightRuleRequest request);
+
+
+
+        /// <summary>
+        /// Creates a Contributor Insights rule. Rules evaluate log events in a CloudWatch Logs
+        /// log group, enabling you to find contributor data for the log events in that log group.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
+        /// Contributor Insights to Analyze High-Cardinality Data</a>.
+        /// 
+        ///  
+        /// <para>
+        /// If you create a rule, delete it, and then re-create it with the same name, historical
+        /// data from the first time the rule was created may or may not be available.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutInsightRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutInsightRule service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The operation exceeded one or more limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">REST API Reference for PutInsightRule Operation</seealso>
+        Task<PutInsightRuleResponse> PutInsightRuleAsync(PutInsightRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutMetricAlarm
 
 
@@ -1559,8 +1957,8 @@ namespace Amazon.CloudWatch
         /// <para>
         /// Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
         /// CloudWatch rejects values that are either too small or too large. Values must be in
-        /// the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).
-        /// In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
+        /// the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
+        /// -Infinity) are not supported.
         /// </para>
         ///  
         /// <para>
@@ -1638,8 +2036,8 @@ namespace Amazon.CloudWatch
         /// <para>
         /// Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
         /// CloudWatch rejects values that are either too small or too large. Values must be in
-        /// the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).
-        /// In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
+        /// the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
+        /// -Infinity) are not supported.
         /// </para>
         ///  
         /// <para>

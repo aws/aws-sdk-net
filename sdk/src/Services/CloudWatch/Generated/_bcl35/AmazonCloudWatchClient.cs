@@ -441,6 +441,72 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  DeleteInsightRules
+
+        /// <summary>
+        /// Permanently deletes the specified Contributor Insights rules.
+        /// 
+        ///  
+        /// <para>
+        /// If you create a rule, delete it, and then re-create it with the same name, historical
+        /// data from the first time the rule was created may or may not be available.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInsightRules service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">REST API Reference for DeleteInsightRules Operation</seealso>
+        public virtual DeleteInsightRulesResponse DeleteInsightRules(DeleteInsightRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInsightRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInsightRulesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInsightRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInsightRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInsightRules operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInsightRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">REST API Reference for DeleteInsightRules Operation</seealso>
+        public virtual IAsyncResult BeginDeleteInsightRules(DeleteInsightRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInsightRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInsightRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInsightRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInsightRules.</param>
+        /// 
+        /// <returns>Returns a  DeleteInsightRulesResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">REST API Reference for DeleteInsightRules Operation</seealso>
+        public virtual DeleteInsightRulesResponse EndDeleteInsightRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteInsightRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAlarmHistory
 
         /// <summary>
@@ -721,6 +787,70 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  DescribeInsightRules
+
+        /// <summary>
+        /// Returns a list of all the Contributor Insights rules in your account. All rules in
+        /// your account are returned with a single operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about Contributor Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
+        /// Contributor Insights to Analyze High-Cardinality Data</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsightRules service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeInsightRules">REST API Reference for DescribeInsightRules Operation</seealso>
+        public virtual DescribeInsightRulesResponse DescribeInsightRules(DescribeInsightRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInsightRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInsightRulesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInsightRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInsightRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsightRules operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInsightRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeInsightRules">REST API Reference for DescribeInsightRules Operation</seealso>
+        public virtual IAsyncResult BeginDescribeInsightRules(DescribeInsightRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInsightRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInsightRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInsightRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInsightRules.</param>
+        /// 
+        /// <returns>Returns a  DescribeInsightRulesResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeInsightRules">REST API Reference for DescribeInsightRules Operation</seealso>
+        public virtual DescribeInsightRulesResponse EndDescribeInsightRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInsightRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisableAlarmActions
 
         /// <summary>
@@ -776,6 +906,67 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  DisableInsightRules
+
+        /// <summary>
+        /// Disables the specified Contributor Insights rules. When rules are disabled, they do
+        /// not analyze log groups and do not incur costs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableInsightRules service method.</param>
+        /// 
+        /// <returns>The response from the DisableInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableInsightRules">REST API Reference for DisableInsightRules Operation</seealso>
+        public virtual DisableInsightRulesResponse DisableInsightRules(DisableInsightRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableInsightRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableInsightRulesResponseUnmarshaller.Instance;
+
+            return Invoke<DisableInsightRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableInsightRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableInsightRules operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableInsightRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableInsightRules">REST API Reference for DisableInsightRules Operation</seealso>
+        public virtual IAsyncResult BeginDisableInsightRules(DisableInsightRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableInsightRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableInsightRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableInsightRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableInsightRules.</param>
+        /// 
+        /// <returns>Returns a  DisableInsightRulesResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableInsightRules">REST API Reference for DisableInsightRules Operation</seealso>
+        public virtual DisableInsightRulesResponse EndDisableInsightRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisableInsightRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  EnableAlarmActions
 
         /// <summary>
@@ -826,6 +1017,70 @@ namespace Amazon.CloudWatch
         public virtual EnableAlarmActionsResponse EndEnableAlarmActions(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableAlarmActionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  EnableInsightRules
+
+        /// <summary>
+        /// Enables the specified Contributor Insights rules. When rules are enabled, they immediately
+        /// begin analyzing log data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableInsightRules service method.</param>
+        /// 
+        /// <returns>The response from the EnableInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The operation exceeded one or more limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableInsightRules">REST API Reference for EnableInsightRules Operation</seealso>
+        public virtual EnableInsightRulesResponse EnableInsightRules(EnableInsightRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableInsightRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableInsightRulesResponseUnmarshaller.Instance;
+
+            return Invoke<EnableInsightRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableInsightRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableInsightRules operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableInsightRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableInsightRules">REST API Reference for EnableInsightRules Operation</seealso>
+        public virtual IAsyncResult BeginEnableInsightRules(EnableInsightRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableInsightRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableInsightRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableInsightRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableInsightRules.</param>
+        /// 
+        /// <returns>Returns a  EnableInsightRulesResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableInsightRules">REST API Reference for EnableInsightRules Operation</seealso>
+        public virtual EnableInsightRulesResponse EndEnableInsightRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<EnableInsightRulesResponse>(asyncResult);
         }
 
         #endregion
@@ -900,11 +1155,123 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  GetInsightRuleReport
+
+        /// <summary>
+        /// This operation returns the time series data collected by a Contributor Insights rule.
+        /// The data includes the identity and number of contributors to the log group.
+        /// 
+        ///  
+        /// <para>
+        /// You can also optionally return one or more statistics about each data point in the
+        /// time series. These statistics can include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>UniqueContributors</code> -- the number of unique contributors for each data
+        /// point.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MaxContributorValue</code> -- the value of the top contributor for each data
+        /// point. The identity of the contributor may change for each data point in the graph.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this rule aggregates by COUNT, the top contributor for each data point is the contributor
+        /// with the most occurrences in that period. If the rule aggregates by SUM, the top contributor
+        /// is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>,
+        /// during that period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SampleCount</code> -- the number of data points matched by the rule.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Sum</code> -- the sum of the values from all contributors during the time period
+        /// represented by that data point.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Minimum</code> -- the minimum value from a single observation during the time
+        /// period represented by that data point.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Maximum</code> -- the maximum value from a single observation during the time
+        /// period represented by that data point.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Average</code> -- the average value from all contributors during the time period
+        /// represented by that data point.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightRuleReport service method.</param>
+        /// 
+        /// <returns>The response from the GetInsightRuleReport service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetInsightRuleReport">REST API Reference for GetInsightRuleReport Operation</seealso>
+        public virtual GetInsightRuleReportResponse GetInsightRuleReport(GetInsightRuleReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightRuleReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightRuleReportResponseUnmarshaller.Instance;
+
+            return Invoke<GetInsightRuleReportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInsightRuleReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightRuleReport operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInsightRuleReport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetInsightRuleReport">REST API Reference for GetInsightRuleReport Operation</seealso>
+        public virtual IAsyncResult BeginGetInsightRuleReport(GetInsightRuleReportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightRuleReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightRuleReportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInsightRuleReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInsightRuleReport.</param>
+        /// 
+        /// <returns>Returns a  GetInsightRuleReportResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetInsightRuleReport">REST API Reference for GetInsightRuleReport Operation</seealso>
+        public virtual GetInsightRuleReportResponse EndGetInsightRuleReport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetInsightRuleReportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetMetricData
 
         /// <summary>
         /// You can use the <code>GetMetricData</code> API to retrieve as many as 100 different
-        /// metrics in a single request, with a total of as many as 100,800 datapoints. You can
+        /// metrics in a single request, with a total of as many as 100,800 data points. You can
         /// also optionally perform math expressions on the values of the returned statistics,
         /// to create new time series that represent new insights into your data. For example,
         /// using Lambda metrics, you could divide the Errors metric by the Invocations metric
@@ -1627,6 +1994,78 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  PutInsightRule
+
+        /// <summary>
+        /// Creates a Contributor Insights rule. Rules evaluate log events in a CloudWatch Logs
+        /// log group, enabling you to find contributor data for the log events in that log group.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
+        /// Contributor Insights to Analyze High-Cardinality Data</a>.
+        /// 
+        ///  
+        /// <para>
+        /// If you create a rule, delete it, and then re-create it with the same name, historical
+        /// data from the first time the rule was created may or may not be available.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutInsightRule service method.</param>
+        /// 
+        /// <returns>The response from the PutInsightRule service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The operation exceeded one or more limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">REST API Reference for PutInsightRule Operation</seealso>
+        public virtual PutInsightRuleResponse PutInsightRule(PutInsightRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutInsightRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutInsightRuleResponseUnmarshaller.Instance;
+
+            return Invoke<PutInsightRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutInsightRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutInsightRule operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutInsightRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">REST API Reference for PutInsightRule Operation</seealso>
+        public virtual IAsyncResult BeginPutInsightRule(PutInsightRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutInsightRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutInsightRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutInsightRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutInsightRule.</param>
+        /// 
+        /// <returns>Returns a  PutInsightRuleResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">REST API Reference for PutInsightRule Operation</seealso>
+        public virtual PutInsightRuleResponse EndPutInsightRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutInsightRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutMetricAlarm
 
         /// <summary>
@@ -1780,8 +2219,8 @@ namespace Amazon.CloudWatch
         /// <para>
         /// Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
         /// CloudWatch rejects values that are either too small or too large. Values must be in
-        /// the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).
-        /// In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
+        /// the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
+        /// -Infinity) are not supported.
         /// </para>
         ///  
         /// <para>

@@ -111,6 +111,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudWatch")]
+        public void DeleteInsightRulesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteInsightRules");
+
+            var request = InstantiateClassGenerator.Execute<DeleteInsightRulesRequest>();
+            var marshaller = new DeleteInsightRulesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteInsightRulesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteInsightRulesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
         public void DescribeAlarmHistoryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeAlarmHistory");
@@ -207,6 +231,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudWatch")]
+        public void DescribeInsightRulesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeInsightRules");
+
+            var request = InstantiateClassGenerator.Execute<DescribeInsightRulesRequest>();
+            var marshaller = new DescribeInsightRulesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeInsightRulesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeInsightRulesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
         public void DisableAlarmActionsMarshallTest()
         {
             var operation = service_model.FindOperation("DisableAlarmActions");
@@ -218,6 +266,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
+        public void DisableInsightRulesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableInsightRules");
+
+            var request = InstantiateClassGenerator.Execute<DisableInsightRulesRequest>();
+            var marshaller = new DisableInsightRulesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DisableInsightRulesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisableInsightRulesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -245,6 +317,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudWatch")]
+        public void EnableInsightRulesMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableInsightRules");
+
+            var request = InstantiateClassGenerator.Execute<EnableInsightRulesRequest>();
+            var marshaller = new EnableInsightRulesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = EnableInsightRulesResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableInsightRulesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
         public void GetDashboardMarshallTest()
         {
             var operation = service_model.FindOperation("GetDashboard");
@@ -260,6 +356,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = GetDashboardResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetDashboardResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
+        public void GetInsightRuleReportMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetInsightRuleReport");
+
+            var request = InstantiateClassGenerator.Execute<GetInsightRuleReportRequest>();
+            var marshaller = new GetInsightRuleReportRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetInsightRuleReportResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetInsightRuleReportResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -452,6 +572,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = PutDashboardResponseUnmarshaller.Instance.Unmarshall(context)
                 as PutDashboardResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
+        public void PutInsightRuleMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutInsightRule");
+
+            var request = InstantiateClassGenerator.Execute<PutInsightRuleRequest>();
+            var marshaller = new PutInsightRuleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = PutInsightRuleResponseUnmarshaller.Instance.Unmarshall(context)
+                as PutInsightRuleResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

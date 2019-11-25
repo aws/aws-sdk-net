@@ -53,8 +53,8 @@ namespace Amazon.CloudWatch.Model
     /// <para>
     /// Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
     /// CloudWatch rejects values that are either too small or too large. Values must be in
-    /// the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).
-    /// In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
+    /// the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
+    /// -Infinity) are not supported.
     /// </para>
     ///  
     /// <para>

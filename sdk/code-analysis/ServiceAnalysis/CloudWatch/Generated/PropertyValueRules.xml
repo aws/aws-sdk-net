@@ -71,6 +71,27 @@
     <pattern>[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DescribeInsightRulesRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.GetInsightRuleReportRequest.OrderBy</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[\x20-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.GetInsightRuleReportRequest.Period</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.GetInsightRuleReportRequest.RuleName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x20-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.GetMetricStatisticsRequest.MetricName</property>
     <min>1</min>
     <max>255</max>
@@ -111,6 +132,24 @@
     <min>1</min>
     <max>255</max>
     <pattern>[^:].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutInsightRuleRequest.RuleDefinition</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>[\x00-\x7F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutInsightRuleRequest.RuleName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x20-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutInsightRuleRequest.RuleState</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[\x20-\x7E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.AlarmDescription</property>
@@ -240,6 +279,24 @@
     <property>Amazon.CloudWatch.Model.DimensionFilter.Value</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.InsightRule.Definition</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>[\x00-\x7F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.InsightRule.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x20-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.InsightRule.State</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[\x20-\x7E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.InvalidFormatFault.Message</property>

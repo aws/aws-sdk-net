@@ -155,7 +155,8 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// The value specified is exclusive; results include data points up to the specified
-        /// time stamp. The time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
+        /// time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for
+        /// example, 2016-10-10T23:00:00Z).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -283,7 +284,8 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// The value specified is inclusive; results include data points with the specified time
-        /// stamp. The time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
+        /// stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example,
+        /// 2016-10-03T23:00:00Z).
         /// </para>
         ///  
         /// <para>
@@ -393,7 +395,8 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// The value specified is exclusive; results include data points up to the specified
-        /// time stamp. The time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
+        /// time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for
+        /// example, 2016-10-10T23:00:00Z).
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
@@ -428,7 +431,8 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// The value specified is inclusive; results include data points with the specified time
-        /// stamp. The time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
+        /// stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example,
+        /// 2016-10-03T23:00:00Z).
         /// </para>
         ///  
         /// <para>

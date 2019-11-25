@@ -183,10 +183,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// Use this field only when you are performing a <code>GetMetricData</code> operation,
-        /// and only when you are specifying the <code>Expression</code> field. Do not use this
-        /// field with a <code>PutMetricAlarm</code> operation or when you are specifying a <code>MetricStat</code>
-        /// in a <code>GetMetricData</code> operation.
+        /// If you are performing a <code>GetMetricData</code> operation, use this field only
+        /// if you are specifying an <code>Expression</code>. Do not use this field when you are
+        /// specifying a <code>MetricStat</code> in a <code>GetMetricData</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
