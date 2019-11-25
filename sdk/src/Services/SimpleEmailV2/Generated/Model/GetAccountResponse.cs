@@ -38,6 +38,7 @@ namespace Amazon.SimpleEmailV2.Model
         private bool? _productionAccessEnabled;
         private bool? _sendingEnabled;
         private SendQuota _sendQuota;
+        private SuppressionAttributes _suppressionAttributes;
 
         /// <summary>
         /// Gets and sets the property DedicatedIpAutoWarmupEnabled. 
@@ -161,6 +162,24 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetSendQuota()
         {
             return this._sendQuota != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuppressionAttributes. 
+        /// <para>
+        /// An object that contains information about your account's suppression preferences.
+        /// </para>
+        /// </summary>
+        public SuppressionAttributes SuppressionAttributes
+        {
+            get { return this._suppressionAttributes; }
+            set { this._suppressionAttributes = value; }
+        }
+
+        // Check to see if SuppressionAttributes property is set
+        internal bool IsSetSuppressionAttributes()
+        {
+            return this._suppressionAttributes != null;
         }
 
     }

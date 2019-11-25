@@ -950,6 +950,69 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  DeleteSuppressedDestination
+
+        /// <summary>
+        /// Used to delete a suppressed email destination from your suppression list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSuppressedDestination service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSuppressedDestination service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination">REST API Reference for DeleteSuppressedDestination Operation</seealso>
+        public virtual DeleteSuppressedDestinationResponse DeleteSuppressedDestination(DeleteSuppressedDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSuppressedDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSuppressedDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSuppressedDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSuppressedDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSuppressedDestination operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSuppressedDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination">REST API Reference for DeleteSuppressedDestination Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSuppressedDestination(DeleteSuppressedDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSuppressedDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSuppressedDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSuppressedDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSuppressedDestination.</param>
+        /// 
+        /// <returns>Returns a  DeleteSuppressedDestinationResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination">REST API Reference for DeleteSuppressedDestination Operation</seealso>
+        public virtual DeleteSuppressedDestinationResponse EndDeleteSuppressedDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSuppressedDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAccount
 
         /// <summary>
@@ -1676,6 +1739,69 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  GetSuppressedDestination
+
+        /// <summary>
+        /// Used to fetch a single suppressed email destination from your suppression list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSuppressedDestination service method.</param>
+        /// 
+        /// <returns>The response from the GetSuppressedDestination service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">REST API Reference for GetSuppressedDestination Operation</seealso>
+        public virtual GetSuppressedDestinationResponse GetSuppressedDestination(GetSuppressedDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSuppressedDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSuppressedDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<GetSuppressedDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSuppressedDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSuppressedDestination operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSuppressedDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">REST API Reference for GetSuppressedDestination Operation</seealso>
+        public virtual IAsyncResult BeginGetSuppressedDestination(GetSuppressedDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSuppressedDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSuppressedDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSuppressedDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSuppressedDestination.</param>
+        /// 
+        /// <returns>Returns a  GetSuppressedDestinationResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">REST API Reference for GetSuppressedDestination Operation</seealso>
+        public virtual GetSuppressedDestinationResponse EndGetSuppressedDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSuppressedDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListConfigurationSets
 
         /// <summary>
@@ -1997,6 +2123,70 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  ListSuppressedDestinations
+
+        /// <summary>
+        /// Used to fetch a list suppressed email destinations from your suppression list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSuppressedDestinations service method.</param>
+        /// 
+        /// <returns>The response from the ListSuppressedDestinations service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.InvalidNextTokenException">
+        /// The specified request includes an invalid or expired token. Please attempt to get
+        /// a new token.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">REST API Reference for ListSuppressedDestinations Operation</seealso>
+        public virtual ListSuppressedDestinationsResponse ListSuppressedDestinations(ListSuppressedDestinationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSuppressedDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSuppressedDestinationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSuppressedDestinationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSuppressedDestinations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSuppressedDestinations operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSuppressedDestinations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">REST API Reference for ListSuppressedDestinations Operation</seealso>
+        public virtual IAsyncResult BeginListSuppressedDestinations(ListSuppressedDestinationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSuppressedDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSuppressedDestinationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSuppressedDestinations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSuppressedDestinations.</param>
+        /// 
+        /// <returns>Returns a  ListSuppressedDestinationsResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">REST API Reference for ListSuppressedDestinations Operation</seealso>
+        public virtual ListSuppressedDestinationsResponse EndListSuppressedDestinations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSuppressedDestinationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -2180,6 +2370,66 @@ namespace Amazon.SimpleEmailV2
         public virtual PutAccountSendingAttributesResponse EndPutAccountSendingAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<PutAccountSendingAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutAccountSuppressionAttributes
+
+        /// <summary>
+        /// Change your account's suppression preferences for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountSuppressionAttributes service method.</param>
+        /// 
+        /// <returns>The response from the PutAccountSuppressionAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes">REST API Reference for PutAccountSuppressionAttributes Operation</seealso>
+        public virtual PutAccountSuppressionAttributesResponse PutAccountSuppressionAttributes(PutAccountSuppressionAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountSuppressionAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountSuppressionAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccountSuppressionAttributesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAccountSuppressionAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountSuppressionAttributes operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccountSuppressionAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes">REST API Reference for PutAccountSuppressionAttributes Operation</seealso>
+        public virtual IAsyncResult BeginPutAccountSuppressionAttributes(PutAccountSuppressionAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountSuppressionAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountSuppressionAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAccountSuppressionAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccountSuppressionAttributes.</param>
+        /// 
+        /// <returns>Returns a  PutAccountSuppressionAttributesResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes">REST API Reference for PutAccountSuppressionAttributes Operation</seealso>
+        public virtual PutAccountSuppressionAttributesResponse EndPutAccountSuppressionAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutAccountSuppressionAttributesResponse>(asyncResult);
         }
 
         #endregion
@@ -2372,6 +2622,69 @@ namespace Amazon.SimpleEmailV2
         public virtual PutConfigurationSetSendingOptionsResponse EndPutConfigurationSetSendingOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<PutConfigurationSetSendingOptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutConfigurationSetSuppressionOptions
+
+        /// <summary>
+        /// Specify your account's suppression preferences for a configuration set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetSuppressionOptions service method.</param>
+        /// 
+        /// <returns>The response from the PutConfigurationSetSuppressionOptions service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions">REST API Reference for PutConfigurationSetSuppressionOptions Operation</seealso>
+        public virtual PutConfigurationSetSuppressionOptionsResponse PutConfigurationSetSuppressionOptions(PutConfigurationSetSuppressionOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetSuppressionOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetSuppressionOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<PutConfigurationSetSuppressionOptionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutConfigurationSetSuppressionOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetSuppressionOptions operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutConfigurationSetSuppressionOptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions">REST API Reference for PutConfigurationSetSuppressionOptions Operation</seealso>
+        public virtual IAsyncResult BeginPutConfigurationSetSuppressionOptions(PutConfigurationSetSuppressionOptionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetSuppressionOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetSuppressionOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutConfigurationSetSuppressionOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutConfigurationSetSuppressionOptions.</param>
+        /// 
+        /// <returns>Returns a  PutConfigurationSetSuppressionOptionsResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions">REST API Reference for PutConfigurationSetSuppressionOptions Operation</seealso>
+        public virtual PutConfigurationSetSuppressionOptionsResponse EndPutConfigurationSetSuppressionOptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutConfigurationSetSuppressionOptionsResponse>(asyncResult);
         }
 
         #endregion
@@ -2859,6 +3172,66 @@ namespace Amazon.SimpleEmailV2
         public virtual PutEmailIdentityMailFromAttributesResponse EndPutEmailIdentityMailFromAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<PutEmailIdentityMailFromAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutSuppressedDestination
+
+        /// <summary>
+        /// Puts (overwrites) an email destination in your suppression list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSuppressedDestination service method.</param>
+        /// 
+        /// <returns>The response from the PutSuppressedDestination service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination">REST API Reference for PutSuppressedDestination Operation</seealso>
+        public virtual PutSuppressedDestinationResponse PutSuppressedDestination(PutSuppressedDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSuppressedDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSuppressedDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<PutSuppressedDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutSuppressedDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutSuppressedDestination operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutSuppressedDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination">REST API Reference for PutSuppressedDestination Operation</seealso>
+        public virtual IAsyncResult BeginPutSuppressedDestination(PutSuppressedDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSuppressedDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSuppressedDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutSuppressedDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutSuppressedDestination.</param>
+        /// 
+        /// <returns>Returns a  PutSuppressedDestinationResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination">REST API Reference for PutSuppressedDestination Operation</seealso>
+        public virtual PutSuppressedDestinationResponse EndPutSuppressedDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutSuppressedDestinationResponse>(asyncResult);
         }
 
         #endregion

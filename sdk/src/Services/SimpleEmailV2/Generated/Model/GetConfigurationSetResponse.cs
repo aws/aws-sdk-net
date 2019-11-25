@@ -36,6 +36,7 @@ namespace Amazon.SimpleEmailV2.Model
         private DeliveryOptions _deliveryOptions;
         private ReputationOptions _reputationOptions;
         private SendingOptions _sendingOptions;
+        private SuppressionOptions _suppressionOptions;
         private List<Tag> _tags = new List<Tag>();
         private TrackingOptions _trackingOptions;
 
@@ -112,6 +113,24 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetSendingOptions()
         {
             return this._sendingOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuppressionOptions. 
+        /// <para>
+        /// An object that contains information about your account's suppression preferences.
+        /// </para>
+        /// </summary>
+        public SuppressionOptions SuppressionOptions
+        {
+            get { return this._suppressionOptions; }
+            set { this._suppressionOptions = value; }
+        }
+
+        // Check to see if SuppressionOptions property is set
+        internal bool IsSetSuppressionOptions()
+        {
+            return this._suppressionOptions != null;
         }
 
         /// <summary>

@@ -710,6 +710,52 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  DeleteSuppressedDestination
+
+
+        /// <summary>
+        /// Used to delete a suppressed email destination from your suppression list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSuppressedDestination service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSuppressedDestination service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination">REST API Reference for DeleteSuppressedDestination Operation</seealso>
+        DeleteSuppressedDestinationResponse DeleteSuppressedDestination(DeleteSuppressedDestinationRequest request);
+
+
+
+        /// <summary>
+        /// Used to delete a suppressed email destination from your suppression list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSuppressedDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSuppressedDestination service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination">REST API Reference for DeleteSuppressedDestination Operation</seealso>
+        Task<DeleteSuppressedDestinationResponse> DeleteSuppressedDestinationAsync(DeleteSuppressedDestinationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAccount
 
 
@@ -1282,6 +1328,52 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  GetSuppressedDestination
+
+
+        /// <summary>
+        /// Used to fetch a single suppressed email destination from your suppression list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSuppressedDestination service method.</param>
+        /// 
+        /// <returns>The response from the GetSuppressedDestination service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">REST API Reference for GetSuppressedDestination Operation</seealso>
+        GetSuppressedDestinationResponse GetSuppressedDestination(GetSuppressedDestinationRequest request);
+
+
+
+        /// <summary>
+        /// Used to fetch a single suppressed email destination from your suppression list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSuppressedDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSuppressedDestination service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">REST API Reference for GetSuppressedDestination Operation</seealso>
+        Task<GetSuppressedDestinationResponse> GetSuppressedDestinationAsync(GetSuppressedDestinationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListConfigurationSets
 
 
@@ -1524,6 +1616,54 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  ListSuppressedDestinations
+
+
+        /// <summary>
+        /// Used to fetch a list suppressed email destinations from your suppression list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSuppressedDestinations service method.</param>
+        /// 
+        /// <returns>The response from the ListSuppressedDestinations service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.InvalidNextTokenException">
+        /// The specified request includes an invalid or expired token. Please attempt to get
+        /// a new token.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">REST API Reference for ListSuppressedDestinations Operation</seealso>
+        ListSuppressedDestinationsResponse ListSuppressedDestinations(ListSuppressedDestinationsRequest request);
+
+
+
+        /// <summary>
+        /// Used to fetch a list suppressed email destinations from your suppression list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSuppressedDestinations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSuppressedDestinations service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.InvalidNextTokenException">
+        /// The specified request includes an invalid or expired token. Please attempt to get
+        /// a new token.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">REST API Reference for ListSuppressedDestinations Operation</seealso>
+        Task<ListSuppressedDestinationsResponse> ListSuppressedDestinationsAsync(ListSuppressedDestinationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -1655,6 +1795,46 @@ namespace Amazon.SimpleEmailV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSendingAttributes">REST API Reference for PutAccountSendingAttributes Operation</seealso>
         Task<PutAccountSendingAttributesResponse> PutAccountSendingAttributesAsync(PutAccountSendingAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutAccountSuppressionAttributes
+
+
+        /// <summary>
+        /// Change your account's suppression preferences for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountSuppressionAttributes service method.</param>
+        /// 
+        /// <returns>The response from the PutAccountSuppressionAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes">REST API Reference for PutAccountSuppressionAttributes Operation</seealso>
+        PutAccountSuppressionAttributesResponse PutAccountSuppressionAttributes(PutAccountSuppressionAttributesRequest request);
+
+
+
+        /// <summary>
+        /// Change your account's suppression preferences for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountSuppressionAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccountSuppressionAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes">REST API Reference for PutAccountSuppressionAttributes Operation</seealso>
+        Task<PutAccountSuppressionAttributesResponse> PutAccountSuppressionAttributesAsync(PutAccountSuppressionAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1799,6 +1979,52 @@ namespace Amazon.SimpleEmailV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSendingOptions">REST API Reference for PutConfigurationSetSendingOptions Operation</seealso>
         Task<PutConfigurationSetSendingOptionsResponse> PutConfigurationSetSendingOptionsAsync(PutConfigurationSetSendingOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutConfigurationSetSuppressionOptions
+
+
+        /// <summary>
+        /// Specify your account's suppression preferences for a configuration set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetSuppressionOptions service method.</param>
+        /// 
+        /// <returns>The response from the PutConfigurationSetSuppressionOptions service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions">REST API Reference for PutConfigurationSetSuppressionOptions Operation</seealso>
+        PutConfigurationSetSuppressionOptionsResponse PutConfigurationSetSuppressionOptions(PutConfigurationSetSuppressionOptionsRequest request);
+
+
+
+        /// <summary>
+        /// Specify your account's suppression preferences for a configuration set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetSuppressionOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutConfigurationSetSuppressionOptions service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions">REST API Reference for PutConfigurationSetSuppressionOptions Operation</seealso>
+        Task<PutConfigurationSetSuppressionOptionsResponse> PutConfigurationSetSuppressionOptionsAsync(PutConfigurationSetSuppressionOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2213,6 +2439,46 @@ namespace Amazon.SimpleEmailV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityMailFromAttributes">REST API Reference for PutEmailIdentityMailFromAttributes Operation</seealso>
         Task<PutEmailIdentityMailFromAttributesResponse> PutEmailIdentityMailFromAttributesAsync(PutEmailIdentityMailFromAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutSuppressedDestination
+
+
+        /// <summary>
+        /// Puts (overwrites) an email destination in your suppression list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSuppressedDestination service method.</param>
+        /// 
+        /// <returns>The response from the PutSuppressedDestination service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination">REST API Reference for PutSuppressedDestination Operation</seealso>
+        PutSuppressedDestinationResponse PutSuppressedDestination(PutSuppressedDestinationRequest request);
+
+
+
+        /// <summary>
+        /// Puts (overwrites) an email destination in your suppression list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSuppressedDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutSuppressedDestination service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination">REST API Reference for PutSuppressedDestination Operation</seealso>
+        Task<PutSuppressedDestinationResponse> PutSuppressedDestinationAsync(PutSuppressedDestinationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

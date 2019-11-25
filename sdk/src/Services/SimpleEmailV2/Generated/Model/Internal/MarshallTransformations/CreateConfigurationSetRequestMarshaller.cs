@@ -105,6 +105,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSuppressionOptions())
+                {
+                    context.Writer.WritePropertyName("SuppressionOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SuppressionOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SuppressionOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

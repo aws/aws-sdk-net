@@ -332,6 +332,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SimpleEmailV2")]
+        public void DeleteSuppressedDestinationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSuppressedDestination");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSuppressedDestinationRequest>();
+            var marshaller = new DeleteSuppressedDestinationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteSuppressedDestination", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteSuppressedDestinationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteSuppressedDestinationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SimpleEmailV2")]
         public void GetAccountMarshallTest()
         {
             var operation = service_model.FindOperation("GetAccount");
@@ -684,6 +716,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SimpleEmailV2")]
+        public void GetSuppressedDestinationMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSuppressedDestination");
+
+            var request = InstantiateClassGenerator.Execute<GetSuppressedDestinationRequest>();
+            var marshaller = new GetSuppressedDestinationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetSuppressedDestination", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetSuppressedDestinationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetSuppressedDestinationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SimpleEmailV2")]
         public void ListConfigurationSetsMarshallTest()
         {
             var operation = service_model.FindOperation("ListConfigurationSets");
@@ -844,6 +908,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SimpleEmailV2")]
+        public void ListSuppressedDestinationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSuppressedDestinations");
+
+            var request = InstantiateClassGenerator.Execute<ListSuppressedDestinationsRequest>();
+            var marshaller = new ListSuppressedDestinationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListSuppressedDestinations", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListSuppressedDestinationsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListSuppressedDestinationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SimpleEmailV2")]
         public void ListTagsForResourceMarshallTest()
         {
             var operation = service_model.FindOperation("ListTagsForResource");
@@ -940,6 +1036,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SimpleEmailV2")]
+        public void PutAccountSuppressionAttributesMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutAccountSuppressionAttributes");
+
+            var request = InstantiateClassGenerator.Execute<PutAccountSuppressionAttributesRequest>();
+            var marshaller = new PutAccountSuppressionAttributesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutAccountSuppressionAttributes", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutAccountSuppressionAttributesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutAccountSuppressionAttributesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SimpleEmailV2")]
         public void PutConfigurationSetDeliveryOptionsMarshallTest()
         {
             var operation = service_model.FindOperation("PutConfigurationSetDeliveryOptions");
@@ -1028,6 +1156,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PutConfigurationSetSendingOptionsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PutConfigurationSetSendingOptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SimpleEmailV2")]
+        public void PutConfigurationSetSuppressionOptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutConfigurationSetSuppressionOptions");
+
+            var request = InstantiateClassGenerator.Execute<PutConfigurationSetSuppressionOptionsRequest>();
+            var marshaller = new PutConfigurationSetSuppressionOptionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutConfigurationSetSuppressionOptions", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutConfigurationSetSuppressionOptionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutConfigurationSetSuppressionOptionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -1252,6 +1412,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PutEmailIdentityMailFromAttributesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PutEmailIdentityMailFromAttributesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SimpleEmailV2")]
+        public void PutSuppressedDestinationMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutSuppressedDestination");
+
+            var request = InstantiateClassGenerator.Execute<PutSuppressedDestinationRequest>();
+            var marshaller = new PutSuppressedDestinationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutSuppressedDestination", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutSuppressedDestinationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutSuppressedDestinationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

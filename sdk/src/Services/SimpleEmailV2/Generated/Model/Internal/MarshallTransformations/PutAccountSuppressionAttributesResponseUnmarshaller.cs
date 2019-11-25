@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetAccount operation
+    /// Response Unmarshaller for PutAccountSuppressionAttributes operation
     /// </summary>  
-    public class GetAccountResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutAccountSuppressionAttributesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,49 +45,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetAccountResponse response = new GetAccountResponse();
+            PutAccountSuppressionAttributesResponse response = new PutAccountSuppressionAttributesResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("DedicatedIpAutoWarmupEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.DedicatedIpAutoWarmupEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EnforcementStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.EnforcementStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProductionAccessEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.ProductionAccessEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SendingEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.SendingEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SendQuota", targetDepth))
-                {
-                    var unmarshaller = SendQuotaUnmarshaller.Instance;
-                    response.SendQuota = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SuppressionAttributes", targetDepth))
-                {
-                    var unmarshaller = SuppressionAttributesUnmarshaller.Instance;
-                    response.SuppressionAttributes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -113,9 +72,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             return new AmazonSimpleEmailServiceV2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetAccountResponseUnmarshaller _instance = new GetAccountResponseUnmarshaller();        
+        private static PutAccountSuppressionAttributesResponseUnmarshaller _instance = new PutAccountSuppressionAttributesResponseUnmarshaller();        
 
-        internal static GetAccountResponseUnmarshaller GetInstance()
+        internal static PutAccountSuppressionAttributesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -123,7 +82,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetAccountResponseUnmarshaller Instance
+        public static PutAccountSuppressionAttributesResponseUnmarshaller Instance
         {
             get
             {
