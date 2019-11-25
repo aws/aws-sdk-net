@@ -74,6 +74,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.CiphertextBlob));
                 }
 
+                if(publicRequest.IsSetEncryptionAlgorithm())
+                {
+                    context.Writer.WritePropertyName("EncryptionAlgorithm");
+                    context.Writer.Write(publicRequest.EncryptionAlgorithm);
+                }
+
                 if(publicRequest.IsSetEncryptionContext())
                 {
                     context.Writer.WritePropertyName("EncryptionContext");
@@ -97,6 +103,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestGrantTokensListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetKeyId())
+                {
+                    context.Writer.WritePropertyName("KeyId");
+                    context.Writer.Write(publicRequest.KeyId);
                 }
 
         

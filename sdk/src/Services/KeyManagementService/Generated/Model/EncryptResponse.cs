@@ -33,13 +33,14 @@ namespace Amazon.KeyManagementService.Model
     public partial class EncryptResponse : AmazonWebServiceResponse
     {
         private MemoryStream _ciphertextBlob;
+        private EncryptionAlgorithmSpec _encryptionAlgorithm;
         private string _keyId;
 
         /// <summary>
         /// Gets and sets the property CiphertextBlob. 
         /// <para>
         /// The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-        /// Otherwise, it is not encoded.
+        /// Otherwise, it is not Base64-encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]
@@ -53,6 +54,24 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetCiphertextBlob()
         {
             return this._ciphertextBlob != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionAlgorithm. 
+        /// <para>
+        /// The encryption algorithm that was used to encrypt the plaintext.
+        /// </para>
+        /// </summary>
+        public EncryptionAlgorithmSpec EncryptionAlgorithm
+        {
+            get { return this._encryptionAlgorithm; }
+            set { this._encryptionAlgorithm = value; }
+        }
+
+        // Check to see if EncryptionAlgorithm property is set
+        internal bool IsSetEncryptionAlgorithm()
+        {
+            return this._encryptionAlgorithm != null;
         }
 
         /// <summary>

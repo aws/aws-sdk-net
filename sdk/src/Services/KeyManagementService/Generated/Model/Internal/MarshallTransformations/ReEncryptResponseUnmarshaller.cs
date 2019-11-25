@@ -57,10 +57,22 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     response.CiphertextBlob = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DestinationEncryptionAlgorithm", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DestinationEncryptionAlgorithm = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceEncryptionAlgorithm", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceEncryptionAlgorithm = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SourceKeyId", targetDepth))
@@ -91,6 +103,10 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("DisabledException"))
             {
                 return new DisabledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("IncorrectKeyException"))
+            {
+                return new IncorrectKeyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCiphertextException"))
             {

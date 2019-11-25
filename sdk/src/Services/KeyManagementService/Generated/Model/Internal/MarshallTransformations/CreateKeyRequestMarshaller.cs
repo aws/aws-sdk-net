@@ -74,6 +74,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BypassPolicyLockoutSafetyCheck);
                 }
 
+                if(publicRequest.IsSetCustomerMasterKeySpec())
+                {
+                    context.Writer.WritePropertyName("CustomerMasterKeySpec");
+                    context.Writer.Write(publicRequest.CustomerMasterKeySpec);
+                }
+
                 if(publicRequest.IsSetCustomKeyStoreId())
                 {
                     context.Writer.WritePropertyName("CustomKeyStoreId");

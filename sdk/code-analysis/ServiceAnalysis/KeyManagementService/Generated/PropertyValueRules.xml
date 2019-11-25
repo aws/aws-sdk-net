@@ -105,6 +105,11 @@
     <max>6144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.DecryptRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DecryptResponse.KeyId</property>
     <min>1</min>
     <max>2048</max>
@@ -233,6 +238,51 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairResponse.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairResponse.PrivateKeyCiphertextBlob</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairResponse.PrivateKeyPlaintext</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairResponse.PublicKey</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairWithoutPlaintextRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairWithoutPlaintextResponse.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairWithoutPlaintextResponse.PrivateKeyCiphertextBlob</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairWithoutPlaintextResponse.PublicKey</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyWithoutPlaintextRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>
@@ -308,6 +358,21 @@
     <property>Amazon.KeyManagementService.Model.GetParametersForImportResponse.PublicKey</property>
     <min>1</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GetPublicKeyRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GetPublicKeyResponse.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GetPublicKeyResponse.PublicKey</property>
+    <min>1</min>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ImportKeyMaterialRequest.EncryptedKeyMaterial</property>
@@ -480,6 +545,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ReEncryptRequest.SourceKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ReEncryptResponse.CiphertextBlob</property>
     <min>1</min>
     <max>6144</max>
@@ -535,6 +605,26 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.SignRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.SignRequest.Message</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.SignResponse.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.SignResponse.Signature</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.TagResourceRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>
@@ -581,6 +671,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateKeyDescriptionRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.VerifyRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.VerifyRequest.Message</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.VerifyRequest.Signature</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.VerifyResponse.KeyId</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>

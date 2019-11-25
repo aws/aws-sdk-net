@@ -81,6 +81,10 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             {
                 return new CustomKeyStoreInvalidStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("CustomKeyStoreNameInUseException"))
+            {
+                return new CustomKeyStoreNameInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("CustomKeyStoreNotFoundException"))
             {
                 return new CustomKeyStoreNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

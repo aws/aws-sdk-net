@@ -68,6 +68,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEncryptionAlgorithm())
+                {
+                    context.Writer.WritePropertyName("EncryptionAlgorithm");
+                    context.Writer.Write(publicRequest.EncryptionAlgorithm);
+                }
+
                 if(publicRequest.IsSetEncryptionContext())
                 {
                     context.Writer.WritePropertyName("EncryptionContext");

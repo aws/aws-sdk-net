@@ -207,6 +207,150 @@ namespace Amazon.KeyManagementService
 
 
     /// <summary>
+    /// Constants used for properties of type CustomerMasterKeySpec.
+    /// </summary>
+    public class CustomerMasterKeySpec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ECC_NIST_P256 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec ECC_NIST_P256 = new CustomerMasterKeySpec("ECC_NIST_P256");
+        /// <summary>
+        /// Constant ECC_NIST_P384 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec ECC_NIST_P384 = new CustomerMasterKeySpec("ECC_NIST_P384");
+        /// <summary>
+        /// Constant ECC_NIST_P521 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec ECC_NIST_P521 = new CustomerMasterKeySpec("ECC_NIST_P521");
+        /// <summary>
+        /// Constant ECC_SECG_P256K1 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec ECC_SECG_P256K1 = new CustomerMasterKeySpec("ECC_SECG_P256K1");
+        /// <summary>
+        /// Constant RSA_2048 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec RSA_2048 = new CustomerMasterKeySpec("RSA_2048");
+        /// <summary>
+        /// Constant RSA_3072 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec RSA_3072 = new CustomerMasterKeySpec("RSA_3072");
+        /// <summary>
+        /// Constant RSA_4096 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec RSA_4096 = new CustomerMasterKeySpec("RSA_4096");
+        /// <summary>
+        /// Constant SYMMETRIC_DEFAULT for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec SYMMETRIC_DEFAULT = new CustomerMasterKeySpec("SYMMETRIC_DEFAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomerMasterKeySpec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomerMasterKeySpec FindValue(string value)
+        {
+            return FindValue<CustomerMasterKeySpec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomerMasterKeySpec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataKeyPairSpec.
+    /// </summary>
+    public class DataKeyPairSpec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ECC_NIST_P256 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec ECC_NIST_P256 = new DataKeyPairSpec("ECC_NIST_P256");
+        /// <summary>
+        /// Constant ECC_NIST_P384 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec ECC_NIST_P384 = new DataKeyPairSpec("ECC_NIST_P384");
+        /// <summary>
+        /// Constant ECC_NIST_P521 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec ECC_NIST_P521 = new DataKeyPairSpec("ECC_NIST_P521");
+        /// <summary>
+        /// Constant ECC_SECG_P256K1 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec ECC_SECG_P256K1 = new DataKeyPairSpec("ECC_SECG_P256K1");
+        /// <summary>
+        /// Constant RSA_2048 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec RSA_2048 = new DataKeyPairSpec("RSA_2048");
+        /// <summary>
+        /// Constant RSA_3072 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec RSA_3072 = new DataKeyPairSpec("RSA_3072");
+        /// <summary>
+        /// Constant RSA_4096 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec RSA_4096 = new DataKeyPairSpec("RSA_4096");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataKeyPairSpec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataKeyPairSpec FindValue(string value)
+        {
+            return FindValue<DataKeyPairSpec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataKeyPairSpec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataKeySpec.
     /// </summary>
     public class DataKeySpec : ConstantClass
@@ -250,6 +394,60 @@ namespace Amazon.KeyManagementService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataKeySpec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EncryptionAlgorithmSpec.
+    /// </summary>
+    public class EncryptionAlgorithmSpec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RSAES_OAEP_SHA_1 for EncryptionAlgorithmSpec
+        /// </summary>
+        public static readonly EncryptionAlgorithmSpec RSAES_OAEP_SHA_1 = new EncryptionAlgorithmSpec("RSAES_OAEP_SHA_1");
+        /// <summary>
+        /// Constant RSAES_OAEP_SHA_256 for EncryptionAlgorithmSpec
+        /// </summary>
+        public static readonly EncryptionAlgorithmSpec RSAES_OAEP_SHA_256 = new EncryptionAlgorithmSpec("RSAES_OAEP_SHA_256");
+        /// <summary>
+        /// Constant SYMMETRIC_DEFAULT for EncryptionAlgorithmSpec
+        /// </summary>
+        public static readonly EncryptionAlgorithmSpec SYMMETRIC_DEFAULT = new EncryptionAlgorithmSpec("SYMMETRIC_DEFAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionAlgorithmSpec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionAlgorithmSpec FindValue(string value)
+        {
+            return FindValue<EncryptionAlgorithmSpec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionAlgorithmSpec(string value)
         {
             return FindValue(value);
         }
@@ -333,9 +531,21 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly GrantOperation GenerateDataKey = new GrantOperation("GenerateDataKey");
         /// <summary>
+        /// Constant GenerateDataKeyPair for GrantOperation
+        /// </summary>
+        public static readonly GrantOperation GenerateDataKeyPair = new GrantOperation("GenerateDataKeyPair");
+        /// <summary>
+        /// Constant GenerateDataKeyPairWithoutPlaintext for GrantOperation
+        /// </summary>
+        public static readonly GrantOperation GenerateDataKeyPairWithoutPlaintext = new GrantOperation("GenerateDataKeyPairWithoutPlaintext");
+        /// <summary>
         /// Constant GenerateDataKeyWithoutPlaintext for GrantOperation
         /// </summary>
         public static readonly GrantOperation GenerateDataKeyWithoutPlaintext = new GrantOperation("GenerateDataKeyWithoutPlaintext");
+        /// <summary>
+        /// Constant GetPublicKey for GrantOperation
+        /// </summary>
+        public static readonly GrantOperation GetPublicKey = new GrantOperation("GetPublicKey");
         /// <summary>
         /// Constant ReEncryptFrom for GrantOperation
         /// </summary>
@@ -348,6 +558,14 @@ namespace Amazon.KeyManagementService
         /// Constant RetireGrant for GrantOperation
         /// </summary>
         public static readonly GrantOperation RetireGrant = new GrantOperation("RetireGrant");
+        /// <summary>
+        /// Constant Sign for GrantOperation
+        /// </summary>
+        public static readonly GrantOperation Sign = new GrantOperation("Sign");
+        /// <summary>
+        /// Constant Verify for GrantOperation
+        /// </summary>
+        public static readonly GrantOperation Verify = new GrantOperation("Verify");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -506,6 +724,10 @@ namespace Amazon.KeyManagementService
         /// Constant ENCRYPT_DECRYPT for KeyUsageType
         /// </summary>
         public static readonly KeyUsageType ENCRYPT_DECRYPT = new KeyUsageType("ENCRYPT_DECRYPT");
+        /// <summary>
+        /// Constant SIGN_VERIFY for KeyUsageType
+        /// </summary>
+        public static readonly KeyUsageType SIGN_VERIFY = new KeyUsageType("SIGN_VERIFY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -536,6 +758,56 @@ namespace Amazon.KeyManagementService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeyUsageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MessageType.
+    /// </summary>
+    public class MessageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIGEST for MessageType
+        /// </summary>
+        public static readonly MessageType DIGEST = new MessageType("DIGEST");
+        /// <summary>
+        /// Constant RAW for MessageType
+        /// </summary>
+        public static readonly MessageType RAW = new MessageType("RAW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageType FindValue(string value)
+        {
+            return FindValue<MessageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageType(string value)
         {
             return FindValue(value);
         }
@@ -590,6 +862,84 @@ namespace Amazon.KeyManagementService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OriginType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SigningAlgorithmSpec.
+    /// </summary>
+    public class SigningAlgorithmSpec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ECDSA_SHA_256 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec ECDSA_SHA_256 = new SigningAlgorithmSpec("ECDSA_SHA_256");
+        /// <summary>
+        /// Constant ECDSA_SHA_384 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec ECDSA_SHA_384 = new SigningAlgorithmSpec("ECDSA_SHA_384");
+        /// <summary>
+        /// Constant ECDSA_SHA_512 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec ECDSA_SHA_512 = new SigningAlgorithmSpec("ECDSA_SHA_512");
+        /// <summary>
+        /// Constant RSASSA_PKCS1_V1_5_SHA_256 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec RSASSA_PKCS1_V1_5_SHA_256 = new SigningAlgorithmSpec("RSASSA_PKCS1_V1_5_SHA_256");
+        /// <summary>
+        /// Constant RSASSA_PKCS1_V1_5_SHA_384 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec RSASSA_PKCS1_V1_5_SHA_384 = new SigningAlgorithmSpec("RSASSA_PKCS1_V1_5_SHA_384");
+        /// <summary>
+        /// Constant RSASSA_PKCS1_V1_5_SHA_512 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec RSASSA_PKCS1_V1_5_SHA_512 = new SigningAlgorithmSpec("RSASSA_PKCS1_V1_5_SHA_512");
+        /// <summary>
+        /// Constant RSASSA_PSS_SHA_256 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec RSASSA_PSS_SHA_256 = new SigningAlgorithmSpec("RSASSA_PSS_SHA_256");
+        /// <summary>
+        /// Constant RSASSA_PSS_SHA_384 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec RSASSA_PSS_SHA_384 = new SigningAlgorithmSpec("RSASSA_PSS_SHA_384");
+        /// <summary>
+        /// Constant RSASSA_PSS_SHA_512 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec RSASSA_PSS_SHA_512 = new SigningAlgorithmSpec("RSASSA_PSS_SHA_512");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SigningAlgorithmSpec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SigningAlgorithmSpec FindValue(string value)
+        {
+            return FindValue<SigningAlgorithmSpec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SigningAlgorithmSpec(string value)
         {
             return FindValue(value);
         }

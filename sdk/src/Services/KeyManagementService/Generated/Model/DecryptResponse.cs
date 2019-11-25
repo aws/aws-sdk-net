@@ -32,14 +32,32 @@ namespace Amazon.KeyManagementService.Model
     /// </summary>
     public partial class DecryptResponse : AmazonWebServiceResponse
     {
+        private EncryptionAlgorithmSpec _encryptionAlgorithm;
         private string _keyId;
         private MemoryStream _plaintext;
 
         /// <summary>
+        /// Gets and sets the property EncryptionAlgorithm. 
+        /// <para>
+        /// The encryption algorithm that was used to decrypt the ciphertext.
+        /// </para>
+        /// </summary>
+        public EncryptionAlgorithmSpec EncryptionAlgorithm
+        {
+            get { return this._encryptionAlgorithm; }
+            set { this._encryptionAlgorithm = value; }
+        }
+
+        // Check to see if EncryptionAlgorithm property is set
+        internal bool IsSetEncryptionAlgorithm()
+        {
+            return this._encryptionAlgorithm != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// ARN of the key used to perform the decryption. This value is returned if no errors
-        /// are encountered during the operation.
+        /// The ARN of the customer master key that was used to perform the decryption.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -59,7 +77,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Plaintext. 
         /// <para>
         /// Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-        /// Otherwise, it is not encoded.
+        /// Otherwise, it is not Base64-encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

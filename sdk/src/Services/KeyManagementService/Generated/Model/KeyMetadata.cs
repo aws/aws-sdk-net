@@ -42,16 +42,19 @@ namespace Amazon.KeyManagementService.Model
         private string _awsAccountId;
         private string _cloudHsmClusterId;
         private DateTime? _creationDate;
+        private CustomerMasterKeySpec _customerMasterKeySpec;
         private string _customKeyStoreId;
         private DateTime? _deletionDate;
         private string _description;
         private bool? _enabled;
+        private List<string> _encryptionAlgorithms = new List<string>();
         private ExpirationModelType _expirationModel;
         private string _keyId;
         private KeyManagerType _keyManager;
         private KeyState _keyState;
         private KeyUsageType _keyUsage;
         private OriginType _origin;
+        private List<string> _signingAlgorithms = new List<string>();
         private DateTime? _validTo;
 
         /// <summary>
@@ -135,6 +138,24 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomerMasterKeySpec. 
+        /// <para>
+        /// Describes the type of key material in the CMK.
+        /// </para>
+        /// </summary>
+        public CustomerMasterKeySpec CustomerMasterKeySpec
+        {
+            get { return this._customerMasterKeySpec; }
+            set { this._customerMasterKeySpec = value; }
+        }
+
+        // Check to see if CustomerMasterKeySpec property is set
+        internal bool IsSetCustomerMasterKeySpec()
+        {
+            return this._customerMasterKeySpec != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CustomKeyStoreId. 
         /// <para>
         /// A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
@@ -210,6 +231,29 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionAlgorithms. 
+        /// <para>
+        /// A list of encryption algorithms that the CMK supports. You cannot use the CMK with
+        /// other encryption algorithms within AWS KMS.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+        /// </para>
+        /// </summary>
+        public List<string> EncryptionAlgorithms
+        {
+            get { return this._encryptionAlgorithms; }
+            set { this._encryptionAlgorithms = value; }
+        }
+
+        // Check to see if EncryptionAlgorithms property is set
+        internal bool IsSetEncryptionAlgorithms()
+        {
+            return this._encryptionAlgorithms != null && this._encryptionAlgorithms.Count > 0; 
         }
 
         /// <summary>
@@ -297,9 +341,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyUsage. 
         /// <para>
-        /// The cryptographic operations for which you can use the CMK. The only valid value is
-        /// <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt
-        /// data.
+        /// The cryptographic operations for which you can use the CMK.
         /// </para>
         /// </summary>
         public KeyUsageType KeyUsage
@@ -334,6 +376,29 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetOrigin()
         {
             return this._origin != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SigningAlgorithms. 
+        /// <para>
+        /// A list of signing algorithms that the CMK supports. You cannot use the CMK with other
+        /// signing algorithms within AWS KMS.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
+        /// </para>
+        /// </summary>
+        public List<string> SigningAlgorithms
+        {
+            get { return this._signingAlgorithms; }
+            set { this._signingAlgorithms = value; }
+        }
+
+        // Check to see if SigningAlgorithms property is set
+        internal bool IsSetSigningAlgorithms()
+        {
+            return this._signingAlgorithms != null && this._signingAlgorithms.Count > 0; 
         }
 
         /// <summary>

@@ -39,7 +39,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property CiphertextBlob. 
         /// <para>
         /// The encrypted data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-        /// Otherwise, it is not encoded.
+        /// Otherwise, it is not Base64-encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

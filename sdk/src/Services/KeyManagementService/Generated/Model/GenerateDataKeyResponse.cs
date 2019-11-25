@@ -40,7 +40,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property CiphertextBlob. 
         /// <para>
         /// The encrypted copy of the data key. When you use the HTTP API or the AWS CLI, the
-        /// value is Base64-encoded. Otherwise, it is not encoded.
+        /// value is Base64-encoded. Otherwise, it is not Base64-encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]
@@ -79,8 +79,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Plaintext. 
         /// <para>
         /// The plaintext data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-        /// Otherwise, it is not encoded. Use this data key to encrypt your data outside of KMS.
-        /// Then, remove it from memory as soon as possible.
+        /// Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside
+        /// of KMS. Then, remove it from memory as soon as possible.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
