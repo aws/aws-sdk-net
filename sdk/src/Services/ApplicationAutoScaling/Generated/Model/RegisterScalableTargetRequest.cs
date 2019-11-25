@@ -135,12 +135,12 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         /// DynamoDB table - The resource type is <code>table</code> and the unique identifier
-        /// is the resource ID. Example: <code>table/my-table</code>.
+        /// is the table name. Example: <code>table/my-table</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// DynamoDB global secondary index - The resource type is <code>index</code> and the
-        /// unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+        /// unique identifier is the index name. Example: <code>table/my-table/index/my-table-index</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -149,7 +149,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and
+        /// Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and
         /// the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
         /// </para>
         ///  </li> <li> 
@@ -159,6 +159,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// the resources. The unique identifier is defined by the service provider. More information
         /// is available in our <a href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
         /// repository</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Comprehend document classification endpoint - The resource type and unique
+        /// identifier are specified using the endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -262,6 +267,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a
         /// custom resource provided by your own application or service.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The
+        /// number of inference units for an Amazon Comprehend document classification endpoint.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -328,8 +338,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend
-        /// and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
+        /// and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public SuspendedState SuspendedState

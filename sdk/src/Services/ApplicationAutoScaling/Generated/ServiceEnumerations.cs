@@ -205,6 +205,14 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly MetricType ALBRequestCountPerTarget = new MetricType("ALBRequestCountPerTarget");
         /// <summary>
+        /// Constant AppStreamAverageCapacityUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType AppStreamAverageCapacityUtilization = new MetricType("AppStreamAverageCapacityUtilization");
+        /// <summary>
+        /// Constant ComprehendInferenceUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType ComprehendInferenceUtilization = new MetricType("ComprehendInferenceUtilization");
+        /// <summary>
         /// Constant DynamoDBReadCapacityUtilization for MetricType
         /// </summary>
         public static readonly MetricType DynamoDBReadCapacityUtilization = new MetricType("DynamoDBReadCapacityUtilization");
@@ -340,6 +348,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant AppstreamFleetDesiredCapacity for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension AppstreamFleetDesiredCapacity = new ScalableDimension("appstream:fleet:DesiredCapacity");
+        /// <summary>
+        /// Constant ComprehendDocumentClassifierEndpointDesiredInferenceUnits for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension ComprehendDocumentClassifierEndpointDesiredInferenceUnits = new ScalableDimension("comprehend:document-classifier-endpoint:DesiredInferenceUnits");
         /// <summary>
         /// Constant CustomResourceResourceTypeProperty for ScalableDimension
         /// </summary>
@@ -492,6 +504,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant Appstream for ServiceNamespace
         /// </summary>
         public static readonly ServiceNamespace Appstream = new ServiceNamespace("appstream");
+        /// <summary>
+        /// Constant Comprehend for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace Comprehend = new ServiceNamespace("comprehend");
         /// <summary>
         /// Constant CustomResource for ServiceNamespace
         /// </summary>

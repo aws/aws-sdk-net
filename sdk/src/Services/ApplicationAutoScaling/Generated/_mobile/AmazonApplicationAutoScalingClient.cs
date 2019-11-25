@@ -73,6 +73,10 @@ namespace Amazon.ApplicationAutoScaling
     /// <para>
     /// Custom resources provided by your own applications or services
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon Comprehend document classification endpoints
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <b>API Summary</b> 
