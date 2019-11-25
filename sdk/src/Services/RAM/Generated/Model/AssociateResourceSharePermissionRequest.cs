@@ -28,14 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateResourceShare operation.
-    /// Disassociates the specified principals or resources from the specified resource share.
+    /// Container for the parameters to the AssociateResourceSharePermission operation.
+    /// Associates a permission with a resource share.
     /// </summary>
-    public partial class DisassociateResourceShareRequest : AmazonRAMRequest
+    public partial class AssociateResourceSharePermissionRequest : AmazonRAMRequest
     {
         private string _clientToken;
-        private List<string> _principals = new List<string>();
-        private List<string> _resourceArns = new List<string>();
+        private string _permissionArn;
+        private bool? _replace;
         private string _resourceShareArn;
 
         /// <summary>
@@ -58,39 +58,42 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Principals. 
+        /// Gets and sets the property PermissionArn. 
         /// <para>
-        /// The principals.
+        /// The ARN of the AWS RAM permission to associate with the resource share.
         /// </para>
         /// </summary>
-        public List<string> Principals
+        [AWSProperty(Required=true)]
+        public string PermissionArn
         {
-            get { return this._principals; }
-            set { this._principals = value; }
+            get { return this._permissionArn; }
+            set { this._permissionArn = value; }
         }
 
-        // Check to see if Principals property is set
-        internal bool IsSetPrincipals()
+        // Check to see if PermissionArn property is set
+        internal bool IsSetPermissionArn()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._permissionArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceArns. 
+        /// Gets and sets the property Replace. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of the resources.
+        /// Indicates whether the permission should replace the permissions that are currently
+        /// associated with the resource share. Use <code>true</code> to replace the current permissions.
+        /// Use <code>false</code> to add the permission to the current permission.
         /// </para>
         /// </summary>
-        public List<string> ResourceArns
+        public bool Replace
         {
-            get { return this._resourceArns; }
-            set { this._resourceArns = value; }
+            get { return this._replace.GetValueOrDefault(); }
+            set { this._replace = value; }
         }
 
-        // Check to see if ResourceArns property is set
-        internal bool IsSetResourceArns()
+        // Check to see if Replace property is set
+        internal bool IsSetReplace()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._replace.HasValue; 
         }
 
         /// <summary>

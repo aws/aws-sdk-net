@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RAM.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Resource Object
+    /// Response Unmarshaller for ResourceSharePermissionDetail Object
     /// </summary>  
-    public class ResourceUnmarshaller : IUnmarshaller<Resource, XmlUnmarshallerContext>, IUnmarshaller<Resource, JsonUnmarshallerContext>
+    public class ResourceSharePermissionDetailUnmarshaller : IUnmarshaller<ResourceSharePermissionDetail, XmlUnmarshallerContext>, IUnmarshaller<ResourceSharePermissionDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Resource IUnmarshaller<Resource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ResourceSharePermissionDetail IUnmarshaller<ResourceSharePermissionDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Resource Unmarshall(JsonUnmarshallerContext context)
+        public ResourceSharePermissionDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Resource unmarshalledObject = new Resource();
+            ResourceSharePermissionDetail unmarshalledObject = new ResourceSharePermissionDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -76,40 +76,40 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("defaultVersion", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DefaultVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceGroupArn", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceGroupArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceShareArn", targetDepth))
+                if (context.TestExpression("permission", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceShareArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Permission = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("statusMessage", targetDepth))
+                if (context.TestExpression("version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,12 +118,12 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceUnmarshaller _instance = new ResourceUnmarshaller();        
+        private static ResourceSharePermissionDetailUnmarshaller _instance = new ResourceSharePermissionDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceUnmarshaller Instance
+        public static ResourceSharePermissionDetailUnmarshaller Instance
         {
             get
             {

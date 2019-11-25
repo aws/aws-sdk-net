@@ -28,23 +28,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Describes a resource associated with a resource share.
+    /// Information about a permission that is associated with a resource share.
     /// </summary>
-    public partial class Resource
+    public partial class ResourceSharePermissionSummary
     {
         private string _arn;
         private DateTime? _creationTime;
+        private bool? _defaultVersion;
         private DateTime? _lastUpdatedTime;
-        private string _resourceGroupArn;
-        private string _resourceShareArn;
-        private ResourceStatus _status;
-        private string _statusMessage;
-        private string _type;
+        private string _name;
+        private string _resourceType;
+        private string _status;
+        private string _version;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource.
+        /// The ARN of the permission.
         /// </para>
         /// </summary>
         public string Arn
@@ -62,7 +62,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time when the resource was associated with the resource share.
+        /// The date and time when the permission was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -78,9 +78,27 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DefaultVersion. 
+        /// <para>
+        /// The identifier for the version of the permission that is set as the default version.
+        /// </para>
+        /// </summary>
+        public bool DefaultVersion
+        {
+            get { return this._defaultVersion.GetValueOrDefault(); }
+            set { this._defaultVersion = value; }
+        }
+
+        // Check to see if DefaultVersion property is set
+        internal bool IsSetDefaultVersion()
+        {
+            return this._defaultVersion.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The time when the association was last updated.
+        /// The date and time when the permission was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -96,49 +114,48 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceGroupArn. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The ARN of the resource group. This value is returned only if the resource is a resource
-        /// group.
+        /// The name of the permission.
         /// </para>
         /// </summary>
-        public string ResourceGroupArn
+        public string Name
         {
-            get { return this._resourceGroupArn; }
-            set { this._resourceGroupArn = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if ResourceGroupArn property is set
-        internal bool IsSetResourceGroupArn()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._resourceGroupArn != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceShareArn. 
+        /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource share.
+        /// The type of resource to which the permission applies.
         /// </para>
         /// </summary>
-        public string ResourceShareArn
+        public string ResourceType
         {
-            get { return this._resourceShareArn; }
-            set { this._resourceShareArn = value; }
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
         }
 
-        // Check to see if ResourceShareArn property is set
-        internal bool IsSetResourceShareArn()
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
         {
-            return this._resourceShareArn != null;
+            return this._resourceType != null;
         }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the resource.
+        /// The current status of the permission.
         /// </para>
         /// </summary>
-        public ResourceStatus Status
+        public string Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -151,39 +168,21 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusMessage. 
+        /// Gets and sets the property Version. 
         /// <para>
-        /// A message about the status of the resource.
+        /// The identifier for the version of the permission.
         /// </para>
         /// </summary>
-        public string StatusMessage
+        public string Version
         {
-            get { return this._statusMessage; }
-            set { this._statusMessage = value; }
+            get { return this._version; }
+            set { this._version = value; }
         }
 
-        // Check to see if StatusMessage property is set
-        internal bool IsSetStatusMessage()
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
         {
-            return this._statusMessage != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The resource type.
-        /// </para>
-        /// </summary>
-        public string Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
+            return this._version != null;
         }
 
     }

@@ -84,6 +84,17 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPermissionArns())
+                {
+                    context.Writer.WritePropertyName("permissionArns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPermissionArnsListValue in publicRequest.PermissionArns)
+                    {
+                            context.Writer.Write(publicRequestPermissionArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetPrincipals())
                 {
                     context.Writer.WritePropertyName("principals");

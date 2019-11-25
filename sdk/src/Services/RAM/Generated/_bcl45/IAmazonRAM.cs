@@ -239,6 +239,76 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  AssociateResourceSharePermission
+
+
+        /// <summary>
+        /// Associates a permission with a resource share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateResourceSharePermission service method.</param>
+        /// 
+        /// <returns>The response from the AssociateResourceSharePermission service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// A client token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceSharePermission">REST API Reference for AssociateResourceSharePermission Operation</seealso>
+        AssociateResourceSharePermissionResponse AssociateResourceSharePermission(AssociateResourceSharePermissionRequest request);
+
+
+
+        /// <summary>
+        /// Associates a permission with a resource share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateResourceSharePermission service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateResourceSharePermission service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// A client token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceSharePermission">REST API Reference for AssociateResourceSharePermission Operation</seealso>
+        Task<AssociateResourceSharePermissionResponse> AssociateResourceSharePermissionAsync(AssociateResourceSharePermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateResourceShare
 
 
@@ -509,6 +579,76 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  DisassociateResourceSharePermission
+
+
+        /// <summary>
+        /// Disassociates an AWS RAM permission from a resource share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateResourceSharePermission service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateResourceSharePermission service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// A client token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceSharePermission">REST API Reference for DisassociateResourceSharePermission Operation</seealso>
+        DisassociateResourceSharePermissionResponse DisassociateResourceSharePermission(DisassociateResourceSharePermissionRequest request);
+
+
+
+        /// <summary>
+        /// Disassociates an AWS RAM permission from a resource share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateResourceSharePermission service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateResourceSharePermission service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// A client token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceSharePermission">REST API Reference for DisassociateResourceSharePermission Operation</seealso>
+        Task<DisassociateResourceSharePermissionResponse> DisassociateResourceSharePermissionAsync(DisassociateResourceSharePermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  EnableSharingWithAwsOrganization
 
 
@@ -562,6 +702,70 @@ namespace Amazon.RAM
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/EnableSharingWithAwsOrganization">REST API Reference for EnableSharingWithAwsOrganization Operation</seealso>
         Task<EnableSharingWithAwsOrganizationResponse> EnableSharingWithAwsOrganizationAsync(EnableSharingWithAwsOrganizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetPermission
+
+
+        /// <summary>
+        /// Gets the contents of an AWS RAM permission in JSON format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPermission service method.</param>
+        /// 
+        /// <returns>The response from the GetPermission service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetPermission">REST API Reference for GetPermission Operation</seealso>
+        GetPermissionResponse GetPermission(GetPermissionRequest request);
+
+
+
+        /// <summary>
+        /// Gets the contents of an AWS RAM permission in JSON format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPermission service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPermission service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetPermission">REST API Reference for GetPermission Operation</seealso>
+        Task<GetPermissionResponse> GetPermissionAsync(GetPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -913,12 +1117,70 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  ListPermissions
+
+
+        /// <summary>
+        /// Lists the AWS RAM permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissions service method.</param>
+        /// 
+        /// <returns>The response from the ListPermissions service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
+        ListPermissionsResponse ListPermissions(ListPermissionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the AWS RAM permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPermissions service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
+        Task<ListPermissionsResponse> ListPermissionsAsync(ListPermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListPrincipals
 
 
         /// <summary>
-        /// Lists the principals that you have shared resources with or the principals that have
-        /// shared resources with you.
+        /// Lists the principals that you have shared resources with or that have shared resources
+        /// with you.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipals service method.</param>
         /// 
@@ -947,8 +1209,8 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Lists the principals that you have shared resources with or the principals that have
-        /// shared resources with you.
+        /// Lists the principals that you have shared resources with or that have shared resources
+        /// with you.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipals service method.</param>
         /// <param name="cancellationToken">
@@ -1048,6 +1310,174 @@ namespace Amazon.RAM
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResources">REST API Reference for ListResources Operation</seealso>
         Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListResourceSharePermissions
+
+
+        /// <summary>
+        /// Lists the AWS RAM permissions that are associated with a resource share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceSharePermissions service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceSharePermissions service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceSharePermissions">REST API Reference for ListResourceSharePermissions Operation</seealso>
+        ListResourceSharePermissionsResponse ListResourceSharePermissions(ListResourceSharePermissionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the AWS RAM permissions that are associated with a resource share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceSharePermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceSharePermissions service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceSharePermissions">REST API Reference for ListResourceSharePermissions Operation</seealso>
+        Task<ListResourceSharePermissionsResponse> ListResourceSharePermissionsAsync(ListResourceSharePermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PromoteResourceShareCreatedFromPolicy
+
+
+        /// <summary>
+        /// Resource shares that were created by attaching a policy to a resource are visible
+        /// only to the resource share owner, and the resource share cannot be modified in AWS
+        /// RAM.
+        /// 
+        ///  
+        /// <para>
+        /// Use this API action to promote the resource share. When you promote the resource share,
+        /// it becomes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Visible to all principals that it is shared with.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifiable in AWS RAM.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PromoteResourceShareCreatedFromPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PromoteResourceShareCreatedFromPolicy service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MissingRequiredParameterException">
+        /// A required input parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy">REST API Reference for PromoteResourceShareCreatedFromPolicy Operation</seealso>
+        PromoteResourceShareCreatedFromPolicyResponse PromoteResourceShareCreatedFromPolicy(PromoteResourceShareCreatedFromPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Resource shares that were created by attaching a policy to a resource are visible
+        /// only to the resource share owner, and the resource share cannot be modified in AWS
+        /// RAM.
+        /// 
+        ///  
+        /// <para>
+        /// Use this API action to promote the resource share. When you promote the resource share,
+        /// it becomes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Visible to all principals that it is shared with.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifiable in AWS RAM.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PromoteResourceShareCreatedFromPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PromoteResourceShareCreatedFromPolicy service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MissingRequiredParameterException">
+        /// A required input parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy">REST API Reference for PromoteResourceShareCreatedFromPolicy Operation</seealso>
+        Task<PromoteResourceShareCreatedFromPolicyResponse> PromoteResourceShareCreatedFromPolicyAsync(PromoteResourceShareCreatedFromPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

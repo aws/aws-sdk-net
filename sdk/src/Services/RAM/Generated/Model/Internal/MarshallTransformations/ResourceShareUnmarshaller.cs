@@ -76,6 +76,12 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("featureSet", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FeatureSet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

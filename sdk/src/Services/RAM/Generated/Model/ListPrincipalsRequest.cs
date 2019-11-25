@@ -29,8 +29,8 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPrincipals operation.
-    /// Lists the principals that you have shared resources with or the principals that have
-    /// shared resources with you.
+    /// Lists the principals that you have shared resources with or that have shared resources
+    /// with you.
     /// </summary>
     public partial class ListPrincipalsRequest : AmazonRAMRequest
     {
@@ -160,8 +160,10 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>route53resolver:ResolverRule</code> | <code>ec2:TransitGateway</code>
-        /// | <code>ec2:Subnet</code> | <code>license-manager:LicenseConfiguration</code> 
+        /// Valid values: <code>ec2:CapacityReservation</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code>
+        /// | <code>ec2:TransitGateway</code> | <code>license-manager:LicenseConfiguration</code>
+        /// | <code>rds:Cluster</code> | <code>route53resolver:ResolverRule</code> I <code>resource-groups:Group</code>
+        /// 
         /// </para>
         /// </summary>
         public string ResourceType

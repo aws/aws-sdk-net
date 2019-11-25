@@ -28,69 +28,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateResourceShare operation.
-    /// Disassociates the specified principals or resources from the specified resource share.
+    /// Container for the parameters to the ListResourceSharePermissions operation.
+    /// Lists the AWS RAM permissions that are associated with a resource share.
     /// </summary>
-    public partial class DisassociateResourceShareRequest : AmazonRAMRequest
+    public partial class ListResourceSharePermissionsRequest : AmazonRAMRequest
     {
-        private string _clientToken;
-        private List<string> _principals = new List<string>();
-        private List<string> _resourceArns = new List<string>();
+        private int? _maxResults;
+        private string _nextToken;
         private string _resourceShareArn;
 
         /// <summary>
-        /// Gets and sets the property ClientToken. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// The maximum number of results to return with a single call. To retrieve the remaining
+        /// results, make another call with the returned <code>nextToken</code> value.
         /// </para>
         /// </summary>
-        public string ClientToken
+        [AWSProperty(Min=1, Max=500)]
+        public int MaxResults
         {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._clientToken != null;
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Principals. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The principals.
+        /// The token for the next page of results.
         /// </para>
         /// </summary>
-        public List<string> Principals
+        public string NextToken
         {
-            get { return this._principals; }
-            set { this._principals = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Principals property is set
-        internal bool IsSetPrincipals()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._principals != null && this._principals.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceArns. 
-        /// <para>
-        /// The Amazon Resource Names (ARNs) of the resources.
-        /// </para>
-        /// </summary>
-        public List<string> ResourceArns
-        {
-            get { return this._resourceArns; }
-            set { this._resourceArns = value; }
-        }
-
-        // Check to see if ResourceArns property is set
-        internal bool IsSetResourceArns()
-        {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._nextToken != null;
         }
 
         /// <summary>

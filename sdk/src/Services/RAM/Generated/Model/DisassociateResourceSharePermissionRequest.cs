@@ -28,14 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateResourceShare operation.
-    /// Disassociates the specified principals or resources from the specified resource share.
+    /// Container for the parameters to the DisassociateResourceSharePermission operation.
+    /// Disassociates an AWS RAM permission from a resource share.
     /// </summary>
-    public partial class DisassociateResourceShareRequest : AmazonRAMRequest
+    public partial class DisassociateResourceSharePermissionRequest : AmazonRAMRequest
     {
         private string _clientToken;
-        private List<string> _principals = new List<string>();
-        private List<string> _resourceArns = new List<string>();
+        private string _permissionArn;
         private string _resourceShareArn;
 
         /// <summary>
@@ -58,39 +57,22 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Principals. 
+        /// Gets and sets the property PermissionArn. 
         /// <para>
-        /// The principals.
+        /// The ARN of the permission to disassociate from the resource share.
         /// </para>
         /// </summary>
-        public List<string> Principals
+        [AWSProperty(Required=true)]
+        public string PermissionArn
         {
-            get { return this._principals; }
-            set { this._principals = value; }
+            get { return this._permissionArn; }
+            set { this._permissionArn = value; }
         }
 
-        // Check to see if Principals property is set
-        internal bool IsSetPrincipals()
+        // Check to see if PermissionArn property is set
+        internal bool IsSetPermissionArn()
         {
-            return this._principals != null && this._principals.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceArns. 
-        /// <para>
-        /// The Amazon Resource Names (ARNs) of the resources.
-        /// </para>
-        /// </summary>
-        public List<string> ResourceArns
-        {
-            get { return this._resourceArns; }
-            set { this._resourceArns = value; }
-        }
-
-        // Check to see if ResourceArns property is set
-        internal bool IsSetResourceArns()
-        {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._permissionArn != null;
         }
 
         /// <summary>

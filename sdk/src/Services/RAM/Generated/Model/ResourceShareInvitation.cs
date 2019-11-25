@@ -99,7 +99,8 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceShareAssociations. 
         /// <para>
         /// To view the resources associated with a pending resource share invitation, use <a
-        /// href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">ListPendingInvitationResources</a>.
+        /// href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
+        /// ListPendingInvitationResources</a>.
         /// </para>
         /// </summary>
         [Obsolete("This member has been deprecated. Use ListPendingInvitationResources.")]
