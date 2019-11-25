@@ -39,6 +39,7 @@ namespace Amazon.Lex.Model
         private ResponseCard _responseCard;
         private SentimentResponse _sentimentResponse;
         private Dictionary<string, string> _sessionAttributes = new Dictionary<string, string>();
+        private string _sessionId;
         private Dictionary<string, string> _slots = new Dictionary<string, string>();
         private string _slotToElicit;
 
@@ -276,6 +277,24 @@ namespace Amazon.Lex.Model
         internal bool IsSetSessionAttributes()
         {
             return this._sessionAttributes != null && this._sessionAttributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// A unique identifier for the session.
+        /// </para>
+        /// </summary>
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return this._sessionId != null;
         }
 
         /// <summary>

@@ -67,6 +67,8 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                 var headerBytes = Convert.FromBase64String(context.ResponseData.GetHeaderValue("x-amz-lex-session-attributes"));
                 response.SessionAttributes = Encoding.UTF8.GetString(headerBytes, 0, headerBytes.Length);
             }
+            if (context.ResponseData.IsHeaderPresent("x-amz-lex-session-id"))
+                response.SessionId = context.ResponseData.GetHeaderValue("x-amz-lex-session-id");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-slots"))
             {
                 var headerBytes = Convert.FromBase64String(context.ResponseData.GetHeaderValue("x-amz-lex-slots"));

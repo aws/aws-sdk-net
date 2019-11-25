@@ -129,6 +129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-lex-message-format","x-amz-lex-message-format_Value"},
                     {"x-amz-lex-sentiment","x-amz-lex-sentiment_Value"},
                     {"x-amz-lex-session-attributes",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-session-attributes_Value"))},
+                    {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},

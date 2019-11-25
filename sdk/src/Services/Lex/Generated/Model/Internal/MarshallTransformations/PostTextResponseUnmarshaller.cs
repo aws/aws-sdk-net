@@ -93,6 +93,12 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                     response.SessionAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sessionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SessionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("slots", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

@@ -41,6 +41,7 @@ namespace Amazon.Lex.Model
         private MessageFormatType _messageFormat;
         private string _sentimentResponse;
         private string _sessionAttributes;
+        private string _sessionId;
         private string _slots;
         private string _slotToElicit;
 
@@ -323,6 +324,24 @@ namespace Amazon.Lex.Model
         internal bool IsSetSessionAttributes()
         {
             return this._sessionAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The unique identifier for the session.
+        /// </para>
+        /// </summary>
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return this._sessionId != null;
         }
 
         /// <summary>
