@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// The field to aggregate.
+    /// Describes the name and data type at a field.
     /// </summary>
     public partial class Field
     {
@@ -56,7 +56,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The data type of the field.
+        /// The datatype of the field.
         /// </para>
         /// </summary>
         public FieldType Type

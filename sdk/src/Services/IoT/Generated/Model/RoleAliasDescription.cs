@@ -139,6 +139,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the role alias.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string RoleAliasArn
         {
             get { return this._roleAliasArn; }

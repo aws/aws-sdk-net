@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         private HttpAction _http;
         private IotAnalyticsAction _iotAnalytics;
         private IotEventsAction _iotEvents;
+        private IotSiteWiseAction _iotSiteWise;
         private KinesisAction _kinesis;
         private LambdaAction _lambda;
         private RepublishAction _republish;
@@ -211,6 +212,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetIotEvents()
         {
             return this._iotEvents != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IotSiteWise. 
+        /// <para>
+        /// Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset
+        /// properties.
+        /// </para>
+        /// </summary>
+        public IotSiteWiseAction IotSiteWise
+        {
+            get { return this._iotSiteWise; }
+            set { this._iotSiteWise = value; }
+        }
+
+        // Check to see if IotSiteWise property is set
+        internal bool IsSetIotSiteWise()
+        {
+            return this._iotSiteWise != null;
         }
 
         /// <summary>

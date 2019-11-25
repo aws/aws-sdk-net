@@ -44,7 +44,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date the policy version was created.
+        /// The date the policy was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -98,7 +98,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        /// The date the policy version was last modified.
+        /// The date the policy was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedDate

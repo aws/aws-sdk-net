@@ -94,10 +94,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeviceCertificateId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("iamRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("policyVersionIdentifier", targetDepth))
                 {
                     var unmarshaller = PolicyVersionIdentifierUnmarshaller.Instance;
                     unmarshalledObject.PolicyVersionIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("roleAliasArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleAliasArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

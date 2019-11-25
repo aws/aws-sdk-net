@@ -37,7 +37,9 @@ namespace Amazon.IoT.Model
         private string _clientId;
         private string _cognitoIdentityPoolId;
         private string _deviceCertificateId;
+        private string _iamRoleArn;
         private PolicyVersionIdentifier _policyVersionIdentifier;
+        private string _roleAliasArn;
 
         /// <summary>
         /// Gets and sets the property Account. 
@@ -133,6 +135,25 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IamRoleArn. 
+        /// <para>
+        /// The ARN of the IAM role that has overly permissive actions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string IamRoleArn
+        {
+            get { return this._iamRoleArn; }
+            set { this._iamRoleArn = value; }
+        }
+
+        // Check to see if IamRoleArn property is set
+        internal bool IsSetIamRoleArn()
+        {
+            return this._iamRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyVersionIdentifier. 
         /// <para>
         /// The version of the policy associated with the resource.
@@ -148,6 +169,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetPolicyVersionIdentifier()
         {
             return this._policyVersionIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleAliasArn. 
+        /// <para>
+        /// The ARN of the role alias that has overly permissive actions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string RoleAliasArn
+        {
+            get { return this._roleAliasArn; }
+            set { this._roleAliasArn = value; }
+        }
+
+        // Check to see if RoleAliasArn property is set
+        internal bool IsSetRoleAliasArn()
+        {
+            return this._roleAliasArn != null;
         }
 
     }

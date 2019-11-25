@@ -36,6 +36,9 @@ namespace Amazon.IoT.Model
     public partial class TestInvokeAuthorizerRequest : AmazonIoTRequest
     {
         private string _authorizerName;
+        private HttpContext _httpContext;
+        private MqttContext _mqttContext;
+        private TlsContext _tlsContext;
         private string _token;
         private string _tokenSignature;
 
@@ -59,12 +62,66 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HttpContext. 
+        /// <para>
+        /// Specifies a test HTTP authorization request.
+        /// </para>
+        /// </summary>
+        public HttpContext HttpContext
+        {
+            get { return this._httpContext; }
+            set { this._httpContext = value; }
+        }
+
+        // Check to see if HttpContext property is set
+        internal bool IsSetHttpContext()
+        {
+            return this._httpContext != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MqttContext. 
+        /// <para>
+        /// Specifies a test MQTT authorization request.&gt;
+        /// </para>
+        /// </summary>
+        public MqttContext MqttContext
+        {
+            get { return this._mqttContext; }
+            set { this._mqttContext = value; }
+        }
+
+        // Check to see if MqttContext property is set
+        internal bool IsSetMqttContext()
+        {
+            return this._mqttContext != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TlsContext. 
+        /// <para>
+        /// Specifies a test TLS authorization request.
+        /// </para>
+        /// </summary>
+        public TlsContext TlsContext
+        {
+            get { return this._tlsContext; }
+            set { this._tlsContext = value; }
+        }
+
+        // Check to see if TlsContext property is set
+        internal bool IsSetTlsContext()
+        {
+            return this._tlsContext != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Token. 
         /// <para>
         /// The token returned by your custom authentication service.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=6144)]
+        [AWSProperty(Min=1, Max=6144)]
         public string Token
         {
             get { return this._token; }
@@ -84,7 +141,7 @@ namespace Amazon.IoT.Model
         /// key.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2560)]
+        [AWSProperty(Min=1, Max=2560)]
         public string TokenSignature
         {
             get { return this._tokenSignature; }

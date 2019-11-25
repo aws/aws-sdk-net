@@ -75,6 +75,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AuthorizerFunctionArn);
                 }
 
+                if(publicRequest.IsSetSigningDisabled())
+                {
+                    context.Writer.WritePropertyName("signingDisabled");
+                    context.Writer.Write(publicRequest.SigningDisabled);
+                }
+
                 if(publicRequest.IsSetStatus())
                 {
                     context.Writer.WritePropertyName("status");

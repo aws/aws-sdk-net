@@ -75,6 +75,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DeviceCertificateId);
             }
 
+            if(requestObject.IsSetIamRoleArn())
+            {
+                context.Writer.WritePropertyName("iamRoleArn");
+                context.Writer.Write(requestObject.IamRoleArn);
+            }
+
             if(requestObject.IsSetPolicyVersionIdentifier())
             {
                 context.Writer.WritePropertyName("policyVersionIdentifier");
@@ -84,6 +90,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.PolicyVersionIdentifier, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRoleAliasArn())
+            {
+                context.Writer.WritePropertyName("roleAliasArn");
+                context.Writer.Write(requestObject.RoleAliasArn);
             }
 
         }
