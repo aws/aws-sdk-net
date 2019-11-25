@@ -291,6 +291,9 @@ namespace Amazon.ApplicationInsights
         /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
         /// The resource does not exist in the customer account.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.TagsAlreadyExistException">
+        /// Tags are already registered for the specified application ARN.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
         /// The parameter is not valid.
         /// </exception>
@@ -348,6 +351,52 @@ namespace Amazon.ApplicationInsights
             options.ResponseUnmarshaller = CreateComponentResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateComponentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLogPattern
+
+        internal virtual CreateLogPatternResponse CreateLogPattern(CreateLogPatternRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLogPatternRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLogPatternResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLogPatternResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds an log pattern to a <code>LogPatternSet</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLogPattern service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLogPattern service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceInUseException">
+        /// The resource is already created or in use.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateLogPattern">REST API Reference for CreateLogPattern Operation</seealso>
+        public virtual Task<CreateLogPatternResponse> CreateLogPatternAsync(CreateLogPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLogPatternRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLogPatternResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLogPatternResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -439,6 +488,52 @@ namespace Amazon.ApplicationInsights
             options.ResponseUnmarshaller = DeleteComponentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteComponentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLogPattern
+
+        internal virtual DeleteLogPatternResponse DeleteLogPattern(DeleteLogPatternRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLogPatternRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLogPatternResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLogPatternResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the specified log pattern from a <code>LogPatternSet</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLogPattern service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLogPattern service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.BadRequestException">
+        /// The request is not understood by the server.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DeleteLogPattern">REST API Reference for DeleteLogPattern Operation</seealso>
+        public virtual Task<DeleteLogPatternResponse> DeleteLogPatternAsync(DeleteLogPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLogPatternRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLogPatternResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLogPatternResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -611,6 +706,49 @@ namespace Amazon.ApplicationInsights
             options.ResponseUnmarshaller = DescribeComponentConfigurationRecommendationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeComponentConfigurationRecommendationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLogPattern
+
+        internal virtual DescribeLogPatternResponse DescribeLogPattern(DescribeLogPatternRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLogPatternRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLogPatternResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLogPatternResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describe a specific log pattern from a <code>LogPatternSet</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLogPattern service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLogPattern service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeLogPattern">REST API Reference for DescribeLogPattern Operation</seealso>
+        public virtual Task<DescribeLogPatternResponse> DescribeLogPatternAsync(DescribeLogPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLogPatternRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLogPatternResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLogPatternResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -827,6 +965,92 @@ namespace Amazon.ApplicationInsights
 
         #endregion
         
+        #region  ListLogPatterns
+
+        internal virtual ListLogPatternsResponse ListLogPatterns(ListLogPatternsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLogPatternsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLogPatternsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLogPatternsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the log patterns in the specific log <code>LogPatternSet</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLogPatterns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLogPatterns service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatterns">REST API Reference for ListLogPatterns Operation</seealso>
+        public virtual Task<ListLogPatternsResponse> ListLogPatternsAsync(ListLogPatternsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLogPatternsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLogPatternsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLogPatternsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLogPatternSets
+
+        internal virtual ListLogPatternSetsResponse ListLogPatternSets(ListLogPatternSetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLogPatternSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLogPatternSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLogPatternSetsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the log pattern sets in the specific application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLogPatternSets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLogPatternSets service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatternSets">REST API Reference for ListLogPatternSets Operation</seealso>
+        public virtual Task<ListLogPatternSetsResponse> ListLogPatternSetsAsync(ListLogPatternSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLogPatternSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLogPatternSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLogPatternSetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListProblems
 
         internal virtual ListProblemsResponse ListProblems(ListProblemsRequest request)
@@ -866,6 +1090,144 @@ namespace Amazon.ApplicationInsights
             options.ResponseUnmarshaller = ListProblemsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProblemsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve a list of the tags (keys and values) that are associated with a specified
+        /// application. A <i>tag</i> is a label that you optionally define and associate with
+        /// an application. Each tag consists of a required <i>tag key</i> and an optional associated
+        /// <i>tag value</i>. A tag key is a general label that acts as a category for more specific
+        /// tag values. A tag value acts as a descriptor within a tag key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Add one or more tags (keys and values) to a specified application. A <i>tag</i> is
+        /// a label that you optionally define and associate with an application. Tags can help
+        /// you categorize and manage application in different ways, such as by purpose, owner,
+        /// environment, or other criteria. 
+        /// 
+        ///  
+        /// <para>
+        /// Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>,
+        /// both of which you define. A tag key is a general label that acts as a category for
+        /// more specific tag values. A tag value acts as a descriptor within a tag key.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.TooManyTagsException">
+        /// The number of the provided tags is beyond the limit, or the number of total tags you
+        /// are trying to attach to the specified resource exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Remove one or more tags (keys and values) from a specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1000,6 +1362,52 @@ namespace Amazon.ApplicationInsights
             options.ResponseUnmarshaller = UpdateComponentConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateComponentConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLogPattern
+
+        internal virtual UpdateLogPatternResponse UpdateLogPattern(UpdateLogPatternRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLogPatternRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLogPatternResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLogPatternResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds a log pattern to a <code>LogPatternSet</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLogPattern service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLogPattern service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceInUseException">
+        /// The resource is already created or in use.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateLogPattern">REST API Reference for UpdateLogPattern Operation</seealso>
+        public virtual Task<UpdateLogPatternResponse> UpdateLogPatternAsync(UpdateLogPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLogPatternRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLogPatternResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateLogPatternResponse>(request, options, cancellationToken);
         }
 
         #endregion

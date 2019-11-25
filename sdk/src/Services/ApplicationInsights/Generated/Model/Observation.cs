@@ -70,6 +70,7 @@ namespace Amazon.ApplicationInsights.Model
         /// The ID of the observation type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=38, Max=38)]
         public string Id
         {
             get { return this._id; }

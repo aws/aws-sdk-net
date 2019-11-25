@@ -102,6 +102,7 @@ namespace Amazon.ApplicationInsights.Model
         /// The name of the resource group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ResourceGroupName
         {
             get { return this._resourceGroupName; }

@@ -35,7 +35,7 @@ namespace Amazon.ApplicationInsights.Model
     {
         private string _componentName;
         private string _resourceGroupName;
-        private string _tier;
+        private Tier _tier;
 
         /// <summary>
         /// Gets and sets the property ComponentName. 
@@ -62,7 +62,7 @@ namespace Amazon.ApplicationInsights.Model
         /// The name of the resource group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ResourceGroupName
         {
             get { return this._resourceGroupName; }
@@ -78,12 +78,13 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property Tier. 
         /// <para>
-        /// The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-        /// <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+        /// The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>,
+        /// <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and
+        /// <code>DEFAULT</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Tier
+        [AWSProperty(Required=true, Min=1, Max=50)]
+        public Tier Tier
         {
             get { return this._tier; }
             set { this._tier = value; }

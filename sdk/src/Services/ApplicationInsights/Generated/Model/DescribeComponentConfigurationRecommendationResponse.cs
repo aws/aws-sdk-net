@@ -41,6 +41,7 @@ namespace Amazon.ApplicationInsights.Model
         /// JSON of the configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public string ComponentConfiguration
         {
             get { return this._componentConfiguration; }

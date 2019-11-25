@@ -82,6 +82,7 @@ namespace Amazon.ApplicationInsights.Model
         /// opsItems to receive SNS notifications for opsItem updates. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=300)]
         public string OpsItemSNSTopicArn
         {
             get { return this._opsItemSNSTopicArn; }
@@ -119,6 +120,7 @@ namespace Amazon.ApplicationInsights.Model
         /// The name of the resource group used for the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ResourceGroupName
         {
             get { return this._resourceGroupName; }

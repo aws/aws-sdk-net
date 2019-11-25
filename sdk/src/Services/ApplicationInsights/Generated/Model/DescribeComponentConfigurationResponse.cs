@@ -34,7 +34,7 @@ namespace Amazon.ApplicationInsights.Model
     {
         private string _componentConfiguration;
         private bool? _monitor;
-        private string _tier;
+        private Tier _tier;
 
         /// <summary>
         /// Gets and sets the property ComponentConfiguration. 
@@ -43,6 +43,7 @@ namespace Amazon.ApplicationInsights.Model
         /// configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public string ComponentConfiguration
         {
             get { return this._componentConfiguration; }
@@ -76,11 +77,13 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property Tier. 
         /// <para>
-        /// The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-        /// <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code> 
+        /// The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>,
+        /// <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and
+        /// <code>DEFAULT</code> 
         /// </para>
         /// </summary>
-        public string Tier
+        [AWSProperty(Min=1, Max=50)]
+        public Tier Tier
         {
             get { return this._tier; }
             set { this._tier = value; }
