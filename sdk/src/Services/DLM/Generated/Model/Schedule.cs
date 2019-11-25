@@ -117,7 +117,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property RetainRule. 
         /// <para>
-        /// The retain rule.
+        /// The retention rule.
         /// </para>
         /// </summary>
         public RetainRule RetainRule

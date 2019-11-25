@@ -28,12 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies when to enable fast snapshot restore.
+    /// Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot
+    /// restore based on either a count or a time interval.
     /// </summary>
     public partial class FastRestoreRule
     {
         private List<string> _availabilityZones = new List<string>();
         private int? _count;
+        private int? _interval;
+        private RetentionIntervalUnitValues _intervalUnit;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
@@ -60,7 +63,7 @@ namespace Amazon.DLM.Model
         /// The number of snapshots to be enabled with fast snapshot restore.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=1000)]
         public int Count
         {
             get { return this._count.GetValueOrDefault(); }
@@ -71,6 +74,44 @@ namespace Amazon.DLM.Model
         internal bool IsSetCount()
         {
             return this._count.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Interval. 
+        /// <para>
+        /// The amount of time to enable fast snapshot restore. The maximum is 100 years. This
+        /// is equivalent to 1200 months, 5200 weeks, or 36500 days.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int Interval
+        {
+            get { return this._interval.GetValueOrDefault(); }
+            set { this._interval = value; }
+        }
+
+        // Check to see if Interval property is set
+        internal bool IsSetInterval()
+        {
+            return this._interval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntervalUnit. 
+        /// <para>
+        /// The unit of time for enabling fast snapshot restore.
+        /// </para>
+        /// </summary>
+        public RetentionIntervalUnitValues IntervalUnit
+        {
+            get { return this._intervalUnit; }
+            set { this._intervalUnit = value; }
+        }
+
+        // Check to see if IntervalUnit property is set
+        internal bool IsSetIntervalUnit()
+        {
+            return this._intervalUnit != null;
         }
 
     }

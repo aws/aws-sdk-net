@@ -51,6 +51,18 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Count);
             }
 
+            if(requestObject.IsSetInterval())
+            {
+                context.Writer.WritePropertyName("Interval");
+                context.Writer.Write(requestObject.Interval);
+            }
+
+            if(requestObject.IsSetIntervalUnit())
+            {
+                context.Writer.WritePropertyName("IntervalUnit");
+                context.Writer.Write(requestObject.IntervalUnit);
+            }
+
         }
 
         /// <summary>
