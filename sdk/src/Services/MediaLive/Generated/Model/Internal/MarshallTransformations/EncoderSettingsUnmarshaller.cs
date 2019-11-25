@@ -100,6 +100,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.GlobalConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nielsenConfiguration", targetDepth))
+                {
+                    var unmarshaller = NielsenConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NielsenConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("outputGroups", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<OutputGroup, OutputGroupUnmarshaller>(OutputGroupUnmarshaller.Instance);

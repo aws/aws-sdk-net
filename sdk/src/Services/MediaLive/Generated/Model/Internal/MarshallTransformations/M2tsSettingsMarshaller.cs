@@ -222,6 +222,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.KlvDataPids);
             }
 
+            if(requestObject.IsSetNielsenId3Behavior())
+            {
+                context.Writer.WritePropertyName("nielsenId3Behavior");
+                context.Writer.Write(requestObject.NielsenId3Behavior);
+            }
+
             if(requestObject.IsSetNullPacketBitrate())
             {
                 context.Writer.WritePropertyName("nullPacketBitrate");

@@ -4961,6 +4961,10 @@ namespace Amazon.MediaLive
         /// </summary>
         public static readonly H265RateControlMode CBR = new H265RateControlMode("CBR");
         /// <summary>
+        /// Constant MULTIPLEX for H265RateControlMode
+        /// </summary>
+        public static readonly H265RateControlMode MULTIPLEX = new H265RateControlMode("MULTIPLEX");
+        /// <summary>
         /// Constant QVBR for H265RateControlMode
         /// </summary>
         public static readonly H265RateControlMode QVBR = new H265RateControlMode("QVBR");
@@ -7977,6 +7981,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type M2tsNielsenId3Behavior.
+    /// </summary>
+    public class M2tsNielsenId3Behavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_PASSTHROUGH for M2tsNielsenId3Behavior
+        /// </summary>
+        public static readonly M2tsNielsenId3Behavior NO_PASSTHROUGH = new M2tsNielsenId3Behavior("NO_PASSTHROUGH");
+        /// <summary>
+        /// Constant PASSTHROUGH for M2tsNielsenId3Behavior
+        /// </summary>
+        public static readonly M2tsNielsenId3Behavior PASSTHROUGH = new M2tsNielsenId3Behavior("PASSTHROUGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public M2tsNielsenId3Behavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static M2tsNielsenId3Behavior FindValue(string value)
+        {
+            return FindValue<M2tsNielsenId3Behavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator M2tsNielsenId3Behavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type M2tsPcrControl.
     /// </summary>
     public class M2tsPcrControl : ConstantClass
@@ -8293,6 +8347,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type M3u8NielsenId3Behavior.
+    /// </summary>
+    public class M3u8NielsenId3Behavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_PASSTHROUGH for M3u8NielsenId3Behavior
+        /// </summary>
+        public static readonly M3u8NielsenId3Behavior NO_PASSTHROUGH = new M3u8NielsenId3Behavior("NO_PASSTHROUGH");
+        /// <summary>
+        /// Constant PASSTHROUGH for M3u8NielsenId3Behavior
+        /// </summary>
+        public static readonly M3u8NielsenId3Behavior PASSTHROUGH = new M3u8NielsenId3Behavior("PASSTHROUGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public M3u8NielsenId3Behavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static M3u8NielsenId3Behavior FindValue(string value)
+        {
+            return FindValue<M3u8NielsenId3Behavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator M3u8NielsenId3Behavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type M3u8PcrControl.
     /// </summary>
     public class M3u8PcrControl : ConstantClass
@@ -8543,6 +8647,84 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type MultiplexState.
+    /// </summary>
+    public class MultiplexState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for MultiplexState
+        /// </summary>
+        public static readonly MultiplexState CREATE_FAILED = new MultiplexState("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for MultiplexState
+        /// </summary>
+        public static readonly MultiplexState CREATING = new MultiplexState("CREATING");
+        /// <summary>
+        /// Constant DELETED for MultiplexState
+        /// </summary>
+        public static readonly MultiplexState DELETED = new MultiplexState("DELETED");
+        /// <summary>
+        /// Constant DELETING for MultiplexState
+        /// </summary>
+        public static readonly MultiplexState DELETING = new MultiplexState("DELETING");
+        /// <summary>
+        /// Constant IDLE for MultiplexState
+        /// </summary>
+        public static readonly MultiplexState IDLE = new MultiplexState("IDLE");
+        /// <summary>
+        /// Constant RECOVERING for MultiplexState
+        /// </summary>
+        public static readonly MultiplexState RECOVERING = new MultiplexState("RECOVERING");
+        /// <summary>
+        /// Constant RUNNING for MultiplexState
+        /// </summary>
+        public static readonly MultiplexState RUNNING = new MultiplexState("RUNNING");
+        /// <summary>
+        /// Constant STARTING for MultiplexState
+        /// </summary>
+        public static readonly MultiplexState STARTING = new MultiplexState("STARTING");
+        /// <summary>
+        /// Constant STOPPING for MultiplexState
+        /// </summary>
+        public static readonly MultiplexState STOPPING = new MultiplexState("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MultiplexState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultiplexState FindValue(string value)
+        {
+            return FindValue<MultiplexState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultiplexState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NetworkInputServerValidation.
     /// </summary>
     public class NetworkInputServerValidation : ConstantClass
@@ -8586,6 +8768,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NetworkInputServerValidation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NielsenPcmToId3TaggingState.
+    /// </summary>
+    public class NielsenPcmToId3TaggingState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for NielsenPcmToId3TaggingState
+        /// </summary>
+        public static readonly NielsenPcmToId3TaggingState DISABLED = new NielsenPcmToId3TaggingState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for NielsenPcmToId3TaggingState
+        /// </summary>
+        public static readonly NielsenPcmToId3TaggingState ENABLED = new NielsenPcmToId3TaggingState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NielsenPcmToId3TaggingState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NielsenPcmToId3TaggingState FindValue(string value)
+        {
+            return FindValue<NielsenPcmToId3TaggingState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NielsenPcmToId3TaggingState(string value)
         {
             return FindValue(value);
         }
@@ -8903,6 +9135,10 @@ namespace Amazon.MediaLive
     {
 
         /// <summary>
+        /// Constant FHD for ReservationResolution
+        /// </summary>
+        public static readonly ReservationResolution FHD = new ReservationResolution("FHD");
+        /// <summary>
         /// Constant HD for ReservationResolution
         /// </summary>
         public static readonly ReservationResolution HD = new ReservationResolution("HD");
@@ -8964,6 +9200,10 @@ namespace Amazon.MediaLive
         /// Constant INPUT for ReservationResourceType
         /// </summary>
         public static readonly ReservationResourceType INPUT = new ReservationResourceType("INPUT");
+        /// <summary>
+        /// Constant MULTIPLEX for ReservationResourceType
+        /// </summary>
+        public static readonly ReservationResourceType MULTIPLEX = new ReservationResourceType("MULTIPLEX");
         /// <summary>
         /// Constant OUTPUT for ReservationResourceType
         /// </summary>

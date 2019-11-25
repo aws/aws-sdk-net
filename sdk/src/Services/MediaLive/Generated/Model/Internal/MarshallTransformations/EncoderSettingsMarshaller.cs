@@ -121,6 +121,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetNielsenConfiguration())
+            {
+                context.Writer.WritePropertyName("nielsenConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NielsenConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.NielsenConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOutputGroups())
             {
                 context.Writer.WritePropertyName("outputGroups");

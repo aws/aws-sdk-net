@@ -100,6 +100,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMultiplexOutputSettings())
+            {
+                context.Writer.WritePropertyName("multiplexOutputSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MultiplexOutputSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MultiplexOutputSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRtmpOutputSettings())
             {
                 context.Writer.WritePropertyName("rtmpOutputSettings");

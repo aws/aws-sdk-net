@@ -94,6 +94,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.MsSmoothGroupSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("multiplexGroupSettings", targetDepth))
+                {
+                    var unmarshaller = MultiplexGroupSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MultiplexGroupSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("rtmpGroupSettings", targetDepth))
                 {
                     var unmarshaller = RtmpGroupSettingsUnmarshaller.Instance;

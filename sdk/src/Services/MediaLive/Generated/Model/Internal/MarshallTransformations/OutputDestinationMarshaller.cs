@@ -67,6 +67,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetMultiplexSettings())
+            {
+                context.Writer.WritePropertyName("multiplexSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MultiplexProgramChannelDestinationSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MultiplexSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSettings())
             {
                 context.Writer.WritePropertyName("settings");

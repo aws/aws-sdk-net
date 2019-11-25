@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         private HlsGroupSettings _hlsGroupSettings;
         private MediaPackageGroupSettings _mediaPackageGroupSettings;
         private MsSmoothGroupSettings _msSmoothGroupSettings;
+        private MultiplexGroupSettings _multiplexGroupSettings;
         private RtmpGroupSettings _rtmpGroupSettings;
         private UdpGroupSettings _udpGroupSettings;
 
@@ -113,6 +114,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetMsSmoothGroupSettings()
         {
             return this._msSmoothGroupSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiplexGroupSettings.
+        /// </summary>
+        public MultiplexGroupSettings MultiplexGroupSettings
+        {
+            get { return this._multiplexGroupSettings; }
+            set { this._multiplexGroupSettings = value; }
+        }
+
+        // Check to see if MultiplexGroupSettings property is set
+        internal bool IsSetMultiplexGroupSettings()
+        {
+            return this._multiplexGroupSettings != null;
         }
 
         /// <summary>

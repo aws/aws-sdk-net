@@ -21,6 +21,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListMultiplexesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListMultiplexProgramsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.ListOfferingsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -218,7 +228,7 @@
   <property-value-rule>
     <property>Amazon.MediaLive.Model.FrameCaptureSettings.CaptureInterval</property>
     <min>1</min>
-    <max>3600</max>
+    <max>3600000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.GlobalConfiguration.InitialAudioGain</property>
@@ -604,6 +614,71 @@
     <property>Amazon.MediaLive.Model.MsSmoothGroupSettings.SendDelayMs</property>
     <min>0</min>
     <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexMediaConnectOutputDestinationSettings.EntitlementArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexProgramChannelDestinationSettings.MultiplexId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexProgramChannelDestinationSettings.ProgramName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexProgramServiceDescriptor.ProviderName</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexProgramServiceDescriptor.ServiceName</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexProgramSettings.ProgramNumber</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexSettings.MaximumVideoBufferDelayMilliseconds</property>
+    <min>1000</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexSettings.TransportStreamBitrate</property>
+    <min>1000000</min>
+    <max>100000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexSettings.TransportStreamId</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexSettings.TransportStreamReservedBitrate</property>
+    <min>0</min>
+    <max>100000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexSettingsSummary.TransportStreamBitrate</property>
+    <min>1000000</min>
+    <max>100000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexStatmuxVideoSettings.MaximumBitrate</property>
+    <min>100000</min>
+    <max>100000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexStatmuxVideoSettings.MinimumBitrate</property>
+    <min>100000</min>
+    <max>100000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexVideoSettings.ConstantBitrate</property>
+    <min>100000</min>
+    <max>100000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.Output.OutputName</property>

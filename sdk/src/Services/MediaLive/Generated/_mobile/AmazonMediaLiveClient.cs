@@ -463,6 +463,122 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  CreateMultiplex
+
+        internal virtual CreateMultiplexResponse CreateMultiplex(CreateMultiplexRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMultiplexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMultiplexResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMultiplexResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create a new multiplex.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMultiplex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMultiplex service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplex">REST API Reference for CreateMultiplex Operation</seealso>
+        public virtual Task<CreateMultiplexResponse> CreateMultiplexAsync(CreateMultiplexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMultiplexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMultiplexResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMultiplexResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateMultiplexProgram
+
+        internal virtual CreateMultiplexProgramResponse CreateMultiplexProgram(CreateMultiplexProgramRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMultiplexProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMultiplexProgramResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMultiplexProgramResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create a new program in the multiplex.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMultiplexProgram service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMultiplexProgram service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplexProgram">REST API Reference for CreateMultiplexProgram Operation</seealso>
+        public virtual Task<CreateMultiplexProgramResponse> CreateMultiplexProgramAsync(CreateMultiplexProgramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMultiplexProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMultiplexProgramResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMultiplexProgramResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTags
 
         internal virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
@@ -676,6 +792,122 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = DeleteInputSecurityGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteInputSecurityGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteMultiplex
+
+        internal virtual DeleteMultiplexResponse DeleteMultiplex(DeleteMultiplexRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMultiplexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMultiplexResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMultiplexResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete a multiplex. The multiplex must be idle.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMultiplex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMultiplex service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplex">REST API Reference for DeleteMultiplex Operation</seealso>
+        public virtual Task<DeleteMultiplexResponse> DeleteMultiplexAsync(DeleteMultiplexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMultiplexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMultiplexResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteMultiplexResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteMultiplexProgram
+
+        internal virtual DeleteMultiplexProgramResponse DeleteMultiplexProgram(DeleteMultiplexProgramRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMultiplexProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMultiplexProgramResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMultiplexProgramResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete a program from a multiplex.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMultiplexProgram service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMultiplexProgram service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplexProgram">REST API Reference for DeleteMultiplexProgram Operation</seealso>
+        public virtual Task<DeleteMultiplexProgramResponse> DeleteMultiplexProgramAsync(DeleteMultiplexProgramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMultiplexProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMultiplexProgramResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteMultiplexProgramResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1004,6 +1236,116 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  DescribeMultiplex
+
+        internal virtual DescribeMultiplexResponse DescribeMultiplex(DescribeMultiplexRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMultiplexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMultiplexResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMultiplexResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets details about a multiplex.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMultiplex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMultiplex service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplex">REST API Reference for DescribeMultiplex Operation</seealso>
+        public virtual Task<DescribeMultiplexResponse> DescribeMultiplexAsync(DescribeMultiplexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMultiplexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMultiplexResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMultiplexResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeMultiplexProgram
+
+        internal virtual DescribeMultiplexProgramResponse DescribeMultiplexProgram(DescribeMultiplexProgramRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMultiplexProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMultiplexProgramResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMultiplexProgramResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the details for a program in a multiplex.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMultiplexProgram service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMultiplexProgram service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplexProgram">REST API Reference for DescribeMultiplexProgram Operation</seealso>
+        public virtual Task<DescribeMultiplexProgramResponse> DescribeMultiplexProgramAsync(DescribeMultiplexProgramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMultiplexProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMultiplexProgramResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMultiplexProgramResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeOffering
 
         internal virtual DescribeOfferingResponse DescribeOffering(DescribeOfferingRequest request)
@@ -1325,6 +1667,113 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  ListMultiplexes
+
+        internal virtual ListMultiplexesResponse ListMultiplexes(ListMultiplexesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultiplexesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultiplexesResponseUnmarshaller.Instance;
+
+            return Invoke<ListMultiplexesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve a list of the existing multiplexes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMultiplexes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMultiplexes service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexes">REST API Reference for ListMultiplexes Operation</seealso>
+        public virtual Task<ListMultiplexesResponse> ListMultiplexesAsync(ListMultiplexesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultiplexesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultiplexesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMultiplexesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMultiplexPrograms
+
+        internal virtual ListMultiplexProgramsResponse ListMultiplexPrograms(ListMultiplexProgramsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultiplexProgramsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultiplexProgramsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMultiplexProgramsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List the programs that currently exist for a specific multiplex.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMultiplexPrograms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMultiplexPrograms service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexPrograms">REST API Reference for ListMultiplexPrograms Operation</seealso>
+        public virtual Task<ListMultiplexProgramsResponse> ListMultiplexProgramsAsync(ListMultiplexProgramsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultiplexProgramsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultiplexProgramsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMultiplexProgramsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListOfferings
 
         internal virtual ListOfferingsResponse ListOfferings(ListOfferingsRequest request)
@@ -1591,6 +2040,65 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  StartMultiplex
+
+        internal virtual StartMultiplexResponse StartMultiplex(StartMultiplexRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMultiplexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMultiplexResponseUnmarshaller.Instance;
+
+            return Invoke<StartMultiplexResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Start (run) the multiplex. Starting the multiplex does not start the channels. You
+        /// must explicitly start each channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMultiplex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMultiplex service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMultiplex">REST API Reference for StartMultiplex Operation</seealso>
+        public virtual Task<StartMultiplexResponse> StartMultiplexAsync(StartMultiplexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMultiplexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMultiplexResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartMultiplexResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopChannel
 
         internal virtual StopChannelResponse StopChannel(StopChannelRequest request)
@@ -1645,6 +2153,64 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = StopChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopMultiplex
+
+        internal virtual StopMultiplexResponse StopMultiplex(StopMultiplexRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopMultiplexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopMultiplexResponseUnmarshaller.Instance;
+
+            return Invoke<StopMultiplexResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a running multiplex. If the multiplex isn't running, this action has no effect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopMultiplex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopMultiplex service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopMultiplex">REST API Reference for StopMultiplex Operation</seealso>
+        public virtual Task<StopMultiplexResponse> StopMultiplexAsync(StopMultiplexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopMultiplexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopMultiplexResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopMultiplexResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1871,6 +2437,122 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = UpdateInputSecurityGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateInputSecurityGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMultiplex
+
+        internal virtual UpdateMultiplexResponse UpdateMultiplex(UpdateMultiplexRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMultiplexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMultiplexResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMultiplexResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a multiplex.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMultiplex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMultiplex service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplex">REST API Reference for UpdateMultiplex Operation</seealso>
+        public virtual Task<UpdateMultiplexResponse> UpdateMultiplexAsync(UpdateMultiplexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMultiplexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMultiplexResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMultiplexResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMultiplexProgram
+
+        internal virtual UpdateMultiplexProgramResponse UpdateMultiplexProgram(UpdateMultiplexProgramRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMultiplexProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMultiplexProgramResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMultiplexProgramResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update a program in a multiplex.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMultiplexProgram service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMultiplexProgram service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplexProgram">REST API Reference for UpdateMultiplexProgram Operation</seealso>
+        public virtual Task<UpdateMultiplexProgramResponse> UpdateMultiplexProgramAsync(UpdateMultiplexProgramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMultiplexProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMultiplexProgramResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMultiplexProgramResponse>(request, options, cancellationToken);
         }
 
         #endregion

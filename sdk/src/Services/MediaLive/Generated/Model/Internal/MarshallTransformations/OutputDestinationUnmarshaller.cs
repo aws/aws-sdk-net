@@ -76,6 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.MediaPackageSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("multiplexSettings", targetDepth))
+                {
+                    var unmarshaller = MultiplexProgramChannelDestinationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MultiplexSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("settings", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<OutputDestinationSettings, OutputDestinationSettingsUnmarshaller>(OutputDestinationSettingsUnmarshaller.Instance);

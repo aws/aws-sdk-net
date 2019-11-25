@@ -263,7 +263,9 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property GopSize. GOP size (keyframe interval) in units of either
-        /// frames or seconds per gopSizeUnits. Must be greater than zero.
+        /// frames or seconds per gopSizeUnits.If gopSizeUnits is frames, gopSize must be an integer
+        /// and must be greater than or equal to 1.If gopSizeUnits is seconds, gopSize must be
+        /// greater than 0, but need not be an integer.
         /// </summary>
         public double GopSize
         {
@@ -344,12 +346,12 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property MinIInterval. Only meaningful if sceneChangeDetect is set
-        /// to enabled.  Enforces separation between repeated (cadence) I-frames and I-frames
-        /// inserted by Scene Change Detection. If a scene change I-frame is within I-interval
-        /// frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-        /// I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The
-        /// normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval
-        /// - 1
+        /// to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation
+        /// between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection.
+        /// If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP
+        /// is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling
+        /// lookahead as well as setting I-interval. The normal cadence resumes for the next GOP.
+        /// Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
         public int MinIInterval
