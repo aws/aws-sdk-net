@@ -32,7 +32,7 @@ namespace Amazon.S3Control
     public partial class AmazonS3ControlConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.101.90");
+            InternalSDKUtils.BuildUserAgentString("3.3.101.91");
 
         private string _userAgent = UserAgentString;
 
