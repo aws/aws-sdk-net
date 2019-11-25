@@ -98,6 +98,17 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxVolumeLimit);
                 }
 
+                if(publicRequest.IsSetMeetingRoomConfiguration())
+                {
+                    context.Writer.WritePropertyName("MeetingRoomConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateMeetingRoomConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MeetingRoomConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetProfileArn())
                 {
                     context.Writer.WritePropertyName("ProfileArn");
