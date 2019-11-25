@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.SageMakerRuntime")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon SageMaker Runtime. Amazon SageMaker Runtime now supports a new TargetModel header to invoke a specific model hosted on multi model endpoints.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon SageMaker Runtime. Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]
@@ -29,4 +29,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.3")]
-[assembly: AssemblyFileVersion("3.3.100.4")]
+[assembly: AssemblyFileVersion("3.3.100.99")]

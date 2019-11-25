@@ -146,8 +146,6 @@
 	* Added support for S3 Replication for existing objects. This release allows customers who have requested and been granted access to replicate existing S3 objects across buckets.
 * SageMaker (3.3.107.0)
 	* Amazon SageMaker now supports multi-model endpoints to host multiple models on an endpoint using a single inference container.
-* SageMakerRuntime (3.3.100.0)
-	* Amazon SageMaker Runtime now supports a new TargetModel header to invoke a specific model hosted on multi model endpoints.
 * SimpleSystemsManagement (3.3.110.0)
 	* The release contains new API and API changes for AWS Systems Manager Explorer product.
 

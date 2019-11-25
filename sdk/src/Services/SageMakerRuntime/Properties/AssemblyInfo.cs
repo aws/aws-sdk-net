@@ -8,17 +8,17 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.SageMakerRuntime")]
 #if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon SageMaker Runtime. Amazon SageMaker Runtime now supports a new TargetModel header to invoke a specific model hosted on multi model endpoints.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon SageMaker Runtime. Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.")]
 #elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon SageMaker Runtime. Amazon SageMaker Runtime now supports a new TargetModel header to invoke a specific model hosted on multi model endpoints.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon SageMaker Runtime. Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon SageMaker Runtime. Amazon SageMaker Runtime now supports a new TargetModel header to invoke a specific model hosted on multi model endpoints.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon SageMaker Runtime. Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.")]
 #elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon SageMaker Runtime. Amazon SageMaker Runtime now supports a new TargetModel header to invoke a specific model hosted on multi model endpoints.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon SageMaker Runtime. Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.")]
 #elif NETSTANDARD13
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon SageMaker Runtime. Amazon SageMaker Runtime now supports a new TargetModel header to invoke a specific model hosted on multi model endpoints.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon SageMaker Runtime. Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- Amazon SageMaker Runtime. Amazon SageMaker Runtime now supports a new TargetModel header to invoke a specific model hosted on multi model endpoints.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- Amazon SageMaker Runtime. Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
@@ -46,7 +46,7 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.3")]
-[assembly: AssemblyFileVersion("3.3.100.4")]
+[assembly: AssemblyFileVersion("3.3.100.99")]
 
 #if WINDOWS_PHONE || UNITY
 [assembly: System.CLSCompliant(false)]
