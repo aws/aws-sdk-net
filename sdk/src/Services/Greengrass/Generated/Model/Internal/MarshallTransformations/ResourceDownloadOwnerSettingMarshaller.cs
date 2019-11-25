@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SageMakerMachineLearningModelResourceData Marshaller
+    /// ResourceDownloadOwnerSetting Marshaller
     /// </summary>       
-    public class SageMakerMachineLearningModelResourceDataMarshaller : IRequestMarshaller<SageMakerMachineLearningModelResourceData, JsonMarshallerContext> 
+    public class ResourceDownloadOwnerSettingMarshaller : IRequestMarshaller<ResourceDownloadOwnerSetting, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,18 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SageMakerMachineLearningModelResourceData requestObject, JsonMarshallerContext context)
+        public void Marshall(ResourceDownloadOwnerSetting requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDestinationPath())
+            if(requestObject.IsSetGroupOwner())
             {
-                context.Writer.WritePropertyName("DestinationPath");
-                context.Writer.Write(requestObject.DestinationPath);
+                context.Writer.WritePropertyName("GroupOwner");
+                context.Writer.Write(requestObject.GroupOwner);
             }
 
-            if(requestObject.IsSetOwnerSetting())
+            if(requestObject.IsSetGroupPermission())
             {
-                context.Writer.WritePropertyName("OwnerSetting");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ResourceDownloadOwnerSettingMarshaller.Instance;
-                marshaller.Marshall(requestObject.OwnerSetting, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSageMakerJobArn())
-            {
-                context.Writer.WritePropertyName("SageMakerJobArn");
-                context.Writer.Write(requestObject.SageMakerJobArn);
+                context.Writer.WritePropertyName("GroupPermission");
+                context.Writer.Write(requestObject.GroupPermission);
             }
 
         }
@@ -73,7 +62,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static SageMakerMachineLearningModelResourceDataMarshaller Instance = new SageMakerMachineLearningModelResourceDataMarshaller();
+        public readonly static ResourceDownloadOwnerSettingMarshaller Instance = new ResourceDownloadOwnerSettingMarshaller();
 
     }
 }

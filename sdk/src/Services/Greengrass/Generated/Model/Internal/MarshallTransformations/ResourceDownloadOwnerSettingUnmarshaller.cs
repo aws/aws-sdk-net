@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3MachineLearningModelResourceData Object
+    /// Response Unmarshaller for ResourceDownloadOwnerSetting Object
     /// </summary>  
-    public class S3MachineLearningModelResourceDataUnmarshaller : IUnmarshaller<S3MachineLearningModelResourceData, XmlUnmarshallerContext>, IUnmarshaller<S3MachineLearningModelResourceData, JsonUnmarshallerContext>
+    public class ResourceDownloadOwnerSettingUnmarshaller : IUnmarshaller<ResourceDownloadOwnerSetting, XmlUnmarshallerContext>, IUnmarshaller<ResourceDownloadOwnerSetting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        S3MachineLearningModelResourceData IUnmarshaller<S3MachineLearningModelResourceData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ResourceDownloadOwnerSetting IUnmarshaller<ResourceDownloadOwnerSetting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3MachineLearningModelResourceData Unmarshall(JsonUnmarshallerContext context)
+        public ResourceDownloadOwnerSetting Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            S3MachineLearningModelResourceData unmarshalledObject = new S3MachineLearningModelResourceData();
+            ResourceDownloadOwnerSetting unmarshalledObject = new ResourceDownloadOwnerSetting();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DestinationPath", targetDepth))
+                if (context.TestExpression("GroupOwner", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationPath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GroupOwner = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OwnerSetting", targetDepth))
-                {
-                    var unmarshaller = ResourceDownloadOwnerSettingUnmarshaller.Instance;
-                    unmarshalledObject.OwnerSetting = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3Uri", targetDepth))
+                if (context.TestExpression("GroupPermission", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GroupPermission = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         }
 
 
-        private static S3MachineLearningModelResourceDataUnmarshaller _instance = new S3MachineLearningModelResourceDataUnmarshaller();        
+        private static ResourceDownloadOwnerSettingUnmarshaller _instance = new ResourceDownloadOwnerSettingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3MachineLearningModelResourceDataUnmarshaller Instance
+        public static ResourceDownloadOwnerSettingUnmarshaller Instance
         {
             get
             {

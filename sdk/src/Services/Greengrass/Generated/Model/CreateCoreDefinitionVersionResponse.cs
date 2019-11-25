@@ -69,7 +69,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The ID of the version.
+        /// Gets and sets the property Id. The ID of the parent definition that the version is
+        /// associated with.
         /// </summary>
         public string Id
         {
@@ -84,7 +85,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. The unique ID of the version.
+        /// Gets and sets the property Version. The ID of the version.
         /// </summary>
         public string Version
         {
