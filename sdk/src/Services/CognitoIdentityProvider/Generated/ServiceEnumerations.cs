@@ -1120,6 +1120,10 @@ namespace Amazon.CognitoIdentityProvider
         /// Constant SAML for IdentityProviderTypeType
         /// </summary>
         public static readonly IdentityProviderTypeType SAML = new IdentityProviderTypeType("SAML");
+        /// <summary>
+        /// Constant SignInWithApple for IdentityProviderTypeType
+        /// </summary>
+        public static readonly IdentityProviderTypeType SignInWithApple = new IdentityProviderTypeType("SignInWithApple");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
