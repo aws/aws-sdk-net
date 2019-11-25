@@ -28,39 +28,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Container for the parameters to the DetectKeyPhrases operation.
-    /// Detects the key noun phrases found in the text.
+    /// Container for the parameters to the ClassifyDocument operation.
+    /// Creates a new document classification request to analyze a single document in real-time,
+    /// using a previously created and trained custom model and an endpoint.
     /// </summary>
-    public partial class DetectKeyPhrasesRequest : AmazonComprehendRequest
+    public partial class ClassifyDocumentRequest : AmazonComprehendRequest
     {
-        private LanguageCode _languageCode;
+        private string _endpointArn;
         private string _text;
 
         /// <summary>
-        /// Gets and sets the property LanguageCode. 
+        /// Gets and sets the property EndpointArn. 
         /// <para>
-        /// The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.
+        /// The Amazon Resource Number (ARN) of the endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public LanguageCode LanguageCode
+        [AWSProperty(Required=true, Max=256)]
+        public string EndpointArn
         {
-            get { return this._languageCode; }
-            set { this._languageCode = value; }
+            get { return this._endpointArn; }
+            set { this._endpointArn = value; }
         }
 
-        // Check to see if LanguageCode property is set
-        internal bool IsSetLanguageCode()
+        // Check to see if EndpointArn property is set
+        internal bool IsSetEndpointArn()
         {
-            return this._languageCode != null;
+            return this._endpointArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.
+        /// The document text to be analyzed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

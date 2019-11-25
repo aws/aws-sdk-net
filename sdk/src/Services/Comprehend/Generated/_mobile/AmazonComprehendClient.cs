@@ -512,6 +512,54 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ClassifyDocument
+
+        internal virtual ClassifyDocumentResponse ClassifyDocument(ClassifyDocumentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ClassifyDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ClassifyDocumentResponseUnmarshaller.Instance;
+
+            return Invoke<ClassifyDocumentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new document classification request to analyze a single document in real-time,
+        /// using a previously created and trained custom model and an endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ClassifyDocument service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ClassifyDocument service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+        /// state and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ClassifyDocument">REST API Reference for ClassifyDocument Operation</seealso>
+        public virtual Task<ClassifyDocumentResponse> ClassifyDocumentAsync(ClassifyDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ClassifyDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ClassifyDocumentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ClassifyDocumentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDocumentClassifier
 
         internal virtual CreateDocumentClassifierResponse CreateDocumentClassifier(CreateDocumentClassifierRequest request)
@@ -576,6 +624,69 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = CreateDocumentClassifierResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDocumentClassifierResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateEndpoint
+
+        internal virtual CreateEndpointResponse CreateEndpoint(CreateEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a model-specific endpoint for synchronous inference for a previously trained
+        /// custom model
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEndpoint service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified name is already in use. Use a different name and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
+        /// The maximum number of recognizers per account has been exceeded. Review the recognizers,
+        /// perform cleanup, and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+        /// state and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
+        public virtual Task<CreateEndpointResponse> CreateEndpointAsync(CreateEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -708,6 +819,56 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = DeleteDocumentClassifierResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDocumentClassifierResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEndpoint
+
+        internal virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a model-specific endpoint for a previously-trained custom model. All endpoints
+        /// must be deleted in order for the model to be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEndpoint service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified name is already in use. Use a different name and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
+        public virtual Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -914,6 +1075,53 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = DescribeDominantLanguageDetectionJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDominantLanguageDetectionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEndpoint
+
+        internal virtual DescribeEndpointResponse DescribeEndpoint(DescribeEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the properties associated with a specific endpoint. Use this operation to get
+        /// the status of an endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEndpoint service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
+        public virtual Task<DescribeEndpointResponse> DescribeEndpointAsync(DescribeEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1531,6 +1739,49 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = ListDominantLanguageDetectionJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDominantLanguageDetectionJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEndpoints
+
+        internal virtual ListEndpointsResponse ListEndpoints(ListEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEndpointsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of all existing endpoints that you've created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEndpoints service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
+        public virtual Task<ListEndpointsResponse> ListEndpointsAsync(ListEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEndpointsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2583,6 +2834,63 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEndpoint
+
+        internal virtual UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates information about the specified endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEndpoint service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified name is already in use. Use a different name and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
+        /// The maximum number of recognizers per account has been exceeded. Review the recognizers,
+        /// perform cleanup, and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+        /// state and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
+        public virtual Task<UpdateEndpointResponse> UpdateEndpointAsync(UpdateEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
