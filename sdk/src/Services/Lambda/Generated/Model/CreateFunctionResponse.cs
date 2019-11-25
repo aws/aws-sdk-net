@@ -42,12 +42,18 @@ namespace Amazon.Lambda.Model
         private string _handler;
         private string _kmsKeyArn;
         private string _lastModified;
+        private LastUpdateStatus _lastUpdateStatus;
+        private string _lastUpdateStatusReason;
+        private LastUpdateStatusReasonCode _lastUpdateStatusReasonCode;
         private List<Layer> _layers = new List<Layer>();
         private string _masterArn;
         private int? _memorySize;
         private string _revisionId;
         private string _role;
         private Runtime _runtime;
+        private State _state;
+        private string _stateReason;
+        private StateReasonCode _stateReasonCode;
         private int? _timeout;
         private TracingConfigResponse _tracingConfig;
         private string _version;
@@ -204,7 +210,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
         /// The KMS key that's used to encrypt the function's environment variables. This key
-        /// is only returned if you've configured a customer-managed CMK.
+        /// is only returned if you've configured a customer managed CMK.
         /// </para>
         /// </summary>
         public string KMSKeyArn
@@ -236,6 +242,60 @@ namespace Amazon.Lambda.Model
         internal bool IsSetLastModified()
         {
             return this._lastModified != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdateStatus. 
+        /// <para>
+        /// The status of the last update that was performed on the function.
+        /// </para>
+        /// </summary>
+        public LastUpdateStatus LastUpdateStatus
+        {
+            get { return this._lastUpdateStatus; }
+            set { this._lastUpdateStatus = value; }
+        }
+
+        // Check to see if LastUpdateStatus property is set
+        internal bool IsSetLastUpdateStatus()
+        {
+            return this._lastUpdateStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdateStatusReason. 
+        /// <para>
+        /// The reason for the last update that was performed on the function.
+        /// </para>
+        /// </summary>
+        public string LastUpdateStatusReason
+        {
+            get { return this._lastUpdateStatusReason; }
+            set { this._lastUpdateStatusReason = value; }
+        }
+
+        // Check to see if LastUpdateStatusReason property is set
+        internal bool IsSetLastUpdateStatusReason()
+        {
+            return this._lastUpdateStatusReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdateStatusReasonCode. 
+        /// <para>
+        /// The reason code for the last update that was performed on the function.
+        /// </para>
+        /// </summary>
+        public LastUpdateStatusReasonCode LastUpdateStatusReasonCode
+        {
+            get { return this._lastUpdateStatusReasonCode; }
+            set { this._lastUpdateStatusReasonCode = value; }
+        }
+
+        // Check to see if LastUpdateStatusReasonCode property is set
+        internal bool IsSetLastUpdateStatusReasonCode()
+        {
+            return this._lastUpdateStatusReasonCode != null;
         }
 
         /// <summary>
@@ -346,6 +406,62 @@ namespace Amazon.Lambda.Model
         internal bool IsSetRuntime()
         {
             return this._runtime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The current state of the function. When the state is <code>Inactive</code>, you can
+        /// reactivate the function by invoking it.
+        /// </para>
+        /// </summary>
+        public State State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateReason. 
+        /// <para>
+        /// The reason for the function's current state.
+        /// </para>
+        /// </summary>
+        public string StateReason
+        {
+            get { return this._stateReason; }
+            set { this._stateReason = value; }
+        }
+
+        // Check to see if StateReason property is set
+        internal bool IsSetStateReason()
+        {
+            return this._stateReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateReasonCode. 
+        /// <para>
+        /// The reason code for the function's current state. When the code is <code>Creating</code>,
+        /// you can't invoke or modify the function.
+        /// </para>
+        /// </summary>
+        public StateReasonCode StateReasonCode
+        {
+            get { return this._stateReasonCode; }
+            set { this._stateReasonCode = value; }
+        }
+
+        // Check to see if StateReasonCode property is set
+        internal bool IsSetStateReasonCode()
+        {
+            return this._stateReasonCode != null;
         }
 
         /// <summary>

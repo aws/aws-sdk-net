@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The results of a configuration update that applied environment variables.
+    /// The results of an operation to update or read environment variables. If the operation
+    /// is successful, the response contains the environment variables. If it failed, the
+    /// response contains details about the error.
     /// </summary>
     public partial class EnvironmentResponse
     {

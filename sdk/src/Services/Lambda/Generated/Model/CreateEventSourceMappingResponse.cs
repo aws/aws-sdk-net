@@ -34,11 +34,16 @@ namespace Amazon.Lambda.Model
     public partial class CreateEventSourceMappingResponse : AmazonWebServiceResponse
     {
         private int? _batchSize;
+        private bool? _bisectBatchOnFunctionError;
+        private DestinationConfig _destinationConfig;
         private string _eventSourceArn;
         private string _functionArn;
         private DateTime? _lastModified;
         private string _lastProcessingResult;
         private int? _maximumBatchingWindowInSeconds;
+        private int? _maximumRecordAgeInSeconds;
+        private int? _maximumRetryAttempts;
+        private int? _parallelizationFactor;
         private string _state;
         private string _stateTransitionReason;
         private string _uuid;
@@ -60,6 +65,42 @@ namespace Amazon.Lambda.Model
         internal bool IsSetBatchSize()
         {
             return this._batchSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BisectBatchOnFunctionError. 
+        /// <para>
+        /// (Streams) If the function returns an error, split the batch in two and retry.
+        /// </para>
+        /// </summary>
+        public bool BisectBatchOnFunctionError
+        {
+            get { return this._bisectBatchOnFunctionError.GetValueOrDefault(); }
+            set { this._bisectBatchOnFunctionError = value; }
+        }
+
+        // Check to see if BisectBatchOnFunctionError property is set
+        internal bool IsSetBisectBatchOnFunctionError()
+        {
+            return this._bisectBatchOnFunctionError.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationConfig. 
+        /// <para>
+        /// (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+        /// </para>
+        /// </summary>
+        public DestinationConfig DestinationConfig
+        {
+            get { return this._destinationConfig; }
+            set { this._destinationConfig = value; }
+        }
+
+        // Check to see if DestinationConfig property is set
+        internal bool IsSetDestinationConfig()
+        {
+            return this._destinationConfig != null;
         }
 
         /// <summary>
@@ -101,7 +142,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
-        /// The date that the event source mapping was last updated.
+        /// The date that the event source mapping was last updated, or its state changed.
         /// </para>
         /// </summary>
         public DateTime LastModified
@@ -135,7 +176,10 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaximumBatchingWindowInSeconds.
+        /// Gets and sets the property MaximumBatchingWindowInSeconds. 
+        /// <para>
+        /// The maximum amount of time to gather records before invoking the function, in seconds.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
         public int MaximumBatchingWindowInSeconds
@@ -148,6 +192,63 @@ namespace Amazon.Lambda.Model
         internal bool IsSetMaximumBatchingWindowInSeconds()
         {
             return this._maximumBatchingWindowInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaximumRecordAgeInSeconds. 
+        /// <para>
+        /// (Streams) The maximum age of a record that Lambda sends to a function for processing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=60, Max=604800)]
+        public int MaximumRecordAgeInSeconds
+        {
+            get { return this._maximumRecordAgeInSeconds.GetValueOrDefault(); }
+            set { this._maximumRecordAgeInSeconds = value; }
+        }
+
+        // Check to see if MaximumRecordAgeInSeconds property is set
+        internal bool IsSetMaximumRecordAgeInSeconds()
+        {
+            return this._maximumRecordAgeInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaximumRetryAttempts. 
+        /// <para>
+        /// (Streams) The maximum number of times to retry when the function returns an error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
+        public int MaximumRetryAttempts
+        {
+            get { return this._maximumRetryAttempts.GetValueOrDefault(); }
+            set { this._maximumRetryAttempts = value; }
+        }
+
+        // Check to see if MaximumRetryAttempts property is set
+        internal bool IsSetMaximumRetryAttempts()
+        {
+            return this._maximumRetryAttempts.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParallelizationFactor. 
+        /// <para>
+        /// (Streams) The number of batches to process from each shard concurrently.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public int ParallelizationFactor
+        {
+            get { return this._parallelizationFactor.GetValueOrDefault(); }
+            set { this._parallelizationFactor = value; }
+        }
+
+        // Check to see if ParallelizationFactor property is set
+        internal bool IsSetParallelizationFactor()
+        {
+            return this._parallelizationFactor.HasValue; 
         }
 
         /// <summary>
@@ -173,8 +274,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property StateTransitionReason. 
         /// <para>
-        /// The cause of the last state change, either <code>User initiated</code> or <code>Lambda
-        /// initiated</code>.
+        /// Indicates whether the last change to the event source mapping was made by a user,
+        /// or by the Lambda service.
         /// </para>
         /// </summary>
         public string StateTransitionReason

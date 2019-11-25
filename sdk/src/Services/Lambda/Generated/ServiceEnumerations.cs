@@ -179,6 +179,118 @@ namespace Amazon.Lambda
 
 
     /// <summary>
+    /// Constants used for properties of type LastUpdateStatus.
+    /// </summary>
+    public class LastUpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for LastUpdateStatus
+        /// </summary>
+        public static readonly LastUpdateStatus Failed = new LastUpdateStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for LastUpdateStatus
+        /// </summary>
+        public static readonly LastUpdateStatus InProgress = new LastUpdateStatus("InProgress");
+        /// <summary>
+        /// Constant Successful for LastUpdateStatus
+        /// </summary>
+        public static readonly LastUpdateStatus Successful = new LastUpdateStatus("Successful");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LastUpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LastUpdateStatus FindValue(string value)
+        {
+            return FindValue<LastUpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LastUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LastUpdateStatusReasonCode.
+    /// </summary>
+    public class LastUpdateStatusReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EniLimitExceeded for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode EniLimitExceeded = new LastUpdateStatusReasonCode("EniLimitExceeded");
+        /// <summary>
+        /// Constant InsufficientRolePermissions for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode InsufficientRolePermissions = new LastUpdateStatusReasonCode("InsufficientRolePermissions");
+        /// <summary>
+        /// Constant InternalError for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode InternalError = new LastUpdateStatusReasonCode("InternalError");
+        /// <summary>
+        /// Constant InvalidConfiguration for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode InvalidConfiguration = new LastUpdateStatusReasonCode("InvalidConfiguration");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LastUpdateStatusReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LastUpdateStatusReasonCode FindValue(string value)
+        {
+            return FindValue<LastUpdateStatusReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LastUpdateStatusReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogType.
     /// </summary>
     public class LogType : ConstantClass
@@ -340,6 +452,138 @@ namespace Amazon.Lambda
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Runtime(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type State.
+    /// </summary>
+    public class State : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for State
+        /// </summary>
+        public static readonly State Active = new State("Active");
+        /// <summary>
+        /// Constant Failed for State
+        /// </summary>
+        public static readonly State Failed = new State("Failed");
+        /// <summary>
+        /// Constant Inactive for State
+        /// </summary>
+        public static readonly State Inactive = new State("Inactive");
+        /// <summary>
+        /// Constant Pending for State
+        /// </summary>
+        public static readonly State Pending = new State("Pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public State(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static State FindValue(string value)
+        {
+            return FindValue<State>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator State(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StateReasonCode.
+    /// </summary>
+    public class StateReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Creating for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode Creating = new StateReasonCode("Creating");
+        /// <summary>
+        /// Constant EniLimitExceeded for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode EniLimitExceeded = new StateReasonCode("EniLimitExceeded");
+        /// <summary>
+        /// Constant Idle for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode Idle = new StateReasonCode("Idle");
+        /// <summary>
+        /// Constant InsufficientRolePermissions for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode InsufficientRolePermissions = new StateReasonCode("InsufficientRolePermissions");
+        /// <summary>
+        /// Constant InternalError for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode InternalError = new StateReasonCode("InternalError");
+        /// <summary>
+        /// Constant InvalidConfiguration for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode InvalidConfiguration = new StateReasonCode("InvalidConfiguration");
+        /// <summary>
+        /// Constant Restoring for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode Restoring = new StateReasonCode("Restoring");
+        /// <summary>
+        /// Constant SubnetOutOfIPAddresses for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode SubnetOutOfIPAddresses = new StateReasonCode("SubnetOutOfIPAddresses");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StateReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StateReasonCode FindValue(string value)
+        {
+            return FindValue<StateReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StateReasonCode(string value)
         {
             return FindValue(value);
         }

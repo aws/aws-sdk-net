@@ -75,6 +75,23 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BatchSize);
                 }
 
+                if(publicRequest.IsSetBisectBatchOnFunctionError())
+                {
+                    context.Writer.WritePropertyName("BisectBatchOnFunctionError");
+                    context.Writer.Write(publicRequest.BisectBatchOnFunctionError);
+                }
+
+                if(publicRequest.IsSetDestinationConfig())
+                {
+                    context.Writer.WritePropertyName("DestinationConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DestinationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DestinationConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEnabled())
                 {
                     context.Writer.WritePropertyName("Enabled");
@@ -91,6 +108,24 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
                     context.Writer.Write(publicRequest.MaximumBatchingWindowInSeconds);
+                }
+
+                if(publicRequest.IsSetMaximumRecordAgeInSeconds())
+                {
+                    context.Writer.WritePropertyName("MaximumRecordAgeInSeconds");
+                    context.Writer.Write(publicRequest.MaximumRecordAgeInSeconds);
+                }
+
+                if(publicRequest.IsSetMaximumRetryAttempts())
+                {
+                    context.Writer.WritePropertyName("MaximumRetryAttempts");
+                    context.Writer.Write(publicRequest.MaximumRetryAttempts);
+                }
+
+                if(publicRequest.IsSetParallelizationFactor())
+                {
+                    context.Writer.WritePropertyName("ParallelizationFactor");
+                    context.Writer.Write(publicRequest.ParallelizationFactor);
                 }
 
         

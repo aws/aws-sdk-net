@@ -189,22 +189,19 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid. For example, if you provided an IAM
-        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
-        /// The resource already exists.
+        /// The resource already exists, or another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource (for example, a Lambda function or access policy statement) specified
-        /// in the request does not exist.
+        /// The resource specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// Request throughput limit exceeded.
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         void DeleteFunctionAsync(string functionName,  AmazonServiceCallback<DeleteFunctionRequest, DeleteFunctionResponse> callback, AsyncOptions options = null);
@@ -238,6 +235,24 @@ namespace Amazon.Lambda
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">REST API Reference for DeleteFunctionConcurrency Operation</seealso>
         void DeleteFunctionConcurrencyAsync(DeleteFunctionConcurrencyRequest request, AmazonServiceCallback<DeleteFunctionConcurrencyRequest, DeleteFunctionConcurrencyResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  DeleteFunctionEventInvokeConfig
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFunctionEventInvokeConfig operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionEventInvokeConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionEventInvokeConfig">REST API Reference for DeleteFunctionEventInvokeConfig Operation</seealso>
+        void DeleteFunctionEventInvokeConfigAsync(DeleteFunctionEventInvokeConfigRequest request, AmazonServiceCallback<DeleteFunctionEventInvokeConfigRequest, DeleteFunctionEventInvokeConfigResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -328,19 +343,16 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid. For example, if you provided an IAM
-        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource (for example, a Lambda function or access policy statement) specified
-        /// in the request does not exist.
+        /// The resource specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// Request throughput limit exceeded.
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         void GetFunctionAsync(string functionName,  AmazonServiceCallback<GetFunctionRequest, GetFunctionResponse> callback, AsyncOptions options = null);
@@ -381,19 +393,16 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid. For example, if you provided an IAM
-        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource (for example, a Lambda function or access policy statement) specified
-        /// in the request does not exist.
+        /// The resource specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// Request throughput limit exceeded.
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         void GetFunctionConfigurationAsync(string functionName,  AmazonServiceCallback<GetFunctionConfigurationRequest, GetFunctionConfigurationResponse> callback, AsyncOptions options = null);
@@ -408,6 +417,23 @@ namespace Amazon.Lambda
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         void GetFunctionConfigurationAsync(GetFunctionConfigurationRequest request, AmazonServiceCallback<GetFunctionConfigurationRequest, GetFunctionConfigurationResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  GetFunctionEventInvokeConfig
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFunctionEventInvokeConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFunctionEventInvokeConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionEventInvokeConfig">REST API Reference for GetFunctionEventInvokeConfig Operation</seealso>
+        void GetFunctionEventInvokeConfigAsync(GetFunctionEventInvokeConfigRequest request, AmazonServiceCallback<GetFunctionEventInvokeConfigRequest, GetFunctionEventInvokeConfigResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -549,6 +575,23 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  ListFunctionEventInvokeConfigs
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFunctionEventInvokeConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctionEventInvokeConfigs operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionEventInvokeConfigs">REST API Reference for ListFunctionEventInvokeConfigs Operation</seealso>
+        void ListFunctionEventInvokeConfigsAsync(ListFunctionEventInvokeConfigsRequest request, AmazonServiceCallback<ListFunctionEventInvokeConfigsRequest, ListFunctionEventInvokeConfigsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  ListFunctions
 
 
@@ -570,15 +613,13 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListFunctions service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid. For example, if you provided an IAM
-        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// Request throughput limit exceeded.
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         void ListFunctionsAsync( AmazonServiceCallback<ListFunctionsRequest, ListFunctionsResponse> callback, AsyncOptions options = null);
@@ -713,6 +754,24 @@ namespace Amazon.Lambda
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">REST API Reference for PutFunctionConcurrency Operation</seealso>
         void PutFunctionConcurrencyAsync(PutFunctionConcurrencyRequest request, AmazonServiceCallback<PutFunctionConcurrencyRequest, PutFunctionConcurrencyResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  PutFunctionEventInvokeConfig
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutFunctionEventInvokeConfig operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutFunctionEventInvokeConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionEventInvokeConfig">REST API Reference for PutFunctionEventInvokeConfig Operation</seealso>
+        void PutFunctionEventInvokeConfigAsync(PutFunctionEventInvokeConfigRequest request, AmazonServiceCallback<PutFunctionEventInvokeConfigRequest, PutFunctionEventInvokeConfigResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -856,6 +915,23 @@ namespace Amazon.Lambda
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
         void UpdateFunctionConfigurationAsync(UpdateFunctionConfigurationRequest request, AmazonServiceCallback<UpdateFunctionConfigurationRequest, UpdateFunctionConfigurationResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  UpdateFunctionEventInvokeConfig
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFunctionEventInvokeConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionEventInvokeConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionEventInvokeConfig">REST API Reference for UpdateFunctionEventInvokeConfig Operation</seealso>
+        void UpdateFunctionEventInvokeConfigAsync(UpdateFunctionEventInvokeConfigRequest request, AmazonServiceCallback<UpdateFunctionEventInvokeConfigRequest, UpdateFunctionEventInvokeConfigResponse> callback, AsyncOptions options = null);
 
 
         #endregion

@@ -37,6 +37,16 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
+    /// When you create a function, Lambda provisions an instance of the function and its
+    /// supporting resources. If your function connects to a VPC, this process can take a
+    /// minute or so. During this time, you can't invoke or modify the function. The <code>State</code>,
+    /// <code>StateReason</code>, and <code>StateReasonCode</code> fields in the response
+    /// from <a>GetFunctionConfiguration</a> indicate when the function is ready to invoke.
+    /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
+    /// States</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// A function has an unpublished version, and can have published versions and aliases.
     /// The unpublished version changes when you update your function's code and configuration.
     /// A published version is a snapshot of your function code and configuration that can't
@@ -63,7 +73,7 @@ namespace Amazon.Lambda.Model
     /// To invoke your function directly, use <a>Invoke</a>. To invoke your function in response
     /// to events in other AWS services, create an event source mapping (<a>CreateEventSourceMapping</a>),
     /// or configure a function trigger in the other service. For more information, see <a
-    /// href="https://docs.aws.amazon.com/lambda/latest/dg/invoking-lambda-functions.html">Invoking
+    /// href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
     /// Functions</a>.
     /// </para>
     /// </summary>
@@ -109,7 +119,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property DeadLetterConfig. 
         /// <para>
         /// A dead letter queue configuration that specifies the queue or topic where Lambda sends
-        /// asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead
+        /// asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead
         /// Letter Queues</a>.
         /// </para>
         /// </summary>
@@ -402,7 +412,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// For network connectivity to AWS resources in a VPC, specify a list of security groups
         /// and subnets in the VPC. When you connect a function to a VPC, it can only access resources
-        /// and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+        /// and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
         /// Settings</a>.
         /// </para>
         /// </summary>

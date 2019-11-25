@@ -33,6 +33,17 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
+    /// When you update a function, Lambda provisions an instance of the function and its
+    /// supporting resources. If your function connects to a VPC, this process can take a
+    /// minute. During this time, you can't modify the function, but you can still invoke
+    /// it. The <code>LastUpdateStatus</code>, <code>LastUpdateStatusReason</code>, and <code>LastUpdateStatusReasonCode</code>
+    /// fields in the response from <a>GetFunctionConfiguration</a> indicate when the update
+    /// is complete and the function is processing events with the new configuration. For
+    /// more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
+    /// States</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// These settings can vary between versions of a function and are locked when you publish
     /// a version. You can't modify the configuration of a published version, only the unpublished
     /// version.
@@ -64,7 +75,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property DeadLetterConfig. 
         /// <para>
         /// A dead letter queue configuration that specifies the queue or topic where Lambda sends
-        /// asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead
+        /// asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead
         /// Letter Queues</a>.
         /// </para>
         /// </summary>
@@ -337,7 +348,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// For network connectivity to AWS resources in a VPC, specify a list of security groups
         /// and subnets in the VPC. When you connect a function to a VPC, it can only access resources
-        /// and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+        /// and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
         /// Settings</a>.
         /// </para>
         /// </summary>

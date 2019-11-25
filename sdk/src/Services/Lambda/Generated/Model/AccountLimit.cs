@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Limits that are related to concurrency and code storage. All file and storage sizes
-    /// are in bytes.
+    /// Limits that are related to concurrency and storage. All file and storage sizes are
+    /// in bytes.
     /// </summary>
     public partial class AccountLimit
     {
@@ -42,7 +42,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property CodeSizeUnzipped. 
         /// <para>
-        /// The maximum size of your function's code and layers when they're extracted.
+        /// The maximum size of a function's deployment package and layers when they're extracted.
         /// </para>
         /// </summary>
         public long CodeSizeUnzipped
