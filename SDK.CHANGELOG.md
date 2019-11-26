@@ -1,3 +1,32 @@
+### 3.3.639.0 (2019-11-26 19:12 UTC)
+* CognitoIdentityProvider (3.3.107.0)
+	* This release adds a new setting for a user pool to configure which recovery methods a user can use to recover their account via the forgot password operation.
+* DirectoryService (3.3.101.0)
+	* This release will introduce optional encryption over LDAP network traffic using SSL certificates between customer's self-managed AD and AWS Directory Services instances. The release also provides APIs for Certificate management.
+* DynamoDBv2 (3.3.104.0)
+	* 1) Amazon Contributor Insights for Amazon DynamoDB is a diagnostic tool for identifying frequently accessed keys and understanding database traffic trends. 2) Support for displaying new fields when a table's encryption state is Inaccessible or the table have been Archived.
+* ElasticInference (3.3.100.0)
+	* Amazon Elastic Inference allows customers to attach Elastic Inference Accelerators to Amazon EC2 and Amazon ECS tasks, thus providing low-cost GPU-powered acceleration and reducing the cost of running deep learning inference. This release allows customers to add or remove tags for their Elastic Inference Accelerators.
+* MediaTailor (3.3.102.0)
+	* AWS Elemental MediaTailor SDK now allows configuration of the Live Pre-Roll feature for HLS and DASH streams.
+* Organizations (3.3.104.0)
+	* Introduces the DescribeEffectivePolicy action, which returns the contents of the policy that's in effect for the account.
+* QuickSight (3.3.102.4)
+	* Documentation updates for QuickSight
+* RDSDataService (3.3.103.0)
+	* Type hints to improve handling of some specific parameter types (date/time, decimal etc) for ExecuteStatement and BatchExecuteStatement APIs
+* ResourceGroupsTaggingAPI (3.3.103.0)
+	* You can use tag policies to help standardize on tags across your organization's resources.
+* ServerlessApplicationRepository (3.3.101.0)
+	* AWS Serverless Application Repository now supports verified authors. Verified means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.
+* WorkSpaces (3.3.107.0)
+	* For the WorkspaceBundle API, added the image identifier and the time of the last update.
+* Core 3.3.103.70
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.638.0 (2019-11-25 21:21 UTC)
 * AlexaForBusiness (3.3.107.0)
 	* API update for Alexa for Business: This update enables the use of meeting room configuration that can be applied to a room profile. These settings help improve and measure utilization on Alexa for Business enabled rooms. New features include end meeting reminders, intelligent room release and room utilization analytics report.
