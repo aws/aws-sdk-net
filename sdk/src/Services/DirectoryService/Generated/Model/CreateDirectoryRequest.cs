@@ -29,7 +29,8 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDirectory operation.
-    /// Creates a Simple AD directory.
+    /// Creates a Simple AD directory. For more information, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html">Simple
+    /// Active Directory</a> in the <i>AWS Directory Service Admin Guide</i>.
     /// 
     ///  
     /// <para>
@@ -52,7 +53,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A textual description for the directory.
+        /// A description for the directory.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -94,6 +95,11 @@ namespace Amazon.DirectoryService.Model
         /// a directory administrator account with the user name <code>Administrator</code> and
         /// this password.
         /// </para>
+        ///  
+        /// <para>
+        /// If you need to change the password for the administrator account, you can use the
+        /// <a>ResetUserPassword</a> API call.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Password
@@ -111,7 +117,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property ShortName. 
         /// <para>
-        /// The short name of the directory, such as <code>CORP</code>.
+        /// The NetBIOS name of the directory, such as <code>CORP</code>.
         /// </para>
         /// </summary>
         public string ShortName

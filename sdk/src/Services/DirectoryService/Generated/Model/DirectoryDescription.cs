@@ -121,7 +121,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The textual description for the directory.
+        /// The description for the directory.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]

@@ -38,7 +38,7 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property DirectoryLimits. 
         /// <para>
         /// A <a>DirectoryLimits</a> object that contains the directory limits for the current
-        /// region.
+        /// rRegion.
         /// </para>
         /// </summary>
         public DirectoryLimits DirectoryLimits
