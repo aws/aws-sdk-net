@@ -81,6 +81,12 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                     response.HomePageUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isVerifiedAuthor", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsVerifiedAuthor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("labels", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -109,6 +115,12 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SpdxLicenseId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("verifiedAuthorUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VerifiedAuthorUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("version", targetDepth))
