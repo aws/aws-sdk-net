@@ -38,7 +38,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// One part of a key-value pair that make up a tag. A key is a general label that acts
+        /// One part of a key-value pair that makes up a tag. A key is a general label that acts
         /// like a category for more specific tag values.
         /// </para>
         /// </summary>

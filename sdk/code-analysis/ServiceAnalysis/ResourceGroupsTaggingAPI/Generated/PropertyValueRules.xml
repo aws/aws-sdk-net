@@ -1,37 +1,77 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ResourceGroupsTaggingAPI.Model.GetComplianceSummaryRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroupsTaggingAPI.Model.GetComplianceSummaryRequest.PaginationToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroupsTaggingAPI.Model.GetComplianceSummaryResponse.PaginationToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.GetResourcesRequest.PaginationToken</property>
     <min>0</min>
     <max>2048</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.GetResourcesResponse.PaginationToken</property>
     <min>0</min>
     <max>2048</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.GetTagKeysRequest.PaginationToken</property>
     <min>0</min>
     <max>2048</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.GetTagKeysResponse.PaginationToken</property>
     <min>0</min>
     <max>2048</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.GetTagValuesRequest.Key</property>
     <min>1</min>
     <max>128</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.GetTagValuesRequest.PaginationToken</property>
     <min>0</min>
     <max>2048</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.GetTagValuesResponse.PaginationToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroupsTaggingAPI.Model.StartReportCreationRequest.S3Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroupsTaggingAPI.Model.ConcurrentModificationException.Message</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroupsTaggingAPI.Model.ConstraintViolationException.Message</property>
     <min>0</min>
     <max>2048</max>
   </property-value-rule>
@@ -53,22 +93,44 @@
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.ResourceTagMapping.ResourceARN</property>
     <min>1</min>
-    <max>1600</max>
+    <max>1011</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroupsTaggingAPI.Model.Summary.Region</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroupsTaggingAPI.Model.Summary.ResourceType</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroupsTaggingAPI.Model.Summary.TargetId</property>
+    <min>6</min>
+    <max>68</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.TagFilter.Key</property>
     <min>1</min>
     <max>128</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException.Message</property>

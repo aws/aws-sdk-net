@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
-    /// This is the response object from the UntagResources operation.
+    /// This is the response object from the StartReportCreation operation.
     /// </summary>
-    public partial class UntagResourcesResponse : AmazonWebServiceResponse
+    public partial class StartReportCreationResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, FailureInfo> _failedResourcesMap = new Dictionary<string, FailureInfo>();
-
-        /// <summary>
-        /// Gets and sets the property FailedResourcesMap. 
-        /// <para>
-        /// Details of resources that could not be untagged. An error code, status code, and error
-        /// message are returned for each failed item. 
-        /// </para>
-        /// </summary>
-        public Dictionary<string, FailureInfo> FailedResourcesMap
-        {
-            get { return this._failedResourcesMap; }
-            set { this._failedResourcesMap = value; }
-        }
-
-        // Check to see if FailedResourcesMap property is set
-        internal bool IsSetFailedResourcesMap()
-        {
-            return this._failedResourcesMap != null && this._failedResourcesMap.Count > 0; 
-        }
 
     }
 }

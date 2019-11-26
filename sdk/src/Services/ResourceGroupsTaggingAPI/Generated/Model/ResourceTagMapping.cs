@@ -32,8 +32,28 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// </summary>
     public partial class ResourceTagMapping
     {
+        private ComplianceDetails _complianceDetails;
         private string _resourceARN;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property ComplianceDetails. 
+        /// <para>
+        /// Information that shows whether a resource is compliant with the effective tag policy,
+        /// including details on any noncompliant tag keys.
+        /// </para>
+        /// </summary>
+        public ComplianceDetails ComplianceDetails
+        {
+            get { return this._complianceDetails; }
+            set { this._complianceDetails = value; }
+        }
+
+        // Check to see if ComplianceDetails property is set
+        internal bool IsSetComplianceDetails()
+        {
+            return this._complianceDetails != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceARN. 
@@ -41,7 +61,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// The ARN of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1600)]
+        [AWSProperty(Min=1, Max=1011)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
