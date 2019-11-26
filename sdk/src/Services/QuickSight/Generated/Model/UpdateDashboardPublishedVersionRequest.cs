@@ -30,16 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the UpdateDashboardPublishedVersion operation.
     /// Updates the published version of a dashboard.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight update-dashboard-published-version --aws-account-id 111122223333
-    /// --dashboard-id dashboard-w1 ---version-number 2</code> 
-    /// </para>
     /// </summary>
     public partial class UpdateDashboardPublishedVersionRequest : AmazonQuickSightRequest
     {

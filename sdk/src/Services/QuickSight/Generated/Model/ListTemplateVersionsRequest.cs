@@ -30,16 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the ListTemplateVersions operation.
     /// Lists all the versions of the templates in the Quicksight account.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    /// aws quicksight list-template-versions --aws-account-id 111122223333 --aws-account-id
-    /// 196359894473 --template-id reports-test-template
-    /// </para>
     /// </summary>
     public partial class ListTemplateVersionsRequest : AmazonQuickSightRequest
     {

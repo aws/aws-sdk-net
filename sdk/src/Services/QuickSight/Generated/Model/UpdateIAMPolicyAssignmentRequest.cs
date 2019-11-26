@@ -31,17 +31,6 @@ namespace Amazon.QuickSight.Model
     /// Container for the parameters to the UpdateIAMPolicyAssignment operation.
     /// Updates an existing assignment. This operation updates only the optional parameter
     /// or parameters that are specified in the request.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code/>aws quicksight update-iam-policy-assignment --aws-account-id=111122223333
-    /// --assignment-name=FullAccessAssignment --assignment-status=DRAFT --policy-arns=arn:aws:iam::aws:policy/AdministratorAccess
-    /// --identities="user=user-1,user-2,group=admin" --namespace=default --region=us-east-1
-    /// </para>
     /// </summary>
     public partial class UpdateIAMPolicyAssignmentRequest : AmazonQuickSightRequest
     {
@@ -161,8 +150,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// An IAM policy ARN that will be applied to specified QuickSight users and groups in
-        /// this assignment.
+        /// An IAM policy Amazon Resource Name (ARN) that will be applied to specified QuickSight
+        /// users and groups in this assignment.
         /// </para>
         /// </summary>
         public string PolicyArn

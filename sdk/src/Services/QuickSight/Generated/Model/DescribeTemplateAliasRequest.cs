@@ -30,16 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DescribeTemplateAlias operation.
     /// Describes the template aliases of a template.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight describe-template-alias --aws-account-id 111122223333 --template-id
-    /// 'reports_test_template' --alias-name 'STAGING'</code> 
-    /// </para>
     /// </summary>
     public partial class DescribeTemplateAliasRequest : AmazonQuickSightRequest
     {
@@ -50,7 +40,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// The alias name. <code>$PUBLISHED</code> is not supported for template.
+        /// The alias of the template that you want to describe. If you provide a specific alias,
+        /// you describe the version that the alias points to. You can specify the latest version
+        /// of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
+        /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

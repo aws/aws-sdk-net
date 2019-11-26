@@ -30,16 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DescribeIAMPolicyAssignment operation.
     /// Describes an existing IAMPolicy Assignment by specified assignment name.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight describe-iam-policy-assignment --aws-account-id=111122223333
-    /// --assignment-name=testtest --namespace=default --region=us-east-1 </code> 
-    /// </para>
     /// </summary>
     public partial class DescribeIAMPolicyAssignmentRequest : AmazonQuickSightRequest
     {

@@ -33,13 +33,7 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// CLI syntax: <code>aws quicksight list-data-sets --aws-account-id=111111111111</code>
-    /// 
+    /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>.
     /// </para>
     /// </summary>
     public partial class ListDataSetsRequest : AmazonQuickSightRequest

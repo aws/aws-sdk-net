@@ -29,17 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUserByPrincipalId operation.
-    /// Deletes a user identified by its principal ID. 
-    /// 
-    ///  
-    /// <para>
-    ///  <b>CLI Sample:</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight delete-user-by-principal-id --aws-account-id=111122223333 --namespace=default
-    /// --principal-id=ABCDEFJA26JLI7EUUOEHS </code> 
-    /// </para>
+    /// Deletes a user identified by its principal ID.
     /// </summary>
     public partial class DeleteUserByPrincipalIdRequest : AmazonQuickSightRequest
     {

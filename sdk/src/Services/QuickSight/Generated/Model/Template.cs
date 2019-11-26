@@ -53,7 +53,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the template.
+        /// The Amazon Resource Name (ARN) of the template.
         /// </para>
         /// </summary>
         public string Arn
@@ -126,7 +126,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TemplateId. 
         /// <para>
-        /// The ID for the template. This is unique per region per AWS account.
+        /// The ID for the template. This is unique per AWS Region for each AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -37,7 +37,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VpcConnectionArn. 
         /// <para>
-        /// VPC connection ARN.
+        /// The Amazon Resource Name (ARN) for the VPC connection.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

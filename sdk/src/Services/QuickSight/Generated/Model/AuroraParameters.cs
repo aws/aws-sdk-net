@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Aurora parameters.
+    /// Amazon Aurora parameters.
     /// </summary>
     public partial class AuroraParameters
     {

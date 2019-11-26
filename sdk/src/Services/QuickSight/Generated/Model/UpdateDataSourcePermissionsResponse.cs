@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceArn. 
         /// <para>
-        /// The ARN of the data source.
+        /// The Amazon Resource Name (ARN) of the data source.
         /// </para>
         /// </summary>
         public string DataSourceArn
@@ -58,7 +58,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The ID of the data source. This is unique per AWS Region per AWS account.
+        /// The ID of the data source. This ID is unique per AWS Region for each AWS account.
         /// </para>
         /// </summary>
         public string DataSourceId
@@ -94,7 +94,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The http status of the request.
+        /// The HTTP status of the request.
         /// </para>
         /// </summary>
         public int Status

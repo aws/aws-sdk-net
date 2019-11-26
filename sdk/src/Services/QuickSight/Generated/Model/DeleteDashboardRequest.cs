@@ -30,21 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DeleteDashboard operation.
     /// Deletes a dashboard.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight delete-dashboard --aws-account-id 111122223333 —dashboard-id
-    /// 123123123</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight delete-dashboard --aws-account-id 111122223333 —dashboard-id
-    /// 123123123 —version-number 3</code> 
-    /// </para>
     /// </summary>
     public partial class DeleteDashboardRequest : AmazonQuickSightRequest
     {

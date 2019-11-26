@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The http status of the request.
+        /// The HTTP status of the request.
         /// </para>
         /// </summary>
         public int Status
@@ -96,7 +96,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TemplateArn. 
         /// <para>
-        /// The ARN of the template.
+        /// The Amazon Resource Name (ARN) of the template.
         /// </para>
         /// </summary>
         public string TemplateArn

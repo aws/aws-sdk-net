@@ -30,15 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the ListDashboardVersions operation.
     /// Lists all the versions of the dashboards in the Quicksight subscription.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    /// aws quicksight list-template-versions —aws-account-id 111122223333 —template-id reports-test-template
-    /// </para>
     /// </summary>
     public partial class ListDashboardVersionsRequest : AmazonQuickSightRequest
     {

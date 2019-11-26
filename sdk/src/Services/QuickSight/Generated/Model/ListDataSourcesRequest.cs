@@ -29,18 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDataSources operation.
-    /// Lists data sources in current AWS region that belong to this AWS account.
-    /// 
-    ///  
-    /// <para>
-    /// The permissions resource is: <code>arn:aws:quicksight:region:aws-account-id:datasource/*</code>
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// CLI syntax: <code>aws quicksight list-data-sources --aws-account-id=111122223333</code>
-    /// 
-    /// </para>
+    /// Lists data sources in current AWS Region that belong to this AWS account.
     /// </summary>
     public partial class ListDataSourcesRequest : AmazonQuickSightRequest
     {

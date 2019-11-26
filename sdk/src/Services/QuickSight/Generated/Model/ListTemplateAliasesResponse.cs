@@ -76,7 +76,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The http status of the request.
+        /// The HTTP status of the request.
         /// </para>
         /// </summary>
         public int Status
@@ -94,7 +94,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TemplateAliasList. 
         /// <para>
-        /// A structure containing the list of template aliases.
+        /// A structure containing the list of the template's aliases.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

@@ -30,22 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DescribeDashboard operation.
     /// Provides a summary for a dashboard.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <code>aws quicksight describe-dashboard --aws-account-id 111122223333 —dashboard-id
-    /// reports_test_report -version-number 2</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code> aws quicksight describe-dashboard --aws-account-id 111122223333 —dashboard-id
-    /// reports_test_report -alias-name ‘$PUBLISHED’ </code> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class DescribeDashboardRequest : AmazonQuickSightRequest
     {

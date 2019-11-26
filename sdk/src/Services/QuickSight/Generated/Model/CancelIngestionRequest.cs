@@ -29,7 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelIngestion operation.
-    /// Cancels an on-going ingestion of data into SPICE.
+    /// Cancels an ongoing ingestion of data into SPICE.
     /// </summary>
     public partial class CancelIngestionRequest : AmazonQuickSightRequest
     {

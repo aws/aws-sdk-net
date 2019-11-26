@@ -30,16 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DescribeDashboardPermissions operation.
     /// Describes read and write permissions on a dashboard.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight describe-dashboard-permissions --aws-account-id 735340738645
-    /// —dashboard-id reports_test_bob_report</code> 
-    /// </para>
     /// </summary>
     public partial class DescribeDashboardPermissionsRequest : AmazonQuickSightRequest
     {

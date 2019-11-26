@@ -129,8 +129,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// An IAM policy ARN that is applied to the QuickSight users and groups specified in
-        /// this assignment.
+        /// An IAM policy Amazon Resource Name (ARN) that is applied to the QuickSight users and
+        /// groups specified in this assignment.
         /// </para>
         /// </summary>
         public string PolicyArn
@@ -166,7 +166,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The http status of the request.
+        /// The HTTP status of the request.
         /// </para>
         /// </summary>
         public int Status

@@ -30,23 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the UpdateDashboard operation.
     /// Updates a dashboard in the AWS account.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight update-dashboard --aws-account-id 111122223333 --dashboard-id
-    /// 123123123 --dashboard-name "test-update102" --source-entity SourceTemplate={Arn=arn:aws:quicksight:us-west-2:111122223333:template/sales-report-template2}
-    /// --data-set-references DataSetPlaceholder=SalesDataSet,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/0e251aef-9ebf-46e1-b852-eb4fa33c1d3a</code>
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight update-dashboard --cli-input-json file://update-dashboard.json
-    /// </code> 
-    /// </para>
     /// </summary>
     public partial class UpdateDashboardRequest : AmazonQuickSightRequest
     {

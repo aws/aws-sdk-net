@@ -30,23 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DeleteDataSet operation.
     /// Deletes a dataset.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight delete-data-set \</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>--aws-account-id=111111111111 \</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>--data-set-id=unique-data-set-id</code> 
-    /// </para>
     /// </summary>
     public partial class DeleteDataSetRequest : AmazonQuickSightRequest
     {
@@ -56,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS Account ID.
+        /// The AWS account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -75,7 +58,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetId. 
         /// <para>
-        /// The ID for the dataset you want to create. This is unique per region per AWS account.
+        /// The ID for the dataset that you want to create. This ID is unique per AWS Region for
+        /// each AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

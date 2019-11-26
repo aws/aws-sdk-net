@@ -120,7 +120,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SourceEntityArn. 
         /// <para>
-        /// The ARN of the analysis or template which was used to create this template.
+        /// The Amazon Resource Name (ARN) of the analysis or template which was used to create
+        /// this template.
         /// </para>
         /// </summary>
         public string SourceEntityArn
@@ -138,7 +139,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The http status of the request.
+        /// The HTTP status of the request.
         /// </para>
         /// </summary>
         public ResourceStatus Status

@@ -30,17 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Removes a tag or tags from a resource.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <code>aws quicksight untag-resource --resource-arn arn:aws:quicksight:us-east-1:111111111111:dataset/dataset1
-    /// --tag-keys K1 K2 --region us-east-1</code> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class UntagResourceRequest : AmazonQuickSightRequest
     {
@@ -50,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource you to untag.
+        /// The Amazon Resource Name (ARN) of the resource that you want to untag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

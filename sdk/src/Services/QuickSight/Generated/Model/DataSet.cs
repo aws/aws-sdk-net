@@ -66,7 +66,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ColumnGroups. 
         /// <para>
-        /// Groupings of columns that work together in certain QuickSight features. Currently
+        /// Groupings of columns that work together in certain QuickSight features. Currently,
         /// only geospatial hierarchy is supported.
         /// </para>
         /// </summary>

@@ -30,16 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the UpdateTemplateAlias operation.
     /// Updates the template alias of a template.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight update-template-alias --aws-account-id 111122223333 --template-id
-    /// 'reports_test_template' --alias-name STAGING —template-version-number 2 </code> 
-    /// </para>
     /// </summary>
     public partial class UpdateTemplateAliasRequest : AmazonQuickSightRequest
     {
@@ -51,7 +41,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// The alias name.
+        /// The alias of the template that you want to update. If you provide a specific alias,
+        /// you update the version that the alias points to. You can specify the latest version
+        /// of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
+        /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

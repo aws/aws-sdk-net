@@ -40,41 +40,6 @@ namespace Amazon.QuickSight.Model
     /// templates to create dashboards by replacing dataset placeholders with datasets which
     /// follow the same schema that was used to create the source analysis and template.
     /// </para>
-    ///  
-    /// <para>
-    /// To create a template from an existing analysis, use the analysis's ARN, <code>aws-account-id</code>,
-    /// <code>template-id</code>, <code>source-entity</code>, and <code>data-set-references</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// CLI syntax to create a template: 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight create-template —cli-input-json file://create-template.json</code>
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// CLI syntax to create a template from another template in the same AWS account:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight create-template --aws-account-id 111122223333 --template-id
-    /// reports_test_template --data-set-references DataSetPlaceholder=reports,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/0dfc789c-81f6-4f4f-b9ac-7db2453eefc8
-    /// DataSetPlaceholder=Elblogs,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/f60da323-af68-45db-9016-08e0d1d7ded5
-    /// --source-entity SourceAnalysis='{Arn=arn:aws:quicksight:us-west-2:111122223333:analysis/7fb74527-c36d-4be8-8139-ac1be4c97365}'</code>
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// To create template from another account’s template, you need to grant cross account
-    /// resource permission for DescribeTemplate the account that contains the template.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can use a file to pass JSON to the function if you prefer. 
-    /// </para>
     /// </summary>
     public partial class CreateTemplateRequest : AmazonQuickSightRequest
     {
@@ -128,9 +93,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Permissions. 
         /// <para>
-        /// A list of resource permissions to be set on the template. The shorthand syntax should
-        /// look similar to this: <code>Shorthand Syntax: Principal=string,Actions=string,string
-        /// ... </code> 
+        /// A list of resource permissions to be set on the template. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -149,9 +112,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SourceEntity. 
         /// <para>
-        /// The ARN of the source entity from which this template is being created. Templates
-        /// can be currently created from an analysis or another template. If the ARN is for an
-        /// analysis, you must include its dataset references. 
+        /// The Amazon Resource Name (ARN) of the source entity from which this template is being
+        /// created. Templates can be currently created from an analysis or another template.
+        /// If the ARN is for an analysis, you must include its dataset references. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

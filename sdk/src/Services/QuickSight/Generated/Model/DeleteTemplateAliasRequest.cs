@@ -30,16 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DeleteTemplateAlias operation.
     /// Update template alias of given template.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight delete-template-alias --aws-account-id 111122223333 --template-id
-    /// 'reports_test_template' --alias-name 'STAGING'</code> 
-    /// </para>
     /// </summary>
     public partial class DeleteTemplateAliasRequest : AmazonQuickSightRequest
     {
@@ -50,9 +40,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// The alias of the template. If alias-name is provided, the version that the alias-name
-        /// points to is deleted. Alias names that start with <code>$</code> are reserved by QuickSight
-        /// and can't be deleted.”
+        /// The alias of the template that you want to delete. If you provide a specific alias,
+        /// you delete the version that the alias points to. You can specify the latest version
+        /// of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
+        /// parameter. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

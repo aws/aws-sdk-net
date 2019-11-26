@@ -29,25 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGroups operation.
-    /// Lists all user groups in Amazon QuickSight. 
-    /// 
-    ///  
-    /// <para>
-    /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/*</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// The response is a list of group objects. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>CLI Sample:</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight list-groups -\-aws-account-id=111122223333 -\-namespace=default
-    /// </code> 
-    /// </para>
+    /// Lists all user groups in Amazon QuickSight.
     /// </summary>
     public partial class ListGroupsRequest : AmazonQuickSightRequest
     {

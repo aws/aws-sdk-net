@@ -30,24 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the UpdateTemplate operation.
     /// Updates a template from an existing QuickSight analysis.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight update-template --aws-account-id 111122223333 --template-id
-    /// reports_test_template --data-set-references DataSetPlaceholder=reports,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/c684a204-d134-4c53-a63c-451f72c60c28
-    /// DataSetPlaceholder=Elblogs,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/15840b7d-b542-4491-937b-602416b367b3
-    /// —source-entity SourceAnalysis=’{Arn=arn:aws:quicksight:us-west-2:111122223333:analysis/c5731fe9-4708-4598-8f6d-cf2a70875b6d}</code>
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// You can also pass in a json file: <code>aws quicksight update-template —cli-input-json
-    /// file://create-template.json</code> 
-    /// </para>
     /// </summary>
     public partial class UpdateTemplateRequest : AmazonQuickSightRequest
     {
@@ -137,10 +119,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VersionDescription. 
         /// <para>
-        /// A description of the current template version being created. This API created the
-        /// first version of the template. Every time UpdateTemplate is called a new version is
-        /// created. Each version of the template maintains a description of the version in the
-        /// VersionDescription field.
+        /// A description of the current template version being updated. Every time you cal <code>UpdateTemplate</code>
+        /// you create a new version. Each version of the template maintains a description of
+        /// the version in the <code>VersionDescription</code> field.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

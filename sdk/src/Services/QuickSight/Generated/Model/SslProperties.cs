@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// SSL properties that apply when QuickSight connects to your underlying data source.
+    /// Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying
+    /// data source.
     /// </summary>
     public partial class SslProperties
     {

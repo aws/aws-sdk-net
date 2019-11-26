@@ -30,16 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DescribeTemplatePermissions operation.
     /// Describes read and write permissions on a template.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight describe-template-permissions —aws-account-id 735340738645 —template-id
-    /// reports_test_template</code> 
-    /// </para>
     /// </summary>
     public partial class DescribeTemplatePermissionsRequest : AmazonQuickSightRequest
     {

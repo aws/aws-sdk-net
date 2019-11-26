@@ -30,16 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the ListTemplates operation.
     /// Lists all the templates in the QuickSight account.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight list-templates --aws-account-id 111122223333 --max-results 1
-    /// —next-token AYADeJuxwOypAndSoOn</code> 
-    /// </para>
     /// </summary>
     public partial class ListTemplatesRequest : AmazonQuickSightRequest
     {

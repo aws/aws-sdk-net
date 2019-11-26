@@ -30,84 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the CreateDataSet operation.
     /// Creates a dataset.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight create-data-set \</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>--aws-account-id=111122223333 \</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>--data-set-id=unique-data-set-id \</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>--name='My dataset' \</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>--import-mode=SPICE \</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>--physical-table-map='{</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code> "physical-table-id": {</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code> "RelationalTable": {</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code> "DataSourceArn": "arn:aws:quicksight:us-west-2:111111111111:datasource/data-source-id",</code>
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code> "Name": "table1",</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code> "InputColumns": [</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code> {</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code> "Name": "column1",</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code> "Type": "STRING"</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code> }</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code> ]</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code> }</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code> }'</code> 
-    /// </para>
     /// </summary>
     public partial class CreateDataSetRequest : AmazonQuickSightRequest
     {
@@ -144,7 +66,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ColumnGroups. 
         /// <para>
-        /// Groupings of columns that work together in certain QuickSight features. Currently
+        /// Groupings of columns that work together in certain QuickSight features. Currently,
         /// only geospatial hierarchy is supported.
         /// </para>
         /// </summary>
@@ -164,7 +86,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetId. 
         /// <para>
-        /// An ID for the dataset you want to create. This is unique per region per AWS account.
+        /// An ID for the dataset that you want to create. This ID is unique per AWS Region for
+        /// each AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

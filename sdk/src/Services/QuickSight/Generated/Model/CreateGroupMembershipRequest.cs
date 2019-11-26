@@ -29,34 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGroupMembership operation.
-    /// Adds an Amazon QuickSight user to an Amazon QuickSight group. 
-    /// 
-    ///  
-    /// <para>
-    /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-    /// </code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// The condition resource is the user name.
-    /// </para>
-    ///  
-    /// <para>
-    /// The condition key is <code>quicksight:UserName</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// The response is the group member object.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>CLI Sample:</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight create-group-membership --aws-account-id=111122223333 --namespace=default
-    /// --group-name=Sales --member-name=Pat </code> 
-    /// </para>
+    /// Adds an Amazon QuickSight user to an Amazon QuickSight group.
     /// </summary>
     public partial class CreateGroupMembershipRequest : AmazonQuickSightRequest
     {

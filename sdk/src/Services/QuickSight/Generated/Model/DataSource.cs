@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The ID of the data source. This is unique per AWS Region per AWS account.
+        /// The ID of the data source. This ID is unique per AWS Region for each AWS account.
         /// </para>
         /// </summary>
         public string DataSourceId
@@ -101,9 +101,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceParameters. 
         /// <para>
-        /// The parameters QuickSight uses to connect to your underlying source. This is a variant
-        /// type structure. At most one of the attributes should be non-null for this structure
-        /// to be valid.
+        /// The parameters that QuickSight uses to connect to your underlying source. This is
+        /// a variant type structure. At most one of the attributes should be non-null for this
+        /// structure to be valid.
         /// </para>
         /// </summary>
         public DataSourceParameters DataSourceParameters
@@ -176,7 +176,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SslProperties. 
         /// <para>
-        /// SSL properties that apply when QuickSight connects to your underlying source.
+        /// Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying
+        /// source.
         /// </para>
         /// </summary>
         public SslProperties SslProperties
@@ -194,7 +195,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The http status of the request.
+        /// The HTTP status of the request.
         /// </para>
         /// </summary>
         public ResourceStatus Status

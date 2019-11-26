@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardArn. 
         /// <para>
-        /// The ARN of the dashboard.
+        /// The Amazon Resource Name (ARN) of the dashboard.
         /// </para>
         /// </summary>
         public string DashboardArn
@@ -95,7 +95,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The http status of the request.
+        /// The HTTP status of the request.
         /// </para>
         /// </summary>
         public int Status

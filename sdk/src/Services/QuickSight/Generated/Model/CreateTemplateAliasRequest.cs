@@ -30,16 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the CreateTemplateAlias operation.
     /// Creates a template alias for a template.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight create-template-alias --aws-account-id 111122223333 --template-id
-    /// 'reports_test_template' --alias-name PROD —version-number 1</code> 
-    /// </para>
     /// </summary>
     public partial class CreateTemplateAliasRequest : AmazonQuickSightRequest
     {
@@ -51,9 +41,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// The name you want to give the template's alias. Alias names can't begin with a <code>$</code>,
-        /// which is reserved by QuickSight. Alias names that start with ‘$’ sign are QuickSight
-        /// reserved naming and can't be deleted. 
+        /// The name that you want to give to the template alias that you're creating. Aliases
+        /// that start with <code>$</code> are reserved by QuickSight. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

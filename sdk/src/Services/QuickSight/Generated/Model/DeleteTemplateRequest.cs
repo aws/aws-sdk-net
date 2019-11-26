@@ -30,43 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DeleteTemplate operation.
     /// Deletes a template.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <code>aws quicksight delete-template --aws-account-id 111122223333 —-template-id
-    /// reports_test_template --version-number 2 </code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>aws quicksight delete-template —aws-account-id 111122223333 —template-id reports_test_template
-    /// —alias-name STAGING </code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>aws quicksight delete-template —aws-account-id 111122223333 —template-id reports_test_template
-    /// —alias-name ‘\$LATEST’ </code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>aws quicksight delete-template --aws-account-id 111122223333 —-template-id
-    /// reports_test_template</code> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// If version number which is an optional field is not passed the template (including
-    /// all the versions) is deleted by the API, if version number is provided, the specific
-    /// template version is deleted by the API.
-    /// </para>
-    ///  
-    /// <para>
-    /// Users can explicitly describe the latest version of the template by passing <code>$LATEST</code>
-    /// to the <code>alias-name</code> parameter. <code>$LATEST</code> is an internally supported
-    /// alias, which points to the latest version of the template. 
-    /// </para>
     /// </summary>
     public partial class DeleteTemplateRequest : AmazonQuickSightRequest
     {
@@ -115,7 +78,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VersionNumber. 
         /// <para>
-        /// The version number
+        /// Specifies the version of the template that you want to delete. If you don't provide
+        /// a version number, <code>DeleteTemplate</code> deletes all versions of the template.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

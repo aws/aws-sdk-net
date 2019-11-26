@@ -30,16 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the ListDashboards operation.
     /// Lists dashboards in the AWS account.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight list-dashboards --aws-account-id 111122223333 --max-results
-    /// 5 —next-token 'next-10'</code> 
-    /// </para>
     /// </summary>
     public partial class ListDashboardsRequest : AmazonQuickSightRequest
     {

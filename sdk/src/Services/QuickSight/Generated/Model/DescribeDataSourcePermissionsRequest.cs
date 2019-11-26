@@ -30,12 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DescribeDataSourcePermissions operation.
     /// Describes the resource permissions for a data source.
-    /// 
-    ///  
-    /// <para>
-    /// The permissions resource is <code>aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
-    /// 
-    /// </para>
     /// </summary>
     public partial class DescribeDataSourcePermissionsRequest : AmazonQuickSightRequest
     {
@@ -64,7 +58,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The ID of the data source. This is unique per AWS Region per AWS account.
+        /// The ID of the data source. This ID is unique per AWS Region for each AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

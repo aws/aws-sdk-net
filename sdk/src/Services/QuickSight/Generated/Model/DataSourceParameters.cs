@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The parameters QuickSight uses to connect to your underlying source. This is a variant
-    /// type structure. At most one of the attributes should be non-null for this structure
-    /// to be valid.
+    /// The parameters that QuickSight uses to connect to your underlying source. This is
+    /// a variant type structure. At most one of the attributes should be non-null for this
+    /// structure to be valid.
     /// </summary>
     public partial class DataSourceParameters
     {

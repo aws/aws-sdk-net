@@ -29,18 +29,9 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIAMPolicyAssignmentsForUser operation.
-    /// Lists all the assignments and the ARNs for the associated IAM policies assigned to
-    /// the specified user and the group or groups that the user belongs to.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight list-iam-policy-assignments-for-user --aws-account-id=111122223333
-    /// --user-name=user5 --namespace=default --max-result=6 --region=us-east-1 </code> 
-    /// </para>
+    /// Lists all the assignments and the Amazon Resource Names (ARNs) for the associated
+    /// IAM policies assigned to the specified user and the group or groups that the user
+    /// belongs to.
     /// </summary>
     public partial class ListIAMPolicyAssignmentsForUserRequest : AmazonQuickSightRequest
     {

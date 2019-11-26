@@ -29,22 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
-    /// Returns a list of all of the Amazon QuickSight users belonging to this account. 
-    /// 
-    ///  
-    /// <para>
-    /// The response is a list of user objects, containing each user's Amazon Resource Name
-    /// (ARN), AWS Identity and Access Management (IAM) role, and email address. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>CLI Sample:</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight list-users --aws-account-id=111122223333 --namespace=default
-    /// </code> 
-    /// </para>
+    /// Returns a list of all of the Amazon QuickSight users belonging to this account.
     /// </summary>
     public partial class ListUsersRequest : AmazonQuickSightRequest
     {

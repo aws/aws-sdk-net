@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the dataset.
+        /// The Amazon Resource Name (ARN) of the dataset.
         /// </para>
         /// </summary>
         public string Arn
@@ -60,7 +60,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetId. 
         /// <para>
-        /// The ID for the dataset you want to create. This is unique per region per AWS account.
+        /// The ID for the dataset that you want to create. This ID is unique per AWS Region for
+        /// each AWS account.
         /// </para>
         /// </summary>
         public string DataSetId
@@ -78,8 +79,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IngestionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the ingestion, which is triggered as a result of
-        /// dataset creation if the import mode is SPICE
+        /// The ARN for the ingestion, which is triggered as a result of dataset creation if the
+        /// import mode is SPICE
         /// </para>
         /// </summary>
         public string IngestionArn
@@ -134,7 +135,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The http status of the request.
+        /// The HTTP status of the request.
         /// </para>
         /// </summary>
         public int Status

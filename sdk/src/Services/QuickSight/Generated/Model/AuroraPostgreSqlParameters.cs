@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Aurora PostgreSQL parameters.
+    /// Amazon Aurora with PostgreSQL compatibility parameters.
     /// </summary>
     public partial class AuroraPostgreSqlParameters
     {

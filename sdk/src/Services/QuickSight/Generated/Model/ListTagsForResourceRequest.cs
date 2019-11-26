@@ -30,17 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
     /// Lists the tags assigned to a resource.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <code>aws quicksight list-tags-for-resource --resource-arn arn:aws:quicksight:us-east-1:111111111111:dataset/dataset1
-    /// --region us-east-1</code> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonQuickSightRequest
     {
@@ -49,7 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource you want a list of tags for.
+        /// The Amazon Resource Name (ARN) of the resource that you want a list of tags for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

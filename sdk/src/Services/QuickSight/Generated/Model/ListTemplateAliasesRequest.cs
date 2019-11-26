@@ -30,16 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the ListTemplateAliases operation.
     /// Lists all the aliases of a template.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight list-template-aliases --aws-account-id 111122223333 —template-id
-    /// 'reports_test_template'</code> 
-    /// </para>
     /// </summary>
     public partial class ListTemplateAliasesRequest : AmazonQuickSightRequest
     {

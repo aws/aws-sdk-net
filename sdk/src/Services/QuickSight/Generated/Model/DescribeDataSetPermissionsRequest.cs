@@ -33,24 +33,7 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// CLI syntax: 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight describe-data-set-permissions \</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>--aws-account-id=111122223333 \</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>--data-set-id=unique-data-set-id \</code> 
+    /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.
     /// </para>
     /// </summary>
     public partial class DescribeDataSetPermissionsRequest : AmazonQuickSightRequest
@@ -80,7 +63,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetId. 
         /// <para>
-        /// The ID for the dataset you want to create. This is unique per region per AWS account.
+        /// The ID for the dataset that you want to create. This ID is unique per AWS Region for
+        /// each AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

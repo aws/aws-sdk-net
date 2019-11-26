@@ -30,18 +30,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the RegisterUser operation.
     /// Creates an Amazon QuickSight user, whose identity is associated with the AWS Identity
-    /// and Access Management (IAM) identity or role specified in the request. 
-    /// 
-    ///  
-    /// <para>
-    ///  <b>CLI Sample:</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight register-user -\-aws-account-id=111122223333 -\-namespace=default
-    /// -\-email=pat@example.com -\-identity-type=IAM -\-user-role=AUTHOR -\-iam-arn=arn:aws:iam::111122223333:user/Pat
-    /// </code> 
-    /// </para>
+    /// and Access Management (IAM) identity or role specified in the request.
     /// </summary>
     public partial class RegisterUserRequest : AmazonQuickSightRequest
     {

@@ -30,16 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DeleteIAMPolicyAssignment operation.
     /// Deletes an existing assignment.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight delete-iam-policy-assignment --aws-account-id=111122223333 --assignment-name=testtest
-    /// --region=us-east-1 --namespace=default</code> 
-    /// </para>
     /// </summary>
     public partial class DeleteIAMPolicyAssignmentRequest : AmazonQuickSightRequest
     {

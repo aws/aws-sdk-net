@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Athena parameters.
+    /// Amazon Athena parameters.
     /// </summary>
     public partial class AthenaParameters
     {
@@ -37,7 +37,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property WorkGroup. 
         /// <para>
-        /// The workgroup that Athena uses.
+        /// The workgroup that Amazon Athena uses.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

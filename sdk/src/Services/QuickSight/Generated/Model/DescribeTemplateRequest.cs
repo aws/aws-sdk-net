@@ -30,32 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DescribeTemplate operation.
     /// Describes a template's metadata.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight describe-template --aws-account-id 111122223333 --template-id
-    /// reports_test_template </code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight describe-template --aws-account-id 111122223333 --template-id
-    /// reports_test_template --version-number-2</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight describe-template --aws-account-id 111122223333 --template-id
-    /// reports_test_template --alias-name '\$LATEST' </code> 
-    /// </para>
-    ///  
-    /// <para>
-    /// Users can explicitly describe the latest version of the dashboard by passing <code>$LATEST</code>
-    /// to the <code>alias-name</code> parameter. <code>$LATEST</code> is an internally supported
-    /// alias, which points to the latest version of the dashboard. 
-    /// </para>
     /// </summary>
     public partial class DescribeTemplateRequest : AmazonQuickSightRequest
     {
@@ -67,9 +41,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// This is an optional field, when an alias name is provided, the version referenced
-        /// by the alias is described. Refer to <code>CreateTemplateAlias</code> to create a template
-        /// alias. <code>$PUBLISHED</code> is not supported for template.
+        /// The alias of the template that you want to describe. If you provide a specific alias,
+        /// you describe the version that the alias points to. You can specify the latest version
+        /// of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
+        /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

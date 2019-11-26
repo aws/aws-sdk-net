@@ -41,15 +41,6 @@ namespace Amazon.QuickSight.Model
     /// the correct permissions, you can create a dashboard from a template that exists in
     /// a different AWS account.
     /// </para>
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight create-dashboard --cli-input-json file://create-dashboard.json</code>
-    /// 
-    /// </para>
     /// </summary>
     public partial class CreateDashboardRequest : AmazonQuickSightRequest
     {
@@ -125,15 +116,7 @@ namespace Amazon.QuickSight.Model
         /// or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
         /// to true. Collapsed by default. 
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Shorthand Syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>AdHocFilteringDisabled=boolean,ExportToCSVDisabled=boolean,SheetControlsCollapsed=boolean</code>
-        /// 
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DashboardPublishOptions DashboardPublishOptions
         {
@@ -210,11 +193,11 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SourceEntity. 
         /// <para>
-        /// Source entity from which the dashboard is created. The souce entity accepts the ARN
-        /// of the source template or analysis and also references the replacement datasets for
-        /// the placeholders set when creating the template. The replacement datasets need to
-        /// follow the same schema as the datasets for which placeholders were created when creating
-        /// the template. 
+        /// Source entity from which the dashboard is created. The souce entity accepts the Amazon
+        /// Resource Name (ARN) of the source template or analysis and also references the replacement
+        /// datasets for the placeholders set when creating the template. The replacement datasets
+        /// need to follow the same schema as the datasets for which placeholders were created
+        /// when creating the template. 
         /// </para>
         ///  
         /// <para>

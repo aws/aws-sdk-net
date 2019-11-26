@@ -40,10 +40,10 @@ namespace Amazon.QuickSight
     ///
     /// Amazon QuickSight API Reference 
     /// <para>
-    /// Amazon QuickSight is a fully managed, serverless, cloud business intelligence service
-    /// that makes it easy to extend data and insights to every user in your organization.
-    /// This API interface reference contains documentation for a programming interface that
-    /// you can use to manage Amazon QuickSight. 
+    /// Amazon QuickSight is a fully managed, serverless business intelligence service for
+    /// the AWS Cloud that makes it easy to extend data and insights to every user in your
+    /// organization. This API reference contains documentation for a programming interface
+    /// that you can use to manage Amazon QuickSight. 
     /// </para>
     /// </summary>
     public partial class AmazonQuickSightClient : AmazonServiceClient, IAmazonQuickSight
@@ -263,7 +263,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Cancels an on-going ingestion of data into SPICE.
+        /// Cancels an ongoing ingestion of data into SPICE.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelIngestion service method.</param>
         /// <param name="cancellationToken">
@@ -330,15 +330,6 @@ namespace Amazon.QuickSight
         /// the correct permissions, you can create a dashboard from a template that exists in
         /// a different AWS account.
         /// </para>
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight create-dashboard --cli-input-json file://create-dashboard.json</code>
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDashboard service method.</param>
         /// <param name="cancellationToken">
@@ -397,84 +388,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Creates a dataset.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight create-data-set \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--aws-account-id=111122223333 \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--data-set-id=unique-data-set-id \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--name='My dataset' \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--import-mode=SPICE \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--physical-table-map='{</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "physical-table-id": {</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "RelationalTable": {</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "DataSourceArn": "arn:aws:quicksight:us-west-2:111111111111:datasource/data-source-id",</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Name": "table1",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "InputColumns": [</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> {</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Name": "column1",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Type": "STRING"</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> }</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> ]</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> }</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> }'</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -542,64 +455,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Creates a data source.
-        /// 
-        ///  
-        /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight create-data-source \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--aws-account-id=111122223333 \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--data-source-id=unique-data-source-id \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--name='My Data Source' \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--type=POSTGRESQL \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--data-source-parameters='{ "PostgreSqlParameters": {</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Host": "my-db-host.example.com",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Port": 1234,</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Database": "my-db" } }' \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--credentials='{ "CredentialPair": {</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Username": "username",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Password": "password" } }'</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -671,16 +526,6 @@ namespace Amazon.QuickSight
         /// <para>
         /// The response is a group object.
         /// </para>
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight create-group --aws-account-id=111122223333 --namespace=default
-        /// --group-name="Sales-Management" --description="Sales Management - Forecasting" </code>
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
         /// <param name="cancellationToken">
@@ -744,34 +589,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Adds an Amazon QuickSight user to an Amazon QuickSight group. 
-        /// 
-        ///  
-        /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-        /// </code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The condition resource is the user name.
-        /// </para>
-        ///  
-        /// <para>
-        /// The condition key is <code>quicksight:UserName</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The response is the group member object.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight create-group-membership --aws-account-id=111122223333 --namespace=default
-        /// --group-name=Sales --member-name=Pat </code> 
-        /// </para>
+        /// Adds an Amazon QuickSight user to an Amazon QuickSight group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroupMembership service method.</param>
         /// <param name="cancellationToken">
@@ -829,20 +647,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates an assignment with one specified IAM policy ARN and will assigned to specified
-        /// groups or users of QuickSight. Users and groups need to be in the same namespace.
-        /// 
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight create-iam-policy-assignment --aws-account-id=111122223333 --assignment-name=helpAssignment
-        /// --policy-arn=arn:aws:iam::aws:policy/AdministratorAccess --identities="user=user5,engineer123,group=QS-Admin"
-        /// --namespace=default --region=us-west-2</code> 
-        /// </para>
+        /// Creates an assignment with one specified IAM policy Amazon Resource Name (ARN) and
+        /// will assigned to specified groups or users of QuickSight. Users and groups need to
+        /// be in the same namespace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIAMPolicyAssignment service method.</param>
         /// <param name="cancellationToken">
@@ -906,9 +713,10 @@ namespace Amazon.QuickSight
         ///  
         /// <para>
         /// Any ingestions operating on tagged datasets inherit the same tags automatically for
-        /// use in access-control. For an example, see <a href="https://aws.example.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How
-        /// do I create an IAM policy to control access to Amazon EC2 resources using tags?</a>.
-        /// Tags will be visible on the tagged dataset, but not on the ingestion resource.
+        /// use in access control. For an example, see <a href="https://aws.example.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How
+        /// do I create an IAM policy to control access to Amazon EC2 resources using tags?</a>
+        /// in the AWS Knowledge Center. Tags are visible on the tagged dataset, but not on the
+        /// ingestion resource.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIngestion service method.</param>
@@ -978,41 +786,6 @@ namespace Amazon.QuickSight
         /// templates to create dashboards by replacing dataset placeholders with datasets which
         /// follow the same schema that was used to create the source analysis and template.
         /// </para>
-        ///  
-        /// <para>
-        /// To create a template from an existing analysis, use the analysis's ARN, <code>aws-account-id</code>,
-        /// <code>template-id</code>, <code>source-entity</code>, and <code>data-set-references</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// CLI syntax to create a template: 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight create-template —cli-input-json file://create-template.json</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// CLI syntax to create a template from another template in the same AWS account:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight create-template --aws-account-id 111122223333 --template-id
-        /// reports_test_template --data-set-references DataSetPlaceholder=reports,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/0dfc789c-81f6-4f4f-b9ac-7db2453eefc8
-        /// DataSetPlaceholder=Elblogs,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/f60da323-af68-45db-9016-08e0d1d7ded5
-        /// --source-entity SourceAnalysis='{Arn=arn:aws:quicksight:us-west-2:111122223333:analysis/7fb74527-c36d-4be8-8139-ac1be4c97365}'</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// To create template from another account’s template, you need to grant cross account
-        /// resource permission for DescribeTemplate the account that contains the template.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use a file to pass JSON to the function if you prefer. 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -1077,16 +850,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Creates a template alias for a template.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight create-template-alias --aws-account-id 111122223333 --template-id
-        /// 'reports_test_template' --alias-name PROD —version-number 1</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTemplateAlias service method.</param>
         /// <param name="cancellationToken">
@@ -1145,21 +908,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Deletes a dashboard.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight delete-dashboard --aws-account-id 111122223333 —dashboard-id
-        /// 123123123</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight delete-dashboard --aws-account-id 111122223333 —dashboard-id
-        /// 123123123 —version-number 3</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDashboard service method.</param>
         /// <param name="cancellationToken">
@@ -1215,23 +963,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Deletes a dataset.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight delete-data-set \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--aws-account-id=111111111111 \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--data-set-id=unique-data-set-id</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -1285,23 +1016,6 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Deletes the data source permanently. This action breaks all the datasets that reference
         /// the deleted data source.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight delete-data-source \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--aws-account-id=111122223333 \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--data-source-id=unique-data-source-id </code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -1353,22 +1067,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Removes a user group from Amazon QuickSight. 
-        /// 
-        ///  
-        /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-        /// </code>.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight delete-group -\-aws-account-id=111122223333 -\-namespace=default
-        /// -\-group-name=Sales-Management </code> 
-        /// </para>
+        /// Removes a user group from Amazon QuickSight.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1427,29 +1126,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Removes a user from a group so that the user is no longer a member of the group.
-        /// 
-        ///  
-        /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-        /// </code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The condition resource is the user name.
-        /// </para>
-        ///  
-        /// <para>
-        /// The condition key is <code>quicksight:UserName</code>.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight delete-group-membership --aws-account-id=111122223333 --namespace=default
-        /// --group-name=Sales-Management --member-name=Charlie </code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroupMembership service method.</param>
         /// <param name="cancellationToken">
@@ -1508,16 +1184,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Deletes an existing assignment.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight delete-iam-policy-assignment --aws-account-id=111122223333 --assignment-name=testtest
-        /// --region=us-east-1 --namespace=default</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIAMPolicyAssignment service method.</param>
         /// <param name="cancellationToken">
@@ -1577,43 +1243,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Deletes a template.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>aws quicksight delete-template --aws-account-id 111122223333 —-template-id
-        /// reports_test_template --version-number 2 </code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>aws quicksight delete-template —aws-account-id 111122223333 —template-id reports_test_template
-        /// —alias-name STAGING </code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>aws quicksight delete-template —aws-account-id 111122223333 —template-id reports_test_template
-        /// —alias-name ‘\$LATEST’ </code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>aws quicksight delete-template --aws-account-id 111122223333 —-template-id
-        /// reports_test_template</code> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If version number which is an optional field is not passed the template (including
-        /// all the versions) is deleted by the API, if version number is provided, the specific
-        /// template version is deleted by the API.
-        /// </para>
-        ///  
-        /// <para>
-        /// Users can explicitly describe the latest version of the template by passing <code>$LATEST</code>
-        /// to the <code>alias-name</code> parameter. <code>$LATEST</code> is an internally supported
-        /// alias, which points to the latest version of the template. 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -1672,16 +1301,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Update template alias of given template.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight delete-template-alias --aws-account-id 111122223333 --template-id
-        /// 'reports_test_template' --alias-name 'STAGING'</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTemplateAlias service method.</param>
         /// <param name="cancellationToken">
@@ -1732,17 +1351,7 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Deletes the Amazon QuickSight user that is associated with the identity of the AWS
         /// Identity and Access Management (IAM) user or role that's making the call. The IAM
-        /// user isn't deleted as a result of this call. 
-        /// 
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight delete-user --aws-account-id=111122223333 --namespace=default
-        /// --user-name=Pat </code> 
-        /// </para>
+        /// user isn't deleted as a result of this call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// <param name="cancellationToken">
@@ -1797,17 +1406,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Deletes a user identified by its principal ID. 
-        /// 
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight delete-user-by-principal-id --aws-account-id=111122223333 --namespace=default
-        /// --principal-id=ABCDEFJA26JLI7EUUOEHS </code> 
-        /// </para>
+        /// Deletes a user identified by its principal ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUserByPrincipalId service method.</param>
         /// <param name="cancellationToken">
@@ -1863,22 +1462,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Provides a summary for a dashboard.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>aws quicksight describe-dashboard --aws-account-id 111122223333 —dashboard-id
-        /// reports_test_report -version-number 2</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code> aws quicksight describe-dashboard --aws-account-id 111122223333 —dashboard-id
-        /// reports_test_report -alias-name ‘$PUBLISHED’ </code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDashboard service method.</param>
         /// <param name="cancellationToken">
@@ -1937,16 +1520,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Describes read and write permissions on a dashboard.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight describe-dashboard-permissions --aws-account-id 735340738645
-        /// —dashboard-id reports_test_bob_report</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDashboardPermissions service method.</param>
         /// <param name="cancellationToken">
@@ -1998,24 +1571,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Describes a dataset. 
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight describe-data-set \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--aws-account-id=111111111111 \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--data-set-id=unique-data-set-id</code> 
-        /// </para>
+        /// Describes a dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -2071,24 +1627,7 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// CLI syntax: 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight describe-data-set-permissions \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--aws-account-id=111122223333 \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--data-set-id=unique-data-set-id \</code> 
+        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataSetPermissions service method.</param>
@@ -2142,12 +1681,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Describes a data source.
-        /// 
-        ///  
-        /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -2200,12 +1733,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Describes the resource permissions for a data source.
-        /// 
-        ///  
-        /// <para>
-        /// The permissions resource is <code>aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataSourcePermissions service method.</param>
         /// <param name="cancellationToken">
@@ -2257,26 +1784,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN). 
-        /// 
-        ///  
-        /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-        /// </code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The response is the group object. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight describe-group -\-aws-account-id=11112222333 -\-namespace=default
-        /// -\-group-name=Sales </code> 
-        /// </para>
+        /// Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGroup service method.</param>
         /// <param name="cancellationToken">
@@ -2335,16 +1843,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Describes an existing IAMPolicy Assignment by specified assignment name.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight describe-iam-policy-assignment --aws-account-id=111122223333
-        /// --assignment-name=testtest --namespace=default --region=us-east-1 </code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIAMPolicyAssignment service method.</param>
         /// <param name="cancellationToken">
@@ -2455,32 +1953,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Describes a template's metadata.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight describe-template --aws-account-id 111122223333 --template-id
-        /// reports_test_template </code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight describe-template --aws-account-id 111122223333 --template-id
-        /// reports_test_template --version-number-2</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight describe-template --aws-account-id 111122223333 --template-id
-        /// reports_test_template --alias-name '\$LATEST' </code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Users can explicitly describe the latest version of the dashboard by passing <code>$LATEST</code>
-        /// to the <code>alias-name</code> parameter. <code>$LATEST</code> is an internally supported
-        /// alias, which points to the latest version of the dashboard. 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -2545,16 +2017,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Describes the template aliases of a template.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight describe-template-alias --aws-account-id 111122223333 --template-id
-        /// 'reports_test_template' --alias-name 'STAGING'</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTemplateAlias service method.</param>
         /// <param name="cancellationToken">
@@ -2604,16 +2066,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Describes read and write permissions on a template.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight describe-template-permissions —aws-account-id 735340738645 —template-id
-        /// reports_test_template</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTemplatePermissions service method.</param>
         /// <param name="cancellationToken">
@@ -2668,22 +2120,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Returns information about a user, given the user name. 
-        /// 
-        ///  
-        /// <para>
-        /// The response is a user object that contains the user's Amazon Resource Name (ARN),
-        /// AWS Identity and Access Management (IAM) role, and email address. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight describe-user --aws-account-id=111122223333 --namespace=default
-        /// --user-name=Pat </code> 
-        /// </para>
+        /// Returns information about a user, given the user name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeUser service method.</param>
         /// <param name="cancellationToken">
@@ -2740,58 +2177,15 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Generates a server-side embeddable URL and authorization code. Before this can work
         /// properly, first you need to configure the dashboards and user permissions. For more
-        /// information, see <a href="https://docs.aws.example.com/en_us/quicksight/latest/user/embedding.html">
-        /// Embedding Amazon QuickSight Dashboards</a>.
+        /// information, see the Amazon QuickSight User Guide section on <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
+        /// Amazon QuickSight Dashboards</a> or see the Amazon QuickSight API Reference section
+        /// on <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
+        /// Amazon QuickSight Dashboards</a> .
         /// 
         ///  
         /// <para>
         /// Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not
         /// from the user’s browser.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Assume the role with permissions enabled for actions: <code>quickSight:RegisterUser</code>
-        /// and <code>quicksight:GetDashboardEmbedURL</code>. You can use assume-role, assume-role-with-web-identity,
-        /// or assume-role-with-saml. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws sts assume-role --role-arn "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role"
-        /// --role-session-name embeddingsession</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// If the user does not exist in QuickSight, register the user:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight register-user --aws-account-id 111122223333 --namespace default
-        /// --identity-type IAM --iam-arn "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role"
-        /// --user-role READER --session-name "embeddingsession" --email user123@example.com --region
-        /// us-east-1</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Get the URL for the embedded dashboard (<code>IAM</code> identity authentication):
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight get-dashboard-embed-url --aws-account-id 111122223333 --dashboard-id
-        /// 1a1ac2b2-3fc3-4b44-5e5d-c6db6778df89 --identity-type IAM</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Get the URL for the embedded dashboard (<code>QUICKSIGHT</code> identity authentication):
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight get-dashboard-embed-url --aws-account-id 111122223333 --dashboard-id
-        /// 1a1ac2b2-3fc3-4b44-5e5d-c6db6778df89 --identity-type QUICKSIGHT --user-arn arn:aws:quicksight:us-east-1:111122223333:user/default/embedding_quicksight_dashboard_role/embeddingsession</code>
-        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboardEmbedUrl service method.</param>
@@ -2871,16 +2265,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Lists dashboards in the AWS account.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight list-dashboards --aws-account-id 111122223333 --max-results
-        /// 5 —next-token 'next-10'</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboards service method.</param>
         /// <param name="cancellationToken">
@@ -2930,15 +2314,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Lists all the versions of the dashboards in the Quicksight subscription.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        /// aws quicksight list-template-versions —aws-account-id 111122223333 —template-id reports-test-template
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboardVersions service method.</param>
         /// <param name="cancellationToken">
@@ -2997,13 +2372,7 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// CLI syntax: <code>aws quicksight list-data-sets --aws-account-id=111111111111</code>
-        /// 
+        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSets service method.</param>
@@ -3056,18 +2425,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists data sources in current AWS region that belong to this AWS account.
-        /// 
-        ///  
-        /// <para>
-        /// The permissions resource is: <code>arn:aws:quicksight:region:aws-account-id:datasource/*</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// CLI syntax: <code>aws quicksight list-data-sources --aws-account-id=111122223333</code>
-        /// 
-        /// </para>
+        /// Lists data sources in current AWS Region that belong to this AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSources service method.</param>
         /// <param name="cancellationToken">
@@ -3120,25 +2478,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Lists member users in a group.
-        /// 
-        ///  
-        /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-        /// </code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The response is a list of group member objects.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight list-group-memberships -\-aws-account-id=111122223333 -\-namespace=default
-        /// </code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupMemberships service method.</param>
         /// <param name="cancellationToken">
@@ -3199,25 +2538,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists all user groups in Amazon QuickSight. 
-        /// 
-        ///  
-        /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/*</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The response is a list of group objects. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight list-groups -\-aws-account-id=111122223333 -\-namespace=default
-        /// </code> 
-        /// </para>
+        /// Lists all user groups in Amazon QuickSight.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
         /// <param name="cancellationToken">
@@ -3279,17 +2600,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Lists assignments in current QuickSight account.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight list-iam-policy-assignments --aws-account-id=111122223333 --max-result=5
-        /// --assignment-status=ENABLED --namespace=default --region=us-east-1 --next-token=3
-        /// </code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIAMPolicyAssignments service method.</param>
         /// <param name="cancellationToken">
@@ -3344,18 +2654,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists all the assignments and the ARNs for the associated IAM policies assigned to
-        /// the specified user and the group or groups that the user belongs to.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight list-iam-policy-assignments-for-user --aws-account-id=111122223333
-        /// --user-name=user5 --namespace=default --max-result=6 --region=us-east-1 </code> 
-        /// </para>
+        /// Lists all the assignments and the Amazon Resource Names (ARNs) for the associated
+        /// IAM policies assigned to the specified user and the group or groups that the user
+        /// belongs to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIAMPolicyAssignmentsForUser service method.</param>
         /// <param name="cancellationToken">
@@ -3473,17 +2774,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Lists the tags assigned to a resource.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>aws quicksight list-tags-for-resource --resource-arn arn:aws:quicksight:us-east-1:111111111111:dataset/dataset1
-        /// --region us-east-1</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -3536,16 +2826,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Lists all the aliases of a template.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight list-template-aliases --aws-account-id 111122223333 —template-id
-        /// 'reports_test_template'</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTemplateAliases service method.</param>
         /// <param name="cancellationToken">
@@ -3595,16 +2875,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Lists all the templates in the QuickSight account.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight list-templates --aws-account-id 111122223333 --max-results 1
-        /// —next-token AYADeJuxwOypAndSoOn</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTemplates service method.</param>
         /// <param name="cancellationToken">
@@ -3660,16 +2930,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Lists all the versions of the templates in the Quicksight account.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        /// aws quicksight list-template-versions --aws-account-id 111122223333 --aws-account-id
-        /// 196359894473 --template-id reports-test-template
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTemplateVersions service method.</param>
         /// <param name="cancellationToken">
@@ -3725,20 +2985,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
-        /// 
-        ///  
-        /// <para>
-        /// The response is a one or more group objects. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight list-user-groups -\-user-name=Pat -\-aws-account-id=111122223333
-        /// -\-namespace=default -\-region=us-east-1 </code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserGroups service method.</param>
         /// <param name="cancellationToken">
@@ -3793,22 +3039,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Returns a list of all of the Amazon QuickSight users belonging to this account. 
-        /// 
-        ///  
-        /// <para>
-        /// The response is a list of user objects, containing each user's Amazon Resource Name
-        /// (ARN), AWS Identity and Access Management (IAM) role, and email address. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight list-users --aws-account-id=111122223333 --namespace=default
-        /// </code> 
-        /// </para>
+        /// Returns a list of all of the Amazon QuickSight users belonging to this account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
         /// <param name="cancellationToken">
@@ -3867,18 +3098,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Creates an Amazon QuickSight user, whose identity is associated with the AWS Identity
-        /// and Access Management (IAM) identity or role specified in the request. 
-        /// 
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight register-user -\-aws-account-id=111122223333 -\-namespace=default
-        /// -\-email=pat@example.com -\-identity-type=IAM -\-user-role=AUTHOR -\-iam-arn=arn:aws:iam::111122223333:user/Pat
-        /// </code> 
-        /// </para>
+        /// and Access Management (IAM) identity or role specified in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterUser service method.</param>
         /// <param name="cancellationToken">
@@ -3942,46 +3162,36 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Assigns a tag or tags to a resource.
+        /// Assigns one or more tags (key-value pairs) to the specified QuickSight resource. 
         /// 
         ///  
         /// <para>
-        /// Assigns one or more tags (key-value pairs) to the specified QuickSight resource. Tags
-        /// can help you organize and categorize your resources. You can also use them to scope
-        /// user permissions, by granting a user permission to access or change only resources
-        /// with certain tag values. You can use the TagResource action with a resource that already
-        /// has tags. If you specify a new tag key for the resource, this tag is appended to the
-        /// list of tags associated with the resource. If you specify a tag key that is already
-        /// associated with the resource, the new tag value that you specify replaces the previous
-        /// value for that tag.
+        /// Tags can help you organize and categorize your resources. You can also use them to
+        /// scope user permissions, by granting a user permission to access or change only resources
+        /// with certain tag values. You can use the <code>TagResource</code> operation with a
+        /// resource that already has tags. If you specify a new tag key for the resource, this
+        /// tag is appended to the list of tags associated with the resource. If you specify a
+        /// tag key that is already associated with the resource, the new tag value that you specify
+        /// replaces the previous value for that tag.
         /// </para>
         ///  
         /// <para>
         /// You can associate as many as 50 tags with a resource. QuickSight supports tagging
-        /// on data-set, data-source, dashboard, template. 
+        /// on data set, data source, dashboard, and template. 
         /// </para>
         ///  
         /// <para>
-        /// Tagging for QuickSight works in a similar was to tagging for other AWS services, except
+        /// Tagging for QuickSight works in a similar way to tagging for other AWS services, except
         /// for the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can't use tags to track AWS costs for QuickSight, because QuickSight costs are
-        /// based on users and SPICE capacity, which aren't taggable resources.
+        /// You can't use tags to track AWS costs for QuickSight. This restriction is because
+        /// QuickSight costs are based on users and SPICE capacity, which aren't taggable resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// QuickSight doesn't currently support the Tag Editor for AWS Resource Groups.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// CLI syntax to tag a resource:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>aws quicksight tag-resource --resource-arn arn:aws:quicksight:us-east-1:111111111111:dataset/dataset1
-        /// --tags Key=K1,Value=V1 Key=K2,Value=V2 --region us-east-1</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4039,17 +3249,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Removes a tag or tags from a resource.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>aws quicksight untag-resource --resource-arn arn:aws:quicksight:us-east-1:111111111111:dataset/dataset1
-        /// --tag-keys K1 K2 --region us-east-1</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -4102,23 +3301,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates a dashboard in the AWS account.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight update-dashboard --aws-account-id 111122223333 --dashboard-id
-        /// 123123123 --dashboard-name "test-update102" --source-entity SourceTemplate={Arn=arn:aws:quicksight:us-west-2:111122223333:template/sales-report-template2}
-        /// --data-set-references DataSetPlaceholder=SalesDataSet,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/0e251aef-9ebf-46e1-b852-eb4fa33c1d3a</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight update-dashboard --cli-input-json file://update-dashboard.json
-        /// </code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDashboard service method.</param>
         /// <param name="cancellationToken">
@@ -4177,78 +3359,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates read and write permissions on a dashboard.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight update-dashboard-permissions —cli-input-json file://update-permission.json</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// A sample update-permissions.json for granting read only permissions:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>{ "AwsAccountId": "111122223333", "DashboardId": "reports_test_report", "GrantPermissions":
-        /// [ { "Principal": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2", "Actions":
-        /// [ "quicksight:DescribeDashboard", "quicksight:ListDashboardVersions", "quicksight:DescribeDashboardVersion",
-        /// "quicksight:QueryDashboard" ] } ] }</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// A sample update-permissions.json for granting read and write permissions:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>{ "AwsAccountId": "111122223333", "DashboardId": "reports_test_report", "GrantPermissions":
-        /// [ { "Principal": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2", "Actions":
-        /// [ "quicksight:DescribeDashboard", "quicksight:ListDashboardVersions", "quicksight:DescribeDashboardVersion",
-        /// "quicksight:QueryDashboard", "quicksight:DescribeDashboardPermissions", "quicksight:UpdateDashboardPermissions",
-        /// "quicksight:DeleteDashboardVersion", "quicksight:DeleteDashboard", "quicksight:UpdateDashboard",
-        /// "quicksight:UpdateDashboardPublishedVersion", ] } ] }</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// A sample update-permissions.json for revoking write permissions:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>{ "AwsAccountId": "111122223333", "DashboardId": "reports_test_report", "RevokePermissions":
-        /// [ { "Principal": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2", "Actions":
-        /// [ "quicksight:DescribeDashboardPermissions", "quicksight:UpdateDashboardPermissions",
-        /// "quicksight:DeleteDashboardVersion", "quicksight:DeleteDashboard", "quicksight:UpdateDashboard",
-        /// "quicksight:UpdateDashboardPublishedVersion", ] } ] }</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// A sample update-permissions.json for revoking read and write permissions:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>{ "AwsAccountId": "111122223333", "DashboardId": "reports_test_report", "RevokePermissions":
-        /// [ { "Principal": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2", "Actions":
-        /// [ "quicksight:DescribeDashboard", "quicksight:ListDashboardVersions", "quicksight:DescribeDashboardVersion",
-        /// "quicksight:QueryDashboard", "quicksight:DescribeDashboardPermissions", "quicksight:UpdateDashboardPermissions",
-        /// "quicksight:DeleteDashboardVersion", "quicksight:DeleteDashboard", "quicksight:UpdateDashboard",
-        /// "quicksight:UpdateDashboardPublishedVersion", ] } ] }</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To obtain the principal name of a QuickSight user or group, you can use describe-group
-        /// or describe-user. For example:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight describe-user --aws-account-id 111122223333 --namespace default
-        /// --user-name user2 --region us-east-1 { "User": { "Arn": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2",
-        /// "Active": true, "Email": "user2@example.com", "Role": "ADMIN", "UserName": "user2",
-        /// "PrincipalId": "federated/iam/abcd2abcdabcdeabc5ab5" }, "RequestId": "8f74bb31-6291-448a-a71c-a765a44bae31",
-        /// "Status": 200 }</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDashboardPermissions service method.</param>
         /// <param name="cancellationToken">
@@ -4304,16 +3414,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates the published version of a dashboard.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight update-dashboard-published-version --aws-account-id 111122223333
-        /// --dashboard-id dashboard-w1 ---version-number 2</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDashboardPublishedVersion service method.</param>
         /// <param name="cancellationToken">
@@ -4369,84 +3469,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates a dataset.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight update-data-set \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--aws-account-id=111122223333 \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--data-set-id=unique-data-set-id \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--name='My dataset' \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--import-mode=SPICE \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--physical-table-map='{</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "physical-table-id": {</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "RelationalTable": {</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "DataSourceArn": "arn:aws:quicksight:us-west-2:111111111111:datasource/data-source-id",</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Name": "table1",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "InputColumns": [</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> {</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Name": "column1",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Type": "STRING"</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> }</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> ]</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> }</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> }'</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -4514,34 +3536,7 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// CLI syntax: 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight update-data-set-permissions \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--aws-account-id=111122223333 \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--data-set-id=unique-data-set-id \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--grant-permissions='[{"Principal":"arn:aws:quicksight:us-east-1:111122223333:user/default/user1","Actions":["quicksight:DescribeDataSet","quicksight:DescribeDataSetPermissions","quicksight:PassDataSet","quicksight:ListIngestions","quicksight:DescribeIngestion"]}]'
-        /// \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--revoke-permissions='[{"Principal":"arn:aws:quicksight:us-east-1:111122223333:user/default/user2","Actions":["quicksight:UpdateDataSet","quicksight:DeleteDataSet","quicksight:UpdateDataSetPermissions","quicksight:CreateIngestion","quicksight:CancelIngestion"]}]'</code>
-        /// 
+        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSetPermissions service method.</param>
@@ -4598,42 +3593,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates a data source.
-        /// 
-        ///  
-        /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight update-data-source \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--aws-account-id=111122223333 \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--data-source-id=unique-data-source-id \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--name='My Data Source' \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--data-source-parameters='{"PostgreSqlParameters":{"Host":"my-db-host.example.com","Port":1234,"Database":"my-db"}}'
-        /// \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--credentials='{"CredentialPair":{"Username":"username","Password":"password"}}</code>
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -4689,42 +3648,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates the permissions to a data source.
-        /// 
-        ///  
-        /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight update-data-source-permissions \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--aws-account-id=111122223333 \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--data-source-id=unique-data-source-id \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--name='My Data Source' \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--grant-permissions='[{"Principal":"arn:aws:quicksight:us-east-1:111122223333:user/default/user1","Actions":["quicksight:DescribeDataSource","quicksight:DescribeDataSourcePermissions","quicksight:PassDataSource"]}]'
-        /// \</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--revoke-permissions='[{"Principal":"arn:aws:quicksight:us-east-1:111122223333:user/default/user2","Actions":["quicksight:UpdateDataSource","quicksight:DeleteDataSource","quicksight:UpdateDataSourcePermissions"]}]'</code>
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSourcePermissions service method.</param>
         /// <param name="cancellationToken">
@@ -4779,26 +3702,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Changes a group description. 
-        /// 
-        ///  
-        /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-        /// </code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The response is a group object.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight update-group --aws-account-id=111122223333 --namespace=default
-        /// --group-name=Sales --description="Sales BI Dashboards" </code> 
-        /// </para>
+        /// Changes a group description.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
         /// <param name="cancellationToken">
@@ -4858,17 +3762,6 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Updates an existing assignment. This operation updates only the optional parameter
         /// or parameters that are specified in the request.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code/>aws quicksight update-iam-policy-assignment --aws-account-id=111122223333
-        /// --assignment-name=FullAccessAssignment --assignment-status=DRAFT --policy-arns=arn:aws:iam::aws:policy/AdministratorAccess
-        /// --identities="user=user-1,user-2,group=admin" --namespace=default --region=us-east-1
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIAMPolicyAssignment service method.</param>
         /// <param name="cancellationToken">
@@ -4928,24 +3821,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates a template from an existing QuickSight analysis.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight update-template --aws-account-id 111122223333 --template-id
-        /// reports_test_template --data-set-references DataSetPlaceholder=reports,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/c684a204-d134-4c53-a63c-451f72c60c28
-        /// DataSetPlaceholder=Elblogs,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/15840b7d-b542-4491-937b-602416b367b3
-        /// —source-entity SourceAnalysis=’{Arn=arn:aws:quicksight:us-west-2:111122223333:analysis/c5731fe9-4708-4598-8f6d-cf2a70875b6d}</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// You can also pass in a json file: <code>aws quicksight update-template —cli-input-json
-        /// file://create-template.json</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -5007,16 +3882,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates the template alias of a template.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight update-template-alias --aws-account-id 111122223333 --template-id
-        /// 'reports_test_template' --alias-name STAGING —template-version-number 2 </code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplateAlias service method.</param>
         /// <param name="cancellationToken">
@@ -5069,170 +3934,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates the permissions on a template.
-        /// 
-        ///  
-        /// <para>
-        /// CLI syntax:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>aws quicksight describe-template-permissions —aws-account-id 111122223333 —template-id
-        /// reports_test_template</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>aws quicksight update-template-permissions —cli-input-json file://update-permission.json
-        /// </code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The structure of <code>update-permissions.json</code> to add permissions:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>{ "AwsAccountId": "111122223333",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "DashboardId": "reports_test_template",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "GrantPermissions": [</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> { "Principal": "arn:aws:quicksight:us-east-1:196359894473:user/default/user3",</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Actions": [</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "quicksight:DescribeTemplate",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "quicksight:ListTemplateVersions"</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> ] } ] }</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The structure of <code>update-permissions.json</code> to add permissions:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>{ "AwsAccountId": "111122223333",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "DashboardId": "reports_test_template",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "RevokePermissions": [</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> { "Principal": "arn:aws:quicksight:us-east-1:196359894473:user/default/user3",</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Actions": [</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "quicksight:DescribeTemplate",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "quicksight:ListTemplateVersions"</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> ] } ] }</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To obtain the principal name of a QuickSight group or user, use user describe-group
-        /// or describe-user. For example:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight describe-user </code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--aws-account-id 111122223333</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--namespace default</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--user-name user2 </code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>--region us-east-1</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>{</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "User": {</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Arn": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2",</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Active": true,</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Email": "user2@example.com",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Role": "ADMIN",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "UserName": "user2",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "PrincipalId": "federated/iam/abcd2abcdabcdeabc5ab5"</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> },</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "RequestId": "8f74bb31-6291-448a-a71c-a765a44bae31",</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code> "Status": 200</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>}</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplatePermissions service method.</param>
         /// <param name="cancellationToken">
@@ -5288,22 +3989,6 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates an Amazon QuickSight user.
-        /// 
-        ///  
-        /// <para>
-        /// The response is a user object that contains the user's Amazon QuickSight user name,
-        /// email address, active or inactive status in Amazon QuickSight, Amazon QuickSight role,
-        /// and Amazon Resource Name (ARN). 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>CLI Sample:</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws quicksight update-user --user-name=Pat --role=ADMIN --email=new_address@example.com
-        /// --aws-account-id=111122223333 --namespace=default --region=us-east-1 </code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
         /// <param name="cancellationToken">

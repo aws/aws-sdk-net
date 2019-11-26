@@ -30,17 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the ListIAMPolicyAssignments operation.
     /// Lists assignments in current QuickSight account.
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight list-iam-policy-assignments --aws-account-id=111122223333 --max-result=5
-    /// --assignment-status=ENABLED --namespace=default --region=us-east-1 --next-token=3
-    /// </code> 
-    /// </para>
     /// </summary>
     public partial class ListIAMPolicyAssignmentsRequest : AmazonQuickSightRequest
     {

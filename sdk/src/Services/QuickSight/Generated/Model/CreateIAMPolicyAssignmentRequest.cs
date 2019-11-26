@@ -29,20 +29,9 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIAMPolicyAssignment operation.
-    /// Creates an assignment with one specified IAM policy ARN and will assigned to specified
-    /// groups or users of QuickSight. Users and groups need to be in the same namespace.
-    /// 
-    /// 
-    ///  
-    /// <para>
-    /// CLI syntax:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight create-iam-policy-assignment --aws-account-id=111122223333 --assignment-name=helpAssignment
-    /// --policy-arn=arn:aws:iam::aws:policy/AdministratorAccess --identities="user=user5,engineer123,group=QS-Admin"
-    /// --namespace=default --region=us-west-2</code> 
-    /// </para>
+    /// Creates an assignment with one specified IAM policy Amazon Resource Name (ARN) and
+    /// will assigned to specified groups or users of QuickSight. Users and groups need to
+    /// be in the same namespace.
     /// </summary>
     public partial class CreateIAMPolicyAssignmentRequest : AmazonQuickSightRequest
     {
@@ -163,8 +152,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// An IAM policy ARN that you want to apply to the QuickSight users and groups specified
-        /// in this assignment.
+        /// An IAM policy Amazon Resource Name (ARN) that you want to apply to the QuickSight
+        /// users and groups specified in this assignment.
         /// </para>
         /// </summary>
         public string PolicyArn
