@@ -35,6 +35,8 @@ namespace Amazon.WorkSpaces.Model
         private string _bundleId;
         private ComputeType _computeType;
         private string _description;
+        private string _imageId;
+        private DateTime? _lastUpdatedTime;
         private string _name;
         private string _owner;
         private RootStorage _rootStorage;
@@ -93,6 +95,42 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// The image identifier of the bundle.
+        /// </para>
+        /// </summary>
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdatedTime. 
+        /// <para>
+        /// The last time that the bundle was updated.
+        /// </para>
+        /// </summary>
+        public DateTime LastUpdatedTime
+        {
+            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            set { this._lastUpdatedTime = value; }
+        }
+
+        // Check to see if LastUpdatedTime property is set
+        internal bool IsSetLastUpdatedTime()
+        {
+            return this._lastUpdatedTime.HasValue; 
         }
 
         /// <summary>

@@ -369,6 +369,10 @@
     <pattern>^wsb-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.WorkspaceBundle.ImageId</property>
+    <pattern>wsi-[0-9a-z]{9,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.WorkspaceBundle.Name</property>
     <min>1</min>
   </property-value-rule>
