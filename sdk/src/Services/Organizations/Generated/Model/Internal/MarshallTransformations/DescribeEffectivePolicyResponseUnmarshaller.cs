@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AttachPolicy operation
+    /// Response Unmarshaller for DescribeEffectivePolicy operation
     /// </summary>  
-    public class AttachPolicyResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeEffectivePolicyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            AttachPolicyResponse response = new AttachPolicyResponse();
+            DescribeEffectivePolicyResponse response = new DescribeEffectivePolicyResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("EffectivePolicy", targetDepth))
+                {
+                    var unmarshaller = EffectivePolicyUnmarshaller.Instance;
+                    response.EffectivePolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -69,33 +80,17 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             {
                 return new AWSOrganizationsNotInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
-            {
-                return new ConcurrentModificationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ConstraintViolationException"))
             {
                 return new ConstraintViolationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicatePolicyAttachmentException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("EffectivePolicyNotFoundException"))
             {
-                return new DuplicatePolicyAttachmentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new EffectivePolicyNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInputException"))
             {
                 return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("PolicyChangesInProgressException"))
-            {
-                return new PolicyChangesInProgressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("PolicyNotFoundException"))
-            {
-                return new PolicyNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("PolicyTypeNotEnabledException"))
-            {
-                return new PolicyTypeNotEnabledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceException"))
             {
@@ -116,9 +111,9 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             return new AmazonOrganizationsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static AttachPolicyResponseUnmarshaller _instance = new AttachPolicyResponseUnmarshaller();        
+        private static DescribeEffectivePolicyResponseUnmarshaller _instance = new DescribeEffectivePolicyResponseUnmarshaller();        
 
-        internal static AttachPolicyResponseUnmarshaller GetInstance()
+        internal static DescribeEffectivePolicyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +121,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AttachPolicyResponseUnmarshaller Instance
+        public static DescribeEffectivePolicyResponseUnmarshaller Instance
         {
             get
             {

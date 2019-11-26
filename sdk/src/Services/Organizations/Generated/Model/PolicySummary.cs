@@ -66,7 +66,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property AwsManaged. 
         /// <para>
-        /// A boolean value that indicates whether the specified policy is an AWS managed policy.
+        /// A Boolean value that indicates whether the specified policy is an AWS managed policy.
         /// If true, then you can attach the policy to roots, OUs, or accounts, but you cannot
         /// edit it.
         /// </para>

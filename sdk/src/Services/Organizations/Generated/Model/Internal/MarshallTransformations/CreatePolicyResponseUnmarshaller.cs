@@ -112,6 +112,10 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             {
                 return new TooManyRequestsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedAPIEndpointException"))
+            {
+                return new UnsupportedAPIEndpointException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonOrganizationsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 

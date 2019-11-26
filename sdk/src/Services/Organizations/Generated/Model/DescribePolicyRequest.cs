@@ -49,7 +49,7 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
-        /// requires "p-" followed by from 8 to 128 lower-case letters or digits.
+        /// requires "p-" followed by from 8 to 128 lowercase letters or digits.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -83,7 +83,7 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-        /// requires "r-" followed by from 4 to 32 lower-case letters or digits.
+        /// requires "r-" followed by from 4 to 32 lowercase letters or digits.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
