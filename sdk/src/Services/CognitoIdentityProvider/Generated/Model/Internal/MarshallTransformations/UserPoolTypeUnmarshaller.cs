@@ -64,6 +64,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccountRecoverySetting", targetDepth))
+                {
+                    var unmarshaller = AccountRecoverySettingTypeUnmarshaller.Instance;
+                    unmarshalledObject.AccountRecoverySetting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AdminCreateUserConfig", targetDepth))
                 {
                     var unmarshaller = AdminCreateUserConfigTypeUnmarshaller.Instance;

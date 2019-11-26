@@ -1470,7 +1470,9 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Signs out users from all devices, as an administrator.
+        /// Signs out users from all devices, as an administrator. It also invalidates all refresh
+        /// tokens issued to a user. The user's current access and Id tokens remain valid until
+        /// their expiry. Access and Id tokens expire one hour after they are issued.
         /// 
         ///  
         /// <para>
@@ -3115,7 +3117,9 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Signs out users from all devices.
+        /// Signs out users from all devices. It also invalidates all refresh tokens issued to
+        /// a user. The user's current access and Id tokens remain valid until their expiry. Access
+        /// and Id tokens expire one hour after they are issued.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GlobalSignOut service method.</param>
         /// <param name="cancellationToken">

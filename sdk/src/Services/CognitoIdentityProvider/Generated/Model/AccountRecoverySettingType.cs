@@ -28,32 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Container for the parameters to the GlobalSignOut operation.
-    /// Signs out users from all devices. It also invalidates all refresh tokens issued to
-    /// a user. The user's current access and Id tokens remain valid until their expiry. Access
-    /// and Id tokens expire one hour after they are issued.
+    /// The data type for <code>AccountRecoverySetting</code>.
     /// </summary>
-    public partial class GlobalSignOutRequest : AmazonCognitoIdentityProviderRequest
+    public partial class AccountRecoverySettingType
     {
-        private string _accessToken;
+        private List<RecoveryOptionType> _recoveryMechanisms = new List<RecoveryOptionType>();
 
         /// <summary>
-        /// Gets and sets the property AccessToken. 
+        /// Gets and sets the property RecoveryMechanisms. 
         /// <para>
-        /// The access token.
+        /// The list of <code>RecoveryOptionTypes</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string AccessToken
+        [AWSProperty(Min=1, Max=2)]
+        public List<RecoveryOptionType> RecoveryMechanisms
         {
-            get { return this._accessToken; }
-            set { this._accessToken = value; }
+            get { return this._recoveryMechanisms; }
+            set { this._recoveryMechanisms = value; }
         }
 
-        // Check to see if AccessToken property is set
-        internal bool IsSetAccessToken()
+        // Check to see if RecoveryMechanisms property is set
+        internal bool IsSetRecoveryMechanisms()
         {
-            return this._accessToken != null;
+            return this._recoveryMechanisms != null && this._recoveryMechanisms.Count > 0; 
         }
 
     }

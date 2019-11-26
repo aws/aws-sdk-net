@@ -32,6 +32,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class UserPoolType
     {
+        private AccountRecoverySettingType _accountRecoverySetting;
         private AdminCreateUserConfigType _adminCreateUserConfig;
         private List<string> _aliasAttributes = new List<string>();
         private string _arn;
@@ -61,6 +62,29 @@ namespace Amazon.CognitoIdentityProvider.Model
         private UserPoolAddOnsType _userPoolAddOns;
         private Dictionary<string, string> _userPoolTags = new Dictionary<string, string>();
         private VerificationMessageTemplateType _verificationMessageTemplate;
+
+        /// <summary>
+        /// Gets and sets the property AccountRecoverySetting. 
+        /// <para>
+        /// Use this setting to define which verified available method a user can use to recover
+        /// their password when they call <code>ForgotPassword</code>. It allows you to define
+        /// a preferred method when a user has more than one method available. With this setting,
+        /// SMS does not qualify for a valid password recovery mechanism if the user also has
+        /// SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior
+        /// to determine the recovery method where SMS is preferred over email.
+        /// </para>
+        /// </summary>
+        public AccountRecoverySettingType AccountRecoverySetting
+        {
+            get { return this._accountRecoverySetting; }
+            set { this._accountRecoverySetting = value; }
+        }
+
+        // Check to see if AccountRecoverySetting property is set
+        internal bool IsSetAccountRecoverySetting()
+        {
+            return this._accountRecoverySetting != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AdminCreateUserConfig. 

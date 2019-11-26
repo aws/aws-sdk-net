@@ -1315,6 +1315,60 @@ namespace Amazon.CognitoIdentityProvider
 
 
     /// <summary>
+    /// Constants used for properties of type RecoveryOptionNameType.
+    /// </summary>
+    public class RecoveryOptionNameType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Admin_only for RecoveryOptionNameType
+        /// </summary>
+        public static readonly RecoveryOptionNameType Admin_only = new RecoveryOptionNameType("admin_only");
+        /// <summary>
+        /// Constant Verified_email for RecoveryOptionNameType
+        /// </summary>
+        public static readonly RecoveryOptionNameType Verified_email = new RecoveryOptionNameType("verified_email");
+        /// <summary>
+        /// Constant Verified_phone_number for RecoveryOptionNameType
+        /// </summary>
+        public static readonly RecoveryOptionNameType Verified_phone_number = new RecoveryOptionNameType("verified_phone_number");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecoveryOptionNameType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecoveryOptionNameType FindValue(string value)
+        {
+            return FindValue<RecoveryOptionNameType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecoveryOptionNameType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RiskDecisionType.
     /// </summary>
     public class RiskDecisionType : ConstantClass
