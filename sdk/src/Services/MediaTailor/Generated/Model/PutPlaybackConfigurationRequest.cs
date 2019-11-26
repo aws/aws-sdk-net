@@ -36,6 +36,7 @@ namespace Amazon.MediaTailor.Model
         private string _adDecisionServerUrl;
         private CdnConfiguration _cdnConfiguration;
         private DashConfigurationForPut _dashConfiguration;
+        private LivePreRollConfiguration _livePreRollConfiguration;
         private string _name;
         private string _slateAdUrl;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -98,6 +99,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetDashConfiguration()
         {
             return this._dashConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LivePreRollConfiguration. 
+        /// <para>
+        /// The configuration for pre-roll ad insertion.
+        /// </para>
+        /// </summary>
+        public LivePreRollConfiguration LivePreRollConfiguration
+        {
+            get { return this._livePreRollConfiguration; }
+            set { this._livePreRollConfiguration = value; }
+        }
+
+        // Check to see if LivePreRollConfiguration property is set
+        internal bool IsSetLivePreRollConfiguration()
+        {
+            return this._livePreRollConfiguration != null;
         }
 
         /// <summary>

@@ -36,6 +36,7 @@ namespace Amazon.MediaTailor.Model
         private CdnConfiguration _cdnConfiguration;
         private DashConfiguration _dashConfiguration;
         private HlsConfiguration _hlsConfiguration;
+        private LivePreRollConfiguration _livePreRollConfiguration;
         private string _name;
         private string _playbackConfigurationArn;
         private string _playbackEndpointPrefix;
@@ -119,6 +120,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetHlsConfiguration()
         {
             return this._hlsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LivePreRollConfiguration. 
+        /// <para>
+        /// The configuration for pre-roll ad insertion.
+        /// </para>
+        /// </summary>
+        public LivePreRollConfiguration LivePreRollConfiguration
+        {
+            get { return this._livePreRollConfiguration; }
+            set { this._livePreRollConfiguration = value; }
+        }
+
+        // Check to see if LivePreRollConfiguration property is set
+        internal bool IsSetLivePreRollConfiguration()
+        {
+            return this._livePreRollConfiguration != null;
         }
 
         /// <summary>
