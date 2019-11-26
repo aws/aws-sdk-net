@@ -32,6 +32,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class TableDescription
     {
+        private ArchivalSummary _archivalSummary;
         private List<AttributeDefinition> _attributeDefinitions = new List<AttributeDefinition>();
         private BillingModeSummary _billingModeSummary;
         private DateTime? _creationDateTime;
@@ -57,6 +58,24 @@ namespace Amazon.DynamoDBv2.Model
         /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
         public TableDescription() { }
+
+        /// <summary>
+        /// Gets and sets the property ArchivalSummary. 
+        /// <para>
+        /// Contains information about the table archive.
+        /// </para>
+        /// </summary>
+        public ArchivalSummary ArchivalSummary
+        {
+            get { return this._archivalSummary; }
+            set { this._archivalSummary = value; }
+        }
+
+        // Check to see if ArchivalSummary property is set
+        internal bool IsSetArchivalSummary()
+        {
+            return this._archivalSummary != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AttributeDefinitions. 
@@ -660,6 +679,23 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ACTIVE</code> - The table is ready for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS key used to encrypt
+        /// the table in inaccessible. Table operations may fail due to failure to use the AWS
+        /// KMS key. DynamoDB will initiate the table archival process when a table's AWS KMS
+        /// key remains inaccessible for more than seven days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ARCHIVING</code> - The table is being archived. Operations are not allowed
+        /// until archival is complete. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more
+        /// information. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

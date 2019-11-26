@@ -1653,6 +1653,54 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeContributorInsights
+
+
+        /// <summary>
+        /// Returns information about contributor insights, for a given table or global secondary
+        /// index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContributorInsights service method.</param>
+        /// 
+        /// <returns>The response from the DescribeContributorInsights service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights">REST API Reference for DescribeContributorInsights Operation</seealso>
+        DescribeContributorInsightsResponse DescribeContributorInsights(DescribeContributorInsightsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContributorInsights operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeContributorInsights
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights">REST API Reference for DescribeContributorInsights Operation</seealso>
+        IAsyncResult BeginDescribeContributorInsights(DescribeContributorInsightsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeContributorInsights.</param>
+        /// 
+        /// <returns>Returns a  DescribeContributorInsightsResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights">REST API Reference for DescribeContributorInsights Operation</seealso>
+        DescribeContributorInsightsResponse EndDescribeContributorInsights(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeEndpoints
 
 
@@ -2331,6 +2379,54 @@ namespace Amazon.DynamoDBv2
         /// <returns>Returns a  ListBackupsResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">REST API Reference for ListBackups Operation</seealso>
         ListBackupsResponse EndListBackups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListContributorInsights
+
+
+        /// <summary>
+        /// Returns a list of ContributorInsightsSummary for a table and all its global secondary
+        /// indexes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContributorInsights service method.</param>
+        /// 
+        /// <returns>The response from the ListContributorInsights service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">REST API Reference for ListContributorInsights Operation</seealso>
+        ListContributorInsightsResponse ListContributorInsights(ListContributorInsightsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListContributorInsights operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListContributorInsights
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">REST API Reference for ListContributorInsights Operation</seealso>
+        IAsyncResult BeginListContributorInsights(ListContributorInsightsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListContributorInsights.</param>
+        /// 
+        /// <returns>Returns a  ListContributorInsightsResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">REST API Reference for ListContributorInsights Operation</seealso>
+        ListContributorInsightsResponse EndListContributorInsights(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4538,6 +4634,53 @@ namespace Amazon.DynamoDBv2
         /// <returns>Returns a  UpdateContinuousBackupsResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">REST API Reference for UpdateContinuousBackups Operation</seealso>
         UpdateContinuousBackupsResponse EndUpdateContinuousBackups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateContributorInsights
+
+
+        /// <summary>
+        /// Updates the status for contributor insights for a specific table or index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContributorInsights service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContributorInsights service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">REST API Reference for UpdateContributorInsights Operation</seealso>
+        UpdateContributorInsightsResponse UpdateContributorInsights(UpdateContributorInsightsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContributorInsights operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContributorInsights
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">REST API Reference for UpdateContributorInsights Operation</seealso>
+        IAsyncResult BeginUpdateContributorInsights(UpdateContributorInsightsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContributorInsights.</param>
+        /// 
+        /// <returns>Returns a  UpdateContributorInsightsResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">REST API Reference for UpdateContributorInsights Operation</seealso>
+        UpdateContributorInsightsResponse EndUpdateContributorInsights(IAsyncResult asyncResult);
 
         #endregion
         

@@ -1306,6 +1306,43 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeContributorInsights
+        internal virtual DescribeContributorInsightsResponse DescribeContributorInsights(DescribeContributorInsightsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeContributorInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContributorInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContributorInsightsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContributorInsights operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights">REST API Reference for DescribeContributorInsights Operation</seealso>
+        public virtual void DescribeContributorInsightsAsync(DescribeContributorInsightsRequest request, AmazonServiceCallback<DescribeContributorInsightsRequest, DescribeContributorInsightsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DescribeContributorInsightsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DescribeContributorInsightsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DescribeContributorInsightsRequest,DescribeContributorInsightsResponse> responseObject 
+                            = new AmazonServiceResult<DescribeContributorInsightsRequest,DescribeContributorInsightsResponse>((DescribeContributorInsightsRequest)req, (DescribeContributorInsightsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  DescribeEndpoints
         internal virtual DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request)
         {
@@ -1829,6 +1866,43 @@ namespace Amazon.DynamoDBv2
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
                     AmazonServiceResult<ListBackupsRequest,ListBackupsResponse> responseObject 
                             = new AmazonServiceResult<ListBackupsRequest,ListBackupsResponse>((ListBackupsRequest)req, (ListBackupsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  ListContributorInsights
+        internal virtual ListContributorInsightsResponse ListContributorInsights(ListContributorInsightsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContributorInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContributorInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContributorInsightsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListContributorInsights operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">REST API Reference for ListContributorInsights Operation</seealso>
+        public virtual void ListContributorInsightsAsync(ListContributorInsightsRequest request, AmazonServiceCallback<ListContributorInsightsRequest, ListContributorInsightsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListContributorInsightsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListContributorInsightsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListContributorInsightsRequest,ListContributorInsightsResponse> responseObject 
+                            = new AmazonServiceResult<ListContributorInsightsRequest,ListContributorInsightsResponse>((ListContributorInsightsRequest)req, (ListContributorInsightsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
             BeginInvoke(request, invokeOptions, options, callbackHelper);
@@ -2975,6 +3049,43 @@ namespace Amazon.DynamoDBv2
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
                     AmazonServiceResult<UpdateContinuousBackupsRequest,UpdateContinuousBackupsResponse> responseObject 
                             = new AmazonServiceResult<UpdateContinuousBackupsRequest,UpdateContinuousBackupsResponse>((UpdateContinuousBackupsRequest)req, (UpdateContinuousBackupsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UpdateContributorInsights
+        internal virtual UpdateContributorInsightsResponse UpdateContributorInsights(UpdateContributorInsightsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContributorInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContributorInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContributorInsightsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContributorInsights operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">REST API Reference for UpdateContributorInsights Operation</seealso>
+        public virtual void UpdateContributorInsightsAsync(UpdateContributorInsightsRequest request, AmazonServiceCallback<UpdateContributorInsightsRequest, UpdateContributorInsightsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateContributorInsightsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateContributorInsightsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateContributorInsightsRequest,UpdateContributorInsightsResponse> responseObject 
+                            = new AmazonServiceResult<UpdateContributorInsightsRequest,UpdateContributorInsightsResponse>((UpdateContributorInsightsRequest)req, (UpdateContributorInsightsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
             BeginInvoke(request, invokeOptions, options, callbackHelper);

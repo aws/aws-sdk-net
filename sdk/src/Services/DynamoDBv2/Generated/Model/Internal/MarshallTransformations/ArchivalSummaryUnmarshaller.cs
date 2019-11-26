@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SSEDescription Object
+    /// Response Unmarshaller for ArchivalSummary Object
     /// </summary>  
-    public class SSEDescriptionUnmarshaller : IUnmarshaller<SSEDescription, XmlUnmarshallerContext>, IUnmarshaller<SSEDescription, JsonUnmarshallerContext>
+    public class ArchivalSummaryUnmarshaller : IUnmarshaller<ArchivalSummary, XmlUnmarshallerContext>, IUnmarshaller<ArchivalSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SSEDescription IUnmarshaller<SSEDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ArchivalSummary IUnmarshaller<ArchivalSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SSEDescription Unmarshall(JsonUnmarshallerContext context)
+        public ArchivalSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SSEDescription unmarshalledObject = new SSEDescription();
+            ArchivalSummary unmarshalledObject = new ArchivalSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InaccessibleEncryptionDateTime", targetDepth))
+                if (context.TestExpression("ArchivalBackupArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ArchivalBackupArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ArchivalDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.InaccessibleEncryptionDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ArchivalDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("KMSMasterKeyArn", targetDepth))
+                if (context.TestExpression("ArchivalReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KMSMasterKeyArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SSEType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SSEType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ArchivalReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         }
 
 
-        private static SSEDescriptionUnmarshaller _instance = new SSEDescriptionUnmarshaller();        
+        private static ArchivalSummaryUnmarshaller _instance = new ArchivalSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SSEDescriptionUnmarshaller Instance
+        public static ArchivalSummaryUnmarshaller Instance
         {
             get
             {

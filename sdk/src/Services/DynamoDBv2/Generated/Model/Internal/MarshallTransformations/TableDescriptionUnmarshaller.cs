@@ -64,6 +64,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ArchivalSummary", targetDepth))
+                {
+                    var unmarshaller = ArchivalSummaryUnmarshaller.Instance;
+                    unmarshalledObject.ArchivalSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AttributeDefinitions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AttributeDefinition, AttributeDefinitionUnmarshaller>(AttributeDefinitionUnmarshaller.Instance);

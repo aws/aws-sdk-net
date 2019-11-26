@@ -333,6 +333,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("DynamoDBv2")]
+        public void DescribeContributorInsightsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeContributorInsightsRequest>();
+            var marshaller = new DescribeContributorInsightsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeContributorInsightsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeContributorInsights").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeContributorInsightsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeContributorInsightsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DynamoDBv2")]
         public void DescribeEndpointsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeEndpointsRequest>();
@@ -586,6 +615,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListBackupsResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListBackupsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DynamoDBv2")]
+        public void ListContributorInsightsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListContributorInsightsRequest>();
+            var marshaller = new ListContributorInsightsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListContributorInsightsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListContributorInsights").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListContributorInsightsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListContributorInsightsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -937,6 +995,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateContinuousBackupsResponseUnmarshaller.Instance.Unmarshall(context)
                 as UpdateContinuousBackupsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DynamoDBv2")]
+        public void UpdateContributorInsightsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UpdateContributorInsightsRequest>();
+            var marshaller = new UpdateContributorInsightsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UpdateContributorInsightsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateContributorInsights").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = UpdateContributorInsightsResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateContributorInsightsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

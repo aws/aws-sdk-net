@@ -837,6 +837,23 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeContributorInsights
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContributorInsights operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights">REST API Reference for DescribeContributorInsights Operation</seealso>
+        void DescribeContributorInsightsAsync(DescribeContributorInsightsRequest request, AmazonServiceCallback<DescribeContributorInsightsRequest, DescribeContributorInsightsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  DescribeEndpoints
 
 
@@ -1128,6 +1145,23 @@ namespace Amazon.DynamoDBv2
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">REST API Reference for ListBackups Operation</seealso>
         void ListBackupsAsync(ListBackupsRequest request, AmazonServiceCallback<ListBackupsRequest, ListBackupsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  ListContributorInsights
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListContributorInsights operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">REST API Reference for ListContributorInsights Operation</seealso>
+        void ListContributorInsightsAsync(ListContributorInsightsRequest request, AmazonServiceCallback<ListContributorInsightsRequest, ListContributorInsightsResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -1867,6 +1901,23 @@ namespace Amazon.DynamoDBv2
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">REST API Reference for UpdateContinuousBackups Operation</seealso>
         void UpdateContinuousBackupsAsync(UpdateContinuousBackupsRequest request, AmazonServiceCallback<UpdateContinuousBackupsRequest, UpdateContinuousBackupsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  UpdateContributorInsights
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContributorInsights operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">REST API Reference for UpdateContributorInsights Operation</seealso>
+        void UpdateContributorInsightsAsync(UpdateContributorInsightsRequest request, AmazonServiceCallback<UpdateContributorInsightsRequest, UpdateContributorInsightsResponse> callback, AsyncOptions options = null);
 
 
         #endregion

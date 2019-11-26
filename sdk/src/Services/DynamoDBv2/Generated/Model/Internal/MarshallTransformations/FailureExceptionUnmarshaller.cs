@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SSEDescription Object
+    /// Response Unmarshaller for FailureException Object
     /// </summary>  
-    public class SSEDescriptionUnmarshaller : IUnmarshaller<SSEDescription, XmlUnmarshallerContext>, IUnmarshaller<SSEDescription, JsonUnmarshallerContext>
+    public class FailureExceptionUnmarshaller : IUnmarshaller<FailureException, XmlUnmarshallerContext>, IUnmarshaller<FailureException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SSEDescription IUnmarshaller<SSEDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FailureException IUnmarshaller<FailureException, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SSEDescription Unmarshall(JsonUnmarshallerContext context)
+        public FailureException Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SSEDescription unmarshalledObject = new SSEDescription();
+            FailureException unmarshalledObject = new FailureException();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InaccessibleEncryptionDateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.InaccessibleEncryptionDateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KMSMasterKeyArn", targetDepth))
+                if (context.TestExpression("ExceptionDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KMSMasterKeyArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExceptionDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SSEType", targetDepth))
+                if (context.TestExpression("ExceptionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SSEType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExceptionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         }
 
 
-        private static SSEDescriptionUnmarshaller _instance = new SSEDescriptionUnmarshaller();        
+        private static FailureExceptionUnmarshaller _instance = new FailureExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SSEDescriptionUnmarshaller Instance
+        public static FailureExceptionUnmarshaller Instance
         {
             get
             {

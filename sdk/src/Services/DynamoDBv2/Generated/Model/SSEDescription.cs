@@ -32,9 +32,32 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class SSEDescription
     {
+        private DateTime? _inaccessibleEncryptionDateTime;
         private string _kmsMasterKeyArn;
         private SSEType _sseType;
         private SSEStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property InaccessibleEncryptionDateTime. 
+        /// <para>
+        /// Indicates the time, in UNIX epoch date format, when DynamoDB detected that the table's
+        /// AWS KMS key was inaccessible. This attribute will automatically be cleared when DynamoDB
+        /// detects that the table's AWS KMS key is accessible again. DynamoDB will initiate the
+        /// table archival process when table's AWS KMS key remains inaccessible for more than
+        /// seven days from this date.
+        /// </para>
+        /// </summary>
+        public DateTime InaccessibleEncryptionDateTime
+        {
+            get { return this._inaccessibleEncryptionDateTime.GetValueOrDefault(); }
+            set { this._inaccessibleEncryptionDateTime = value; }
+        }
+
+        // Check to see if InaccessibleEncryptionDateTime property is set
+        internal bool IsSetInaccessibleEncryptionDateTime()
+        {
+            return this._inaccessibleEncryptionDateTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property KMSMasterKeyArn. 

@@ -3256,6 +3256,63 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeContributorInsights
+
+
+        /// <summary>
+        /// Returns information about contributor insights, for a given table or global secondary
+        /// index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContributorInsights service method.</param>
+        /// 
+        /// <returns>The response from the DescribeContributorInsights service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights">REST API Reference for DescribeContributorInsights Operation</seealso>
+        public virtual DescribeContributorInsightsResponse DescribeContributorInsights(DescribeContributorInsightsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeContributorInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContributorInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContributorInsightsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about contributor insights, for a given table or global secondary
+        /// index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContributorInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeContributorInsights service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights">REST API Reference for DescribeContributorInsights Operation</seealso>
+        public virtual Task<DescribeContributorInsightsResponse> DescribeContributorInsightsAsync(DescribeContributorInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeContributorInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContributorInsightsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeContributorInsightsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeEndpoints
 
 
@@ -4357,6 +4414,63 @@ namespace Amazon.DynamoDBv2
             options.EndpointOperation = EndpointOperation;
             
             return InvokeAsync<ListBackupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListContributorInsights
+
+
+        /// <summary>
+        /// Returns a list of ContributorInsightsSummary for a table and all its global secondary
+        /// indexes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContributorInsights service method.</param>
+        /// 
+        /// <returns>The response from the ListContributorInsights service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">REST API Reference for ListContributorInsights Operation</seealso>
+        public virtual ListContributorInsightsResponse ListContributorInsights(ListContributorInsightsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContributorInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContributorInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContributorInsightsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of ContributorInsightsSummary for a table and all its global secondary
+        /// indexes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContributorInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContributorInsights service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">REST API Reference for ListContributorInsights Operation</seealso>
+        public virtual Task<ListContributorInsightsResponse> ListContributorInsightsAsync(ListContributorInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContributorInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContributorInsightsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListContributorInsightsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8462,6 +8576,61 @@ namespace Amazon.DynamoDBv2
             options.EndpointOperation = EndpointOperation;
             
             return InvokeAsync<UpdateContinuousBackupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateContributorInsights
+
+
+        /// <summary>
+        /// Updates the status for contributor insights for a specific table or index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContributorInsights service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContributorInsights service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">REST API Reference for UpdateContributorInsights Operation</seealso>
+        public virtual UpdateContributorInsightsResponse UpdateContributorInsights(UpdateContributorInsightsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContributorInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContributorInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContributorInsightsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the status for contributor insights for a specific table or index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContributorInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContributorInsights service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">REST API Reference for UpdateContributorInsights Operation</seealso>
+        public virtual Task<UpdateContributorInsightsResponse> UpdateContributorInsightsAsync(UpdateContributorInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContributorInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContributorInsightsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateContributorInsightsResponse>(request, options, cancellationToken);
         }
 
         #endregion
