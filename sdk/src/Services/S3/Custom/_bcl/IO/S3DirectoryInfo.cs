@@ -660,7 +660,11 @@ namespace Amazon.S3.IO
                             .WithItemListPropertyPath("S3Objects")
                             .WithTokenRequestPropertyPath("Marker")
                             .WithTokenResponsePropertyPath("NextMarker"))))
-                        .Where(s3Object => !String.Equals(S3Helper.DecodeKey(s3Object.Key), key, StringComparison.Ordinal) && !s3Object.Key.EndsWith("\\", StringComparison.Ordinal)),
+                        .Where(s3Object =>
+                        {
+                            string decodeKey = S3Helper.DecodeKey(s3Object.Key);
+                            return !String.Equals(decodeKey, key, StringComparison.Ordinal) && !decodeKey.EndsWith("\\", StringComparison.Ordinal);
+                        }),
                         s3Object => new S3FileInfo(s3Client, bucket, S3Helper.DecodeKey(s3Object.Key)));
             }
 
