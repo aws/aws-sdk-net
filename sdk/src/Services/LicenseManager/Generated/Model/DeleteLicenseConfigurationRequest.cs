@@ -29,8 +29,12 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLicenseConfiguration operation.
-    /// Deletes an existing license configuration. This action fails if the configuration
-    /// is in use.
+    /// Deletes the specified license configuration.
+    /// 
+    ///  
+    /// <para>
+    /// You cannot delete a license configuration that is in use.
+    /// </para>
     /// </summary>
     public partial class DeleteLicenseConfigurationRequest : AmazonLicenseManagerRequest
     {
@@ -39,7 +43,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationArn. 
         /// <para>
-        /// Unique ID of the configuration object to delete.
+        /// ID of the license configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

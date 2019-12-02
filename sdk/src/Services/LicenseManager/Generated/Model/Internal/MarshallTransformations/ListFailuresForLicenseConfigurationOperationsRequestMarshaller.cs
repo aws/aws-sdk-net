@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateLicenseConfiguration Request Marshaller
+    /// ListFailuresForLicenseConfigurationOperations Request Marshaller
     /// </summary>       
-    public class UpdateLicenseConfigurationRequestMarshaller : IMarshaller<IRequest, UpdateLicenseConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListFailuresForLicenseConfigurationOperationsRequestMarshaller : IMarshaller<IRequest, ListFailuresForLicenseConfigurationOperationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateLicenseConfigurationRequest)input);
+            return this.Marshall((ListFailuresForLicenseConfigurationOperationsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateLicenseConfigurationRequest publicRequest)
+        public IRequest Marshall(ListFailuresForLicenseConfigurationOperationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LicenseManager");
-            string target = "AWSLicenseManager.UpdateLicenseConfiguration";
+            string target = "AWSLicenseManager.ListFailuresForLicenseConfigurationOperations";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-01";            
@@ -68,67 +68,22 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
                 if(publicRequest.IsSetLicenseConfigurationArn())
                 {
                     context.Writer.WritePropertyName("LicenseConfigurationArn");
                     context.Writer.Write(publicRequest.LicenseConfigurationArn);
                 }
 
-                if(publicRequest.IsSetLicenseConfigurationStatus())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("LicenseConfigurationStatus");
-                    context.Writer.Write(publicRequest.LicenseConfigurationStatus);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetLicenseCount())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("LicenseCount");
-                    context.Writer.Write(publicRequest.LicenseCount);
-                }
-
-                if(publicRequest.IsSetLicenseCountHardLimit())
-                {
-                    context.Writer.WritePropertyName("LicenseCountHardLimit");
-                    context.Writer.Write(publicRequest.LicenseCountHardLimit);
-                }
-
-                if(publicRequest.IsSetLicenseRules())
-                {
-                    context.Writer.WritePropertyName("LicenseRules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLicenseRulesListValue in publicRequest.LicenseRules)
-                    {
-                            context.Writer.Write(publicRequestLicenseRulesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetProductInformationList())
-                {
-                    context.Writer.WritePropertyName("ProductInformationList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProductInformationListListValue in publicRequest.ProductInformationList)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProductInformationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestProductInformationListListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         
@@ -140,9 +95,9 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateLicenseConfigurationRequestMarshaller _instance = new UpdateLicenseConfigurationRequestMarshaller();        
+        private static ListFailuresForLicenseConfigurationOperationsRequestMarshaller _instance = new ListFailuresForLicenseConfigurationOperationsRequestMarshaller();        
 
-        internal static UpdateLicenseConfigurationRequestMarshaller GetInstance()
+        internal static ListFailuresForLicenseConfigurationOperationsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -150,7 +105,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateLicenseConfigurationRequestMarshaller Instance
+        public static ListFailuresForLicenseConfigurationOperationsRequestMarshaller Instance
         {
             get
             {

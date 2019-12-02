@@ -29,7 +29,7 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLicenseConfiguration operation.
-    /// Returns a detailed description of a license configuration.
+    /// Gets detailed information about the specified license configuration.
     /// </summary>
     public partial class GetLicenseConfigurationRequest : AmazonLicenseManagerRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationArn. 
         /// <para>
-        /// ARN of the license configuration being requested.
+        /// Amazon Resource Name (ARN) of the license configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

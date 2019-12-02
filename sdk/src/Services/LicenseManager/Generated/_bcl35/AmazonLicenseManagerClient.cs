@@ -37,16 +37,8 @@ namespace Amazon.LicenseManager
     ///
     /// AWS License Manager  
     /// <para>
-    ///  <i>This is the AWS License Manager API Reference.</i> It provides descriptions, syntax,
-    /// and usage examples for each of the actions and data types for License Manager. The
-    /// topic for each action shows the Query API request parameters and the XML response.
-    /// You can also view the XML request elements in the WSDL. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  Alternatively, you can use one of the AWS SDKs to access an API that's tailored to
-    /// the programming language or platform that you're using. For more information, see
-    /// <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>. 
+    /// AWS License Manager makes it easier to manage licenses from software vendors across
+    /// multiple AWS accounts and on-premises servers.
     /// </para>
     /// </summary>
     public partial class AmazonLicenseManagerClient : AmazonServiceClient, IAmazonLicenseManager
@@ -251,12 +243,17 @@ namespace Amazon.LicenseManager
         #region  CreateLicenseConfiguration
 
         /// <summary>
-        /// Creates a new license configuration object. A license configuration is an abstraction
-        /// of a customer license agreement that can be consumed and enforced by License Manager.
-        /// Components include specifications for the license type (licensing by instance, socket,
-        /// CPU, or VCPU), tenancy (shared tenancy, Amazon EC2 Dedicated Instance, Amazon EC2
-        /// Dedicated Host, or any of these), host affinity (how long a VM must be associated
-        /// with a host), the number of licenses purchased and used.
+        /// Creates a license configuration.
+        /// 
+        ///  
+        /// <para>
+        /// A license configuration is an abstraction of a customer license agreement that can
+        /// be consumed and enforced by License Manager. Components include specifications for
+        /// the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared
+        /// tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how
+        /// long a VM must be associated with a host), and the number of licenses purchased and
+        /// used.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLicenseConfiguration service method.</param>
         /// 
@@ -329,8 +326,12 @@ namespace Amazon.LicenseManager
         #region  DeleteLicenseConfiguration
 
         /// <summary>
-        /// Deletes an existing license configuration. This action fails if the configuration
-        /// is in use.
+        /// Deletes the specified license configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a license configuration that is in use.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLicenseConfiguration service method.</param>
         /// 
@@ -400,7 +401,7 @@ namespace Amazon.LicenseManager
         #region  GetLicenseConfiguration
 
         /// <summary>
-        /// Returns a detailed description of a license configuration.
+        /// Gets detailed information about the specified license configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLicenseConfiguration service method.</param>
         /// 
@@ -470,8 +471,7 @@ namespace Amazon.LicenseManager
         #region  GetServiceSettings
 
         /// <summary>
-        /// Gets License Manager settings for a region. Exposes the configured S3 bucket, SNS
-        /// topic, etc., for inspection.
+        /// Gets the License Manager settings for the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceSettings service method.</param>
         /// 
@@ -538,10 +538,14 @@ namespace Amazon.LicenseManager
         #region  ListAssociationsForLicenseConfiguration
 
         /// <summary>
-        /// Lists the resource associations for a license configuration. Resource associations
-        /// need not consume licenses from a license configuration. For example, an AMI or a stopped
-        /// instance may not consume a license (depending on the license rules). Use this operation
-        /// to find all resources associated with a license configuration.
+        /// Lists the resource associations for the specified license configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Resource associations need not consume licenses from a license configuration. For
+        /// example, an AMI or a stopped instance might not consume a license (depending on the
+        /// license rules).
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociationsForLicenseConfiguration service method.</param>
         /// 
@@ -611,11 +615,80 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  ListFailuresForLicenseConfigurationOperations
+
+        /// <summary>
+        /// Lists the license configuration operations that failed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFailuresForLicenseConfigurationOperations service method.</param>
+        /// 
+        /// <returns>The response from the ListFailuresForLicenseConfigurationOperations service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListFailuresForLicenseConfigurationOperations">REST API Reference for ListFailuresForLicenseConfigurationOperations Operation</seealso>
+        public virtual ListFailuresForLicenseConfigurationOperationsResponse ListFailuresForLicenseConfigurationOperations(ListFailuresForLicenseConfigurationOperationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFailuresForLicenseConfigurationOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFailuresForLicenseConfigurationOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFailuresForLicenseConfigurationOperationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFailuresForLicenseConfigurationOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFailuresForLicenseConfigurationOperations operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFailuresForLicenseConfigurationOperations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListFailuresForLicenseConfigurationOperations">REST API Reference for ListFailuresForLicenseConfigurationOperations Operation</seealso>
+        public virtual IAsyncResult BeginListFailuresForLicenseConfigurationOperations(ListFailuresForLicenseConfigurationOperationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFailuresForLicenseConfigurationOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFailuresForLicenseConfigurationOperationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFailuresForLicenseConfigurationOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFailuresForLicenseConfigurationOperations.</param>
+        /// 
+        /// <returns>Returns a  ListFailuresForLicenseConfigurationOperationsResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListFailuresForLicenseConfigurationOperations">REST API Reference for ListFailuresForLicenseConfigurationOperations Operation</seealso>
+        public virtual ListFailuresForLicenseConfigurationOperationsResponse EndListFailuresForLicenseConfigurationOperations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFailuresForLicenseConfigurationOperationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListLicenseConfigurations
 
         /// <summary>
-        /// Lists license configuration objects for an account, each containing the name, description,
-        /// license type, and other license terms modeled from a license agreement.
+        /// Lists the license configurations for your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLicenseConfigurations service method.</param>
         /// 
@@ -688,7 +761,7 @@ namespace Amazon.LicenseManager
         #region  ListLicenseSpecificationsForResource
 
         /// <summary>
-        /// Returns the license configuration for a resource.
+        /// Describes the license configurations for the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLicenseSpecificationsForResource service method.</param>
         /// 
@@ -758,7 +831,7 @@ namespace Amazon.LicenseManager
         #region  ListResourceInventory
 
         /// <summary>
-        /// Returns a detailed list of resources.
+        /// Lists resources managed using Systems Manager inventory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceInventory service method.</param>
         /// 
@@ -834,7 +907,7 @@ namespace Amazon.LicenseManager
         #region  ListTagsForResource
 
         /// <summary>
-        /// Lists tags attached to a resource.
+        /// Lists the tags for the specified license configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -979,7 +1052,7 @@ namespace Amazon.LicenseManager
         #region  TagResource
 
         /// <summary>
-        /// Attach one of more tags to any resource.
+        /// Adds the specified tags to the specified license configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1049,7 +1122,7 @@ namespace Amazon.LicenseManager
         #region  UntagResource
 
         /// <summary>
-        /// Remove tags from a resource.
+        /// Removes the specified tags from the specified license configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1119,11 +1192,17 @@ namespace Amazon.LicenseManager
         #region  UpdateLicenseConfiguration
 
         /// <summary>
-        /// Modifies the attributes of an existing license configuration object. A license configuration
-        /// is an abstraction of a customer license agreement that can be consumed and enforced
-        /// by License Manager. Components include specifications for the license type (Instances,
-        /// cores, sockets, VCPUs), tenancy (shared or Dedicated Host), host affinity (how long
-        /// a VM is associated with a host), the number of licenses purchased and used.
+        /// Modifies the attributes of an existing license configuration.
+        /// 
+        ///  
+        /// <para>
+        /// A license configuration is an abstraction of a customer license agreement that can
+        /// be consumed and enforced by License Manager. Components include specifications for
+        /// the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared
+        /// tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how
+        /// long a VM must be associated with a host), and the number of licenses purchased and
+        /// used.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLicenseConfiguration service method.</param>
         /// 
@@ -1193,11 +1272,14 @@ namespace Amazon.LicenseManager
         #region  UpdateLicenseSpecificationsForResource
 
         /// <summary>
-        /// Adds or removes license configurations for a specified AWS resource. This operation
-        /// currently supports updating the license specifications of AMIs, instances, and hosts.
-        /// Launch templates and AWS CloudFormation templates are not managed from this operation
-        /// as those resources send the license configurations directly to a resource creation
-        /// operation, such as <code>RunInstances</code>.
+        /// Adds or removes the specified license configurations for the specified AWS resource.
+        /// 
+        ///  
+        /// <para>
+        /// You can update the license specifications of AMIs, instances, and hosts. You cannot
+        /// update the license specifications for launch templates and AWS CloudFormation templates,
+        /// as they send license configurations to the operation that creates the resource.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLicenseSpecificationsForResource service method.</param>
         /// 
@@ -1279,7 +1361,7 @@ namespace Amazon.LicenseManager
         #region  UpdateServiceSettings
 
         /// <summary>
-        /// Updates License Manager service settings.
+        /// Updates License Manager settings for the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSettings service method.</param>
         /// 

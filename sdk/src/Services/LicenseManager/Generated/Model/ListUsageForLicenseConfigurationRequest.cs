@@ -43,8 +43,24 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// List of filters to apply.
+        /// Filters to scope the results. The following filters and logical operators are supported:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resourceArn</code> - The ARN of the license configuration resource. Logical
+        /// operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI
+        /// | SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>resourceAccount</code> - The ID of the account that owns the resource. Logical
+        /// operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
@@ -61,7 +77,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationArn. 
         /// <para>
-        /// ARN of the targeted <code>LicenseConfiguration</code> object.
+        /// Amazon Resource Name (ARN) of the license configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,8 +96,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of results to return in a single call. To retrieve the remaining results,
-        /// make another call with the returned <code>NextToken</code> value.
+        /// Maximum number of results to return in a single call.
         /// </para>
         /// </summary>
         public int MaxResults

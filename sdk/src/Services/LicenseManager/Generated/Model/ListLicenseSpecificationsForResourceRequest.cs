@@ -29,7 +29,7 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLicenseSpecificationsForResource operation.
-    /// Returns the license configuration for a resource.
+    /// Describes the license configurations for the specified resource.
     /// </summary>
     public partial class ListLicenseSpecificationsForResourceRequest : AmazonLicenseManagerRequest
     {
@@ -40,8 +40,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of results to return in a single call. To retrieve the remaining results,
-        /// make another call with the returned <code>NextToken</code> value.
+        /// Maximum number of results to return in a single call.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -77,7 +76,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// ARN of an AMI or Amazon EC2 instance that has an associated license configuration.
+        /// Amazon Resource Name (ARN) of a resource that has an associated license configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

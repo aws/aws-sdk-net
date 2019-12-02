@@ -29,7 +29,7 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResourceInventory operation.
-    /// Returns a detailed list of resources.
+    /// Lists resources managed using Systems Manager inventory.
     /// </summary>
     public partial class ListResourceInventoryRequest : AmazonLicenseManagerRequest
     {
@@ -40,8 +40,35 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// Filters to scope the results. The following filters and logical operators are supported:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>account_id</code> - The ID of the AWS account that owns the resource. Logical
+        /// operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>application_name</code> - The name of the application. Logical operators are
+        /// <code>EQUALS</code> | <code>BEGINS_WITH</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>license_included</code> - The type of license included. Logical operators are
+        /// <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code>
+        /// | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code>
+        /// | <code>BEGINS_WITH</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code>
+        /// | <code>NOT_EQUALS</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<InventoryFilter> Filters
         {
@@ -58,8 +85,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of results to return in a single call. To retrieve the remaining results,
-        /// make another call with the returned <code>NextToken</code> value.
+        /// Maximum number of results to return in a single call.
         /// </para>
         /// </summary>
         public int MaxResults

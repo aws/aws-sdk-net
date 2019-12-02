@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Object used for associating a license configuration with a resource.
+    /// Details for associating a license configuration with a resource.
     /// </summary>
     public partial class LicenseSpecification
     {
@@ -37,7 +37,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationArn. 
         /// <para>
-        /// ARN of the <code>LicenseConfiguration</code> object.
+        /// Amazon Resource Name (ARN) of the license configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

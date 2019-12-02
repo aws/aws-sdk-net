@@ -28,47 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Details about a tag for a license configuration.
+    /// Describes automated discovery.
     /// </summary>
-    public partial class Tag
+    public partial class AutomatedDiscoveryInformation
     {
-        private string _key;
-        private string _value;
+        private DateTime? _lastRunTime;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property LastRunTime. 
         /// <para>
-        /// Tag key.
+        /// Time that automated discovery last ran.
         /// </para>
         /// </summary>
-        public string Key
+        public DateTime LastRunTime
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._lastRunTime.GetValueOrDefault(); }
+            set { this._lastRunTime = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if LastRunTime property is set
+        internal bool IsSetLastRunTime()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// Tag value.
-        /// </para>
-        /// </summary>
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._lastRunTime.HasValue; 
         }
 
     }

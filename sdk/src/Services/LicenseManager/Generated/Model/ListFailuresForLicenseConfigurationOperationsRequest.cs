@@ -28,29 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// This is the response object from the ListLicenseConfigurations operation.
+    /// Container for the parameters to the ListFailuresForLicenseConfigurationOperations operation.
+    /// Lists the license configuration operations that failed.
     /// </summary>
-    public partial class ListLicenseConfigurationsResponse : AmazonWebServiceResponse
+    public partial class ListFailuresForLicenseConfigurationOperationsRequest : AmazonLicenseManagerRequest
     {
-        private List<LicenseConfiguration> _licenseConfigurations = new List<LicenseConfiguration>();
+        private string _licenseConfigurationArn;
+        private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property LicenseConfigurations. 
+        /// Gets and sets the property LicenseConfigurationArn. 
         /// <para>
-        /// Information about the license configurations.
+        /// Amazon Resource Name of the license configuration.
         /// </para>
         /// </summary>
-        public List<LicenseConfiguration> LicenseConfigurations
+        [AWSProperty(Required=true)]
+        public string LicenseConfigurationArn
         {
-            get { return this._licenseConfigurations; }
-            set { this._licenseConfigurations = value; }
+            get { return this._licenseConfigurationArn; }
+            set { this._licenseConfigurationArn = value; }
         }
 
-        // Check to see if LicenseConfigurations property is set
-        internal bool IsSetLicenseConfigurations()
+        // Check to see if LicenseConfigurationArn property is set
+        internal bool IsSetLicenseConfigurationArn()
         {
-            return this._licenseConfigurations != null && this._licenseConfigurations.Count > 0; 
+            return this._licenseConfigurationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// Maximum number of results to return in a single call.
+        /// </para>
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>

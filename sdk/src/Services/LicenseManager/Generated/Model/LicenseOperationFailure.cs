@@ -28,51 +28,107 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Details about the usage of a resource associated with a license configuration.
+    /// Describes the failure of a license operation.
     /// </summary>
-    public partial class LicenseConfigurationUsage
+    public partial class LicenseOperationFailure
     {
-        private DateTime? _associationTime;
-        private long? _consumedLicenses;
+        private string _errorMessage;
+        private DateTime? _failureTime;
+        private List<Metadata> _metadataList = new List<Metadata>();
+        private string _operationName;
+        private string _operationRequestedBy;
         private string _resourceArn;
         private string _resourceOwnerId;
-        private string _resourceStatus;
         private ResourceType _resourceType;
 
         /// <summary>
-        /// Gets and sets the property AssociationTime. 
+        /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// Time when the license configuration was initially associated with the resource.
+        /// Error message.
         /// </para>
         /// </summary>
-        public DateTime AssociationTime
+        public string ErrorMessage
         {
-            get { return this._associationTime.GetValueOrDefault(); }
-            set { this._associationTime = value; }
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
         }
 
-        // Check to see if AssociationTime property is set
-        internal bool IsSetAssociationTime()
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
         {
-            return this._associationTime.HasValue; 
+            return this._errorMessage != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ConsumedLicenses. 
+        /// Gets and sets the property FailureTime. 
         /// <para>
-        /// Number of licenses consumed by the resource.
+        /// Failure time.
         /// </para>
         /// </summary>
-        public long ConsumedLicenses
+        public DateTime FailureTime
         {
-            get { return this._consumedLicenses.GetValueOrDefault(); }
-            set { this._consumedLicenses = value; }
+            get { return this._failureTime.GetValueOrDefault(); }
+            set { this._failureTime = value; }
         }
 
-        // Check to see if ConsumedLicenses property is set
-        internal bool IsSetConsumedLicenses()
+        // Check to see if FailureTime property is set
+        internal bool IsSetFailureTime()
         {
-            return this._consumedLicenses.HasValue; 
+            return this._failureTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataList. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public List<Metadata> MetadataList
+        {
+            get { return this._metadataList; }
+            set { this._metadataList = value; }
+        }
+
+        // Check to see if MetadataList property is set
+        internal bool IsSetMetadataList()
+        {
+            return this._metadataList != null && this._metadataList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationName. 
+        /// <para>
+        /// Name of the operation.
+        /// </para>
+        /// </summary>
+        public string OperationName
+        {
+            get { return this._operationName; }
+            set { this._operationName = value; }
+        }
+
+        // Check to see if OperationName property is set
+        internal bool IsSetOperationName()
+        {
+            return this._operationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationRequestedBy. 
+        /// <para>
+        /// The requester is "License Manager Automated Discovery".
+        /// </para>
+        /// </summary>
+        public string OperationRequestedBy
+        {
+            get { return this._operationRequestedBy; }
+            set { this._operationRequestedBy = value; }
+        }
+
+        // Check to see if OperationRequestedBy property is set
+        internal bool IsSetOperationRequestedBy()
+        {
+            return this._operationRequestedBy != null;
         }
 
         /// <summary>
@@ -96,7 +152,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceOwnerId. 
         /// <para>
-        /// ID of the account that owns the resource.
+        /// ID of the AWS account that owns the resource.
         /// </para>
         /// </summary>
         public string ResourceOwnerId
@@ -112,27 +168,9 @@ namespace Amazon.LicenseManager.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceStatus. 
-        /// <para>
-        /// Status of the resource.
-        /// </para>
-        /// </summary>
-        public string ResourceStatus
-        {
-            get { return this._resourceStatus; }
-            set { this._resourceStatus = value; }
-        }
-
-        // Check to see if ResourceStatus property is set
-        internal bool IsSetResourceStatus()
-        {
-            return this._resourceStatus != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Type of resource.
+        /// Resource type.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

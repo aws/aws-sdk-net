@@ -28,29 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// This is the response object from the ListLicenseConfigurations operation.
+    /// This is the response object from the ListFailuresForLicenseConfigurationOperations operation.
     /// </summary>
-    public partial class ListLicenseConfigurationsResponse : AmazonWebServiceResponse
+    public partial class ListFailuresForLicenseConfigurationOperationsResponse : AmazonWebServiceResponse
     {
-        private List<LicenseConfiguration> _licenseConfigurations = new List<LicenseConfiguration>();
+        private List<LicenseOperationFailure> _licenseOperationFailureList = new List<LicenseOperationFailure>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property LicenseConfigurations. 
+        /// Gets and sets the property LicenseOperationFailureList. 
         /// <para>
-        /// Information about the license configurations.
+        /// License configuration operations that failed.
         /// </para>
         /// </summary>
-        public List<LicenseConfiguration> LicenseConfigurations
+        public List<LicenseOperationFailure> LicenseOperationFailureList
         {
-            get { return this._licenseConfigurations; }
-            set { this._licenseConfigurations = value; }
+            get { return this._licenseOperationFailureList; }
+            set { this._licenseOperationFailureList = value; }
         }
 
-        // Check to see if LicenseConfigurations property is set
-        internal bool IsSetLicenseConfigurations()
+        // Check to see if LicenseOperationFailureList property is set
+        internal bool IsSetLicenseOperationFailureList()
         {
-            return this._licenseConfigurations != null && this._licenseConfigurations.Count > 0; 
+            return this._licenseOperationFailureList != null && this._licenseOperationFailureList.Count > 0; 
         }
 
         /// <summary>

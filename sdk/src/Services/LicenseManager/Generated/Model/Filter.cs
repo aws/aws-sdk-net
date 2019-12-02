@@ -28,10 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// A filter name and value pair that is used to return a more specific list of results
-    /// from a describe operation. Filters can be used to match a set of resources by specific
-    /// criteria, such as tags, attributes, or IDs. The filters supported by a <code>Describe</code>
-    /// operation are documented with the <code>Describe</code> operation.
+    /// A filter name and value pair that is used to return more specific results from a describe
+    /// operation. Filters can be used to match a set of resources by specific criteria, such
+    /// as tags, attributes, or IDs.
     /// </summary>
     public partial class Filter
     {
@@ -59,7 +58,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// One or more filter values. Filter values are case-sensitive.
+        /// Filter values. Filter values are case-sensitive.
         /// </para>
         /// </summary>
         public List<string> Values

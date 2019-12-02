@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetServiceSettings operation
+    /// Response Unmarshaller for ListFailuresForLicenseConfigurationOperations operation
     /// </summary>  
-    public class GetServiceSettingsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListFailuresForLicenseConfigurationOperationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,40 +45,22 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetServiceSettingsResponse response = new GetServiceSettingsResponse();
+            ListFailuresForLicenseConfigurationOperationsResponse response = new ListFailuresForLicenseConfigurationOperationsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EnableCrossAccountsDiscovery", targetDepth))
+                if (context.TestExpression("LicenseOperationFailureList", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.EnableCrossAccountsDiscovery = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<LicenseOperationFailure, LicenseOperationFailureUnmarshaller>(LicenseOperationFailureUnmarshaller.Instance);
+                    response.LicenseOperationFailureList = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LicenseManagerResourceShareArn", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LicenseManagerResourceShareArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OrganizationConfiguration", targetDepth))
-                {
-                    var unmarshaller = OrganizationConfigurationUnmarshaller.Instance;
-                    response.OrganizationConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3BucketArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.S3BucketArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SnsTopicArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SnsTopicArn = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -104,6 +86,10 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             {
                 return new AuthorizationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
+            {
+                return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("RateLimitExceededException"))
             {
                 return new RateLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -115,9 +101,9 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             return new AmazonLicenseManagerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetServiceSettingsResponseUnmarshaller _instance = new GetServiceSettingsResponseUnmarshaller();        
+        private static ListFailuresForLicenseConfigurationOperationsResponseUnmarshaller _instance = new ListFailuresForLicenseConfigurationOperationsResponseUnmarshaller();        
 
-        internal static GetServiceSettingsResponseUnmarshaller GetInstance()
+        internal static ListFailuresForLicenseConfigurationOperationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +111,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetServiceSettingsResponseUnmarshaller Instance
+        public static ListFailuresForLicenseConfigurationOperationsResponseUnmarshaller Instance
         {
             get
             {

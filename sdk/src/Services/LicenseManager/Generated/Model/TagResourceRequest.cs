@@ -29,7 +29,7 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Attach one of more tags to any resource.
+    /// Adds the specified tags to the specified license configuration.
     /// </summary>
     public partial class TagResourceRequest : AmazonLicenseManagerRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Resource of the ARN to be tagged.
+        /// Amazon Resource Name (ARN) of the license configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Names of the tags to attach to the resource.
+        /// One or more tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

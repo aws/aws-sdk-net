@@ -29,7 +29,7 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists tags attached to a resource.
+    /// Lists the tags for the specified license configuration.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonLicenseManagerRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// ARN for the resource.
+        /// Amazon Resource Name (ARN) of the license configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

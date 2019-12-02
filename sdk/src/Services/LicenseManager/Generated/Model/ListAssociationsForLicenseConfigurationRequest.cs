@@ -29,10 +29,14 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssociationsForLicenseConfiguration operation.
-    /// Lists the resource associations for a license configuration. Resource associations
-    /// need not consume licenses from a license configuration. For example, an AMI or a stopped
-    /// instance may not consume a license (depending on the license rules). Use this operation
-    /// to find all resources associated with a license configuration.
+    /// Lists the resource associations for the specified license configuration.
+    /// 
+    ///  
+    /// <para>
+    /// Resource associations need not consume licenses from a license configuration. For
+    /// example, an AMI or a stopped instance might not consume a license (depending on the
+    /// license rules).
+    /// </para>
     /// </summary>
     public partial class ListAssociationsForLicenseConfigurationRequest : AmazonLicenseManagerRequest
     {
@@ -43,7 +47,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationArn. 
         /// <para>
-        /// ARN of a <code>LicenseConfiguration</code> object.
+        /// Amazon Resource Name (ARN) of a license configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,8 +66,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of results to return in a single call. To retrieve the remaining results,
-        /// make another call with the returned <code>NextToken</code> value.
+        /// Maximum number of results to return in a single call.
         /// </para>
         /// </summary>
         public int MaxResults

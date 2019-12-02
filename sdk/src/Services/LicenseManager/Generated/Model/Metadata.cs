@@ -28,35 +28,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Details about a tag for a license configuration.
+    /// Reserved.
     /// </summary>
-    public partial class Tag
+    public partial class Metadata
     {
-        private string _key;
+        private string _name;
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Tag key.
+        /// Reserved.
         /// </para>
         /// </summary>
-        public string Key
+        public string Name
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._key != null;
+            return this._name != null;
         }
 
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Tag value.
+        /// Reserved.
         /// </para>
         /// </summary>
         public string Value

@@ -29,11 +29,17 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLicenseConfiguration operation.
-    /// Modifies the attributes of an existing license configuration object. A license configuration
-    /// is an abstraction of a customer license agreement that can be consumed and enforced
-    /// by License Manager. Components include specifications for the license type (Instances,
-    /// cores, sockets, VCPUs), tenancy (shared or Dedicated Host), host affinity (how long
-    /// a VM is associated with a host), the number of licenses purchased and used.
+    /// Modifies the attributes of an existing license configuration.
+    /// 
+    ///  
+    /// <para>
+    /// A license configuration is an abstraction of a customer license agreement that can
+    /// be consumed and enforced by License Manager. Components include specifications for
+    /// the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared
+    /// tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how
+    /// long a VM must be associated with a host), and the number of licenses purchased and
+    /// used.
+    /// </para>
     /// </summary>
     public partial class UpdateLicenseConfigurationRequest : AmazonLicenseManagerRequest
     {
@@ -44,11 +50,12 @@ namespace Amazon.LicenseManager.Model
         private bool? _licenseCountHardLimit;
         private List<string> _licenseRules = new List<string>();
         private string _name;
+        private List<ProductInformation> _productInformationList = new List<ProductInformation>();
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// New human-friendly description of the license configuration.
+        /// New description of the license configuration.
         /// </para>
         /// </summary>
         public string Description
@@ -66,7 +73,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationArn. 
         /// <para>
-        /// ARN for a license configuration.
+        /// Amazon Resource Name (ARN) of the license configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,7 +92,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationStatus. 
         /// <para>
-        /// New status of the license configuration (<code>ACTIVE</code> or <code>INACTIVE</code>).
+        /// New status of the license configuration.
         /// </para>
         /// </summary>
         public LicenseConfigurationStatus LicenseConfigurationStatus
@@ -121,7 +128,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseCountHardLimit. 
         /// <para>
-        /// Sets the number of available licenses as a hard limit.
+        /// New hard limit of the number of available licenses.
         /// </para>
         /// </summary>
         public bool LicenseCountHardLimit
@@ -139,7 +146,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseRules. 
         /// <para>
-        /// List of flexible text strings designating license rules.
+        /// New license rules.
         /// </para>
         /// </summary>
         public List<string> LicenseRules
@@ -170,6 +177,24 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductInformationList. 
+        /// <para>
+        /// New product information.
+        /// </para>
+        /// </summary>
+        public List<ProductInformation> ProductInformationList
+        {
+            get { return this._productInformationList; }
+            set { this._productInformationList = value; }
+        }
+
+        // Check to see if ProductInformationList property is set
+        internal bool IsSetProductInformationList()
+        {
+            return this._productInformationList != null && this._productInformationList.Count > 0; 
         }
 
     }

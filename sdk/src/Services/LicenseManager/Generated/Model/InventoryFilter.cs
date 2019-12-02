@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// An inventory filter object.
+    /// An inventory filter.
     /// </summary>
     public partial class InventoryFilter
     {
@@ -39,7 +39,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
-        /// The condition of the filter.
+        /// Condition of the filter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the filter.
+        /// Name of the filter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

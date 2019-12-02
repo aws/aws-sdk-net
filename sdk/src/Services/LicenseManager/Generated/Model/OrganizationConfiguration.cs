@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Object containing configuration information for AWS Organizations.
+    /// Configuration information for AWS Organizations.
     /// </summary>
     public partial class OrganizationConfiguration
     {
@@ -37,7 +37,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property EnableIntegration. 
         /// <para>
-        /// Flag to activate AWS Organization integration.
+        /// Enables AWS Organization integration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

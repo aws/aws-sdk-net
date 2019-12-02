@@ -56,7 +56,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceInventoryList. 
         /// <para>
-        /// The detailed list of resources.
+        /// Information about the resources.
         /// </para>
         /// </summary>
         public List<ResourceInventory> ResourceInventoryList

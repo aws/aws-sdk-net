@@ -29,11 +29,14 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLicenseSpecificationsForResource operation.
-    /// Adds or removes license configurations for a specified AWS resource. This operation
-    /// currently supports updating the license specifications of AMIs, instances, and hosts.
-    /// Launch templates and AWS CloudFormation templates are not managed from this operation
-    /// as those resources send the license configurations directly to a resource creation
-    /// operation, such as <code>RunInstances</code>.
+    /// Adds or removes the specified license configurations for the specified AWS resource.
+    /// 
+    ///  
+    /// <para>
+    /// You can update the license specifications of AMIs, instances, and hosts. You cannot
+    /// update the license specifications for launch templates and AWS CloudFormation templates,
+    /// as they send license configurations to the operation that creates the resource.
+    /// </para>
     /// </summary>
     public partial class UpdateLicenseSpecificationsForResourceRequest : AmazonLicenseManagerRequest
     {
@@ -44,7 +47,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property AddLicenseSpecifications. 
         /// <para>
-        /// License configuration ARNs to be added to a resource.
+        /// ARNs of the license configurations to add.
         /// </para>
         /// </summary>
         public List<LicenseSpecification> AddLicenseSpecifications
@@ -62,7 +65,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property RemoveLicenseSpecifications. 
         /// <para>
-        /// License configuration ARNs to be removed from a resource.
+        /// ARNs of the license configurations to remove.
         /// </para>
         /// </summary>
         public List<LicenseSpecification> RemoveLicenseSpecifications
@@ -80,7 +83,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// ARN for an AWS server resource.
+        /// Amazon Resource Name (ARN) of the AWS resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
