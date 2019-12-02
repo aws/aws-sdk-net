@@ -422,6 +422,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Placement" + "." + "HostId", StringUtils.FromString(publicRequest.Placement.HostId));
                     }
+                    if(publicRequest.Placement.IsSetHostResourceGroupArn())
+                    {
+                        request.Parameters.Add("Placement" + "." + "HostResourceGroupArn", StringUtils.FromString(publicRequest.Placement.HostResourceGroupArn));
+                    }
                     if(publicRequest.Placement.IsSetPartitionNumber())
                     {
                         request.Parameters.Add("Placement" + "." + "PartitionNumber", StringUtils.FromInt(publicRequest.Placement.PartitionNumber));

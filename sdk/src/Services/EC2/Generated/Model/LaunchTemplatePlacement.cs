@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private string _groupName;
         private string _hostId;
+        private string _hostResourceGroupArn;
         private string _spreadDomain;
         private Tenancy _tenancy;
 
@@ -109,6 +110,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetHostId()
         {
             return this._hostId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostResourceGroupArn. 
+        /// <para>
+        /// The ARN of the host resource group in which to launch the instances.
+        /// </para>
+        /// </summary>
+        public string HostResourceGroupArn
+        {
+            get { return this._hostResourceGroupArn; }
+            set { this._hostResourceGroupArn = value; }
+        }
+
+        // Check to see if HostResourceGroupArn property is set
+        internal bool IsSetHostResourceGroupArn()
+        {
+            return this._hostResourceGroupArn != null;
         }
 
         /// <summary>

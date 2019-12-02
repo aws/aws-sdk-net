@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         private HostRecovery _hostRecovery;
         private string _hostReservationId;
         private List<HostInstance> _instances = new List<HostInstance>();
+        private bool? _memberOfServiceLinkedResourceGroup;
         private string _ownerId;
         private DateTime? _releaseTime;
         private AllocationState _state;
@@ -269,6 +270,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstances()
         {
             return this._instances != null && this._instances.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemberOfServiceLinkedResourceGroup. 
+        /// <para>
+        /// Indicates whether the Dedicated Host is in a host resource group. If <b>memberOfServiceLinkedResourceGroup</b>
+        /// is <code>true</code>, the host is in a host resource group; otherwise, it is not.
+        /// </para>
+        /// </summary>
+        public bool MemberOfServiceLinkedResourceGroup
+        {
+            get { return this._memberOfServiceLinkedResourceGroup.GetValueOrDefault(); }
+            set { this._memberOfServiceLinkedResourceGroup = value; }
+        }
+
+        // Check to see if MemberOfServiceLinkedResourceGroup property is set
+        internal bool IsSetMemberOfServiceLinkedResourceGroup()
+        {
+            return this._memberOfServiceLinkedResourceGroup.HasValue; 
         }
 
         /// <summary>

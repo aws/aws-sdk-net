@@ -369,6 +369,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "HostId", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.HostId));
                         }
+                        if(publicRequest.LaunchTemplateData.Placement.IsSetHostResourceGroupArn())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "HostResourceGroupArn", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.HostResourceGroupArn));
+                        }
                         if(publicRequest.LaunchTemplateData.Placement.IsSetSpreadDomain())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "SpreadDomain", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.SpreadDomain));

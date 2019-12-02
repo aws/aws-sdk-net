@@ -201,18 +201,18 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code>
-        /// | <code>required</code>)
+        ///  <code>metadata-options.http-tokens</code> - The metadata request authorization state
+        /// (<code>optional</code> | <code>required</code>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>metadata-http-put-response-hop-limit</code> - The http metadata request put
-        /// response hop limit (integer, possible values <code>1</code> to <code>64</code>)
+        ///  <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request
+        /// put response hop limit (integer, possible values <code>1</code> to <code>64</code>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint
-        /// (<code>enabled</code> | <code>disabled</code>)
+        ///  <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on
+        /// http endpoint (<code>enabled</code> | <code>disabled</code>)
         /// </para>
         ///  </li> <li> 
         /// <para>

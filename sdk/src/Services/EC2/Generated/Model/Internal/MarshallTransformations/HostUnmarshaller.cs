@@ -127,6 +127,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Instances.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("memberOfServiceLinkedResourceGroup", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.MemberOfServiceLinkedResourceGroup = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ownerId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

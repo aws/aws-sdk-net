@@ -7879,6 +7879,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType Snapshot = new ResourceType("snapshot");
         /// <summary>
+        /// Constant SpotFleetRequest for ResourceType
+        /// </summary>
+        public static readonly ResourceType SpotFleetRequest = new ResourceType("spot-fleet-request");
+        /// <summary>
         /// Constant SpotInstancesRequest for ResourceType
         /// </summary>
         public static readonly ResourceType SpotInstancesRequest = new ResourceType("spot-instances-request");
