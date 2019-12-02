@@ -15,6 +15,8 @@
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5.2,)" />
   </Dependencies>
   <Assets>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AccessAnalyzer.CodeAnalysis" Path="|AWSSDK.AccessAnalyzer.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AccessAnalyzer.CodeAnalysis" Path="|AWSSDK.AccessAnalyzer.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ACMPCA.CodeAnalysis" Path="|AWSSDK.ACMPCA.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ACMPCA.CodeAnalysis" Path="|AWSSDK.ACMPCA.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AlexaForBusiness.CodeAnalysis" Path="|AWSSDK.AlexaForBusiness.CodeAnalysis|"/>

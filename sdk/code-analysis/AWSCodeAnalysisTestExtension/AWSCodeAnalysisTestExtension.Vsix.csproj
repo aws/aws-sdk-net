@@ -52,6 +52,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="../ServiceAnalysis/AccessAnalyzer/AWSSDK.AccessAnalyzer.CodeAnalysis.csproj">
+      <Project>{C9197FF6-C530-49D5-BB7B-4E8946983982}</Project>
+      <Name>AWSSDK.AccessAnalyzer.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ACMPCA/AWSSDK.ACMPCA.CodeAnalysis.csproj">
       <Project>{9101C77B-4FF4-4323-88E2-A16F1052D157}</Project>
       <Name>AWSSDK.ACMPCA.CodeAnalysis</Name>
