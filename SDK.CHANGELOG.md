@@ -1,3 +1,18 @@
+### 3.3.640.0 (2019-12-02 09:31 UTC)
+* EC2 (3.3.141.0)
+	* AWS now provides a new BYOL experience for software licenses, such as Windows and SQL Server, that require a dedicated physical server. You can now enjoy the flexibility and cost effectiveness of using your own licenses on Amazon EC2 Dedicated Hosts, but with the simplicity, resiliency, and elasticity of AWS. You can specify your Dedicated Host management preferences, such as host allocation, host capacity utilization, and instance placement in AWS License Manager.  Once set up, AWS takes care of these administrative tasks on your behalf, so that you can seamlessly launch virtual machines (instances) on Dedicated Hosts just like you would launch an EC2 instance with AWS provided licenses.
+* Imagebuilder (3.3.100.0)
+	* This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.
+* LicenseManager (3.3.101.0)
+	* AWS License Manager now automates discovery of bring-your-own-license usage across the customers organization. With few simple settings, customers can add bring your own license product information along with licensing rules, which would enable License Manager to automatically track the instances that have the specified products installed. If License Manager detects any violation of licensing rules, it would notify the customers designated license administrator to take corrective action.
+* Schemas (3.3.100.0)
+	* This release introduces support for Amazon EventBridge schema registry, making it easy to discover and write code for events in EventBridge.
+* Core 3.3.103.71
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.639.0 (2019-11-26 19:12 UTC)
 * CognitoIdentityProvider (3.3.107.0)
 	* This release adds a new setting for a user pool to configure which recovery methods a user can use to recover their account via the forgot password operation.
