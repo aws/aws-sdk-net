@@ -416,6 +416,10 @@
       <Project>{B20D0577-6579-4191-8C47-16AD07B1D34C}</Project>
       <Name>AWSSDK.IdentityManagement.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Imagebuilder/AWSSDK.Imagebuilder.CodeAnalysis.csproj">
+      <Project>{7D8E02BE-FF84-421A-8275-CA89BD7D1EC1}</Project>
+      <Name>AWSSDK.Imagebuilder.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ImportExport/AWSSDK.ImportExport.CodeAnalysis.csproj">
       <Project>{E5BEFF71-9E4A-4050-8953-6191C3086787}</Project>
       <Name>AWSSDK.ImportExport.CodeAnalysis</Name>
