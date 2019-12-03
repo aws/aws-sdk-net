@@ -48,6 +48,7 @@ namespace Amazon.Runtime.CredentialManagement
         private const string RegionField = "Region";
 
         private const string EndpointDiscoveryEnabledField = "EndpointDiscoveryEnabled";
+        private const string S3UseArnRegionField = "S3UseArnRegion";
 
         private const string StsRegionalEndpointsField = "StsRegionalEndpoints";
 
@@ -57,6 +58,7 @@ namespace Amazon.Runtime.CredentialManagement
             SettingsConstants.ProfileTypeField,
             RegionField,
             EndpointDiscoveryEnabledField,
+            S3UseArnRegionField,
             StsRegionalEndpointsField
         };
 
@@ -180,6 +182,20 @@ namespace Amazon.Runtime.CredentialManagement
 #endif
                     }
 
+                    string s3UseArnRegionString;
+                    bool? s3UseArnRegion = null;
+                    if(reservedProperties.TryGetValue(S3UseArnRegionField, out s3UseArnRegionString))
+                    {
+                        bool s3UseArnRegionOut;
+                        if (!bool.TryParse(s3UseArnRegionString, out s3UseArnRegionOut))
+                        {
+                            profile = null;
+                            return false;
+                        }
+
+                        s3UseArnRegion = s3UseArnRegionOut;
+                    }
+
                     profile = new CredentialProfile(profileName, profileOptions)
                     {
                         UniqueKey = uniqueKey,
@@ -187,7 +203,8 @@ namespace Amazon.Runtime.CredentialManagement
                         Region = region,
                         CredentialProfileStore = this,
                         EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
-                        StsRegionalEndpoints = stsRegionalEndpoints
+                        StsRegionalEndpoints = stsRegionalEndpoints,
+                        S3UseArnRegion = s3UseArnRegion
                     };
                     return true;
                 }
@@ -228,6 +245,9 @@ namespace Amazon.Runtime.CredentialManagement
 
                 if (profile.StsRegionalEndpoints != null)
                     reservedProperties[StsRegionalEndpointsField] = profile.StsRegionalEndpoints.ToString().ToLowerInvariant();
+
+                if (profile.S3UseArnRegion != null)
+                    reservedProperties[S3UseArnRegionField] = profile.S3UseArnRegion.Value.ToString().ToLowerInvariant();
 
                 var profileDictionary = PropertyMapping.CombineProfileParts(
                     profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);

@@ -47,6 +47,14 @@ namespace Amazon.Internal
             }
         }
 
+        public string PartitionDnsSuffix
+        {
+            get
+            {
+                return (string)_partitionJsonData["dnsSuffix"];
+            }
+        }
+
         private JsonData _partitionJsonData;
         private JsonData _servicesJsonData;
         private bool _servicesLoaded = false;

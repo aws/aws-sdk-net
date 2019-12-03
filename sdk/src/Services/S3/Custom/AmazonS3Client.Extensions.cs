@@ -83,30 +83,46 @@ namespace Amazon.S3
                 throw new InvalidOperationException("The Expires specified is null!");
 
             var aws4Signing = AWSConfigsS3.UseSignatureVersion4;
-            var region = AWS4Signer.DetermineSigningRegion(Config, "s3", alternateEndpoint: null, request: null);
-            if (aws4Signing && string.IsNullOrEmpty(region))
-                throw new InvalidOperationException("To use AWS4 signing, a region must be specified in the client configuration using the AuthenticationRegion or Region properties, or be determinable from the service URL.");
 
-            RegionEndpoint endpoint = RegionEndpoint.GetBySystemName(region);
-            if (endpoint.GetEndpointForService("s3").SignatureVersionOverride == "4" || endpoint.GetEndpointForService("s3").SignatureVersionOverride == null)
-                aws4Signing = true;
-
-            var fallbackToSigV2 = useSigV2Fallback && !AWSConfigsS3.UseSigV4SetExplicitly;
-            if (endpoint == RegionEndpoint.USEast1 && fallbackToSigV2)
-                aws4Signing = false;
-
-            // If the expiration is longer than SigV4 will allow then automatically use SigV2 instead.
-            // But only if the region we're signing for allows SigV2.
-            if (aws4Signing)
+            Arn arn;
+            string accessPoint;
+            if (Arn.TryParse(request.BucketName, out arn) && arn.TryParseAccessPoint(out accessPoint))
             {
-                var secondsUntilExpiration = GetSecondsUntilExpiration(this.Config, request, aws4Signing);
+                aws4Signing = true;
+            }
+            else
+            {
+                var region = AWS4Signer.DetermineSigningRegion(Config, "s3", alternateEndpoint: null, request: null);
+                if (aws4Signing && string.IsNullOrEmpty(region))
+                    throw new InvalidOperationException("To use AWS4 signing, a region must be specified in the client configuration using the AuthenticationRegion or Region properties, or be determinable from the service URL.");
 
-                if (secondsUntilExpiration > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry &&
-                    endpoint.GetEndpointForService("s3").SignatureVersionOverride == "2")
+                RegionEndpoint endpoint = RegionEndpoint.GetBySystemName(region);
+                var s3SignatureVersionOverride = endpoint.GetEndpointForService("s3").SignatureVersionOverride;
+                if (s3SignatureVersionOverride == "4" || s3SignatureVersionOverride == null)
+                {
+                    aws4Signing = true;
+                }
+
+                var fallbackToSigV2 = useSigV2Fallback && !AWSConfigsS3.UseSigV4SetExplicitly;
+                if (endpoint == RegionEndpoint.USEast1 && fallbackToSigV2)
                 {
                     aws4Signing = false;
                 }
+
+                // If the expiration is longer than SigV4 will allow then automatically use SigV2 instead.
+                // But only if the region we're signing for allows SigV2.
+                if (aws4Signing)
+                {
+                    var secondsUntilExpiration = GetSecondsUntilExpiration(this.Config, request, aws4Signing);
+
+                    if (secondsUntilExpiration > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry &&
+                        s3SignatureVersionOverride == "2")
+                    {
+                        aws4Signing = false;
+                    }
+                }
             }
+
 
             var immutableCredentials = Credentials.GetCredentials();
             var irequest = Marshall(this.Config, request, immutableCredentials.AccessKey, immutableCredentials.Token, aws4Signing);

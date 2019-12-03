@@ -266,17 +266,18 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// To verify that all parts have been removed, so you don't get charged for the part
-        /// storage, you should call the <a>ListParts</a> operation and ensure the parts list
-        /// is empty.
+        /// storage, you should call the <a>ListParts</a> operation and ensure that the parts
+        /// list is empty.
         /// </para>
         ///  
         /// <para>
-        /// For information on permissions required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// For information about permissions required to use the multipart upload API, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
         /// Upload API and Permissions</a>.
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>AbortMultipartUpload</code> 
+        /// The following operations are related to <code>AbortMultipartUpload</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -300,7 +301,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket to which the upload was taking place.</param>
+        /// <param name="bucketName">The bucket name to which the upload was taking place.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key of the object for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// 
@@ -326,17 +327,18 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// To verify that all parts have been removed, so you don't get charged for the part
-        /// storage, you should call the <a>ListParts</a> operation and ensure the parts list
-        /// is empty.
+        /// storage, you should call the <a>ListParts</a> operation and ensure that the parts
+        /// list is empty.
         /// </para>
         ///  
         /// <para>
-        /// For information on permissions required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// For information about permissions required to use the multipart upload API, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
         /// Upload API and Permissions</a>.
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>AbortMultipartUpload</code> 
+        /// The following operations are related to <code>AbortMultipartUpload</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -384,17 +386,18 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// To verify that all parts have been removed, so you don't get charged for the part
-        /// storage, you should call the <a>ListParts</a> operation and ensure the parts list
-        /// is empty.
+        /// storage, you should call the <a>ListParts</a> operation and ensure that the parts
+        /// list is empty.
         /// </para>
         ///  
         /// <para>
-        /// For information on permissions required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// For information about permissions required to use the multipart upload API, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
         /// Upload API and Permissions</a>.
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>AbortMultipartUpload</code> 
+        /// The following operations are related to <code>AbortMultipartUpload</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -418,7 +421,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket to which the upload was taking place.</param>
+        /// <param name="bucketName">The bucket name to which the upload was taking place.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key of the object for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// <param name="cancellationToken">
@@ -447,17 +450,18 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// To verify that all parts have been removed, so you don't get charged for the part
-        /// storage, you should call the <a>ListParts</a> operation and ensure the parts list
-        /// is empty.
+        /// storage, you should call the <a>ListParts</a> operation and ensure that the parts
+        /// list is empty.
         /// </para>
         ///  
         /// <para>
-        /// For information on permissions required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// For information about permissions required to use the multipart upload API, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
         /// Upload API and Permissions</a>.
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>AbortMultipartUpload</code> 
+        /// The following operations are related to <code>AbortMultipartUpload</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -510,9 +514,9 @@ namespace Amazon.S3
         /// operation. After successfully uploading all relevant parts of an upload, you call
         /// this operation to complete the upload. Upon receiving this request, Amazon S3 concatenates
         /// all the parts in ascending order by part number to create a new object. In the Complete
-        /// Multipart Upload request, you must provide the parts list. You must ensure the parts
-        /// list is complete, this operation concatenates the parts you provide in the list. For
-        /// each part in the list, you must provide the part number and the <code>ETag</code>
+        /// Multipart Upload request, you must provide the parts list. You must ensure that the
+        /// parts list is complete. This operation concatenates the parts that you provide in
+        /// the list. For each part in the list, you must provide the part number and the <code>ETag</code>
         /// value, returned after that part was uploaded.
         /// </para>
         ///  
@@ -520,7 +524,7 @@ namespace Amazon.S3
         /// Processing of a Complete Multipart Upload request could take several minutes to complete.
         /// After Amazon S3 begins processing the request, it sends an HTTP response header that
         /// specifies a 200 OK response. While processing is in progress, Amazon S3 periodically
-        /// sends whitespace characters to keep the connection from timing out. Because a request
+        /// sends white space characters to keep the connection from timing out. Because a request
         /// could fail after the initial 200 OK response has been sent, it is important that you
         /// check the response body to determine whether the request succeeded.
         /// </para>
@@ -532,12 +536,13 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For more information on multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
+        /// For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
         /// Objects Using Multipart Upload</a>.
         /// </para>
         ///  
         /// <para>
-        /// For information on permissions required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// For information about permissions required to use the multipart upload API, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
         /// Upload API and Permissions</a>.
         /// </para>
         ///  
@@ -645,9 +650,9 @@ namespace Amazon.S3
         /// operation. After successfully uploading all relevant parts of an upload, you call
         /// this operation to complete the upload. Upon receiving this request, Amazon S3 concatenates
         /// all the parts in ascending order by part number to create a new object. In the Complete
-        /// Multipart Upload request, you must provide the parts list. You must ensure the parts
-        /// list is complete, this operation concatenates the parts you provide in the list. For
-        /// each part in the list, you must provide the part number and the <code>ETag</code>
+        /// Multipart Upload request, you must provide the parts list. You must ensure that the
+        /// parts list is complete. This operation concatenates the parts that you provide in
+        /// the list. For each part in the list, you must provide the part number and the <code>ETag</code>
         /// value, returned after that part was uploaded.
         /// </para>
         ///  
@@ -655,7 +660,7 @@ namespace Amazon.S3
         /// Processing of a Complete Multipart Upload request could take several minutes to complete.
         /// After Amazon S3 begins processing the request, it sends an HTTP response header that
         /// specifies a 200 OK response. While processing is in progress, Amazon S3 periodically
-        /// sends whitespace characters to keep the connection from timing out. Because a request
+        /// sends white space characters to keep the connection from timing out. Because a request
         /// could fail after the initial 200 OK response has been sent, it is important that you
         /// check the response body to determine whether the request succeeded.
         /// </para>
@@ -667,12 +672,13 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For more information on multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
+        /// For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
         /// Objects Using Multipart Upload</a>.
         /// </para>
         ///  
         /// <para>
-        /// For information on permissions required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+        /// For information about permissions required to use the multipart upload API, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
         /// Upload API and Permissions</a>.
         /// </para>
         ///  
@@ -786,7 +792,7 @@ namespace Amazon.S3
         /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic operation using this API. However,
         /// for copying an object greater than 5 GB, you must use the multipart upload Upload
-        /// Part - Copy API. For conceptual information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
+        /// Part - Copy API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
         /// Object Using the REST Multipart Upload API</a>.
         /// </para>
         ///  </note> 
@@ -799,8 +805,8 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// Amazon S3 Transfer Acceleration does not support cross-region copies. If you request
-        /// a cross-region copy using a Transfer Acceleration endpoint, you get a 400 <code>Bad
+        /// Amazon S3 transfer acceleration does not support cross-region copies. If you request
+        /// a cross-region copy using a transfer acceleration endpoint, you get a 400 <code>Bad
         /// Request</code> error. For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
         /// Acceleration</a>.
         /// </para>
@@ -814,28 +820,29 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// To only copy an object under certain conditions, such as whether the Etag matches
-        /// or whether the object was modified before or after a specified date, use the request
-        /// parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
+        /// To only copy an object under certain conditions, such as whether the <code>Etag</code>
+        /// matches or whether the object was modified before or after a specified date, use the
+        /// request parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
         /// <code>x-amz-copy-source-if-unmodified-since</code>, or <code> x-amz-copy-source-if-modified-since</code>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// All headers with the x-amz- prefix, including x-amz-copy-source, must be signed.
+        /// All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>,
+        /// must be signed.
         /// </para>
         ///  </note> 
         /// <para>
         /// You can use this operation to change the storage class of an object that is already
-        /// stored in Amazon S3 using the StorageClass parameter. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+        /// stored in Amazon S3 using the <code>StorageClass</code> parameter. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
         /// Classes</a>.
         /// </para>
         ///  
         /// <para>
         /// The source object that you are copying can be encrypted or unencrypted. If the source
-        /// object is encrypted, it can be encrypted by server-side encryption using AWS-managed
+        /// object is encrypted, it can be encrypted by server-side encryption using AWS managed
         /// encryption keys or by using a customer-provided encryption key. When copying an object,
-        /// you can request that Amazon S3 encrypt the target object by using either the AWS-managed
+        /// you can request that Amazon S3 encrypt the target object by using either the AWS managed
         /// encryption keys or by using your own encryption key. You can do this regardless of
         /// the form of server-side encryption that was used to encrypt the source, or even if
         /// the source object was not encrypted. For more information about server-side encryption,
@@ -847,9 +854,9 @@ namespace Amazon.S3
         /// A copy request might return an error when Amazon S3 receives the copy request or while
         /// Amazon S3 is copying the files. If the error occurs before the copy operation starts,
         /// you receive a standard Amazon S3 error. If the error occurs during the copy operation,
-        /// the error response is embedded in the 200 OK response. This means that a <code>200
-        /// OK</code> response can contain either a success or an error. Design your application
-        /// to parse the contents of the response and handle it appropriately.
+        /// the error response is embedded in the <code>200 OK</code> response. This means that
+        /// a <code>200 OK</code> response can contain either a success or an error. Design your
+        /// application to parse the contents of the response and handle it appropriately.
         /// </para>
         ///  
         /// <para>
@@ -867,31 +874,32 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Consideration 1 – If both the x-amz-copy-source-if-match and x-amz-copy-source-if-unmodified-since
+        ///  Consideration 1 – If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code>
         /// headers are present in the request and evaluate as follows, Amazon S3 returns 200
         /// OK and copies the data:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-copy-source-if-match condition evaluates to true
+        ///  <code>x-amz-copy-source-if-match</code> condition evaluates to true
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-copy-source-if-unmodified-since condition evaluates to false
+        ///  <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to false
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  Consideration 2 – If both of the x-amz-copy-source-if-none-match and x-amz-copy-source-if-modified-since
-        /// headers are present in the request and evaluate as follows, Amazon S3 returns the
-        /// 412 Precondition Failed response code:
+        ///  Consideration 2 – If both of the <code>x-amz-copy-source-if-none-match</code> and
+        /// <code>x-amz-copy-source-if-modified-since</code> headers are present in the request
+        /// and evaluate as follows, Amazon S3 returns the <code>412 Precondition Failed</code>
+        /// response code:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-copy-source-if-none-match condition evaluates to false
+        ///  <code>x-amz-copy-source-if-none-match</code> condition evaluates to false
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-copy-source-if-modified-since condition evaluates to true
+        ///  <code>x-amz-copy-source-if-modified-since</code> condition evaluates to true
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -913,7 +921,7 @@ namespace Amazon.S3
         /// <para>
         /// If you enable versioning on the target bucket, Amazon S3 generates a unique version
         /// ID for the object being copied. This version ID is different from the version ID of
-        /// the source object. Amazon S3 returns the version ID of the copied object in the x-amz-version-id
+        /// the source object. Amazon S3 returns the version ID of the copied object in the <code>x-amz-version-id</code>
         /// response header in the response.
         /// </para>
         ///  
@@ -923,8 +931,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the source object's storage class is GLACIER, then you must restore a copy of this
-        /// object before you can use it as a source object for the copy operation. For more information,
+        /// If the source object's storage class is GLACIER, you must restore a copy of this object
+        /// before you can use it as a source object for the copy operation. For more information,
         /// see .
         /// </para>
         ///  </dd> <dt>Access Permissions</dt> <dd> 
@@ -955,31 +963,31 @@ namespace Amazon.S3
         ///  </dd> <dt>Server-Side- Encryption-Specific Request Headers</dt> <dd> 
         /// <para>
         /// To encrypt the target object, you must provide the appropriate encryption-related
-        /// request headers. The one you use depends on whether you want to use AWS-managed encryption
+        /// request headers. The one you use depends on whether you want to use AWS managed encryption
         /// keys or provide your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To encrypt the target object using server-side encryption with an AWS-managed encryption
+        /// To encrypt the target object using server-side encryption with an AWS managed encryption
         /// key, provide the following request headers, as appropriate.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption
+        ///  <code>x-amz-server-side​-encryption</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side-encryption-aws-kms-key-id
+        ///  <code>x-amz-server-side-encryption-aws-kms-key-id</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side-encryption-context
+        ///  <code>x-amz-server-side-encryption-context</code> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify x-amz-server-side-encryption:aws:kms, but don't provide x-amz-server-side-
-        /// encryption-aws-kms-key-id, Amazon S3 uses the AWS managed customer master key (CMK)
-        /// in KMS to protect the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code> but don't provide
+        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+        /// managed customer master key (CMK) in AWS KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -988,7 +996,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in KMS</a>.
         /// </para>
@@ -1028,7 +1036,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in Amazon KMS</a>.
         /// </para>
@@ -1038,16 +1046,16 @@ namespace Amazon.S3
         /// You also can use the following access control–related headers with this operation.
         /// By default, all objects are private. Only the owner has full access control. When
         /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the Access Control
-        /// List (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// groups defined by Amazon S3. These permissions are then added to the access control
+        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
         /// ACLs</a>. With this operation, you can grant access permissions using one of the following
         /// two methods:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify a canned ACL (x-amz-acl) — Amazon S3 supports a set of predefined ACLs, known
-        /// as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
+        /// ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
         ///  </li> <li> 
@@ -1056,7 +1064,7 @@ namespace Amazon.S3
         /// specific AWS accounts or groups, use the following headers. Each header maps to specific
         /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
-        /// get the specific permission. To grant permissions explicitly use:
+        /// get the specific permission. To grant permissions explicitly, use:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1084,20 +1092,21 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -1106,7 +1115,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
-        /// The following operation are related to <code>CopyObject</code> 
+        /// The following operations are related to <code>CopyObject</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1147,7 +1156,7 @@ namespace Amazon.S3
         /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic operation using this API. However,
         /// for copying an object greater than 5 GB, you must use the multipart upload Upload
-        /// Part - Copy API. For conceptual information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
+        /// Part - Copy API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
         /// Object Using the REST Multipart Upload API</a>.
         /// </para>
         ///  </note> 
@@ -1160,8 +1169,8 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// Amazon S3 Transfer Acceleration does not support cross-region copies. If you request
-        /// a cross-region copy using a Transfer Acceleration endpoint, you get a 400 <code>Bad
+        /// Amazon S3 transfer acceleration does not support cross-region copies. If you request
+        /// a cross-region copy using a transfer acceleration endpoint, you get a 400 <code>Bad
         /// Request</code> error. For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
         /// Acceleration</a>.
         /// </para>
@@ -1175,28 +1184,29 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// To only copy an object under certain conditions, such as whether the Etag matches
-        /// or whether the object was modified before or after a specified date, use the request
-        /// parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
+        /// To only copy an object under certain conditions, such as whether the <code>Etag</code>
+        /// matches or whether the object was modified before or after a specified date, use the
+        /// request parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
         /// <code>x-amz-copy-source-if-unmodified-since</code>, or <code> x-amz-copy-source-if-modified-since</code>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// All headers with the x-amz- prefix, including x-amz-copy-source, must be signed.
+        /// All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>,
+        /// must be signed.
         /// </para>
         ///  </note> 
         /// <para>
         /// You can use this operation to change the storage class of an object that is already
-        /// stored in Amazon S3 using the StorageClass parameter. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+        /// stored in Amazon S3 using the <code>StorageClass</code> parameter. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
         /// Classes</a>.
         /// </para>
         ///  
         /// <para>
         /// The source object that you are copying can be encrypted or unencrypted. If the source
-        /// object is encrypted, it can be encrypted by server-side encryption using AWS-managed
+        /// object is encrypted, it can be encrypted by server-side encryption using AWS managed
         /// encryption keys or by using a customer-provided encryption key. When copying an object,
-        /// you can request that Amazon S3 encrypt the target object by using either the AWS-managed
+        /// you can request that Amazon S3 encrypt the target object by using either the AWS managed
         /// encryption keys or by using your own encryption key. You can do this regardless of
         /// the form of server-side encryption that was used to encrypt the source, or even if
         /// the source object was not encrypted. For more information about server-side encryption,
@@ -1208,9 +1218,9 @@ namespace Amazon.S3
         /// A copy request might return an error when Amazon S3 receives the copy request or while
         /// Amazon S3 is copying the files. If the error occurs before the copy operation starts,
         /// you receive a standard Amazon S3 error. If the error occurs during the copy operation,
-        /// the error response is embedded in the 200 OK response. This means that a <code>200
-        /// OK</code> response can contain either a success or an error. Design your application
-        /// to parse the contents of the response and handle it appropriately.
+        /// the error response is embedded in the <code>200 OK</code> response. This means that
+        /// a <code>200 OK</code> response can contain either a success or an error. Design your
+        /// application to parse the contents of the response and handle it appropriately.
         /// </para>
         ///  
         /// <para>
@@ -1228,31 +1238,32 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Consideration 1 – If both the x-amz-copy-source-if-match and x-amz-copy-source-if-unmodified-since
+        ///  Consideration 1 – If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code>
         /// headers are present in the request and evaluate as follows, Amazon S3 returns 200
         /// OK and copies the data:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-copy-source-if-match condition evaluates to true
+        ///  <code>x-amz-copy-source-if-match</code> condition evaluates to true
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-copy-source-if-unmodified-since condition evaluates to false
+        ///  <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to false
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  Consideration 2 – If both of the x-amz-copy-source-if-none-match and x-amz-copy-source-if-modified-since
-        /// headers are present in the request and evaluate as follows, Amazon S3 returns the
-        /// 412 Precondition Failed response code:
+        ///  Consideration 2 – If both of the <code>x-amz-copy-source-if-none-match</code> and
+        /// <code>x-amz-copy-source-if-modified-since</code> headers are present in the request
+        /// and evaluate as follows, Amazon S3 returns the <code>412 Precondition Failed</code>
+        /// response code:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-copy-source-if-none-match condition evaluates to false
+        ///  <code>x-amz-copy-source-if-none-match</code> condition evaluates to false
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-copy-source-if-modified-since condition evaluates to true
+        ///  <code>x-amz-copy-source-if-modified-since</code> condition evaluates to true
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -1274,7 +1285,7 @@ namespace Amazon.S3
         /// <para>
         /// If you enable versioning on the target bucket, Amazon S3 generates a unique version
         /// ID for the object being copied. This version ID is different from the version ID of
-        /// the source object. Amazon S3 returns the version ID of the copied object in the x-amz-version-id
+        /// the source object. Amazon S3 returns the version ID of the copied object in the <code>x-amz-version-id</code>
         /// response header in the response.
         /// </para>
         ///  
@@ -1284,8 +1295,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the source object's storage class is GLACIER, then you must restore a copy of this
-        /// object before you can use it as a source object for the copy operation. For more information,
+        /// If the source object's storage class is GLACIER, you must restore a copy of this object
+        /// before you can use it as a source object for the copy operation. For more information,
         /// see .
         /// </para>
         ///  </dd> <dt>Access Permissions</dt> <dd> 
@@ -1316,31 +1327,31 @@ namespace Amazon.S3
         ///  </dd> <dt>Server-Side- Encryption-Specific Request Headers</dt> <dd> 
         /// <para>
         /// To encrypt the target object, you must provide the appropriate encryption-related
-        /// request headers. The one you use depends on whether you want to use AWS-managed encryption
+        /// request headers. The one you use depends on whether you want to use AWS managed encryption
         /// keys or provide your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To encrypt the target object using server-side encryption with an AWS-managed encryption
+        /// To encrypt the target object using server-side encryption with an AWS managed encryption
         /// key, provide the following request headers, as appropriate.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption
+        ///  <code>x-amz-server-side​-encryption</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side-encryption-aws-kms-key-id
+        ///  <code>x-amz-server-side-encryption-aws-kms-key-id</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side-encryption-context
+        ///  <code>x-amz-server-side-encryption-context</code> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify x-amz-server-side-encryption:aws:kms, but don't provide x-amz-server-side-
-        /// encryption-aws-kms-key-id, Amazon S3 uses the AWS managed customer master key (CMK)
-        /// in KMS to protect the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code> but don't provide
+        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+        /// managed customer master key (CMK) in AWS KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -1349,7 +1360,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in KMS</a>.
         /// </para>
@@ -1389,7 +1400,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in Amazon KMS</a>.
         /// </para>
@@ -1399,16 +1410,16 @@ namespace Amazon.S3
         /// You also can use the following access control–related headers with this operation.
         /// By default, all objects are private. Only the owner has full access control. When
         /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the Access Control
-        /// List (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// groups defined by Amazon S3. These permissions are then added to the access control
+        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
         /// ACLs</a>. With this operation, you can grant access permissions using one of the following
         /// two methods:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify a canned ACL (x-amz-acl) — Amazon S3 supports a set of predefined ACLs, known
-        /// as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
+        /// ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
         ///  </li> <li> 
@@ -1417,7 +1428,7 @@ namespace Amazon.S3
         /// specific AWS accounts or groups, use the following headers. Each header maps to specific
         /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
-        /// get the specific permission. To grant permissions explicitly use:
+        /// get the specific permission. To grant permissions explicitly, use:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1445,20 +1456,21 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -1467,7 +1479,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
-        /// The following operation are related to <code>CopyObject</code> 
+        /// The following operations are related to <code>CopyObject</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1510,7 +1522,7 @@ namespace Amazon.S3
         /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic operation using this API. However,
         /// for copying an object greater than 5 GB, you must use the multipart upload Upload
-        /// Part - Copy API. For conceptual information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
+        /// Part - Copy API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
         /// Object Using the REST Multipart Upload API</a>.
         /// </para>
         ///  </note> 
@@ -1523,8 +1535,8 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// Amazon S3 Transfer Acceleration does not support cross-region copies. If you request
-        /// a cross-region copy using a Transfer Acceleration endpoint, you get a 400 <code>Bad
+        /// Amazon S3 transfer acceleration does not support cross-region copies. If you request
+        /// a cross-region copy using a transfer acceleration endpoint, you get a 400 <code>Bad
         /// Request</code> error. For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
         /// Acceleration</a>.
         /// </para>
@@ -1538,28 +1550,29 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// To only copy an object under certain conditions, such as whether the Etag matches
-        /// or whether the object was modified before or after a specified date, use the request
-        /// parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
+        /// To only copy an object under certain conditions, such as whether the <code>Etag</code>
+        /// matches or whether the object was modified before or after a specified date, use the
+        /// request parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
         /// <code>x-amz-copy-source-if-unmodified-since</code>, or <code> x-amz-copy-source-if-modified-since</code>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// All headers with the x-amz- prefix, including x-amz-copy-source, must be signed.
+        /// All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>,
+        /// must be signed.
         /// </para>
         ///  </note> 
         /// <para>
         /// You can use this operation to change the storage class of an object that is already
-        /// stored in Amazon S3 using the StorageClass parameter. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+        /// stored in Amazon S3 using the <code>StorageClass</code> parameter. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
         /// Classes</a>.
         /// </para>
         ///  
         /// <para>
         /// The source object that you are copying can be encrypted or unencrypted. If the source
-        /// object is encrypted, it can be encrypted by server-side encryption using AWS-managed
+        /// object is encrypted, it can be encrypted by server-side encryption using AWS managed
         /// encryption keys or by using a customer-provided encryption key. When copying an object,
-        /// you can request that Amazon S3 encrypt the target object by using either the AWS-managed
+        /// you can request that Amazon S3 encrypt the target object by using either the AWS managed
         /// encryption keys or by using your own encryption key. You can do this regardless of
         /// the form of server-side encryption that was used to encrypt the source, or even if
         /// the source object was not encrypted. For more information about server-side encryption,
@@ -1571,9 +1584,9 @@ namespace Amazon.S3
         /// A copy request might return an error when Amazon S3 receives the copy request or while
         /// Amazon S3 is copying the files. If the error occurs before the copy operation starts,
         /// you receive a standard Amazon S3 error. If the error occurs during the copy operation,
-        /// the error response is embedded in the 200 OK response. This means that a <code>200
-        /// OK</code> response can contain either a success or an error. Design your application
-        /// to parse the contents of the response and handle it appropriately.
+        /// the error response is embedded in the <code>200 OK</code> response. This means that
+        /// a <code>200 OK</code> response can contain either a success or an error. Design your
+        /// application to parse the contents of the response and handle it appropriately.
         /// </para>
         ///  
         /// <para>
@@ -1591,31 +1604,32 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Consideration 1 – If both the x-amz-copy-source-if-match and x-amz-copy-source-if-unmodified-since
+        ///  Consideration 1 – If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code>
         /// headers are present in the request and evaluate as follows, Amazon S3 returns 200
         /// OK and copies the data:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-copy-source-if-match condition evaluates to true
+        ///  <code>x-amz-copy-source-if-match</code> condition evaluates to true
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-copy-source-if-unmodified-since condition evaluates to false
+        ///  <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to false
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  Consideration 2 – If both of the x-amz-copy-source-if-none-match and x-amz-copy-source-if-modified-since
-        /// headers are present in the request and evaluate as follows, Amazon S3 returns the
-        /// 412 Precondition Failed response code:
+        ///  Consideration 2 – If both of the <code>x-amz-copy-source-if-none-match</code> and
+        /// <code>x-amz-copy-source-if-modified-since</code> headers are present in the request
+        /// and evaluate as follows, Amazon S3 returns the <code>412 Precondition Failed</code>
+        /// response code:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-copy-source-if-none-match condition evaluates to false
+        ///  <code>x-amz-copy-source-if-none-match</code> condition evaluates to false
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-copy-source-if-modified-since condition evaluates to true
+        ///  <code>x-amz-copy-source-if-modified-since</code> condition evaluates to true
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -1637,7 +1651,7 @@ namespace Amazon.S3
         /// <para>
         /// If you enable versioning on the target bucket, Amazon S3 generates a unique version
         /// ID for the object being copied. This version ID is different from the version ID of
-        /// the source object. Amazon S3 returns the version ID of the copied object in the x-amz-version-id
+        /// the source object. Amazon S3 returns the version ID of the copied object in the <code>x-amz-version-id</code>
         /// response header in the response.
         /// </para>
         ///  
@@ -1647,8 +1661,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the source object's storage class is GLACIER, then you must restore a copy of this
-        /// object before you can use it as a source object for the copy operation. For more information,
+        /// If the source object's storage class is GLACIER, you must restore a copy of this object
+        /// before you can use it as a source object for the copy operation. For more information,
         /// see .
         /// </para>
         ///  </dd> <dt>Access Permissions</dt> <dd> 
@@ -1679,31 +1693,31 @@ namespace Amazon.S3
         ///  </dd> <dt>Server-Side- Encryption-Specific Request Headers</dt> <dd> 
         /// <para>
         /// To encrypt the target object, you must provide the appropriate encryption-related
-        /// request headers. The one you use depends on whether you want to use AWS-managed encryption
+        /// request headers. The one you use depends on whether you want to use AWS managed encryption
         /// keys or provide your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To encrypt the target object using server-side encryption with an AWS-managed encryption
+        /// To encrypt the target object using server-side encryption with an AWS managed encryption
         /// key, provide the following request headers, as appropriate.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption
+        ///  <code>x-amz-server-side​-encryption</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side-encryption-aws-kms-key-id
+        ///  <code>x-amz-server-side-encryption-aws-kms-key-id</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side-encryption-context
+        ///  <code>x-amz-server-side-encryption-context</code> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify x-amz-server-side-encryption:aws:kms, but don't provide x-amz-server-side-
-        /// encryption-aws-kms-key-id, Amazon S3 uses the AWS managed customer master key (CMK)
-        /// in KMS to protect the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code> but don't provide
+        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+        /// managed customer master key (CMK) in AWS KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -1712,7 +1726,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in KMS</a>.
         /// </para>
@@ -1752,7 +1766,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in Amazon KMS</a>.
         /// </para>
@@ -1762,16 +1776,16 @@ namespace Amazon.S3
         /// You also can use the following access control–related headers with this operation.
         /// By default, all objects are private. Only the owner has full access control. When
         /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the Access Control
-        /// List (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// groups defined by Amazon S3. These permissions are then added to the access control
+        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
         /// ACLs</a>. With this operation, you can grant access permissions using one of the following
         /// two methods:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify a canned ACL (x-amz-acl) — Amazon S3 supports a set of predefined ACLs, known
-        /// as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
+        /// ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
         ///  </li> <li> 
@@ -1780,7 +1794,7 @@ namespace Amazon.S3
         /// specific AWS accounts or groups, use the following headers. Each header maps to specific
         /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
-        /// get the specific permission. To grant permissions explicitly use:
+        /// get the specific permission. To grant permissions explicitly, use:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1808,20 +1822,21 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -1830,7 +1845,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
-        /// The following operation are related to <code>CopyObject</code> 
+        /// The following operations are related to <code>CopyObject</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1867,7 +1882,7 @@ namespace Amazon.S3
         /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic operation using this API. However,
         /// for copying an object greater than 5 GB, you must use the multipart upload Upload
-        /// Part - Copy API. For conceptual information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
+        /// Part - Copy API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
         /// Object Using the REST Multipart Upload API</a>.
         /// </para>
         ///  </note> 
@@ -1880,8 +1895,8 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// Amazon S3 Transfer Acceleration does not support cross-region copies. If you request
-        /// a cross-region copy using a Transfer Acceleration endpoint, you get a 400 <code>Bad
+        /// Amazon S3 transfer acceleration does not support cross-region copies. If you request
+        /// a cross-region copy using a transfer acceleration endpoint, you get a 400 <code>Bad
         /// Request</code> error. For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
         /// Acceleration</a>.
         /// </para>
@@ -1895,28 +1910,29 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// To only copy an object under certain conditions, such as whether the Etag matches
-        /// or whether the object was modified before or after a specified date, use the request
-        /// parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
+        /// To only copy an object under certain conditions, such as whether the <code>Etag</code>
+        /// matches or whether the object was modified before or after a specified date, use the
+        /// request parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
         /// <code>x-amz-copy-source-if-unmodified-since</code>, or <code> x-amz-copy-source-if-modified-since</code>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// All headers with the x-amz- prefix, including x-amz-copy-source, must be signed.
+        /// All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>,
+        /// must be signed.
         /// </para>
         ///  </note> 
         /// <para>
         /// You can use this operation to change the storage class of an object that is already
-        /// stored in Amazon S3 using the StorageClass parameter. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+        /// stored in Amazon S3 using the <code>StorageClass</code> parameter. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
         /// Classes</a>.
         /// </para>
         ///  
         /// <para>
         /// The source object that you are copying can be encrypted or unencrypted. If the source
-        /// object is encrypted, it can be encrypted by server-side encryption using AWS-managed
+        /// object is encrypted, it can be encrypted by server-side encryption using AWS managed
         /// encryption keys or by using a customer-provided encryption key. When copying an object,
-        /// you can request that Amazon S3 encrypt the target object by using either the AWS-managed
+        /// you can request that Amazon S3 encrypt the target object by using either the AWS managed
         /// encryption keys or by using your own encryption key. You can do this regardless of
         /// the form of server-side encryption that was used to encrypt the source, or even if
         /// the source object was not encrypted. For more information about server-side encryption,
@@ -1928,9 +1944,9 @@ namespace Amazon.S3
         /// A copy request might return an error when Amazon S3 receives the copy request or while
         /// Amazon S3 is copying the files. If the error occurs before the copy operation starts,
         /// you receive a standard Amazon S3 error. If the error occurs during the copy operation,
-        /// the error response is embedded in the 200 OK response. This means that a <code>200
-        /// OK</code> response can contain either a success or an error. Design your application
-        /// to parse the contents of the response and handle it appropriately.
+        /// the error response is embedded in the <code>200 OK</code> response. This means that
+        /// a <code>200 OK</code> response can contain either a success or an error. Design your
+        /// application to parse the contents of the response and handle it appropriately.
         /// </para>
         ///  
         /// <para>
@@ -1948,31 +1964,32 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Consideration 1 – If both the x-amz-copy-source-if-match and x-amz-copy-source-if-unmodified-since
+        ///  Consideration 1 – If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code>
         /// headers are present in the request and evaluate as follows, Amazon S3 returns 200
         /// OK and copies the data:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-copy-source-if-match condition evaluates to true
+        ///  <code>x-amz-copy-source-if-match</code> condition evaluates to true
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-copy-source-if-unmodified-since condition evaluates to false
+        ///  <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to false
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  Consideration 2 – If both of the x-amz-copy-source-if-none-match and x-amz-copy-source-if-modified-since
-        /// headers are present in the request and evaluate as follows, Amazon S3 returns the
-        /// 412 Precondition Failed response code:
+        ///  Consideration 2 – If both of the <code>x-amz-copy-source-if-none-match</code> and
+        /// <code>x-amz-copy-source-if-modified-since</code> headers are present in the request
+        /// and evaluate as follows, Amazon S3 returns the <code>412 Precondition Failed</code>
+        /// response code:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-copy-source-if-none-match condition evaluates to false
+        ///  <code>x-amz-copy-source-if-none-match</code> condition evaluates to false
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-copy-source-if-modified-since condition evaluates to true
+        ///  <code>x-amz-copy-source-if-modified-since</code> condition evaluates to true
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -1994,7 +2011,7 @@ namespace Amazon.S3
         /// <para>
         /// If you enable versioning on the target bucket, Amazon S3 generates a unique version
         /// ID for the object being copied. This version ID is different from the version ID of
-        /// the source object. Amazon S3 returns the version ID of the copied object in the x-amz-version-id
+        /// the source object. Amazon S3 returns the version ID of the copied object in the <code>x-amz-version-id</code>
         /// response header in the response.
         /// </para>
         ///  
@@ -2004,8 +2021,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the source object's storage class is GLACIER, then you must restore a copy of this
-        /// object before you can use it as a source object for the copy operation. For more information,
+        /// If the source object's storage class is GLACIER, you must restore a copy of this object
+        /// before you can use it as a source object for the copy operation. For more information,
         /// see .
         /// </para>
         ///  </dd> <dt>Access Permissions</dt> <dd> 
@@ -2036,31 +2053,31 @@ namespace Amazon.S3
         ///  </dd> <dt>Server-Side- Encryption-Specific Request Headers</dt> <dd> 
         /// <para>
         /// To encrypt the target object, you must provide the appropriate encryption-related
-        /// request headers. The one you use depends on whether you want to use AWS-managed encryption
+        /// request headers. The one you use depends on whether you want to use AWS managed encryption
         /// keys or provide your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To encrypt the target object using server-side encryption with an AWS-managed encryption
+        /// To encrypt the target object using server-side encryption with an AWS managed encryption
         /// key, provide the following request headers, as appropriate.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption
+        ///  <code>x-amz-server-side​-encryption</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side-encryption-aws-kms-key-id
+        ///  <code>x-amz-server-side-encryption-aws-kms-key-id</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side-encryption-context
+        ///  <code>x-amz-server-side-encryption-context</code> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify x-amz-server-side-encryption:aws:kms, but don't provide x-amz-server-side-
-        /// encryption-aws-kms-key-id, Amazon S3 uses the AWS managed customer master key (CMK)
-        /// in KMS to protect the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code> but don't provide
+        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+        /// managed customer master key (CMK) in AWS KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -2069,7 +2086,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in KMS</a>.
         /// </para>
@@ -2109,7 +2126,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in Amazon KMS</a>.
         /// </para>
@@ -2119,16 +2136,16 @@ namespace Amazon.S3
         /// You also can use the following access control–related headers with this operation.
         /// By default, all objects are private. Only the owner has full access control. When
         /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the Access Control
-        /// List (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// groups defined by Amazon S3. These permissions are then added to the access control
+        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
         /// ACLs</a>. With this operation, you can grant access permissions using one of the following
         /// two methods:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify a canned ACL (x-amz-acl) — Amazon S3 supports a set of predefined ACLs, known
-        /// as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
+        /// ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
         ///  </li> <li> 
@@ -2137,7 +2154,7 @@ namespace Amazon.S3
         /// specific AWS accounts or groups, use the following headers. Each header maps to specific
         /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
-        /// get the specific permission. To grant permissions explicitly use:
+        /// get the specific permission. To grant permissions explicitly, use:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2165,20 +2182,21 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -2187,7 +2205,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
-        /// The following operation are related to <code>CopyObject</code> 
+        /// The following operations are related to <code>CopyObject</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2231,7 +2249,7 @@ namespace Amazon.S3
         /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic operation using this API. However,
         /// for copying an object greater than 5 GB, you must use the multipart upload Upload
-        /// Part - Copy API. For conceptual information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
+        /// Part - Copy API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
         /// Object Using the REST Multipart Upload API</a>.
         /// </para>
         ///  </note> 
@@ -2244,8 +2262,8 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// Amazon S3 Transfer Acceleration does not support cross-region copies. If you request
-        /// a cross-region copy using a Transfer Acceleration endpoint, you get a 400 <code>Bad
+        /// Amazon S3 transfer acceleration does not support cross-region copies. If you request
+        /// a cross-region copy using a transfer acceleration endpoint, you get a 400 <code>Bad
         /// Request</code> error. For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
         /// Acceleration</a>.
         /// </para>
@@ -2259,28 +2277,29 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// To only copy an object under certain conditions, such as whether the Etag matches
-        /// or whether the object was modified before or after a specified date, use the request
-        /// parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
+        /// To only copy an object under certain conditions, such as whether the <code>Etag</code>
+        /// matches or whether the object was modified before or after a specified date, use the
+        /// request parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
         /// <code>x-amz-copy-source-if-unmodified-since</code>, or <code> x-amz-copy-source-if-modified-since</code>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// All headers with the x-amz- prefix, including x-amz-copy-source, must be signed.
+        /// All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>,
+        /// must be signed.
         /// </para>
         ///  </note> 
         /// <para>
         /// You can use this operation to change the storage class of an object that is already
-        /// stored in Amazon S3 using the StorageClass parameter. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+        /// stored in Amazon S3 using the <code>StorageClass</code> parameter. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
         /// Classes</a>.
         /// </para>
         ///  
         /// <para>
         /// The source object that you are copying can be encrypted or unencrypted. If the source
-        /// object is encrypted, it can be encrypted by server-side encryption using AWS-managed
+        /// object is encrypted, it can be encrypted by server-side encryption using AWS managed
         /// encryption keys or by using a customer-provided encryption key. When copying an object,
-        /// you can request that Amazon S3 encrypt the target object by using either the AWS-managed
+        /// you can request that Amazon S3 encrypt the target object by using either the AWS managed
         /// encryption keys or by using your own encryption key. You can do this regardless of
         /// the form of server-side encryption that was used to encrypt the source, or even if
         /// the source object was not encrypted. For more information about server-side encryption,
@@ -2292,9 +2311,9 @@ namespace Amazon.S3
         /// A copy request might return an error when Amazon S3 receives the copy request or while
         /// Amazon S3 is copying the files. If the error occurs before the copy operation starts,
         /// you receive a standard Amazon S3 error. If the error occurs during the copy operation,
-        /// the error response is embedded in the 200 OK response. This means that a <code>200
-        /// OK</code> response can contain either a success or an error. Design your application
-        /// to parse the contents of the response and handle it appropriately.
+        /// the error response is embedded in the <code>200 OK</code> response. This means that
+        /// a <code>200 OK</code> response can contain either a success or an error. Design your
+        /// application to parse the contents of the response and handle it appropriately.
         /// </para>
         ///  
         /// <para>
@@ -2312,31 +2331,32 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Consideration 1 – If both the x-amz-copy-source-if-match and x-amz-copy-source-if-unmodified-since
+        ///  Consideration 1 – If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code>
         /// headers are present in the request and evaluate as follows, Amazon S3 returns 200
         /// OK and copies the data:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-copy-source-if-match condition evaluates to true
+        ///  <code>x-amz-copy-source-if-match</code> condition evaluates to true
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-copy-source-if-unmodified-since condition evaluates to false
+        ///  <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to false
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  Consideration 2 – If both of the x-amz-copy-source-if-none-match and x-amz-copy-source-if-modified-since
-        /// headers are present in the request and evaluate as follows, Amazon S3 returns the
-        /// 412 Precondition Failed response code:
+        ///  Consideration 2 – If both of the <code>x-amz-copy-source-if-none-match</code> and
+        /// <code>x-amz-copy-source-if-modified-since</code> headers are present in the request
+        /// and evaluate as follows, Amazon S3 returns the <code>412 Precondition Failed</code>
+        /// response code:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-copy-source-if-none-match condition evaluates to false
+        ///  <code>x-amz-copy-source-if-none-match</code> condition evaluates to false
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-copy-source-if-modified-since condition evaluates to true
+        ///  <code>x-amz-copy-source-if-modified-since</code> condition evaluates to true
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -2358,7 +2378,7 @@ namespace Amazon.S3
         /// <para>
         /// If you enable versioning on the target bucket, Amazon S3 generates a unique version
         /// ID for the object being copied. This version ID is different from the version ID of
-        /// the source object. Amazon S3 returns the version ID of the copied object in the x-amz-version-id
+        /// the source object. Amazon S3 returns the version ID of the copied object in the <code>x-amz-version-id</code>
         /// response header in the response.
         /// </para>
         ///  
@@ -2368,8 +2388,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the source object's storage class is GLACIER, then you must restore a copy of this
-        /// object before you can use it as a source object for the copy operation. For more information,
+        /// If the source object's storage class is GLACIER, you must restore a copy of this object
+        /// before you can use it as a source object for the copy operation. For more information,
         /// see .
         /// </para>
         ///  </dd> <dt>Access Permissions</dt> <dd> 
@@ -2400,31 +2420,31 @@ namespace Amazon.S3
         ///  </dd> <dt>Server-Side- Encryption-Specific Request Headers</dt> <dd> 
         /// <para>
         /// To encrypt the target object, you must provide the appropriate encryption-related
-        /// request headers. The one you use depends on whether you want to use AWS-managed encryption
+        /// request headers. The one you use depends on whether you want to use AWS managed encryption
         /// keys or provide your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To encrypt the target object using server-side encryption with an AWS-managed encryption
+        /// To encrypt the target object using server-side encryption with an AWS managed encryption
         /// key, provide the following request headers, as appropriate.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption
+        ///  <code>x-amz-server-side​-encryption</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side-encryption-aws-kms-key-id
+        ///  <code>x-amz-server-side-encryption-aws-kms-key-id</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side-encryption-context
+        ///  <code>x-amz-server-side-encryption-context</code> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify x-amz-server-side-encryption:aws:kms, but don't provide x-amz-server-side-
-        /// encryption-aws-kms-key-id, Amazon S3 uses the AWS managed customer master key (CMK)
-        /// in KMS to protect the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code> but don't provide
+        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+        /// managed customer master key (CMK) in AWS KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -2433,7 +2453,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in KMS</a>.
         /// </para>
@@ -2473,7 +2493,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in Amazon KMS</a>.
         /// </para>
@@ -2483,16 +2503,16 @@ namespace Amazon.S3
         /// You also can use the following access control–related headers with this operation.
         /// By default, all objects are private. Only the owner has full access control. When
         /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the Access Control
-        /// List (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// groups defined by Amazon S3. These permissions are then added to the access control
+        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
         /// ACLs</a>. With this operation, you can grant access permissions using one of the following
         /// two methods:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify a canned ACL (x-amz-acl) — Amazon S3 supports a set of predefined ACLs, known
-        /// as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
+        /// ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
         ///  </li> <li> 
@@ -2501,7 +2521,7 @@ namespace Amazon.S3
         /// specific AWS accounts or groups, use the following headers. Each header maps to specific
         /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
-        /// get the specific permission. To grant permissions explicitly use:
+        /// get the specific permission. To grant permissions explicitly, use:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2529,20 +2549,21 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -2551,7 +2572,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
-        /// The following operation are related to <code>CopyObject</code> 
+        /// The following operations are related to <code>CopyObject</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2597,7 +2618,7 @@ namespace Amazon.S3
         /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic operation using this API. However,
         /// for copying an object greater than 5 GB, you must use the multipart upload Upload
-        /// Part - Copy API. For conceptual information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
+        /// Part - Copy API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
         /// Object Using the REST Multipart Upload API</a>.
         /// </para>
         ///  </note> 
@@ -2610,8 +2631,8 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// Amazon S3 Transfer Acceleration does not support cross-region copies. If you request
-        /// a cross-region copy using a Transfer Acceleration endpoint, you get a 400 <code>Bad
+        /// Amazon S3 transfer acceleration does not support cross-region copies. If you request
+        /// a cross-region copy using a transfer acceleration endpoint, you get a 400 <code>Bad
         /// Request</code> error. For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
         /// Acceleration</a>.
         /// </para>
@@ -2625,28 +2646,29 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// To only copy an object under certain conditions, such as whether the Etag matches
-        /// or whether the object was modified before or after a specified date, use the request
-        /// parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
+        /// To only copy an object under certain conditions, such as whether the <code>Etag</code>
+        /// matches or whether the object was modified before or after a specified date, use the
+        /// request parameters <code>x-amz-copy-source-if-match</code>, <code>x-amz-copy-source-if-none-match</code>,
         /// <code>x-amz-copy-source-if-unmodified-since</code>, or <code> x-amz-copy-source-if-modified-since</code>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// All headers with the x-amz- prefix, including x-amz-copy-source, must be signed.
+        /// All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>,
+        /// must be signed.
         /// </para>
         ///  </note> 
         /// <para>
         /// You can use this operation to change the storage class of an object that is already
-        /// stored in Amazon S3 using the StorageClass parameter. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+        /// stored in Amazon S3 using the <code>StorageClass</code> parameter. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
         /// Classes</a>.
         /// </para>
         ///  
         /// <para>
         /// The source object that you are copying can be encrypted or unencrypted. If the source
-        /// object is encrypted, it can be encrypted by server-side encryption using AWS-managed
+        /// object is encrypted, it can be encrypted by server-side encryption using AWS managed
         /// encryption keys or by using a customer-provided encryption key. When copying an object,
-        /// you can request that Amazon S3 encrypt the target object by using either the AWS-managed
+        /// you can request that Amazon S3 encrypt the target object by using either the AWS managed
         /// encryption keys or by using your own encryption key. You can do this regardless of
         /// the form of server-side encryption that was used to encrypt the source, or even if
         /// the source object was not encrypted. For more information about server-side encryption,
@@ -2658,9 +2680,9 @@ namespace Amazon.S3
         /// A copy request might return an error when Amazon S3 receives the copy request or while
         /// Amazon S3 is copying the files. If the error occurs before the copy operation starts,
         /// you receive a standard Amazon S3 error. If the error occurs during the copy operation,
-        /// the error response is embedded in the 200 OK response. This means that a <code>200
-        /// OK</code> response can contain either a success or an error. Design your application
-        /// to parse the contents of the response and handle it appropriately.
+        /// the error response is embedded in the <code>200 OK</code> response. This means that
+        /// a <code>200 OK</code> response can contain either a success or an error. Design your
+        /// application to parse the contents of the response and handle it appropriately.
         /// </para>
         ///  
         /// <para>
@@ -2678,31 +2700,32 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Consideration 1 – If both the x-amz-copy-source-if-match and x-amz-copy-source-if-unmodified-since
+        ///  Consideration 1 – If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code>
         /// headers are present in the request and evaluate as follows, Amazon S3 returns 200
         /// OK and copies the data:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-copy-source-if-match condition evaluates to true
+        ///  <code>x-amz-copy-source-if-match</code> condition evaluates to true
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-copy-source-if-unmodified-since condition evaluates to false
+        ///  <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to false
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  Consideration 2 – If both of the x-amz-copy-source-if-none-match and x-amz-copy-source-if-modified-since
-        /// headers are present in the request and evaluate as follows, Amazon S3 returns the
-        /// 412 Precondition Failed response code:
+        ///  Consideration 2 – If both of the <code>x-amz-copy-source-if-none-match</code> and
+        /// <code>x-amz-copy-source-if-modified-since</code> headers are present in the request
+        /// and evaluate as follows, Amazon S3 returns the <code>412 Precondition Failed</code>
+        /// response code:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-copy-source-if-none-match condition evaluates to false
+        ///  <code>x-amz-copy-source-if-none-match</code> condition evaluates to false
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-copy-source-if-modified-since condition evaluates to true
+        ///  <code>x-amz-copy-source-if-modified-since</code> condition evaluates to true
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -2724,7 +2747,7 @@ namespace Amazon.S3
         /// <para>
         /// If you enable versioning on the target bucket, Amazon S3 generates a unique version
         /// ID for the object being copied. This version ID is different from the version ID of
-        /// the source object. Amazon S3 returns the version ID of the copied object in the x-amz-version-id
+        /// the source object. Amazon S3 returns the version ID of the copied object in the <code>x-amz-version-id</code>
         /// response header in the response.
         /// </para>
         ///  
@@ -2734,8 +2757,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the source object's storage class is GLACIER, then you must restore a copy of this
-        /// object before you can use it as a source object for the copy operation. For more information,
+        /// If the source object's storage class is GLACIER, you must restore a copy of this object
+        /// before you can use it as a source object for the copy operation. For more information,
         /// see .
         /// </para>
         ///  </dd> <dt>Access Permissions</dt> <dd> 
@@ -2766,31 +2789,31 @@ namespace Amazon.S3
         ///  </dd> <dt>Server-Side- Encryption-Specific Request Headers</dt> <dd> 
         /// <para>
         /// To encrypt the target object, you must provide the appropriate encryption-related
-        /// request headers. The one you use depends on whether you want to use AWS-managed encryption
+        /// request headers. The one you use depends on whether you want to use AWS managed encryption
         /// keys or provide your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To encrypt the target object using server-side encryption with an AWS-managed encryption
+        /// To encrypt the target object using server-side encryption with an AWS managed encryption
         /// key, provide the following request headers, as appropriate.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption
+        ///  <code>x-amz-server-side​-encryption</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side-encryption-aws-kms-key-id
+        ///  <code>x-amz-server-side-encryption-aws-kms-key-id</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side-encryption-context
+        ///  <code>x-amz-server-side-encryption-context</code> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify x-amz-server-side-encryption:aws:kms, but don't provide x-amz-server-side-
-        /// encryption-aws-kms-key-id, Amazon S3 uses the AWS managed customer master key (CMK)
-        /// in KMS to protect the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code> but don't provide
+        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+        /// managed customer master key (CMK) in AWS KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -2799,7 +2822,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in KMS</a>.
         /// </para>
@@ -2839,7 +2862,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in Amazon KMS</a>.
         /// </para>
@@ -2849,16 +2872,16 @@ namespace Amazon.S3
         /// You also can use the following access control–related headers with this operation.
         /// By default, all objects are private. Only the owner has full access control. When
         /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the Access Control
-        /// List (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// groups defined by Amazon S3. These permissions are then added to the access control
+        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
         /// ACLs</a>. With this operation, you can grant access permissions using one of the following
         /// two methods:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify a canned ACL (x-amz-acl) — Amazon S3 supports a set of predefined ACLs, known
-        /// as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
+        /// ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
         ///  </li> <li> 
@@ -2867,7 +2890,7 @@ namespace Amazon.S3
         /// specific AWS accounts or groups, use the following headers. Each header maps to specific
         /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
-        /// get the specific permission. To grant permissions explicitly use:
+        /// get the specific permission. To grant permissions explicitly, use:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2895,20 +2918,21 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -2917,7 +2941,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
-        /// The following operation are related to <code>CopyObject</code> 
+        /// The following operations are related to <code>CopyObject</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2976,25 +3000,27 @@ namespace Amazon.S3
         /// your initiate request. Amazon S3 returns a unique identifier, the upload ID, that
         /// you must include in your upload part request.
         /// </para>
-        ///  <p class="title"> <b>For more information on using the UploadPartCopy operation,
-        /// see the following topics:</b> 
+        ///  
+        /// <para>
+        /// For more information about using the <code>UploadPartCopy</code> operation, see the
+        /// following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For conceptual information on multipart uploads, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
+        /// For conceptual information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
         /// Objects Using Multipart Upload</a> in the <i>Amazon Simple Storage Service Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For information on permissions required to use the multipart upload API, go to <a
+        /// For information about permissions required to use the multipart upload API, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
         /// Upload API and Permissions</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For information about copying objects using a single atomic operation vs. the multipart
-        /// upload, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectOperations.html">Operations
+        /// upload, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectOperations.html">Operations
         /// on Objects</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3005,8 +3031,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// Note the following additional considerations about the request headers <code>x-amz-copy-source-if-match</code>,
-        /// <code>x-amz-copy-source-if-none-match</code> <code>x-amz-copy-source-if-unmodified-since</code>
-        /// <code>x-amz-copy-source-if-modified-since</code> 
+        /// <code>x-amz-copy-source-if-none-match</code>, <code>x-amz-copy-source-if-unmodified-since</code>,
+        /// and <code>x-amz-copy-source-if-modified-since</code>:
         /// </para>
         ///  
         /// <para>
@@ -3029,7 +3055,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// then, S3 returns <code>200 OK</code> and copies the data. 
+        /// Amazon S3 returns <code>200 OK</code> and copies the data. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3048,7 +3074,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// then, S3 returns <code>412 Precondition Failed</code> response code. 
+        /// Amazon S3 returns <code>412 Precondition Failed</code> response code. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3176,25 +3202,27 @@ namespace Amazon.S3
         /// your initiate request. Amazon S3 returns a unique identifier, the upload ID, that
         /// you must include in your upload part request.
         /// </para>
-        ///  <p class="title"> <b>For more information on using the UploadPartCopy operation,
-        /// see the following topics:</b> 
+        ///  
+        /// <para>
+        /// For more information about using the <code>UploadPartCopy</code> operation, see the
+        /// following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For conceptual information on multipart uploads, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
+        /// For conceptual information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
         /// Objects Using Multipart Upload</a> in the <i>Amazon Simple Storage Service Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For information on permissions required to use the multipart upload API, go to <a
+        /// For information about permissions required to use the multipart upload API, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
         /// Upload API and Permissions</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For information about copying objects using a single atomic operation vs. the multipart
-        /// upload, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectOperations.html">Operations
+        /// upload, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectOperations.html">Operations
         /// on Objects</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3205,8 +3233,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// Note the following additional considerations about the request headers <code>x-amz-copy-source-if-match</code>,
-        /// <code>x-amz-copy-source-if-none-match</code> <code>x-amz-copy-source-if-unmodified-since</code>
-        /// <code>x-amz-copy-source-if-modified-since</code> 
+        /// <code>x-amz-copy-source-if-none-match</code>, <code>x-amz-copy-source-if-unmodified-since</code>,
+        /// and <code>x-amz-copy-source-if-modified-since</code>:
         /// </para>
         ///  
         /// <para>
@@ -3229,7 +3257,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// then, S3 returns <code>200 OK</code> and copies the data. 
+        /// Amazon S3 returns <code>200 OK</code> and copies the data. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3248,7 +3276,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// then, S3 returns <code>412 Precondition Failed</code> response code. 
+        /// Amazon S3 returns <code>412 Precondition Failed</code> response code. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3378,25 +3406,27 @@ namespace Amazon.S3
         /// your initiate request. Amazon S3 returns a unique identifier, the upload ID, that
         /// you must include in your upload part request.
         /// </para>
-        ///  <p class="title"> <b>For more information on using the UploadPartCopy operation,
-        /// see the following topics:</b> 
+        ///  
+        /// <para>
+        /// For more information about using the <code>UploadPartCopy</code> operation, see the
+        /// following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For conceptual information on multipart uploads, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
+        /// For conceptual information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
         /// Objects Using Multipart Upload</a> in the <i>Amazon Simple Storage Service Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For information on permissions required to use the multipart upload API, go to <a
+        /// For information about permissions required to use the multipart upload API, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
         /// Upload API and Permissions</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For information about copying objects using a single atomic operation vs. the multipart
-        /// upload, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectOperations.html">Operations
+        /// upload, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectOperations.html">Operations
         /// on Objects</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3407,8 +3437,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// Note the following additional considerations about the request headers <code>x-amz-copy-source-if-match</code>,
-        /// <code>x-amz-copy-source-if-none-match</code> <code>x-amz-copy-source-if-unmodified-since</code>
-        /// <code>x-amz-copy-source-if-modified-since</code> 
+        /// <code>x-amz-copy-source-if-none-match</code>, <code>x-amz-copy-source-if-unmodified-since</code>,
+        /// and <code>x-amz-copy-source-if-modified-since</code>:
         /// </para>
         ///  
         /// <para>
@@ -3431,7 +3461,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// then, S3 returns <code>200 OK</code> and copies the data. 
+        /// Amazon S3 returns <code>200 OK</code> and copies the data. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3450,7 +3480,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// then, S3 returns <code>412 Precondition Failed</code> response code. 
+        /// Amazon S3 returns <code>412 Precondition Failed</code> response code. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3572,25 +3602,27 @@ namespace Amazon.S3
         /// your initiate request. Amazon S3 returns a unique identifier, the upload ID, that
         /// you must include in your upload part request.
         /// </para>
-        ///  <p class="title"> <b>For more information on using the UploadPartCopy operation,
-        /// see the following topics:</b> 
+        ///  
+        /// <para>
+        /// For more information about using the <code>UploadPartCopy</code> operation, see the
+        /// following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For conceptual information on multipart uploads, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
+        /// For conceptual information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
         /// Objects Using Multipart Upload</a> in the <i>Amazon Simple Storage Service Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For information on permissions required to use the multipart upload API, go to <a
+        /// For information about permissions required to use the multipart upload API, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
         /// Upload API and Permissions</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For information about copying objects using a single atomic operation vs. the multipart
-        /// upload, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectOperations.html">Operations
+        /// upload, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectOperations.html">Operations
         /// on Objects</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3601,8 +3633,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// Note the following additional considerations about the request headers <code>x-amz-copy-source-if-match</code>,
-        /// <code>x-amz-copy-source-if-none-match</code> <code>x-amz-copy-source-if-unmodified-since</code>
-        /// <code>x-amz-copy-source-if-modified-since</code> 
+        /// <code>x-amz-copy-source-if-none-match</code>, <code>x-amz-copy-source-if-unmodified-since</code>,
+        /// and <code>x-amz-copy-source-if-modified-since</code>:
         /// </para>
         ///  
         /// <para>
@@ -3625,7 +3657,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// then, S3 returns <code>200 OK</code> and copies the data. 
+        /// Amazon S3 returns <code>200 OK</code> and copies the data. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3644,7 +3676,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// then, S3 returns <code>412 Precondition Failed</code> response code. 
+        /// Amazon S3 returns <code>412 Precondition Failed</code> response code. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3775,25 +3807,27 @@ namespace Amazon.S3
         /// your initiate request. Amazon S3 returns a unique identifier, the upload ID, that
         /// you must include in your upload part request.
         /// </para>
-        ///  <p class="title"> <b>For more information on using the UploadPartCopy operation,
-        /// see the following topics:</b> 
+        ///  
+        /// <para>
+        /// For more information about using the <code>UploadPartCopy</code> operation, see the
+        /// following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For conceptual information on multipart uploads, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
+        /// For conceptual information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
         /// Objects Using Multipart Upload</a> in the <i>Amazon Simple Storage Service Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For information on permissions required to use the multipart upload API, go to <a
+        /// For information about permissions required to use the multipart upload API, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
         /// Upload API and Permissions</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For information about copying objects using a single atomic operation vs. the multipart
-        /// upload, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectOperations.html">Operations
+        /// upload, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectOperations.html">Operations
         /// on Objects</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3804,8 +3838,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// Note the following additional considerations about the request headers <code>x-amz-copy-source-if-match</code>,
-        /// <code>x-amz-copy-source-if-none-match</code> <code>x-amz-copy-source-if-unmodified-since</code>
-        /// <code>x-amz-copy-source-if-modified-since</code> 
+        /// <code>x-amz-copy-source-if-none-match</code>, <code>x-amz-copy-source-if-unmodified-since</code>,
+        /// and <code>x-amz-copy-source-if-modified-since</code>:
         /// </para>
         ///  
         /// <para>
@@ -3828,7 +3862,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// then, S3 returns <code>200 OK</code> and copies the data. 
+        /// Amazon S3 returns <code>200 OK</code> and copies the data. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3847,7 +3881,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// then, S3 returns <code>412 Precondition Failed</code> response code. 
+        /// Amazon S3 returns <code>412 Precondition Failed</code> response code. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3980,25 +4014,27 @@ namespace Amazon.S3
         /// your initiate request. Amazon S3 returns a unique identifier, the upload ID, that
         /// you must include in your upload part request.
         /// </para>
-        ///  <p class="title"> <b>For more information on using the UploadPartCopy operation,
-        /// see the following topics:</b> 
+        ///  
+        /// <para>
+        /// For more information about using the <code>UploadPartCopy</code> operation, see the
+        /// following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For conceptual information on multipart uploads, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
+        /// For conceptual information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
         /// Objects Using Multipart Upload</a> in the <i>Amazon Simple Storage Service Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For information on permissions required to use the multipart upload API, go to <a
+        /// For information about permissions required to use the multipart upload API, see <a
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
         /// Upload API and Permissions</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For information about copying objects using a single atomic operation vs. the multipart
-        /// upload, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectOperations.html">Operations
+        /// upload, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectOperations.html">Operations
         /// on Objects</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -4009,8 +4045,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// Note the following additional considerations about the request headers <code>x-amz-copy-source-if-match</code>,
-        /// <code>x-amz-copy-source-if-none-match</code> <code>x-amz-copy-source-if-unmodified-since</code>
-        /// <code>x-amz-copy-source-if-modified-since</code> 
+        /// <code>x-amz-copy-source-if-none-match</code>, <code>x-amz-copy-source-if-unmodified-since</code>,
+        /// and <code>x-amz-copy-source-if-modified-since</code>:
         /// </para>
         ///  
         /// <para>
@@ -4033,7 +4069,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// then, S3 returns <code>200 OK</code> and copies the data. 
+        /// Amazon S3 returns <code>200 OK</code> and copies the data. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4052,7 +4088,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// then, S3 returns <code>412 Precondition Failed</code> response code. 
+        /// Amazon S3 returns <code>412 Precondition Failed</code> response code. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4159,7 +4195,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the bucket. All objects (including all object versions and Delete Markers)
+        /// Deletes the bucket. All objects (including all object versions and delete markers)
         /// in the bucket must be deleted before the bucket itself can be deleted.
         /// 
         ///  <p class="title"> <b>Related Resources</b> 
@@ -4186,7 +4222,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the bucket. All objects (including all object versions and Delete Markers)
+        /// Deletes the bucket. All objects (including all object versions and delete markers)
         /// in the bucket must be deleted before the bucket itself can be deleted.
         /// 
         ///  <p class="title"> <b>Related Resources</b> 
@@ -4215,7 +4251,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the bucket. All objects (including all object versions and Delete Markers)
+        /// Deletes the bucket. All objects (including all object versions and delete markers)
         /// in the bucket must be deleted before the bucket itself can be deleted.
         /// 
         ///  <p class="title"> <b>Related Resources</b> 
@@ -4245,7 +4281,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the bucket. All objects (including all object versions and Delete Markers)
+        /// Deletes the bucket. All objects (including all object versions and delete markers)
         /// in the bucket must be deleted before the bucket itself can be deleted.
         /// 
         ///  <p class="title"> <b>Related Resources</b> 
@@ -4286,7 +4322,7 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have permissions to perform the s3:PutAnalyticsConfiguration
+        /// To use this operation, you must have permissions to perform the <code>s3:PutAnalyticsConfiguration</code>
         /// action. The bucket owner has this permission by default. The bucket owner can grant
         /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
@@ -4294,7 +4330,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For information about Amazon S3 analytics feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/analytics-storage-class.html">Amazon
+        /// For information about the Amazon S3 analytics feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/analytics-storage-class.html">Amazon
         /// S3 Analytics – Storage Class Analysis</a>. 
         /// </para>
         ///  
@@ -4334,7 +4370,7 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have permissions to perform the s3:PutAnalyticsConfiguration
+        /// To use this operation, you must have permissions to perform the <code>s3:PutAnalyticsConfiguration</code>
         /// action. The bucket owner has this permission by default. The bucket owner can grant
         /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
@@ -4342,7 +4378,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For information about Amazon S3 analytics feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/analytics-storage-class.html">Amazon
+        /// For information about the Amazon S3 analytics feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/analytics-storage-class.html">Amazon
         /// S3 Analytics – Storage Class Analysis</a>. 
         /// </para>
         ///  
@@ -4488,7 +4524,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// Operation related to <code>DeleteBucketInventoryConfiguration</code> include: 
+        /// Operations related to <code>DeleteBucketInventoryConfiguration</code> include: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4535,7 +4571,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// Operation related to <code>DeleteBucketInventoryConfiguration</code> include: 
+        /// Operations related to <code>DeleteBucketInventoryConfiguration</code> include: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4591,8 +4627,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketMetricsConfiguration</code>
-        /// 
+        /// The following operations are related to <code>DeleteBucketMetricsConfiguration</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4646,8 +4681,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketMetricsConfiguration</code>
-        /// 
+        /// The following operations are related to <code>DeleteBucketMetricsConfiguration</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4689,17 +4723,17 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// This implementation of the DELETE operation uses the policysubresource to delete the
-        /// policy of a specified bucket. If you are using an identity other than the root user
-        /// of the AWS account that owns the bucket, the calling identity must have the <code>DeleteBucketPolicy</code>
-        /// permissions on the specified bucket and belong to the bucket owner's account in order
-        /// to use this operation. 
+        /// This implementation of the DELETE operation uses the policy subresource to delete
+        /// the policy of a specified bucket. If you are using an identity other than the root
+        /// user of the AWS account that owns the bucket, the calling identity must have the <code>DeleteBucketPolicy</code>
+        /// permissions on the specified bucket and belong to the bucket owner's account to use
+        /// this operation. 
         /// 
         ///  
         /// <para>
         /// If you don't have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a
         /// <code>403 Access Denied</code> error. If you have the correct permissions, but you're
-        /// notusing an identity that belongs to the bucket owner's account, Amazon S3 returns
+        /// not using an identity that belongs to the bucket owner's account, Amazon S3 returns
         /// a <code>405 Method Not Allowed</code> error. 
         /// </para>
         ///  <important> 
@@ -4739,17 +4773,17 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// This implementation of the DELETE operation uses the policysubresource to delete the
-        /// policy of a specified bucket. If you are using an identity other than the root user
-        /// of the AWS account that owns the bucket, the calling identity must have the <code>DeleteBucketPolicy</code>
-        /// permissions on the specified bucket and belong to the bucket owner's account in order
-        /// to use this operation. 
+        /// This implementation of the DELETE operation uses the policy subresource to delete
+        /// the policy of a specified bucket. If you are using an identity other than the root
+        /// user of the AWS account that owns the bucket, the calling identity must have the <code>DeleteBucketPolicy</code>
+        /// permissions on the specified bucket and belong to the bucket owner's account to use
+        /// this operation. 
         /// 
         ///  
         /// <para>
         /// If you don't have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a
         /// <code>403 Access Denied</code> error. If you have the correct permissions, but you're
-        /// notusing an identity that belongs to the bucket owner's account, Amazon S3 returns
+        /// not using an identity that belongs to the bucket owner's account, Amazon S3 returns
         /// a <code>405 Method Not Allowed</code> error. 
         /// </para>
         ///  <important> 
@@ -4791,17 +4825,17 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// This implementation of the DELETE operation uses the policysubresource to delete the
-        /// policy of a specified bucket. If you are using an identity other than the root user
-        /// of the AWS account that owns the bucket, the calling identity must have the <code>DeleteBucketPolicy</code>
-        /// permissions on the specified bucket and belong to the bucket owner's account in order
-        /// to use this operation. 
+        /// This implementation of the DELETE operation uses the policy subresource to delete
+        /// the policy of a specified bucket. If you are using an identity other than the root
+        /// user of the AWS account that owns the bucket, the calling identity must have the <code>DeleteBucketPolicy</code>
+        /// permissions on the specified bucket and belong to the bucket owner's account to use
+        /// this operation. 
         /// 
         ///  
         /// <para>
         /// If you don't have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a
         /// <code>403 Access Denied</code> error. If you have the correct permissions, but you're
-        /// notusing an identity that belongs to the bucket owner's account, Amazon S3 returns
+        /// not using an identity that belongs to the bucket owner's account, Amazon S3 returns
         /// a <code>405 Method Not Allowed</code> error. 
         /// </para>
         ///  <important> 
@@ -4844,17 +4878,17 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// This implementation of the DELETE operation uses the policysubresource to delete the
-        /// policy of a specified bucket. If you are using an identity other than the root user
-        /// of the AWS account that owns the bucket, the calling identity must have the <code>DeleteBucketPolicy</code>
-        /// permissions on the specified bucket and belong to the bucket owner's account in order
-        /// to use this operation. 
+        /// This implementation of the DELETE operation uses the policy subresource to delete
+        /// the policy of a specified bucket. If you are using an identity other than the root
+        /// user of the AWS account that owns the bucket, the calling identity must have the <code>DeleteBucketPolicy</code>
+        /// permissions on the specified bucket and belong to the bucket owner's account to use
+        /// this operation. 
         /// 
         ///  
         /// <para>
         /// If you don't have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a
         /// <code>403 Access Denied</code> error. If you have the correct permissions, but you're
-        /// notusing an identity that belongs to the bucket owner's account, Amazon S3 returns
+        /// not using an identity that belongs to the bucket owner's account, Amazon S3 returns
         /// a <code>405 Method Not Allowed</code> error. 
         /// </para>
         ///  <important> 
@@ -4924,7 +4958,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketReplication</code> 
+        /// The following operations are related to <code>DeleteBucketReplication</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4971,7 +5005,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketReplication</code> 
+        /// The following operations are related to <code>DeleteBucketReplication</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5014,7 +5048,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketTagging</code> 
+        /// The following operations are related to <code>DeleteBucketTagging</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5048,7 +5082,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketTagging</code> 
+        /// The following operations are related to <code>DeleteBucketTagging</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5084,7 +5118,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketTagging</code> 
+        /// The following operations are related to <code>DeleteBucketTagging</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5121,7 +5155,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketTagging</code> 
+        /// The following operations are related to <code>DeleteBucketTagging</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5175,7 +5209,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketWebsite</code> 
+        /// The following operations are related to <code>DeleteBucketWebsite</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5220,7 +5254,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketWebsite</code> 
+        /// The following operations are related to <code>DeleteBucketWebsite</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5267,7 +5301,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketWebsite</code> 
+        /// The following operations are related to <code>DeleteBucketWebsite</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5315,7 +5349,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketWebsite</code> 
+        /// The following operations are related to <code>DeleteBucketWebsite</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5358,7 +5392,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For information more about <code>cors</code>, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
+        /// For information about <code>cors</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
         /// Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service Developer
         /// Guide</i>.
         /// </para>
@@ -5396,7 +5430,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For information more about <code>cors</code>, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
+        /// For information about <code>cors</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
         /// Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service Developer
         /// Guide</i>.
         /// </para>
@@ -5436,7 +5470,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For information more about <code>cors</code>, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
+        /// For information about <code>cors</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
         /// Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service Developer
         /// Guide</i>.
         /// </para>
@@ -5477,7 +5511,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For information more about <code>cors</code>, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
+        /// For information about <code>cors</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
         /// Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service Developer
         /// Guide</i>.
         /// </para>
@@ -5724,14 +5758,15 @@ namespace Amazon.S3
         /// <para>
         /// To remove a specific version, you must be the bucket owner and you must use the version
         /// Id subresource. Using this subresource permanently deletes the version. If the object
-        /// deleted is a delete marker, Amazon S3 sets the response header, x-amz-delete-marker,
+        /// deleted is a delete marker, Amazon S3 sets the response header, <code>x-amz-delete-marker</code>,
         /// to true. 
         /// </para>
         ///  
         /// <para>
-        /// If the object you want to delete is in a bucket where the bucket versioning configurationis
-        /// MFA Delete enabled, you must include the x-amz-mfa request header in the DELETE versionId
-        /// request. Requests that include x-amz-mfa must use HTTPS. 
+        /// If the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA Delete enabled, you must include the <code>x-amz-mfa</code> request header
+        /// in the DELETE <code>versionId</code> request. Requests that include <code>x-amz-mfa</code>
+        /// must use HTTPS. 
         /// </para>
         ///  
         /// <para>
@@ -5744,12 +5779,12 @@ namespace Amazon.S3
         /// You can delete objects by explicitly calling the DELETE Object API or configure its
         /// lifecycle (<a>PutBucketLifecycle</a>) to enable Amazon S3 to remove them for you.
         /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket you must deny them the s3:DeleteObject, s3:DeleteObjectVersion and s3:PutLifeCycleConfiguration
-        /// actions. 
+        /// bucket, you must deny them the <code>s3:DeleteObject</code>, <code>s3:DeleteObjectVersion</code>,
+        /// and <code>s3:PutLifeCycleConfiguration</code> actions. 
         /// </para>
         ///  
         /// <para>
-        /// The following operation is related to <code>DeleteObject</code> 
+        /// The following operation is related to <code>DeleteObject</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5757,7 +5792,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
@@ -5779,14 +5814,15 @@ namespace Amazon.S3
         /// <para>
         /// To remove a specific version, you must be the bucket owner and you must use the version
         /// Id subresource. Using this subresource permanently deletes the version. If the object
-        /// deleted is a delete marker, Amazon S3 sets the response header, x-amz-delete-marker,
+        /// deleted is a delete marker, Amazon S3 sets the response header, <code>x-amz-delete-marker</code>,
         /// to true. 
         /// </para>
         ///  
         /// <para>
-        /// If the object you want to delete is in a bucket where the bucket versioning configurationis
-        /// MFA Delete enabled, you must include the x-amz-mfa request header in the DELETE versionId
-        /// request. Requests that include x-amz-mfa must use HTTPS. 
+        /// If the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA Delete enabled, you must include the <code>x-amz-mfa</code> request header
+        /// in the DELETE <code>versionId</code> request. Requests that include <code>x-amz-mfa</code>
+        /// must use HTTPS. 
         /// </para>
         ///  
         /// <para>
@@ -5799,12 +5835,12 @@ namespace Amazon.S3
         /// You can delete objects by explicitly calling the DELETE Object API or configure its
         /// lifecycle (<a>PutBucketLifecycle</a>) to enable Amazon S3 to remove them for you.
         /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket you must deny them the s3:DeleteObject, s3:DeleteObjectVersion and s3:PutLifeCycleConfiguration
-        /// actions. 
+        /// bucket, you must deny them the <code>s3:DeleteObject</code>, <code>s3:DeleteObjectVersion</code>,
+        /// and <code>s3:PutLifeCycleConfiguration</code> actions. 
         /// </para>
         ///  
         /// <para>
-        /// The following operation is related to <code>DeleteObject</code> 
+        /// The following operation is related to <code>DeleteObject</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5812,7 +5848,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
@@ -5836,14 +5872,15 @@ namespace Amazon.S3
         /// <para>
         /// To remove a specific version, you must be the bucket owner and you must use the version
         /// Id subresource. Using this subresource permanently deletes the version. If the object
-        /// deleted is a delete marker, Amazon S3 sets the response header, x-amz-delete-marker,
+        /// deleted is a delete marker, Amazon S3 sets the response header, <code>x-amz-delete-marker</code>,
         /// to true. 
         /// </para>
         ///  
         /// <para>
-        /// If the object you want to delete is in a bucket where the bucket versioning configurationis
-        /// MFA Delete enabled, you must include the x-amz-mfa request header in the DELETE versionId
-        /// request. Requests that include x-amz-mfa must use HTTPS. 
+        /// If the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA Delete enabled, you must include the <code>x-amz-mfa</code> request header
+        /// in the DELETE <code>versionId</code> request. Requests that include <code>x-amz-mfa</code>
+        /// must use HTTPS. 
         /// </para>
         ///  
         /// <para>
@@ -5856,12 +5893,12 @@ namespace Amazon.S3
         /// You can delete objects by explicitly calling the DELETE Object API or configure its
         /// lifecycle (<a>PutBucketLifecycle</a>) to enable Amazon S3 to remove them for you.
         /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket you must deny them the s3:DeleteObject, s3:DeleteObjectVersion and s3:PutLifeCycleConfiguration
-        /// actions. 
+        /// bucket, you must deny them the <code>s3:DeleteObject</code>, <code>s3:DeleteObjectVersion</code>,
+        /// and <code>s3:PutLifeCycleConfiguration</code> actions. 
         /// </para>
         ///  
         /// <para>
-        /// The following operation is related to <code>DeleteObject</code> 
+        /// The following operation is related to <code>DeleteObject</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5891,14 +5928,15 @@ namespace Amazon.S3
         /// <para>
         /// To remove a specific version, you must be the bucket owner and you must use the version
         /// Id subresource. Using this subresource permanently deletes the version. If the object
-        /// deleted is a delete marker, Amazon S3 sets the response header, x-amz-delete-marker,
+        /// deleted is a delete marker, Amazon S3 sets the response header, <code>x-amz-delete-marker</code>,
         /// to true. 
         /// </para>
         ///  
         /// <para>
-        /// If the object you want to delete is in a bucket where the bucket versioning configurationis
-        /// MFA Delete enabled, you must include the x-amz-mfa request header in the DELETE versionId
-        /// request. Requests that include x-amz-mfa must use HTTPS. 
+        /// If the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA Delete enabled, you must include the <code>x-amz-mfa</code> request header
+        /// in the DELETE <code>versionId</code> request. Requests that include <code>x-amz-mfa</code>
+        /// must use HTTPS. 
         /// </para>
         ///  
         /// <para>
@@ -5911,12 +5949,12 @@ namespace Amazon.S3
         /// You can delete objects by explicitly calling the DELETE Object API or configure its
         /// lifecycle (<a>PutBucketLifecycle</a>) to enable Amazon S3 to remove them for you.
         /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket you must deny them the s3:DeleteObject, s3:DeleteObjectVersion and s3:PutLifeCycleConfiguration
-        /// actions. 
+        /// bucket, you must deny them the <code>s3:DeleteObject</code>, <code>s3:DeleteObjectVersion</code>,
+        /// and <code>s3:PutLifeCycleConfiguration</code> actions. 
         /// </para>
         ///  
         /// <para>
-        /// The following operation is related to <code>DeleteObject</code> 
+        /// The following operation is related to <code>DeleteObject</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5924,7 +5962,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5949,14 +5987,15 @@ namespace Amazon.S3
         /// <para>
         /// To remove a specific version, you must be the bucket owner and you must use the version
         /// Id subresource. Using this subresource permanently deletes the version. If the object
-        /// deleted is a delete marker, Amazon S3 sets the response header, x-amz-delete-marker,
+        /// deleted is a delete marker, Amazon S3 sets the response header, <code>x-amz-delete-marker</code>,
         /// to true. 
         /// </para>
         ///  
         /// <para>
-        /// If the object you want to delete is in a bucket where the bucket versioning configurationis
-        /// MFA Delete enabled, you must include the x-amz-mfa request header in the DELETE versionId
-        /// request. Requests that include x-amz-mfa must use HTTPS. 
+        /// If the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA Delete enabled, you must include the <code>x-amz-mfa</code> request header
+        /// in the DELETE <code>versionId</code> request. Requests that include <code>x-amz-mfa</code>
+        /// must use HTTPS. 
         /// </para>
         ///  
         /// <para>
@@ -5969,12 +6008,12 @@ namespace Amazon.S3
         /// You can delete objects by explicitly calling the DELETE Object API or configure its
         /// lifecycle (<a>PutBucketLifecycle</a>) to enable Amazon S3 to remove them for you.
         /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket you must deny them the s3:DeleteObject, s3:DeleteObjectVersion and s3:PutLifeCycleConfiguration
-        /// actions. 
+        /// bucket, you must deny them the <code>s3:DeleteObject</code>, <code>s3:DeleteObjectVersion</code>,
+        /// and <code>s3:PutLifeCycleConfiguration</code> actions. 
         /// </para>
         ///  
         /// <para>
-        /// The following operation is related to <code>DeleteObject</code> 
+        /// The following operation is related to <code>DeleteObject</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5982,7 +6021,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="cancellationToken">
@@ -6009,14 +6048,15 @@ namespace Amazon.S3
         /// <para>
         /// To remove a specific version, you must be the bucket owner and you must use the version
         /// Id subresource. Using this subresource permanently deletes the version. If the object
-        /// deleted is a delete marker, Amazon S3 sets the response header, x-amz-delete-marker,
+        /// deleted is a delete marker, Amazon S3 sets the response header, <code>x-amz-delete-marker</code>,
         /// to true. 
         /// </para>
         ///  
         /// <para>
-        /// If the object you want to delete is in a bucket where the bucket versioning configurationis
-        /// MFA Delete enabled, you must include the x-amz-mfa request header in the DELETE versionId
-        /// request. Requests that include x-amz-mfa must use HTTPS. 
+        /// If the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA Delete enabled, you must include the <code>x-amz-mfa</code> request header
+        /// in the DELETE <code>versionId</code> request. Requests that include <code>x-amz-mfa</code>
+        /// must use HTTPS. 
         /// </para>
         ///  
         /// <para>
@@ -6029,12 +6069,12 @@ namespace Amazon.S3
         /// You can delete objects by explicitly calling the DELETE Object API or configure its
         /// lifecycle (<a>PutBucketLifecycle</a>) to enable Amazon S3 to remove them for you.
         /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket you must deny them the s3:DeleteObject, s3:DeleteObjectVersion and s3:PutLifeCycleConfiguration
-        /// actions. 
+        /// bucket, you must deny them the <code>s3:DeleteObject</code>, <code>s3:DeleteObjectVersion</code>,
+        /// and <code>s3:PutLifeCycleConfiguration</code> actions. 
         /// </para>
         ///  
         /// <para>
-        /// The following operation is related to <code>DeleteObject</code> 
+        /// The following operation is related to <code>DeleteObject</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6074,12 +6114,12 @@ namespace Amazon.S3
         /// you provide the object key names, and optionally, version IDs if you want to delete
         /// a specific version of the object from a versioning-enabled bucket. For each key, Amazon
         /// S3 performs a delete operation and returns the result of that delete, success, or
-        /// failure, in the response. Note that, if the object specified in the request is not
+        /// failure, in the response. Note that if the object specified in the request is not
         /// found, Amazon S3 returns the result as deleted.
         /// </para>
         ///  
         /// <para>
-        ///  The operation supports two modes for the response; verbose and quiet. By default,
+        ///  The operation supports two modes for the response: verbose and quiet. By default,
         /// the operation uses verbose mode in which the response includes the result of deletion
         /// of each key in your request. In quiet mode the response includes only keys where the
         /// delete operation encountered an error. For a successful deletion, the operation does
@@ -6089,21 +6129,21 @@ namespace Amazon.S3
         /// <para>
         /// When performing this operation on an MFA Delete enabled bucket, that attempts to delete
         /// any versioned objects, you must include an MFA token. If you do not provide one, the
-        /// entire request will fail, even if there are non versioned objects you are attempting
-        /// to delete. If you provide an invalid token, whether there are versioned keys in the
-        /// request or not, the entire Multi-Object Delete request will fail. For information
-        /// about MFA Delete, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html#MultiFactorAuthenticationDelete">
+        /// entire request will fail, even if there are non-versioned objects you are trying to
+        /// delete. If you provide an invalid token, whether there are versioned keys in the request
+        /// or not, the entire Multi-Object Delete request will fail. For information about MFA
+        /// Delete, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html#MultiFactorAuthenticationDelete">
         /// MFA Delete</a>.
         /// </para>
         ///  
         /// <para>
         /// Finally, the Content-MD5 header is required for all Multi-Object Delete requests.
-        /// Amazon S3 uses the header value to ensure that your request body has not be altered
+        /// Amazon S3 uses the header value to ensure that your request body has not been altered
         /// in transit.
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteObjects</code> 
+        /// The following operations are related to <code>DeleteObjects</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6152,12 +6192,12 @@ namespace Amazon.S3
         /// you provide the object key names, and optionally, version IDs if you want to delete
         /// a specific version of the object from a versioning-enabled bucket. For each key, Amazon
         /// S3 performs a delete operation and returns the result of that delete, success, or
-        /// failure, in the response. Note that, if the object specified in the request is not
+        /// failure, in the response. Note that if the object specified in the request is not
         /// found, Amazon S3 returns the result as deleted.
         /// </para>
         ///  
         /// <para>
-        ///  The operation supports two modes for the response; verbose and quiet. By default,
+        ///  The operation supports two modes for the response: verbose and quiet. By default,
         /// the operation uses verbose mode in which the response includes the result of deletion
         /// of each key in your request. In quiet mode the response includes only keys where the
         /// delete operation encountered an error. For a successful deletion, the operation does
@@ -6167,21 +6207,21 @@ namespace Amazon.S3
         /// <para>
         /// When performing this operation on an MFA Delete enabled bucket, that attempts to delete
         /// any versioned objects, you must include an MFA token. If you do not provide one, the
-        /// entire request will fail, even if there are non versioned objects you are attempting
-        /// to delete. If you provide an invalid token, whether there are versioned keys in the
-        /// request or not, the entire Multi-Object Delete request will fail. For information
-        /// about MFA Delete, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html#MultiFactorAuthenticationDelete">
+        /// entire request will fail, even if there are non-versioned objects you are trying to
+        /// delete. If you provide an invalid token, whether there are versioned keys in the request
+        /// or not, the entire Multi-Object Delete request will fail. For information about MFA
+        /// Delete, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html#MultiFactorAuthenticationDelete">
         /// MFA Delete</a>.
         /// </para>
         ///  
         /// <para>
         /// Finally, the Content-MD5 header is required for all Multi-Object Delete requests.
-        /// Amazon S3 uses the header value to ensure that your request body has not be altered
+        /// Amazon S3 uses the header value to ensure that your request body has not been altered
         /// in transit.
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteObjects</code> 
+        /// The following operations are related to <code>DeleteObjects</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6232,18 +6272,18 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the s3:DeleteObjectTagging
+        /// To use this operation, you must have permission to perform the <code>s3:DeleteObjectTagging</code>
         /// action.
         /// </para>
         ///  
         /// <para>
-        /// To delete tags of a specific object version, add the versionId query parameter in
-        /// the request. You will need permission for the s3:DeleteObjectVersionTagging action.
+        /// To delete tags of a specific object version, add the <code>versionId</code> query
+        /// parameter in the request. You will need permission for the <code>s3:DeleteObjectVersionTagging</code>
+        /// action.
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketMetricsConfiguration</code>
-        /// 
+        /// The following operations are related to <code>DeleteBucketMetricsConfiguration</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6275,18 +6315,18 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the s3:DeleteObjectTagging
+        /// To use this operation, you must have permission to perform the <code>s3:DeleteObjectTagging</code>
         /// action.
         /// </para>
         ///  
         /// <para>
-        /// To delete tags of a specific object version, add the versionId query parameter in
-        /// the request. You will need permission for the s3:DeleteObjectVersionTagging action.
+        /// To delete tags of a specific object version, add the <code>versionId</code> query
+        /// parameter in the request. You will need permission for the <code>s3:DeleteObjectVersionTagging</code>
+        /// action.
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketMetricsConfiguration</code>
-        /// 
+        /// The following operations are related to <code>DeleteBucketMetricsConfiguration</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6319,9 +6359,9 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Removes the PublicAccessBlock configuration for an Amazon S3 bucket. In order to use
-        /// this operation, you must have the s3:PutBucketPublicAccessBlock permission. For more
-        /// information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// Removes the <code>PublicAccessBlock</code> configuration for an Amazon S3 bucket.
+        /// To use this operation, you must have the <code>s3:PutBucketPublicAccessBlock</code>
+        /// permission. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// 
@@ -6362,9 +6402,9 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Removes the PublicAccessBlock configuration for an Amazon S3 bucket. In order to use
-        /// this operation, you must have the s3:PutBucketPublicAccessBlock permission. For more
-        /// information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// Removes the <code>PublicAccessBlock</code> configuration for an Amazon S3 bucket.
+        /// To use this operation, you must have the <code>s3:PutBucketPublicAccessBlock</code>
+        /// permission. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// 
@@ -6541,8 +6581,8 @@ namespace Amazon.S3
         /// action. The bucket owner has this permission by default. The bucket owner can grant
         /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//s3-access-control.html">Managing
-        /// Access Permissions to your Amazon S3 Resources</a> in the Amazon Simple Storage Service
-        /// Developer Guide.
+        /// Access Permissions to your Amazon S3 Resources</a> in the <i>Amazon Simple Storage
+        /// Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6553,12 +6593,12 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// A GET <code>accelerate</code> request does not return a state value for a bucket that
-        /// has no transfer acceleration state. A bucket has no Transfer Acceleration state, if
+        /// has no transfer acceleration state. A bucket has no Transfer Acceleration state if
         /// a state has never been set on the bucket. 
         /// </para>
         ///  
         /// <para>
-        /// For more information on transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//transfer-acceleration.html">Transfer
+        /// For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//transfer-acceleration.html">Transfer
         /// Acceleration</a> in the Amazon Simple Storage Service Developer Guide.
         /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
@@ -6592,8 +6632,8 @@ namespace Amazon.S3
         /// action. The bucket owner has this permission by default. The bucket owner can grant
         /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//s3-access-control.html">Managing
-        /// Access Permissions to your Amazon S3 Resources</a> in the Amazon Simple Storage Service
-        /// Developer Guide.
+        /// Access Permissions to your Amazon S3 Resources</a> in the <i>Amazon Simple Storage
+        /// Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6604,12 +6644,12 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// A GET <code>accelerate</code> request does not return a state value for a bucket that
-        /// has no transfer acceleration state. A bucket has no Transfer Acceleration state, if
+        /// has no transfer acceleration state. A bucket has no Transfer Acceleration state if
         /// a state has never been set on the bucket. 
         /// </para>
         ///  
         /// <para>
-        /// For more information on transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//transfer-acceleration.html">Transfer
+        /// For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//transfer-acceleration.html">Transfer
         /// Acceleration</a> in the Amazon Simple Storage Service Developer Guide.
         /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
@@ -6645,8 +6685,8 @@ namespace Amazon.S3
         /// action. The bucket owner has this permission by default. The bucket owner can grant
         /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//s3-access-control.html">Managing
-        /// Access Permissions to your Amazon S3 Resources</a> in the Amazon Simple Storage Service
-        /// Developer Guide.
+        /// Access Permissions to your Amazon S3 Resources</a> in the <i>Amazon Simple Storage
+        /// Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6657,12 +6697,12 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// A GET <code>accelerate</code> request does not return a state value for a bucket that
-        /// has no transfer acceleration state. A bucket has no Transfer Acceleration state, if
+        /// has no transfer acceleration state. A bucket has no Transfer Acceleration state if
         /// a state has never been set on the bucket. 
         /// </para>
         ///  
         /// <para>
-        /// For more information on transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//transfer-acceleration.html">Transfer
+        /// For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//transfer-acceleration.html">Transfer
         /// Acceleration</a> in the Amazon Simple Storage Service Developer Guide.
         /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
@@ -6699,8 +6739,8 @@ namespace Amazon.S3
         /// action. The bucket owner has this permission by default. The bucket owner can grant
         /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//s3-access-control.html">Managing
-        /// Access Permissions to your Amazon S3 Resources</a> in the Amazon Simple Storage Service
-        /// Developer Guide.
+        /// Access Permissions to your Amazon S3 Resources</a> in the <i>Amazon Simple Storage
+        /// Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6711,12 +6751,12 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// A GET <code>accelerate</code> request does not return a state value for a bucket that
-        /// has no transfer acceleration state. A bucket has no Transfer Acceleration state, if
+        /// has no transfer acceleration state. A bucket has no Transfer Acceleration state if
         /// a state has never been set on the bucket. 
         /// </para>
         ///  
         /// <para>
-        /// For more information on transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//transfer-acceleration.html">Transfer
+        /// For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//transfer-acceleration.html">Transfer
         /// Acceleration</a> in the Amazon Simple Storage Service Developer Guide.
         /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
@@ -7041,7 +7081,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns the region the bucket resides in. You set the bucket's region using the <code>LocationConstraint</code>
+        /// Returns the Region the bucket resides in. You set the bucket's Region using the <code>LocationConstraint</code>
         /// request parameter in a <code>CreateBucket</code> request. For more information, see
         /// <a>CreateBucket</a>.
         /// 
@@ -7075,7 +7115,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns the region the bucket resides in. You set the bucket's region using the <code>LocationConstraint</code>
+        /// Returns the Region the bucket resides in. You set the bucket's Region using the <code>LocationConstraint</code>
         /// request parameter in a <code>CreateBucket</code> request. For more information, see
         /// <a>CreateBucket</a>.
         /// 
@@ -7111,7 +7151,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns the region the bucket resides in. You set the bucket's region using the <code>LocationConstraint</code>
+        /// Returns the Region the bucket resides in. You set the bucket's Region using the <code>LocationConstraint</code>
         /// request parameter in a <code>CreateBucket</code> request. For more information, see
         /// <a>CreateBucket</a>.
         /// 
@@ -7148,7 +7188,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns the region the bucket resides in. You set the bucket's region using the <code>LocationConstraint</code>
+        /// Returns the Region the bucket resides in. You set the bucket's Region using the <code>LocationConstraint</code>
         /// request parameter in a <code>CreateBucket</code> request. For more information, see
         /// <a>CreateBucket</a>.
         /// 
@@ -8187,8 +8227,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// This implementation also returns the MFA Delete status of the versioning state, i.e.,
-        /// if the MFA Delete status is <code>enabled</code>, the bucket owner must use an authentication
+        /// This implementation also returns the MFA Delete status of the versioning state. If
+        /// the MFA Delete status is <code>enabled</code>, the bucket owner must use an authentication
         /// device to change the versioning state of the bucket.
         /// </para>
         ///  
@@ -8229,8 +8269,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// This implementation also returns the MFA Delete status of the versioning state, i.e.,
-        /// if the MFA Delete status is <code>enabled</code>, the bucket owner must use an authentication
+        /// This implementation also returns the MFA Delete status of the versioning state. If
+        /// the MFA Delete status is <code>enabled</code>, the bucket owner must use an authentication
         /// device to change the versioning state of the bucket.
         /// </para>
         ///  
@@ -8273,8 +8313,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// This implementation also returns the MFA Delete status of the versioning state, i.e.,
-        /// if the MFA Delete status is <code>enabled</code>, the bucket owner must use an authentication
+        /// This implementation also returns the MFA Delete status of the versioning state. If
+        /// the MFA Delete status is <code>enabled</code>, the bucket owner must use an authentication
         /// device to change the versioning state of the bucket.
         /// </para>
         ///  
@@ -8318,8 +8358,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// This implementation also returns the MFA Delete status of the versioning state, i.e.,
-        /// if the MFA Delete status is <code>enabled</code>, the bucket owner must use an authentication
+        /// This implementation also returns the MFA Delete status of the versioning state. If
+        /// the MFA Delete status is <code>enabled</code>, the bucket owner must use an authentication
         /// device to change the versioning state of the bucket.
         /// </para>
         ///  
@@ -8375,7 +8415,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketWebsite</code> 
+        /// The following operations are related to <code>DeleteBucketWebsite</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -8413,7 +8453,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketWebsite</code> 
+        /// The following operations are related to <code>DeleteBucketWebsite</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -8453,7 +8493,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketWebsite</code> 
+        /// The following operations are related to <code>DeleteBucketWebsite</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -8494,7 +8534,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>DeleteBucketWebsite</code> 
+        /// The following operations are related to <code>DeleteBucketWebsite</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -8536,8 +8576,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        ///  To learn more cors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">
-        /// Enabling Cross-Origin Resource Sharing</a>Enabling Cross-Origin Resource Sharing.
+        ///  For more information about cors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">
+        /// Enabling Cross-Origin Resource Sharing</a>.
         /// </para>
         ///  
         /// <para>
@@ -8574,8 +8614,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        ///  To learn more cors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">
-        /// Enabling Cross-Origin Resource Sharing</a>Enabling Cross-Origin Resource Sharing.
+        ///  For more information about cors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">
+        /// Enabling Cross-Origin Resource Sharing</a>.
         /// </para>
         ///  
         /// <para>
@@ -8614,8 +8654,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        ///  To learn more cors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">
-        /// Enabling Cross-Origin Resource Sharing</a>Enabling Cross-Origin Resource Sharing.
+        ///  For more information about cors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">
+        /// Enabling Cross-Origin Resource Sharing</a>.
         /// </para>
         ///  
         /// <para>
@@ -8655,8 +8695,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        ///  To learn more cors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">
-        /// Enabling Cross-Origin Resource Sharing</a>Enabling Cross-Origin Resource Sharing.
+        ///  For more information about cors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">
+        /// Enabling Cross-Origin Resource Sharing</a>.
         /// </para>
         ///  
         /// <para>
@@ -8754,7 +8794,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket for which to the the lifecycle information.</param>
+        /// <param name="bucketName">The name of the bucket for which to get the lifecycle information.</param>
         /// 
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
         public virtual GetLifecycleConfigurationResponse GetLifecycleConfiguration(string bucketName)
@@ -8902,7 +8942,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket for which to the the lifecycle information.</param>
+        /// <param name="bucketName">The name of the bucket for which to get the lifecycle information.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -9017,7 +9057,7 @@ namespace Amazon.S3
         /// if you have the object <code>photos/2006/February/sample.jpg</code>, specify the resource
         /// as <code>/photos/2006/February/sample.jpg</code>. For a path-style request example,
         /// if you have the object <code>photos/2006/February/sample.jpg</code> in the bucket
-        /// named examplebucket, specify the resource as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
+        /// named <code>examplebucket</code>, specify the resource as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
         /// For more information about request types, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket">HTTP
         /// Host Header Bucket Specification</a>.
         /// </para>
@@ -9199,7 +9239,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.</param>
+        /// <param name="bucketName">The bucket name containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
@@ -9231,7 +9271,7 @@ namespace Amazon.S3
         /// if you have the object <code>photos/2006/February/sample.jpg</code>, specify the resource
         /// as <code>/photos/2006/February/sample.jpg</code>. For a path-style request example,
         /// if you have the object <code>photos/2006/February/sample.jpg</code> in the bucket
-        /// named examplebucket, specify the resource as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
+        /// named <code>examplebucket</code>, specify the resource as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
         /// For more information about request types, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket">HTTP
         /// Host Header Bucket Specification</a>.
         /// </para>
@@ -9413,7 +9453,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.</param>
+        /// <param name="bucketName">The bucket name containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
@@ -9447,7 +9487,7 @@ namespace Amazon.S3
         /// if you have the object <code>photos/2006/February/sample.jpg</code>, specify the resource
         /// as <code>/photos/2006/February/sample.jpg</code>. For a path-style request example,
         /// if you have the object <code>photos/2006/February/sample.jpg</code> in the bucket
-        /// named examplebucket, specify the resource as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
+        /// named <code>examplebucket</code>, specify the resource as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
         /// For more information about request types, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket">HTTP
         /// Host Header Bucket Specification</a>.
         /// </para>
@@ -9661,7 +9701,7 @@ namespace Amazon.S3
         /// if you have the object <code>photos/2006/February/sample.jpg</code>, specify the resource
         /// as <code>/photos/2006/February/sample.jpg</code>. For a path-style request example,
         /// if you have the object <code>photos/2006/February/sample.jpg</code> in the bucket
-        /// named examplebucket, specify the resource as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
+        /// named <code>examplebucket</code>, specify the resource as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
         /// For more information about request types, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket">HTTP
         /// Host Header Bucket Specification</a>.
         /// </para>
@@ -9843,7 +9883,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.</param>
+        /// <param name="bucketName">The bucket name containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -9878,7 +9918,7 @@ namespace Amazon.S3
         /// if you have the object <code>photos/2006/February/sample.jpg</code>, specify the resource
         /// as <code>/photos/2006/February/sample.jpg</code>. For a path-style request example,
         /// if you have the object <code>photos/2006/February/sample.jpg</code> in the bucket
-        /// named examplebucket, specify the resource as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
+        /// named <code>examplebucket</code>, specify the resource as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
         /// For more information about request types, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket">HTTP
         /// Host Header Bucket Specification</a>.
         /// </para>
@@ -10060,7 +10100,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.</param>
+        /// <param name="bucketName">The bucket name containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="cancellationToken">
@@ -10097,7 +10137,7 @@ namespace Amazon.S3
         /// if you have the object <code>photos/2006/February/sample.jpg</code>, specify the resource
         /// as <code>/photos/2006/February/sample.jpg</code>. For a path-style request example,
         /// if you have the object <code>photos/2006/February/sample.jpg</code> in the bucket
-        /// named examplebucket, specify the resource as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
+        /// named <code>examplebucket</code>, specify the resource as <code>/examplebucket/photos/2006/February/sample.jpg</code>.
         /// For more information about request types, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket">HTTP
         /// Host Header Bucket Specification</a>.
         /// </para>
@@ -10488,13 +10528,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will
-        /// return a HTTP status code 404 ("no such key") error.
+        /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 returns
+        /// an HTTP status code 404 ("no such key") error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return
-        /// a HTTP status code 403 ("access denied") error.
+        /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
+        /// HTTP status code 403 ("access denied") error.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -10622,13 +10662,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will
-        /// return a HTTP status code 404 ("no such key") error.
+        /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 returns
+        /// an HTTP status code 404 ("no such key") error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return
-        /// a HTTP status code 403 ("access denied") error.
+        /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
+        /// HTTP status code 403 ("access denied") error.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -10758,13 +10798,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will
-        /// return a HTTP status code 404 ("no such key") error.
+        /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 returns
+        /// an HTTP status code 404 ("no such key") error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return
-        /// a HTTP status code 403 ("access denied") error.
+        /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
+        /// HTTP status code 403 ("access denied") error.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -10892,13 +10932,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will
-        /// return a HTTP status code 404 ("no such key") error.
+        /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 returns
+        /// an HTTP status code 404 ("no such key") error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return
-        /// a HTTP status code 403 ("access denied") error.
+        /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
+        /// HTTP status code 403 ("access denied") error.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -11029,13 +11069,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will
-        /// return a HTTP status code 404 ("no such key") error.
+        /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 returns
+        /// an HTTP status code 404 ("no such key") error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return
-        /// a HTTP status code 403 ("access denied") error.
+        /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
+        /// HTTP status code 403 ("access denied") error.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -11168,13 +11208,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will
-        /// return a HTTP status code 404 ("no such key") error.
+        /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 returns
+        /// an HTTP status code 404 ("no such key") error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return
-        /// a HTTP status code 403 ("access denied") error.
+        /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
+        /// HTTP status code 403 ("access denied") error.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -11504,7 +11544,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon S3 bucket.
-        /// In order to use this operation, you must have the <code>s3:GetBucketPublicAccessBlock</code>
+        /// To use this operation, you must have the <code>s3:GetBucketPublicAccessBlock</code>
         /// permission. For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
         /// Permissions in a Policy</a>.
         /// 
@@ -11561,7 +11601,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon S3 bucket.
-        /// In order to use this operation, you must have the <code>s3:GetBucketPublicAccessBlock</code>
+        /// To use this operation, you must have the <code>s3:GetBucketPublicAccessBlock</code>
         /// permission. For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
         /// Permissions in a Policy</a>.
         /// 
@@ -11789,14 +11829,14 @@ namespace Amazon.S3
         /// You can optionally tell Amazon S3 to encrypt data at rest using server-side encryption.
         /// Server-side encryption is for data encryption at rest. Amazon S3 encrypts your data
         /// as it writes it to disks in its data centers and decrypts it when you access it. The
-        /// option you use depends on whether you want to use AWS-managed encryption keys or provide
+        /// option you use depends on whether you want to use AWS managed encryption keys or provide
         /// your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
-        /// Amazon Key Management Service (KMS) – If you want AWS to manage the keys used to encrypt
-        /// data, specify the following headers in the request.
+        /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
+        /// encrypt data, specify the following headers in the request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -11812,9 +11852,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify x-amz-server-side-encryption:aws:kms, but don't provide x-amz-server-side-
-        /// encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK in AWS KMS to protect
-        /// the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+        /// managed CMK in AWS KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -11823,7 +11863,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs Stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
         /// </para>
@@ -11846,7 +11886,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in AWS KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
         /// </para>
@@ -11856,16 +11896,16 @@ namespace Amazon.S3
         /// You also can use the following access control–related headers with this operation.
         /// By default, all objects are private. Only the owner has full access control. When
         /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the Access Control
-        /// List (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// groups defined by Amazon S3. These permissions are then added to the access control
+        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
         /// ACLs</a>. With this operation, you can grant access permissions using one of the following
         /// two methods:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify a canned ACL (x-amz-acl) — Amazon S3 supports a set of predefined ACLs, known
-        /// as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
+        /// ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
         ///  </li> <li> 
@@ -11874,7 +11914,7 @@ namespace Amazon.S3
         /// specific AWS accounts or groups, use the following headers. Each header maps to specific
         /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
-        /// get the specific permission. To grant permissions explicitly use:
+        /// get the specific permission. To grant permissions explicitly, use:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -11902,20 +11942,21 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -12064,14 +12105,14 @@ namespace Amazon.S3
         /// You can optionally tell Amazon S3 to encrypt data at rest using server-side encryption.
         /// Server-side encryption is for data encryption at rest. Amazon S3 encrypts your data
         /// as it writes it to disks in its data centers and decrypts it when you access it. The
-        /// option you use depends on whether you want to use AWS-managed encryption keys or provide
+        /// option you use depends on whether you want to use AWS managed encryption keys or provide
         /// your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
-        /// Amazon Key Management Service (KMS) – If you want AWS to manage the keys used to encrypt
-        /// data, specify the following headers in the request.
+        /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
+        /// encrypt data, specify the following headers in the request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -12087,9 +12128,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify x-amz-server-side-encryption:aws:kms, but don't provide x-amz-server-side-
-        /// encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK in AWS KMS to protect
-        /// the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+        /// managed CMK in AWS KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -12098,7 +12139,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs Stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
         /// </para>
@@ -12121,7 +12162,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in AWS KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
         /// </para>
@@ -12131,16 +12172,16 @@ namespace Amazon.S3
         /// You also can use the following access control–related headers with this operation.
         /// By default, all objects are private. Only the owner has full access control. When
         /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the Access Control
-        /// List (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// groups defined by Amazon S3. These permissions are then added to the access control
+        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
         /// ACLs</a>. With this operation, you can grant access permissions using one of the following
         /// two methods:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify a canned ACL (x-amz-acl) — Amazon S3 supports a set of predefined ACLs, known
-        /// as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
+        /// ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
         ///  </li> <li> 
@@ -12149,7 +12190,7 @@ namespace Amazon.S3
         /// specific AWS accounts or groups, use the following headers. Each header maps to specific
         /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
-        /// get the specific permission. To grant permissions explicitly use:
+        /// get the specific permission. To grant permissions explicitly, use:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -12177,20 +12218,21 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -12339,14 +12381,14 @@ namespace Amazon.S3
         /// You can optionally tell Amazon S3 to encrypt data at rest using server-side encryption.
         /// Server-side encryption is for data encryption at rest. Amazon S3 encrypts your data
         /// as it writes it to disks in its data centers and decrypts it when you access it. The
-        /// option you use depends on whether you want to use AWS-managed encryption keys or provide
+        /// option you use depends on whether you want to use AWS managed encryption keys or provide
         /// your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
-        /// Amazon Key Management Service (KMS) – If you want AWS to manage the keys used to encrypt
-        /// data, specify the following headers in the request.
+        /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
+        /// encrypt data, specify the following headers in the request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -12362,9 +12404,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify x-amz-server-side-encryption:aws:kms, but don't provide x-amz-server-side-
-        /// encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK in AWS KMS to protect
-        /// the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+        /// managed CMK in AWS KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -12373,7 +12415,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs Stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
         /// </para>
@@ -12396,7 +12438,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in AWS KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
         /// </para>
@@ -12406,16 +12448,16 @@ namespace Amazon.S3
         /// You also can use the following access control–related headers with this operation.
         /// By default, all objects are private. Only the owner has full access control. When
         /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the Access Control
-        /// List (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// groups defined by Amazon S3. These permissions are then added to the access control
+        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
         /// ACLs</a>. With this operation, you can grant access permissions using one of the following
         /// two methods:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify a canned ACL (x-amz-acl) — Amazon S3 supports a set of predefined ACLs, known
-        /// as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
+        /// ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
         ///  </li> <li> 
@@ -12424,7 +12466,7 @@ namespace Amazon.S3
         /// specific AWS accounts or groups, use the following headers. Each header maps to specific
         /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
-        /// get the specific permission. To grant permissions explicitly use:
+        /// get the specific permission. To grant permissions explicitly, use:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -12452,20 +12494,21 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -12617,14 +12660,14 @@ namespace Amazon.S3
         /// You can optionally tell Amazon S3 to encrypt data at rest using server-side encryption.
         /// Server-side encryption is for data encryption at rest. Amazon S3 encrypts your data
         /// as it writes it to disks in its data centers and decrypts it when you access it. The
-        /// option you use depends on whether you want to use AWS-managed encryption keys or provide
+        /// option you use depends on whether you want to use AWS managed encryption keys or provide
         /// your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
-        /// Amazon Key Management Service (KMS) – If you want AWS to manage the keys used to encrypt
-        /// data, specify the following headers in the request.
+        /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
+        /// encrypt data, specify the following headers in the request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -12640,9 +12683,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify x-amz-server-side-encryption:aws:kms, but don't provide x-amz-server-side-
-        /// encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK in AWS KMS to protect
-        /// the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+        /// managed CMK in AWS KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -12651,7 +12694,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs Stored in Amazon KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
         /// </para>
@@ -12674,7 +12717,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in AWS KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
         /// </para>
@@ -12684,16 +12727,16 @@ namespace Amazon.S3
         /// You also can use the following access control–related headers with this operation.
         /// By default, all objects are private. Only the owner has full access control. When
         /// adding a new object, you can grant permissions to individual AWS accounts or to predefined
-        /// groups defined by Amazon S3. These permissions are then added to the Access Control
-        /// List (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+        /// groups defined by Amazon S3. These permissions are then added to the access control
+        /// list (ACL) on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
         /// ACLs</a>. With this operation, you can grant access permissions using one of the following
         /// two methods:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify a canned ACL (x-amz-acl) — Amazon S3 supports a set of predefined ACLs, known
-        /// as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
+        /// ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
         ///  </li> <li> 
@@ -12702,7 +12745,7 @@ namespace Amazon.S3
         /// specific AWS accounts or groups, use the following headers. Each header maps to specific
         /// permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>. In the header, you specify a list of grantees who
-        /// get the specific permission. To grant permissions explicitly use:
+        /// get the specific permission. To grant permissions explicitly, use:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -12730,20 +12773,21 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -13290,7 +13334,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.</param>
+        /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
         public virtual ListMultipartUploadsResponse ListMultipartUploads(string bucketName)
@@ -13359,7 +13403,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.</param>
+        /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.)</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
@@ -13501,7 +13545,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.</param>
+        /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -13573,7 +13617,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.</param>
+        /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.)</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -13668,7 +13712,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// Returns some or all (up to 1,000) of the objects in a bucket. You can use the request
         /// parameters as selection criteria to return a subset of the objects in a bucket. A
         /// 200 OK response can contain valid or invalid XML. Be sure to design your application
         /// to parse the contents of the response and handle it appropriately.
@@ -13717,7 +13761,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// Returns some or all (up to 1,000) of the objects in a bucket. You can use the request
         /// parameters as selection criteria to return a subset of the objects in a bucket. A
         /// 200 OK response can contain valid or invalid XML. Be sure to design your application
         /// to parse the contents of the response and handle it appropriately.
@@ -13768,7 +13812,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// Returns some or all (up to 1,000) of the objects in a bucket. You can use the request
         /// parameters as selection criteria to return a subset of the objects in a bucket. A
         /// 200 OK response can contain valid or invalid XML. Be sure to design your application
         /// to parse the contents of the response and handle it appropriately.
@@ -13819,7 +13863,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// Returns some or all (up to 1,000) of the objects in a bucket. You can use the request
         /// parameters as selection criteria to return a subset of the objects in a bucket. A
         /// 200 OK response can contain valid or invalid XML. Be sure to design your application
         /// to parse the contents of the response and handle it appropriately.
@@ -13871,7 +13915,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// Returns some or all (up to 1,000) of the objects in a bucket. You can use the request
         /// parameters as selection criteria to return a subset of the objects in a bucket. A
         /// 200 OK response can contain valid or invalid XML. Be sure to design your application
         /// to parse the contents of the response and handle it appropriately.
@@ -13925,7 +13969,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// Returns some or all (up to 1,000) of the objects in a bucket. You can use the request
         /// parameters as selection criteria to return a subset of the objects in a bucket. A
         /// 200 OK response can contain valid or invalid XML. Be sure to design your application
         /// to parse the contents of the response and handle it appropriately.
@@ -13990,7 +14034,7 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// To use thisoperation, you must have READ access to the bucket.
+        /// To use this operation, you must have READ access to the bucket.
         /// </para>
         ///  
         /// <para>
@@ -14050,7 +14094,7 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// To use thisoperation, you must have READ access to the bucket.
+        /// To use this operation, you must have READ access to the bucket.
         /// </para>
         ///  
         /// <para>
@@ -14157,7 +14201,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket to which the parts are being uploaded.-&gt;</param>
+        /// <param name="bucketName">Name of the bucket to which the parts are being uploaded.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// 
@@ -14281,7 +14325,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket to which the parts are being uploaded.-&gt;</param>
+        /// <param name="bucketName">Name of the bucket to which the parts are being uploaded.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// <param name="cancellationToken">
@@ -14403,7 +14447,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket that contains the objects.</param>
+        /// <param name="bucketName">The bucket name that contains the objects.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
         public virtual ListVersionsResponse ListVersions(string bucketName)
@@ -14450,7 +14494,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket that contains the objects.</param>
+        /// <param name="bucketName">The bucket name that contains the objects.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="prefix">Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.) You can use prefix with delimiter to roll up numerous objects into a single result under CommonPrefixes. </param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
@@ -14548,7 +14592,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket that contains the objects.</param>
+        /// <param name="bucketName">The bucket name that contains the objects.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -14598,7 +14642,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket that contains the objects.</param>
+        /// <param name="bucketName">The bucket name that contains the objects.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="prefix">Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.) You can use prefix with delimiter to roll up numerous objects into a single result under CommonPrefixes. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -14673,7 +14717,7 @@ namespace Amazon.S3
         /// <summary>
         /// Sets the permissions on an existing bucket using access control lists (ACL). For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-        /// ACLs</a>. To set the ACL of a bucket, you must have WRITE_ACP permission.
+        /// ACLs</a>. To set the ACL of a bucket, you must have <code>WRITE_ACP</code> permission.
         /// 
         ///  
         /// <para>
@@ -14709,9 +14753,9 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Specify a canned ACL with the <code>x-amz-acl</code> request header. Amazon S3 supports
-        /// a set of predefined ACLs, known as canned ACLs. Each canned ACL has a predefined set
-        /// of grantees and permissions. Specify the canned ACL name as the value of x-amz-acl.
-        /// If you use this header, you cannot use other access control specific headers in your
+        /// a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined
+        /// set of grantees and permissions. Specify the canned ACL name as the value of <code>x-amz-acl</code>.
+        /// If you use this header, you cannot use other access control-specific headers in your
         /// request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
@@ -14719,11 +14763,11 @@ namespace Amazon.S3
         /// <para>
         /// Specify access permissions explicitly with the <code>x-amz-grant-read</code>, <code>x-amz-grant-read-acp</code>,
         /// <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code> headers.
-        /// When using these headers you specify explicit access permissions and grantees (AWS
-        /// accounts or a Amazon S3 groups) who will receive the permission. If you use these
-        /// ACL specific headers, you cannot use x-amz-acl header to set a canned ACL. These parameters
-        /// map to the set of permissions that Amazon S3 supports in an ACL. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// When using these headers, you specify explicit access permissions and grantees (AWS
+        /// accounts or Amazon S3 groups) who will receive the permission. If you use these ACL-specific
+        /// headers, you cannot use the <code>x-amz-acl</code> header to set a canned ACL. These
+        /// parameters map to the set of permissions that Amazon S3 supports in an ACL. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>.
         /// </para>
         ///  
@@ -14732,21 +14776,22 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-write header grants create, overwrite, and
-        /// delete objects permission to LogDelivery group predefined by Amazon S3 and two AWS
-        /// accounts identified by their email addresses.
+        /// For example, the following <code>x-amz-grant-write</code> header grants create, overwrite,
+        /// and delete objects permission to LogDelivery group predefined by Amazon S3 and two
+        /// AWS accounts identified by their email addresses.
         /// </para>
         ///  
         /// <para>
@@ -14835,7 +14880,7 @@ namespace Amazon.S3
         /// <summary>
         /// Sets the permissions on an existing bucket using access control lists (ACL). For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-        /// ACLs</a>. To set the ACL of a bucket, you must have WRITE_ACP permission.
+        /// ACLs</a>. To set the ACL of a bucket, you must have <code>WRITE_ACP</code> permission.
         /// 
         ///  
         /// <para>
@@ -14871,9 +14916,9 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Specify a canned ACL with the <code>x-amz-acl</code> request header. Amazon S3 supports
-        /// a set of predefined ACLs, known as canned ACLs. Each canned ACL has a predefined set
-        /// of grantees and permissions. Specify the canned ACL name as the value of x-amz-acl.
-        /// If you use this header, you cannot use other access control specific headers in your
+        /// a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined
+        /// set of grantees and permissions. Specify the canned ACL name as the value of <code>x-amz-acl</code>.
+        /// If you use this header, you cannot use other access control-specific headers in your
         /// request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
@@ -14881,11 +14926,11 @@ namespace Amazon.S3
         /// <para>
         /// Specify access permissions explicitly with the <code>x-amz-grant-read</code>, <code>x-amz-grant-read-acp</code>,
         /// <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code> headers.
-        /// When using these headers you specify explicit access permissions and grantees (AWS
-        /// accounts or a Amazon S3 groups) who will receive the permission. If you use these
-        /// ACL specific headers, you cannot use x-amz-acl header to set a canned ACL. These parameters
-        /// map to the set of permissions that Amazon S3 supports in an ACL. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+        /// When using these headers, you specify explicit access permissions and grantees (AWS
+        /// accounts or Amazon S3 groups) who will receive the permission. If you use these ACL-specific
+        /// headers, you cannot use the <code>x-amz-acl</code> header to set a canned ACL. These
+        /// parameters map to the set of permissions that Amazon S3 supports in an ACL. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>.
         /// </para>
         ///  
@@ -14894,21 +14939,22 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-write header grants create, overwrite, and
-        /// delete objects permission to LogDelivery group predefined by Amazon S3 and two AWS
-        /// accounts identified by their email addresses.
+        /// For example, the following <code>x-amz-grant-write</code> header grants create, overwrite,
+        /// and delete objects permission to LogDelivery group predefined by Amazon S3 and two
+        /// AWS accounts identified by their email addresses.
         /// </para>
         ///  
         /// <para>
@@ -15014,21 +15060,21 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// By default, the bucket is created in the US East (N. Virginia) region. You can optionally
-        /// specify a region in the request body. You might choose a region to optimize latency,
+        /// By default, the bucket is created in the US East (N. Virginia) Region. You can optionally
+        /// specify a Region in the request body. You might choose a Region to optimize latency,
         /// minimize costs, or address regulatory requirements. For example, if you reside in
         /// Europe, you will probably find it advantageous to create buckets in the EU (Ireland)
-        /// region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
+        /// Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
         /// to Select a Region for Your Buckets</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you send your create bucket request to the s3.amazonaws.com endpoint, the request
-        /// go to the us-east-1 region. Accordingly, the signature calculations in Signature Version
-        /// 4 must use us-east-1 as region, even if the location constraint in the request specifies
-        /// another region where the bucket is to be created. If you create a bucket in a region
-        /// other than US East (N. Virginia) region, your application must be able to handle 307
-        /// redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual
+        /// If you send your create bucket request to the <code>s3.amazonaws.com</code> endpoint,
+        /// the request goes to the us-east-1 Region. Accordingly, the signature calculations
+        /// in Signature Version 4 must use us-east-1 as the Region, even if the location constraint
+        /// in the request specifies another Region where the bucket is to be created. If you
+        /// create a bucket in a Region other than US East (N. Virginia), your application must
+        /// be able to handle 307 redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual
         /// Hosting of Buckets</a>.
         /// </para>
         ///  </note> 
@@ -15040,14 +15086,14 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Specify a canned ACL using the <code>x-amz-acl</code> request header. Amazon S3 supports
-        /// a set of predefined ACLs, known as canned ACLs. Each canned ACL has a predefined set
-        /// of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined
+        /// set of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Specify access permissions explicitly using the <code>x-amz-grant-read</code>, <code>x-amz-grant-write</code>,
-        /// <code>x-amz-grant-read-acp</code>, <code>x-amz-grant-write-acp</code>, <code>x-amz-grant-full-control</code>
+        /// <code>x-amz-grant-read-acp</code>, <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code>
         /// headers. These headers map to the set of permissions Amazon S3 supports in an ACL.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>.
@@ -15058,20 +15104,21 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -15121,21 +15168,21 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// By default, the bucket is created in the US East (N. Virginia) region. You can optionally
-        /// specify a region in the request body. You might choose a region to optimize latency,
+        /// By default, the bucket is created in the US East (N. Virginia) Region. You can optionally
+        /// specify a Region in the request body. You might choose a Region to optimize latency,
         /// minimize costs, or address regulatory requirements. For example, if you reside in
         /// Europe, you will probably find it advantageous to create buckets in the EU (Ireland)
-        /// region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
+        /// Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
         /// to Select a Region for Your Buckets</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you send your create bucket request to the s3.amazonaws.com endpoint, the request
-        /// go to the us-east-1 region. Accordingly, the signature calculations in Signature Version
-        /// 4 must use us-east-1 as region, even if the location constraint in the request specifies
-        /// another region where the bucket is to be created. If you create a bucket in a region
-        /// other than US East (N. Virginia) region, your application must be able to handle 307
-        /// redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual
+        /// If you send your create bucket request to the <code>s3.amazonaws.com</code> endpoint,
+        /// the request goes to the us-east-1 Region. Accordingly, the signature calculations
+        /// in Signature Version 4 must use us-east-1 as the Region, even if the location constraint
+        /// in the request specifies another Region where the bucket is to be created. If you
+        /// create a bucket in a Region other than US East (N. Virginia), your application must
+        /// be able to handle 307 redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual
         /// Hosting of Buckets</a>.
         /// </para>
         ///  </note> 
@@ -15147,14 +15194,14 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Specify a canned ACL using the <code>x-amz-acl</code> request header. Amazon S3 supports
-        /// a set of predefined ACLs, known as canned ACLs. Each canned ACL has a predefined set
-        /// of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined
+        /// set of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Specify access permissions explicitly using the <code>x-amz-grant-read</code>, <code>x-amz-grant-write</code>,
-        /// <code>x-amz-grant-read-acp</code>, <code>x-amz-grant-write-acp</code>, <code>x-amz-grant-full-control</code>
+        /// <code>x-amz-grant-read-acp</code>, <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code>
         /// headers. These headers map to the set of permissions Amazon S3 supports in an ACL.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>.
@@ -15165,20 +15212,21 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -15230,21 +15278,21 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// By default, the bucket is created in the US East (N. Virginia) region. You can optionally
-        /// specify a region in the request body. You might choose a region to optimize latency,
+        /// By default, the bucket is created in the US East (N. Virginia) Region. You can optionally
+        /// specify a Region in the request body. You might choose a Region to optimize latency,
         /// minimize costs, or address regulatory requirements. For example, if you reside in
         /// Europe, you will probably find it advantageous to create buckets in the EU (Ireland)
-        /// region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
+        /// Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
         /// to Select a Region for Your Buckets</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you send your create bucket request to the s3.amazonaws.com endpoint, the request
-        /// go to the us-east-1 region. Accordingly, the signature calculations in Signature Version
-        /// 4 must use us-east-1 as region, even if the location constraint in the request specifies
-        /// another region where the bucket is to be created. If you create a bucket in a region
-        /// other than US East (N. Virginia) region, your application must be able to handle 307
-        /// redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual
+        /// If you send your create bucket request to the <code>s3.amazonaws.com</code> endpoint,
+        /// the request goes to the us-east-1 Region. Accordingly, the signature calculations
+        /// in Signature Version 4 must use us-east-1 as the Region, even if the location constraint
+        /// in the request specifies another Region where the bucket is to be created. If you
+        /// create a bucket in a Region other than US East (N. Virginia), your application must
+        /// be able to handle 307 redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual
         /// Hosting of Buckets</a>.
         /// </para>
         ///  </note> 
@@ -15256,14 +15304,14 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Specify a canned ACL using the <code>x-amz-acl</code> request header. Amazon S3 supports
-        /// a set of predefined ACLs, known as canned ACLs. Each canned ACL has a predefined set
-        /// of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined
+        /// set of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Specify access permissions explicitly using the <code>x-amz-grant-read</code>, <code>x-amz-grant-write</code>,
-        /// <code>x-amz-grant-read-acp</code>, <code>x-amz-grant-write-acp</code>, <code>x-amz-grant-full-control</code>
+        /// <code>x-amz-grant-read-acp</code>, <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code>
         /// headers. These headers map to the set of permissions Amazon S3 supports in an ACL.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>.
@@ -15274,20 +15322,21 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -15340,21 +15389,21 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// By default, the bucket is created in the US East (N. Virginia) region. You can optionally
-        /// specify a region in the request body. You might choose a region to optimize latency,
+        /// By default, the bucket is created in the US East (N. Virginia) Region. You can optionally
+        /// specify a Region in the request body. You might choose a Region to optimize latency,
         /// minimize costs, or address regulatory requirements. For example, if you reside in
         /// Europe, you will probably find it advantageous to create buckets in the EU (Ireland)
-        /// region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
+        /// Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
         /// to Select a Region for Your Buckets</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you send your create bucket request to the s3.amazonaws.com endpoint, the request
-        /// go to the us-east-1 region. Accordingly, the signature calculations in Signature Version
-        /// 4 must use us-east-1 as region, even if the location constraint in the request specifies
-        /// another region where the bucket is to be created. If you create a bucket in a region
-        /// other than US East (N. Virginia) region, your application must be able to handle 307
-        /// redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual
+        /// If you send your create bucket request to the <code>s3.amazonaws.com</code> endpoint,
+        /// the request goes to the us-east-1 Region. Accordingly, the signature calculations
+        /// in Signature Version 4 must use us-east-1 as the Region, even if the location constraint
+        /// in the request specifies another Region where the bucket is to be created. If you
+        /// create a bucket in a Region other than US East (N. Virginia), your application must
+        /// be able to handle 307 redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual
         /// Hosting of Buckets</a>.
         /// </para>
         ///  </note> 
@@ -15366,14 +15415,14 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Specify a canned ACL using the <code>x-amz-acl</code> request header. Amazon S3 supports
-        /// a set of predefined ACLs, known as canned ACLs. Each canned ACL has a predefined set
-        /// of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+        /// a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined
+        /// set of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Specify access permissions explicitly using the <code>x-amz-grant-read</code>, <code>x-amz-grant-write</code>,
-        /// <code>x-amz-grant-read-acp</code>, <code>x-amz-grant-write-acp</code>, <code>x-amz-grant-full-control</code>
+        /// <code>x-amz-grant-read-acp</code>, <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code>
         /// headers. These headers map to the set of permissions Amazon S3 supports in an ACL.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
         /// Control List (ACL) Overview</a>.
@@ -15384,20 +15433,21 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -15602,13 +15652,14 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// You can choose to have storage class analysis export analysis reports to a comma-separated
-        /// values (CSV) flat file, see the DataExport request element. Reports are updated daily
-        /// and are based on the object filters you configure. When selecting data export you
-        /// specify a destination bucket and optional destination prefix where the file is written.
-        /// You can export the data to a destination bucket in a different account. However, the
-        /// destination bucket must be in the same region as the bucket that you are making the
-        /// PUT analytics configuration to. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/analytics-storage-class.html">Amazon
+        /// You can choose to have storage class analysis export analysis reports sent to a comma-separated
+        /// values (CSV) flat file. See the <code>DataExport</code> request element. Reports are
+        /// updated daily and are based on the object filters that you configure. When selecting
+        /// data export, you specify a destination bucket and an optional destination prefix where
+        /// the file is written. You can export the data to a destination bucket in a different
+        /// account. However, the destination bucket must be in the same Region as the bucket
+        /// that you are making the PUT analytics configuration to. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/analytics-storage-class.html">Amazon
         /// S3 Analytics – Storage Class Analysis</a>. 
         /// </para>
         ///  <important> 
@@ -15701,13 +15752,14 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// You can choose to have storage class analysis export analysis reports to a comma-separated
-        /// values (CSV) flat file, see the DataExport request element. Reports are updated daily
-        /// and are based on the object filters you configure. When selecting data export you
-        /// specify a destination bucket and optional destination prefix where the file is written.
-        /// You can export the data to a destination bucket in a different account. However, the
-        /// destination bucket must be in the same region as the bucket that you are making the
-        /// PUT analytics configuration to. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/analytics-storage-class.html">Amazon
+        /// You can choose to have storage class analysis export analysis reports sent to a comma-separated
+        /// values (CSV) flat file. See the <code>DataExport</code> request element. Reports are
+        /// updated daily and are based on the object filters that you configure. When selecting
+        /// data export, you specify a destination bucket and an optional destination prefix where
+        /// the file is written. You can export the data to a destination bucket in a different
+        /// account. However, the destination bucket must be in the same Region as the bucket
+        /// that you are making the PUT analytics configuration to. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/analytics-storage-class.html">Amazon
         /// S3 Analytics – Storage Class Analysis</a>. 
         /// </para>
         ///  <important> 
@@ -15809,11 +15861,7 @@ namespace Amazon.S3
         /// <para>
         /// This implementation of the <code>PUT</code> operation sets default encryption for
         /// a buckets using server-side encryption with Amazon S3-managed keys SSE-S3 or AWS KMS
-        /// customer master keys (CMKs) (SSE-KMS) bucket. For information about the Amazon S3
-        /// default encryption feature, see As a security precaution, the root user of the AWS
-        /// account that owns a bucket can always use this operation, even if the policy explicitly
-        /// denies the root user the ability to perform this action. in the <i>Amazon Simple Storage
-        /// Service Developer Guide</i>. 
+        /// customer master keys (CMKs) (SSE-KMS) bucket.
         /// </para>
         ///  <important> 
         /// <para>
@@ -15862,11 +15910,7 @@ namespace Amazon.S3
         /// <para>
         /// This implementation of the <code>PUT</code> operation sets default encryption for
         /// a buckets using server-side encryption with Amazon S3-managed keys SSE-S3 or AWS KMS
-        /// customer master keys (CMKs) (SSE-KMS) bucket. For information about the Amazon S3
-        /// default encryption feature, see As a security precaution, the root user of the AWS
-        /// account that owns a bucket can always use this operation, even if the policy explicitly
-        /// denies the root user the ability to perform this action. in the <i>Amazon Simple Storage
-        /// Service Developer Guide</i>. 
+        /// customer master keys (CMKs) (SSE-KMS) bucket.
         /// </para>
         ///  <important> 
         /// <para>
@@ -16133,9 +16177,9 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// The bucket owner is automatically granted FULL_CONTROL to all logs. You use the Grantee
-        /// request element to grant access to other people. The Permissions request element specifies
-        /// the kind of access the grantee has to the logs.
+        /// The bucket owner is automatically granted FULL_CONTROL to all logs. You use the <code>Grantee</code>
+        /// request element to grant access to other people. The <code>Permissions</code> request
+        /// element specifies the kind of access the grantee has to the logs.
         /// </para>
         ///  
         /// <para>
@@ -16245,9 +16289,9 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// The bucket owner is automatically granted FULL_CONTROL to all logs. You use the Grantee
-        /// request element to grant access to other people. The Permissions request element specifies
-        /// the kind of access the grantee has to the logs.
+        /// The bucket owner is automatically granted FULL_CONTROL to all logs. You use the <code>Grantee</code>
+        /// request element to grant access to other people. The <code>Permissions</code> request
+        /// element specifies the kind of access the grantee has to the logs.
         /// </para>
         ///  
         /// <para>
@@ -16365,7 +16409,7 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have permissions to perform the s3:PutMetricsConfiguration
+        /// To use this operation, you must have permissions to perform the <code>s3:PutMetricsConfiguration</code>
         /// action. The bucket owner has this permission by default. The bucket owner can grant
         /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
@@ -16402,7 +16446,7 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Description:You are attempting to create a new configuration but have already reached
+        /// Description: You are attempting to create a new configuration but have already reached
         /// the 1,000-configuration limit.
         /// </para>
         ///  </li> <li> 
@@ -16433,7 +16477,7 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have permissions to perform the s3:PutMetricsConfiguration
+        /// To use this operation, you must have permissions to perform the <code>s3:PutMetricsConfiguration</code>
         /// action. The bucket owner has this permission by default. The bucket owner can grant
         /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
@@ -16470,7 +16514,7 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Description:You are attempting to create a new configuration but have already reached
+        /// Description: You are attempting to create a new configuration but have already reached
         /// the 1,000-configuration limit.
         /// </para>
         ///  </li> <li> 
@@ -16564,13 +16608,13 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// If the configuration in the request body includes only one <code>TopicConfiguration</code>
-        /// specifying only the <i>s3:ReducedRedundancyLostObject</i> event type, the response
-        /// will also include the <i>x-amz-sns-test-message-id</i> header containing the message
-        /// ID of the test notification sent to topic.
+        /// specifying only the <code>s3:ReducedRedundancyLostObject</code> event type, the response
+        /// will also include the <code>x-amz-sns-test-message-id</code> header containing the
+        /// message ID of the test notification sent to the topic.
         /// </para>
         ///  
         /// <para>
-        /// The following operations is related to <code>PutBucketNotificationConfiguration</code>:
+        /// The following operation is related to <code>PutBucketNotificationConfiguration</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -16656,13 +16700,13 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// If the configuration in the request body includes only one <code>TopicConfiguration</code>
-        /// specifying only the <i>s3:ReducedRedundancyLostObject</i> event type, the response
-        /// will also include the <i>x-amz-sns-test-message-id</i> header containing the message
-        /// ID of the test notification sent to topic.
+        /// specifying only the <code>s3:ReducedRedundancyLostObject</code> event type, the response
+        /// will also include the <code>x-amz-sns-test-message-id</code> header containing the
+        /// message ID of the test notification sent to the topic.
         /// </para>
         ///  
         /// <para>
-        /// The following operations is related to <code>PutBucketNotificationConfiguration</code>:
+        /// The following operation is related to <code>PutBucketNotificationConfiguration</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -17074,48 +17118,10 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        ///  <code>PutBucketReplication</code> has the following special errors:
+        /// For information on <code>PutBucketReplication</code> errors, see <a>ReplicationErrorCodeList</a>
+        /// 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Error code: <code>InvalidRequest</code> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Description: If the &lt;Owner&gt; in &lt;AccessControlTranslation&gt; has a value,
-        /// the &lt;Account&gt; element must be specified.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// HTTP 400
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Error code: <code>InvalidArgument</code> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Description: The &lt;Account&gt; element is empty. It must contain a valid account
-        /// ID.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// HTTP 400
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Error code: <code>InvalidArgument</code> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Description: The AWS account specified in the &lt;Account&gt; element must match the
-        /// destination bucket owner.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// HTTP 400
-        /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  
         /// <para>
         /// The following operations are related to <code>PutBucketReplication</code>:
         /// </para>
@@ -17203,48 +17209,10 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        ///  <code>PutBucketReplication</code> has the following special errors:
+        /// For information on <code>PutBucketReplication</code> errors, see <a>ReplicationErrorCodeList</a>
+        /// 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Error code: <code>InvalidRequest</code> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Description: If the &lt;Owner&gt; in &lt;AccessControlTranslation&gt; has a value,
-        /// the &lt;Account&gt; element must be specified.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// HTTP 400
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Error code: <code>InvalidArgument</code> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Description: The &lt;Account&gt; element is empty. It must contain a valid account
-        /// ID.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// HTTP 400
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Error code: <code>InvalidArgument</code> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Description: The AWS account specified in the &lt;Account&gt; element must match the
-        /// destination bucket owner.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// HTTP 400
-        /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  
         /// <para>
         /// The following operations are related to <code>PutBucketReplication</code>:
         /// </para>
@@ -17836,7 +17804,7 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// If the bucket owner enables MFA Delete in the bucket versioning configuration, the
-        /// bucket owner must include the <code>x-amz-mfa request</code> header and the Status
+        /// bucket owner must include the <code>x-amz-mfa request</code> header and the <code>Status</code>
         /// and the <code>MfaDelete</code> request elements in a request to set the versioning
         /// state of the bucket.
         /// </para>
@@ -17905,7 +17873,7 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// If the bucket owner enables MFA Delete in the bucket versioning configuration, the
-        /// bucket owner must include the <code>x-amz-mfa request</code> header and the Status
+        /// bucket owner must include the <code>x-amz-mfa request</code> header and the <code>Status</code>
         /// and the <code>MfaDelete</code> request elements in a request to set the versioning
         /// state of the bucket.
         /// </para>
@@ -17977,19 +17945,19 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// WebsiteConfiguration
+        ///  <code>WebsiteConfiguration</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RedirectAllRequestsTo
+        ///  <code>RedirectAllRequestsTo</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HostName
+        ///  <code>HostName</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Protocol
+        ///  <code>Protocol</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -18000,67 +17968,67 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// WebsiteConfiguration
+        ///  <code>WebsiteConfiguration</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IndexDocument
+        ///  <code>IndexDocument</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Suffix
+        ///  <code>Suffix</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ErrorDocument
+        ///  <code>ErrorDocument</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key
+        ///  <code>Key</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RoutingRules
+        ///  <code>RoutingRules</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RoutingRule
+        ///  <code>RoutingRule</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Condition
+        ///  <code>Condition</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HttpErrorCodeReturnedEquals
+        ///  <code>HttpErrorCodeReturnedEquals</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// KeyPrefixEquals
+        ///  <code>KeyPrefixEquals</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redirect
+        ///  <code>Redirect</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Protocol
+        ///  <code>Protocol</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HostName
+        ///  <code>HostName</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ReplaceKeyPrefixWith
+        ///  <code>ReplaceKeyPrefixWith</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ReplaceKeyWith
+        ///  <code>ReplaceKeyWith</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HttpRedirectCode
+        ///  <code>HttpRedirectCode</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -18099,19 +18067,19 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// WebsiteConfiguration
+        ///  <code>WebsiteConfiguration</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RedirectAllRequestsTo
+        ///  <code>RedirectAllRequestsTo</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HostName
+        ///  <code>HostName</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Protocol
+        ///  <code>Protocol</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -18122,67 +18090,67 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// WebsiteConfiguration
+        ///  <code>WebsiteConfiguration</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IndexDocument
+        ///  <code>IndexDocument</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Suffix
+        ///  <code>Suffix</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ErrorDocument
+        ///  <code>ErrorDocument</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key
+        ///  <code>Key</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RoutingRules
+        ///  <code>RoutingRules</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RoutingRule
+        ///  <code>RoutingRule</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Condition
+        ///  <code>Condition</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HttpErrorCodeReturnedEquals
+        ///  <code>HttpErrorCodeReturnedEquals</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// KeyPrefixEquals
+        ///  <code>KeyPrefixEquals</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redirect
+        ///  <code>Redirect</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Protocol
+        ///  <code>Protocol</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HostName
+        ///  <code>HostName</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ReplaceKeyPrefixWith
+        ///  <code>ReplaceKeyPrefixWith</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ReplaceKeyWith
+        ///  <code>ReplaceKeyWith</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HttpRedirectCode
+        ///  <code>HttpRedirectCode</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -18221,19 +18189,19 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// WebsiteConfiguration
+        ///  <code>WebsiteConfiguration</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RedirectAllRequestsTo
+        ///  <code>RedirectAllRequestsTo</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HostName
+        ///  <code>HostName</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Protocol
+        ///  <code>Protocol</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -18244,67 +18212,67 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// WebsiteConfiguration
+        ///  <code>WebsiteConfiguration</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IndexDocument
+        ///  <code>IndexDocument</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Suffix
+        ///  <code>Suffix</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ErrorDocument
+        ///  <code>ErrorDocument</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key
+        ///  <code>Key</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RoutingRules
+        ///  <code>RoutingRules</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RoutingRule
+        ///  <code>RoutingRule</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Condition
+        ///  <code>Condition</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HttpErrorCodeReturnedEquals
+        ///  <code>HttpErrorCodeReturnedEquals</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// KeyPrefixEquals
+        ///  <code>KeyPrefixEquals</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redirect
+        ///  <code>Redirect</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Protocol
+        ///  <code>Protocol</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HostName
+        ///  <code>HostName</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ReplaceKeyPrefixWith
+        ///  <code>ReplaceKeyPrefixWith</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ReplaceKeyWith
+        ///  <code>ReplaceKeyWith</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HttpRedirectCode
+        ///  <code>HttpRedirectCode</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -18346,19 +18314,19 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// WebsiteConfiguration
+        ///  <code>WebsiteConfiguration</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RedirectAllRequestsTo
+        ///  <code>RedirectAllRequestsTo</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HostName
+        ///  <code>HostName</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Protocol
+        ///  <code>Protocol</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -18369,67 +18337,67 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// WebsiteConfiguration
+        ///  <code>WebsiteConfiguration</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IndexDocument
+        ///  <code>IndexDocument</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Suffix
+        ///  <code>Suffix</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ErrorDocument
+        ///  <code>ErrorDocument</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key
+        ///  <code>Key</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RoutingRules
+        ///  <code>RoutingRules</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RoutingRule
+        ///  <code>RoutingRule</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Condition
+        ///  <code>Condition</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HttpErrorCodeReturnedEquals
+        ///  <code>HttpErrorCodeReturnedEquals</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// KeyPrefixEquals
+        ///  <code>KeyPrefixEquals</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redirect
+        ///  <code>Redirect</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Protocol
+        ///  <code>Protocol</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HostName
+        ///  <code>HostName</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ReplaceKeyPrefixWith
+        ///  <code>ReplaceKeyPrefixWith</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ReplaceKeyWith
+        ///  <code>ReplaceKeyWith</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HttpRedirectCode
+        ///  <code>HttpRedirectCode</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -18490,7 +18458,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The request method (for example, GET, PUT, HEAD and so on) or the <code>Access-Control-Request-Method</code>
+        /// The request method (for example, GET, PUT, HEAD, and so on) or the <code>Access-Control-Request-Method</code>
         /// header in case of a pre-flight <code>OPTIONS</code> request must be one of the <code>AllowedMethod</code>
         /// elements. 
         /// </para>
@@ -18522,7 +18490,7 @@ namespace Amazon.S3
         ///  </li> </ul>
         /// </summary>
         /// <param name="bucketName">Specifies the bucket impacted by the <code>cors</code>configuration.</param>
-        /// <param name="configuration">Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//cors.html">Enabling Cross-Origin Resource Sharing</a> in the Amazon Simple Storage Service Developer Guide.</param>
+        /// <param name="configuration">Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
         public virtual PutCORSConfigurationResponse PutCORSConfiguration(string bucketName, CORSConfiguration configuration)
@@ -18571,7 +18539,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The request method (for example, GET, PUT, HEAD and so on) or the <code>Access-Control-Request-Method</code>
+        /// The request method (for example, GET, PUT, HEAD, and so on) or the <code>Access-Control-Request-Method</code>
         /// header in case of a pre-flight <code>OPTIONS</code> request must be one of the <code>AllowedMethod</code>
         /// elements. 
         /// </para>
@@ -18652,7 +18620,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The request method (for example, GET, PUT, HEAD and so on) or the <code>Access-Control-Request-Method</code>
+        /// The request method (for example, GET, PUT, HEAD, and so on) or the <code>Access-Control-Request-Method</code>
         /// header in case of a pre-flight <code>OPTIONS</code> request must be one of the <code>AllowedMethod</code>
         /// elements. 
         /// </para>
@@ -18684,7 +18652,7 @@ namespace Amazon.S3
         ///  </li> </ul>
         /// </summary>
         /// <param name="bucketName">Specifies the bucket impacted by the <code>cors</code>configuration.</param>
-        /// <param name="configuration">Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//cors.html">Enabling Cross-Origin Resource Sharing</a> in the Amazon Simple Storage Service Developer Guide.</param>
+        /// <param name="configuration">Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev//cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -18736,7 +18704,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The request method (for example, GET, PUT, HEAD and so on) or the <code>Access-Control-Request-Method</code>
+        /// The request method (for example, GET, PUT, HEAD, and so on) or the <code>Access-Control-Request-Method</code>
         /// header in case of a pre-flight <code>OPTIONS</code> request must be one of the <code>AllowedMethod</code>
         /// elements. 
         /// </para>
@@ -19286,7 +19254,7 @@ namespace Amazon.S3
         /// You can optionally request server-side encryption. With server-side encryption, Amazon
         /// S3 encrypts your data as it writes it to disks in its data centers and decrypts the
         /// data when you access it. You have the option to provide your own encryption key or
-        /// use AWS-managed encryption keys. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+        /// use AWS managed encryption keys. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
         /// Server-Side Encryption</a>.
         /// </para>
         ///  <dl> <dt>Access Permissions</dt> <dd> 
@@ -19319,14 +19287,14 @@ namespace Amazon.S3
         /// You can optionally tell Amazon S3 to encrypt data at rest using server-side encryption.
         /// Server-side encryption is for data encryption at rest. Amazon S3 encrypts your data
         /// as it writes it to disks in its data centers and decrypts it when you access it. The
-        /// option you use depends on whether you want to use AWS-managed encryption keys or provide
+        /// option you use depends on whether you want to use AWS managed encryption keys or provide
         /// your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use encryption keys managed Amazon S3 or customer master keys (CMKs) stored in AWS
-        /// Key Management Service (KMS) – If you want AWS to manage the keys used to encrypt
-        /// data, specify the following headers in the request.
+        /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
+        /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
+        /// encrypt data, specify the following headers in the request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -19342,9 +19310,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify x-amz-server-side-encryption:aws:kms, but don't provide x-amz-server-side-
-        /// encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK in AWS KMS to protect
-        /// the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+        /// managed CMK in AWS KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -19353,7 +19321,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in AWS KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS</a>.
         /// </para>
@@ -19376,7 +19344,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
         /// </para>
@@ -19393,8 +19361,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify a canned ACL (x-amz-acl) — Amazon S3 supports a set of predefined ACLs, known
-        /// as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
+        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
+        /// ACLs, known as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
@@ -19432,7 +19400,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  <important> 
         /// <para>
@@ -19473,21 +19442,21 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For a list of all the Amazon S3 supported regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
         /// and Endpoints</a> in the AWS General Reference
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -19506,8 +19475,8 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
-        /// AWS Key Management Service (KMS) – If you want AWS to manage the keys used to encrypt
-        /// data, specify the following headers in the request.
+        /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
+        /// encrypt data, specify the following headers in the request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -19523,8 +19492,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify x-amz-server-side-encryption:aws:kms, but don't provide x-amz-server-side-
-        /// encryption-aws-kms-key-id, Amazon S3 uses the default AWS KMS CMK to protect the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the default
+        /// AWS KMS CMK to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -19533,7 +19503,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in AWS KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
         /// </para>
@@ -19561,7 +19531,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in AWS KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
         /// </para>
@@ -19653,7 +19623,7 @@ namespace Amazon.S3
         /// You can optionally request server-side encryption. With server-side encryption, Amazon
         /// S3 encrypts your data as it writes it to disks in its data centers and decrypts the
         /// data when you access it. You have the option to provide your own encryption key or
-        /// use AWS-managed encryption keys. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+        /// use AWS managed encryption keys. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
         /// Server-Side Encryption</a>.
         /// </para>
         ///  <dl> <dt>Access Permissions</dt> <dd> 
@@ -19686,14 +19656,14 @@ namespace Amazon.S3
         /// You can optionally tell Amazon S3 to encrypt data at rest using server-side encryption.
         /// Server-side encryption is for data encryption at rest. Amazon S3 encrypts your data
         /// as it writes it to disks in its data centers and decrypts it when you access it. The
-        /// option you use depends on whether you want to use AWS-managed encryption keys or provide
+        /// option you use depends on whether you want to use AWS managed encryption keys or provide
         /// your own encryption key. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use encryption keys managed Amazon S3 or customer master keys (CMKs) stored in AWS
-        /// Key Management Service (KMS) – If you want AWS to manage the keys used to encrypt
-        /// data, specify the following headers in the request.
+        /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
+        /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
+        /// encrypt data, specify the following headers in the request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -19709,9 +19679,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify x-amz-server-side-encryption:aws:kms, but don't provide x-amz-server-side-
-        /// encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK in AWS KMS to protect
-        /// the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+        /// managed CMK in AWS KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -19720,7 +19690,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in AWS KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS</a>.
         /// </para>
@@ -19743,7 +19713,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
         /// </para>
@@ -19760,8 +19730,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify a canned ACL (x-amz-acl) — Amazon S3 supports a set of predefined ACLs, known
-        /// as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
+        /// Specify a canned ACL (<code>x-amz-acl</code>) — Amazon S3 supports a set of predefined
+        /// ACLs, known as canned ACLs. Each canned ACL has a predefined set of grantees and permissions.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.
         /// </para>
@@ -19799,7 +19769,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// emailAddress – if the value specified is the email address of an AWS account
+        ///  <code>emailAddress</code> – if the value specified is the email address of an AWS
+        /// account
         /// </para>
         ///  <important> 
         /// <para>
@@ -19840,21 +19811,21 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For a list of all the Amazon S3 supported regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+        /// For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
         /// and Endpoints</a> in the AWS General Reference
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// id – if the value specified is the canonical user ID of an AWS account
+        ///  <code>id</code> – if the value specified is the canonical user ID of an AWS account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// uri – if you are granting permissions to a predefined group
+        ///  <code>uri</code> – if you are granting permissions to a predefined group
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, the following x-amz-grant-read header grants the AWS accounts identified
-        /// by email addresses permissions to read object data and its metadata:
+        /// For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts
+        /// identified by email addresses permissions to read object data and its metadata:
         /// </para>
         ///  
         /// <para>
@@ -19873,8 +19844,8 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
-        /// AWS Key Management Service (KMS) – If you want AWS to manage the keys used to encrypt
-        /// data, specify the following headers in the request.
+        /// AWS Key Management Service (AWS KMS) – If you want AWS to manage the keys used to
+        /// encrypt data, specify the following headers in the request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -19890,8 +19861,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify x-amz-server-side-encryption:aws:kms, but don't provide x-amz-server-side-
-        /// encryption-aws-kms-key-id, Amazon S3 uses the default AWS KMS CMK to protect the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the default
+        /// AWS KMS CMK to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -19900,7 +19872,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in AWS KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
         /// </para>
@@ -19928,7 +19900,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on Server-Side Encryption with CMKs stored in AWS KMS (SSE-KMS),
+        /// For more information about server-side encryption with CMKs stored in AWS KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
         /// </para>
@@ -20370,17 +20342,18 @@ namespace Amazon.S3
 
         /// <summary>
         /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon
-        /// S3 bucket. In order to use this operation, you must have the <code>s3:PutBucketPublicAccessBlock</code>
+        /// S3 bucket. To use this operation, you must have the <code>s3:PutBucketPublicAccessBlock</code>
         /// permission. For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
         /// Permissions in a Policy</a>.
         /// 
         ///  <important> 
         /// <para>
-        /// When Amazon S3 evaluates the PublicAccessBlock configuration for a bucket or an object,
-        /// it checks the PublicAccessBlock configuration for both the bucket (or the bucket that
-        /// contains the object) and the bucket owner's account. If the PublicAccessBlock configurations
-        /// are different between the bucket and the account, Amazon S3 uses the most restrictive
-        /// combination of the bucket-level and account-level settings.
+        /// When Amazon S3 evaluates the <code>PublicAccessBlock</code> configuration for a bucket
+        /// or an object, it checks the <code>PublicAccessBlock</code> configuration for both
+        /// the bucket (or the bucket that contains the object) and the bucket owner's account.
+        /// If the <code>PublicAccessBlock</code> configurations are different between the bucket
+        /// and the account, Amazon S3 uses the most restrictive combination of the bucket-level
+        /// and account-level settings.
         /// </para>
         ///  </important> 
         /// <para>
@@ -20424,17 +20397,18 @@ namespace Amazon.S3
 
         /// <summary>
         /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon
-        /// S3 bucket. In order to use this operation, you must have the <code>s3:PutBucketPublicAccessBlock</code>
+        /// S3 bucket. To use this operation, you must have the <code>s3:PutBucketPublicAccessBlock</code>
         /// permission. For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
         /// Permissions in a Policy</a>.
         /// 
         ///  <important> 
         /// <para>
-        /// When Amazon S3 evaluates the PublicAccessBlock configuration for a bucket or an object,
-        /// it checks the PublicAccessBlock configuration for both the bucket (or the bucket that
-        /// contains the object) and the bucket owner's account. If the PublicAccessBlock configurations
-        /// are different between the bucket and the account, Amazon S3 uses the most restrictive
-        /// combination of the bucket-level and account-level settings.
+        /// When Amazon S3 evaluates the <code>PublicAccessBlock</code> configuration for a bucket
+        /// or an object, it checks the <code>PublicAccessBlock</code> configuration for both
+        /// the bucket (or the bucket that contains the object) and the bucket owner's account.
+        /// If the <code>PublicAccessBlock</code> configurations are different between the bucket
+        /// and the account, Amazon S3 uses the most restrictive combination of the bucket-level
+        /// and account-level settings.
         /// </para>
         ///  </important> 
         /// <para>
@@ -20677,10 +20651,11 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon Glacier’s lowest-cost retrieval
-        /// option, enabling you to retrieve large amounts, even petabytes, of data inexpensively
-        /// in a day. Bulk retrievals typically complete within 5-12 hours from the GLACIER storage
-        /// class and typically complete within 48 hours from the DEEP_ARCHIVE storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
+        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
+        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
+        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
+        /// storage class.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -20807,7 +20782,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
@@ -21014,10 +20989,11 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon Glacier’s lowest-cost retrieval
-        /// option, enabling you to retrieve large amounts, even petabytes, of data inexpensively
-        /// in a day. Bulk retrievals typically complete within 5-12 hours from the GLACIER storage
-        /// class and typically complete within 48 hours from the DEEP_ARCHIVE storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
+        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
+        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
+        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
+        /// storage class.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -21144,7 +21120,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
@@ -21353,10 +21329,11 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon Glacier’s lowest-cost retrieval
-        /// option, enabling you to retrieve large amounts, even petabytes, of data inexpensively
-        /// in a day. Bulk retrievals typically complete within 5-12 hours from the GLACIER storage
-        /// class and typically complete within 48 hours from the DEEP_ARCHIVE storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
+        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
+        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
+        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
+        /// storage class.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -21483,7 +21460,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
@@ -21692,10 +21669,11 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon Glacier’s lowest-cost retrieval
-        /// option, enabling you to retrieve large amounts, even petabytes, of data inexpensively
-        /// in a day. Bulk retrievals typically complete within 5-12 hours from the GLACIER storage
-        /// class and typically complete within 48 hours from the DEEP_ARCHIVE storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
+        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
+        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
+        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
+        /// storage class.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -21822,7 +21800,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
@@ -22033,10 +22011,11 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon Glacier’s lowest-cost retrieval
-        /// option, enabling you to retrieve large amounts, even petabytes, of data inexpensively
-        /// in a day. Bulk retrievals typically complete within 5-12 hours from the GLACIER storage
-        /// class and typically complete within 48 hours from the DEEP_ARCHIVE storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
+        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
+        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
+        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
+        /// storage class.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -22370,10 +22349,11 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon Glacier’s lowest-cost retrieval
-        /// option, enabling you to retrieve large amounts, even petabytes, of data inexpensively
-        /// in a day. Bulk retrievals typically complete within 5-12 hours from the GLACIER storage
-        /// class and typically complete within 48 hours from the DEEP_ARCHIVE storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
+        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
+        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
+        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
+        /// storage class.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -22500,7 +22480,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -22710,10 +22690,11 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon Glacier’s lowest-cost retrieval
-        /// option, enabling you to retrieve large amounts, even petabytes, of data inexpensively
-        /// in a day. Bulk retrievals typically complete within 5-12 hours from the GLACIER storage
-        /// class and typically complete within 48 hours from the DEEP_ARCHIVE storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
+        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
+        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
+        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
+        /// storage class.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -22840,7 +22821,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// <param name="cancellationToken">
@@ -23052,10 +23033,11 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon Glacier’s lowest-cost retrieval
-        /// option, enabling you to retrieve large amounts, even petabytes, of data inexpensively
-        /// in a day. Bulk retrievals typically complete within 5-12 hours from the GLACIER storage
-        /// class and typically complete within 48 hours from the DEEP_ARCHIVE storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
+        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
+        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
+        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
+        /// storage class.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -23182,7 +23164,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="cancellationToken">
@@ -23394,10 +23376,11 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon Glacier’s lowest-cost retrieval
-        /// option, enabling you to retrieve large amounts, even petabytes, of data inexpensively
-        /// in a day. Bulk retrievals typically complete within 5-12 hours from the GLACIER storage
-        /// class and typically complete within 48 hours from the DEEP_ARCHIVE storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
+        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
+        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
+        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
+        /// storage class.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -23524,7 +23507,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
@@ -23738,10 +23721,11 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon Glacier’s lowest-cost retrieval
-        /// option, enabling you to retrieve large amounts, even petabytes, of data inexpensively
-        /// in a day. Bulk retrievals typically complete within 5-12 hours from the GLACIER storage
-        /// class and typically complete within 48 hours from the DEEP_ARCHIVE storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
+        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
+        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
+        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
+        /// storage class.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -24241,18 +24225,19 @@ namespace Amazon.S3
         /// <para>
         /// You can optionally request server-side encryption where Amazon S3 encrypts your data
         /// as it writes it to disks in its data centers and decrypts it for you when you access
-        /// it. You have the option of providing your own encryption key, or you can use the AWS-managed
-        /// encryption keys. If you choose to provide your own encryption key, the request headers
-        /// you provide in the request must match the headers you used in the request to initiate
-        /// the upload by using <a>CreateMultipartUpload</a>. For more information, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+        /// it. You have the option of providing your own encryption key, or you can use the AWS
+        /// managed encryption keys. If you choose to provide your own encryption key, the request
+        /// headers you provide in the request must match the headers you used in the request
+        /// to initiate the upload by using <a>CreateMultipartUpload</a>. For more information,
+        /// go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
         /// Server-Side Encryption</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Server-side encryption is supported by the S3 Multipart Upload actions. Unless you
         /// are using a customer-provided encryption key, you don't need to specify the encryption
-        /// parameters in each UploadPart request. Instead, you only need to specify the server
-        /// side encryption parameters in the initial Initiate Multipart request. For more information,
+        /// parameters in each UploadPart request. Instead, you only need to specify the server-side
+        /// encryption parameters in the initial Initiate Multipart request. For more information,
         /// see <a>CreateMultipartUpload</a>.
         /// </para>
         ///  
@@ -24383,18 +24368,19 @@ namespace Amazon.S3
         /// <para>
         /// You can optionally request server-side encryption where Amazon S3 encrypts your data
         /// as it writes it to disks in its data centers and decrypts it for you when you access
-        /// it. You have the option of providing your own encryption key, or you can use the AWS-managed
-        /// encryption keys. If you choose to provide your own encryption key, the request headers
-        /// you provide in the request must match the headers you used in the request to initiate
-        /// the upload by using <a>CreateMultipartUpload</a>. For more information, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+        /// it. You have the option of providing your own encryption key, or you can use the AWS
+        /// managed encryption keys. If you choose to provide your own encryption key, the request
+        /// headers you provide in the request must match the headers you used in the request
+        /// to initiate the upload by using <a>CreateMultipartUpload</a>. For more information,
+        /// go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
         /// Server-Side Encryption</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Server-side encryption is supported by the S3 Multipart Upload actions. Unless you
         /// are using a customer-provided encryption key, you don't need to specify the encryption
-        /// parameters in each UploadPart request. Instead, you only need to specify the server
-        /// side encryption parameters in the initial Initiate Multipart request. For more information,
+        /// parameters in each UploadPart request. Instead, you only need to specify the server-side
+        /// encryption parameters in the initial Initiate Multipart request. For more information,
         /// see <a>CreateMultipartUpload</a>.
         /// </para>
         ///  

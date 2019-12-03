@@ -267,6 +267,30 @@ namespace Amazon
             private set;
         }
 
+        /// <summary>
+        /// Gets the partition name the region is in. For example for us-east-1 the partition name is aws. For cn-northwest-1 the partition name is aws-cn.
+        /// </summary>
+        public string PartitionName
+        {
+            get
+            {
+                var regionEndpointV3 = this.InternedRegionEndpoint as RegionEndpointV3;
+                return regionEndpointV3?.PartitionName;
+            }
+        }
+
+        /// <summary>
+        /// Gets the dns suffix for the region endpoints in a partition. For example the aws partition's suffix is amazonaws.com. The aws-cn partition's suffix is amazonaws.com.cn.
+        /// </summary>
+        public string PartitionDnsSuffix
+        {
+            get
+            {
+                var regionEndpointV3 = this.InternedRegionEndpoint as RegionEndpointV3;
+                return regionEndpointV3?.PartitionDnsSuffix;
+            }
+        }
+
         private IRegionEndpoint InternedRegionEndpoint
         {
             get

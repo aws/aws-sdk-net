@@ -57,6 +57,11 @@ namespace Amazon.Runtime.CredentialManagement
         public bool? EndpointDiscoveryEnabled { get; set; }
 
         /// <summary>
+        /// If true the region identified in the S3 access point arn will be used when making requests.
+        /// </summary>
+        public bool? S3UseArnRegion { get; set; }
+        
+        /// <summary>
         /// The Sts Regional Endpoints Value as either legacy or regional
         /// </summary>
         public StsRegionalEndpointsValue? StsRegionalEndpoints { get; set; }
