@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private bool? _defaultForAz;
         private List<SubnetIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = new List<SubnetIpv6CidrBlockAssociation>();
         private bool? _mapPublicIpOnLaunch;
+        private string _outpostArn;
         private string _ownerId;
         private SubnetState _state;
         private string _subnetArn;
@@ -191,6 +192,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetMapPublicIpOnLaunch()
         {
             return this._mapPublicIpOnLaunch.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Outpost.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>

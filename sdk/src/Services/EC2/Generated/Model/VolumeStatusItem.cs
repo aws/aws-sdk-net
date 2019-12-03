@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private List<VolumeStatusAction> _actions = new List<VolumeStatusAction>();
         private string _availabilityZone;
         private List<VolumeStatusEvent> _events = new List<VolumeStatusEvent>();
+        private string _outpostArn;
         private string _volumeId;
         private VolumeStatusInfo _volumeStatus;
 
@@ -90,6 +91,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetEvents()
         {
             return this._events != null && this._events.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Outpost.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>

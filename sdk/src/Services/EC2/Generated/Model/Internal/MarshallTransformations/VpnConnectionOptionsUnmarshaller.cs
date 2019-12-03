@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("enableAcceleration", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EnableAcceleration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("staticRoutesOnly", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

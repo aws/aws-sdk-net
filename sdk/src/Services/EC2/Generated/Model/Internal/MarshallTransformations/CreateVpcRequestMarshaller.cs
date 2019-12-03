@@ -70,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceTenancy", StringUtils.FromString(publicRequest.InstanceTenancy));
                 }
+                if(publicRequest.IsSetIpv6CidrBlockNetworkBorderGroup())
+                {
+                    request.Parameters.Add("Ipv6CidrBlockNetworkBorderGroup", StringUtils.FromString(publicRequest.Ipv6CidrBlockNetworkBorderGroup));
+                }
             }
             return request;
         }

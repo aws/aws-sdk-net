@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllocationId", StringUtils.FromString(publicRequest.AllocationId));
                 }
+                if(publicRequest.IsSetNetworkBorderGroup())
+                {
+                    request.Parameters.Add("NetworkBorderGroup", StringUtils.FromString(publicRequest.NetworkBorderGroup));
+                }
                 if(publicRequest.IsSetPublicIp())
                 {
                     request.Parameters.Add("PublicIp", StringUtils.FromString(publicRequest.PublicIp));

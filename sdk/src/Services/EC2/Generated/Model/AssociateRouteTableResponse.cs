@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class AssociateRouteTableResponse : AmazonWebServiceResponse
     {
         private string _associationId;
+        private RouteTableAssociationState _associationState;
 
         /// <summary>
         /// Gets and sets the property AssociationId. 
@@ -50,6 +51,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAssociationId()
         {
             return this._associationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociationState. 
+        /// <para>
+        /// The state of the association.
+        /// </para>
+        /// </summary>
+        public RouteTableAssociationState AssociationState
+        {
+            get { return this._associationState; }
+            set { this._associationState = value; }
+        }
+
+        // Check to see if AssociationState property is set
+        internal bool IsSetAssociationState()
+        {
+            return this._associationState != null;
         }
 
     }

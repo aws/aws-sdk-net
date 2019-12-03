@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private string _gatewayId;
         private string _instanceId;
         private string _instanceOwnerId;
+        private string _localGatewayId;
         private string _natGatewayId;
         private string _networkInterfaceId;
         private RouteOrigin _origin;
@@ -170,6 +171,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceOwnerId()
         {
             return this._instanceOwnerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalGatewayId. 
+        /// <para>
+        /// The ID of the local gateway.
+        /// </para>
+        /// </summary>
+        public string LocalGatewayId
+        {
+            get { return this._localGatewayId; }
+            set { this._localGatewayId = value; }
+        }
+
+        // Check to see if LocalGatewayId property is set
+        internal bool IsSetLocalGatewayId()
+        {
+            return this._localGatewayId != null;
         }
 
         /// <summary>

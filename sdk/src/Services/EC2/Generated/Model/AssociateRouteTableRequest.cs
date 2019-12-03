@@ -29,11 +29,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateRouteTable operation.
-    /// Associates a subnet with a route table. The subnet and route table must be in the
-    /// same VPC. This association causes traffic originating from the subnet to be routed
-    /// according to the routes in the route table. The action returns an association ID,
-    /// which you need in order to disassociate the route table from the subnet later. A route
-    /// table can be associated with multiple subnets.
+    /// Associates a subnet in your VPC or an internet gateway or virtual private gateway
+    /// attached to your VPC with a route table in your VPC. This association causes traffic
+    /// from the subnet or gateway to be routed according to the routes in the route table.
+    /// The action returns an association ID, which you need in order to disassociate the
+    /// route table later. A route table can be associated with multiple subnets.
     /// 
     ///  
     /// <para>
@@ -43,8 +43,27 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AssociateRouteTableRequest : AmazonEC2Request
     {
+        private string _gatewayId;
         private string _routeTableId;
         private string _subnetId;
+
+        /// <summary>
+        /// Gets and sets the property GatewayId. 
+        /// <para>
+        /// The ID of the internet gateway or virtual private gateway.
+        /// </para>
+        /// </summary>
+        public string GatewayId
+        {
+            get { return this._gatewayId; }
+            set { this._gatewayId = value; }
+        }
+
+        // Check to see if GatewayId property is set
+        internal bool IsSetGatewayId()
+        {
+            return this._gatewayId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RouteTableId. 
@@ -71,7 +90,6 @@ namespace Amazon.EC2.Model
         /// The ID of the subnet.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SubnetId
         {
             get { return this._subnetId; }

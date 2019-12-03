@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         private GpuInfo _gpuInfo;
         private bool? _hibernationSupported;
         private InstanceTypeHypervisor _hypervisor;
+        private InferenceAcceleratorInfo _inferenceAcceleratorInfo;
         private InstanceStorageInfo _instanceStorageInfo;
         private bool? _instanceStorageSupported;
         private InstanceType _instanceType;
@@ -250,6 +251,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetHypervisor()
         {
             return this._hypervisor != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceAcceleratorInfo. 
+        /// <para>
+        /// Describes the Inference accelerator settings for the instance type.
+        /// </para>
+        /// </summary>
+        public InferenceAcceleratorInfo InferenceAcceleratorInfo
+        {
+            get { return this._inferenceAcceleratorInfo; }
+            set { this._inferenceAcceleratorInfo = value; }
+        }
+
+        // Check to see if InferenceAcceleratorInfo property is set
+        internal bool IsSetInferenceAcceleratorInfo()
+        {
+            return this._inferenceAcceleratorInfo != null;
         }
 
         /// <summary>

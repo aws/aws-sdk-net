@@ -117,8 +117,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the
-        /// Amazon Resource Name (ARN) of the CloudWatch Logs log group.
+        /// If <code>LogDestinationType</code> is not specified or <code>cloud-watch-logs</code>,
+        /// specify the Amazon Resource Name (ARN) of the CloudWatch Logs log group. For example,
+        /// to publish to a log group called <code>my-logs</code>, specify <code>arn:aws:logs:us-east-1:123456789012:log-group:my-logs</code>.
+        /// Alternatively, use <code>LogGroupName</code> instead.
         /// </para>
         ///  
         /// <para>

@@ -209,6 +209,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.NetworkInterfaces.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("outpostArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("placement", targetDepth))
                     {
                         var unmarshaller = PlacementUnmarshaller.Instance;

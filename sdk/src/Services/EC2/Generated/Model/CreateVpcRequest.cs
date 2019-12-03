@@ -59,6 +59,7 @@ namespace Amazon.EC2.Model
         private bool? _amazonProvidedIpv6CidrBlock;
         private string _cidrBlock;
         private Tenancy _instanceTenancy;
+        private string _ipv6CidrBlockNetworkBorderGroup;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -141,6 +142,30 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceTenancy()
         {
             return this._instanceTenancy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6CidrBlockNetworkBorderGroup. 
+        /// <para>
+        /// The name of the location from which we advertise the IPV6 CIDR block. Use this parameter
+        /// to limit the address to this location.
+        /// </para>
+        ///  
+        /// <para>
+        ///  You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use
+        /// this parameter.
+        /// </para>
+        /// </summary>
+        public string Ipv6CidrBlockNetworkBorderGroup
+        {
+            get { return this._ipv6CidrBlockNetworkBorderGroup; }
+            set { this._ipv6CidrBlockNetworkBorderGroup = value; }
+        }
+
+        // Check to see if Ipv6CidrBlockNetworkBorderGroup property is set
+        internal bool IsSetIpv6CidrBlockNetworkBorderGroup()
+        {
+            return this._ipv6CidrBlockNetworkBorderGroup != null;
         }
 
     }

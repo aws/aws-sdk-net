@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private string _associationId;
         private string _ipv6CidrBlock;
         private VpcCidrBlockState _ipv6CidrBlockState;
+        private string _networkBorderGroup;
 
         /// <summary>
         /// Gets and sets the property AssociationId. 
@@ -88,6 +89,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6CidrBlockState()
         {
             return this._ipv6CidrBlockState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkBorderGroup. 
+        /// <para>
+        /// The name of the location from which we advertise the IPV6 CIDR block.
+        /// </para>
+        /// </summary>
+        public string NetworkBorderGroup
+        {
+            get { return this._networkBorderGroup; }
+            set { this._networkBorderGroup = value; }
+        }
+
+        // Check to see if NetworkBorderGroup property is set
+        internal bool IsSetNetworkBorderGroup()
+        {
+            return this._networkBorderGroup != null;
         }
 
     }

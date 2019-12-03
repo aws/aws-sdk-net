@@ -54,11 +54,29 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("groupName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("messageSet/item", targetDepth))
                     {
                         var unmarshaller = AvailabilityZoneMessageUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Messages.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("networkBorderGroup", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NetworkBorderGroup = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("optInStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OptInStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("regionName", targetDepth))

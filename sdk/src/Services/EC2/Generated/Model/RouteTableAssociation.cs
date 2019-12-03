@@ -28,14 +28,52 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an association between a route table and a subnet.
+    /// Describes an association between a route table and a subnet or gateway.
     /// </summary>
     public partial class RouteTableAssociation
     {
+        private RouteTableAssociationState _associationState;
+        private string _gatewayId;
         private bool? _main;
         private string _routeTableAssociationId;
         private string _routeTableId;
         private string _subnetId;
+
+        /// <summary>
+        /// Gets and sets the property AssociationState. 
+        /// <para>
+        /// The state of the association.
+        /// </para>
+        /// </summary>
+        public RouteTableAssociationState AssociationState
+        {
+            get { return this._associationState; }
+            set { this._associationState = value; }
+        }
+
+        // Check to see if AssociationState property is set
+        internal bool IsSetAssociationState()
+        {
+            return this._associationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayId. 
+        /// <para>
+        /// The ID of the internet gateway or virtual private gateway.
+        /// </para>
+        /// </summary>
+        public string GatewayId
+        {
+            get { return this._gatewayId; }
+            set { this._gatewayId = value; }
+        }
+
+        // Check to see if GatewayId property is set
+        internal bool IsSetGatewayId()
+        {
+            return this._gatewayId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Main. 
@@ -58,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RouteTableAssociationId. 
         /// <para>
-        /// The ID of the association between a route table and a subnet.
+        /// The ID of the association.
         /// </para>
         /// </summary>
         public string RouteTableAssociationId

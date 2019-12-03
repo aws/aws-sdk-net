@@ -96,6 +96,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.InstanceOwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("localGatewayId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LocalGatewayId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("natGatewayId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

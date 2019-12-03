@@ -33,7 +33,10 @@ namespace Amazon.EC2.Model
     public partial class AllocateAddressResponse : AmazonWebServiceResponse
     {
         private string _allocationId;
+        private string _customerOwnedIp;
+        private string _customerOwnedIpv4Pool;
         private DomainType _domain;
+        private string _networkBorderGroup;
         private string _publicIp;
         private string _publicIpv4Pool;
 
@@ -57,6 +60,42 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomerOwnedIp. 
+        /// <para>
+        /// The customer-owned IP address.
+        /// </para>
+        /// </summary>
+        public string CustomerOwnedIp
+        {
+            get { return this._customerOwnedIp; }
+            set { this._customerOwnedIp = value; }
+        }
+
+        // Check to see if CustomerOwnedIp property is set
+        internal bool IsSetCustomerOwnedIp()
+        {
+            return this._customerOwnedIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerOwnedIpv4Pool. 
+        /// <para>
+        /// The ID of the customer-owned address pool.
+        /// </para>
+        /// </summary>
+        public string CustomerOwnedIpv4Pool
+        {
+            get { return this._customerOwnedIpv4Pool; }
+            set { this._customerOwnedIpv4Pool = value; }
+        }
+
+        // Check to see if CustomerOwnedIpv4Pool property is set
+        internal bool IsSetCustomerOwnedIpv4Pool()
+        {
+            return this._customerOwnedIpv4Pool != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
         /// Indicates whether this Elastic IP address is for use with instances in EC2-Classic
@@ -73,6 +112,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDomain()
         {
             return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkBorderGroup. 
+        /// <para>
+        /// The location from which the IP address is advertised.
+        /// </para>
+        /// </summary>
+        public string NetworkBorderGroup
+        {
+            get { return this._networkBorderGroup; }
+            set { this._networkBorderGroup = value; }
+        }
+
+        // Check to see if NetworkBorderGroup property is set
+        internal bool IsSetNetworkBorderGroup()
+        {
+            return this._networkBorderGroup != null;
         }
 
         /// <summary>

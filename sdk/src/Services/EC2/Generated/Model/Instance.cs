@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         private InstanceMetadataOptionsResponse _metadataOptions;
         private Monitoring _monitoring;
         private List<InstanceNetworkInterface> _networkInterfaces = new List<InstanceNetworkInterface>();
+        private string _outpostArn;
         private Placement _placement;
         private PlatformValues _platform;
         private string _privateDnsName;
@@ -530,6 +531,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaces()
         {
             return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Outpost.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>

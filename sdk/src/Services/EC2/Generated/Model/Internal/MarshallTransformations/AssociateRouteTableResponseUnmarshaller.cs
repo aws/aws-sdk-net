@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.AssociationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("associationState", targetDepth))
+                    {
+                        var unmarshaller = RouteTableAssociationStateUnmarshaller.Instance;
+                        response.AssociationState = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
             }
 

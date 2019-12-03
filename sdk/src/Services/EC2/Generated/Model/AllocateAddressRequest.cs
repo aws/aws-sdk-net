@@ -64,7 +64,9 @@ namespace Amazon.EC2.Model
     public partial class AllocateAddressRequest : AmazonEC2Request
     {
         private string _address;
+        private string _customerOwnedIpv4Pool;
         private DomainType _domain;
+        private string _networkBorderGroup;
         private string _publicIpv4Pool;
 
         /// <summary>
@@ -83,6 +85,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetAddress()
         {
             return this._address != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerOwnedIpv4Pool. 
+        /// <para>
+        /// The ID of a customer-owned address pool. Use this parameter to let Amazon EC2 select
+        /// an address from the address pool. Alternatively, specify a specific address from the
+        /// address pool.
+        /// </para>
+        /// </summary>
+        public string CustomerOwnedIpv4Pool
+        {
+            get { return this._customerOwnedIpv4Pool; }
+            set { this._customerOwnedIpv4Pool = value; }
+        }
+
+        // Check to see if CustomerOwnedIpv4Pool property is set
+        internal bool IsSetCustomerOwnedIpv4Pool()
+        {
+            return this._customerOwnedIpv4Pool != null;
         }
 
         /// <summary>
@@ -105,6 +127,38 @@ namespace Amazon.EC2.Model
         internal bool IsSetDomain()
         {
             return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkBorderGroup. 
+        /// <para>
+        /// The location from which the IP address is advertised. Use this parameter to limit
+        /// the address to this location.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcs.html">DescribeVpcs</a>
+        /// to view the network border groups.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot use a network border group with EC2 Classic. If you attempt this operation
+        /// on EC2 classic, you will receive an <code>InvalidParameterCombination</code> error.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
+        /// Codes</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string NetworkBorderGroup
+        {
+            get { return this._networkBorderGroup; }
+            set { this._networkBorderGroup = value; }
+        }
+
+        // Check to see if NetworkBorderGroup property is set
+        internal bool IsSetNetworkBorderGroup()
+        {
+            return this._networkBorderGroup != null;
         }
 
         /// <summary>

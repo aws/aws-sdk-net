@@ -59,6 +59,7 @@ namespace Amazon.EC2.Model
     public partial class ReleaseAddressRequest : AmazonEC2Request
     {
         private string _allocationId;
+        private string _networkBorderGroup;
         private string _publicIp;
 
         /// <summary>
@@ -91,6 +92,38 @@ namespace Amazon.EC2.Model
         internal bool IsSetAllocationId()
         {
             return this._allocationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkBorderGroup. 
+        /// <para>
+        /// The location that the IP address is released from.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code>
+        /// error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
+        /// Codes</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot use a network border group with EC2 Classic. If you attempt this operation
+        /// on EC2 classic, you will receive an <code>InvalidParameterCombination</code> error.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
+        /// Codes</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string NetworkBorderGroup
+        {
+            get { return this._networkBorderGroup; }
+            set { this._networkBorderGroup = value; }
+        }
+
+        // Check to see if NetworkBorderGroup property is set
+        internal bool IsSetNetworkBorderGroup()
+        {
+            return this._networkBorderGroup != null;
         }
 
         /// <summary>

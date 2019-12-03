@@ -318,6 +318,41 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AcceptTransitGatewayPeeringAttachment
+
+        internal virtual AcceptTransitGatewayPeeringAttachmentResponse AcceptTransitGatewayPeeringAttachment(AcceptTransitGatewayPeeringAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptTransitGatewayPeeringAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Accepts a transit gateway peering attachment request. The peering attachment must
+        /// be in the <code>pendingAcceptance</code> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayPeeringAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptTransitGatewayPeeringAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayPeeringAttachment">REST API Reference for AcceptTransitGatewayPeeringAttachment Operation</seealso>
+        public virtual Task<AcceptTransitGatewayPeeringAttachmentResponse> AcceptTransitGatewayPeeringAttachmentAsync(AcceptTransitGatewayPeeringAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AcceptTransitGatewayPeeringAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AcceptTransitGatewayVpcAttachment
 
         internal virtual AcceptTransitGatewayVpcAttachmentResponse AcceptTransitGatewayVpcAttachment(AcceptTransitGatewayVpcAttachmentRequest request)
@@ -976,11 +1011,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Associates a subnet with a route table. The subnet and route table must be in the
-        /// same VPC. This association causes traffic originating from the subnet to be routed
-        /// according to the routes in the route table. The action returns an association ID,
-        /// which you need in order to disassociate the route table from the subnet later. A route
-        /// table can be associated with multiple subnets.
+        /// Associates a subnet in your VPC or an internet gateway or virtual private gateway
+        /// attached to your VPC with a route table in your VPC. This association causes traffic
+        /// from the subnet or gateway to be routed according to the routes in the route table.
+        /// The action returns an association ID, which you need in order to disassociate the
+        /// route table later. A route table can be associated with multiple subnets.
         /// 
         ///  
         /// <para>
@@ -1037,6 +1072,48 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = AssociateSubnetCidrBlockResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateSubnetCidrBlockResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateTransitGatewayMulticastDomain
+
+        internal virtual AssociateTransitGatewayMulticastDomainResponse AssociateTransitGatewayMulticastDomain(AssociateTransitGatewayMulticastDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateTransitGatewayMulticastDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateTransitGatewayMulticastDomainResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates the specified subnets and transit gateway attachments with the specified
+        /// transit gateway multicast domain.
+        /// 
+        ///  
+        /// <para>
+        /// The transit gateway attachment must be in the available state before you can add a
+        /// resource. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayAttachments.html">DescribeTransitGatewayAttachments</a>
+        /// to see the state of the attachment.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTransitGatewayMulticastDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateTransitGatewayMulticastDomain service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayMulticastDomain">REST API Reference for AssociateTransitGatewayMulticastDomain Operation</seealso>
+        public virtual Task<AssociateTransitGatewayMulticastDomainResponse> AssociateTransitGatewayMulticastDomainAsync(AssociateTransitGatewayMulticastDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateTransitGatewayMulticastDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateTransitGatewayMulticastDomainResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1182,10 +1259,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Attaches an internet gateway to a VPC, enabling connectivity between the internet
-        /// and the VPC. For more information about your VPC and internet gateway, see the <a
-        /// href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud
-        /// User Guide</a>.
+        /// Attaches an internet gateway or a virtual private gateway to a VPC, enabling connectivity
+        /// between the internet and the VPC. For more information about your VPC and internet
+        /// gateway, see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon
+        /// Virtual Private Cloud User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachInternetGateway service method.</param>
         /// <param name="cancellationToken">
@@ -2887,6 +2964,74 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateLocalGatewayRoute
+
+        internal virtual CreateLocalGatewayRouteResponse CreateLocalGatewayRoute(CreateLocalGatewayRouteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocalGatewayRouteResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a static route for the specified local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRoute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRoute">REST API Reference for CreateLocalGatewayRoute Operation</seealso>
+        public virtual Task<CreateLocalGatewayRouteResponse> CreateLocalGatewayRouteAsync(CreateLocalGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayRouteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLocalGatewayRouteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLocalGatewayRouteTableVpcAssociation
+
+        internal virtual CreateLocalGatewayRouteTableVpcAssociationResponse CreateLocalGatewayRouteTableVpcAssociation(CreateLocalGatewayRouteTableVpcAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayRouteTableVpcAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocalGatewayRouteTableVpcAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates the specified VPC with the specified local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRouteTableVpcAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayRouteTableVpcAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVpcAssociation">REST API Reference for CreateLocalGatewayRouteTableVpcAssociation Operation</seealso>
+        public virtual Task<CreateLocalGatewayRouteTableVpcAssociationResponse> CreateLocalGatewayRouteTableVpcAssociationAsync(CreateLocalGatewayRouteTableVpcAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayRouteTableVpcAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLocalGatewayRouteTableVpcAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateNatGateway
 
         internal virtual CreateNatGatewayResponse CreateNatGateway(CreateNatGatewayRequest request)
@@ -3237,8 +3382,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You must specify one of the following targets: internet gateway or virtual private
-        /// gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or
-        /// egress-only internet gateway.
+        /// gateway, NAT instance, NAT gateway, VPC peering connection, network interface, egress-only
+        /// internet gateway, or transit gateway.
         /// </para>
         ///  
         /// <para>
@@ -3907,6 +4052,90 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CreateTransitGatewayResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTransitGatewayResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayMulticastDomain
+
+        internal virtual CreateTransitGatewayMulticastDomainResponse CreateTransitGatewayMulticastDomain(CreateTransitGatewayMulticastDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayMulticastDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayMulticastDomainResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a multicast domain using the specified transit gateway.
+        /// 
+        ///  
+        /// <para>
+        /// The transit gateway must be in the available state before you create a domain. Use
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGateways.html">DescribeTransitGateways</a>
+        /// to see the state of transit gateway.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMulticastDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayMulticastDomain service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMulticastDomain">REST API Reference for CreateTransitGatewayMulticastDomain Operation</seealso>
+        public virtual Task<CreateTransitGatewayMulticastDomainResponse> CreateTransitGatewayMulticastDomainAsync(CreateTransitGatewayMulticastDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayMulticastDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransitGatewayMulticastDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayPeeringAttachment
+
+        internal virtual CreateTransitGatewayPeeringAttachmentResponse CreateTransitGatewayPeeringAttachment(CreateTransitGatewayPeeringAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayPeeringAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Requests a transit gateway peering attachment between the specified transit gateway
+        /// (requester) and a peer transit gateway (accepter). The transit gateways must be in
+        /// different Regions. The peer transit gateway can be in your account or a different
+        /// AWS account. 
+        /// 
+        ///  
+        /// <para>
+        /// After you create the peering attachment, the owner of the accepter transit gateway
+        /// must accept the attachment request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayPeeringAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayPeeringAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">REST API Reference for CreateTransitGatewayPeeringAttachment Operation</seealso>
+        public virtual Task<CreateTransitGatewayPeeringAttachmentResponse> CreateTransitGatewayPeeringAttachmentAsync(CreateTransitGatewayPeeringAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransitGatewayPeeringAttachmentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4913,6 +5142,74 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteLocalGatewayRoute
+
+        internal virtual DeleteLocalGatewayRouteResponse DeleteLocalGatewayRoute(DeleteLocalGatewayRouteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLocalGatewayRouteResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified route from the specified local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayRoute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRoute">REST API Reference for DeleteLocalGatewayRoute Operation</seealso>
+        public virtual Task<DeleteLocalGatewayRouteResponse> DeleteLocalGatewayRouteAsync(DeleteLocalGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayRouteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLocalGatewayRouteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLocalGatewayRouteTableVpcAssociation
+
+        internal virtual DeleteLocalGatewayRouteTableVpcAssociationResponse DeleteLocalGatewayRouteTableVpcAssociation(DeleteLocalGatewayRouteTableVpcAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayRouteTableVpcAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLocalGatewayRouteTableVpcAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified association between a VPC and local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayRouteTableVpcAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayRouteTableVpcAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation">REST API Reference for DeleteLocalGatewayRouteTableVpcAssociation Operation</seealso>
+        public virtual Task<DeleteLocalGatewayRouteTableVpcAssociationResponse> DeleteLocalGatewayRouteTableVpcAssociationAsync(DeleteLocalGatewayRouteTableVpcAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayRouteTableVpcAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLocalGatewayRouteTableVpcAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteNatGateway
 
         internal virtual DeleteNatGatewayResponse DeleteNatGateway(DeleteNatGatewayRequest request)
@@ -5631,6 +5928,74 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteTransitGatewayMulticastDomain
+
+        internal virtual DeleteTransitGatewayMulticastDomainResponse DeleteTransitGatewayMulticastDomain(DeleteTransitGatewayMulticastDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayMulticastDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayMulticastDomainResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified transit gateway multicast domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMulticastDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayMulticastDomain service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMulticastDomain">REST API Reference for DeleteTransitGatewayMulticastDomain Operation</seealso>
+        public virtual Task<DeleteTransitGatewayMulticastDomainResponse> DeleteTransitGatewayMulticastDomainAsync(DeleteTransitGatewayMulticastDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayMulticastDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTransitGatewayMulticastDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTransitGatewayPeeringAttachment
+
+        internal virtual DeleteTransitGatewayPeeringAttachmentResponse DeleteTransitGatewayPeeringAttachment(DeleteTransitGatewayPeeringAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayPeeringAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a transit gateway peering attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayPeeringAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayPeeringAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPeeringAttachment">REST API Reference for DeleteTransitGatewayPeeringAttachment Operation</seealso>
+        public virtual Task<DeleteTransitGatewayPeeringAttachmentResponse> DeleteTransitGatewayPeeringAttachmentAsync(DeleteTransitGatewayPeeringAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTransitGatewayPeeringAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteTransitGatewayRoute
 
         internal virtual DeleteTransitGatewayRouteResponse DeleteTransitGatewayRoute(DeleteTransitGatewayRouteRequest request)
@@ -6167,6 +6532,76 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeregisterTransitGatewayMulticastGroupMembers
+
+        internal virtual DeregisterTransitGatewayMulticastGroupMembersResponse DeregisterTransitGatewayMulticastGroupMembers(DeregisterTransitGatewayMulticastGroupMembersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterTransitGatewayMulticastGroupMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterTransitGatewayMulticastGroupMembersResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterTransitGatewayMulticastGroupMembersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deregisters the specified members (network interfaces) from the transit gateway multicast
+        /// group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterTransitGatewayMulticastGroupMembers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterTransitGatewayMulticastGroupMembers service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupMembers">REST API Reference for DeregisterTransitGatewayMulticastGroupMembers Operation</seealso>
+        public virtual Task<DeregisterTransitGatewayMulticastGroupMembersResponse> DeregisterTransitGatewayMulticastGroupMembersAsync(DeregisterTransitGatewayMulticastGroupMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterTransitGatewayMulticastGroupMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterTransitGatewayMulticastGroupMembersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterTransitGatewayMulticastGroupMembersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterTransitGatewayMulticastGroupSources
+
+        internal virtual DeregisterTransitGatewayMulticastGroupSourcesResponse DeregisterTransitGatewayMulticastGroupSources(DeregisterTransitGatewayMulticastGroupSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterTransitGatewayMulticastGroupSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterTransitGatewayMulticastGroupSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterTransitGatewayMulticastGroupSourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deregisters the specified sources (network interfaces) from the transit gateway multicast
+        /// group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterTransitGatewayMulticastGroupSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterTransitGatewayMulticastGroupSources service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupSources">REST API Reference for DeregisterTransitGatewayMulticastGroupSources Operation</seealso>
+        public virtual Task<DeregisterTransitGatewayMulticastGroupSourcesResponse> DeregisterTransitGatewayMulticastGroupSourcesAsync(DeregisterTransitGatewayMulticastGroupSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterTransitGatewayMulticastGroupSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterTransitGatewayMulticastGroupSourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterTransitGatewayMulticastGroupSourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeAccountAttributes
 
         internal virtual DescribeAccountAttributesResponse DescribeAccountAttributes()
@@ -6423,14 +6858,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Availability Zones that are available to you. The results include zones
-        /// only for the Region you're currently using. If there is an event impacting an Availability
-        /// Zone, you can use this request to view the state and any provided message for that
-        /// Availability Zone.
+        /// Describes the Availability Zones and Local Zones that are available to you. If there
+        /// is an event impacting an Availability Zone or Local Zone, you can use this request
+        /// to view the state and any provided messages for that Availability Zone or Local Zone.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+        /// For more information about Availability Zones and Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
         /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6448,14 +6882,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Availability Zones that are available to you. The results include zones
-        /// only for the Region you're currently using. If there is an event impacting an Availability
-        /// Zone, you can use this request to view the state and any provided message for that
-        /// Availability Zone.
+        /// Describes the Availability Zones and Local Zones that are available to you. If there
+        /// is an event impacting an Availability Zone or Local Zone, you can use this request
+        /// to view the state and any provided messages for that Availability Zone or Local Zone.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+        /// For more information about Availability Zones and Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
         /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6826,6 +7259,41 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeClientVpnTargetNetworksResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeClientVpnTargetNetworksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCoipPools
+
+        internal virtual DescribeCoipPoolsResponse DescribeCoipPools(DescribeCoipPoolsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCoipPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCoipPoolsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCoipPoolsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the specified customer-owned address pools or all of your customer-owned
+        /// address pools.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCoipPools service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCoipPools service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCoipPools">REST API Reference for DescribeCoipPools Operation</seealso>
+        public virtual Task<DescribeCoipPoolsResponse> DescribeCoipPoolsAsync(DescribeCoipPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCoipPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCoipPoolsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCoipPoolsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8459,6 +8927,213 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeLaunchTemplateVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeLaunchTemplateVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLocalGatewayRouteTables
+
+        internal virtual DescribeLocalGatewayRouteTablesResponse DescribeLocalGatewayRouteTables(DescribeLocalGatewayRouteTablesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocalGatewayRouteTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocalGatewayRouteTablesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLocalGatewayRouteTablesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more local gateway route tables. By default, all local gateway route
+        /// tables are described. Alternatively, you can filter the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayRouteTables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLocalGatewayRouteTables service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTables">REST API Reference for DescribeLocalGatewayRouteTables Operation</seealso>
+        public virtual Task<DescribeLocalGatewayRouteTablesResponse> DescribeLocalGatewayRouteTablesAsync(DescribeLocalGatewayRouteTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocalGatewayRouteTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocalGatewayRouteTablesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLocalGatewayRouteTablesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations
+
+        internal virtual DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the associations between virtual interface groups and local gateway route
+        /// tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations">REST API Reference for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations Operation</seealso>
+        public virtual Task<DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse> DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsAsync(DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLocalGatewayRouteTableVpcAssociations
+
+        internal virtual DescribeLocalGatewayRouteTableVpcAssociationsResponse DescribeLocalGatewayRouteTableVpcAssociations(DescribeLocalGatewayRouteTableVpcAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocalGatewayRouteTableVpcAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocalGatewayRouteTableVpcAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLocalGatewayRouteTableVpcAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the specified associations between VPCs and local gateway route tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayRouteTableVpcAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLocalGatewayRouteTableVpcAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVpcAssociations">REST API Reference for DescribeLocalGatewayRouteTableVpcAssociations Operation</seealso>
+        public virtual Task<DescribeLocalGatewayRouteTableVpcAssociationsResponse> DescribeLocalGatewayRouteTableVpcAssociationsAsync(DescribeLocalGatewayRouteTableVpcAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocalGatewayRouteTableVpcAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocalGatewayRouteTableVpcAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLocalGatewayRouteTableVpcAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLocalGateways
+
+        internal virtual DescribeLocalGatewaysResponse DescribeLocalGateways(DescribeLocalGatewaysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocalGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocalGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLocalGatewaysResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more local gateways. By default, all local gateways are described.
+        /// Alternatively, you can filter the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGateways service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLocalGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGateways">REST API Reference for DescribeLocalGateways Operation</seealso>
+        public virtual Task<DescribeLocalGatewaysResponse> DescribeLocalGatewaysAsync(DescribeLocalGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocalGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocalGatewaysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLocalGatewaysResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLocalGatewayVirtualInterfaceGroups
+
+        internal virtual DescribeLocalGatewayVirtualInterfaceGroupsResponse DescribeLocalGatewayVirtualInterfaceGroups(DescribeLocalGatewayVirtualInterfaceGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocalGatewayVirtualInterfaceGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocalGatewayVirtualInterfaceGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLocalGatewayVirtualInterfaceGroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the specified local gateway virtual interface groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayVirtualInterfaceGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLocalGatewayVirtualInterfaceGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaceGroups">REST API Reference for DescribeLocalGatewayVirtualInterfaceGroups Operation</seealso>
+        public virtual Task<DescribeLocalGatewayVirtualInterfaceGroupsResponse> DescribeLocalGatewayVirtualInterfaceGroupsAsync(DescribeLocalGatewayVirtualInterfaceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocalGatewayVirtualInterfaceGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocalGatewayVirtualInterfaceGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLocalGatewayVirtualInterfaceGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLocalGatewayVirtualInterfaces
+
+        internal virtual DescribeLocalGatewayVirtualInterfacesResponse DescribeLocalGatewayVirtualInterfaces(DescribeLocalGatewayVirtualInterfacesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocalGatewayVirtualInterfacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocalGatewayVirtualInterfacesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLocalGatewayVirtualInterfacesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the specified local gateway virtual interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayVirtualInterfaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLocalGatewayVirtualInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaces">REST API Reference for DescribeLocalGatewayVirtualInterfaces Operation</seealso>
+        public virtual Task<DescribeLocalGatewayVirtualInterfacesResponse> DescribeLocalGatewayVirtualInterfacesAsync(DescribeLocalGatewayVirtualInterfacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocalGatewayVirtualInterfacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocalGatewayVirtualInterfacesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLocalGatewayVirtualInterfacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10446,6 +11121,74 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeTransitGatewayMulticastDomains
+
+        internal virtual DescribeTransitGatewayMulticastDomainsResponse DescribeTransitGatewayMulticastDomains(DescribeTransitGatewayMulticastDomainsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayMulticastDomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayMulticastDomainsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewayMulticastDomainsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more transit gateway multicast domains.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayMulticastDomains service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayMulticastDomains service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMulticastDomains">REST API Reference for DescribeTransitGatewayMulticastDomains Operation</seealso>
+        public virtual Task<DescribeTransitGatewayMulticastDomainsResponse> DescribeTransitGatewayMulticastDomainsAsync(DescribeTransitGatewayMulticastDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayMulticastDomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayMulticastDomainsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTransitGatewayMulticastDomainsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTransitGatewayPeeringAttachments
+
+        internal virtual DescribeTransitGatewayPeeringAttachmentsResponse DescribeTransitGatewayPeeringAttachments(DescribeTransitGatewayPeeringAttachmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayPeeringAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayPeeringAttachmentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewayPeeringAttachmentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes your transit gateway peering attachments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayPeeringAttachments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayPeeringAttachments service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPeeringAttachments">REST API Reference for DescribeTransitGatewayPeeringAttachments Operation</seealso>
+        public virtual Task<DescribeTransitGatewayPeeringAttachmentsResponse> DescribeTransitGatewayPeeringAttachmentsAsync(DescribeTransitGatewayPeeringAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayPeeringAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayPeeringAttachmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTransitGatewayPeeringAttachmentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTransitGatewayRouteTables
 
         internal virtual DescribeTransitGatewayRouteTablesResponse DescribeTransitGatewayRouteTables(DescribeTransitGatewayRouteTablesRequest request)
@@ -12062,6 +12805,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateTransitGatewayMulticastDomain
+
+        internal virtual DisassociateTransitGatewayMulticastDomainResponse DisassociateTransitGatewayMulticastDomain(DisassociateTransitGatewayMulticastDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateTransitGatewayMulticastDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateTransitGatewayMulticastDomainResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates the specified subnets from the transit gateway multicast domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTransitGatewayMulticastDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateTransitGatewayMulticastDomain service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayMulticastDomain">REST API Reference for DisassociateTransitGatewayMulticastDomain Operation</seealso>
+        public virtual Task<DisassociateTransitGatewayMulticastDomainResponse> DisassociateTransitGatewayMulticastDomainAsync(DisassociateTransitGatewayMulticastDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateTransitGatewayMulticastDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateTransitGatewayMulticastDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateTransitGatewayRouteTable
 
         internal virtual DisassociateTransitGatewayRouteTableResponse DisassociateTransitGatewayRouteTable(DisassociateTransitGatewayRouteTableRequest request)
@@ -12603,6 +13380,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetCoipPoolUsage
+
+        internal virtual GetCoipPoolUsageResponse GetCoipPoolUsage(GetCoipPoolUsageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoipPoolUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoipPoolUsageResponseUnmarshaller.Instance;
+
+            return Invoke<GetCoipPoolUsageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the allocations from the specified customer-owned address pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoipPoolUsage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCoipPoolUsage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCoipPoolUsage">REST API Reference for GetCoipPoolUsage Operation</seealso>
+        public virtual Task<GetCoipPoolUsageResponse> GetCoipPoolUsageAsync(GetCoipPoolUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoipPoolUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoipPoolUsageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCoipPoolUsageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetConsoleOutput
 
         internal virtual GetConsoleOutputResponse GetConsoleOutput(GetConsoleOutputRequest request)
@@ -13025,6 +13836,40 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = GetTransitGatewayAttachmentPropagationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTransitGatewayAttachmentPropagationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTransitGatewayMulticastDomainAssociations
+
+        internal virtual GetTransitGatewayMulticastDomainAssociationsResponse GetTransitGatewayMulticastDomainAssociations(GetTransitGatewayMulticastDomainAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayMulticastDomainAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about the associations for the transit gateway multicast domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayMulticastDomainAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayMulticastDomainAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations">REST API Reference for GetTransitGatewayMulticastDomainAssociations Operation</seealso>
+        public virtual Task<GetTransitGatewayMulticastDomainAssociationsResponse> GetTransitGatewayMulticastDomainAssociationsAsync(GetTransitGatewayMulticastDomainAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTransitGatewayMulticastDomainAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -15544,6 +16389,130 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  RegisterTransitGatewayMulticastGroupMembers
+
+        internal virtual RegisterTransitGatewayMulticastGroupMembersResponse RegisterTransitGatewayMulticastGroupMembers(RegisterTransitGatewayMulticastGroupMembersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterTransitGatewayMulticastGroupMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterTransitGatewayMulticastGroupMembersResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterTransitGatewayMulticastGroupMembersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Registers members (network interfaces) with the transit gateway multicast group. A
+        /// member is a network interface associated with a supported EC2 instance that receives
+        /// multicast traffic. For information about supported instances, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
+        /// Consideration</a> in <i>Amazon VPC Transit Gateways</i>.
+        /// 
+        ///  
+        /// <para>
+        /// After you add the members, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html">SearchTransitGatewayMulticastGroups</a>
+        /// to verify that the members were added to the transit gateway multicast group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterTransitGatewayMulticastGroupMembers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterTransitGatewayMulticastGroupMembers service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupMembers">REST API Reference for RegisterTransitGatewayMulticastGroupMembers Operation</seealso>
+        public virtual Task<RegisterTransitGatewayMulticastGroupMembersResponse> RegisterTransitGatewayMulticastGroupMembersAsync(RegisterTransitGatewayMulticastGroupMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterTransitGatewayMulticastGroupMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterTransitGatewayMulticastGroupMembersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterTransitGatewayMulticastGroupMembersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterTransitGatewayMulticastGroupSources
+
+        internal virtual RegisterTransitGatewayMulticastGroupSourcesResponse RegisterTransitGatewayMulticastGroupSources(RegisterTransitGatewayMulticastGroupSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterTransitGatewayMulticastGroupSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterTransitGatewayMulticastGroupSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterTransitGatewayMulticastGroupSourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Registers sources (network interfaces) with the specified transit gateway multicast
+        /// group.
+        /// 
+        ///  
+        /// <para>
+        /// A multicast source is a network interface attached to a supported instance that sends
+        /// multicast traffic. For information about supported instances, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
+        /// Considerations</a> in <i>Amazon VPC Transit Gateways</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you add the source, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html">SearchTransitGatewayMulticastGroups</a>
+        /// to verify that the source was added to the multicast group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterTransitGatewayMulticastGroupSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterTransitGatewayMulticastGroupSources service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupSources">REST API Reference for RegisterTransitGatewayMulticastGroupSources Operation</seealso>
+        public virtual Task<RegisterTransitGatewayMulticastGroupSourcesResponse> RegisterTransitGatewayMulticastGroupSourcesAsync(RegisterTransitGatewayMulticastGroupSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterTransitGatewayMulticastGroupSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterTransitGatewayMulticastGroupSourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterTransitGatewayMulticastGroupSourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RejectTransitGatewayPeeringAttachment
+
+        internal virtual RejectTransitGatewayPeeringAttachmentResponse RejectTransitGatewayPeeringAttachment(RejectTransitGatewayPeeringAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<RejectTransitGatewayPeeringAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Rejects a transit gateway peering attachment request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayPeeringAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectTransitGatewayPeeringAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayPeeringAttachment">REST API Reference for RejectTransitGatewayPeeringAttachment Operation</seealso>
+        public virtual Task<RejectTransitGatewayPeeringAttachmentResponse> RejectTransitGatewayPeeringAttachmentAsync(RejectTransitGatewayPeeringAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RejectTransitGatewayPeeringAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RejectTransitGatewayVpcAttachment
 
         internal virtual RejectTransitGatewayVpcAttachmentResponse RejectTransitGatewayVpcAttachment(RejectTransitGatewayVpcAttachmentRequest request)
@@ -15898,8 +16867,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Replaces an existing route within a route table in a VPC. You must provide only one
-        /// of the following: internet gateway or virtual private gateway, NAT instance, NAT gateway,
-        /// VPC peering connection, network interface, or egress-only internet gateway.
+        /// of the following: internet gateway, virtual private gateway, NAT instance, NAT gateway,
+        /// VPC peering connection, network interface, egress-only internet gateway, or transit
+        /// gateway.
         /// 
         ///  
         /// <para>
@@ -15939,16 +16909,17 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Changes the route table associated with a given subnet in a VPC. After the operation
-        /// completes, the subnet uses the routes in the new route table it's associated with.
-        /// For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+        /// Changes the route table associated with a given subnet, internet gateway, or virtual
+        /// private gateway in a VPC. After the operation completes, the subnet or gateway uses
+        /// the routes in the new route table. For more information about route tables, see <a
+        /// href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You can also use ReplaceRouteTableAssociation to change which table is the main route
-        /// table in the VPC. You just specify the main route table's association ID and the route
-        /// table to be the new main route table.
+        /// You can also use this operation to change which table is the main route table in the
+        /// VPC. Specify the main route table's association ID and the route table ID of the new
+        /// main route table.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplaceRouteTableAssociation service method.</param>
@@ -16726,6 +17697,75 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = RunScheduledInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<RunScheduledInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchLocalGatewayRoutes
+
+        internal virtual SearchLocalGatewayRoutesResponse SearchLocalGatewayRoutes(SearchLocalGatewayRoutesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchLocalGatewayRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchLocalGatewayRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchLocalGatewayRoutesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches for routes in the specified local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchLocalGatewayRoutes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchLocalGatewayRoutes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchLocalGatewayRoutes">REST API Reference for SearchLocalGatewayRoutes Operation</seealso>
+        public virtual Task<SearchLocalGatewayRoutesResponse> SearchLocalGatewayRoutesAsync(SearchLocalGatewayRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchLocalGatewayRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchLocalGatewayRoutesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchLocalGatewayRoutesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchTransitGatewayMulticastGroups
+
+        internal virtual SearchTransitGatewayMulticastGroupsResponse SearchTransitGatewayMulticastGroups(SearchTransitGatewayMulticastGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchTransitGatewayMulticastGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchTransitGatewayMulticastGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchTransitGatewayMulticastGroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches one or more transit gateway multicast groups and returns the group membership
+        /// information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchTransitGatewayMulticastGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchTransitGatewayMulticastGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayMulticastGroups">REST API Reference for SearchTransitGatewayMulticastGroups Operation</seealso>
+        public virtual Task<SearchTransitGatewayMulticastGroupsResponse> SearchTransitGatewayMulticastGroupsAsync(SearchTransitGatewayMulticastGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchTransitGatewayMulticastGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchTransitGatewayMulticastGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchTransitGatewayMulticastGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -120,6 +120,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Hypervisor = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("inferenceAcceleratorInfo", targetDepth))
+                    {
+                        var unmarshaller = InferenceAcceleratorInfoUnmarshaller.Instance;
+                        unmarshalledObject.InferenceAcceleratorInfo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("instanceStorageInfo", targetDepth))
                     {
                         var unmarshaller = InstanceStorageInfoUnmarshaller.Instance;

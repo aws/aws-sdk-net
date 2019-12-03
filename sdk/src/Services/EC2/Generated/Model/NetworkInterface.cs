@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private List<NetworkInterfaceIpv6Address> _ipv6Addresses = new List<NetworkInterfaceIpv6Address>();
         private string _macAddress;
         private string _networkInterfaceId;
+        private string _outpostArn;
         private string _ownerId;
         private string _privateDnsName;
         private string _privateIpAddress;
@@ -214,6 +215,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaceId()
         {
             return this._networkInterfaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Outpost.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>

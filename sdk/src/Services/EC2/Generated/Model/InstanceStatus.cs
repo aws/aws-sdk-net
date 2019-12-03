@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private List<InstanceStatusEvent> _events = new List<InstanceStatusEvent>();
         private string _instanceId;
         private InstanceState _instanceState;
+        private string _outpostArn;
         private InstanceStatusSummary _status;
         private InstanceStatusSummary _systemStatus;
 
@@ -110,6 +111,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceState()
         {
             return this._instanceState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Outpost.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>
