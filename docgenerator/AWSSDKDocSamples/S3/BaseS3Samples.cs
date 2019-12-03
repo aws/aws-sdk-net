@@ -706,7 +706,7 @@ namespace AWSSDKDocSamples.S3
                 {
                     BucketName = "SampleBucket",
                     Key = "Item1",
-                    Expires = DateTime.Now.AddMinutes(5)
+                    Expires = DateTime.UtcNow.AddMinutes(5)
                 };
 
                 // Get path for request
@@ -729,7 +729,7 @@ namespace AWSSDKDocSamples.S3
                 {
                     BucketName = "SampleBucket",
                     Key = "Item1",
-                    Expires = DateTime.Now.AddMinutes(5)
+                    Expires = DateTime.UtcNow.AddMinutes(5)
                 };
                 request.ResponseHeaderOverrides.ContentType = "text/xml+zip";
                 request.ResponseHeaderOverrides.ContentDisposition = "attachment; filename=dispName.pdf";
@@ -757,7 +757,7 @@ namespace AWSSDKDocSamples.S3
                 GetPreSignedUrlRequest request = new GetPreSignedUrlRequest
                 {
                     BucketName = "SampleBucket",
-                    Expires = DateTime.Now.AddMinutes(5)
+                    Expires = DateTime.UtcNow.AddMinutes(5)
                 };
 
                 // Get path for request
@@ -778,7 +778,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a CopyObject request
                 GetPreSignedUrlRequest request = new GetPreSignedUrlRequest
                 {
-                    Expires = DateTime.Now.AddMinutes(5)
+                    Expires = DateTime.UtcNow.AddMinutes(5)
                 };
 
                 // Get path for request
@@ -802,7 +802,7 @@ namespace AWSSDKDocSamples.S3
                     BucketName = "SampleBucket",
                     Key = "Item1",
                     Verb = HttpVerb.PUT,
-                    Expires = DateTime.Now.AddDays(10)
+                    Expires = DateTime.UtcNow.AddDays(10)
                 };
 
                 // Get path for request
