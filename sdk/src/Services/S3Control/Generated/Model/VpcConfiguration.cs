@@ -28,32 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeletePublicAccessBlock operation.
-    /// Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
-    /// account.
+    /// The Virtual Private Cloud (VPC) configuration for an access point.
     /// </summary>
-    public partial class DeletePublicAccessBlockRequest : AmazonS3ControlRequest
+    public partial class VpcConfiguration
     {
-        private string _accountId;
+        private string _vpcId;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
+        /// Gets and sets the property VpcId. 
         /// <para>
-        /// The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code>
-        /// configuration you want to remove.
+        /// If this field is specified, this access point will only allow connections from the
+        /// specified VPC ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=64)]
-        public string AccountId
+        [AWSProperty(Required=true, Min=1, Max=1024)]
+        public string VpcId
         {
-            get { return this._accountId; }
-            set { this._accountId = value; }
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
         }
 
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
         {
-            return this._accountId != null;
+            return this._vpcId != null;
         }
 
     }

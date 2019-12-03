@@ -28,32 +28,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeletePublicAccessBlock operation.
-    /// Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
-    /// account.
+    /// Indicates whether this access point policy is public. For more information about how
+    /// Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
+    /// Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
     /// </summary>
-    public partial class DeletePublicAccessBlockRequest : AmazonS3ControlRequest
+    public partial class PolicyStatus
     {
-        private string _accountId;
+        private bool? _isPublic;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
-        /// <para>
-        /// The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code>
-        /// configuration you want to remove.
-        /// </para>
+        /// Gets and sets the property IsPublic.
         /// </summary>
-        [AWSProperty(Required=true, Max=64)]
-        public string AccountId
+        public bool IsPublic
         {
-            get { return this._accountId; }
-            set { this._accountId = value; }
+            get { return this._isPublic.GetValueOrDefault(); }
+            set { this._isPublic = value; }
         }
 
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
+        // Check to see if IsPublic property is set
+        internal bool IsSetIsPublic()
         {
-            return this._accountId != null;
+            return this._isPublic.HasValue; 
         }
 
     }

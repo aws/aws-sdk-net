@@ -28,32 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeletePublicAccessBlock operation.
-    /// Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
-    /// account.
+    /// This is the response object from the GetAccessPointPolicy operation.
     /// </summary>
-    public partial class DeletePublicAccessBlockRequest : AmazonS3ControlRequest
+    public partial class GetAccessPointPolicyResponse : AmazonWebServiceResponse
     {
-        private string _accountId;
+        private string _policy;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
+        /// Gets and sets the property Policy. 
         /// <para>
-        /// The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code>
-        /// configuration you want to remove.
+        /// The access point policy associated with the specified access point.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=64)]
-        public string AccountId
+        public string Policy
         {
-            get { return this._accountId; }
-            set { this._accountId = value; }
+            get { return this._policy; }
+            set { this._policy = value; }
         }
 
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
         {
-            return this._accountId != null;
+            return this._policy != null;
         }
 
     }

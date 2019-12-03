@@ -248,6 +248,45 @@ namespace Amazon.S3Control
         #endregion
 
 
+        #region  CreateAccessPoint
+
+
+        /// <summary>
+        /// Creates an access point and associates it with the specified bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessPoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccessPoint service method, as returned by S3Control.</returns>
+        public virtual CreateAccessPointResponse CreateAccessPoint(CreateAccessPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessPointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAccessPointResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an access point and associates it with the specified bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessPoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAccessPoint service method, as returned by S3Control.</returns>
+        public virtual Task<CreateAccessPointResponse> CreateAccessPointAsync(CreateAccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessPointResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAccessPointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateJob
 
 
@@ -311,11 +350,90 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  DeleteAccessPoint
+
+
+        /// <summary>
+        /// Deletes the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessPoint service method, as returned by S3Control.</returns>
+        public virtual DeleteAccessPointResponse DeleteAccessPoint(DeleteAccessPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessPointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessPointResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccessPoint service method, as returned by S3Control.</returns>
+        public virtual Task<DeleteAccessPointResponse> DeleteAccessPointAsync(DeleteAccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessPointResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAccessPointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAccessPointPolicy
+
+
+        /// <summary>
+        /// Deletes the access point policy for the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessPointPolicy service method, as returned by S3Control.</returns>
+        public virtual DeleteAccessPointPolicyResponse DeleteAccessPointPolicy(DeleteAccessPointPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessPointPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessPointPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the access point policy for the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccessPointPolicy service method, as returned by S3Control.</returns>
+        public virtual Task<DeleteAccessPointPolicyResponse> DeleteAccessPointPolicyAsync(DeleteAccessPointPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessPointPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAccessPointPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeletePublicAccessBlock
 
 
         /// <summary>
-        /// Deletes the block public access configuration for the specified account.
+        /// Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// 
@@ -331,7 +449,8 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Deletes the block public access configuration for the specified account.
+        /// Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// <param name="cancellationToken">
@@ -413,17 +532,143 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetAccessPoint
+
+
+        /// <summary>
+        /// Returns configuration information about the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPoint service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessPoint service method, as returned by S3Control.</returns>
+        public virtual GetAccessPointResponse GetAccessPoint(GetAccessPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessPointResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessPointResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns configuration information about the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccessPoint service method, as returned by S3Control.</returns>
+        public virtual Task<GetAccessPointResponse> GetAccessPointAsync(GetAccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessPointResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAccessPointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAccessPointPolicy
+
+
+        /// <summary>
+        /// Returns the access point policy associated with the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessPointPolicy service method, as returned by S3Control.</returns>
+        public virtual GetAccessPointPolicyResponse GetAccessPointPolicy(GetAccessPointPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessPointPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessPointPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the access point policy associated with the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccessPointPolicy service method, as returned by S3Control.</returns>
+        public virtual Task<GetAccessPointPolicyResponse> GetAccessPointPolicyAsync(GetAccessPointPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessPointPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAccessPointPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAccessPointPolicyStatus
+
+
+        /// <summary>
+        /// Indicates whether the specified access point currently has a policy that allows public
+        /// access. For more information about public access through access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+        /// Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service
+        /// Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessPointPolicyStatus service method, as returned by S3Control.</returns>
+        public virtual GetAccessPointPolicyStatusResponse GetAccessPointPolicyStatus(GetAccessPointPolicyStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessPointPolicyStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessPointPolicyStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessPointPolicyStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Indicates whether the specified access point currently has a policy that allows public
+        /// access. For more information about public access through access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+        /// Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service
+        /// Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccessPointPolicyStatus service method, as returned by S3Control.</returns>
+        public virtual Task<GetAccessPointPolicyStatusResponse> GetAccessPointPolicyStatusAsync(GetAccessPointPolicyStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessPointPolicyStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessPointPolicyStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAccessPointPolicyStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPublicAccessBlock
 
 
         /// <summary>
-        /// 
+        /// Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the GetPublicAccessBlock service method, as returned by S3Control.</returns>
         /// <exception cref="Amazon.S3Control.Model.NoSuchPublicAccessBlockConfigurationException">
-        /// 
+        /// Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request
+        /// against an account that doesn't have a <code>PublicAccessBlockConfiguration</code>
+        /// set.
         /// </exception>
         public virtual GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request)
         {
@@ -436,7 +681,8 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// 
+        /// Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
         /// <param name="cancellationToken">
@@ -445,7 +691,9 @@ namespace Amazon.S3Control
         /// 
         /// <returns>The response from the GetPublicAccessBlock service method, as returned by S3Control.</returns>
         /// <exception cref="Amazon.S3Control.Model.NoSuchPublicAccessBlockConfigurationException">
-        /// 
+        /// Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request
+        /// against an account that doesn't have a <code>PublicAccessBlockConfiguration</code>
+        /// set.
         /// </exception>
         public virtual Task<GetPublicAccessBlockResponse> GetPublicAccessBlockAsync(GetPublicAccessBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -454,6 +702,53 @@ namespace Amazon.S3Control
             options.ResponseUnmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetPublicAccessBlockResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAccessPoints
+
+
+        /// <summary>
+        /// Returns a list of the access points currently associated with the specified bucket.
+        /// You can retrieve up to 1000 access points per call. If the specified bucket has more
+        /// than 1000 access points (or the number specified in <code>maxResults</code>, whichever
+        /// is less), then the response will include a continuation token that you can use to
+        /// list the additional access points.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessPoints service method.</param>
+        /// 
+        /// <returns>The response from the ListAccessPoints service method, as returned by S3Control.</returns>
+        public virtual ListAccessPointsResponse ListAccessPoints(ListAccessPointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessPointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessPointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccessPointsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of the access points currently associated with the specified bucket.
+        /// You can retrieve up to 1000 access points per call. If the specified bucket has more
+        /// than 1000 access points (or the number specified in <code>maxResults</code>, whichever
+        /// is less), then the response will include a continuation token that you can use to
+        /// list the additional access points.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessPoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAccessPoints service method, as returned by S3Control.</returns>
+        public virtual Task<ListAccessPointsResponse> ListAccessPointsAsync(ListAccessPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessPointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessPointsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAccessPointsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -517,11 +812,55 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  PutAccessPointPolicy
+
+
+        /// <summary>
+        /// Associates an access policy with the specified access point. Each access point can
+        /// have only one policy, so a request made to this API replaces any existing policy associated
+        /// with the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessPointPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutAccessPointPolicy service method, as returned by S3Control.</returns>
+        public virtual PutAccessPointPolicyResponse PutAccessPointPolicy(PutAccessPointPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccessPointPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccessPointPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates an access policy with the specified access point. Each access point can
+        /// have only one policy, so a request made to this API replaces any existing policy associated
+        /// with the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessPointPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccessPointPolicy service method, as returned by S3Control.</returns>
+        public virtual Task<PutAccessPointPolicyResponse> PutAccessPointPolicyAsync(PutAccessPointPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccessPointPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAccessPointPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutPublicAccessBlock
 
 
         /// <summary>
-        /// 
+        /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon
+        /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// 
@@ -537,7 +876,8 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// 
+        /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon
+        /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// <param name="cancellationToken">

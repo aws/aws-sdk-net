@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.CreateAccessPointRequest.AccountId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.CreateAccessPointRequest.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.CreateAccessPointRequest.Name</property>
+    <min>3</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.CreateJobRequest.AccountId</property>
     <max>64</max>
   </property-value-rule>
@@ -30,6 +44,24 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteAccessPointRequest.AccountId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteAccessPointRequest.Name</property>
+    <min>3</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteAccessPointPolicyRequest.AccountId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteAccessPointPolicyRequest.Name</property>
+    <min>3</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.DeletePublicAccessBlockRequest.AccountId</property>
     <max>64</max>
   </property-value-rule>
@@ -43,8 +75,69 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointRequest.AccountId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointRequest.Name</property>
+    <min>3</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointResponse.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointResponse.Name</property>
+    <min>3</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointPolicyRequest.AccountId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointPolicyRequest.Name</property>
+    <min>3</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointPolicyStatusRequest.AccountId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointPolicyStatusRequest.Name</property>
+    <min>3</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.GetPublicAccessBlockRequest.AccountId</property>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListAccessPointsRequest.AccountId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListAccessPointsRequest.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListAccessPointsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListAccessPointsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListAccessPointsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.ListJobsRequest.AccountId</property>
@@ -64,6 +157,15 @@
     <property>Amazon.S3Control.Model.ListJobsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.PutAccessPointPolicyRequest.AccountId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.PutAccessPointPolicyRequest.Name</property>
+    <min>3</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutPublicAccessBlockRequest.AccountId</property>
@@ -116,6 +218,16 @@
     <property>Amazon.S3Control.Model.UpdateJobStatusResponse.StatusUpdateReason</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.AccessPoint.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.AccessPoint.Name</property>
+    <min>3</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.BadRequestException.Message</property>
@@ -343,6 +455,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.TooManyRequestsException.Message</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.VpcConfiguration.VpcId</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
