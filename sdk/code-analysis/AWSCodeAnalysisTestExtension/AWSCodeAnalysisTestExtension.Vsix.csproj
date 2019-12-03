@@ -480,6 +480,10 @@
       <Project>{DCF594AB-B311-4FFD-B089-CD4DCCD5E236}</Project>
       <Name>AWSSDK.Kafka.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Kendra/AWSSDK.Kendra.CodeAnalysis.csproj">
+      <Project>{DCF9E751-7543-4E27-9F24-BCC3C0C9F5C2}</Project>
+      <Name>AWSSDK.Kendra.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/KeyManagementService/AWSSDK.KeyManagementService.CodeAnalysis.csproj">
       <Project>{F7AE8373-8387-4003-8F53-795D127CF79F}</Project>
       <Name>AWSSDK.KeyManagementService.CodeAnalysis</Name>
