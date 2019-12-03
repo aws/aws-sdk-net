@@ -43,7 +43,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property ClusterSecurityGroupId. 
         /// <para>
         /// The cluster security group that was created by Amazon EKS for the cluster. Managed
-        /// node groups use this security group for control plane to data plane communication.
+        /// node groups use this security group for control-plane-to-data-plane communication.
         /// </para>
         /// </summary>
         public string ClusterSecurityGroupId

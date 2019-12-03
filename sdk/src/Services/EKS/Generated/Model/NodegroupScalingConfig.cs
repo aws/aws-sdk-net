@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An object representing the scaling configuration details for the AutoScaling group
+    /// An object representing the scaling configuration details for the Auto Scaling group
     /// that is associated with your node group.
     /// </summary>
     public partial class NodegroupScalingConfig

@@ -369,6 +369,105 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  CreateFargateProfile
+
+        internal virtual CreateFargateProfileResponse CreateFargateProfile(CreateFargateProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFargateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFargateProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFargateProfileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at least
+        /// one Fargate profile in a cluster to be able to schedule pods on Fargate infrastructure.
+        /// 
+        ///  
+        /// <para>
+        /// The Fargate profile allows an administrator to declare which pods run on Fargate infrastructure
+        /// and specify which pods run on which Fargate profile. This declaration is done through
+        /// the profile’s selectors. Each profile can have up to five selectors that contain a
+        /// namespace and labels. A namespace is required for every selector. The label field
+        /// consists of multiple optional key-value pairs. Pods that match the selectors are scheduled
+        /// on Fargate infrastructure. If a to-be-scheduled pod matches any of the selectors in
+        /// the Fargate profile, then that pod is scheduled on Fargate infrastructure.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create a Fargate profile, you must specify a pod execution role to use with
+        /// the pods that are scheduled with the profile. This role is added to the cluster's
+        /// Kubernetes <a href="https://kubernetes.io/docs/admin/authorization/rbac/">Role Based
+        /// Access Control</a> (RBAC) for authorization so that the <code>kubelet</code> that
+        /// is running on the Fargate infrastructure can register with your Amazon EKS cluster.
+        /// This role is what allows Fargate infrastructure to appear in your cluster as nodes.
+        /// The pod execution role also provides IAM permissions to the Fargate infrastructure
+        /// to allow read access to Amazon ECR image repositories. For more information, see <a
+        /// href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+        /// Execution Role</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Fargate profiles are immutable. However, you can create a new updated profile to replace
+        /// an existing profile and then delete the original after the updated profile has finished
+        /// creating.
+        /// </para>
+        ///  
+        /// <para>
+        /// If any Fargate profiles in a cluster are in the <code>DELETING</code> status, you
+        /// must wait for that Fargate profile to finish deleting before you can create any other
+        /// profiles in that cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS
+        /// Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFargateProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFargateProfile service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceLimitExceededException">
+        /// You have encountered a service limit on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.UnsupportedAvailabilityZoneException">
+        /// At least one of your specified cluster subnets is in an Availability Zone that does
+        /// not support Amazon EKS. The exception output specifies the supported Availability
+        /// Zones for your account, from which you can choose subnets for your cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile">REST API Reference for CreateFargateProfile Operation</seealso>
+        public virtual Task<CreateFargateProfileResponse> CreateFargateProfileAsync(CreateFargateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFargateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFargateProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFargateProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateNodegroup
 
         internal virtual CreateNodegroupResponse CreateNodegroup(CreateNodegroupRequest request)
@@ -465,8 +564,8 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// If you have managed node groups attached to the cluster, you must delete them first.
-        /// For more information, see <a>DeleteNodegroup</a>.
+        /// If you have managed node groups or Fargate profiles attached to the cluster, you must
+        /// delete them first. For more information, see <a>DeleteNodegroup</a> and<a>DeleteFargateProfile</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
@@ -502,6 +601,70 @@ namespace Amazon.EKS
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFargateProfile
+
+        internal virtual DeleteFargateProfileResponse DeleteFargateProfile(DeleteFargateProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFargateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFargateProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFargateProfileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an AWS Fargate profile.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a Fargate profile, any pods that were scheduled onto Fargate infrastructure
+        /// with the profile are deleted. If those pods match another Fargate profile, then they
+        /// are scheduled on Fargate infrastructure with that profile. If they no longer match
+        /// any Fargate profiles, then they are not scheduled on Fargate infrastructure.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only one Fargate profile in a cluster can be in the <code>DELETING</code> status at
+        /// a time. You must wait for a Fargate profile to finish deleting before you can delete
+        /// any other profiles in that cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFargateProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFargateProfile service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteFargateProfile">REST API Reference for DeleteFargateProfile Operation</seealso>
+        public virtual Task<DeleteFargateProfileResponse> DeleteFargateProfileAsync(DeleteFargateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFargateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFargateProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFargateProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -622,6 +785,56 @@ namespace Amazon.EKS
             options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFargateProfile
+
+        internal virtual DescribeFargateProfileResponse DescribeFargateProfile(DescribeFargateProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFargateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFargateProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFargateProfileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns descriptive information about an AWS Fargate profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFargateProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFargateProfile service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile">REST API Reference for DescribeFargateProfile Operation</seealso>
+        public virtual Task<DescribeFargateProfileResponse> DescribeFargateProfileAsync(DescribeFargateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFargateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFargateProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFargateProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -781,6 +994,57 @@ namespace Amazon.EKS
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListFargateProfiles
+
+        internal virtual ListFargateProfilesResponse ListFargateProfiles(ListFargateProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFargateProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFargateProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListFargateProfilesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the AWS Fargate profiles associated with the specified cluster in your AWS account
+        /// in the specified Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFargateProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFargateProfiles service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles">REST API Reference for ListFargateProfiles Operation</seealso>
+        public virtual Task<ListFargateProfilesResponse> ListFargateProfilesAsync(ListFargateProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFargateProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFargateProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFargateProfilesResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -121,7 +121,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ScalingConfig. 
         /// <para>
-        /// The scaling configuration details for the AutoScaling group after the update.
+        /// The scaling configuration details for the Auto Scaling group after the update.
         /// </para>
         /// </summary>
         public NodegroupScalingConfig ScalingConfig

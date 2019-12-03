@@ -67,7 +67,7 @@ namespace Amazon.EKS.Model
         /// <para>
         ///  <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template version for
         /// your managed node group does not match the version that Amazon EKS created. You may
-        /// be able to revert to the Amazon EKS-created version to recover.
+        /// be able to revert to the version that Amazon EKS created to recover.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -87,6 +87,12 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <b>NodeCreationFailure</b>: Your launched instances are unable to register with your
+        /// Amazon EKS cluster. Common causes of this failure are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
+        /// node IAM role</a> permissions or lack of outbound internet access for the nodes. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances
         /// of the specified instance type. You may be able to request an Amazon EC2 instance
         /// limit increase to recover.
@@ -98,8 +104,8 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AccessDenied</b>: Amazon EKS and or one or more of your managed nodes is unable
-        /// to communicate with your cluster API server.
+        ///  <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to
+        /// communicate with your cluster API server.
         /// </para>
         ///  </li> <li> 
         /// <para>

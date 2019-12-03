@@ -64,7 +64,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property AmiType. 
         /// <para>
         /// The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code>
-        /// AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU
+        /// AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU
         /// instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized
         /// Linux AMI.
         /// </para>
@@ -263,7 +263,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ScalingConfig. 
         /// <para>
-        /// The scaling configuration details for the AutoScaling group that is created for your
+        /// The scaling configuration details for the Auto Scaling group that is created for your
         /// node group.
         /// </para>
         /// </summary>
@@ -282,7 +282,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// The subnets to use for the AutoScaling group that is created for your node group.
+        /// The subnets to use for the Auto Scaling group that is created for your node group.
         /// These subnets must have the tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code>
         /// with a value of <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with
         /// the name of your cluster.

@@ -167,6 +167,111 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  CreateFargateProfile
+
+
+        /// <summary>
+        /// Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at least
+        /// one Fargate profile in a cluster to be able to schedule pods on Fargate infrastructure.
+        /// 
+        ///  
+        /// <para>
+        /// The Fargate profile allows an administrator to declare which pods run on Fargate infrastructure
+        /// and specify which pods run on which Fargate profile. This declaration is done through
+        /// the profile’s selectors. Each profile can have up to five selectors that contain a
+        /// namespace and labels. A namespace is required for every selector. The label field
+        /// consists of multiple optional key-value pairs. Pods that match the selectors are scheduled
+        /// on Fargate infrastructure. If a to-be-scheduled pod matches any of the selectors in
+        /// the Fargate profile, then that pod is scheduled on Fargate infrastructure.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create a Fargate profile, you must specify a pod execution role to use with
+        /// the pods that are scheduled with the profile. This role is added to the cluster's
+        /// Kubernetes <a href="https://kubernetes.io/docs/admin/authorization/rbac/">Role Based
+        /// Access Control</a> (RBAC) for authorization so that the <code>kubelet</code> that
+        /// is running on the Fargate infrastructure can register with your Amazon EKS cluster.
+        /// This role is what allows Fargate infrastructure to appear in your cluster as nodes.
+        /// The pod execution role also provides IAM permissions to the Fargate infrastructure
+        /// to allow read access to Amazon ECR image repositories. For more information, see <a
+        /// href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+        /// Execution Role</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Fargate profiles are immutable. However, you can create a new updated profile to replace
+        /// an existing profile and then delete the original after the updated profile has finished
+        /// creating.
+        /// </para>
+        ///  
+        /// <para>
+        /// If any Fargate profiles in a cluster are in the <code>DELETING</code> status, you
+        /// must wait for that Fargate profile to finish deleting before you can create any other
+        /// profiles in that cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS
+        /// Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFargateProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateFargateProfile service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceLimitExceededException">
+        /// You have encountered a service limit on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.UnsupportedAvailabilityZoneException">
+        /// At least one of your specified cluster subnets is in an Availability Zone that does
+        /// not support Amazon EKS. The exception output specifies the supported Availability
+        /// Zones for your account, from which you can choose subnets for your cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile">REST API Reference for CreateFargateProfile Operation</seealso>
+        CreateFargateProfileResponse CreateFargateProfile(CreateFargateProfileRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFargateProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFargateProfile operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFargateProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile">REST API Reference for CreateFargateProfile Operation</seealso>
+        IAsyncResult BeginCreateFargateProfile(CreateFargateProfileRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFargateProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFargateProfile.</param>
+        /// 
+        /// <returns>Returns a  CreateFargateProfileResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile">REST API Reference for CreateFargateProfile Operation</seealso>
+        CreateFargateProfileResponse EndCreateFargateProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateNodegroup
 
 
@@ -259,8 +364,8 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// If you have managed node groups attached to the cluster, you must delete them first.
-        /// For more information, see <a>DeleteNodegroup</a>.
+        /// If you have managed node groups or Fargate profiles attached to the cluster, you must
+        /// delete them first. For more information, see <a>DeleteNodegroup</a> and<a>DeleteFargateProfile</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
@@ -313,6 +418,76 @@ namespace Amazon.EKS
         /// <returns>Returns a  DeleteClusterResult from EKS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         DeleteClusterResponse EndDeleteCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteFargateProfile
+
+
+        /// <summary>
+        /// Deletes an AWS Fargate profile.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a Fargate profile, any pods that were scheduled onto Fargate infrastructure
+        /// with the profile are deleted. If those pods match another Fargate profile, then they
+        /// are scheduled on Fargate infrastructure with that profile. If they no longer match
+        /// any Fargate profiles, then they are not scheduled on Fargate infrastructure.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only one Fargate profile in a cluster can be in the <code>DELETING</code> status at
+        /// a time. You must wait for a Fargate profile to finish deleting before you can delete
+        /// any other profiles in that cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFargateProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFargateProfile service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteFargateProfile">REST API Reference for DeleteFargateProfile Operation</seealso>
+        DeleteFargateProfileResponse DeleteFargateProfile(DeleteFargateProfileRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFargateProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFargateProfile operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFargateProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteFargateProfile">REST API Reference for DeleteFargateProfile Operation</seealso>
+        IAsyncResult BeginDeleteFargateProfile(DeleteFargateProfileRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFargateProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFargateProfile.</param>
+        /// 
+        /// <returns>Returns a  DeleteFargateProfileResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteFargateProfile">REST API Reference for DeleteFargateProfile Operation</seealso>
+        DeleteFargateProfileResponse EndDeleteFargateProfile(IAsyncResult asyncResult);
 
         #endregion
         
@@ -445,6 +620,62 @@ namespace Amazon.EKS
         /// <returns>Returns a  DescribeClusterResult from EKS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         DescribeClusterResponse EndDescribeCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeFargateProfile
+
+
+        /// <summary>
+        /// Returns descriptive information about an AWS Fargate profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFargateProfile service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFargateProfile service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile">REST API Reference for DescribeFargateProfile Operation</seealso>
+        DescribeFargateProfileResponse DescribeFargateProfile(DescribeFargateProfileRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFargateProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFargateProfile operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFargateProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile">REST API Reference for DescribeFargateProfile Operation</seealso>
+        IAsyncResult BeginDescribeFargateProfile(DescribeFargateProfileRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFargateProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFargateProfile.</param>
+        /// 
+        /// <returns>Returns a  DescribeFargateProfileResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile">REST API Reference for DescribeFargateProfile Operation</seealso>
+        DescribeFargateProfileResponse EndDescribeFargateProfile(IAsyncResult asyncResult);
 
         #endregion
         
@@ -622,6 +853,63 @@ namespace Amazon.EKS
         /// <returns>Returns a  ListClustersResult from EKS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListClusters">REST API Reference for ListClusters Operation</seealso>
         ListClustersResponse EndListClusters(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListFargateProfiles
+
+
+        /// <summary>
+        /// Lists the AWS Fargate profiles associated with the specified cluster in your AWS account
+        /// in the specified Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFargateProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListFargateProfiles service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles">REST API Reference for ListFargateProfiles Operation</seealso>
+        ListFargateProfilesResponse ListFargateProfiles(ListFargateProfilesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFargateProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFargateProfiles operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFargateProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles">REST API Reference for ListFargateProfiles Operation</seealso>
+        IAsyncResult BeginListFargateProfiles(ListFargateProfilesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFargateProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFargateProfiles.</param>
+        /// 
+        /// <returns>Returns a  ListFargateProfilesResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles">REST API Reference for ListFargateProfiles Operation</seealso>
+        ListFargateProfilesResponse EndListFargateProfiles(IAsyncResult asyncResult);
 
         #endregion
         

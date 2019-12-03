@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An object representing the resources associated with the nodegroup, such as AutoScaling
-    /// groups and security groups for remote access.
+    /// An object representing the resources associated with the node group, such as Auto
+    /// Scaling groups and security groups for remote access.
     /// </summary>
     public partial class NodegroupResources
     {
@@ -39,7 +39,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroups. 
         /// <para>
-        /// The autoscaling groups associated with the node group.
+        /// The Auto Scaling groups associated with the node group.
         /// </para>
         /// </summary>
         public List<AutoScalingGroup> AutoScalingGroups

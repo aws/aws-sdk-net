@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An Auto Scaling group that is associated with an Amazon EKS managed node group.
+    /// This is the response object from the DeleteFargateProfile operation.
     /// </summary>
-    public partial class AutoScalingGroup
+    public partial class DeleteFargateProfileResponse : AmazonWebServiceResponse
     {
-        private string _name;
+        private FargateProfile _fargateProfile;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property FargateProfile. 
         /// <para>
-        /// The name of the Auto Scaling group associated with an Amazon EKS managed node group.
+        /// The deleted Fargate profile.
         /// </para>
         /// </summary>
-        public string Name
+        public FargateProfile FargateProfile
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._fargateProfile; }
+            set { this._fargateProfile = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if FargateProfile property is set
+        internal bool IsSetFargateProfile()
         {
-            return this._name != null;
+            return this._fargateProfile != null;
         }
 
     }

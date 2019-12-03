@@ -58,10 +58,10 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property SourceSecurityGroups. 
         /// <para>
-        /// The security groups to allow SSH access (port 22) from on the worker nodes. If you
-        /// specify an Amazon EC2 SSH key, but you do not specify a source security group when
-        /// you create a managed node group, port 22 on the worker nodes is opened to the internet
-        /// (0.0.0.0/0). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
+        /// The security groups that are allowed SSH access (port 22) to the worker nodes. If
+        /// you specify an Amazon EC2 SSH key but do not specify a source security group when
+        /// you create a managed node group, then port 22 on the worker nodes is opened to the
+        /// internet (0.0.0.0/0). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
         /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
