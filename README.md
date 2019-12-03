@@ -173,6 +173,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Comprehend is an AWS service for gaining insight into the content of text and documents. It can be used to determine the topics contained in your documents, the topics they discuss, the  predominant sentiment expressed in them, the predominant language used, and more. For more information, go to the Amazon Comprehend product page. To get started, see the Amazon Comprehend Developer Guide.
 * [AWSSDK.ComprehendMedical](https://www.nuget.org/packages/AWSSDK.ComprehendMedical/)
 	* The first release of Comprehend Medical includes two APIs, detectPHI and detectEntities. DetectPHI extracts PHI from your clinical text, and detectEntities extracts entities such as medication, medical conditions, or anatomy. DetectEntities also extracts attributes (e.g. dosage for medication) and identifies contextual traits (e.g. negation) for each entity.
+* [AWSSDK.ComputeOptimizer](https://www.nuget.org/packages/AWSSDK.ComputeOptimizer/)
+	* Initial release of AWS Compute Optimizer. AWS Compute Optimizer recommends optimal AWS Compute resources to reduce costs and improve performance for your workloads.
 * [AWSSDK.ConfigService](https://www.nuget.org/packages/AWSSDK.ConfigService/)
 	* AWS Config is a fully managed service that provides you with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance.
 * [AWSSDK.Connect](https://www.nuget.org/packages/AWSSDK.Connect/)

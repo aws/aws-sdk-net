@@ -248,6 +248,10 @@
       <Project>{F1768DB0-5D1B-4009-9A43-28E61B7AD54D}</Project>
       <Name>AWSSDK.ComprehendMedical.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ComputeOptimizer/AWSSDK.ComputeOptimizer.CodeAnalysis.csproj">
+      <Project>{067069AF-F6E1-4485-8571-D5A6E796ACF6}</Project>
+      <Name>AWSSDK.ComputeOptimizer.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ConfigService/AWSSDK.ConfigService.CodeAnalysis.csproj">
       <Project>{2F79A9E2-BE9C-43DB-876A-A7F16A5B64AC}</Project>
       <Name>AWSSDK.ConfigService.CodeAnalysis</Name>
