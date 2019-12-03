@@ -648,6 +648,10 @@
       <Project>{9539F8B3-78F6-4C4D-8A47-664D8476011F}</Project>
       <Name>AWSSDK.Organizations.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Outposts/AWSSDK.Outposts.CodeAnalysis.csproj">
+      <Project>{21666C44-79EE-4A87-B6CF-64FBAE5675A8}</Project>
+      <Name>AWSSDK.Outposts.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Personalize/AWSSDK.Personalize.CodeAnalysis.csproj">
       <Project>{66D218FF-F3FD-49FD-9929-18D43E7A35E7}</Project>
       <Name>AWSSDK.Personalize.CodeAnalysis</Name>

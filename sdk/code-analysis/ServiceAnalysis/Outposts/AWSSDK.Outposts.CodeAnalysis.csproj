@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5DDFE5E5-54FA-42BA-8397-214DD772CA93}</ProjectGuid>
+    <ProjectGuid>{21666C44-79EE-4A87-B6CF-64FBAE5675A8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Amazon.CodeGuruProfiler.CodeAnalysis</RootNamespace>
-    <AssemblyName>AWSSDK.CodeGuruProfiler.CodeAnalysis</AssemblyName>
+    <RootNamespace>Amazon.Outposts.CodeAnalysis</RootNamespace>
+    <AssemblyName>AWSSDK.Outposts.CodeAnalysis</AssemblyName>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -35,9 +35,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Generated\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
