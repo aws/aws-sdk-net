@@ -105,6 +105,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.
 * [AWSSDK.Athena](https://www.nuget.org/packages/AWSSDK.Athena/)
 	* This release adds support for Amazon Athena. Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run.
+* [AWSSDK.AugmentedAIRuntime](https://www.nuget.org/packages/AWSSDK.AugmentedAIRuntime/)
+	* This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.
 * [AWSSDK.AutoScaling](https://www.nuget.org/packages/AWSSDK.AutoScaling/)
 	* Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.
 * [AWSSDK.AutoScalingPlans](https://www.nuget.org/packages/AWSSDK.AutoScalingPlans/)

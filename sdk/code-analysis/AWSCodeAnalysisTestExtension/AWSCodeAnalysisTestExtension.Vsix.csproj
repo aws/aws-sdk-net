@@ -112,6 +112,10 @@
       <Project>{C759B78F-82AA-4460-9E39-2C8A695A76B6}</Project>
       <Name>AWSSDK.Athena.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AugmentedAIRuntime/AWSSDK.AugmentedAIRuntime.CodeAnalysis.csproj">
+      <Project>{2B2BECB3-01AC-4DCC-A5B1-AA1B00A4F601}</Project>
+      <Name>AWSSDK.AugmentedAIRuntime.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/AutoScaling/AWSSDK.AutoScaling.CodeAnalysis.csproj">
       <Project>{DE877AEA-BBDF-43E5-90C5-765D0B02BFC3}</Project>
       <Name>AWSSDK.AutoScaling.CodeAnalysis</Name>
