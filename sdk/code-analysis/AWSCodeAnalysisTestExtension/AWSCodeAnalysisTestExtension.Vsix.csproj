@@ -216,6 +216,10 @@
       <Project>{B853D48D-7004-4126-ACBF-3C9E9FAAE3C2}</Project>
       <Name>AWSSDK.CodeDeploy.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CodeGuruReviewer/AWSSDK.CodeGuruReviewer.CodeAnalysis.csproj">
+      <Project>{98A53020-9E36-4F6F-91EE-9D88ED7CF713}</Project>
+      <Name>AWSSDK.CodeGuruReviewer.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CodePipeline/AWSSDK.CodePipeline.CodeAnalysis.csproj">
       <Project>{248F1FBE-1690-4C43-A76E-A135D674AEAC}</Project>
       <Name>AWSSDK.CodePipeline.CodeAnalysis</Name>

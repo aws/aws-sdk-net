@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5FE820DE-C5FA-4A9E-A252-BE87AFCEBE3A}</ProjectGuid>
+    <ProjectGuid>{98A53020-9E36-4F6F-91EE-9D88ED7CF713}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Amazon.FraudDetector.CodeAnalysis</RootNamespace>
-    <AssemblyName>AWSSDK.FraudDetector.CodeAnalysis</AssemblyName>
+    <RootNamespace>Amazon.CodeGuruReviewer.CodeAnalysis</RootNamespace>
+    <AssemblyName>AWSSDK.CodeGuruReviewer.CodeAnalysis</AssemblyName>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -35,9 +35,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Generated\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
