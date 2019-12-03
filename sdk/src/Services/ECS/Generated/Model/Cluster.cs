@@ -36,8 +36,12 @@ namespace Amazon.ECS.Model
     public partial class Cluster
     {
         private int? _activeServicesCount;
+        private List<Attachment> _attachments = new List<Attachment>();
+        private string _attachmentsStatus;
+        private List<string> _capacityProviders = new List<string>();
         private string _clusterArn;
         private string _clusterName;
+        private List<CapacityProviderStrategyItem> _defaultCapacityProviderStrategy = new List<CapacityProviderStrategyItem>();
         private int? _pendingTasksCount;
         private int? _registeredContainerInstancesCount;
         private int? _runningTasksCount;
@@ -63,6 +67,76 @@ namespace Amazon.ECS.Model
         internal bool IsSetActiveServicesCount()
         {
             return this._activeServicesCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Attachments. 
+        /// <para>
+        /// The resources attached to a cluster. When using a capacity provider with a cluster,
+        /// the Auto Scaling plan that is created will be returned as a cluster attachment.
+        /// </para>
+        /// </summary>
+        public List<Attachment> Attachments
+        {
+            get { return this._attachments; }
+            set { this._attachments = value; }
+        }
+
+        // Check to see if Attachments property is set
+        internal bool IsSetAttachments()
+        {
+            return this._attachments != null && this._attachments.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachmentsStatus. 
+        /// <para>
+        /// The status of the capacity providers associated with the cluster. The following are
+        /// the states that will be returned:
+        /// </para>
+        ///  <dl> <dt>UPDATE_IN_PROGRESS</dt> <dd> 
+        /// <para>
+        /// The available capacity providers for the cluster are updating. This occurs when the
+        /// Auto Scaling plan is provisioning or deprovisioning.
+        /// </para>
+        ///  </dd> <dt>UPDATE_COMPLETE</dt> <dd> 
+        /// <para>
+        /// The capacity providers have successfully updated.
+        /// </para>
+        ///  </dd> <dt>UPDATE_FAILED</dt> <dd> 
+        /// <para>
+        /// The capacity provider updates failed.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        public string AttachmentsStatus
+        {
+            get { return this._attachmentsStatus; }
+            set { this._attachmentsStatus = value; }
+        }
+
+        // Check to see if AttachmentsStatus property is set
+        internal bool IsSetAttachmentsStatus()
+        {
+            return this._attachmentsStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviders. 
+        /// <para>
+        /// The capacity providers associated with the cluster.
+        /// </para>
+        /// </summary>
+        public List<string> CapacityProviders
+        {
+            get { return this._capacityProviders; }
+            set { this._capacityProviders = value; }
+        }
+
+        // Check to see if CapacityProviders property is set
+        internal bool IsSetCapacityProviders()
+        {
+            return this._capacityProviders != null && this._capacityProviders.Count > 0; 
         }
 
         /// <summary>
@@ -102,6 +176,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultCapacityProviderStrategy. 
+        /// <para>
+        /// The default capacity provider strategy for the cluster. When services or tasks are
+        /// run in the cluster with no launch type or capacity provider strategy specified, the
+        /// default capacity provider strategy is used.
+        /// </para>
+        /// </summary>
+        public List<CapacityProviderStrategyItem> DefaultCapacityProviderStrategy
+        {
+            get { return this._defaultCapacityProviderStrategy; }
+            set { this._defaultCapacityProviderStrategy = value; }
+        }
+
+        // Check to see if DefaultCapacityProviderStrategy property is set
+        internal bool IsSetDefaultCapacityProviderStrategy()
+        {
+            return this._defaultCapacityProviderStrategy != null && this._defaultCapacityProviderStrategy.Count > 0; 
         }
 
         /// <summary>

@@ -82,6 +82,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("capacityProviderName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CapacityProviderName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("clusterArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

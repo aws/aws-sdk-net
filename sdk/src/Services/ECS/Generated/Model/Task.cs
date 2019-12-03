@@ -35,6 +35,7 @@ namespace Amazon.ECS.Model
         private List<Attachment> _attachments = new List<Attachment>();
         private List<Attribute> _attributes = new List<Attribute>();
         private string _availabilityZone;
+        private string _capacityProviderName;
         private string _clusterArn;
         private Connectivity _connectivity;
         private DateTime? _connectivityAt;
@@ -118,6 +119,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderName. 
+        /// <para>
+        /// The capacity provider associated with the task.
+        /// </para>
+        /// </summary>
+        public string CapacityProviderName
+        {
+            get { return this._capacityProviderName; }
+            set { this._capacityProviderName = value; }
+        }
+
+        // Check to see if CapacityProviderName property is set
+        internal bool IsSetCapacityProviderName()
+        {
+            return this._capacityProviderName != null;
         }
 
         /// <summary>

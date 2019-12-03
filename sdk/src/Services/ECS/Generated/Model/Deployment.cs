@@ -33,6 +33,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class Deployment
     {
+        private List<CapacityProviderStrategyItem> _capacityProviderStrategy = new List<CapacityProviderStrategyItem>();
         private DateTime? _createdAt;
         private int? _desiredCount;
         private string _id;
@@ -44,6 +45,24 @@ namespace Amazon.ECS.Model
         private string _status;
         private string _taskDefinition;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderStrategy. 
+        /// <para>
+        /// The capacity provider strategy that the deployment is using.
+        /// </para>
+        /// </summary>
+        public List<CapacityProviderStrategyItem> CapacityProviderStrategy
+        {
+            get { return this._capacityProviderStrategy; }
+            set { this._capacityProviderStrategy = value; }
+        }
+
+        // Check to see if CapacityProviderStrategy property is set
+        internal bool IsSetCapacityProviderStrategy()
+        {
+            return this._capacityProviderStrategy != null && this._capacityProviderStrategy.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 

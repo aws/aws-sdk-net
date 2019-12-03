@@ -88,6 +88,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("capacityProviderName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CapacityProviderName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("containerInstanceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

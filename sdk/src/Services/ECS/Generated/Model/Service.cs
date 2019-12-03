@@ -32,6 +32,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class Service
     {
+        private List<CapacityProviderStrategyItem> _capacityProviderStrategy = new List<CapacityProviderStrategyItem>();
         private string _clusterArn;
         private DateTime? _createdAt;
         private string _createdBy;
@@ -60,6 +61,24 @@ namespace Amazon.ECS.Model
         private List<Tag> _tags = new List<Tag>();
         private string _taskDefinition;
         private List<TaskSet> _taskSets = new List<TaskSet>();
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderStrategy. 
+        /// <para>
+        /// The capacity provider strategy associated with the service.
+        /// </para>
+        /// </summary>
+        public List<CapacityProviderStrategyItem> CapacityProviderStrategy
+        {
+            get { return this._capacityProviderStrategy; }
+            set { this._capacityProviderStrategy = value; }
+        }
+
+        // Check to see if CapacityProviderStrategy property is set
+        internal bool IsSetCapacityProviderStrategy()
+        {
+            return this._capacityProviderStrategy != null && this._capacityProviderStrategy.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterArn. 
