@@ -316,6 +316,14 @@ namespace Amazon.Elasticsearch
         /// Constant T2SmallElasticsearch for ESPartitionInstanceType
         /// </summary>
         public static readonly ESPartitionInstanceType T2SmallElasticsearch = new ESPartitionInstanceType("t2.small.elasticsearch");
+        /// <summary>
+        /// Constant Ultrawarm1LargeElasticsearch for ESPartitionInstanceType
+        /// </summary>
+        public static readonly ESPartitionInstanceType Ultrawarm1LargeElasticsearch = new ESPartitionInstanceType("ultrawarm1.large.elasticsearch");
+        /// <summary>
+        /// Constant Ultrawarm1MediumElasticsearch for ESPartitionInstanceType
+        /// </summary>
+        public static readonly ESPartitionInstanceType Ultrawarm1MediumElasticsearch = new ESPartitionInstanceType("ultrawarm1.medium.elasticsearch");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -346,6 +354,56 @@ namespace Amazon.Elasticsearch
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ESPartitionInstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ESWarmPartitionInstanceType.
+    /// </summary>
+    public class ESWarmPartitionInstanceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ultrawarm1LargeElasticsearch for ESWarmPartitionInstanceType
+        /// </summary>
+        public static readonly ESWarmPartitionInstanceType Ultrawarm1LargeElasticsearch = new ESWarmPartitionInstanceType("ultrawarm1.large.elasticsearch");
+        /// <summary>
+        /// Constant Ultrawarm1MediumElasticsearch for ESWarmPartitionInstanceType
+        /// </summary>
+        public static readonly ESWarmPartitionInstanceType Ultrawarm1MediumElasticsearch = new ESWarmPartitionInstanceType("ultrawarm1.medium.elasticsearch");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ESWarmPartitionInstanceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ESWarmPartitionInstanceType FindValue(string value)
+        {
+            return FindValue<ESWarmPartitionInstanceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ESWarmPartitionInstanceType(string value)
         {
             return FindValue(value);
         }

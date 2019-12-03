@@ -75,6 +75,24 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceType);
             }
 
+            if(requestObject.IsSetWarmCount())
+            {
+                context.Writer.WritePropertyName("WarmCount");
+                context.Writer.Write(requestObject.WarmCount);
+            }
+
+            if(requestObject.IsSetWarmEnabled())
+            {
+                context.Writer.WritePropertyName("WarmEnabled");
+                context.Writer.Write(requestObject.WarmEnabled);
+            }
+
+            if(requestObject.IsSetWarmType())
+            {
+                context.Writer.WritePropertyName("WarmType");
+                context.Writer.Write(requestObject.WarmType);
+            }
+
             if(requestObject.IsSetZoneAwarenessConfig())
             {
                 context.Writer.WritePropertyName("ZoneAwarenessConfig");
