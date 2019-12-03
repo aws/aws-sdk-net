@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.640.0",
+    "ProductVersion" : "3.3.641.0",
     "CoreVersion"    : "3.3.103.71",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1649,6 +1649,14 @@
             "InPreview"               : false
         },
         "Schemas"                         : {
+            "Version" : "3.3.100.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.103.71"
+            },
+            "InPreview"               : false
+        },
+        "AccessAnalyzer"                  : {
             "Version" : "3.3.100.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
