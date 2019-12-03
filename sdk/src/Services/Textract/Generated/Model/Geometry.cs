@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// Information about where a recognized text, key, value, table, or table cell is located
-    /// on a document page.
+    /// Information about where the following items are located on a document page: detected
+    /// page, text, key-value pairs, tables, table cells, and selection elements.
     /// </summary>
     public partial class Geometry
     {
@@ -39,7 +39,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property BoundingBox. 
         /// <para>
-        /// An axis-aligned coarse representation of the location of the recognized text on the
+        /// An axis-aligned coarse representation of the location of the recognized item on the
         /// document page.
         /// </para>
         /// </summary>
@@ -58,7 +58,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Polygon. 
         /// <para>
-        /// Within the bounding box, a fine-grained polygon around the recognized text.
+        /// Within the bounding box, a fine-grained polygon around the recognized item.
         /// </para>
         /// </summary>
         public List<Point> Polygon

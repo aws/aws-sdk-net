@@ -28,10 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// The X and Y coordinates of a point on a document page. The X and Y values returned
-    /// are ratios of the overall document page size. For example, if the input document is
-    /// 700 x 200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50)
-    /// pixel coordinate on the document page.
+    /// The X and Y coordinates of a point on a document page. The X and Y values that are
+    /// returned are ratios of the overall document page size. For example, if the input document
+    /// is 700 x 200 and the operation returns X=0.5 and Y=0.25, then the point is at the
+    /// (350,50) pixel coordinate on the document page.
     /// 
     ///  
     /// <para>

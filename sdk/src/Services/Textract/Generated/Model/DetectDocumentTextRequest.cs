@@ -30,9 +30,9 @@ namespace Amazon.Textract.Model
     /// <summary>
     /// Container for the parameters to the DetectDocumentText operation.
     /// Detects text in the input document. Amazon Textract can detect lines of text and the
-    /// words that make up a line of text. The input document must be an image in JPG or PNG
-    /// format. <code>DetectDocumentText</code> returns the detected text in an array of <a>Block</a>
-    /// objects. 
+    /// words that make up a line of text. The input document must be an image in JPEG or
+    /// PNG format. <code>DetectDocumentText</code> returns the detected text in an array
+    /// of <a>Block</a> objects. 
     /// 
     ///  
     /// <para>
@@ -62,12 +62,12 @@ namespace Amazon.Textract.Model
         /// <para>
         /// The input document as base64-encoded bytes or an Amazon S3 object. If you use the
         /// AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document
-        /// must be an image in JPG or PNG format.
+        /// must be an image in JPEG or PNG format.
         /// </para>
         ///  
         /// <para>
-        /// If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode
-        /// image bytes passed using the <code>Bytes</code> field. 
+        /// If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+        /// image bytes that are passed using the <code>Bytes</code> field. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

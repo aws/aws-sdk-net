@@ -37,7 +37,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Pages. 
         /// <para>
-        /// The number of pages detected in the document.
+        /// The number of pages that are detected in the document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

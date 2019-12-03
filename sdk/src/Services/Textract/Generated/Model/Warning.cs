@@ -29,7 +29,7 @@ namespace Amazon.Textract.Model
 {
     /// <summary>
     /// A warning about an issue that occurred during asynchronous text analysis (<a>StartDocumentAnalysis</a>)
-    /// or asynchronous document-text detection (<a>StartDocumentTextDetection</a>).
+    /// or asynchronous document text detection (<a>StartDocumentTextDetection</a>).
     /// </summary>
     public partial class Warning
     {

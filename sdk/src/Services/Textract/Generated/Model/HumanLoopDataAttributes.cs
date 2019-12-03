@@ -28,31 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// This is the response object from the StartDocumentAnalysis operation.
+    /// Allows you to set attributes of the image. Currently, you can declare an image as
+    /// free of personally identifiable information and adult content.
     /// </summary>
-    public partial class StartDocumentAnalysisResponse : AmazonWebServiceResponse
+    public partial class HumanLoopDataAttributes
     {
-        private string _jobId;
+        private List<string> _contentClassifiers = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property JobId. 
+        /// Gets and sets the property ContentClassifiers. 
         /// <para>
-        /// The identifier for the document text detection job. Use <code>JobId</code> to identify
-        /// the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code>
-        /// value is only valid for 7 days.
+        /// Sets whether the input image is free of personally identifiable information or adult
+        /// content.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string JobId
+        [AWSProperty(Max=256)]
+        public List<string> ContentClassifiers
         {
-            get { return this._jobId; }
-            set { this._jobId = value; }
+            get { return this._contentClassifiers; }
+            set { this._contentClassifiers = value; }
         }
 
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
+        // Check to see if ContentClassifiers property is set
+        internal bool IsSetContentClassifiers()
         {
-            return this._jobId != null;
+            return this._contentClassifiers != null && this._contentClassifiers.Count > 0; 
         }
 
     }

@@ -51,6 +51,12 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AnalyzeDocumentModelVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AnalyzeDocumentModelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Blocks", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Block, BlockUnmarshaller>(BlockUnmarshaller.Instance);
@@ -61,6 +67,12 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DocumentMetadataUnmarshaller.Instance;
                     response.DocumentMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HumanLoopActivationOutput", targetDepth))
+                {
+                    var unmarshaller = HumanLoopActivationOutputUnmarshaller.Instance;
+                    response.HumanLoopActivationOutput = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,6 +101,10 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("DocumentTooLargeException"))
             {
                 return new DocumentTooLargeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("HumanLoopQuotaExceededException"))
+            {
+                return new HumanLoopQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
             {

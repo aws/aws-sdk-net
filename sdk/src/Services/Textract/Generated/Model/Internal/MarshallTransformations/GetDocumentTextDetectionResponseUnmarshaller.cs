@@ -57,6 +57,12 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                     response.Blocks = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DetectDocumentTextModelVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DetectDocumentTextModelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DocumentMetadata", targetDepth))
                 {
                     var unmarshaller = DocumentMetadataUnmarshaller.Instance;

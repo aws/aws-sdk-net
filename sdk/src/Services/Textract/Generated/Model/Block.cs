@@ -29,10 +29,10 @@ namespace Amazon.Textract.Model
 {
     /// <summary>
     /// A <code>Block</code> represents items that are recognized in a document within a group
-    /// of pixels close to each other. The information returned in a <code>Block</code> depends
-    /// on the type of operation. In document-text detection (for example <a>DetectDocumentText</a>),
+    /// of pixels close to each other. The information returned in a <code>Block</code> object
+    /// depends on the type of operation. In text detection for documents (for example <a>DetectDocumentText</a>),
     /// you get information about the detected words and lines of text. In text analysis (for
-    /// example <a>AnalyzeDocument</a>), you can also get information about the fields, tables
+    /// example <a>AnalyzeDocument</a>), you can also get information about the fields, tables,
     /// and selection elements that are detected in the document.
     /// 
     ///  
@@ -67,13 +67,13 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property BlockType. 
         /// <para>
-        /// The type of text that's recognized in a block. In text-detection operations, the following
+        /// The type of text item that's recognized. In operations for text detection, the following
         /// types are returned:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>PAGE</i> - Contains a list of the LINE Block objects that are detected on a document
-        /// page.
+        ///  <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected
+        /// on a document page.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -82,8 +82,8 @@ namespace Amazon.Textract.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document
-        /// page.
+        ///  <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a
+        /// document page.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -91,31 +91,31 @@ namespace Amazon.Textract.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>PAGE</i> - Contains a list of child Block objects that are detected on a document
-        /// page.
+        ///  <i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected
+        /// on a document page.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE Block objects for a field that's
-        /// detected on a document page. Use the <code>EntityType</code> field to determine if
-        /// a KEY_VALUE_SET object is a KEY Block object or a VALUE Block object. 
+        ///  <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked
+        /// text that's detected on a document page. Use the <code>EntityType</code> field to
+        /// determine if a KEY_VALUE_SET object is a KEY <code>Block</code> object or a VALUE
+        /// <code>Block</code> object. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>WORD</i> - A word detected on a document page. A word is one or more ISO basic
-        /// Latin script characters that aren't separated by spaces that's detected on a document
-        /// page.
+        ///  <i>WORD</i> - A word that's detected on a document page. A word is one or more ISO
+        /// basic Latin script characters that aren't separated by spaces.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document
-        /// page.
+        ///  <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a
+        /// document page.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>TABLE</i> - A table that's detected on a document page. A table is any grid-based
-        /// information with 2 or more rows or columns with a cell span of 1 row and 1 column
-        /// each. 
+        ///  <i>TABLE</i> - A table that's detected on a document page. A table is grid-based
+        /// information with two or more rows or columns, with a cell span of one row and one
+        /// column each. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -124,8 +124,8 @@ namespace Amazon.Textract.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>SELECTION_ELEMENT</i> - A selectable element such as a radio button or checkbox
-        /// that's detected on a document page. Use the value of <code>SelectionStatus</code>
+        ///  <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button)
+        /// or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code>
         /// to determine the status of the selection element.
         /// </para>
         ///  </li> </ul>
@@ -165,8 +165,10 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property ColumnSpan. 
         /// <para>
-        /// The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned
-        /// by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. 
+        /// The number of columns that a table cell spans. Currently this value is always 1, even
+        /// if the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't
+        /// returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -185,8 +187,8 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Confidence. 
         /// <para>
-        /// The confidence that Amazon Textract has in the accuracy of the recognized text and
-        /// the accuracy of the geometry points around the recognized text.
+        /// The confidence score that Amazon Textract has in the accuracy of the recognized text
+        /// and the accuracy of the geometry points around the recognized text.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -274,11 +276,11 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Page. 
         /// <para>
-        /// The page in which a block was detected. <code>Page</code> is returned by asynchronous
-        /// operations. Page values greater than 1 are only returned for multi-page documents
-        /// that are in PDF format. A scanned image (JPG/PNG), even if it contains multiple document
-        /// pages, is always considered to be a single-page document and the value of <code>Page</code>
-        /// is always 1. Synchronous operations don't return <code>Page</code> as every input
+        /// The page on which a block was detected. <code>Page</code> is returned by asynchronous
+        /// operations. Page values greater than 1 are only returned for multipage documents that
+        /// are in PDF format. A scanned image (JPEG/PNG), even if it contains multiple document
+        /// pages, is considered to be a single-page document. The value of <code>Page</code>
+        /// is always 1. Synchronous operations don't return <code>Page</code> because every input
         /// document is considered to be a single-page document.
         /// </para>
         /// </summary>
@@ -298,10 +300,10 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Relationships. 
         /// <para>
-        /// A list of child blocks of the current block. For example a LINE object has child blocks
-        /// for each WORD block that's part of the line of text. There aren't Relationship objects
-        /// in the list for relationships that don't exist, such as when the current block has
-        /// no child blocks. The list size can be the following:
+        /// A list of child blocks of the current block. For example, a LINE object has child
+        /// blocks for each WORD block that's part of the line of text. There aren't Relationship
+        /// objects in the list for relationships that don't exist, such as when the current block
+        /// has no child blocks. The list size can be the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -348,8 +350,9 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property RowSpan. 
         /// <para>
-        /// The number of rows that a table spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code>
-        /// and <code>GetDocumentTextDetection</code>.
+        /// The number of rows that a table cell spans. Currently this value is always 1, even
+        /// if the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned
+        /// by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -368,7 +371,8 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property SelectionStatus. 
         /// <para>
-        /// The selection status of a selectable element such as a radio button or checkbox. 
+        /// The selection status of a selection element, such as an option button or check box.
+        /// 
         /// </para>
         /// </summary>
         public SelectionStatus SelectionStatus

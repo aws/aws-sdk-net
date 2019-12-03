@@ -69,8 +69,8 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The file name of the input document. It must be an image file (.JPG or .PNG format).
-        /// Asynchronous operations also support PDF files.
+        /// The file name of the input document. Synchronous operations can use image files that
+        /// are in JPEG or PNG format. Asynchronous operations also support PDF format files.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

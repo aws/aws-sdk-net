@@ -35,7 +35,7 @@ namespace Amazon.Textract.Model
     ///  
     /// <para>
     ///  <code>StartDocumentTextDetection</code> can analyze text in documents that are in
-    /// JPG, PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
+    /// JPEG, PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
     /// to specify the bucket name and file name of the document. 
     /// </para>
     ///  
@@ -67,7 +67,8 @@ namespace Amazon.Textract.Model
         /// The idempotent token that's used to identify the start request. If you use the same
         /// token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code>
         /// is returned. Use <code>ClientRequestToken</code> to prevent the same job from being
-        /// accidentally started more than once. 
+        /// accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+        /// Amazon Textract Asynchronous Operations</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -105,10 +106,10 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property JobTag. 
         /// <para>
-        /// An identifier you specify that's included in the completion notification that's published
+        /// An identifier that you specify that's included in the completion notification published
         /// to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify
-        /// the type of document, such as a tax form or a receipt, that the completion notification
-        /// corresponds to.
+        /// the type of document that the completion notification corresponds to (such as a tax
+        /// form or a receipt).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
