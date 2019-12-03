@@ -616,6 +616,10 @@
       <Project>{30310D66-687A-4E88-B671-0AE37059A1EA}</Project>
       <Name>AWSSDK.Neptune.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/NetworkManager/AWSSDK.NetworkManager.CodeAnalysis.csproj">
+      <Project>{43150253-BF73-4661-BD35-AD36944B92AC}</Project>
+      <Name>AWSSDK.NetworkManager.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/OpsWorks/AWSSDK.OpsWorks.CodeAnalysis.csproj">
       <Project>{7F36180A-2EE4-41E8-B237-964EEF734D42}</Project>
       <Name>AWSSDK.OpsWorks.CodeAnalysis</Name>
