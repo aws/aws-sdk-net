@@ -243,6 +243,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Forecast is a fully managed machine learning service that makes it easy for customers to generate accurate forecasts using their historical time-series data
 * [AWSSDK.ForecastService](https://www.nuget.org/packages/AWSSDK.ForecastService/)
 	* Amazon Forecast is a fully managed machine learning service that makes it easy for customers to generate accurate forecasts using their historical time-series data
+* [AWSSDK.FraudDetector](https://www.nuget.org/packages/AWSSDK.FraudDetector/)
+	* Amazon Fraud Detector is a fully managed service that makes it easy to identify potentially fraudulent online activities such as online payment fraud and the creation of fake accounts. Amazon Fraud Detector uses your data, machine learning (ML), and more than 20 years of fraud detection expertise from Amazon to automatically identify potentially fraudulent online activity so you can catch more fraud faster.
 * [AWSSDK.FSx](https://www.nuget.org/packages/AWSSDK.FSx/)
 	* Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.
 * [AWSSDK.GameLift](https://www.nuget.org/packages/AWSSDK.GameLift/)

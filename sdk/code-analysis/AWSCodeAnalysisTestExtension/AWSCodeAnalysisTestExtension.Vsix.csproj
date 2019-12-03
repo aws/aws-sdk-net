@@ -388,6 +388,10 @@
       <Project>{F69573A3-075C-498B-84E6-9FE7BDF4F0E7}</Project>
       <Name>AWSSDK.ForecastService.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/FraudDetector/AWSSDK.FraudDetector.CodeAnalysis.csproj">
+      <Project>{5FE820DE-C5FA-4A9E-A252-BE87AFCEBE3A}</Project>
+      <Name>AWSSDK.FraudDetector.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/FSx/AWSSDK.FSx.CodeAnalysis.csproj">
       <Project>{8D1894F4-BA02-4B2D-AA39-C570D365B5A0}</Project>
       <Name>AWSSDK.FSx.CodeAnalysis</Name>
