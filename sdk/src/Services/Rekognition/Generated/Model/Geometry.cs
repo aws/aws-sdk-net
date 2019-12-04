@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Information about where the text detected by <a>DetectText</a> is located on an image.
+    /// Information about where an object (<a>DetectCustomLabels</a>) or text (<a>DetectText</a>)
+    /// is located on an image.
     /// </summary>
     public partial class Geometry
     {
@@ -38,7 +39,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property BoundingBox. 
         /// <para>
-        /// An axis-aligned coarse representation of the detected text's location on the image.
+        /// An axis-aligned coarse representation of the detected item's location on the image.
         /// </para>
         /// </summary>
         public BoundingBox BoundingBox
@@ -56,7 +57,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Polygon. 
         /// <para>
-        /// Within the bounding box, a fine-grained polygon around the detected text.
+        /// Within the bounding box, a fine-grained polygon around the detected item.
         /// </para>
         /// </summary>
         public List<Point> Polygon

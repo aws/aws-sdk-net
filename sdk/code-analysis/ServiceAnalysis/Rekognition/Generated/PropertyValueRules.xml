@@ -16,6 +16,36 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.CreateProjectRequest.ProjectName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.CreateProjectResponse.ProjectArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.CreateProjectVersionRequest.ProjectArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.CreateProjectVersionRequest.VersionName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.CreateProjectVersionResponse.ProjectVersionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateStreamProcessorRequest.Name</property>
     <min>1</min>
     <max>128</max>
@@ -62,6 +92,38 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.DescribeProjectsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DescribeProjectsRequest.NextToken</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DescribeProjectsResponse.NextToken</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DescribeProjectVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DescribeProjectVersionsRequest.NextToken</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DescribeProjectVersionsRequest.ProjectArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DescribeProjectVersionsResponse.NextToken</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.DescribeStreamProcessorRequest.Name</property>
     <min>1</min>
     <max>128</max>
@@ -80,6 +142,21 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DescribeStreamProcessorResponse.StreamProcessorArn</property>
     <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:streamprocessor\/.+$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DetectCustomLabelsRequest.MaxResults</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DetectCustomLabelsRequest.MinConfidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DetectCustomLabelsRequest.ProjectVersionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DetectLabelsRequest.MaxLabels</property>
@@ -438,10 +515,26 @@
     <pattern>^[a-zA-Z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.StartProjectVersionRequest.MinInferenceUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.StartProjectVersionRequest.ProjectVersionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.StartStreamProcessorRequest.Name</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.StopProjectVersionRequest.ProjectVersionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StopStreamProcessorRequest.Name</property>
@@ -492,6 +585,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CompareFacesMatch.Similarity</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.CustomLabel.Confidence</property>
     <min>0</min>
     <max>100</max>
   </property-value-rule>
@@ -556,6 +654,24 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.HumanLoopActivationOutput.HumanLoopActivationConditionsEvaluationResults</property>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.HumanLoopActivationOutput.HumanLoopArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.HumanLoopConfig.FlowDefinitionArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.HumanLoopConfig.HumanLoopName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9](-*[a-z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.Image.Bytes</property>
     <min>1</min>
     <max>5242880</max>
@@ -602,6 +718,16 @@
     <pattern>(^arn:aws:sns:.*:\w{12}:.+$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.OutputConfig.S3Bucket</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[0-9A-Za-z\.\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.OutputConfig.S3KeyPrefix</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.Pose.Pitch</property>
     <min>-180</min>
     <max>180</max>
@@ -615,6 +741,26 @@
     <property>Amazon.Rekognition.Model.Pose.Yaw</property>
     <min>-180</min>
     <max>180</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ProjectDescription.ProjectArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ProjectVersionDescription.BillableTrainingTimeInSeconds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ProjectVersionDescription.MinInferenceUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ProjectVersionDescription.ProjectVersionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.S3Object.Bucket</property>

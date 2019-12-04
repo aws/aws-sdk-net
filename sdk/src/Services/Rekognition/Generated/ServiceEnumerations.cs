@@ -125,6 +125,56 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type ContentClassifier.
+    /// </summary>
+    public class ContentClassifier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FreeOfAdultContent for ContentClassifier
+        /// </summary>
+        public static readonly ContentClassifier FreeOfAdultContent = new ContentClassifier("FreeOfAdultContent");
+        /// <summary>
+        /// Constant FreeOfPersonallyIdentifiableInformation for ContentClassifier
+        /// </summary>
+        public static readonly ContentClassifier FreeOfPersonallyIdentifiableInformation = new ContentClassifier("FreeOfPersonallyIdentifiableInformation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentClassifier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentClassifier FindValue(string value)
+        {
+            return FindValue<ContentClassifier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentClassifier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContentModerationSortBy.
     /// </summary>
     public class ContentModerationSortBy : ConstantClass
@@ -716,6 +766,138 @@ namespace Amazon.Rekognition
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PersonTrackingSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProjectStatus.
+    /// </summary>
+    public class ProjectStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for ProjectStatus
+        /// </summary>
+        public static readonly ProjectStatus CREATED = new ProjectStatus("CREATED");
+        /// <summary>
+        /// Constant CREATING for ProjectStatus
+        /// </summary>
+        public static readonly ProjectStatus CREATING = new ProjectStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ProjectStatus
+        /// </summary>
+        public static readonly ProjectStatus DELETING = new ProjectStatus("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProjectStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProjectStatus FindValue(string value)
+        {
+            return FindValue<ProjectStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProjectStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProjectVersionStatus.
+    /// </summary>
+    public class ProjectVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETING for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus DELETING = new ProjectVersionStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus FAILED = new ProjectVersionStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus RUNNING = new ProjectVersionStatus("RUNNING");
+        /// <summary>
+        /// Constant STARTING for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus STARTING = new ProjectVersionStatus("STARTING");
+        /// <summary>
+        /// Constant STOPPED for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus STOPPED = new ProjectVersionStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus STOPPING = new ProjectVersionStatus("STOPPING");
+        /// <summary>
+        /// Constant TRAINING_COMPLETED for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus TRAINING_COMPLETED = new ProjectVersionStatus("TRAINING_COMPLETED");
+        /// <summary>
+        /// Constant TRAINING_FAILED for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus TRAINING_FAILED = new ProjectVersionStatus("TRAINING_FAILED");
+        /// <summary>
+        /// Constant TRAINING_IN_PROGRESS for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus TRAINING_IN_PROGRESS = new ProjectVersionStatus("TRAINING_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProjectVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProjectVersionStatus FindValue(string value)
+        {
+            return FindValue<ProjectVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProjectVersionStatus(string value)
         {
             return FindValue(value);
         }

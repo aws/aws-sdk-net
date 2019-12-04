@@ -51,6 +51,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("HumanLoopActivationOutput", targetDepth))
+                {
+                    var unmarshaller = HumanLoopActivationOutputUnmarshaller.Instance;
+                    response.HumanLoopActivationOutput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModerationLabels", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ModerationLabel, ModerationLabelUnmarshaller>(ModerationLabelUnmarshaller.Instance);
@@ -81,6 +87,10 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
             {
                 return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("HumanLoopQuotaExceededException"))
+            {
+                return new HumanLoopQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ImageTooLargeException"))
             {

@@ -53,8 +53,28 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DetectModerationLabelsRequest : AmazonRekognitionRequest
     {
+        private HumanLoopConfig _humanLoopConfig;
         private Image _image;
         private float? _minConfidence;
+
+        /// <summary>
+        /// Gets and sets the property HumanLoopConfig. 
+        /// <para>
+        /// Sets up the configuration for human evaluation, including the FlowDefinition the image
+        /// will be sent to.
+        /// </para>
+        /// </summary>
+        public HumanLoopConfig HumanLoopConfig
+        {
+            get { return this._humanLoopConfig; }
+            set { this._humanLoopConfig = value; }
+        }
+
+        // Check to see if HumanLoopConfig property is set
+        internal bool IsSetHumanLoopConfig()
+        {
+            return this._humanLoopConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Image. 

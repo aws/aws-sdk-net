@@ -280,10 +280,9 @@ namespace Amazon.Rekognition
         /// <para>
         /// The <code>QualityFilter</code> input parameter allows you to filter out detected faces
         /// that don’t meet a required quality bar. The quality bar is based on a variety of common
-        /// use cases. By default, <code>CompareFaces</code> chooses the quality bar that's used
-        /// to filter faces. You can also explicitly choose the quality bar. Use <code>QualityFilter</code>,
-        /// to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>.
-        /// If you do not want to filter detected faces, specify <code>NONE</code>. 
+        /// use cases. Use <code>QualityFilter</code> to set the quality bar by specifying <code>LOW</code>,
+        /// <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to filter detected faces,
+        /// specify <code>NONE</code>. The default value is <code>NONE</code>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -487,6 +486,201 @@ namespace Amazon.Rekognition
         public virtual CreateCollectionResponse EndCreateCollection(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCollectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateProject
+
+        /// <summary>
+        /// Creates a new Amazon Rekognition Custom Labels project. A project is a logical grouping
+        /// of resources (images, Labels, models) and operations (training, evaluation and detection).
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:CreateProject</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
+        /// 
+        /// <returns>The response from the CreateProject service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProject">REST API Reference for CreateProject Operation</seealso>
+        public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProjectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProject operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProject
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProject">REST API Reference for CreateProject Operation</seealso>
+        public virtual IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProject operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProject.</param>
+        /// 
+        /// <returns>Returns a  CreateProjectResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProject">REST API Reference for CreateProject Operation</seealso>
+        public virtual CreateProjectResponse EndCreateProject(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateProjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateProjectVersion
+
+        /// <summary>
+        /// Creates a new version of a model and begins training. Models are managed as part of
+        /// an Amazon Rekognition Custom Labels project. You can specify one training dataset
+        /// and one testing dataset. The response from <code>CreateProjectVersion</code> is an
+        /// Amazon Resource Name (ARN) for the version of the model. 
+        /// 
+        ///  
+        /// <para>
+        /// Training takes a while to complete. You can get the current status by calling <a>DescribeProjectVersions</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once training has successfully completed, call <a>DescribeProjectVersions</a> to get
+        /// the training results and evaluate the model. 
+        /// </para>
+        ///  
+        /// <para>
+        /// After evaluating the model, you start the model by calling <a>StartProjectVersion</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProjectVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateProjectVersion service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The collection specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProjectVersion">REST API Reference for CreateProjectVersion Operation</seealso>
+        public virtual CreateProjectVersionResponse CreateProjectVersion(CreateProjectVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProjectVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProjectVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProjectVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProjectVersion operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProjectVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProjectVersion">REST API Reference for CreateProjectVersion Operation</seealso>
+        public virtual IAsyncResult BeginCreateProjectVersion(CreateProjectVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProjectVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProjectVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProjectVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateProjectVersionResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProjectVersion">REST API Reference for CreateProjectVersion Operation</seealso>
+        public virtual CreateProjectVersionResponse EndCreateProjectVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateProjectVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -918,6 +1112,171 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  DescribeProjects
+
+        /// <summary>
+        /// Lists and gets information about your Amazon Rekognition Custom Labels projects.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:DescribeProjects</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProjects service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProjects service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidPaginationTokenException">
+        /// Pagination token in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">REST API Reference for DescribeProjects Operation</seealso>
+        public virtual DescribeProjectsResponse DescribeProjects(DescribeProjectsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProjectsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProjectsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProjects operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProjects operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProjects
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">REST API Reference for DescribeProjects Operation</seealso>
+        public virtual IAsyncResult BeginDescribeProjects(DescribeProjectsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProjectsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeProjects operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeProjects.</param>
+        /// 
+        /// <returns>Returns a  DescribeProjectsResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">REST API Reference for DescribeProjects Operation</seealso>
+        public virtual DescribeProjectsResponse EndDescribeProjects(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeProjectsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeProjectVersions
+
+        /// <summary>
+        /// Lists and describes the models in an Amazon Rekognition Custom Labels project. You
+        /// can specify up to 10 model versions in <code>ProjectVersionArns</code>. If you don't
+        /// specify a value, descriptions for all models are returned.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:DescribeProjectVersions</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProjectVersions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProjectVersions service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidPaginationTokenException">
+        /// Pagination token in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The collection specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjectVersions">REST API Reference for DescribeProjectVersions Operation</seealso>
+        public virtual DescribeProjectVersionsResponse DescribeProjectVersions(DescribeProjectVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProjectVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProjectVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProjectVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProjectVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProjectVersions operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProjectVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjectVersions">REST API Reference for DescribeProjectVersions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeProjectVersions(DescribeProjectVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProjectVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProjectVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeProjectVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeProjectVersions.</param>
+        /// 
+        /// <returns>Returns a  DescribeProjectVersionsResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjectVersions">REST API Reference for DescribeProjectVersions Operation</seealso>
+        public virtual DescribeProjectVersionsResponse EndDescribeProjectVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeProjectVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeStreamProcessor
 
         /// <summary>
@@ -990,6 +1349,148 @@ namespace Amazon.Rekognition
         public virtual DescribeStreamProcessorResponse EndDescribeStreamProcessor(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStreamProcessorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DetectCustomLabels
+
+        /// <summary>
+        /// Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels
+        /// model. 
+        /// 
+        ///  
+        /// <para>
+        /// You specify which version of a model version to use by using the <code>ProjectVersionArn</code>
+        /// input parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You pass the input image as base64-encoded image bytes or as a reference to an image
+        /// in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,
+        /// passing image bytes is not supported. The image must be either a PNG or JPEG formatted
+        /// file. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For each object that the model version detects on an image, the API returns a (<code>CustomLabel</code>)
+        /// object in an array (<code>CustomLabels</code>). Each <code>CustomLabel</code> object
+        /// provides the label name (<code>Name</code>), the level of confidence that the image
+        /// contains the object (<code>Confidence</code>), and object location information, if
+        /// it exists, for the label on the image (<code>Geometry</code>). 
+        /// </para>
+        ///  
+        /// <para>
+        /// During training model calculates a threshold value that determines if a prediction
+        /// for a label is true. By default, <code>DetectCustomLabels</code> doesn't return labels
+        /// whose confidence value is below the model's calculated threshold value. To filter
+        /// labels that are returned, specify a value for <code>MinConfidence</code> that is higher
+        /// than the model's calculated threshold. You can get the model's calculated threshold
+        /// from the model's training results shown in the Amazon Rekognition Custom Labels console.
+        /// To get all labels, regardless of confidence, specify a <code>MinConfidence</code>
+        /// value of 0. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also add the <code>MaxResults</code> parameter to limit the number of labels
+        /// returned. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This is a stateless API operation. That is, the operation does not persist any data.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:DetectCustomLabels</code>
+        /// action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectCustomLabels service method.</param>
+        /// 
+        /// <returns>The response from the DetectCustomLabels service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ImageTooLargeException">
+        /// The input image size exceeds the allowed limit. For more information, see Limits in
+        /// Amazon Rekognition in the Amazon Rekognition Developer Guide.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidImageFormatException">
+        /// The provided image format is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidS3ObjectException">
+        /// Amazon Rekognition is unable to access the S3 object specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The collection specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotReadyException">
+        /// The requested resource isn't ready. For example, this exception occurs when you call
+        /// <code>DetectCustomLabels</code> with a model version that isn't deployed.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">REST API Reference for DetectCustomLabels Operation</seealso>
+        public virtual DetectCustomLabelsResponse DetectCustomLabels(DetectCustomLabelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectCustomLabelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectCustomLabelsResponseUnmarshaller.Instance;
+
+            return Invoke<DetectCustomLabelsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetectCustomLabels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetectCustomLabels operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetectCustomLabels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">REST API Reference for DetectCustomLabels Operation</seealso>
+        public virtual IAsyncResult BeginDetectCustomLabels(DetectCustomLabelsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectCustomLabelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectCustomLabelsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetectCustomLabels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetectCustomLabels.</param>
+        /// 
+        /// <returns>Returns a  DetectCustomLabelsResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">REST API Reference for DetectCustomLabels Operation</seealso>
+        public virtual DetectCustomLabelsResponse EndDetectCustomLabels(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DetectCustomLabelsResponse>(asyncResult);
         }
 
         #endregion
@@ -1319,6 +1820,9 @@ namespace Amazon.Rekognition
         /// <returns>The response from the DetectModerationLabels service method, as returned by Rekognition.</returns>
         /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
         /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.HumanLoopQuotaExceededException">
+        /// The number of in-progress human reviews you have has exceeded the number allowed.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ImageTooLargeException">
         /// The input image size exceeds the allowed limit. For more information, see Limits in
@@ -3064,11 +3568,10 @@ namespace Amazon.Rekognition
         /// <para>
         /// The <code>QualityFilter</code> input parameter allows you to filter out detected faces
         /// that don’t meet a required quality bar. The quality bar is based on a variety of common
-        /// use cases. By default, Amazon Rekognition chooses the quality bar that's used to filter
-        /// faces. You can also explicitly choose the quality bar. Use <code>QualityFilter</code>,
-        /// to set the quality bar for filtering by specifying <code>LOW</code>, <code>MEDIUM</code>,
-        /// or <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>.
-        /// 
+        /// use cases. Use <code>QualityFilter</code> to set the quality bar for filtering by
+        /// specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do
+        /// not want to filter detected faces, specify <code>NONE</code>. The default value is
+        /// <code>NONE</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3814,6 +4317,106 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  StartProjectVersion
+
+        /// <summary>
+        /// Starts the running of the version of a model. Starting a model takes a while to complete.
+        /// To check the current state of the model, use <a>DescribeProjectVersions</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Once the model is running, you can detect custom labels in new images by calling <a>DetectCustomLabels</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You are charged for the amount of time that the model is running. To stop a running
+        /// model, call <a>StopProjectVersion</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartProjectVersion service method.</param>
+        /// 
+        /// <returns>The response from the StartProjectVersion service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The collection specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">REST API Reference for StartProjectVersion Operation</seealso>
+        public virtual StartProjectVersionResponse StartProjectVersion(StartProjectVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartProjectVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartProjectVersionResponseUnmarshaller.Instance;
+
+            return Invoke<StartProjectVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartProjectVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartProjectVersion operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartProjectVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">REST API Reference for StartProjectVersion Operation</seealso>
+        public virtual IAsyncResult BeginStartProjectVersion(StartProjectVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartProjectVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartProjectVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartProjectVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartProjectVersion.</param>
+        /// 
+        /// <returns>Returns a  StartProjectVersionResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">REST API Reference for StartProjectVersion Operation</seealso>
+        public virtual StartProjectVersionResponse EndStartProjectVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartProjectVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartStreamProcessor
 
         /// <summary>
@@ -3889,6 +4492,84 @@ namespace Amazon.Rekognition
         public virtual StartStreamProcessorResponse EndStartStreamProcessor(IAsyncResult asyncResult)
         {
             return EndInvoke<StartStreamProcessorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopProjectVersion
+
+        /// <summary>
+        /// Stops a running model. The operation might take a while to complete. To check the
+        /// current status, call <a>DescribeProjectVersions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopProjectVersion service method.</param>
+        /// 
+        /// <returns>The response from the StopProjectVersion service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The collection specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopProjectVersion">REST API Reference for StopProjectVersion Operation</seealso>
+        public virtual StopProjectVersionResponse StopProjectVersion(StopProjectVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopProjectVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopProjectVersionResponseUnmarshaller.Instance;
+
+            return Invoke<StopProjectVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopProjectVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopProjectVersion operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopProjectVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopProjectVersion">REST API Reference for StopProjectVersion Operation</seealso>
+        public virtual IAsyncResult BeginStopProjectVersion(StopProjectVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopProjectVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopProjectVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopProjectVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopProjectVersion.</param>
+        /// 
+        /// <returns>Returns a  StopProjectVersionResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopProjectVersion">REST API Reference for StopProjectVersion Operation</seealso>
+        public virtual StopProjectVersionResponse EndStopProjectVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopProjectVersionResponse>(asyncResult);
         }
 
         #endregion
