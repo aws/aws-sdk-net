@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.642.0",
+    "ProductVersion" : "3.3.643.0",
     "CoreVersion"    : "3.3.104.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -241,7 +241,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.3.105.3",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.0"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.113.3",
+            "Version" : "3.3.114.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.0"
@@ -553,7 +553,7 @@
             "InPreview"               : false
         },
         "ApplicationAutoScaling"          : {
-            "Version" : "3.3.103.3",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.0"
@@ -609,7 +609,7 @@
             "InPreview"               : false
         },
         "Rekognition"                     : {
-            "Version" : "3.3.102.4",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.0"
@@ -633,7 +633,7 @@
             "InPreview"               : false
         },
         "StepFunctions"                   : {
-            "Version" : "3.3.102.35",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.0"
@@ -945,7 +945,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.3.107.8",
+            "Version" : "3.3.108.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.0"
@@ -1721,6 +1721,14 @@
             "InPreview"               : false
         },
         "AugmentedAIRuntime"              : {
+            "Version" : "3.3.100.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.104.0"
+            },
+            "InPreview"               : false
+        },
+        "EBS"                             : {
             "Version" : "3.3.100.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {

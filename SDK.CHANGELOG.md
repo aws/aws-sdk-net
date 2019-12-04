@@ -1,3 +1,19 @@
+### 3.3.643.0 (2019-12-04 01:41 UTC)
+* ApplicationAutoScaling (3.3.104.0)
+	* This release supports auto scaling of provisioned concurrency for AWS Lambda.
+* EBS (3.3.100.0)
+	* This release introduces the EBS direct APIs for Snapshots: 1. ListSnapshotBlocks, which lists the block indexes and block tokens for blocks in an Amazon EBS snapshot. 2. ListChangedBlocks, which lists the block indexes and block tokens for blocks that are different between two snapshots of the same volume/snapshot lineage. 3. GetSnapshotBlock, which returns the data in a block of an Amazon EBS snapshot.
+* Lambda (3.3.106.0)
+	* - Added the ProvisionedConcurrency type and operations. Allocate provisioned concurrency to enable your function to scale up without fluctuations in latency. Use PutProvisionedConcurrencyConfig to configure provisioned concurrency on a version of a function, or on an alias.
+* RDS (3.3.114.0)
+	* This release adds support for the Amazon RDS Proxy
+* Rekognition (3.3.103.0)
+	* This SDK Release introduces APIs for Amazon Rekognition Custom Labels feature (CreateProjects, CreateProjectVersion,DescribeProjects, DescribeProjectVersions, StartProjectVersion, StopProjectVersion and DetectCustomLabels).  Also new is  AugmentedAI (Human In The Loop) Support for DetectModerationLabels in Amazon Rekognition.
+* SageMaker (3.3.108.0)
+	* You can now use SageMaker Autopilot for automatically training and tuning candidate models using a combination of various feature engineering, ML algorithms, and hyperparameters determined from the user's input data. SageMaker Automatic Model Tuning now supports tuning across multiple algorithms. With Amazon SageMaker Experiments users can create Experiments, ExperimentTrials, and ExperimentTrialComponents to track, organize, and evaluate their ML training jobs. With Amazon SageMaker Debugger, users can easily debug training jobs using a number of pre-built rules provided by Amazon SageMaker, or build custom rules. With Amazon SageMaker Processing, users can run on-demand, distributed, and fully managed jobs for data pre- or post- processing or model evaluation. With Amazon SageMaker Model Monitor, a user can create MonitoringSchedules to automatically monitor endpoints to detect data drift and other issues and get alerted on them. This release also includes the preview version of Amazon SageMaker Studio with Domains, UserProfiles, and Apps. This release also includes the preview version of Amazon Augmented AI to easily implement human review of machine learning predictions by creating FlowDefinitions, HumanTaskUis, and HumanLoops.
+* StepFunctions (3.3.103.0)
+	* This release of the AWS Step Functions SDK introduces support for Express Workflows.
+
 ### 3.3.642.0 (2019-12-03 19:17 UTC)
 * AugmentedAIRuntime (3.3.100.0)
 	* This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.
