@@ -328,6 +328,10 @@
       <Project>{B0E4C8D2-B504-4B0E-8789-47F2B9CBDA02}</Project>
       <Name>AWSSDK.DynamoDBv2.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/EBS/AWSSDK.EBS.CodeAnalysis.csproj">
+      <Project>{6127C910-D79E-4373-BA20-D8005902781D}</Project>
+      <Name>AWSSDK.EBS.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/EC2/AWSSDK.EC2.CodeAnalysis.csproj">
       <Project>{5EDD3F86-D8FD-4BA0-9086-290BFF27CD44}</Project>
       <Name>AWSSDK.EC2.CodeAnalysis</Name>
