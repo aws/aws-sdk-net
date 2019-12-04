@@ -34,10 +34,12 @@ namespace Amazon.StepFunctions.Model
     {
         private DateTime? _creationDate;
         private string _definition;
+        private LoggingConfiguration _loggingConfiguration;
         private string _name;
         private string _roleArn;
         private string _stateMachineArn;
         private StateMachineStatus _status;
+        private StateMachineType _type;
 
         /// <summary>
         /// Gets and sets the property CreationDate. 
@@ -76,6 +78,21 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetDefinition()
         {
             return this._definition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfiguration.
+        /// </summary>
+        public LoggingConfiguration LoggingConfiguration
+        {
+            get { return this._loggingConfiguration; }
+            set { this._loggingConfiguration = value; }
+        }
+
+        // Check to see if LoggingConfiguration property is set
+        internal bool IsSetLoggingConfiguration()
+        {
+            return this._loggingConfiguration != null;
         }
 
         /// <summary>
@@ -177,6 +194,22 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public StateMachineType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

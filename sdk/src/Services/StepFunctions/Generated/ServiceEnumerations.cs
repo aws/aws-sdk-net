@@ -349,6 +349,64 @@ namespace Amazon.StepFunctions
 
 
     /// <summary>
+    /// Constants used for properties of type LogLevel.
+    /// </summary>
+    public class LogLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for LogLevel
+        /// </summary>
+        public static readonly LogLevel ALL = new LogLevel("ALL");
+        /// <summary>
+        /// Constant ERROR for LogLevel
+        /// </summary>
+        public static readonly LogLevel ERROR = new LogLevel("ERROR");
+        /// <summary>
+        /// Constant FATAL for LogLevel
+        /// </summary>
+        public static readonly LogLevel FATAL = new LogLevel("FATAL");
+        /// <summary>
+        /// Constant OFF for LogLevel
+        /// </summary>
+        public static readonly LogLevel OFF = new LogLevel("OFF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogLevel FindValue(string value)
+        {
+            return FindValue<LogLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StateMachineStatus.
     /// </summary>
     public class StateMachineStatus : ConstantClass
@@ -392,6 +450,56 @@ namespace Amazon.StepFunctions
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StateMachineStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StateMachineType.
+    /// </summary>
+    public class StateMachineType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXPRESS for StateMachineType
+        /// </summary>
+        public static readonly StateMachineType EXPRESS = new StateMachineType("EXPRESS");
+        /// <summary>
+        /// Constant STANDARD for StateMachineType
+        /// </summary>
+        public static readonly StateMachineType STANDARD = new StateMachineType("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StateMachineType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StateMachineType FindValue(string value)
+        {
+            return FindValue<StateMachineType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StateMachineType(string value)
         {
             return FindValue(value);
         }

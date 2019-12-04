@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StateMachineListItem Object
+    /// Response Unmarshaller for LoggingConfiguration Object
     /// </summary>  
-    public class StateMachineListItemUnmarshaller : IUnmarshaller<StateMachineListItem, XmlUnmarshallerContext>, IUnmarshaller<StateMachineListItem, JsonUnmarshallerContext>
+    public class LoggingConfigurationUnmarshaller : IUnmarshaller<LoggingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LoggingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StateMachineListItem IUnmarshaller<StateMachineListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LoggingConfiguration IUnmarshaller<LoggingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StateMachineListItem Unmarshall(JsonUnmarshallerContext context)
+        public LoggingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StateMachineListItem unmarshalledObject = new StateMachineListItem();
+            LoggingConfiguration unmarshalledObject = new LoggingConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("creationDate", targetDepth))
+                if (context.TestExpression("destinations", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<LogDestination, LogDestinationUnmarshaller>(LogDestinationUnmarshaller.Instance);
+                    unmarshalledObject.Destinations = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("includeExecutionData", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeExecutionData = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("stateMachineArn", targetDepth))
+                if (context.TestExpression("level", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StateMachineArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Level = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         }
 
 
-        private static StateMachineListItemUnmarshaller _instance = new StateMachineListItemUnmarshaller();        
+        private static LoggingConfigurationUnmarshaller _instance = new LoggingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StateMachineListItemUnmarshaller Instance
+        public static LoggingConfigurationUnmarshaller Instance
         {
             get
             {

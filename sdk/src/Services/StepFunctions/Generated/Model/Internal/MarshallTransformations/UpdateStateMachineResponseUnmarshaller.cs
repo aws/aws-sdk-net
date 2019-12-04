@@ -80,6 +80,10 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             {
                 return new InvalidDefinitionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLoggingConfiguration"))
+            {
+                return new InvalidLoggingConfigurationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("MissingRequiredParameter"))
             {
                 return new MissingRequiredParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

@@ -54,9 +54,11 @@ namespace Amazon.StepFunctions.Model
     public partial class CreateStateMachineRequest : AmazonStepFunctionsRequest
     {
         private string _definition;
+        private LoggingConfiguration _loggingConfiguration;
         private string _name;
         private string _roleArn;
         private List<Tag> _tags = new List<Tag>();
+        private StateMachineType _type;
 
         /// <summary>
         /// Gets and sets the property Definition. 
@@ -76,6 +78,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetDefinition()
         {
             return this._definition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfiguration. 
+        /// <para>
+        /// Defines what execution history events are logged and where they are logged.
+        /// </para>
+        /// </summary>
+        public LoggingConfiguration LoggingConfiguration
+        {
+            get { return this._loggingConfiguration; }
+            set { this._loggingConfiguration = value; }
+        }
+
+        // Check to see if LoggingConfiguration property is set
+        internal bool IsSetLoggingConfiguration()
+        {
+            return this._loggingConfiguration != null;
         }
 
         /// <summary>
@@ -169,6 +189,25 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Determines whether a Standard or Express state machine is created. If not set, Standard
+        /// is created.
+        /// </para>
+        /// </summary>
+        public StateMachineType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

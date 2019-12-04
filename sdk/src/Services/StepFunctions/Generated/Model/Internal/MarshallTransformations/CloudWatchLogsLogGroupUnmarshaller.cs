@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StateMachineListItem Object
+    /// Response Unmarshaller for CloudWatchLogsLogGroup Object
     /// </summary>  
-    public class StateMachineListItemUnmarshaller : IUnmarshaller<StateMachineListItem, XmlUnmarshallerContext>, IUnmarshaller<StateMachineListItem, JsonUnmarshallerContext>
+    public class CloudWatchLogsLogGroupUnmarshaller : IUnmarshaller<CloudWatchLogsLogGroup, XmlUnmarshallerContext>, IUnmarshaller<CloudWatchLogsLogGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StateMachineListItem IUnmarshaller<StateMachineListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CloudWatchLogsLogGroup IUnmarshaller<CloudWatchLogsLogGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StateMachineListItem Unmarshall(JsonUnmarshallerContext context)
+        public CloudWatchLogsLogGroup Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StateMachineListItem unmarshalledObject = new StateMachineListItem();
+            CloudWatchLogsLogGroup unmarshalledObject = new CloudWatchLogsLogGroup();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("creationDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("logGroupArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stateMachineArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StateMachineArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogGroupArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         }
 
 
-        private static StateMachineListItemUnmarshaller _instance = new StateMachineListItemUnmarshaller();        
+        private static CloudWatchLogsLogGroupUnmarshaller _instance = new CloudWatchLogsLogGroupUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StateMachineListItemUnmarshaller Instance
+        public static CloudWatchLogsLogGroupUnmarshaller Instance
         {
             get
             {

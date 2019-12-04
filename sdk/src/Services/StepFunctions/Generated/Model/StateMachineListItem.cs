@@ -35,6 +35,7 @@ namespace Amazon.StepFunctions.Model
         private DateTime? _creationDate;
         private string _name;
         private string _stateMachineArn;
+        private StateMachineType _type;
 
         /// <summary>
         /// Gets and sets the property CreationDate. 
@@ -116,6 +117,22 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetStateMachineArn()
         {
             return this._stateMachineArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public StateMachineType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }
