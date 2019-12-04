@@ -77,6 +77,10 @@ namespace Amazon.ApplicationAutoScaling
     /// <para>
     /// Amazon Comprehend document classification endpoints
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// AWS Lambda function provisioned concurrency
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <b>API Summary</b> 

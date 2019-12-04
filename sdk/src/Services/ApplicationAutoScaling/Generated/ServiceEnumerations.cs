@@ -241,6 +241,10 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly MetricType ECSServiceAverageMemoryUtilization = new MetricType("ECSServiceAverageMemoryUtilization");
         /// <summary>
+        /// Constant LambdaProvisionedConcurrencyUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType LambdaProvisionedConcurrencyUtilization = new MetricType("LambdaProvisionedConcurrencyUtilization");
+        /// <summary>
         /// Constant RDSReaderAverageCPUUtilization for MetricType
         /// </summary>
         public static readonly MetricType RDSReaderAverageCPUUtilization = new MetricType("RDSReaderAverageCPUUtilization");
@@ -385,6 +389,10 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly ScalableDimension ElasticmapreduceInstancegroupInstanceCount = new ScalableDimension("elasticmapreduce:instancegroup:InstanceCount");
         /// <summary>
+        /// Constant LambdaFunctionProvisionedConcurrency for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension LambdaFunctionProvisionedConcurrency = new ScalableDimension("lambda:function:ProvisionedConcurrency");
+        /// <summary>
         /// Constant RdsClusterReadReplicaCount for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension RdsClusterReadReplicaCount = new ScalableDimension("rds:cluster:ReadReplicaCount");
@@ -528,6 +536,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant Elasticmapreduce for ServiceNamespace
         /// </summary>
         public static readonly ServiceNamespace Elasticmapreduce = new ServiceNamespace("elasticmapreduce");
+        /// <summary>
+        /// Constant Lambda for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace Lambda = new ServiceNamespace("lambda");
         /// <summary>
         /// Constant Rds for ServiceNamespace
         /// </summary>
