@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CheckpointConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DefinitionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefinitionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnableInterContainerTrafficEncryption", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.EnableNetworkIsolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HyperParameterRanges", targetDepth))
+                {
+                    var unmarshaller = ParameterRangesUnmarshaller.Instance;
+                    unmarshalledObject.HyperParameterRanges = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InputDataConfig", targetDepth))
@@ -128,6 +140,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StoppingConditionUnmarshaller.Instance;
                     unmarshalledObject.StoppingCondition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TuningObjective", targetDepth))
+                {
+                    var unmarshaller = HyperParameterTuningJobObjectiveUnmarshaller.Instance;
+                    unmarshalledObject.TuningObjective = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VpcConfig", targetDepth))

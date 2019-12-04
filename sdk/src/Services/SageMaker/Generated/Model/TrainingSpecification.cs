@@ -123,7 +123,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property SupportsDistributedTraining. 
         /// <para>
         /// Indicates whether the algorithm supports distributed training. If set to false, buyers
-        /// can’t request more than one instance during training.
+        /// can't request more than one instance during training.
         /// </para>
         /// </summary>
         public bool SupportsDistributedTraining

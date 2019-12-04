@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// When a <code>ContainerDefinition</code> is part of an inference pipeline, the value
-        /// of ths parameter uniquely identifies the container for the purposes of logging and
+        /// of the parameter uniquely identifies the container for the purposes of logging and
         /// metrics. For information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
         /// Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a value
         /// for this parameter for a <code>ContainerDefinition</code> that is part of an inference
@@ -119,7 +119,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// Specifies whether the container hosts a single model or multiple models.
+        /// Whether the container hosts a single model or multiple models.
         /// </para>
         /// </summary>
         public ContainerMode Mode

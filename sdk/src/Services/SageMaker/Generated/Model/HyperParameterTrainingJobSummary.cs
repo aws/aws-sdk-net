@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private ObjectiveStatus _objectiveStatus;
         private DateTime? _trainingEndTime;
         private string _trainingJobArn;
+        private string _trainingJobDefinitionName;
         private string _trainingJobName;
         private TrainingJobStatus _trainingJobStatus;
         private DateTime? _trainingStartTime;
@@ -175,6 +176,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingJobArn()
         {
             return this._trainingJobArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingJobDefinitionName. 
+        /// <para>
+        /// The training job definition name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string TrainingJobDefinitionName
+        {
+            get { return this._trainingJobDefinitionName; }
+            set { this._trainingJobDefinitionName = value; }
+        }
+
+        // Check to see if TrainingJobDefinitionName property is set
+        internal bool IsSetTrainingJobDefinitionName()
+        {
+            return this._trainingJobDefinitionName != null;
         }
 
         /// <summary>

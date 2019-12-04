@@ -68,6 +68,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDataCaptureConfig())
+                {
+                    context.Writer.WritePropertyName("DataCaptureConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataCaptureConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DataCaptureConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEndpointConfigName())
                 {
                     context.Writer.WritePropertyName("EndpointConfigName");

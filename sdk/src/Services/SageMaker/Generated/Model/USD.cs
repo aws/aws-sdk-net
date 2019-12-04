@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// The whole number of dollars in the amount.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
+        [AWSProperty(Min=0, Max=2)]
         public int Dollars
         {
             get { return this._dollars.GetValueOrDefault(); }

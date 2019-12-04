@@ -33,9 +33,17 @@ namespace Amazon.SageMaker.Model
     public partial class TrainingJob
     {
         private AlgorithmSpecification _algorithmSpecification;
+        private string _autoMLJobArn;
+        private int? _billableTimeInSeconds;
+        private CheckpointConfig _checkpointConfig;
         private DateTime? _creationTime;
+        private DebugHookConfig _debugHookConfig;
+        private List<DebugRuleConfiguration> _debugRuleConfigurations = new List<DebugRuleConfiguration>();
+        private List<DebugRuleEvaluationStatus> _debugRuleEvaluationStatuses = new List<DebugRuleEvaluationStatus>();
         private bool? _enableInterContainerTrafficEncryption;
+        private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
+        private ExperimentConfig _experimentConfig;
         private string _failureReason;
         private List<MetricData> _finalMetricDataList = new List<MetricData>();
         private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
@@ -50,11 +58,13 @@ namespace Amazon.SageMaker.Model
         private List<SecondaryStatusTransition> _secondaryStatusTransitions = new List<SecondaryStatusTransition>();
         private StoppingCondition _stoppingCondition;
         private List<Tag> _tags = new List<Tag>();
+        private TensorBoardOutputConfig _tensorBoardOutputConfig;
         private DateTime? _trainingEndTime;
         private string _trainingJobArn;
         private string _trainingJobName;
         private TrainingJobStatus _trainingJobStatus;
         private DateTime? _trainingStartTime;
+        private int? _trainingTimeInSeconds;
         private string _tuningJobArn;
         private VpcConfig _vpcConfig;
 
@@ -77,6 +87,59 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutoMLJobArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string AutoMLJobArn
+        {
+            get { return this._autoMLJobArn; }
+            set { this._autoMLJobArn = value; }
+        }
+
+        // Check to see if AutoMLJobArn property is set
+        internal bool IsSetAutoMLJobArn()
+        {
+            return this._autoMLJobArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillableTimeInSeconds. 
+        /// <para>
+        /// The billable time in seconds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int BillableTimeInSeconds
+        {
+            get { return this._billableTimeInSeconds.GetValueOrDefault(); }
+            set { this._billableTimeInSeconds = value; }
+        }
+
+        // Check to see if BillableTimeInSeconds property is set
+        internal bool IsSetBillableTimeInSeconds()
+        {
+            return this._billableTimeInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CheckpointConfig.
+        /// </summary>
+        public CheckpointConfig CheckpointConfig
+        {
+            get { return this._checkpointConfig; }
+            set { this._checkpointConfig = value; }
+        }
+
+        // Check to see if CheckpointConfig property is set
+        internal bool IsSetCheckpointConfig()
+        {
+            return this._checkpointConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// A timestamp that indicates when the training job was created.
@@ -92,6 +155,59 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DebugHookConfig.
+        /// </summary>
+        public DebugHookConfig DebugHookConfig
+        {
+            get { return this._debugHookConfig; }
+            set { this._debugHookConfig = value; }
+        }
+
+        // Check to see if DebugHookConfig property is set
+        internal bool IsSetDebugHookConfig()
+        {
+            return this._debugHookConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DebugRuleConfigurations. 
+        /// <para>
+        /// Information about the debug rule configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<DebugRuleConfiguration> DebugRuleConfigurations
+        {
+            get { return this._debugRuleConfigurations; }
+            set { this._debugRuleConfigurations = value; }
+        }
+
+        // Check to see if DebugRuleConfigurations property is set
+        internal bool IsSetDebugRuleConfigurations()
+        {
+            return this._debugRuleConfigurations != null && this._debugRuleConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DebugRuleEvaluationStatuses. 
+        /// <para>
+        /// Information about the evaluation status of the rules for the training job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<DebugRuleEvaluationStatus> DebugRuleEvaluationStatuses
+        {
+            get { return this._debugRuleEvaluationStatuses; }
+            set { this._debugRuleEvaluationStatuses = value; }
+        }
+
+        // Check to see if DebugRuleEvaluationStatuses property is set
+        internal bool IsSetDebugRuleEvaluationStatuses()
+        {
+            return this._debugRuleEvaluationStatuses != null && this._debugRuleEvaluationStatuses.Count > 0; 
         }
 
         /// <summary>
@@ -117,6 +233,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableManagedSpotTraining. 
+        /// <para>
+        /// When true, enables managed spot training using Amazon EC2 Spot instances to run training
+        /// jobs instead of on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+        /// </para>
+        /// </summary>
+        public bool EnableManagedSpotTraining
+        {
+            get { return this._enableManagedSpotTraining.GetValueOrDefault(); }
+            set { this._enableManagedSpotTraining = value; }
+        }
+
+        // Check to see if EnableManagedSpotTraining property is set
+        internal bool IsSetEnableManagedSpotTraining()
+        {
+            return this._enableManagedSpotTraining.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableNetworkIsolation. 
         /// <para>
         /// If the <code>TrainingJob</code> was created with network isolation, the value is set
@@ -134,6 +269,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnableNetworkIsolation()
         {
             return this._enableNetworkIsolation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentConfig.
+        /// </summary>
+        public ExperimentConfig ExperimentConfig
+        {
+            get { return this._experimentConfig; }
+            set { this._experimentConfig = value; }
+        }
+
+        // Check to see if ExperimentConfig property is set
+        internal bool IsSetExperimentConfig()
+        {
+            return this._experimentConfig != null;
         }
 
         /// <summary>
@@ -478,6 +628,21 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TensorBoardOutputConfig.
+        /// </summary>
+        public TensorBoardOutputConfig TensorBoardOutputConfig
+        {
+            get { return this._tensorBoardOutputConfig; }
+            set { this._tensorBoardOutputConfig = value; }
+        }
+
+        // Check to see if TensorBoardOutputConfig property is set
+        internal bool IsSetTensorBoardOutputConfig()
+        {
+            return this._tensorBoardOutputConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TrainingEndTime. 
         /// <para>
         /// Indicates the time when the training job ends on training instances. You are billed
@@ -605,6 +770,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingStartTime()
         {
             return this._trainingStartTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingTimeInSeconds. 
+        /// <para>
+        /// The training time in seconds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int TrainingTimeInSeconds
+        {
+            get { return this._trainingTimeInSeconds.GetValueOrDefault(); }
+            set { this._trainingTimeInSeconds = value; }
+        }
+
+        // Check to see if TrainingTimeInSeconds property is set
+        internal bool IsSetTrainingTimeInSeconds()
+        {
+            return this._trainingTimeInSeconds.HasValue; 
         }
 
         /// <summary>

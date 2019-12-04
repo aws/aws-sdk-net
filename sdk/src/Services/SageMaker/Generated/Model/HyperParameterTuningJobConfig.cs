@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private ResourceLimits _resourceLimits;
         private HyperParameterTuningJobStrategyType _strategy;
         private TrainingJobEarlyStoppingType _trainingJobEarlyStoppingType;
+        private TuningJobCompletionCriteria _tuningJobCompletionCriteria;
 
         /// <summary>
         /// Gets and sets the property HyperParameterTuningJobObjective. 
@@ -100,9 +101,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Strategy. 
         /// <para>
         /// Specifies how hyperparameter tuning chooses the combinations of hyperparameter values
-        /// to use for the training job it launches. To use the Bayesian search stategy, set this
-        /// to <code>Bayesian</code>. To randomly search, set it to <code>Random</code>. For information
-        /// about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+        /// to use for the training job it launches. To use the Bayesian search strategy, set
+        /// this to <code>Bayesian</code>. To randomly search, set it to <code>Random</code>.
+        /// For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
         /// Hyperparameter Tuning Works</a>.
         /// </para>
         /// </summary>
@@ -148,6 +149,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingJobEarlyStoppingType()
         {
             return this._trainingJobEarlyStoppingType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TuningJobCompletionCriteria. 
+        /// <para>
+        /// The tuning job's completion criteria.
+        /// </para>
+        /// </summary>
+        public TuningJobCompletionCriteria TuningJobCompletionCriteria
+        {
+            get { return this._tuningJobCompletionCriteria; }
+            set { this._tuningJobCompletionCriteria = value; }
+        }
+
+        // Check to see if TuningJobCompletionCriteria property is set
+        internal bool IsSetTuningJobCompletionCriteria()
+        {
+            return this._tuningJobCompletionCriteria != null;
         }
 
     }

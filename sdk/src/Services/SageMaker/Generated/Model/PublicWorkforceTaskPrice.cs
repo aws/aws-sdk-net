@@ -183,6 +183,253 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// 1.200
     /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon
+    /// Augmented AI review tasks. Prices are in US dollars.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// 2.400 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 2.280 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 2.160 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 2.040 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.920 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.800 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.680 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.560 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.440 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.320 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.200 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.080 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.960 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.840 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.720 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.600 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.480 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.360 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.240 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.120 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.072 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.060 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.048 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.036 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.024 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.012 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented
+    /// AI review tasks. Prices are in US dollars.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// 1.200 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.080 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.960 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.840 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.720 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.600 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.480 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.360 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.240 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.120 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.072 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.060 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.048 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.036 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.024 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.012 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Use one of the following prices for Amazon Augmented AI custom human review tasks.
+    /// Prices are in US dollars.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// 1.200 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.080 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.960 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.840 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.720 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.600 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.480 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.360 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.240 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.120 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.072 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.060 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.048 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.036 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.024 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.012 
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class PublicWorkforceTaskPrice

@@ -99,6 +99,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetExperimentConfig())
+                {
+                    context.Writer.WritePropertyName("ExperimentConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExperimentConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExperimentConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaxConcurrentTransforms())
                 {
                     context.Writer.WritePropertyName("MaxConcurrentTransforms");

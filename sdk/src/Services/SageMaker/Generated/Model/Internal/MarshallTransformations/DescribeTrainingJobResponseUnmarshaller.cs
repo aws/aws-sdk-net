@@ -57,6 +57,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.AlgorithmSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AutoMLJobArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AutoMLJobArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BillableTimeInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -75,6 +81,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DebugHookConfig", targetDepth))
+                {
+                    var unmarshaller = DebugHookConfigUnmarshaller.Instance;
+                    response.DebugHookConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DebugRuleConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DebugRuleConfiguration, DebugRuleConfigurationUnmarshaller>(DebugRuleConfigurationUnmarshaller.Instance);
+                    response.DebugRuleConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DebugRuleEvaluationStatuses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DebugRuleEvaluationStatus, DebugRuleEvaluationStatusUnmarshaller>(DebugRuleEvaluationStatusUnmarshaller.Instance);
+                    response.DebugRuleEvaluationStatuses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnableInterContainerTrafficEncryption", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -91,6 +115,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     response.EnableNetworkIsolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExperimentConfig", targetDepth))
+                {
+                    var unmarshaller = ExperimentConfigUnmarshaller.Instance;
+                    response.ExperimentConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FailureReason", targetDepth))
@@ -169,6 +199,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StoppingConditionUnmarshaller.Instance;
                     response.StoppingCondition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TensorBoardOutputConfig", targetDepth))
+                {
+                    var unmarshaller = TensorBoardOutputConfigUnmarshaller.Instance;
+                    response.TensorBoardOutputConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TrainingEndTime", targetDepth))

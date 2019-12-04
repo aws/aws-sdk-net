@@ -90,7 +90,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The KMS key policy must grant permission to the IAM role that you specify in your
         /// <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code>
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+        /// requests. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
         /// Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>

@@ -100,6 +100,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrainingJobArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TrainingJobDefinitionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TrainingJobDefinitionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TrainingJobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

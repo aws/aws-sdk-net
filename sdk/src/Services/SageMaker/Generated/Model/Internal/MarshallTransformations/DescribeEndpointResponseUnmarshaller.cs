@@ -57,6 +57,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataCaptureConfig", targetDepth))
+                {
+                    var unmarshaller = DataCaptureConfigSummaryUnmarshaller.Instance;
+                    response.DataCaptureConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndpointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

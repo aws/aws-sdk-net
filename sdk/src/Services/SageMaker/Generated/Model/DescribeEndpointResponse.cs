@@ -33,6 +33,7 @@ namespace Amazon.SageMaker.Model
     public partial class DescribeEndpointResponse : AmazonWebServiceResponse
     {
         private DateTime? _creationTime;
+        private DataCaptureConfigSummary _dataCaptureConfig;
         private string _endpointArn;
         private string _endpointConfigName;
         private string _endpointName;
@@ -58,6 +59,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataCaptureConfig.
+        /// </summary>
+        public DataCaptureConfigSummary DataCaptureConfig
+        {
+            get { return this._dataCaptureConfig; }
+            set { this._dataCaptureConfig = value; }
+        }
+
+        // Check to see if DataCaptureConfig property is set
+        internal bool IsSetDataCaptureConfig()
+        {
+            return this._dataCaptureConfig != null;
         }
 
         /// <summary>

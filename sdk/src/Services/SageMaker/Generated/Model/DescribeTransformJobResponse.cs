@@ -32,10 +32,12 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DescribeTransformJobResponse : AmazonWebServiceResponse
     {
+        private string _autoMLJobArn;
         private BatchStrategy _batchStrategy;
         private DateTime? _creationTime;
         private DataProcessing _dataProcessing;
         private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private ExperimentConfig _experimentConfig;
         private string _failureReason;
         private string _labelingJobArn;
         private int? _maxConcurrentTransforms;
@@ -49,6 +51,22 @@ namespace Amazon.SageMaker.Model
         private TransformOutput _transformOutput;
         private TransformResources _transformResources;
         private DateTime? _transformStartTime;
+
+        /// <summary>
+        /// Gets and sets the property AutoMLJobArn.
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string AutoMLJobArn
+        {
+            get { return this._autoMLJobArn; }
+            set { this._autoMLJobArn = value; }
+        }
+
+        // Check to see if AutoMLJobArn property is set
+        internal bool IsSetAutoMLJobArn()
+        {
+            return this._autoMLJobArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BatchStrategy. 
@@ -127,6 +145,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnvironment()
         {
             return this._environment != null && this._environment.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentConfig.
+        /// </summary>
+        public ExperimentConfig ExperimentConfig
+        {
+            get { return this._experimentConfig; }
+            set { this._experimentConfig = value; }
+        }
+
+        // Check to see if ExperimentConfig property is set
+        internal bool IsSetExperimentConfig()
+        {
+            return this._experimentConfig != null;
         }
 
         /// <summary>

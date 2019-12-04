@@ -90,6 +90,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDebugHookConfig())
+                {
+                    context.Writer.WritePropertyName("DebugHookConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DebugHookConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DebugHookConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDebugRuleConfigurations())
+                {
+                    context.Writer.WritePropertyName("DebugRuleConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDebugRuleConfigurationsListValue in publicRequest.DebugRuleConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DebugRuleConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDebugRuleConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetEnableInterContainerTrafficEncryption())
                 {
                     context.Writer.WritePropertyName("EnableInterContainerTrafficEncryption");
@@ -106,6 +133,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("EnableNetworkIsolation");
                     context.Writer.Write(publicRequest.EnableNetworkIsolation);
+                }
+
+                if(publicRequest.IsSetExperimentConfig())
+                {
+                    context.Writer.WritePropertyName("ExperimentConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExperimentConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExperimentConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetHyperParameters())
@@ -191,6 +229,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetTensorBoardOutputConfig())
+                {
+                    context.Writer.WritePropertyName("TensorBoardOutputConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TensorBoardOutputConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TensorBoardOutputConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTrainingJobName())

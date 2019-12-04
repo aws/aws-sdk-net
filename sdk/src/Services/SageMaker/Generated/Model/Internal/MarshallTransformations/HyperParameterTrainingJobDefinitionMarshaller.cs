@@ -67,6 +67,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDefinitionName())
+            {
+                context.Writer.WritePropertyName("DefinitionName");
+                context.Writer.Write(requestObject.DefinitionName);
+            }
+
             if(requestObject.IsSetEnableInterContainerTrafficEncryption())
             {
                 context.Writer.WritePropertyName("EnableInterContainerTrafficEncryption");
@@ -83,6 +89,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("EnableNetworkIsolation");
                 context.Writer.Write(requestObject.EnableNetworkIsolation);
+            }
+
+            if(requestObject.IsSetHyperParameterRanges())
+            {
+                context.Writer.WritePropertyName("HyperParameterRanges");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ParameterRangesMarshaller.Instance;
+                marshaller.Marshall(requestObject.HyperParameterRanges, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetInputDataConfig())
@@ -150,6 +167,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
                 var marshaller = StoppingConditionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StoppingCondition, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTuningObjective())
+            {
+                context.Writer.WritePropertyName("TuningObjective");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HyperParameterTuningJobObjectiveMarshaller.Instance;
+                marshaller.Marshall(requestObject.TuningObjective, context);
 
                 context.Writer.WriteObjectEnd();
             }

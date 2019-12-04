@@ -78,6 +78,7 @@ namespace Amazon.SageMaker.Model
         private BatchStrategy _batchStrategy;
         private DataProcessing _dataProcessing;
         private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private ExperimentConfig _experimentConfig;
         private int? _maxConcurrentTransforms;
         private int? _maxPayloadInMB;
         private string _modelName;
@@ -169,14 +170,29 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExperimentConfig.
+        /// </summary>
+        public ExperimentConfig ExperimentConfig
+        {
+            get { return this._experimentConfig; }
+            set { this._experimentConfig = value; }
+        }
+
+        // Check to see if ExperimentConfig property is set
+        internal bool IsSetExperimentConfig()
+        {
+            return this._experimentConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxConcurrentTransforms. 
         /// <para>
         /// The maximum number of parallel requests that can be sent to each instance in a transform
         /// job. If <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset,
-        /// Amazon SageMaker checks the optional execution-parameters to determine the optimal
-        /// settings for your chosen algorithm. If the execution-parameters endpoint is not enabled,
-        /// the default value is <code>1</code>. For more information on execution-parameters,
-        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
+        /// Amazon SageMaker checks the optional execution-parameters to determine the settings
+        /// for your chosen algorithm. If the execution-parameters endpoint is not enabled, the
+        /// default value is <code>1</code>. For more information on execution-parameters, see
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
         /// Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value
         /// for <code>MaxConcurrentTransforms</code>.
         /// </para>

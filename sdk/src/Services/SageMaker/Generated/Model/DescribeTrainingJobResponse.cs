@@ -33,12 +33,17 @@ namespace Amazon.SageMaker.Model
     public partial class DescribeTrainingJobResponse : AmazonWebServiceResponse
     {
         private AlgorithmSpecification _algorithmSpecification;
+        private string _autoMLJobArn;
         private int? _billableTimeInSeconds;
         private CheckpointConfig _checkpointConfig;
         private DateTime? _creationTime;
+        private DebugHookConfig _debugHookConfig;
+        private List<DebugRuleConfiguration> _debugRuleConfigurations = new List<DebugRuleConfiguration>();
+        private List<DebugRuleEvaluationStatus> _debugRuleEvaluationStatuses = new List<DebugRuleEvaluationStatus>();
         private bool? _enableInterContainerTrafficEncryption;
         private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
+        private ExperimentConfig _experimentConfig;
         private string _failureReason;
         private List<MetricData> _finalMetricDataList = new List<MetricData>();
         private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
@@ -52,6 +57,7 @@ namespace Amazon.SageMaker.Model
         private SecondaryStatus _secondaryStatus;
         private List<SecondaryStatusTransition> _secondaryStatusTransitions = new List<SecondaryStatusTransition>();
         private StoppingCondition _stoppingCondition;
+        private TensorBoardOutputConfig _tensorBoardOutputConfig;
         private DateTime? _trainingEndTime;
         private string _trainingJobArn;
         private string _trainingJobName;
@@ -78,6 +84,22 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAlgorithmSpecification()
         {
             return this._algorithmSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoMLJobArn.
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string AutoMLJobArn
+        {
+            get { return this._autoMLJobArn; }
+            set { this._autoMLJobArn = value; }
+        }
+
+        // Check to see if AutoMLJobArn property is set
+        internal bool IsSetAutoMLJobArn()
+        {
+            return this._autoMLJobArn != null;
         }
 
         /// <summary>
@@ -137,6 +159,59 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DebugHookConfig.
+        /// </summary>
+        public DebugHookConfig DebugHookConfig
+        {
+            get { return this._debugHookConfig; }
+            set { this._debugHookConfig = value; }
+        }
+
+        // Check to see if DebugHookConfig property is set
+        internal bool IsSetDebugHookConfig()
+        {
+            return this._debugHookConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DebugRuleConfigurations. 
+        /// <para>
+        /// Configuration information for debugging rules.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<DebugRuleConfiguration> DebugRuleConfigurations
+        {
+            get { return this._debugRuleConfigurations; }
+            set { this._debugRuleConfigurations = value; }
+        }
+
+        // Check to see if DebugRuleConfigurations property is set
+        internal bool IsSetDebugRuleConfigurations()
+        {
+            return this._debugRuleConfigurations != null && this._debugRuleConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DebugRuleEvaluationStatuses. 
+        /// <para>
+        /// Status about the debug rule evaluation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<DebugRuleEvaluationStatus> DebugRuleEvaluationStatuses
+        {
+            get { return this._debugRuleEvaluationStatuses; }
+            set { this._debugRuleEvaluationStatuses = value; }
+        }
+
+        // Check to see if DebugRuleEvaluationStatuses property is set
+        internal bool IsSetDebugRuleEvaluationStatuses()
+        {
+            return this._debugRuleEvaluationStatuses != null && this._debugRuleEvaluationStatuses.Count > 0; 
         }
 
         /// <summary>
@@ -205,6 +280,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnableNetworkIsolation()
         {
             return this._enableNetworkIsolation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentConfig.
+        /// </summary>
+        public ExperimentConfig ExperimentConfig
+        {
+            get { return this._experimentConfig; }
+            set { this._experimentConfig = value; }
+        }
+
+        // Check to see if ExperimentConfig property is set
+        internal bool IsSetExperimentConfig()
+        {
+            return this._experimentConfig != null;
         }
 
         /// <summary>
@@ -543,6 +633,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetStoppingCondition()
         {
             return this._stoppingCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TensorBoardOutputConfig.
+        /// </summary>
+        public TensorBoardOutputConfig TensorBoardOutputConfig
+        {
+            get { return this._tensorBoardOutputConfig; }
+            set { this._tensorBoardOutputConfig = value; }
+        }
+
+        // Check to see if TensorBoardOutputConfig property is set
+        internal bool IsSetTensorBoardOutputConfig()
+        {
+            return this._tensorBoardOutputConfig != null;
         }
 
         /// <summary>

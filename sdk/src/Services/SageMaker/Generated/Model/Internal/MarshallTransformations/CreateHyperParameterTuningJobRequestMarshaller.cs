@@ -112,6 +112,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTrainingJobDefinitions())
+                {
+                    context.Writer.WritePropertyName("TrainingJobDefinitions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTrainingJobDefinitionsListValue in publicRequest.TrainingJobDefinitions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HyperParameterTrainingJobDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTrainingJobDefinitionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetWarmStartConfig())
                 {
                     context.Writer.WritePropertyName("WarmStartConfig");

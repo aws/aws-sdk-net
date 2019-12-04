@@ -58,10 +58,26 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CreateEndpointConfigRequest : AmazonSageMakerRequest
     {
+        private DataCaptureConfig _dataCaptureConfig;
         private string _endpointConfigName;
         private string _kmsKeyId;
         private List<ProductionVariant> _productionVariants = new List<ProductionVariant>();
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property DataCaptureConfig.
+        /// </summary>
+        public DataCaptureConfig DataCaptureConfig
+        {
+            get { return this._dataCaptureConfig; }
+            set { this._dataCaptureConfig = value; }
+        }
+
+        // Check to see if DataCaptureConfig property is set
+        internal bool IsSetDataCaptureConfig()
+        {
+            return this._dataCaptureConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndpointConfigName. 
