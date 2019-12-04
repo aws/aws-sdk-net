@@ -1586,6 +1586,65 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CreateDBProxy
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Creates a new DB proxy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBProxy service method.</param>
+        /// 
+        /// <returns>The response from the CreateDBProxy service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyAlreadyExistsException">
+        /// The specified proxy name must be unique for all proxies owned by your AWS account
+        /// in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyQuotaExceededException">
+        /// Your AWS account already has the maximum number of proxies in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy">REST API Reference for CreateDBProxy Operation</seealso>
+        CreateDBProxyResponse CreateDBProxy(CreateDBProxyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDBProxy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBProxy operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDBProxy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy">REST API Reference for CreateDBProxy Operation</seealso>
+        IAsyncResult BeginCreateDBProxy(CreateDBProxyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDBProxy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDBProxy.</param>
+        /// 
+        /// <returns>Returns a  CreateDBProxyResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy">REST API Reference for CreateDBProxy Operation</seealso>
+        CreateDBProxyResponse EndCreateDBProxy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDBSecurityGroup
 
 
@@ -2456,6 +2515,61 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DeleteDBProxy
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Deletes an existing proxy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBProxy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDBProxy service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy">REST API Reference for DeleteDBProxy Operation</seealso>
+        DeleteDBProxyResponse DeleteDBProxy(DeleteDBProxyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDBProxy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBProxy operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDBProxy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy">REST API Reference for DeleteDBProxy Operation</seealso>
+        IAsyncResult BeginDeleteDBProxy(DeleteDBProxyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDBProxy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDBProxy.</param>
+        /// 
+        /// <returns>Returns a  DeleteDBProxyResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy">REST API Reference for DeleteDBProxy Operation</seealso>
+        DeleteDBProxyResponse EndDeleteDBProxy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteDBSecurityGroup
 
 
@@ -2802,6 +2916,67 @@ namespace Amazon.RDS
         /// <returns>Returns a  DeleteOptionGroupResult from RDS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteOptionGroup">REST API Reference for DeleteOptionGroup Operation</seealso>
         DeleteOptionGroupResponse EndDeleteOptionGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeregisterDBProxyTargets
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Remove the association between one or more <code>DBProxyTarget</code> data structures
+        /// and a <code>DBProxyTargetGroup</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterDBProxyTargets service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterDBProxyTargets service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetNotFoundException">
+        /// The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned
+        /// by your AWS account in the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets">REST API Reference for DeregisterDBProxyTargets Operation</seealso>
+        DeregisterDBProxyTargetsResponse DeregisterDBProxyTargets(DeregisterDBProxyTargetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterDBProxyTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterDBProxyTargets operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterDBProxyTargets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets">REST API Reference for DeregisterDBProxyTargets Operation</seealso>
+        IAsyncResult BeginDeregisterDBProxyTargets(DeregisterDBProxyTargetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterDBProxyTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterDBProxyTargets.</param>
+        /// 
+        /// <returns>Returns a  DeregisterDBProxyTargetsResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets">REST API Reference for DeregisterDBProxyTargets Operation</seealso>
+        DeregisterDBProxyTargetsResponse EndDeregisterDBProxyTargets(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3650,6 +3825,171 @@ namespace Amazon.RDS
         /// <returns>Returns a  DescribeDBParametersResult from RDS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters">REST API Reference for DescribeDBParameters Operation</seealso>
         DescribeDBParametersResponse EndDescribeDBParameters(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeDBProxies
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns information about DB proxies.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxies service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBProxies service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">REST API Reference for DescribeDBProxies Operation</seealso>
+        DescribeDBProxiesResponse DescribeDBProxies(DescribeDBProxiesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBProxies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxies operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBProxies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">REST API Reference for DescribeDBProxies Operation</seealso>
+        IAsyncResult BeginDescribeDBProxies(DescribeDBProxiesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBProxies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBProxies.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBProxiesResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">REST API Reference for DescribeDBProxies Operation</seealso>
+        DescribeDBProxiesResponse EndDescribeDBProxies(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeDBProxyTargetGroups
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code>
+        /// data structures.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargetGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBProxyTargetGroups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups">REST API Reference for DescribeDBProxyTargetGroups Operation</seealso>
+        DescribeDBProxyTargetGroupsResponse DescribeDBProxyTargetGroups(DescribeDBProxyTargetGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBProxyTargetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargetGroups operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBProxyTargetGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups">REST API Reference for DescribeDBProxyTargetGroups Operation</seealso>
+        IAsyncResult BeginDescribeDBProxyTargetGroups(DescribeDBProxyTargetGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBProxyTargetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBProxyTargetGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBProxyTargetGroupsResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups">REST API Reference for DescribeDBProxyTargetGroups Operation</seealso>
+        DescribeDBProxyTargetGroupsResponse EndDescribeDBProxyTargetGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeDBProxyTargets
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargets service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBProxyTargets service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetNotFoundException">
+        /// The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned
+        /// by your AWS account in the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets">REST API Reference for DescribeDBProxyTargets Operation</seealso>
+        DescribeDBProxyTargetsResponse DescribeDBProxyTargets(DescribeDBProxyTargetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBProxyTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargets operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBProxyTargets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets">REST API Reference for DescribeDBProxyTargets Operation</seealso>
+        IAsyncResult BeginDescribeDBProxyTargets(DescribeDBProxyTargetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBProxyTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBProxyTargets.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBProxyTargetsResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets">REST API Reference for DescribeDBProxyTargets Operation</seealso>
+        DescribeDBProxyTargetsResponse EndDescribeDBProxyTargets(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5423,6 +5763,121 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  ModifyDBProxy
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Changes the settings for an existing DB proxy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxy service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBProxy service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyAlreadyExistsException">
+        /// The specified proxy name must be unique for all proxies owned by your AWS account
+        /// in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy">REST API Reference for ModifyDBProxy Operation</seealso>
+        ModifyDBProxyResponse ModifyDBProxy(ModifyDBProxyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDBProxy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxy operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDBProxy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy">REST API Reference for ModifyDBProxy Operation</seealso>
+        IAsyncResult BeginModifyDBProxy(ModifyDBProxyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyDBProxy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDBProxy.</param>
+        /// 
+        /// <returns>Returns a  ModifyDBProxyResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy">REST API Reference for ModifyDBProxy Operation</seealso>
+        ModifyDBProxyResponse EndModifyDBProxy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyDBProxyTargetGroup
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Modifies the properties of a <code>DBProxyTargetGroup</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxyTargetGroup service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBProxyTargetGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup">REST API Reference for ModifyDBProxyTargetGroup Operation</seealso>
+        ModifyDBProxyTargetGroupResponse ModifyDBProxyTargetGroup(ModifyDBProxyTargetGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDBProxyTargetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxyTargetGroup operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDBProxyTargetGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup">REST API Reference for ModifyDBProxyTargetGroup Operation</seealso>
+        IAsyncResult BeginModifyDBProxyTargetGroup(ModifyDBProxyTargetGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyDBProxyTargetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDBProxyTargetGroup.</param>
+        /// 
+        /// <returns>Returns a  ModifyDBProxyTargetGroupResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup">REST API Reference for ModifyDBProxyTargetGroup Operation</seealso>
+        ModifyDBProxyTargetGroupResponse EndModifyDBProxyTargetGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyDBSnapshot
 
 
@@ -5990,6 +6445,77 @@ namespace Amazon.RDS
         /// <returns>Returns a  RebootDBInstanceResult from RDS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         RebootDBInstanceResponse EndRebootDBInstance(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RegisterDBProxyTargets
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDBProxyTargets service method.</param>
+        /// 
+        /// <returns>The response from the RegisterDBProxyTargets service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetAlreadyRegisteredException">
+        /// The proxy is already associated with the specified RDS DB instance or Aurora DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets">REST API Reference for RegisterDBProxyTargets Operation</seealso>
+        RegisterDBProxyTargetsResponse RegisterDBProxyTargets(RegisterDBProxyTargetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterDBProxyTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDBProxyTargets operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterDBProxyTargets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets">REST API Reference for RegisterDBProxyTargets Operation</seealso>
+        IAsyncResult BeginRegisterDBProxyTargets(RegisterDBProxyTargetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterDBProxyTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterDBProxyTargets.</param>
+        /// 
+        /// <returns>Returns a  RegisterDBProxyTargetsResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets">REST API Reference for RegisterDBProxyTargets Operation</seealso>
+        RegisterDBProxyTargetsResponse EndRegisterDBProxyTargets(IAsyncResult asyncResult);
 
         #endregion
         

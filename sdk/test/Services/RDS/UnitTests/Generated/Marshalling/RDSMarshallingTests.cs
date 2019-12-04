@@ -509,6 +509,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void CreateDBProxyMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBProxy");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBProxyRequest>();
+            var marshaller = new CreateDBProxyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateDBProxyResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateDBProxyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CreateDBSecurityGroupMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDBSecurityGroup");
@@ -835,6 +859,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DeleteDBProxyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteDBProxy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDBProxyRequest>();
+            var marshaller = new DeleteDBProxyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteDBProxyResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteDBProxyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DeleteDBSecurityGroupMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteDBSecurityGroup");
@@ -980,6 +1028,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DeregisterDBProxyTargetsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeregisterDBProxyTargets");
+
+            var request = InstantiateClassGenerator.Execute<DeregisterDBProxyTargetsRequest>();
+            var marshaller = new DeregisterDBProxyTargetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeregisterDBProxyTargetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeregisterDBProxyTargetsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -1363,6 +1435,78 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeDBParametersResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeDBParametersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DescribeDBProxiesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDBProxies");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDBProxiesRequest>();
+            var marshaller = new DescribeDBProxiesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeDBProxiesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDBProxiesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DescribeDBProxyTargetGroupsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDBProxyTargetGroups");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDBProxyTargetGroupsRequest>();
+            var marshaller = new DescribeDBProxyTargetGroupsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeDBProxyTargetGroupsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDBProxyTargetGroupsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DescribeDBProxyTargetsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDBProxyTargets");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDBProxyTargetsRequest>();
+            var marshaller = new DescribeDBProxyTargetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeDBProxyTargetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDBProxyTargetsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -2092,6 +2236,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void ModifyDBProxyMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBProxy");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBProxyRequest>();
+            var marshaller = new ModifyDBProxyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyDBProxyResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyDBProxyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyDBProxyTargetGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBProxyTargetGroup");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBProxyTargetGroupRequest>();
+            var marshaller = new ModifyDBProxyTargetGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyDBProxyTargetGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyDBProxyTargetGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void ModifyDBSnapshotMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyDBSnapshot");
@@ -2323,6 +2515,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = RebootDBInstanceResponseUnmarshaller.Instance.Unmarshall(context)
                 as RebootDBInstanceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void RegisterDBProxyTargetsMarshallTest()
+        {
+            var operation = service_model.FindOperation("RegisterDBProxyTargets");
+
+            var request = InstantiateClassGenerator.Execute<RegisterDBProxyTargetsRequest>();
+            var marshaller = new RegisterDBProxyTargetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RegisterDBProxyTargetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as RegisterDBProxyTargetsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

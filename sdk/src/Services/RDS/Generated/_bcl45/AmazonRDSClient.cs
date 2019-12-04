@@ -2497,6 +2497,85 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CreateDBProxy
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Creates a new DB proxy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBProxy service method.</param>
+        /// 
+        /// <returns>The response from the CreateDBProxy service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyAlreadyExistsException">
+        /// The specified proxy name must be unique for all proxies owned by your AWS account
+        /// in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyQuotaExceededException">
+        /// Your AWS account already has the maximum number of proxies in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy">REST API Reference for CreateDBProxy Operation</seealso>
+        public virtual CreateDBProxyResponse CreateDBProxy(CreateDBProxyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDBProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDBProxyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDBProxyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Creates a new DB proxy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBProxy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDBProxy service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyAlreadyExistsException">
+        /// The specified proxy name must be unique for all proxies owned by your AWS account
+        /// in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyQuotaExceededException">
+        /// Your AWS account already has the maximum number of proxies in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy">REST API Reference for CreateDBProxy Operation</seealso>
+        public virtual Task<CreateDBProxyResponse> CreateDBProxyAsync(CreateDBProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDBProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDBProxyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDBProxyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDBSecurityGroup
 
 
@@ -3691,6 +3770,77 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DeleteDBProxy
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Deletes an existing proxy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBProxy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDBProxy service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy">REST API Reference for DeleteDBProxy Operation</seealso>
+        public virtual DeleteDBProxyResponse DeleteDBProxy(DeleteDBProxyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDBProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDBProxyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDBProxyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Deletes an existing proxy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBProxy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDBProxy service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy">REST API Reference for DeleteDBProxy Operation</seealso>
+        public virtual Task<DeleteDBProxyResponse> DeleteDBProxyAsync(DeleteDBProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDBProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDBProxyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDBProxyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDBSecurityGroup
 
 
@@ -4112,6 +4262,89 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = DeleteOptionGroupResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteOptionGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterDBProxyTargets
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Remove the association between one or more <code>DBProxyTarget</code> data structures
+        /// and a <code>DBProxyTargetGroup</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterDBProxyTargets service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterDBProxyTargets service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetNotFoundException">
+        /// The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned
+        /// by your AWS account in the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets">REST API Reference for DeregisterDBProxyTargets Operation</seealso>
+        public virtual DeregisterDBProxyTargetsResponse DeregisterDBProxyTargets(DeregisterDBProxyTargetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterDBProxyTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterDBProxyTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterDBProxyTargetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Remove the association between one or more <code>DBProxyTarget</code> data structures
+        /// and a <code>DBProxyTargetGroup</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterDBProxyTargets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterDBProxyTargets service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetNotFoundException">
+        /// The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned
+        /// by your AWS account in the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets">REST API Reference for DeregisterDBProxyTargets Operation</seealso>
+        public virtual Task<DeregisterDBProxyTargetsResponse> DeregisterDBProxyTargetsAsync(DeregisterDBProxyTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterDBProxyTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterDBProxyTargetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterDBProxyTargetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5224,6 +5457,219 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = DescribeDBParametersResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeDBParametersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDBProxies
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns information about DB proxies.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxies service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBProxies service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">REST API Reference for DescribeDBProxies Operation</seealso>
+        public virtual DescribeDBProxiesResponse DescribeDBProxies(DescribeDBProxiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBProxiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBProxiesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBProxiesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns information about DB proxies.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBProxies service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">REST API Reference for DescribeDBProxies Operation</seealso>
+        public virtual Task<DescribeDBProxiesResponse> DescribeDBProxiesAsync(DescribeDBProxiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBProxiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBProxiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDBProxiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDBProxyTargetGroups
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code>
+        /// data structures.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargetGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBProxyTargetGroups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups">REST API Reference for DescribeDBProxyTargetGroups Operation</seealso>
+        public virtual DescribeDBProxyTargetGroupsResponse DescribeDBProxyTargetGroups(DescribeDBProxyTargetGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBProxyTargetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBProxyTargetGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBProxyTargetGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code>
+        /// data structures.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargetGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBProxyTargetGroups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups">REST API Reference for DescribeDBProxyTargetGroups Operation</seealso>
+        public virtual Task<DescribeDBProxyTargetGroupsResponse> DescribeDBProxyTargetGroupsAsync(DescribeDBProxyTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBProxyTargetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBProxyTargetGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDBProxyTargetGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDBProxyTargets
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargets service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBProxyTargets service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetNotFoundException">
+        /// The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned
+        /// by your AWS account in the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets">REST API Reference for DescribeDBProxyTargets Operation</seealso>
+        public virtual DescribeDBProxyTargetsResponse DescribeDBProxyTargets(DescribeDBProxyTargetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBProxyTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBProxyTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBProxyTargetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBProxyTargets service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetNotFoundException">
+        /// The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned
+        /// by your AWS account in the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets">REST API Reference for DescribeDBProxyTargets Operation</seealso>
+        public virtual Task<DescribeDBProxyTargetsResponse> DescribeDBProxyTargetsAsync(DescribeDBProxyTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBProxyTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBProxyTargetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDBProxyTargetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7688,6 +8134,158 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  ModifyDBProxy
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Changes the settings for an existing DB proxy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxy service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBProxy service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyAlreadyExistsException">
+        /// The specified proxy name must be unique for all proxies owned by your AWS account
+        /// in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy">REST API Reference for ModifyDBProxy Operation</seealso>
+        public virtual ModifyDBProxyResponse ModifyDBProxy(ModifyDBProxyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDBProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDBProxyResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyDBProxyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Changes the settings for an existing DB proxy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyDBProxy service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyAlreadyExistsException">
+        /// The specified proxy name must be unique for all proxies owned by your AWS account
+        /// in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy">REST API Reference for ModifyDBProxy Operation</seealso>
+        public virtual Task<ModifyDBProxyResponse> ModifyDBProxyAsync(ModifyDBProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDBProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDBProxyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyDBProxyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyDBProxyTargetGroup
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Modifies the properties of a <code>DBProxyTargetGroup</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxyTargetGroup service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBProxyTargetGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup">REST API Reference for ModifyDBProxyTargetGroup Operation</seealso>
+        public virtual ModifyDBProxyTargetGroupResponse ModifyDBProxyTargetGroup(ModifyDBProxyTargetGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDBProxyTargetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDBProxyTargetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyDBProxyTargetGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Modifies the properties of a <code>DBProxyTargetGroup</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxyTargetGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyDBProxyTargetGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup">REST API Reference for ModifyDBProxyTargetGroup Operation</seealso>
+        public virtual Task<ModifyDBProxyTargetGroupResponse> ModifyDBProxyTargetGroupAsync(ModifyDBProxyTargetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDBProxyTargetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDBProxyTargetGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyDBProxyTargetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyDBSnapshot
 
 
@@ -8434,6 +9032,109 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = RebootDBInstanceResponseUnmarshaller.Instance;
             
             return InvokeAsync<RebootDBInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterDBProxyTargets
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDBProxyTargets service method.</param>
+        /// 
+        /// <returns>The response from the RegisterDBProxyTargets service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetAlreadyRegisteredException">
+        /// The proxy is already associated with the specified RDS DB instance or Aurora DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets">REST API Reference for RegisterDBProxyTargets Operation</seealso>
+        public virtual RegisterDBProxyTargetsResponse RegisterDBProxyTargets(RegisterDBProxyTargetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDBProxyTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDBProxyTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterDBProxyTargetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDBProxyTargets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterDBProxyTargets service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetAlreadyRegisteredException">
+        /// The proxy is already associated with the specified RDS DB instance or Aurora DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets">REST API Reference for RegisterDBProxyTargets Operation</seealso>
+        public virtual Task<RegisterDBProxyTargetsResponse> RegisterDBProxyTargetsAsync(RegisterDBProxyTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDBProxyTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDBProxyTargetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterDBProxyTargetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
