@@ -28,31 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutFunctionConcurrency operation.
-    /// Sets the maximum number of simultaneous executions for a function, and reserves capacity
-    /// for that concurrency level.
-    /// 
-    ///  
-    /// <para>
-    /// Concurrency settings apply to the function as a whole, including all published versions
-    /// and the unpublished version. Reserving concurrency both ensures that your function
-    /// has capacity to process the specified number of events simultaneously, and prevents
-    /// it from scaling beyond that level. Use <a>GetFunction</a> to see the current setting
-    /// for a function.
-    /// </para>
-    ///  
-    /// <para>
-    /// Use <a>GetAccountSettings</a> to see your Regional concurrency limit. You can reserve
-    /// concurrency for as many functions as you like, as long as you leave at least 100 simultaneous
-    /// executions unreserved for functions that aren't configured with a per-function limit.
-    /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
-    /// Concurrency</a>.
-    /// </para>
+    /// Container for the parameters to the ListProvisionedConcurrencyConfigs operation.
+    /// Retrieves a list of provisioned concurrency configurations for a function.
     /// </summary>
-    public partial class PutFunctionConcurrencyRequest : AmazonLambdaRequest
+    public partial class ListProvisionedConcurrencyConfigsRequest : AmazonLambdaRequest
     {
         private string _functionName;
-        private int? _reservedConcurrentExecutions;
+        private string _marker;
+        private int? _maxItems;
 
         /// <summary>
         /// Gets and sets the property FunctionName. 
@@ -93,22 +76,41 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReservedConcurrentExecutions. 
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// The number of simultaneous executions to reserve for the function.
+        /// Specify the pagination token that's returned by a previous request to retrieve the
+        /// next page of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
-        public int ReservedConcurrentExecutions
+        public string Marker
         {
-            get { return this._reservedConcurrentExecutions.GetValueOrDefault(); }
-            set { this._reservedConcurrentExecutions = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
-        // Check to see if ReservedConcurrentExecutions property is set
-        internal bool IsSetReservedConcurrentExecutions()
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
         {
-            return this._reservedConcurrentExecutions.HasValue; 
+            return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// Specify a number to limit the number of configurations returned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public int MaxItems
+        {
+            get { return this._maxItems.GetValueOrDefault(); }
+            set { this._maxItems = value; }
+        }
+
+        // Check to see if MaxItems property is set
+        internal bool IsSetMaxItems()
+        {
+            return this._maxItems.HasValue; 
         }
 
     }

@@ -582,6 +582,40 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  DeleteProvisionedConcurrencyConfig
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProvisionedConcurrencyConfig operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProvisionedConcurrencyConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteProvisionedConcurrencyConfig">REST API Reference for DeleteProvisionedConcurrencyConfig Operation</seealso>
+        public virtual void DeleteProvisionedConcurrencyConfigAsync(DeleteProvisionedConcurrencyConfigRequest request, AmazonServiceCallback<DeleteProvisionedConcurrencyConfigRequest, DeleteProvisionedConcurrencyConfigResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("DeleteProvisionedConcurrencyConfig is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteProvisionedConcurrencyConfigRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteProvisionedConcurrencyConfigRequest,DeleteProvisionedConcurrencyConfigResponse> responseObject 
+                            = new AmazonServiceResult<DeleteProvisionedConcurrencyConfigRequest,DeleteProvisionedConcurrencyConfigResponse>((DeleteProvisionedConcurrencyConfigRequest)req, (DeleteProvisionedConcurrencyConfigResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  GetAccountSettings
 
         /// <summary>
@@ -725,6 +759,35 @@ namespace Amazon.Lambda
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
                     AmazonServiceResult<GetFunctionRequest,GetFunctionResponse> responseObject 
                             = new AmazonServiceResult<GetFunctionRequest,GetFunctionResponse>((GetFunctionRequest)req, (GetFunctionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  GetFunctionConcurrency
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFunctionConcurrency operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFunctionConcurrency operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency">REST API Reference for GetFunctionConcurrency Operation</seealso>
+        public virtual void GetFunctionConcurrencyAsync(GetFunctionConcurrencyRequest request, AmazonServiceCallback<GetFunctionConcurrencyRequest, GetFunctionConcurrencyResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetFunctionConcurrencyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetFunctionConcurrencyResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetFunctionConcurrencyRequest,GetFunctionConcurrencyResponse> responseObject 
+                            = new AmazonServiceResult<GetFunctionConcurrencyRequest,GetFunctionConcurrencyResponse>((GetFunctionConcurrencyRequest)req, (GetFunctionConcurrencyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
             BeginInvoke(request, invokeOptions, options, callbackHelper);
@@ -938,6 +1001,35 @@ namespace Amazon.Lambda
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
                     AmazonServiceResult<GetPolicyRequest,GetPolicyResponse> responseObject 
                             = new AmazonServiceResult<GetPolicyRequest,GetPolicyResponse>((GetPolicyRequest)req, (GetPolicyResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  GetProvisionedConcurrencyConfig
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetProvisionedConcurrencyConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetProvisionedConcurrencyConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetProvisionedConcurrencyConfig">REST API Reference for GetProvisionedConcurrencyConfig Operation</seealso>
+        public virtual void GetProvisionedConcurrencyConfigAsync(GetProvisionedConcurrencyConfigRequest request, AmazonServiceCallback<GetProvisionedConcurrencyConfigRequest, GetProvisionedConcurrencyConfigResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetProvisionedConcurrencyConfigRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetProvisionedConcurrencyConfigRequest,GetProvisionedConcurrencyConfigResponse> responseObject 
+                            = new AmazonServiceResult<GetProvisionedConcurrencyConfigRequest,GetProvisionedConcurrencyConfigResponse>((GetProvisionedConcurrencyConfigRequest)req, (GetProvisionedConcurrencyConfigResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
             BeginInvoke(request, invokeOptions, options, callbackHelper);
@@ -1212,6 +1304,35 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  ListProvisionedConcurrencyConfigs
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProvisionedConcurrencyConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisionedConcurrencyConfigs operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListProvisionedConcurrencyConfigs">REST API Reference for ListProvisionedConcurrencyConfigs Operation</seealso>
+        public virtual void ListProvisionedConcurrencyConfigsAsync(ListProvisionedConcurrencyConfigsRequest request, AmazonServiceCallback<ListProvisionedConcurrencyConfigsRequest, ListProvisionedConcurrencyConfigsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListProvisionedConcurrencyConfigsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListProvisionedConcurrencyConfigsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListProvisionedConcurrencyConfigsRequest,ListProvisionedConcurrencyConfigsResponse> responseObject 
+                            = new AmazonServiceResult<ListProvisionedConcurrencyConfigsRequest,ListProvisionedConcurrencyConfigsResponse>((ListProvisionedConcurrencyConfigsRequest)req, (ListProvisionedConcurrencyConfigsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  ListTags
 
         /// <summary>
@@ -1389,6 +1510,40 @@ namespace Amazon.Lambda
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
                     AmazonServiceResult<PutFunctionEventInvokeConfigRequest,PutFunctionEventInvokeConfigResponse> responseObject 
                             = new AmazonServiceResult<PutFunctionEventInvokeConfigRequest,PutFunctionEventInvokeConfigResponse>((PutFunctionEventInvokeConfigRequest)req, (PutFunctionEventInvokeConfigResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  PutProvisionedConcurrencyConfig
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutProvisionedConcurrencyConfig operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutProvisionedConcurrencyConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutProvisionedConcurrencyConfig">REST API Reference for PutProvisionedConcurrencyConfig Operation</seealso>
+        public virtual void PutProvisionedConcurrencyConfigAsync(PutProvisionedConcurrencyConfigRequest request, AmazonServiceCallback<PutProvisionedConcurrencyConfigRequest, PutProvisionedConcurrencyConfigResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("PutProvisionedConcurrencyConfig is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = PutProvisionedConcurrencyConfigRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = PutProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PutProvisionedConcurrencyConfigRequest,PutProvisionedConcurrencyConfigResponse> responseObject 
+                            = new AmazonServiceResult<PutProvisionedConcurrencyConfigRequest,PutProvisionedConcurrencyConfigResponse>((PutProvisionedConcurrencyConfigRequest)req, (PutProvisionedConcurrencyConfigResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
             BeginInvoke(request, invokeOptions, options, callbackHelper);

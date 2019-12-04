@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteAlias operation
+    /// Response Unmarshaller for PutProvisionedConcurrencyConfig operation
     /// </summary>  
-    public class DeleteAliasResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutProvisionedConcurrencyConfigResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,49 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteAliasResponse response = new DeleteAliasResponse();
+            PutProvisionedConcurrencyConfigResponse response = new PutProvisionedConcurrencyConfigResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("AllocatedProvisionedConcurrentExecutions", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.AllocatedProvisionedConcurrentExecutions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AvailableProvisionedConcurrentExecutions", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.AvailableProvisionedConcurrentExecutions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastModified", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LastModified = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RequestedProvisionedConcurrentExecutions", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.RequestedProvisionedConcurrentExecutions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StatusReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -69,6 +110,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 return new ResourceConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceException"))
             {
                 return new ServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -80,9 +125,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             return new AmazonLambdaException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteAliasResponseUnmarshaller _instance = new DeleteAliasResponseUnmarshaller();        
+        private static PutProvisionedConcurrencyConfigResponseUnmarshaller _instance = new PutProvisionedConcurrencyConfigResponseUnmarshaller();        
 
-        internal static DeleteAliasResponseUnmarshaller GetInstance()
+        internal static PutProvisionedConcurrencyConfigResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -90,7 +135,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteAliasResponseUnmarshaller Instance
+        public static PutProvisionedConcurrencyConfigResponseUnmarshaller Instance
         {
             get
             {

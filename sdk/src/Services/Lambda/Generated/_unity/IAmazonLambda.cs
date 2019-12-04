@@ -275,6 +275,24 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  DeleteProvisionedConcurrencyConfig
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProvisionedConcurrencyConfig operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProvisionedConcurrencyConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteProvisionedConcurrencyConfig">REST API Reference for DeleteProvisionedConcurrencyConfig Operation</seealso>
+        void DeleteProvisionedConcurrencyConfigAsync(DeleteProvisionedConcurrencyConfigRequest request, AmazonServiceCallback<DeleteProvisionedConcurrencyConfigRequest, DeleteProvisionedConcurrencyConfigResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  GetAccountSettings
 
 
@@ -367,6 +385,23 @@ namespace Amazon.Lambda
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         void GetFunctionAsync(GetFunctionRequest request, AmazonServiceCallback<GetFunctionRequest, GetFunctionResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  GetFunctionConcurrency
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFunctionConcurrency operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFunctionConcurrency operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency">REST API Reference for GetFunctionConcurrency Operation</seealso>
+        void GetFunctionConcurrencyAsync(GetFunctionConcurrencyRequest request, AmazonServiceCallback<GetFunctionConcurrencyRequest, GetFunctionConcurrencyResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -502,6 +537,23 @@ namespace Amazon.Lambda
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         void GetPolicyAsync(GetPolicyRequest request, AmazonServiceCallback<GetPolicyRequest, GetPolicyResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  GetProvisionedConcurrencyConfig
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetProvisionedConcurrencyConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetProvisionedConcurrencyConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetProvisionedConcurrencyConfig">REST API Reference for GetProvisionedConcurrencyConfig Operation</seealso>
+        void GetProvisionedConcurrencyConfigAsync(GetProvisionedConcurrencyConfigRequest request, AmazonServiceCallback<GetProvisionedConcurrencyConfigRequest, GetProvisionedConcurrencyConfigResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -672,6 +724,23 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  ListProvisionedConcurrencyConfigs
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProvisionedConcurrencyConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisionedConcurrencyConfigs operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListProvisionedConcurrencyConfigs">REST API Reference for ListProvisionedConcurrencyConfigs Operation</seealso>
+        void ListProvisionedConcurrencyConfigsAsync(ListProvisionedConcurrencyConfigsRequest request, AmazonServiceCallback<ListProvisionedConcurrencyConfigsRequest, ListProvisionedConcurrencyConfigsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  ListTags
 
 
@@ -772,6 +841,24 @@ namespace Amazon.Lambda
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionEventInvokeConfig">REST API Reference for PutFunctionEventInvokeConfig Operation</seealso>
         void PutFunctionEventInvokeConfigAsync(PutFunctionEventInvokeConfigRequest request, AmazonServiceCallback<PutFunctionEventInvokeConfigRequest, PutFunctionEventInvokeConfigResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  PutProvisionedConcurrencyConfig
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutProvisionedConcurrencyConfig operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutProvisionedConcurrencyConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutProvisionedConcurrencyConfig">REST API Reference for PutProvisionedConcurrencyConfig Operation</seealso>
+        void PutProvisionedConcurrencyConfigAsync(PutProvisionedConcurrencyConfigRequest request, AmazonServiceCallback<PutProvisionedConcurrencyConfigRequest, PutProvisionedConcurrencyConfigResponse> callback, AsyncOptions options = null);
 
 
         #endregion

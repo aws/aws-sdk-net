@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteAlias operation
+    /// Response Unmarshaller for GetFunctionConcurrency operation
     /// </summary>  
-    public class DeleteAliasResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetFunctionConcurrencyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteAliasResponse response = new DeleteAliasResponse();
+            GetFunctionConcurrencyResponse response = new GetFunctionConcurrencyResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("ReservedConcurrentExecutions", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.ReservedConcurrentExecutions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -65,9 +76,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceConflictException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
-                return new ResourceConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceException"))
             {
@@ -80,9 +91,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             return new AmazonLambdaException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteAliasResponseUnmarshaller _instance = new DeleteAliasResponseUnmarshaller();        
+        private static GetFunctionConcurrencyResponseUnmarshaller _instance = new GetFunctionConcurrencyResponseUnmarshaller();        
 
-        internal static DeleteAliasResponseUnmarshaller GetInstance()
+        internal static GetFunctionConcurrencyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -90,7 +101,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteAliasResponseUnmarshaller Instance
+        public static GetFunctionConcurrencyResponseUnmarshaller Instance
         {
             get
             {
