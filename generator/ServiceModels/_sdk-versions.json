@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.643.0",
+    "ProductVersion" : "3.3.644.0",
     "CoreVersion"    : "3.3.104.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -969,7 +969,7 @@
             "InPreview"               : false
         },
         "KinesisVideo"                    : {
-            "Version" : "3.3.101.62",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.0"
@@ -1345,7 +1345,7 @@
             "InPreview"               : false
         },
         "ApiGatewayV2"                    : {
-            "Version" : "3.3.103.60",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.0"
@@ -1729,6 +1729,14 @@
             "InPreview"               : false
         },
         "EBS"                             : {
+            "Version" : "3.3.100.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.104.0"
+            },
+            "InPreview"               : false
+        },
+        "KinesisVideoSignalingChannels"   : {
             "Version" : "3.3.100.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {

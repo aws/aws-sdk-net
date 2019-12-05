@@ -1,3 +1,11 @@
+### 3.3.644.0 (2019-12-05 01:33 UTC)
+* ApiGatewayV2 (3.3.104.0)
+	* Amazon API Gateway now supports HTTP APIs (beta), enabling customers to quickly build high performance RESTful APIs that are up to 71% cheaper than REST APIs also available from API Gateway. HTTP APIs are optimized for building APIs that proxy to AWS Lambda functions or HTTP backends, making them ideal for serverless workloads. Using HTTP APIs, you can secure your APIs using OIDC and OAuth 2 out of box, quickly build web applications using a simple CORS experience, and get started immediately with automatic deployment and simple create workflows.
+* KinesisVideo (3.3.102.0)
+	* Introduces management of signaling channels for Kinesis Video Streams.
+* KinesisVideoSignalingChannels (3.3.100.0)
+	* Announcing support for WebRTC in Kinesis Video Streams, as fully managed capability. You can now use simple APIs to enable your connected devices, web, and mobile apps with real-time two-way media streaming capabilities.
+
 ### 3.3.643.0 (2019-12-04 01:41 UTC)
 * ApplicationAutoScaling (3.3.104.0)
 	* This release supports auto scaling of provisioned concurrency for AWS Lambda.
