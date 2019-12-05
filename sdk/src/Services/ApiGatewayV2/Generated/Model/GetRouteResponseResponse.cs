@@ -41,7 +41,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ModelSelectionExpression. 
         /// <para>
-        /// Represents the model selection expression of a route response.
+        /// Represents the model selection expression of a route response. Supported only for
+        /// WebSocket APIs.
         /// </para>
         /// </summary>
         public string ModelSelectionExpression

@@ -42,7 +42,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// Gets and sets the property DataTraceEnabled. 
         /// <para>
         /// Specifies whether (true) or not (false) data trace logging is enabled for this route.
-        /// This property affects the log entries pushed to Amazon CloudWatch Logs.
+        /// This property affects the log entries pushed to Amazon CloudWatch Logs. Supported
+        /// only for WebSocket APIs.
         /// </para>
         /// </summary>
         public bool DataTraceEnabled
@@ -78,8 +79,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property LoggingLevel. 
         /// <para>
-        /// Specifies the logging level for this route: DEBUG, INFO, or WARN. This property affects
-        /// the log entries pushed to Amazon CloudWatch Logs.
+        /// Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects
+        /// the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
         /// </para>
         /// </summary>
         public LoggingLevel LoggingLevel
@@ -97,7 +98,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ThrottlingBurstLimit. 
         /// <para>
-        /// Specifies the throttling burst limit.
+        /// Specifies the throttling burst limit. Supported only for WebSocket APIs.
         /// </para>
         /// </summary>
         public int ThrottlingBurstLimit
@@ -115,7 +116,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ThrottlingRateLimit. 
         /// <para>
-        /// Specifies the throttling rate limit.
+        /// Specifies the throttling rate limit. Supported only for WebSocket APIs.
         /// </para>
         /// </summary>
         public double ThrottlingRateLimit

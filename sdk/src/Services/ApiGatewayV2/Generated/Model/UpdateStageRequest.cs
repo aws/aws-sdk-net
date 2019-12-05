@@ -35,6 +35,7 @@ namespace Amazon.ApiGatewayV2.Model
     {
         private AccessLogSettings _accessLogSettings;
         private string _apiId;
+        private bool? _autoDeploy;
         private string _clientCertificateId;
         private RouteSettings _defaultRouteSettings;
         private string _deploymentId;
@@ -81,6 +82,25 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutoDeploy. 
+        /// <para>
+        /// Specifies whether updates to an API automatically trigger a new deployment. The default
+        /// value is false.
+        /// </para>
+        /// </summary>
+        public bool AutoDeploy
+        {
+            get { return this._autoDeploy.GetValueOrDefault(); }
+            set { this._autoDeploy = value; }
+        }
+
+        // Check to see if AutoDeploy property is set
+        internal bool IsSetAutoDeploy()
+        {
+            return this._autoDeploy.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ClientCertificateId. 
         /// <para>
         /// The identifier of a client certificate for a Stage.
@@ -119,7 +139,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The deployment identifier for the API stage.
+        /// The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.
         /// </para>
         /// </summary>
         public string DeploymentId
@@ -173,7 +193,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// The stage name.
+        /// The stage name. Stage names can only contain alphanumeric characters, hyphens, and
+        /// underscores. Maximum length is 128 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -193,7 +214,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// Gets and sets the property StageVariables. 
         /// <para>
         /// A map that defines the stage variables for a Stage. Variable names can have alphanumeric
-        /// and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+        /// and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.
+        /// Supported only for WebSocket APIs.
         /// </para>
         /// </summary>
         public Dictionary<string, string> StageVariables

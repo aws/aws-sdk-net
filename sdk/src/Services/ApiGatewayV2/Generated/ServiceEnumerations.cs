@@ -39,6 +39,10 @@ namespace Amazon.ApiGatewayV2
         /// </summary>
         public static readonly AuthorizationType CUSTOM = new AuthorizationType("CUSTOM");
         /// <summary>
+        /// Constant JWT for AuthorizationType
+        /// </summary>
+        public static readonly AuthorizationType JWT = new AuthorizationType("JWT");
+        /// <summary>
         /// Constant NONE for AuthorizationType
         /// </summary>
         public static readonly AuthorizationType NONE = new AuthorizationType("NONE");
@@ -84,6 +88,10 @@ namespace Amazon.ApiGatewayV2
     public class AuthorizerType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant JWT for AuthorizerType
+        /// </summary>
+        public static readonly AuthorizerType JWT = new AuthorizerType("JWT");
         /// <summary>
         /// Constant REQUEST for AuthorizerType
         /// </summary>
@@ -554,6 +562,10 @@ namespace Amazon.ApiGatewayV2
     public class ProtocolType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant HTTP for ProtocolType
+        /// </summary>
+        public static readonly ProtocolType HTTP = new ProtocolType("HTTP");
         /// <summary>
         /// Constant WEBSOCKET for ProtocolType
         /// </summary>

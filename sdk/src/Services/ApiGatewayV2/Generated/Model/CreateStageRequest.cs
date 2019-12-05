@@ -35,6 +35,7 @@ namespace Amazon.ApiGatewayV2.Model
     {
         private AccessLogSettings _accessLogSettings;
         private string _apiId;
+        private bool? _autoDeploy;
         private string _clientCertificateId;
         private RouteSettings _defaultRouteSettings;
         private string _deploymentId;
@@ -82,9 +83,28 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutoDeploy. 
+        /// <para>
+        /// Specifies whether updates to an API automatically trigger a new deployment. The default
+        /// value is false.
+        /// </para>
+        /// </summary>
+        public bool AutoDeploy
+        {
+            get { return this._autoDeploy.GetValueOrDefault(); }
+            set { this._autoDeploy = value; }
+        }
+
+        // Check to see if AutoDeploy property is set
+        internal bool IsSetAutoDeploy()
+        {
+            return this._autoDeploy.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ClientCertificateId. 
         /// <para>
-        /// The identifier of a client certificate for a Stage.
+        /// The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
         /// </para>
         /// </summary>
         public string ClientCertificateId
@@ -156,7 +176,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property RouteSettings. 
         /// <para>
-        /// Route settings for the stage.
+        /// Route settings for the stage, by routeKey.
         /// </para>
         /// </summary>
         public Dictionary<string, RouteSettings> RouteSettings
@@ -194,7 +214,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// Gets and sets the property StageVariables. 
         /// <para>
         /// A map that defines the stage variables for a Stage. Variable names can have alphanumeric
-        /// and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+        /// and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.
+        /// Supported only for WebSocket APIs.
         /// </para>
         /// </summary>
         public Dictionary<string, string> StageVariables
@@ -212,9 +233,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag
-        /// key can be up to 128 characters and must not start with aws:. The tag value can be
-        /// up to 256 characters..
+        /// The collection of tags. Each tag element is associated with a given resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

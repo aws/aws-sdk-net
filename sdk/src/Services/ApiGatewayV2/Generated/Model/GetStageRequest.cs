@@ -58,7 +58,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// The stage name.
+        /// The stage name. Stage names can only contain alphanumeric characters, hyphens, and
+        /// underscores. Maximum length is 128 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

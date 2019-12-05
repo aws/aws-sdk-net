@@ -93,16 +93,16 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     response.IdentityValidationExpression = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jwtConfiguration", targetDepth))
+                {
+                    var unmarshaller = JWTConfigurationUnmarshaller.Instance;
+                    response.JwtConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("providerArns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.ProviderArns = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

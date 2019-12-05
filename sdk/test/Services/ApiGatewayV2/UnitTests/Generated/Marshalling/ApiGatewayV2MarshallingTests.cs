@@ -447,6 +447,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ApiGatewayV2")]
+        public void DeleteCorsConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteCorsConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteCorsConfigurationRequest>();
+            var marshaller = new DeleteCorsConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteCorsConfiguration", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ApiGatewayV2")]
         public void DeleteDeploymentMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteDeployment");
@@ -558,6 +575,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("DeleteRouteResponse", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ApiGatewayV2")]
+        public void DeleteRouteSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteRouteSettings");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRouteSettingsRequest>();
+            var marshaller = new DeleteRouteSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteRouteSettings", request, internalRequest, service_model);            
 
         }
 
@@ -1343,6 +1377,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetTagsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetTagsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ApiGatewayV2")]
+        public void ImportApiMarshallTest()
+        {
+            var operation = service_model.FindOperation("ImportApi");
+
+            var request = InstantiateClassGenerator.Execute<ImportApiRequest>();
+            var marshaller = new ImportApiRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ImportApi", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ImportApiResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ImportApiResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ApiGatewayV2")]
+        public void ReimportApiMarshallTest()
+        {
+            var operation = service_model.FindOperation("ReimportApi");
+
+            var request = InstantiateClassGenerator.Execute<ReimportApiRequest>();
+            var marshaller = new ReimportApiRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ReimportApi", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ReimportApiResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ReimportApiResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

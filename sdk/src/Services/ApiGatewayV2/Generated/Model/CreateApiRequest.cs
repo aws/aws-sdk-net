@@ -34,18 +34,22 @@ namespace Amazon.ApiGatewayV2.Model
     public partial class CreateApiRequest : AmazonApiGatewayV2Request
     {
         private string _apiKeySelectionExpression;
+        private Cors _corsConfiguration;
+        private string _credentialsArn;
         private string _description;
         private bool? _disableSchemaValidation;
         private string _name;
         private ProtocolType _protocolType;
+        private string _routeKey;
         private string _routeSelectionExpression;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _target;
         private string _version;
 
         /// <summary>
         /// Gets and sets the property ApiKeySelectionExpression. 
         /// <para>
-        /// An API key selection expression. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
+        /// An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
         /// Key Selection Expressions</a>.
         /// </para>
         /// </summary>
@@ -59,6 +63,49 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetApiKeySelectionExpression()
         {
             return this._apiKeySelectionExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CorsConfiguration. 
+        /// <para>
+        /// A CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring
+        /// CORS</a> for more information.
+        /// </para>
+        /// </summary>
+        public Cors CorsConfiguration
+        {
+            get { return this._corsConfiguration; }
+            set { this._corsConfiguration = value; }
+        }
+
+        // Check to see if CorsConfiguration property is set
+        internal bool IsSetCorsConfiguration()
+        {
+            return this._corsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CredentialsArn. 
+        /// <para>
+        /// This property is part of quick create. It specifies the credentials required for the
+        /// integration, if any. For a Lambda integration, three options are available. To specify
+        /// an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN).
+        /// To require that the caller's identity be passed through from the request, specify
+        /// arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services,
+        /// specify null. Currently, this property is not used for HTTP integrations. Supported
+        /// only for HTTP APIs.
+        /// </para>
+        /// </summary>
+        public string CredentialsArn
+        {
+            get { return this._credentialsArn; }
+            set { this._credentialsArn = value; }
+        }
+
+        // Check to see if CredentialsArn property is set
+        internal bool IsSetCredentialsArn()
+        {
+            return this._credentialsArn != null;
         }
 
         /// <summary>
@@ -82,7 +129,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property DisableSchemaValidation. 
         /// <para>
-        /// Avoid validating models when creating a deployment.
+        /// Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
         /// </para>
         /// </summary>
         public bool DisableSchemaValidation
@@ -119,7 +166,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ProtocolType. 
         /// <para>
-        /// The API protocol: Currently only WEBSOCKET is supported.
+        /// The API protocol.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -136,12 +183,35 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RouteSelectionExpression. 
+        /// Gets and sets the property RouteKey. 
         /// <para>
-        /// The route selection expression for the API.
+        /// This property is part of quick create. If you don't specify a routeKey, a default
+        /// route of $default is created. The $default route acts as a catch-all for any request
+        /// made to your API, for a particular stage. The $default route key can't be modified.
+        /// You can add routes after creating the API, and you can update the route keys of additional
+        /// routes. Supported only for HTTP APIs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public string RouteKey
+        {
+            get { return this._routeKey; }
+            set { this._routeKey = value; }
+        }
+
+        // Check to see if RouteKey property is set
+        internal bool IsSetRouteKey()
+        {
+            return this._routeKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouteSelectionExpression. 
+        /// <para>
+        /// The route selection expression for the API. For HTTP APIs, the routeSelectionExpression
+        /// must be ${request.method} ${request.path}. If not provided, this will be the default
+        /// for HTTP APIs. This property is required for WebSocket APIs.
+        /// </para>
+        /// </summary>
         public string RouteSelectionExpression
         {
             get { return this._routeSelectionExpression; }
@@ -157,9 +227,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag
-        /// key can be up to 128 characters and must not start with aws:. The tag value can be
-        /// up to 256 characters..
+        /// The collection of tags. Each tag element is associated with a given resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -172,6 +240,28 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Target. 
+        /// <para>
+        /// This property is part of quick create. Quick create produces an API with an integration,
+        /// a default catch-all route, and a default stage which is configured to automatically
+        /// deploy changes. For HTTP integrations, specify a fully qualified URL. For Lambda integrations,
+        /// specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY,
+        /// respectively. Supported only for HTTP APIs.
+        /// </para>
+        /// </summary>
+        public string Target
+        {
+            get { return this._target; }
+            set { this._target = value; }
+        }
+
+        // Check to see if Target property is set
+        internal bool IsSetTarget()
+        {
+            return this._target != null;
         }
 
         /// <summary>

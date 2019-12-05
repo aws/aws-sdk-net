@@ -77,9 +77,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag
-        /// key can be up to 128 characters and must not start with aws:. The tag value can be
-        /// up to 256 characters..
+        /// The collection of tags associated with a domain name.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

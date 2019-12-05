@@ -80,6 +80,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetAutoDeploy())
+                {
+                    context.Writer.WritePropertyName("autoDeploy");
+                    context.Writer.Write(publicRequest.AutoDeploy);
+                }
+
                 if(publicRequest.IsSetClientCertificateId())
                 {
                     context.Writer.WritePropertyName("clientCertificateId");

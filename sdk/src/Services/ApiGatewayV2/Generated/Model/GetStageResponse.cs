@@ -33,11 +33,14 @@ namespace Amazon.ApiGatewayV2.Model
     public partial class GetStageResponse : AmazonWebServiceResponse
     {
         private AccessLogSettings _accessLogSettings;
+        private bool? _apiGatewayManaged;
+        private bool? _autoDeploy;
         private string _clientCertificateId;
         private DateTime? _createdDate;
         private RouteSettings _defaultRouteSettings;
         private string _deploymentId;
         private string _description;
+        private string _lastDeploymentStatusMessage;
         private DateTime? _lastUpdatedDate;
         private Dictionary<string, RouteSettings> _routeSettings = new Dictionary<string, RouteSettings>();
         private string _stageName;
@@ -63,9 +66,48 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ApiGatewayManaged. 
+        /// <para>
+        /// Specifies whether a stage is managed by API Gateway. If you created an API using quick
+        /// create, the $default stage is managed by API Gateway. You can't modify the $default
+        /// stage.
+        /// </para>
+        /// </summary>
+        public bool ApiGatewayManaged
+        {
+            get { return this._apiGatewayManaged.GetValueOrDefault(); }
+            set { this._apiGatewayManaged = value; }
+        }
+
+        // Check to see if ApiGatewayManaged property is set
+        internal bool IsSetApiGatewayManaged()
+        {
+            return this._apiGatewayManaged.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoDeploy. 
+        /// <para>
+        /// Specifies whether updates to an API automatically trigger a new deployment. The default
+        /// value is false.
+        /// </para>
+        /// </summary>
+        public bool AutoDeploy
+        {
+            get { return this._autoDeploy.GetValueOrDefault(); }
+            set { this._autoDeploy = value; }
+        }
+
+        // Check to see if AutoDeploy property is set
+        internal bool IsSetAutoDeploy()
+        {
+            return this._autoDeploy.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ClientCertificateId. 
         /// <para>
-        /// The identifier of a client certificate for a Stage.
+        /// The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
         /// </para>
         /// </summary>
         public string ClientCertificateId
@@ -119,7 +161,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The identifier of the Deployment that the Stage is associated with.
+        /// The identifier of the Deployment that the Stage is associated with. Can't be updated
+        /// if autoDeploy is enabled.
         /// </para>
         /// </summary>
         public string DeploymentId
@@ -153,6 +196,25 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastDeploymentStatusMessage. 
+        /// <para>
+        /// Describes the status of the last deployment of a stage. Supported only for stages
+        /// with autoDeploy enabled.
+        /// </para>
+        /// </summary>
+        public string LastDeploymentStatusMessage
+        {
+            get { return this._lastDeploymentStatusMessage; }
+            set { this._lastDeploymentStatusMessage = value; }
+        }
+
+        // Check to see if LastDeploymentStatusMessage property is set
+        internal bool IsSetLastDeploymentStatusMessage()
+        {
+            return this._lastDeploymentStatusMessage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdatedDate. 
         /// <para>
         /// The timestamp when the stage was last updated.
@@ -173,7 +235,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property RouteSettings. 
         /// <para>
-        /// Route settings for the stage.
+        /// Route settings for the stage, by routeKey.
         /// </para>
         /// </summary>
         public Dictionary<string, RouteSettings> RouteSettings
@@ -210,7 +272,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// Gets and sets the property StageVariables. 
         /// <para>
         /// A map that defines the stage variables for a stage resource. Variable names can have
-        /// alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+        /// alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.
+        /// Supported only for WebSocket APIs.
         /// </para>
         /// </summary>
         public Dictionary<string, string> StageVariables
@@ -228,9 +291,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag
-        /// key can be up to 128 characters and must not start with aws:. The tag value can be
-        /// up to 256 characters..
+        /// The collection of tags. Each tag element is associated with a given resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

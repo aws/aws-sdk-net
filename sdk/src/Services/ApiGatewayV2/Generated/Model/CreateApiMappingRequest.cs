@@ -58,7 +58,7 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ApiMappingKey.
+        /// Gets and sets the property ApiMappingKey. The API mapping key.
         /// </summary>
         public string ApiMappingKey
         {

@@ -35,10 +35,14 @@ namespace Amazon.ApiGatewayV2.Model
     {
         private string _apiId;
         private string _apiKeySelectionExpression;
+        private Cors _corsConfiguration;
+        private string _credentialsArn;
         private string _description;
         private bool? _disableSchemaValidation;
         private string _name;
+        private string _routeKey;
         private string _routeSelectionExpression;
+        private string _target;
         private string _version;
 
         /// <summary>
@@ -63,7 +67,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ApiKeySelectionExpression. 
         /// <para>
-        /// An API key selection expression. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
+        /// An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
         /// Key Selection Expressions</a>.
         /// </para>
         /// </summary>
@@ -77,6 +81,49 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetApiKeySelectionExpression()
         {
             return this._apiKeySelectionExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CorsConfiguration. 
+        /// <para>
+        /// A CORS configuration. Supported only for HTTP APIs.
+        /// </para>
+        /// </summary>
+        public Cors CorsConfiguration
+        {
+            get { return this._corsConfiguration; }
+            set { this._corsConfiguration = value; }
+        }
+
+        // Check to see if CorsConfiguration property is set
+        internal bool IsSetCorsConfiguration()
+        {
+            return this._corsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CredentialsArn. 
+        /// <para>
+        /// This property is part of quick create. It specifies the credentials required for the
+        /// integration, if any. For a Lambda integration, three options are available. To specify
+        /// an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN).
+        /// To require that the caller's identity be passed through from the request, specify
+        /// arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services,
+        /// specify null. Currently, this property is not used for HTTP integrations. If provided,
+        /// this value replaces the credentials associated with the quick create integration.
+        /// Supported only for HTTP APIs.
+        /// </para>
+        /// </summary>
+        public string CredentialsArn
+        {
+            get { return this._credentialsArn; }
+            set { this._credentialsArn = value; }
+        }
+
+        // Check to see if CredentialsArn property is set
+        internal bool IsSetCredentialsArn()
+        {
+            return this._credentialsArn != null;
         }
 
         /// <summary>
@@ -100,7 +147,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property DisableSchemaValidation. 
         /// <para>
-        /// Avoid validating models when creating a deployment.
+        /// Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
         /// </para>
         /// </summary>
         public bool DisableSchemaValidation
@@ -134,9 +181,32 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RouteKey. 
+        /// <para>
+        /// This property is part of quick create. If not specified, the route created using quick
+        /// create is kept. Otherwise, this value replaces the route key of the quick create route.
+        /// Additional routes may still be added after the API is updated. Supported only for
+        /// HTTP APIs.
+        /// </para>
+        /// </summary>
+        public string RouteKey
+        {
+            get { return this._routeKey; }
+            set { this._routeKey = value; }
+        }
+
+        // Check to see if RouteKey property is set
+        internal bool IsSetRouteKey()
+        {
+            return this._routeKey != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RouteSelectionExpression. 
         /// <para>
-        /// The route selection expression for the API.
+        /// The route selection expression for the API. For HTTP APIs, the routeSelectionExpression
+        /// must be ${request.method} ${request.path}. If not provided, this will be the default
+        /// for HTTP APIs. This property is required for WebSocket APIs.
         /// </para>
         /// </summary>
         public string RouteSelectionExpression
@@ -149,6 +219,28 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetRouteSelectionExpression()
         {
             return this._routeSelectionExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Target. 
+        /// <para>
+        /// This property is part of quick create. For HTTP integrations, specify a fully qualified
+        /// URL. For Lambda integrations, specify a function ARN. The type of the integration
+        /// will be HTTP_PROXY or AWS_PROXY, respectively. The value provided updates the integration
+        /// URI and integration type. You can update a quick-created target, but you can't remove
+        /// it from an API. Supported only for HTTP APIs.
+        /// </para>
+        /// </summary>
+        public string Target
+        {
+            get { return this._target; }
+            set { this._target = value; }
+        }
+
+        // Check to see if Target property is set
+        internal bool IsSetTarget()
+        {
+            return this._target != null;
         }
 
         /// <summary>

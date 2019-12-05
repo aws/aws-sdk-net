@@ -461,6 +461,9 @@ namespace Amazon.ApiGatewayV2
         /// </param>
         /// 
         /// <returns>The response from the CreateDomainName service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
         /// The request is not valid, for example, the input is incomplete or incorrect. See the
         /// accompanying error message for details.
@@ -906,6 +909,46 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  DeleteCorsConfiguration
+
+        internal virtual DeleteCorsConfigurationResponse DeleteCorsConfiguration(DeleteCorsConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCorsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCorsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCorsConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a CORS configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCorsConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCorsConfiguration service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual Task<DeleteCorsConfigurationResponse> DeleteCorsConfigurationAsync(DeleteCorsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCorsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCorsConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCorsConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDeployment
 
         internal virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
@@ -1186,6 +1229,46 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  DeleteRouteSettings
+
+        internal virtual DeleteRouteSettingsResponse DeleteRouteSettings(DeleteRouteSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRouteSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouteSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRouteSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the RouteSettings for a stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRouteSettings service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual Task<DeleteRouteSettingsResponse> DeleteRouteSettingsAsync(DeleteRouteSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRouteSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouteSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRouteSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteStage
 
         internal virtual DeleteStageResponse DeleteStage(DeleteStageRequest request)
@@ -1280,7 +1363,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// The API mapping.
+        /// Gets an API mapping.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApiMapping service method.</param>
         /// <param name="cancellationToken">
@@ -1324,7 +1407,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// The API mappings.
+        /// Gets API mappings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApiMappings service method.</param>
         /// <param name="cancellationToken">
@@ -2208,7 +2291,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// Gets the Tags for an API.
+        /// Gets a collection of Tag resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
         /// <param name="cancellationToken">
@@ -2243,6 +2326,104 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  ImportApi
+
+        internal virtual ImportApiResponse ImportApi(ImportApiRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportApiResponseUnmarshaller.Instance;
+
+            return Invoke<ImportApiResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Imports an API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportApi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportApi service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual Task<ImportApiResponse> ImportApiAsync(ImportApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportApiResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportApiResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ReimportApi
+
+        internal virtual ReimportApiResponse ReimportApi(ReimportApiRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReimportApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReimportApiResponseUnmarshaller.Instance;
+
+            return Invoke<ReimportApiResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Puts an Api resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReimportApi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReimportApi service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual Task<ReimportApiResponse> ReimportApiAsync(ReimportApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReimportApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReimportApiResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ReimportApiResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -2257,7 +2438,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// Tag an APIGW resource
+        /// Creates a new Tag resource to represent a tag.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2306,7 +2487,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// Untag an APIGW resource
+        /// Deletes a Tag.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

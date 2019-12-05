@@ -29,14 +29,17 @@ namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTags operation.
-    /// Gets the Tags for an API.
+    /// Gets a collection of Tag resources.
     /// </summary>
     public partial class GetTagsRequest : AmazonApiGatewayV2Request
     {
         private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The resource ARN for the tag.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn
