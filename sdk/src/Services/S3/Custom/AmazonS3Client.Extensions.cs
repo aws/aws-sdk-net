@@ -241,6 +241,11 @@ namespace Amazon.S3
             if (getPreSignedUrlRequest.IsSetVersionId())
                 request.AddSubResource("versionId", S3Transforms.ToStringValue(getPreSignedUrlRequest.VersionId));
 
+            if (getPreSignedUrlRequest.IsSetUploadId())
+                request.AddSubResource("uploadId", S3Transforms.ToStringValue(getPreSignedUrlRequest.UploadId));
+            if (getPreSignedUrlRequest.IsSetPartNumber())
+                request.AddSubResource("partNumber", S3Transforms.ToStringValue(getPreSignedUrlRequest.PartNumber));
+
             var responseHeaderOverrides = getPreSignedUrlRequest.ResponseHeaderOverrides;
             if (!string.IsNullOrEmpty(responseHeaderOverrides.CacheControl))
                 queryParameters.Add("response-cache-control", responseHeaderOverrides.CacheControl);
