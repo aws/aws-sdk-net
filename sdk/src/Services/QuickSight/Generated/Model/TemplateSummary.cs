@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The last time this was created.
+        /// The last time that this template was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The last time this was updated.
+        /// The last time that this template was updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -134,7 +134,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TemplateId. 
         /// <para>
-        /// The ID of the template. This is unique per AWS Region for each AWS account.
+        /// The ID of the template. This ID is unique per AWS Region for each AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

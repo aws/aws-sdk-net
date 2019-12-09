@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A structure describing the name, datatype, and geographic role of the columns.
+    /// A structure describing the name, data type, and geographic role of the columns.
     /// </summary>
     public partial class ColumnGroupColumnSchema
     {

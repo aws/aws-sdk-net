@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceArn. 
         /// <para>
-        /// Data source ARN.
+        /// The amazon Resource Name (ARN) for the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,7 +77,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UploadSettings. 
         /// <para>
-        /// Information on the S3 source file(s) format.
+        /// Information about the format for the S3 source file or files.
         /// </para>
         /// </summary>
         public UploadSettings UploadSettings

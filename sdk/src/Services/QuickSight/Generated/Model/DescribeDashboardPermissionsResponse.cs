@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Permissions. 
         /// <para>
-        /// A structure that contains the permissions of the dashboard.
+        /// A structure that contains the permissions for the dashboard.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

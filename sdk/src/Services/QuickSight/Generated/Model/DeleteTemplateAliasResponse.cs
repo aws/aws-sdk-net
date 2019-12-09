@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// The name of the alias.
+        /// The name for the template alias.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -114,7 +114,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TemplateId. 
         /// <para>
-        /// An ID for the template.
+        /// An ID for the template associated with the deletion.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

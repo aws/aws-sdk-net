@@ -29,7 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeIAMPolicyAssignment operation.
-    /// Describes an existing IAMPolicy Assignment by specified assignment name.
+    /// Describes an existing IAM policy assignment, as specified by the assignment name.
     /// </summary>
     public partial class DescribeIAMPolicyAssignmentRequest : AmazonQuickSightRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID that contains the assignment you want to describe.
+        /// The ID of the AWS account that contains the assignment that you want to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

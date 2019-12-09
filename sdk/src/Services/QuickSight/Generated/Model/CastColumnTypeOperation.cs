@@ -58,8 +58,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// When casting a column from string to datetime type, you can supply a QuickSight supported
-        /// format string to denote the source data format.
+        /// When casting a column from string to datetime type, you can supply a string in a format
+        /// supported by Amazon QuickSight to denote the source data format.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]

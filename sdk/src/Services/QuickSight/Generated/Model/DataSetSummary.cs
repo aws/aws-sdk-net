@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource name (ARN) of the dataset.
+        /// The Amazon Resource Name (ARN) of the dataset.
         /// </para>
         /// </summary>
         public string Arn
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The time this was created.
+        /// The time that this dataset was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -97,7 +97,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ImportMode. 
         /// <para>
-        /// Indicates whether or not you want to import the data into SPICE.
+        /// Indicates whether you want to import the data into SPICE.
         /// </para>
         /// </summary>
         public DataSetImportMode ImportMode
@@ -115,7 +115,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The last time this was updated.
+        /// The last time that this dataset was updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -152,7 +152,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RowLevelPermissionDataSet. 
         /// <para>
-        /// Row-level security configuration on the dataset.
+        /// The row-level security configuration for the dataset.
         /// </para>
         /// </summary>
         public RowLevelPermissionDataSet RowLevelPermissionDataSet

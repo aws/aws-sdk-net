@@ -80,19 +80,21 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssignmentStatus. 
         /// <para>
-        /// The status of the assignment:
+        /// The status of the assignment. Possible values are as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ENABLED - Anything specified in this assignment is used while creating the data source.
+        ///  <code>ENABLED</code> - Anything specified in this assignment is used when creating
+        /// the data source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DISABLED - This assignment isn't used while creating the data source.
+        ///  <code>DISABLED</code> - This assignment isn't used when creating the data source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DRAFT - Assignment is an unfinished draft and isn't used while creating the data source.
+        ///  <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating
+        /// the data source.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -111,7 +113,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Identities. 
         /// <para>
-        /// QuickSight users and/or groups that are assigned to this IAM policy.
+        /// The QuickSight users, groups, or both that the IAM policy is assigned to.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Identities
@@ -129,7 +131,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The IAM policy ARN assigned to the QuickSight users and groups specified in this request.
+        /// The ARN for the IAM policy applied to the QuickSight users and groups specified in
+        /// this assignment.
         /// </para>
         /// </summary>
         public string PolicyArn

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// IAM policy assignment.
+    /// An IAM policy assignment.
     /// </summary>
     public partial class IAMPolicyAssignment
     {
@@ -97,7 +97,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID.
+        /// The AWS account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -134,7 +134,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// Policy Amazon Resource Name (ARN).
+        /// The Amazon Resource Name (ARN) for the IAM policy.
         /// </para>
         /// </summary>
         public string PolicyArn

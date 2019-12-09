@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Information on the SPICE ingestion for a dataset.
+    /// Information about the SPICE ingestion for a dataset.
     /// </summary>
     public partial class Ingestion
     {
@@ -47,7 +47,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource name (ARN) of the resource.
+        /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -66,7 +66,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The time this ingestion started.
+        /// The time that this ingestion started.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -122,7 +122,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IngestionSizeInBytes. 
         /// <para>
-        /// Size of the data ingested in bytes.
+        /// The size of the data ingested, in bytes.
         /// </para>
         /// </summary>
         public long IngestionSizeInBytes
@@ -159,7 +159,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IngestionTimeInSeconds. 
         /// <para>
-        /// The time this ingestion took, measured in seconds.
+        /// The time that this ingestion took, measured in seconds.
         /// </para>
         /// </summary>
         public long IngestionTimeInSeconds

@@ -29,7 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDashboardVersions operation.
-    /// Lists all the versions of the dashboards in the Quicksight subscription.
+    /// Lists all the versions of the dashboards in the QuickSight subscription.
     /// </summary>
     public partial class ListDashboardVersionsRequest : AmazonQuickSightRequest
     {
@@ -41,7 +41,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the dashboard you are listing.
+        /// The ID of the AWS account that contains the dashboard that you're listing versions
+        /// for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

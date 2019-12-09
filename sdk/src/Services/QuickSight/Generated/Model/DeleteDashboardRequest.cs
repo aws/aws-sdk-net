@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the dashboard you are deleting.
+        /// The ID of the AWS account that contains the dashboard that you're deleting.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VersionNumber. 
         /// <para>
-        /// The version number of the dashboard. If version number property is provided, only
+        /// The version number of the dashboard. If the version number property is provided, only
         /// the specified version of the dashboard is deleted.
         /// </para>
         /// </summary>

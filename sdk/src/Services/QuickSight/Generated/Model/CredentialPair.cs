@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The combination of username and password that are used as credentials.
+    /// The combination of user name and password that are used as credentials.
     /// </summary>
     public partial class CredentialPair
     {
@@ -57,7 +57,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// Username.
+        /// User name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

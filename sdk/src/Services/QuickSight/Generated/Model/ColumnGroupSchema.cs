@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ColumnGroupColumnSchemaList. 
         /// <para>
-        /// A structure containing the list of column group column schemas.
+        /// A structure containing the list of schemas for column group columns.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]

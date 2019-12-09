@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// The alias of the template that you want to describe. If you provide a specific alias,
+        /// The alias of the template that you want to describe. If you name a specific alias,
         /// you describe the version that the alias points to. You can specify the latest version
         /// of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
         /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the template you are describing.
+        /// The ID of the AWS account that contains the template that you're describing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -82,7 +82,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TemplateId. 
         /// <para>
-        /// An ID for the template.
+        /// The ID for the template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -101,8 +101,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VersionNumber. 
         /// <para>
-        /// This is an optional field, when a version number is provided the corresponding version
-        /// is describe, if it's not provided the latest version of the template is described.
+        /// (Optional) The number for the version to describe. If a <code>VersionNumber</code>
+        /// parameter value isn't provided, the latest version of the template is described.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

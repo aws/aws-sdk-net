@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ColumnName. 
         /// <para>
-        /// Name of the column to be renamed.
+        /// The name of the column to be renamed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -57,7 +57,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property NewColumnName. 
         /// <para>
-        /// New name for the column.
+        /// The new name for the column.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -29,8 +29,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateIAMPolicyAssignment operation.
-    /// Updates an existing assignment. This operation updates only the optional parameter
-    /// or parameters that are specified in the request.
+    /// Updates an existing IAM policy assignment. This operation updates only the optional
+    /// parameter or parameters that are specified in the request.
     /// </summary>
     public partial class UpdateIAMPolicyAssignmentRequest : AmazonQuickSightRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssignmentName. 
         /// <para>
-        /// The name of the assignment. It must be unique within an AWS account.
+        /// The name of the assignment. This name must be unique within an AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -63,19 +63,21 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssignmentStatus. 
         /// <para>
-        /// The status of an assignment:
+        /// The status of the assignment. Possible values are as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ENABLED - Anything specified in this assignment is used while creating the data source.
+        ///  <code>ENABLED</code> - Anything specified in this assignment is used when creating
+        /// the data source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DISABLED - This assignment isn't used while creating the data source.
+        ///  <code>DISABLED</code> - This assignment isn't used when creating the data source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DRAFT - Assignment is an unfinished draft and isn't used while creating the data source.
+        ///  <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating
+        /// the data source.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -94,7 +96,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID that contains the IAM policy assignment.
+        /// The ID of the AWS account that contains the IAM policy assignment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -113,7 +115,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Identities. 
         /// <para>
-        /// QuickSight users and/or groups that you want to assign to the specified IAM policy.
+        /// The QuickSight users, groups, or both that you want to assign the policy to.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Identities
@@ -150,8 +152,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// An IAM policy Amazon Resource Name (ARN) that will be applied to specified QuickSight
-        /// users and groups in this assignment.
+        /// The ARN for the IAM policy to apply to the QuickSight users and groups specified in
+        /// this assignment.
         /// </para>
         /// </summary>
         public string PolicyArn

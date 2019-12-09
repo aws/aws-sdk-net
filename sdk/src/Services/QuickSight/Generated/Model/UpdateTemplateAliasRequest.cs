@@ -41,9 +41,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// The alias of the template that you want to update. If you provide a specific alias,
-        /// you update the version that the alias points to. You can specify the latest version
-        /// of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
+        /// The alias of the template that you want to update. If you name a specific alias, you
+        /// update the version that the alias points to. You can specify the latest version of
+        /// the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
         /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
         /// </para>
         /// </summary>
@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the template aliases you are updating.
+        /// The ID of the AWS account that contains the template alias that you're updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

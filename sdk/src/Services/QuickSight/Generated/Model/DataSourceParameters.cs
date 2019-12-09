@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The parameters that QuickSight uses to connect to your underlying source. This is
-    /// a variant type structure. At most one of the attributes should be non-null for this
-    /// structure to be valid.
+    /// The parameters that Amazon QuickSight uses to connect to your underlying data source.
+    /// This is a variant type structure. For this structure to be valid, only one of the
+    /// attributes can be non-null.
     /// </summary>
     public partial class DataSourceParameters
     {
@@ -57,7 +57,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AmazonElasticsearchParameters. 
         /// <para>
-        /// Amazon Elasticsearch parameters.
+        /// Amazon Elasticsearch Service parameters.
         /// </para>
         /// </summary>
         public AmazonElasticsearchParameters AmazonElasticsearchParameters
@@ -75,7 +75,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AthenaParameters. 
         /// <para>
-        /// Athena parameters.
+        /// Amazon Athena parameters.
         /// </para>
         /// </summary>
         public AthenaParameters AthenaParameters
@@ -93,7 +93,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AuroraParameters. 
         /// <para>
-        /// Aurora MySQL parameters.
+        /// Amazon Aurora MySQL parameters.
         /// </para>
         /// </summary>
         public AuroraParameters AuroraParameters
@@ -237,7 +237,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RdsParameters. 
         /// <para>
-        /// RDS parameters.
+        /// Amazon RDS parameters.
         /// </para>
         /// </summary>
         public RdsParameters RdsParameters
@@ -255,7 +255,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RedshiftParameters. 
         /// <para>
-        /// Redshift parameters.
+        /// Amazon Redshift parameters.
         /// </para>
         /// </summary>
         public RedshiftParameters RedshiftParameters

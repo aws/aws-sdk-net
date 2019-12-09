@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A transform operation that filters rows based on some condition.
+    /// A transform operation that filters rows based on a condition.
     /// </summary>
     public partial class FilterOperation
     {
@@ -37,8 +37,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ConditionExpression. 
         /// <para>
-        /// An expression that must evaluate to a boolean value. Rows for which the expression
-        /// is evaluated to true are kept in the dataset.
+        /// An expression that must evaluate to a Boolean value. Rows for which the expression
+        /// evaluates to true are kept in the dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4096)]

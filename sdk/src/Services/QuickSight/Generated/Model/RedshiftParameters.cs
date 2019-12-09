@@ -28,8 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code>
-    /// and <code>Port</code> are both set, and the other way around.
+    /// Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code>
+    /// and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields
+    /// can be blank if the <code>ClusterId</code> field is set.
     /// </summary>
     public partial class RedshiftParameters
     {
@@ -41,7 +42,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ClusterId. 
         /// <para>
-        /// Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code> are provided.
+        /// Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code>
+        /// are provided.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -79,7 +81,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Host. 
         /// <para>
-        /// Host. This can be blank if the <code>ClusterId</code> is provided.
+        /// Host. This field can be blank if <code>ClusterId</code> is provided.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -98,7 +100,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Port. This can be blank if the <code>ClusterId</code> is provided.
+        /// Port. This field can be blank if the <code>ClusterId</code> is provided.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]

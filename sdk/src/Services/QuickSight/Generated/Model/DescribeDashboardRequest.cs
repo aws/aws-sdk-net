@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the dashboard you are describing.
+        /// The ID of the AWS account that contains the dashboard that you're describing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -98,8 +98,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VersionNumber. 
         /// <para>
-        /// The version number for the dashboard. If version number isn’t passed the latest published
-        /// dashboard version is described. 
+        /// The version number for the dashboard. If a version number isn't passed, the latest
+        /// published dashboard version is described. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

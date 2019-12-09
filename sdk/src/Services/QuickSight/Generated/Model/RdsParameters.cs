@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// RDS parameters.
+    /// Amazon RDS parameters.
     /// </summary>
     public partial class RdsParameters
     {

@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource name (ARN) of the resource.
+        /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
         public string Arn
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The time this was created.
+        /// The time that this dashboard was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -98,7 +98,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property LastPublishedTime. 
         /// <para>
-        /// The last time this was published.
+        /// The last time that this dashboard was published.
         /// </para>
         /// </summary>
         public DateTime LastPublishedTime
@@ -116,7 +116,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The last time this was updated.
+        /// The last time that this dashboard was updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -134,7 +134,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A display name for the dataset.
+        /// A display name for the dashboard.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Export to CSV option.
+    /// Export to .csv option.
     /// </summary>
     public partial class ExportToCSVOption
     {

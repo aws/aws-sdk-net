@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the dashboard you are updating.
+        /// The ID of the AWS account that contains the dashboard whose permissions you're updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

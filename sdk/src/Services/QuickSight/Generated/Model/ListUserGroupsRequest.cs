@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS Account ID that the user is in. Currently, you use the ID for the AWS account
+        /// The AWS account ID that the user is in. Currently, you use the ID for the AWS account
         /// that contains your Amazon QuickSight account.
         /// </para>
         /// </summary>

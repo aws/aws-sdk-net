@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the template aliases you are listing.
+        /// The ID of the AWS account that contains the template aliases that you're listing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

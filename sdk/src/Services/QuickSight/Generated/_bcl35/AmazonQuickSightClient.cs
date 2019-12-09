@@ -251,16 +251,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the CancelIngestion service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified already exists.
@@ -321,16 +321,16 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Creates a dashboard from a template. To first create a template, see the CreateTemplate
-        /// API.
+        /// API operation.
         /// 
         ///  
         /// <para>
-        /// A dashboard is an entity in QuickSight which identifies Quicksight reports, created
-        /// from analyses. QuickSight dashboards are sharable. With the right permissions, you
-        /// can create scheduled email reports from them. The <code>CreateDashboard</code>, <code>DescribeDashboard</code>
-        /// and <code>ListDashboardsByUser</code> APIs act on the dashboard entity. If you have
-        /// the correct permissions, you can create a dashboard from a template that exists in
-        /// a different AWS account.
+        /// A dashboard is an entity in QuickSight that identifies QuickSight reports, created
+        /// from analyses. You can share QuickSight dashboards. With the right permissions, you
+        /// can create scheduled email reports from them. The <code>CreateDashboard</code>, <code>DescribeDashboard</code>,
+        /// and <code>ListDashboardsByUser</code> API operations act on the dashboard entity.
+        /// If you have the correct permissions, you can create a dashboard from a template that
+        /// exists in a different AWS account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDashboard service method.</param>
@@ -343,7 +343,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified already exists.
@@ -415,10 +415,10 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the CreateDataSet service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -427,7 +427,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
         /// A limit is exceeded.
@@ -502,10 +502,10 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the CreateDataSource service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -514,7 +514,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
         /// A limit is exceeded.
@@ -593,16 +593,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the CreateGroup service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
         /// A limit is exceeded.
@@ -677,16 +677,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the CreateGroupMembership service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
         /// One or more preconditions aren't met.
@@ -749,28 +749,28 @@ namespace Amazon.QuickSight
         #region  CreateIAMPolicyAssignment
 
         /// <summary>
-        /// Creates an assignment with one specified IAM policy Amazon Resource Name (ARN) and
-        /// will assigned to specified groups or users of QuickSight. Users and groups need to
-        /// be in the same namespace.
+        /// Creates an assignment with one specified IAM policy, identified by its Amazon Resource
+        /// Name (ARN). This policy will be assigned to specified groups or users of Amazon QuickSight.
+        /// The users and groups need to be in the same namespace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIAMPolicyAssignment service method.</param>
         /// 
         /// <returns>The response from the CreateIAMPolicyAssignment service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
-        /// A resource is already in an "actionable" state that must complete before a new update
-        /// can be applied.
+        /// A resource is already in a state that indicates an action is happening that must complete
+        /// before a new update can be applied.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified already exists.
@@ -845,16 +845,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the CreateIngestion service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
         /// A limit is exceeded.
@@ -917,32 +917,33 @@ namespace Amazon.QuickSight
         #region  CreateTemplate
 
         /// <summary>
-        /// Creates a template from an existing QuickSight analysis or template. The resulting
-        /// template can be used to create a dashboard.
+        /// Creates a template from an existing QuickSight analysis or template. You can use the
+        /// resulting template to create a dashboard.
         /// 
         ///  
         /// <para>
-        /// A template is an entity in QuickSight which encapsulates the metadata required to
-        /// create an analysis that can be used to create dashboard. It adds a layer of abstraction
-        /// by use placeholders to replace the dataset associated with the analysis. You can use
-        /// templates to create dashboards by replacing dataset placeholders with datasets which
-        /// follow the same schema that was used to create the source analysis and template.
+        /// A <i>template</i> is an entity in QuickSight that encapsulates the metadata required
+        /// to create an analysis and that you can use to create s dashboard. A template adds
+        /// a layer of abstraction by using placeholders to replace the dataset associated with
+        /// the analysis. You can use templates to create dashboards by replacing dataset placeholders
+        /// with datasets that follow the same schema that was used to create the source analysis
+        /// and template.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTemplate service method.</param>
         /// 
         /// <returns>The response from the CreateTemplate service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
         /// A limit is exceeded.
@@ -1101,7 +1102,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -1170,16 +1171,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DeleteDataSet service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -1243,16 +1244,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DeleteDataSource service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -1315,16 +1316,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DeleteGroup service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
         /// One or more preconditions aren't met.
@@ -1393,16 +1394,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DeleteGroupMembership service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
         /// One or more preconditions aren't met.
@@ -1465,26 +1466,26 @@ namespace Amazon.QuickSight
         #region  DeleteIAMPolicyAssignment
 
         /// <summary>
-        /// Deletes an existing assignment.
+        /// Deletes an existing IAM policy assignment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIAMPolicyAssignment service method.</param>
         /// 
         /// <returns>The response from the DeleteIAMPolicyAssignment service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
-        /// A resource is already in an "actionable" state that must complete before a new update
-        /// can be applied.
+        /// A resource is already in a state that indicates an action is happening that must complete
+        /// before a new update can be applied.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified already exists.
@@ -1556,7 +1557,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
         /// A limit is exceeded.
@@ -1622,7 +1623,8 @@ namespace Amazon.QuickSight
         #region  DeleteTemplateAlias
 
         /// <summary>
-        /// Update template alias of given template.
+        /// Deletes the item that the specified template alias points to. If you provide a specific
+        /// alias, you delete the version of the template that the alias points to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTemplateAlias service method.</param>
         /// 
@@ -1699,16 +1701,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -1774,16 +1776,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DeleteUserByPrincipalId service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -1849,16 +1851,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DescribeDashboard service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -1921,7 +1923,7 @@ namespace Amazon.QuickSight
         #region  DescribeDashboardPermissions
 
         /// <summary>
-        /// Describes read and write permissions on a dashboard.
+        /// Describes read and write permissions for a dashboard.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDashboardPermissions service method.</param>
         /// 
@@ -1930,7 +1932,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -1999,16 +2001,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DescribeDataSet service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -2076,16 +2078,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DescribeDataSetPermissions service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -2148,16 +2150,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DescribeDataSource service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -2220,16 +2222,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DescribeDataSourcePermissions service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -2292,16 +2294,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DescribeGroup service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
         /// One or more preconditions aren't met.
@@ -2364,16 +2366,16 @@ namespace Amazon.QuickSight
         #region  DescribeIAMPolicyAssignment
 
         /// <summary>
-        /// Describes an existing IAMPolicy Assignment by specified assignment name.
+        /// Describes an existing IAM policy assignment, as specified by the assignment name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIAMPolicyAssignment service method.</param>
         /// 
         /// <returns>The response from the DescribeIAMPolicyAssignment service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -2382,7 +2384,7 @@ namespace Amazon.QuickSight
         /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -2445,16 +2447,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DescribeIngestion service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified already exists.
@@ -2520,10 +2522,10 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DescribeTemplate service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -2532,7 +2534,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified already exists.
@@ -2598,7 +2600,7 @@ namespace Amazon.QuickSight
         #region  DescribeTemplateAlias
 
         /// <summary>
-        /// Describes the template aliases of a template.
+        /// Describes the template alias for a template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTemplateAlias service method.</param>
         /// 
@@ -2679,7 +2681,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -2748,16 +2750,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the DescribeUser service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -2817,12 +2819,12 @@ namespace Amazon.QuickSight
         #region  GetDashboardEmbedUrl
 
         /// <summary>
-        /// Generates a server-side embeddable URL and authorization code. Before this can work
-        /// properly, first you need to configure the dashboards and user permissions. For more
-        /// information, see the Amazon QuickSight User Guide section on <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-        /// Amazon QuickSight Dashboards</a> or see the Amazon QuickSight API Reference section
-        /// on <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-        /// Amazon QuickSight Dashboards</a> .
+        /// Generates a server-side embeddable URL and authorization code. For this process to
+        /// work properly, first configure the dashboards and user permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
+        /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
+        /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
+        /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
         /// 
         ///  
         /// <para>
@@ -2834,29 +2836,29 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the GetDashboardEmbedUrl service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.DomainNotWhitelistedException">
-        /// The domain specified is not on the allowlist. All domains for embedded dashboards
+        /// The domain specified isn't on the allow list. All domains for embedded dashboards
         /// must be added to the approved list by an Amazon QuickSight admin.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.IdentityTypeNotSupportedException">
-        /// The identity type specified is not supported. Supported identity types include IAM
-        /// and QUICKSIGHT.
+        /// The identity type specified isn't supported. Supported identity types include <code>IAM</code>
+        /// and <code>QUICKSIGHT</code>.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.QuickSightUserNotFoundException">
-        /// The user is not found. This error can happen in any operation that requires finding
-        /// a user based on a provided user name, such as <code>DeleteUser</code>, <code>DescribeUser</code>,
-        /// and so on.
+        /// The user with the provided name isn't found. This error can happen in any operation
+        /// that requires finding a user based on a provided user name, such as <code>DeleteUser</code>,
+        /// <code>DescribeUser</code>, and so on.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified already exists.
@@ -2865,8 +2867,8 @@ namespace Amazon.QuickSight
         /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.SessionLifetimeInMinutesInvalidException">
-        /// The number of minutes specified for the lifetime of a session is not valid. The session
-        /// lifetime must be from 15 to 600 minutes.
+        /// The number of minutes specified for the lifetime of a session isn't valid. The session
+        /// lifetime must be 15-600 minutes.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
         /// Access is throttled.
@@ -2926,7 +2928,7 @@ namespace Amazon.QuickSight
         #region  ListDashboards
 
         /// <summary>
-        /// Lists dashboards in the AWS account.
+        /// Lists dashboards in an AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboards service method.</param>
         /// 
@@ -2995,7 +2997,7 @@ namespace Amazon.QuickSight
         #region  ListDashboardVersions
 
         /// <summary>
-        /// Lists all the versions of the dashboards in the Quicksight subscription.
+        /// Lists all the versions of the dashboards in the QuickSight subscription.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboardVersions service method.</param>
         /// 
@@ -3007,7 +3009,7 @@ namespace Amazon.QuickSight
         /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -3070,7 +3072,7 @@ namespace Amazon.QuickSight
         #region  ListDataSets
 
         /// <summary>
-        /// Lists all of the datasets belonging to this account in an AWS region.
+        /// Lists all of the datasets belonging to the current AWS account in an AWS Region.
         /// 
         ///  
         /// <para>
@@ -3081,10 +3083,10 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the ListDataSets service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3093,7 +3095,7 @@ namespace Amazon.QuickSight
         /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
         /// Access is throttled.
@@ -3153,10 +3155,10 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the ListDataSources service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3165,7 +3167,7 @@ namespace Amazon.QuickSight
         /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
         /// Access is throttled.
@@ -3225,10 +3227,10 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the ListGroupMemberships service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3237,7 +3239,7 @@ namespace Amazon.QuickSight
         /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
         /// One or more preconditions aren't met.
@@ -3306,10 +3308,10 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the ListGroups service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3318,7 +3320,7 @@ namespace Amazon.QuickSight
         /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
         /// One or more preconditions aren't met.
@@ -3381,16 +3383,16 @@ namespace Amazon.QuickSight
         #region  ListIAMPolicyAssignments
 
         /// <summary>
-        /// Lists assignments in current QuickSight account.
+        /// Lists IAM policy assignments in the current Amazon QuickSight account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIAMPolicyAssignments service method.</param>
         /// 
         /// <returns>The response from the ListIAMPolicyAssignments service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3399,7 +3401,7 @@ namespace Amazon.QuickSight
         /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -3456,28 +3458,28 @@ namespace Amazon.QuickSight
         #region  ListIAMPolicyAssignmentsForUser
 
         /// <summary>
-        /// Lists all the assignments and the Amazon Resource Names (ARNs) for the associated
-        /// IAM policies assigned to the specified user and the group or groups that the user
+        /// Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for
+        /// the IAM policies assigned to the specified user and group or groups that the user
         /// belongs to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIAMPolicyAssignmentsForUser service method.</param>
         /// 
         /// <returns>The response from the ListIAMPolicyAssignmentsForUser service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
-        /// A resource is already in an "actionable" state that must complete before a new update
-        /// can be applied.
+        /// A resource is already in a state that indicates an action is happening that must complete
+        /// before a new update can be applied.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified already exists.
@@ -3543,10 +3545,10 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the ListIngestions service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3555,7 +3557,7 @@ namespace Amazon.QuickSight
         /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified already exists.
@@ -3621,16 +3623,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -3756,7 +3758,7 @@ namespace Amazon.QuickSight
         #region  ListTemplates
 
         /// <summary>
-        /// Lists all the templates in the QuickSight account.
+        /// Lists all the templates in the current Amazon QuickSight account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTemplates service method.</param>
         /// 
@@ -3768,7 +3770,7 @@ namespace Amazon.QuickSight
         /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -3831,7 +3833,7 @@ namespace Amazon.QuickSight
         #region  ListTemplateVersions
 
         /// <summary>
-        /// Lists all the versions of the templates in the Quicksight account.
+        /// Lists all the versions of the templates in the current Amazon QuickSight account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTemplateVersions service method.</param>
         /// 
@@ -3843,7 +3845,7 @@ namespace Amazon.QuickSight
         /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -3912,16 +3914,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the ListUserGroups service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -3987,10 +3989,10 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the ListUsers service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3999,7 +4001,7 @@ namespace Amazon.QuickSight
         /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -4066,16 +4068,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the RegisterUser service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
         /// A limit is exceeded.
@@ -4181,16 +4183,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the TagResource service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
         /// A limit is exceeded.
@@ -4256,16 +4258,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the UntagResource service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -4322,7 +4324,7 @@ namespace Amazon.QuickSight
         #region  UpdateDashboard
 
         /// <summary>
-        /// Updates a dashboard in the AWS account.
+        /// Updates a dashboard in an AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDashboard service method.</param>
         /// 
@@ -4334,7 +4336,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
         /// A limit is exceeded.
@@ -4412,7 +4414,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -4487,7 +4489,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -4556,10 +4558,10 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the UpdateDataSet service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -4568,7 +4570,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
         /// A limit is exceeded.
@@ -4645,10 +4647,10 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the UpdateDataSetPermissions service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -4657,7 +4659,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -4720,10 +4722,10 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the UpdateDataSource service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -4732,7 +4734,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -4795,10 +4797,10 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the UpdateDataSourcePermissions service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -4807,7 +4809,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -4870,16 +4872,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the UpdateGroup service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
         /// One or more preconditions aren't met.
@@ -4942,27 +4944,27 @@ namespace Amazon.QuickSight
         #region  UpdateIAMPolicyAssignment
 
         /// <summary>
-        /// Updates an existing assignment. This operation updates only the optional parameter
-        /// or parameters that are specified in the request.
+        /// Updates an existing IAM policy assignment. This operation updates only the optional
+        /// parameter or parameters that are specified in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIAMPolicyAssignment service method.</param>
         /// 
         /// <returns>The response from the UpdateIAMPolicyAssignment service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
-        /// A resource is already in an "actionable" state that must complete before a new update
-        /// can be applied.
+        /// A resource is already in a state that indicates an action is happening that must complete
+        /// before a new update can be applied.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified already exists.
@@ -5022,7 +5024,7 @@ namespace Amazon.QuickSight
         #region  UpdateTemplate
 
         /// <summary>
-        /// Updates a template from an existing QuickSight analysis.
+        /// Updates a template from an existing Amazon QuickSight analysis or another template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate service method.</param>
         /// 
@@ -5034,7 +5036,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
         /// A limit is exceeded.
@@ -5175,7 +5177,7 @@ namespace Amazon.QuickSight
         #region  UpdateTemplatePermissions
 
         /// <summary>
-        /// Updates the permissions on a template.
+        /// Updates the resource permissions for a template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplatePermissions service method.</param>
         /// 
@@ -5187,7 +5189,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -5256,16 +5258,16 @@ namespace Amazon.QuickSight
         /// 
         /// <returns>The response from the UpdateUser service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this. The provided credentials couldn't be validated. You
-        /// might not be authorized to carry out the request. Ensure that your account is authorized
-        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
-        /// and that you are using the correct access keys.
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
-        /// One or more parameters don't have a valid value.
+        /// One or more parameters has a value that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.

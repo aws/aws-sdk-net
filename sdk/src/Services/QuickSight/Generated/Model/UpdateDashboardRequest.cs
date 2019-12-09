@@ -29,7 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDashboard operation.
-    /// Updates a dashboard in the AWS account.
+    /// Updates a dashboard in an AWS account.
     /// </summary>
     public partial class UpdateDashboardRequest : AmazonQuickSightRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the dashboard you are updating.
+        /// The ID of the AWS account that contains the dashboard that you're updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -82,26 +82,29 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardPublishOptions. 
         /// <para>
-        /// Publishing options when creating a dashboard.
+        /// Options for publishing the dashboard when you create it:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code>
-        /// or <code>DISABLED</code>. When This is set to set to <code>DISABLED</code>, QuickSight
-        /// disables the left filter pane on the published dashboard, which can be used for AdHoc
-        /// filtering. Enabled by default. 
+        ///  <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status
+        /// can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>,
+        /// QuickSight disables the left filter pane on the published dashboard, which can be
+        /// used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code>
-        /// or <code>DISABLED</code>. The visual option to export data to CSV is disabled when
-        /// this is set to <code>DISABLED</code>. Enabled by default. 
+        ///  <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
+        /// can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to
+        /// export data to .csv format isn't enabled when this is set to <code>DISABLED</code>.
+        /// This option is <code>ENABLED</code> by default. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code>
-        /// or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
-        /// to true. Collapsed by default. 
+        ///  <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility
+        /// state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls
+        /// pane is collapsed by default when set to true. This option is <code>COLLAPSED</code>
+        /// by default. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -157,11 +160,11 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SourceEntity. 
         /// <para>
-        /// The template or analysis from which the dashboard is created. The SouceTemplate entity
-        /// accepts the Arn of the template and also references to replacement datasets for the
-        /// placeholders set when creating the template. The replacement datasets need to follow
-        /// the same schema as the datasets for which placeholders were created when creating
-        /// the template.
+        /// The template or analysis from which the dashboard is created. The <code>SouceTemplate</code>
+        /// entity accepts the Amazon Resource Name (ARN) of the template and also references
+        /// to replacement datasets for the placeholders set when creating the template. The replacement
+        /// datasets need to follow the same schema as the datasets for which placeholders were
+        /// created when creating the template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

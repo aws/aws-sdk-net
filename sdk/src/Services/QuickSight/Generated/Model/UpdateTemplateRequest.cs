@@ -29,7 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTemplate operation.
-    /// Updates a template from an existing QuickSight analysis.
+    /// Updates a template from an existing Amazon QuickSight analysis or another template.
     /// </summary>
     public partial class UpdateTemplateRequest : AmazonQuickSightRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the template you are updating.
+        /// The ID of the AWS account that contains the template that you're updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -80,8 +80,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SourceEntity. 
         /// <para>
-        /// The source QuickSight entity from which this template is being created. Templates
-        /// can be currently created from an Analysis or another template.
+        /// The source QuickSight entity from which this template is being updated. You can currently
+        /// update templates from an Analysis or another template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,9 +119,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VersionDescription. 
         /// <para>
-        /// A description of the current template version being updated. Every time you cal <code>UpdateTemplate</code>
-        /// you create a new version. Each version of the template maintains a description of
-        /// the version in the <code>VersionDescription</code> field.
+        /// A description of the current template version that is being updated. Every time you
+        /// call <code>UpdateTemplate</code>, you create a new version of the template. Each version
+        /// of the template maintains a description of the version in the <code>VersionDescription</code>
+        /// field.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

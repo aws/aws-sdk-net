@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Information on queued dataset SPICE ingestion.
+    /// Information about a queued dataset SPICE ingestion.
     /// </summary>
     public partial class QueueInfo
     {

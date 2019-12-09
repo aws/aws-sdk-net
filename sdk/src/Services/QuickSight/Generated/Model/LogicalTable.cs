@@ -28,9 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A unit that joins and data transformations operate on. A logical table has a source,
-    /// which can be either a physical table or result of a join. When it points to a physical
-    /// table, a logical table acts as a mutable copy of that table through transform operations.
+    /// A <i>logical table</i> is a unit that joins and that data transformations operate
+    /// on. A logical table has a source, which can be either a physical table or result of
+    /// a join. When a logical table points to a physical table, the logical table acts as
+    /// a mutable copy of that physical table through transform operations.
     /// </summary>
     public partial class LogicalTable
     {

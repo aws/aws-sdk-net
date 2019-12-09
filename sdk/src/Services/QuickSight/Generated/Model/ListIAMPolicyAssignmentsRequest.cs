@@ -29,7 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIAMPolicyAssignments operation.
-    /// Lists assignments in current QuickSight account.
+    /// Lists IAM policy assignments in the current Amazon QuickSight account.
     /// </summary>
     public partial class ListIAMPolicyAssignmentsRequest : AmazonQuickSightRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssignmentStatus. 
         /// <para>
-        /// The status of the assignment.
+        /// The status of the assignments.
         /// </para>
         /// </summary>
         public AssignmentStatus AssignmentStatus
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID that contains this IAM policy assignment.
+        /// The ID of the AWS account that contains these IAM policy assignments.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -98,7 +98,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace for this assignment.
+        /// The namespace for the assignments.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

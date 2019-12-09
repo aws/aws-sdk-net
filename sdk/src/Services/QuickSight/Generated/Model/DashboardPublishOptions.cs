@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AdHocFilteringOption. 
         /// <para>
-        /// Ad hoc filtering option.
+        /// Ad hoc (one-time) filtering option.
         /// </para>
         /// </summary>
         public AdHocFilteringOption AdHocFilteringOption
@@ -57,7 +57,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ExportToCSVOption. 
         /// <para>
-        /// Export to CSV option.
+        /// Export to .csv option.
         /// </para>
         /// </summary>
         public ExportToCSVOption ExportToCSVOption

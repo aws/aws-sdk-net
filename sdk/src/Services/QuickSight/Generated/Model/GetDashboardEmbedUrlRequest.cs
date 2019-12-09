@@ -29,12 +29,12 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDashboardEmbedUrl operation.
-    /// Generates a server-side embeddable URL and authorization code. Before this can work
-    /// properly, first you need to configure the dashboards and user permissions. For more
-    /// information, see the Amazon QuickSight User Guide section on <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-    /// Amazon QuickSight Dashboards</a> or see the Amazon QuickSight API Reference section
-    /// on <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-    /// Amazon QuickSight Dashboards</a> .
+    /// Generates a server-side embeddable URL and authorization code. For this process to
+    /// work properly, first configure the dashboards and user permissions. For more information,
+    /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
+    /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
+    /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
+    /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
     /// 
     ///  
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the dashboard you are embedding.
+        /// The ID for the AWS account that contains the dashboard that you're embedding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -74,7 +74,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardId. 
         /// <para>
-        /// The ID for the dashboard, also added to IAM policy
+        /// The ID for the dashboard, also added to the IAM policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -93,7 +93,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IdentityType. 
         /// <para>
-        /// The authentication method the user uses to sign in.
+        /// The authentication method that the user uses to sign in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -112,7 +112,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ResetDisabled. 
         /// <para>
-        /// Remove the reset button on embedded dashboard. The default is FALSE, which allows
+        /// Remove the reset button on the embedded dashboard. The default is FALSE, which enables
         /// the reset button.
         /// </para>
         /// </summary>
@@ -131,8 +131,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SessionLifetimeInMinutes. 
         /// <para>
-        /// How many minutes the session is valid. The session lifetime must be between 15 and
-        /// 600 minutes.
+        /// How many minutes the session is valid. The session lifetime must be 15-600 minutes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=600)]
@@ -151,8 +150,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UndoRedoDisabled. 
         /// <para>
-        /// Remove the undo/redo button on embedded dashboard. The default is FALSE, which enables
-        /// the undo/redo button.
+        /// Remove the undo/redo button on the embedded dashboard. The default is FALSE, which
+        /// enables the undo/redo button.
         /// </para>
         /// </summary>
         public bool UndoRedoDisabled
@@ -180,12 +179,12 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Invited non-federated users
+        /// Invited nonfederated users
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// IAM users and IAM role-based sessions authenticated through Federated Single Sign-On
-        /// using SAML, OpenID Connect, or IAM Federation
+        /// using SAML, OpenID Connect, or IAM federation.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -29,7 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDashboardPermissions operation.
-    /// Describes read and write permissions on a dashboard.
+    /// Describes read and write permissions for a dashboard.
     /// </summary>
     public partial class DescribeDashboardPermissionsRequest : AmazonQuickSightRequest
     {
@@ -39,7 +39,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the dashboard you are describing permissions of.
+        /// The ID of the AWS account that contains the dashboard that you're describing permissions
+        /// for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -58,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardId. 
         /// <para>
-        /// The ID for the dashboard, also added to IAM policy.
+        /// The ID for the dashboard, also added to the IAM policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

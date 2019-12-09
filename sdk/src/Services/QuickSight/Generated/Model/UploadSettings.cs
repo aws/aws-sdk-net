@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Information on source file(s) format.
+    /// Information about the format for a source file or files.
     /// </summary>
     public partial class UploadSettings
     {
@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ContainsHeader. 
         /// <para>
-        /// Whether or not the file(s) has a header row.
+        /// Whether the file has a header row, or the files each have a header row.
         /// </para>
         /// </summary>
         public bool ContainsHeader

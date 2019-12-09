@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource name (ARN) for the group.
+        /// The Amazon Resource Name (ARN) for the group.
         /// </para>
         /// </summary>
         public string Arn

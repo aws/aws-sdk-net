@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetArn. 
         /// <para>
-        /// Dataset ARN.
+        /// Dataset Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

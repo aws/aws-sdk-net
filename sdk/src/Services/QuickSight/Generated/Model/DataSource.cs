@@ -47,7 +47,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource name (ARN) of the data source.
+        /// The Amazon Resource Name (ARN) of the data source.
         /// </para>
         /// </summary>
         public string Arn
@@ -65,7 +65,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The time this was created.
+        /// The time that this data source was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -101,9 +101,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceParameters. 
         /// <para>
-        /// The parameters that QuickSight uses to connect to your underlying source. This is
-        /// a variant type structure. At most one of the attributes should be non-null for this
-        /// structure to be valid.
+        /// The parameters that Amazon QuickSight uses to connect to your underlying source. This
+        /// is a variant type structure. For this structure to be valid, only one of the attributes
+        /// can be non-null.
         /// </para>
         /// </summary>
         public DataSourceParameters DataSourceParameters
@@ -139,7 +139,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The last time this was updated.
+        /// The last time that this data source was updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -213,7 +213,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the data source. This indicates which database engine the data source
+        /// The type of the data source. This type indicates which database engine the data source
         /// connects to.
         /// </para>
         /// </summary>

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Error information on a data set SPICE ingestion.
+    /// Error information for the SPICE ingestion of a dataset.
     /// </summary>
     public partial class ErrorInfo
     {
@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Error essage.
+        /// Error message.
         /// </para>
         /// </summary>
         public string Message

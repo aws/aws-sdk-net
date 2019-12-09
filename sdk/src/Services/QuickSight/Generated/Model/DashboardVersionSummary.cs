@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource name (ARN) of the resource.
+        /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
         public string Arn
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The time this was created.
+        /// The time that this dashboard version was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime

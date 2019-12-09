@@ -133,8 +133,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the template, including the version information
-        /// of the first version.
+        /// The ARN for the template, including the version information of the first version.
         /// </para>
         /// </summary>
         public string VersionArn

@@ -41,8 +41,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// The name that you want to give to the template alias that you're creating. Aliases
-        /// that start with <code>$</code> are reserved by QuickSight. 
+        /// The name that you want to give to the template alias that you're creating. Don't start
+        /// the alias name with the <code>$</code> character. Alias names that start with <code>$</code>
+        /// are reserved by QuickSight. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -61,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the template you are aliasing.
+        /// The ID of the AWS account that contains the template that you creating an alias for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A data transformation on a logical table. This is a variant type structure. No more
-    /// than one of the attributes should be non-null for this structure to be valid.
+    /// A data transformation on a logical table. This is a variant type structure. For this
+    /// structure to be valid, only one of the attributes can be non-null.
     /// </summary>
     public partial class TransformOperation
     {

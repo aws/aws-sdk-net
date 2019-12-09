@@ -80,7 +80,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property IngestionArn. 
         /// <para>
         /// The ARN for the ingestion, which is triggered as a result of dataset creation if the
-        /// import mode is SPICE
+        /// import mode is SPICE.
         /// </para>
         /// </summary>
         public string IngestionArn
@@ -99,7 +99,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property IngestionId. 
         /// <para>
         /// The ID of the ingestion, which is triggered as a result of dataset creation if the
-        /// import mode is SPICE
+        /// import mode is SPICE.
         /// </para>
         /// </summary>
         public string IngestionId

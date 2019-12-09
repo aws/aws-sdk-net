@@ -29,7 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTemplatePermissions operation.
-    /// Updates the permissions on a template.
+    /// Updates the resource permissions for a template.
     /// </summary>
     public partial class UpdateTemplatePermissionsRequest : AmazonQuickSightRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the template.
+        /// The ID of the AWS account that contains the template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

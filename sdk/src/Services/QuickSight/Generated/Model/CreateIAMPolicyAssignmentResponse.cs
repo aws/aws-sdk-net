@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssignmentId. 
         /// <para>
-        /// An ID for the assignment.
+        /// The ID for the assignment.
         /// </para>
         /// </summary>
         public string AssignmentId
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssignmentName. 
         /// <para>
-        /// The name of the assignment. Must be unique within an AWS account.
+        /// The name of the assignment. This name must be unique within the AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -80,19 +80,21 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssignmentStatus. 
         /// <para>
-        /// The status of an assignment:
+        /// The status of the assignment. Possible values are as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ENABLED - Anything specified in this assignment is used while creating the data source.
+        ///  <code>ENABLED</code> - Anything specified in this assignment is used when creating
+        /// the data source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DISABLED - This assignment isn't used while creating the data source.
+        ///  <code>DISABLED</code> - This assignment isn't used when creating the data source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DRAFT - Assignment is an unfinished draft and isn't used while creating the data source.
+        ///  <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating
+        /// the data source.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -111,7 +113,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Identities. 
         /// <para>
-        /// QuickSight users and/or groups that are assigned to the IAM policy.
+        /// The QuickSight users, groups, or both that the IAM policy is assigned to.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Identities
@@ -129,8 +131,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// An IAM policy Amazon Resource Name (ARN) that is applied to the QuickSight users and
-        /// groups specified in this assignment.
+        /// The ARN for the IAM policy that is applied to the QuickSight users and groups specified
+        /// in this assignment.
         /// </para>
         /// </summary>
         public string PolicyArn

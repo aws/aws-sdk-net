@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the relational table.
+        /// The name of the relational table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -97,7 +97,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Schema. 
         /// <para>
-        /// The schema name. Applies to certain relational database engines.
+        /// The schema name. This name applies to certain relational database engines.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

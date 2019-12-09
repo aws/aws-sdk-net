@@ -75,7 +75,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The http status of this request.
+        /// The HTTP status of this request.
         /// </para>
         /// </summary>
         public int Status

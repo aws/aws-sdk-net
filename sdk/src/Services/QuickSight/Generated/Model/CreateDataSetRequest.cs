@@ -47,7 +47,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS Account ID.
+        /// The AWS account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -106,7 +106,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ImportMode. 
         /// <para>
-        /// Indicates whether or not you want to import the data into SPICE.
+        /// Indicates whether you want to import the data into SPICE.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -201,7 +201,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RowLevelPermissionDataSet. 
         /// <para>
-        /// Row-level security configuration on the data you want to create.
+        /// The row-level security configuration for the data that you want to create.
         /// </para>
         /// </summary>
         public RowLevelPermissionDataSet RowLevelPermissionDataSet

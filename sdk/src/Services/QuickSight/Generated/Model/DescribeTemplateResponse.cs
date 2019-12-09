@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Template. 
         /// <para>
-        /// The template structure of the object you want to describe.
+        /// The template structure for the object you want to describe.
         /// </para>
         /// </summary>
         public Template Template

@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DisableSsl. 
         /// <para>
-        /// A boolean flag to control whether SSL should be disabled.
+        /// A Boolean option to control whether SSL should be disabled.
         /// </para>
         /// </summary>
         public bool DisableSsl

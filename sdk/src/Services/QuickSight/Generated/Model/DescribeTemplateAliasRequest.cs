@@ -29,7 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTemplateAlias operation.
-    /// Describes the template aliases of a template.
+    /// Describes the template alias for a template.
     /// </summary>
     public partial class DescribeTemplateAliasRequest : AmazonQuickSightRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// The alias of the template that you want to describe. If you provide a specific alias,
+        /// The name of the template alias that you want to describe. If you name a specific alias,
         /// you describe the version that the alias points to. You can specify the latest version
         /// of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
         /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the template alias you are describing.
+        /// The ID of the AWS account that contains the template alias that you're describing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -81,7 +81,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TemplateId. 
         /// <para>
-        /// An ID for the template.
+        /// The ID for the template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

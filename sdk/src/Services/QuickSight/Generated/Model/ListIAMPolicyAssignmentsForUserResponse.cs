@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ActiveAssignments. 
         /// <para>
-        /// Active assignments for this user.
+        /// The active assignments for this user.
         /// </para>
         /// </summary>
         public List<ActiveIAMPolicyAssignment> ActiveAssignments

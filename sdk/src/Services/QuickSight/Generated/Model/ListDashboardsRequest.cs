@@ -29,7 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDashboards operation.
-    /// Lists dashboards in the AWS account.
+    /// Lists dashboards in an AWS account.
     /// </summary>
     public partial class ListDashboardsRequest : AmazonQuickSightRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the dashboards you are listing.
+        /// The ID of the AWS account that contains the dashboards that you're listing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

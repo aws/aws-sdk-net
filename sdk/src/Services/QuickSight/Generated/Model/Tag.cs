@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The keys of the key-value pairs for the resource tag or tags assigned to the resource.
+    /// The key or keys of the key-value pairs for the resource tag or tags assigned to the
+    /// resource.
     /// </summary>
     public partial class Tag
     {

@@ -75,7 +75,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TemplateAlias. 
         /// <para>
-        /// Information on the template alias.
+        /// Information about the template alias.
         /// </para>
         /// </summary>
         public TemplateAlias TemplateAlias

@@ -29,7 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDataSets operation.
-    /// Lists all of the datasets belonging to this account in an AWS region.
+    /// Lists all of the datasets belonging to the current AWS account in an AWS Region.
     /// 
     ///  
     /// <para>
@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS Account ID.
+        /// The AWS account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

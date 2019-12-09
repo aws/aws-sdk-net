@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CreationStatus. 
         /// <para>
-        /// The creation status of the dashboard create request.
+        /// The status of the dashboard creation request.
         /// </para>
         /// </summary>
         public ResourceStatus CreationStatus

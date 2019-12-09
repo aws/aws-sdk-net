@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Metadata on a column that is used as the input of a transform operation.
+    /// Metadata for a column that is used as the input of a transform operation.
     /// </summary>
     public partial class InputColumn
     {

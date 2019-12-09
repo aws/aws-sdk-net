@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Information on rows during a data set SPICE ingestion.
+    /// Information about rows for a data set SPICE ingestion.
     /// </summary>
     public partial class RowInfo
     {

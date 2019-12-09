@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The time this was created.
+        /// The time that this template version was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -77,7 +77,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The desription of the template version.
+        /// The description of the template version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

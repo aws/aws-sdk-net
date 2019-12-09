@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Row-level security configuration on the dataset.
+    /// The row-level security configuration for the dataset.
     /// </summary>
     public partial class RowLevelPermissionDataSet
     {
@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource name (ARN) of the permission dataset.
+        /// The Amazon Resource Name (ARN) of the permission dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

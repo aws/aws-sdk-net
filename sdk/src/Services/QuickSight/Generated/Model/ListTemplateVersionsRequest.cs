@@ -29,7 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTemplateVersions operation.
-    /// Lists all the versions of the templates in the Quicksight account.
+    /// Lists all the versions of the templates in the current Amazon QuickSight account.
     /// </summary>
     public partial class ListTemplateVersionsRequest : AmazonQuickSightRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// AWS account ID that contains the templates you are listing.
+        /// The ID of the AWS account that contains the templates that you're listing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

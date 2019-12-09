@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Error information on data source creation or update.
+    /// Error information for the data source creation or update.
     /// </summary>
     public partial class DataSourceErrorInfo
     {

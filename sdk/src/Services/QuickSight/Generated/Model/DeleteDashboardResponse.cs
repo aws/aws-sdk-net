@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Secure Socket Layer (SSL) properties that apply. of the resource.
+        /// The Secure Socket Layer (SSL) properties that apply for the resource.
         /// </para>
         /// </summary>
         public string Arn
