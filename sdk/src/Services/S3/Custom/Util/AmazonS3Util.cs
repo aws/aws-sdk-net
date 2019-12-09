@@ -102,6 +102,7 @@ namespace Amazon.S3.Util
             { ".jpeg", "image/jpeg" },
             { ".jpg", "image/jpeg" },
             { ".js", "application/x-javascript" },
+            { ".json", "application/json" },
             { ".kar", "audio/midi" },
             { ".latex", "application/x-latex" },
             { ".lha", "application/octet-stream" },
