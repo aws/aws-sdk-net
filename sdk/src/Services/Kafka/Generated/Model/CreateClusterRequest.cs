@@ -41,6 +41,7 @@ namespace Amazon.Kafka.Model
         private EnhancedMonitoring _enhancedMonitoring;
         private string _kafkaVersion;
         private int? _numberOfBrokerNodes;
+        private OpenMonitoringInfo _openMonitoring;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -190,6 +191,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetNumberOfBrokerNodes()
         {
             return this._numberOfBrokerNodes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenMonitoring.             
+        /// <para>
+        /// The settings for open monitoring.
+        /// </para>
+        /// </summary>
+        public OpenMonitoringInfo OpenMonitoring
+        {
+            get { return this._openMonitoring; }
+            set { this._openMonitoring = value; }
+        }
+
+        // Check to see if OpenMonitoring property is set
+        internal bool IsSetOpenMonitoring()
+        {
+            return this._openMonitoring != null;
         }
 
         /// <summary>

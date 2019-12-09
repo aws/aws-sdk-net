@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MutableClusterInfo Object
+    /// Response Unmarshaller for Prometheus Object
     /// </summary>  
-    public class MutableClusterInfoUnmarshaller : IUnmarshaller<MutableClusterInfo, XmlUnmarshallerContext>, IUnmarshaller<MutableClusterInfo, JsonUnmarshallerContext>
+    public class PrometheusUnmarshaller : IUnmarshaller<Prometheus, XmlUnmarshallerContext>, IUnmarshaller<Prometheus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MutableClusterInfo IUnmarshaller<MutableClusterInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Prometheus IUnmarshaller<Prometheus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MutableClusterInfo Unmarshall(JsonUnmarshallerContext context)
+        public Prometheus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MutableClusterInfo unmarshalledObject = new MutableClusterInfo();
+            Prometheus unmarshalledObject = new Prometheus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("brokerEBSVolumeInfo", targetDepth))
+                if (context.TestExpression("jmxExporter", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BrokerEBSVolumeInfo, BrokerEBSVolumeInfoUnmarshaller>(BrokerEBSVolumeInfoUnmarshaller.Instance);
-                    unmarshalledObject.BrokerEBSVolumeInfo = unmarshaller.Unmarshall(context);
+                    var unmarshaller = JmxExporterUnmarshaller.Instance;
+                    unmarshalledObject.JmxExporter = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("configurationInfo", targetDepth))
+                if (context.TestExpression("nodeExporter", targetDepth))
                 {
-                    var unmarshaller = ConfigurationInfoUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationInfo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("enhancedMonitoring", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EnhancedMonitoring = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("numberOfBrokerNodes", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfBrokerNodes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("openMonitoring", targetDepth))
-                {
-                    var unmarshaller = OpenMonitoringUnmarshaller.Instance;
-                    unmarshalledObject.OpenMonitoring = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NodeExporterUnmarshaller.Instance;
+                    unmarshalledObject.NodeExporter = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         }
 
 
-        private static MutableClusterInfoUnmarshaller _instance = new MutableClusterInfoUnmarshaller();        
+        private static PrometheusUnmarshaller _instance = new PrometheusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MutableClusterInfoUnmarshaller Instance
+        public static PrometheusUnmarshaller Instance
         {
             get
             {

@@ -28,50 +28,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Information about cluster attributes that can be updated via update APIs.
+    /// Container for the parameters to the UpdateMonitoring operation.
+    /// Updates the monitoring settings for the cluster. You can use this operation to specify
+    /// which Apache Kafka metrics you want Amazon MSK to send to Amazon CloudWatch. You can
+    /// also specify settings for open monitoring with Prometheus.
     /// </summary>
-    public partial class MutableClusterInfo
+    public partial class UpdateMonitoringRequest : AmazonKafkaRequest
     {
-        private List<BrokerEBSVolumeInfo> _brokerEBSVolumeInfo = new List<BrokerEBSVolumeInfo>();
-        private ConfigurationInfo _configurationInfo;
+        private string _clusterArn;
+        private string _currentVersion;
         private EnhancedMonitoring _enhancedMonitoring;
-        private int? _numberOfBrokerNodes;
-        private OpenMonitoring _openMonitoring;
+        private OpenMonitoringInfo _openMonitoring;
 
         /// <summary>
-        /// Gets and sets the property BrokerEBSVolumeInfo.             
+        /// Gets and sets the property ClusterArn.             
         /// <para>
-        /// Specifies the size of the EBS volume and the ID of the associated broker.
+        /// The Amazon Resource Name (ARN) that uniquely identifies the cluster.
         /// </para>
         /// </summary>
-        public List<BrokerEBSVolumeInfo> BrokerEBSVolumeInfo
+        [AWSProperty(Required=true)]
+        public string ClusterArn
         {
-            get { return this._brokerEBSVolumeInfo; }
-            set { this._brokerEBSVolumeInfo = value; }
+            get { return this._clusterArn; }
+            set { this._clusterArn = value; }
         }
 
-        // Check to see if BrokerEBSVolumeInfo property is set
-        internal bool IsSetBrokerEBSVolumeInfo()
+        // Check to see if ClusterArn property is set
+        internal bool IsSetClusterArn()
         {
-            return this._brokerEBSVolumeInfo != null && this._brokerEBSVolumeInfo.Count > 0; 
+            return this._clusterArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ConfigurationInfo.             
+        /// Gets and sets the property CurrentVersion.             
         /// <para>
-        /// Information about the changes in the configuration of the brokers.
+        /// The version of the MSK cluster to update. Cluster versions aren't simple numbers.
+        /// You can describe an MSK cluster to find its version. When this update operation is
+        /// successful, it generates a new cluster version.
         /// </para>
         /// </summary>
-        public ConfigurationInfo ConfigurationInfo
+        [AWSProperty(Required=true)]
+        public string CurrentVersion
         {
-            get { return this._configurationInfo; }
-            set { this._configurationInfo = value; }
+            get { return this._currentVersion; }
+            set { this._currentVersion = value; }
         }
 
-        // Check to see if ConfigurationInfo property is set
-        internal bool IsSetConfigurationInfo()
+        // Check to see if CurrentVersion property is set
+        internal bool IsSetCurrentVersion()
         {
-            return this._configurationInfo != null;
+            return this._currentVersion != null;
         }
 
         /// <summary>
@@ -94,30 +100,12 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NumberOfBrokerNodes.             
-        /// <para>
-        /// The number of broker nodes in the cluster.
-        /// </para>
-        /// </summary>
-        public int NumberOfBrokerNodes
-        {
-            get { return this._numberOfBrokerNodes.GetValueOrDefault(); }
-            set { this._numberOfBrokerNodes = value; }
-        }
-
-        // Check to see if NumberOfBrokerNodes property is set
-        internal bool IsSetNumberOfBrokerNodes()
-        {
-            return this._numberOfBrokerNodes.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property OpenMonitoring.             
         /// <para>
         /// The settings for open monitoring.
         /// </para>
         /// </summary>
-        public OpenMonitoring OpenMonitoring
+        public OpenMonitoringInfo OpenMonitoring
         {
             get { return this._openMonitoring; }
             set { this._openMonitoring = value; }

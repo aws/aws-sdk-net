@@ -130,6 +130,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.NumberOfBrokerNodes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("openMonitoring", targetDepth))
+                {
+                    var unmarshaller = OpenMonitoringUnmarshaller.Instance;
+                    unmarshalledObject.OpenMonitoring = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("state", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

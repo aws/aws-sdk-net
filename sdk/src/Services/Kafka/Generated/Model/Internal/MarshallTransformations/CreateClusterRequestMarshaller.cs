@@ -134,6 +134,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NumberOfBrokerNodes);
                 }
 
+                if(publicRequest.IsSetOpenMonitoring())
+                {
+                    context.Writer.WritePropertyName("openMonitoring");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OpenMonitoringInfoMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OpenMonitoring, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
