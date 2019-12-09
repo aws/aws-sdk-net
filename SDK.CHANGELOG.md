@@ -1,3 +1,18 @@
+### 3.3.645.0 (2019-12-09 20:24 UTC)
+* Kafka (3.3.105.0)
+	* AWS MSK has added support for Open Monitoring with Prometheus.
+* KeyManagementService (3.3.103.0)
+	* The Verify operation now returns KMSInvalidSignatureException on invalid signatures. The Sign and Verify operations now return KMSInvalidStateException when a request is made against a CMK pending deletion.
+* QuickSight (3.3.102.7)
+	* Documentation updates for QuickSight
+* SimpleSystemsManagement (3.3.114.0)
+	* Adds the SSM GetCalendarState API and ChangeCalendar SSM Document type. These features enable the forthcoming Systems Manager Change Calendar feature, which will allow you to schedule events during which actions should (or should not) be performed.
+* Core 3.3.104.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.644.0 (2019-12-05 01:33 UTC)
 * ApiGatewayV2 (3.3.104.0)
 	* Amazon API Gateway now supports HTTP APIs (beta), enabling customers to quickly build high performance RESTful APIs that are up to 71% cheaper than REST APIs also available from API Gateway. HTTP APIs are optimized for building APIs that proxy to AWS Lambda functions or HTTP backends, making them ideal for serverless workloads. Using HTTP APIs, you can secure your APIs using OIDC and OAuth 2 out of box, quickly build web applications using a simple CORS experience, and get started immediately with automatic deployment and simple create workflows.
