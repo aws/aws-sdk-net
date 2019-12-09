@@ -43,7 +43,7 @@ namespace Amazon.KeyManagementService.Model
     /// with the identifier of an asymmetric CMK. When you use the public key within AWS KMS,
     /// you benefit from the authentication, authorization, and logging that are part of every
     /// AWS KMS operation. You also reduce of risk of encrypting data that cannot be decrypted.
-    /// These features are not effective outside of AWS KMS. For details, see <a href="kms/latest/developerguide/get-public-key.html#get-public-key-considerations">Special
+    /// These features are not effective outside of AWS KMS. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/download-public-key.html#download-public-key-considerations">Special
     /// Considerations for Downloading Public Keys</a>.
     /// </para>
     ///  

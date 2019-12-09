@@ -58,10 +58,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property SignatureValid. 
         /// <para>
-        /// A Boolean value that indicates whether the signature was verified. A value of True
+        /// A Boolean value that indicates whether the signature was verified. A value of <code>True</code>
         /// indicates that the <code>Signature</code> was produced by signing the <code>Message</code>
-        /// with the specified KeyID and <code>SigningAlgorithm.</code> A value of False indicates
-        /// that the message, the algorithm, or the key changed since the message was signed.
+        /// with the specified <code>KeyID</code> and <code>SigningAlgorithm.</code> If the signature
+        /// is not verified, the <code>Verify</code> operation fails with a <code>KMSInvalidSignatureException</code>
+        /// exception. 
         /// </para>
         /// </summary>
         public bool SignatureValid

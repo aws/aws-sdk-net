@@ -31,7 +31,7 @@ namespace Amazon.KeyManagementService.Model
     /// Container for the parameters to the ReEncrypt operation.
     /// Decrypts ciphertext and then reencrypts it entirely within AWS KMS. You can use this
     /// operation to change the customer master key (CMK) under which data is encrypted, such
-    /// as when you <a href="kms/latest/developerguide/rotate-keys.html#rotate-keys-manually">manually
+    /// as when you <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-manually">manually
     /// rotate</a> a CMK or change the CMK that protects a ciphertext. You can also use it
     /// to reencrypt ciphertext under the same CMK, such as to change the encryption context
     /// of a ciphertext. 
