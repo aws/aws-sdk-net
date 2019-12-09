@@ -2304,11 +2304,6 @@
     <pattern>[A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SimpleSystemsManagement.Model.ComplianceItem.Id</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ComplianceItem.ResourceId</property>
     <min>1</min>
     <max>100</max>
@@ -2321,11 +2316,6 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ComplianceItem.Title</property>
     <max>500</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleSystemsManagement.Model.ComplianceItemEntry.Id</property>
-    <min>1</min>
-    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ComplianceItemEntry.Title</property>

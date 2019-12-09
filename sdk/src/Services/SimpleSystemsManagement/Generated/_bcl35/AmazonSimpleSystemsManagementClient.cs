@@ -4842,6 +4842,80 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  GetCalendarState
+
+        /// <summary>
+        /// Gets the state of the AWS Systems Manager Change Calendar at an optional, specified
+        /// time. If you specify a time, <code>GetCalendarState</code> returns the state of the
+        /// calendar at a specific time, and returns the next time that the Change Calendar state
+        /// will transition. If you do not specify a time, <code>GetCalendarState</code> assumes
+        /// the current time. Change Calendar entries have two possible states: <code>OPEN</code>
+        /// or <code>CLOSED</code>. For more information about Systems Manager Change Calendar,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
+        /// Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalendarState service method.</param>
+        /// 
+        /// <returns>The response from the GetCalendarState service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentTypeException">
+        /// The document type is not valid. Valid document types are described in the <code>DocumentType</code>
+        /// property.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedCalendarException">
+        /// The calendar entry contained in the specified Systems Manager document is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState">REST API Reference for GetCalendarState Operation</seealso>
+        public virtual GetCalendarStateResponse GetCalendarState(GetCalendarStateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCalendarStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCalendarStateResponseUnmarshaller.Instance;
+
+            return Invoke<GetCalendarStateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCalendarState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCalendarState operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCalendarState
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState">REST API Reference for GetCalendarState Operation</seealso>
+        public virtual IAsyncResult BeginGetCalendarState(GetCalendarStateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCalendarStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCalendarStateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCalendarState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCalendarState.</param>
+        /// 
+        /// <returns>Returns a  GetCalendarStateResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState">REST API Reference for GetCalendarState Operation</seealso>
+        public virtual GetCalendarStateResponse EndGetCalendarState(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCalendarStateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetCommandInvocation
 
         /// <summary>

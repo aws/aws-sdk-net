@@ -63,7 +63,6 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// ID could be the number of the KB article.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }

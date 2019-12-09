@@ -2562,6 +2562,44 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
                 
+        #region  GetCalendarState
+
+
+
+        /// <summary>
+        /// Gets the state of the AWS Systems Manager Change Calendar at an optional, specified
+        /// time. If you specify a time, <code>GetCalendarState</code> returns the state of the
+        /// calendar at a specific time, and returns the next time that the Change Calendar state
+        /// will transition. If you do not specify a time, <code>GetCalendarState</code> assumes
+        /// the current time. Change Calendar entries have two possible states: <code>OPEN</code>
+        /// or <code>CLOSED</code>. For more information about Systems Manager Change Calendar,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
+        /// Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalendarState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCalendarState service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentTypeException">
+        /// The document type is not valid. Valid document types are described in the <code>DocumentType</code>
+        /// property.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedCalendarException">
+        /// The calendar entry contained in the specified Systems Manager document is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState">REST API Reference for GetCalendarState Operation</seealso>
+        Task<GetCalendarStateResponse> GetCalendarStateAsync(GetCalendarStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetCommandInvocation
 
 
