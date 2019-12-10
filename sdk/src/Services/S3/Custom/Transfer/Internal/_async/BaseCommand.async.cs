@@ -29,11 +29,11 @@ namespace Amazon.S3.Transfer.Internal
         public abstract Task ExecuteAsync(CancellationToken cancellationToken);
 
         /// <summary>
-        ///  Waits for all of the tasks to complete or till any task fails.
+        ///  Waits for all of the tasks to complete or till any task fails or is canceled.
         /// </summary>        
         protected static async Task<List<T>> WhenAllOrFirstExceptionAsync<T>(List<Task<T>> pendingTasks, CancellationToken cancellationToken)
         {
-            int processed = 0;
+            int processed = 0;            
             int total = pendingTasks.Count;
             var responses = new List<T>();
             while (processed < total)
@@ -42,24 +42,22 @@ namespace Amazon.S3.Transfer.Internal
 
                 var completedTask = await Task.WhenAny(pendingTasks)
                     .ConfigureAwait(continueOnCapturedContext: false);
-                if (completedTask.Status == TaskStatus.RanToCompletion ||
-                    completedTask.Status == TaskStatus.Faulted)
-                {
-                    // Only process results from completed or faulted tasks.                    
-                    // so that we can capture the result of the operation or the exception,
-                    // and ignore OperationCancelledException from cancelled tasks.
-                    var response = await completedTask
-                        .ConfigureAwait(continueOnCapturedContext: false);
-                    responses.Add(response);
-                }
+                
+                //If RanToCompletion a response will be returned
+                //If Faulted or Canceled an appropriate exception will be thrown  
+                var response = await completedTask
+                    .ConfigureAwait(continueOnCapturedContext: false);
+                responses.Add(response);
+                
                 pendingTasks.Remove(completedTask);
                 processed++;
             }
+            
             return responses;
         }
 
         /// <summary>
-        /// Waits for all of the tasks to complete or till any task fails.
+        /// Waits for all of the tasks to complete or till any task fails or is canceled.
         /// </summary>        
         protected static async Task WhenAllOrFirstExceptionAsync(List<Task> pendingTasks, CancellationToken cancellationToken)
         {
@@ -71,12 +69,12 @@ namespace Amazon.S3.Transfer.Internal
 
                 var completedTask = await Task.WhenAny(pendingTasks)
                     .ConfigureAwait(continueOnCapturedContext: false);                
-                if (completedTask.Status == TaskStatus.Faulted)
-                {
-                    // Only process results from faulted tasks so that the exception is thrown.                    
-                    await completedTask
-                        .ConfigureAwait(continueOnCapturedContext: false);                    
-                }
+                
+                //If RanToCompletion a response will be returned
+                //If Faulted or Canceled an appropriate exception will be thrown       
+                await completedTask
+                    .ConfigureAwait(continueOnCapturedContext: false);                    
+                
                 pendingTasks.Remove(completedTask);
                 processed++;
             }
