@@ -1,3 +1,7 @@
+### 3.3.646.0 (2019-12-10 20:29 UTC)
+* Kendra (3.3.101.0)
+	* 1. Adding DocumentTitleFieldName as an optional configuration for SharePoint. 2. updating s3 object pattern to  support all s3 keys.
+
 ### 3.3.645.0 (2019-12-09 20:24 UTC)
 * Kafka (3.3.105.0)
 	* AWS MSK has added support for Open Monitoring with Prometheus.
