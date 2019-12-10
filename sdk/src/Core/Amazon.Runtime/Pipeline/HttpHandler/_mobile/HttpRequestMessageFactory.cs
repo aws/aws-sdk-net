@@ -541,18 +541,35 @@ namespace Amazon.Runtime
                 }
 
                 return new HttpClientResponseData(responseMessage, _httpClient, disposeClient);
-            }
-            catch (HttpRequestException e)
-            {
-                if (e.InnerException != null)
+            }            
+            catch (HttpRequestException httpException)
+            {                
+                if (httpException.InnerException != null)
                 {
-                    if (e.InnerException is IOException)
-                        throw e.InnerException;
+                    if (httpException.InnerException is IOException)
+                    {
+                        throw httpException.InnerException;
+                    }
 #if !NETSTANDARD
-                    if (e.InnerException is WebException)
-                        throw e.InnerException;
+                    if (httpException.InnerException is WebException)
+                        throw httpException.InnerException;
 #endif
                 }
+
+                throw;
+            }
+            catch (OperationCanceledException canceledException)
+            {             
+                if (!cancellationToken.IsCancellationRequested)
+                {
+                    //OperationCanceledException thrown by HttpClient not the CancellationToken supplied by the user.
+                    //This exception can wrap at least IOExceptions, ObjectDisposedExceptions and should be retried.
+                    //Throw the underlying exception if it exists.
+                    if(canceledException.InnerException != null)
+                    {
+                        throw canceledException.InnerException;
+                    }                    
+                }                
 
                 throw;
             }

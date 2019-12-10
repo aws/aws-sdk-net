@@ -269,6 +269,15 @@ namespace Amazon.Runtime.Internal
                 if (ContainErrorMessage(exception))
                     return true;
             }
+
+            if (exception is OperationCanceledException && !executionContext.RequestContext.CancellationToken.IsCancellationRequested)
+            {
+                //OperationCanceledException thrown by HttpClient not the CancellationToken supplied by the user.
+                //This exception can wrap at least IOExceptions, ObjectDisposedExceptions and should be retried.
+                //It will only get in here if the OperationCanceledException thrown from HttpClient did not contain
+                //an inner exception which is handled in the HttpRequestMessageFactory.
+                return true;             
+            }
 #endif
 
             // A AmazonServiceException was thrown by ErrorHandler
