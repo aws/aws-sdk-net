@@ -70,6 +70,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.CrawlAttachments = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DocumentTitleFieldName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DocumentTitleFieldName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FieldMappings", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DataSourceToIndexFieldMapping, DataSourceToIndexFieldMappingUnmarshaller>(DataSourceToIndexFieldMappingUnmarshaller.Instance);

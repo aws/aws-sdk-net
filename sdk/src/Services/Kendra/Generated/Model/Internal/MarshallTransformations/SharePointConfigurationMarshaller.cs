@@ -51,6 +51,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CrawlAttachments);
             }
 
+            if(requestObject.IsSetDocumentTitleFieldName())
+            {
+                context.Writer.WritePropertyName("DocumentTitleFieldName");
+                context.Writer.Write(requestObject.DocumentTitleFieldName);
+            }
+
             if(requestObject.IsSetFieldMappings())
             {
                 context.Writer.WritePropertyName("FieldMappings");

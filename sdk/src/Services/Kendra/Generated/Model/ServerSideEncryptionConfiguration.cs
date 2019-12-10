@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides the identifier of the KMS key used to encrypt data indexed by Amazon Kendra.
+    /// Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt data
+    /// indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.
     /// </summary>
     public partial class ServerSideEncryptionConfiguration
     {
@@ -37,7 +38,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The identifier of the KMS key.
+        /// The identifier of the AWS KMS customer master key (CMK). Amazon Kendra doesn't support
+        /// asymmetric CMKs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

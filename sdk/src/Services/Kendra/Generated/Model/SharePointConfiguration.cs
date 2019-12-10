@@ -33,6 +33,7 @@ namespace Amazon.Kendra.Model
     public partial class SharePointConfiguration
     {
         private bool? _crawlAttachments;
+        private string _documentTitleFieldName;
         private List<DataSourceToIndexFieldMapping> _fieldMappings = new List<DataSourceToIndexFieldMapping>();
         private string _secretArn;
         private SharePointVersion _sharePointVersion;
@@ -56,6 +57,25 @@ namespace Amazon.Kendra.Model
         internal bool IsSetCrawlAttachments()
         {
             return this._crawlAttachments.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentTitleFieldName. 
+        /// <para>
+        /// The Microsoft SharePoint attribute field that contains the title of the document.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string DocumentTitleFieldName
+        {
+            get { return this._documentTitleFieldName; }
+            set { this._documentTitleFieldName = value; }
+        }
+
+        // Check to see if DocumentTitleFieldName property is set
+        internal bool IsSetDocumentTitleFieldName()
+        {
+            return this._documentTitleFieldName != null;
         }
 
         /// <summary>
