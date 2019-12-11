@@ -1,3 +1,12 @@
+### 3.3.647.0 (2019-12-11 19:13 UTC)
+* EC2 (3.3.143.0)
+	* This release allows customers to attach multiple Elastic Inference Accelerators to a single EC2 instance. It adds support for a Count parameter for each Elastic Inference Accelerator type you specify on the RunInstances and LaunchTemplate APIs.
+* Core 3.3.104.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.646.0 (2019-12-10 20:29 UTC)
 * Kendra (3.3.101.0)
 	* 1. Adding DocumentTitleFieldName as an optional configuration for SharePoint. 2. updating s3 object pattern to  support all s3 keys.
