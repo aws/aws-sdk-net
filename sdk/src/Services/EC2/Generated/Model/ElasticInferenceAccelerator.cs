@@ -32,13 +32,34 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ElasticInferenceAccelerator
     {
+        private int? _count;
         private string _type;
+
+        /// <summary>
+        /// Gets and sets the property Count. 
+        /// <para>
+        ///  The number of elastic inference accelerators of given type to be attached to the
+        /// instance. Only positive values allowed. If not specified defaults to 1. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int Count
+        {
+            get { return this._count.GetValueOrDefault(); }
+            set { this._count = value; }
+        }
+
+        // Check to see if Count property is set
+        internal bool IsSetCount()
+        {
+            return this._count.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of elastic inference accelerator. The possible values are <code>eia1.small</code>,
-        /// <code>eia1.medium</code>, and <code>eia1.large</code>. 
+        ///  The type of elastic inference accelerator. The possible values are <code>eia1.medium</code>,
+        /// <code>eia1.large</code>, and <code>eia1.xlarge</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -172,6 +172,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         int publicRequestLaunchTemplateDatalistValueIndex = 1;
                         foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.ElasticInferenceAccelerators)
                         {
+                            if(publicRequestLaunchTemplateDatalistValue.IsSetCount())
+                            {
+                                request.Parameters.Add("LaunchTemplateData" + "." + "ElasticInferenceAccelerator" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Count", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Count));
+                            }
                             if(publicRequestLaunchTemplateDatalistValue.IsSetType())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "ElasticInferenceAccelerator" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Type", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Type));

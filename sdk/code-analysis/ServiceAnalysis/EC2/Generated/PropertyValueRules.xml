@@ -370,6 +370,10 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.ElasticInferenceAccelerator.Count</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.FleetLaunchTemplateSpecification.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
@@ -386,6 +390,10 @@
     <min>3</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.LaunchTemplateElasticInferenceAccelerator.Count</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.LaunchTemplateVersion.LaunchTemplateName</property>
