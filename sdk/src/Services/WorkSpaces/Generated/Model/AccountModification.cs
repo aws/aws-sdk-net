@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes a modification to the configuration of bring your own license (BYOL) for
+    /// Describes a modification to the configuration of Bring Your Own License (BYOL) for
     /// the specified account.
     /// </summary>
     public partial class AccountModification

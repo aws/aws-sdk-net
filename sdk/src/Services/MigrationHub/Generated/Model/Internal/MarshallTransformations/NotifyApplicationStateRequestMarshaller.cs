@@ -86,6 +86,12 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Status);
                 }
 
+                if(publicRequest.IsSetUpdateDateTime())
+                {
+                    context.Writer.WritePropertyName("UpdateDateTime");
+                    context.Writer.Write(publicRequest.UpdateDateTime);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

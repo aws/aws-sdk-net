@@ -56,7 +56,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>
+        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
         /// field is a duplicate of a previously entered job name. Resend your request with a
         /// different name.
         /// 
@@ -291,7 +291,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>
+        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
         /// field is a duplicate of a previously entered job name. Resend your request with a
         /// different name.
         /// 
@@ -334,7 +334,7 @@ namespace Amazon.TranscribeService
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>
+        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
         /// field is a duplicate of a previously entered job name. Resend your request with a
         /// different name.
         /// 

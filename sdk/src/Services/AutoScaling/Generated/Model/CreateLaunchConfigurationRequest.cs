@@ -131,7 +131,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter can only be used if you are launching EC2-Classic instances. 
+        /// This parameter can only be used if you are launching EC2-Classic instances.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -158,7 +158,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// If you specify the <code>ClassicLinkVPCId</code> parameter, you must specify this
-        /// parameter. 
+        /// parameter.
         /// </para>
         /// </summary>
         public List<string> ClassicLinkVPCSecurityGroups
@@ -186,7 +186,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>false</code>. 
+        /// The default value is <code>false</code>.
         /// </para>
         /// </summary>
         public bool EbsOptimized
@@ -205,7 +205,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property IamInstanceProfile. 
         /// <para>
         /// The name or the Amazon Resource Name (ARN) of the instance profile associated with
-        /// the IAM role for the instance. The instance profile contains the IAM role. 
+        /// the IAM role for the instance. The instance profile contains the IAM role.
         /// </para>
         ///  
         /// <para>
@@ -292,11 +292,11 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property InstanceMonitoring. 
         /// <para>
         /// Controls whether instances in this group are launched with detailed (<code>true</code>)
-        /// or basic (<code>false</code>) monitoring. 
+        /// or basic (<code>false</code>) monitoring.
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>true</code> (enabled). 
+        /// The default value is <code>true</code> (enabled).
         /// </para>
         ///  <important> 
         /// <para>
@@ -304,7 +304,6 @@ namespace Amazon.AutoScaling.Model
         /// and your account is charged a fee. When you disable detailed monitoring, CloudWatch
         /// generates metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
         /// Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-        /// 
         /// </para>
         ///  </important>
         /// </summary>
@@ -430,7 +429,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>default</code> | <code>dedicated</code> 
+        /// Valid Values: <code>default</code> | <code>dedicated</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -500,21 +499,15 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The maximum hourly price to be paid for any Spot Instance launched to fulfill the
         /// request. Spot Instances are launched when the price you specify exceeds the current
-        /// Spot market price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
+        /// Spot price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
         /// Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.
         /// </para>
-        ///  
-        /// <para>
-        /// If a Spot price is set, then the Auto Scaling group will only launch instances when
-        /// the Spot price has been met, regardless of the setting in the Auto Scaling group's
-        /// <code>DesiredCapacity</code>. 
-        /// </para>
         ///  <note> 
         /// <para>
-        /// When you change your Spot price by creating a new launch configuration, running instances
-        /// will continue to run as long as the Spot price for those running instances is higher
-        /// than the current Spot market price. 
+        /// When you change your maximum price by creating a new launch configuration, running
+        /// instances will continue to run as long as the maximum price for those running instances
+        /// is higher than the current Spot price.
         /// </para>
         ///  </note>
         /// </summary>

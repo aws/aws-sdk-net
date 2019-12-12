@@ -62,6 +62,7 @@ namespace Amazon.CognitoIdentity.Model
         /// The keys of the tags to remove from the user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

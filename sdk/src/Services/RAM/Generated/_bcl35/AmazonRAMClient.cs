@@ -422,6 +422,81 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  AssociateResourceSharePermission
+
+        /// <summary>
+        /// Associates a permission with a resource share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateResourceSharePermission service method.</param>
+        /// 
+        /// <returns>The response from the AssociateResourceSharePermission service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// A client token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceSharePermission">REST API Reference for AssociateResourceSharePermission Operation</seealso>
+        public virtual AssociateResourceSharePermissionResponse AssociateResourceSharePermission(AssociateResourceSharePermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateResourceSharePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateResourceSharePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateResourceSharePermissionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateResourceSharePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateResourceSharePermission operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateResourceSharePermission
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceSharePermission">REST API Reference for AssociateResourceSharePermission Operation</seealso>
+        public virtual IAsyncResult BeginAssociateResourceSharePermission(AssociateResourceSharePermissionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateResourceSharePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateResourceSharePermissionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateResourceSharePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateResourceSharePermission.</param>
+        /// 
+        /// <returns>Returns a  AssociateResourceSharePermissionResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceSharePermission">REST API Reference for AssociateResourceSharePermission Operation</seealso>
+        public virtual AssociateResourceSharePermissionResponse EndAssociateResourceSharePermission(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateResourceSharePermissionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateResourceShare
 
         /// <summary>
@@ -677,6 +752,81 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  DisassociateResourceSharePermission
+
+        /// <summary>
+        /// Disassociates an AWS RAM permission from a resource share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateResourceSharePermission service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateResourceSharePermission service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// A client token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceSharePermission">REST API Reference for DisassociateResourceSharePermission Operation</seealso>
+        public virtual DisassociateResourceSharePermissionResponse DisassociateResourceSharePermission(DisassociateResourceSharePermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateResourceSharePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateResourceSharePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateResourceSharePermissionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateResourceSharePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateResourceSharePermission operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateResourceSharePermission
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceSharePermission">REST API Reference for DisassociateResourceSharePermission Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateResourceSharePermission(DisassociateResourceSharePermissionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateResourceSharePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateResourceSharePermissionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateResourceSharePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateResourceSharePermission.</param>
+        /// 
+        /// <returns>Returns a  DisassociateResourceSharePermissionResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceSharePermission">REST API Reference for DisassociateResourceSharePermission Operation</seealso>
+        public virtual DisassociateResourceSharePermissionResponse EndDisassociateResourceSharePermission(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateResourceSharePermissionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  EnableSharingWithAwsOrganization
 
         /// <summary>
@@ -741,6 +891,78 @@ namespace Amazon.RAM
         public virtual EnableSharingWithAwsOrganizationResponse EndEnableSharingWithAwsOrganization(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableSharingWithAwsOrganizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPermission
+
+        /// <summary>
+        /// Gets the contents of an AWS RAM permission in JSON format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPermission service method.</param>
+        /// 
+        /// <returns>The response from the GetPermission service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetPermission">REST API Reference for GetPermission Operation</seealso>
+        public virtual GetPermissionResponse GetPermission(GetPermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPermissionResponseUnmarshaller.Instance;
+
+            return Invoke<GetPermissionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPermission operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPermission
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetPermission">REST API Reference for GetPermission Operation</seealso>
+        public virtual IAsyncResult BeginGetPermission(GetPermissionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPermissionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPermission.</param>
+        /// 
+        /// <returns>Returns a  GetPermissionResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetPermission">REST API Reference for GetPermission Operation</seealso>
+        public virtual GetPermissionResponse EndGetPermission(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPermissionResponse>(asyncResult);
         }
 
         #endregion
@@ -1119,11 +1341,80 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  ListPermissions
+
+        /// <summary>
+        /// Lists the AWS RAM permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissions service method.</param>
+        /// 
+        /// <returns>The response from the ListPermissions service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
+        public virtual ListPermissionsResponse ListPermissions(ListPermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPermissionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissions operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
+        public virtual IAsyncResult BeginListPermissions(ListPermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPermissions.</param>
+        /// 
+        /// <returns>Returns a  ListPermissionsResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
+        public virtual ListPermissionsResponse EndListPermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListPrincipals
 
         /// <summary>
-        /// Lists the principals that you have shared resources with or the principals that have
-        /// shared resources with you.
+        /// Lists the principals that you have shared resources with or that have shared resources
+        /// with you.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipals service method.</param>
         /// 
@@ -1264,6 +1555,170 @@ namespace Amazon.RAM
         public virtual ListResourcesResponse EndListResources(IAsyncResult asyncResult)
         {
             return EndInvoke<ListResourcesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListResourceSharePermissions
+
+        /// <summary>
+        /// Lists the AWS RAM permissions that are associated with a resource share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceSharePermissions service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceSharePermissions service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceSharePermissions">REST API Reference for ListResourceSharePermissions Operation</seealso>
+        public virtual ListResourceSharePermissionsResponse ListResourceSharePermissions(ListResourceSharePermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceSharePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceSharePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceSharePermissionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceSharePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceSharePermissions operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceSharePermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceSharePermissions">REST API Reference for ListResourceSharePermissions Operation</seealso>
+        public virtual IAsyncResult BeginListResourceSharePermissions(ListResourceSharePermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceSharePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceSharePermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceSharePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceSharePermissions.</param>
+        /// 
+        /// <returns>Returns a  ListResourceSharePermissionsResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceSharePermissions">REST API Reference for ListResourceSharePermissions Operation</seealso>
+        public virtual ListResourceSharePermissionsResponse EndListResourceSharePermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceSharePermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PromoteResourceShareCreatedFromPolicy
+
+        /// <summary>
+        /// Resource shares that were created by attaching a policy to a resource are visible
+        /// only to the resource share owner, and the resource share cannot be modified in AWS
+        /// RAM.
+        /// 
+        ///  
+        /// <para>
+        /// Use this API action to promote the resource share. When you promote the resource share,
+        /// it becomes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Visible to all principals that it is shared with.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifiable in AWS RAM.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PromoteResourceShareCreatedFromPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PromoteResourceShareCreatedFromPolicy service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MissingRequiredParameterException">
+        /// A required input parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy">REST API Reference for PromoteResourceShareCreatedFromPolicy Operation</seealso>
+        public virtual PromoteResourceShareCreatedFromPolicyResponse PromoteResourceShareCreatedFromPolicy(PromoteResourceShareCreatedFromPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PromoteResourceShareCreatedFromPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PromoteResourceShareCreatedFromPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PromoteResourceShareCreatedFromPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PromoteResourceShareCreatedFromPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PromoteResourceShareCreatedFromPolicy operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPromoteResourceShareCreatedFromPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy">REST API Reference for PromoteResourceShareCreatedFromPolicy Operation</seealso>
+        public virtual IAsyncResult BeginPromoteResourceShareCreatedFromPolicy(PromoteResourceShareCreatedFromPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PromoteResourceShareCreatedFromPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PromoteResourceShareCreatedFromPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PromoteResourceShareCreatedFromPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPromoteResourceShareCreatedFromPolicy.</param>
+        /// 
+        /// <returns>Returns a  PromoteResourceShareCreatedFromPolicyResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy">REST API Reference for PromoteResourceShareCreatedFromPolicy Operation</seealso>
+        public virtual PromoteResourceShareCreatedFromPolicyResponse EndPromoteResourceShareCreatedFromPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PromoteResourceShareCreatedFromPolicyResponse>(asyncResult);
         }
 
         #endregion

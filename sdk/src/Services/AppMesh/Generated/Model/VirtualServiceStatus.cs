@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the status of a virtual service.
+    /// An object that represents the status of a virtual service.
     /// </summary>
     public partial class VirtualServiceStatus
     {

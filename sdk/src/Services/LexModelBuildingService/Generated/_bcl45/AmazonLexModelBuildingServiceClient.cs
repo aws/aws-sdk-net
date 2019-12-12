@@ -607,8 +607,16 @@ namespace Amazon.LexModelBuildingService
 
         /// <summary>
         /// Deletes all versions of the bot, including the <code>$LATEST</code> version. To delete
-        /// a specific version of the bot, use the <a>DeleteBotVersion</a> operation.
+        /// a specific version of the bot, use the <a>DeleteBotVersion</a> operation. The <code>DeleteBot</code>
+        /// operation doesn't immediately remove the bot schema. Instead, it is marked for deletion
+        /// and removed later.
         /// 
+        ///  
+        /// <para>
+        /// Amazon Lex stores utterances indefinitely for improving the ability of your bot to
+        /// respond to user inputs. These utterances are not removed when the bot is deleted.
+        /// To remove the utterances, use the <a>DeleteUtterances</a> operation.
+        /// </para>
         ///  
         /// <para>
         /// If a bot has an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation
@@ -675,8 +683,16 @@ namespace Amazon.LexModelBuildingService
 
         /// <summary>
         /// Deletes all versions of the bot, including the <code>$LATEST</code> version. To delete
-        /// a specific version of the bot, use the <a>DeleteBotVersion</a> operation.
+        /// a specific version of the bot, use the <a>DeleteBotVersion</a> operation. The <code>DeleteBot</code>
+        /// operation doesn't immediately remove the bot schema. Instead, it is marked for deletion
+        /// and removed later.
         /// 
+        ///  
+        /// <para>
+        /// Amazon Lex stores utterances indefinitely for improving the ability of your bot to
+        /// respond to user inputs. These utterances are not removed when the bot is deleted.
+        /// To remove the utterances, use the <a>DeleteUtterances</a> operation.
+        /// </para>
         ///  
         /// <para>
         /// If a bot has an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation
@@ -1680,8 +1696,11 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>DeleteStoredUtterances</code> operation to manually delete stored utterances
-        /// for a specific user.
+        /// Use the <code>DeleteUtterances</code> operation to manually delete stored utterances
+        /// for a specific user. When you use the <code>DeleteUtterances</code> operation, utterances
+        /// stored for improving your bot's ability to respond to user input are deleted immediately.
+        /// Utterances stored for use with the <code>GetUtterancesView</code> operation are deleted
+        /// after 15 days.
         /// </para>
         ///  
         /// <para>
@@ -1726,8 +1745,11 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>DeleteStoredUtterances</code> operation to manually delete stored utterances
-        /// for a specific user.
+        /// Use the <code>DeleteUtterances</code> operation to manually delete stored utterances
+        /// for a specific user. When you use the <code>DeleteUtterances</code> operation, utterances
+        /// stored for improving your bot's ability to respond to user input are deleted immediately.
+        /// Utterances stored for use with the <code>GetUtterancesView</code> operation are deleted
+        /// after 15 days.
         /// </para>
         ///  
         /// <para>
@@ -3295,13 +3317,19 @@ namespace Amazon.LexModelBuildingService
         /// After you publish a new version of a bot, you can get information about the old version
         /// and the new so that you can compare the performance across the two versions. 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// Utterance statistics are generated once a day. Data is available for the last 15 days.
-        /// You can request information for up to 5 versions in each request. The response contains
-        /// information about a maximum of 100 utterances for each version.
+        /// You can request information for up to 5 versions of your bot in each request. Amazon
+        /// Lex returns the most frequent utterances received by the bot in the last 15 days.
+        /// The response contains information about a maximum of 100 utterances for each version.
         /// </para>
-        ///  </note> 
+        ///  
+        /// <para>
+        /// If you set <code>childDirected</code> field to true when you created your bot, or
+        /// if you opted out of participating in improving Amazon Lex, utterances are not available.
+        /// </para>
+        ///  
         /// <para>
         /// This operation requires permissions for the <code>lex:GetUtterancesView</code> action.
         /// </para>
@@ -3349,13 +3377,19 @@ namespace Amazon.LexModelBuildingService
         /// After you publish a new version of a bot, you can get information about the old version
         /// and the new so that you can compare the performance across the two versions. 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// Utterance statistics are generated once a day. Data is available for the last 15 days.
-        /// You can request information for up to 5 versions in each request. The response contains
-        /// information about a maximum of 100 utterances for each version.
+        /// You can request information for up to 5 versions of your bot in each request. Amazon
+        /// Lex returns the most frequent utterances received by the bot in the last 15 days.
+        /// The response contains information about a maximum of 100 utterances for each version.
         /// </para>
-        ///  </note> 
+        ///  
+        /// <para>
+        /// If you set <code>childDirected</code> field to true when you created your bot, or
+        /// if you opted out of participating in improving Amazon Lex, utterances are not available.
+        /// </para>
+        ///  
         /// <para>
         /// This operation requires permissions for the <code>lex:GetUtterancesView</code> action.
         /// </para>
@@ -3411,7 +3445,7 @@ namespace Amazon.LexModelBuildingService
         ///  
         /// <para>
         /// This operation requires permissions for the <code>lex:PutBot</code> action. For more
-        /// information, see <a>auth-and-access-control</a>.
+        /// information, see <a>security-iam</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBot service method.</param>
@@ -3465,7 +3499,7 @@ namespace Amazon.LexModelBuildingService
         ///  
         /// <para>
         /// This operation requires permissions for the <code>lex:PutBot</code> action. For more
-        /// information, see <a>auth-and-access-control</a>.
+        /// information, see <a>security-iam</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBot service method.</param>

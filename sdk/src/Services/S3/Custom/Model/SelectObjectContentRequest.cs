@@ -115,5 +115,12 @@ namespace Amazon.S3.Model
         public OutputSerialization OutputSerialization { get; set; }
 
         internal bool IsSetOutputSerialization() => OutputSerialization != null;
+
+        /// <summary>
+        /// The byte range of the object to get the records from.
+        /// </summary>
+        public ScanRange ScanRange { get; set; }
+
+        internal bool IsSetScanRange() => ScanRange != null;
     }
 }

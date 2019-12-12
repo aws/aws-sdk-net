@@ -41,6 +41,7 @@ namespace Amazon.OpsWorksCM.Model
         /// API call to get the status of the disassociation request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string NodeAssociationStatusToken
         {
             get { return this._nodeAssociationStatusToken; }

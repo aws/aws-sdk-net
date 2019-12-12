@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the health check policy for a virtual node's listener.
+    /// An object that represents the health check policy for a virtual node's listener.
     /// </summary>
     public partial class HealthCheckPolicy
     {

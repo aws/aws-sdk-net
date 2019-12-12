@@ -32,14 +32,37 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class SSEDescription
     {
+        private DateTime? _inaccessibleEncryptionDateTime;
         private string _kmsMasterKeyArn;
         private SSEType _sseType;
         private SSEStatus _status;
 
         /// <summary>
+        /// Gets and sets the property InaccessibleEncryptionDateTime. 
+        /// <para>
+        /// Indicates the time, in UNIX epoch date format, when DynamoDB detected that the table's
+        /// AWS KMS key was inaccessible. This attribute will automatically be cleared when DynamoDB
+        /// detects that the table's AWS KMS key is accessible again. DynamoDB will initiate the
+        /// table archival process when table's AWS KMS key remains inaccessible for more than
+        /// seven days from this date.
+        /// </para>
+        /// </summary>
+        public DateTime InaccessibleEncryptionDateTime
+        {
+            get { return this._inaccessibleEncryptionDateTime.GetValueOrDefault(); }
+            set { this._inaccessibleEncryptionDateTime = value; }
+        }
+
+        // Check to see if InaccessibleEncryptionDateTime property is set
+        internal bool IsSetInaccessibleEncryptionDateTime()
+        {
+            return this._inaccessibleEncryptionDateTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property KMSMasterKeyArn. 
         /// <para>
-        /// The KMS customer master key (CMK) ARN used for the KMS encryption.
+        /// The AWS KMS customer master key (CMK) ARN used for the AWS KMS encryption.
         /// </para>
         /// </summary>
         public string KMSMasterKeyArn
@@ -61,8 +84,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
-        /// Key is stored in your account and is managed by AWS KMS (KMS charges apply).
+        ///  <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The
+        /// key is stored in your account and is managed by AWS KMS (AWS KMS charges apply).
         /// </para>
         ///  </li> </ul>
         /// </summary>

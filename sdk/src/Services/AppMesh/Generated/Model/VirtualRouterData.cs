@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing a virtual router returned by a describe operation.
+    /// An object that represents a virtual router returned by a describe operation.
     /// </summary>
     public partial class VirtualRouterData
     {

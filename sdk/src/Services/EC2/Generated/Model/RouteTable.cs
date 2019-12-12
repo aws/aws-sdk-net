@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Associations. 
         /// <para>
-        /// The associations between the route table and one or more subnets.
+        /// The associations between the route table and one or more subnets or a gateway.
         /// </para>
         /// </summary>
         public List<RouteTableAssociation> Associations

@@ -871,10 +871,81 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DeregisterWorkspaceDirectory
+
+        /// <summary>
+        /// Deregisters the specified directory. This operation is asynchronous and returns before
+        /// the WorkSpace directory is deregistered. If any WorkSpaces are registered to this
+        /// directory, you must remove them before you can deregister the directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterWorkspaceDirectory service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterWorkspaceDirectory service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeregisterWorkspaceDirectory">REST API Reference for DeregisterWorkspaceDirectory Operation</seealso>
+        public virtual DeregisterWorkspaceDirectoryResponse DeregisterWorkspaceDirectory(DeregisterWorkspaceDirectoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterWorkspaceDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterWorkspaceDirectoryResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterWorkspaceDirectoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterWorkspaceDirectory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterWorkspaceDirectory operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterWorkspaceDirectory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeregisterWorkspaceDirectory">REST API Reference for DeregisterWorkspaceDirectory Operation</seealso>
+        public virtual IAsyncResult BeginDeregisterWorkspaceDirectory(DeregisterWorkspaceDirectoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterWorkspaceDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterWorkspaceDirectoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterWorkspaceDirectory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterWorkspaceDirectory.</param>
+        /// 
+        /// <returns>Returns a  DeregisterWorkspaceDirectoryResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeregisterWorkspaceDirectory">REST API Reference for DeregisterWorkspaceDirectory Operation</seealso>
+        public virtual DeregisterWorkspaceDirectoryResponse EndDeregisterWorkspaceDirectory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeregisterWorkspaceDirectoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAccount
 
         /// <summary>
-        /// Retrieves a list that describes the configuration of bring your own license (BYOL)
+        /// Retrieves a list that describes the configuration of Bring Your Own License (BYOL)
         /// for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccount service method.</param>
@@ -932,8 +1003,8 @@ namespace Amazon.WorkSpaces
         #region  DescribeAccountModifications
 
         /// <summary>
-        /// Retrieves a list that describes modifications to the configuration of bring your own
-        /// license (BYOL) for the specified account.
+        /// Retrieves a list that describes modifications to the configuration of Bring Your Own
+        /// License (BYOL) for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountModifications service method.</param>
         /// 
@@ -1253,8 +1324,7 @@ namespace Amazon.WorkSpaces
         #region  DescribeWorkspaceDirectories
 
         /// <summary>
-        /// Describes the available AWS Directory Service directories that are registered with
-        /// Amazon WorkSpaces.
+        /// Describes the available directories that are registered with Amazon WorkSpaces.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeWorkspaceDirectories service method, as returned by WorkSpaces.</returns>
@@ -1270,8 +1340,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the available AWS Directory Service directories that are registered with
-        /// Amazon WorkSpaces.
+        /// Describes the available directories that are registered with Amazon WorkSpaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceDirectories service method.</param>
         /// 
@@ -1663,7 +1732,7 @@ namespace Amazon.WorkSpaces
         #region  ImportWorkspaceImage
 
         /// <summary>
-        /// Imports the specified Windows 7 or Windows 10 bring your own license (BYOL) image
+        /// Imports the specified Windows 7 or Windows 10 Bring Your Own License (BYOL) image
         /// into Amazon WorkSpaces. The image must be an already licensed EC2 image that is in
         /// your AWS account, and you must own the image.
         /// </summary>
@@ -1738,7 +1807,7 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can
-        /// use for the network management interface when you enable bring your own license (BYOL).
+        /// use for the network management interface when you enable Bring Your Own License (BYOL).
         /// 
         /// 
         ///  
@@ -1806,7 +1875,7 @@ namespace Amazon.WorkSpaces
         #region  ModifyAccount
 
         /// <summary>
-        /// Modifies the configuration of bring your own license (BYOL) for the specified account.
+        /// Modifies the configuration of Bring Your Own License (BYOL) for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyAccount service method.</param>
         /// 
@@ -1935,6 +2004,196 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  ModifySelfservicePermissions
+
+        /// <summary>
+        /// Modifies the self-service WorkSpace management capabilities for your users. For more
+        /// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable
+        /// Self-Service WorkSpace Management Capabilities for Your Users</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifySelfservicePermissions service method.</param>
+        /// 
+        /// <returns>The response from the ModifySelfservicePermissions service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySelfservicePermissions">REST API Reference for ModifySelfservicePermissions Operation</seealso>
+        public virtual ModifySelfservicePermissionsResponse ModifySelfservicePermissions(ModifySelfservicePermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySelfservicePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySelfservicePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifySelfservicePermissionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifySelfservicePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifySelfservicePermissions operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifySelfservicePermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySelfservicePermissions">REST API Reference for ModifySelfservicePermissions Operation</seealso>
+        public virtual IAsyncResult BeginModifySelfservicePermissions(ModifySelfservicePermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySelfservicePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySelfservicePermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifySelfservicePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifySelfservicePermissions.</param>
+        /// 
+        /// <returns>Returns a  ModifySelfservicePermissionsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySelfservicePermissions">REST API Reference for ModifySelfservicePermissions Operation</seealso>
+        public virtual ModifySelfservicePermissionsResponse EndModifySelfservicePermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifySelfservicePermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyWorkspaceAccessProperties
+
+        /// <summary>
+        /// Specifies which devices and operating systems users can use to access their Workspaces.
+        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access">
+        /// Control Device Access</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceAccessProperties service method.</param>
+        /// 
+        /// <returns>The response from the ModifyWorkspaceAccessProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceAccessProperties">REST API Reference for ModifyWorkspaceAccessProperties Operation</seealso>
+        public virtual ModifyWorkspaceAccessPropertiesResponse ModifyWorkspaceAccessProperties(ModifyWorkspaceAccessPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyWorkspaceAccessPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyWorkspaceAccessPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyWorkspaceAccessPropertiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyWorkspaceAccessProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceAccessProperties operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyWorkspaceAccessProperties
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceAccessProperties">REST API Reference for ModifyWorkspaceAccessProperties Operation</seealso>
+        public virtual IAsyncResult BeginModifyWorkspaceAccessProperties(ModifyWorkspaceAccessPropertiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyWorkspaceAccessPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyWorkspaceAccessPropertiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyWorkspaceAccessProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyWorkspaceAccessProperties.</param>
+        /// 
+        /// <returns>Returns a  ModifyWorkspaceAccessPropertiesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceAccessProperties">REST API Reference for ModifyWorkspaceAccessProperties Operation</seealso>
+        public virtual ModifyWorkspaceAccessPropertiesResponse EndModifyWorkspaceAccessProperties(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyWorkspaceAccessPropertiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyWorkspaceCreationProperties
+
+        /// <summary>
+        /// Modify the default properties used to create WorkSpaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceCreationProperties service method.</param>
+        /// 
+        /// <returns>The response from the ModifyWorkspaceCreationProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceCreationProperties">REST API Reference for ModifyWorkspaceCreationProperties Operation</seealso>
+        public virtual ModifyWorkspaceCreationPropertiesResponse ModifyWorkspaceCreationProperties(ModifyWorkspaceCreationPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyWorkspaceCreationPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyWorkspaceCreationPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyWorkspaceCreationPropertiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyWorkspaceCreationProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceCreationProperties operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyWorkspaceCreationProperties
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceCreationProperties">REST API Reference for ModifyWorkspaceCreationProperties Operation</seealso>
+        public virtual IAsyncResult BeginModifyWorkspaceCreationProperties(ModifyWorkspaceCreationPropertiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyWorkspaceCreationPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyWorkspaceCreationPropertiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyWorkspaceCreationProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyWorkspaceCreationProperties.</param>
+        /// 
+        /// <returns>Returns a  ModifyWorkspaceCreationPropertiesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceCreationProperties">REST API Reference for ModifyWorkspaceCreationProperties Operation</seealso>
+        public virtual ModifyWorkspaceCreationPropertiesResponse EndModifyWorkspaceCreationProperties(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyWorkspaceCreationPropertiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyWorkspaceProperties
 
         /// <summary>
@@ -1963,8 +2222,8 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.UnsupportedWorkspaceConfigurationException">
         /// The configuration of this WorkSpace is not supported for this operation. For more
-        /// information, see the <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/">Amazon
-        /// WorkSpaces Administration Guide</a>.
+        /// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/required-service-components.html">Required
+        /// Configuration and Service Components for WorkSpaces </a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">REST API Reference for ModifyWorkspaceProperties Operation</seealso>
         public virtual ModifyWorkspacePropertiesResponse ModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request)
@@ -2213,6 +2472,94 @@ namespace Amazon.WorkSpaces
         public virtual RebuildWorkspacesResponse EndRebuildWorkspaces(IAsyncResult asyncResult)
         {
             return EndInvoke<RebuildWorkspacesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RegisterWorkspaceDirectory
+
+        /// <summary>
+        /// Registers the specified directory. This operation is asynchronous and returns before
+        /// the WorkSpace directory is registered. If this is the first time you are registering
+        /// a directory, you will need to create the workspaces_DefaultRole role before you can
+        /// register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">
+        /// Creating the workspaces_DefaultRole Role</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterWorkspaceDirectory service method.</param>
+        /// 
+        /// <returns>The response from the RegisterWorkspaceDirectory service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.UnsupportedNetworkConfigurationException">
+        /// The configuration of this network is not supported for this operation, or your network
+        /// configuration conflicts with the Amazon WorkSpaces management network IP range. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html">
+        /// Configure a VPC for Amazon WorkSpaces</a>.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.WorkspacesDefaultRoleNotFoundException">
+        /// The workspaces_DefaultRole role could not be found. If this is the first time you
+        /// are registering a directory, you will need to create the workspaces_DefaultRole role
+        /// before you can register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">Creating
+        /// the workspaces_DefaultRole Role</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RegisterWorkspaceDirectory">REST API Reference for RegisterWorkspaceDirectory Operation</seealso>
+        public virtual RegisterWorkspaceDirectoryResponse RegisterWorkspaceDirectory(RegisterWorkspaceDirectoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterWorkspaceDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterWorkspaceDirectoryResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterWorkspaceDirectoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterWorkspaceDirectory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterWorkspaceDirectory operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterWorkspaceDirectory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RegisterWorkspaceDirectory">REST API Reference for RegisterWorkspaceDirectory Operation</seealso>
+        public virtual IAsyncResult BeginRegisterWorkspaceDirectory(RegisterWorkspaceDirectoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterWorkspaceDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterWorkspaceDirectoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterWorkspaceDirectory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterWorkspaceDirectory.</param>
+        /// 
+        /// <returns>Returns a  RegisterWorkspaceDirectoryResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RegisterWorkspaceDirectory">REST API Reference for RegisterWorkspaceDirectory Operation</seealso>
+        public virtual RegisterWorkspaceDirectoryResponse EndRegisterWorkspaceDirectory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RegisterWorkspaceDirectoryResponse>(asyncResult);
         }
 
         #endregion

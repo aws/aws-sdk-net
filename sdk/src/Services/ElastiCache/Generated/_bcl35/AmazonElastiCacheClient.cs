@@ -537,6 +537,69 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  CompleteMigration
+
+        /// <summary>
+        /// Complete the migration of data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteMigration service method.</param>
+        /// 
+        /// <returns>The response from the CompleteMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotUnderMigrationException">
+        /// The designated replication group is not available for data migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CompleteMigration">REST API Reference for CompleteMigration Operation</seealso>
+        public virtual CompleteMigrationResponse CompleteMigration(CompleteMigrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteMigrationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CompleteMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CompleteMigration operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteMigration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CompleteMigration">REST API Reference for CompleteMigration Operation</seealso>
+        public virtual IAsyncResult BeginCompleteMigration(CompleteMigrationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteMigrationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CompleteMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteMigration.</param>
+        /// 
+        /// <returns>Returns a  CompleteMigrationResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CompleteMigration">REST API Reference for CompleteMigration Operation</seealso>
+        public virtual CompleteMigrationResponse EndCompleteMigration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CompleteMigrationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CopySnapshot
 
         /// <summary>
@@ -4129,6 +4192,72 @@ namespace Amazon.ElastiCache
         public virtual RevokeCacheSecurityGroupIngressResponse EndRevokeCacheSecurityGroupIngress(IAsyncResult asyncResult)
         {
             return EndInvoke<RevokeCacheSecurityGroupIngressResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartMigration
+
+        /// <summary>
+        /// Start the migration of data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMigration service method.</param>
+        /// 
+        /// <returns>The response from the StartMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupAlreadyUnderMigrationException">
+        /// The targeted replication group is not available.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        public virtual StartMigrationResponse StartMigration(StartMigrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<StartMigrationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMigration operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMigration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        public virtual IAsyncResult BeginStartMigration(StartMigrationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMigrationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMigration.</param>
+        /// 
+        /// <returns>Returns a  StartMigrationResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        public virtual StartMigrationResponse EndStartMigration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartMigrationResponse>(asyncResult);
         }
 
         #endregion

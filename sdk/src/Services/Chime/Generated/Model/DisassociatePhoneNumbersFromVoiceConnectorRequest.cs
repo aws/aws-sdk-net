@@ -29,7 +29,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociatePhoneNumbersFromVoiceConnector operation.
-    /// Disassociates the specified phone number from the specified Amazon Chime Voice Connector.
+    /// Disassociates the specified phone numbers from the specified Amazon Chime Voice Connector.
     /// </summary>
     public partial class DisassociatePhoneNumbersFromVoiceConnectorRequest : AmazonChimeRequest
     {

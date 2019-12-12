@@ -54,6 +54,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("associationState", targetDepth))
+                    {
+                        var unmarshaller = RouteTableAssociationStateUnmarshaller.Instance;
+                        unmarshalledObject.AssociationState = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("gatewayId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GatewayId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("main", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

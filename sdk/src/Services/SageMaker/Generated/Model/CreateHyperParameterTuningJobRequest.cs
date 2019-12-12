@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private string _hyperParameterTuningJobName;
         private List<Tag> _tags = new List<Tag>();
         private HyperParameterTrainingJobDefinition _trainingJobDefinition;
+        private List<HyperParameterTrainingJobDefinition> _trainingJobDefinitions = new List<HyperParameterTrainingJobDefinition>();
         private HyperParameterTuningJobWarmStartConfig _warmStartConfig;
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// An array of key-value pairs. You can use tags to categorize your AWS resources in
         /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+        /// see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
         /// Tagging Strategies</a>.
         /// </para>
         ///  
@@ -132,6 +133,22 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingJobDefinition()
         {
             return this._trainingJobDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingJobDefinitions.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<HyperParameterTrainingJobDefinition> TrainingJobDefinitions
+        {
+            get { return this._trainingJobDefinitions; }
+            set { this._trainingJobDefinitions = value; }
+        }
+
+        // Check to see if TrainingJobDefinitions property is set
+        internal bool IsSetTrainingJobDefinitions()
+        {
+            return this._trainingJobDefinitions != null && this._trainingJobDefinitions.Count > 0; 
         }
 
         /// <summary>

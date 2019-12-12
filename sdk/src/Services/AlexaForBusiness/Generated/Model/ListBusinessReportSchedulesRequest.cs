@@ -29,7 +29,9 @@ namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBusinessReportSchedules operation.
-    /// Lists the details of the schedules that a user configured.
+    /// Lists the details of the schedules that a user configured. A download URL of the report
+    /// associated with each schedule is returned every time this action is called. A new
+    /// download URL is returned each time, and is valid for 24 hours.
     /// </summary>
     public partial class ListBusinessReportSchedulesRequest : AmazonAlexaForBusinessRequest
     {

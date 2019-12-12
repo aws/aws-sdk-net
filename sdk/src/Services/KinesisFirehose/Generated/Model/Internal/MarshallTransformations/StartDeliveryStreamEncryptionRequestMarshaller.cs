@@ -68,6 +68,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeliveryStreamEncryptionConfigurationInput())
+                {
+                    context.Writer.WritePropertyName("DeliveryStreamEncryptionConfigurationInput");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeliveryStreamEncryptionConfigurationInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeliveryStreamEncryptionConfigurationInput, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDeliveryStreamName())
                 {
                     context.Writer.WritePropertyName("DeliveryStreamName");

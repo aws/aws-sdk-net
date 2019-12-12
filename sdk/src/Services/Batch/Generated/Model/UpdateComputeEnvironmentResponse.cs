@@ -38,7 +38,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the compute environment. 
+        /// The Amazon Resource Name (ARN) of the compute environment.
         /// </para>
         /// </summary>
         public string ComputeEnvironmentArn

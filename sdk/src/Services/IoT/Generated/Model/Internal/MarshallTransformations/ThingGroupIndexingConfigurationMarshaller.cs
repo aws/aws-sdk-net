@@ -45,6 +45,38 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ThingGroupIndexingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomFields())
+            {
+                context.Writer.WritePropertyName("customFields");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomFieldsListValue in requestObject.CustomFields)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FieldMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCustomFieldsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetManagedFields())
+            {
+                context.Writer.WritePropertyName("managedFields");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectManagedFieldsListValue in requestObject.ManagedFields)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FieldMarshaller.Instance;
+                    marshaller.Marshall(requestObjectManagedFieldsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetThingGroupIndexingMode())
             {
                 context.Writer.WritePropertyName("thingGroupIndexingMode");

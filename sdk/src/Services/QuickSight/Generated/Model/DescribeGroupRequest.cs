@@ -29,26 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGroup operation.
-    /// Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN). 
-    /// 
-    ///  
-    /// <para>
-    /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-    /// </code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// The response is the group object. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>CLI Sample:</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight describe-group -\-aws-account-id=11112222333 -\-namespace=default
-    /// -\-group-name=Sales </code> 
-    /// </para>
+    /// Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN).
     /// </summary>
     public partial class DescribeGroupRequest : AmazonQuickSightRequest
     {
@@ -101,7 +82,7 @@ namespace Amazon.QuickSight.Model
         /// The namespace. Currently, you should set this to <code>default</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=64)]
         public string Namespace
         {
             get { return this._awsNamespace; }

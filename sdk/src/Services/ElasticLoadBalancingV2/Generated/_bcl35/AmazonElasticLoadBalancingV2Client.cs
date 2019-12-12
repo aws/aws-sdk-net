@@ -495,6 +495,11 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
         /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyUniqueTargetGroupsPerLoadBalancerException">
+        /// You've reached the limit on the number of unique target groups per load balancer across
+        /// all listeners. If a target group is used by multiple actions for a load balancer,
+        /// it is counted as only one use.
+        /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
         /// The specified protocol is not supported.
         /// </exception>
@@ -728,6 +733,11 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyUniqueTargetGroupsPerLoadBalancerException">
+        /// You've reached the limit on the number of unique target groups per load balancer across
+        /// all listeners. If a target group is used by multiple actions for a load balancer,
+        /// it is counted as only one use.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
         /// The specified protocol is not supported.
@@ -1918,14 +1928,21 @@ namespace Amazon.ElasticLoadBalancingV2
         #region  ModifyListener
 
         /// <summary>
-        /// Modifies the specified properties of the specified listener.
+        /// Replaces the specified properties of the specified listener. Any properties that you
+        /// do not specify remain unchanged.
         /// 
         ///  
         /// <para>
-        /// Any properties that you do not specify retain their current values. However, changing
-        /// the protocol from HTTPS to HTTP, or from TLS to TCP, removes the security policy and
-        /// default certificate properties. If you change the protocol from HTTP to HTTPS, or
-        /// from TCP to TLS, you must add the security policy and default certificate properties.
+        /// Changing the protocol from HTTPS to HTTP, or from TLS to TCP, removes the security
+        /// policy and default certificate properties. If you change the protocol from HTTP to
+        /// HTTPS, or from TCP to TLS, you must add the security policy and default certificate
+        /// properties.
+        /// </para>
+        ///  
+        /// <para>
+        /// To add an item to a list, remove an item from a list, or update an item in a list,
+        /// you must provide the entire list. For example, to add an action, specify a list with
+        /// the current actions plus the new action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyListener service method.</param>
@@ -1973,6 +1990,11 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyUniqueTargetGroupsPerLoadBalancerException">
+        /// You've reached the limit on the number of unique target groups per load balancer across
+        /// all listeners. If a target group is used by multiple actions for a load balancer,
+        /// it is counted as only one use.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
         /// The specified protocol is not supported.
@@ -2093,11 +2115,14 @@ namespace Amazon.ElasticLoadBalancingV2
         #region  ModifyRule
 
         /// <summary>
-        /// Modifies the specified rule.
+        /// Replaces the specified properties of the specified rule. Any properties that you do
+        /// not specify are unchanged.
         /// 
         ///  
         /// <para>
-        /// Any existing properties that you do not modify retain their current values.
+        /// To add an item to a list, remove an item from a list, or update an item in a list,
+        /// you must provide the entire list. For example, to add an action, specify a list with
+        /// the current actions plus the new action.
         /// </para>
         ///  
         /// <para>
@@ -2134,6 +2159,11 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyUniqueTargetGroupsPerLoadBalancerException">
+        /// You've reached the limit on the number of unique target groups per load balancer across
+        /// all listeners. If a target group is used by multiple actions for a load balancer,
+        /// it is counted as only one use.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
         /// The specified protocol is not supported.
@@ -2751,12 +2781,14 @@ namespace Amazon.ElasticLoadBalancingV2
         #region  SetSubnets
 
         /// <summary>
-        /// Enables the Availability Zone for the specified public subnets for the specified Application
-        /// Load Balancer. The specified subnets replace the previously enabled subnets.
+        /// Enables the Availability Zones for the specified public subnets for the specified
+        /// load balancer. The specified subnets replace the previously enabled subnets.
         /// 
         ///  
         /// <para>
-        /// You can't change the subnets for a Network Load Balancer.
+        /// When you specify subnets for a Network Load Balancer, you must include all subnets
+        /// that were enabled previously, with their existing configurations, plus any additional
+        /// subnets.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetSubnets service method.</param>

@@ -57,6 +57,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     response.CiphertextBlob = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EncryptionAlgorithm", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EncryptionAlgorithm = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -32,10 +32,31 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class ClusterSummary
     {
+        private string _clusterArn;
         private string _id;
         private string _name;
         private int? _normalizedInstanceHours;
+        private string _outpostArn;
         private ClusterStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property ClusterArn. 
+        /// <para>
+        /// The Amazon Resource Name of the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ClusterArn
+        {
+            get { return this._clusterArn; }
+            set { this._clusterArn = value; }
+        }
+
+        // Check to see if ClusterArn property is set
+        internal bool IsSetClusterArn()
+        {
+            return this._clusterArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -93,6 +114,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetNormalizedInstanceHours()
         {
             return this._normalizedInstanceHours.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>

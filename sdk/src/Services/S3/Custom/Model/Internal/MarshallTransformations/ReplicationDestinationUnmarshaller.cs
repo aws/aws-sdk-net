@@ -65,6 +65,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                         continue;
                     }
+                    if (context.TestExpression("ReplicationTime", targetDepth))
+                    {
+                        destination.ReplicationTime = ReplicationTimeUnmarshaller.Instance.Unmarshall(context);
+                    }
+                    if (context.TestExpression("Metrics", targetDepth)) 
+                    {
+                        destination.Metrics = MetricsUnmarshaller.Instance.Unmarshall(context);
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

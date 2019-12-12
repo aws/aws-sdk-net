@@ -37,8 +37,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// A <code>User</code> object that contains information about the user account and configuration
-        /// settings.
+        /// Information about the user account and configuration settings.
         /// </para>
         /// </summary>
         public User User

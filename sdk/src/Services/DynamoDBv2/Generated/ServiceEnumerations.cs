@@ -489,6 +489,118 @@ namespace Amazon.DynamoDBv2
 
 
     /// <summary>
+    /// Constants used for properties of type ContributorInsightsAction.
+    /// </summary>
+    public class ContributorInsightsAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLE for ContributorInsightsAction
+        /// </summary>
+        public static readonly ContributorInsightsAction DISABLE = new ContributorInsightsAction("DISABLE");
+        /// <summary>
+        /// Constant ENABLE for ContributorInsightsAction
+        /// </summary>
+        public static readonly ContributorInsightsAction ENABLE = new ContributorInsightsAction("ENABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContributorInsightsAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContributorInsightsAction FindValue(string value)
+        {
+            return FindValue<ContributorInsightsAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContributorInsightsAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContributorInsightsStatus.
+    /// </summary>
+    public class ContributorInsightsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ContributorInsightsStatus
+        /// </summary>
+        public static readonly ContributorInsightsStatus DISABLED = new ContributorInsightsStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLING for ContributorInsightsStatus
+        /// </summary>
+        public static readonly ContributorInsightsStatus DISABLING = new ContributorInsightsStatus("DISABLING");
+        /// <summary>
+        /// Constant ENABLED for ContributorInsightsStatus
+        /// </summary>
+        public static readonly ContributorInsightsStatus ENABLED = new ContributorInsightsStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for ContributorInsightsStatus
+        /// </summary>
+        public static readonly ContributorInsightsStatus ENABLING = new ContributorInsightsStatus("ENABLING");
+        /// <summary>
+        /// Constant FAILED for ContributorInsightsStatus
+        /// </summary>
+        public static readonly ContributorInsightsStatus FAILED = new ContributorInsightsStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContributorInsightsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContributorInsightsStatus FindValue(string value)
+        {
+            return FindValue<ContributorInsightsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContributorInsightsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GlobalTableStatus.
     /// </summary>
     public class GlobalTableStatus : ConstantClass
@@ -772,6 +884,10 @@ namespace Amazon.DynamoDBv2
         /// Constant CREATING for ReplicaStatus
         /// </summary>
         public static readonly ReplicaStatus CREATING = new ReplicaStatus("CREATING");
+        /// <summary>
+        /// Constant CREATION_FAILED for ReplicaStatus
+        /// </summary>
+        public static readonly ReplicaStatus CREATION_FAILED = new ReplicaStatus("CREATION_FAILED");
         /// <summary>
         /// Constant DELETING for ReplicaStatus
         /// </summary>
@@ -1325,6 +1441,14 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         public static readonly TableStatus ACTIVE = new TableStatus("ACTIVE");
         /// <summary>
+        /// Constant ARCHIVED for TableStatus
+        /// </summary>
+        public static readonly TableStatus ARCHIVED = new TableStatus("ARCHIVED");
+        /// <summary>
+        /// Constant ARCHIVING for TableStatus
+        /// </summary>
+        public static readonly TableStatus ARCHIVING = new TableStatus("ARCHIVING");
+        /// <summary>
         /// Constant CREATING for TableStatus
         /// </summary>
         public static readonly TableStatus CREATING = new TableStatus("CREATING");
@@ -1332,6 +1456,10 @@ namespace Amazon.DynamoDBv2
         /// Constant DELETING for TableStatus
         /// </summary>
         public static readonly TableStatus DELETING = new TableStatus("DELETING");
+        /// <summary>
+        /// Constant INACCESSIBLE_ENCRYPTION_CREDENTIALS for TableStatus
+        /// </summary>
+        public static readonly TableStatus INACCESSIBLE_ENCRYPTION_CREDENTIALS = new TableStatus("INACCESSIBLE_ENCRYPTION_CREDENTIALS");
         /// <summary>
         /// Constant UPDATING for TableStatus
         /// </summary>

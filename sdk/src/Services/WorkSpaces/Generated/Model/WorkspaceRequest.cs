@@ -68,7 +68,7 @@ namespace Amazon.WorkSpaces.Model
         /// <a>DescribeWorkspaceDirectories</a> to list the available directories.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=10, Max=65)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -120,8 +120,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The username of the user for the WorkSpace. This username must exist in the AWS Directory
-        /// Service directory for the WorkSpace.
+        /// The user name of the user for the WorkSpace. This user name must exist in the AWS
+        /// Directory Service directory for the WorkSpace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

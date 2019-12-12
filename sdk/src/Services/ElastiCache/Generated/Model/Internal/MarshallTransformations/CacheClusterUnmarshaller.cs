@@ -66,6 +66,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.AuthTokenEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AuthTokenLastModifiedDate", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.AuthTokenLastModifiedDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

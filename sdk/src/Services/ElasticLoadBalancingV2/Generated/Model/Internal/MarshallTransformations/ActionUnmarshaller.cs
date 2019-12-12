@@ -72,6 +72,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.FixedResponseConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ForwardConfig", targetDepth))
+                    {
+                        var unmarshaller = ForwardActionConfigUnmarshaller.Instance;
+                        unmarshalledObject.ForwardConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Order", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

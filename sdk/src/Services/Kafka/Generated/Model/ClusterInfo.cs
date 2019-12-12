@@ -43,6 +43,7 @@ namespace Amazon.Kafka.Model
         private EncryptionInfo _encryptionInfo;
         private EnhancedMonitoring _enhancedMonitoring;
         private int? _numberOfBrokerNodes;
+        private OpenMonitoring _openMonitoring;
         private ClusterState _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _zookeeperConnectString;
@@ -246,6 +247,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetNumberOfBrokerNodes()
         {
             return this._numberOfBrokerNodes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenMonitoring.             
+        /// <para>
+        /// Settings for open monitoring using Prometheus.
+        /// </para>
+        /// </summary>
+        public OpenMonitoring OpenMonitoring
+        {
+            get { return this._openMonitoring; }
+            set { this._openMonitoring = value; }
+        }
+
+        // Check to see if OpenMonitoring property is set
+        internal bool IsSetOpenMonitoring()
+        {
+            return this._openMonitoring != null;
         }
 
         /// <summary>

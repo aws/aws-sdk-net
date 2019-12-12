@@ -89,7 +89,14 @@ namespace Amazon.RDS.Model
     /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
     /// Signature Version 4 Signing Process</a>.
     /// </para>
-    ///  </li> <li> 
+    ///  <note> 
+    /// <para>
+    /// If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code>
+    /// (or <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code>
+    /// manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that
+    /// is a valid request for the operation that can be executed in the source AWS Region.
+    /// </para>
+    ///  </note> </li> <li> 
     /// <para>
     ///  <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy
     /// of the DB cluster snapshot in the destination AWS Region.
@@ -203,7 +210,8 @@ namespace Amazon.RDS.Model
         /// The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code>
         /// API action in the AWS Region that contains the source DB cluster snapshot to copy.
         /// The <code>PreSignedUrl</code> parameter must be used when copying an encrypted DB
-        /// cluster snapshot from another AWS Region.
+        /// cluster snapshot from another AWS Region. Don't specify <code>PreSignedUrl</code>
+        /// when you are copying an encrypted DB cluster snapshot in the same AWS Region.
         /// </para>
         ///  
         /// <para>
@@ -239,6 +247,14 @@ namespace Amazon.RDS.Model
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
         /// Signature Version 4 Signing Process</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code>
+        /// (or <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code>
+        /// manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that
+        /// is a valid request for the operation that can be executed in the source AWS Region.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string PreSignedUrl
         {
@@ -255,7 +271,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceDBClusterSnapshotIdentifier. 
         /// <para>
-        /// The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
+        /// The identifier of the DB cluster snapshot to copy. This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -317,7 +333,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property TargetDBClusterSnapshotIdentifier. 
         /// <para>
         /// The identifier of the new DB cluster snapshot to create from the source DB cluster
-        /// snapshot. This parameter is not case-sensitive.
+        /// snapshot. This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>

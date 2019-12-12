@@ -68,8 +68,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalClusterIdentifier. 
         /// <para>
-        ///  The DB cluster identifier for the global cluster being modified. This parameter is
-        /// not case-sensitive. 
+        ///  The DB cluster identifier for the global cluster being modified. This parameter isn't
+        /// case-sensitive. 
         /// </para>
         ///  
         /// <para>

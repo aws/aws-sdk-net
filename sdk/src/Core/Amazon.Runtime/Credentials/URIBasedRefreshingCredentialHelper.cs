@@ -14,6 +14,7 @@
  */
 using Amazon.Util;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Net;
@@ -32,26 +33,36 @@ namespace Amazon.Runtime
 
         protected static string GetContents(Uri uri, IWebProxy proxy)
         {
+            return GetContents(uri, proxy, null);
+        }
+
+        protected static string GetContents(Uri uri, IWebProxy proxy, Dictionary<string, string> headers)
+        {
             try
             {
-                return AWSSDKUtils.DownloadStringContent(uri, proxy);
+                return AWSSDKUtils.ExecuteHttpRequest(uri, "GET", null, TimeSpan.Zero, proxy, headers);
             }
-            catch (WebException)
-            {
-                throw new AmazonServiceException("Unable to reach credentials server");
+            catch (Exception e)
+            {                
+                throw new AmazonServiceException("Unable to reach credentials server", e);
             }
         }
 
         protected static T GetObjectFromResponse<T>(Uri uri)
         {
-            return GetObjectFromResponse<T>(uri, null);
+            return GetObjectFromResponse<T>(uri, null, null);
         }
 
         protected static T GetObjectFromResponse<T>(Uri uri, IWebProxy proxy)
         {
-            string json = GetContents(uri, proxy);
-            return JsonMapper.ToObject<T>(json);
+            return GetObjectFromResponse<T>(uri, proxy, null);
         }
+
+        protected static T GetObjectFromResponse<T>(Uri uri, IWebProxy proxy, Dictionary<string, string> headers)
+        {
+            string json = GetContents(uri, proxy, headers);
+            return JsonMapper.ToObject<T>(json);
+        }                
 
         protected static void ValidateResponse(SecurityBase response)
         {

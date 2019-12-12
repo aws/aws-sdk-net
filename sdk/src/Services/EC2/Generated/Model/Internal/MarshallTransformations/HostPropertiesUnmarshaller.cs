@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Cores = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("instanceFamily", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceFamily = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("instanceType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

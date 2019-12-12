@@ -48,7 +48,6 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ComputeEnvironments. 
         /// <para>
         /// A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.
-        /// 
         /// </para>
         /// </summary>
         public List<string> ComputeEnvironments

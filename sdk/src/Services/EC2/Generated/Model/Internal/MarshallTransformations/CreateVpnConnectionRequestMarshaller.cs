@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetOptions())
                 {
+                    if(publicRequest.Options.IsSetEnableAcceleration())
+                    {
+                        request.Parameters.Add("Options" + "." + "EnableAcceleration", StringUtils.FromBool(publicRequest.Options.EnableAcceleration));
+                    }
                     if(publicRequest.Options.IsSetStaticRoutesOnly())
                     {
                         request.Parameters.Add("Options" + "." + "StaticRoutesOnly", StringUtils.FromBool(publicRequest.Options.StaticRoutesOnly));

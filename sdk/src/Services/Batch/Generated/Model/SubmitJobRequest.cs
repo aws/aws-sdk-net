@@ -137,7 +137,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property JobName. 
         /// <para>
         /// The name of the job. The first character must be alphanumeric, and up to 128 letters
-        /// (uppercase and lowercase), numbers, hyphens, and underscores are allowed. 
+        /// (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -157,7 +157,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property JobQueue. 
         /// <para>
         /// The job queue into which the job is submitted. You can specify either the name or
-        /// the Amazon Resource Name (ARN) of the queue. 
+        /// the Amazon Resource Name (ARN) of the queue.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

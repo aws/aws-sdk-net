@@ -45,7 +45,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ApiGatewayDomainName. 
         /// <para>
-        /// A domain name for the WebSocket API.
+        /// A domain name for the API.
         /// </para>
         /// </summary>
         public string ApiGatewayDomainName

@@ -28,14 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// Any overrides that are applied to the signing configuration of an AWS Signer platform.
+    /// Any overrides that are applied to the signing configuration of a code signing platform.
     /// </summary>
     public partial class SigningPlatformOverrides
     {
         private SigningConfigurationOverrides _signingConfiguration;
 
         /// <summary>
-        /// Gets and sets the property SigningConfiguration.
+        /// Gets and sets the property SigningConfiguration. 
+        /// <para>
+        /// A signing configuration that overrides the default encryption or hash algorithm of
+        /// a signing job.
+        /// </para>
         /// </summary>
         public SigningConfigurationOverrides SigningConfiguration
         {

@@ -29,7 +29,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTagKeys operation.
-    /// Returns all tag keys in the specified region for the AWS account.
+    /// Returns all tag keys in the specified Region for the AWS account.
     /// </summary>
     public partial class GetTagKeysRequest : AmazonResourceGroupsTaggingAPIRequest
     {
@@ -39,8 +39,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Gets and sets the property PaginationToken. 
         /// <para>
         /// A string that indicates that additional data is available. Leave this value empty
-        /// for your initial request. If the response includes a PaginationToken, use that string
-        /// for this value to request an additional page of data.
+        /// for your initial request. If the response includes a <code>PaginationToken</code>,
+        /// use that string for this value to request an additional page of data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

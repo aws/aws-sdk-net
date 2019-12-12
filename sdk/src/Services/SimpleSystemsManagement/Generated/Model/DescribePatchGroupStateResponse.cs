@@ -36,6 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private int? _instancesWithFailedPatches;
         private int? _instancesWithInstalledOtherPatches;
         private int? _instancesWithInstalledPatches;
+        private int? _instancesWithInstalledPendingRebootPatches;
         private int? _instancesWithInstalledRejectedPatches;
         private int? _instancesWithMissingPatches;
         private int? _instancesWithNotApplicablePatches;
@@ -111,6 +112,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetInstancesWithInstalledPatches()
         {
             return this._instancesWithInstalledPatches.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstancesWithInstalledPendingRebootPatches. 
+        /// <para>
+        /// Reserved for future use. 
+        /// </para>
+        /// </summary>
+        public int InstancesWithInstalledPendingRebootPatches
+        {
+            get { return this._instancesWithInstalledPendingRebootPatches.GetValueOrDefault(); }
+            set { this._instancesWithInstalledPendingRebootPatches = value; }
+        }
+
+        // Check to see if InstancesWithInstalledPendingRebootPatches property is set
+        internal bool IsSetInstancesWithInstalledPendingRebootPatches()
+        {
+            return this._instancesWithInstalledPendingRebootPatches.HasValue; 
         }
 
         /// <summary>

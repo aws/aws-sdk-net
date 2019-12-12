@@ -35,12 +35,14 @@ namespace Amazon.CodeBuild.Model
         private string _arn;
         private BuildArtifacts _artifacts;
         private bool? _buildComplete;
+        private long? _buildNumber;
         private StatusType _buildStatus;
         private ProjectCache _cache;
         private string _currentPhase;
         private string _encryptionKey;
         private DateTime? _endTime;
         private ProjectEnvironment _environment;
+        private List<ExportedEnvironmentVariable> _exportedEnvironmentVariables = new List<ExportedEnvironmentVariable>();
         private string _id;
         private string _initiator;
         private LogsLocation _logs;
@@ -48,6 +50,7 @@ namespace Amazon.CodeBuild.Model
         private List<BuildPhase> _phases = new List<BuildPhase>();
         private string _projectName;
         private int? _queuedTimeoutInMinutes;
+        private List<string> _reportArns = new List<string>();
         private string _resolvedSourceVersion;
         private List<BuildArtifacts> _secondaryArtifacts = new List<BuildArtifacts>();
         private List<ProjectSource> _secondarySources = new List<ProjectSource>();
@@ -112,6 +115,27 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetBuildComplete()
         {
             return this._buildComplete.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuildNumber. 
+        /// <para>
+        /// The number of the build. For each project, the <code>buildNumber</code> of its first
+        /// build is <code>1</code>. The <code>buildNumber</code> of each subsequent build is
+        /// incremented by <code>1</code>. If a build is deleted, the <code>buildNumber</code>
+        /// of other builds does not change.
+        /// </para>
+        /// </summary>
+        public long BuildNumber
+        {
+            get { return this._buildNumber.GetValueOrDefault(); }
+            set { this._buildNumber = value; }
+        }
+
+        // Check to see if BuildNumber property is set
+        internal bool IsSetBuildNumber()
+        {
+            return this._buildNumber.HasValue; 
         }
 
         /// <summary>
@@ -260,6 +284,24 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExportedEnvironmentVariables. 
+        /// <para>
+        ///  A list of exported environment variables for this build. 
+        /// </para>
+        /// </summary>
+        public List<ExportedEnvironmentVariable> ExportedEnvironmentVariables
+        {
+            get { return this._exportedEnvironmentVariables; }
+            set { this._exportedEnvironmentVariables = value; }
+        }
+
+        // Check to see if ExportedEnvironmentVariables property is set
+        internal bool IsSetExportedEnvironmentVariables()
+        {
+            return this._exportedEnvironmentVariables != null && this._exportedEnvironmentVariables.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique ID for the build.
@@ -403,6 +445,24 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReportArns. 
+        /// <para>
+        ///  An array of the ARNs associated with this build's reports. 
+        /// </para>
+        /// </summary>
+        public List<string> ReportArns
+        {
+            get { return this._reportArns; }
+            set { this._reportArns = value; }
+        }
+
+        // Check to see if ReportArns property is set
+        internal bool IsSetReportArns()
+        {
+            return this._reportArns != null && this._reportArns.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ResolvedSourceVersion. 
         /// <para>
         ///  An identifier for the version of this build's source code. 
@@ -480,7 +540,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For AWS CodeCommit: the commit ID to use.
+        /// For AWS CodeCommit: the commit ID, branch, or Git tag to use.
         /// </para>
         ///  </li> <li> 
         /// <para>

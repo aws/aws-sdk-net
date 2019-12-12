@@ -63,7 +63,7 @@ namespace Amazon.Batch.Model
         /// range. If the ending range value is omitted (<code>n:</code>), then the highest possible
         /// node index is used to end the range. Your accumulative node ranges must account for
         /// all nodes (0:n). You may nest node ranges, for example 0:10 and 4:5, in which case
-        /// the 4:5 range properties override the 0:10 properties. 
+        /// the 4:5 range properties override the 0:10 properties.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

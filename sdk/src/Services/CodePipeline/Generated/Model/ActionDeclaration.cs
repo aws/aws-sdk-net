@@ -36,6 +36,7 @@ namespace Amazon.CodePipeline.Model
         private Dictionary<string, string> _configuration = new Dictionary<string, string>();
         private List<InputArtifact> _inputArtifacts = new List<InputArtifact>();
         private string _name;
+        private string _awsNamespace;
         private List<OutputArtifact> _outputArtifacts = new List<OutputArtifact>();
         private string _region;
         private string _roleArn;
@@ -133,6 +134,26 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// The variable namespace associated with the action. All variables produced as output
+        /// by this action fall under this namespace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string Namespace
+        {
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
+        }
+
+        // Check to see if Namespace property is set
+        internal bool IsSetNamespace()
+        {
+            return this._awsNamespace != null;
         }
 
         /// <summary>

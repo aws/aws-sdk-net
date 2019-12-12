@@ -132,6 +132,12 @@ namespace Amazon.SimpleNotificationService.Model
         /// <para>
         /// The list of tags to add to a new topic.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code>
+        /// and <code>sns:TagResource</code> permissions.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Tag> Tags
         {

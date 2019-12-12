@@ -69,6 +69,18 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DailyAutomaticBackupStartTime);
             }
 
+            if(requestObject.IsSetDeploymentType())
+            {
+                context.Writer.WritePropertyName("DeploymentType");
+                context.Writer.Write(requestObject.DeploymentType);
+            }
+
+            if(requestObject.IsSetPreferredSubnetId())
+            {
+                context.Writer.WritePropertyName("PreferredSubnetId");
+                context.Writer.Write(requestObject.PreferredSubnetId);
+            }
+
             if(requestObject.IsSetSelfManagedActiveDirectoryConfiguration())
             {
                 context.Writer.WritePropertyName("SelfManagedActiveDirectoryConfiguration");

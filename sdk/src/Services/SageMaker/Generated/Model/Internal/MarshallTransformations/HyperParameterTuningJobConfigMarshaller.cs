@@ -90,6 +90,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TrainingJobEarlyStoppingType);
             }
 
+            if(requestObject.IsSetTuningJobCompletionCriteria())
+            {
+                context.Writer.WritePropertyName("TuningJobCompletionCriteria");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TuningJobCompletionCriteriaMarshaller.Instance;
+                marshaller.Marshall(requestObject.TuningJobCompletionCriteria, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

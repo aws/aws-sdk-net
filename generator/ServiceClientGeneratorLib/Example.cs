@@ -347,6 +347,14 @@ namespace ServiceClientGenerator
         {
             if (shape.IsBoolean)
                 return "bool";
+            if (shape.IsInt)
+                return "int";
+            if (shape.IsLong)
+                return "long";
+            if (shape.IsFloat)
+                return "float";
+            if (shape.IsDouble)
+                return "double";
             if (shape.IsDateTime)
                 return "DateTime";
             if (shape.IsMemoryStream)

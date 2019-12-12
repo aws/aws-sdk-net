@@ -32,12 +32,74 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class ReplicaDescription
     {
+        private List<ReplicaGlobalSecondaryIndexDescription> _globalSecondaryIndexes = new List<ReplicaGlobalSecondaryIndexDescription>();
+        private string _kmsMasterKeyId;
+        private ProvisionedThroughputOverride _provisionedThroughputOverride;
         private string _regionName;
+        private ReplicaStatus _replicaStatus;
+        private string _replicaStatusDescription;
+        private string _replicaStatusPercentProgress;
+
+        /// <summary>
+        /// Gets and sets the property GlobalSecondaryIndexes. 
+        /// <para>
+        /// Replica-specific global secondary index settings.
+        /// </para>
+        /// </summary>
+        public List<ReplicaGlobalSecondaryIndexDescription> GlobalSecondaryIndexes
+        {
+            get { return this._globalSecondaryIndexes; }
+            set { this._globalSecondaryIndexes = value; }
+        }
+
+        // Check to see if GlobalSecondaryIndexes property is set
+        internal bool IsSetGlobalSecondaryIndexes()
+        {
+            return this._globalSecondaryIndexes != null && this._globalSecondaryIndexes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSMasterKeyId. 
+        /// <para>
+        /// The AWS KMS customer master key (CMK) of the replica that will be used for AWS KMS
+        /// encryption.
+        /// </para>
+        /// </summary>
+        public string KMSMasterKeyId
+        {
+            get { return this._kmsMasterKeyId; }
+            set { this._kmsMasterKeyId = value; }
+        }
+
+        // Check to see if KMSMasterKeyId property is set
+        internal bool IsSetKMSMasterKeyId()
+        {
+            return this._kmsMasterKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedThroughputOverride. 
+        /// <para>
+        /// Replica-specific provisioned throughput. If not described, uses the source table's
+        /// provisioned throughput settings.
+        /// </para>
+        /// </summary>
+        public ProvisionedThroughputOverride ProvisionedThroughputOverride
+        {
+            get { return this._provisionedThroughputOverride; }
+            set { this._provisionedThroughputOverride = value; }
+        }
+
+        // Check to see if ProvisionedThroughputOverride property is set
+        internal bool IsSetProvisionedThroughputOverride()
+        {
+            return this._provisionedThroughputOverride != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The name of the region.
+        /// The name of the Region.
         /// </para>
         /// </summary>
         public string RegionName
@@ -50,6 +112,77 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetRegionName()
         {
             return this._regionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaStatus. 
+        /// <para>
+        /// The current state of the replica:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATING</code> - The replica is being created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATING</code> - The replica is being updated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETING</code> - The replica is being deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> - The replica is ready for use.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ReplicaStatus ReplicaStatus
+        {
+            get { return this._replicaStatus; }
+            set { this._replicaStatus = value; }
+        }
+
+        // Check to see if ReplicaStatus property is set
+        internal bool IsSetReplicaStatus()
+        {
+            return this._replicaStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaStatusDescription. 
+        /// <para>
+        /// Detailed information about the replica status.
+        /// </para>
+        /// </summary>
+        public string ReplicaStatusDescription
+        {
+            get { return this._replicaStatusDescription; }
+            set { this._replicaStatusDescription = value; }
+        }
+
+        // Check to see if ReplicaStatusDescription property is set
+        internal bool IsSetReplicaStatusDescription()
+        {
+            return this._replicaStatusDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaStatusPercentProgress. 
+        /// <para>
+        /// Specifies the progress of a Create, Update, or Delete action on the replica as a percentage.
+        /// </para>
+        /// </summary>
+        public string ReplicaStatusPercentProgress
+        {
+            get { return this._replicaStatusPercentProgress; }
+            set { this._replicaStatusPercentProgress = value; }
+        }
+
+        // Check to see if ReplicaStatusPercentProgress property is set
+        internal bool IsSetReplicaStatusPercentProgress()
+        {
+            return this._replicaStatusPercentProgress != null;
         }
 
     }

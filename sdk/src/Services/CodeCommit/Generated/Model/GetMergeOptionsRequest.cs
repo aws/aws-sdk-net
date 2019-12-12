@@ -30,8 +30,7 @@ namespace Amazon.CodeCommit.Model
     /// <summary>
     /// Container for the parameters to the GetMergeOptions operation.
     /// Returns information about the merge options available for merging two specified branches.
-    /// For details about why a particular merge option is not available, use GetMergeConflicts
-    /// or DescribeMergeConflicts.
+    /// For details about why a merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.
     /// </summary>
     public partial class GetMergeOptionsRequest : AmazonCodeCommitRequest
     {
@@ -45,9 +44,9 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property ConflictDetailLevel. 
         /// <para>
         /// The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which will return a not mergeable result if the same file has differences in both
-        /// branches. If LINE_LEVEL is specified, a conflict will be considered not mergeable
-        /// if the same file in both branches has differences on the same line.
+        /// which returns a not-mergeable result if the same file has differences in both branches.
+        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file
+        /// in both branches has differences on the same line.
         /// </para>
         /// </summary>
         public ConflictDetailLevelTypeEnum ConflictDetailLevel
@@ -67,7 +66,7 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// Specifies which branch to use when resolving conflicts, or whether to attempt automatically
         /// merging two versions of a file. The default is NONE, which requires any conflicts
-        /// to be resolved manually before the merge operation will be successful.
+        /// to be resolved manually before the merge operation is successful.
         /// </para>
         /// </summary>
         public ConflictResolutionStrategyTypeEnum ConflictResolutionStrategy
@@ -85,8 +84,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property DestinationCommitSpecifier. 
         /// <para>
-        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit.
-        /// For example, a branch name or a full commit ID.
+        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+        /// (for example, a branch name or a full commit ID).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -125,8 +124,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property SourceCommitSpecifier. 
         /// <para>
-        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit.
-        /// For example, a branch name or a full commit ID.
+        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+        /// (for example, a branch name or a full commit ID).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

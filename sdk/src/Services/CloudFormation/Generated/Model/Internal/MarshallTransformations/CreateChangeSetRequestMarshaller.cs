@@ -116,6 +116,37 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetResourcesToImport())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ResourcesToImport)
+                    {
+                        if(publicRequestlistValue.IsSetLogicalResourceId())
+                        {
+                            request.Parameters.Add("ResourcesToImport" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LogicalResourceId", StringUtils.FromString(publicRequestlistValue.LogicalResourceId));
+                        }
+                        if(publicRequestlistValue.IsSetResourceIdentifier())
+                        {
+                            int mapIndex = 1;
+                            foreach(var key in publicRequestlistValue.ResourceIdentifier.Keys)
+                            {
+                                String value;
+                                bool hasValue = publicRequestlistValue.ResourceIdentifier.TryGetValue(key, out value);
+                                request.Parameters.Add("ResourcesToImport" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceIdentifier" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
+                                if (hasValue)
+                                {
+                                    request.Parameters.Add("ResourcesToImport" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceIdentifier" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
+                                }
+                                mapIndex++;
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetResourceType())
+                        {
+                            request.Parameters.Add("ResourcesToImport" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetResourceTypes())
                 {
                     int publicRequestlistValueIndex = 1;

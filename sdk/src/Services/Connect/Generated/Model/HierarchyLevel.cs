@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>HierarchyLevel</code> object that contains information about the levels in
-    /// a hierarchy group, including ARN, Id, and Name.
+    /// Contains information about a hierarchy level.
     /// </summary>
     public partial class HierarchyLevel
     {
@@ -40,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN for the hierarchy group level.
+        /// The Amazon Resource Name (ARN) of the hierarchy level.
         /// </para>
         /// </summary>
         public string Arn
@@ -58,7 +57,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the hierarchy group level.
+        /// The identifier of the hierarchy level.
         /// </para>
         /// </summary>
         public string Id
@@ -76,7 +75,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the hierarchy group level.
+        /// The name of the hierarchy level.
         /// </para>
         /// </summary>
         public string Name

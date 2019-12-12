@@ -236,7 +236,7 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
             string acceptRanges = response.AcceptRanges;
             MemoryStream body = response.Body;
             string contentType = response.ContentType;
-            integer status = response.Status;
+            int status = response.Status;
 
             #endregion
         }

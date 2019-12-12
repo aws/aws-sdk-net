@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the specification of a virtual service.
+    /// An object that represents the specification of a virtual service.
     /// </summary>
     public partial class VirtualServiceSpec
     {

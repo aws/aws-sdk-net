@@ -29,7 +29,7 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccount operation.
-    /// Retrieves AWS Organizations-related information about the specified account.
+    /// Retrieves AWS Organizations related information about the specified account.
     /// 
     ///  
     /// <para>

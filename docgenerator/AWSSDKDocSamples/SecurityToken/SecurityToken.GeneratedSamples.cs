@@ -18,16 +18,33 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
 
             var response = client.AssumeRole(new AssumeRoleRequest 
             {
-                DurationSeconds = 3600,
                 ExternalId = "123ABC",
                 Policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Stmt1\",\"Effect\":\"Allow\",\"Action\":\"s3:ListAllMyBuckets\",\"Resource\":\"*\"}]}",
                 RoleArn = "arn:aws:iam::123456789012:role/demo",
-                RoleSessionName = "Bob"
+                RoleSessionName = "testAssumeRoleSession",
+                Tags = new List<Tag> {
+                    new Tag {
+                        Key = "Project",
+                        Value = "Unicorn"
+                    },
+                    new Tag {
+                        Key = "Team",
+                        Value = "Automation"
+                    },
+                    new Tag {
+                        Key = "Cost-Center",
+                        Value = "12345"
+                    }
+                },
+                TransitiveTagKeys = new List<string> {
+                    "Project",
+                    "Cost-Center"
+                }
             });
 
             AssumedRoleUser assumedRoleUser = response.AssumedRoleUser;
             Credentials credentials = response.Credentials;
-            integer packedPolicySize = response.PackedPolicySize;
+            int packedPolicySize = response.PackedPolicySize;
 
             #endregion
         }
@@ -49,7 +66,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             AssumedRoleUser assumedRoleUser = response.AssumedRoleUser;
             string audience = response.Audience;
             Credentials credentials = response.Credentials;
-            integer packedPolicySize = response.PackedPolicySize;
+            int packedPolicySize = response.PackedPolicySize;
             string provider = response.Provider;
             string subjectFromWebIdentityToken = response.SubjectFromWebIdentityToken;
 
@@ -122,13 +139,23 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             var response = client.GetFederationToken(new GetFederationTokenRequest 
             {
                 DurationSeconds = 3600,
-                Name = "Bob",
-                Policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Stmt1\",\"Effect\":\"Allow\",\"Action\":\"s3:ListAllMyBuckets\",\"Resource\":\"*\"}]}"
+                Name = "testFedUserSession",
+                Policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Stmt1\",\"Effect\":\"Allow\",\"Action\":\"s3:ListAllMyBuckets\",\"Resource\":\"*\"}]}",
+                Tags = new List<Tag> {
+                    new Tag {
+                        Key = "Project",
+                        Value = "Pegasus"
+                    },
+                    new Tag {
+                        Key = "Cost-Center",
+                        Value = "98765"
+                    }
+                }
             });
 
             Credentials credentials = response.Credentials;
             FederatedUser federatedUser = response.FederatedUser;
-            integer packedPolicySize = response.PackedPolicySize;
+            int packedPolicySize = response.PackedPolicySize;
 
             #endregion
         }

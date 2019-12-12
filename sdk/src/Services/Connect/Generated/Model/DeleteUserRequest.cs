@@ -29,7 +29,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
-    /// Deletes a user account from Amazon Connect.
+    /// Deletes a user account from the specified Amazon Connect instance.
     /// </summary>
     public partial class DeleteUserRequest : AmazonConnectRequest
     {
@@ -39,11 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier for your Amazon Connect instance. To find the ID of your instance,
-        /// open the AWS console and select Amazon Connect. Select the alias of the instance in
-        /// the Instance alias column. The instance ID is displayed in the Overview section of
-        /// your instance settings. For example, the instance ID is the set of characters at the
-        /// end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+        /// The identifier of the Amazon Connect instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -62,7 +58,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The unique identifier of the user to delete.
+        /// The identifier of the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

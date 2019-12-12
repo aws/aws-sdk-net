@@ -214,6 +214,14 @@
     <pattern>^t-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DeregisterCertificateRequest.CertificateId</property>
+    <pattern>^c-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DeregisterCertificateRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.DeregisterEventTopicRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -222,6 +230,14 @@
     <min>1</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeCertificateRequest.CertificateId</property>
+    <pattern>^c-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeCertificateRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeConditionalForwardersRequest.DirectoryId</property>
@@ -242,6 +258,15 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeEventTopicsRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeLDAPSSettingsRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeLDAPSSettingsRequest.Limit</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeSharedDirectoriesRequest.Limit</property>
@@ -268,6 +293,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DisableLDAPSRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.DisableRadiusRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -284,6 +313,10 @@
     <property>Amazon.DirectoryService.Model.DisableSsoRequest.UserName</property>
     <min>1</min>
     <pattern>[a-zA-Z0-9._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.EnableLDAPSRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.EnableRadiusRequest.DirectoryId</property>
@@ -306,6 +339,15 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.GetSnapshotLimitsRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ListCertificatesRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ListCertificatesRequest.Limit</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.ListIpRoutesRequest.DirectoryId</property>
@@ -338,6 +380,19 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.ListTagsForResourceRequest.ResourceId</property>
     <pattern>^[d]-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.RegisterCertificateRequest.CertificateData</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.RegisterCertificateRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.RegisterCertificateResponse.CertificateId</property>
+    <pattern>^c-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.RegisterEventTopicRequest.DirectoryId</property>
@@ -476,6 +531,30 @@
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.Certificate.CertificateId</property>
+    <pattern>^c-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CertificateAlreadyExistsException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CertificateDoesNotExistException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CertificateInfo.CertificateId</property>
+    <pattern>^c-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CertificateInUseException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CertificateLimitExceededException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.ClientException.RequestId</property>
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
@@ -556,6 +635,10 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryDescription.ShortName</property>
     <pattern>^[^\\/:*?\"\&lt;\&gt;|.]+[^\\/:*?\"&lt;&gt;|]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DirectoryDoesNotExistException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryLimitExceededException.RequestId</property>
@@ -652,6 +735,14 @@
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.InvalidCertificateException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.InvalidLDAPSStatusException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.InvalidNextTokenException.RequestId</property>
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
@@ -704,6 +795,10 @@
     <min>1</min>
     <max>512</max>
     <pattern>[-._/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.NoAvailableCertificateException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.OrganizationsException.RequestId</property>

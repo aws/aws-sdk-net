@@ -86,6 +86,10 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             {
                 return new InvalidDefinitionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLoggingConfiguration"))
+            {
+                return new InvalidLoggingConfigurationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidName"))
             {
                 return new InvalidNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -101,6 +105,10 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("StateMachineLimitExceeded"))
             {
                 return new StateMachineLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("StateMachineTypeNotSupported"))
+            {
+                return new StateMachineTypeNotSupportedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTags"))
             {

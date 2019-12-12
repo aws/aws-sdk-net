@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
         private string _containerHostname;
         private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private string _image;
+        private ContainerMode _mode;
         private string _modelDataUrl;
         private string _modelPackageName;
 
@@ -46,7 +47,7 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// When a <code>ContainerDefinition</code> is part of an inference pipeline, the value
-        /// of ths parameter uniquely identifies the container for the purposes of logging and
+        /// of the parameter uniquely identifies the container for the purposes of logging and
         /// metrics. For information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
         /// Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a value
         /// for this parameter for a <code>ContainerDefinition</code> that is part of an inference
@@ -113,6 +114,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetImage()
         {
             return this._image != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// Whether the container hosts a single model or multiple models.
+        /// </para>
+        /// </summary>
+        public ContainerMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
         }
 
         /// <summary>

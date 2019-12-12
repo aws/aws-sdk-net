@@ -280,6 +280,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidParameterException">
+        /// An input parameter was invalid.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidTagException">
         /// One or both of the values that make up the key-value pair is not valid. For example,
         /// you cannot specify a tag value that begins with <code>aws:</code>.
@@ -287,6 +290,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TagPolicyException">
+        /// A specified tag did not comply with an existing tag policy and was rejected.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
         /// The request contains too many tags. Try the request again with fewer tags.
@@ -335,6 +341,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidParameterException">
+        /// An input parameter was invalid.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidTagException">
         /// One or both of the values that make up the key-value pair is not valid. For example,
         /// you cannot specify a tag value that begins with <code>aws:</code>.
@@ -342,6 +351,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TagPolicyException">
+        /// A specified tag did not comply with an existing tag policy and was rejected.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
         /// The request contains too many tags. Try the request again with fewer tags.
@@ -623,15 +635,16 @@ namespace Amazon.CertificateManager
 
         /// <summary>
         /// Exports a private certificate issued by a private certificate authority (CA) for use
-        /// anywhere. You can export the certificate, the certificate chain, and the encrypted
-        /// private key associated with the public key embedded in the certificate. You must store
-        /// the private key securely. The private key is a 2048 bit RSA key. You must provide
-        /// a passphrase for the private key when exporting it. You can use the following OpenSSL
-        /// command to decrypt it later. Provide the passphrase when prompted. 
+        /// anywhere. The exported file contains the certificate, the certificate chain, and the
+        /// encrypted private 2048-bit RSA key associated with the public key that is embedded
+        /// in the certificate. For security, you must assign a passphrase for the private key
+        /// when exporting it. 
         /// 
         ///  
         /// <para>
-        ///  <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> 
+        /// For information about exporting and formatting a certificate using the ACM console
+        /// or CLI, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-export-private.html">Export
+        /// a Private Certificate</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportCertificate service method.</param>
@@ -661,15 +674,16 @@ namespace Amazon.CertificateManager
 
         /// <summary>
         /// Exports a private certificate issued by a private certificate authority (CA) for use
-        /// anywhere. You can export the certificate, the certificate chain, and the encrypted
-        /// private key associated with the public key embedded in the certificate. You must store
-        /// the private key securely. The private key is a 2048 bit RSA key. You must provide
-        /// a passphrase for the private key when exporting it. You can use the following OpenSSL
-        /// command to decrypt it later. Provide the passphrase when prompted. 
+        /// anywhere. The exported file contains the certificate, the certificate chain, and the
+        /// encrypted private 2048-bit RSA key associated with the public key that is embedded
+        /// in the certificate. For security, you must assign a passphrase for the private key
+        /// when exporting it. 
         /// 
         ///  
         /// <para>
-        ///  <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> 
+        /// For information about exporting and formatting a certificate using the ACM console
+        /// or CLI, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-export-private.html">Export
+        /// a Private Certificate</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportCertificate service method.</param>
@@ -895,7 +909,7 @@ namespace Amazon.CertificateManager
         ///  </li> <li> 
         /// <para>
         /// To import a new certificate, omit the <code>CertificateArn</code> argument. Include
-        /// this argument only when you want to replace a previously imported certificate.
+        /// this argument only when you want to replace a previously imported certifica
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -911,6 +925,12 @@ namespace Amazon.CertificateManager
         /// certificate chain, and the private key files in the manner required by the programming
         /// language you're using. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The cryptographic algorithm of an imported certificate must match the algorithm of
+        /// the signing CA. For example, if the signing CA key type is RSA, then the certificate
+        /// key type must also be RSA.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// This operation returns the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
@@ -920,12 +940,25 @@ namespace Amazon.CertificateManager
         /// <param name="request">Container for the necessary parameters to execute the ImportCertificate service method.</param>
         /// 
         /// <returns>The response from the ImportCertificate service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidParameterException">
+        /// An input parameter was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidTagException">
+        /// One or both of the values that make up the key-value pair is not valid. For example,
+        /// you cannot specify a tag value that begins with <code>aws:</code>.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.LimitExceededException">
         /// An ACM limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TagPolicyException">
+        /// A specified tag did not comply with an existing tag policy and was rejected.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
+        /// The request contains too many tags. Try the request again with fewer tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
         public virtual ImportCertificateResponse ImportCertificate(ImportCertificateRequest request)
@@ -995,7 +1028,7 @@ namespace Amazon.CertificateManager
         ///  </li> <li> 
         /// <para>
         /// To import a new certificate, omit the <code>CertificateArn</code> argument. Include
-        /// this argument only when you want to replace a previously imported certificate.
+        /// this argument only when you want to replace a previously imported certifica
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1011,6 +1044,12 @@ namespace Amazon.CertificateManager
         /// certificate chain, and the private key files in the manner required by the programming
         /// language you're using. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The cryptographic algorithm of an imported certificate must match the algorithm of
+        /// the signing CA. For example, if the signing CA key type is RSA, then the certificate
+        /// key type must also be RSA.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// This operation returns the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
@@ -1023,12 +1062,25 @@ namespace Amazon.CertificateManager
         /// </param>
         /// 
         /// <returns>The response from the ImportCertificate service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidParameterException">
+        /// An input parameter was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidTagException">
+        /// One or both of the values that make up the key-value pair is not valid. For example,
+        /// you cannot specify a tag value that begins with <code>aws:</code>.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.LimitExceededException">
         /// An ACM limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TagPolicyException">
+        /// A specified tag did not comply with an existing tag policy and was rejected.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
+        /// The request contains too many tags. Try the request again with fewer tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
         public virtual Task<ImportCertificateResponse> ImportCertificateAsync(ImportCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1048,7 +1100,8 @@ namespace Amazon.CertificateManager
         /// <summary>
         /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
         /// that match a specific status be listed. You can also filter by specific attributes
-        /// of the certificate.
+        /// of the certificate. Default filtering returns only <code>RSA_2048</code> certificates.
+        /// For more information, see <a>Filters</a>.
         /// </summary>
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
@@ -1065,7 +1118,8 @@ namespace Amazon.CertificateManager
         /// <summary>
         /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
         /// that match a specific status be listed. You can also filter by specific attributes
-        /// of the certificate.
+        /// of the certificate. Default filtering returns only <code>RSA_2048</code> certificates.
+        /// For more information, see <a>Filters</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
         /// 
@@ -1087,7 +1141,8 @@ namespace Amazon.CertificateManager
         /// <summary>
         /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
         /// that match a specific status be listed. You can also filter by specific attributes
-        /// of the certificate.
+        /// of the certificate. Default filtering returns only <code>RSA_2048</code> certificates.
+        /// For more information, see <a>Filters</a>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1106,7 +1161,8 @@ namespace Amazon.CertificateManager
         /// <summary>
         /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
         /// that match a specific status be listed. You can also filter by specific attributes
-        /// of the certificate.
+        /// of the certificate. Default filtering returns only <code>RSA_2048</code> certificates.
+        /// For more information, see <a>Filters</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
         /// <param name="cancellationToken">
@@ -1212,6 +1268,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidParameterException">
+        /// An input parameter was invalid.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidTagException">
         /// One or both of the values that make up the key-value pair is not valid. For example,
         /// you cannot specify a tag value that begins with <code>aws:</code>.
@@ -1219,6 +1278,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TagPolicyException">
+        /// A specified tag did not comply with an existing tag policy and was rejected.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">REST API Reference for RemoveTagsFromCertificate Operation</seealso>
         public virtual RemoveTagsFromCertificateResponse RemoveTagsFromCertificate(RemoveTagsFromCertificateRequest request)
@@ -1253,6 +1315,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidParameterException">
+        /// An input parameter was invalid.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidTagException">
         /// One or both of the values that make up the key-value pair is not valid. For example,
         /// you cannot specify a tag value that begins with <code>aws:</code>.
@@ -1260,6 +1325,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TagPolicyException">
+        /// A specified tag did not comply with an existing tag policy and was rejected.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">REST API Reference for RemoveTagsFromCertificate Operation</seealso>
         public virtual Task<RemoveTagsFromCertificateResponse> RemoveTagsFromCertificateAsync(RemoveTagsFromCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1355,7 +1423,7 @@ namespace Amazon.CertificateManager
         /// after receiving approval from the domain owner. 
         /// </para>
         /// </summary>
-        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </param>
+        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </param>
         /// 
         /// <returns>The response from the RequestCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
@@ -1364,8 +1432,21 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.InvalidDomainValidationOptionsException">
         /// One or more values in the <a>DomainValidationOption</a> structure is incorrect.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidParameterException">
+        /// An input parameter was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidTagException">
+        /// One or both of the values that make up the key-value pair is not valid. For example,
+        /// you cannot specify a tag value that begins with <code>aws:</code>.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.LimitExceededException">
         /// An ACM limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TagPolicyException">
+        /// A specified tag did not comply with an existing tag policy and was rejected.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
+        /// The request contains too many tags. Try the request again with fewer tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">REST API Reference for RequestCertificate Operation</seealso>
         public virtual RequestCertificateResponse RequestCertificate(string domainName)
@@ -1401,8 +1482,21 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.InvalidDomainValidationOptionsException">
         /// One or more values in the <a>DomainValidationOption</a> structure is incorrect.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidParameterException">
+        /// An input parameter was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidTagException">
+        /// One or both of the values that make up the key-value pair is not valid. For example,
+        /// you cannot specify a tag value that begins with <code>aws:</code>.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.LimitExceededException">
         /// An ACM limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TagPolicyException">
+        /// A specified tag did not comply with an existing tag policy and was rejected.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
+        /// The request contains too many tags. Try the request again with fewer tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">REST API Reference for RequestCertificate Operation</seealso>
         public virtual RequestCertificateResponse RequestCertificate(RequestCertificateRequest request)
@@ -1431,7 +1525,7 @@ namespace Amazon.CertificateManager
         /// after receiving approval from the domain owner. 
         /// </para>
         /// </summary>
-        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </param>
+        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1443,8 +1537,21 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.InvalidDomainValidationOptionsException">
         /// One or more values in the <a>DomainValidationOption</a> structure is incorrect.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidParameterException">
+        /// An input parameter was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidTagException">
+        /// One or both of the values that make up the key-value pair is not valid. For example,
+        /// you cannot specify a tag value that begins with <code>aws:</code>.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.LimitExceededException">
         /// An ACM limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TagPolicyException">
+        /// A specified tag did not comply with an existing tag policy and was rejected.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
+        /// The request contains too many tags. Try the request again with fewer tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">REST API Reference for RequestCertificate Operation</seealso>
         public virtual Task<RequestCertificateResponse> RequestCertificateAsync(string domainName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1483,8 +1590,21 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.InvalidDomainValidationOptionsException">
         /// One or more values in the <a>DomainValidationOption</a> structure is incorrect.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidParameterException">
+        /// An input parameter was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidTagException">
+        /// One or both of the values that make up the key-value pair is not valid. For example,
+        /// you cannot specify a tag value that begins with <code>aws:</code>.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.LimitExceededException">
         /// An ACM limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TagPolicyException">
+        /// A specified tag did not comply with an existing tag policy and was rejected.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
+        /// The request contains too many tags. Try the request again with fewer tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">REST API Reference for RequestCertificate Operation</seealso>
         public virtual Task<RequestCertificateResponse> RequestCertificateAsync(RequestCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

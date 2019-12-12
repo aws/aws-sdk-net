@@ -125,6 +125,68 @@ namespace Amazon.AppMesh
 
 
     /// <summary>
+    /// Constants used for properties of type GrpcRetryPolicyEvent.
+    /// </summary>
+    public class GrpcRetryPolicyEvent : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cancelled for GrpcRetryPolicyEvent
+        /// </summary>
+        public static readonly GrpcRetryPolicyEvent Cancelled = new GrpcRetryPolicyEvent("cancelled");
+        /// <summary>
+        /// Constant DeadlineExceeded for GrpcRetryPolicyEvent
+        /// </summary>
+        public static readonly GrpcRetryPolicyEvent DeadlineExceeded = new GrpcRetryPolicyEvent("deadline-exceeded");
+        /// <summary>
+        /// Constant Internal for GrpcRetryPolicyEvent
+        /// </summary>
+        public static readonly GrpcRetryPolicyEvent Internal = new GrpcRetryPolicyEvent("internal");
+        /// <summary>
+        /// Constant ResourceExhausted for GrpcRetryPolicyEvent
+        /// </summary>
+        public static readonly GrpcRetryPolicyEvent ResourceExhausted = new GrpcRetryPolicyEvent("resource-exhausted");
+        /// <summary>
+        /// Constant Unavailable for GrpcRetryPolicyEvent
+        /// </summary>
+        public static readonly GrpcRetryPolicyEvent Unavailable = new GrpcRetryPolicyEvent("unavailable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GrpcRetryPolicyEvent(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GrpcRetryPolicyEvent FindValue(string value)
+        {
+            return FindValue<GrpcRetryPolicyEvent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GrpcRetryPolicyEvent(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HttpMethod.
     /// </summary>
     public class HttpMethod : ConstantClass
@@ -313,9 +375,17 @@ namespace Amazon.AppMesh
     {
 
         /// <summary>
+        /// Constant Grpc for PortProtocol
+        /// </summary>
+        public static readonly PortProtocol Grpc = new PortProtocol("grpc");
+        /// <summary>
         /// Constant Http for PortProtocol
         /// </summary>
         public static readonly PortProtocol Http = new PortProtocol("http");
+        /// <summary>
+        /// Constant Http2 for PortProtocol
+        /// </summary>
+        public static readonly PortProtocol Http2 = new PortProtocol("http2");
         /// <summary>
         /// Constant Tcp for PortProtocol
         /// </summary>

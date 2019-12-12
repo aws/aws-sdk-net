@@ -185,17 +185,17 @@ namespace Amazon.ApplicationInsights
     {
 
         /// <summary>
-        /// Constant HIGH for SeverityLevel
+        /// Constant High for SeverityLevel
         /// </summary>
-        public static readonly SeverityLevel HIGH = new SeverityLevel("HIGH");
+        public static readonly SeverityLevel High = new SeverityLevel("High");
         /// <summary>
-        /// Constant LOW for SeverityLevel
+        /// Constant Low for SeverityLevel
         /// </summary>
-        public static readonly SeverityLevel LOW = new SeverityLevel("LOW");
+        public static readonly SeverityLevel Low = new SeverityLevel("Low");
         /// <summary>
-        /// Constant MEDIUM for SeverityLevel
+        /// Constant Medium for SeverityLevel
         /// </summary>
-        public static readonly SeverityLevel MEDIUM = new SeverityLevel("MEDIUM");
+        public static readonly SeverityLevel Medium = new SeverityLevel("Medium");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -280,6 +280,68 @@ namespace Amazon.ApplicationInsights
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Tier.
+    /// </summary>
+    public class Tier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for Tier
+        /// </summary>
+        public static readonly Tier DEFAULT = new Tier("DEFAULT");
+        /// <summary>
+        /// Constant DOT_NET_CORE for Tier
+        /// </summary>
+        public static readonly Tier DOT_NET_CORE = new Tier("DOT_NET_CORE");
+        /// <summary>
+        /// Constant DOT_NET_WEB for Tier
+        /// </summary>
+        public static readonly Tier DOT_NET_WEB = new Tier("DOT_NET_WEB");
+        /// <summary>
+        /// Constant DOT_NET_WORKER for Tier
+        /// </summary>
+        public static readonly Tier DOT_NET_WORKER = new Tier("DOT_NET_WORKER");
+        /// <summary>
+        /// Constant SQL_SERVER for Tier
+        /// </summary>
+        public static readonly Tier SQL_SERVER = new Tier("SQL_SERVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Tier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Tier FindValue(string value)
+        {
+            return FindValue<Tier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Tier(string value)
         {
             return FindValue(value);
         }

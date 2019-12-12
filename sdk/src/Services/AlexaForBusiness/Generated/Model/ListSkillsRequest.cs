@@ -42,8 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property EnablementType. 
         /// <para>
-        /// Whether the skill is enabled under the user's account, or if it requires linking to
-        /// be used.
+        /// Whether the skill is enabled under the user's account.
         /// </para>
         /// </summary>
         public EnablementTypeFilter EnablementType
@@ -63,7 +62,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <para>
         /// The maximum number of results to include in the response. If more results exist than
         /// the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved. Required.
+        /// that the remaining results can be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -84,7 +83,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <para>
         /// An optional token returned from a prior request. Use this token for pagination of
         /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>. Required.
+        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1100)]
@@ -103,7 +102,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property SkillGroupArn. 
         /// <para>
-        /// The ARN of the skill group for which to list enabled skills. Required.
+        /// The ARN of the skill group for which to list enabled skills.
         /// </para>
         /// </summary>
         public string SkillGroupArn

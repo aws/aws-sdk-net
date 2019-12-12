@@ -37,7 +37,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Invites. 
         /// <para>
-        /// The invite details.
+        /// The email invitation details.
         /// </para>
         /// </summary>
         public List<Invite> Invites

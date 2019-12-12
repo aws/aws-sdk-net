@@ -37,6 +37,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<OpsFilter> _filters = new List<OpsFilter>();
         private int? _maxResults;
         private string _nextToken;
+        private List<OpsResultAttribute> _resultAttributes = new List<OpsResultAttribute>();
+        private string _syncName;
 
         /// <summary>
         /// Gets and sets the property Aggregators. 
@@ -44,7 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Optional aggregators that return counts of OpsItems based on one or more expressions.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=12)]
+        [AWSProperty(Min=1, Max=12)]
         public List<OpsAggregator> Aggregators
         {
             get { return this._aggregators; }
@@ -112,6 +114,44 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResultAttributes. 
+        /// <para>
+        /// The OpsItem data type to return.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<OpsResultAttribute> ResultAttributes
+        {
+            get { return this._resultAttributes; }
+            set { this._resultAttributes = value; }
+        }
+
+        // Check to see if ResultAttributes property is set
+        internal bool IsSetResultAttributes()
+        {
+            return this._resultAttributes != null && this._resultAttributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyncName. 
+        /// <para>
+        /// Specify the name of a resource data sync to get.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string SyncName
+        {
+            get { return this._syncName; }
+            set { this._syncName = value; }
+        }
+
+        // Check to see if SyncName property is set
+        internal bool IsSetSyncName()
+        {
+            return this._syncName != null;
         }
 
     }

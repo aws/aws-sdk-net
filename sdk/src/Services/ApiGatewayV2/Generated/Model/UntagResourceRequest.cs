@@ -29,7 +29,7 @@ namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Untag an APIGW resource
+    /// Deletes a Tag.
     /// </summary>
     public partial class UntagResourceRequest : AmazonApiGatewayV2Request
     {
@@ -39,7 +39,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// AWS resource arn 
+        /// The resource ARN for the tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -56,9 +56,9 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. 
+        /// Gets and sets the property TagKeys.             
         /// <para>
-        /// The Tag keys to delete
+        /// The Tag keys to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

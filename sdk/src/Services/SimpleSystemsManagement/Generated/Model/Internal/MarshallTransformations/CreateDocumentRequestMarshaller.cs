@@ -108,6 +108,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetRequires())
+                {
+                    context.Writer.WritePropertyName("Requires");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRequiresListValue in publicRequest.Requires)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DocumentRequiresMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRequiresListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

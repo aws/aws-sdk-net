@@ -366,6 +366,175 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  CreateFargateProfile
+
+        internal virtual CreateFargateProfileResponse CreateFargateProfile(CreateFargateProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFargateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFargateProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFargateProfileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at least
+        /// one Fargate profile in a cluster to be able to schedule pods on Fargate infrastructure.
+        /// 
+        ///  
+        /// <para>
+        /// The Fargate profile allows an administrator to declare which pods run on Fargate infrastructure
+        /// and specify which pods run on which Fargate profile. This declaration is done through
+        /// the profile’s selectors. Each profile can have up to five selectors that contain a
+        /// namespace and labels. A namespace is required for every selector. The label field
+        /// consists of multiple optional key-value pairs. Pods that match the selectors are scheduled
+        /// on Fargate infrastructure. If a to-be-scheduled pod matches any of the selectors in
+        /// the Fargate profile, then that pod is scheduled on Fargate infrastructure.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create a Fargate profile, you must specify a pod execution role to use with
+        /// the pods that are scheduled with the profile. This role is added to the cluster's
+        /// Kubernetes <a href="https://kubernetes.io/docs/admin/authorization/rbac/">Role Based
+        /// Access Control</a> (RBAC) for authorization so that the <code>kubelet</code> that
+        /// is running on the Fargate infrastructure can register with your Amazon EKS cluster.
+        /// This role is what allows Fargate infrastructure to appear in your cluster as nodes.
+        /// The pod execution role also provides IAM permissions to the Fargate infrastructure
+        /// to allow read access to Amazon ECR image repositories. For more information, see <a
+        /// href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+        /// Execution Role</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Fargate profiles are immutable. However, you can create a new updated profile to replace
+        /// an existing profile and then delete the original after the updated profile has finished
+        /// creating.
+        /// </para>
+        ///  
+        /// <para>
+        /// If any Fargate profiles in a cluster are in the <code>DELETING</code> status, you
+        /// must wait for that Fargate profile to finish deleting before you can create any other
+        /// profiles in that cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS
+        /// Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFargateProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFargateProfile service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceLimitExceededException">
+        /// You have encountered a service limit on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.UnsupportedAvailabilityZoneException">
+        /// At least one of your specified cluster subnets is in an Availability Zone that does
+        /// not support Amazon EKS. The exception output specifies the supported Availability
+        /// Zones for your account, from which you can choose subnets for your cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile">REST API Reference for CreateFargateProfile Operation</seealso>
+        public virtual Task<CreateFargateProfileResponse> CreateFargateProfileAsync(CreateFargateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFargateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFargateProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFargateProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateNodegroup
+
+        internal virtual CreateNodegroupResponse CreateNodegroup(CreateNodegroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNodegroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNodegroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNodegroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a managed worker node group for an Amazon EKS cluster. You can only create
+        /// a node group for your cluster that is equal to the current Kubernetes version for
+        /// the cluster. All node groups are created with the latest AMI release version for the
+        /// respective minor Kubernetes version of the cluster.
+        /// 
+        ///  
+        /// <para>
+        /// An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated
+        /// Amazon EC2 instances that are managed by AWS for an Amazon EKS cluster. Each node
+        /// group uses a version of the Amazon EKS-optimized Amazon Linux 2 AMI. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
+        /// Node Groups</a> in the <i>Amazon EKS User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNodegroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateNodegroup service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceLimitExceededException">
+        /// You have encountered a service limit on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup">REST API Reference for CreateNodegroup Operation</seealso>
+        public virtual Task<CreateNodegroupResponse> CreateNodegroupAsync(CreateNodegroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNodegroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNodegroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateNodegroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCluster
 
         internal virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
@@ -380,9 +549,9 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Deletes the Amazon EKS cluster control plane. 
+        /// Deletes the Amazon EKS cluster control plane.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// If you have active services in your cluster that are associated with a load balancer,
         /// you must delete those services before deleting the cluster so that the load balancers
@@ -390,7 +559,11 @@ namespace Amazon.EKS
         /// prevent you from being able to delete the VPC. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
         /// a Cluster</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        /// If you have managed node groups or Fargate profiles attached to the cluster, you must
+        /// delete them first. For more information, see <a>DeleteNodegroup</a> and<a>DeleteFargateProfile</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
         /// <param name="cancellationToken">
@@ -408,7 +581,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -424,6 +598,126 @@ namespace Amazon.EKS
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFargateProfile
+
+        internal virtual DeleteFargateProfileResponse DeleteFargateProfile(DeleteFargateProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFargateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFargateProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFargateProfileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an AWS Fargate profile.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a Fargate profile, any pods that were scheduled onto Fargate infrastructure
+        /// with the profile are deleted. If those pods match another Fargate profile, then they
+        /// are scheduled on Fargate infrastructure with that profile. If they no longer match
+        /// any Fargate profiles, then they are not scheduled on Fargate infrastructure.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only one Fargate profile in a cluster can be in the <code>DELETING</code> status at
+        /// a time. You must wait for a Fargate profile to finish deleting before you can delete
+        /// any other profiles in that cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFargateProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFargateProfile service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteFargateProfile">REST API Reference for DeleteFargateProfile Operation</seealso>
+        public virtual Task<DeleteFargateProfileResponse> DeleteFargateProfileAsync(DeleteFargateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFargateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFargateProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFargateProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteNodegroup
+
+        internal virtual DeleteNodegroupResponse DeleteNodegroup(DeleteNodegroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNodegroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNodegroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNodegroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Amazon EKS node group for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNodegroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteNodegroup service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteNodegroup">REST API Reference for DeleteNodegroup Operation</seealso>
+        public virtual Task<DeleteNodegroupResponse> DeleteNodegroupAsync(DeleteNodegroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNodegroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNodegroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteNodegroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -471,7 +765,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -491,6 +786,109 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DescribeFargateProfile
+
+        internal virtual DescribeFargateProfileResponse DescribeFargateProfile(DescribeFargateProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFargateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFargateProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFargateProfileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns descriptive information about an AWS Fargate profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFargateProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFargateProfile service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile">REST API Reference for DescribeFargateProfile Operation</seealso>
+        public virtual Task<DescribeFargateProfileResponse> DescribeFargateProfileAsync(DescribeFargateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFargateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFargateProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFargateProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeNodegroup
+
+        internal virtual DescribeNodegroupResponse DescribeNodegroup(DescribeNodegroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNodegroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNodegroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNodegroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns descriptive information about an Amazon EKS node group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNodegroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNodegroup service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup">REST API Reference for DescribeNodegroup Operation</seealso>
+        public virtual Task<DescribeNodegroupResponse> DescribeNodegroupAsync(DescribeNodegroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNodegroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNodegroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeNodegroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeUpdate
 
         internal virtual DescribeUpdateResponse DescribeUpdate(DescribeUpdateRequest request)
@@ -505,7 +903,8 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Returns descriptive information about an update against your Amazon EKS cluster.
+        /// Returns descriptive information about an update against your Amazon EKS cluster or
+        /// associated managed node group.
         /// 
         ///  
         /// <para>
@@ -530,7 +929,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -595,6 +995,111 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  ListFargateProfiles
+
+        internal virtual ListFargateProfilesResponse ListFargateProfiles(ListFargateProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFargateProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFargateProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListFargateProfilesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the AWS Fargate profiles associated with the specified cluster in your AWS account
+        /// in the specified Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFargateProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFargateProfiles service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles">REST API Reference for ListFargateProfiles Operation</seealso>
+        public virtual Task<ListFargateProfilesResponse> ListFargateProfilesAsync(ListFargateProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFargateProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFargateProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFargateProfilesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNodegroups
+
+        internal virtual ListNodegroupsResponse ListNodegroups(ListNodegroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNodegroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNodegroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNodegroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the Amazon EKS node groups associated with the specified cluster in your AWS
+        /// account in the specified Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNodegroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNodegroups service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">REST API Reference for ListNodegroups Operation</seealso>
+        public virtual Task<ListNodegroupsResponse> ListNodegroupsAsync(ListNodegroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNodegroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNodegroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListNodegroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -651,8 +1156,8 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Lists the updates associated with an Amazon EKS cluster in your AWS account, in the
-        /// specified Region.
+        /// Lists the updates associated with an Amazon EKS cluster or managed node group in your
+        /// AWS account, in the specified Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUpdates service method.</param>
         /// <param name="cancellationToken">
@@ -670,7 +1175,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -704,7 +1210,10 @@ namespace Amazon.EKS
         /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
         /// If existing tags on a resource are not specified in the request parameters, they are
         /// not changed. When a resource is deleted, the tags associated with that resource are
-        /// deleted as well.
+        /// deleted as well. Tags that you create for Amazon EKS resources do not propagate to
+        /// any other resources associated with the cluster. For example, if you tag a cluster
+        /// with this operation, that tag does not automatically propagate to the subnets and
+        /// worker nodes associated with the cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -849,7 +1358,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -892,6 +1402,12 @@ namespace Amazon.EKS
         /// is eventually consistent). When the update is complete (either <code>Failed</code>
         /// or <code>Successful</code>), the cluster status moves to <code>Active</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// If your cluster has managed node groups attached to it, all of your node groups’ Kubernetes
+        /// versions must match the cluster’s Kubernetes version in order to update the cluster
+        /// to a new Kubernetes version.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateClusterVersion service method.</param>
         /// <param name="cancellationToken">
@@ -916,7 +1432,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -929,6 +1446,144 @@ namespace Amazon.EKS
             options.ResponseUnmarshaller = UpdateClusterVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateClusterVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateNodegroupConfig
+
+        internal virtual UpdateNodegroupConfigResponse UpdateNodegroupConfig(UpdateNodegroupConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNodegroupConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNodegroupConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNodegroupConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an Amazon EKS managed node group configuration. Your node group continues
+        /// to function during the update. The response output includes an update ID that you
+        /// can use to track the status of your node group update with the <a>DescribeUpdate</a>
+        /// API operation. Currently you can update the Kubernetes labels for a node group or
+        /// the scaling configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNodegroupConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNodegroupConfig service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupConfig">REST API Reference for UpdateNodegroupConfig Operation</seealso>
+        public virtual Task<UpdateNodegroupConfigResponse> UpdateNodegroupConfigAsync(UpdateNodegroupConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNodegroupConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNodegroupConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateNodegroupConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateNodegroupVersion
+
+        internal virtual UpdateNodegroupVersionResponse UpdateNodegroupVersion(UpdateNodegroupVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNodegroupVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNodegroupVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNodegroupVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the Kubernetes version or AMI version of an Amazon EKS managed node group.
+        /// 
+        ///  
+        /// <para>
+        /// You can update to the latest available AMI version of a node group's current Kubernetes
+        /// version by not specifying a Kubernetes version in the request. You can update to the
+        /// latest AMI version of your cluster's current Kubernetes version by specifying your
+        /// cluster's Kubernetes version in the request. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
+        /// EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot roll back a node group to an earlier Kubernetes version or AMI version.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a node in a managed node group is terminated due to a scaling action or update,
+        /// the pods in that node are drained first. Amazon EKS attempts to drain the nodes gracefully
+        /// and will fail if it is unable to do so. You can <code>force</code> the update if Amazon
+        /// EKS is unable to drain the nodes as a result of a pod disruption budget issue.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNodegroupVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNodegroupVersion service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion">REST API Reference for UpdateNodegroupVersion Operation</seealso>
+        public virtual Task<UpdateNodegroupVersionResponse> UpdateNodegroupVersionAsync(UpdateNodegroupVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNodegroupVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNodegroupVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateNodegroupVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion

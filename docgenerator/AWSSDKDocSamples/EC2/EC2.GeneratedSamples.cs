@@ -730,7 +730,7 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             string state = response.State;
             List<Tag> tags = response.Tags;
             string volumeId = response.VolumeId;
-            integer volumeSize = response.VolumeSize;
+            int volumeSize = response.VolumeSize;
 
             #endregion
         }
@@ -800,8 +800,8 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             string availabilityZone = response.AvailabilityZone;
             DateTime createTime = response.CreateTime;
             bool encrypted = response.Encrypted;
-            integer iops = response.Iops;
-            integer size = response.Size;
+            int iops = response.Iops;
+            int size = response.Size;
             string snapshotId = response.SnapshotId;
             string state = response.State;
             string volumeId = response.VolumeId;
@@ -825,8 +825,8 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             List<VolumeAttachment> attachments = response.Attachments;
             string availabilityZone = response.AvailabilityZone;
             DateTime createTime = response.CreateTime;
-            integer iops = response.Iops;
-            integer size = response.Size;
+            int iops = response.Iops;
+            int size = response.Size;
             string snapshotId = response.SnapshotId;
             string state = response.State;
             List<Tag> tags = response.Tags;
@@ -1662,7 +1662,7 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
                 Recurrence = new ScheduledInstanceRecurrenceRequest {
                     Frequency = "Weekly",
                     Interval = 1,
-                    OccurrenceDays = new List<integer> {
+                    OccurrenceDays = new List<int> {
                         1
                     }
                 }

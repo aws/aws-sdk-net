@@ -62,7 +62,9 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property AssociationType. 
         /// <para>
-        /// The association type.
+        /// The association type. Specify <code>PRINCIPAL</code> to list the principals that are
+        /// associated with the specified resource share. Specify <code>RESOURCE</code> to list
+        /// the resources that are associated with the specified resource share.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

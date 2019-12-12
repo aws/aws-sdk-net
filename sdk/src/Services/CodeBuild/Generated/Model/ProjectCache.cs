@@ -117,7 +117,7 @@ namespace Amazon.CodeBuild.Model
         ///  </li> <li> 
         /// <para>
         ///  Cached directories are linked to your build before it downloads its project sources.
-        /// Cached items are overriden if a source item has the same name. Directories are specified
+        /// Cached items are overridden if a source item has the same name. Directories are specified
         /// using cache paths in the buildspec file. 
         /// </para>
         ///  </li> </ul> </li> </ul>

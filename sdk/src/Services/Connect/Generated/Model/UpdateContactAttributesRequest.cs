@@ -29,33 +29,30 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateContactAttributes operation.
-    /// The <code>UpdateContactAttributes</code> operation lets you programmatically create
-    /// new, or update existing, contact attributes associated with a contact. You can use
-    /// the operation to add or update attributes for both ongoing and completed contacts.
-    /// For example, you can update the customer's name or the reason the customer called
-    /// while the call is active, or add notes about steps that the agent took during the
-    /// call that are displayed to the next agent that takes the call. You can also use the
-    /// <code>UpdateContactAttributes</code> operation to update attributes for a contact
+    /// Creates or updates the contact attributes associated with the specified contact.
+    /// 
+    ///  
+    /// <para>
+    /// You can add or update attributes for both ongoing and completed contacts. For example,
+    /// you can update the customer's name or the reason the customer called while the call
+    /// is active, or add notes about steps that the agent took during the call that are displayed
+    /// to the next agent that takes the call. You can also update attributes for a contact
     /// using data from your CRM application and save the data with the contact in Amazon
     /// Connect. You could also flag calls for additional analysis, such as legal review or
     /// identifying abusive callers.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
     /// </para>
     ///  
     /// <para>
-    ///  <i>Important:</i> 
-    /// </para>
-    ///  
-    /// <para>
-    /// You cannot use the operation to update attributes for contacts that occurred prior
-    /// to the release of the API, September 12, 2018. You can update attributes only for
-    /// contacts that started after the release of the API. If you attempt to update attributes
-    /// for a contact that occurred prior to the release of the API, a 400 error is returned.
-    /// This applies also to queued callbacks that were initiated prior to the release of
-    /// the API but are still active in your instance.
+    ///  <b>Important:</b> You cannot use the operation to update attributes for contacts
+    /// that occurred prior to the release of the API, September 12, 2018. You can update
+    /// attributes only for contacts that started after the release of the API. If you attempt
+    /// to update attributes for a contact that occurred prior to the release of the API,
+    /// a 400 error is returned. This applies also to queued callbacks that were initiated
+    /// prior to the release of the API but are still active in your instance.
     /// </para>
     /// </summary>
     public partial class UpdateContactAttributesRequest : AmazonConnectRequest
@@ -67,13 +64,12 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// Specify a custom key-value pair using an attribute map. The attributes are standard
-        /// Amazon Connect attributes, and can be accessed in contact flows just like any other
-        /// contact attributes.
+        /// The Amazon Connect attributes. These attributes can be accessed in contact flows just
+        /// like any other contact attributes.
         /// </para>
         ///  
         /// <para>
-        /// There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute
+        /// You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute
         /// keys can include only alphanumeric, dash, and underscore characters.
         /// </para>
         /// </summary>
@@ -93,8 +89,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InitialContactId. 
         /// <para>
-        /// The unique identifier of the contact for which to update attributes. This is the identifier
-        /// for the contact associated with the first interaction with the contact center.
+        /// The identifier of the contact. This is the identifier of the contact associated with
+        /// the first interaction with the contact center.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -113,11 +109,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier for your Amazon Connect instance. To find the ID of your instance,
-        /// open the AWS console and select Amazon Connect. Select the alias of the instance in
-        /// the Instance alias column. The instance ID is displayed in the Overview section of
-        /// your instance settings. For example, the instance ID is the set of characters at the
-        /// end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+        /// The identifier of the Amazon Connect instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

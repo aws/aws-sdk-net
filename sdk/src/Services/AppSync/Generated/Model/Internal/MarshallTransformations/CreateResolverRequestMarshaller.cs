@@ -72,6 +72,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCachingConfig())
+                {
+                    context.Writer.WritePropertyName("cachingConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CachingConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CachingConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDataSourceName())
                 {
                     context.Writer.WritePropertyName("dataSourceName");
@@ -111,6 +122,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("responseMappingTemplate");
                     context.Writer.Write(publicRequest.ResponseMappingTemplate);
+                }
+
+                if(publicRequest.IsSetSyncConfig())
+                {
+                    context.Writer.WritePropertyName("syncConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SyncConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SyncConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
         

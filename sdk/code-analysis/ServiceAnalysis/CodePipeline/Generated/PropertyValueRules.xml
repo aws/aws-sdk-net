@@ -405,6 +405,12 @@
     <pattern>[A-Za-z0-9.@\-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionDeclaration.Namespace</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.ActionDeclaration.Region</property>
     <min>4</min>
     <max>30</max>
@@ -462,6 +468,12 @@
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.ActionExecutionFilter.PipelineExecutionId</property>
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionExecutionInput.Namespace</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9@\-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.ActionExecutionInput.Region</property>
@@ -717,6 +729,11 @@
     <min>1</min>
     <max>100</max>
     <pattern>[a-zA-Z0-9_\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.OutputVariablesSizeExceededException.Message</property>
+    <min>1</min>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.PipelineContext.PipelineArn</property>

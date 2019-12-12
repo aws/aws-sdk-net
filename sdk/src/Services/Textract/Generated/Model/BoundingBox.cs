@@ -28,10 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// The bounding box around the recognized text, key, value, table or table cell on a
-    /// document page. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate)
-    /// are coordinates that represent the top and left sides of the bounding box. Note that
-    /// the upper-left corner of the image is the origin (0,0). 
+    /// The bounding box around the detected page, text, key-value pair, table, table cell,
+    /// or selection element on a document page. The <code>left</code> (x-coordinate) and
+    /// <code>top</code> (y-coordinate) are coordinates that represent the top and left sides
+    /// of the bounding box. Note that the upper-left corner of the image is the origin (0,0).
+    /// 
     /// 
     ///  
     /// <para>

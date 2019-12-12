@@ -246,6 +246,57 @@ namespace Amazon.S3Control
         #endregion
 
 
+        #region  CreateAccessPoint
+
+        /// <summary>
+        /// Creates an access point and associates it with the specified bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessPoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccessPoint service method, as returned by S3Control.</returns>
+        public virtual CreateAccessPointResponse CreateAccessPoint(CreateAccessPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessPointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAccessPointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAccessPoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessPoint operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAccessPoint
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginCreateAccessPoint(CreateAccessPointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessPointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAccessPoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccessPoint.</param>
+        /// 
+        /// <returns>Returns a  CreateAccessPointResult from S3Control.</returns>
+        public virtual CreateAccessPointResponse EndCreateAccessPoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAccessPointResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateJob
 
         /// <summary>
@@ -309,10 +360,113 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  DeleteAccessPoint
+
+        /// <summary>
+        /// Deletes the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessPoint service method, as returned by S3Control.</returns>
+        public virtual DeleteAccessPointResponse DeleteAccessPoint(DeleteAccessPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessPointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessPointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccessPoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPoint operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessPoint
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteAccessPoint(DeleteAccessPointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessPointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccessPoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessPoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccessPointResult from S3Control.</returns>
+        public virtual DeleteAccessPointResponse EndDeleteAccessPoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAccessPointResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAccessPointPolicy
+
+        /// <summary>
+        /// Deletes the access point policy for the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessPointPolicy service method, as returned by S3Control.</returns>
+        public virtual DeleteAccessPointPolicyResponse DeleteAccessPointPolicy(DeleteAccessPointPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessPointPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessPointPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccessPointPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointPolicy operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessPointPolicy
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteAccessPointPolicy(DeleteAccessPointPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessPointPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccessPointPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessPointPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccessPointPolicyResult from S3Control.</returns>
+        public virtual DeleteAccessPointPolicyResponse EndDeleteAccessPointPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAccessPointPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePublicAccessBlock
 
         /// <summary>
-        /// Deletes the block public access configuration for the specified account.
+        /// Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// 
@@ -423,16 +577,175 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetAccessPoint
+
+        /// <summary>
+        /// Returns configuration information about the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPoint service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessPoint service method, as returned by S3Control.</returns>
+        public virtual GetAccessPointResponse GetAccessPoint(GetAccessPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessPointResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessPointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessPoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPoint operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessPoint
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetAccessPoint(GetAccessPointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessPointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessPoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessPoint.</param>
+        /// 
+        /// <returns>Returns a  GetAccessPointResult from S3Control.</returns>
+        public virtual GetAccessPointResponse EndGetAccessPoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccessPointResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAccessPointPolicy
+
+        /// <summary>
+        /// Returns the access point policy associated with the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessPointPolicy service method, as returned by S3Control.</returns>
+        public virtual GetAccessPointPolicyResponse GetAccessPointPolicy(GetAccessPointPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessPointPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessPointPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessPointPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicy operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessPointPolicy
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetAccessPointPolicy(GetAccessPointPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessPointPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessPointPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessPointPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetAccessPointPolicyResult from S3Control.</returns>
+        public virtual GetAccessPointPolicyResponse EndGetAccessPointPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccessPointPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAccessPointPolicyStatus
+
+        /// <summary>
+        /// Indicates whether the specified access point currently has a policy that allows public
+        /// access. For more information about public access through access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+        /// Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service
+        /// Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessPointPolicyStatus service method, as returned by S3Control.</returns>
+        public virtual GetAccessPointPolicyStatusResponse GetAccessPointPolicyStatus(GetAccessPointPolicyStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessPointPolicyStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessPointPolicyStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessPointPolicyStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessPointPolicyStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatus operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessPointPolicyStatus
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetAccessPointPolicyStatus(GetAccessPointPolicyStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessPointPolicyStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessPointPolicyStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessPointPolicyStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessPointPolicyStatus.</param>
+        /// 
+        /// <returns>Returns a  GetAccessPointPolicyStatusResult from S3Control.</returns>
+        public virtual GetAccessPointPolicyStatusResponse EndGetAccessPointPolicyStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccessPointPolicyStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetPublicAccessBlock
 
         /// <summary>
-        /// 
+        /// Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the GetPublicAccessBlock service method, as returned by S3Control.</returns>
         /// <exception cref="Amazon.S3Control.Model.NoSuchPublicAccessBlockConfigurationException">
-        /// 
+        /// Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request
+        /// against an account that doesn't have a <code>PublicAccessBlockConfiguration</code>
+        /// set.
         /// </exception>
         public virtual GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request)
         {
@@ -473,6 +786,61 @@ namespace Amazon.S3Control
         public virtual GetPublicAccessBlockResponse EndGetPublicAccessBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPublicAccessBlockResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAccessPoints
+
+        /// <summary>
+        /// Returns a list of the access points currently associated with the specified bucket.
+        /// You can retrieve up to 1000 access points per call. If the specified bucket has more
+        /// than 1000 access points (or the number specified in <code>maxResults</code>, whichever
+        /// is less), then the response will include a continuation token that you can use to
+        /// list the additional access points.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessPoints service method.</param>
+        /// 
+        /// <returns>The response from the ListAccessPoints service method, as returned by S3Control.</returns>
+        public virtual ListAccessPointsResponse ListAccessPoints(ListAccessPointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessPointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessPointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccessPointsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccessPoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessPoints operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccessPoints
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginListAccessPoints(ListAccessPointsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessPointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessPointsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccessPoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccessPoints.</param>
+        /// 
+        /// <returns>Returns a  ListAccessPointsResult from S3Control.</returns>
+        public virtual ListAccessPointsResponse EndListAccessPoints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAccessPointsResponse>(asyncResult);
         }
 
         #endregion
@@ -538,10 +906,64 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  PutAccessPointPolicy
+
+        /// <summary>
+        /// Associates an access policy with the specified access point. Each access point can
+        /// have only one policy, so a request made to this API replaces any existing policy associated
+        /// with the specified access point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessPointPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutAccessPointPolicy service method, as returned by S3Control.</returns>
+        public virtual PutAccessPointPolicyResponse PutAccessPointPolicy(PutAccessPointPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccessPointPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccessPointPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAccessPointPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessPointPolicy operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccessPointPolicy
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginPutAccessPointPolicy(PutAccessPointPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccessPointPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccessPointPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAccessPointPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccessPointPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutAccessPointPolicyResult from S3Control.</returns>
+        public virtual PutAccessPointPolicyResponse EndPutAccessPointPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutAccessPointPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutPublicAccessBlock
 
         /// <summary>
-        /// 
+        /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon
+        /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// 

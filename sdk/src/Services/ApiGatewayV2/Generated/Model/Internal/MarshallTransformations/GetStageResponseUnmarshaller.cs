@@ -57,6 +57,18 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     response.AccessLogSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("apiGatewayManaged", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.ApiGatewayManaged = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("autoDeploy", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.AutoDeploy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("clientCertificateId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -85,6 +97,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastDeploymentStatusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LastDeploymentStatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedDate", targetDepth))

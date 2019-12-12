@@ -47,7 +47,7 @@ namespace Amazon.SecurityToken.Model
     /// identity provider. In this case, we recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
     /// Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see <a
     /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
-    /// Through a Web-based Identity Provider</a>.
+    /// Through a Web-based Identity Provider</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
@@ -60,50 +60,85 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// The temporary credentials are valid for the specified duration, from 900 seconds (15
-    /// minutes) up to a maximum of 129,600 seconds (36 hours). The default is 43,200 seconds
-    /// (12 hours). Temporary credentials that are obtained by using AWS account root user
-    /// credentials have a maximum duration of 3,600 seconds (1 hour).
+    ///  <b>Session duration</b> 
     /// </para>
     ///  
     /// <para>
-    /// The temporary security credentials created by <code>GetFederationToken</code> can
-    /// be used to make API calls to any AWS service with the following exceptions:
+    /// The temporary credentials are valid for the specified duration, from 900 seconds (15
+    /// minutes) up to a maximum of 129,600 seconds (36 hours). The default session duration
+    /// is 43,200 seconds (12 hours). Temporary credentials that are obtained by using AWS
+    /// account root user credentials have a maximum duration of 3,600 seconds (1 hour).
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// You cannot use these credentials to call any IAM API operations.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// You cannot call any STS API operations except <code>GetCallerIdentity</code>.
-    /// </para>
-    ///  </li> </ul> 
+    ///  
     /// <para>
     ///  <b>Permissions</b> 
     /// </para>
     ///  
     /// <para>
+    /// You can use the temporary credentials created by <code>GetFederationToken</code> in
+    /// any AWS service except the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// You cannot call any IAM operations using the AWS CLI or the AWS API. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You cannot call any STS operations except <code>GetCallerIdentity</code>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// You must pass an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
     /// policy</a> to this operation. You can pass a single JSON policy document to use as
     /// an inline session policy. You can also specify up to 10 managed policies to use as
     /// managed session policies. The plain text that you use for both inline and managed
-    /// session policies shouldn't exceed 2048 characters.
+    /// session policies can't exceed 2,048 characters.
     /// </para>
     ///  
     /// <para>
     /// Though the session policy parameters are optional, if you do not pass a policy, then
-    /// the resulting federated user session has no permissions. The only exception is when
-    /// the credentials are used to access a resource that has a resource-based policy that
-    /// specifically references the federated user session in the <code>Principal</code> element
-    /// of the policy. When you pass session policies, the session permissions are the intersection
-    /// of the IAM user policies and the session policies that you pass. This gives you a
-    /// way to further restrict the permissions for a federated user. You cannot use session
-    /// policies to grant more permissions than those that are defined in the permissions
-    /// policy of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+    /// the resulting federated user session has no permissions. When you pass session policies,
+    /// the session permissions are the intersection of the IAM user policies and the session
+    /// policies that you pass. This gives you a way to further restrict the permissions for
+    /// a federated user. You cannot use session policies to grant more permissions than those
+    /// that are defined in the permissions policy of the IAM user. For more information,
+    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
     /// Policies</a> in the <i>IAM User Guide</i>. For information about using <code>GetFederationToken</code>
     /// to create temporary security credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
     /// Through a Custom Identity Broker</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use the credentials to access a resource that has a resource-based policy.
+    /// If that policy specifically references the federated user session in the <code>Principal</code>
+    /// element of the policy, the session has the permissions allowed by the policy. These
+    /// permissions are granted in addition to the permissions granted by the session policies.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Tags</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// (Optional) You can pass tag key-value pairs to your session. These are called session
+    /// tags. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+    /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// An administrator must grant you the permissions necessary to pass session tags. The
+    /// administrator can also create granular permissions to allow you to pass only specific
+    /// session tags. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial:
+    /// Using Tags for Attribute-Based Access Control</a> in the <i>IAM User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Tag key–value pairs are not case sensitive, but case is preserved. This means that
+    /// you cannot have separate <code>Department</code> and <code>department</code> tag keys.
+    /// Assume that the user that you are federating has the <code>Department</code>=<code>Marketing</code>
+    /// tag and you pass the <code>department</code>=<code>engineering</code> session tag.
+    /// <code>Department</code> and <code>department</code> are not saved as separate tags,
+    /// and the session tag passed in the request takes precedence over the user tag.
     /// </para>
     /// </summary>
     public partial class GetFederationTokenRequest : AmazonSecurityTokenServiceRequest
@@ -112,6 +147,7 @@ namespace Amazon.SecurityToken.Model
         private string _name;
         private string _policy;
         private List<PolicyDescriptorType> _policyArns = new List<PolicyDescriptorType>();
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -193,10 +229,7 @@ namespace Amazon.SecurityToken.Model
         ///  
         /// <para>
         /// This parameter is optional. However, if you do not pass any session policies, then
-        /// the resulting federated user session has no permissions. The only exception is when
-        /// the credentials are used to access a resource that has a resource-based policy that
-        /// specifically references the federated user session in the <code>Principal</code> element
-        /// of the policy.
+        /// the resulting federated user session has no permissions.
         /// </para>
         ///  
         /// <para>
@@ -209,19 +242,26 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// The plain text that you use for both inline and managed session policies shouldn't
-        /// exceed 2048 characters. The JSON policy characters can be any ASCII character from
-        /// the space character to the end of the valid character list (\u0020 through \u00FF).
-        /// It can also include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-        /// characters.
+        /// The resulting credentials can be used to access a resource that has a resource-based
+        /// policy. If that policy specifically references the federated user session in the <code>Principal</code>
+        /// element of the policy, the session has the permissions allowed by the policy. These
+        /// permissions are granted in addition to the permissions that are granted by the session
+        /// policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// The plain text that you use for both inline and managed session policies can't exceed
+        /// 2,048 characters. The JSON policy characters can be any ASCII character from the space
+        /// character to the end of the valid character list (\u0020 through \u00FF). It can also
+        /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The characters in this parameter count towards the 2048 character session policy guideline.
-        /// However, an AWS conversion compresses the session policies into a packed binary format
-        /// that has a separate limit. This is the enforced limit. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policy is to the upper size
-        /// limit.
+        /// An AWS conversion compresses the passed session policies and session tags into a packed
+        /// binary format that has a separate limit. Your request can fail for this limit even
+        /// if your plain text meets the other requirements. The <code>PackedPolicySize</code>
+        /// response element indicates by percentage how close the policies and tags for your
+        /// request are to the upper size limit. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -251,17 +291,14 @@ namespace Amazon.SecurityToken.Model
         /// policy</a> to this operation. You can pass a single JSON policy document to use as
         /// an inline session policy. You can also specify up to 10 managed policies to use as
         /// managed session policies. The plain text that you use for both inline and managed
-        /// session policies shouldn't exceed 2048 characters. You can provide up to 10 managed
-        /// policy ARNs. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// session policies can't exceed 2,048 characters. You can provide up to 10 managed policy
+        /// ARNs. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
         /// </para>
         ///  
         /// <para>
         /// This parameter is optional. However, if you do not pass any session policies, then
-        /// the resulting federated user session has no permissions. The only exception is when
-        /// the credentials are used to access a resource that has a resource-based policy that
-        /// specifically references the federated user session in the <code>Principal</code> element
-        /// of the policy.
+        /// the resulting federated user session has no permissions.
         /// </para>
         ///  
         /// <para>
@@ -272,13 +309,21 @@ namespace Amazon.SecurityToken.Model
         /// the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// The resulting credentials can be used to access a resource that has a resource-based
+        /// policy. If that policy specifically references the federated user session in the <code>Principal</code>
+        /// element of the policy, the session has the permissions allowed by the policy. These
+        /// permissions are granted in addition to the permissions that are granted by the session
+        /// policies.
+        /// </para>
         ///  <note> 
         /// <para>
-        /// The characters in this parameter count towards the 2048 character session policy guideline.
-        /// However, an AWS conversion compresses the session policies into a packed binary format
-        /// that has a separate limit. This is the enforced limit. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policy is to the upper size
-        /// limit.
+        /// An AWS conversion compresses the passed session policies and session tags into a packed
+        /// binary format that has a separate limit. Your request can fail for this limit even
+        /// if your plain text meets the other requirements. The <code>PackedPolicySize</code>
+        /// response element indicates by percentage how close the policies and tags for your
+        /// request are to the upper size limit. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -292,6 +337,57 @@ namespace Amazon.SecurityToken.Model
         internal bool IsSetPolicyArns()
         {
             return this._policyArns != null && this._policyArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of session tags. Each session tag consists of a key name and an associated
+        /// value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+        /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is optional. You can pass up to 50 session tags. The plain text session
+        /// tag keys can’t exceed 128 characters and the values can’t exceed 256 characters. For
+        /// these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
+        /// and STS Character Limits</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// An AWS conversion compresses the passed session policies and session tags into a packed
+        /// binary format that has a separate limit. Your request can fail for this limit even
+        /// if your plain text meets the other requirements. The <code>PackedPolicySize</code>
+        /// response element indicates by percentage how close the policies and tags for your
+        /// request are to the upper size limit. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can pass a session tag with the same key as a tag that is already attached to
+        /// the user you are federating. When you do, session tags override a user tag with the
+        /// same key. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Tag key–value pairs are not case sensitive, but case is preserved. This means that
+        /// you cannot have separate <code>Department</code> and <code>department</code> tag keys.
+        /// Assume that the role has the <code>Department</code>=<code>Marketing</code> tag and
+        /// you pass the <code>department</code>=<code>engineering</code> session tag. <code>Department</code>
+        /// and <code>department</code> are not saved as separate tags, and the session tag passed
+        /// in the request takes precedence over the role tag.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

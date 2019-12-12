@@ -100,6 +100,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMultiplexGroupSettings())
+            {
+                context.Writer.WritePropertyName("multiplexGroupSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MultiplexGroupSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MultiplexGroupSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRtmpGroupSettings())
             {
                 context.Writer.WritePropertyName("rtmpGroupSettings");

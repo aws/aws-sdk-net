@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// The image format of an AWS Signer platform or profile.
+    /// The image format of a code signing platform or profile.
     /// </summary>
     public partial class SigningImageFormat
     {
@@ -38,7 +38,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property DefaultFormat. 
         /// <para>
-        /// The default format of an AWS Signer signing image.
+        /// The default format of a code signing signing image.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -57,7 +57,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property SupportedFormats. 
         /// <para>
-        /// The supported formats of an AWS Signer signing image.
+        /// The supported formats of a code signing signing image.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

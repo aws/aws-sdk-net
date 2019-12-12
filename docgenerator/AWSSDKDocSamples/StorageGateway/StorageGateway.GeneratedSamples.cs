@@ -443,10 +443,10 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
                 GatewayARN = "arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B"
             });
 
-            integer dayOfWeek = response.DayOfWeek;
+            int dayOfWeek = response.DayOfWeek;
             string gatewayARN = response.GatewayARN;
-            integer hourOfDay = response.HourOfDay;
-            integer minuteOfHour = response.MinuteOfHour;
+            int hourOfDay = response.HourOfDay;
+            int minuteOfHour = response.MinuteOfHour;
             string timezone = response.Timezone;
 
             #endregion
@@ -462,8 +462,8 @@ namespace AWSSDKDocSamples.Amazon.StorageGateway.Generated
             });
 
             string description = response.Description;
-            integer recurrenceInHours = response.RecurrenceInHours;
-            integer startAt = response.StartAt;
+            int recurrenceInHours = response.RecurrenceInHours;
+            int startAt = response.StartAt;
             string timezone = response.Timezone;
             string volumeARN = response.VolumeARN;
 

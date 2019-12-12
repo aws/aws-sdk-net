@@ -129,6 +129,64 @@ namespace Amazon.Chime
 
 
     /// <summary>
+    /// Constants used for properties of type CallingNameStatus.
+    /// </summary>
+    public class CallingNameStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Unassigned for CallingNameStatus
+        /// </summary>
+        public static readonly CallingNameStatus Unassigned = new CallingNameStatus("Unassigned");
+        /// <summary>
+        /// Constant UpdateFailed for CallingNameStatus
+        /// </summary>
+        public static readonly CallingNameStatus UpdateFailed = new CallingNameStatus("UpdateFailed");
+        /// <summary>
+        /// Constant UpdateInProgress for CallingNameStatus
+        /// </summary>
+        public static readonly CallingNameStatus UpdateInProgress = new CallingNameStatus("UpdateInProgress");
+        /// <summary>
+        /// Constant UpdateSucceeded for CallingNameStatus
+        /// </summary>
+        public static readonly CallingNameStatus UpdateSucceeded = new CallingNameStatus("UpdateSucceeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CallingNameStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CallingNameStatus FindValue(string value)
+        {
+            return FindValue<CallingNameStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CallingNameStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EmailStatus.
     /// </summary>
     public class EmailStatus : ConstantClass
@@ -189,6 +247,10 @@ namespace Amazon.Chime
     {
 
         /// <summary>
+        /// Constant AccessDenied for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode AccessDenied = new ErrorCode("AccessDenied");
+        /// <summary>
         /// Constant BadRequest for ErrorCode
         /// </summary>
         public static readonly ErrorCode BadRequest = new ErrorCode("BadRequest");
@@ -205,9 +267,17 @@ namespace Amazon.Chime
         /// </summary>
         public static readonly ErrorCode NotFound = new ErrorCode("NotFound");
         /// <summary>
+        /// Constant PhoneNumberAssociationsExist for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode PhoneNumberAssociationsExist = new ErrorCode("PhoneNumberAssociationsExist");
+        /// <summary>
         /// Constant PreconditionFailed for ErrorCode
         /// </summary>
         public static readonly ErrorCode PreconditionFailed = new ErrorCode("PreconditionFailed");
+        /// <summary>
+        /// Constant ResourceLimitExceeded for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode ResourceLimitExceeded = new ErrorCode("ResourceLimitExceeded");
         /// <summary>
         /// Constant ServiceFailure for ErrorCode
         /// </summary>
@@ -228,6 +298,10 @@ namespace Amazon.Chime
         /// Constant Unprocessable for ErrorCode
         /// </summary>
         public static readonly ErrorCode Unprocessable = new ErrorCode("Unprocessable");
+        /// <summary>
+        /// Constant VoiceConnectorGroupAssociationsExist for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode VoiceConnectorGroupAssociationsExist = new ErrorCode("VoiceConnectorGroupAssociationsExist");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -377,6 +451,60 @@ namespace Amazon.Chime
 
 
     /// <summary>
+    /// Constants used for properties of type MemberType.
+    /// </summary>
+    public class MemberType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Bot for MemberType
+        /// </summary>
+        public static readonly MemberType Bot = new MemberType("Bot");
+        /// <summary>
+        /// Constant User for MemberType
+        /// </summary>
+        public static readonly MemberType User = new MemberType("User");
+        /// <summary>
+        /// Constant Webhook for MemberType
+        /// </summary>
+        public static readonly MemberType Webhook = new MemberType("Webhook");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MemberType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MemberType FindValue(string value)
+        {
+            return FindValue<MemberType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MemberType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OrderedPhoneNumberStatus.
     /// </summary>
     public class OrderedPhoneNumberStatus : ConstantClass
@@ -494,6 +622,10 @@ namespace Amazon.Chime
         /// Constant UserId for PhoneNumberAssociationName
         /// </summary>
         public static readonly PhoneNumberAssociationName UserId = new PhoneNumberAssociationName("UserId");
+        /// <summary>
+        /// Constant VoiceConnectorGroupId for PhoneNumberAssociationName
+        /// </summary>
+        public static readonly PhoneNumberAssociationName VoiceConnectorGroupId = new PhoneNumberAssociationName("VoiceConnectorGroupId");
         /// <summary>
         /// Constant VoiceConnectorId for PhoneNumberAssociationName
         /// </summary>
@@ -814,6 +946,106 @@ namespace Amazon.Chime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RegistrationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RoomMembershipRole.
+    /// </summary>
+    public class RoomMembershipRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Administrator for RoomMembershipRole
+        /// </summary>
+        public static readonly RoomMembershipRole Administrator = new RoomMembershipRole("Administrator");
+        /// <summary>
+        /// Constant Member for RoomMembershipRole
+        /// </summary>
+        public static readonly RoomMembershipRole Member = new RoomMembershipRole("Member");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RoomMembershipRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RoomMembershipRole FindValue(string value)
+        {
+            return FindValue<RoomMembershipRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RoomMembershipRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VoiceConnectorAwsRegion.
+    /// </summary>
+    public class VoiceConnectorAwsRegion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UsEast1 for VoiceConnectorAwsRegion
+        /// </summary>
+        public static readonly VoiceConnectorAwsRegion UsEast1 = new VoiceConnectorAwsRegion("us-east-1");
+        /// <summary>
+        /// Constant UsWest2 for VoiceConnectorAwsRegion
+        /// </summary>
+        public static readonly VoiceConnectorAwsRegion UsWest2 = new VoiceConnectorAwsRegion("us-west-2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VoiceConnectorAwsRegion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VoiceConnectorAwsRegion FindValue(string value)
+        {
+            return FindValue<VoiceConnectorAwsRegion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VoiceConnectorAwsRegion(string value)
         {
             return FindValue(value);
         }

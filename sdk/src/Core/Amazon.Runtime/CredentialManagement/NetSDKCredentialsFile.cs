@@ -48,13 +48,18 @@ namespace Amazon.Runtime.CredentialManagement
         private const string RegionField = "Region";
 
         private const string EndpointDiscoveryEnabledField = "EndpointDiscoveryEnabled";
+        private const string S3UseArnRegionField = "S3UseArnRegion";
+
+        private const string StsRegionalEndpointsField = "StsRegionalEndpoints";
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             SettingsConstants.DisplayNameField,
             SettingsConstants.ProfileTypeField,
             RegionField,
-            EndpointDiscoveryEnabledField
+            EndpointDiscoveryEnabledField,
+            S3UseArnRegionField,
+            StsRegionalEndpointsField
         };
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
@@ -154,13 +159,52 @@ namespace Amazon.Runtime.CredentialManagement
                         endpointDiscoveryEnabled = endpointDiscoveryEnabledOut;
                     }
 
+                    StsRegionalEndpointsValue? stsRegionalEndpoints = null;
+                    if (reservedProperties.TryGetValue(StsRegionalEndpointsField, out var stsRegionalEndpointsString))
+                    {
+#if BCL35
+                        try
+                        {
+                            stsRegionalEndpoints = (StsRegionalEndpointsValue)Enum.Parse(typeof(StsRegionalEndpointsValue), stsRegionalEndpointsString, true);
+                        }
+                        catch (Exception)
+                        {
+                            profile = null;
+                            return false;
+                        }
+#else
+                        if (!Enum.TryParse<StsRegionalEndpointsValue>(stsRegionalEndpointsString, true, out var tempStsRegionalEndpoints))
+                        {
+                            profile = null;
+                            return false;
+                        }
+                        stsRegionalEndpoints = tempStsRegionalEndpoints;
+#endif
+                    }
+
+                    string s3UseArnRegionString;
+                    bool? s3UseArnRegion = null;
+                    if(reservedProperties.TryGetValue(S3UseArnRegionField, out s3UseArnRegionString))
+                    {
+                        bool s3UseArnRegionOut;
+                        if (!bool.TryParse(s3UseArnRegionString, out s3UseArnRegionOut))
+                        {
+                            profile = null;
+                            return false;
+                        }
+
+                        s3UseArnRegion = s3UseArnRegionOut;
+                    }
+
                     profile = new CredentialProfile(profileName, profileOptions)
                     {
                         UniqueKey = uniqueKey,
                         Properties = userProperties,
                         Region = region,
                         CredentialProfileStore = this,
-                        EndpointDiscoveryEnabled = endpointDiscoveryEnabled
+                        EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
+                        StsRegionalEndpoints = stsRegionalEndpoints,
+                        S3UseArnRegion = s3UseArnRegion
                     };
                     return true;
                 }
@@ -198,6 +242,12 @@ namespace Amazon.Runtime.CredentialManagement
 
                 if (profile.EndpointDiscoveryEnabled != null)
                     reservedProperties[EndpointDiscoveryEnabledField] = profile.EndpointDiscoveryEnabled.Value.ToString().ToLowerInvariant();
+
+                if (profile.StsRegionalEndpoints != null)
+                    reservedProperties[StsRegionalEndpointsField] = profile.StsRegionalEndpoints.ToString().ToLowerInvariant();
+
+                if (profile.S3UseArnRegion != null)
+                    reservedProperties[S3UseArnRegionField] = profile.S3UseArnRegion.Value.ToString().ToLowerInvariant();
 
                 var profileDictionary = PropertyMapping.CombineProfileParts(
                     profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);

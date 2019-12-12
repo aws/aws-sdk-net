@@ -59,6 +59,7 @@ namespace Amazon.MediaLive.Model
         private double? _fragmentTime;
         private M2tsKlv _klv;
         private string _klvDataPids;
+        private M2tsNielsenId3Behavior _nielsenId3Behavior;
         private double? _nullPacketBitrate;
         private int? _patInterval;
         private M2tsPcrControl _pcrControl;
@@ -535,6 +536,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetKlvDataPids()
         {
             return this._klvDataPids != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NielsenId3Behavior. If set to passthrough, Nielsen inaudible
+        /// tones for media tracking will be detected in the input audio and an equivalent ID3
+        /// tag will be inserted in the output.
+        /// </summary>
+        public M2tsNielsenId3Behavior NielsenId3Behavior
+        {
+            get { return this._nielsenId3Behavior; }
+            set { this._nielsenId3Behavior = value; }
+        }
+
+        // Check to see if NielsenId3Behavior property is set
+        internal bool IsSetNielsenId3Behavior()
+        {
+            return this._nielsenId3Behavior != null;
         }
 
         /// <summary>

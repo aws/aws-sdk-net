@@ -38,6 +38,7 @@ namespace Amazon.DataSync.Model
         private string _errorDetail;
         private long? _prepareDuration;
         private PhaseStatus _prepareStatus;
+        private long? _totalDuration;
         private long? _transferDuration;
         private PhaseStatus _transferStatus;
         private long? _verifyDuration;
@@ -116,6 +117,26 @@ namespace Amazon.DataSync.Model
         internal bool IsSetPrepareStatus()
         {
             return this._prepareStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalDuration. 
+        /// <para>
+        /// The total time in milliseconds that AWS DataSync took to transfer the file from the
+        /// source to the destination location.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long TotalDuration
+        {
+            get { return this._totalDuration.GetValueOrDefault(); }
+            set { this._totalDuration = value; }
+        }
+
+        // Check to see if TotalDuration property is set
+        internal bool IsSetTotalDuration()
+        {
+            return this._totalDuration.HasValue; 
         }
 
         /// <summary>

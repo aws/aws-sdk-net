@@ -29,7 +29,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDirectoryLimits operation.
-    /// Obtains directory limit information for the current region.
+    /// Obtains directory limit information for the current Region.
     /// </summary>
     public partial class GetDirectoryLimitsRequest : AmazonDirectoryServiceRequest
     {

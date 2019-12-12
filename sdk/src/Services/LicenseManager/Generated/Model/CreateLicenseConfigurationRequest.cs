@@ -29,12 +29,17 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLicenseConfiguration operation.
-    /// Creates a new license configuration object. A license configuration is an abstraction
-    /// of a customer license agreement that can be consumed and enforced by License Manager.
-    /// Components include specifications for the license type (licensing by instance, socket,
-    /// CPU, or VCPU), tenancy (shared tenancy, Amazon EC2 Dedicated Instance, Amazon EC2
-    /// Dedicated Host, or any of these), host affinity (how long a VM must be associated
-    /// with a host), the number of licenses purchased and used.
+    /// Creates a license configuration.
+    /// 
+    ///  
+    /// <para>
+    /// A license configuration is an abstraction of a customer license agreement that can
+    /// be consumed and enforced by License Manager. Components include specifications for
+    /// the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared
+    /// tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how
+    /// long a VM must be associated with a host), and the number of licenses purchased and
+    /// used.
+    /// </para>
     /// </summary>
     public partial class CreateLicenseConfigurationRequest : AmazonLicenseManagerRequest
     {
@@ -44,12 +49,13 @@ namespace Amazon.LicenseManager.Model
         private LicenseCountingType _licenseCountingType;
         private List<string> _licenseRules = new List<string>();
         private string _name;
+        private List<ProductInformation> _productInformationList = new List<ProductInformation>();
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Human-friendly description of the license configuration.
+        /// Description of the license configuration.
         /// </para>
         /// </summary>
         public string Description
@@ -85,8 +91,8 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseCountHardLimit. 
         /// <para>
-        /// Flag indicating whether hard or soft license enforcement is used. Exceeding a hard
-        /// limit results in the blocked deployment of new instances.
+        /// Indicates whether hard or soft license enforcement is used. Exceeding a hard limit
+        /// blocks the launch of new instances.
         /// </para>
         /// </summary>
         public bool LicenseCountHardLimit
@@ -104,7 +110,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseCountingType. 
         /// <para>
-        /// Dimension to use to track the license inventory.
+        /// Dimension used to track the license inventory.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -123,8 +129,31 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseRules. 
         /// <para>
-        /// Array of configured License Manager rules.
+        /// License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost).
+        /// Available rules vary by dimension.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code>
+        /// | <code>minimumCores</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code>
+        /// | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code>
+        /// | <code>maximumVcpus</code> | <code>minimumVcpus</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>maximumSockets</code>
+        /// | <code>minimumSockets</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code>
+        /// | <code>maximumVcpus</code> | <code>minimumVcpus</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> LicenseRules
         {
@@ -158,11 +187,27 @@ namespace Amazon.LicenseManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProductInformationList. 
+        /// <para>
+        /// Product information.
+        /// </para>
+        /// </summary>
+        public List<ProductInformation> ProductInformationList
+        {
+            get { return this._productInformationList; }
+            set { this._productInformationList = value; }
+        }
+
+        // Check to see if ProductInformationList property is set
+        internal bool IsSetProductInformationList()
+        {
+            return this._productInformationList != null && this._productInformationList.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to apply to the resources during launch. You can only tag instances and volumes
-        /// on launch. The specified tags are applied to all instances or volumes that are created
-        /// during launch. To tag a resource after it has been created, see CreateTags .
+        /// Tags to add to the license configuration.
         /// </para>
         /// </summary>
         public List<Tag> Tags

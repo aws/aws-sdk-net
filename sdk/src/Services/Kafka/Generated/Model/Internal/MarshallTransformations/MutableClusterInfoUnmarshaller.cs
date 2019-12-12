@@ -76,10 +76,22 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConfigurationInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enhancedMonitoring", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EnhancedMonitoring = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("numberOfBrokerNodes", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfBrokerNodes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("openMonitoring", targetDepth))
+                {
+                    var unmarshaller = OpenMonitoringUnmarshaller.Instance;
+                    unmarshalledObject.OpenMonitoring = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

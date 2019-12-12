@@ -38,15 +38,11 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MetricResults. 
         /// <para>
-        /// A list of <code>HistoricalMetricResult</code> objects, organized by <code>Dimensions</code>,
-        /// which is the ID of the resource specified in the <code>Filters</code> used for the
-        /// request. The metrics are combined with the metrics included in <code>Collections</code>,
-        /// which is a list of <code>HisotricalMetricData</code> objects.
+        /// Information about the historical metrics.
         /// </para>
         ///  
         /// <para>
-        /// If no <code>Grouping</code> is specified in the request, <code>Collections</code>
-        /// includes summary data for the <code>HistoricalMetrics</code>.
+        /// If no grouping is specified, a summary of metric data is returned.
         /// </para>
         /// </summary>
         public List<HistoricalMetricResult> MetricResults
@@ -64,14 +60,13 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A string returned in the response. Use the value returned in the response as the value
-        /// of the NextToken in a subsequent request to retrieve the next set of results.
+        /// If there are additional results, this is the token for the next set of results.
         /// </para>
         ///  
         /// <para>
         /// The token expires after 5 minutes from the time it is created. Subsequent requests
-        /// that use the NextToken must use the same request parameters as the request that generated
-        /// the token. 
+        /// that use the token must use the same request parameters as the request that generated
+        /// the token.
         /// </para>
         /// </summary>
         public string NextToken

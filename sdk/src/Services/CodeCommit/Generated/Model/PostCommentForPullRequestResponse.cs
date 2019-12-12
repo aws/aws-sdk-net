@@ -44,7 +44,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AfterBlobId. 
         /// <para>
-        /// In the directionality of the pull request, the blob ID of the 'after' blob.
+        /// In the directionality of the pull request, the blob ID of the after blob.
         /// </para>
         /// </summary>
         public string AfterBlobId
@@ -63,7 +63,7 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property AfterCommitId. 
         /// <para>
         /// The full commit ID of the commit in the destination branch where the pull request
-        /// will be merged.
+        /// is merged.
         /// </para>
         /// </summary>
         public string AfterCommitId
@@ -81,7 +81,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property BeforeBlobId. 
         /// <para>
-        /// In the directionality of the pull request, the blob ID of the 'before' blob.
+        /// In the directionality of the pull request, the blob ID of the before blob.
         /// </para>
         /// </summary>
         public string BeforeBlobId

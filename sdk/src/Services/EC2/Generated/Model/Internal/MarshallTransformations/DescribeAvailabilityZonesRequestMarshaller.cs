@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAllAvailabilityZones())
+                {
+                    request.Parameters.Add("AllAvailabilityZones", StringUtils.FromBool(publicRequest.AllAvailabilityZones));
+                }
                 if(publicRequest.IsSetFilters())
                 {
                     int publicRequestlistValueIndex = 1;

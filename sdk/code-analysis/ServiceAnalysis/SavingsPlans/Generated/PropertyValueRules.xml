@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.DescribeSavingsPlanRatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.DescribeSavingsPlanRatesRequest.NextToken</property>
+    <max>1024</max>
+    <pattern>^[A-Za-z0-9/=\+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.DescribeSavingsPlanRatesResponse.NextToken</property>
+    <max>1024</max>
+    <pattern>^[A-Za-z0-9/=\+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.DescribeSavingsPlansRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.DescribeSavingsPlansRequest.NextToken</property>
+    <max>1024</max>
+    <pattern>^[A-Za-z0-9/=\+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.DescribeSavingsPlansResponse.NextToken</property>
+    <max>1024</max>
+    <pattern>^[A-Za-z0-9/=\+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.DescribeSavingsPlansOfferingRatesRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.DescribeSavingsPlansOfferingRatesRequest.NextToken</property>
+    <max>1024</max>
+    <pattern>^[A-Za-z0-9/=\+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.DescribeSavingsPlansOfferingRatesResponse.NextToken</property>
+    <max>1024</max>
+    <pattern>^[A-Za-z0-9/=\+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.DescribeSavingsPlansOfferingsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.DescribeSavingsPlansOfferingsRequest.NextToken</property>
+    <max>1024</max>
+    <pattern>^[A-Za-z0-9/=\+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.DescribeSavingsPlansOfferingsResponse.NextToken</property>
+    <max>1024</max>
+    <pattern>^[A-Za-z0-9/=\+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <pattern>arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.TagResourceRequest.ResourceArn</property>
+    <pattern>arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.UntagResourceRequest.ResourceArn</property>
+    <pattern>arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.ParentSavingsPlanOffering.DurationSeconds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.ParentSavingsPlanOffering.OfferingId</property>
+    <pattern>^(([0-9a-f]+)(-?))+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.ParentSavingsPlanOffering.PlanDescription</property>
+    <pattern>^[a-zA-Z0-9_\- ]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlan.SavingsPlanArn</property>
+    <pattern>arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlanOffering.Description</property>
+    <pattern>^[a-zA-Z0-9_\- ]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlanOffering.DurationSeconds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlanOffering.OfferingId</property>
+    <pattern>^(([0-9a-f]+)(-?))+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlanOffering.Operation</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_ \/.:-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlanOffering.ServiceCode</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlanOffering.UsageType</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_ \/.:-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlanOfferingProperty.Value</property>
+    <pattern>^[a-zA-Z0-9_ \/.\:\-\(\)]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlanOfferingRate.Operation</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_ \/.:-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlanOfferingRate.UsageType</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_ \/.:-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlanOfferingRateProperty.Name</property>
+    <pattern>^[a-zA-Z0-9_ \/.\:\-\(\)]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlanOfferingRateProperty.Value</property>
+    <pattern>^[a-zA-Z0-9_ \/.\:\-\(\)]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlanRate.Operation</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_ \/.:-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlanRate.UsageType</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_ \/.:-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SavingsPlans.Model.SavingsPlanRateProperty.Value</property>
+    <pattern>^[a-zA-Z0-9_ \/.\:\-\(\)]+$</pattern>
+  </property-value-rule>
+</property-value-rules>

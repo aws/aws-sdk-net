@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Continas information about the remote IP address.
+    /// Continas information about the remote IP address of the connection.
     /// </summary>
     public partial class RemoteIpDetails
     {

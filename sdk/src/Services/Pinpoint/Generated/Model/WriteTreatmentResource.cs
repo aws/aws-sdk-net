@@ -96,7 +96,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TemplateConfiguration.
+        /// Gets and sets the property TemplateConfiguration. 
+        /// <para>
+        /// The message template to use for the treatment.
+        /// </para>
         /// </summary>
         public TemplateConfiguration TemplateConfiguration
         {
@@ -113,7 +116,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TreatmentDescription. 
         /// <para>
-        /// The custom description of the treatment.
+        /// A custom description of the treatment.
         /// </para>
         /// </summary>
         public string TreatmentDescription

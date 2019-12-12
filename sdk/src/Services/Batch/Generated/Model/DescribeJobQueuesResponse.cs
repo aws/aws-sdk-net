@@ -38,7 +38,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobQueues. 
         /// <para>
-        /// The list of job queues. 
+        /// The list of job queues.
         /// </para>
         /// </summary>
         public List<JobQueueDetail> JobQueues

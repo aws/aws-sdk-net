@@ -58,8 +58,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A list of the Elastic Inference (EI) instance types associated with this notebook
         /// instance. Currently only one EI instance type can be associated with a notebook instance.
-        /// For more information, see <a href="sagemaker/latest/dg/ei.html">Using Elastic Inference
-        /// in Amazon SageMaker</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using
+        /// Elastic Inference in Amazon SageMaker</a>.
         /// </para>
         /// </summary>
         public List<string> AcceleratorTypes

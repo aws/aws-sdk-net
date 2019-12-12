@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// A set of attributes that describe a resource.
+    /// Details about a resource.
     /// </summary>
     public partial class ResourceInventory
     {
@@ -42,7 +42,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the resource.
+        /// Platform of the resource.
         /// </para>
         /// </summary>
         public string Platform
@@ -78,7 +78,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource.
+        /// Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -96,7 +96,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// Unique ID of the resource.
+        /// ID of the resource.
         /// </para>
         /// </summary>
         public string ResourceId
@@ -114,7 +114,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceOwningAccountId. 
         /// <para>
-        /// Unique ID of the account that owns the resource.
+        /// ID of the account that owns the resource.
         /// </para>
         /// </summary>
         public string ResourceOwningAccountId
@@ -132,7 +132,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource.
+        /// Type of resource.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

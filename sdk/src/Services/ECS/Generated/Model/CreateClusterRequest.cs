@@ -36,10 +36,10 @@ namespace Amazon.ECS.Model
     ///  <note> 
     /// <para>
     /// When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
-    /// the service-linked role for your account so that required resources in other AWS services
-    /// can be managed on your behalf. However, if the IAM user that makes the call does not
-    /// have permissions to create the service-linked role, it is not created. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+    /// the Amazon ECS service-linked role for your account so that required resources in
+    /// other AWS services can be managed on your behalf. However, if the IAM user that makes
+    /// the call does not have permissions to create the service-linked role, it is not created.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
     /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
     /// Developer Guide</i>.
     /// </para>
@@ -47,9 +47,47 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class CreateClusterRequest : AmazonECSRequest
     {
+        private List<string> _capacityProviders = new List<string>();
         private string _clusterName;
+        private List<CapacityProviderStrategyItem> _defaultCapacityProviderStrategy = new List<CapacityProviderStrategyItem>();
         private List<ClusterSetting> _settings = new List<ClusterSetting>();
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviders. 
+        /// <para>
+        /// The short name or full Amazon Resource Name (ARN) of one or more capacity providers
+        /// to associate with the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
+        /// must already be created and not already associated with another cluster. New capacity
+        /// providers can be created with the <a>CreateCapacityProvider</a> API operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are
+        /// available to all accounts and only need to be associated with a cluster to be used.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+        /// available capacity providers for a cluster after the cluster is created.
+        /// </para>
+        /// </summary>
+        public List<string> CapacityProviders
+        {
+            get { return this._capacityProviders; }
+            set { this._capacityProviders = value; }
+        }
+
+        // Check to see if CapacityProviders property is set
+        internal bool IsSetCapacityProviders()
+        {
+            return this._capacityProviders != null && this._capacityProviders.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterName. 
@@ -69,6 +107,56 @@ namespace Amazon.ECS.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultCapacityProviderStrategy. 
+        /// <para>
+        /// The capacity provider strategy to use by default for the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// When creating a service or running a task on a cluster, if no capacity provider or
+        /// launch type is specified then the default capacity provider strategy for the cluster
+        /// is used.
+        /// </para>
+        ///  
+        /// <para>
+        /// A capacity provider strategy consists of one or more capacity providers along with
+        /// the <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+        /// must be associated with the cluster to be used in a capacity provider strategy. The
+        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider with
+        /// a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code>
+        /// status can be used.
+        /// </para>
+        ///  
+        /// <para>
+        /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
+        /// must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a>
+        /// API operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are
+        /// available to all accounts and only need to be associated with a cluster to be used.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a default capacity provider strategy is not defined for a cluster during creation,
+        /// it can be defined later with the <a>PutClusterCapacityProviders</a> API operation.
+        /// </para>
+        /// </summary>
+        public List<CapacityProviderStrategyItem> DefaultCapacityProviderStrategy
+        {
+            get { return this._defaultCapacityProviderStrategy; }
+            set { this._defaultCapacityProviderStrategy = value; }
+        }
+
+        // Check to see if DefaultCapacityProviderStrategy property is set
+        internal bool IsSetDefaultCapacityProviderStrategy()
+        {
+            return this._defaultCapacityProviderStrategy != null && this._defaultCapacityProviderStrategy.Count > 0; 
         }
 
         /// <summary>

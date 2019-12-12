@@ -33,6 +33,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class RunConfigurationUpdate
     {
         private ApplicationRestoreConfiguration _applicationRestoreConfiguration;
+        private FlinkRunConfiguration _flinkRunConfiguration;
 
         /// <summary>
         /// Gets and sets the property ApplicationRestoreConfiguration. 
@@ -50,6 +51,25 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetApplicationRestoreConfiguration()
         {
             return this._applicationRestoreConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlinkRunConfiguration. 
+        /// <para>
+        /// Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics
+        /// application.
+        /// </para>
+        /// </summary>
+        public FlinkRunConfiguration FlinkRunConfiguration
+        {
+            get { return this._flinkRunConfiguration; }
+            set { this._flinkRunConfiguration = value; }
+        }
+
+        // Check to see if FlinkRunConfiguration property is set
+        internal bool IsSetFlinkRunConfiguration()
+        {
+            return this._flinkRunConfiguration != null;
         }
 
     }

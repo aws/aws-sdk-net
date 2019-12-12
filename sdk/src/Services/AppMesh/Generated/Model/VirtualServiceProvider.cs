@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the provider for a virtual service.
+    /// An object that represents the provider for a virtual service.
     /// </summary>
     public partial class VirtualServiceProvider
     {

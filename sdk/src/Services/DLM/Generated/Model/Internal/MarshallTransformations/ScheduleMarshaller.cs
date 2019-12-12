@@ -62,6 +62,17 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFastRestoreRule())
+            {
+                context.Writer.WritePropertyName("FastRestoreRule");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FastRestoreRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.FastRestoreRule, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

@@ -33,7 +33,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// You can create up to 5000 log groups per account.
+    /// You can create up to 20,000 log groups per account.
     /// </para>
     ///  
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.CloudWatchLogs.Model
     ///  </li> <li> 
     /// <para>
     /// Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore),
-    /// '-' (hyphen), '/' (forward slash), and '.' (period).
+    /// '-' (hyphen), '/' (forward slash), '.' (period), and '#' (number sign)
     /// </para>
     ///  </li> </ul> 
     /// <para>

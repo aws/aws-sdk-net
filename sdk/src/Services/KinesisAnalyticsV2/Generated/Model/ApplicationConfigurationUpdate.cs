@@ -37,6 +37,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private EnvironmentPropertyUpdates _environmentPropertyUpdates;
         private FlinkApplicationConfigurationUpdate _flinkApplicationConfigurationUpdate;
         private SqlApplicationConfigurationUpdate _sqlApplicationConfigurationUpdate;
+        private List<VpcConfigurationUpdate> _vpcConfigurationUpdates = new List<VpcConfigurationUpdate>();
 
         /// <summary>
         /// Gets and sets the property ApplicationCodeConfigurationUpdate. 
@@ -127,6 +128,24 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetSqlApplicationConfigurationUpdate()
         {
             return this._sqlApplicationConfigurationUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfigurationUpdates. 
+        /// <para>
+        /// Updates to the array of descriptions of VPC configurations available to the application.
+        /// </para>
+        /// </summary>
+        public List<VpcConfigurationUpdate> VpcConfigurationUpdates
+        {
+            get { return this._vpcConfigurationUpdates; }
+            set { this._vpcConfigurationUpdates = value; }
+        }
+
+        // Check to see if VpcConfigurationUpdates property is set
+        internal bool IsSetVpcConfigurationUpdates()
+        {
+            return this._vpcConfigurationUpdates != null && this._vpcConfigurationUpdates.Count > 0; 
         }
 
     }

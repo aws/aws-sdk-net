@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the requirements for a route to match HTTP requests for a virtual
-    ///         router.
+    /// An object that represents the requirements for a route to match HTTP requests for
+    /// a virtual         router.
     /// </summary>
     public partial class HttpRouteMatch
     {
@@ -41,7 +41,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Headers. 
         /// <para>
-        /// The client request headers to match on.
+        /// An object that represents the client request headers to match on.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -60,7 +60,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Method. 
         /// <para>
-        /// The client request header method to match on.
+        /// The client request method to match on. Specify only one.
         /// </para>
         /// </summary>
         public HttpMethod Method
@@ -102,7 +102,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Scheme. 
         /// <para>
-        /// The client request header scheme to match on.
+        /// The client request scheme to match on. Specify only one.
         /// </para>
         /// </summary>
         public HttpScheme Scheme

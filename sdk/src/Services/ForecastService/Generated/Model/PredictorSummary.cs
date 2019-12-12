@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// Provides a summary of the predictor properties used in the <a>ListPredictors</a> operation.
-    /// To get the complete set of properties, call the <a>DescribePredictor</a> operation,
-    /// and provide the listed <code>PredictorArn</code>.
+    /// Provides a summary of the predictor properties that are used in the <a>ListPredictors</a>
+    /// operation. To get the complete set of properties, call the <a>DescribePredictor</a>
+    /// operation, and provide the listed <code>PredictorArn</code>.
     /// </summary>
     public partial class PredictorSummary
     {
@@ -183,8 +183,8 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using
-        /// the predictor to create a forecast.
+        /// The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can
+        /// use the predictor to create a forecast.
         /// </para>
         ///  </note>
         /// </summary>

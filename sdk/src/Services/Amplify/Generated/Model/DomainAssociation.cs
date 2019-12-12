@@ -120,7 +120,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableAutoSubDomain. 
         /// <para>
-        ///  Enables automated creation of Subdomains for branches. 
+        ///  Enables automated creation of Subdomains for branches. (Currently not supported)
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

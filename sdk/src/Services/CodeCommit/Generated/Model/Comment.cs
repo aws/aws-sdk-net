@@ -62,9 +62,9 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A unique, client-generated idempotency token that when provided in a request, ensures
+        /// A unique, client-generated idempotency token that, when provided in a request, ensures
         /// the request cannot be repeated with a changed parameter. If a request is received
-        /// with the same parameters and a token is included, the request will return information
+        /// with the same parameters and a token is included, the request returns information
         /// about the initial request that used that token.
         /// </para>
         /// </summary>

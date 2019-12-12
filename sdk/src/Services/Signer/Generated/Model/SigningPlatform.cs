@@ -29,7 +29,7 @@ namespace Amazon.Signer.Model
 {
     /// <summary>
     /// Contains information about the signing configurations and parameters that is used
-    /// to perform an AWS Signer job.
+    /// to perform a code signing job.
     /// </summary>
     public partial class SigningPlatform
     {
@@ -45,7 +45,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// The category of an AWS Signer platform.
+        /// The category of a code signing platform.
         /// </para>
         /// </summary>
         public Category Category
@@ -63,7 +63,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The display name of an AWS Signer platform.
+        /// The display name of a code signing platform.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -81,7 +81,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property MaxSizeInMB. 
         /// <para>
-        /// The maximum size (in MB) of code that can be signed by a AWS Signer platform.
+        /// The maximum size (in MB) of code that can be signed by a code signing platform.
         /// </para>
         /// </summary>
         public int MaxSizeInMB
@@ -99,7 +99,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property Partner. 
         /// <para>
-        /// Any partner entities linked to an AWS Signer platform.
+        /// Any partner entities linked to a code signing platform.
         /// </para>
         /// </summary>
         public string Partner
@@ -117,7 +117,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property PlatformId. 
         /// <para>
-        /// The ID of an AWS Signer platform.
+        /// The ID of a code signing; platform.
         /// </para>
         /// </summary>
         public string PlatformId
@@ -135,7 +135,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property SigningConfiguration. 
         /// <para>
-        /// The configuration of an AWS Signer platform. This includes the designated hash algorithm
+        /// The configuration of a code signing platform. This includes the designated hash algorithm
         /// and encryption algorithm of a signing platform.
         /// </para>
         /// </summary>
@@ -152,10 +152,7 @@ namespace Amazon.Signer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SigningImageFormat. 
-        /// <para>
-        /// The signing image format that is used by an AWS Signer platform.
-        /// </para>
+        /// Gets and sets the property SigningImageFormat.
         /// </summary>
         public SigningImageFormat SigningImageFormat
         {
@@ -172,7 +169,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The types of targets that can be signed by an AWS Signer platform.
+        /// The types of targets that can be signed by a code signing platform.
         /// </para>
         /// </summary>
         public string Target

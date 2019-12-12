@@ -88,6 +88,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.PrepareStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TotalDuration", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.TotalDuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TransferDuration", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

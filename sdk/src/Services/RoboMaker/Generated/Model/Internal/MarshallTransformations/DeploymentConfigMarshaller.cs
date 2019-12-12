@@ -51,6 +51,17 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ConcurrentDeploymentPercentage);
             }
 
+            if(requestObject.IsSetDownloadConditionFile())
+            {
+                context.Writer.WritePropertyName("downloadConditionFile");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3ObjectMarshaller.Instance;
+                marshaller.Marshall(requestObject.DownloadConditionFile, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFailureThresholdPercentage())
             {
                 context.Writer.WritePropertyName("failureThresholdPercentage");

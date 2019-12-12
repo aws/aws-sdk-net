@@ -136,6 +136,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.LoadBalancerNames.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("MaxInstanceLifetime", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MaxInstanceLifetime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MaxSize", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

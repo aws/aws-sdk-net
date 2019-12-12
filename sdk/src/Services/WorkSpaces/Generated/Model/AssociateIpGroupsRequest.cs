@@ -42,7 +42,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifier of the directory.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=10, Max=65)]
         public string DirectoryId
         {
             get { return this._directoryId; }

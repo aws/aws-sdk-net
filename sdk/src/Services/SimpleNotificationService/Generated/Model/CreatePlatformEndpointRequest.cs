@@ -30,7 +30,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the CreatePlatformEndpoint operation.
     /// Creates an endpoint for a device and mobile app on one of the supported push notification
-    /// services, such as GCM and APNS. <code>CreatePlatformEndpoint</code> requires the PlatformApplicationArn
+    /// services, such as FCM and APNS. <code>CreatePlatformEndpoint</code> requires the PlatformApplicationArn
     /// that is returned from <code>CreatePlatformApplication</code>. The EndpointArn that
     /// is returned when using <code>CreatePlatformEndpoint</code> can then be used by the
     /// <code>Publish</code> action to send a message to a mobile app or by the <code>Subscribe</code>
@@ -118,7 +118,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Unique identifier created by the notification service for an app on a device. The
         /// specific name for Token will vary, depending on which notification service is being
         /// used. For example, when using APNS as the notification service, you need the device
-        /// token. Alternatively, when using GCM or ADM, the device token equivalent is called
+        /// token. Alternatively, when using FCM or ADM, the device token equivalent is called
         /// the registration ID.
         /// </para>
         /// </summary>

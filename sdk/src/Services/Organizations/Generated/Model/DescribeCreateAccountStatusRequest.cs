@@ -50,7 +50,7 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account
-        /// request ID string requires "car-" followed by from 8 to 32 lower-case letters or digits.
+        /// request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

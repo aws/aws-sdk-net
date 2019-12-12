@@ -45,6 +45,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VideoSelector requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAlphaBehavior())
+            {
+                context.Writer.WritePropertyName("alphaBehavior");
+                context.Writer.Write(requestObject.AlphaBehavior);
+            }
+
             if(requestObject.IsSetColorSpace())
             {
                 context.Writer.WritePropertyName("colorSpace");

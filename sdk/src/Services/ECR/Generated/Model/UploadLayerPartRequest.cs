@@ -54,7 +54,7 @@ namespace Amazon.ECR.Model
         /// The base64-encoded layer part payload.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=20971520)]
         public MemoryStream LayerPartBlob
         {
             get { return this._layerPartBlob; }

@@ -91,6 +91,152 @@ namespace Amazon.KinesisVideo
 
 
     /// <summary>
+    /// Constants used for properties of type ChannelProtocol.
+    /// </summary>
+    public class ChannelProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HTTPS for ChannelProtocol
+        /// </summary>
+        public static readonly ChannelProtocol HTTPS = new ChannelProtocol("HTTPS");
+        /// <summary>
+        /// Constant WSS for ChannelProtocol
+        /// </summary>
+        public static readonly ChannelProtocol WSS = new ChannelProtocol("WSS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelProtocol FindValue(string value)
+        {
+            return FindValue<ChannelProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChannelRole.
+    /// </summary>
+    public class ChannelRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MASTER for ChannelRole
+        /// </summary>
+        public static readonly ChannelRole MASTER = new ChannelRole("MASTER");
+        /// <summary>
+        /// Constant VIEWER for ChannelRole
+        /// </summary>
+        public static readonly ChannelRole VIEWER = new ChannelRole("VIEWER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelRole FindValue(string value)
+        {
+            return FindValue<ChannelRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChannelType.
+    /// </summary>
+    public class ChannelType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SINGLE_MASTER for ChannelType
+        /// </summary>
+        public static readonly ChannelType SINGLE_MASTER = new ChannelType("SINGLE_MASTER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelType FindValue(string value)
+        {
+            return FindValue<ChannelType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComparisonOperator.
     /// </summary>
     public class ComparisonOperator : ConstantClass

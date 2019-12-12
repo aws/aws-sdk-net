@@ -109,7 +109,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property LatestDeliveryAttemptSucceeded. 
         /// <para>
-        /// This field is deprecated.
+        /// This field is no longer in use.
         /// </para>
         /// </summary>
         public string LatestDeliveryAttemptSucceeded
@@ -127,7 +127,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property LatestDeliveryAttemptTime. 
         /// <para>
-        /// This field is deprecated.
+        /// This field is no longer in use.
         /// </para>
         /// </summary>
         public string LatestDeliveryAttemptTime
@@ -146,7 +146,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property LatestDeliveryError. 
         /// <para>
         /// Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver
-        /// log files to the designated bucket. For more information see the topic <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+        /// log files to the designated bucket. For more information see the topic <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
         /// Responses</a> in the Amazon S3 API Reference. 
         /// </para>
         ///  <note> 
@@ -193,7 +193,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property LatestDigestDeliveryError. 
         /// <para>
         /// Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver
-        /// a digest file to the designated bucket. For more information see the topic <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+        /// a digest file to the designated bucket. For more information see the topic <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
         /// Responses</a> in the Amazon S3 API Reference. 
         /// </para>
         ///  <note> 
@@ -239,7 +239,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property LatestNotificationAttemptSucceeded. 
         /// <para>
-        /// This field is deprecated.
+        /// This field is no longer in use.
         /// </para>
         /// </summary>
         public string LatestNotificationAttemptSucceeded
@@ -257,7 +257,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property LatestNotificationAttemptTime. 
         /// <para>
-        /// This field is deprecated.
+        /// This field is no longer in use.
         /// </para>
         /// </summary>
         public string LatestNotificationAttemptTime
@@ -276,7 +276,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property LatestNotificationError. 
         /// <para>
         /// Displays any Amazon SNS error that CloudTrail encountered when attempting to send
-        /// a notification. For more information about Amazon SNS errors, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon
+        /// a notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon
         /// SNS Developer Guide</a>. 
         /// </para>
         /// </summary>
@@ -352,7 +352,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property TimeLoggingStarted. 
         /// <para>
-        /// This field is deprecated.
+        /// This field is no longer in use.
         /// </para>
         /// </summary>
         public string TimeLoggingStarted
@@ -370,7 +370,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property TimeLoggingStopped. 
         /// <para>
-        /// This field is deprecated.
+        /// This field is no longer in use.
         /// </para>
         /// </summary>
         public string TimeLoggingStopped

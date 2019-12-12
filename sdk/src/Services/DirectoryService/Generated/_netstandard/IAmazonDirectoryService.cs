@@ -373,7 +373,8 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Creates a Simple AD directory.
+        /// Creates a Simple AD directory. For more information, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html">Simple
+        /// Active Directory</a> in the <i>AWS Directory Service Admin Guide</i>.
         /// 
         ///  
         /// <para>
@@ -412,8 +413,8 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Creates a subscription to forward real time Directory Service domain controller security
-        /// logs to the specified CloudWatch log group in your AWS account.
+        /// Creates a subscription to forward real-time Directory Service domain controller security
+        /// logs to the specified Amazon CloudWatch log group in your AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLogSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -449,7 +450,8 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Creates an AWS Managed Microsoft AD directory.
+        /// Creates a Microsoft AD directory in the AWS Cloud. For more information, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
+        /// Managed Microsoft AD</a> in the <i>AWS Directory Service Admin Guide</i>.
         /// 
         ///  
         /// <para>
@@ -739,6 +741,49 @@ namespace Amazon.DirectoryService
 
         #endregion
                 
+        #region  DeregisterCertificate
+
+
+
+        /// <summary>
+        /// Deletes from the system the certificate that was registered for a secured LDAP connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterCertificate service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.CertificateDoesNotExistException">
+        /// The certificate is not present in the system for describe or deregister activities.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.CertificateInUseException">
+        /// The certificate is being used for the LDAP security connection and cannot be removed
+        /// without disabling LDAP security.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterCertificate">REST API Reference for DeregisterCertificate Operation</seealso>
+        Task<DeregisterCertificateResponse> DeregisterCertificateAsync(DeregisterCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeregisterEventTopic
 
 
@@ -766,6 +811,42 @@ namespace Amazon.DirectoryService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">REST API Reference for DeregisterEventTopic Operation</seealso>
         Task<DeregisterEventTopicResponse> DeregisterEventTopicAsync(DeregisterEventTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeCertificate
+
+
+
+        /// <summary>
+        /// Displays information about the certificate registered for a secured LDAP connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCertificate service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.CertificateDoesNotExistException">
+        /// The certificate is not present in the system for describe or deregister activities.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
+        Task<DescribeCertificateResponse> DescribeCertificateAsync(DescribeCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -982,6 +1063,42 @@ namespace Amazon.DirectoryService
 
         #endregion
                 
+        #region  DescribeLDAPSSettings
+
+
+
+        /// <summary>
+        /// Describes the status of LDAP security for the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLDAPSSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLDAPSSettings service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeLDAPSSettings">REST API Reference for DescribeLDAPSSettings Operation</seealso>
+        Task<DescribeLDAPSSettingsResponse> DescribeLDAPSSettingsAsync(DescribeLDAPSSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeSharedDirectories
 
 
@@ -1105,6 +1222,45 @@ namespace Amazon.DirectoryService
 
         #endregion
                 
+        #region  DisableLDAPS
+
+
+
+        /// <summary>
+        /// Deactivates LDAP secure calls for the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableLDAPS service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableLDAPS service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidLDAPSStatusException">
+        /// The LDAP activities could not be performed because they are limited by the LDAPS status.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableLDAPS">REST API Reference for DisableLDAPS Operation</seealso>
+        Task<DisableLDAPSResponse> DisableLDAPSAsync(DisableLDAPSRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisableRadius
 
 
@@ -1166,6 +1322,49 @@ namespace Amazon.DirectoryService
 
         #endregion
                 
+        #region  EnableLDAPS
+
+
+
+        /// <summary>
+        /// Activates the switch for the specific directory to always use LDAP secure calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableLDAPS service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableLDAPS service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidLDAPSStatusException">
+        /// The LDAP activities could not be performed because they are limited by the LDAPS status.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.NoAvailableCertificateException">
+        /// The LDAP activities could not be performed because at least one valid certificate
+        /// must be registered with the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableLDAPS">REST API Reference for EnableLDAPS Operation</seealso>
+        Task<EnableLDAPSResponse> EnableLDAPSAsync(EnableLDAPSRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  EnableRadius
 
 
@@ -1205,7 +1404,9 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Enables single sign-on for a directory.
+        /// Enables single sign-on for a directory. Single sign-on allows users in your directory
+        /// to access certain AWS services from a computer joined to the directory without having
+        /// to enter their credentials separately.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSso service method.</param>
         /// <param name="cancellationToken">
@@ -1237,7 +1438,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Obtains directory limit information for the current region.
+        /// Obtains directory limit information for the current Region.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1259,7 +1460,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Obtains directory limit information for the current region.
+        /// Obtains directory limit information for the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDirectoryLimits service method.</param>
         /// <param name="cancellationToken">
@@ -1305,6 +1506,43 @@ namespace Amazon.DirectoryService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">REST API Reference for GetSnapshotLimits Operation</seealso>
         Task<GetSnapshotLimitsResponse> GetSnapshotLimitsAsync(GetSnapshotLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCertificates
+
+
+
+        /// <summary>
+        /// For the specified directory, lists all the certificates registered for a secured LDAP
+        /// connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCertificates service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
+        Task<ListCertificatesResponse> ListCertificatesAsync(ListCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1431,6 +1669,51 @@ namespace Amazon.DirectoryService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RegisterCertificate
+
+
+
+        /// <summary>
+        /// Registers a certificate for secured LDAP connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterCertificate service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.CertificateAlreadyExistsException">
+        /// The certificate has already been registered into the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.CertificateLimitExceededException">
+        /// The certificate could not be added because the certificate limit has been reached.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidCertificateException">
+        /// The certificate PEM that was provided has incorrect encoding.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterCertificate">REST API Reference for RegisterCertificate Operation</seealso>
+        Task<RegisterCertificateResponse> RegisterCertificateAsync(RegisterCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1570,6 +1853,27 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
+        /// 
+        ///  
+        /// <para>
+        /// You can reset the password for any user in your directory with the following exceptions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For Simple AD, you cannot reset the password for any user that is a member of either
+        /// the <b>Domain Admins</b> or <b>Enterprise Admins</b> group except for the administrator
+        /// user.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For AWS Managed Microsoft AD, you can only reset the password for a user that is in
+        /// an OU based off of the NetBIOS name that you typed when you created your directory.
+        /// For example, you cannot reset the password for a user in the <b>AWS Reserved</b> OU.
+        /// For more information about the OU structure for an AWS Managed Microsoft AD directory,
+        /// see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html">What
+        /// Gets Created</a> in the <i>AWS Directory Service Administration Guide</i>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetUserPassword service method.</param>
         /// <param name="cancellationToken">

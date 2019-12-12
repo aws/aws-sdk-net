@@ -34,8 +34,8 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// You must specify one of the following targets: internet gateway or virtual private
-    /// gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or
-    /// egress-only internet gateway.
+    /// gateway, NAT instance, NAT gateway, VPC peering connection, network interface, egress-only
+    /// internet gateway, or transit gateway.
     /// </para>
     ///  
     /// <para>
@@ -70,6 +70,7 @@ namespace Amazon.EC2.Model
         private string _egressOnlyInternetGatewayId;
         private string _gatewayId;
         private string _instanceId;
+        private string _localGatewayId;
         private string _natGatewayId;
         private string _networkInterfaceId;
         private string _routeTableId;
@@ -167,6 +168,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalGatewayId. 
+        /// <para>
+        /// The ID of the local gateway.
+        /// </para>
+        /// </summary>
+        public string LocalGatewayId
+        {
+            get { return this._localGatewayId; }
+            set { this._localGatewayId = value; }
+        }
+
+        // Check to see if LocalGatewayId property is set
+        internal bool IsSetLocalGatewayId()
+        {
+            return this._localGatewayId != null;
         }
 
         /// <summary>

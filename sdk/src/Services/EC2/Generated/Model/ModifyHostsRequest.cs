@@ -35,12 +35,20 @@ namespace Amazon.EC2.Model
     /// enabled. When auto-placement is disabled, you need to provide a host ID to have the
     /// instance launch onto a specific host. If no host ID is provided, the instance is launched
     /// onto a suitable host with auto-placement enabled.
+    /// 
+    ///  
+    /// <para>
+    /// You can also use this API action to modify a Dedicated Host to support either multiple
+    /// instance types in an instance family, or to support a specific instance type only.
+    /// </para>
     /// </summary>
     public partial class ModifyHostsRequest : AmazonEC2Request
     {
         private AutoPlacement _autoPlacement;
         private List<string> _hostIds = new List<string>();
         private HostRecovery _hostRecovery;
+        private string _instanceFamily;
+        private string _instanceType;
 
         /// <summary>
         /// Gets and sets the property AutoPlacement. 
@@ -97,6 +105,57 @@ namespace Amazon.EC2.Model
         internal bool IsSetHostRecovery()
         {
             return this._hostRecovery != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceFamily. 
+        /// <para>
+        /// Specifies the instance family to be supported by the Dedicated Host. Specify this
+        /// parameter to modify a Dedicated Host to support multiple instance types within its
+        /// current instance family.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to modify a Dedicated Host to support a specific instance type only, omit
+        /// this parameter and specify <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b>
+        /// and <b>InstanceType</b> in the same request.
+        /// </para>
+        /// </summary>
+        public string InstanceFamily
+        {
+            get { return this._instanceFamily; }
+            set { this._instanceFamily = value; }
+        }
+
+        // Check to see if InstanceFamily property is set
+        internal bool IsSetInstanceFamily()
+        {
+            return this._instanceFamily != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// Specifies the instance type to be supported by the Dedicated Host. Specify this parameter
+        /// to modify a Dedicated Host to support only a specific instance type.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to modify a Dedicated Host to support multiple instance types in its current
+        /// instance family, omit this parameter and specify <b>InstanceFamily</b> instead. You
+        /// cannot specify <b>InstanceType</b> and <b>InstanceFamily</b> in the same request.
+        /// </para>
+        /// </summary>
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
         }
 
     }

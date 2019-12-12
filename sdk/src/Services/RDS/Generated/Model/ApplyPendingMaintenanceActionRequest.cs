@@ -44,8 +44,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>
-        /// 
+        /// Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+        /// <code>ca-certificate-rotation</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

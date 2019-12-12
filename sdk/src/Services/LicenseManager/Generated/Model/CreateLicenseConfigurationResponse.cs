@@ -37,7 +37,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationArn. 
         /// <para>
-        /// ARN of the license configuration object after its creation.
+        /// Amazon Resource Name (ARN) of the license configuration.
         /// </para>
         /// </summary>
         public string LicenseConfigurationArn

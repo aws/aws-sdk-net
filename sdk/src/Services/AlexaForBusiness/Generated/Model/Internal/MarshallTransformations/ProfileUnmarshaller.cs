@@ -100,6 +100,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxVolumeLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MeetingRoomConfiguration", targetDepth))
+                {
+                    var unmarshaller = MeetingRoomConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.MeetingRoomConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProfileArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Provides information about an API request or response.
+    /// Provides information about a request to create a message template.
     /// </summary>
     public partial class CreateTemplateMessageBody
     {
@@ -39,7 +39,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the message template.
+        /// The Amazon Resource Name (ARN) of the message template that was created.
         /// </para>
         /// </summary>
         public string Arn
@@ -57,7 +57,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The message that's returned from the API.
+        /// The message that's returned from the API for the request to create the message template.
         /// </para>
         /// </summary>
         public string Message
@@ -75,7 +75,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property RequestID. 
         /// <para>
-        /// The unique identifier for the request or response.
+        /// The unique identifier for the request to create the message template.
         /// </para>
         /// </summary>
         public string RequestID

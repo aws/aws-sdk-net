@@ -29,7 +29,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// The phone number associations, such as Amazon Chime account ID, Amazon Chime user
-    /// ID, or Amazon Chime Voice Connector ID.
+    /// ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.
     /// </summary>
     public partial class PhoneNumberAssociation
     {
@@ -58,8 +58,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Defines the association with an Amazon Chime account ID, user ID, or Amazon Chime
-        /// Voice Connector ID.
+        /// Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice
+        /// Connector ID, or Amazon Chime Voice Connector group ID.
         /// </para>
         /// </summary>
         public PhoneNumberAssociationName Name

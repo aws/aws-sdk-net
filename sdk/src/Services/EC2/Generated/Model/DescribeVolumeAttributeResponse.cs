@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeVolumeAttribute.
+    /// This is the response object from the DescribeVolumeAttribute operation.
     /// </summary>
     public partial class DescribeVolumeAttributeResponse : AmazonWebServiceResponse
     {

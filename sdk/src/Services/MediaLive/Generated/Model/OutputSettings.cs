@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         private HlsOutputSettings _hlsOutputSettings;
         private MediaPackageOutputSettings _mediaPackageOutputSettings;
         private MsSmoothOutputSettings _msSmoothOutputSettings;
+        private MultiplexOutputSettings _multiplexOutputSettings;
         private RtmpOutputSettings _rtmpOutputSettings;
         private UdpOutputSettings _udpOutputSettings;
 
@@ -113,6 +114,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetMsSmoothOutputSettings()
         {
             return this._msSmoothOutputSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiplexOutputSettings.
+        /// </summary>
+        public MultiplexOutputSettings MultiplexOutputSettings
+        {
+            get { return this._multiplexOutputSettings; }
+            set { this._multiplexOutputSettings = value; }
+        }
+
+        // Check to see if MultiplexOutputSettings property is set
+        internal bool IsSetMultiplexOutputSettings()
+        {
+            return this._multiplexOutputSettings != null;
         }
 
         /// <summary>

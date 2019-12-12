@@ -64,6 +64,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("cachingConfig", targetDepth))
+                {
+                    var unmarshaller = CachingConfigUnmarshaller.Instance;
+                    unmarshalledObject.CachingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dataSourceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResponseMappingTemplate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("syncConfig", targetDepth))
+                {
+                    var unmarshaller = SyncConfigUnmarshaller.Instance;
+                    unmarshalledObject.SyncConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("typeName", targetDepth))

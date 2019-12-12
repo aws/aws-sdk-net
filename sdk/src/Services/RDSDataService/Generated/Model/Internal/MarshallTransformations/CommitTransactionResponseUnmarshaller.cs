@@ -92,6 +92,10 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             {
                 return new ServiceUnavailableErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("StatementTimeoutException"))
+            {
+                return new StatementTimeoutException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRDSDataServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 

@@ -195,7 +195,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property DatapointsToAlarm. 
         /// <para>
-        /// The number of datapoints that must be breaching to trigger the alarm.
+        /// The number of data points that must be breaching to trigger the alarm.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -29,7 +29,7 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateServiceSettings operation.
-    /// Updates License Manager service settings.
+    /// Updates License Manager settings for the current Region.
     /// </summary>
     public partial class UpdateServiceSettingsRequest : AmazonLicenseManagerRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property OrganizationConfiguration. 
         /// <para>
-        /// Integrates AWS Organizations with License Manager for cross-account discovery.
+        /// Enables integration with AWS Organizations for cross-account discovery.
         /// </para>
         /// </summary>
         public OrganizationConfiguration OrganizationConfiguration
@@ -77,7 +77,8 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property S3BucketArn. 
         /// <para>
-        /// ARN of the Amazon S3 bucket where License Manager information is stored.
+        /// Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information
+        /// is stored.
         /// </para>
         /// </summary>
         public string S3BucketArn
@@ -95,7 +96,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// ARN of the Amazon SNS topic used for License Manager alerts.
+        /// Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.
         /// </para>
         /// </summary>
         public string SnsTopicArn

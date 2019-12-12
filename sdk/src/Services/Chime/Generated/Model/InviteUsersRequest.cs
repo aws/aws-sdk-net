@@ -29,9 +29,9 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the InviteUsers operation.
-    /// Sends email invites to as many as 50 users, inviting them to the specified Amazon
-    /// Chime <code>Team</code> account. Only <code>Team</code> account types are currently
-    /// supported for this action.
+    /// Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime
+    /// <code>Team</code> account. Only <code>Team</code> account types are currently supported
+    /// for this action.
     /// </summary>
     public partial class InviteUsersRequest : AmazonChimeRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property UserEmailList. 
         /// <para>
-        /// The user email addresses to which to send the invite.
+        /// The user email addresses to which to send the email invitation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=50)]

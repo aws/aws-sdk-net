@@ -35,6 +35,7 @@ namespace Amazon.Redshift.Model
     public partial class DescribeNodeConfigurationOptionsRequest : AmazonRedshiftRequest
     {
         private ActionType _actionType;
+        private string _clusterIdentifier;
         private List<NodeConfigurationOptionsFilter> _filters = new List<NodeConfigurationOptionsFilter>();
         private string _marker;
         private int? _maxRecords;
@@ -44,8 +45,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ActionType. 
         /// <para>
-        /// The action type to evaluate for possible node configurations. Currently, it must be
-        /// "restore-cluster".
+        /// The action type to evaluate for possible node configurations. Specify "restore-cluster"
+        /// to get configuration combinations based on an existing snapshot. Specify "recommend-node-config"
+        /// to get configuration recommendations based on an existing cluster or snapshot. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,6 +61,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetActionType()
         {
             return this._actionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        /// The identifier of the cluster to evaluate for possible node configurations.
+        /// </para>
+        /// </summary>
+        public string ClusterIdentifier
+        {
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
+        }
+
+        // Check to see if ClusterIdentifier property is set
+        internal bool IsSetClusterIdentifier()
+        {
+            return this._clusterIdentifier != null;
         }
 
         /// <summary>

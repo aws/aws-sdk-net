@@ -29,7 +29,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Represents a request to perform a check that an item exists or to check the condition
-    /// of specific attributes of the item..
+    /// of specific attributes of the item.
     /// </summary>
     public partial class ConditionCheck
     {

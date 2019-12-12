@@ -87,6 +87,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Requires", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DocumentRequires, DocumentRequiresUnmarshaller>(DocumentRequiresUnmarshaller.Instance);
+                    response.Requires = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

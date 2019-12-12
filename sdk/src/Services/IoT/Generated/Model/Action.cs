@@ -38,8 +38,10 @@ namespace Amazon.IoT.Model
         private DynamoDBv2Action _dynamodBv2;
         private ElasticsearchAction _elasticsearch;
         private FirehoseAction _firehose;
+        private HttpAction _http;
         private IotAnalyticsAction _iotAnalytics;
         private IotEventsAction _iotEvents;
+        private IotSiteWiseAction _iotSiteWise;
         private KinesisAction _kinesis;
         private LambdaAction _lambda;
         private RepublishAction _republish;
@@ -159,6 +161,24 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Http. 
+        /// <para>
+        /// Send data to an HTTPS endpoint.
+        /// </para>
+        /// </summary>
+        public HttpAction Http
+        {
+            get { return this._http; }
+            set { this._http = value; }
+        }
+
+        // Check to see if Http property is set
+        internal bool IsSetHttp()
+        {
+            return this._http != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IotAnalytics. 
         /// <para>
         /// Sends message data to an AWS IoT Analytics channel.
@@ -192,6 +212,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetIotEvents()
         {
             return this._iotEvents != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IotSiteWise. 
+        /// <para>
+        /// Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset
+        /// properties.
+        /// </para>
+        /// </summary>
+        public IotSiteWiseAction IotSiteWise
+        {
+            get { return this._iotSiteWise; }
+            set { this._iotSiteWise = value; }
+        }
+
+        // Check to see if IotSiteWise property is set
+        internal bool IsSetIotSiteWise()
+        {
+            return this._iotSiteWise != null;
         }
 
         /// <summary>

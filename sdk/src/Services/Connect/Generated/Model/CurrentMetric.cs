@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>CurrentMetric</code> object that contains the Name and Unit for the metric.
+    /// Contains information about a real-time metric.
     /// </summary>
     public partial class CurrentMetric
     {

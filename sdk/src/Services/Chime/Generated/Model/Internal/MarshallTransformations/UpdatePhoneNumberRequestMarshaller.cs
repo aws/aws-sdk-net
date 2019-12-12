@@ -69,6 +69,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCallingName())
+                {
+                    context.Writer.WritePropertyName("CallingName");
+                    context.Writer.Write(publicRequest.CallingName);
+                }
+
                 if(publicRequest.IsSetProductType())
                 {
                     context.Writer.WritePropertyName("ProductType");

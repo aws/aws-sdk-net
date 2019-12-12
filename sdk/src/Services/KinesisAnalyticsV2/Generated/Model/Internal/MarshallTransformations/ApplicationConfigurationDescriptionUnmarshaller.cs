@@ -100,6 +100,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.SqlApplicationConfigurationDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VpcConfigurationDescriptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<VpcConfigurationDescription, VpcConfigurationDescriptionUnmarshaller>(VpcConfigurationDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.VpcConfigurationDescriptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

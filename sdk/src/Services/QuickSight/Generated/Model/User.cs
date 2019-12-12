@@ -44,8 +44,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Active. 
         /// <para>
-        /// Active status of user. When you create an Amazon QuickSight user that’s not an IAM
-        /// user or an AD user, that user is inactive until they sign in and provide a password
+        /// The active status of user. When you create an Amazon QuickSight user that’s not an
+        /// IAM user or an Active Directory user, that user is inactive until they sign in and
+        /// provide a password.
         /// </para>
         /// </summary>
         public bool Active
@@ -135,8 +136,31 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The Amazon QuickSight role for the user.
+        /// The Amazon QuickSight role for the user. The user role can be one of the following:.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>READER</code>: A user who has read-only access to dashboards.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
+        /// dashboards.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
+        /// settings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public UserRole Role
         {

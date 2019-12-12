@@ -42,7 +42,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CallingRegions. 
         /// <para>
-        /// The countries to which calls are allowed.
+        /// The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.
         /// </para>
         /// </summary>
         public List<string> CallingRegions
@@ -60,7 +60,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CidrAllowedList. 
         /// <para>
-        /// The IP addresses allowed to make calls, in CIDR format.
+        /// The IP addresses allowed to make calls, in CIDR format. Required.
         /// </para>
         /// </summary>
         public List<string> CidrAllowedList

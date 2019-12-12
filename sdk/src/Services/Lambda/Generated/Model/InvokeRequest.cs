@@ -35,12 +35,11 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
-    /// For synchronous invocation, details about the function response, including errors,
-    /// are included in the response body and headers. For either invocation type, you can
-    /// find more information in the <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution
-    /// log</a> and <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>.
-    /// To record function errors for asynchronous invocations, configure your function with
-    /// a <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>.
+    /// For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous
+    /// invocation</a>, details about the function response, including errors, are included
+    /// in the response body and headers. For either invocation type, you can find more information
+    /// in the <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution
+    /// log</a> and <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html">trace</a>.
     /// </para>
     ///  
     /// <para>
@@ -49,6 +48,16 @@ namespace Amazon.Lambda.Model
     /// invoke a function asynchronously and it returns an error, Lambda executes the function
     /// up to two more times. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry
     /// Behavior</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
+    /// invocation</a>, Lambda adds events to a queue before sending them to your function.
+    /// If your function does not have enough capacity to keep up with the queue, events may
+    /// be lost. Occasionally, your function may receive the same event multiple times, even
+    /// if no error occurs. To retain events that were not processed, configure your function
+    /// with a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter
+    /// queue</a>.
     /// </para>
     ///  
     /// <para>

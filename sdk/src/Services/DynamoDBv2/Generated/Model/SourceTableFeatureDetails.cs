@@ -43,7 +43,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property GlobalSecondaryIndexes. 
         /// <para>
         /// Represents the GSI properties for the table when the backup was created. It includes
-        /// the IndexName, KeySchema, Projection and ProvisionedThroughput for the GSIs on the
+        /// the IndexName, KeySchema, Projection, and ProvisionedThroughput for the GSIs on the
         /// table at the time of backup. 
         /// </para>
         /// </summary>

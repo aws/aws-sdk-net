@@ -41,7 +41,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property ConfigurationTypeUpdate. 
         /// <para>
         /// Describes updates to whether to use the default CloudWatch logging configuration for
-        /// an application.
+        /// an application. You must set this property to <code>CUSTOM</code> in order to set
+        /// the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.
         /// </para>
         /// </summary>
         public ConfigurationType ConfigurationTypeUpdate

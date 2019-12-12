@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the method and value to match the header value sent with a
-    /// request. Specify one match method.
+    /// An object that represents the method and value to match with the header value sent
+    /// in a         request. Specify one match method.
     /// </summary>
     public partial class HeaderMatchMethod
     {
@@ -42,7 +42,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Exact. 
         /// <para>
-        /// The header value sent by the client must match the specified value exactly.
+        /// The value sent by the client must match the specified value exactly.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -61,7 +61,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// The header value sent by the client must begin with the specified characters.
+        /// The value sent by the client must begin with the specified characters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -80,8 +80,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Range. 
         /// <para>
-        /// The object that specifies the range of numbers that the header value sent by the client
-        /// must be included in.
+        /// An object that represents the range of values to match on.
         /// </para>
         /// </summary>
         public MatchRange Range
@@ -99,7 +98,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Regex. 
         /// <para>
-        /// The header value sent by the client must include the specified characters.
+        /// The value sent by the client must include the specified characters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -118,7 +117,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Suffix. 
         /// <para>
-        /// The header value sent by the client must end with the specified characters.
+        /// The value sent by the client must end with the specified characters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

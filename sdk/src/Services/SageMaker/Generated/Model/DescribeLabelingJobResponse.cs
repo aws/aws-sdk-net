@@ -171,8 +171,17 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LabelCategoryConfigS3Uri. 
         /// <para>
         /// The S3 location of the JSON file that defines the categories used to label data objects.
+        /// Please note the following label-category limits:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// Semantic segmentation labeling jobs using automated labeling: 20 labels
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Box bounding labeling jobs (all): 10 lables
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The file is a JSON structure in the following format:
         /// </para>

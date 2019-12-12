@@ -57,6 +57,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     response.EnableCrossAccountsDiscovery = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LicenseManagerResourceShareArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LicenseManagerResourceShareArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OrganizationConfiguration", targetDepth))
                 {
                     var unmarshaller = OrganizationConfigurationUnmarshaller.Instance;

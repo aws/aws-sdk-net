@@ -78,6 +78,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
+                if(publicRequest.IsSetLocalGatewayId())
+                {
+                    request.Parameters.Add("LocalGatewayId", StringUtils.FromString(publicRequest.LocalGatewayId));
+                }
                 if(publicRequest.IsSetNatGatewayId())
                 {
                     request.Parameters.Add("NatGatewayId", StringUtils.FromString(publicRequest.NatGatewayId));

@@ -58,6 +58,70 @@ namespace Amazon.ECS
     {
 
         
+        #region  CreateCapacityProvider
+
+
+        /// <summary>
+        /// Creates a new capacity provider. Capacity providers are associated with an Amazon
+        /// ECS cluster and are used in capacity provider strategies to facilitate cluster auto
+        /// scaling.
+        /// 
+        ///  
+        /// <para>
+        /// Only capacity providers using an Auto Scaling group can be created. Amazon ECS tasks
+        /// on AWS Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity
+        /// providers which are already created and available to all accounts in Regions supported
+        /// by AWS Fargate.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
+        /// 
+        /// <returns>The response from the CreateCapacityProvider service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
+        CreateCapacityProviderResponse CreateCapacityProvider(CreateCapacityProviderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCapacityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCapacityProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
+        IAsyncResult BeginCreateCapacityProvider(CreateCapacityProviderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCapacityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCapacityProvider.</param>
+        /// 
+        /// <returns>Returns a  CreateCapacityProviderResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
+        CreateCapacityProviderResponse EndCreateCapacityProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateCluster
 
 
@@ -69,10 +133,10 @@ namespace Amazon.ECS
         ///  <note> 
         /// <para>
         /// When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
-        /// the service-linked role for your account so that required resources in other AWS services
-        /// can be managed on your behalf. However, if the IAM user that makes the call does not
-        /// have permissions to create the service-linked role, it is not created. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// the Amazon ECS service-linked role for your account so that required resources in
+        /// other AWS services can be managed on your behalf. However, if the IAM user that makes
+        /// the call does not have permissions to create the service-linked role, it is not created.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
@@ -539,6 +603,13 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
+        /// There is already a current Amazon ECS container agent update in progress on the specified
+        /// container instance. If the container agent becomes disconnected while it is in a transitional
+        /// stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can
+        /// get stuck in that state. However, when the agent reconnects, it resumes where it stopped
+        /// previously.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         DeleteClusterResponse DeleteCluster(DeleteClusterRequest request);
 
@@ -689,9 +760,8 @@ namespace Amazon.ECS
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and Region-specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TaskSetNotFoundException">
-        /// The specified task set could not be found. You can view your available container instances
-        /// with <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and
-        /// Region.
+        /// The specified task set could not be found. You can view your available task sets with
+        /// <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and Region.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
         /// The specified task is not supported in this Region.
@@ -871,6 +941,57 @@ namespace Amazon.ECS
         /// <returns>Returns a  DeregisterTaskDefinitionResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
         DeregisterTaskDefinitionResponse EndDeregisterTaskDefinition(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeCapacityProviders
+
+
+        /// <summary>
+        /// Describes one or more of your capacity providers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityProviders service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCapacityProviders service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders">REST API Reference for DescribeCapacityProviders Operation</seealso>
+        DescribeCapacityProvidersResponse DescribeCapacityProviders(DescribeCapacityProvidersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCapacityProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityProviders operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCapacityProviders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders">REST API Reference for DescribeCapacityProviders Operation</seealso>
+        IAsyncResult BeginDescribeCapacityProviders(DescribeCapacityProvidersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCapacityProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCapacityProviders.</param>
+        /// 
+        /// <returns>Returns a  DescribeCapacityProvidersResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders">REST API Reference for DescribeCapacityProviders Operation</seealso>
+        DescribeCapacityProvidersResponse EndDescribeCapacityProviders(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1925,6 +2046,91 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  PutClusterCapacityProviders
+
+
+        /// <summary>
+        /// Modifies the available capacity providers and the default capacity provider strategy
+        /// for a cluster.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify both the available capacity providers and a default capacity provider
+        /// strategy for the cluster. If the specified cluster has existing capacity providers
+        /// associated with it, you must specify all existing capacity providers in addition to
+        /// any new ones you want to add. Any existing capacity providers associated with a cluster
+        /// that are omitted from a <a>PutClusterCapacityProviders</a> API call will be disassociated
+        /// with the cluster. You can only disassociate an existing capacity provider from a cluster
+        /// if it's not being used by any existing tasks.
+        /// </para>
+        ///  
+        /// <para>
+        /// When creating a service or running a task on a cluster, if no capacity provider or
+        /// launch type is specified, then the cluster's default capacity provider strategy is
+        /// used. It is recommended to define a default capacity provider strategy for your cluster,
+        /// however you may specify an empty array (<code>[]</code>) to bypass defining a default
+        /// strategy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutClusterCapacityProviders service method.</param>
+        /// 
+        /// <returns>The response from the PutClusterCapacityProviders service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceInUseException">
+        /// The specified resource is in-use and cannot be removed.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
+        /// There is already a current Amazon ECS container agent update in progress on the specified
+        /// container instance. If the container agent becomes disconnected while it is in a transitional
+        /// stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can
+        /// get stuck in that state. However, when the agent reconnects, it resumes where it stopped
+        /// previously.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutClusterCapacityProviders">REST API Reference for PutClusterCapacityProviders Operation</seealso>
+        PutClusterCapacityProvidersResponse PutClusterCapacityProviders(PutClusterCapacityProvidersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutClusterCapacityProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutClusterCapacityProviders operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutClusterCapacityProviders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutClusterCapacityProviders">REST API Reference for PutClusterCapacityProviders Operation</seealso>
+        IAsyncResult BeginPutClusterCapacityProviders(PutClusterCapacityProvidersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutClusterCapacityProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutClusterCapacityProviders.</param>
+        /// 
+        /// <returns>Returns a  PutClusterCapacityProvidersResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutClusterCapacityProviders">REST API Reference for PutClusterCapacityProviders Operation</seealso>
+        PutClusterCapacityProvidersResponse EndPutClusterCapacityProviders(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RegisterTaskDefinition
 
 
@@ -2904,9 +3110,6 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
         /// You do not have authorization to perform the requested action.
         /// </exception>
-        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
-        /// You do not have authorization to perform the requested action.
-        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
@@ -2931,9 +3134,8 @@ namespace Amazon.ECS
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and Region-specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TaskSetNotFoundException">
-        /// The specified task set could not be found. You can view your available container instances
-        /// with <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and
-        /// Region.
+        /// The specified task set could not be found. You can view your available task sets with
+        /// <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and Region.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
         /// The specified task is not supported in this Region.
@@ -3007,9 +3209,8 @@ namespace Amazon.ECS
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and Region-specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TaskSetNotFoundException">
-        /// The specified task set could not be found. You can view your available container instances
-        /// with <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and
-        /// Region.
+        /// The specified task set could not be found. You can view your available task sets with
+        /// <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and Region.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
         /// The specified task is not supported in this Region.

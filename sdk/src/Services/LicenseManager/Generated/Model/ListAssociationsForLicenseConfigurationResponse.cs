@@ -38,9 +38,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationAssociations. 
         /// <para>
-        /// Lists association objects for the license configuration, each containing the association
-        /// time, number of consumed licenses, resource ARN, resource ID, account ID that owns
-        /// the resource, resource size, and resource type.
+        /// Information about the associations for the license configuration.
         /// </para>
         /// </summary>
         public List<LicenseConfigurationAssociation> LicenseConfigurationAssociations

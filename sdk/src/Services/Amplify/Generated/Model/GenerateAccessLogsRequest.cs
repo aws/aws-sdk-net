@@ -29,8 +29,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateAccessLogs operation.
-    /// Retrieve website access logs for a specific time range via a pre-signed URL. Optionally,
-    /// deliver the logs to a given S3 bucket.
+    /// Retrieve website access logs for a specific time range via a pre-signed URL.
     /// </summary>
     public partial class GenerateAccessLogsRequest : AmazonAmplifyRequest
     {

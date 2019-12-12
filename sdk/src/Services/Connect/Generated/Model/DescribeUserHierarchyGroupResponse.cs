@@ -37,7 +37,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property HierarchyGroup. 
         /// <para>
-        /// Returns a <code>HierarchyGroup</code> object.
+        /// Information about the hierarchy group.
         /// </para>
         /// </summary>
         public HierarchyGroup HierarchyGroup

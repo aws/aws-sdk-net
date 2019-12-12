@@ -51,7 +51,7 @@ namespace Amazon.AutoScalingPlans
         {
             get
             {
-                return "autoscaling";
+                return "autoscaling-plans";
             }
         }
 

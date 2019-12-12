@@ -94,6 +94,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetLivePreRollConfiguration())
+                {
+                    context.Writer.WritePropertyName("LivePreRollConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LivePreRollConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LivePreRollConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

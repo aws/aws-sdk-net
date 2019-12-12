@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="utf-16"?>
-<property-value-rules />
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.DescribeDBProxiesRequest.MaxRecords</property>
+    <min>20</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.DescribeDBProxyTargetGroupsRequest.MaxRecords</property>
+    <min>20</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.DescribeDBProxyTargetsRequest.MaxRecords</property>
+    <min>20</min>
+    <max>100</max>
+  </property-value-rule>
+</property-value-rules>

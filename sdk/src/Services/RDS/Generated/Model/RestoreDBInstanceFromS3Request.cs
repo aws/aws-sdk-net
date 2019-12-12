@@ -210,7 +210,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Importing from Amazon S3 is not supported on the db.t2.micro DB instance class. 
+        /// Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -896,9 +896,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether the DB instance is publicly accessible. When the DB
         /// instance is publicly accessible, it is an Internet-facing instance with a publicly
-        /// resolvable DNS name, which resolves to a public IP address. When the DB instance is
-        /// not publicly accessible, it is an internal instance with a DNS name that resolves
-        /// to a private IP address. For more information, see <a>CreateDBInstance</a>.
+        /// resolvable DNS name, which resolves to a public IP address. When the DB instance isn't
+        /// publicly accessible, it is an internal instance with a DNS name that resolves to a
+        /// private IP address. For more information, see <a>CreateDBInstance</a>.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible

@@ -38,7 +38,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property UserArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the user account created.
+        /// The Amazon Resource Name (ARN) of the user account.
         /// </para>
         /// </summary>
         public string UserArn
@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The unique identifier for the user account in Amazon Connect
+        /// The identifier of the user account.
         /// </para>
         /// </summary>
         public string UserId

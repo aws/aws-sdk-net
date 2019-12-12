@@ -68,6 +68,12 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAllowClassicFlow())
+                {
+                    context.Writer.WritePropertyName("AllowClassicFlow");
+                    context.Writer.Write(publicRequest.AllowClassicFlow);
+                }
+
                 if(publicRequest.IsSetAllowUnauthenticatedIdentities())
                 {
                     context.Writer.WritePropertyName("AllowUnauthenticatedIdentities");

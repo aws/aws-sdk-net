@@ -48,8 +48,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Eq. 
         /// <para>
-        /// Deprecated. Represents the equal condition to be applied to a single field when querying
-        /// for findings.
+        /// Represents the equal condition to be applied to a single field when querying for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the Equals property should be used instead.")]
@@ -125,8 +124,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Gt. 
         /// <para>
-        /// Deprecated. Represents a greater than condition to be applied to a single field when
-        /// querying for findings.
+        /// Represents a greater than condition to be applied to a single field when querying
+        /// for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the GreaterThan property should be used instead.")]
@@ -145,8 +144,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Gte. 
         /// <para>
-        /// Deprecated. Represents a greater than equal condition to be applied to a single field
-        /// when querying for findings.
+        /// Represents a greater than equal condition to be applied to a single field when querying
+        /// for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the GreaterThanOrEqual property should be used instead.")]
@@ -203,8 +202,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Lt. 
         /// <para>
-        /// Deprecated. Represents a less than condition to be applied to a single field when
-        /// querying for findings.
+        /// Represents a less than condition to be applied to a single field when querying for
+        /// findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the LessThan property should be used instead.")]
@@ -223,8 +222,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Lte. 
         /// <para>
-        /// Deprecated. Represents a less than equal condition to be applied to a single field
-        /// when querying for findings.
+        /// Represents a less than equal condition to be applied to a single field when querying
+        /// for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the LessThanOrEqual property should be used instead.")]
@@ -243,8 +242,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Neq. 
         /// <para>
-        /// Deprecated. Represents the not equal condition to be applied to a single field when
-        /// querying for findings.
+        /// Represents the not equal condition to be applied to a single field when querying for
+        /// findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the NotEquals property should be used instead.")]

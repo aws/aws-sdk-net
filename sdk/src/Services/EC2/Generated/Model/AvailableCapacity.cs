@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The capacity information for instances launched onto the Dedicated Host.
+    /// The capacity information for instances that can be launched onto the Dedicated Host.
     /// </summary>
     public partial class AvailableCapacity
     {
@@ -38,7 +38,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailableInstanceCapacity. 
         /// <para>
-        /// The total number of instances supported by the Dedicated Host.
+        /// The number of instances that can be launched onto the Dedicated Host depending on
+        /// the host's available capacity. For Dedicated Hosts that support multiple instance
+        /// types, this parameter represents the number of instances for each instance size that
+        /// is supported on the host.
         /// </para>
         /// </summary>
         public List<InstanceCapacity> AvailableInstanceCapacity
@@ -56,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailableVCpus. 
         /// <para>
-        /// The number of vCPUs available on the Dedicated Host.
+        /// The number of vCPUs available for launching instances onto the Dedicated Host.
         /// </para>
         /// </summary>
         public int AvailableVCpus

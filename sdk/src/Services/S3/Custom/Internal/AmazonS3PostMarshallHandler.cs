@@ -106,69 +106,138 @@ namespace Amazon.S3.Internal
                 request.UseSigV4 = true;
             }
 
-            var bucketName = GetBucketName(request.ResourcePath);
-            if (string.IsNullOrEmpty(bucketName))
+            var bucketResourcePathToken = GetBucketName(request.ResourcePath);
+            if (string.IsNullOrEmpty(bucketResourcePathToken))
                 return;
 
             var s3Config = config as AmazonS3Config;
             if (s3Config == null)
                 throw new AmazonClientException("Current config object is not of type AmazonS3Config");
 
-            // If path style is not forced and the bucket name is DNS
-            // compatible modify the endpoint to use virtual host style
-            // addressing
-            var bucketIsDnsCompatible = IsDnsCompatibleBucketName(bucketName);
-            var ub = new UriBuilder(EndpointResolver.DetermineEndpoint(s3Config, request));
-            var isHttp = string.Equals(ub.Scheme, "http", StringComparison.OrdinalIgnoreCase);
+            bool isHttp;
+            bool removeBucketFromResourcePath = false;
 
-            if (!s3Config.ForcePathStyle && bucketIsDnsCompatible)
+            if (Arn.IsArn(bucketResourcePathToken))
             {
-                // If using HTTPS, bucketName cannot contain a period
-                if (isHttp || bucketName.IndexOf('.') < 0)
+                string accessPoint;
+                Arn accessPointArn;
+                if ((accessPointArn = Arn.Parse(bucketResourcePathToken)).TryParseAccessPoint(out accessPoint))
                 {
-                    // Add bucket to host
-                    ub.Host = string.Concat(bucketName, ".", ub.Host);
+                    if (!string.IsNullOrEmpty(config.ServiceURL))
+                    {
+                        throw new AmazonClientException(
+                                    "The request is using an access point ARN for the bucket name and the S3 service client is configured to use a specific host using the ServiceURL property. " +
+                                    "Access point ARNs define the host for the request which makes it incompatible with the host being set ServiceURL. " +
+                                    "When using access point arns set the region and not the ServiceURL for the S3 service client.");
+                    }
+                    if (s3Config.UseAccelerateEndpoint)
+                    {
+                        throw new AmazonClientException(
+                                    "The request is using an access point ARN for the bucket name and the S3 service client is configured to use accelerate endpoints which is not supported. " +
+                                    "To use this access point create a new S3 service client with the UseAccelerateEndpoint property set to false."
+                            );
+                    }
+                    if(string.IsNullOrEmpty(accessPointArn.AccountId))
+                    {
+                        throw new AmazonClientException("Account ID is missing in access point ARN");
+                    }
+                    if (string.IsNullOrEmpty(accessPointArn.Region))
+                    {
+                        throw new AmazonClientException("AWS region is missing in access point ARN");
+                    }
+
+
+                    if (!string.Equals(config.RegionEndpoint.PartitionName, accessPointArn.Partition, StringComparison.Ordinal))
+                    {
+                        throw new AmazonClientException("The access point used in the request is in a different AWS partition then the region configured for the AmazonS3Client.");
+                    }
+
+                    ValidateUseArnRegion(accessPointArn, s3Config);
+
+                    request.UseSigV4 = true;
+                    isHttp = config.UseHttp;
+
+                    removeBucketFromResourcePath = true;
+
+                    var scheme = isHttp ? "http" : "https";
+
+                    UriBuilder ub = new UriBuilder($"{scheme}://{accessPoint}-{accessPointArn.AccountId}.s3-accesspoint{(config.UseDualstackEndpoint ? ".dualstack" : "")}.{accessPointArn.Region}.{config.RegionEndpoint.PartitionDnsSuffix}");
                     request.Endpoint = ub.Uri;
 
-                    // Remove bucket from resource path but retain in canonical resource
-                    // prefix, so it gets included when we sign the request later
-                    var resourcePath = request.ResourcePath;
-                    var canonicalBucketName = string.Concat("/", bucketName);
-                    if (resourcePath.IndexOf(canonicalBucketName, StringComparison.Ordinal) == 0)
-                        resourcePath = resourcePath.Substring(canonicalBucketName.Length);
-                    request.ResourcePath = resourcePath;
-
-                    request.CanonicalResourcePrefix = canonicalBucketName;
+                    // The access point arn can be using a region different from the configured region for the service client.
+                    // If so be sure to set the authentication region so the signer will use the correct region.
+                    request.AuthenticationRegion = accessPointArn.Region;
+                }
+                else
+                {
+                    throw new AmazonClientException("Invalid ARN specified for bucket name. Only access point ARNs are allowed for the value of bucket name.");
                 }
             }
-
-            if (s3Config.UseAccelerateEndpoint)
+            else
             {
-                // Validate if bucket name is accelerate compatible and enable acceleration by using
-                // Accelerate endpoint for this request
+                // If path style is not forced and the bucket name is DNS
+                // compatible modify the endpoint to use virtual host style
+                // addressing
+                var bucketIsDnsCompatible = IsDnsCompatibleBucketName(bucketResourcePathToken);
+                var ub = new UriBuilder(EndpointResolver.DetermineEndpoint(s3Config, request));
+                isHttp = string.Equals(ub.Scheme, "http", StringComparison.OrdinalIgnoreCase);
 
-                if (!bucketIsDnsCompatible || BucketNameContainsPeriod(bucketName))
+                if (!s3Config.ForcePathStyle && bucketIsDnsCompatible)
                 {
-                    throw new AmazonClientException(
-                        @"S3 accelerate is enabled for this request but the bucket name is not accelerate compatible." +
-                          " The bucket name must be DNS compatible (http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html)" +
-                          " and must not contain any period (.) characters to be accelerate compatible.");
+                    // If using HTTPS, bucketName cannot contain a period
+                    if (isHttp || bucketResourcePathToken.IndexOf('.') < 0)
+                    {
+                        // Add bucket to host
+                        ub.Host = string.Concat(bucketResourcePathToken, ".", ub.Host);
+                        request.Endpoint = ub.Uri;
+                        removeBucketFromResourcePath = true;
+                    }
                 }
 
-                var originalRequest = request.OriginalRequest;
-                bool accelerateSupportedApi = !UnsupportedAccelerateRequestTypes.Contains(originalRequest.GetType());
-
-                // Skip requests which are not supported
-                if (accelerateSupportedApi)
+                if (s3Config.UseAccelerateEndpoint)
                 {
-                    request.Endpoint = GetAccelerateEndpoint(bucketName, s3Config);
+                    // Validate if bucket name is accelerate compatible and enable acceleration by using
+                    // Accelerate endpoint for this request
 
-                    if (request.UseSigV4 && s3Config.RegionEndpoint != null)
+                    if (!bucketIsDnsCompatible || BucketNameContainsPeriod(bucketResourcePathToken))
                     {
-                        request.AlternateEndpoint = s3Config.RegionEndpoint;
-                    }                    
+                        throw new AmazonClientException(
+                            @"S3 accelerate is enabled for this request but the bucket name is not accelerate compatible." +
+                              " The bucket name must be DNS compatible (http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html)" +
+                              " and must not contain any period (.) characters to be accelerate compatible.");
+                    }
+
+                    var originalRequest = request.OriginalRequest;
+                    bool accelerateSupportedApi = !UnsupportedAccelerateRequestTypes.Contains(originalRequest.GetType());
+
+                    // Skip requests which are not supported
+                    if (accelerateSupportedApi)
+                    {
+                        request.Endpoint = GetAccelerateEndpoint(bucketResourcePathToken, s3Config);
+
+                        if (request.UseSigV4 && s3Config.RegionEndpoint != null)
+                        {
+                            request.AlternateEndpoint = s3Config.RegionEndpoint;
+                        }
+                    }
                 }
             }
+
+            if (removeBucketFromResourcePath)
+            {
+                // Remove bucket from resource path but retain in canonical resource
+                // prefix, so it gets included when we sign the request later
+                var resourcePath = request.ResourcePath;
+                var canonicalBucketName = string.Concat("/", bucketResourcePathToken);
+                if (resourcePath.IndexOf(canonicalBucketName, StringComparison.Ordinal) == 0)
+                {
+                    resourcePath = resourcePath.Substring(canonicalBucketName.Length);
+                }
+
+                request.ResourcePath = resourcePath;
+                request.CanonicalResourcePrefix = canonicalBucketName;
+            }
+
 
             // Some parameters should not be sent over HTTP, just HTTPS
             if (isHttp)
@@ -184,6 +253,21 @@ namespace Amazon.S3.Internal
                 bucketName,
                 config.AccelerateEndpoint));
             return url;
+        }
+
+        private static void ValidateUseArnRegion(Arn arn, AmazonS3Config config)
+        {
+            if(string.Equals(arn.Region, config.RegionEndpoint.SystemName, StringComparison.Ordinal))
+            {
+                return;
+            }
+
+            if(!config.UseArnRegion)
+            {
+                throw new AmazonClientException(
+                    $"The S3 service client is configured for region {config.RegionEndpoint.SystemName} but the access point is in {arn.Region}. " +
+                    "By default the SDK doesn't allow cross region calls. If you want to enable cross region calls set the environment AWS_S3_USE_ARN_REGION or the AmazonS3Config.UseArnRegion property to value \"true\".");
+            }
         }
 
         private static void ValidateHttpsOnlyHeaders(IRequest request)
@@ -226,8 +310,22 @@ namespace Amazon.S3.Internal
         internal static string GetBucketName(string resourcePath)
         {
             resourcePath = resourcePath.Trim().Trim(separators);
-            var parts = resourcePath.Split(separators, 2);
+            var parts = resourcePath.Split(separators);
             var bucketName = parts[0];
+
+            // Check to see if the bucket name is an arn using a '/' to break up the access point prefix and identifier.
+            // If it is then bucketName will currently be missing the resource identifier which is the next token in the split.
+            //
+            // For example a resource path using an arn to get an object will look like this:
+            // arn:aws:s3:us-west-2:12345689:accesspoint/mybucket/myobject.txt.
+            // We need this method to return "arn:aws:s3:us-west-2:12345689:accesspoint/mybucket" but by splitting on "/"
+            // only "arn:aws:s3:us-west-2:12345689:accesspoint" is captured. This if block checks to see it is the resource path has an access point arn and then
+            // grab the bucket name which is the next token in the split.
+            if (Arn.IsArn(bucketName) && bucketName.EndsWith(ArnExtensions.ResourceTypeAccessPoint))
+            {
+                bucketName += "/" + parts[1];
+            }
+
             return bucketName;
         }
 

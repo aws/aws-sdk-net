@@ -41,8 +41,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Branches. 
         /// <para>
-        /// The branches that will be included in the trigger configuration. If you specify an
-        /// empty array, the trigger will apply to all branches.
+        /// The branches to be included in the trigger configuration. If you specify an empty
+        /// array, the trigger applies to all branches.
         /// </para>
         ///  <note> 
         /// <para>
@@ -65,8 +65,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property CustomData. 
         /// <para>
-        /// Any custom data associated with the trigger that will be included in the information
-        /// sent to the target of the trigger.
+        /// Any custom data associated with the trigger to be included in the information sent
+        /// to the target of the trigger.
         /// </para>
         /// </summary>
         public string CustomData
@@ -84,8 +84,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property DestinationArn. 
         /// <para>
-        /// The ARN of the resource that is the target for a trigger. For example, the ARN of
-        /// a topic in Amazon SNS.
+        /// The ARN of the resource that is the target for a trigger (for example, the ARN of
+        /// a topic in Amazon SNS).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,8 +104,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// The repository events that will cause the trigger to run actions in another service,
-        /// such as sending a notification through Amazon SNS. 
+        /// The repository events that cause the trigger to run actions in another service, such
+        /// as sending a notification through Amazon SNS. 
         /// </para>
         ///  <note> 
         /// <para>

@@ -34,15 +34,18 @@ namespace Amazon.SageMaker.Model
     {
         private HyperParameterAlgorithmSpecification _algorithmSpecification;
         private CheckpointConfig _checkpointConfig;
+        private string _definitionName;
         private bool? _enableInterContainerTrafficEncryption;
         private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
+        private ParameterRanges _hyperParameterRanges;
         private List<Channel> _inputDataConfig = new List<Channel>();
         private OutputDataConfig _outputDataConfig;
         private ResourceConfig _resourceConfig;
         private string _roleArn;
         private Dictionary<string, string> _staticHyperParameters = new Dictionary<string, string>();
         private StoppingCondition _stoppingCondition;
+        private HyperParameterTuningJobObjective _tuningObjective;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -78,6 +81,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCheckpointConfig()
         {
             return this._checkpointConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefinitionName. 
+        /// <para>
+        /// The job definition name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string DefinitionName
+        {
+            get { return this._definitionName; }
+            set { this._definitionName = value; }
+        }
+
+        // Check to see if DefinitionName property is set
+        internal bool IsSetDefinitionName()
+        {
+            return this._definitionName != null;
         }
 
         /// <summary>
@@ -146,6 +168,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnableNetworkIsolation()
         {
             return this._enableNetworkIsolation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HyperParameterRanges.
+        /// </summary>
+        public ParameterRanges HyperParameterRanges
+        {
+            get { return this._hyperParameterRanges; }
+            set { this._hyperParameterRanges = value; }
+        }
+
+        // Check to see if HyperParameterRanges property is set
+        internal bool IsSetHyperParameterRanges()
+        {
+            return this._hyperParameterRanges != null;
         }
 
         /// <summary>
@@ -275,6 +312,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetStoppingCondition()
         {
             return this._stoppingCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TuningObjective.
+        /// </summary>
+        public HyperParameterTuningJobObjective TuningObjective
+        {
+            get { return this._tuningObjective; }
+            set { this._tuningObjective = value; }
+        }
+
+        // Check to see if TuningObjective property is set
+        internal bool IsSetTuningObjective()
+        {
+            return this._tuningObjective != null;
         }
 
         /// <summary>

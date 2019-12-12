@@ -154,8 +154,10 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property RequiredTenancy. 
         /// <para>
-        /// Specifies whether the image is running on dedicated hardware. When bring your own
-        /// license (BYOL) is enabled, this value is set to DEDICATED. 
+        /// Specifies whether the image is running on dedicated hardware. When Bring Your Own
+        /// License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
+        /// Your Own Windows Desktop Images</a>.
         /// </para>
         /// </summary>
         public WorkspaceImageRequiredTenancy RequiredTenancy

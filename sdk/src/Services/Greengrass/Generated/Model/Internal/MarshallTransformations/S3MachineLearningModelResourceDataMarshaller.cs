@@ -51,6 +51,17 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DestinationPath);
             }
 
+            if(requestObject.IsSetOwnerSetting())
+            {
+                context.Writer.WritePropertyName("OwnerSetting");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ResourceDownloadOwnerSettingMarshaller.Instance;
+                marshaller.Marshall(requestObject.OwnerSetting, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");

@@ -70,6 +70,24 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActiveServicesCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("attachments", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Attachment, AttachmentUnmarshaller>(AttachmentUnmarshaller.Instance);
+                    unmarshalledObject.Attachments = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("attachmentsStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AttachmentsStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("capacityProviders", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CapacityProviders = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("clusterArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -80,6 +98,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("defaultCapacityProviderStrategy", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CapacityProviderStrategyItem, CapacityProviderStrategyItemUnmarshaller>(CapacityProviderStrategyItemUnmarshaller.Instance);
+                    unmarshalledObject.DefaultCapacityProviderStrategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("pendingTasksCount", targetDepth))

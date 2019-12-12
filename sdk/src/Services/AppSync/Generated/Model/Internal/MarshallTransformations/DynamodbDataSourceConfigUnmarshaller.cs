@@ -70,6 +70,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deltaSyncConfig", targetDepth))
+                {
+                    var unmarshaller = DeltaSyncConfigUnmarshaller.Instance;
+                    unmarshalledObject.DeltaSyncConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tableName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.UseCallerCredentials = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("versioned", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Versioned = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

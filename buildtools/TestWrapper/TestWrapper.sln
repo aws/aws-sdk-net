@@ -1,13 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyMSTestCases", "DummyMSTestCases\DummyMSTestCases.csproj", "{FD0D6108-36D5-42A7-A3D0-B428C87395C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyXUnitTestCases", "DummyXUnitTestCases\DummyXUnitTestCases.csproj", "{E63D3373-8D72-47BC-B9A7-46879B877D86}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRunners", "TestRunners\TestRunners.csproj", "{3D1058AB-4434-4D97-8DAE-B9D47069454D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E5918442-391A-47BA-8E30-805516E12DD2}"
+	ProjectSection(SolutionItems) = preProject
+		testdummycases.proj = testdummycases.proj
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +35,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {147AAC14-2B4D-4D57-AEE4-D8AE38B0141E}
 	EndGlobalSection
 EndGlobal

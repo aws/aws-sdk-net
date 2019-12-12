@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the current status of a route.
+    /// An object that represents the current status of a route.
     /// </summary>
     public partial class RouteStatus
     {

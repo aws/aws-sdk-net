@@ -57,6 +57,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.AccountIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AccountSharingInfoList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AccountSharingInfo, AccountSharingInfoUnmarshaller>(AccountSharingInfoUnmarshaller.Instance);
+                    response.AccountSharingInfoList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

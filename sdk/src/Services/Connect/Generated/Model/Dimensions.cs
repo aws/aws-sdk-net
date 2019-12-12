@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>Dimensions</code> object that includes the Channel and Queue for the metric.
+    /// Contains information about the dimensions for a set of metrics.
     /// </summary>
     public partial class Dimensions
     {
@@ -38,7 +38,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Channel. 
         /// <para>
-        /// The channel used for grouping and filters. Only VOICE is supported.
+        /// The channel used for grouping and filters.
         /// </para>
         /// </summary>
         public Channel Channel
@@ -56,8 +56,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Queue. 
         /// <para>
-        /// A <code>QueueReference</code> object used as one part of dimension for the metrics
-        /// results.
+        /// Information about the queue for which metrics are returned.
         /// </para>
         /// </summary>
         public QueueReference Queue

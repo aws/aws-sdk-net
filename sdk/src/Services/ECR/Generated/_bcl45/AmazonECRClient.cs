@@ -588,7 +588,9 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Creates an image repository.
+        /// Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where users
+        /// can push and pull Docker images. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon
+        /// ECR Repositories</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRepository service method.</param>
         /// 
@@ -627,7 +629,9 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Creates an image repository.
+        /// Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where users
+        /// can push and pull Docker images. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon
+        /// ECR Repositories</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRepository service method.</param>
         /// <param name="cancellationToken">
@@ -959,6 +963,81 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = DescribeImagesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeImagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeImageScanFindings
+
+
+        /// <summary>
+        /// Describes the image scan findings for the specified image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageScanFindings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageScanFindings service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ScanNotFoundException">
+        /// The specified image scan could not be found. Ensure that image scanning is enabled
+        /// on the repository and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">REST API Reference for DescribeImageScanFindings Operation</seealso>
+        public virtual DescribeImageScanFindingsResponse DescribeImageScanFindings(DescribeImageScanFindingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageScanFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageScanFindingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImageScanFindingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the image scan findings for the specified image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageScanFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImageScanFindings service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ScanNotFoundException">
+        /// The specified image scan could not be found. Ensure that image scanning is enabled
+        /// on the repository and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">REST API Reference for DescribeImageScanFindings Operation</seealso>
+        public virtual Task<DescribeImageScanFindingsResponse> DescribeImageScanFindingsAsync(DescribeImageScanFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageScanFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageScanFindingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeImageScanFindingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1723,11 +1802,75 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  PutImageScanningConfiguration
+
+
+        /// <summary>
+        /// Updates the image scanning configuration for a repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutImageScanningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutImageScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">REST API Reference for PutImageScanningConfiguration Operation</seealso>
+        public virtual PutImageScanningConfigurationResponse PutImageScanningConfiguration(PutImageScanningConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutImageScanningConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutImageScanningConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutImageScanningConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the image scanning configuration for a repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutImageScanningConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutImageScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">REST API Reference for PutImageScanningConfiguration Operation</seealso>
+        public virtual Task<PutImageScanningConfigurationResponse> PutImageScanningConfigurationAsync(PutImageScanningConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutImageScanningConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutImageScanningConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutImageScanningConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutImageTagMutability
 
 
         /// <summary>
-        /// Updates the image tag mutability settings for a repository.
+        /// Updates the image tag mutability settings for a repository. When a repository is configured
+        /// with tag immutability, all image tags within the repository will be prevented them
+        /// from being overwritten. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
+        /// Tag Mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImageTagMutability service method.</param>
         /// 
@@ -1754,7 +1897,10 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Updates the image tag mutability settings for a repository.
+        /// Updates the image tag mutability settings for a repository. When a repository is configured
+        /// with tag immutability, all image tags within the repository will be prevented them
+        /// from being overwritten. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
+        /// Tag Mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImageTagMutability service method.</param>
         /// <param name="cancellationToken">
@@ -1910,6 +2056,79 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = SetRepositoryPolicyResponseUnmarshaller.Instance;
             
             return InvokeAsync<SetRepositoryPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartImageScan
+
+
+        /// <summary>
+        /// Starts an image vulnerability scan. An image scan can only be started once per day
+        /// on an individual image. This limit includes if an image was scanned on initial push.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
+        /// Scanning</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImageScan service method.</param>
+        /// 
+        /// <returns>The response from the StartImageScan service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">REST API Reference for StartImageScan Operation</seealso>
+        public virtual StartImageScanResponse StartImageScan(StartImageScanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImageScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImageScanResponseUnmarshaller.Instance;
+
+            return Invoke<StartImageScanResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts an image vulnerability scan. An image scan can only be started once per day
+        /// on an individual image. This limit includes if an image was scanned on initial push.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
+        /// Scanning</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImageScan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartImageScan service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">REST API Reference for StartImageScan Operation</seealso>
+        public virtual Task<StartImageScanResponse> StartImageScanAsync(StartImageScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImageScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImageScanResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartImageScanResponse>(request, options, cancellationToken);
         }
 
         #endregion

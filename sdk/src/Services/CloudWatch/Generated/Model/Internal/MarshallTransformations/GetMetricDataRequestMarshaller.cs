@@ -125,6 +125,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                                 request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Unit", StringUtils.FromString(publicRequestlistValue.MetricStat.Unit));
                             }
                         }
+                        if(publicRequestlistValue.IsSetPeriod())
+                        {
+                            request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Period", StringUtils.FromInt(publicRequestlistValue.Period));
+                        }
                         if(publicRequestlistValue.IsSetReturnData())
                         {
                             request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReturnData", StringUtils.FromBool(publicRequestlistValue.ReturnData));

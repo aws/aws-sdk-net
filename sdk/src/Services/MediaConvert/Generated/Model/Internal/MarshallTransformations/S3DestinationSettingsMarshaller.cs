@@ -45,6 +45,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3DestinationSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccessControl())
+            {
+                context.Writer.WritePropertyName("accessControl");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3DestinationAccessControlMarshaller.Instance;
+                marshaller.Marshall(requestObject.AccessControl, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("encryption");

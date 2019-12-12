@@ -64,6 +64,12 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("approvalRules", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ApprovalRule, ApprovalRuleUnmarshaller>(ApprovalRuleUnmarshaller.Instance);
+                    unmarshalledObject.ApprovalRules = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("authorArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<PullRequestTarget, PullRequestTargetUnmarshaller>(PullRequestTargetUnmarshaller.Instance);
                     unmarshalledObject.PullRequestTargets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("revisionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RevisionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("title", targetDepth))

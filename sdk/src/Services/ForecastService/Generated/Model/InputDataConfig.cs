@@ -29,7 +29,7 @@ namespace Amazon.ForecastService.Model
 {
     /// <summary>
     /// The data used to train a predictor. The data includes a dataset group and any supplementary
-    /// features. This object is specified in the <a>CreatePredictor</a> request.
+    /// features. You specify this object in the <a>CreatePredictor</a> request.
     /// </summary>
     public partial class InputDataConfig
     {
@@ -58,8 +58,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property SupplementaryFeatures. 
         /// <para>
-        /// An array of supplementary features. For this release, the only supported feature is
-        /// a holiday calendar.
+        /// An array of supplementary features. The only supported feature is a holiday calendar.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

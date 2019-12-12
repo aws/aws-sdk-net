@@ -68,10 +68,37 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCapacityProviders())
+                {
+                    context.Writer.WritePropertyName("capacityProviders");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCapacityProvidersListValue in publicRequest.CapacityProviders)
+                    {
+                            context.Writer.Write(publicRequestCapacityProvidersListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetClusterName())
                 {
                     context.Writer.WritePropertyName("clusterName");
                     context.Writer.Write(publicRequest.ClusterName);
+                }
+
+                if(publicRequest.IsSetDefaultCapacityProviderStrategy())
+                {
+                    context.Writer.WritePropertyName("defaultCapacityProviderStrategy");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDefaultCapacityProviderStrategyListValue in publicRequest.DefaultCapacityProviderStrategy)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CapacityProviderStrategyItemMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDefaultCapacityProviderStrategyListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetSettings())

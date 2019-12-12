@@ -109,6 +109,39 @@ namespace Amazon.Util.Internal
 
         #endregion
 
+        public static void ApplyValues(object target, IDictionary<string, object> propertyValues)
+        {
+            if (propertyValues == null || propertyValues.Count == 0)
+                return;
+
+            var targetTypeInfo = TypeFactory.GetTypeInfo(target.GetType());
+            
+            foreach(var kvp in propertyValues)
+            {
+                var property = targetTypeInfo.GetProperty(kvp.Key);
+                if (property == null)
+                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "Unable to find property {0} on type {1}.", kvp.Key, targetTypeInfo.FullName));
+
+                try
+                {
+                    var propertyTypeInfo = TypeFactory.GetTypeInfo(property.PropertyType);
+                    if (propertyTypeInfo.IsEnum)
+                    {
+                        var enumValue = Enum.Parse(property.PropertyType, kvp.Value.ToString(), true);
+                        property.SetValue(target, enumValue, null);
+                    }
+                    else
+                    {
+                        property.SetValue(target, kvp.Value, null);
+                    }                    
+                }
+                catch(Exception e)
+                {
+                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "Unable to set property {0} on type {1}: {2}", kvp.Key, targetTypeInfo.FullName, e.Message));
+                }
+            }
+        }
+
         public static void AddToDictionary<TKey, TValue>(Dictionary<TKey, TValue> dictionary, TKey key, TValue value)
         {
             if (dictionary.ContainsKey(key))
@@ -142,6 +175,24 @@ namespace Amazon.Util.Internal
             FillDictionary(items, keyGenerator, valueGenerator, dictionary);
 
             return dictionary;
+        }
+
+        public static bool TryFindByValue<TKey, TValue>(
+            IDictionary<TKey, TValue> dictionary, TValue value, IEqualityComparer<TValue> valueComparer,
+            out TKey key)
+        {
+            foreach (var kvp in dictionary)
+            {
+                var candidateValue = kvp.Value;
+                if (valueComparer.Equals(value, candidateValue))
+                {
+                    key = kvp.Key;
+                    return true;
+                }
+            }
+
+            key = default(TKey);
+            return false;
         }
 
         internal static string EXECUTION_ENVIRONMENT_ENVVAR = "AWS_EXECUTION_ENV";

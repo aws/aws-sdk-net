@@ -73,6 +73,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeCoipPoolsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeDhcpOptionsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -91,6 +96,11 @@
     <property>Amazon.EC2.Model.DescribeExportImageTasksRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeFastSnapshotRestoresRequest.MaxResults</property>
+    <min>0</min>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeFpgaImagesRequest.MaxResults</property>
@@ -113,6 +123,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeInstanceTypeOfferingsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeInstanceTypesRequest.MaxResults</property>
+    <min>5</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeInternetGatewaysRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -127,6 +147,36 @@
     <min>3</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeLocalGatewayRouteTablesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeLocalGatewayRouteTableVpcAssociationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeLocalGatewaysRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeLocalGatewayVirtualInterfaceGroupsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeLocalGatewayVirtualInterfacesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeMovingAddressesRequest.MaxResults</property>
@@ -224,6 +274,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTransitGatewayMulticastDomainsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTransitGatewayPeeringAttachmentsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeTransitGatewayRouteTablesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -269,7 +329,17 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetCoipPoolUsageRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetTransitGatewayAttachmentPropagationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetTransitGatewayMulticastDomainAssociationsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -290,9 +360,18 @@
     <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.SearchTransitGatewayMulticastGroupsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.SearchTransitGatewayRoutesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ElasticInferenceAccelerator.Count</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.FleetLaunchTemplateSpecification.LaunchTemplateName</property>
@@ -311,6 +390,10 @@
     <min>3</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.LaunchTemplateElasticInferenceAccelerator.Count</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.LaunchTemplateVersion.LaunchTemplateName</property>

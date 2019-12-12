@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>HierarchyStructure</code> object that contains information about the hierarchy
-    /// group structure.
+    /// Contains information about a hierarchy structure.
     /// </summary>
     public partial class HierarchyStructure
     {
@@ -42,8 +41,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LevelFive. 
         /// <para>
-        /// A <code>HierarchyLevel</code> object that contains information about the hierarchy
-        /// group level.
+        /// Information about level five.
         /// </para>
         /// </summary>
         public HierarchyLevel LevelFive
@@ -61,8 +59,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LevelFour. 
         /// <para>
-        /// A <code>HierarchyLevel</code> object that contains information about the hierarchy
-        /// group level.
+        /// Information about level four.
         /// </para>
         /// </summary>
         public HierarchyLevel LevelFour
@@ -80,8 +77,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LevelOne. 
         /// <para>
-        /// A <code>HierarchyLevel</code> object that contains information about the hierarchy
-        /// group level.
+        /// Information about level one.
         /// </para>
         /// </summary>
         public HierarchyLevel LevelOne
@@ -99,8 +95,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LevelThree. 
         /// <para>
-        /// A <code>HierarchyLevel</code> object that contains information about the hierarchy
-        /// group level.
+        /// Information about level three.
         /// </para>
         /// </summary>
         public HierarchyLevel LevelThree
@@ -118,8 +113,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LevelTwo. 
         /// <para>
-        /// A <code>HierarchyLevel</code> object that contains information about the hierarchy
-        /// group level.
+        /// Information about level two.
         /// </para>
         /// </summary>
         public HierarchyLevel LevelTwo

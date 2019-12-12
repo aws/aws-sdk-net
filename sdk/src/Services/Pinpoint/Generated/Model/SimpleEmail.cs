@@ -40,9 +40,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property HtmlPart. 
         /// <para>
-        /// The body of the email message, in HTML format. We recommend using an HTML part for
-        /// email clients that support HTML. You can include links, formatted text, and more in
-        /// an HTML message.
+        /// The body of the email message, in HTML format. We recommend using HTML format for
+        /// email clients that render HTML content. You can include links, formatted text, and
+        /// more in an HTML message.
         /// </para>
         /// </summary>
         public SimpleEmailPart HtmlPart
@@ -78,9 +78,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TextPart. 
         /// <para>
-        /// The body of the email message, in text format. We recommend using a text part for
-        /// email clients that don't support HTML and clients that are connected to high-latency
-        /// networks, such as mobile devices.
+        /// The body of the email message, in plain text format. We recommend using plain text
+        /// format for email clients that don't render HTML content and clients that are connected
+        /// to high-latency networks, such as mobile devices.
         /// </para>
         /// </summary>
         public SimpleEmailPart TextPart

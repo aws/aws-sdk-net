@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private string _imageId;
         private string _importTaskId;
         private string _kmsKeyId;
+        private List<ImportImageLicenseConfigurationResponse> _licenseSpecifications = new List<ImportImageLicenseConfigurationResponse>();
         private string _licenseType;
         private string _platform;
         private string _progress;
@@ -179,6 +180,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseSpecifications. 
+        /// <para>
+        /// The ARNs of the license configurations associated to the import image task.
+        /// </para>
+        /// </summary>
+        public List<ImportImageLicenseConfigurationResponse> LicenseSpecifications
+        {
+            get { return this._licenseSpecifications; }
+            set { this._licenseSpecifications = value; }
+        }
+
+        // Check to see if LicenseSpecifications property is set
+        internal bool IsSetLicenseSpecifications()
+        {
+            return this._licenseSpecifications != null && this._licenseSpecifications.Count > 0; 
         }
 
         /// <summary>

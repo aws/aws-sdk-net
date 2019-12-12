@@ -29,7 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// A member of an Amazon QuickSight group. Currently, group members must be users. Groups
-    /// can't be members of another group.
+    /// can't be members of another group. .
     /// </summary>
     public partial class GroupMember
     {

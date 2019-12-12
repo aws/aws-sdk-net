@@ -33,12 +33,14 @@ namespace Amazon.Textract.Model
     public partial class DetectDocumentTextResponse : AmazonWebServiceResponse
     {
         private List<Block> _blocks = new List<Block>();
+        private string _detectDocumentTextModelVersion;
         private DocumentMetadata _documentMetadata;
 
         /// <summary>
         /// Gets and sets the property Blocks. 
         /// <para>
-        /// An array of Block objects containing the text detected in the document.
+        /// An array of <code>Block</code> objects that contain the text that's detected in the
+        /// document.
         /// </para>
         /// </summary>
         public List<Block> Blocks
@@ -54,10 +56,25 @@ namespace Amazon.Textract.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DetectDocumentTextModelVersion.
+        /// </summary>
+        public string DetectDocumentTextModelVersion
+        {
+            get { return this._detectDocumentTextModelVersion; }
+            set { this._detectDocumentTextModelVersion = value; }
+        }
+
+        // Check to see if DetectDocumentTextModelVersion property is set
+        internal bool IsSetDetectDocumentTextModelVersion()
+        {
+            return this._detectDocumentTextModelVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DocumentMetadata. 
         /// <para>
-        /// Metadata about the document. Contains the number of pages that are detected in the
-        /// document.
+        /// Metadata about the document. It contains the number of pages that are detected in
+        /// the document.
         /// </para>
         /// </summary>
         public DocumentMetadata DocumentMetadata

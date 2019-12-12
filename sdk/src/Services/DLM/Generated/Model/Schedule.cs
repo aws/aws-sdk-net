@@ -34,6 +34,7 @@ namespace Amazon.DLM.Model
     {
         private bool? _copyTags;
         private CreateRule _createRule;
+        private FastRestoreRule _fastRestoreRule;
         private string _name;
         private RetainRule _retainRule;
         private List<Tag> _tagsToAdd = new List<Tag>();
@@ -77,6 +78,24 @@ namespace Amazon.DLM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FastRestoreRule. 
+        /// <para>
+        /// Enable fast snapshot restore.
+        /// </para>
+        /// </summary>
+        public FastRestoreRule FastRestoreRule
+        {
+            get { return this._fastRestoreRule; }
+            set { this._fastRestoreRule = value; }
+        }
+
+        // Check to see if FastRestoreRule property is set
+        internal bool IsSetFastRestoreRule()
+        {
+            return this._fastRestoreRule != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the schedule.
@@ -98,7 +117,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property RetainRule. 
         /// <para>
-        /// The retain rule.
+        /// The retention rule.
         /// </para>
         /// </summary>
         public RetainRule RetainRule

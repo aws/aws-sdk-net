@@ -88,6 +88,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("namespace", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("outputArtifacts", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<OutputArtifact, OutputArtifactUnmarshaller>(OutputArtifactUnmarshaller.Instance);

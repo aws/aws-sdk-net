@@ -64,10 +64,22 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ConfigurationSet", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConfigurationSet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EmailSendingAccount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EmailSendingAccount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("From", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.From = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReplyToEmailAddress", targetDepth))

@@ -203,8 +203,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2)
-        /// region only and the task or service requires platform version 1.3.0 or later.
+        /// For tasks using the Fargate launch type, the task or service requires platform version
+        /// <code>1.3.0</code> or later.
         /// </para>
         /// </summary>
         public List<ContainerDependency> DependsOn
@@ -1103,8 +1103,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2)
-        /// region only and the task or service requires platform version 1.3.0 or later.
+        /// For tasks using the Fargate launch type, the task or service requires platform version
+        /// <code>1.3.0</code> or later.
         /// </para>
         /// </summary>
         public int StartTimeout
@@ -1123,10 +1123,13 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property StopTimeout. 
         /// <para>
         /// Time duration (in seconds) to wait before the container is forcefully killed if it
-        /// doesn't exit normally on its own. For tasks using the Fargate launch type, the max
-        /// <code>stopTimeout</code> value is 2 minutes. This parameter is available for tasks
-        /// using the Fargate launch type in the Ohio (us-east-2) region only and the task or
-        /// service requires platform version 1.3.0 or later.
+        /// doesn't exit normally on its own.
+        /// </para>
+        ///  
+        /// <para>
+        /// For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is
+        /// 2 minutes and the task or service requires platform version <code>1.3.0</code> or
+        /// later.
         /// </para>
         ///  
         /// <para>

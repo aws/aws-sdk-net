@@ -33,8 +33,8 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    /// In addition to listing the properties provided by the user in the <code>CreateDataset</code>
-    /// request, this operation includes the following properties:
+    /// In addition to listing the parameters specified in the <code>CreateDataset</code>
+    /// request, this operation includes the following dataset properties:
     /// </para>
     ///  <ul> <li> 
     /// <para>

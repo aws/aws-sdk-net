@@ -57,6 +57,7 @@ namespace Amazon.DataSync.Model
         private List<FilterRule> _excludes = new List<FilterRule>();
         private string _name;
         private Options _options;
+        private TaskSchedule _schedule;
         private string _sourceLocationArn;
         private List<TagListEntry> _tags = new List<TagListEntry>();
 
@@ -180,6 +181,26 @@ namespace Amazon.DataSync.Model
         internal bool IsSetOptions()
         {
             return this._options != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Schedule. 
+        /// <para>
+        /// Specifies a schedule used to periodically transfer files from a source to a destination
+        /// location. The schedule should be specified in UTC time. For more information, see
+        /// <a>task-scheduling</a>.
+        /// </para>
+        /// </summary>
+        public TaskSchedule Schedule
+        {
+            get { return this._schedule; }
+            set { this._schedule = value; }
+        }
+
+        // Check to see if Schedule property is set
+        internal bool IsSetSchedule()
+        {
+            return this._schedule != null;
         }
 
         /// <summary>

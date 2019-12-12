@@ -32,6 +32,13 @@ namespace Amazon.MigrationHub
     /// The AWS Migration Hub API methods help to obtain server and application migration
     /// status and integrate your resource-specific migration tool by providing a programmatic
     /// interface to Migration Hub.
+    /// 
+    ///  
+    /// <para>
+    /// Remember that you must set your AWS Migration Hub home region before you call any
+    /// of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned.
+    /// Also, you must make the API calls while in your home region.
+    /// </para>
     /// </summary>
     public partial interface IAmazonMigrationHub : IAmazonService, IDisposable
     {
@@ -72,17 +79,20 @@ namespace Amazon.MigrationHub
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
         /// flag is set to "true".
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
-        /// Exception raised when the request references a resource (ADS configuration, update
-        /// stream, migration task, etc.) that does not exist in ADS (Application Discovery Service)
-        /// or in Migration Hub's repository.
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -126,8 +136,8 @@ namespace Amazon.MigrationHub
 
 
         /// <summary>
-        /// Associates a discovered resource ID from Application Discovery Service (ADS) with
-        /// a migration task.
+        /// Associates a discovered resource ID from Application Discovery Service with a migration
+        /// task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateDiscoveredResource service method.</param>
         /// 
@@ -139,22 +149,25 @@ namespace Amazon.MigrationHub
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
         /// flag is set to "true".
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.PolicyErrorException">
-        /// Exception raised when there are problems accessing ADS (Application Discovery Service);
-        /// most likely due to a misconfigured policy or the <code>migrationhub-discovery</code>
+        /// Exception raised when there are problems accessing Application Discovery Service (Application
+        /// Discovery Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code>
         /// role is missing or not configured correctly.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
-        /// Exception raised when the request references a resource (ADS configuration, update
-        /// stream, migration task, etc.) that does not exist in ADS (Application Discovery Service)
-        /// or in Migration Hub's repository.
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -214,8 +227,11 @@ namespace Amazon.MigrationHub
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
         /// flag is set to "true".
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
@@ -285,7 +301,7 @@ namespace Amazon.MigrationHub
         ///  </li> <li> 
         /// <para>
         ///  <code>CreateProgressUpdateStream</code>, <code>ImportMigrationTask</code>, <code>NotifyMigrationTaskState</code>,
-        /// and all Associate[*] APIs realted to the tasks belonging to the stream will throw
+        /// and all Associate[*] APIs related to the tasks belonging to the stream will throw
         /// "InvalidInputException" if the stream of the same name is in the process of being
         /// deleted.
         /// </para>
@@ -307,17 +323,20 @@ namespace Amazon.MigrationHub
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
         /// flag is set to "true".
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
-        /// Exception raised when the request references a resource (ADS configuration, update
-        /// stream, migration task, etc.) that does not exist in ADS (Application Discovery Service)
-        /// or in Migration Hub's repository.
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -369,22 +388,25 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.PolicyErrorException">
-        /// Exception raised when there are problems accessing ADS (Application Discovery Service);
-        /// most likely due to a misconfigured policy or the <code>migrationhub-discovery</code>
+        /// Exception raised when there are problems accessing Application Discovery Service (Application
+        /// Discovery Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code>
         /// role is missing or not configured correctly.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
-        /// Exception raised when the request references a resource (ADS configuration, update
-        /// stream, migration task, etc.) that does not exist in ADS (Application Discovery Service)
-        /// or in Migration Hub's repository.
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -432,17 +454,20 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
-        /// Exception raised when the request references a resource (ADS configuration, update
-        /// stream, migration task, etc.) that does not exist in ADS (Application Discovery Service)
-        /// or in Migration Hub's repository.
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -512,17 +537,20 @@ namespace Amazon.MigrationHub
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
         /// flag is set to "true".
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
-        /// Exception raised when the request references a resource (ADS configuration, update
-        /// stream, migration task, etc.) that does not exist in ADS (Application Discovery Service)
-        /// or in Migration Hub's repository.
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -566,7 +594,7 @@ namespace Amazon.MigrationHub
 
 
         /// <summary>
-        /// Disassociate an Application Discovery Service (ADS) discovered resource from a migration
+        /// Disassociate an Application Discovery Service discovered resource from a migration
         /// task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateDiscoveredResource service method.</param>
@@ -579,17 +607,20 @@ namespace Amazon.MigrationHub
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
         /// flag is set to "true".
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
-        /// Exception raised when the request references a resource (ADS configuration, update
-        /// stream, migration task, etc.) that does not exist in ADS (Application Discovery Service)
-        /// or in Migration Hub's repository.
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -652,17 +683,20 @@ namespace Amazon.MigrationHub
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
         /// flag is set to "true".
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
-        /// Exception raised when the request references a resource (ADS configuration, update
-        /// stream, migration task, etc.) that does not exist in ADS (Application Discovery Service)
-        /// or in Migration Hub's repository.
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -730,17 +764,20 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
-        /// Exception raised when the request references a resource (ADS configuration, update
-        /// stream, migration task, etc.) that does not exist in ADS (Application Discovery Service)
-        /// or in Migration Hub's repository.
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -788,17 +825,20 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
-        /// Exception raised when the request references a resource (ADS configuration, update
-        /// stream, migration task, etc.) that does not exist in ADS (Application Discovery Service)
-        /// or in Migration Hub's repository.
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -861,22 +901,25 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.PolicyErrorException">
-        /// Exception raised when there are problems accessing ADS (Application Discovery Service);
-        /// most likely due to a misconfigured policy or the <code>migrationhub-discovery</code>
+        /// Exception raised when there are problems accessing Application Discovery Service (Application
+        /// Discovery Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code>
         /// role is missing or not configured correctly.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
-        /// Exception raised when the request references a resource (ADS configuration, update
-        /// stream, migration task, etc.) that does not exist in ADS (Application Discovery Service)
-        /// or in Migration Hub's repository.
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -924,8 +967,11 @@ namespace Amazon.MigrationHub
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
@@ -983,22 +1029,25 @@ namespace Amazon.MigrationHub
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
         /// flag is set to "true".
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.PolicyErrorException">
-        /// Exception raised when there are problems accessing ADS (Application Discovery Service);
-        /// most likely due to a misconfigured policy or the <code>migrationhub-discovery</code>
+        /// Exception raised when there are problems accessing Application Discovery Service (Application
+        /// Discovery Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code>
         /// role is missing or not configured correctly.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
-        /// Exception raised when the request references a resource (ADS configuration, update
-        /// stream, migration task, etc.) that does not exist in ADS (Application Discovery Service)
-        /// or in Migration Hub's repository.
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -1071,17 +1120,20 @@ namespace Amazon.MigrationHub
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
         /// flag is set to "true".
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
-        /// Exception raised when the request references a resource (ADS configuration, update
-        /// stream, migration task, etc.) that does not exist in ADS (Application Discovery Service)
-        /// or in Migration Hub's repository.
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -1126,7 +1178,7 @@ namespace Amazon.MigrationHub
 
         /// <summary>
         /// Provides identifying details of the resource being migrated so that it can be associated
-        /// in the Application Discovery Service (ADS)'s repository. This association occurs asynchronously
+        /// in the Application Discovery Service repository. This association occurs asynchronously
         /// after <code>PutResourceAttributes</code> returns.
         /// 
         ///  <important> <ul> <li> 
@@ -1134,13 +1186,13 @@ namespace Amazon.MigrationHub
         /// Keep in mind that subsequent calls to PutResourceAttributes will override previously
         /// stored attributes. For example, if it is first called with a MAC address, but later,
         /// it is desired to <i>add</i> an IP address, it will then be required to call it with
-        /// <i>both</i> the IP and MAC addresses to prevent overiding the MAC address.
+        /// <i>both</i> the IP and MAC addresses to prevent overriding the MAC address.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Note the instructions regarding the special use case of the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList">
         /// <code>ResourceAttributeList</code> </a> parameter when specifying any "VM" related
-        /// value. 
+        /// value.
         /// </para>
         ///  </li> </ul> </important> <note> 
         /// <para>
@@ -1160,17 +1212,20 @@ namespace Amazon.MigrationHub
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
         /// flag is set to "true".
         /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
-        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
         /// Exception raised when the provided input violates a policy constraint or is entered
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
-        /// Exception raised when the request references a resource (ADS configuration, update
-        /// stream, migration task, etc.) that does not exist in ADS (Application Discovery Service)
-        /// or in Migration Hub's repository.
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.

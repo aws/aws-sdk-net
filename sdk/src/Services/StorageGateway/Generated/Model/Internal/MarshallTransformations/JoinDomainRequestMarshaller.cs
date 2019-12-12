@@ -103,6 +103,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Password);
                 }
 
+                if(publicRequest.IsSetTimeoutInSeconds())
+                {
+                    context.Writer.WritePropertyName("TimeoutInSeconds");
+                    context.Writer.Write(publicRequest.TimeoutInSeconds);
+                }
+
                 if(publicRequest.IsSetUserName())
                 {
                     context.Writer.WritePropertyName("UserName");

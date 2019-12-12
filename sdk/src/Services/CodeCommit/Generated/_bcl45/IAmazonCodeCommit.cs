@@ -74,8 +74,8 @@ namespace Amazon.CodeCommit
     ///  </li> <li> 
     /// <para>
     ///  <a>UpdateRepositoryName</a>, which changes the name of the repository. If you change
-    /// the name of a repository, no other users of that repository will be able to access
-    /// it until you send them the new HTTPS or SSH URL to use.
+    /// the name of a repository, no other users of that repository can access it until you
+    /// send them the new HTTPS or SSH URL to use.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -83,7 +83,7 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateBranch</a>, which creates a new branch in a specified repository.
+    ///  <a>CreateBranch</a>, which creates a branch in a specified repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -114,7 +114,7 @@ namespace Amazon.CodeCommit
     ///  </li> <li> 
     /// <para>
     ///  <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob
-    /// object within a repository.
+    /// object in a repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -136,7 +136,7 @@ namespace Amazon.CodeCommit
     ///  <ul> <li> 
     /// <para>
     ///  <a>BatchGetCommits</a>, which returns information about one or more commits in a
-    /// repository
+    /// repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -150,7 +150,7 @@ namespace Amazon.CodeCommit
     ///  </li> <li> 
     /// <para>
     ///  <a>GetDifferences</a>, which returns information about the differences in a valid
-    /// commit specifier (such as a branch, tag, HEAD, commit ID or other fully qualified
+    /// commit specifier (such as a branch, tag, HEAD, commit ID, or other fully qualified
     /// reference).
     /// </para>
     ///  </li> </ul> 
@@ -212,8 +212,23 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>CreatePullRequestApprovalRule</a>, which creates an approval rule for a specified
+    /// pull request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeletePullRequestApprovalRule</a>, which deletes an approval rule for a specified
+    /// pull request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>DescribePullRequestEvents</a>, which returns information about one or more pull
     /// request events.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>EvaluatePullRequestApprovalRules</a>, which evaluates whether a pull request has
+    /// met all the conditions specified in its associated approval rules.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -223,6 +238,18 @@ namespace Amazon.CodeCommit
     ///  </li> <li> 
     /// <para>
     ///  <a>GetPullRequest</a>, which returns information about a specified pull request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetPullRequestApprovalStates</a>, which returns information about the approval
+    /// states for a specified pull request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetPullRequestOverrideState</a>, which returns information about whether approval
+    /// rules have been set aside (overriden) for a pull request, and if so, the Amazon Resource
+    /// Name (ARN) of the user or identity that overrode the rules and their requirements
+    /// for the pull request.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -248,8 +275,23 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>OverridePullRequestApprovalRules</a>, which sets aside all approval rule requirements
+    /// for a pull request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>PostCommentForPullRequest</a>, which posts a comment to a pull request at the
     /// specified line, file, or request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdatePullRequestApprovalRuleContent</a>, which updates the structure of an approval
+    /// rule for a pull request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdatePullRequestApprovalState</a>, which updates the state of an approval on
+    /// a pull request.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -262,6 +304,81 @@ namespace Amazon.CodeCommit
     ///  </li> <li> 
     /// <para>
     ///  <a>UpdatePullRequestTitle</a>, which updates the title of a pull request.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Approval rule templates, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>AssociateApprovalRuleTemplateWithRepository</a>, which associates a template with
+    /// a specified repository. After the template is associated with a repository, AWS CodeCommit
+    /// creates approval rules that match the template conditions on every pull request created
+    /// in the specified repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>BatchAssociateApprovalRuleTemplateWithRepositories</a>, which associates a template
+    /// with one or more specified repositories. After the template is associated with a repository,
+    /// AWS CodeCommit creates approval rules that match the template conditions on every
+    /// pull request created in the specified repositories.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>BatchDisassociateApprovalRuleTemplateFromRepositories</a>, which removes the association
+    /// between a template and specified repositories so that approval rules based on the
+    /// template are not automatically created when pull requests are created in those repositories.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateApprovalRuleTemplate</a>, which creates a template for approval rules that
+    /// can then be associated with one or more repositories in your AWS account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteApprovalRuleTemplate</a>, which deletes the specified template. It does
+    /// not remove approval rules on pull requests already created with the template.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DisassociateApprovalRuleTemplateFromRepository</a>, which removes the association
+    /// between a template and a repository so that approval rules based on the template are
+    /// not automatically created when pull requests are created in the specified repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetApprovalRuleTemplate</a>, which returns information about an approval rule
+    /// template.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListApprovalRuleTemplates</a>, which lists all approval rule templates in the
+    /// AWS Region in your AWS account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListAssociatedApprovalRuleTemplatesForRepository</a>, which lists all approval
+    /// rule templates that are associated with a specified repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListRepositoriesForApprovalRuleTemplate</a>, which lists all repositories associated
+    /// with the specified approval rule template.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateApprovalRuleTemplateDescription</a>, which updates the description of an
+    /// approval rule template.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateApprovalRuleTemplateName</a>, which updates the name of an approval rule
+    /// template.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateApprovalRuleTemplateContent</a>, which updates the content of an approval
+    /// rule template.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -340,6 +457,248 @@ namespace Amazon.CodeCommit
     {
 
         
+        #region  AssociateApprovalRuleTemplateWithRepository
+
+
+        /// <summary>
+        /// Creates an association between an approval rule template and a specified repository.
+        /// Then, the next time a pull request is created in the repository where the destination
+        /// reference (if specified) matches the destination reference (branch) for the pull request,
+        /// an approval rule that matches the template conditions is automatically created for
+        /// that pull request. If no destination references are specified in the template, an
+        /// approval rule that matches the template contents is created for all pull requests
+        /// in that repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApprovalRuleTemplateWithRepository service method.</param>
+        /// 
+        /// <returns>The response from the AssociateApprovalRuleTemplateWithRepository service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// A specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumRuleTemplatesAssociatedWithRepositoryException">
+        /// The maximum number of approval rule templates for a repository has been exceeded.
+        /// You cannot associate more than 25 approval rule templates with a repository.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required, but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/AssociateApprovalRuleTemplateWithRepository">REST API Reference for AssociateApprovalRuleTemplateWithRepository Operation</seealso>
+        AssociateApprovalRuleTemplateWithRepositoryResponse AssociateApprovalRuleTemplateWithRepository(AssociateApprovalRuleTemplateWithRepositoryRequest request);
+
+
+
+        /// <summary>
+        /// Creates an association between an approval rule template and a specified repository.
+        /// Then, the next time a pull request is created in the repository where the destination
+        /// reference (if specified) matches the destination reference (branch) for the pull request,
+        /// an approval rule that matches the template conditions is automatically created for
+        /// that pull request. If no destination references are specified in the template, an
+        /// approval rule that matches the template contents is created for all pull requests
+        /// in that repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApprovalRuleTemplateWithRepository service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateApprovalRuleTemplateWithRepository service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// A specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumRuleTemplatesAssociatedWithRepositoryException">
+        /// The maximum number of approval rule templates for a repository has been exceeded.
+        /// You cannot associate more than 25 approval rule templates with a repository.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required, but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/AssociateApprovalRuleTemplateWithRepository">REST API Reference for AssociateApprovalRuleTemplateWithRepository Operation</seealso>
+        Task<AssociateApprovalRuleTemplateWithRepositoryResponse> AssociateApprovalRuleTemplateWithRepositoryAsync(AssociateApprovalRuleTemplateWithRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchAssociateApprovalRuleTemplateWithRepositories
+
+
+        /// <summary>
+        /// Creates an association between an approval rule template and one or more specified
+        /// repositories.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateApprovalRuleTemplateWithRepositories service method.</param>
+        /// 
+        /// <returns>The response from the BatchAssociateApprovalRuleTemplateWithRepositories service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumRepositoryNamesExceededException">
+        /// The maximum number of allowed repository names was exceeded. Currently, this number
+        /// is 100.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNamesRequiredException">
+        /// At least one repository name object is required, but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchAssociateApprovalRuleTemplateWithRepositories">REST API Reference for BatchAssociateApprovalRuleTemplateWithRepositories Operation</seealso>
+        BatchAssociateApprovalRuleTemplateWithRepositoriesResponse BatchAssociateApprovalRuleTemplateWithRepositories(BatchAssociateApprovalRuleTemplateWithRepositoriesRequest request);
+
+
+
+        /// <summary>
+        /// Creates an association between an approval rule template and one or more specified
+        /// repositories.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateApprovalRuleTemplateWithRepositories service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchAssociateApprovalRuleTemplateWithRepositories service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumRepositoryNamesExceededException">
+        /// The maximum number of allowed repository names was exceeded. Currently, this number
+        /// is 100.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNamesRequiredException">
+        /// At least one repository name object is required, but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchAssociateApprovalRuleTemplateWithRepositories">REST API Reference for BatchAssociateApprovalRuleTemplateWithRepositories Operation</seealso>
+        Task<BatchAssociateApprovalRuleTemplateWithRepositoriesResponse> BatchAssociateApprovalRuleTemplateWithRepositoriesAsync(BatchAssociateApprovalRuleTemplateWithRepositoriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BatchDescribeMergeConflicts
 
 
@@ -395,11 +754,11 @@ namespace Amazon.CodeCommit
         /// are supported for all operations.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -409,8 +768,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
@@ -419,7 +778,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -486,11 +845,11 @@ namespace Amazon.CodeCommit
         /// are supported for all operations.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -500,8 +859,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
@@ -510,7 +869,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -519,6 +878,108 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDescribeMergeConflicts">REST API Reference for BatchDescribeMergeConflicts Operation</seealso>
         Task<BatchDescribeMergeConflictsResponse> BatchDescribeMergeConflictsAsync(BatchDescribeMergeConflictsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchDisassociateApprovalRuleTemplateFromRepositories
+
+
+        /// <summary>
+        /// Removes the association between an approval rule template and one or more specified
+        /// repositories.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateApprovalRuleTemplateFromRepositories service method.</param>
+        /// 
+        /// <returns>The response from the BatchDisassociateApprovalRuleTemplateFromRepositories service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumRepositoryNamesExceededException">
+        /// The maximum number of allowed repository names was exceeded. Currently, this number
+        /// is 100.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNamesRequiredException">
+        /// At least one repository name object is required, but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDisassociateApprovalRuleTemplateFromRepositories">REST API Reference for BatchDisassociateApprovalRuleTemplateFromRepositories Operation</seealso>
+        BatchDisassociateApprovalRuleTemplateFromRepositoriesResponse BatchDisassociateApprovalRuleTemplateFromRepositories(BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest request);
+
+
+
+        /// <summary>
+        /// Removes the association between an approval rule template and one or more specified
+        /// repositories.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateApprovalRuleTemplateFromRepositories service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDisassociateApprovalRuleTemplateFromRepositories service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumRepositoryNamesExceededException">
+        /// The maximum number of allowed repository names was exceeded. Currently, this number
+        /// is 100.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNamesRequiredException">
+        /// At least one repository name object is required, but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDisassociateApprovalRuleTemplateFromRepositories">REST API Reference for BatchDisassociateApprovalRuleTemplateFromRepositories Operation</seealso>
+        Task<BatchDisassociateApprovalRuleTemplateFromRepositoriesResponse> BatchDisassociateApprovalRuleTemplateFromRepositoriesAsync(BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -536,7 +997,7 @@ namespace Amazon.CodeCommit
         /// batch requests contains no more than 100 commit IDs, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitIdsListRequiredException">
-        /// 
+        /// A list of commit IDs is required, but was either not specified or the list was empty.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
@@ -554,11 +1015,11 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -568,7 +1029,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetCommits">REST API Reference for BatchGetCommits Operation</seealso>
         BatchGetCommitsResponse BatchGetCommits(BatchGetCommitsRequest request);
@@ -589,7 +1050,7 @@ namespace Amazon.CodeCommit
         /// batch requests contains no more than 100 commit IDs, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitIdsListRequiredException">
-        /// 
+        /// A list of commit IDs is required, but was either not specified or the list was empty.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
@@ -607,11 +1068,11 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -621,7 +1082,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetCommits">REST API Reference for BatchGetCommits Operation</seealso>
         Task<BatchGetCommitsResponse> BatchGetCommitsAsync(BatchGetCommitsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -638,9 +1099,9 @@ namespace Amazon.CodeCommit
         /// <para>
         /// The description field for a repository accepts all HTML characters and all valid Unicode
         /// characters. Applications that do not HTML-encode the description and display it in
-        /// a web page could expose users to potentially malicious code. Make sure that you HTML-encode
+        /// a webpage can expose users to potentially malicious code. Make sure that you HTML-encode
         /// the description field in any application that uses this API to display the repository
-        /// description on a web page.
+        /// description on a webpage.
         /// </para>
         ///  </note>
         /// </summary>
@@ -663,11 +1124,11 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -675,10 +1136,10 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumRepositoryNamesExceededException">
         /// The maximum number of allowed repository names was exceeded. Currently, this number
-        /// is 25.
+        /// is 100.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNamesRequiredException">
-        /// A repository names object is required but was not specified.
+        /// At least one repository name object is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">REST API Reference for BatchGetRepositories Operation</seealso>
         BatchGetRepositoriesResponse BatchGetRepositories(BatchGetRepositoriesRequest request);
@@ -692,9 +1153,9 @@ namespace Amazon.CodeCommit
         /// <para>
         /// The description field for a repository accepts all HTML characters and all valid Unicode
         /// characters. Applications that do not HTML-encode the description and display it in
-        /// a web page could expose users to potentially malicious code. Make sure that you HTML-encode
+        /// a webpage can expose users to potentially malicious code. Make sure that you HTML-encode
         /// the description field in any application that uses this API to display the repository
-        /// description on a web page.
+        /// description on a webpage.
         /// </para>
         ///  </note>
         /// </summary>
@@ -720,11 +1181,11 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -732,13 +1193,109 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumRepositoryNamesExceededException">
         /// The maximum number of allowed repository names was exceeded. Currently, this number
-        /// is 25.
+        /// is 100.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNamesRequiredException">
-        /// A repository names object is required but was not specified.
+        /// At least one repository name object is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">REST API Reference for BatchGetRepositories Operation</seealso>
         Task<BatchGetRepositoriesResponse> BatchGetRepositoriesAsync(BatchGetRepositoriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateApprovalRuleTemplate
+
+
+        /// <summary>
+        /// Creates a template for approval rules that can then be associated with one or more
+        /// repositories in your AWS account. When you associate a template with a repository,
+        /// AWS CodeCommit creates an approval rule that matches the conditions of the template
+        /// for all pull requests that meet the conditions of the template. For more information,
+        /// see <a>AssociateApprovalRuleTemplateWithRepository</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApprovalRuleTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateApprovalRuleTemplate service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateContentRequiredException">
+        /// The content for the approval rule template is empty. You must provide some content
+        /// for an approval rule template. The content cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameAlreadyExistsException">
+        /// You cannot create an approval rule template with that name because a template with
+        /// that name already exists in this AWS Region for your AWS account. Approval rule template
+        /// names must be unique.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateContentException">
+        /// The content of the approval rule template is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateDescriptionException">
+        /// The description for the approval rule template is not valid because it exceeds the
+        /// maximum characters allowed for a description. For more information about limits in
+        /// AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NumberOfRuleTemplatesExceededException">
+        /// The maximum number of approval rule templates has been exceeded for this AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateApprovalRuleTemplate">REST API Reference for CreateApprovalRuleTemplate Operation</seealso>
+        CreateApprovalRuleTemplateResponse CreateApprovalRuleTemplate(CreateApprovalRuleTemplateRequest request);
+
+
+
+        /// <summary>
+        /// Creates a template for approval rules that can then be associated with one or more
+        /// repositories in your AWS account. When you associate a template with a repository,
+        /// AWS CodeCommit creates an approval rule that matches the conditions of the template
+        /// for all pull requests that meet the conditions of the template. For more information,
+        /// see <a>AssociateApprovalRuleTemplateWithRepository</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApprovalRuleTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateApprovalRuleTemplate service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateContentRequiredException">
+        /// The content for the approval rule template is empty. You must provide some content
+        /// for an approval rule template. The content cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameAlreadyExistsException">
+        /// You cannot create an approval rule template with that name because a template with
+        /// that name already exists in this AWS Region for your AWS account. Approval rule template
+        /// names must be unique.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateContentException">
+        /// The content of the approval rule template is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateDescriptionException">
+        /// The description for the approval rule template is not valid because it exceeds the
+        /// maximum characters allowed for a description. For more information about limits in
+        /// AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NumberOfRuleTemplatesExceededException">
+        /// The maximum number of approval rule templates has been exceeded for this AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateApprovalRuleTemplate">REST API Reference for CreateApprovalRuleTemplate Operation</seealso>
+        Task<CreateApprovalRuleTemplateResponse> CreateApprovalRuleTemplateAsync(CreateApprovalRuleTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -746,7 +1303,7 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Creates a new branch in a repository and points the branch to a commit.
+        /// Creates a branch in a repository and points the branch to a commit.
         /// 
         ///  <note> 
         /// <para>
@@ -762,7 +1319,7 @@ namespace Amazon.CodeCommit
         /// The specified branch name already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
         /// The specified commit does not exist or no commit was specified, and the specified
@@ -793,11 +1350,11 @@ namespace Amazon.CodeCommit
         /// The specified commit ID is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -807,7 +1364,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">REST API Reference for CreateBranch Operation</seealso>
         CreateBranchResponse CreateBranch(CreateBranchRequest request);
@@ -815,7 +1372,7 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Creates a new branch in a repository and points the branch to a commit.
+        /// Creates a branch in a repository and points the branch to a commit.
         /// 
         ///  <note> 
         /// <para>
@@ -834,7 +1391,7 @@ namespace Amazon.CodeCommit
         /// The specified branch name already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
         /// The specified commit does not exist or no commit was specified, and the specified
@@ -865,11 +1422,11 @@ namespace Amazon.CodeCommit
         /// The specified commit ID is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -879,7 +1436,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">REST API Reference for CreateBranch Operation</seealso>
         Task<CreateBranchResponse> CreateBranchAsync(CreateBranchRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -899,11 +1456,11 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
-        /// The specified branch name is not valid because it is a tag name. Type the name of
-        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// The specified branch name is not valid because it is a tag name. Enter the name of
+        /// a branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
         /// The commit message is too long. Provide a shorter string.
@@ -930,25 +1487,25 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentAndSourceFileSpecifiedException">
         /// The commit cannot be created because both a source file and file content have been
-        /// specified for the same file. You cannot provide both. Either specify a source file,
+        /// specified for the same file. You cannot provide both. Either specify a source file
         /// or provide the file content directly.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
-        /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
-        /// these changes using a Git client.
+        /// The file cannot be added because it is too large. The maximum file size is 6 MB, and
+        /// the combined file content change size is 7 MB. Consider making these changes using
+        /// a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileDoesNotExistException">
-        /// The specified file does not exist. Verify that you have provided the correct name
-        /// of the file, including its full path and extension.
+        /// The specified file does not exist. Verify that you have used the correct file name,
+        /// full path, and extension.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileEntryRequiredException">
         /// The commit cannot be created because no files have been specified as added, updated,
         /// or changed (PutFile or DeleteFile) for the commit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileModeRequiredException">
-        /// The commit cannot be created because a file mode is required to update mode permissions
-        /// for an existing file, but no file mode has been specified.
+        /// The commit cannot be created because no file mode has been specified. A file mode
+        /// is required to update mode permissions for a file.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileNameConflictsWithDirectoryNameException">
         /// A file cannot be added to the repository because the specified file name has the same
@@ -987,11 +1544,11 @@ namespace Amazon.CodeCommit
         /// The specified path is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -1034,7 +1591,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RestrictedSourceFileException">
         /// The commit cannot be created because one of the changes specifies copying or moving
@@ -1068,11 +1625,11 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
-        /// The specified branch name is not valid because it is a tag name. Type the name of
-        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// The specified branch name is not valid because it is a tag name. Enter the name of
+        /// a branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
         /// The commit message is too long. Provide a shorter string.
@@ -1099,25 +1656,25 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentAndSourceFileSpecifiedException">
         /// The commit cannot be created because both a source file and file content have been
-        /// specified for the same file. You cannot provide both. Either specify a source file,
+        /// specified for the same file. You cannot provide both. Either specify a source file
         /// or provide the file content directly.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
-        /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
-        /// these changes using a Git client.
+        /// The file cannot be added because it is too large. The maximum file size is 6 MB, and
+        /// the combined file content change size is 7 MB. Consider making these changes using
+        /// a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileDoesNotExistException">
-        /// The specified file does not exist. Verify that you have provided the correct name
-        /// of the file, including its full path and extension.
+        /// The specified file does not exist. Verify that you have used the correct file name,
+        /// full path, and extension.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileEntryRequiredException">
         /// The commit cannot be created because no files have been specified as added, updated,
         /// or changed (PutFile or DeleteFile) for the commit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileModeRequiredException">
-        /// The commit cannot be created because a file mode is required to update mode permissions
-        /// for an existing file, but no file mode has been specified.
+        /// The commit cannot be created because no file mode has been specified. A file mode
+        /// is required to update mode permissions for a file.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileNameConflictsWithDirectoryNameException">
         /// A file cannot be added to the repository because the specified file name has the same
@@ -1156,11 +1713,11 @@ namespace Amazon.CodeCommit
         /// The specified path is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -1203,7 +1760,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RestrictedSourceFileException">
         /// The commit cannot be created because one of the changes specifies copying or moving
@@ -1235,10 +1792,10 @@ namespace Amazon.CodeCommit
         /// <returns>The response from the CreatePullRequest service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.ClientRequestTokenRequiredException">
         /// A client request token is required. A client request token is an unique, client-generated
-        /// idempotency token that when provided in a request, ensures the request cannot be repeated
-        /// with a changed parameter. If a request is received with the same parameters and a
-        /// token is included, the request will return information about the initial request that
-        /// used that token.
+        /// idempotency token that, when provided in a request, ensures the request cannot be
+        /// repeated with a changed parameter. If a request is received with the same parameters
+        /// and a token is included, the request returns information about the initial request
+        /// that used that token.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
@@ -1257,27 +1814,27 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.IdempotencyParameterMismatchException">
         /// The client request token is not valid. Either the token is not in a valid format,
-        /// or the token has been used in a previous request and cannot be re-used.
+        /// or the token has been used in a previous request and cannot be reused.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidClientRequestTokenException">
         /// The client request token is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidDescriptionException">
-        /// The pull request description is not valid. Descriptions are limited to 1,000 characters
-        /// in length.
+        /// The pull request description is not valid. Descriptions cannot be more than 1,000
+        /// characters.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidReferenceNameException">
         /// The specified reference name format is not valid. Reference names must conform to
-        /// the Git references format, for example refs/heads/master. For more information, see
-        /// <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals
+        /// the Git references format (for example, refs/heads/master). For more information,
+        /// see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals
         /// - Git References</a> or consult your Git documentation.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -1318,11 +1875,11 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.SourceAndDestinationAreSameException">
-        /// The source branch and the destination branch for the pull request are the same. You
-        /// must specify different branches for the source and destination.
+        /// The source branch and destination branch for the pull request are the same. You must
+        /// specify different branches for the source and destination.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TargetRequiredException">
         /// A pull request target is required. It cannot be empty or null. A pull request target
@@ -1351,10 +1908,10 @@ namespace Amazon.CodeCommit
         /// <returns>The response from the CreatePullRequest service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.ClientRequestTokenRequiredException">
         /// A client request token is required. A client request token is an unique, client-generated
-        /// idempotency token that when provided in a request, ensures the request cannot be repeated
-        /// with a changed parameter. If a request is received with the same parameters and a
-        /// token is included, the request will return information about the initial request that
-        /// used that token.
+        /// idempotency token that, when provided in a request, ensures the request cannot be
+        /// repeated with a changed parameter. If a request is received with the same parameters
+        /// and a token is included, the request returns information about the initial request
+        /// that used that token.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
@@ -1373,27 +1930,27 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.IdempotencyParameterMismatchException">
         /// The client request token is not valid. Either the token is not in a valid format,
-        /// or the token has been used in a previous request and cannot be re-used.
+        /// or the token has been used in a previous request and cannot be reused.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidClientRequestTokenException">
         /// The client request token is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidDescriptionException">
-        /// The pull request description is not valid. Descriptions are limited to 1,000 characters
-        /// in length.
+        /// The pull request description is not valid. Descriptions cannot be more than 1,000
+        /// characters.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidReferenceNameException">
         /// The specified reference name format is not valid. Reference names must conform to
-        /// the Git references format, for example refs/heads/master. For more information, see
-        /// <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals
+        /// the Git references format (for example, refs/heads/master). For more information,
+        /// see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals
         /// - Git References</a> or consult your Git documentation.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -1434,11 +1991,11 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.SourceAndDestinationAreSameException">
-        /// The source branch and the destination branch for the pull request are the same. You
-        /// must specify different branches for the source and destination.
+        /// The source branch and destination branch for the pull request are the same. You must
+        /// specify different branches for the source and destination.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TargetRequiredException">
         /// A pull request target is required. It cannot be empty or null. A pull request target
@@ -1453,6 +2010,134 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequest">REST API Reference for CreatePullRequest Operation</seealso>
         Task<CreatePullRequestResponse> CreatePullRequestAsync(CreatePullRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreatePullRequestApprovalRule
+
+
+        /// <summary>
+        /// Creates an approval rule for a pull request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePullRequestApprovalRule service method.</param>
+        /// 
+        /// <returns>The response from the CreatePullRequestApprovalRule service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleContentRequiredException">
+        /// The content for the approval rule is empty. You must provide some content for an approval
+        /// rule. The content cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleNameAlreadyExistsException">
+        /// An approval rule with that name already exists. Approval rule names must be unique
+        /// within the scope of a pull request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleNameRequiredException">
+        /// An approval rule name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleContentException">
+        /// The content for the approval rule is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleNameException">
+        /// The name for the approval rule is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NumberOfRulesExceededException">
+        /// The approval rule cannot be added. The pull request has the maximum number of approval
+        /// rules associated with it.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
+        /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequestApprovalRule">REST API Reference for CreatePullRequestApprovalRule Operation</seealso>
+        CreatePullRequestApprovalRuleResponse CreatePullRequestApprovalRule(CreatePullRequestApprovalRuleRequest request);
+
+
+
+        /// <summary>
+        /// Creates an approval rule for a pull request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePullRequestApprovalRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePullRequestApprovalRule service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleContentRequiredException">
+        /// The content for the approval rule is empty. You must provide some content for an approval
+        /// rule. The content cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleNameAlreadyExistsException">
+        /// An approval rule with that name already exists. Approval rule names must be unique
+        /// within the scope of a pull request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleNameRequiredException">
+        /// An approval rule name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleContentException">
+        /// The content for the approval rule is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleNameException">
+        /// The name for the approval rule is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NumberOfRulesExceededException">
+        /// The approval rule cannot be added. The pull request has the maximum number of approval
+        /// rules associated with it.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
+        /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequestApprovalRule">REST API Reference for CreatePullRequestApprovalRule Operation</seealso>
+        Task<CreatePullRequestApprovalRuleResponse> CreatePullRequestApprovalRuleAsync(CreatePullRequestApprovalRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1484,11 +2169,11 @@ namespace Amazon.CodeCommit
         /// The specified repository description is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -1507,7 +2192,7 @@ namespace Amazon.CodeCommit
         /// The specified repository name already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TagPolicyException">
         /// The tag policy is not valid.
@@ -1548,11 +2233,11 @@ namespace Amazon.CodeCommit
         /// The specified repository description is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -1571,7 +2256,7 @@ namespace Amazon.CodeCommit
         /// The specified repository name already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TagPolicyException">
         /// The tag policy is not valid.
@@ -1590,7 +2275,7 @@ namespace Amazon.CodeCommit
         /// <summary>
         /// Creates an unreferenced commit that represents the result of merging two branches
         /// using a specified merge strategy. This can help you determine the outcome of a potential
-        /// merge. This API cannot be used with the fast-forward merge strategy, as that strategy
+        /// merge. This API cannot be used with the fast-forward merge strategy because that strategy
         /// does not create a merge commit.
         /// 
         ///  <note> 
@@ -1635,13 +2320,13 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
-        /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
-        /// these changes using a Git client.
+        /// The file cannot be added because it is too large. The maximum file size is 6 MB, and
+        /// the combined file content change size is 7 MB. Consider making these changes using
+        /// a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileModeRequiredException">
-        /// The commit cannot be created because a file mode is required to update mode permissions
-        /// for an existing file, but no file mode has been specified.
+        /// The commit cannot be created because no file mode has been specified. A file mode
+        /// is required to update mode permissions for a file.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
         /// The commit cannot be created because at least one of the overall changes in the commit
@@ -1684,11 +2369,11 @@ namespace Amazon.CodeCommit
         /// type is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -1705,8 +2390,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
@@ -1723,7 +2408,7 @@ namespace Amazon.CodeCommit
         /// The folderPath for a location cannot be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
-        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// USE_NEW_CONTENT was specified, but no replacement content has been provided.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
         /// A replacement type is required.
@@ -1732,7 +2417,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -1747,7 +2432,7 @@ namespace Amazon.CodeCommit
         /// <summary>
         /// Creates an unreferenced commit that represents the result of merging two branches
         /// using a specified merge strategy. This can help you determine the outcome of a potential
-        /// merge. This API cannot be used with the fast-forward merge strategy, as that strategy
+        /// merge. This API cannot be used with the fast-forward merge strategy because that strategy
         /// does not create a merge commit.
         /// 
         ///  <note> 
@@ -1795,13 +2480,13 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
-        /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
-        /// these changes using a Git client.
+        /// The file cannot be added because it is too large. The maximum file size is 6 MB, and
+        /// the combined file content change size is 7 MB. Consider making these changes using
+        /// a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileModeRequiredException">
-        /// The commit cannot be created because a file mode is required to update mode permissions
-        /// for an existing file, but no file mode has been specified.
+        /// The commit cannot be created because no file mode has been specified. A file mode
+        /// is required to update mode permissions for a file.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
         /// The commit cannot be created because at least one of the overall changes in the commit
@@ -1844,11 +2529,11 @@ namespace Amazon.CodeCommit
         /// type is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -1865,8 +2550,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
@@ -1883,7 +2568,7 @@ namespace Amazon.CodeCommit
         /// The folderPath for a location cannot be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
-        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// USE_NEW_CONTENT was specified, but no replacement content has been provided.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
         /// A replacement type is required.
@@ -1892,7 +2577,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -1901,6 +2586,64 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">REST API Reference for CreateUnreferencedMergeCommit Operation</seealso>
         Task<CreateUnreferencedMergeCommitResponse> CreateUnreferencedMergeCommitAsync(CreateUnreferencedMergeCommitRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteApprovalRuleTemplate
+
+
+        /// <summary>
+        /// Deletes a specified approval rule template. Deleting a template does not remove approval
+        /// rules on pull requests already created with the template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApprovalRuleTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApprovalRuleTemplate service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateInUseException">
+        /// The approval rule template is associated with one or more repositories. You cannot
+        /// delete a template that is associated with a repository. Remove all associations, and
+        /// then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteApprovalRuleTemplate">REST API Reference for DeleteApprovalRuleTemplate Operation</seealso>
+        DeleteApprovalRuleTemplateResponse DeleteApprovalRuleTemplate(DeleteApprovalRuleTemplateRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a specified approval rule template. Deleting a template does not remove approval
+        /// rules on pull requests already created with the template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApprovalRuleTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteApprovalRuleTemplate service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateInUseException">
+        /// The approval rule template is associated with one or more repositories. You cannot
+        /// delete a template that is associated with a repository. Remove all associations, and
+        /// then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteApprovalRuleTemplate">REST API Reference for DeleteApprovalRuleTemplate Operation</seealso>
+        Task<DeleteApprovalRuleTemplateResponse> DeleteApprovalRuleTemplateAsync(DeleteApprovalRuleTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1915,7 +2658,7 @@ namespace Amazon.CodeCommit
         /// 
         /// <returns>The response from the DeleteBranch service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.DefaultBranchCannotBeDeletedException">
         /// The specified branch is the default branch for the repository, and cannot be deleted.
@@ -1940,11 +2683,11 @@ namespace Amazon.CodeCommit
         /// The specified reference name is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -1954,7 +2697,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch">REST API Reference for DeleteBranch Operation</seealso>
         DeleteBranchResponse DeleteBranch(DeleteBranchRequest request);
@@ -1972,7 +2715,7 @@ namespace Amazon.CodeCommit
         /// 
         /// <returns>The response from the DeleteBranch service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.DefaultBranchCannotBeDeletedException">
         /// The specified branch is the default branch for the repository, and cannot be deleted.
@@ -1997,11 +2740,11 @@ namespace Amazon.CodeCommit
         /// The specified reference name is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -2011,7 +2754,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch">REST API Reference for DeleteBranch Operation</seealso>
         Task<DeleteBranchResponse> DeleteBranchAsync(DeleteBranchRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2031,8 +2774,8 @@ namespace Amazon.CodeCommit
         /// This comment has already been deleted. You cannot edit or delete a deleted comment.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentDoesNotExistException">
-        /// No comment exists with the provided ID. Verify that you have provided the correct
-        /// ID, and then try again.
+        /// No comment exists with the provided ID. Verify that you have used the correct ID,
+        /// and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentIdRequiredException">
         /// The comment ID is missing or null. A comment ID is required.
@@ -2059,8 +2802,8 @@ namespace Amazon.CodeCommit
         /// This comment has already been deleted. You cannot edit or delete a deleted comment.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentDoesNotExistException">
-        /// No comment exists with the provided ID. Verify that you have provided the correct
-        /// ID, and then try again.
+        /// No comment exists with the provided ID. Verify that you have used the correct ID,
+        /// and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentIdRequiredException">
         /// The comment ID is missing or null. A comment ID is required.
@@ -2079,8 +2822,8 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Deletes a specified file from a specified branch. A commit is created on the branch
-        /// that contains the revision. The file will still exist in the commits prior to the
-        /// commit that contains the deletion.
+        /// that contains the revision. The file still exists in the commits earlier to the commit
+        /// that contains the deletion.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFile service method.</param>
         /// 
@@ -2089,11 +2832,11 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
-        /// The specified branch name is not valid because it is a tag name. Type the name of
-        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// The specified branch name is not valid because it is a tag name. Enter the name of
+        /// a branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
         /// The commit message is too long. Provide a shorter string.
@@ -2114,8 +2857,8 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileDoesNotExistException">
-        /// The specified file does not exist. Verify that you have provided the correct name
-        /// of the file, including its full path and extension.
+        /// The specified file does not exist. Verify that you have used the correct file name,
+        /// full path, and extension.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
         /// The specified reference name is not valid.
@@ -2133,11 +2876,11 @@ namespace Amazon.CodeCommit
         /// The specified path is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -2167,7 +2910,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFile">REST API Reference for DeleteFile Operation</seealso>
         DeleteFileResponse DeleteFile(DeleteFileRequest request);
@@ -2176,8 +2919,8 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Deletes a specified file from a specified branch. A commit is created on the branch
-        /// that contains the revision. The file will still exist in the commits prior to the
-        /// commit that contains the deletion.
+        /// that contains the revision. The file still exists in the commits earlier to the commit
+        /// that contains the deletion.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFile service method.</param>
         /// <param name="cancellationToken">
@@ -2189,11 +2932,11 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
-        /// The specified branch name is not valid because it is a tag name. Type the name of
-        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// The specified branch name is not valid because it is a tag name. Enter the name of
+        /// a branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
         /// The commit message is too long. Provide a shorter string.
@@ -2214,8 +2957,8 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileDoesNotExistException">
-        /// The specified file does not exist. Verify that you have provided the correct name
-        /// of the file, including its full path and extension.
+        /// The specified file does not exist. Verify that you have used the correct file name,
+        /// full path, and extension.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
         /// The specified reference name is not valid.
@@ -2233,11 +2976,11 @@ namespace Amazon.CodeCommit
         /// The specified path is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -2267,10 +3010,124 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFile">REST API Reference for DeleteFile Operation</seealso>
         Task<DeleteFileResponse> DeleteFileAsync(DeleteFileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeletePullRequestApprovalRule
+
+
+        /// <summary>
+        /// Deletes an approval rule from a specified pull request. Approval rules can be deleted
+        /// from a pull request only if the pull request is open, and if the approval rule was
+        /// created specifically for a pull request and not generated from an approval rule template
+        /// associated with the repository where the pull request was created. You cannot delete
+        /// an approval rule from a merged or closed pull request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePullRequestApprovalRule service method.</param>
+        /// 
+        /// <returns>The response from the DeletePullRequestApprovalRule service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleNameRequiredException">
+        /// An approval rule name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CannotDeleteApprovalRuleFromTemplateException">
+        /// The approval rule cannot be deleted from the pull request because it was created by
+        /// an approval rule template and applied to the pull request automatically.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleNameException">
+        /// The name for the approval rule is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
+        /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeletePullRequestApprovalRule">REST API Reference for DeletePullRequestApprovalRule Operation</seealso>
+        DeletePullRequestApprovalRuleResponse DeletePullRequestApprovalRule(DeletePullRequestApprovalRuleRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an approval rule from a specified pull request. Approval rules can be deleted
+        /// from a pull request only if the pull request is open, and if the approval rule was
+        /// created specifically for a pull request and not generated from an approval rule template
+        /// associated with the repository where the pull request was created. You cannot delete
+        /// an approval rule from a merged or closed pull request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePullRequestApprovalRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePullRequestApprovalRule service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleNameRequiredException">
+        /// An approval rule name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CannotDeleteApprovalRuleFromTemplateException">
+        /// The approval rule cannot be deleted from the pull request because it was created by
+        /// an approval rule template and applied to the pull request automatically.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleNameException">
+        /// The name for the approval rule is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
+        /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeletePullRequestApprovalRule">REST API Reference for DeletePullRequestApprovalRule Operation</seealso>
+        Task<DeletePullRequestApprovalRuleResponse> DeletePullRequestApprovalRuleAsync(DeletePullRequestApprovalRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2279,12 +3136,12 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Deletes a repository. If a specified repository was already deleted, a null repository
-        /// ID will be returned.
+        /// ID is returned.
         /// 
         ///  <important> 
         /// <para>
         /// Deleting a repository also deletes all associated objects and metadata. After a repository
-        /// is deleted, all future push calls to the deleted repository will fail.
+        /// is deleted, all future push calls to the deleted repository fail.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2307,18 +3164,18 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
         ///  </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request);
@@ -2327,12 +3184,12 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Deletes a repository. If a specified repository was already deleted, a null repository
-        /// ID will be returned.
+        /// ID is returned.
         /// 
         ///  <important> 
         /// <para>
         /// Deleting a repository also deletes all associated objects and metadata. After a repository
-        /// is deleted, all future push calls to the deleted repository will fail.
+        /// is deleted, all future push calls to the deleted repository fail.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2358,18 +3215,18 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
         ///  </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2382,7 +3239,7 @@ namespace Amazon.CodeCommit
         /// <summary>
         /// Returns information about one or more merge conflicts in the attempted merge of two
         /// commit specifiers using the squash or three-way merge strategy. If the merge option
-        /// for the attempted merge is specified as FAST_FORWARD_MERGE, an exception will be thrown.
+        /// for the attempted merge is specified as FAST_FORWARD_MERGE, an exception is thrown.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMergeConflicts service method.</param>
         /// 
@@ -2410,8 +3267,8 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileDoesNotExistException">
-        /// The specified file does not exist. Verify that you have provided the correct name
-        /// of the file, including its full path and extension.
+        /// The specified file does not exist. Verify that you have used the correct file name,
+        /// full path, and extension.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
         /// The specified commit is not valid.
@@ -2436,11 +3293,11 @@ namespace Amazon.CodeCommit
         /// The specified path is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -2450,8 +3307,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
@@ -2463,7 +3320,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -2478,7 +3335,7 @@ namespace Amazon.CodeCommit
         /// <summary>
         /// Returns information about one or more merge conflicts in the attempted merge of two
         /// commit specifiers using the squash or three-way merge strategy. If the merge option
-        /// for the attempted merge is specified as FAST_FORWARD_MERGE, an exception will be thrown.
+        /// for the attempted merge is specified as FAST_FORWARD_MERGE, an exception is thrown.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMergeConflicts service method.</param>
         /// <param name="cancellationToken">
@@ -2509,8 +3366,8 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileDoesNotExistException">
-        /// The specified file does not exist. Verify that you have provided the correct name
-        /// of the file, including its full path and extension.
+        /// The specified file does not exist. Verify that you have used the correct file name,
+        /// full path, and extension.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
         /// The specified commit is not valid.
@@ -2535,11 +3392,11 @@ namespace Amazon.CodeCommit
         /// The specified path is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -2549,8 +3406,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
@@ -2562,7 +3419,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -2688,11 +3545,295 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  DisassociateApprovalRuleTemplateFromRepository
+
+
+        /// <summary>
+        /// Removes the association between a template and a repository so that approval rules
+        /// based on the template are not automatically created when pull requests are created
+        /// in the specified repository. This does not delete any approval rules previously created
+        /// for pull requests through the template association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApprovalRuleTemplateFromRepository service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateApprovalRuleTemplateFromRepository service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// A specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required, but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DisassociateApprovalRuleTemplateFromRepository">REST API Reference for DisassociateApprovalRuleTemplateFromRepository Operation</seealso>
+        DisassociateApprovalRuleTemplateFromRepositoryResponse DisassociateApprovalRuleTemplateFromRepository(DisassociateApprovalRuleTemplateFromRepositoryRequest request);
+
+
+
+        /// <summary>
+        /// Removes the association between a template and a repository so that approval rules
+        /// based on the template are not automatically created when pull requests are created
+        /// in the specified repository. This does not delete any approval rules previously created
+        /// for pull requests through the template association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApprovalRuleTemplateFromRepository service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateApprovalRuleTemplateFromRepository service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// A specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required, but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DisassociateApprovalRuleTemplateFromRepository">REST API Reference for DisassociateApprovalRuleTemplateFromRepository Operation</seealso>
+        Task<DisassociateApprovalRuleTemplateFromRepositoryResponse> DisassociateApprovalRuleTemplateFromRepositoryAsync(DisassociateApprovalRuleTemplateFromRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EvaluatePullRequestApprovalRules
+
+
+        /// <summary>
+        /// Evaluates whether a pull request has met all the conditions specified in its associated
+        /// approval rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EvaluatePullRequestApprovalRules service method.</param>
+        /// 
+        /// <returns>The response from the EvaluatePullRequestApprovalRules service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRevisionIdException">
+        /// The revision ID is not valid. Use GetPullRequest to determine the value.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionIdRequiredException">
+        /// A revision ID is required, but was not provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionNotCurrentException">
+        /// The revision ID provided in the request does not match the current revision ID. Use
+        /// GetPullRequest to retrieve the current revision ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/EvaluatePullRequestApprovalRules">REST API Reference for EvaluatePullRequestApprovalRules Operation</seealso>
+        EvaluatePullRequestApprovalRulesResponse EvaluatePullRequestApprovalRules(EvaluatePullRequestApprovalRulesRequest request);
+
+
+
+        /// <summary>
+        /// Evaluates whether a pull request has met all the conditions specified in its associated
+        /// approval rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EvaluatePullRequestApprovalRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EvaluatePullRequestApprovalRules service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRevisionIdException">
+        /// The revision ID is not valid. Use GetPullRequest to determine the value.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionIdRequiredException">
+        /// A revision ID is required, but was not provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionNotCurrentException">
+        /// The revision ID provided in the request does not match the current revision ID. Use
+        /// GetPullRequest to retrieve the current revision ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/EvaluatePullRequestApprovalRules">REST API Reference for EvaluatePullRequestApprovalRules Operation</seealso>
+        Task<EvaluatePullRequestApprovalRulesResponse> EvaluatePullRequestApprovalRulesAsync(EvaluatePullRequestApprovalRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetApprovalRuleTemplate
+
+
+        /// <summary>
+        /// Returns information about a specified approval rule template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApprovalRuleTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetApprovalRuleTemplate service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetApprovalRuleTemplate">REST API Reference for GetApprovalRuleTemplate Operation</seealso>
+        GetApprovalRuleTemplateResponse GetApprovalRuleTemplate(GetApprovalRuleTemplateRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about a specified approval rule template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApprovalRuleTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetApprovalRuleTemplate service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetApprovalRuleTemplate">REST API Reference for GetApprovalRuleTemplate Operation</seealso>
+        Task<GetApprovalRuleTemplateResponse> GetApprovalRuleTemplateAsync(GetApprovalRuleTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetBlob
 
 
         /// <summary>
-        /// Returns the base-64 encoded content of an individual blob within a repository.
+        /// Returns the base-64 encoded content of an individual blob in a repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBlob service method.</param>
         /// 
@@ -2701,7 +3842,7 @@ namespace Amazon.CodeCommit
         /// The specified blob does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BlobIdRequiredException">
-        /// A blob ID is required but was not specified.
+        /// A blob ID is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
@@ -2727,11 +3868,11 @@ namespace Amazon.CodeCommit
         /// The specified blob is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -2741,7 +3882,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlob">REST API Reference for GetBlob Operation</seealso>
         GetBlobResponse GetBlob(GetBlobRequest request);
@@ -2749,7 +3890,7 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Returns the base-64 encoded content of an individual blob within a repository.
+        /// Returns the base-64 encoded content of an individual blob in a repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBlob service method.</param>
         /// <param name="cancellationToken">
@@ -2761,7 +3902,7 @@ namespace Amazon.CodeCommit
         /// The specified blob does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BlobIdRequiredException">
-        /// A blob ID is required but was not specified.
+        /// A blob ID is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
@@ -2787,11 +3928,11 @@ namespace Amazon.CodeCommit
         /// The specified blob is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -2801,7 +3942,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlob">REST API Reference for GetBlob Operation</seealso>
         Task<GetBlobResponse> GetBlobAsync(GetBlobRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2822,7 +3963,7 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
@@ -2843,11 +3984,11 @@ namespace Amazon.CodeCommit
         /// The specified reference name is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -2857,7 +3998,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch">REST API Reference for GetBranch Operation</seealso>
         GetBranchResponse GetBranch(GetBranchRequest request);
@@ -2878,7 +4019,7 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
@@ -2899,11 +4040,11 @@ namespace Amazon.CodeCommit
         /// The specified reference name is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -2913,7 +4054,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch">REST API Reference for GetBranch Operation</seealso>
         Task<GetBranchResponse> GetBranchAsync(GetBranchRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2933,8 +4074,8 @@ namespace Amazon.CodeCommit
         /// This comment has already been deleted. You cannot edit or delete a deleted comment.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentDoesNotExistException">
-        /// No comment exists with the provided ID. Verify that you have provided the correct
-        /// ID, and then try again.
+        /// No comment exists with the provided ID. Verify that you have used the correct ID,
+        /// and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentIdRequiredException">
         /// The comment ID is missing or null. A comment ID is required.
@@ -2961,8 +4102,8 @@ namespace Amazon.CodeCommit
         /// This comment has already been deleted. You cannot edit or delete a deleted comment.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentDoesNotExistException">
-        /// No comment exists with the provided ID. Verify that you have provided the correct
-        /// ID, and then try again.
+        /// No comment exists with the provided ID. Verify that you have used the correct ID,
+        /// and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentIdRequiredException">
         /// The comment ID is missing or null. A comment ID is required.
@@ -3017,11 +4158,11 @@ namespace Amazon.CodeCommit
         /// The specified number of maximum results is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3031,7 +4172,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit">REST API Reference for GetCommentsForComparedCommit Operation</seealso>
         GetCommentsForComparedCommitResponse GetCommentsForComparedCommit(GetCommentsForComparedCommitRequest request);
@@ -3079,11 +4220,11 @@ namespace Amazon.CodeCommit
         /// The specified number of maximum results is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3093,7 +4234,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit">REST API Reference for GetCommentsForComparedCommit Operation</seealso>
         Task<GetCommentsForComparedCommitResponse> GetCommentsForComparedCommitAsync(GetCommentsForComparedCommitRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3145,11 +4286,11 @@ namespace Amazon.CodeCommit
         /// that the pull request is in the specified repository, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3166,7 +4307,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
         /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
@@ -3222,11 +4363,11 @@ namespace Amazon.CodeCommit
         /// that the pull request is in the specified repository, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3243,7 +4384,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
         /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
@@ -3288,11 +4429,11 @@ namespace Amazon.CodeCommit
         /// The specified commit ID is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3302,7 +4443,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommit">REST API Reference for GetCommit Operation</seealso>
         GetCommitResponse GetCommit(GetCommitRequest request);
@@ -3343,11 +4484,11 @@ namespace Amazon.CodeCommit
         /// The specified commit ID is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3357,7 +4498,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommit">REST API Reference for GetCommit Operation</seealso>
         Task<GetCommitResponse> GetCommitAsync(GetCommitRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3369,8 +4510,8 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Returns information about the differences in a valid commit specifier (such as a branch,
-        /// tag, HEAD, commit ID or other fully qualified reference). Results can be limited to
-        /// a specified path.
+        /// tag, HEAD, commit ID, or other fully qualified reference). Results can be limited
+        /// to a specified path.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDifferences service method.</param>
         /// 
@@ -3413,11 +4554,11 @@ namespace Amazon.CodeCommit
         /// The specified path is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3430,7 +4571,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetDifferences">REST API Reference for GetDifferences Operation</seealso>
         GetDifferencesResponse GetDifferences(GetDifferencesRequest request);
@@ -3439,8 +4580,8 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Returns information about the differences in a valid commit specifier (such as a branch,
-        /// tag, HEAD, commit ID or other fully qualified reference). Results can be limited to
-        /// a specified path.
+        /// tag, HEAD, commit ID, or other fully qualified reference). Results can be limited
+        /// to a specified path.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDifferences service method.</param>
         /// <param name="cancellationToken">
@@ -3486,11 +4627,11 @@ namespace Amazon.CodeCommit
         /// The specified path is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3503,7 +4644,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetDifferences">REST API Reference for GetDifferences Operation</seealso>
         Task<GetDifferencesResponse> GetDifferencesAsync(GetDifferencesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3539,8 +4680,8 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileDoesNotExistException">
-        /// The specified file does not exist. Verify that you have provided the correct name
-        /// of the file, including its full path and extension.
+        /// The specified file does not exist. Verify that you have used the correct file name,
+        /// full path, and extension.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileTooLargeException">
         /// The specified file exceeds the file size limit for AWS CodeCommit. For more information
@@ -3554,11 +4695,11 @@ namespace Amazon.CodeCommit
         /// The specified path is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3571,7 +4712,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile">REST API Reference for GetFile Operation</seealso>
         GetFileResponse GetFile(GetFileRequest request);
@@ -3607,8 +4748,8 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileDoesNotExistException">
-        /// The specified file does not exist. Verify that you have provided the correct name
-        /// of the file, including its full path and extension.
+        /// The specified file does not exist. Verify that you have used the correct file name,
+        /// full path, and extension.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileTooLargeException">
         /// The specified file exceeds the file size limit for AWS CodeCommit. For more information
@@ -3622,11 +4763,11 @@ namespace Amazon.CodeCommit
         /// The specified path is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3639,7 +4780,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile">REST API Reference for GetFile Operation</seealso>
         Task<GetFileResponse> GetFileAsync(GetFileRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3676,7 +4817,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderDoesNotExistException">
         /// The specified folder does not exist. Either the folder name is not correct, or you
-        /// did not provide the full path to the folder.
+        /// did not enter the full path to the folder.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
         /// The specified commit is not valid.
@@ -3685,11 +4826,11 @@ namespace Amazon.CodeCommit
         /// The specified path is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3702,7 +4843,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFolder">REST API Reference for GetFolder Operation</seealso>
         GetFolderResponse GetFolder(GetFolderRequest request);
@@ -3739,7 +4880,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderDoesNotExistException">
         /// The specified folder does not exist. Either the folder name is not correct, or you
-        /// did not provide the full path to the folder.
+        /// did not enter the full path to the folder.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
         /// The specified commit is not valid.
@@ -3748,11 +4889,11 @@ namespace Amazon.CodeCommit
         /// The specified path is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3765,7 +4906,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFolder">REST API Reference for GetFolder Operation</seealso>
         Task<GetFolderResponse> GetFolderAsync(GetFolderRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3813,11 +4954,11 @@ namespace Amazon.CodeCommit
         /// The specified conflict resolution strategy is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3827,7 +4968,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeCommit">REST API Reference for GetMergeCommit Operation</seealso>
         GetMergeCommitResponse GetMergeCommit(GetMergeCommitRequest request);
@@ -3875,11 +5016,11 @@ namespace Amazon.CodeCommit
         /// The specified conflict resolution strategy is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3889,7 +5030,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeCommit">REST API Reference for GetMergeCommit Operation</seealso>
         Task<GetMergeCommitResponse> GetMergeCommitAsync(GetMergeCommitRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3952,11 +5093,11 @@ namespace Amazon.CodeCommit
         /// are supported for all operations.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -3970,8 +5111,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
@@ -3980,7 +5121,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -4048,11 +5189,11 @@ namespace Amazon.CodeCommit
         /// are supported for all operations.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -4066,8 +5207,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
@@ -4076,7 +5217,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -4093,8 +5234,7 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Returns information about the merge options available for merging two specified branches.
-        /// For details about why a particular merge option is not available, use GetMergeConflicts
-        /// or DescribeMergeConflicts.
+        /// For details about why a merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMergeOptions service method.</param>
         /// 
@@ -4131,11 +5271,11 @@ namespace Amazon.CodeCommit
         /// The specified conflict resolution strategy is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -4145,14 +5285,14 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -4166,8 +5306,7 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Returns information about the merge options available for merging two specified branches.
-        /// For details about why a particular merge option is not available, use GetMergeConflicts
-        /// or DescribeMergeConflicts.
+        /// For details about why a merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMergeOptions service method.</param>
         /// <param name="cancellationToken">
@@ -4207,11 +5346,11 @@ namespace Amazon.CodeCommit
         /// The specified conflict resolution strategy is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -4221,14 +5360,14 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -4320,6 +5459,198 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  GetPullRequestApprovalStates
+
+
+        /// <summary>
+        /// Gets information about the approval states for a specified pull request. Approval
+        /// states only apply to pull requests that have one or more approval rules applied to
+        /// them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPullRequestApprovalStates service method.</param>
+        /// 
+        /// <returns>The response from the GetPullRequestApprovalStates service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRevisionIdException">
+        /// The revision ID is not valid. Use GetPullRequest to determine the value.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionIdRequiredException">
+        /// A revision ID is required, but was not provided.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequestApprovalStates">REST API Reference for GetPullRequestApprovalStates Operation</seealso>
+        GetPullRequestApprovalStatesResponse GetPullRequestApprovalStates(GetPullRequestApprovalStatesRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about the approval states for a specified pull request. Approval
+        /// states only apply to pull requests that have one or more approval rules applied to
+        /// them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPullRequestApprovalStates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPullRequestApprovalStates service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRevisionIdException">
+        /// The revision ID is not valid. Use GetPullRequest to determine the value.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionIdRequiredException">
+        /// A revision ID is required, but was not provided.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequestApprovalStates">REST API Reference for GetPullRequestApprovalStates Operation</seealso>
+        Task<GetPullRequestApprovalStatesResponse> GetPullRequestApprovalStatesAsync(GetPullRequestApprovalStatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetPullRequestOverrideState
+
+
+        /// <summary>
+        /// Returns information about whether approval rules have been set aside (overridden)
+        /// for a pull request, and if so, the Amazon Resource Name (ARN) of the user or identity
+        /// that overrode the rules and their requirements for the pull request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPullRequestOverrideState service method.</param>
+        /// 
+        /// <returns>The response from the GetPullRequestOverrideState service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRevisionIdException">
+        /// The revision ID is not valid. Use GetPullRequest to determine the value.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionIdRequiredException">
+        /// A revision ID is required, but was not provided.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequestOverrideState">REST API Reference for GetPullRequestOverrideState Operation</seealso>
+        GetPullRequestOverrideStateResponse GetPullRequestOverrideState(GetPullRequestOverrideStateRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about whether approval rules have been set aside (overridden)
+        /// for a pull request, and if so, the Amazon Resource Name (ARN) of the user or identity
+        /// that overrode the rules and their requirements for the pull request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPullRequestOverrideState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPullRequestOverrideState service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRevisionIdException">
+        /// The revision ID is not valid. Use GetPullRequest to determine the value.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionIdRequiredException">
+        /// A revision ID is required, but was not provided.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequestOverrideState">REST API Reference for GetPullRequestOverrideState Operation</seealso>
+        Task<GetPullRequestOverrideStateResponse> GetPullRequestOverrideStateAsync(GetPullRequestOverrideStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetRepository
 
 
@@ -4330,9 +5661,9 @@ namespace Amazon.CodeCommit
         /// <para>
         /// The description field for a repository accepts all HTML characters and all valid Unicode
         /// characters. Applications that do not HTML-encode the description and display it in
-        /// a web page could expose users to potentially malicious code. Make sure that you HTML-encode
+        /// a webpage can expose users to potentially malicious code. Make sure that you HTML-encode
         /// the description field in any application that uses this API to display the repository
-        /// description on a web page.
+        /// description on a webpage.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4355,11 +5686,11 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -4369,7 +5700,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">REST API Reference for GetRepository Operation</seealso>
         GetRepositoryResponse GetRepository(GetRepositoryRequest request);
@@ -4383,9 +5714,9 @@ namespace Amazon.CodeCommit
         /// <para>
         /// The description field for a repository accepts all HTML characters and all valid Unicode
         /// characters. Applications that do not HTML-encode the description and display it in
-        /// a web page could expose users to potentially malicious code. Make sure that you HTML-encode
+        /// a webpage can expose users to potentially malicious code. Make sure that you HTML-encode
         /// the description field in any application that uses this API to display the repository
-        /// description on a web page.
+        /// description on a webpage.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4411,11 +5742,11 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -4425,7 +5756,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">REST API Reference for GetRepository Operation</seealso>
         Task<GetRepositoryResponse> GetRepositoryAsync(GetRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4457,11 +5788,11 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -4471,7 +5802,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepositoryTriggers">REST API Reference for GetRepositoryTriggers Operation</seealso>
         GetRepositoryTriggersResponse GetRepositoryTriggers(GetRepositoryTriggersRequest request);
@@ -4503,11 +5834,11 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -4517,10 +5848,156 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepositoryTriggers">REST API Reference for GetRepositoryTriggers Operation</seealso>
         Task<GetRepositoryTriggersResponse> GetRepositoryTriggersAsync(GetRepositoryTriggersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListApprovalRuleTemplates
+
+
+        /// <summary>
+        /// Lists all approval rule templates in the specified AWS Region in your AWS account.
+        /// If an AWS Region is not specified, the AWS Region where you are signed in is used.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApprovalRuleTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListApprovalRuleTemplates service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxResultsException">
+        /// The specified number of maximum results is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListApprovalRuleTemplates">REST API Reference for ListApprovalRuleTemplates Operation</seealso>
+        ListApprovalRuleTemplatesResponse ListApprovalRuleTemplates(ListApprovalRuleTemplatesRequest request);
+
+
+
+        /// <summary>
+        /// Lists all approval rule templates in the specified AWS Region in your AWS account.
+        /// If an AWS Region is not specified, the AWS Region where you are signed in is used.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApprovalRuleTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApprovalRuleTemplates service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxResultsException">
+        /// The specified number of maximum results is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListApprovalRuleTemplates">REST API Reference for ListApprovalRuleTemplates Operation</seealso>
+        Task<ListApprovalRuleTemplatesResponse> ListApprovalRuleTemplatesAsync(ListApprovalRuleTemplatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAssociatedApprovalRuleTemplatesForRepository
+
+
+        /// <summary>
+        /// Lists all approval rule templates that are associated with a specified repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociatedApprovalRuleTemplatesForRepository service method.</param>
+        /// 
+        /// <returns>The response from the ListAssociatedApprovalRuleTemplatesForRepository service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxResultsException">
+        /// The specified number of maximum results is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// A specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required, but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListAssociatedApprovalRuleTemplatesForRepository">REST API Reference for ListAssociatedApprovalRuleTemplatesForRepository Operation</seealso>
+        ListAssociatedApprovalRuleTemplatesForRepositoryResponse ListAssociatedApprovalRuleTemplatesForRepository(ListAssociatedApprovalRuleTemplatesForRepositoryRequest request);
+
+
+
+        /// <summary>
+        /// Lists all approval rule templates that are associated with a specified repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociatedApprovalRuleTemplatesForRepository service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssociatedApprovalRuleTemplatesForRepository service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxResultsException">
+        /// The specified number of maximum results is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// A specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required, but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListAssociatedApprovalRuleTemplatesForRepository">REST API Reference for ListAssociatedApprovalRuleTemplatesForRepository Operation</seealso>
+        Task<ListAssociatedApprovalRuleTemplatesForRepositoryResponse> ListAssociatedApprovalRuleTemplatesForRepositoryAsync(ListAssociatedApprovalRuleTemplatesForRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4552,11 +6029,11 @@ namespace Amazon.CodeCommit
         /// The specified continuation token is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -4566,7 +6043,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranches">REST API Reference for ListBranches Operation</seealso>
         ListBranchesResponse ListBranches(ListBranchesRequest request);
@@ -4601,11 +6078,11 @@ namespace Amazon.CodeCommit
         /// The specified continuation token is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -4615,7 +6092,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranches">REST API Reference for ListBranches Operation</seealso>
         Task<ListBranchesResponse> ListBranchesAsync(ListBranchesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4665,11 +6142,11 @@ namespace Amazon.CodeCommit
         /// and <code>CLOSED</code>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -4679,7 +6156,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListPullRequests">REST API Reference for ListPullRequests Operation</seealso>
         ListPullRequestsResponse ListPullRequests(ListPullRequestsRequest request);
@@ -4729,11 +6206,11 @@ namespace Amazon.CodeCommit
         /// and <code>CLOSED</code>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -4743,7 +6220,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListPullRequests">REST API Reference for ListPullRequests Operation</seealso>
         Task<ListPullRequestsResponse> ListPullRequestsAsync(ListPullRequestsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4796,23 +6273,121 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  ListRepositoriesForApprovalRuleTemplate
+
+
+        /// <summary>
+        /// Lists all repositories associated with the specified approval rule template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRepositoriesForApprovalRuleTemplate service method.</param>
+        /// 
+        /// <returns>The response from the ListRepositoriesForApprovalRuleTemplate service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxResultsException">
+        /// The specified number of maximum results is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositoriesForApprovalRuleTemplate">REST API Reference for ListRepositoriesForApprovalRuleTemplate Operation</seealso>
+        ListRepositoriesForApprovalRuleTemplateResponse ListRepositoriesForApprovalRuleTemplate(ListRepositoriesForApprovalRuleTemplateRequest request);
+
+
+
+        /// <summary>
+        /// Lists all repositories associated with the specified approval rule template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRepositoriesForApprovalRuleTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRepositoriesForApprovalRuleTemplate service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxResultsException">
+        /// The specified number of maximum results is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositoriesForApprovalRuleTemplate">REST API Reference for ListRepositoriesForApprovalRuleTemplate Operation</seealso>
+        Task<ListRepositoriesForApprovalRuleTemplateResponse> ListRepositoriesForApprovalRuleTemplateAsync(ListRepositoriesForApprovalRuleTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
         /// <summary>
         /// Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
         /// CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// Resources and Operations</a> in the<i> AWS CodeCommit User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -4839,7 +6414,7 @@ namespace Amazon.CodeCommit
         /// <summary>
         /// Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
         /// CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// Resources and Operations</a> in the<i> AWS CodeCommit User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -4848,11 +6423,11 @@ namespace Amazon.CodeCommit
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -4889,11 +6464,11 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
-        /// The specified branch name is not valid because it is a tag name. Type the name of
-        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// The specified branch name is not valid because it is a tag name. Enter the name of
+        /// a branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
         /// The specified commit does not exist or no commit was specified, and the specified
@@ -4929,11 +6504,11 @@ namespace Amazon.CodeCommit
         /// The specified commit is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -4950,7 +6525,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -4975,11 +6550,11 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
-        /// The specified branch name is not valid because it is a tag name. Type the name of
-        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// The specified branch name is not valid because it is a tag name. Enter the name of
+        /// a branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
         /// The specified commit does not exist or no commit was specified, and the specified
@@ -5015,11 +6590,11 @@ namespace Amazon.CodeCommit
         /// The specified commit is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -5036,7 +6611,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -5061,11 +6636,11 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
-        /// The specified branch name is not valid because it is a tag name. Type the name of
-        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// The specified branch name is not valid because it is a tag name. Enter the name of
+        /// a branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
         /// The specified commit does not exist or no commit was specified, and the specified
@@ -5098,13 +6673,13 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
-        /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
-        /// these changes using a Git client.
+        /// The file cannot be added because it is too large. The maximum file size is 6 MB, and
+        /// the combined file content change size is 7 MB. Consider making these changes using
+        /// a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileModeRequiredException">
-        /// The commit cannot be created because a file mode is required to update mode permissions
-        /// for an existing file, but no file mode has been specified.
+        /// The commit cannot be created because no file mode has been specified. A file mode
+        /// is required to update mode permissions for a file.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
         /// The commit cannot be created because at least one of the overall changes in the commit
@@ -5146,11 +6721,11 @@ namespace Amazon.CodeCommit
         /// type is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -5170,8 +6745,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
@@ -5185,7 +6760,7 @@ namespace Amazon.CodeCommit
         /// The folderPath for a location cannot be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
-        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// USE_NEW_CONTENT was specified, but no replacement content has been provided.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
         /// A replacement type is required.
@@ -5194,7 +6769,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -5219,11 +6794,11 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
-        /// The specified branch name is not valid because it is a tag name. Type the name of
-        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// The specified branch name is not valid because it is a tag name. Enter the name of
+        /// a branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
         /// The specified commit does not exist or no commit was specified, and the specified
@@ -5256,13 +6831,13 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
-        /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
-        /// these changes using a Git client.
+        /// The file cannot be added because it is too large. The maximum file size is 6 MB, and
+        /// the combined file content change size is 7 MB. Consider making these changes using
+        /// a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileModeRequiredException">
-        /// The commit cannot be created because a file mode is required to update mode permissions
-        /// for an existing file, but no file mode has been specified.
+        /// The commit cannot be created because no file mode has been specified. A file mode
+        /// is required to update mode permissions for a file.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
         /// The commit cannot be created because at least one of the overall changes in the commit
@@ -5304,11 +6879,11 @@ namespace Amazon.CodeCommit
         /// type is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -5328,8 +6903,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
@@ -5343,7 +6918,7 @@ namespace Amazon.CodeCommit
         /// The folderPath for a location cannot be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
-        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// USE_NEW_CONTENT was specified, but no replacement content has been provided.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
         /// A replacement type is required.
@@ -5352,7 +6927,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -5377,11 +6952,11 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
-        /// The specified branch name is not valid because it is a tag name. Type the name of
-        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// The specified branch name is not valid because it is a tag name. Enter the name of
+        /// a branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
         /// The specified commit does not exist or no commit was specified, and the specified
@@ -5414,13 +6989,13 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
-        /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
-        /// these changes using a Git client.
+        /// The file cannot be added because it is too large. The maximum file size is 6 MB, and
+        /// the combined file content change size is 7 MB. Consider making these changes using
+        /// a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileModeRequiredException">
-        /// The commit cannot be created because a file mode is required to update mode permissions
-        /// for an existing file, but no file mode has been specified.
+        /// The commit cannot be created because no file mode has been specified. A file mode
+        /// is required to update mode permissions for a file.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
         /// The commit cannot be created because at least one of the overall changes in the commit
@@ -5462,11 +7037,11 @@ namespace Amazon.CodeCommit
         /// type is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -5486,8 +7061,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
@@ -5501,7 +7076,7 @@ namespace Amazon.CodeCommit
         /// The folderPath for a location cannot be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
-        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// USE_NEW_CONTENT was specified, but no replacement content has been provided.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
         /// A replacement type is required.
@@ -5510,7 +7085,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -5535,11 +7110,11 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
-        /// The specified branch name is not valid because it is a tag name. Type the name of
-        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// The specified branch name is not valid because it is a tag name. Enter the name of
+        /// a branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
         /// The specified commit does not exist or no commit was specified, and the specified
@@ -5572,13 +7147,13 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
-        /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
-        /// these changes using a Git client.
+        /// The file cannot be added because it is too large. The maximum file size is 6 MB, and
+        /// the combined file content change size is 7 MB. Consider making these changes using
+        /// a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileModeRequiredException">
-        /// The commit cannot be created because a file mode is required to update mode permissions
-        /// for an existing file, but no file mode has been specified.
+        /// The commit cannot be created because no file mode has been specified. A file mode
+        /// is required to update mode permissions for a file.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
         /// The commit cannot be created because at least one of the overall changes in the commit
@@ -5620,11 +7195,11 @@ namespace Amazon.CodeCommit
         /// type is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -5644,8 +7219,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
@@ -5659,7 +7234,7 @@ namespace Amazon.CodeCommit
         /// The folderPath for a location cannot be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
-        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// USE_NEW_CONTENT was specified, but no replacement content has been provided.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
         /// A replacement type is required.
@@ -5668,7 +7243,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
@@ -5719,11 +7294,11 @@ namespace Amazon.CodeCommit
         /// that the pull request is in the specified repository, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -5735,6 +7310,10 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
         /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestApprovalRulesNotSatisfiedException">
+        /// The pull request cannot be merged because one or more approval rules applied to the
+        /// pull request have conditions that have not been met.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
         /// The pull request ID could not be found. Make sure that you have specified the correct
@@ -5750,7 +7329,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
         /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
@@ -5805,11 +7384,11 @@ namespace Amazon.CodeCommit
         /// that the pull request is in the specified repository, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -5821,6 +7400,10 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
         /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestApprovalRulesNotSatisfiedException">
+        /// The pull request cannot be merged because one or more approval rules applied to the
+        /// pull request have conditions that have not been met.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
         /// The pull request ID could not be found. Make sure that you have specified the correct
@@ -5836,7 +7419,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
         /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
@@ -5887,9 +7470,9 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
-        /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
-        /// these changes using a Git client.
+        /// The file cannot be added because it is too large. The maximum file size is 6 MB, and
+        /// the combined file content change size is 7 MB. Consider making these changes using
+        /// a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
         /// The commit cannot be created because at least one of the overall changes in the commit
@@ -5932,11 +7515,11 @@ namespace Amazon.CodeCommit
         /// type is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -5953,8 +7536,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
@@ -5970,6 +7553,10 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
         /// The pull request status cannot be updated because it is already closed.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestApprovalRulesNotSatisfiedException">
+        /// The pull request cannot be merged because one or more approval rules applied to the
+        /// pull request have conditions that have not been met.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
         /// The pull request ID could not be found. Make sure that you have specified the correct
         /// repository name and pull request ID, and then try again.
@@ -5978,7 +7565,7 @@ namespace Amazon.CodeCommit
         /// A pull request ID is required, but none was provided.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
-        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// USE_NEW_CONTENT was specified, but no replacement content has been provided.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
         /// A replacement type is required.
@@ -5987,7 +7574,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
         /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
@@ -6043,9 +7630,9 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
-        /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
-        /// these changes using a Git client.
+        /// The file cannot be added because it is too large. The maximum file size is 6 MB, and
+        /// the combined file content change size is 7 MB. Consider making these changes using
+        /// a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
         /// The commit cannot be created because at least one of the overall changes in the commit
@@ -6088,11 +7675,11 @@ namespace Amazon.CodeCommit
         /// type is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -6109,8 +7696,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
@@ -6126,6 +7713,10 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
         /// The pull request status cannot be updated because it is already closed.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestApprovalRulesNotSatisfiedException">
+        /// The pull request cannot be merged because one or more approval rules applied to the
+        /// pull request have conditions that have not been met.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
         /// The pull request ID could not be found. Make sure that you have specified the correct
         /// repository name and pull request ID, and then try again.
@@ -6134,7 +7725,7 @@ namespace Amazon.CodeCommit
         /// A pull request ID is required, but none was provided.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
-        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// USE_NEW_CONTENT was specified, but no replacement content has been provided.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
         /// A replacement type is required.
@@ -6143,7 +7734,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
         /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
@@ -6199,9 +7790,9 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
-        /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
-        /// these changes using a Git client.
+        /// The file cannot be added because it is too large. The maximum file size is 6 MB, and
+        /// the combined file content change size is 7 MB. Consider making these changes using
+        /// a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
         /// The commit cannot be created because at least one of the overall changes in the commit
@@ -6244,11 +7835,11 @@ namespace Amazon.CodeCommit
         /// type is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -6265,8 +7856,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
@@ -6282,6 +7873,10 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
         /// The pull request status cannot be updated because it is already closed.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestApprovalRulesNotSatisfiedException">
+        /// The pull request cannot be merged because one or more approval rules applied to the
+        /// pull request have conditions that have not been met.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
         /// The pull request ID could not be found. Make sure that you have specified the correct
         /// repository name and pull request ID, and then try again.
@@ -6290,7 +7885,7 @@ namespace Amazon.CodeCommit
         /// A pull request ID is required, but none was provided.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
-        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// USE_NEW_CONTENT was specified, but no replacement content has been provided.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
         /// A replacement type is required.
@@ -6299,7 +7894,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
         /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
@@ -6355,9 +7950,9 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
-        /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
-        /// these changes using a Git client.
+        /// The file cannot be added because it is too large. The maximum file size is 6 MB, and
+        /// the combined file content change size is 7 MB. Consider making these changes using
+        /// a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
         /// The commit cannot be created because at least one of the overall changes in the commit
@@ -6400,11 +7995,11 @@ namespace Amazon.CodeCommit
         /// type is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -6421,8 +8016,8 @@ namespace Amazon.CodeCommit
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
-        /// The maximum number of items to compare between the source or destination branches
-        /// and the merge base has exceeded the maximum allowed.
+        /// The number of items to compare between the source or destination branches and the
+        /// merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
@@ -6438,6 +8033,10 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
         /// The pull request status cannot be updated because it is already closed.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestApprovalRulesNotSatisfiedException">
+        /// The pull request cannot be merged because one or more approval rules applied to the
+        /// pull request have conditions that have not been met.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
         /// The pull request ID could not be found. Make sure that you have specified the correct
         /// repository name and pull request ID, and then try again.
@@ -6446,7 +8045,7 @@ namespace Amazon.CodeCommit
         /// A pull request ID is required, but none was provided.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
-        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// USE_NEW_CONTENT was specified, but no replacement content has been provided.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
         /// A replacement type is required.
@@ -6455,7 +8054,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
         /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
@@ -6476,6 +8075,132 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  OverridePullRequestApprovalRules
+
+
+        /// <summary>
+        /// Sets aside (overrides) all approval rule requirements for a specified pull request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the OverridePullRequestApprovalRules service method.</param>
+        /// 
+        /// <returns>The response from the OverridePullRequestApprovalRules service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidOverrideStatusException">
+        /// The override status is not valid. Valid statuses are OVERRIDE and REVOKE.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRevisionIdException">
+        /// The revision ID is not valid. Use GetPullRequest to determine the value.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.OverrideAlreadySetException">
+        /// The pull request has already had its approval rules set to override.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.OverrideStatusRequiredException">
+        /// An override status is required, but no value was provided. Valid values include OVERRIDE
+        /// and REVOKE.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
+        /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionIdRequiredException">
+        /// A revision ID is required, but was not provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionNotCurrentException">
+        /// The revision ID provided in the request does not match the current revision ID. Use
+        /// GetPullRequest to retrieve the current revision ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/OverridePullRequestApprovalRules">REST API Reference for OverridePullRequestApprovalRules Operation</seealso>
+        OverridePullRequestApprovalRulesResponse OverridePullRequestApprovalRules(OverridePullRequestApprovalRulesRequest request);
+
+
+
+        /// <summary>
+        /// Sets aside (overrides) all approval rule requirements for a specified pull request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the OverridePullRequestApprovalRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the OverridePullRequestApprovalRules service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidOverrideStatusException">
+        /// The override status is not valid. Valid statuses are OVERRIDE and REVOKE.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRevisionIdException">
+        /// The revision ID is not valid. Use GetPullRequest to determine the value.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.OverrideAlreadySetException">
+        /// The pull request has already had its approval rules set to override.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.OverrideStatusRequiredException">
+        /// An override status is required, but no value was provided. Valid values include OVERRIDE
+        /// and REVOKE.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
+        /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionIdRequiredException">
+        /// A revision ID is required, but was not provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionNotCurrentException">
+        /// The revision ID provided in the request does not match the current revision ID. Use
+        /// GetPullRequest to retrieve the current revision ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/OverridePullRequestApprovalRules">REST API Reference for OverridePullRequestApprovalRules Operation</seealso>
+        Task<OverridePullRequestApprovalRulesResponse> OverridePullRequestApprovalRulesAsync(OverridePullRequestApprovalRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PostCommentForComparedCommit
 
 
@@ -6491,10 +8216,10 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ClientRequestTokenRequiredException">
         /// A client request token is required. A client request token is an unique, client-generated
-        /// idempotency token that when provided in a request, ensures the request cannot be repeated
-        /// with a changed parameter. If a request is received with the same parameters and a
-        /// token is included, the request will return information about the initial request that
-        /// used that token.
+        /// idempotency token that, when provided in a request, ensures the request cannot be
+        /// repeated with a changed parameter. If a request is received with the same parameters
+        /// and a token is included, the request returns information about the initial request
+        /// that used that token.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentContentRequiredException">
         /// The comment is empty. You must provide some content for a comment. The content cannot
@@ -6527,7 +8252,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.IdempotencyParameterMismatchException">
         /// The client request token is not valid. Either the token is not in a valid format,
-        /// or the token has been used in a previous request and cannot be re-used.
+        /// or the token has been used in a previous request and cannot be reused.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidClientRequestTokenException">
         /// The client request token is not valid.
@@ -6536,8 +8261,8 @@ namespace Amazon.CodeCommit
         /// The specified commit ID is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidFileLocationException">
-        /// The location of the file is not valid. Make sure that you include the extension of
-        /// the file as well as the file name.
+        /// The location of the file is not valid. Make sure that you include the file name and
+        /// extension.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidFilePositionException">
         /// The position is not valid. Make sure that the line number exists in the version of
@@ -6551,11 +8276,11 @@ namespace Amazon.CodeCommit
         /// valid in respect to the current file version.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -6571,7 +8296,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForComparedCommit">REST API Reference for PostCommentForComparedCommit Operation</seealso>
         PostCommentForComparedCommitResponse PostCommentForComparedCommit(PostCommentForComparedCommitRequest request);
@@ -6593,10 +8318,10 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ClientRequestTokenRequiredException">
         /// A client request token is required. A client request token is an unique, client-generated
-        /// idempotency token that when provided in a request, ensures the request cannot be repeated
-        /// with a changed parameter. If a request is received with the same parameters and a
-        /// token is included, the request will return information about the initial request that
-        /// used that token.
+        /// idempotency token that, when provided in a request, ensures the request cannot be
+        /// repeated with a changed parameter. If a request is received with the same parameters
+        /// and a token is included, the request returns information about the initial request
+        /// that used that token.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentContentRequiredException">
         /// The comment is empty. You must provide some content for a comment. The content cannot
@@ -6629,7 +8354,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.IdempotencyParameterMismatchException">
         /// The client request token is not valid. Either the token is not in a valid format,
-        /// or the token has been used in a previous request and cannot be re-used.
+        /// or the token has been used in a previous request and cannot be reused.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidClientRequestTokenException">
         /// The client request token is not valid.
@@ -6638,8 +8363,8 @@ namespace Amazon.CodeCommit
         /// The specified commit ID is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidFileLocationException">
-        /// The location of the file is not valid. Make sure that you include the extension of
-        /// the file as well as the file name.
+        /// The location of the file is not valid. Make sure that you include the file name and
+        /// extension.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidFilePositionException">
         /// The position is not valid. Make sure that the line number exists in the version of
@@ -6653,11 +8378,11 @@ namespace Amazon.CodeCommit
         /// valid in respect to the current file version.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -6673,7 +8398,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForComparedCommit">REST API Reference for PostCommentForComparedCommit Operation</seealso>
         Task<PostCommentForComparedCommitResponse> PostCommentForComparedCommitAsync(PostCommentForComparedCommitRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6695,10 +8420,10 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ClientRequestTokenRequiredException">
         /// A client request token is required. A client request token is an unique, client-generated
-        /// idempotency token that when provided in a request, ensures the request cannot be repeated
-        /// with a changed parameter. If a request is received with the same parameters and a
-        /// token is included, the request will return information about the initial request that
-        /// used that token.
+        /// idempotency token that, when provided in a request, ensures the request cannot be
+        /// repeated with a changed parameter. If a request is received with the same parameters
+        /// and a token is included, the request returns information about the initial request
+        /// that used that token.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentContentRequiredException">
         /// The comment is empty. You must provide some content for a comment. The content cannot
@@ -6731,7 +8456,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.IdempotencyParameterMismatchException">
         /// The client request token is not valid. Either the token is not in a valid format,
-        /// or the token has been used in a previous request and cannot be re-used.
+        /// or the token has been used in a previous request and cannot be reused.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidClientRequestTokenException">
         /// The client request token is not valid.
@@ -6740,8 +8465,8 @@ namespace Amazon.CodeCommit
         /// The specified commit ID is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidFileLocationException">
-        /// The location of the file is not valid. Make sure that you include the extension of
-        /// the file as well as the file name.
+        /// The location of the file is not valid. Make sure that you include the file name and
+        /// extension.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidFilePositionException">
         /// The position is not valid. Make sure that the line number exists in the version of
@@ -6759,11 +8484,11 @@ namespace Amazon.CodeCommit
         /// valid in respect to the current file version.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -6789,7 +8514,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
         /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
@@ -6815,10 +8540,10 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ClientRequestTokenRequiredException">
         /// A client request token is required. A client request token is an unique, client-generated
-        /// idempotency token that when provided in a request, ensures the request cannot be repeated
-        /// with a changed parameter. If a request is received with the same parameters and a
-        /// token is included, the request will return information about the initial request that
-        /// used that token.
+        /// idempotency token that, when provided in a request, ensures the request cannot be
+        /// repeated with a changed parameter. If a request is received with the same parameters
+        /// and a token is included, the request returns information about the initial request
+        /// that used that token.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentContentRequiredException">
         /// The comment is empty. You must provide some content for a comment. The content cannot
@@ -6851,7 +8576,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.IdempotencyParameterMismatchException">
         /// The client request token is not valid. Either the token is not in a valid format,
-        /// or the token has been used in a previous request and cannot be re-used.
+        /// or the token has been used in a previous request and cannot be reused.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidClientRequestTokenException">
         /// The client request token is not valid.
@@ -6860,8 +8585,8 @@ namespace Amazon.CodeCommit
         /// The specified commit ID is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidFileLocationException">
-        /// The location of the file is not valid. Make sure that you include the extension of
-        /// the file as well as the file name.
+        /// The location of the file is not valid. Make sure that you include the file name and
+        /// extension.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidFilePositionException">
         /// The position is not valid. Make sure that the line number exists in the version of
@@ -6879,11 +8604,11 @@ namespace Amazon.CodeCommit
         /// valid in respect to the current file version.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -6909,7 +8634,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
         /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
@@ -6932,10 +8657,10 @@ namespace Amazon.CodeCommit
         /// <returns>The response from the PostCommentReply service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.ClientRequestTokenRequiredException">
         /// A client request token is required. A client request token is an unique, client-generated
-        /// idempotency token that when provided in a request, ensures the request cannot be repeated
-        /// with a changed parameter. If a request is received with the same parameters and a
-        /// token is included, the request will return information about the initial request that
-        /// used that token.
+        /// idempotency token that, when provided in a request, ensures the request cannot be
+        /// repeated with a changed parameter. If a request is received with the same parameters
+        /// and a token is included, the request returns information about the initial request
+        /// that used that token.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentContentRequiredException">
         /// The comment is empty. You must provide some content for a comment. The content cannot
@@ -6945,15 +8670,15 @@ namespace Amazon.CodeCommit
         /// The comment is too large. Comments are limited to 1,000 characters.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentDoesNotExistException">
-        /// No comment exists with the provided ID. Verify that you have provided the correct
-        /// ID, and then try again.
+        /// No comment exists with the provided ID. Verify that you have used the correct ID,
+        /// and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentIdRequiredException">
         /// The comment ID is missing or null. A comment ID is required.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.IdempotencyParameterMismatchException">
         /// The client request token is not valid. Either the token is not in a valid format,
-        /// or the token has been used in a previous request and cannot be re-used.
+        /// or the token has been used in a previous request and cannot be reused.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidClientRequestTokenException">
         /// The client request token is not valid.
@@ -6979,10 +8704,10 @@ namespace Amazon.CodeCommit
         /// <returns>The response from the PostCommentReply service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.ClientRequestTokenRequiredException">
         /// A client request token is required. A client request token is an unique, client-generated
-        /// idempotency token that when provided in a request, ensures the request cannot be repeated
-        /// with a changed parameter. If a request is received with the same parameters and a
-        /// token is included, the request will return information about the initial request that
-        /// used that token.
+        /// idempotency token that, when provided in a request, ensures the request cannot be
+        /// repeated with a changed parameter. If a request is received with the same parameters
+        /// and a token is included, the request returns information about the initial request
+        /// that used that token.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentContentRequiredException">
         /// The comment is empty. You must provide some content for a comment. The content cannot
@@ -6992,15 +8717,15 @@ namespace Amazon.CodeCommit
         /// The comment is too large. Comments are limited to 1,000 characters.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentDoesNotExistException">
-        /// No comment exists with the provided ID. Verify that you have provided the correct
-        /// ID, and then try again.
+        /// No comment exists with the provided ID. Verify that you have used the correct ID,
+        /// and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentIdRequiredException">
         /// The comment ID is missing or null. A comment ID is required.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.IdempotencyParameterMismatchException">
         /// The client request token is not valid. Either the token is not in a valid format,
-        /// or the token has been used in a previous request and cannot be re-used.
+        /// or the token has been used in a previous request and cannot be reused.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidClientRequestTokenException">
         /// The client request token is not valid.
@@ -7028,11 +8753,11 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
-        /// The specified branch name is not valid because it is a tag name. Type the name of
-        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// The specified branch name is not valid because it is a tag name. Enter the name of
+        /// a branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
         /// The commit message is too long. Provide a shorter string.
@@ -7062,9 +8787,9 @@ namespace Amazon.CodeCommit
         /// with this API.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
-        /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
-        /// these changes using a Git client.
+        /// The file cannot be added because it is too large. The maximum file size is 6 MB, and
+        /// the combined file content change size is 7 MB. Consider making these changes using
+        /// a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileNameConflictsWithDirectoryNameException">
         /// A file cannot be added to the repository because the specified file name has the same
@@ -7103,11 +8828,11 @@ namespace Amazon.CodeCommit
         /// The specified path is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -7137,7 +8862,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.SameFileContentException">
         /// The file was not added or updated because the content of the file is exactly the same
@@ -7162,11 +8887,11 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
-        /// The specified branch name is not valid because it is a tag name. Type the name of
-        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// The specified branch name is not valid because it is a tag name. Enter the name of
+        /// a branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
         /// The commit message is too long. Provide a shorter string.
@@ -7196,9 +8921,9 @@ namespace Amazon.CodeCommit
         /// with this API.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
-        /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
-        /// these changes using a Git client.
+        /// The file cannot be added because it is too large. The maximum file size is 6 MB, and
+        /// the combined file content change size is 7 MB. Consider making these changes using
+        /// a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileNameConflictsWithDirectoryNameException">
         /// A file cannot be added to the repository because the specified file name has the same
@@ -7237,11 +8962,11 @@ namespace Amazon.CodeCommit
         /// The specified path is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -7271,7 +8996,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.SameFileContentException">
         /// The file was not added or updated because the content of the file is exactly the same
@@ -7286,7 +9011,7 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Replaces all triggers for a repository. This can be used to create or delete triggers.
+        /// Replaces all triggers for a repository. Used to create or delete triggers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRepositoryTriggers service method.</param>
         /// 
@@ -7307,11 +9032,11 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -7336,8 +9061,8 @@ namespace Amazon.CodeCommit
         /// The name of the trigger is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerRegionException">
-        /// The region for the trigger target does not match the region for the repository. Triggers
-        /// must be created in the same region as the target for the trigger.
+        /// The AWS Region for the trigger target does not match the AWS Region for the repository.
+        /// Triggers must be created in the same Region as the target for the trigger.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumBranchesExceededException">
         /// The number of branches for the trigger was exceeded.
@@ -7349,22 +9074,23 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerBranchNameListRequiredException">
-        /// At least one branch name is required but was not specified in the trigger configuration.
+        /// At least one branch name is required, but was not specified in the trigger configuration.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerDestinationArnRequiredException">
-        /// A destination ARN for the target service for the trigger is required but was not specified.
+        /// A destination ARN for the target service for the trigger is required, but was not
+        /// specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerEventsListRequiredException">
-        /// At least one event for the trigger is required but was not specified.
+        /// At least one event for the trigger is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerNameRequiredException">
-        /// A name for the trigger is required but was not specified.
+        /// A name for the trigger is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggersListRequiredException">
-        /// The list of triggers for the repository is required but was not specified.
+        /// The list of triggers for the repository is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers">REST API Reference for PutRepositoryTriggers Operation</seealso>
         PutRepositoryTriggersResponse PutRepositoryTriggers(PutRepositoryTriggersRequest request);
@@ -7372,7 +9098,7 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Replaces all triggers for a repository. This can be used to create or delete triggers.
+        /// Replaces all triggers for a repository. Used to create or delete triggers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRepositoryTriggers service method.</param>
         /// <param name="cancellationToken">
@@ -7396,11 +9122,11 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -7425,8 +9151,8 @@ namespace Amazon.CodeCommit
         /// The name of the trigger is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerRegionException">
-        /// The region for the trigger target does not match the region for the repository. Triggers
-        /// must be created in the same region as the target for the trigger.
+        /// The AWS Region for the trigger target does not match the AWS Region for the repository.
+        /// Triggers must be created in the same Region as the target for the trigger.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumBranchesExceededException">
         /// The number of branches for the trigger was exceeded.
@@ -7438,22 +9164,23 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerBranchNameListRequiredException">
-        /// At least one branch name is required but was not specified in the trigger configuration.
+        /// At least one branch name is required, but was not specified in the trigger configuration.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerDestinationArnRequiredException">
-        /// A destination ARN for the target service for the trigger is required but was not specified.
+        /// A destination ARN for the target service for the trigger is required, but was not
+        /// specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerEventsListRequiredException">
-        /// At least one event for the trigger is required but was not specified.
+        /// At least one event for the trigger is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerNameRequiredException">
-        /// A name for the trigger is required but was not specified.
+        /// A name for the trigger is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggersListRequiredException">
-        /// The list of triggers for the repository is required but was not specified.
+        /// The list of triggers for the repository is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers">REST API Reference for PutRepositoryTriggers Operation</seealso>
         Task<PutRepositoryTriggersResponse> PutRepositoryTriggersAsync(PutRepositoryTriggersRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7466,17 +9193,17 @@ namespace Amazon.CodeCommit
         /// <summary>
         /// Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources
         /// in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -7518,7 +9245,7 @@ namespace Amazon.CodeCommit
         /// <summary>
         /// Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources
         /// in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -7527,11 +9254,11 @@ namespace Amazon.CodeCommit
         /// 
         /// <returns>The response from the TagResource service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -7575,8 +9302,8 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Tests the functionality of repository triggers by sending information to the trigger
-        /// target. If real data is available in the repository, the test will send data from
-        /// the last commit. If no data is available, sample data will be generated.
+        /// target. If real data is available in the repository, the test sends data from the
+        /// last commit. If no data is available, sample data is generated.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestRepositoryTriggers service method.</param>
         /// 
@@ -7597,11 +9324,11 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -7626,8 +9353,8 @@ namespace Amazon.CodeCommit
         /// The name of the trigger is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerRegionException">
-        /// The region for the trigger target does not match the region for the repository. Triggers
-        /// must be created in the same region as the target for the trigger.
+        /// The AWS Region for the trigger target does not match the AWS Region for the repository.
+        /// Triggers must be created in the same Region as the target for the trigger.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumBranchesExceededException">
         /// The number of branches for the trigger was exceeded.
@@ -7639,22 +9366,23 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerBranchNameListRequiredException">
-        /// At least one branch name is required but was not specified in the trigger configuration.
+        /// At least one branch name is required, but was not specified in the trigger configuration.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerDestinationArnRequiredException">
-        /// A destination ARN for the target service for the trigger is required but was not specified.
+        /// A destination ARN for the target service for the trigger is required, but was not
+        /// specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerEventsListRequiredException">
-        /// At least one event for the trigger is required but was not specified.
+        /// At least one event for the trigger is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerNameRequiredException">
-        /// A name for the trigger is required but was not specified.
+        /// A name for the trigger is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggersListRequiredException">
-        /// The list of triggers for the repository is required but was not specified.
+        /// The list of triggers for the repository is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers">REST API Reference for TestRepositoryTriggers Operation</seealso>
         TestRepositoryTriggersResponse TestRepositoryTriggers(TestRepositoryTriggersRequest request);
@@ -7663,8 +9391,8 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Tests the functionality of repository triggers by sending information to the trigger
-        /// target. If real data is available in the repository, the test will send data from
-        /// the last commit. If no data is available, sample data will be generated.
+        /// target. If real data is available in the repository, the test sends data from the
+        /// last commit. If no data is available, sample data is generated.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestRepositoryTriggers service method.</param>
         /// <param name="cancellationToken">
@@ -7688,11 +9416,11 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -7717,8 +9445,8 @@ namespace Amazon.CodeCommit
         /// The name of the trigger is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerRegionException">
-        /// The region for the trigger target does not match the region for the repository. Triggers
-        /// must be created in the same region as the target for the trigger.
+        /// The AWS Region for the trigger target does not match the AWS Region for the repository.
+        /// Triggers must be created in the same Region as the target for the trigger.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumBranchesExceededException">
         /// The number of branches for the trigger was exceeded.
@@ -7730,22 +9458,23 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerBranchNameListRequiredException">
-        /// At least one branch name is required but was not specified in the trigger configuration.
+        /// At least one branch name is required, but was not specified in the trigger configuration.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerDestinationArnRequiredException">
-        /// A destination ARN for the target service for the trigger is required but was not specified.
+        /// A destination ARN for the target service for the trigger is required, but was not
+        /// specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerEventsListRequiredException">
-        /// At least one event for the trigger is required but was not specified.
+        /// At least one event for the trigger is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerNameRequiredException">
-        /// A name for the trigger is required but was not specified.
+        /// A name for the trigger is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggersListRequiredException">
-        /// The list of triggers for the repository is required but was not specified.
+        /// The list of triggers for the repository is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers">REST API Reference for TestRepositoryTriggers Operation</seealso>
         Task<TestRepositoryTriggersResponse> TestRepositoryTriggersAsync(TestRepositoryTriggersRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7758,17 +9487,17 @@ namespace Amazon.CodeCommit
         /// <summary>
         /// Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS
         /// CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -7810,7 +9539,7 @@ namespace Amazon.CodeCommit
         /// <summary>
         /// Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS
         /// CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -7819,11 +9548,11 @@ namespace Amazon.CodeCommit
         /// 
         /// <returns>The response from the UntagResource service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -7862,6 +9591,218 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  UpdateApprovalRuleTemplateContent
+
+
+        /// <summary>
+        /// Updates the content of an approval rule template. You can change the number of required
+        /// approvals, the membership of the approval rule, and whether an approval pool is defined.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApprovalRuleTemplateContent service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApprovalRuleTemplateContent service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateContentRequiredException">
+        /// The content for the approval rule template is empty. You must provide some content
+        /// for an approval rule template. The content cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateContentException">
+        /// The content of the approval rule template is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRuleContentSha256Exception">
+        /// The SHA-256 hash signature for the rule content is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateContent">REST API Reference for UpdateApprovalRuleTemplateContent Operation</seealso>
+        UpdateApprovalRuleTemplateContentResponse UpdateApprovalRuleTemplateContent(UpdateApprovalRuleTemplateContentRequest request);
+
+
+
+        /// <summary>
+        /// Updates the content of an approval rule template. You can change the number of required
+        /// approvals, the membership of the approval rule, and whether an approval pool is defined.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApprovalRuleTemplateContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateApprovalRuleTemplateContent service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateContentRequiredException">
+        /// The content for the approval rule template is empty. You must provide some content
+        /// for an approval rule template. The content cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateContentException">
+        /// The content of the approval rule template is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRuleContentSha256Exception">
+        /// The SHA-256 hash signature for the rule content is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateContent">REST API Reference for UpdateApprovalRuleTemplateContent Operation</seealso>
+        Task<UpdateApprovalRuleTemplateContentResponse> UpdateApprovalRuleTemplateContentAsync(UpdateApprovalRuleTemplateContentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateApprovalRuleTemplateDescription
+
+
+        /// <summary>
+        /// Updates the description for a specified approval rule template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApprovalRuleTemplateDescription service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApprovalRuleTemplateDescription service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateDescriptionException">
+        /// The description for the approval rule template is not valid because it exceeds the
+        /// maximum characters allowed for a description. For more information about limits in
+        /// AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateDescription">REST API Reference for UpdateApprovalRuleTemplateDescription Operation</seealso>
+        UpdateApprovalRuleTemplateDescriptionResponse UpdateApprovalRuleTemplateDescription(UpdateApprovalRuleTemplateDescriptionRequest request);
+
+
+
+        /// <summary>
+        /// Updates the description for a specified approval rule template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApprovalRuleTemplateDescription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateApprovalRuleTemplateDescription service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateDescriptionException">
+        /// The description for the approval rule template is not valid because it exceeds the
+        /// maximum characters allowed for a description. For more information about limits in
+        /// AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateDescription">REST API Reference for UpdateApprovalRuleTemplateDescription Operation</seealso>
+        Task<UpdateApprovalRuleTemplateDescriptionResponse> UpdateApprovalRuleTemplateDescriptionAsync(UpdateApprovalRuleTemplateDescriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateApprovalRuleTemplateName
+
+
+        /// <summary>
+        /// Updates the name of a specified approval rule template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApprovalRuleTemplateName service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApprovalRuleTemplateName service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameAlreadyExistsException">
+        /// You cannot create an approval rule template with that name because a template with
+        /// that name already exists in this AWS Region for your AWS account. Approval rule template
+        /// names must be unique.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateName">REST API Reference for UpdateApprovalRuleTemplateName Operation</seealso>
+        UpdateApprovalRuleTemplateNameResponse UpdateApprovalRuleTemplateName(UpdateApprovalRuleTemplateNameRequest request);
+
+
+
+        /// <summary>
+        /// Updates the name of a specified approval rule template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApprovalRuleTemplateName service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateApprovalRuleTemplateName service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
+        /// The specified approval rule template does not exist. Verify that the name is correct
+        /// and that you are signed in to the AWS Region where the template was created, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameAlreadyExistsException">
+        /// You cannot create an approval rule template with that name because a template with
+        /// that name already exists in this AWS Region for your AWS account. Approval rule template
+        /// names must be unique.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
+        /// An approval rule template name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
+        /// The name of the approval rule template is not valid. Template names must be between
+        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateName">REST API Reference for UpdateApprovalRuleTemplateName Operation</seealso>
+        Task<UpdateApprovalRuleTemplateNameResponse> UpdateApprovalRuleTemplateNameAsync(UpdateApprovalRuleTemplateNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateComment
 
 
@@ -7882,8 +9823,8 @@ namespace Amazon.CodeCommit
         /// This comment has already been deleted. You cannot edit or delete a deleted comment.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentDoesNotExistException">
-        /// No comment exists with the provided ID. Verify that you have provided the correct
-        /// ID, and then try again.
+        /// No comment exists with the provided ID. Verify that you have used the correct ID,
+        /// and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentIdRequiredException">
         /// The comment ID is missing or null. A comment ID is required.
@@ -7921,8 +9862,8 @@ namespace Amazon.CodeCommit
         /// This comment has already been deleted. You cannot edit or delete a deleted comment.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentDoesNotExistException">
-        /// No comment exists with the provided ID. Verify that you have provided the correct
-        /// ID, and then try again.
+        /// No comment exists with the provided ID. Verify that you have used the correct ID,
+        /// and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentIdRequiredException">
         /// The comment ID is missing or null. A comment ID is required.
@@ -7961,7 +9902,7 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
@@ -7982,11 +9923,11 @@ namespace Amazon.CodeCommit
         /// The specified reference name is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -7996,7 +9937,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">REST API Reference for UpdateDefaultBranch Operation</seealso>
         UpdateDefaultBranchResponse UpdateDefaultBranch(UpdateDefaultBranchRequest request);
@@ -8024,7 +9965,7 @@ namespace Amazon.CodeCommit
         /// The specified branch does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
-        /// A branch name is required but was not specified.
+        /// A branch name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
@@ -8045,11 +9986,11 @@ namespace Amazon.CodeCommit
         /// The specified reference name is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -8059,10 +10000,284 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">REST API Reference for UpdateDefaultBranch Operation</seealso>
         Task<UpdateDefaultBranchResponse> UpdateDefaultBranchAsync(UpdateDefaultBranchRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdatePullRequestApprovalRuleContent
+
+
+        /// <summary>
+        /// Updates the structure of an approval rule created specifically for a pull request.
+        /// For example, you can change the number of required approvers and the approval pool
+        /// for approvers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePullRequestApprovalRuleContent service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePullRequestApprovalRuleContent service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleContentRequiredException">
+        /// The content for the approval rule is empty. You must provide some content for an approval
+        /// rule. The content cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleDoesNotExistException">
+        /// The specified approval rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleNameRequiredException">
+        /// An approval rule name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CannotModifyApprovalRuleFromTemplateException">
+        /// The approval rule cannot be modified for the pull request because it was created by
+        /// an approval rule template and applied to the pull request automatically.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleContentException">
+        /// The content for the approval rule is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleNameException">
+        /// The name for the approval rule is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRuleContentSha256Exception">
+        /// The SHA-256 hash signature for the rule content is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
+        /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestApprovalRuleContent">REST API Reference for UpdatePullRequestApprovalRuleContent Operation</seealso>
+        UpdatePullRequestApprovalRuleContentResponse UpdatePullRequestApprovalRuleContent(UpdatePullRequestApprovalRuleContentRequest request);
+
+
+
+        /// <summary>
+        /// Updates the structure of an approval rule created specifically for a pull request.
+        /// For example, you can change the number of required approvers and the approval pool
+        /// for approvers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePullRequestApprovalRuleContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePullRequestApprovalRuleContent service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleContentRequiredException">
+        /// The content for the approval rule is empty. You must provide some content for an approval
+        /// rule. The content cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleDoesNotExistException">
+        /// The specified approval rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleNameRequiredException">
+        /// An approval rule name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CannotModifyApprovalRuleFromTemplateException">
+        /// The approval rule cannot be modified for the pull request because it was created by
+        /// an approval rule template and applied to the pull request automatically.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleContentException">
+        /// The content for the approval rule is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleNameException">
+        /// The name for the approval rule is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRuleContentSha256Exception">
+        /// The SHA-256 hash signature for the rule content is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
+        /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestApprovalRuleContent">REST API Reference for UpdatePullRequestApprovalRuleContent Operation</seealso>
+        Task<UpdatePullRequestApprovalRuleContentResponse> UpdatePullRequestApprovalRuleContentAsync(UpdatePullRequestApprovalRuleContentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdatePullRequestApprovalState
+
+
+        /// <summary>
+        /// Updates the state of a user's approval on a pull request. The user is derived from
+        /// the signed-in account when the request is made.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePullRequestApprovalState service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePullRequestApprovalState service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalStateRequiredException">
+        /// An approval state is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalStateException">
+        /// The state for the approval is not valid. Valid values include APPROVE and REVOKE.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRevisionIdException">
+        /// The revision ID is not valid. Use GetPullRequest to determine the value.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumNumberOfApprovalsExceededException">
+        /// The number of approvals required for the approval rule exceeds the maximum number
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
+        /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestCannotBeApprovedByAuthorException">
+        /// The approval cannot be applied because the user approving the pull request matches
+        /// the user who created the pull request. You cannot approve a pull request that you
+        /// created.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionIdRequiredException">
+        /// A revision ID is required, but was not provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionNotCurrentException">
+        /// The revision ID provided in the request does not match the current revision ID. Use
+        /// GetPullRequest to retrieve the current revision ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestApprovalState">REST API Reference for UpdatePullRequestApprovalState Operation</seealso>
+        UpdatePullRequestApprovalStateResponse UpdatePullRequestApprovalState(UpdatePullRequestApprovalStateRequest request);
+
+
+
+        /// <summary>
+        /// Updates the state of a user's approval on a pull request. The user is derived from
+        /// the signed-in account when the request is made.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePullRequestApprovalState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePullRequestApprovalState service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ApprovalStateRequiredException">
+        /// An approval state is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalStateException">
+        /// The state for the approval is not valid. Valid values include APPROVE and REVOKE.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRevisionIdException">
+        /// The revision ID is not valid. Use GetPullRequest to determine the value.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumNumberOfApprovalsExceededException">
+        /// The number of approvals required for the approval rule exceeds the maximum number
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
+        /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestCannotBeApprovedByAuthorException">
+        /// The approval cannot be applied because the user approving the pull request matches
+        /// the user who created the pull request. You cannot approve a pull request that you
+        /// created.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionIdRequiredException">
+        /// A revision ID is required, but was not provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RevisionNotCurrentException">
+        /// The revision ID provided in the request does not match the current revision ID. Use
+        /// GetPullRequest to retrieve the current revision ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestApprovalState">REST API Reference for UpdatePullRequestApprovalState Operation</seealso>
+        Task<UpdatePullRequestApprovalStateResponse> UpdatePullRequestApprovalStateAsync(UpdatePullRequestApprovalStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -8076,8 +10291,8 @@ namespace Amazon.CodeCommit
         /// 
         /// <returns>The response from the UpdatePullRequestDescription service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidDescriptionException">
-        /// The pull request description is not valid. Descriptions are limited to 1,000 characters
-        /// in length.
+        /// The pull request description is not valid. Descriptions cannot be more than 1,000
+        /// characters.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
         /// The pull request ID is not valid. Make sure that you have provided the full ID and
@@ -8108,8 +10323,8 @@ namespace Amazon.CodeCommit
         /// 
         /// <returns>The response from the UpdatePullRequestDescription service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidDescriptionException">
-        /// The pull request description is not valid. Descriptions are limited to 1,000 characters
-        /// in length.
+        /// The pull request description is not valid. Descriptions cannot be more than 1,000
+        /// characters.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
         /// The pull request ID is not valid. Make sure that you have provided the full ID and
@@ -8312,9 +10527,9 @@ namespace Amazon.CodeCommit
         /// <para>
         /// The description field for a repository accepts all HTML characters and all valid Unicode
         /// characters. Applications that do not HTML-encode the description and display it in
-        /// a web page could expose users to potentially malicious code. Make sure that you HTML-encode
+        /// a webpage can expose users to potentially malicious code. Make sure that you HTML-encode
         /// the description field in any application that uses this API to display the repository
-        /// description on a web page.
+        /// description on a webpage.
         /// </para>
         ///  </note>
         /// </summary>
@@ -8340,11 +10555,11 @@ namespace Amazon.CodeCommit
         /// The specified repository description is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -8354,7 +10569,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">REST API Reference for UpdateRepositoryDescription Operation</seealso>
         UpdateRepositoryDescriptionResponse UpdateRepositoryDescription(UpdateRepositoryDescriptionRequest request);
@@ -8368,9 +10583,9 @@ namespace Amazon.CodeCommit
         /// <para>
         /// The description field for a repository accepts all HTML characters and all valid Unicode
         /// characters. Applications that do not HTML-encode the description and display it in
-        /// a web page could expose users to potentially malicious code. Make sure that you HTML-encode
+        /// a webpage can expose users to potentially malicious code. Make sure that you HTML-encode
         /// the description field in any application that uses this API to display the repository
-        /// description on a web page.
+        /// description on a webpage.
         /// </para>
         ///  </note>
         /// </summary>
@@ -8399,11 +10614,11 @@ namespace Amazon.CodeCommit
         /// The specified repository description is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -8413,7 +10628,7 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">REST API Reference for UpdateRepositoryDescription Operation</seealso>
         Task<UpdateRepositoryDescriptionResponse> UpdateRepositoryDescriptionAsync(UpdateRepositoryDescriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8425,20 +10640,20 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Renames a repository. The repository name must be unique across the calling AWS account.
-        /// In addition, repository names are limited to 100 alphanumeric, dash, and underscore
-        /// characters, and cannot include certain characters. The suffix ".git" is prohibited.
-        /// For a full description of the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
+        /// Repository names are limited to 100 alphanumeric, dash, and underscore characters,
+        /// and cannot include certain characters. The suffix .git is prohibited. For more information
+        /// about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
         /// in the AWS CodeCommit User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRepositoryName service method.</param>
         /// 
         /// <returns>The response from the UpdateRepositoryName service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -8451,7 +10666,7 @@ namespace Amazon.CodeCommit
         /// The specified repository name already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName">REST API Reference for UpdateRepositoryName Operation</seealso>
         UpdateRepositoryNameResponse UpdateRepositoryName(UpdateRepositoryNameRequest request);
@@ -8460,9 +10675,9 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Renames a repository. The repository name must be unique across the calling AWS account.
-        /// In addition, repository names are limited to 100 alphanumeric, dash, and underscore
-        /// characters, and cannot include certain characters. The suffix ".git" is prohibited.
-        /// For a full description of the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
+        /// Repository names are limited to 100 alphanumeric, dash, and underscore characters,
+        /// and cannot include certain characters. The suffix .git is prohibited. For more information
+        /// about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
         /// in the AWS CodeCommit User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRepositoryName service method.</param>
@@ -8472,11 +10687,11 @@ namespace Amazon.CodeCommit
         /// 
         /// <returns>The response from the UpdateRepositoryName service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
-        /// At least one specified repository name is not valid.
+        /// A specified repository name is not valid.
         /// 
         ///  <note> 
         /// <para>
-        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
         /// occur when a required repository parameter is missing, or when a specified repository
         /// does not exist.
         /// </para>
@@ -8489,7 +10704,7 @@ namespace Amazon.CodeCommit
         /// The specified repository name already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
-        /// A repository name is required but was not specified.
+        /// A repository name is required, but was not specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName">REST API Reference for UpdateRepositoryName Operation</seealso>
         Task<UpdateRepositoryNameResponse> UpdateRepositoryNameAsync(UpdateRepositoryNameRequest request, CancellationToken cancellationToken = default(CancellationToken));

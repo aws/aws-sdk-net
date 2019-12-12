@@ -29,7 +29,7 @@ namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Tag an APIGW resource
+    /// Creates a new Tag resource to represent a tag.
     /// </summary>
     public partial class TagResourceRequest : AmazonApiGatewayV2Request
     {
@@ -39,7 +39,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// AWS resource arn 
+        /// The resource ARN for the tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,9 +58,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag
-        /// key can be up to 128 characters and must not start with aws:. The tag value can be
-        /// up to 256 characters..
+        /// The collection of tags. Each tag element is associated with a given resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

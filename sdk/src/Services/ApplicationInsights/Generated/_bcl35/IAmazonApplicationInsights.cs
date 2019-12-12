@@ -70,6 +70,9 @@ namespace Amazon.ApplicationInsights
         /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
         /// The resource does not exist in the customer account.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.TagsAlreadyExistException">
+        /// Tags are already registered for the specified application ARN.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
         /// The parameter is not valid.
         /// </exception>
@@ -153,6 +156,58 @@ namespace Amazon.ApplicationInsights
         /// <returns>Returns a  CreateComponentResult from ApplicationInsights.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
         CreateComponentResponse EndCreateComponent(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateLogPattern
+
+
+        /// <summary>
+        /// Adds an log pattern to a <code>LogPatternSet</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLogPattern service method.</param>
+        /// 
+        /// <returns>The response from the CreateLogPattern service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceInUseException">
+        /// The resource is already created or in use.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateLogPattern">REST API Reference for CreateLogPattern Operation</seealso>
+        CreateLogPatternResponse CreateLogPattern(CreateLogPatternRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLogPattern operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLogPattern operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLogPattern
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateLogPattern">REST API Reference for CreateLogPattern Operation</seealso>
+        IAsyncResult BeginCreateLogPattern(CreateLogPatternRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLogPattern operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLogPattern.</param>
+        /// 
+        /// <returns>Returns a  CreateLogPatternResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateLogPattern">REST API Reference for CreateLogPattern Operation</seealso>
+        CreateLogPatternResponse EndCreateLogPattern(IAsyncResult asyncResult);
 
         #endregion
         
@@ -256,6 +311,58 @@ namespace Amazon.ApplicationInsights
         /// <returns>Returns a  DeleteComponentResult from ApplicationInsights.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
         DeleteComponentResponse EndDeleteComponent(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteLogPattern
+
+
+        /// <summary>
+        /// Removes the specified log pattern from a <code>LogPatternSet</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLogPattern service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLogPattern service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.BadRequestException">
+        /// The request is not understood by the server.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DeleteLogPattern">REST API Reference for DeleteLogPattern Operation</seealso>
+        DeleteLogPatternResponse DeleteLogPattern(DeleteLogPatternRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLogPattern operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLogPattern operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLogPattern
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DeleteLogPattern">REST API Reference for DeleteLogPattern Operation</seealso>
+        IAsyncResult BeginDeleteLogPattern(DeleteLogPatternRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLogPattern operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLogPattern.</param>
+        /// 
+        /// <returns>Returns a  DeleteLogPatternResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DeleteLogPattern">REST API Reference for DeleteLogPattern Operation</seealso>
+        DeleteLogPatternResponse EndDeleteLogPattern(IAsyncResult asyncResult);
 
         #endregion
         
@@ -452,6 +559,55 @@ namespace Amazon.ApplicationInsights
         /// <returns>Returns a  DescribeComponentConfigurationRecommendationResult from ApplicationInsights.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeComponentConfigurationRecommendation">REST API Reference for DescribeComponentConfigurationRecommendation Operation</seealso>
         DescribeComponentConfigurationRecommendationResponse EndDescribeComponentConfigurationRecommendation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeLogPattern
+
+
+        /// <summary>
+        /// Describe a specific log pattern from a <code>LogPatternSet</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLogPattern service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLogPattern service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeLogPattern">REST API Reference for DescribeLogPattern Operation</seealso>
+        DescribeLogPatternResponse DescribeLogPattern(DescribeLogPatternRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLogPattern operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLogPattern operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLogPattern
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeLogPattern">REST API Reference for DescribeLogPattern Operation</seealso>
+        IAsyncResult BeginDescribeLogPattern(DescribeLogPatternRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLogPattern operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLogPattern.</param>
+        /// 
+        /// <returns>Returns a  DescribeLogPatternResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeLogPattern">REST API Reference for DescribeLogPattern Operation</seealso>
+        DescribeLogPatternResponse EndDescribeLogPattern(IAsyncResult asyncResult);
 
         #endregion
         
@@ -697,6 +853,104 @@ namespace Amazon.ApplicationInsights
 
         #endregion
         
+        #region  ListLogPatterns
+
+
+        /// <summary>
+        /// Lists the log patterns in the specific log <code>LogPatternSet</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLogPatterns service method.</param>
+        /// 
+        /// <returns>The response from the ListLogPatterns service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatterns">REST API Reference for ListLogPatterns Operation</seealso>
+        ListLogPatternsResponse ListLogPatterns(ListLogPatternsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLogPatterns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLogPatterns operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLogPatterns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatterns">REST API Reference for ListLogPatterns Operation</seealso>
+        IAsyncResult BeginListLogPatterns(ListLogPatternsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLogPatterns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLogPatterns.</param>
+        /// 
+        /// <returns>Returns a  ListLogPatternsResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatterns">REST API Reference for ListLogPatterns Operation</seealso>
+        ListLogPatternsResponse EndListLogPatterns(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListLogPatternSets
+
+
+        /// <summary>
+        /// Lists the log pattern sets in the specific application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLogPatternSets service method.</param>
+        /// 
+        /// <returns>The response from the ListLogPatternSets service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatternSets">REST API Reference for ListLogPatternSets Operation</seealso>
+        ListLogPatternSetsResponse ListLogPatternSets(ListLogPatternSetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLogPatternSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLogPatternSets operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLogPatternSets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatternSets">REST API Reference for ListLogPatternSets Operation</seealso>
+        IAsyncResult BeginListLogPatternSets(ListLogPatternSetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLogPatternSets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLogPatternSets.</param>
+        /// 
+        /// <returns>Returns a  ListLogPatternSetsResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatternSets">REST API Reference for ListLogPatternSets Operation</seealso>
+        ListLogPatternSetsResponse EndListLogPatternSets(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListProblems
 
 
@@ -743,6 +997,162 @@ namespace Amazon.ApplicationInsights
         /// <returns>Returns a  ListProblemsResult from ApplicationInsights.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListProblems">REST API Reference for ListProblems Operation</seealso>
         ListProblemsResponse EndListProblems(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Retrieve a list of the tags (keys and values) that are associated with a specified
+        /// application. A <i>tag</i> is a label that you optionally define and associate with
+        /// an application. Each tag consists of a required <i>tag key</i> and an optional associated
+        /// <i>tag value</i>. A tag key is a general label that acts as a category for more specific
+        /// tag values. A tag value acts as a descriptor within a tag key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Add one or more tags (keys and values) to a specified application. A <i>tag</i> is
+        /// a label that you optionally define and associate with an application. Tags can help
+        /// you categorize and manage application in different ways, such as by purpose, owner,
+        /// environment, or other criteria. 
+        /// 
+        ///  
+        /// <para>
+        /// Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>,
+        /// both of which you define. A tag key is a general label that acts as a category for
+        /// more specific tag values. A tag value acts as a descriptor within a tag key.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.TooManyTagsException">
+        /// The number of the provided tags is beyond the limit, or the number of total tags you
+        /// are trying to attach to the specified resource exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Remove one or more tags (keys and values) from a specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
         
@@ -895,6 +1305,58 @@ namespace Amazon.ApplicationInsights
         /// <returns>Returns a  UpdateComponentConfigurationResult from ApplicationInsights.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateComponentConfiguration">REST API Reference for UpdateComponentConfiguration Operation</seealso>
         UpdateComponentConfigurationResponse EndUpdateComponentConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateLogPattern
+
+
+        /// <summary>
+        /// Adds a log pattern to a <code>LogPatternSet</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLogPattern service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLogPattern service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceInUseException">
+        /// The resource is already created or in use.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateLogPattern">REST API Reference for UpdateLogPattern Operation</seealso>
+        UpdateLogPatternResponse UpdateLogPattern(UpdateLogPatternRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLogPattern operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLogPattern operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLogPattern
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateLogPattern">REST API Reference for UpdateLogPattern Operation</seealso>
+        IAsyncResult BeginUpdateLogPattern(UpdateLogPatternRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLogPattern operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLogPattern.</param>
+        /// 
+        /// <returns>Returns a  UpdateLogPatternResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateLogPattern">REST API Reference for UpdateLogPattern Operation</seealso>
+        UpdateLogPatternResponse EndUpdateLogPattern(IAsyncResult asyncResult);
 
         #endregion
         

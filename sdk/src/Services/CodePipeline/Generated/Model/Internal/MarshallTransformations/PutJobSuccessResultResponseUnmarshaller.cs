@@ -69,6 +69,10 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             {
                 return new JobNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OutputVariablesSizeExceededException"))
+            {
+                return new OutputVariablesSizeExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
             {
                 return new ValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

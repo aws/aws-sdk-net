@@ -33,7 +33,9 @@ namespace Amazon.TranscribeService.Model
     public partial class Settings
     {
         private bool? _channelIdentification;
+        private int? _maxAlternatives;
         private int? _maxSpeakerLabels;
+        private bool? _showAlternatives;
         private bool? _showSpeakerLabels;
         private string _vocabularyName;
 
@@ -68,6 +70,27 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxAlternatives. 
+        /// <para>
+        /// The number of alternative transcriptions that the service should return. If you specify
+        /// the <code>MaxAlternatives</code> field, you must set the <code>ShowAlternatives</code>
+        /// field to true.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=10)]
+        public int MaxAlternatives
+        {
+            get { return this._maxAlternatives.GetValueOrDefault(); }
+            set { this._maxAlternatives = value; }
+        }
+
+        // Check to see if MaxAlternatives property is set
+        internal bool IsSetMaxAlternatives()
+        {
+            return this._maxAlternatives.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxSpeakerLabels. 
         /// <para>
         /// The maximum number of speakers to identify in the input audio. If there are more speakers
@@ -87,6 +110,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetMaxSpeakerLabels()
         {
             return this._maxSpeakerLabels.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShowAlternatives. 
+        /// <para>
+        /// Determines whether the transcription contains alternative transcriptions. If you set
+        /// the <code>ShowAlternatives</code> field to true, you must also set the maximum number
+        /// of alternatives to return in the <code>MaxAlternatives</code> field.
+        /// </para>
+        /// </summary>
+        public bool ShowAlternatives
+        {
+            get { return this._showAlternatives.GetValueOrDefault(); }
+            set { this._showAlternatives = value; }
+        }
+
+        // Check to see if ShowAlternatives property is set
+        internal bool IsSetShowAlternatives()
+        {
+            return this._showAlternatives.HasValue; 
         }
 
         /// <summary>

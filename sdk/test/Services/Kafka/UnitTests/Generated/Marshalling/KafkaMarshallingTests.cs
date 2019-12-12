@@ -617,5 +617,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void UpdateMonitoringMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateMonitoring");
+
+            var request = InstantiateClassGenerator.Execute<UpdateMonitoringRequest>();
+            var marshaller = new UpdateMonitoringRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateMonitoring", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateMonitoringResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateMonitoringResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
             }
 }

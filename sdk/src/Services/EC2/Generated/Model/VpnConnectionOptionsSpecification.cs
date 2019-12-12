@@ -32,8 +32,31 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class VpnConnectionOptionsSpecification
     {
+        private bool? _enableAcceleration;
         private bool? _staticRoutesOnly;
         private List<VpnTunnelOptionsSpecification> _tunnelOptions = new List<VpnTunnelOptionsSpecification>();
+
+        /// <summary>
+        /// Gets and sets the property EnableAcceleration. 
+        /// <para>
+        /// Indicate whether to enable acceleration for the VPN connection.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool EnableAcceleration
+        {
+            get { return this._enableAcceleration.GetValueOrDefault(); }
+            set { this._enableAcceleration = value; }
+        }
+
+        // Check to see if EnableAcceleration property is set
+        internal bool IsSetEnableAcceleration()
+        {
+            return this._enableAcceleration.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property StaticRoutesOnly. 

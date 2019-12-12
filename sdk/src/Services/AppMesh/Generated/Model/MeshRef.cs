@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing a service mesh returned by a list operation.
+    /// An object that represents a service mesh returned by a list operation.
     /// </summary>
     public partial class MeshRef
     {

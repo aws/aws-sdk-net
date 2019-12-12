@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
         private int? _audioFramesPerPes;
         private string _audioPids;
         private string _ecmPid;
+        private M3u8NielsenId3Behavior _nielsenId3Behavior;
         private int? _patInterval;
         private M3u8PcrControl _pcrControl;
         private int? _pcrPeriod;
@@ -96,6 +97,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetEcmPid()
         {
             return this._ecmPid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NielsenId3Behavior. If set to passthrough, Nielsen inaudible
+        /// tones for media tracking will be detected in the input audio and an equivalent ID3
+        /// tag will be inserted in the output.
+        /// </summary>
+        public M3u8NielsenId3Behavior NielsenId3Behavior
+        {
+            get { return this._nielsenId3Behavior; }
+            set { this._nielsenId3Behavior = value; }
+        }
+
+        // Check to see if NielsenId3Behavior property is set
+        internal bool IsSetNielsenId3Behavior()
+        {
+            return this._nielsenId3Behavior != null;
         }
 
         /// <summary>

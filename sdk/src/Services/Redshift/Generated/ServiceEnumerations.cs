@@ -31,6 +31,10 @@ namespace Amazon.Redshift
     {
 
         /// <summary>
+        /// Constant RecommendNodeConfig for ActionType
+        /// </summary>
+        public static readonly ActionType RecommendNodeConfig = new ActionType("recommend-node-config");
+        /// <summary>
         /// Constant RestoreCluster for ActionType
         /// </summary>
         public static readonly ActionType RestoreCluster = new ActionType("restore-cluster");
@@ -71,6 +75,56 @@ namespace Amazon.Redshift
 
 
     /// <summary>
+    /// Constants used for properties of type Mode.
+    /// </summary>
+    public class Mode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HighPerformance for Mode
+        /// </summary>
+        public static readonly Mode HighPerformance = new Mode("high-performance");
+        /// <summary>
+        /// Constant Standard for Mode
+        /// </summary>
+        public static readonly Mode Standard = new Mode("standard");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Mode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Mode FindValue(string value)
+        {
+            return FindValue<Mode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Mode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NodeConfigurationOptionsFilterName.
     /// </summary>
     public class NodeConfigurationOptionsFilterName : ConstantClass
@@ -80,6 +134,10 @@ namespace Amazon.Redshift
         /// Constant EstimatedDiskUtilizationPercent for NodeConfigurationOptionsFilterName
         /// </summary>
         public static readonly NodeConfigurationOptionsFilterName EstimatedDiskUtilizationPercent = new NodeConfigurationOptionsFilterName("EstimatedDiskUtilizationPercent");
+        /// <summary>
+        /// Constant Mode for NodeConfigurationOptionsFilterName
+        /// </summary>
+        public static readonly NodeConfigurationOptionsFilterName Mode = new NodeConfigurationOptionsFilterName("Mode");
         /// <summary>
         /// Constant NodeType for NodeConfigurationOptionsFilterName
         /// </summary>
@@ -295,6 +353,152 @@ namespace Amazon.Redshift
 
 
     /// <summary>
+    /// Constants used for properties of type ScheduledActionFilterName.
+    /// </summary>
+    public class ScheduledActionFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ClusterIdentifier for ScheduledActionFilterName
+        /// </summary>
+        public static readonly ScheduledActionFilterName ClusterIdentifier = new ScheduledActionFilterName("cluster-identifier");
+        /// <summary>
+        /// Constant IamRole for ScheduledActionFilterName
+        /// </summary>
+        public static readonly ScheduledActionFilterName IamRole = new ScheduledActionFilterName("iam-role");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScheduledActionFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduledActionFilterName FindValue(string value)
+        {
+            return FindValue<ScheduledActionFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduledActionFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScheduledActionState.
+    /// </summary>
+    public class ScheduledActionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ScheduledActionState
+        /// </summary>
+        public static readonly ScheduledActionState ACTIVE = new ScheduledActionState("ACTIVE");
+        /// <summary>
+        /// Constant DISABLED for ScheduledActionState
+        /// </summary>
+        public static readonly ScheduledActionState DISABLED = new ScheduledActionState("DISABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScheduledActionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduledActionState FindValue(string value)
+        {
+            return FindValue<ScheduledActionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduledActionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScheduledActionTypeValues.
+    /// </summary>
+    public class ScheduledActionTypeValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ResizeCluster for ScheduledActionTypeValues
+        /// </summary>
+        public static readonly ScheduledActionTypeValues ResizeCluster = new ScheduledActionTypeValues("ResizeCluster");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScheduledActionTypeValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduledActionTypeValues FindValue(string value)
+        {
+            return FindValue<ScheduledActionTypeValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduledActionTypeValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScheduleState.
     /// </summary>
     public class ScheduleState : ConstantClass
@@ -474,6 +678,10 @@ namespace Amazon.Redshift
         /// Constant ClusterSnapshot for SourceType
         /// </summary>
         public static readonly SourceType ClusterSnapshot = new SourceType("cluster-snapshot");
+        /// <summary>
+        /// Constant ScheduledAction for SourceType
+        /// </summary>
+        public static readonly SourceType ScheduledAction = new SourceType("scheduled-action");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

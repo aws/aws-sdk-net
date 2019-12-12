@@ -71,6 +71,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AllocationId", StringUtils.FromString(publicRequestlistValue.AllocationId));
                         }
+                        if(publicRequestlistValue.IsSetPrivateIPv4Address())
+                        {
+                            request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PrivateIPv4Address", StringUtils.FromString(publicRequestlistValue.PrivateIPv4Address));
+                        }
                         if(publicRequestlistValue.IsSetSubnetId())
                         {
                             request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestlistValue.SubnetId));

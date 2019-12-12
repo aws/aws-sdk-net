@@ -53,7 +53,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The ID of the DB instance to retrieve the list of DB snapshots for. This parameter
         /// can't be used in conjunction with <code>DBSnapshotIdentifier</code>. This parameter
-        /// is not case-sensitive. 
+        /// isn't case-sensitive. 
         /// </para>
         ///  
         /// <para>
@@ -248,7 +248,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that the remaining results can be retrieved. 
+        /// included in the response so that you can retrieve the remaining results. 
         /// </para>
         ///  
         /// <para>

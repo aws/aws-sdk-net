@@ -72,6 +72,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CustomerGatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("deviceName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DeviceName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ipAddress", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

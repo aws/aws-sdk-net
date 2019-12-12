@@ -29,14 +29,19 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPublicAccessBlock operation.
-    /// 
+    /// Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
+    /// account.
     /// </summary>
     public partial class GetPublicAccessBlockRequest : AmazonS3ControlRequest
     {
         private string _accountId;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code>
+        /// configuration you want to retrieve.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
         public string AccountId

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the access logging information for a virtual node.
+    /// An object that represents the access logging information for a virtual node.
     /// </summary>
     public partial class AccessLog
     {

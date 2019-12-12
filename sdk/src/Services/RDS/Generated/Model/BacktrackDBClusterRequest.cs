@@ -58,7 +58,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the specified time is not a consistent time for the DB cluster, Aurora automatically
+        /// If the specified time isn't a consistent time for the DB cluster, Aurora automatically
         /// chooses the nearest possible consistent time for the DB cluster.
         /// </para>
         ///  </note> 
@@ -192,7 +192,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the specified time is not a consistent time for the DB cluster, Aurora automatically
+        /// If the specified time isn't a consistent time for the DB cluster, Aurora automatically
         /// chooses the nearest possible consistent time for the DB cluster.
         /// </para>
         ///  </note> 

@@ -37,7 +37,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The region of the replica to be added.
+        /// The Region of the replica to be added.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

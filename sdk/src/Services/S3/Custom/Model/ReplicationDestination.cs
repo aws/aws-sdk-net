@@ -30,6 +30,9 @@ namespace Amazon.S3.Model
         private EncryptionConfiguration encryptionConfiguration;
         private AccessControlTranslation accessControlTranslation;
         private string accountId;
+        private ReplicationTime replicationTime;
+        private Metrics metrics;
+
         /// <summary>
         /// <p> Amazon resource name (ARN) of the bucket where you want Amazon
         /// S3 to store replicas of the object identified by the rule. </p> <p>
@@ -121,6 +124,40 @@ namespace Amazon.S3.Model
         public bool IsSetEncryptionConfiguration()
         {
             return this.encryptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// A container specifying the time when all objects and operations on objects are 
+        /// replicated. Must be specified together with a <code>Metrics</code> block.
+        /// </summary>
+        public ReplicationTime ReplicationTime
+        {
+            get { return this.replicationTime; }
+            set { this.replicationTime = value; }
+        }
+
+        // Check to see if ReplicationTime property is set
+        internal bool IsSetReplicationTime()
+        {
+            return this.replicationTime != null;
+        }
+
+        /// <summary>
+        /// A container specifying replication metrics-related information, including whether 
+        /// emitting metrics and Amazon S3 events for replication are enabled. In addition, 
+        /// contains configurations related to specific metrics or events. Must be specified 
+        /// together with a <code>ReplicationTime</code> block.
+        /// </summary>
+        public Metrics Metrics
+        {
+            get { return this.metrics; }
+            set { this.metrics = value; }
+        }
+
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this.metrics != null;
         }
     }
 }

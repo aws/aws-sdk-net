@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// FFor information about filter rule properties, see <a href="https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html#traffic-mirroring-network-services">Network
+    /// For information about filter rule properties, see <a href="https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html">Network
     /// Services</a> in the <i>Traffic Mirroring User Guide </i>.
     /// </para>
     /// </summary>

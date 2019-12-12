@@ -44,7 +44,7 @@ namespace Amazon.SecurityToken.Model
         /// Instantiates FederatedUser with the parameterized properties
         /// </summary>
         /// <param name="federatedUserId">The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</param>
-        /// <param name="arn">The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in <i>Using IAM</i>. </param>
+        /// <param name="arn">The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </param>
         public FederatedUser(string federatedUserId, string arn)
         {
             _federatedUserId = federatedUserId;
@@ -56,7 +56,7 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// The ARN that specifies the federated user that is associated with the credentials.
         /// For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// Identifiers</a> in <i>Using IAM</i>. 
+        /// Identifiers</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

@@ -37,34 +37,39 @@ namespace Amazon.Textract.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Words and lines that are related to nearby lines and words. The related information
-    /// is returned in two <a>Block</a> objects each of type <code>KEY_VALUE_SET</code>: a
-    /// KEY Block object and a VALUE Block object. For example, <i>Name: Ana Silva Carolina</i>
+    /// Form data (key-value pairs). The related information is returned in two <a>Block</a>
+    /// objects, each of type <code>KEY_VALUE_SET</code>: a KEY <code>Block</code> object
+    /// and a VALUE <code>Block</code> object. For example, <i>Name: Ana Silva Carolina</i>
     /// contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the
     /// value.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Table and table cell data. A TABLE Block object contains information about a detected
-    /// table. A CELL Block object is returned for each cell in a table.
+    /// Table and table cell data. A TABLE <code>Block</code> object contains information
+    /// about a detected table. A CELL <code>Block</code> object is returned for each cell
+    /// in a table.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Selectable elements such as checkboxes and radio buttons. A SELECTION_ELEMENT Block
-    /// object contains information about a selectable element.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Lines and words of text. A LINE Block object contains one or more WORD Block objects.
+    /// Lines and words of text. A LINE <code>Block</code> object contains one or more WORD
+    /// <code>Block</code> objects. All lines and words that are detected in the document
+    /// are returned (including text that doesn't have a relationship with the value of <code>FeatureTypes</code>).
+    /// 
     /// </para>
     ///  </li> </ul> 
+    /// <para>
+    /// Selection elements such as check boxes and option buttons (radio buttons) can be detected
+    /// in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object contains
+    /// information about a selection element, including the selection status.
+    /// </para>
+    ///  
     /// <para>
     /// You can choose which type of analysis to perform by specifying the <code>FeatureTypes</code>
     /// list. 
     /// </para>
     ///  
     /// <para>
-    /// The output is returned in a list of <code>BLOCK</code> objects.
+    /// The output is returned in a list of <code>Block</code> objects.
     /// </para>
     ///  
     /// <para>
@@ -81,18 +86,19 @@ namespace Amazon.Textract.Model
     {
         private Document _document;
         private List<string> _featureTypes = new List<string>();
+        private HumanLoopConfig _humanLoopConfig;
 
         /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
         /// The input document as base64-encoded bytes or an Amazon S3 object. If you use the
         /// AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document
-        /// must be an image in JPG or PNG format.
+        /// must be an image in JPEG or PNG format.
         /// </para>
         ///  
         /// <para>
-        /// If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode
-        /// image bytes passed using the <code>Bytes</code> field. 
+        /// If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+        /// image bytes that are passed using the <code>Bytes</code> field. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -112,9 +118,10 @@ namespace Amazon.Textract.Model
         /// Gets and sets the property FeatureTypes. 
         /// <para>
         /// A list of the types of analysis to perform. Add TABLES to the list to return information
-        /// about the tables detected in the input document. Add FORMS to return detected fields
-        /// and the associated text. To perform both types of analysis, add TABLES and FORMS to
-        /// <code>FeatureTypes</code>.
+        /// about the tables that are detected in the input document. Add FORMS to return detected
+        /// form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+        /// All lines and words detected in the document are included in the response (including
+        /// text that isn't related to the value of <code>FeatureTypes</code>). 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -128,6 +135,24 @@ namespace Amazon.Textract.Model
         internal bool IsSetFeatureTypes()
         {
             return this._featureTypes != null && this._featureTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HumanLoopConfig. 
+        /// <para>
+        /// Sets the configuration for the human in the loop workflow for analyzing documents.
+        /// </para>
+        /// </summary>
+        public HumanLoopConfig HumanLoopConfig
+        {
+            get { return this._humanLoopConfig; }
+            set { this._humanLoopConfig = value; }
+        }
+
+        // Check to see if HumanLoopConfig property is set
+        internal bool IsSetHumanLoopConfig()
+        {
+            return this._humanLoopConfig != null;
         }
 
     }

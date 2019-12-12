@@ -38,7 +38,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property FailureMessage. 
         /// <para>
-        /// Additional message information about the trigger that did not run.
+        /// Message information about the trigger that did not run.
         /// </para>
         /// </summary>
         public string FailureMessage

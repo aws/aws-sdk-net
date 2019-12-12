@@ -70,6 +70,18 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Interval", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Interval = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IntervalUnit", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IntervalUnit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

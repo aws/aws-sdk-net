@@ -75,6 +75,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZoneId;
         private string _cidrBlock;
         private string _ipv6CidrBlock;
+        private string _outpostArn;
         private string _vpcId;
 
         /// <summary>
@@ -96,12 +97,19 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone for the subnet.
+        /// The Availability Zone or Local Zone for the subnet.
         /// </para>
         ///  
         /// <para>
         /// Default: AWS selects one for you. If you create more than one subnet in your VPC,
-        /// we may not necessarily select a different zone for each subnet.
+        /// we do not necessarily select a different zone for each subnet.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
+        /// <code>us-west-2-lax-1a</code>. For information about the Regions that support Local
+        /// Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
+        /// Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -119,7 +127,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneId. 
         /// <para>
-        /// The AZ ID of the subnet.
+        /// The AZ ID or the Local Zone ID of the subnet.
         /// </para>
         /// </summary>
         public string AvailabilityZoneId
@@ -170,6 +178,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6CidrBlock()
         {
             return this._ipv6CidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Outpost.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>

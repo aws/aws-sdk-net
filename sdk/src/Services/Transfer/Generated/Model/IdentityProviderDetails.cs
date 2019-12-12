@@ -43,6 +43,7 @@ namespace Amazon.Transfer.Model
         /// used to authenticate the user account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string InvocationRole
         {
             get { return this._invocationRole; }
@@ -62,6 +63,7 @@ namespace Amazon.Transfer.Model
         /// used to authenticate users.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string Url
         {
             get { return this._url; }

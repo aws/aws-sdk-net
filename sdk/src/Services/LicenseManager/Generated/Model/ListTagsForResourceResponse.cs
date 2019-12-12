@@ -37,7 +37,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// List of tags attached to the resource.
+        /// Information about the tags.
         /// </para>
         /// </summary>
         public List<Tag> Tags

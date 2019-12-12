@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         private bool? _encrypted;
         private string _hypervisor;
         private string _kmsKeyId;
+        private List<ImportImageLicenseConfigurationRequest> _licenseSpecifications = new List<ImportImageLicenseConfigurationRequest>();
         private string _licenseType;
         private string _platform;
         private string _roleName;
@@ -241,6 +242,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseSpecifications. 
+        /// <para>
+        /// The ARNs of the license configurations.
+        /// </para>
+        /// </summary>
+        public List<ImportImageLicenseConfigurationRequest> LicenseSpecifications
+        {
+            get { return this._licenseSpecifications; }
+            set { this._licenseSpecifications = value; }
+        }
+
+        // Check to see if LicenseSpecifications property is set
+        internal bool IsSetLicenseSpecifications()
+        {
+            return this._licenseSpecifications != null && this._licenseSpecifications.Count > 0; 
         }
 
         /// <summary>

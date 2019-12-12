@@ -82,6 +82,30 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.EngineExecutionTimeInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QueryPlanningTimeInMillis", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.QueryPlanningTimeInMillis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("QueryQueueTimeInMillis", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.QueryQueueTimeInMillis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServiceProcessingTimeInMillis", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ServiceProcessingTimeInMillis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TotalExecutionTimeInMillis", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.TotalExecutionTimeInMillis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

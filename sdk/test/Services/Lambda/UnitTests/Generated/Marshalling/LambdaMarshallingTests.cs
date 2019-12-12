@@ -287,6 +287,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
+        public void DeleteFunctionEventInvokeConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteFunctionEventInvokeConfig");
+
+            var request = InstantiateClassGenerator.Execute<DeleteFunctionEventInvokeConfigRequest>();
+            var marshaller = new DeleteFunctionEventInvokeConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteFunctionEventInvokeConfig", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
         public void DeleteLayerVersionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteLayerVersion");
@@ -296,6 +313,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("DeleteLayerVersion", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void DeleteProvisionedConcurrencyConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteProvisionedConcurrencyConfig");
+
+            var request = InstantiateClassGenerator.Execute<DeleteProvisionedConcurrencyConfigRequest>();
+            var marshaller = new DeleteProvisionedConcurrencyConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteProvisionedConcurrencyConfig", request, internalRequest, service_model);            
 
         }
 
@@ -432,6 +466,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
+        public void GetFunctionConcurrencyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetFunctionConcurrency");
+
+            var request = InstantiateClassGenerator.Execute<GetFunctionConcurrencyRequest>();
+            var marshaller = new GetFunctionConcurrencyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetFunctionConcurrency", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetFunctionConcurrencyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetFunctionConcurrencyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
         public void GetFunctionConfigurationMarshallTest()
         {
             var operation = service_model.FindOperation("GetFunctionConfiguration");
@@ -456,6 +522,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetFunctionConfigurationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetFunctionConfigurationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void GetFunctionEventInvokeConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetFunctionEventInvokeConfig");
+
+            var request = InstantiateClassGenerator.Execute<GetFunctionEventInvokeConfigRequest>();
+            var marshaller = new GetFunctionEventInvokeConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetFunctionEventInvokeConfig", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetFunctionEventInvokeConfigResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetFunctionEventInvokeConfigResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -584,6 +682,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetPolicyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetPolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void GetProvisionedConcurrencyConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetProvisionedConcurrencyConfig");
+
+            var request = InstantiateClassGenerator.Execute<GetProvisionedConcurrencyConfigRequest>();
+            var marshaller = new GetProvisionedConcurrencyConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetProvisionedConcurrencyConfig", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetProvisionedConcurrencyConfigResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -723,6 +853,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
+        public void ListFunctionEventInvokeConfigsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListFunctionEventInvokeConfigs");
+
+            var request = InstantiateClassGenerator.Execute<ListFunctionEventInvokeConfigsRequest>();
+            var marshaller = new ListFunctionEventInvokeConfigsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListFunctionEventInvokeConfigs", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListFunctionEventInvokeConfigsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListFunctionEventInvokeConfigsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
         public void ListFunctionsMarshallTest()
         {
             var operation = service_model.FindOperation("ListFunctions");
@@ -811,6 +973,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListLayerVersionsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListLayerVersionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void ListProvisionedConcurrencyConfigsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListProvisionedConcurrencyConfigs");
+
+            var request = InstantiateClassGenerator.Execute<ListProvisionedConcurrencyConfigsRequest>();
+            var marshaller = new ListProvisionedConcurrencyConfigsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListProvisionedConcurrencyConfigs", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListProvisionedConcurrencyConfigsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListProvisionedConcurrencyConfigsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -971,6 +1165,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PutFunctionConcurrencyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PutFunctionConcurrencyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void PutFunctionEventInvokeConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutFunctionEventInvokeConfig");
+
+            var request = InstantiateClassGenerator.Execute<PutFunctionEventInvokeConfigRequest>();
+            var marshaller = new PutFunctionEventInvokeConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutFunctionEventInvokeConfig", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutFunctionEventInvokeConfigResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutFunctionEventInvokeConfigResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void PutProvisionedConcurrencyConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutProvisionedConcurrencyConfig");
+
+            var request = InstantiateClassGenerator.Execute<PutProvisionedConcurrencyConfigRequest>();
+            var marshaller = new PutProvisionedConcurrencyConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutProvisionedConcurrencyConfig", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutProvisionedConcurrencyConfigResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -1167,6 +1425,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = UpdateFunctionConfigurationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as UpdateFunctionConfigurationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void UpdateFunctionEventInvokeConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateFunctionEventInvokeConfig");
+
+            var request = InstantiateClassGenerator.Execute<UpdateFunctionEventInvokeConfigRequest>();
+            var marshaller = new UpdateFunctionEventInvokeConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateFunctionEventInvokeConfig", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateFunctionEventInvokeConfigResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateFunctionEventInvokeConfigResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

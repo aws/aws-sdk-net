@@ -94,10 +94,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>ListTaskDefinitionFamilies</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value
-        /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value.
+        /// The <code>nextToken</code> value returned from a <code>ListTaskDefinitionFamilies</code>
+        /// request indicating that more results are available to fulfill the request and further
+        /// calls will be needed. If <code>maxResults</code> was provided, it is possible the
+        /// number of results to be fewer than <code>maxResults</code>.
         /// </para>
         ///  <note> 
         /// <para>

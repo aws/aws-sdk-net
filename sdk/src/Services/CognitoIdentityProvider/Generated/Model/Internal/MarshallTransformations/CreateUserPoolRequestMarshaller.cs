@@ -68,6 +68,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccountRecoverySetting())
+                {
+                    context.Writer.WritePropertyName("AccountRecoverySetting");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AccountRecoverySettingTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AccountRecoverySetting, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAdminCreateUserConfig())
                 {
                     context.Writer.WritePropertyName("AdminCreateUserConfig");

@@ -6,6 +6,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.AddInstanceFleetResponse.ClusterArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.AddInstanceFleetResponse.ClusterId</property>
     <min>0</min>
     <max>256</max>
@@ -14,6 +19,11 @@
     <property>Amazon.ElasticMapReduce.Model.AddInstanceGroupsRequest.JobFlowId</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.AddInstanceGroupsResponse.ClusterArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.AddInstanceGroupsResponse.JobFlowId</property>
@@ -54,6 +64,11 @@
     <property>Amazon.ElasticMapReduce.Model.DescribeSecurityConfigurationResponse.Name</property>
     <min>0</min>
     <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.PutAutoScalingPolicyResponse.ClusterArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.RunJobFlowRequest.AdditionalInfo</property>
@@ -106,6 +121,11 @@
     <max>10280</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.RunJobFlowResponse.ClusterArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.RunJobFlowResponse.JobFlowId</property>
     <min>0</min>
     <max>256</max>
@@ -130,14 +150,34 @@
     <max>10280</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.Cluster.ClusterArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.Cluster.CustomAmiId</property>
     <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.Cluster.OutpostArn</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.Cluster.SecurityConfiguration</property>
     <min>0</min>
     <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.ClusterSummary.ClusterArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.ClusterSummary.OutpostArn</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.HadoopJarStepConfig.Jar</property>

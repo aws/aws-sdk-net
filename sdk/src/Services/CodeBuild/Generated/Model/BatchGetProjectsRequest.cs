@@ -29,7 +29,7 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetProjects operation.
-    /// Gets information about build projects.
+    /// Gets information about one or more build projects.
     /// </summary>
     public partial class BatchGetProjectsRequest : AmazonCodeBuildRequest
     {

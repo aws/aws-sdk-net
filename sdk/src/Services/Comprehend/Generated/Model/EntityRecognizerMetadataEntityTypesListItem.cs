@@ -58,7 +58,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property NumberOfTrainMentions. 
         /// <para>
-        /// indicates the number of times the given entity name was seen in the training data.
+        /// Indicates the number of times the given entity type was seen in the training data.
         /// 
         /// </para>
         /// </summary>

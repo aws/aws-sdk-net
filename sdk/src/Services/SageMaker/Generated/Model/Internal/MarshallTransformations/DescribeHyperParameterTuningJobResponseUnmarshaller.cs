@@ -123,6 +123,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.TrainingJobDefinition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TrainingJobDefinitions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HyperParameterTrainingJobDefinition, HyperParameterTrainingJobDefinitionUnmarshaller>(HyperParameterTrainingJobDefinitionUnmarshaller.Instance);
+                    response.TrainingJobDefinitions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TrainingJobStatusCounters", targetDepth))
                 {
                     var unmarshaller = TrainingJobStatusCountersUnmarshaller.Instance;

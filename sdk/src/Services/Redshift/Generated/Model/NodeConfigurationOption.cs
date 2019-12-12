@@ -33,6 +33,7 @@ namespace Amazon.Redshift.Model
     public partial class NodeConfigurationOption
     {
         private double? _estimatedDiskUtilizationPercent;
+        private Mode _mode;
         private string _nodeType;
         private int? _numberOfNodes;
 
@@ -52,6 +53,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetEstimatedDiskUtilizationPercent()
         {
             return this._estimatedDiskUtilizationPercent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// The category of the node configuration recommendation.
+        /// </para>
+        /// </summary>
+        public Mode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
         }
 
         /// <summary>

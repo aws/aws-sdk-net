@@ -68,6 +68,7 @@ namespace Amazon.DynamoDBv2.Model
         private BillingMode _billingMode;
         private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = new List<GlobalSecondaryIndexUpdate>();
         private ProvisionedThroughput _provisionedThroughput;
+        private List<ReplicationGroupUpdate> _replicaUpdates = new List<ReplicationGroupUpdate>();
         private SSESpecification _sseSpecification;
         private StreamSpecification _streamSpecification;
         private string _tableName;
@@ -119,13 +120,16 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We
-        /// recommend using <code>PROVISIONED</code> for predictable workloads.
+        ///  <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable
+        /// workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
+        /// Mode</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>.
-        /// We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. 
+        ///  <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for
+        /// unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a
+        /// href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
+        /// Mode</a>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -162,6 +166,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// You can create or delete only one global secondary index per <code>UpdateTable</code>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
         /// Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
         /// </para>
@@ -194,6 +203,31 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetProvisionedThroughput()
         {
             return this._provisionedThroughput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaUpdates. 
+        /// <para>
+        /// A list of replica update actions (create, delete, or update) for the table.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+        /// 2019.11.21</a> of global tables.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ReplicationGroupUpdate> ReplicaUpdates
+        {
+            get { return this._replicaUpdates; }
+            set { this._replicaUpdates = value; }
+        }
+
+        // Check to see if ReplicaUpdates property is set
+        internal bool IsSetReplicaUpdates()
+        {
+            return this._replicaUpdates != null && this._replicaUpdates.Count > 0; 
         }
 
         /// <summary>

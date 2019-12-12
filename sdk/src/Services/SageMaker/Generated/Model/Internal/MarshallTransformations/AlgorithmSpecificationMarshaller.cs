@@ -51,6 +51,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AlgorithmName);
             }
 
+            if(requestObject.IsSetEnableSageMakerMetricsTimeSeries())
+            {
+                context.Writer.WritePropertyName("EnableSageMakerMetricsTimeSeries");
+                context.Writer.Write(requestObject.EnableSageMakerMetricsTimeSeries);
+            }
+
             if(requestObject.IsSetMetricDefinitions())
             {
                 context.Writer.WritePropertyName("MetricDefinitions");

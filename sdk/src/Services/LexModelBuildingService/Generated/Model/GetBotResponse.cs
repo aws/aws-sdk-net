@@ -38,6 +38,7 @@ namespace Amazon.LexModelBuildingService.Model
         private Prompt _clarificationPrompt;
         private DateTime? _createdDate;
         private string _description;
+        private bool? _detectSentiment;
         private string _failureReason;
         private int? _idleSessionTTLInSeconds;
         private List<Intent> _intents = new List<Intent>();
@@ -184,6 +185,25 @@ namespace Amazon.LexModelBuildingService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DetectSentiment. 
+        /// <para>
+        /// Indicates whether user utterances should be sent to Amazon Comprehend for sentiment
+        /// analysis.
+        /// </para>
+        /// </summary>
+        public bool DetectSentiment
+        {
+            get { return this._detectSentiment.GetValueOrDefault(); }
+            set { this._detectSentiment = value; }
+        }
+
+        // Check to see if DetectSentiment property is set
+        internal bool IsSetDetectSentiment()
+        {
+            return this._detectSentiment.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
         /// If <code>status</code> is <code>FAILED</code>, Amazon Lex explains why it failed to
@@ -299,10 +319,27 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the bot. If the bot is ready to run, the status is <code>READY</code>.
+        /// The status of the bot. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing
+        /// and use.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot
+        /// using the exact utterances specified in the bot's intents. When the bot is ready for
+        /// full testing or to run, the status is <code>READY</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// If there was a problem with building the bot, the status is <code>FAILED</code> and
-        /// the <code>failureReason</code> explains why the bot did not build. If the bot was
-        /// saved but not built, the status is <code>NOT BUILT</code>.
+        /// the <code>failureReason</code> field explains why the bot did not build.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the bot was saved but not built, the status is <code>NOT_BUILT</code>.
         /// </para>
         /// </summary>
         public Status Status

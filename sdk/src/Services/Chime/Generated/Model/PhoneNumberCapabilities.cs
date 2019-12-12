@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The phone number capabilities, such as enabled inbound and outbound calling and text
-    /// messaging.
+    /// The phone number capabilities for Amazon Chime Business Calling phone numbers, such
+    /// as enabled inbound and outbound calling and text messaging.
     /// </summary>
     public partial class PhoneNumberCapabilities
     {

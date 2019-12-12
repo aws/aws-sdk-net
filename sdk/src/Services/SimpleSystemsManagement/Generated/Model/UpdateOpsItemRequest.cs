@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class UpdateOpsItemRequest : AmazonSimpleSystemsManagementRequest
     {
+        private string _category;
         private string _description;
         private List<OpsItemNotification> _notifications = new List<OpsItemNotification>();
         private Dictionary<string, OpsItemDataValue> _operationalData = new Dictionary<string, OpsItemDataValue>();
@@ -50,8 +51,28 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _opsItemId;
         private int? _priority;
         private List<RelatedOpsItem> _relatedOpsItems = new List<RelatedOpsItem>();
+        private string _severity;
         private OpsItemStatus _status;
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// Specify a new category for an OpsItem.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Category
+        {
+            get { return this._category; }
+            set { this._category = value; }
+        }
+
+        // Check to see if Category property is set
+        internal bool IsSetCategory()
+        {
+            return this._category != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -214,6 +235,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRelatedOpsItems()
         {
             return this._relatedOpsItems != null && this._relatedOpsItems.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// Specify a new severity for an OpsItem.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Severity
+        {
+            get { return this._severity; }
+            set { this._severity = value; }
+        }
+
+        // Check to see if Severity property is set
+        internal bool IsSetSeverity()
+        {
+            return this._severity != null;
         }
 
         /// <summary>

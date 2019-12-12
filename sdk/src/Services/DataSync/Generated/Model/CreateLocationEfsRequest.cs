@@ -109,6 +109,11 @@ namespace Amazon.DataSync.Model
         /// used to read data from the EFS source location or write data to the EFS destination.
         /// By default, AWS DataSync uses the root directory.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=4096)]
         public string Subdirectory

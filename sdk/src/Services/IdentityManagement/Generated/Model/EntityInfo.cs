@@ -101,7 +101,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Path. 
         /// <para>
         /// The path to the entity (user or role). For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>Using IAM</i> guide. 
+        /// Identifiers</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

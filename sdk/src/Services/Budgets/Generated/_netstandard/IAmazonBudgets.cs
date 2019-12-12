@@ -125,6 +125,9 @@ namespace Amazon.Budgets
         /// </param>
         /// 
         /// <returns>The response from the CreateBudget service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.CreationLimitExceededException">
         /// You've exceeded the notification or subscriber limit.
         /// </exception>
@@ -155,6 +158,9 @@ namespace Amazon.Budgets
         /// </param>
         /// 
         /// <returns>The response from the CreateNotification service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.CreationLimitExceededException">
         /// You've exceeded the notification or subscriber limit.
         /// </exception>
@@ -188,6 +194,9 @@ namespace Amazon.Budgets
         /// </param>
         /// 
         /// <returns>The response from the CreateSubscriber service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.CreationLimitExceededException">
         /// You've exceeded the notification or subscriber limit.
         /// </exception>
@@ -227,6 +236,9 @@ namespace Amazon.Budgets
         /// </param>
         /// 
         /// <returns>The response from the DeleteBudget service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -260,6 +272,9 @@ namespace Amazon.Budgets
         /// </param>
         /// 
         /// <returns>The response from the DeleteNotification service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -292,6 +307,9 @@ namespace Amazon.Budgets
         /// </param>
         /// 
         /// <returns>The response from the DeleteSubscriber service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -326,6 +344,9 @@ namespace Amazon.Budgets
         /// </param>
         /// 
         /// <returns>The response from the DescribeBudget service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -353,6 +374,9 @@ namespace Amazon.Budgets
         /// </param>
         /// 
         /// <returns>The response from the DescribeBudgetPerformanceHistory service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ExpiredNextTokenException">
         /// The pagination token expired.
         /// </exception>
@@ -393,6 +417,9 @@ namespace Amazon.Budgets
         /// </param>
         /// 
         /// <returns>The response from the DescribeBudgets service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ExpiredNextTokenException">
         /// The pagination token expired.
         /// </exception>
@@ -425,6 +452,9 @@ namespace Amazon.Budgets
         /// </param>
         /// 
         /// <returns>The response from the DescribeNotificationsForBudget service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ExpiredNextTokenException">
         /// The pagination token expired.
         /// </exception>
@@ -457,6 +487,9 @@ namespace Amazon.Budgets
         /// </param>
         /// 
         /// <returns>The response from the DescribeSubscribersForNotification service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ExpiredNextTokenException">
         /// The pagination token expired.
         /// </exception>
@@ -501,6 +534,9 @@ namespace Amazon.Budgets
         /// </param>
         /// 
         /// <returns>The response from the UpdateBudget service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -527,6 +563,9 @@ namespace Amazon.Budgets
         /// </param>
         /// 
         /// <returns>The response from the UpdateNotification service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.DuplicateRecordException">
         /// The budget name already exists. Budget names must be unique within an account.
         /// </exception>
@@ -556,6 +595,9 @@ namespace Amazon.Budgets
         /// </param>
         /// 
         /// <returns>The response from the UpdateSubscriber service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.DuplicateRecordException">
         /// The budget name already exists. Budget names must be unique within an account.
         /// </exception>

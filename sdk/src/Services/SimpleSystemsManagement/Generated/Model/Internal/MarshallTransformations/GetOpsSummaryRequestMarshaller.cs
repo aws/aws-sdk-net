@@ -112,6 +112,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetResultAttributes())
+                {
+                    context.Writer.WritePropertyName("ResultAttributes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestResultAttributesListValue in publicRequest.ResultAttributes)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OpsResultAttributeMarshaller.Instance;
+                        marshaller.Marshall(publicRequestResultAttributesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetSyncName())
+                {
+                    context.Writer.WritePropertyName("SyncName");
+                    context.Writer.Write(publicRequest.SyncName);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

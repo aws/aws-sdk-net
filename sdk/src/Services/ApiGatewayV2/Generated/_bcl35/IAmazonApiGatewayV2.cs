@@ -256,6 +256,9 @@ namespace Amazon.ApiGatewayV2
         /// <param name="request">Container for the necessary parameters to execute the CreateDomainName service method.</param>
         /// 
         /// <returns>The response from the CreateDomainName service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
         /// The request is not valid, for example, the input is incomplete or incorrect. See the
         /// accompanying error message for details.
@@ -754,6 +757,50 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  DeleteCorsConfiguration
+
+
+        /// <summary>
+        /// Deletes a CORS configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCorsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCorsConfiguration service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        DeleteCorsConfigurationResponse DeleteCorsConfiguration(DeleteCorsConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCorsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCorsConfiguration operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCorsConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteCorsConfiguration(DeleteCorsConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCorsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCorsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteCorsConfigurationResult from ApiGatewayV2.</returns>
+        DeleteCorsConfigurationResponse EndDeleteCorsConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteDeployment
 
 
@@ -1062,6 +1109,50 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  DeleteRouteSettings
+
+
+        /// <summary>
+        /// Deletes the RouteSettings for a stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteSettings service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRouteSettings service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        DeleteRouteSettingsResponse DeleteRouteSettings(DeleteRouteSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRouteSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteSettings operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRouteSettings
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteRouteSettings(DeleteRouteSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRouteSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRouteSettings.</param>
+        /// 
+        /// <returns>Returns a  DeleteRouteSettingsResult from ApiGatewayV2.</returns>
+        DeleteRouteSettingsResponse EndDeleteRouteSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteStage
 
 
@@ -1154,7 +1245,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// The API mapping.
+        /// Gets an API mapping.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApiMapping service method.</param>
         /// 
@@ -1202,7 +1293,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// The API mappings.
+        /// Gets API mappings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApiMappings service method.</param>
         /// 
@@ -2170,7 +2261,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// Gets the Tags for an API.
+        /// Gets a collection of Tag resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
         /// 
@@ -2219,11 +2310,117 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  ImportApi
+
+
+        /// <summary>
+        /// Imports an API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportApi service method.</param>
+        /// 
+        /// <returns>The response from the ImportApi service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        ImportApiResponse ImportApi(ImportApiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportApi operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportApi
+        ///         operation.</returns>
+        IAsyncResult BeginImportApi(ImportApiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportApi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportApi.</param>
+        /// 
+        /// <returns>Returns a  ImportApiResult from ApiGatewayV2.</returns>
+        ImportApiResponse EndImportApi(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ReimportApi
+
+
+        /// <summary>
+        /// Puts an Api resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReimportApi service method.</param>
+        /// 
+        /// <returns>The response from the ReimportApi service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        ReimportApiResponse ReimportApi(ReimportApiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReimportApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReimportApi operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReimportApi
+        ///         operation.</returns>
+        IAsyncResult BeginReimportApi(ReimportApiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ReimportApi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReimportApi.</param>
+        /// 
+        /// <returns>Returns a  ReimportApiResult from ApiGatewayV2.</returns>
+        ReimportApiResponse EndReimportApi(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TagResource
 
 
         /// <summary>
-        /// Tag an APIGW resource
+        /// Creates a new Tag resource to represent a tag.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -2276,7 +2473,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// Untag an APIGW resource
+        /// Deletes a Tag.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 

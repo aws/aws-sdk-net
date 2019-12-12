@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Specifies the dimensions for an event filter that determines when a campaign is sent.
+    /// Specifies the dimensions for an event filter that determines when a campaign is sent
+    /// or a journey activity is performed.
     /// </summary>
     public partial class EventDimensions
     {
@@ -39,8 +40,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// One or more custom attributes that your app reports to Amazon Pinpoint. You can use
-        /// these attributes as selection criteria when you create an event filter.
+        /// One or more custom attributes that your application reports to Amazon Pinpoint. You
+        /// can use these attributes as selection criteria when you create an event filter.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeDimension> Attributes
@@ -58,9 +59,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The name of the event that causes the campaign to be sent. This can be a standard
-        /// type of event that Amazon Pinpoint generates, such as _session.start, or a custom
-        /// event that's specific to your app.
+        /// The name of the event that causes the campaign to be sent or the journey activity
+        /// to be performed. This can be a standard type of event that Amazon Pinpoint generates,
+        /// such as _email.delivered, or a custom event that's specific to your application.
         /// </para>
         /// </summary>
         public SetDimension EventType
@@ -78,8 +79,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// One or more custom metrics that your app reports to Amazon Pinpoint. You can use these
-        /// metrics as selection criteria when you create an event filter.
+        /// One or more custom metrics that your application reports to Amazon Pinpoint. You can
+        /// use these metrics as selection criteria when you create an event filter.
         /// </para>
         /// </summary>
         public Dictionary<string, MetricDimension> Metrics

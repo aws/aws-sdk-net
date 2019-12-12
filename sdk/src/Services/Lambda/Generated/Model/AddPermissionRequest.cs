@@ -46,7 +46,7 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  
     /// <para>
-    /// This action adds a statement to a resource-based permission policy for the function.
+    /// This action adds a statement to a resource-based permissions policy for the function.
     /// For more information about function policies, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
     /// Function Policies</a>. 
     /// </para>

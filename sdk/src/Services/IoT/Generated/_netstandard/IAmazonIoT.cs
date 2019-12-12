@@ -379,7 +379,7 @@ namespace Amazon.IoT
         /// identities.
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
-        /// <param name="principal">The principal, such as a certificate or other credential.</param>
+        /// <param name="principal">The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -702,6 +702,43 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ClearDefaultAuthorizer">REST API Reference for ClearDefaultAuthorizer Operation</seealso>
         Task<ClearDefaultAuthorizerResponse> ClearDefaultAuthorizerAsync(ClearDefaultAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ConfirmTopicRuleDestination
+
+
+
+        /// <summary>
+        /// Confirms a topic rule destination. When you create a rule requiring a destination,
+        /// AWS IoT sends a confirmation message to the endpoint or base address you specify.
+        /// The message includes a token which you pass back when calling <code>ConfirmTopicRuleDestination</code>
+        /// to confirm that you own or have access to the endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmTopicRuleDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ConfirmTopicRuleDestination service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ConfirmTopicRuleDestination">REST API Reference for ConfirmTopicRuleDestination Operation</seealso>
+        Task<ConfirmTopicRuleDestinationResponse> ConfirmTopicRuleDestinationAsync(ConfirmTopicRuleDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1063,6 +1100,54 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  CreateDomainConfiguration
+
+
+
+        /// <summary>
+        /// Creates a domain configuration.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The domain configuration feature is in public preview and is subject to change.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomainConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDomainConfiguration service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.CertificateValidationException">
+        /// The certificate is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDomainConfiguration">REST API Reference for CreateDomainConfiguration Operation</seealso>
+        Task<CreateDomainConfigurationResponse> CreateDomainConfigurationAsync(CreateDomainConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateDynamicThingGroup
 
 
@@ -1143,7 +1228,9 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public
-        /// key.
+        /// key. You can also call <code>CreateKeysAndCertificate</code> over MQTT from a device,
+        /// for more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#provision-mqtt-api">Provisioning
+        /// MQTT API</a>.
         /// 
         ///  
         /// <para>
@@ -1176,7 +1263,9 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public
-        /// key.
+        /// key. You can also call <code>CreateKeysAndCertificate</code> over MQTT from a device,
+        /// for more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#provision-mqtt-api">Provisioning
+        /// MQTT API</a>.
         /// 
         ///  
         /// <para>
@@ -1211,7 +1300,9 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public
-        /// key.
+        /// key. You can also call <code>CreateKeysAndCertificate</code> over MQTT from a device,
+        /// for more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#provision-mqtt-api">Provisioning
+        /// MQTT API</a>.
         /// 
         ///  
         /// <para>
@@ -1555,6 +1646,118 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  CreateProvisioningClaim
+
+
+
+        /// <summary>
+        /// Creates a provisioning claim.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningClaim service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProvisioningClaim service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateProvisioningClaim">REST API Reference for CreateProvisioningClaim Operation</seealso>
+        Task<CreateProvisioningClaimResponse> CreateProvisioningClaimAsync(CreateProvisioningClaimRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateProvisioningTemplate
+
+
+
+        /// <summary>
+        /// Creates a fleet provisioning template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProvisioningTemplate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateProvisioningTemplate">REST API Reference for CreateProvisioningTemplate Operation</seealso>
+        Task<CreateProvisioningTemplateResponse> CreateProvisioningTemplateAsync(CreateProvisioningTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateProvisioningTemplateVersion
+
+
+
+        /// <summary>
+        /// Creates a new version of a fleet provisioning template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningTemplateVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProvisioningTemplateVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionsLimitExceededException">
+        /// The number of policy versions exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateProvisioningTemplateVersion">REST API Reference for CreateProvisioningTemplateVersion Operation</seealso>
+        Task<CreateProvisioningTemplateVersionResponse> CreateProvisioningTemplateVersionAsync(CreateProvisioningTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateRoleAlias
 
 
@@ -1664,11 +1867,7 @@ namespace Amazon.IoT
         /// <summary>
         /// Creates a stream for delivering one or more large files in chunks over MQTT. A stream
         /// transports data bytes in chunks or blocks packaged as MQTT messages from a source
-        /// like S3. You can have one or more files associated with a stream. The total size of
-        /// a file associated with the stream cannot exceed more than 2 MB. The stream will be
-        /// created with version 0. If a stream is created with the same streamID as a stream
-        /// that existed and was deleted within last 90 days, we will resurrect that old stream
-        /// by incrementing the version by 1.
+        /// like S3. You can have one or more files associated with a stream.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStream service method.</param>
         /// <param name="cancellationToken">
@@ -1862,6 +2061,40 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRule">REST API Reference for CreateTopicRule Operation</seealso>
         Task<CreateTopicRuleResponse> CreateTopicRuleAsync(CreateTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTopicRuleDestination
+
+
+
+        /// <summary>
+        /// Creates a topic rule destination. The destination must be confirmed prior to use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTopicRuleDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTopicRuleDestination service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRuleDestination">REST API Reference for CreateTopicRuleDestination Operation</seealso>
+        Task<CreateTopicRuleDestinationResponse> CreateTopicRuleDestinationAsync(CreateTopicRuleDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2096,6 +2329,48 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteDomainConfiguration
+
+
+
+        /// <summary>
+        /// Deletes the specified domain configuration.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The domain configuration feature is in public preview and is subject to change.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDomainConfiguration service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDomainConfiguration">REST API Reference for DeleteDomainConfiguration Operation</seealso>
+        Task<DeleteDomainConfigurationResponse> DeleteDomainConfigurationAsync(DeleteDomainConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2461,6 +2736,78 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         Task<DeletePolicyVersionResponse> DeletePolicyVersionAsync(DeletePolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteProvisioningTemplate
+
+
+
+        /// <summary>
+        /// Deletes a fleet provisioning template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProvisioningTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProvisioningTemplate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
+        /// You can't delete the resource because it is attached to one or more resources.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteProvisioningTemplate">REST API Reference for DeleteProvisioningTemplate Operation</seealso>
+        Task<DeleteProvisioningTemplateResponse> DeleteProvisioningTemplateAsync(DeleteProvisioningTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteProvisioningTemplateVersion
+
+
+
+        /// <summary>
+        /// Deletes a fleet provisioning template version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProvisioningTemplateVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProvisioningTemplateVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
+        /// You can't delete the resource because it is attached to one or more resources.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteProvisioningTemplateVersion">REST API Reference for DeleteProvisioningTemplateVersion Operation</seealso>
+        Task<DeleteProvisioningTemplateVersionResponse> DeleteProvisioningTemplateVersionAsync(DeleteProvisioningTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2842,6 +3189,40 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">REST API Reference for DeleteTopicRule Operation</seealso>
         Task<DeleteTopicRuleResponse> DeleteTopicRuleAsync(DeleteTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteTopicRuleDestination
+
+
+
+        /// <summary>
+        /// Deletes a topic rule destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTopicRuleDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTopicRuleDestination service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRuleDestination">REST API Reference for DeleteTopicRuleDestination Operation</seealso>
+        Task<DeleteTopicRuleDestinationResponse> DeleteTopicRuleDestinationAsync(DeleteTopicRuleDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3230,6 +3611,45 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  DescribeDomainConfiguration
+
+
+
+        /// <summary>
+        /// Gets summary information about a domain configuration.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The domain configuration feature is in public preview and is subject to change.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDomainConfiguration service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDomainConfiguration">REST API Reference for DescribeDomainConfiguration Operation</seealso>
+        Task<DescribeDomainConfigurationResponse> DescribeDomainConfigurationAsync(DescribeDomainConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeEndpoint
 
 
@@ -3430,6 +3850,72 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeMitigationAction">REST API Reference for DescribeMitigationAction Operation</seealso>
         Task<DescribeMitigationActionResponse> DescribeMitigationActionAsync(DescribeMitigationActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeProvisioningTemplate
+
+
+
+        /// <summary>
+        /// Returns information about a fleet provisioning template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisioningTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeProvisioningTemplate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeProvisioningTemplate">REST API Reference for DescribeProvisioningTemplate Operation</seealso>
+        Task<DescribeProvisioningTemplateResponse> DescribeProvisioningTemplateAsync(DescribeProvisioningTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeProvisioningTemplateVersion
+
+
+
+        /// <summary>
+        /// Returns information about a fleet provisioning template version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisioningTemplateVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeProvisioningTemplateVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeProvisioningTemplateVersion">REST API Reference for DescribeProvisioningTemplateVersion Operation</seealso>
+        Task<DescribeProvisioningTemplateVersionResponse> DescribeProvisioningTemplateVersionAsync(DescribeProvisioningTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4026,6 +4512,51 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  GetCardinality
+
+
+
+        /// <summary>
+        /// Returns the approximate count of unique values that match the query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCardinality service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCardinality service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidAggregationException">
+        /// The aggregation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetCardinality">REST API Reference for GetCardinality Operation</seealso>
+        Task<GetCardinalityResponse> GetCardinalityAsync(GetCardinalityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetEffectivePolicies
 
 
@@ -4071,7 +4602,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets the search configuration.
+        /// Gets the indexing configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIndexingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -4195,6 +4726,59 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetOTAUpdate">REST API Reference for GetOTAUpdate Operation</seealso>
         Task<GetOTAUpdateResponse> GetOTAUpdateAsync(GetOTAUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetPercentiles
+
+
+
+        /// <summary>
+        /// Groups the aggregated values that match the query into percentile groupings. The default
+        /// percentile groupings are: 1,5,25,50,75,95,99, although you can specify your own when
+        /// you call <code>GetPercentiles</code>. This function returns a value for each percentile
+        /// group specified (or the default percentile groupings). The percentile group "1" contains
+        /// the aggregated field value that occurs in approximately one percent of the values
+        /// that match the query. The percentile group "5" contains the aggregated field value
+        /// that occurs in approximately five percent of the values that match the query, and
+        /// so on. The result is an approximation, the more values that match the query, the more
+        /// accurate the percentile values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPercentiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPercentiles service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidAggregationException">
+        /// The aggregation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPercentiles">REST API Reference for GetPercentiles Operation</seealso>
+        Task<GetPercentilesResponse> GetPercentilesAsync(GetPercentilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4371,7 +4955,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets statistics about things that match the specified query.
+        /// Returns the count, average, sum, minimum, maximum, sum of squares, variance, and standard
+        /// deviation for the specified aggregated field. If the aggregation field is of type
+        /// <code>String</code>, only the count statistic is returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStatistics service method.</param>
         /// <param name="cancellationToken">
@@ -4462,6 +5048,36 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">REST API Reference for GetTopicRule Operation</seealso>
         Task<GetTopicRuleResponse> GetTopicRuleAsync(GetTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTopicRuleDestination
+
+
+
+        /// <summary>
+        /// Gets information about a topic rule destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTopicRuleDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTopicRuleDestination service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRuleDestination">REST API Reference for GetTopicRuleDestination Operation</seealso>
+        Task<GetTopicRuleDestinationResponse> GetTopicRuleDestinationAsync(GetTopicRuleDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4873,6 +5489,46 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCA">REST API Reference for ListCertificatesByCA Operation</seealso>
         Task<ListCertificatesByCAResponse> ListCertificatesByCAAsync(ListCertificatesByCARequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDomainConfigurations
+
+
+
+        /// <summary>
+        /// Gets a list of domain configurations for the user. This list is sorted alphabetically
+        /// by domain configuration name.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The domain configuration feature is in public preview and is subject to change.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomainConfigurations service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDomainConfigurations">REST API Reference for ListDomainConfigurations Operation</seealso>
+        Task<ListDomainConfigurationsResponse> ListDomainConfigurationsAsync(ListDomainConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -5408,6 +6064,69 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">REST API Reference for ListPrincipalThings Operation</seealso>
         Task<ListPrincipalThingsResponse> ListPrincipalThingsAsync(ListPrincipalThingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListProvisioningTemplates
+
+
+
+        /// <summary>
+        /// Lists the fleet provisioning templates in your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisioningTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProvisioningTemplates service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListProvisioningTemplates">REST API Reference for ListProvisioningTemplates Operation</seealso>
+        Task<ListProvisioningTemplatesResponse> ListProvisioningTemplatesAsync(ListProvisioningTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListProvisioningTemplateVersions
+
+
+
+        /// <summary>
+        /// A list of fleet provisioning template versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisioningTemplateVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProvisioningTemplateVersions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListProvisioningTemplateVersions">REST API Reference for ListProvisioningTemplateVersions Operation</seealso>
+        Task<ListProvisioningTemplateVersionsResponse> ListProvisioningTemplateVersionsAsync(ListProvisioningTemplateVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -6002,6 +6721,36 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  ListTopicRuleDestinations
+
+
+
+        /// <summary>
+        /// Lists all the topic rule destinations in your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTopicRuleDestinations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTopicRuleDestinations service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRuleDestinations">REST API Reference for ListTopicRuleDestinations Operation</seealso>
+        Task<ListTopicRuleDestinationsResponse> ListTopicRuleDestinationsAsync(ListTopicRuleDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTopicRules
 
 
@@ -6213,7 +6962,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Provisions a thing.
+        /// Provisions a thing in the device registry. RegisterThing calls other AWS IoT control
+        /// plane APIs. These calls might exceed your account level <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
+        /// AWS IoT Throttling Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
+        /// Customer Support</a> to raise your throttling limits if necessary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterThing service method.</param>
         /// <param name="cancellationToken">
@@ -7310,6 +8062,52 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  UpdateDomainConfiguration
+
+
+
+        /// <summary>
+        /// Updates values stored in the domain configuration. Domain configurations for default
+        /// endpoints can't be updated.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The domain configuration feature is in public preview and is subject to change.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDomainConfiguration service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.CertificateValidationException">
+        /// The certificate is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDomainConfiguration">REST API Reference for UpdateDomainConfiguration Operation</seealso>
+        Task<UpdateDomainConfigurationResponse> UpdateDomainConfigurationAsync(UpdateDomainConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateDynamicThingGroup
 
 
@@ -7464,6 +8262,40 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateMitigationAction">REST API Reference for UpdateMitigationAction Operation</seealso>
         Task<UpdateMitigationActionResponse> UpdateMitigationActionAsync(UpdateMitigationActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateProvisioningTemplate
+
+
+
+        /// <summary>
+        /// Updates a fleet provisioning template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProvisioningTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProvisioningTemplate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateProvisioningTemplate">REST API Reference for UpdateProvisioningTemplate Operation</seealso>
+        Task<UpdateProvisioningTemplateResponse> UpdateProvisioningTemplateAsync(UpdateProvisioningTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -7705,6 +8537,41 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroupsForThing">REST API Reference for UpdateThingGroupsForThing Operation</seealso>
         Task<UpdateThingGroupsForThingResponse> UpdateThingGroupsForThingAsync(UpdateThingGroupsForThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateTopicRuleDestination
+
+
+
+        /// <summary>
+        /// Updates a topic rule destination. You use this to change the status, endpoint URL,
+        /// or confirmation URL of the destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTopicRuleDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTopicRuleDestination service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateTopicRuleDestination">REST API Reference for UpdateTopicRuleDestination Operation</seealso>
+        Task<UpdateTopicRuleDestinationResponse> UpdateTopicRuleDestinationAsync(UpdateTopicRuleDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

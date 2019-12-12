@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// To use the target in a Traffic Mirror session, use <a>CreateTrafficMirrorSession</a>.
+    /// To use the target in a Traffic Mirror session, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorSession.htm">CreateTrafficMirrorSession</a>.
     /// </para>
     /// </summary>
     public partial class CreateTrafficMirrorTargetRequest : AmazonEC2Request

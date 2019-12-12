@@ -76,6 +76,18 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImagePushedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageScanFindingsSummary", targetDepth))
+                {
+                    var unmarshaller = ImageScanFindingsSummaryUnmarshaller.Instance;
+                    unmarshalledObject.ImageScanFindingsSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("imageScanStatus", targetDepth))
+                {
+                    var unmarshaller = ImageScanStatusUnmarshaller.Instance;
+                    unmarshalledObject.ImageScanStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("imageSizeInBytes", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

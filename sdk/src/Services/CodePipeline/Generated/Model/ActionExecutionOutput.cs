@@ -34,6 +34,7 @@ namespace Amazon.CodePipeline.Model
     {
         private ActionExecutionResult _executionResult;
         private List<ArtifactDetail> _outputArtifacts = new List<ArtifactDetail>();
+        private Dictionary<string, string> _outputVariables = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ExecutionResult. 
@@ -69,6 +70,25 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetOutputArtifacts()
         {
             return this._outputArtifacts != null && this._outputArtifacts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputVariables. 
+        /// <para>
+        /// The outputVariables field shows the key-value pairs that were output as part of that
+        /// execution.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> OutputVariables
+        {
+            get { return this._outputVariables; }
+            set { this._outputVariables = value; }
+        }
+
+        // Check to see if OutputVariables property is set
+        internal bool IsSetOutputVariables()
+        {
+            return this._outputVariables != null && this._outputVariables.Count > 0; 
         }
 
     }

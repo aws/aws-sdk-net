@@ -810,7 +810,12 @@ namespace Amazon.DynamoDBv2
         /// relationship between two or more DynamoDB tables with the same table name in the provided
         /// Regions. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// 2017.11.29</a> of global tables.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you want to add a new replica table to a global table, each of the following conditions
         /// must be true:
@@ -1648,6 +1653,54 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeContributorInsights
+
+
+        /// <summary>
+        /// Returns information about contributor insights, for a given table or global secondary
+        /// index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContributorInsights service method.</param>
+        /// 
+        /// <returns>The response from the DescribeContributorInsights service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights">REST API Reference for DescribeContributorInsights Operation</seealso>
+        DescribeContributorInsightsResponse DescribeContributorInsights(DescribeContributorInsightsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContributorInsights operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeContributorInsights
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights">REST API Reference for DescribeContributorInsights Operation</seealso>
+        IAsyncResult BeginDescribeContributorInsights(DescribeContributorInsightsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeContributorInsights.</param>
+        /// 
+        /// <returns>Returns a  DescribeContributorInsightsResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights">REST API Reference for DescribeContributorInsights Operation</seealso>
+        DescribeContributorInsightsResponse EndDescribeContributorInsights(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeEndpoints
 
 
@@ -1693,6 +1746,13 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns information about the specified global table.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// 2017.11.29</a> of global tables.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTable service method.</param>
         /// 
@@ -1739,6 +1799,13 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Describes Region-specific settings for a global table.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// 2017.11.29</a> of global tables.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTableSettings service method.</param>
         /// 
@@ -1991,6 +2058,60 @@ namespace Amazon.DynamoDBv2
         /// <returns>Returns a  DescribeTableResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
         DescribeTableResponse EndDescribeTable(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeTableReplicaAutoScaling
+
+
+        /// <summary>
+        /// Describes auto scaling settings across replicas of the global table at once.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+        /// 2019.11.21</a> of global tables.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTableReplicaAutoScaling service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTableReplicaAutoScaling service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">REST API Reference for DescribeTableReplicaAutoScaling Operation</seealso>
+        DescribeTableReplicaAutoScalingResponse DescribeTableReplicaAutoScaling(DescribeTableReplicaAutoScalingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTableReplicaAutoScaling operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTableReplicaAutoScaling operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTableReplicaAutoScaling
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">REST API Reference for DescribeTableReplicaAutoScaling Operation</seealso>
+        IAsyncResult BeginDescribeTableReplicaAutoScaling(DescribeTableReplicaAutoScalingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTableReplicaAutoScaling operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTableReplicaAutoScaling.</param>
+        /// 
+        /// <returns>Returns a  DescribeTableReplicaAutoScalingResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">REST API Reference for DescribeTableReplicaAutoScaling Operation</seealso>
+        DescribeTableReplicaAutoScalingResponse EndDescribeTableReplicaAutoScaling(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2261,11 +2382,66 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  ListContributorInsights
+
+
+        /// <summary>
+        /// Returns a list of ContributorInsightsSummary for a table and all its global secondary
+        /// indexes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContributorInsights service method.</param>
+        /// 
+        /// <returns>The response from the ListContributorInsights service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">REST API Reference for ListContributorInsights Operation</seealso>
+        ListContributorInsightsResponse ListContributorInsights(ListContributorInsightsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListContributorInsights operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListContributorInsights
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">REST API Reference for ListContributorInsights Operation</seealso>
+        IAsyncResult BeginListContributorInsights(ListContributorInsightsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListContributorInsights.</param>
+        /// 
+        /// <returns>Returns a  ListContributorInsightsResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">REST API Reference for ListContributorInsights Operation</seealso>
+        ListContributorInsightsResponse EndListContributorInsights(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListGlobalTables
 
 
         /// <summary>
         /// Lists all global tables that have a replica in the specified Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// 2017.11.29</a> of global tables.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGlobalTables service method.</param>
         /// 
@@ -3618,25 +3794,7 @@ namespace Amazon.DynamoDBv2
         /// cannot retrieve items from tables in more than one AWS account or Region. The aggregate
         /// size of the items in the transaction cannot exceed 4 MB.
         /// 
-        ///  <note> 
-        /// <para>
-        /// All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with
-        /// up to 4 MB of data, except the following AWS Regions: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// China (Beijing)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// China (Ningxia)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction
-        /// with up to 4 MB of data. 
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following
         /// is true:
@@ -3671,6 +3829,11 @@ namespace Amazon.DynamoDBv2
         /// queue is too large to finish. Reduce the frequency of requests and use exponential
         /// backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3709,10 +3872,6 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The aggregate size of the items in the transaction exceeds 4 MBs.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// There is a user error, such as an invalid data format.
         /// </para>
         ///  </li> </ul> 
@@ -3734,10 +3893,6 @@ namespace Amazon.DynamoDBv2
         ///  </li> <li> 
         /// <para>
         /// There is insufficient provisioned capacity for the transaction to be completed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The aggregate size of the items in the transaction exceeds 4 MBs.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3965,25 +4120,7 @@ namespace Amazon.DynamoDBv2
         /// example, you cannot both <code>ConditionCheck</code> and <code>Update</code> the same
         /// item. The aggregate size of the items in the transaction cannot exceed 4 MB.
         /// 
-        ///  <note> 
-        /// <para>
-        /// All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with
-        /// up to 4 MB of data, except the following AWS Regions: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// China (Beijing)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// China (Ningxia)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction
-        /// with up to 4 MB of data. 
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// The actions are completed atomically so that either all of them succeed, or all of
         /// them fail. They are defined by the following objects:
@@ -4071,6 +4208,11 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
@@ -4108,10 +4250,6 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The aggregate size of the items in the transaction exceeds 4 MBs.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// There is a user error, such as an invalid data format.
         /// </para>
         ///  </li> </ul> 
@@ -4133,10 +4271,6 @@ namespace Amazon.DynamoDBv2
         ///  </li> <li> 
         /// <para>
         /// There is insufficient provisioned capacity for the transaction to be completed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The aggregate size of the items in the transaction exceeds 4 MBs.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4500,6 +4634,53 @@ namespace Amazon.DynamoDBv2
         /// <returns>Returns a  UpdateContinuousBackupsResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">REST API Reference for UpdateContinuousBackups Operation</seealso>
         UpdateContinuousBackupsResponse EndUpdateContinuousBackups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateContributorInsights
+
+
+        /// <summary>
+        /// Updates the status for contributor insights for a specific table or index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContributorInsights service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContributorInsights service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">REST API Reference for UpdateContributorInsights Operation</seealso>
+        UpdateContributorInsightsResponse UpdateContributorInsights(UpdateContributorInsightsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContributorInsights operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContributorInsights
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">REST API Reference for UpdateContributorInsights Operation</seealso>
+        IAsyncResult BeginUpdateContributorInsights(UpdateContributorInsightsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateContributorInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContributorInsights.</param>
+        /// 
+        /// <returns>Returns a  UpdateContributorInsightsResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">REST API Reference for UpdateContributorInsights Operation</seealso>
+        UpdateContributorInsightsResponse EndUpdateContributorInsights(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5022,6 +5203,86 @@ namespace Amazon.DynamoDBv2
         /// <returns>Returns a  UpdateTableResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         UpdateTableResponse EndUpdateTable(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateTableReplicaAutoScaling
+
+
+        /// <summary>
+        /// Updates auto scaling settings on your global tables at once.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+        /// 2019.11.21</a> of global tables.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTableReplicaAutoScaling service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTableReplicaAutoScaling service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account limit of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">REST API Reference for UpdateTableReplicaAutoScaling Operation</seealso>
+        UpdateTableReplicaAutoScalingResponse UpdateTableReplicaAutoScaling(UpdateTableReplicaAutoScalingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTableReplicaAutoScaling operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTableReplicaAutoScaling operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTableReplicaAutoScaling
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">REST API Reference for UpdateTableReplicaAutoScaling Operation</seealso>
+        IAsyncResult BeginUpdateTableReplicaAutoScaling(UpdateTableReplicaAutoScalingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTableReplicaAutoScaling operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTableReplicaAutoScaling.</param>
+        /// 
+        /// <returns>Returns a  UpdateTableReplicaAutoScalingResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">REST API Reference for UpdateTableReplicaAutoScaling Operation</seealso>
+        UpdateTableReplicaAutoScalingResponse EndUpdateTableReplicaAutoScaling(IAsyncResult asyncResult);
 
         #endregion
         

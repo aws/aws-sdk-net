@@ -41,7 +41,7 @@ namespace Amazon.ApplicationInsights.Model
         /// The ID of the problem.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=38, Max=38)]
         public string ProblemId
         {
             get { return this._problemId; }

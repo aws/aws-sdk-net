@@ -30,8 +30,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ReplaceRoute operation.
     /// Replaces an existing route within a route table in a VPC. You must provide only one
-    /// of the following: internet gateway or virtual private gateway, NAT instance, NAT gateway,
-    /// VPC peering connection, network interface, or egress-only internet gateway.
+    /// of the following: internet gateway, virtual private gateway, NAT instance, NAT gateway,
+    /// VPC peering connection, network interface, egress-only internet gateway, or transit
+    /// gateway.
     /// 
     ///  
     /// <para>
@@ -46,6 +47,8 @@ namespace Amazon.EC2.Model
         private string _egressOnlyInternetGatewayId;
         private string _gatewayId;
         private string _instanceId;
+        private string _localGatewayId;
+        private bool? _localTarget;
         private string _natGatewayId;
         private string _networkInterfaceId;
         private string _routeTableId;
@@ -142,6 +145,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalGatewayId. 
+        /// <para>
+        /// The ID of the local gateway.
+        /// </para>
+        /// </summary>
+        public string LocalGatewayId
+        {
+            get { return this._localGatewayId; }
+            set { this._localGatewayId = value; }
+        }
+
+        // Check to see if LocalGatewayId property is set
+        internal bool IsSetLocalGatewayId()
+        {
+            return this._localGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalTarget. 
+        /// <para>
+        /// Specifies whether to reset the local route to its default target (<code>local</code>).
+        /// </para>
+        /// </summary>
+        public bool LocalTarget
+        {
+            get { return this._localTarget.GetValueOrDefault(); }
+            set { this._localTarget = value; }
+        }
+
+        // Check to see if LocalTarget property is set
+        internal bool IsSetLocalTarget()
+        {
+            return this._localTarget.HasValue; 
         }
 
         /// <summary>

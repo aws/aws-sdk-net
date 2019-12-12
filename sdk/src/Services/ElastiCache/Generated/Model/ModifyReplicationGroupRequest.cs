@@ -56,6 +56,8 @@ namespace Amazon.ElastiCache.Model
     public partial class ModifyReplicationGroupRequest : AmazonElastiCacheRequest
     {
         private bool? _applyImmediately;
+        private string _authToken;
+        private AuthTokenUpdateStrategyType _authTokenUpdateStrategy;
         private bool? _automaticFailoverEnabled;
         private bool? _autoMinorVersionUpgrade;
         private string _cacheNodeType;
@@ -105,6 +107,74 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetApplyImmediately()
         {
             return this._applyImmediately.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthToken. 
+        /// <para>
+        /// Reserved parameter. The password used to access a password protected server. This
+        /// parameter must be specified with the <code>auth-token-update-strategy </code> parameter.
+        /// Password constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be only printable ASCII characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be at least 16 characters and no more than 128 characters in length
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot contain any of the following characters: '/', '"', or '@', '%'
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
+        /// </para>
+        /// </summary>
+        public string AuthToken
+        {
+            get { return this._authToken; }
+            set { this._authToken = value; }
+        }
+
+        // Check to see if AuthToken property is set
+        internal bool IsSetAuthToken()
+        {
+            return this._authToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthTokenUpdateStrategy. 
+        /// <para>
+        /// Specifies the strategy to use to update the AUTH token. This parameter must be specified
+        /// with the <code>auth-token</code> parameter. Possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Rotate
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+        /// Users with Redis AUTH</a> 
+        /// </para>
+        /// </summary>
+        public AuthTokenUpdateStrategyType AuthTokenUpdateStrategy
+        {
+            get { return this._authTokenUpdateStrategy; }
+            set { this._authTokenUpdateStrategy = value; }
+        }
+
+        // Check to see if AuthTokenUpdateStrategy property is set
+        internal bool IsSetAuthTokenUpdateStrategy()
+        {
+            return this._authTokenUpdateStrategy != null;
         }
 
         /// <summary>

@@ -62,6 +62,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ActionType", StringUtils.FromString(publicRequest.ActionType));
                 }
+                if(publicRequest.IsSetClusterIdentifier())
+                {
+                    request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
+                }
                 if(publicRequest.IsSetFilters())
                 {
                     int publicRequestlistValueIndex = 1;

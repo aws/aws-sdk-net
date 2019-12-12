@@ -106,6 +106,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         request.Parameters.Add("LaunchTemplate" + "." + "Version", StringUtils.FromString(publicRequest.LaunchTemplate.Version));
                     }
                 }
+                if(publicRequest.IsSetMaxInstanceLifetime())
+                {
+                    request.Parameters.Add("MaxInstanceLifetime", StringUtils.FromInt(publicRequest.MaxInstanceLifetime));
+                }
                 if(publicRequest.IsSetMaxSize())
                 {
                     request.Parameters.Add("MaxSize", StringUtils.FromInt(publicRequest.MaxSize));
@@ -168,6 +172,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                 if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.IsSetInstanceType())
                                 {
                                     request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceType));
+                                }
+                                if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.IsSetWeightedCapacity())
+                                {
+                                    request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "WeightedCapacity", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.WeightedCapacity));
                                 }
                                 publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex++;
                             }

@@ -69,6 +69,15 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you use this task setting with a source PostgreSQL database, a logical replication
+        /// slot should already be created and associated with the source endpoint. You can verify
+        /// this by setting the <code>slotName</code> extra connection attribute to the name of
+        /// this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+        /// Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string CdcStartPosition
         {

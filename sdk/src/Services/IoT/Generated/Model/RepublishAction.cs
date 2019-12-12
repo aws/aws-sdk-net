@@ -39,7 +39,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Qos. 
         /// <para>
-        /// The Quality of Service (QoS) level to use when republishing messages.
+        /// The Quality of Service (QoS) level to use when republishing messages. The default
+        /// value is 0.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

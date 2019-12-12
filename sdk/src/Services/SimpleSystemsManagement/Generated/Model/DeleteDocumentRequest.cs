@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DeleteDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _documentVersion;
+        private bool? _force;
         private string _name;
         private string _versionName;
 
@@ -74,6 +75,28 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetDocumentVersion()
         {
             return this._documentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// Some SSM document types require that you specify a <code>Force</code> flag before
+        /// you can delete the document. For example, you must specify a <code>Force</code> flag
+        /// to delete a document of type <code>ApplicationConfigurationSchema</code>. You can
+        /// restrict access to the <code>Force</code> flag in an AWS Identity and Access Management
+        /// (IAM) policy.
+        /// </para>
+        /// </summary>
+        public bool Force
+        {
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
         }
 
         /// <summary>

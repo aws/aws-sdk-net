@@ -34,6 +34,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class TaskSet
     {
+        private List<CapacityProviderStrategyItem> _capacityProviderStrategy = new List<CapacityProviderStrategyItem>();
         private string _clusterArn;
         private int? _computedDesiredCount;
         private DateTime? _createdAt;
@@ -55,6 +56,24 @@ namespace Amazon.ECS.Model
         private string _taskDefinition;
         private string _taskSetArn;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderStrategy. 
+        /// <para>
+        /// The capacity provider strategy associated with the task set.
+        /// </para>
+        /// </summary>
+        public List<CapacityProviderStrategyItem> CapacityProviderStrategy
+        {
+            get { return this._capacityProviderStrategy; }
+            set { this._capacityProviderStrategy = value; }
+        }
+
+        // Check to see if CapacityProviderStrategy property is set
+        internal bool IsSetCapacityProviderStrategy()
+        {
+            return this._capacityProviderStrategy != null && this._capacityProviderStrategy.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterArn. 

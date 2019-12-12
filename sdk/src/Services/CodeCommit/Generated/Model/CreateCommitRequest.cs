@@ -47,8 +47,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AuthorName. 
         /// <para>
-        /// The name of the author who created the commit. This information will be used as both
-        /// the author and committer for the commit.
+        /// The name of the author who created the commit. This information is used as both the
+        /// author and committer for the commit.
         /// </para>
         /// </summary>
         public string AuthorName
@@ -66,7 +66,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        /// The name of the branch where you will create the commit.
+        /// The name of the branch where you create the commit.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -85,8 +85,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property CommitMessage. 
         /// <para>
-        /// The commit message you want to include as part of creating the commit. Commit messages
-        /// are limited to 256 KB. If no message is specified, a default message will be used.
+        /// The commit message you want to include in the commit. Commit messages are limited
+        /// to 256 KB. If no message is specified, a default message is used.
         /// </para>
         /// </summary>
         public string CommitMessage
@@ -104,7 +104,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property DeleteFiles. 
         /// <para>
-        /// The files to delete in this commit. These files will still exist in prior commits.
+        /// The files to delete in this commit. These files still exist in earlier commits.
         /// </para>
         /// </summary>
         public List<DeleteFileEntry> DeleteFiles
@@ -141,8 +141,8 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property KeepEmptyFolders. 
         /// <para>
         /// If the commit contains deletions, whether to keep a folder or folder structure if
-        /// the changes leave the folders empty. If this is specified as true, a .gitkeep file
-        /// will be created for empty folders. The default is false.
+        /// the changes leave the folders empty. If true, a ..gitkeep file is created for empty
+        /// folders. The default is false.
         /// </para>
         /// </summary>
         public bool KeepEmptyFolders
@@ -160,8 +160,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property ParentCommitId. 
         /// <para>
-        /// The ID of the commit that is the parent of the commit you will create. If this is
-        /// an empty repository, this is not required.
+        /// The ID of the commit that is the parent of the commit you create. Not required if
+        /// this is an empty repository.
         /// </para>
         /// </summary>
         public string ParentCommitId
@@ -197,7 +197,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository where you will create the commit.
+        /// The name of the repository where you create the commit.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

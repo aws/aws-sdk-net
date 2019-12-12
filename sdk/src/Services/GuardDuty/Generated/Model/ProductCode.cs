@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the product code.
+    /// Contains information about the product code for the Ec2 instance.
     /// </summary>
     public partial class ProductCode
     {

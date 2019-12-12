@@ -782,19 +782,41 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a resource data sync configuration to a single bucket in Amazon S3. This is
-        /// an asynchronous operation that returns immediately. After a successful initial sync
-        /// is completed, the system continuously syncs data to the Amazon S3 bucket. To check
-        /// the status of the sync, use the <a>ListResourceDataSync</a>.
+        /// A resource data sync helps you view data from multiple sources in a single location.
+        /// Systems Manager offers two types of resource data sync: <code>SyncToDestination</code>
+        /// and <code>SyncFromSource</code>.
         /// 
         ///  
         /// <para>
-        /// By default, data is not encrypted in Amazon S3. We strongly recommend that you enable
-        /// encryption in Amazon S3 to ensure secure data storage. We also recommend that you
-        /// secure access to the Amazon S3 bucket by creating a restrictive bucket policy. For
-        /// more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+        /// You can configure Systems Manager Inventory to use the <code>SyncToDestination</code>
+        /// type to synchronize Inventory data from multiple AWS Regions to a single Amazon S3
+        /// bucket. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
         /// Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can configure Systems Manager Explorer to use the <code>SyncToDestination</code>
+        /// type to synchronize operational work items (OpsItems) and operational data (OpsData)
+        /// from multiple AWS Regions to a single Amazon S3 bucket. You can also configure Explorer
+        /// to use the <code>SyncFromSource</code> type. This type synchronizes OpsItems and OpsData
+        /// from multiple AWS accounts and Regions by using AWS Organizations. For more information,
+        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+        /// Up Explorer to Display Data from Multiple Accounts and Regions</a> in the <i>AWS Systems
+        /// Manager User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A resource data sync is an asynchronous operation that returns immediately. After
+        /// a successful initial sync is completed, the system continuously syncs data. To check
+        /// the status of a sync, use the <a>ListResourceDataSync</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// By default, data is not encrypted in Amazon S3. We strongly recommend that you enable
+        /// encryption in Amazon S3 to ensure secure data storage. We also recommend that you
+        /// secure access to the Amazon S3 bucket by creating a restrictive bucket policy. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourceDataSync service method.</param>
         /// <param name="cancellationToken">
@@ -1168,9 +1190,8 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Deletes a Resource Data Sync configuration. After the configuration is deleted, changes
-        /// to inventory data on managed instances are no longer synced with the target Amazon
-        /// S3 bucket. Deleting a sync configuration does not delete data in the target Amazon
-        /// S3 bucket.
+        /// to data on managed instances are no longer synced to or from the target. Deleting
+        /// a sync configuration does not delete data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourceDataSync service method.</param>
         /// <param name="cancellationToken">
@@ -1180,6 +1201,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DeleteResourceDataSync service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncInvalidConfigurationException">
+        /// The specified sync configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
         /// The specified sync name was not found.
@@ -2321,7 +2345,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Get information about a parameter.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
         /// in the request, the response includes information up to the limit specified. The number
@@ -2331,6 +2355,7 @@ namespace Amazon.SimpleSystemsManagement
         /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
         /// of results.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeParameters service method.</param>
         /// <param name="cancellationToken">
@@ -2534,6 +2559,44 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">REST API Reference for GetAutomationExecution Operation</seealso>
         Task<GetAutomationExecutionResponse> GetAutomationExecutionAsync(GetAutomationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCalendarState
+
+
+
+        /// <summary>
+        /// Gets the state of the AWS Systems Manager Change Calendar at an optional, specified
+        /// time. If you specify a time, <code>GetCalendarState</code> returns the state of the
+        /// calendar at a specific time, and returns the next time that the Change Calendar state
+        /// will transition. If you do not specify a time, <code>GetCalendarState</code> assumes
+        /// the current time. Change Calendar entries have two possible states: <code>OPEN</code>
+        /// or <code>CLOSED</code>. For more information about Systems Manager Change Calendar,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
+        /// Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalendarState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCalendarState service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentTypeException">
+        /// The document type is not valid. Valid document types are described in the <code>DocumentType</code>
+        /// property.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedCalendarException">
+        /// The calendar entry contained in the specified Systems Manager document is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState">REST API Reference for GetCalendarState Operation</seealso>
+        Task<GetCalendarStateResponse> GetCalendarStateAsync(GetCalendarStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3008,6 +3071,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
         /// The parameter type name is not valid.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
+        /// The specified sync name was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsSummary">REST API Reference for GetOpsSummary Operation</seealso>
         Task<GetOpsSummaryResponse> GetOpsSummaryAsync(GetOpsSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -3105,11 +3171,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieve parameters in a specific hierarchy. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-        /// with Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Retrieve information about one or more parameters in a specific hierarchy. 
         /// 
-        /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
         /// in the request, the response includes information up to the limit specified. The number
@@ -3118,10 +3182,6 @@ namespace Amazon.SimpleSystemsManagement
         /// operation and returns the matching values up to that point and a <code>NextToken</code>.
         /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
         /// of results.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// This API action doesn't support filtering by tags. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -3932,6 +3992,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncInvalidConfigurationException">
+        /// The specified sync configuration is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync">REST API Reference for ListResourceDataSync Operation</seealso>
         Task<ListResourceDataSyncResponse> ListResourceDataSyncAsync(ListResourceDataSyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -5425,6 +5488,42 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">REST API Reference for UpdatePatchBaseline Operation</seealso>
         Task<UpdatePatchBaselineResponse> UpdatePatchBaselineAsync(UpdatePatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateResourceDataSync
+
+
+
+        /// <summary>
+        /// Update a resource data sync. After you create a resource data sync for a Region, you
+        /// can't change the account options for that sync. For example, if you create a sync
+        /// in the us-east-2 (Ohio) Region and you choose the Include only the current account
+        /// option, you can't edit that sync later and choose the Include all accounts from my
+        /// AWS Organizations configuration option. Instead, you must delete the first resource
+        /// data sync, and create a new one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceDataSync service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateResourceDataSync service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncConflictException">
+        /// Another <code>UpdateResourceDataSync</code> request is being processed. Wait a few
+        /// minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncInvalidConfigurationException">
+        /// The specified sync configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
+        /// The specified sync name was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync">REST API Reference for UpdateResourceDataSync Operation</seealso>
+        Task<UpdateResourceDataSyncResponse> UpdateResourceDataSyncAsync(UpdateResourceDataSyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

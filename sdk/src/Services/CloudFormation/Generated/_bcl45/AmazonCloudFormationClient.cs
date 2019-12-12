@@ -428,10 +428,11 @@ namespace Amazon.CloudFormation
         /// <para>
         /// To create a change set for a stack that doesn't exist, for the <code>ChangeSetType</code>
         /// parameter, specify <code>CREATE</code>. To create a change set for an existing stack,
-        /// specify <code>UPDATE</code> for the <code>ChangeSetType</code> parameter. After the
-        /// <code>CreateChangeSet</code> call successfully completes, AWS CloudFormation starts
-        /// creating the change set. To check the status of the change set or to review it, use
-        /// the <a>DescribeChangeSet</a> action.
+        /// specify <code>UPDATE</code> for the <code>ChangeSetType</code> parameter. To create
+        /// a change set for an import operation, specify <code>IMPORT</code> for the <code>ChangeSetType</code>
+        /// parameter. After the <code>CreateChangeSet</code> call successfully completes, AWS
+        /// CloudFormation starts creating the change set. To check the status of the change set
+        /// or to review it, use the <a>DescribeChangeSet</a> action.
         /// </para>
         ///  
         /// <para>
@@ -485,10 +486,11 @@ namespace Amazon.CloudFormation
         /// <para>
         /// To create a change set for a stack that doesn't exist, for the <code>ChangeSetType</code>
         /// parameter, specify <code>CREATE</code>. To create a change set for an existing stack,
-        /// specify <code>UPDATE</code> for the <code>ChangeSetType</code> parameter. After the
-        /// <code>CreateChangeSet</code> call successfully completes, AWS CloudFormation starts
-        /// creating the change set. To check the status of the change set or to review it, use
-        /// the <a>DescribeChangeSet</a> action.
+        /// specify <code>UPDATE</code> for the <code>ChangeSetType</code> parameter. To create
+        /// a change set for an import operation, specify <code>IMPORT</code> for the <code>ChangeSetType</code>
+        /// parameter. After the <code>CreateChangeSet</code> call successfully completes, AWS
+        /// CloudFormation starts creating the change set. To check the status of the change set
+        /// or to review it, use the <a>DescribeChangeSet</a> action.
         /// </para>
         ///  
         /// <para>
@@ -1030,6 +1032,85 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = DeleteStackSetResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteStackSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterType
+
+
+        /// <summary>
+        /// Removes a type or type version from active use in the CloudFormation registry. If
+        /// a type or type version is deregistered, it cannot be used in CloudFormation operations.
+        /// 
+        ///  
+        /// <para>
+        /// To deregister a type, you must individually deregister all registered versions of
+        /// that type. If a type has only a single registered version, deregistering that version
+        /// results in the type itself being deregistered. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot deregister the default version of a type, unless it is the only registered
+        /// version of that type, in which case the type itself is deregistered as well. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterType service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified type does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">REST API Reference for DeregisterType Operation</seealso>
+        public virtual DeregisterTypeResponse DeregisterType(DeregisterTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterTypeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes a type or type version from active use in the CloudFormation registry. If
+        /// a type or type version is deregistered, it cannot be used in CloudFormation operations.
+        /// 
+        ///  
+        /// <para>
+        /// To deregister a type, you must individually deregister all registered versions of
+        /// that type. If a type has only a single registered version, deregistering that version
+        /// results in the type itself being deregistered. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot deregister the default version of a type, unless it is the only registered
+        /// version of that type, in which case the type itself is deregistered as well. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified type does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">REST API Reference for DeregisterType Operation</seealso>
+        public virtual Task<DeregisterTypeResponse> DeregisterTypeAsync(DeregisterTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterTypeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1749,6 +1830,146 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  DescribeType
+
+
+        /// <summary>
+        /// Returns detailed information about a type that has been registered.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information
+        /// about that specific type version. Otherwise, it returns information about the default
+        /// type version.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeType service method.</param>
+        /// 
+        /// <returns>The response from the DescribeType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified type does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType">REST API Reference for DescribeType Operation</seealso>
+        public virtual DescribeTypeResponse DescribeType(DescribeTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTypeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns detailed information about a type that has been registered.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information
+        /// about that specific type version. Otherwise, it returns information about the default
+        /// type version.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified type does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType">REST API Reference for DescribeType Operation</seealso>
+        public virtual Task<DescribeTypeResponse> DescribeTypeAsync(DescribeTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTypeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTypeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTypeRegistration
+
+
+        /// <summary>
+        /// Returns information about a type's registration, including its current status and
+        /// type and version identifiers.
+        /// 
+        ///  
+        /// <para>
+        /// When you initiate a registration request using <code> <a>RegisterType</a> </code>,
+        /// you can then use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
+        /// of that registration request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once the registration request has completed, use <code> <a>DescribeType</a> </code>
+        /// to return detailed informaiton about a type.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTypeRegistration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTypeRegistration service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeTypeRegistration">REST API Reference for DescribeTypeRegistration Operation</seealso>
+        public virtual DescribeTypeRegistrationResponse DescribeTypeRegistration(DescribeTypeRegistrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTypeRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTypeRegistrationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTypeRegistrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about a type's registration, including its current status and
+        /// type and version identifiers.
+        /// 
+        ///  
+        /// <para>
+        /// When you initiate a registration request using <code> <a>RegisterType</a> </code>,
+        /// you can then use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
+        /// of that registration request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once the registration request has completed, use <code> <a>DescribeType</a> </code>
+        /// to return detailed informaiton about a type.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTypeRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTypeRegistration service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeTypeRegistration">REST API Reference for DescribeTypeRegistration Operation</seealso>
+        public virtual Task<DescribeTypeRegistrationResponse> DescribeTypeRegistrationAsync(DescribeTypeRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTypeRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTypeRegistrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTypeRegistrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DetectStackDrift
 
 
@@ -1931,6 +2152,165 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = DetectStackResourceDriftResponseUnmarshaller.Instance;
             
             return InvokeAsync<DetectStackResourceDriftResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetectStackSetDrift
+
+
+        /// <summary>
+        /// Detect drift on a stack set. When CloudFormation performs drift detection on a stack
+        /// set, it performs drift detection on the stack associated with each stack instance
+        /// in the stack set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">How
+        /// CloudFormation Performs Drift Detection on a Stack Set</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the stack
+        /// set drift detection operation. Use this operation id with <code> <a>DescribeStackSetOperation</a>
+        /// </code> to monitor the progress of the drift detection operation. The drift detection
+        /// operation may take some time, depending on the number of stack instances included
+        /// in the stack set, as well as the number of resources included in each stack.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once the operation has completed, use the following actions to return drift information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use <code> <a>DescribeStackSet</a> </code> to return detailed informaiton about the
+        /// stack set, including detailed information about the last <i>completed</i> drift operation
+        /// performed on the stack set. (Information about drift operations that are in progress
+        /// is not included.)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code> <a>ListStackInstances</a> </code> to return a list of stack instances belonging
+        /// to the stack set, including the drift status and last drift time checked of each instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code> <a>DescribeStackInstance</a> </code> to return detailed information about
+        /// a specific stack instance, including its drift status and last drift time checked.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information on performing a drift detection operation on a stack set, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
+        /// Unmanaged Changes in Stack Sets</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only run a single drift detection operation on a given stack set at one time.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To stop a drift detection stack set operation, use <code> <a>StopStackSetOperation</a>
+        /// </code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectStackSetDrift service method.</param>
+        /// 
+        /// <returns>The response from the DetectStackSetDrift service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidOperationException">
+        /// The specified operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationInProgressException">
+        /// Another operation is currently in progress for this stack set. Only one operation
+        /// can be performed for a stack set at a given time.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackSetDrift">REST API Reference for DetectStackSetDrift Operation</seealso>
+        public virtual DetectStackSetDriftResponse DetectStackSetDrift(DetectStackSetDriftRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectStackSetDriftRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectStackSetDriftResponseUnmarshaller.Instance;
+
+            return Invoke<DetectStackSetDriftResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Detect drift on a stack set. When CloudFormation performs drift detection on a stack
+        /// set, it performs drift detection on the stack associated with each stack instance
+        /// in the stack set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">How
+        /// CloudFormation Performs Drift Detection on a Stack Set</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the stack
+        /// set drift detection operation. Use this operation id with <code> <a>DescribeStackSetOperation</a>
+        /// </code> to monitor the progress of the drift detection operation. The drift detection
+        /// operation may take some time, depending on the number of stack instances included
+        /// in the stack set, as well as the number of resources included in each stack.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once the operation has completed, use the following actions to return drift information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use <code> <a>DescribeStackSet</a> </code> to return detailed informaiton about the
+        /// stack set, including detailed information about the last <i>completed</i> drift operation
+        /// performed on the stack set. (Information about drift operations that are in progress
+        /// is not included.)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code> <a>ListStackInstances</a> </code> to return a list of stack instances belonging
+        /// to the stack set, including the drift status and last drift time checked of each instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code> <a>DescribeStackInstance</a> </code> to return detailed information about
+        /// a specific stack instance, including its drift status and last drift time checked.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information on performing a drift detection operation on a stack set, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
+        /// Unmanaged Changes in Stack Sets</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only run a single drift detection operation on a given stack set at one time.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To stop a drift detection stack set operation, use <code> <a>StopStackSetOperation</a>
+        /// </code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectStackSetDrift service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetectStackSetDrift service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidOperationException">
+        /// The specified operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationInProgressException">
+        /// Another operation is currently in progress for this stack set. Only one operation
+        /// can be performed for a stack set at a given time.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackSetDrift">REST API Reference for DetectStackSetDrift Operation</seealso>
+        public virtual Task<DetectStackSetDriftResponse> DetectStackSetDriftAsync(DetectStackSetDriftRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectStackSetDriftRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectStackSetDriftResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DetectStackSetDriftResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2759,6 +3139,315 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  ListTypeRegistrations
+
+
+        /// <summary>
+        /// Returns a list of registration tokens for the specified type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypeRegistrations service method.</param>
+        /// 
+        /// <returns>The response from the ListTypeRegistrations service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations">REST API Reference for ListTypeRegistrations Operation</seealso>
+        public virtual ListTypeRegistrationsResponse ListTypeRegistrations(ListTypeRegistrationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTypeRegistrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTypeRegistrationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTypeRegistrationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of registration tokens for the specified type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypeRegistrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTypeRegistrations service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations">REST API Reference for ListTypeRegistrations Operation</seealso>
+        public virtual Task<ListTypeRegistrationsResponse> ListTypeRegistrationsAsync(ListTypeRegistrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTypeRegistrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTypeRegistrationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTypeRegistrationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTypes
+
+
+        /// <summary>
+        /// Returns summary information about types that have been registered with CloudFormation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypes service method.</param>
+        /// 
+        /// <returns>The response from the ListTypes service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypes">REST API Reference for ListTypes Operation</seealso>
+        public virtual ListTypesResponse ListTypes(ListTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTypesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns summary information about types that have been registered with CloudFormation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTypes service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypes">REST API Reference for ListTypes Operation</seealso>
+        public virtual Task<ListTypesResponse> ListTypesAsync(ListTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTypesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTypesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTypeVersions
+
+
+        /// <summary>
+        /// Returns summary information about the versions of a type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypeVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListTypeVersions service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeVersions">REST API Reference for ListTypeVersions Operation</seealso>
+        public virtual ListTypeVersionsResponse ListTypeVersions(ListTypeVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTypeVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTypeVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTypeVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns summary information about the versions of a type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypeVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTypeVersions service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeVersions">REST API Reference for ListTypeVersions Operation</seealso>
+        public virtual Task<ListTypeVersionsResponse> ListTypeVersionsAsync(ListTypeVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTypeVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTypeVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTypeVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RecordHandlerProgress
+
+
+        /// <summary>
+        /// Reports progress of a resource handler to CloudFormation.
+        /// 
+        ///  
+        /// <para>
+        /// Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
+        /// CLI</a>. Do not use this API in your code.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RecordHandlerProgress service method.</param>
+        /// 
+        /// <returns>The response from the RecordHandlerProgress service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidStateTransitionException">
+        /// Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
+        /// CLI</a>. CloudFormation does not return this error to users.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationStatusCheckFailedException">
+        /// Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
+        /// CLI</a>. CloudFormation does not return this error to users.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RecordHandlerProgress">REST API Reference for RecordHandlerProgress Operation</seealso>
+        public virtual RecordHandlerProgressResponse RecordHandlerProgress(RecordHandlerProgressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RecordHandlerProgressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RecordHandlerProgressResponseUnmarshaller.Instance;
+
+            return Invoke<RecordHandlerProgressResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Reports progress of a resource handler to CloudFormation.
+        /// 
+        ///  
+        /// <para>
+        /// Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
+        /// CLI</a>. Do not use this API in your code.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RecordHandlerProgress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RecordHandlerProgress service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidStateTransitionException">
+        /// Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
+        /// CLI</a>. CloudFormation does not return this error to users.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationStatusCheckFailedException">
+        /// Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
+        /// CLI</a>. CloudFormation does not return this error to users.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RecordHandlerProgress">REST API Reference for RecordHandlerProgress Operation</seealso>
+        public virtual Task<RecordHandlerProgressResponse> RecordHandlerProgressAsync(RecordHandlerProgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RecordHandlerProgressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RecordHandlerProgressResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RecordHandlerProgressResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterType
+
+
+        /// <summary>
+        /// Registers a type with the CloudFormation service. Registering a type makes it available
+        /// for use in CloudFormation templates in your AWS account, and includes:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Validating the resource schema
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Determining which handlers have been specified for the resource
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Making the resource type available for use in your account
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information on how to develop types and ready them for registeration, see
+        /// <a href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
+        /// Providers</a> in the <i>CloudFormation CLI User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once you have initiated a registration request using <code> <a>RegisterType</a> </code>,
+        /// you can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
+        /// of the registration request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterType service method.</param>
+        /// 
+        /// <returns>The response from the RegisterType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">REST API Reference for RegisterType Operation</seealso>
+        public virtual RegisterTypeResponse RegisterType(RegisterTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterTypeResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterTypeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Registers a type with the CloudFormation service. Registering a type makes it available
+        /// for use in CloudFormation templates in your AWS account, and includes:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Validating the resource schema
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Determining which handlers have been specified for the resource
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Making the resource type available for use in your account
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information on how to develop types and ready them for registeration, see
+        /// <a href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
+        /// Providers</a> in the <i>CloudFormation CLI User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once you have initiated a registration request using <code> <a>RegisterType</a> </code>,
+        /// you can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
+        /// of the registration request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">REST API Reference for RegisterType Operation</seealso>
+        public virtual Task<RegisterTypeResponse> RegisterTypeAsync(RegisterTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterTypeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterTypeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SetStackPolicy
 
 
@@ -2796,6 +3485,61 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = SetStackPolicyResponseUnmarshaller.Instance;
             
             return InvokeAsync<SetStackPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetTypeDefaultVersion
+
+
+        /// <summary>
+        /// Specify the default version of a type. The default version of a type will be used
+        /// in CloudFormation operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetTypeDefaultVersion service method.</param>
+        /// 
+        /// <returns>The response from the SetTypeDefaultVersion service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified type does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion">REST API Reference for SetTypeDefaultVersion Operation</seealso>
+        public virtual SetTypeDefaultVersionResponse SetTypeDefaultVersion(SetTypeDefaultVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetTypeDefaultVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetTypeDefaultVersionResponseUnmarshaller.Instance;
+
+            return Invoke<SetTypeDefaultVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Specify the default version of a type. The default version of a type will be used
+        /// in CloudFormation operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetTypeDefaultVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SetTypeDefaultVersion service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified type does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion">REST API Reference for SetTypeDefaultVersion Operation</seealso>
+        public virtual Task<SetTypeDefaultVersionResponse> SetTypeDefaultVersionAsync(SetTypeDefaultVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetTypeDefaultVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetTypeDefaultVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SetTypeDefaultVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3229,12 +3973,12 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Updates termination protection for the specified stack. If a user attempts to delete
         /// a stack with termination protection enabled, the operation fails and the stack remains
-        /// unchanged. For more information, see <a href="AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+        /// unchanged. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
         /// a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.
         /// 
         ///  
         /// <para>
-        ///  For <a href="AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+        ///  For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
         /// stacks</a>, termination protection is set on the root stack and cannot be changed
         /// directly on the nested stack.
         /// </para>
@@ -3256,12 +4000,12 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Updates termination protection for the specified stack. If a user attempts to delete
         /// a stack with termination protection enabled, the operation fails and the stack remains
-        /// unchanged. For more information, see <a href="AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+        /// unchanged. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
         /// a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.
         /// 
         ///  
         /// <para>
-        ///  For <a href="AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+        ///  For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
         /// stacks</a>, termination protection is set on the root stack and cannot be changed
         /// directly on the nested stack.
         /// </para>

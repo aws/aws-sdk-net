@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the network interface.
+    /// Contains information about the network interface of the Ec2 instance.
     /// </summary>
     public partial class NetworkInterface
     {

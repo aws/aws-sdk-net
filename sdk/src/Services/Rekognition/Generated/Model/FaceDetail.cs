@@ -221,7 +221,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Gender. 
         /// <para>
-        /// Gender of the face and the confidence level in the determination.
+        /// The predicted gender of a detected face. 
         /// </para>
         /// </summary>
         public Gender Gender

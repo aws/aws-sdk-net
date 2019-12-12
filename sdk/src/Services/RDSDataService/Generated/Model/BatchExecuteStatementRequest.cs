@@ -78,6 +78,10 @@ namespace Amazon.RDSDataService.Model
         /// <para>
         /// The parameter set for the batch operation.
         /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of parameters in a parameter set is 1,000.
+        /// </para>
         /// </summary>
         public List<List<SqlParameter>> ParameterSets
         {

@@ -29,7 +29,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes one or more tags from a Kinesis Analytics application.
+    /// Removes one or more tags from a Kinesis Analytics application. For more information,
+    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+    /// Tagging</a>.
     /// </summary>
     public partial class UntagResourceRequest : AmazonKinesisAnalyticsV2Request
     {

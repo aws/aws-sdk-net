@@ -43,7 +43,7 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must supply the full SHAs of each commit. You cannot use shortened SHAs.
+        /// You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.
         /// </para>
         ///  </note>
         /// </summary>

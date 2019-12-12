@@ -30,7 +30,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the ListEndpointsByPlatformApplication operation.
     /// Lists the endpoints and endpoint attributes for devices in a supported push notification
-    /// service, such as GCM and APNS. The results for <code>ListEndpointsByPlatformApplication</code>
+    /// service, such as FCM and APNS. The results for <code>ListEndpointsByPlatformApplication</code>
     /// are paginated and return a limited list of endpoints, up to 100. If additional records
     /// are available after the first page results, then a NextToken string will be returned.
     /// To receive the next page, you call <code>ListEndpointsByPlatformApplication</code>

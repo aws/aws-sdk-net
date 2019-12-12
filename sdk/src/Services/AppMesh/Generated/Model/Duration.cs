@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the duration between retry attempts.
+    /// An object that represents a duration of time.
     /// </summary>
     public partial class Duration
     {
@@ -38,7 +38,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit of time between retry attempts.
+        /// A unit of time.
         /// </para>
         /// </summary>
         public DurationUnit Unit
@@ -56,7 +56,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The duration of time between retry attempts.
+        /// A number of time units.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

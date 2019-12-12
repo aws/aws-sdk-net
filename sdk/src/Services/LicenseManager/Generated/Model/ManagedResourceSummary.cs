@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Summary for a resource.
+    /// Summary information about a managed resource.
     /// </summary>
     public partial class ManagedResourceSummary
     {
@@ -56,7 +56,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Type of resource associated with a license (instance, host, or AMI).
+        /// Type of resource associated with a license.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

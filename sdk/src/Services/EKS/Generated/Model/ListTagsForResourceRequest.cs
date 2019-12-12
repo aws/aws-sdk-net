@@ -39,7 +39,8 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies the resource for which to list the
-        /// tags. Currently, the supported resources are Amazon EKS clusters.
+        /// tags. Currently, the supported resources are Amazon EKS clusters and managed node
+        /// groups.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

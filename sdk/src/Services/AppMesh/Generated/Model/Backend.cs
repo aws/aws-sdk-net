@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the backends that a virtual node is expected to send outbound
+    /// An object that represents the backends that a virtual node is expected to send outbound
     ///         traffic to.
     /// </summary>
     public partial class Backend

@@ -401,6 +401,10 @@ namespace Amazon.CertificateManager
         /// </summary>
         public static readonly FailureReason PCA_LIMIT_EXCEEDED = new FailureReason("PCA_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant PCA_NAME_CONSTRAINTS_VALIDATION for FailureReason
+        /// </summary>
+        public static readonly FailureReason PCA_NAME_CONSTRAINTS_VALIDATION = new FailureReason("PCA_NAME_CONSTRAINTS_VALIDATION");
+        /// <summary>
         /// Constant PCA_REQUEST_FAILED for FailureReason
         /// </summary>
         public static readonly FailureReason PCA_REQUEST_FAILED = new FailureReason("PCA_REQUEST_FAILED");

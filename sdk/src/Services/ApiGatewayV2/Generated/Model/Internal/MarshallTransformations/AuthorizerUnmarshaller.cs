@@ -106,16 +106,16 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.IdentityValidationExpression = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jwtConfiguration", targetDepth))
+                {
+                    var unmarshaller = JWTConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.JwtConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("providerArns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ProviderArns = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

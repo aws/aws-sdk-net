@@ -33,6 +33,7 @@ namespace Amazon.Greengrass.Model
     public partial class S3MachineLearningModelResourceData
     {
         private string _destinationPath;
+        private ResourceDownloadOwnerSetting _ownerSetting;
         private string _s3Uri;
 
         /// <summary>
@@ -49,6 +50,21 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetDestinationPath()
         {
             return this._destinationPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerSetting.
+        /// </summary>
+        public ResourceDownloadOwnerSetting OwnerSetting
+        {
+            get { return this._ownerSetting; }
+            set { this._ownerSetting = value; }
+        }
+
+        // Check to see if OwnerSetting property is set
+        internal bool IsSetOwnerSetting()
+        {
+            return this._ownerSetting != null;
         }
 
         /// <summary>

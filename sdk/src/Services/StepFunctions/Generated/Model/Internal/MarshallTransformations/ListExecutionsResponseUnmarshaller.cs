@@ -90,6 +90,10 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             {
                 return new StateMachineDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("StateMachineTypeNotSupported"))
+            {
+                return new StateMachineTypeNotSupportedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonStepFunctionsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 

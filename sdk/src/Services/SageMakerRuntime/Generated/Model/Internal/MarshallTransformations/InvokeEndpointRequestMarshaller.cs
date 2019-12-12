@@ -77,6 +77,9 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
         
             if(publicRequest.IsSetCustomAttributes())
                 request.Headers["X-Amzn-SageMaker-Custom-Attributes"] = publicRequest.CustomAttributes;
+        
+            if(publicRequest.IsSetTargetModel())
+                request.Headers["X-Amzn-SageMaker-Target-Model"] = publicRequest.TargetModel;
 
             return request;
         }

@@ -48,7 +48,7 @@ namespace Amazon.Transfer.Model
         /// method is tested with a user name and password.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=19, Max=19)]
         public string ServerId
         {
             get { return this._serverId; }
@@ -67,7 +67,7 @@ namespace Amazon.Transfer.Model
         /// This request parameter is the name of the user account to be tested.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=3, Max=32)]
         public string UserName
         {
             get { return this._userName; }
@@ -86,6 +86,7 @@ namespace Amazon.Transfer.Model
         /// The password of the user account to be tested.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string UserPassword
         {
             get { return this._userPassword; }

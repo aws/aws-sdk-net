@@ -221,7 +221,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property S3KeyPrefix. 
         /// <para>
         /// Specifies the Amazon S3 key prefix that comes after the name of the bucket you have
-        /// designated for log file delivery. For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+        /// designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
         /// Your CloudTrail Log Files</a>.
         /// </para>
         /// </summary>
@@ -263,7 +263,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property SnsTopicName. 
         /// <para>
-        /// This field is deprecated. Use SnsTopicARN.
+        /// This field is no longer in use. Use SnsTopicARN.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated. Use SnsTopicARN.")]

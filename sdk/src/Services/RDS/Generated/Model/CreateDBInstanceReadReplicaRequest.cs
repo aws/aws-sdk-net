@@ -226,7 +226,12 @@ namespace Amazon.RDS.Model
         /// Replica, or the default <code>DBParameterGroup</code> for the specified DB engine
         /// for a cross region Read Replica.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Currently, specifying a parameter group for this operation is only supported for Oracle
+        /// DB instances.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Constraints:
         /// </para>
@@ -261,7 +266,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specifies a DB subnet group for the DB instance. The new DB instance is created in
         /// the VPC associated with the DB subnet group. If no DB subnet group is specified, then
-        /// the new DB instance is not created in a VPC.
+        /// the new DB instance isn't created in a VPC.
         /// </para>
         ///  
         /// <para>
@@ -684,9 +689,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// You must specify this parameter when you create an encrypted Read Replica from another
-        /// AWS Region by using the Amazon RDS API. You can specify the <code>--source-region</code>
-        /// option instead of this parameter when you create an encrypted Read Replica from another
-        /// AWS Region by using the AWS CLI. 
+        /// AWS Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when
+        /// you are creating an encrypted Read Replica in the same AWS Region. 
         /// </para>
         ///  
         /// <para>
@@ -732,6 +736,14 @@ namespace Amazon.RDS.Model
         /// Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
         /// Version 4 Signing Process</a>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code>
+        /// (or <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code>
+        /// manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that
+        /// is a valid request for the operation that can be executed in the source AWS Region.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string PreSignedUrl
         {
@@ -769,9 +781,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether the DB instance is publicly accessible. When the DB
         /// instance is publicly accessible, it is an Internet-facing instance with a publicly
-        /// resolvable DNS name, which resolves to a public IP address. When the DB instance is
-        /// not publicly accessible, it is an internal instance with a DNS name that resolves
-        /// to a private IP address. For more information, see <a>CreateDBInstance</a>.
+        /// resolvable DNS name, which resolves to a public IP address. When the DB instance isn't
+        /// publicly accessible, it is an internal instance with a DNS name that resolves to a
+        /// private IP address. For more information, see <a>CreateDBInstance</a>.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible

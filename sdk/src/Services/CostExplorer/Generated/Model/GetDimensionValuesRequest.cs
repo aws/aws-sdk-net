@@ -115,6 +115,11 @@ namespace Amazon.CostExplorer.Model
         /// RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds,
         /// and credits.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature
+        /// only available for last 14 days for EC2-Compute Service.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions
@@ -163,6 +168,36 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// TENANCY - The tenancy of a resource. Examples are shared or dedicated.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions
+        /// for searching:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// REGION - The AWS Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// LINKED_ACCOUNT - The description in the attribute map that includes the full name
+        /// of the member account. The value field contains the AWS ID of the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public Context Context
@@ -181,7 +216,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Dimension. 
         /// <para>
         /// The name of the dimension. Each <code>Dimension</code> is available for a different
-        /// <code>Context</code>. For more information, see <code>Context</code>.
+        /// <code>Context</code>. For more information, see <code>Context</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

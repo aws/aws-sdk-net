@@ -46,7 +46,7 @@ namespace Amazon.RDS
     /// <para>
     /// Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier
     /// to set up, operate, and scale a relational database in the cloud. It provides cost-efficient,
-    /// resizable capacity for an industry-standard relational database and manages common
+    /// resizeable capacity for an industry-standard relational database and manages common
     /// database administration tasks, freeing up developers to focus on what makes their
     /// applications and businesses unique.
     /// </para>
@@ -351,7 +351,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the AddRoleToDBCluster service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterRoleAlreadyExistsException">
         /// The specified IAM role Amazon Resource Name (ARN) is already associated with the specified
@@ -405,11 +405,11 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the AddRoleToDBInstance service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceRoleAlreadyExistsException">
-        /// The specified <i>RoleArn</i> or <i>FeatureName</i> value is already associated with
-        /// the DB instance.
+        /// The specified <code>RoleArn</code> or <code>FeatureName</code> value is already associated
+        /// with the DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceRoleQuotaExceededException">
         /// You can't associate any more AWS Identity and Access Management (IAM) roles with the
@@ -501,13 +501,13 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the AddTagsToResource service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
-        /// <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -604,14 +604,14 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the AuthorizeDBSecurityGroupIngress service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.AuthorizationAlreadyExistsException">
-        /// The specified CIDRIP or Amazon EC2 security group is already authorized for the specified
-        /// DB security group.
+        /// The specified CIDR IP range or Amazon EC2 security group is already authorized for
+        /// the specified DB security group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.AuthorizationQuotaExceededException">
         /// The DB security group authorization quota has been reached.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
-        /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
+        /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSecurityGroupStateException">
         /// The state of the DB security group doesn't allow deletion.
@@ -662,7 +662,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the BacktrackDBCluster service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -711,7 +711,7 @@ namespace Amazon.RDS
         /// A DB parameter group with the same name exists.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB parameter
@@ -803,7 +803,14 @@ namespace Amazon.RDS
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
         /// Signature Version 4 Signing Process</a>.
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code>
+        /// (or <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code>
+        /// manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that
+        /// is a valid request for the operation that can be executed in the source AWS Region.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy
         /// of the DB cluster snapshot in the destination AWS Region.
@@ -848,7 +855,8 @@ namespace Amazon.RDS
         /// The user already has a DB cluster snapshot with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
-        /// <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
+        /// snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
         /// The supplied value isn't a valid DB cluster snapshot state.
@@ -900,7 +908,7 @@ namespace Amazon.RDS
         /// A DB parameter group with the same name exists.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB parameter
@@ -954,10 +962,10 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the CopyDBSnapshot service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
-        /// <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
+        /// <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
-        /// <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
         /// The state of the DB snapshot doesn't allow deletion.
@@ -1023,6 +1031,60 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CreateCustomAvailabilityZone
+
+        internal virtual CreateCustomAvailabilityZoneResponse CreateCustomAvailabilityZone(CreateCustomAvailabilityZoneRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomAvailabilityZoneRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomAvailabilityZoneResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomAvailabilityZoneResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a custom Availability Zone (AZ).
+        /// 
+        ///  
+        /// <para>
+        /// A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
+        /// <i>RDS on VMware User Guide.</i> </a> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomAvailabilityZone service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCustomAvailabilityZone service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneAlreadyExistsException">
+        /// <code>CustomAvailabilityZoneName</code> is already used by an existing custom Availability
+        /// Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneQuotaExceededException">
+        /// You have exceeded the maximum number of custom Availability Zones.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an AWS KMS key.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomAvailabilityZone">REST API Reference for CreateCustomAvailabilityZone Operation</seealso>
+        public virtual Task<CreateCustomAvailabilityZoneResponse> CreateCustomAvailabilityZoneAsync(CreateCustomAvailabilityZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomAvailabilityZoneRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomAvailabilityZoneResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCustomAvailabilityZoneResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDBCluster
 
         internal virtual CreateDBClusterResponse CreateDBCluster(CreateDBClusterRequest request)
@@ -1067,28 +1129,28 @@ namespace Amazon.RDS
         /// The user already has a DB cluster with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
-        /// <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter
-        /// group.
+        /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster
+        /// parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
         /// maximum allowed DB cluster quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless
         /// there is only one Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
-        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
         /// 
@@ -1172,10 +1234,10 @@ namespace Amazon.RDS
         /// The cluster already has the maximum number of custom endpoints.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -1306,7 +1368,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the CreateDBClusterSnapshot service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotAlreadyExistsException">
         /// The user already has a DB cluster snapshot with the given identifier.
@@ -1355,38 +1417,38 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the CreateDBInstance service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
-        /// The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified
-        /// DB security group.
+        /// The specified CIDR IP range or Amazon EC2 security group might not be authorized for
+        /// the specified DB security group.
         /// 
         ///  
         /// <para>
-        /// RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
+        /// Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
-        /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
+        /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless
         /// there is only one Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
-        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB instances.
@@ -1419,7 +1481,8 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <i>StorageType</i> specified can't be associated with the DB instance.
+        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
+        /// instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         public virtual Task<CreateDBInstanceResponse> CreateDBInstanceAsync(CreateDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1479,13 +1542,13 @@ namespace Amazon.RDS
         /// The user already has a DB instance with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
-        /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
+        /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless
@@ -1496,10 +1559,10 @@ namespace Amazon.RDS
         /// the same region as the source instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
-        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB instances.
@@ -1536,7 +1599,8 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <i>StorageType</i> specified can't be associated with the DB instance.
+        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
+        /// instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         public virtual Task<CreateDBInstanceReadReplicaResponse> CreateDBInstanceReadReplicaAsync(CreateDBInstanceReadReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1615,6 +1679,59 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CreateDBProxy
+
+        internal virtual CreateDBProxyResponse CreateDBProxy(CreateDBProxyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDBProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDBProxyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDBProxyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Creates a new DB proxy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBProxy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDBProxy service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyAlreadyExistsException">
+        /// The specified proxy name must be unique for all proxies owned by your AWS account
+        /// in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyQuotaExceededException">
+        /// Your AWS account already has the maximum number of proxies in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy">REST API Reference for CreateDBProxy Operation</seealso>
+        public virtual Task<CreateDBProxyResponse> CreateDBProxyAsync(CreateDBProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDBProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDBProxyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDBProxyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDBSecurityGroup
 
         internal virtual CreateDBSecurityGroupResponse CreateDBSecurityGroup(CreateDBSecurityGroupRequest request)
@@ -1645,7 +1762,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the CreateDBSecurityGroup service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupAlreadyExistsException">
-        /// A DB security group with the name specified in <i>DBSecurityGroupName</i> already
+        /// A DB security group with the name specified in <code>DBSecurityGroupName</code> already
         /// exists.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotSupportedException">
@@ -1689,10 +1806,10 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the CreateDBSnapshot service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
-        /// <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
+        /// <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
@@ -1736,7 +1853,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the CreateDBSubnetGroup service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupAlreadyExistsException">
-        /// <i>DBSubnetGroupName</i> is already used by an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> is already used by an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless
@@ -1801,6 +1918,12 @@ namespace Amazon.RDS
         /// you do not specify either the SourceType nor the SourceIdentifier, you are notified
         /// of events generated from all RDS sources belonging to your customer account.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// RDS event notification is only available for unencrypted SNS topics. If you specify
+        /// an encrypted SNS topic, event notifications aren't sent for the topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -1881,7 +2004,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the CreateGlobalCluster service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterAlreadyExistsException">
         /// 
@@ -1944,6 +2067,57 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DeleteCustomAvailabilityZone
+
+        internal virtual DeleteCustomAvailabilityZoneResponse DeleteCustomAvailabilityZone(DeleteCustomAvailabilityZoneRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomAvailabilityZoneRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomAvailabilityZoneResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomAvailabilityZoneResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a custom Availability Zone (AZ).
+        /// 
+        ///  
+        /// <para>
+        /// A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
+        /// <i>RDS on VMware User Guide.</i> </a> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomAvailabilityZone service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCustomAvailabilityZone service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
+        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
+        /// Zone identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an AWS KMS key.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomAvailabilityZone">REST API Reference for DeleteCustomAvailabilityZone Operation</seealso>
+        public virtual Task<DeleteCustomAvailabilityZoneResponse> DeleteCustomAvailabilityZoneAsync(DeleteCustomAvailabilityZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomAvailabilityZoneRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomAvailabilityZoneResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCustomAvailabilityZoneResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDBCluster
 
         internal virtual DeleteDBClusterResponse DeleteDBCluster(DeleteDBClusterRequest request)
@@ -1980,7 +2154,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DeleteDBCluster service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotAlreadyExistsException">
         /// The user already has a DB cluster snapshot with the given identifier.
@@ -2091,7 +2265,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DeleteDBClusterParameterGroup service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group is in use or is in an invalid state. If you are attempting
@@ -2149,7 +2323,8 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DeleteDBClusterSnapshot service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
-        /// <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
+        /// snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
         /// The supplied value isn't a valid DB cluster snapshot state.
@@ -2232,10 +2407,10 @@ namespace Amazon.RDS
         /// as your DB Instance quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
-        /// <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
+        /// <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -2324,7 +2499,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DeleteDBParameterGroup service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group is in use or is in an invalid state. If you are attempting
@@ -2339,6 +2514,55 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = DeleteDBParameterGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDBParameterGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDBProxy
+
+        internal virtual DeleteDBProxyResponse DeleteDBProxy(DeleteDBProxyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDBProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDBProxyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDBProxyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Deletes an existing proxy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBProxy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDBProxy service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy">REST API Reference for DeleteDBProxy Operation</seealso>
+        public virtual Task<DeleteDBProxyResponse> DeleteDBProxyAsync(DeleteDBProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDBProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDBProxyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDBProxyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2372,7 +2596,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DeleteDBSecurityGroup service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
-        /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
+        /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSecurityGroupStateException">
         /// The state of the DB security group doesn't allow deletion.
@@ -2418,7 +2642,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DeleteDBSnapshot service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
-        /// <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
         /// The state of the DB snapshot doesn't allow deletion.
@@ -2464,7 +2688,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DeleteDBSubnetGroup service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
         /// The DB subnet group cannot be deleted because it's in use.
@@ -2572,6 +2796,44 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DeleteInstallationMedia
+
+        internal virtual DeleteInstallationMediaResponse DeleteInstallationMedia(DeleteInstallationMediaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstallationMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstallationMediaResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInstallationMediaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the installation medium for a DB engine that requires an on-premises customer
+        /// provided license, such as Microsoft SQL Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstallationMedia service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteInstallationMedia service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.InstallationMediaNotFoundException">
+        /// <code>InstallationMediaID</code> doesn't refer to an existing installation medium.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteInstallationMedia">REST API Reference for DeleteInstallationMedia Operation</seealso>
+        public virtual Task<DeleteInstallationMediaResponse> DeleteInstallationMediaAsync(DeleteInstallationMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstallationMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstallationMediaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteInstallationMediaResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteOptionGroup
 
         internal virtual DeleteOptionGroupResponse DeleteOptionGroup(DeleteOptionGroupRequest request)
@@ -2608,6 +2870,61 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = DeleteOptionGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteOptionGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterDBProxyTargets
+
+        internal virtual DeregisterDBProxyTargetsResponse DeregisterDBProxyTargets(DeregisterDBProxyTargetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterDBProxyTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterDBProxyTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterDBProxyTargetsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Remove the association between one or more <code>DBProxyTarget</code> data structures
+        /// and a <code>DBProxyTargetGroup</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterDBProxyTargets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterDBProxyTargets service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetNotFoundException">
+        /// The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned
+        /// by your AWS account in the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets">REST API Reference for DeregisterDBProxyTargets Operation</seealso>
+        public virtual Task<DeregisterDBProxyTargetsResponse> DeregisterDBProxyTargetsAsync(DeregisterDBProxyTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterDBProxyTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterDBProxyTargetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterDBProxyTargetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2704,7 +3021,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeCertificates service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
-        /// <i>CertificateIdentifier</i> doesn't refer to an existing certificate.
+        /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
         public virtual Task<DescribeCertificatesResponse> DescribeCertificatesAsync(DescribeCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2714,6 +3031,54 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeCertificatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCustomAvailabilityZones
+
+        internal virtual DescribeCustomAvailabilityZonesResponse DescribeCustomAvailabilityZones(DescribeCustomAvailabilityZonesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomAvailabilityZonesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomAvailabilityZonesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCustomAvailabilityZonesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about custom Availability Zones (AZs).
+        /// 
+        ///  
+        /// <para>
+        /// A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
+        /// <i>RDS on VMware User Guide.</i> </a> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomAvailabilityZones service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCustomAvailabilityZones service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
+        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
+        /// Zone identifier.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCustomAvailabilityZones">REST API Reference for DescribeCustomAvailabilityZones Operation</seealso>
+        public virtual Task<DescribeCustomAvailabilityZonesResponse> DescribeCustomAvailabilityZonesAsync(DescribeCustomAvailabilityZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomAvailabilityZonesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomAvailabilityZonesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCustomAvailabilityZonesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2752,10 +3117,10 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBClusterBacktracks service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterBacktrackNotFoundException">
-        /// <i>BacktrackIdentifier</i> doesn't refer to an existing backtrack.
+        /// <code>BacktrackIdentifier</code> doesn't refer to an existing backtrack.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterBacktracks">REST API Reference for DescribeDBClusterBacktracks Operation</seealso>
         public virtual Task<DescribeDBClusterBacktracksResponse> DescribeDBClusterBacktracksAsync(DescribeDBClusterBacktracksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2798,7 +3163,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBClusterEndpoints service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterEndpoints">REST API Reference for DescribeDBClusterEndpoints Operation</seealso>
         public virtual Task<DescribeDBClusterEndpointsResponse> DescribeDBClusterEndpointsAsync(DescribeDBClusterEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2848,7 +3213,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBClusterParameterGroups service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups">REST API Reference for DescribeDBClusterParameterGroups Operation</seealso>
         public virtual Task<DescribeDBClusterParameterGroupsResponse> DescribeDBClusterParameterGroupsAsync(DescribeDBClusterParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2896,7 +3261,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBClusterParameters service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters">REST API Reference for DescribeDBClusterParameters Operation</seealso>
         public virtual Task<DescribeDBClusterParametersResponse> DescribeDBClusterParametersAsync(DescribeDBClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2944,7 +3309,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBClusters service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">REST API Reference for DescribeDBClusters Operation</seealso>
         public virtual Task<DescribeDBClustersResponse> DescribeDBClustersAsync(DescribeDBClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3002,7 +3367,8 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBClusterSnapshotAttributes service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
-        /// <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
+        /// snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshotAttributes">REST API Reference for DescribeDBClusterSnapshotAttributes Operation</seealso>
         public virtual Task<DescribeDBClusterSnapshotAttributesResponse> DescribeDBClusterSnapshotAttributesAsync(DescribeDBClusterSnapshotAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3050,7 +3416,8 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBClusterSnapshots service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
-        /// <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
+        /// snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots">REST API Reference for DescribeDBClusterSnapshots Operation</seealso>
         public virtual Task<DescribeDBClusterSnapshotsResponse> DescribeDBClusterSnapshotsAsync(DescribeDBClusterSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3187,7 +3554,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBInstances service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
         public virtual Task<DescribeDBInstancesResponse> DescribeDBInstancesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3207,7 +3574,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBInstances service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
         public virtual Task<DescribeDBInstancesResponse> DescribeDBInstancesAsync(DescribeDBInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3244,7 +3611,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBLogFiles service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">REST API Reference for DescribeDBLogFiles Operation</seealso>
         public virtual Task<DescribeDBLogFilesResponse> DescribeDBLogFilesAsync(DescribeDBLogFilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3285,7 +3652,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBParameterGroups service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups">REST API Reference for DescribeDBParameterGroups Operation</seealso>
         public virtual Task<DescribeDBParameterGroupsResponse> DescribeDBParameterGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3307,7 +3674,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBParameterGroups service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups">REST API Reference for DescribeDBParameterGroups Operation</seealso>
         public virtual Task<DescribeDBParameterGroupsResponse> DescribeDBParameterGroupsAsync(DescribeDBParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3344,7 +3711,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBParameters service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters">REST API Reference for DescribeDBParameters Operation</seealso>
         public virtual Task<DescribeDBParametersResponse> DescribeDBParametersAsync(DescribeDBParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3354,6 +3721,153 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = DescribeDBParametersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDBParametersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDBProxies
+
+        internal virtual DescribeDBProxiesResponse DescribeDBProxies(DescribeDBProxiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBProxiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBProxiesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBProxiesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns information about DB proxies.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBProxies service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">REST API Reference for DescribeDBProxies Operation</seealso>
+        public virtual Task<DescribeDBProxiesResponse> DescribeDBProxiesAsync(DescribeDBProxiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBProxiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBProxiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDBProxiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDBProxyTargetGroups
+
+        internal virtual DescribeDBProxyTargetGroupsResponse DescribeDBProxyTargetGroups(DescribeDBProxyTargetGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBProxyTargetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBProxyTargetGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBProxyTargetGroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code>
+        /// data structures.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargetGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBProxyTargetGroups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups">REST API Reference for DescribeDBProxyTargetGroups Operation</seealso>
+        public virtual Task<DescribeDBProxyTargetGroupsResponse> DescribeDBProxyTargetGroupsAsync(DescribeDBProxyTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBProxyTargetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBProxyTargetGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDBProxyTargetGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDBProxyTargets
+
+        internal virtual DescribeDBProxyTargetsResponse DescribeDBProxyTargets(DescribeDBProxyTargetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBProxyTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBProxyTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBProxyTargetsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBProxyTargets service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetNotFoundException">
+        /// The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned
+        /// by your AWS account in the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets">REST API Reference for DescribeDBProxyTargets Operation</seealso>
+        public virtual Task<DescribeDBProxyTargetsResponse> DescribeDBProxyTargetsAsync(DescribeDBProxyTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBProxyTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBProxyTargetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDBProxyTargetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3385,7 +3899,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBSecurityGroups service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
-        /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
+        /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups">REST API Reference for DescribeDBSecurityGroups Operation</seealso>
         public virtual Task<DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3407,7 +3921,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBSecurityGroups service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
-        /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
+        /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups">REST API Reference for DescribeDBSecurityGroups Operation</seealso>
         public virtual Task<DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsAsync(DescribeDBSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3459,7 +3973,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBSnapshotAttributes service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
-        /// <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotAttributes">REST API Reference for DescribeDBSnapshotAttributes Operation</seealso>
         public virtual Task<DescribeDBSnapshotAttributesResponse> DescribeDBSnapshotAttributesAsync(DescribeDBSnapshotAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3498,7 +4012,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBSnapshots service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
-        /// <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">REST API Reference for DescribeDBSnapshots Operation</seealso>
         public virtual Task<DescribeDBSnapshotsResponse> DescribeDBSnapshotsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3518,7 +4032,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBSnapshots service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
-        /// <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">REST API Reference for DescribeDBSnapshots Operation</seealso>
         public virtual Task<DescribeDBSnapshotsResponse> DescribeDBSnapshotsAsync(DescribeDBSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3564,7 +4078,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBSubnetGroups service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
         public virtual Task<DescribeDBSubnetGroupsResponse> DescribeDBSubnetGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3591,7 +4105,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBSubnetGroups service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
         public virtual Task<DescribeDBSubnetGroupsResponse> DescribeDBSubnetGroupsAsync(DescribeDBSubnetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3917,6 +4431,44 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = DescribeGlobalClustersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeGlobalClustersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInstallationMedia
+
+        internal virtual DescribeInstallationMediaResponse DescribeInstallationMedia(DescribeInstallationMediaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstallationMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstallationMediaResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstallationMediaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the available installation media for a DB engine that requires an on-premises
+        /// customer provided license, such as Microsoft SQL Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstallationMedia service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstallationMedia service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.InstallationMediaNotFoundException">
+        /// <code>InstallationMediaID</code> doesn't refer to an existing installation medium.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeInstallationMedia">REST API Reference for DescribeInstallationMedia Operation</seealso>
+        public virtual Task<DescribeInstallationMediaResponse> DescribeInstallationMediaAsync(DescribeInstallationMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstallationMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstallationMediaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInstallationMediaResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4265,7 +4817,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeValidDBInstanceModifications service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
@@ -4305,10 +4857,10 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DownloadDBLogFilePortion service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBLogFileNotFoundException">
-        /// <i>LogFileName</i> doesn't refer to an existing DB log file.
+        /// <code>LogFileName</code> doesn't refer to an existing DB log file.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">REST API Reference for DownloadDBLogFilePortion Operation</seealso>
         public virtual Task<DownloadDBLogFilePortionResponse> DownloadDBLogFilePortionAsync(DownloadDBLogFilePortionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4369,7 +4921,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the FailoverDBCluster service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -4385,6 +4937,48 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = FailoverDBClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<FailoverDBClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportInstallationMedia
+
+        internal virtual ImportInstallationMediaResponse ImportInstallationMedia(ImportInstallationMediaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportInstallationMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportInstallationMediaResponseUnmarshaller.Instance;
+
+            return Invoke<ImportInstallationMediaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Imports the installation media for a DB engine that requires an on-premises customer
+        /// provided license, such as SQL Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportInstallationMedia service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportInstallationMedia service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
+        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
+        /// Zone identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InstallationMediaAlreadyExistsException">
+        /// The specified installation medium has already been imported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ImportInstallationMedia">REST API Reference for ImportInstallationMedia Operation</seealso>
+        public virtual Task<ImportInstallationMediaResponse> ImportInstallationMediaAsync(ImportInstallationMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportInstallationMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportInstallationMediaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportInstallationMediaResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4418,13 +5012,13 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
-        /// <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4492,12 +5086,12 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ModifyCurrentDBClusterCapacity service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterCapacityException">
-        /// <i>Capacity</i> isn't a valid Aurora Serverless DB cluster capacity. Valid capacity
-        /// values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
-        /// <code>64</code>, <code>128</code>, and <code>256</code>.
+        /// <code>Capacity</code> isn't a valid Aurora Serverless DB cluster capacity. Valid
+        /// capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+        /// <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -4549,17 +5143,17 @@ namespace Amazon.RDS
         /// The user already has a DB cluster with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
-        /// <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter
-        /// group.
+        /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster
+        /// parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
-        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -4629,7 +5223,7 @@ namespace Amazon.RDS
         /// The specified custom endpoint doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterEndpointStateException">
         /// The requested operation can't be performed on the endpoint while the endpoint is in
@@ -4695,6 +5289,13 @@ namespace Amazon.RDS
         /// RDS console</a> or the <code>DescribeDBClusterParameters</code> action to verify that
         /// your DB cluster parameter group has been created or modified.
         /// </para>
+        ///  
+        /// <para>
+        /// If the modified DB cluster parameter group is used by an Aurora Serverless cluster,
+        /// Aurora applies the update immediately. The cluster restart might interrupt your workload.
+        /// In that case, your application must reopen any connections and retry any transactions
+        /// that were active when the parameter changes took effect.
+        /// </para>
         ///  </important> <note> 
         /// <para>
         /// This action only applies to Aurora DB clusters.
@@ -4708,7 +5309,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ModifyDBClusterParameterGroup service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group is in use or is in an invalid state. If you are attempting
@@ -4776,7 +5377,8 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ModifyDBClusterSnapshotAttribute service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
-        /// <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
+        /// snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
         /// The supplied value isn't a valid DB cluster snapshot state.
@@ -4823,37 +5425,37 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ModifyDBInstance service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
-        /// The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified
-        /// DB security group.
+        /// The specified CIDR IP range or Amazon EC2 security group might not be authorized for
+        /// the specified DB security group.
         /// 
         ///  
         /// <para>
-        /// RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
+        /// Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
-        /// <i>CertificateIdentifier</i> doesn't refer to an existing certificate.
+        /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
-        /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
+        /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBUpgradeDependencyFailureException">
         /// The DB upgrade failed because a resource the DB depends on can't be modified.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
-        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
@@ -4879,7 +5481,8 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <i>StorageType</i> specified can't be associated with the DB instance.
+        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
+        /// instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         public virtual Task<ModifyDBInstanceResponse> ModifyDBInstanceAsync(ModifyDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4939,7 +5542,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ModifyDBParameterGroup service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group is in use or is in an invalid state. If you are attempting
@@ -4954,6 +5557,109 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = ModifyDBParameterGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyDBParameterGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyDBProxy
+
+        internal virtual ModifyDBProxyResponse ModifyDBProxy(ModifyDBProxyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDBProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDBProxyResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyDBProxyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Changes the settings for an existing DB proxy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyDBProxy service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyAlreadyExistsException">
+        /// The specified proxy name must be unique for all proxies owned by your AWS account
+        /// in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy">REST API Reference for ModifyDBProxy Operation</seealso>
+        public virtual Task<ModifyDBProxyResponse> ModifyDBProxyAsync(ModifyDBProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDBProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDBProxyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyDBProxyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyDBProxyTargetGroup
+
+        internal virtual ModifyDBProxyTargetGroupResponse ModifyDBProxyTargetGroup(ModifyDBProxyTargetGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDBProxyTargetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDBProxyTargetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyDBProxyTargetGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Modifies the properties of a <code>DBProxyTargetGroup</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxyTargetGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyDBProxyTargetGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup">REST API Reference for ModifyDBProxyTargetGroup Operation</seealso>
+        public virtual Task<ModifyDBProxyTargetGroupResponse> ModifyDBProxyTargetGroupAsync(ModifyDBProxyTargetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDBProxyTargetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDBProxyTargetGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyDBProxyTargetGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4977,7 +5683,7 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// Amazon RDS supports upgrading DB snapshots for MySQL and Oracle. 
+        /// Amazon RDS supports upgrading DB snapshots for MySQL, Oracle, and PostgreSQL. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshot service method.</param>
@@ -4987,7 +5693,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ModifyDBSnapshot service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
-        /// <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">REST API Reference for ModifyDBSnapshot Operation</seealso>
         public virtual Task<ModifyDBSnapshotResponse> ModifyDBSnapshotAsync(ModifyDBSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5044,7 +5750,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ModifyDBSnapshotAttribute service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
-        /// <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
         /// The state of the DB snapshot doesn't allow deletion.
@@ -5093,7 +5799,7 @@ namespace Amazon.RDS
         /// there is only one Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of subnets in a
@@ -5307,7 +6013,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the PromoteReadReplica service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
@@ -5353,7 +6059,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the PromoteReadReplicaDBCluster service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -5451,7 +6157,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the RebootDBInstance service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
@@ -5464,6 +6170,71 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = RebootDBInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<RebootDBInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterDBProxyTargets
+
+        internal virtual RegisterDBProxyTargetsResponse RegisterDBProxyTargets(RegisterDBProxyTargetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDBProxyTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDBProxyTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterDBProxyTargetsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
+        /// It is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDBProxyTargets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterDBProxyTargets service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetAlreadyRegisteredException">
+        /// The proxy is already associated with the specified RDS DB instance or Aurora DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
+        /// The specified target group isn't available for a proxy owned by your AWS account in
+        /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets">REST API Reference for RegisterDBProxyTargets Operation</seealso>
+        public virtual Task<RegisterDBProxyTargetsResponse> RegisterDBProxyTargetsAsync(RegisterDBProxyTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDBProxyTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDBProxyTargetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterDBProxyTargetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5499,7 +6270,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the RemoveFromGlobalCluster service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
         /// 
@@ -5551,7 +6322,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the RemoveRoleFromDBCluster service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterRoleNotFoundException">
         /// The specified IAM role Amazon Resource Name (ARN) isn't associated with the specified
@@ -5595,10 +6366,11 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the RemoveRoleFromDBInstance service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceRoleNotFoundException">
-        /// The specified <i>RoleArn</i> value doesn't match the specifed feature for the DB instance.
+        /// The specified <code>RoleArn</code> value doesn't match the specified feature for the
+        /// DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
@@ -5684,13 +6456,13 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the RemoveTagsFromResource service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
-        /// <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5750,7 +6522,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ResetDBClusterParameterGroup service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group is in use or is in an invalid state. If you are attempting
@@ -5798,7 +6570,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ResetDBParameterGroup service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group is in use or is in an invalid state. If you are attempting
@@ -5853,21 +6625,21 @@ namespace Amazon.RDS
         /// The user already has a DB cluster with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
-        /// <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter
-        /// group.
+        /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster
+        /// parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
         /// maximum allowed DB cluster quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
-        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientStorageClusterCapacityException">
         /// There is insufficient storage available for the current action. You might be able
@@ -5936,8 +6708,9 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// If a DB cluster snapshot is specified, the target DB cluster is created from the source
-        /// DB cluster restore point with the same configuration as the original source DB cluster,
-        /// except that the new DB cluster is created with the default security group.
+        /// DB cluster restore point with the same configuration as the original source DB cluster.
+        /// If you don't specify a security group, the new DB cluster is associated with the default
+        /// security group.
         /// </para>
         ///  
         /// <para>
@@ -5960,27 +6733,28 @@ namespace Amazon.RDS
         /// The user already has a DB cluster with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
-        /// <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter
-        /// group.
+        /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster
+        /// parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
         /// maximum allowed DB cluster quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
-        /// <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
+        /// snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
-        /// <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
-        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBClusterCapacityException">
         /// The DB cluster doesn't have enough capacity for the current operation.
@@ -6082,24 +6856,25 @@ namespace Amazon.RDS
         /// The user already has a DB cluster with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
-        /// <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter
-        /// group.
+        /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster
+        /// parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
         /// maximum allowed DB cluster quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
-        /// <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
+        /// snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
-        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBClusterCapacityException">
         /// The DB cluster doesn't have enough capacity for the current operation.
@@ -6201,12 +6976,12 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the RestoreDBInstanceFromDBSnapshot service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
-        /// The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified
-        /// DB security group.
+        /// The specified CIDR IP range or Amazon EC2 security group might not be authorized for
+        /// the specified DB security group.
         /// 
         ///  
         /// <para>
-        /// RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
+        /// Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
@@ -6216,23 +6991,23 @@ namespace Amazon.RDS
         /// The user already has a DB instance with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
-        /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
+        /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
-        /// <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless
         /// there is only one Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
-        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB instances.
@@ -6268,7 +7043,8 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <i>StorageType</i> specified can't be associated with the DB instance.
+        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
+        /// instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         public virtual Task<RestoreDBInstanceFromDBSnapshotResponse> RestoreDBInstanceFromDBSnapshotAsync(RestoreDBInstanceFromDBSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6309,12 +7085,12 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the RestoreDBInstanceFromS3 service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
-        /// The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified
-        /// DB security group.
+        /// The specified CIDR IP range or Amazon EC2 security group might not be authorized for
+        /// the specified DB security group.
         /// 
         ///  
         /// <para>
-        /// RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
+        /// Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
@@ -6324,17 +7100,17 @@ namespace Amazon.RDS
         /// The user already has a DB instance with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
-        /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
+        /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless
         /// there is only one Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB instances.
@@ -6369,7 +7145,8 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <i>StorageType</i> specified can't be associated with the DB instance.
+        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
+        /// instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">REST API Reference for RestoreDBInstanceFromS3 Operation</seealso>
         public virtual Task<RestoreDBInstanceFromS3Response> RestoreDBInstanceFromS3Async(RestoreDBInstanceFromS3Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6424,12 +7201,12 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the RestoreDBInstanceToPointInTime service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
-        /// The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified
-        /// DB security group.
+        /// The specified CIDR IP range or Amazon EC2 security group might not be authorized for
+        /// the specified DB security group.
         /// 
         ///  
         /// <para>
-        /// RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
+        /// Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
@@ -6442,23 +7219,23 @@ namespace Amazon.RDS
         /// No automated backup for this DB instance was found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
-        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
-        /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
+        /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless
         /// there is only one Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
-        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB instances.
@@ -6487,7 +7264,7 @@ namespace Amazon.RDS
         /// The specified option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.PointInTimeRestoreNotEnabledException">
-        /// <i>SourceDBInstanceIdentifier</i> refers to a DB instance with <i>BackupRetentionPeriod</i>
+        /// <code>SourceDBInstanceIdentifier</code> refers to a DB instance with <code>BackupRetentionPeriod</code>
         /// equal to 0.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.ProvisionedIopsNotAvailableInAZException">
@@ -6498,7 +7275,8 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <i>StorageType</i> specified can't be associated with the DB instance.
+        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
+        /// instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         public virtual Task<RestoreDBInstanceToPointInTimeResponse> RestoreDBInstanceToPointInTimeAsync(RestoreDBInstanceToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6537,16 +7315,16 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the RevokeDBSecurityGroupIngress service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
-        /// The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified
-        /// DB security group.
+        /// The specified CIDR IP range or Amazon EC2 security group might not be authorized for
+        /// the specified DB security group.
         /// 
         ///  
         /// <para>
-        /// RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
+        /// Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
-        /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
+        /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSecurityGroupStateException">
         /// The state of the DB security group doesn't allow deletion.
@@ -6588,10 +7366,10 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the StartActivityStream service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -6653,7 +7431,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the StartDBCluster service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -6710,26 +7488,26 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the StartDBInstance service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
-        /// The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified
-        /// DB security group.
+        /// The specified CIDR IP range or Amazon EC2 security group might not be authorized for
+        /// the specified DB security group.
         /// 
         ///  
         /// <para>
-        /// RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
+        /// Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless
         /// there is only one Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
@@ -6793,10 +7571,10 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the StopActivityStream service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -6856,7 +7634,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the StopDBCluster service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -6915,10 +7693,10 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the StopDBInstance service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
-        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
-        /// <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
+        /// <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.

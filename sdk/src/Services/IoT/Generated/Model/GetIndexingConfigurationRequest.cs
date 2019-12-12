@@ -29,7 +29,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIndexingConfiguration operation.
-    /// Gets the search configuration.
+    /// Gets the indexing configuration.
     /// </summary>
     public partial class GetIndexingConfigurationRequest : AmazonIoTRequest
     {

@@ -6,6 +6,7 @@
         <DisableValidateRepo Condition="'$(DisableValidateRepo)'==''">false</DisableValidateRepo>
         <TestBackwardCompatibility Condition="'$(TestBackwardCompatibility)'==''">true</TestBackwardCompatibility>
         <ServiceList Condition="'$(ServiceList)'==''"></ServiceList>
+        <SaveBuildArtifacts Condition="'$(SaveBuildArtifacts)'==''">true</SaveBuildArtifacts>
 
         <VSToolsPath Condition="'$(VSToolsPath)' == ''">C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0</VSToolsPath>
 
@@ -82,10 +83,8 @@
 
     <Target Name="build-test-wrapper" Condition="!Exists($(TestWrapperAssembly))">
         <Exec Command="..\sdk\.nuget\NuGet.exe restore .\TestWrapper\TestWrapper.sln" />
-
-        <MSBuild Projects=".\TestWrapper\TestWrapper.sln"
-            Targets="Clean;Build"
-            Properties="Configuration=Debug"/>
+        <Exec Command="dotnet clean TestWrapper.sln" WorkingDirectory=".\TestWrapper" />
+        <Exec Command="dotnet build -c Debug TestWrapper.sln" WorkingDirectory=".\TestWrapper" />
     </Target>
 
     <Target Name="build-test-analyzer" Condition="!Exists($(TestAnalyzerAssembly))">
@@ -489,6 +488,7 @@
             <PrivateKeyException Include="sdk\test\NetStandard\UnitTests\sample.rsa.private.key.txt" />
             <PrivateKeyException Include="sdk\test\Services\CloudFront\UnitTests\Custom\EmbeddedResource\sample.rsa.private.key.txt" />
             <PrivateKeyException Include="sdk\code-analysis\ServiceAnalysis\WorkLink\Generated\PropertyValueRules.xml" />
+            <PrivateKeyException Include="sdk\code-analysis\ServiceAnalysis\OpsWorksCM\Generated\PropertyValueRules.xml" />
         </ItemGroup>
 
     <ItemGroup>
@@ -513,7 +513,7 @@
 
     </Target>
 
-    <Target Name="save-build" Condition="Exists('$(InternalBuildTools)\references.targets')=='true'" DependsOnTargets="build-tools">
+    <Target Name="save-build" Condition="Exists('$(InternalBuildTools)\references.targets')=='true' And $(SaveBuildArtifacts)" DependsOnTargets="build-tools">
         <SaveBuildArtifactTask
             RepositoryRoot="$(MSBuildProjectDirectory)\.."
             BuildArtifactType="sdk"

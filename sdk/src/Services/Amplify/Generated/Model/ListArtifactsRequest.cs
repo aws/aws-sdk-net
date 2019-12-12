@@ -34,7 +34,6 @@ namespace Amazon.Amplify.Model
     public partial class ListArtifactsRequest : AmazonAmplifyRequest
     {
         private string _appId;
-        private ArtifactType _artifactType;
         private string _branchName;
         private string _jobId;
         private int? _maxResults;
@@ -57,24 +56,6 @@ namespace Amazon.Amplify.Model
         internal bool IsSetAppId()
         {
             return this._appId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ArtifactType. 
-        /// <para>
-        ///  Type for an artifact. 
-        /// </para>
-        /// </summary>
-        public ArtifactType ArtifactType
-        {
-            get { return this._artifactType; }
-            set { this._artifactType = value; }
-        }
-
-        // Check to see if ArtifactType property is set
-        internal bool IsSetArtifactType()
-        {
-            return this._artifactType != null;
         }
 
         /// <summary>

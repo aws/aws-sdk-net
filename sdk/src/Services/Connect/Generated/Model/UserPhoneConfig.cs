@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>UserPhoneConfig</code> object that contains information about the user phone
-    /// configuration settings.
+    /// Contains information about the phone configuration settings for a user.
     /// </summary>
     public partial class UserPhoneConfig
     {
@@ -41,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AfterContactWorkTimeLimit. 
         /// <para>
-        /// The After Call Work (ACW) timeout setting, in seconds, for the user.
+        /// The After Call Work (ACW) timeout setting, in seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -60,7 +59,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AutoAccept. 
         /// <para>
-        /// The Auto accept setting for the user, Yes or No.
+        /// The Auto accept setting.
         /// </para>
         /// </summary>
         public bool AutoAccept
@@ -96,7 +95,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property PhoneType. 
         /// <para>
-        /// The phone type selected for the user, either Soft phone or Desk phone.
+        /// The phone type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

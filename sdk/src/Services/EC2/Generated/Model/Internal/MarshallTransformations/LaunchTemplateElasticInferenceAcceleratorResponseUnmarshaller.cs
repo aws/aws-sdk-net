@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("count", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Count = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("type", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

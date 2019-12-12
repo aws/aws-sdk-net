@@ -40,8 +40,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property LoadBalancerAddresses. 
         /// <para>
         /// [Network Load Balancers] If you need static IP addresses for your load balancer, you
-        /// can specify one Elastic IP address per Availability Zone when you create the load
-        /// balancer.
+        /// can specify one Elastic IP address per Availability Zone when you create an internal-facing
+        /// load balancer. For internal load balancers, you can specify a private IP address from
+        /// the IPv4 range of the subnet.
         /// </para>
         /// </summary>
         public List<LoadBalancerAddress> LoadBalancerAddresses

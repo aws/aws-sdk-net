@@ -161,6 +161,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class CreateServiceRequest : AmazonECSRequest
     {
+        private List<CapacityProviderStrategyItem> _capacityProviderStrategy = new List<CapacityProviderStrategyItem>();
         private string _clientToken;
         private string _cluster;
         private DeploymentConfiguration _deploymentConfiguration;
@@ -181,6 +182,57 @@ namespace Amazon.ECS.Model
         private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
         private List<Tag> _tags = new List<Tag>();
         private string _taskDefinition;
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderStrategy. 
+        /// <para>
+        /// The capacity provider strategy to use for the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// A capacity provider strategy consists of one or more capacity providers along with
+        /// the <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+        /// must be associated with the cluster to be used in a capacity provider strategy. The
+        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider with
+        /// a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code>
+        /// status can be used.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code>
+        /// is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is
+        /// used.
+        /// </para>
+        ///  
+        /// <para>
+        /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
+        /// must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a>
+        /// API operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are
+        /// available to all accounts and only need to be associated with a cluster to be used.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+        /// available capacity providers for a cluster after the cluster is created.
+        /// </para>
+        /// </summary>
+        public List<CapacityProviderStrategyItem> CapacityProviderStrategy
+        {
+            get { return this._capacityProviderStrategy; }
+            set { this._capacityProviderStrategy = value; }
+        }
+
+        // Check to see if CapacityProviderStrategy property is set
+        internal bool IsSetCapacityProviderStrategy()
+        {
+            return this._capacityProviderStrategy != null && this._capacityProviderStrategy.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -333,6 +385,11 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The launch type on which to run your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
         /// ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
+        /// parameter must be omitted.
         /// </para>
         /// </summary>
         public LaunchType LaunchType
@@ -540,8 +597,8 @@ namespace Amazon.ECS.Model
         /// is used by default for your service unless you specify a role here. The service-linked
         /// role is required if your task definition uses the <code>awsvpc</code> network mode
         /// or if the service is configured to use service discovery, an external deployment controller,
-        /// or multiple target groups in which case you should not specify a role here. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// multiple target groups, or Elastic Inference accelerators in which case you should
+        /// not specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>

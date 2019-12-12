@@ -32,6 +32,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class HlsGroupSettings
     {
+        private List<HlsAdditionalManifest> _additionalManifests = new List<HlsAdditionalManifest>();
         private List<string> _adMarkers = new List<string>();
         private string _baseUrl;
         private List<HlsCaptionLanguageMapping> _captionLanguageMappings = new List<HlsCaptionLanguageMapping>();
@@ -56,6 +57,25 @@ namespace Amazon.MediaConvert.Model
         private HlsTimedMetadataId3Frame _timedMetadataId3Frame;
         private int? _timedMetadataId3Period;
         private int? _timestampDeltaMilliseconds;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalManifests. By default, the service creates one
+        /// top-level .m3u8 HLS manifest for each HLS output group in your job. This default manifest
+        /// references every output in the output group. To create additional top-level manifests
+        /// that reference a subset of the outputs in the output group, specify a list of them
+        /// here.
+        /// </summary>
+        public List<HlsAdditionalManifest> AdditionalManifests
+        {
+            get { return this._additionalManifests; }
+            set { this._additionalManifests = value; }
+        }
+
+        // Check to see if AdditionalManifests property is set
+        internal bool IsSetAdditionalManifests()
+        {
+            return this._additionalManifests != null && this._additionalManifests.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AdMarkers. Choose one or more ad marker types to decorate

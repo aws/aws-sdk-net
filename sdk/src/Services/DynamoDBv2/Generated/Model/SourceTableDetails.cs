@@ -75,7 +75,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ItemCount. 
         /// <para>
-        /// Number of items in the table. Please note this is an approximate value. 
+        /// Number of items in the table. Note that this is an approximate value. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -207,7 +207,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableSizeBytes. 
         /// <para>
-        /// Size of the table in bytes. Please note this is an approximate value.
+        /// Size of the table in bytes. Note that this is an approximate value.
         /// </para>
         /// </summary>
         public long TableSizeBytes

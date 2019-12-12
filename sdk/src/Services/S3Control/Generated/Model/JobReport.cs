@@ -41,7 +41,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The bucket where specified job-completion report will be stored.
+        /// The Amazon Resource Name (ARN) for the bucket where specified job-completion report
+        /// will be stored.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

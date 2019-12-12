@@ -35,7 +35,9 @@ namespace Amazon.CodePipeline.Model
         private ActionTypeId _actionTypeId;
         private Dictionary<string, string> _configuration = new Dictionary<string, string>();
         private List<ArtifactDetail> _inputArtifacts = new List<ArtifactDetail>();
+        private string _awsNamespace;
         private string _region;
+        private Dictionary<string, string> _resolvedConfiguration = new Dictionary<string, string>();
         private string _roleArn;
 
         /// <summary>
@@ -90,6 +92,26 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// The variable namespace associated with the action. All variables produced as output
+        /// by this action fall under this namespace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string Namespace
+        {
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
+        }
+
+        // Check to see if Namespace property is set
+        internal bool IsSetNamespace()
+        {
+            return this._awsNamespace != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
         /// The AWS Region for the action, such as us-east-1.
@@ -106,6 +128,25 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetRegion()
         {
             return this._region != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolvedConfiguration. 
+        /// <para>
+        /// Configuration data for an action execution with all variable references replaced with
+        /// their real values for the execution.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> ResolvedConfiguration
+        {
+            get { return this._resolvedConfiguration; }
+            set { this._resolvedConfiguration = value; }
+        }
+
+        // Check to see if ResolvedConfiguration property is set
+        internal bool IsSetResolvedConfiguration()
+        {
+            return this._resolvedConfiguration != null && this._resolvedConfiguration.Count > 0; 
         }
 
         /// <summary>

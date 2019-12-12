@@ -76,6 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Deinterlacer = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dolbyVision", targetDepth))
+                {
+                    var unmarshaller = DolbyVisionUnmarshaller.Instance;
+                    unmarshalledObject.DolbyVision = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("imageInserter", targetDepth))
                 {
                     var unmarshaller = ImageInserterUnmarshaller.Instance;

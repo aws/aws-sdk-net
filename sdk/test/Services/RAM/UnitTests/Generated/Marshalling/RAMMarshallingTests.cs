@@ -108,6 +108,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("RAM")]
+        public void AssociateResourceSharePermissionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateResourceSharePermission");
+
+            var request = InstantiateClassGenerator.Execute<AssociateResourceSharePermissionRequest>();
+            var marshaller = new AssociateResourceSharePermissionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("AssociateResourceSharePermission", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = AssociateResourceSharePermissionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as AssociateResourceSharePermissionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("RAM")]
         public void CreateResourceShareMarshallTest()
         {
             var operation = service_model.FindOperation("CreateResourceShare");
@@ -204,6 +236,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("RAM")]
+        public void DisassociateResourceSharePermissionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateResourceSharePermission");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateResourceSharePermissionRequest>();
+            var marshaller = new DisassociateResourceSharePermissionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DisassociateResourceSharePermission", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DisassociateResourceSharePermissionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DisassociateResourceSharePermissionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("RAM")]
         public void EnableSharingWithAwsOrganizationMarshallTest()
         {
             var operation = service_model.FindOperation("EnableSharingWithAwsOrganization");
@@ -228,6 +292,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = EnableSharingWithAwsOrganizationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as EnableSharingWithAwsOrganizationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("RAM")]
+        public void GetPermissionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetPermission");
+
+            var request = InstantiateClassGenerator.Execute<GetPermissionRequest>();
+            var marshaller = new GetPermissionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetPermission", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetPermissionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetPermissionResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -396,6 +492,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("RAM")]
+        public void ListPermissionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListPermissions");
+
+            var request = InstantiateClassGenerator.Execute<ListPermissionsRequest>();
+            var marshaller = new ListPermissionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListPermissions", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListPermissionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListPermissionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("RAM")]
         public void ListPrincipalsMarshallTest()
         {
             var operation = service_model.FindOperation("ListPrincipals");
@@ -452,6 +580,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListResourcesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListResourcesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("RAM")]
+        public void ListResourceSharePermissionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListResourceSharePermissions");
+
+            var request = InstantiateClassGenerator.Execute<ListResourceSharePermissionsRequest>();
+            var marshaller = new ListResourceSharePermissionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListResourceSharePermissions", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListResourceSharePermissionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListResourceSharePermissionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("RAM")]
+        public void PromoteResourceShareCreatedFromPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("PromoteResourceShareCreatedFromPolicy");
+
+            var request = InstantiateClassGenerator.Execute<PromoteResourceShareCreatedFromPolicyRequest>();
+            var marshaller = new PromoteResourceShareCreatedFromPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PromoteResourceShareCreatedFromPolicy", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PromoteResourceShareCreatedFromPolicyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PromoteResourceShareCreatedFromPolicyResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

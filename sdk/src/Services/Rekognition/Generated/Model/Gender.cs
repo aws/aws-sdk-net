@@ -28,7 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Gender of the face and the confidence level in the determination.
+    /// The predicted gender of a detected face. 
+    /// 
+    ///  
+    /// <para>
+    /// Amazon Rekognition makes gender binary (male/female) predictions based on the physical
+    /// appearance of a face in a particular image. This kind of prediction is not designed
+    /// to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition
+    /// to make such a determination. For example, a male actor wearing a long-haired wig
+    /// and earrings for a role might be predicted as female.
+    /// </para>
+    ///  
+    /// <para>
+    /// Using Amazon Rekognition to make gender binary predictions is best suited for use
+    /// cases where aggregate gender distribution statistics need to be analyzed without identifying
+    /// specific users. For example, the percentage of female users compared to male users
+    /// on a social media platform. 
+    /// </para>
+    ///  
+    /// <para>
+    /// We don't recommend using gender binary predictions to make decisions that impact&#x2028;
+    /// an individual's rights, privacy, or access to services.
+    /// </para>
     /// </summary>
     public partial class Gender
     {
@@ -38,7 +59,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Confidence. 
         /// <para>
-        /// Level of confidence in the determination.
+        /// Level of confidence in the prediction.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -57,7 +78,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Gender of the face.
+        /// The predicted gender of the face.
         /// </para>
         /// </summary>
         public GenderType Value

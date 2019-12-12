@@ -77,6 +77,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The value to set for the attribute. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string AttributeValue
         {
             get { return this._attributeValue; }

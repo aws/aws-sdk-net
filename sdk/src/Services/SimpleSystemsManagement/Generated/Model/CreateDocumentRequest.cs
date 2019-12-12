@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DocumentFormat _documentFormat;
         private DocumentType _documentType;
         private string _name;
+        private List<DocumentRequires> _requires = new List<DocumentRequires>();
         private List<Tag> _tags = new List<Tag>();
         private string _targetType;
         private string _versionName;
@@ -70,7 +71,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A list of key and value pairs that describe attachments to a version of a document.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
+        [AWSProperty(Min=0, Max=20)]
         public List<AttachmentsSource> Attachments
         {
             get { return this._attachments; }
@@ -175,6 +176,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Requires. 
+        /// <para>
+        /// A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
+        /// document requires an <code>ApplicationConfigurationSchema</code> document.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<DocumentRequires> Requires
+        {
+            get { return this._requires; }
+            set { this._requires = value; }
+        }
+
+        // Check to see if Requires property is set
+        internal bool IsSetRequires()
+        {
+            return this._requires != null && this._requires.Count > 0; 
         }
 
         /// <summary>

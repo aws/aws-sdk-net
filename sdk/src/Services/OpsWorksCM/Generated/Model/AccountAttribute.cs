@@ -71,6 +71,7 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string Name
         {
             get { return this._name; }

@@ -41,6 +41,7 @@ namespace Amazon.Transfer.Model
         /// The ID of the VPC endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=22, Max=22)]
         public string VpcEndpointId
         {
             get { return this._vpcEndpointId; }

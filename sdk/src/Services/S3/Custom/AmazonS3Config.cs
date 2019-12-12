@@ -17,6 +17,10 @@ using System;
 using Amazon.Runtime;
 using Amazon.Util.Internal;
 
+#if BCL || NETSTANDARD
+using Amazon.Runtime.CredentialManagement;
+#endif
+
 namespace Amazon.S3
 {
 
@@ -25,11 +29,18 @@ namespace Amazon.S3
     /// </summary>
     public partial class AmazonS3Config : ClientConfig
     {
-        private const string _accelerateEndpoint = "s3-accelerate.amazonaws.com";
-        private const string _accelerateDualstackEndpoint = "s3-accelerate.dualstack.amazonaws.com";
+        private const string UseArnRegionEnvName = "AWS_S3_USE_ARN_REGION";
+        private const string AccelerateEndpointSuffix = "s3-accelerate.amazonaws.com";
+        private const string AccelerateDualstackEndpointSuffix = "s3-accelerate.dualstack.amazonaws.com";
+        private const string AwsProfileEnvironmentVariable = "AWS_PROFILE";
+        private const string DefaultProfileName = "default";
 
         private bool forcePathStyle = false;
         private bool useAccelerateEndpoint = false;
+
+#if BCL || NETSTANDARD
+        private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
+#endif
 
         /// <summary>
         /// When true, requests will always use path style addressing.
@@ -59,6 +70,46 @@ namespace Amazon.S3
             set { useAccelerateEndpoint = value; }
         }
 
+        bool? _useArnRegion;
+        /// <summary>
+        /// If set to true and the service package supports it the region identified in the arn for a resource
+        /// will be used when making the service request.
+        /// </summary>
+        public bool UseArnRegion
+        {
+            get 
+            {
+                if (!this._useArnRegion.HasValue)
+                {
+#if BCL || NETSTANDARD
+                    var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
+                    if (credentialProfileChain.TryGetProfile(profileName, out var profile))
+                    {
+                        this._useArnRegion = profile.S3UseArnRegion;
+                    }
+
+                    if (!this._useArnRegion.HasValue && !string.IsNullOrEmpty(Environment.GetEnvironmentVariable(UseArnRegionEnvName)))
+                    {
+                        if (bool.TryParse(Environment.GetEnvironmentVariable(UseArnRegionEnvName), out var value))
+                        {
+                            this._useArnRegion = value;
+                        }
+                    }
+#endif
+
+                    if (!this._useArnRegion.HasValue)
+                    {
+                        // To maintain consistency with buckets default UseArnRegion to true when client configured for us-east-1.
+                        this._useArnRegion = this.RegionEndpoint == RegionEndpoint.USEast1;
+                    }
+                }
+
+                return this._useArnRegion.GetValueOrDefault(); 
+            }
+
+            set { this._useArnRegion = value; }
+        }
+
         /// <summary>
         /// Validate that the config object is properly configured.
         /// </summary>
@@ -74,8 +125,8 @@ namespace Amazon.S3
             }
 
             var isExplicitAccelerateEndpoint = !string.IsNullOrEmpty(this.ServiceURL) &&
-                                               (this.ServiceURL.IndexOf(_accelerateEndpoint, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                                                this.ServiceURL.IndexOf(_accelerateDualstackEndpoint, StringComparison.OrdinalIgnoreCase) >= 0);
+                                               (this.ServiceURL.IndexOf(AccelerateEndpointSuffix, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                                                this.ServiceURL.IndexOf(AccelerateDualstackEndpointSuffix, StringComparison.OrdinalIgnoreCase) >= 0);
 
             if (isExplicitAccelerateEndpoint)
             {
@@ -102,7 +153,7 @@ namespace Amazon.S3
         {
             get
             {
-                return this.UseDualstackEndpoint ? _accelerateDualstackEndpoint : _accelerateEndpoint;
+                return this.UseDualstackEndpoint ? AccelerateDualstackEndpointSuffix : AccelerateEndpointSuffix;
             }
         }
 

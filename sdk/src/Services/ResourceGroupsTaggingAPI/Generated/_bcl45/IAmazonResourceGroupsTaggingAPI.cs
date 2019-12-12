@@ -53,23 +53,23 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Tag and untag supported resources located in the specified region for the AWS account
+    /// Tag and untag supported resources located in the specified Region for the AWS account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use tag-based filters to search for resources located in the specified region for
-    /// the AWS account
+    /// Use tag-based filters to search for resources located in the specified Region for
+    /// the AWS account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// List all existing tag keys in the specified region for the AWS account
+    /// List all existing tag keys in the specified Region for the AWS account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// List all existing values for the specified key in the specified region for the AWS
-    /// account
+    /// List all existing values for the specified key in the specified Region for the AWS
+    /// account.
     /// </para>
-    ///  </li> </ul>  
+    ///  </li> </ul> 
     /// <para>
     /// To use resource groups tagging API operations, you must add the following permissions
     /// to your IAM policy:
@@ -119,7 +119,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// AWS AppStream
+    /// Amazon AppStream
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -223,7 +223,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// AWS Datasync
+    /// AWS DataSync
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -295,11 +295,15 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon Glacier
+    /// Amazon S3 Glacier
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// AWS Glue
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon GuardDuty
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -320,6 +324,10 @@ namespace Amazon.ResourceGroupsTaggingAPI
     ///  </li> <li> 
     /// <para>
     /// AWS IoT Device Management
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// AWS IoT Events
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -371,6 +379,14 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// AWS Organizations
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon Quantum Ledger Database (QLDB)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Amazon RDS
     /// </para>
     ///  </li> <li> 
@@ -411,6 +427,10 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// AWS Security Hub
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// AWS Service Catalog
     /// </para>
     ///  </li> <li> 
@@ -423,15 +443,15 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// AWS Simple System Manager (SSM)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// AWS Step Functions
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// AWS Storage Gateway
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// AWS Systems Manager
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -451,19 +471,360 @@ namespace Amazon.ResourceGroupsTaggingAPI
     {
 
         
+        #region  DescribeReportCreation
+
+
+        /// <summary>
+        /// Describes the status of the <code>StartReportCreation</code> operation. 
+        /// 
+        ///  
+        /// <para>
+        /// You can call this operation only from the organization's master account and from the
+        /// us-east-1 Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReportCreation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReportCreation service method, as returned by ResourceGroupsTaggingAPI.</returns>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ConstraintViolationException">
+        /// The request was denied because performing this operation violates a constraint. 
+        /// 
+        ///  
+        /// <para>
+        /// Some of the reasons in the following list might not apply to this specific operation.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must meet the prerequisites for using tag policies. For information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
+        /// and Permissions for Using Tag Policies</a> in the <i>AWS Organizations User Guide.</i>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must enable the tag policies service principal (<code>tagpolicies.tag.amazonaws.com</code>)
+        /// to integrate with AWS Organizations For information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have a tag policy attached to the organization root, an OU, or an account.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InternalServiceException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
+        /// The request was denied to limit the frequency of submitted requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/DescribeReportCreation">REST API Reference for DescribeReportCreation Operation</seealso>
+        DescribeReportCreationResponse DescribeReportCreation(DescribeReportCreationRequest request);
+
+
+
+        /// <summary>
+        /// Describes the status of the <code>StartReportCreation</code> operation. 
+        /// 
+        ///  
+        /// <para>
+        /// You can call this operation only from the organization's master account and from the
+        /// us-east-1 Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReportCreation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReportCreation service method, as returned by ResourceGroupsTaggingAPI.</returns>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ConstraintViolationException">
+        /// The request was denied because performing this operation violates a constraint. 
+        /// 
+        ///  
+        /// <para>
+        /// Some of the reasons in the following list might not apply to this specific operation.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must meet the prerequisites for using tag policies. For information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
+        /// and Permissions for Using Tag Policies</a> in the <i>AWS Organizations User Guide.</i>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must enable the tag policies service principal (<code>tagpolicies.tag.amazonaws.com</code>)
+        /// to integrate with AWS Organizations For information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have a tag policy attached to the organization root, an OU, or an account.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InternalServiceException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
+        /// The request was denied to limit the frequency of submitted requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/DescribeReportCreation">REST API Reference for DescribeReportCreation Operation</seealso>
+        Task<DescribeReportCreationResponse> DescribeReportCreationAsync(DescribeReportCreationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetComplianceSummary
+
+
+        /// <summary>
+        /// Returns a table that shows counts of resources that are noncompliant with their tag
+        /// policies.
+        /// 
+        ///  
+        /// <para>
+        /// For more information on tag policies, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
+        /// Policies</a> in the <i>AWS Organizations User Guide.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can call this operation only from the organization's master account and from the
+        /// us-east-1 Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetComplianceSummary service method, as returned by ResourceGroupsTaggingAPI.</returns>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ConstraintViolationException">
+        /// The request was denied because performing this operation violates a constraint. 
+        /// 
+        ///  
+        /// <para>
+        /// Some of the reasons in the following list might not apply to this specific operation.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must meet the prerequisites for using tag policies. For information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
+        /// and Permissions for Using Tag Policies</a> in the <i>AWS Organizations User Guide.</i>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must enable the tag policies service principal (<code>tagpolicies.tag.amazonaws.com</code>)
+        /// to integrate with AWS Organizations For information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have a tag policy attached to the organization root, an OU, or an account.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InternalServiceException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
+        /// The request was denied to limit the frequency of submitted requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetComplianceSummary">REST API Reference for GetComplianceSummary Operation</seealso>
+        GetComplianceSummaryResponse GetComplianceSummary(GetComplianceSummaryRequest request);
+
+
+
+        /// <summary>
+        /// Returns a table that shows counts of resources that are noncompliant with their tag
+        /// policies.
+        /// 
+        ///  
+        /// <para>
+        /// For more information on tag policies, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
+        /// Policies</a> in the <i>AWS Organizations User Guide.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can call this operation only from the organization's master account and from the
+        /// us-east-1 Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetComplianceSummary service method, as returned by ResourceGroupsTaggingAPI.</returns>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ConstraintViolationException">
+        /// The request was denied because performing this operation violates a constraint. 
+        /// 
+        ///  
+        /// <para>
+        /// Some of the reasons in the following list might not apply to this specific operation.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must meet the prerequisites for using tag policies. For information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
+        /// and Permissions for Using Tag Policies</a> in the <i>AWS Organizations User Guide.</i>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must enable the tag policies service principal (<code>tagpolicies.tag.amazonaws.com</code>)
+        /// to integrate with AWS Organizations For information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have a tag policy attached to the organization root, an OU, or an account.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InternalServiceException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
+        /// The request was denied to limit the frequency of submitted requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetComplianceSummary">REST API Reference for GetComplianceSummary Operation</seealso>
+        Task<GetComplianceSummaryResponse> GetComplianceSummaryAsync(GetComplianceSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetResources
 
 
         /// <summary>
         /// Returns all the tagged or previously tagged resources that are located in the specified
-        /// region for the AWS account. You can optionally specify <i>filters</i> (tags and resource
-        /// types) in your request, depending on what information you want returned. The response
-        /// includes all tags that are associated with the requested resources.
+        /// Region for the AWS account.
         /// 
-        ///  <note> 
+        ///  
+        /// <para>
+        /// Depending on what information you want returned, you can also specify the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Filters</i> that specify what tags and resource types you want returned. The response
+        /// includes all tags that are associated with the requested resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Information about compliance with the account's effective tag policy. For more information
+        /// on tag policies, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
+        /// Policies</a> in the <i>AWS Organizations User Guide.</i> 
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// You can check the <code>PaginationToken</code> response parameter to determine if
-        /// a query completed. Queries can occasionally return fewer results on a page than allowed.
+        /// a query is complete. Queries occasionally return fewer results on a page than allowed.
         /// The <code>PaginationToken</code> response parameter value is <code>null</code> <i>only</i>
         /// when there are no more results to display. 
         /// </para>
@@ -477,8 +838,32 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// A parameter is missing or a malformed string or invalid or out-of-range value was
-        /// supplied for the request parameter.
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.PaginationTokenExpiredException">
         /// A <code>PaginationToken</code> is valid for a maximum of 15 minutes. Your request
@@ -494,14 +879,27 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
         /// <summary>
         /// Returns all the tagged or previously tagged resources that are located in the specified
-        /// region for the AWS account. You can optionally specify <i>filters</i> (tags and resource
-        /// types) in your request, depending on what information you want returned. The response
-        /// includes all tags that are associated with the requested resources.
+        /// Region for the AWS account.
         /// 
-        ///  <note> 
+        ///  
+        /// <para>
+        /// Depending on what information you want returned, you can also specify the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Filters</i> that specify what tags and resource types you want returned. The response
+        /// includes all tags that are associated with the requested resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Information about compliance with the account's effective tag policy. For more information
+        /// on tag policies, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
+        /// Policies</a> in the <i>AWS Organizations User Guide.</i> 
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// You can check the <code>PaginationToken</code> response parameter to determine if
-        /// a query completed. Queries can occasionally return fewer results on a page than allowed.
+        /// a query is complete. Queries occasionally return fewer results on a page than allowed.
         /// The <code>PaginationToken</code> response parameter value is <code>null</code> <i>only</i>
         /// when there are no more results to display. 
         /// </para>
@@ -518,8 +916,32 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// A parameter is missing or a malformed string or invalid or out-of-range value was
-        /// supplied for the request parameter.
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.PaginationTokenExpiredException">
         /// A <code>PaginationToken</code> is valid for a maximum of 15 minutes. Your request
@@ -537,7 +959,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
 
         /// <summary>
-        /// Returns all tag keys in the specified region for the AWS account.
+        /// Returns all tag keys in the specified Region for the AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTagKeys service method.</param>
         /// 
@@ -547,8 +969,32 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// A parameter is missing or a malformed string or invalid or out-of-range value was
-        /// supplied for the request parameter.
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.PaginationTokenExpiredException">
         /// A <code>PaginationToken</code> is valid for a maximum of 15 minutes. Your request
@@ -563,7 +1009,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
 
         /// <summary>
-        /// Returns all tag keys in the specified region for the AWS account.
+        /// Returns all tag keys in the specified Region for the AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTagKeys service method.</param>
         /// <param name="cancellationToken">
@@ -576,8 +1022,32 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// A parameter is missing or a malformed string or invalid or out-of-range value was
-        /// supplied for the request parameter.
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.PaginationTokenExpiredException">
         /// A <code>PaginationToken</code> is valid for a maximum of 15 minutes. Your request
@@ -595,7 +1065,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
 
         /// <summary>
-        /// Returns all tag values for the specified key in the specified region for the AWS account.
+        /// Returns all tag values for the specified key in the specified Region for the AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTagValues service method.</param>
         /// 
@@ -605,8 +1075,32 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// A parameter is missing or a malformed string or invalid or out-of-range value was
-        /// supplied for the request parameter.
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.PaginationTokenExpiredException">
         /// A <code>PaginationToken</code> is valid for a maximum of 15 minutes. Your request
@@ -621,7 +1115,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
 
         /// <summary>
-        /// Returns all tag values for the specified key in the specified region for the AWS account.
+        /// Returns all tag values for the specified key in the specified Region for the AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTagValues service method.</param>
         /// <param name="cancellationToken">
@@ -634,8 +1128,32 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// A parameter is missing or a malformed string or invalid or out-of-range value was
-        /// supplied for the request parameter.
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.PaginationTokenExpiredException">
         /// A <code>PaginationToken</code> is valid for a maximum of 15 minutes. Your request
@@ -649,6 +1167,194 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
         #endregion
         
+        #region  StartReportCreation
+
+
+        /// <summary>
+        /// Generates a report that lists all tagged resources in accounts across your organization
+        /// and tells whether each resource is compliant with the effective tag policy. Compliance
+        /// data is refreshed daily. 
+        /// 
+        ///  
+        /// <para>
+        /// The generated report is saved to the following location:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>s3://example-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can call this operation only from the organization's master account and from the
+        /// us-east-1 Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartReportCreation service method.</param>
+        /// 
+        /// <returns>The response from the StartReportCreation service method, as returned by ResourceGroupsTaggingAPI.</returns>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ConstraintViolationException">
+        /// The request was denied because performing this operation violates a constraint. 
+        /// 
+        ///  
+        /// <para>
+        /// Some of the reasons in the following list might not apply to this specific operation.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must meet the prerequisites for using tag policies. For information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
+        /// and Permissions for Using Tag Policies</a> in the <i>AWS Organizations User Guide.</i>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must enable the tag policies service principal (<code>tagpolicies.tag.amazonaws.com</code>)
+        /// to integrate with AWS Organizations For information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have a tag policy attached to the organization root, an OU, or an account.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InternalServiceException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
+        /// The request was denied to limit the frequency of submitted requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/StartReportCreation">REST API Reference for StartReportCreation Operation</seealso>
+        StartReportCreationResponse StartReportCreation(StartReportCreationRequest request);
+
+
+
+        /// <summary>
+        /// Generates a report that lists all tagged resources in accounts across your organization
+        /// and tells whether each resource is compliant with the effective tag policy. Compliance
+        /// data is refreshed daily. 
+        /// 
+        ///  
+        /// <para>
+        /// The generated report is saved to the following location:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>s3://example-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can call this operation only from the organization's master account and from the
+        /// us-east-1 Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartReportCreation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartReportCreation service method, as returned by ResourceGroupsTaggingAPI.</returns>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ConstraintViolationException">
+        /// The request was denied because performing this operation violates a constraint. 
+        /// 
+        ///  
+        /// <para>
+        /// Some of the reasons in the following list might not apply to this specific operation.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must meet the prerequisites for using tag policies. For information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
+        /// and Permissions for Using Tag Policies</a> in the <i>AWS Organizations User Guide.</i>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must enable the tag policies service principal (<code>tagpolicies.tag.amazonaws.com</code>)
+        /// to integrate with AWS Organizations For information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have a tag policy attached to the organization root, an OU, or an account.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InternalServiceException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
+        /// The request was denied to limit the frequency of submitted requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/StartReportCreation">REST API Reference for StartReportCreation Operation</seealso>
+        Task<StartReportCreationResponse> StartReportCreationAsync(StartReportCreationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  TagResources
 
 
@@ -657,25 +1363,25 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Not all resources can have tags. For a list of resources that support tagging, see
-        /// <a href="http://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Supported
-        /// Resources</a> in the <i>AWS Resource Groups User Guide</i>.
+        /// Not all resources can have tags. For a list of services that support tagging, see
+        /// <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this
+        /// list</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Each resource can have up to 50 tags. For other limits, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions">Tag
-        /// Restrictions</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Each resource can have up to 50 tags. For other limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
+        /// Naming and Usage Conventions</a> in the <i>AWS General Reference.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can only tag resources that are located in the specified region for the AWS account.
+        /// You can only tag resources that are located in the specified Region for the AWS account.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To add tags to a resource, you need the necessary permissions for the service that
         /// the resource belongs to as well as permissions for adding tags. For more information,
-        /// see <a href="http://docs.aws.amazon.com/ARG/latest/userguide/obtaining-permissions-for-tagging.html">Obtaining
-        /// Permissions for Tagging</a> in the <i>AWS Resource Groups User Guide</i>.
+        /// see <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this
+        /// list</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -687,8 +1393,32 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// A parameter is missing or a malformed string or invalid or out-of-range value was
-        /// supplied for the request parameter.
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
         /// The request was denied to limit the frequency of submitted requests.
@@ -703,25 +1433,25 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Not all resources can have tags. For a list of resources that support tagging, see
-        /// <a href="http://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Supported
-        /// Resources</a> in the <i>AWS Resource Groups User Guide</i>.
+        /// Not all resources can have tags. For a list of services that support tagging, see
+        /// <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this
+        /// list</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Each resource can have up to 50 tags. For other limits, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions">Tag
-        /// Restrictions</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Each resource can have up to 50 tags. For other limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
+        /// Naming and Usage Conventions</a> in the <i>AWS General Reference.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can only tag resources that are located in the specified region for the AWS account.
+        /// You can only tag resources that are located in the specified Region for the AWS account.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To add tags to a resource, you need the necessary permissions for the service that
         /// the resource belongs to as well as permissions for adding tags. For more information,
-        /// see <a href="http://docs.aws.amazon.com/ARG/latest/userguide/obtaining-permissions-for-tagging.html">Obtaining
-        /// Permissions for Tagging</a> in the <i>AWS Resource Groups User Guide</i>.
+        /// see <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this
+        /// list</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -736,8 +1466,32 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// A parameter is missing or a malformed string or invalid or out-of-range value was
-        /// supplied for the request parameter.
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
         /// The request was denied to limit the frequency of submitted requests.
@@ -760,12 +1514,12 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <para>
         /// To remove tags from a resource, you need the necessary permissions for the service
         /// that the resource belongs to as well as permissions for removing tags. For more information,
-        /// see <a href="http://docs.aws.amazon.com/ARG/latest/userguide/obtaining-permissions-for-tagging.html">Obtaining
-        /// Permissions for Tagging</a> in the <i>AWS Resource Groups User Guide</i>.
+        /// see <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this
+        /// list</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can only tag resources that are located in the specified region for the AWS account.
+        /// You can only tag resources that are located in the specified Region for the AWS account.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -777,8 +1531,32 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// A parameter is missing or a malformed string or invalid or out-of-range value was
-        /// supplied for the request parameter.
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
         /// The request was denied to limit the frequency of submitted requests.
@@ -798,12 +1576,12 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <para>
         /// To remove tags from a resource, you need the necessary permissions for the service
         /// that the resource belongs to as well as permissions for removing tags. For more information,
-        /// see <a href="http://docs.aws.amazon.com/ARG/latest/userguide/obtaining-permissions-for-tagging.html">Obtaining
-        /// Permissions for Tagging</a> in the <i>AWS Resource Groups User Guide</i>.
+        /// see <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this
+        /// list</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can only tag resources that are located in the specified region for the AWS account.
+        /// You can only tag resources that are located in the specified Region for the AWS account.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -818,8 +1596,32 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// A parameter is missing or a malformed string or invalid or out-of-range value was
-        /// supplied for the request parameter.
+        /// This error indicates one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A malformed string was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An out-of-range value was supplied for the request parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
         /// The request was denied to limit the frequency of submitted requests.

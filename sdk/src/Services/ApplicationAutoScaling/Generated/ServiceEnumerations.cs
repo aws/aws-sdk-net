@@ -205,6 +205,14 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly MetricType ALBRequestCountPerTarget = new MetricType("ALBRequestCountPerTarget");
         /// <summary>
+        /// Constant AppStreamAverageCapacityUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType AppStreamAverageCapacityUtilization = new MetricType("AppStreamAverageCapacityUtilization");
+        /// <summary>
+        /// Constant ComprehendInferenceUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType ComprehendInferenceUtilization = new MetricType("ComprehendInferenceUtilization");
+        /// <summary>
         /// Constant DynamoDBReadCapacityUtilization for MetricType
         /// </summary>
         public static readonly MetricType DynamoDBReadCapacityUtilization = new MetricType("DynamoDBReadCapacityUtilization");
@@ -232,6 +240,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant ECSServiceAverageMemoryUtilization for MetricType
         /// </summary>
         public static readonly MetricType ECSServiceAverageMemoryUtilization = new MetricType("ECSServiceAverageMemoryUtilization");
+        /// <summary>
+        /// Constant LambdaProvisionedConcurrencyUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType LambdaProvisionedConcurrencyUtilization = new MetricType("LambdaProvisionedConcurrencyUtilization");
         /// <summary>
         /// Constant RDSReaderAverageCPUUtilization for MetricType
         /// </summary>
@@ -341,6 +353,10 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly ScalableDimension AppstreamFleetDesiredCapacity = new ScalableDimension("appstream:fleet:DesiredCapacity");
         /// <summary>
+        /// Constant ComprehendDocumentClassifierEndpointDesiredInferenceUnits for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension ComprehendDocumentClassifierEndpointDesiredInferenceUnits = new ScalableDimension("comprehend:document-classifier-endpoint:DesiredInferenceUnits");
+        /// <summary>
         /// Constant CustomResourceResourceTypeProperty for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension CustomResourceResourceTypeProperty = new ScalableDimension("custom-resource:ResourceType:Property");
@@ -372,6 +388,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant ElasticmapreduceInstancegroupInstanceCount for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension ElasticmapreduceInstancegroupInstanceCount = new ScalableDimension("elasticmapreduce:instancegroup:InstanceCount");
+        /// <summary>
+        /// Constant LambdaFunctionProvisionedConcurrency for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension LambdaFunctionProvisionedConcurrency = new ScalableDimension("lambda:function:ProvisionedConcurrency");
         /// <summary>
         /// Constant RdsClusterReadReplicaCount for ScalableDimension
         /// </summary>
@@ -493,6 +513,10 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly ServiceNamespace Appstream = new ServiceNamespace("appstream");
         /// <summary>
+        /// Constant Comprehend for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace Comprehend = new ServiceNamespace("comprehend");
+        /// <summary>
         /// Constant CustomResource for ServiceNamespace
         /// </summary>
         public static readonly ServiceNamespace CustomResource = new ServiceNamespace("custom-resource");
@@ -512,6 +536,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant Elasticmapreduce for ServiceNamespace
         /// </summary>
         public static readonly ServiceNamespace Elasticmapreduce = new ServiceNamespace("elasticmapreduce");
+        /// <summary>
+        /// Constant Lambda for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace Lambda = new ServiceNamespace("lambda");
         /// <summary>
         /// Constant Rds for ServiceNamespace
         /// </summary>

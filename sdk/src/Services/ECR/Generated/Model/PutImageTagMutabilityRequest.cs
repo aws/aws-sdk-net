@@ -29,7 +29,10 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the PutImageTagMutability operation.
-    /// Updates the image tag mutability settings for a repository.
+    /// Updates the image tag mutability settings for a repository. When a repository is configured
+    /// with tag immutability, all image tags within the repository will be prevented them
+    /// from being overwritten. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
+    /// Tag Mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
     /// </summary>
     public partial class PutImageTagMutabilityRequest : AmazonECRRequest
     {

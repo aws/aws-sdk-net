@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the specification of a service mesh.
+    /// An object that represents the specification of a service mesh.
     /// </summary>
     public partial class MeshSpec
     {

@@ -107,6 +107,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DisplayName);
                 }
 
+                if(publicRequest.IsSetEmbedHostDomains())
+                {
+                    context.Writer.WritePropertyName("EmbedHostDomains");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEmbedHostDomainsListValue in publicRequest.EmbedHostDomains)
+                    {
+                            context.Writer.Write(publicRequestEmbedHostDomainsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetFeedbackURL())
                 {
                     context.Writer.WritePropertyName("FeedbackURL");

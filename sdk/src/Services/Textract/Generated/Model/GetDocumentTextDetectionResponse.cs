@@ -33,6 +33,7 @@ namespace Amazon.Textract.Model
     public partial class GetDocumentTextDetectionResponse : AmazonWebServiceResponse
     {
         private List<Block> _blocks = new List<Block>();
+        private string _detectDocumentTextModelVersion;
         private DocumentMetadata _documentMetadata;
         private JobStatus _jobStatus;
         private string _nextToken;
@@ -55,6 +56,21 @@ namespace Amazon.Textract.Model
         internal bool IsSetBlocks()
         {
             return this._blocks != null && this._blocks.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetectDocumentTextModelVersion.
+        /// </summary>
+        public string DetectDocumentTextModelVersion
+        {
+            get { return this._detectDocumentTextModelVersion; }
+            set { this._detectDocumentTextModelVersion = value; }
+        }
+
+        // Check to see if DetectDocumentTextModelVersion property is set
+        internal bool IsSetDetectDocumentTextModelVersion()
+        {
+            return this._detectDocumentTextModelVersion != null;
         }
 
         /// <summary>
@@ -117,7 +133,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// The current status of an asynchronous document text-detection operation. 
+        /// The current status of an asynchronous text-detection operation for the document. 
         /// </para>
         /// </summary>
         public string StatusMessage
@@ -135,7 +151,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Warnings. 
         /// <para>
-        /// A list of warnings that occurred during the document text-detection operation.
+        /// A list of warnings that occurred during the text-detection operation for the document.
         /// </para>
         /// </summary>
         public List<Warning> Warnings

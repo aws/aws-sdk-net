@@ -51,6 +51,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AutoMLJobArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AutoMLJobArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BatchStrategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Environment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExperimentConfig", targetDepth))
+                {
+                    var unmarshaller = ExperimentConfigUnmarshaller.Instance;
+                    response.ExperimentConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FailureReason", targetDepth))

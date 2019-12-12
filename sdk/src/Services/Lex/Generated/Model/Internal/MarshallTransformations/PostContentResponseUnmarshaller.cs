@@ -60,11 +60,15 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                 response.Message = context.ResponseData.GetHeaderValue("x-amz-lex-message");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-message-format"))
                 response.MessageFormat = context.ResponseData.GetHeaderValue("x-amz-lex-message-format");
+            if (context.ResponseData.IsHeaderPresent("x-amz-lex-sentiment"))
+                response.SentimentResponse = context.ResponseData.GetHeaderValue("x-amz-lex-sentiment");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-session-attributes"))
             {
                 var headerBytes = Convert.FromBase64String(context.ResponseData.GetHeaderValue("x-amz-lex-session-attributes"));
                 response.SessionAttributes = Encoding.UTF8.GetString(headerBytes, 0, headerBytes.Length);
             }
+            if (context.ResponseData.IsHeaderPresent("x-amz-lex-session-id"))
+                response.SessionId = context.ResponseData.GetHeaderValue("x-amz-lex-session-id");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-slots"))
             {
                 var headerBytes = Convert.FromBase64String(context.ResponseData.GetHeaderValue("x-amz-lex-slots"));

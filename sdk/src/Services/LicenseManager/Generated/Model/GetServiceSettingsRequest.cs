@@ -29,8 +29,7 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetServiceSettings operation.
-    /// Gets License Manager settings for a region. Exposes the configured S3 bucket, SNS
-    /// topic, etc., for inspection.
+    /// Gets the License Manager settings for the current Region.
     /// </summary>
     public partial class GetServiceSettingsRequest : AmazonLicenseManagerRequest
     {

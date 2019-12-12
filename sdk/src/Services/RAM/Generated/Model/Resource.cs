@@ -35,6 +35,7 @@ namespace Amazon.RAM.Model
         private string _arn;
         private DateTime? _creationTime;
         private DateTime? _lastUpdatedTime;
+        private string _resourceGroupArn;
         private string _resourceShareArn;
         private ResourceStatus _status;
         private string _statusMessage;
@@ -92,6 +93,25 @@ namespace Amazon.RAM.Model
         internal bool IsSetLastUpdatedTime()
         {
             return this._lastUpdatedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceGroupArn. 
+        /// <para>
+        /// The ARN of the resource group. This value is returned only if the resource is a resource
+        /// group.
+        /// </para>
+        /// </summary>
+        public string ResourceGroupArn
+        {
+            get { return this._resourceGroupArn; }
+            set { this._resourceGroupArn = value; }
+        }
+
+        // Check to see if ResourceGroupArn property is set
+        internal bool IsSetResourceGroupArn()
+        {
+            return this._resourceGroupArn != null;
         }
 
         /// <summary>

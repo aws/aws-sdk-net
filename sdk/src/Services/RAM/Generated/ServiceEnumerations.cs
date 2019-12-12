@@ -187,6 +187,60 @@ namespace Amazon.RAM
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceShareFeatureSet.
+    /// </summary>
+    public class ResourceShareFeatureSet : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED_FROM_POLICY for ResourceShareFeatureSet
+        /// </summary>
+        public static readonly ResourceShareFeatureSet CREATED_FROM_POLICY = new ResourceShareFeatureSet("CREATED_FROM_POLICY");
+        /// <summary>
+        /// Constant PROMOTING_TO_STANDARD for ResourceShareFeatureSet
+        /// </summary>
+        public static readonly ResourceShareFeatureSet PROMOTING_TO_STANDARD = new ResourceShareFeatureSet("PROMOTING_TO_STANDARD");
+        /// <summary>
+        /// Constant STANDARD for ResourceShareFeatureSet
+        /// </summary>
+        public static readonly ResourceShareFeatureSet STANDARD = new ResourceShareFeatureSet("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceShareFeatureSet(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceShareFeatureSet FindValue(string value)
+        {
+            return FindValue<ResourceShareFeatureSet>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceShareFeatureSet(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceShareInvitationStatus.
     /// </summary>
     public class ResourceShareInvitationStatus : ConstantClass

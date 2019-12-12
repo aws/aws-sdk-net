@@ -37,11 +37,13 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private string _creationTime;
         private string _description;
         private string _homePageUrl;
+        private bool? _isVerifiedAuthor;
         private List<string> _labels = new List<string>();
         private string _licenseUrl;
         private string _name;
         private string _readmeUrl;
         private string _spdxLicenseId;
+        private string _verifiedAuthorUrl;
         private Version _version;
 
         /// <summary>
@@ -145,6 +147,27 @@ namespace Amazon.ServerlessApplicationRepository.Model
         internal bool IsSetHomePageUrl()
         {
             return this._homePageUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsVerifiedAuthor. 
+        /// <para>
+        /// Whether the author of this application has been verified. This means means that AWS
+        /// has made a good faith review, as a reasonable and prudent service provider, of the
+        /// information provided by the requester and has confirmed that the requester's identity
+        /// is as claimed.
+        /// </para>
+        /// </summary>
+        public bool IsVerifiedAuthor
+        {
+            get { return this._isVerifiedAuthor.GetValueOrDefault(); }
+            set { this._isVerifiedAuthor = value; }
+        }
+
+        // Check to see if IsVerifiedAuthor property is set
+        internal bool IsSetIsVerifiedAuthor()
+        {
+            return this._isVerifiedAuthor.HasValue; 
         }
 
         /// <summary>
@@ -260,6 +283,24 @@ namespace Amazon.ServerlessApplicationRepository.Model
         internal bool IsSetSpdxLicenseId()
         {
             return this._spdxLicenseId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerifiedAuthorUrl. 
+        /// <para>
+        /// The URL to the public profile of a verified author. This URL is submitted by the author.
+        /// </para>
+        /// </summary>
+        public string VerifiedAuthorUrl
+        {
+            get { return this._verifiedAuthorUrl; }
+            set { this._verifiedAuthorUrl = value; }
+        }
+
+        // Check to see if VerifiedAuthorUrl property is set
+        internal bool IsSetVerifiedAuthorUrl()
+        {
+            return this._verifiedAuthorUrl != null;
         }
 
         /// <summary>

@@ -28,18 +28,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the specification of a route.
+    /// An object that represents a route specification. Specify one route type.
     /// </summary>
     public partial class RouteSpec
     {
+        private GrpcRoute _grpcRoute;
+        private HttpRoute _http2Route;
         private HttpRoute _httpRoute;
         private int? _priority;
         private TcpRoute _tcpRoute;
 
         /// <summary>
+        /// Gets and sets the property GrpcRoute. 
+        /// <para>
+        /// An object that represents the specification of a GRPC route.
+        /// </para>
+        /// </summary>
+        public GrpcRoute GrpcRoute
+        {
+            get { return this._grpcRoute; }
+            set { this._grpcRoute = value; }
+        }
+
+        // Check to see if GrpcRoute property is set
+        internal bool IsSetGrpcRoute()
+        {
+            return this._grpcRoute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Http2Route. 
+        /// <para>
+        /// An object that represents the specification of an HTTP2 route.
+        /// </para>
+        /// </summary>
+        public HttpRoute Http2Route
+        {
+            get { return this._http2Route; }
+            set { this._http2Route = value; }
+        }
+
+        // Check to see if Http2Route property is set
+        internal bool IsSetHttp2Route()
+        {
+            return this._http2Route != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HttpRoute. 
         /// <para>
-        /// The HTTP routing information for the route.
+        /// An object that represents the specification of an HTTP route.
         /// </para>
         /// </summary>
         public HttpRoute HttpRoute
@@ -58,7 +96,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Priority. 
         /// <para>
         /// The priority for the route. Routes are matched based on the specified value, where
-        /// 0 is the highest priority.
+        /// 0 is         the highest priority.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -77,7 +115,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property TcpRoute. 
         /// <para>
-        /// The TCP routing information for the route.
+        /// An object that represents the specification of a TCP route.
         /// </para>
         /// </summary>
         public TcpRoute TcpRoute

@@ -58,13 +58,15 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Actions. 
         /// <para>
         /// The actions. Each rule must include exactly one of the following types of actions:
-        /// <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
+        /// <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it
+        /// must be the last action to be performed.
         /// </para>
         ///  
         /// <para>
-        /// If the action type is <code>forward</code>, you specify a target group. The protocol
-        /// of the target group must be HTTP or HTTPS for an Application Load Balancer. The protocol
-        /// of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
+        /// If the action type is <code>forward</code>, you specify one or more target groups.
+        /// The protocol of the target group must be HTTP or HTTPS for an Application Load Balancer.
+        /// The protocol of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network Load
+        /// Balancer.
         /// </para>
         ///  
         /// <para>

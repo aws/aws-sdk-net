@@ -29,13 +29,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMetricData operation.
-    /// The <code>GetMetricData</code> operation retrieves historical metrics data from your
-    /// Amazon Connect instance.
+    /// Gets historical metric data from the specified Amazon Connect instance.
     /// 
     ///  
     /// <para>
-    /// If you are using an IAM account, it must have permission to the <code>connect:GetMetricData</code>
-    /// action.
+    /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics.html">Historical
+    /// Metrics Reports</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetMetricDataRequest : AmazonConnectRequest
@@ -54,13 +53,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The timestamp, in UNIX Epoch time format, at which to end the reporting interval for
         /// the retrieval of historical metrics data. The time must be specified using an interval
-        /// of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the <code>StartTime</code>
-        /// timestamp.
+        /// of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.
         /// </para>
         ///  
         /// <para>
-        /// The time range between <code>StartTime</code> and <code>EndTime</code> must be less
-        /// than 24 hours.
+        /// The time range between the start and end time must be less than 24 hours.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,19 +76,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A <code>Filters</code> object that contains a list of queue IDs or queue ARNs, up
-        /// to 100, or a list of Channels to use to filter the metrics returned in the response.
-        /// Metric data is retrieved only for the resources associated with the IDs, ARNs, or
-        /// Channels included in the filter. You can use both IDs and ARNs together in a request.
-        /// Only VOICE is supported for Channel.
-        /// </para>
-        ///  
-        /// <para>
-        /// To find the ARN for a queue, open the queue you want to use in the Amazon Connect
-        /// Queue editor. The ARN for the queue is displayed in the address bar as part of the
-        /// URL. For example, the queue ARN is the set of characters at the end of the URL, after
-        /// 'id=' such as <code>arn:aws:connect:us-east-1:270923740243:instance/78fb859d-1b7d-44b1-8aa3-12f0835c5855/queue/1d1a4575-9618-40ab-bbeb-81e45795fe61</code>.
-        /// The queue ID is also included in the URL, and is the string after 'queue/'.
+        /// The queues, up to 100, or channels, to use to filter the metrics returned. Metric
+        /// data is retrieved only for the resources associated with the queues or channels included
+        /// in the filter. You can include both queue IDs and queue ARNs in the same request.
+        /// The only supported channel is <code>VOICE</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -111,17 +99,16 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Groupings. 
         /// <para>
         /// The grouping applied to the metrics returned. For example, when results are grouped
-        /// by queueId, the metrics returned are grouped by queue. The values returned apply to
+        /// by queue, the metrics returned are grouped by queue. The values returned apply to
         /// the metrics for each queue rather than aggregated for all queues.
         /// </para>
         ///  
         /// <para>
-        /// The current version supports grouping by Queue
+        /// The only supported grouping is <code>QUEUE</code>.
         /// </para>
         ///  
         /// <para>
-        /// If no <code>Grouping</code> is included in the request, a summary of <code>HistoricalMetrics</code>
-        /// for all queues is returned.
+        /// If no grouping is specified, a summary of metrics for all queues is returned.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2)]
@@ -140,25 +127,58 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property HistoricalMetrics. 
         /// <para>
-        /// A list of <code>HistoricalMetric</code> objects that contain the metrics to retrieve
-        /// with the request.
+        /// The metrics to retrieve. Specify the name, unit, and statistic for each metric. The
+        /// following historical metrics are available:
+        /// </para>
+        ///  <dl> <dt>ABANDON_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: SECONDS
         /// </para>
         ///  
         /// <para>
-        /// A <code>HistoricalMetric</code> object contains: <code>HistoricalMetricName</code>,
-        /// <code>Statistic</code>, <code>Threshold</code>, and <code>Unit</code>.
+        /// Statistic: AVG
+        /// </para>
+        ///  </dd> <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: SECONDS
         /// </para>
         ///  
         /// <para>
-        /// You must list each metric to retrieve data for in the request. For each historical
-        /// metric you include in the request, you must include a <code>Unit</code> and a <code>Statistic</code>.
-        /// 
+        /// Statistic: AVG
+        /// </para>
+        ///  </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> 
+        /// <para>
+        /// Unit: COUNT
         /// </para>
         ///  
         /// <para>
-        /// The following historical metrics are available:
+        /// Statistic: SUM
         /// </para>
-        ///  <dl> <dt>CONTACTS_QUEUED</dt> <dd> 
+        ///  </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> 
+        /// <para>
+        /// Unit: COUNT
+        /// </para>
+        ///  
+        /// <para>
+        /// Statistic: SUM
+        /// </para>
+        ///  </dd> <dt>CONTACTS_ABANDONED</dt> <dd> 
+        /// <para>
+        /// Unit: COUNT
+        /// </para>
+        ///  
+        /// <para>
+        /// Statistic: SUM
+        /// </para>
+        ///  </dd> <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> 
+        /// <para>
+        /// Unit: COUNT
+        /// </para>
+        ///  
+        /// <para>
+        /// Statistic: SUM
+        /// </para>
+        ///  </dd> <dt>CONTACTS_CONSULTED</dt> <dd> 
         /// <para>
         /// Unit: COUNT
         /// </para>
@@ -172,31 +192,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Statistics: SUM
-        /// </para>
-        ///  </dd> <dt>CONTACTS_ABANDONED</dt> <dd> 
-        /// <para>
-        /// Unit: COUNT
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: SUM
-        /// </para>
-        ///  </dd> <dt>CONTACTS_CONSULTED</dt> <dd> 
-        /// <para>
-        /// Unit: COUNT
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: SUM
-        /// </para>
-        ///  </dd> <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> 
-        /// <para>
-        /// Unit: COUNT
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: SUM
+        /// Statistic: SUM
         /// </para>
         ///  </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd> 
         /// <para>
@@ -204,7 +200,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Statistics: SUM
+        /// Statistic: SUM
         /// </para>
         ///  </dd> <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> 
         /// <para>
@@ -212,7 +208,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Statistics: SUM
+        /// Statistic: SUM
         /// </para>
         ///  </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> 
         /// <para>
@@ -220,63 +216,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Statistics: SUM
-        /// </para>
-        ///  </dd> <dt>CONTACTS_TRANSFERRED_IN</dt> <dd> 
-        /// <para>
-        /// Unit: COUNT
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: SUM
-        /// </para>
-        ///  </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> 
-        /// <para>
-        /// Unit: COUNT
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: SUM
-        /// </para>
-        ///  </dd> <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> 
-        /// <para>
-        /// Unit: COUNT
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: SUM
-        /// </para>
-        ///  </dd> <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt> <dd> 
-        /// <para>
-        /// Unit: COUNT
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: SUM
-        /// </para>
-        ///  </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> 
-        /// <para>
-        /// Unit: COUNT
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: SUM
-        /// </para>
-        ///  </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> 
-        /// <para>
-        /// Unit: COUNT
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: SUM
-        /// </para>
-        ///  </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> 
-        /// <para>
-        /// Unit: COUNT
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: SUM
+        /// Statistic: SUM
         /// </para>
         ///  </dd> <dt>CONTACTS_MISSED</dt> <dd> 
         /// <para>
@@ -284,15 +224,47 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Statistics: SUM
+        /// Statistic: SUM
         /// </para>
-        ///  </dd> <dt>OCCUPANCY</dt> <dd> 
+        ///  </dd> <dt>CONTACTS_QUEUED</dt> <dd> 
         /// <para>
-        /// Unit: PERCENT
+        /// Unit: COUNT
         /// </para>
         ///  
         /// <para>
-        /// Statistics: AVG
+        /// Statistic: SUM
+        /// </para>
+        ///  </dd> <dt>CONTACTS_TRANSFERRED_IN</dt> <dd> 
+        /// <para>
+        /// Unit: COUNT
+        /// </para>
+        ///  
+        /// <para>
+        /// Statistic: SUM
+        /// </para>
+        ///  </dd> <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> 
+        /// <para>
+        /// Unit: COUNT
+        /// </para>
+        ///  
+        /// <para>
+        /// Statistic: SUM
+        /// </para>
+        ///  </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> 
+        /// <para>
+        /// Unit: COUNT
+        /// </para>
+        ///  
+        /// <para>
+        /// Statistic: SUM
+        /// </para>
+        ///  </dd> <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt> <dd> 
+        /// <para>
+        /// Unit: COUNT
+        /// </para>
+        ///  
+        /// <para>
+        /// Statistic: SUM
         /// </para>
         ///  </dd> <dt>HANDLE_TIME</dt> <dd> 
         /// <para>
@@ -300,39 +272,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Statistics: AVG
-        /// </para>
-        ///  </dd> <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> 
-        /// <para>
-        /// Unit: SECONDS
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: AVG
-        /// </para>
-        ///  </dd> <dt>QUEUED_TIME</dt> <dd> 
-        /// <para>
-        /// Unit: SECONDS
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: MAX
-        /// </para>
-        ///  </dd> <dt>ABANDON_TIME</dt> <dd> 
-        /// <para>
-        /// Unit: COUNT
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: SUM
-        /// </para>
-        ///  </dd> <dt>QUEUE_ANSWER_TIME</dt> <dd> 
-        /// <para>
-        /// Unit: SECONDS
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: AVG
+        /// Statistic: AVG
         /// </para>
         ///  </dd> <dt>HOLD_TIME</dt> <dd> 
         /// <para>
@@ -340,15 +280,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Statistics: AVG
-        /// </para>
-        ///  </dd> <dt>INTERACTION_TIME</dt> <dd> 
-        /// <para>
-        /// Unit: SECONDS
-        /// </para>
-        ///  
-        /// <para>
-        /// Statistics: AVG
+        /// Statistic: AVG
         /// </para>
         ///  </dd> <dt>INTERACTION_AND_HOLD_TIME</dt> <dd> 
         /// <para>
@@ -356,7 +288,39 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Statistics: AVG
+        /// Statistic: AVG
+        /// </para>
+        ///  </dd> <dt>INTERACTION_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: SECONDS
+        /// </para>
+        ///  
+        /// <para>
+        /// Statistic: AVG
+        /// </para>
+        ///  </dd> <dt>OCCUPANCY</dt> <dd> 
+        /// <para>
+        /// Unit: PERCENT
+        /// </para>
+        ///  
+        /// <para>
+        /// Statistic: AVG
+        /// </para>
+        ///  </dd> <dt>QUEUE_ANSWER_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: SECONDS
+        /// </para>
+        ///  
+        /// <para>
+        /// Statistic: AVG
+        /// </para>
+        ///  </dd> <dt>QUEUED_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: SECONDS
+        /// </para>
+        ///  
+        /// <para>
+        /// Statistic: MAX
         /// </para>
         ///  </dd> <dt>SERVICE_LEVEL</dt> <dd> 
         /// <para>
@@ -364,7 +328,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Statistics: AVG
+        /// Statistic: AVG
         /// </para>
         ///  
         /// <para>
@@ -389,11 +353,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier for your Amazon Connect instance. To find the ID of your instance,
-        /// open the AWS console and select Amazon Connect. Select the alias of the instance in
-        /// the Instance alias column. The instance ID is displayed in the Overview section of
-        /// your instance settings. For example, the instance ID is the set of characters at the
-        /// end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+        /// The identifier of the Amazon Connect instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -412,8 +372,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Indicates the maximum number of results to return per page in the response, between
-        /// 1-100.
+        /// The maximimum number of results to return per page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -457,8 +416,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>StartTime</code> cannot be earlier than 24 hours before the time of the request.
-        /// Historical metrics are available in Amazon Connect only for 24 hours.
+        /// The start time cannot be earlier than 24 hours before the time of the request. Historical
+        /// metrics are available only for 24 hours.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

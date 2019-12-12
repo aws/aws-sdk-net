@@ -33,6 +33,7 @@ namespace Amazon.RDSDataService.Model
     public partial class SqlParameter
     {
         private string _name;
+        private TypeHint _typeHint;
         private Field _value;
 
         /// <summary>
@@ -51,6 +52,50 @@ namespace Amazon.RDSDataService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TypeHint. 
+        /// <para>
+        /// A hint that specifies the correct object type for data type mapping.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Values:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent
+        /// as an object of <code>DECIMAL</code> type to the database.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is
+        /// sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format
+        /// is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TIME</code> - The corresponding <code>String</code> parameter value is sent
+        /// as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DATE</code> - The corresponding <code>String</code> parameter value is sent
+        /// as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TypeHint TypeHint
+        {
+            get { return this._typeHint; }
+            set { this._typeHint = value; }
+        }
+
+        // Check to see if TypeHint property is set
+        internal bool IsSetTypeHint()
+        {
+            return this._typeHint != null;
         }
 
         /// <summary>

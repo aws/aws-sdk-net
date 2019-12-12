@@ -33,6 +33,7 @@ namespace Amazon.MediaPackageVod.Model
     public partial class CreateAssetResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private string _createdAt;
         private List<EgressEndpoint> _egressEndpoints = new List<EgressEndpoint>();
         private string _id;
         private string _packagingGroupId;
@@ -53,6 +54,22 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. The time the Asset was initially submitted for
+        /// Ingest.
+        /// </summary>
+        public string CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt != null;
         }
 
         /// <summary>

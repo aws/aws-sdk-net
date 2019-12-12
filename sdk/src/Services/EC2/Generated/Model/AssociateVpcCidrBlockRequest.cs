@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
     {
         private bool? _amazonProvidedIpv6CidrBlock;
         private string _cidrBlock;
+        private string _ipv6CidrBlockNetworkBorderGroup;
         private string _vpcId;
 
         /// <summary>
@@ -81,6 +82,34 @@ namespace Amazon.EC2.Model
         internal bool IsSetCidrBlock()
         {
             return this._cidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6CidrBlockNetworkBorderGroup. 
+        /// <para>
+        /// The name of the location from which we advertise the IPV6 CIDR block. Use this parameter
+        /// to limit the CiDR block to this location.
+        /// </para>
+        ///  
+        /// <para>
+        ///  You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use
+        /// this parameter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can have one IPv6 CIDR block association per network border group.
+        /// </para>
+        /// </summary>
+        public string Ipv6CidrBlockNetworkBorderGroup
+        {
+            get { return this._ipv6CidrBlockNetworkBorderGroup; }
+            set { this._ipv6CidrBlockNetworkBorderGroup = value; }
+        }
+
+        // Check to see if Ipv6CidrBlockNetworkBorderGroup property is set
+        internal bool IsSetIpv6CidrBlockNetworkBorderGroup()
+        {
+            return this._ipv6CidrBlockNetworkBorderGroup != null;
         }
 
         /// <summary>

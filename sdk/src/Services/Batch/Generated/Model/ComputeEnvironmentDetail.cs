@@ -45,7 +45,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the compute environment. 
+        /// The Amazon Resource Name (ARN) of the compute environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +64,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentName. 
         /// <para>
-        /// The name of the compute environment. 
+        /// The name of the compute environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,7 +83,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ComputeResources. 
         /// <para>
-        /// The compute resources defined for the compute environment. 
+        /// The compute resources defined for the compute environment.
         /// </para>
         /// </summary>
         public ComputeResource ComputeResources
@@ -102,7 +102,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property EcsClusterArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute
-        /// environment. 
+        /// environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -141,7 +141,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property State. 
         /// <para>
         /// The state of the compute environment. The valid values are <code>ENABLED</code> or
-        /// <code>DISABLED</code>. 
+        /// <code>DISABLED</code>.
         /// </para>
         ///  
         /// <para>

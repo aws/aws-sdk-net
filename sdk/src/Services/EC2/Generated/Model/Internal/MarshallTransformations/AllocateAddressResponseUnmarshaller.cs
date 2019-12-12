@@ -61,10 +61,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.AllocationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("customerOwnedIp", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.CustomerOwnedIp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("customerOwnedIpv4Pool", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.CustomerOwnedIpv4Pool = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("domain", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.Domain = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("networkBorderGroup", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NetworkBorderGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("publicIp", targetDepth))

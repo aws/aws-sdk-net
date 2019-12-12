@@ -111,6 +111,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     response.GatewayType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HostEnvironment", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.HostEnvironment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastSoftwareUpdate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

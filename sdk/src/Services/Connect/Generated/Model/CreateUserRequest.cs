@@ -29,7 +29,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
-    /// Creates a new user account in your Amazon Connect instance.
+    /// Creates a user account for the specified Amazon Connect instance.
     /// </summary>
     public partial class CreateUserRequest : AmazonConnectRequest
     {
@@ -41,24 +41,24 @@ namespace Amazon.Connect.Model
         private UserPhoneConfig _phoneConfig;
         private string _routingProfileId;
         private List<string> _securityProfileIds = new List<string>();
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _username;
 
         /// <summary>
         /// Gets and sets the property DirectoryUserId. 
         /// <para>
-        /// The unique identifier for the user account in the directory service directory used
-        /// for identity management. If Amazon Connect is unable to access the existing directory,
-        /// you can use the <code>DirectoryUserId</code> to authenticate users. If you include
-        /// the parameter, it is assumed that Amazon Connect cannot access the directory. If the
-        /// parameter is not included, the <code>UserIdentityInfo</code> is used to authenticate
-        /// users from your existing directory.
+        /// The identifier of the user account in the directory used for identity management.
+        /// If Amazon Connect cannot access the directory, you can specify this identifier to
+        /// authenticate users. If you include the identifier, we assume that Amazon Connect cannot
+        /// access the directory. Otherwise, the identity information is used to authenticate
+        /// users from your directory.
         /// </para>
         ///  
         /// <para>
         /// This parameter is required if you are using an existing directory for identity management
         /// in Amazon Connect when Amazon Connect cannot access your directory to authenticate
         /// users. If you are using SAML for identity management and include this parameter, an
-        /// <code>InvalidRequestException</code> is returned.
+        /// error is returned.
         /// </para>
         /// </summary>
         public string DirectoryUserId
@@ -76,7 +76,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property HierarchyGroupId. 
         /// <para>
-        /// The unique identifier for the hierarchy group to assign to the user created.
+        /// The identifier of the hierarchy group for the user.
         /// </para>
         /// </summary>
         public string HierarchyGroupId
@@ -94,7 +94,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property IdentityInfo. 
         /// <para>
-        /// Information about the user, including email address, first name, and last name.
+        /// The information about the identity of the user.
         /// </para>
         /// </summary>
         public UserIdentityInfo IdentityInfo
@@ -112,11 +112,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier for your Amazon Connect instance. To find the ID of your instance,
-        /// open the AWS console and select Amazon Connect. Select the alias of the instance in
-        /// the Instance alias column. The instance ID is displayed in the Overview section of
-        /// your instance settings. For example, the instance ID is the set of characters at the
-        /// end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+        /// The identifier of the Amazon Connect instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -135,9 +131,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password for the user account to create. This is required if you are using Amazon
-        /// Connect for identity management. If you are using SAML for identity management and
-        /// include this parameter, an <code>InvalidRequestException</code> is returned.
+        /// The password for the user account. A password is required if you are using Amazon
+        /// Connect for identity management. Otherwise, it is an error to include a password.
         /// </para>
         /// </summary>
         public string Password
@@ -155,8 +150,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property PhoneConfig. 
         /// <para>
-        /// Specifies the phone settings for the user, including <code>AfterContactWorkTimeLimit</code>,
-        /// <code>AutoAccept</code>, <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.
+        /// The phone settings for the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -175,7 +169,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property RoutingProfileId. 
         /// <para>
-        /// The unique identifier for the routing profile to assign to the user created.
+        /// The identifier of the routing profile for the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -194,7 +188,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SecurityProfileIds. 
         /// <para>
-        /// The unique identifier of the security profile to assign to the user created.
+        /// The identifier of the security profile for the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -211,14 +205,33 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Username. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The user name in Amazon Connect for the account to create. If you are using SAML for
-        /// identity management in your Amazon Connect, the value for <code>Username</code> can
-        /// include up to 64 characters from [a-zA-Z0-9_-.\@]+.
+        /// One or more tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Username. 
+        /// <para>
+        /// The user name for the account. For instances not using SAML for identity management,
+        /// the user name can include up to 20 characters. If you are using SAML for identity
+        /// management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Username
         {
             get { return this._username; }

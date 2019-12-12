@@ -33,17 +33,41 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class EmailTemplateRequest
     {
+        private string _defaultSubstitutions;
         private string _htmlPart;
         private string _subject;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _templateDescription;
         private string _textPart;
+
+        /// <summary>
+        /// Gets and sets the property DefaultSubstitutions. 
+        /// <para>
+        /// A JSON object that specifies the default values to use for message variables in the
+        /// message template. This object is a set of key-value pairs. Each key defines a message
+        /// variable in the template. The corresponding value defines the default value for that
+        /// variable. When you create a message that's based on the template, you can override
+        /// these defaults with message-specific and address-specific variables and values.
+        /// </para>
+        /// </summary>
+        public string DefaultSubstitutions
+        {
+            get { return this._defaultSubstitutions; }
+            set { this._defaultSubstitutions = value; }
+        }
+
+        // Check to see if DefaultSubstitutions property is set
+        internal bool IsSetDefaultSubstitutions()
+        {
+            return this._defaultSubstitutions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property HtmlPart. 
         /// <para>
         /// The message body, in HTML format, to use in email messages that are based on the message
-        /// template. We recommend using HTML format for email clients that support HTML. You
-        /// can include links, formatted text, and more in an HTML message.
+        /// template. We recommend using HTML format for email clients that render HTML content.
+        /// You can include links, formatted text, and more in an HTML message.
         /// </para>
         /// </summary>
         public string HtmlPart
@@ -98,11 +122,30 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TemplateDescription. 
+        /// <para>
+        /// A custom description of the message template.
+        /// </para>
+        /// </summary>
+        public string TemplateDescription
+        {
+            get { return this._templateDescription; }
+            set { this._templateDescription = value; }
+        }
+
+        // Check to see if TemplateDescription property is set
+        internal bool IsSetTemplateDescription()
+        {
+            return this._templateDescription != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TextPart. 
         /// <para>
-        /// The message body, in text format, to use in email messages that are based on the message
-        /// template. We recommend using text format for email clients that don't support HTML
-        /// and clients that are connected to high-latency networks, such as mobile devices.
+        /// The message body, in plain text format, to use in email messages that are based on
+        /// the message template. We recommend using plain text format for email clients that
+        /// don't render HTML content and clients that are connected to high-latency networks,
+        /// such as mobile devices.
         /// </para>
         /// </summary>
         public string TextPart

@@ -29,7 +29,8 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIPSet operation.
-    /// Deletes the IPSet specified by the IPSet ID.
+    /// Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called Trusted
+    /// IP lists in the console user interface.
     /// </summary>
     public partial class DeleteIPSetRequest : AmazonGuardDutyRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector the ipSet is associated with.
+        /// The unique ID of the detector associated with the IPSet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -58,7 +59,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property IpSetId. 
         /// <para>
-        /// The unique ID of the ipSet you want to delete.
+        /// The unique ID of the IPSet to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

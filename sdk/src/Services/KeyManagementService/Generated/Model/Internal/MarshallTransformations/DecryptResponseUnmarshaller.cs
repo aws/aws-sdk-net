@@ -51,6 +51,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EncryptionAlgorithm", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EncryptionAlgorithm = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,10 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             {
                 return new DisabledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("IncorrectKeyException"))
+            {
+                return new IncorrectKeyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCiphertextException"))
             {
                 return new InvalidCiphertextException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -93,6 +103,10 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGrantTokenException"))
             {
                 return new InvalidGrantTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidKeyUsageException"))
+            {
+                return new InvalidKeyUsageException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("KeyUnavailableException"))
             {

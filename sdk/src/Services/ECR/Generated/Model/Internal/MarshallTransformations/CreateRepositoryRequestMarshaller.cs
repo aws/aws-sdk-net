@@ -68,6 +68,17 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetImageScanningConfiguration())
+                {
+                    context.Writer.WritePropertyName("imageScanningConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ImageScanningConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ImageScanningConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetImageTagMutability())
                 {
                     context.Writer.WritePropertyName("imageTagMutability");

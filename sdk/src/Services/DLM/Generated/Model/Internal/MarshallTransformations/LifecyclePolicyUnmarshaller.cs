@@ -88,6 +88,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PolicyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PolicyArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PolicyDetails", targetDepth))
                 {
                     var unmarshaller = PolicyDetailsUnmarshaller.Instance;
@@ -104,6 +110,18 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Tags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

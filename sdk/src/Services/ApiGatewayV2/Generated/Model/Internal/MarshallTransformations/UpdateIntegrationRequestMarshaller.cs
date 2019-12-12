@@ -126,6 +126,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PassthroughBehavior);
                 }
 
+                if(publicRequest.IsSetPayloadFormatVersion())
+                {
+                    context.Writer.WritePropertyName("payloadFormatVersion");
+                    context.Writer.Write(publicRequest.PayloadFormatVersion);
+                }
+
                 if(publicRequest.IsSetRequestParameters())
                 {
                     context.Writer.WritePropertyName("requestParameters");

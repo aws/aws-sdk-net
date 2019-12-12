@@ -131,6 +131,12 @@ namespace Amazon.CognitoIdentity.Model
         /// time for a token, as there are significant security implications: an attacker could
         /// use a leaked token to access your AWS resources for the token's duration.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Please provide for a small grace period, usually no more than 5 minutes, to account
+        /// for clock skew.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
         public long TokenDuration

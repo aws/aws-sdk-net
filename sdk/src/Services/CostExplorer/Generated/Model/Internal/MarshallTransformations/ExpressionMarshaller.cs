@@ -61,6 +61,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetCostCategories())
+            {
+                context.Writer.WritePropertyName("CostCategories");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CostCategoryValuesMarshaller.Instance;
+                marshaller.Marshall(requestObject.CostCategories, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("Dimensions");

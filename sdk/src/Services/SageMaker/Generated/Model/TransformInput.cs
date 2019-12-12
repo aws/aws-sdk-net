@@ -127,9 +127,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about the RecordIO, see <a href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data
-        /// Format</a> in the MXNet documentation. For more information about the TFRecord, see
-        /// <a href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
+        /// For more information about <code>RecordIO</code>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create
+        /// a Dataset Using RecordIO</a> in the MXNet documentation. For more information about
+        /// <code>TFRecord</code>, see <a href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
         /// TFRecord data</a> in the TensorFlow documentation.
         /// </para>
         ///  </note>

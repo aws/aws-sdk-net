@@ -125,6 +125,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PropagateTags);
                 }
 
+                if(publicRequest.IsSetReferenceId())
+                {
+                    context.Writer.WritePropertyName("referenceId");
+                    context.Writer.Write(publicRequest.ReferenceId);
+                }
+
                 if(publicRequest.IsSetStartedBy())
                 {
                     context.Writer.WritePropertyName("startedBy");

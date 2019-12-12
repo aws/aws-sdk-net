@@ -60,7 +60,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScheduledUpdateGroupActions. 
         /// <para>
-        /// One or more scheduled actions. The maximum number allowed is 50. 
+        /// One or more scheduled actions. The maximum number allowed is 50.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

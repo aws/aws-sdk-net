@@ -35,7 +35,11 @@ namespace Amazon.S3Control.Model
         private PublicAccessBlockConfiguration _publicAccessBlockConfiguration;
 
         /// <summary>
-        /// Gets and sets the property PublicAccessBlockConfiguration.
+        /// Gets and sets the property PublicAccessBlockConfiguration. 
+        /// <para>
+        /// The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon
+        /// Web Services account.
+        /// </para>
         /// </summary>
         public PublicAccessBlockConfiguration PublicAccessBlockConfiguration
         {

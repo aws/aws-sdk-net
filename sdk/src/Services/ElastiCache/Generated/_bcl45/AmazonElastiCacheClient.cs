@@ -555,6 +555,65 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  CompleteMigration
+
+
+        /// <summary>
+        /// Complete the migration of data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteMigration service method.</param>
+        /// 
+        /// <returns>The response from the CompleteMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotUnderMigrationException">
+        /// The designated replication group is not available for data migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CompleteMigration">REST API Reference for CompleteMigration Operation</seealso>
+        public virtual CompleteMigrationResponse CompleteMigration(CompleteMigrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteMigrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Complete the migration of data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CompleteMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotUnderMigrationException">
+        /// The designated replication group is not available for data migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CompleteMigration">REST API Reference for CompleteMigration Operation</seealso>
+        public virtual Task<CompleteMigrationResponse> CompleteMigrationAsync(CompleteMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteMigrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CompleteMigrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CopySnapshot
 
 
@@ -5036,6 +5095,71 @@ namespace Amazon.ElastiCache
             options.ResponseUnmarshaller = RevokeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
             
             return InvokeAsync<RevokeCacheSecurityGroupIngressResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartMigration
+
+
+        /// <summary>
+        /// Start the migration of data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMigration service method.</param>
+        /// 
+        /// <returns>The response from the StartMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupAlreadyUnderMigrationException">
+        /// The targeted replication group is not available.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        public virtual StartMigrationResponse StartMigration(StartMigrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<StartMigrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Start the migration of data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupAlreadyUnderMigrationException">
+        /// The targeted replication group is not available.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        public virtual Task<StartMigrationResponse> StartMigrationAsync(StartMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMigrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartMigrationResponse>(request, options, cancellationToken);
         }
 
         #endregion

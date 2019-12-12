@@ -180,7 +180,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Attaches one or more target groups to the specified Auto Scaling group. 
+        /// Attaches one or more target groups to the specified Auto Scaling group.
         /// 
         ///  
         /// <para>
@@ -2349,6 +2349,18 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
+        /// If you choose to decrement the desired capacity of the Auto Scaling group, the instances
+        /// can enter standby as long as the desired capacity of the Auto Scaling group after
+        /// the instances are placed into standby is equal to or greater than the minimum capacity
+        /// of the group.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose not to decrement the desired capacity of the Auto Scaling group, the
+        /// Auto Scaling group launches new instances to replace the instances on standby.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
         /// Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
         /// User Guide</i>.
@@ -2445,6 +2457,10 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// Moves the specified instances out of the standby state.
         /// 
+        ///  
+        /// <para>
+        /// After you put the instances back in service, the desired capacity is incremented.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
@@ -3199,7 +3215,7 @@ namespace Amazon.AutoScaling
         /// To update an Auto Scaling group, specify the name of the group and the parameter that
         /// you want to change. Any parameters that you don't specify are not changed by this
         /// update request. The new settings take effect on any scaling activities after this
-        /// call returns. Scaling activities that are currently in progress aren't affected.
+        /// call returns. 
         /// </para>
         ///  
         /// <para>

@@ -25,6 +25,72 @@ namespace Amazon.DirectoryService
 {
 
     /// <summary>
+    /// Constants used for properties of type CertificateState.
+    /// </summary>
+    public class CertificateState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Deregistered for CertificateState
+        /// </summary>
+        public static readonly CertificateState Deregistered = new CertificateState("Deregistered");
+        /// <summary>
+        /// Constant DeregisterFailed for CertificateState
+        /// </summary>
+        public static readonly CertificateState DeregisterFailed = new CertificateState("DeregisterFailed");
+        /// <summary>
+        /// Constant Deregistering for CertificateState
+        /// </summary>
+        public static readonly CertificateState Deregistering = new CertificateState("Deregistering");
+        /// <summary>
+        /// Constant Registered for CertificateState
+        /// </summary>
+        public static readonly CertificateState Registered = new CertificateState("Registered");
+        /// <summary>
+        /// Constant RegisterFailed for CertificateState
+        /// </summary>
+        public static readonly CertificateState RegisterFailed = new CertificateState("RegisterFailed");
+        /// <summary>
+        /// Constant Registering for CertificateState
+        /// </summary>
+        public static readonly CertificateState Registering = new CertificateState("Registering");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateState FindValue(string value)
+        {
+            return FindValue<CertificateState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DirectoryEdition.
     /// </summary>
     public class DirectoryEdition : ConstantClass
@@ -398,6 +464,110 @@ namespace Amazon.DirectoryService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IpRouteStatusMsg(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LDAPSStatus.
+    /// </summary>
+    public class LDAPSStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for LDAPSStatus
+        /// </summary>
+        public static readonly LDAPSStatus Disabled = new LDAPSStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for LDAPSStatus
+        /// </summary>
+        public static readonly LDAPSStatus Enabled = new LDAPSStatus("Enabled");
+        /// <summary>
+        /// Constant EnableFailed for LDAPSStatus
+        /// </summary>
+        public static readonly LDAPSStatus EnableFailed = new LDAPSStatus("EnableFailed");
+        /// <summary>
+        /// Constant Enabling for LDAPSStatus
+        /// </summary>
+        public static readonly LDAPSStatus Enabling = new LDAPSStatus("Enabling");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LDAPSStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LDAPSStatus FindValue(string value)
+        {
+            return FindValue<LDAPSStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LDAPSStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LDAPSType.
+    /// </summary>
+    public class LDAPSType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Client for LDAPSType
+        /// </summary>
+        public static readonly LDAPSType Client = new LDAPSType("Client");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LDAPSType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LDAPSType FindValue(string value)
+        {
+            return FindValue<LDAPSType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LDAPSType(string value)
         {
             return FindValue(value);
         }

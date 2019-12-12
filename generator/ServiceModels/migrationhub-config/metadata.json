@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "AWS Migration Hub Config Service allows you to get and set the Migration Hub home region for use with AWS Migration Hub and Application Discovery Service",
+  "generate-client-constructors": true
+}

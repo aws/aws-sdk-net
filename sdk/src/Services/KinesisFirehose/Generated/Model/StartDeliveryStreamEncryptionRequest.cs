@@ -34,17 +34,40 @@ namespace Amazon.KinesisFirehose.Model
     ///  
     /// <para>
     /// This operation is asynchronous. It returns immediately. When you invoke it, Kinesis
-    /// Data Firehose first sets the status of the stream to <code>ENABLING</code>, and then
-    /// to <code>ENABLED</code>. You can continue to read and write data to your stream while
-    /// its status is <code>ENABLING</code>, but the data is not encrypted. It can take up
-    /// to 5 seconds after the encryption status changes to <code>ENABLED</code> before all
-    /// records written to the delivery stream are encrypted. To find out whether a record
-    /// or a batch of records was encrypted, check the response elements <a>PutRecordOutput$Encrypted</a>
-    /// and <a>PutRecordBatchOutput$Encrypted</a>, respectively.
+    /// Data Firehose first sets the encryption status of the stream to <code>ENABLING</code>,
+    /// and then to <code>ENABLED</code>. The encryption status of a delivery stream is the
+    /// <code>Status</code> property in <a>DeliveryStreamEncryptionConfiguration</a>. If the
+    /// operation fails, the encryption status changes to <code>ENABLING_FAILED</code>. You
+    /// can continue to read and write data to your delivery stream while the encryption status
+    /// is <code>ENABLING</code>, but the data is not encrypted. It can take up to 5 seconds
+    /// after the encryption status changes to <code>ENABLED</code> before all records written
+    /// to the delivery stream are encrypted. To find out whether a record or a batch of records
+    /// was encrypted, check the response elements <a>PutRecordOutput$Encrypted</a> and <a>PutRecordBatchOutput$Encrypted</a>,
+    /// respectively.
     /// </para>
     ///  
     /// <para>
-    /// To check the encryption state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+    /// To check the encryption status of a delivery stream, use <a>DescribeDeliveryStream</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Even if encryption is currently enabled for a delivery stream, you can still invoke
+    /// this operation on it to change the ARN of the CMK or both its type and ARN. In this
+    /// case, Kinesis Data Firehose schedules the grant it had on the old CMK for retirement
+    /// and creates a grant that enables it to use the new CMK to encrypt and decrypt data
+    /// and to manage the grant.
+    /// </para>
+    ///  
+    /// <para>
+    /// If a delivery stream already has encryption enabled and then you invoke this operation
+    /// to change the ARN of the CMK or both its type and ARN and you get <code>ENABLING_FAILED</code>,
+    /// this only means that the attempt to change the CMK failed. In this case, encryption
+    /// remains enabled with the old CMK.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the encryption status of your delivery stream is <code>ENABLING_FAILED</code>,
+    /// you can invoke this operation again. 
     /// </para>
     ///  
     /// <para>
@@ -62,7 +85,27 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class StartDeliveryStreamEncryptionRequest : AmazonKinesisFirehoseRequest
     {
+        private DeliveryStreamEncryptionConfigurationInput _deliveryStreamEncryptionConfigurationInput;
         private string _deliveryStreamName;
+
+        /// <summary>
+        /// Gets and sets the property DeliveryStreamEncryptionConfigurationInput. 
+        /// <para>
+        /// Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for
+        /// Server-Side Encryption (SSE).
+        /// </para>
+        /// </summary>
+        public DeliveryStreamEncryptionConfigurationInput DeliveryStreamEncryptionConfigurationInput
+        {
+            get { return this._deliveryStreamEncryptionConfigurationInput; }
+            set { this._deliveryStreamEncryptionConfigurationInput = value; }
+        }
+
+        // Check to see if DeliveryStreamEncryptionConfigurationInput property is set
+        internal bool IsSetDeliveryStreamEncryptionConfigurationInput()
+        {
+            return this._deliveryStreamEncryptionConfigurationInput != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 

@@ -89,6 +89,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDefaultSubstitutions())
+            {
+                context.Writer.WritePropertyName("DefaultSubstitutions");
+                context.Writer.Write(requestObject.DefaultSubstitutions);
+            }
+
             if(requestObject.IsSetGCM())
             {
                 context.Writer.WritePropertyName("GCM");
@@ -112,6 +118,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectTagsValue);
                 }
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTemplateDescription())
+            {
+                context.Writer.WritePropertyName("TemplateDescription");
+                context.Writer.Write(requestObject.TemplateDescription);
             }
 
         }

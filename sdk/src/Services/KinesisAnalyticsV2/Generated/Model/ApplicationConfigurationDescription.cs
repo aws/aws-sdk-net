@@ -39,6 +39,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private FlinkApplicationConfigurationDescription _flinkApplicationConfigurationDescription;
         private RunConfigurationDescription _runConfigurationDescription;
         private SqlApplicationConfigurationDescription _sqlApplicationConfigurationDescription;
+        private List<VpcConfigurationDescription> _vpcConfigurationDescriptions = new List<VpcConfigurationDescription>();
 
         /// <summary>
         /// Gets and sets the property ApplicationCodeConfigurationDescription. 
@@ -147,6 +148,24 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetSqlApplicationConfigurationDescription()
         {
             return this._sqlApplicationConfigurationDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfigurationDescriptions. 
+        /// <para>
+        /// The array of descriptions of VPC configurations available to the application.
+        /// </para>
+        /// </summary>
+        public List<VpcConfigurationDescription> VpcConfigurationDescriptions
+        {
+            get { return this._vpcConfigurationDescriptions; }
+            set { this._vpcConfigurationDescriptions = value; }
+        }
+
+        // Check to see if VpcConfigurationDescriptions property is set
+        internal bool IsSetVpcConfigurationDescriptions()
+        {
+            return this._vpcConfigurationDescriptions != null && this._vpcConfigurationDescriptions.Count > 0; 
         }
 
     }

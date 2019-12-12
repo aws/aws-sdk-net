@@ -66,17 +66,17 @@ namespace Amazon.ApiGatewayV2.Model
         /// Specifies how to handle response payload content type conversions. Supported values
         /// are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
         /// </para>
-        /// 
+        ///  
         /// <para>
-        ///  CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the
+        /// CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the
         /// corresponding binary blob.
         /// </para>
-        /// 
+        ///  
         /// <para>
-        ///  CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded
+        /// CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded
         /// string.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// If this property is not defined, the response payload will be passed through from
         /// the integration response to the route response or method response without modification.
@@ -181,7 +181,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property TemplateSelectionExpression. 
         /// <para>
-        /// The template selection expression for the integration response.
+        /// The template selection expression for the integration response. Supported only for
+        /// WebSocket APIs.
         /// </para>
         /// </summary>
         public string TemplateSelectionExpression

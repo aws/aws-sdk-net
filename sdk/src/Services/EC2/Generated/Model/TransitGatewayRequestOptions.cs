@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private DefaultRouteTableAssociationValue _defaultRouteTableAssociation;
         private DefaultRouteTablePropagationValue _defaultRouteTablePropagation;
         private DnsSupportValue _dnsSupport;
+        private MulticastSupportValue _multicastSupport;
         private VpnEcmpSupportValue _vpnEcmpSupport;
 
         /// <summary>
@@ -130,6 +131,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDnsSupport()
         {
             return this._dnsSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MulticastSupport. 
+        /// <para>
+        /// Indicates whether multicast is enabled on the transit gateway
+        /// </para>
+        /// </summary>
+        public MulticastSupportValue MulticastSupport
+        {
+            get { return this._multicastSupport; }
+            set { this._multicastSupport = value; }
+        }
+
+        // Check to see if MulticastSupport property is set
+        internal bool IsSetMulticastSupport()
+        {
+            return this._multicastSupport != null;
         }
 
         /// <summary>

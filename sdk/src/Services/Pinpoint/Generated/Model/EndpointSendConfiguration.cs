@@ -81,7 +81,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property RawContent. 
         /// <para>
         /// The raw, JSON-formatted string to use as the payload for the message. If specified,
-        /// this value overrides the message.
+        /// this value overrides all other values for the message.
         /// </para>
         /// </summary>
         public string RawContent

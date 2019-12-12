@@ -39,7 +39,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _lastSyncTime;
         private ResourceDataSyncS3Destination _s3Destination;
         private DateTime? _syncCreatedTime;
+        private DateTime? _syncLastModifiedTime;
         private string _syncName;
+        private ResourceDataSyncSourceWithState _syncSource;
+        private string _syncType;
 
         /// <summary>
         /// Gets and sets the property LastStatus. 
@@ -150,6 +153,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SyncLastModifiedTime. 
+        /// <para>
+        /// The date and time the resource data sync was changed. 
+        /// </para>
+        /// </summary>
+        public DateTime SyncLastModifiedTime
+        {
+            get { return this._syncLastModifiedTime.GetValueOrDefault(); }
+            set { this._syncLastModifiedTime = value; }
+        }
+
+        // Check to see if SyncLastModifiedTime property is set
+        internal bool IsSetSyncLastModifiedTime()
+        {
+            return this._syncLastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SyncName. 
         /// <para>
         /// The name of the Resource Data Sync.
@@ -166,6 +187,46 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetSyncName()
         {
             return this._syncName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyncSource. 
+        /// <para>
+        /// Information about the source where the data was synchronized. 
+        /// </para>
+        /// </summary>
+        public ResourceDataSyncSourceWithState SyncSource
+        {
+            get { return this._syncSource; }
+            set { this._syncSource = value; }
+        }
+
+        // Check to see if SyncSource property is set
+        internal bool IsSetSyncSource()
+        {
+            return this._syncSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyncType. 
+        /// <para>
+        /// The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>,
+        /// then the resource data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code>
+        /// is <code>SyncFromSource</code> then the resource data sync synchronizes data from
+        /// AWS Organizations or from multiple AWS Regions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string SyncType
+        {
+            get { return this._syncType; }
+            set { this._syncType = value; }
+        }
+
+        // Check to see if SyncType property is set
+        internal bool IsSetSyncType()
+        {
+            return this._syncType != null;
         }
 
     }

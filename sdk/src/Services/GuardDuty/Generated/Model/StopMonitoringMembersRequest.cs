@@ -29,9 +29,8 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the StopMonitoringMembers operation.
-    /// Disables GuardDuty from monitoring findings of the member accounts specified by the
-    /// account IDs. After running this command, a master GuardDuty account can run StartMonitoringMembers
-    /// to re-enable GuardDuty to monitor these members’ findings.
+    /// Stops GuardDuty monitoring for the specified member accounnts. Use the <code>StartMonitoringMembers</code>
+    /// to restart monitoring for those accounts.
     /// </summary>
     public partial class StopMonitoringMembersRequest : AmazonGuardDutyRequest
     {

@@ -138,7 +138,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Resolution. Filter by resolution, 'SD', 'HD', or 'UHD'
+        /// Gets and sets the property Resolution. Filter by resolution, 'SD', 'HD', 'FHD', or
+        /// 'UHD'
         /// </summary>
         public string Resolution
         {
@@ -154,7 +155,7 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property ResourceType. Filter by resource type, 'INPUT', 'OUTPUT',
-        /// or 'CHANNEL'
+        /// 'MULTIPLEX', or 'CHANNEL'
         /// </summary>
         public string ResourceType
         {

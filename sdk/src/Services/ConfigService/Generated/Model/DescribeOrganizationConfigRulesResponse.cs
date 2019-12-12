@@ -57,7 +57,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrganizationConfigRules. 
         /// <para>
-        /// Retuns a list <code>OrganizationConfigRule</code> objects.
+        /// Returns a list of <code>OrganizationConfigRule</code> objects.
         /// </para>
         /// </summary>
         public List<OrganizationConfigRule> OrganizationConfigRules

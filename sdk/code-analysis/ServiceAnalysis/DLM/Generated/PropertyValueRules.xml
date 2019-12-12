@@ -4,23 +4,121 @@
     <property>Amazon.DLM.Model.CreateLifecyclePolicyRequest.Description</property>
     <min>0</min>
     <max>500</max>
+    <pattern>[0-9A-Za-z _-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.CreateLifecyclePolicyRequest.ExecutionRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws:iam::\d+:role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.CreateLifecyclePolicyResponse.PolicyId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>policy-[A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.DeleteLifecyclePolicyRequest.PolicyId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>policy-[A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.GetLifecyclePolicyRequest.PolicyId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>policy-[A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <pattern>^arn:aws:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.TagResourceRequest.ResourceArn</property>
+    <pattern>^arn:aws:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.UntagResourceRequest.ResourceArn</property>
+    <pattern>^arn:aws:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.UpdateLifecyclePolicyRequest.Description</property>
     <min>0</min>
     <max>500</max>
+    <pattern>[0-9A-Za-z _-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.UpdateLifecyclePolicyRequest.ExecutionRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws:iam::\d+:role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.UpdateLifecyclePolicyRequest.PolicyId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>policy-[A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.CreateRule.Interval</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DLM.Model.FastRestoreRule.Count</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.FastRestoreRule.Interval</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DLM.Model.LifecyclePolicy.Description</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[0-9A-Za-z _-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.LifecyclePolicy.ExecutionRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws:iam::\d+:role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.LifecyclePolicy.PolicyArn</property>
+    <pattern>^arn:aws:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.LifecyclePolicy.PolicyId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>policy-[A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.LifecyclePolicy.StatusMessage</property>
     <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.LifecyclePolicySummary.Description</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[0-9A-Za-z _-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.LifecyclePolicySummary.PolicyId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>policy-[A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.LimitExceededException.ResourceType</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.ResourceNotFoundException.ResourceType</property>
     <min>0</min>
     <max>500</max>
   </property-value-rule>
@@ -30,7 +128,21 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DLM.Model.RetainRule.Interval</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DLM.Model.Schedule.Name</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.Tag.Key</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.Tag.Value</property>
     <min>0</min>
     <max>500</max>
   </property-value-rule>

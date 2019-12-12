@@ -217,8 +217,8 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
             {
             });
 
-            integer snowballLimit = response.SnowballLimit;
-            integer snowballsInUse = response.SnowballsInUse;
+            int snowballLimit = response.SnowballLimit;
+            int snowballsInUse = response.SnowballsInUse;
 
             #endregion
         }

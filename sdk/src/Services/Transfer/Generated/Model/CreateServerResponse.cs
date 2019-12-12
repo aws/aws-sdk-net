@@ -40,7 +40,7 @@ namespace Amazon.Transfer.Model
         /// The service-assigned ID of the SFTP server that is created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=19, Max=19)]
         public string ServerId
         {
             get { return this._serverId; }

@@ -29,7 +29,8 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePublicAccessBlock operation.
-    /// Deletes the block public access configuration for the specified account.
+    /// Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
+    /// account.
     /// </summary>
     public partial class DeletePublicAccessBlockRequest : AmazonS3ControlRequest
     {
@@ -38,8 +39,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID for the AWS account whose block public access configuration you want
-        /// to delete.
+        /// The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code>
+        /// configuration you want to remove.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

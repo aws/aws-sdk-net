@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.
+        /// The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>

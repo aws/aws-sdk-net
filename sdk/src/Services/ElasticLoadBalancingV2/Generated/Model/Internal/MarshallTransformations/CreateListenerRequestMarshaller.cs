@@ -202,6 +202,36 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FixedResponseConfig" + "." + "StatusCode", StringUtils.FromString(publicRequestlistValue.FixedResponseConfig.StatusCode));
                             }
                         }
+                        if(publicRequestlistValue.IsSetForwardConfig())
+                        {
+                            if(publicRequestlistValue.ForwardConfig.IsSetTargetGroups())
+                            {
+                                int publicRequestlistValueForwardConfiglistValueIndex = 1;
+                                foreach(var publicRequestlistValueForwardConfiglistValue in publicRequestlistValue.ForwardConfig.TargetGroups)
+                                {
+                                    if(publicRequestlistValueForwardConfiglistValue.IsSetTargetGroupArn())
+                                    {
+                                        request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroups" + "." + "member" + "." + publicRequestlistValueForwardConfiglistValueIndex + "." + "TargetGroupArn", StringUtils.FromString(publicRequestlistValueForwardConfiglistValue.TargetGroupArn));
+                                    }
+                                    if(publicRequestlistValueForwardConfiglistValue.IsSetWeight())
+                                    {
+                                        request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroups" + "." + "member" + "." + publicRequestlistValueForwardConfiglistValueIndex + "." + "Weight", StringUtils.FromInt(publicRequestlistValueForwardConfiglistValue.Weight));
+                                    }
+                                    publicRequestlistValueForwardConfiglistValueIndex++;
+                                }
+                            }
+                            if(publicRequestlistValue.ForwardConfig.IsSetTargetGroupStickinessConfig())
+                            {
+                                if(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.IsSetDurationSeconds())
+                                {
+                                    request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroupStickinessConfig" + "." + "DurationSeconds", StringUtils.FromInt(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.DurationSeconds));
+                                }
+                                if(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.IsSetEnabled())
+                                {
+                                    request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroupStickinessConfig" + "." + "Enabled", StringUtils.FromBool(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.Enabled));
+                                }
+                            }
+                        }
                         if(publicRequestlistValue.IsSetOrder())
                         {
                             request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Order", StringUtils.FromInt(publicRequestlistValue.Order));

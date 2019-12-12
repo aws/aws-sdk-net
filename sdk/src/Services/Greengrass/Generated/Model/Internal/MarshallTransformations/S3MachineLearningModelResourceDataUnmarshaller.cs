@@ -70,6 +70,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                     unmarshalledObject.DestinationPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OwnerSetting", targetDepth))
+                {
+                    var unmarshaller = ResourceDownloadOwnerSettingUnmarshaller.Instance;
+                    unmarshalledObject.OwnerSetting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -221,6 +221,64 @@ namespace Amazon.DLM
 
 
     /// <summary>
+    /// Constants used for properties of type RetentionIntervalUnitValues.
+    /// </summary>
+    public class RetentionIntervalUnitValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS for RetentionIntervalUnitValues
+        /// </summary>
+        public static readonly RetentionIntervalUnitValues DAYS = new RetentionIntervalUnitValues("DAYS");
+        /// <summary>
+        /// Constant MONTHS for RetentionIntervalUnitValues
+        /// </summary>
+        public static readonly RetentionIntervalUnitValues MONTHS = new RetentionIntervalUnitValues("MONTHS");
+        /// <summary>
+        /// Constant WEEKS for RetentionIntervalUnitValues
+        /// </summary>
+        public static readonly RetentionIntervalUnitValues WEEKS = new RetentionIntervalUnitValues("WEEKS");
+        /// <summary>
+        /// Constant YEARS for RetentionIntervalUnitValues
+        /// </summary>
+        public static readonly RetentionIntervalUnitValues YEARS = new RetentionIntervalUnitValues("YEARS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RetentionIntervalUnitValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetentionIntervalUnitValues FindValue(string value)
+        {
+            return FindValue<RetentionIntervalUnitValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetentionIntervalUnitValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SettablePolicyStateValues.
     /// </summary>
     public class SettablePolicyStateValues : ConstantClass

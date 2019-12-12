@@ -162,26 +162,26 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Lifecycle. 
         /// <para>
-        /// The lifecycle status of the file system:
+        /// The lifecycle status of the file system, following are the possible values and what
+        /// they mean:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> indicates that the file system is reachable and available
-        /// for use.
+        ///  <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable
+        /// and available for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATING</code> indicates that Amazon FSx is in the process of creating the
-        /// new file system.
+        ///  <code>CREATING</code> - Amazon FSx is creating the new file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the
-        /// file system.
+        ///  <code>DELETING</code> - Amazon FSx is deleting an existing file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+        ///  <code>FAILED</code> - An existing file system has experienced an unrecoverable failure.
+        /// When creating a new file system, Amazon FSx was unable to create the file system.
         /// </para>
         ///  </li> <li> 
         /// <para>

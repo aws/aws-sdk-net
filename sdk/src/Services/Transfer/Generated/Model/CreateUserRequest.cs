@@ -40,6 +40,8 @@ namespace Amazon.Transfer.Model
     public partial class CreateUserRequest : AmazonTransferRequest
     {
         private string _homeDirectory;
+        private List<HomeDirectoryMapEntry> _homeDirectoryMappings = new List<HomeDirectoryMapEntry>();
+        private HomeDirectoryType _homeDirectoryType;
         private string _policy;
         private string _role;
         private string _serverId;
@@ -51,7 +53,11 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property HomeDirectory. 
         /// <para>
         /// The landing directory (folder) for a user when they log in to the server using their
-        /// SFTP client. An example is <code>/home/<i>username</i> </code>.
+        /// SFTP client. 
+        /// </para>
+        ///  
+        /// <para>
+        /// An example is &lt;<code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -65,6 +71,63 @@ namespace Amazon.Transfer.Model
         internal bool IsSetHomeDirectory()
         {
             return this._homeDirectory != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HomeDirectoryMappings. 
+        /// <para>
+        /// Logical directory mappings that specify what S3 paths and keys should be visible to
+        /// your user and how you want to make them visible. You will need to specify the "<code>Entry</code>"
+        /// and "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
+        /// visible and <code>Target</code> is the actual S3 path. If you only specify a target,
+        /// it will be displayed as is. You will need to also make sure that your AWS IAM Role
+        /// provides access to paths in <code>Target</code>. The following is an example.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
+        /// "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// In most cases, you can use this value instead of the scope down policy to lock your
+        /// user down to the designated home directory ("chroot"). To do this, you can set <code>Entry</code>
+        /// to '/' and set <code>Target</code> to the HomeDirectory parameter value. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<HomeDirectoryMapEntry> HomeDirectoryMappings
+        {
+            get { return this._homeDirectoryMappings; }
+            set { this._homeDirectoryMappings = value; }
+        }
+
+        // Check to see if HomeDirectoryMappings property is set
+        internal bool IsSetHomeDirectoryMappings()
+        {
+            return this._homeDirectoryMappings != null && this._homeDirectoryMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HomeDirectoryType. 
+        /// <para>
+        /// The type of landing directory (folder) you want your users' home directory to be when
+        /// they log into the SFTP server. If you set it to <code>PATH</code>, the user will see
+        /// the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set it <code>LOGICAL</code>,
+        /// you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how
+        /// you want to make S3 paths visible to your user.
+        /// </para>
+        /// </summary>
+        public HomeDirectoryType HomeDirectoryType
+        {
+            get { return this._homeDirectoryType; }
+            set { this._homeDirectoryType = value; }
+        }
+
+        // Check to see if HomeDirectoryType property is set
+        internal bool IsSetHomeDirectoryType()
+        {
+            return this._homeDirectoryType != null;
         }
 
         /// <summary>
@@ -93,6 +156,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string Policy
         {
             get { return this._policy; }
@@ -115,7 +179,7 @@ namespace Amazon.Transfer.Model
         /// your resources when servicing your SFTP user's transfer requests.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string Role
         {
             get { return this._role; }
@@ -135,7 +199,7 @@ namespace Amazon.Transfer.Model
         /// SFTP server that you added your user to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=19, Max=19)]
         public string ServerId
         {
             get { return this._serverId; }
@@ -197,7 +261,7 @@ namespace Amazon.Transfer.Model
         /// and hyphen. The user name can't start with a hyphen.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=3, Max=32)]
         public string UserName
         {
             get { return this._userName; }

@@ -120,6 +120,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.Parameters.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ResourceIdentifierSummaries/member", targetDepth))
+                    {
+                        var unmarshaller = ResourceIdentifierSummaryUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.ResourceIdentifierSummaries.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("ResourceTypes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

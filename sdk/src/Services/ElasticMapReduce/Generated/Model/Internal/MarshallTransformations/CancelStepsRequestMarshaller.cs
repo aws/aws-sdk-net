@@ -74,6 +74,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClusterId);
                 }
 
+                if(publicRequest.IsSetStepCancellationOption())
+                {
+                    context.Writer.WritePropertyName("StepCancellationOption");
+                    context.Writer.Write(publicRequest.StepCancellationOption);
+                }
+
                 if(publicRequest.IsSetStepIds())
                 {
                     context.Writer.WritePropertyName("StepIds");

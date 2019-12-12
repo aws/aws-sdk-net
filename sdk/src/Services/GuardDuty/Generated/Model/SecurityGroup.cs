@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the security group.
+    /// Contains information about the security groups associated with the EC2 instance.
     /// </summary>
     public partial class SecurityGroup
     {

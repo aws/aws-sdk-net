@@ -141,11 +141,111 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityProviderField.
+    /// </summary>
+    public class CapacityProviderField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TAGS for CapacityProviderField
+        /// </summary>
+        public static readonly CapacityProviderField TAGS = new CapacityProviderField("TAGS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityProviderField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityProviderField FindValue(string value)
+        {
+            return FindValue<CapacityProviderField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityProviderField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityProviderStatus.
+    /// </summary>
+    public class CapacityProviderStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for CapacityProviderStatus
+        /// </summary>
+        public static readonly CapacityProviderStatus ACTIVE = new CapacityProviderStatus("ACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityProviderStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityProviderStatus FindValue(string value)
+        {
+            return FindValue<CapacityProviderStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityProviderStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterField.
     /// </summary>
     public class ClusterField : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ATTACHMENTS for ClusterField
+        /// </summary>
+        public static readonly ClusterField ATTACHMENTS = new ClusterField("ATTACHMENTS");
+        /// <summary>
+        /// Constant SETTINGS for ClusterField
+        /// </summary>
+        public static readonly ClusterField SETTINGS = new ClusterField("SETTINGS");
         /// <summary>
         /// Constant STATISTICS for ClusterField
         /// </summary>
@@ -940,6 +1040,106 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogDriver(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ManagedScalingStatus.
+    /// </summary>
+    public class ManagedScalingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ManagedScalingStatus
+        /// </summary>
+        public static readonly ManagedScalingStatus DISABLED = new ManagedScalingStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ManagedScalingStatus
+        /// </summary>
+        public static readonly ManagedScalingStatus ENABLED = new ManagedScalingStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedScalingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedScalingStatus FindValue(string value)
+        {
+            return FindValue<ManagedScalingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedScalingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ManagedTerminationProtection.
+    /// </summary>
+    public class ManagedTerminationProtection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ManagedTerminationProtection
+        /// </summary>
+        public static readonly ManagedTerminationProtection DISABLED = new ManagedTerminationProtection("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ManagedTerminationProtection
+        /// </summary>
+        public static readonly ManagedTerminationProtection ENABLED = new ManagedTerminationProtection("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedTerminationProtection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedTerminationProtection FindValue(string value)
+        {
+            return FindValue<ManagedTerminationProtection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedTerminationProtection(string value)
         {
             return FindValue(value);
         }

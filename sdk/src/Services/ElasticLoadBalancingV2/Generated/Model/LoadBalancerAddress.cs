@@ -34,11 +34,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
         private string _allocationId;
         private string _ipAddress;
+        private string _privateIPv4Address;
 
         /// <summary>
         /// Gets and sets the property AllocationId. 
         /// <para>
-        /// [Network Load Balancers] The allocation ID of the Elastic IP address.
+        /// [Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing
+        /// load balancer.
         /// </para>
         /// </summary>
         public string AllocationId
@@ -69,6 +71,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetIpAddress()
         {
             return this._ipAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateIPv4Address. 
+        /// <para>
+        /// [Network Load Balancers] The private IPv4 address for an internal load balancer.
+        /// </para>
+        /// </summary>
+        public string PrivateIPv4Address
+        {
+            get { return this._privateIPv4Address; }
+            set { this._privateIPv4Address = value; }
+        }
+
+        // Check to see if PrivateIPv4Address property is set
+        internal bool IsSetPrivateIPv4Address()
+        {
+            return this._privateIPv4Address != null;
         }
 
     }

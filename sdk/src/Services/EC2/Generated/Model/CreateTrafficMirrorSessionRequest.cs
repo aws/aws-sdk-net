@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// By default, no traffic is mirrored. Use <a>CreateTrafficMirrorFilter</a> to create
-    /// filter rules that specify the traffic to mirror.
+    /// By default, no traffic is mirrored. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.htm">CreateTrafficMirrorFilter</a>
+    /// to create filter rules that specify the traffic to mirror.
     /// </para>
     /// </summary>
     public partial class CreateTrafficMirrorSessionRequest : AmazonEC2Request
@@ -124,8 +124,8 @@ namespace Amazon.EC2.Model
         /// The number of bytes in each packet to mirror. These are bytes after the VXLAN header.
         /// Do not specify this parameter when you want to mirror the entire packet. To mirror
         /// a subset of the packet, set this to the length (in bytes) that you want to mirror.
-        /// For example, if you set this value to 1network0, then the first 100 bytes that meet
-        /// the filter criteria are copied to the target.
+        /// For example, if you set this value to 100, then the first 100 bytes that meet the
+        /// filter criteria are copied to the target.
         /// </para>
         ///  
         /// <para>

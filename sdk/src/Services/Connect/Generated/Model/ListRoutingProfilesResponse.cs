@@ -38,8 +38,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A string returned in the response. Use the value returned in the response as the value
-        /// of the NextToken in a subsequent request to retrieve the next set of results.
+        /// If there are additional results, this is the token for the next set of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -57,8 +56,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property RoutingProfileSummaryList. 
         /// <para>
-        /// An array of <code>RoutingProfileSummary</code> objects that include the ARN, Id, and
-        /// Name of the routing profile.
+        /// Information about the routing profiles.
         /// </para>
         /// </summary>
         public List<RoutingProfileSummary> RoutingProfileSummaryList

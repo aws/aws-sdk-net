@@ -88,6 +88,7 @@ namespace Amazon.ElasticMapReduce.Model
         private ScaleDownBehavior _scaleDownBehavior;
         private string _securityConfiguration;
         private string _serviceRole;
+        private int? _stepConcurrencyLevel;
         private List<StepConfig> _steps = new List<StepConfig>();
         private List<string> _supportedProducts = new List<string>();
         private List<Tag> _tags = new List<Tag>();
@@ -552,6 +553,25 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StepConcurrencyLevel. 
+        /// <para>
+        /// Specifies the number of steps that can be executed concurrently. The default value
+        /// is <code>1</code>. The maximum value is <code>256</code>.
+        /// </para>
+        /// </summary>
+        public int StepConcurrencyLevel
+        {
+            get { return this._stepConcurrencyLevel.GetValueOrDefault(); }
+            set { this._stepConcurrencyLevel = value; }
+        }
+
+        // Check to see if StepConcurrencyLevel property is set
+        internal bool IsSetStepConcurrencyLevel()
+        {
+            return this._stepConcurrencyLevel.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Steps. 
         /// <para>
         /// A list of steps to run.
@@ -623,15 +643,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VisibleToAllUsers. 
         /// <para>
-        ///  <i>This member will be deprecated.</i> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Whether the cluster is visible to all IAM users of the AWS account associated with
-        /// the cluster. If this value is set to <code>true</code>, all IAM users of that AWS
-        /// account can view and (if they have the proper policy permissions set) manage the cluster.
-        /// If it is set to <code>false</code>, only the IAM user that created the cluster can
-        /// view and manage it.
+        /// A value of <code>true</code> indicates that all IAM users in the AWS account can perform
+        /// cluster actions if they have the proper IAM policy permissions. This is the default.
+        /// A value of <code>false</code> indicates that only the IAM user who created the cluster
+        /// can perform actions.
         /// </para>
         /// </summary>
         public bool VisibleToAllUsers

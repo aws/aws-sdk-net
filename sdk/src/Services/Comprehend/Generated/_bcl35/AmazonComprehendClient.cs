@@ -605,6 +605,74 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ClassifyDocument
+
+        /// <summary>
+        /// Creates a new document classification request to analyze a single document in real-time,
+        /// using a previously created and trained custom model and an endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ClassifyDocument service method.</param>
+        /// 
+        /// <returns>The response from the ClassifyDocument service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+        /// state and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ClassifyDocument">REST API Reference for ClassifyDocument Operation</seealso>
+        public virtual ClassifyDocumentResponse ClassifyDocument(ClassifyDocumentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ClassifyDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ClassifyDocumentResponseUnmarshaller.Instance;
+
+            return Invoke<ClassifyDocumentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ClassifyDocument operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ClassifyDocument operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndClassifyDocument
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ClassifyDocument">REST API Reference for ClassifyDocument Operation</seealso>
+        public virtual IAsyncResult BeginClassifyDocument(ClassifyDocumentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ClassifyDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ClassifyDocumentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ClassifyDocument operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginClassifyDocument.</param>
+        /// 
+        /// <returns>Returns a  ClassifyDocumentResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ClassifyDocument">REST API Reference for ClassifyDocument Operation</seealso>
+        public virtual ClassifyDocumentResponse EndClassifyDocument(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ClassifyDocumentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDocumentClassifier
 
         /// <summary>
@@ -689,6 +757,89 @@ namespace Amazon.Comprehend
         public virtual CreateDocumentClassifierResponse EndCreateDocumentClassifier(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDocumentClassifierResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateEndpoint
+
+        /// <summary>
+        /// Creates a model-specific endpoint for synchronous inference for a previously trained
+        /// custom model
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateEndpoint service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified name is already in use. Use a different name and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
+        /// The maximum number of recognizers per account has been exceeded. Review the recognizers,
+        /// perform cleanup, and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+        /// state and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
+        public virtual CreateEndpointResponse CreateEndpoint(CreateEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginCreateEndpoint(CreateEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEndpoint.</param>
+        /// 
+        /// <returns>Returns a  CreateEndpointResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
+        public virtual CreateEndpointResponse EndCreateEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateEndpointResponse>(asyncResult);
         }
 
         #endregion
@@ -861,6 +1012,76 @@ namespace Amazon.Comprehend
         public virtual DeleteDocumentClassifierResponse EndDeleteDocumentClassifier(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDocumentClassifierResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteEndpoint
+
+        /// <summary>
+        /// Deletes a model-specific endpoint for a previously-trained custom model. All endpoints
+        /// must be deleted in order for the model to be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEndpoint service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified name is already in use. Use a different name and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
+        public virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteEndpointResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
+        public virtual DeleteEndpointResponse EndDeleteEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEndpointResponse>(asyncResult);
         }
 
         #endregion
@@ -1147,6 +1368,73 @@ namespace Amazon.Comprehend
         public virtual DescribeDominantLanguageDetectionJobResponse EndDescribeDominantLanguageDetectionJob(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDominantLanguageDetectionJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeEndpoint
+
+        /// <summary>
+        /// Gets the properties associated with a specific endpoint. Use this operation to get
+        /// the status of an endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEndpoint service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
+        public virtual DescribeEndpointResponse DescribeEndpoint(DescribeEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginDescribeEndpoint(DescribeEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DescribeEndpointResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
+        public virtual DescribeEndpointResponse EndDescribeEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEndpointResponse>(asyncResult);
         }
 
         #endregion
@@ -2024,6 +2312,69 @@ namespace Amazon.Comprehend
         public virtual ListDominantLanguageDetectionJobsResponse EndListDominantLanguageDetectionJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDominantLanguageDetectionJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListEndpoints
+
+        /// <summary>
+        /// Gets a list of all existing endpoints that you've created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the ListEndpoints service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
+        public virtual ListEndpointsResponse ListEndpoints(ListEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEndpointsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEndpoints operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
+        public virtual IAsyncResult BeginListEndpoints(ListEndpointsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEndpointsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEndpoints.</param>
+        /// 
+        /// <returns>Returns a  ListEndpointsResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
+        public virtual ListEndpointsResponse EndListEndpoints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEndpointsResponse>(asyncResult);
         }
 
         #endregion
@@ -3476,6 +3827,83 @@ namespace Amazon.Comprehend
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateEndpoint
+
+        /// <summary>
+        /// Updates information about the specified endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEndpoint service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified name is already in use. Use a different name and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
+        /// The maximum number of recognizers per account has been exceeded. Review the recognizers,
+        /// perform cleanup, and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+        /// state and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
+        public virtual UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginUpdateEndpoint(UpdateEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEndpoint.</param>
+        /// 
+        /// <returns>Returns a  UpdateEndpointResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
+        public virtual UpdateEndpointResponse EndUpdateEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateEndpointResponse>(asyncResult);
         }
 
         #endregion

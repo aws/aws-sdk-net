@@ -60,6 +60,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("WeightedCapacity", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.WeightedCapacity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

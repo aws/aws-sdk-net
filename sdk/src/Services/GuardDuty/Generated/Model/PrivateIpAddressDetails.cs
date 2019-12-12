@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the private IP address.
+    /// Contains other private IP address information of the EC2 instance.
     /// </summary>
     public partial class PrivateIpAddressDetails
     {

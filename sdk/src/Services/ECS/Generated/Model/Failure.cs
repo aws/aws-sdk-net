@@ -33,6 +33,7 @@ namespace Amazon.ECS.Model
     public partial class Failure
     {
         private string _arn;
+        private string _detail;
         private string _reason;
 
         /// <summary>
@@ -51,6 +52,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Detail. 
+        /// <para>
+        /// The details of the failure.
+        /// </para>
+        /// </summary>
+        public string Detail
+        {
+            get { return this._detail; }
+            set { this._detail = value; }
+        }
+
+        // Check to see if Detail property is set
+        internal bool IsSetDetail()
+        {
+            return this._detail != null;
         }
 
         /// <summary>

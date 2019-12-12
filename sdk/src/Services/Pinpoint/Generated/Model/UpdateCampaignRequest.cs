@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCampaign operation.
-    /// Updates the settings for a campaign.
+    /// Updates the configuration and other settings for a campaign.
     /// </summary>
     public partial class UpdateCampaignRequest : AmazonPinpointRequest
     {

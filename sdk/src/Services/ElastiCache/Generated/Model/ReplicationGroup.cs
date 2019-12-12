@@ -34,6 +34,7 @@ namespace Amazon.ElastiCache.Model
     {
         private bool? _atRestEncryptionEnabled;
         private bool? _authTokenEnabled;
+        private DateTime? _authTokenLastModifiedDate;
         private AutomaticFailoverStatus _automaticFailover;
         private string _cacheNodeType;
         private bool? _clusterEnabled;
@@ -104,6 +105,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetAuthTokenEnabled()
         {
             return this._authTokenEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthTokenLastModifiedDate. 
+        /// <para>
+        /// The date the auth token was last modified
+        /// </para>
+        /// </summary>
+        public DateTime AuthTokenLastModifiedDate
+        {
+            get { return this._authTokenLastModifiedDate.GetValueOrDefault(); }
+            set { this._authTokenLastModifiedDate = value; }
+        }
+
+        // Check to see if AuthTokenLastModifiedDate property is set
+        internal bool IsSetAuthTokenLastModifiedDate()
+        {
+            return this._authTokenLastModifiedDate.HasValue; 
         }
 
         /// <summary>

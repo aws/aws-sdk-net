@@ -138,7 +138,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Recurrence. 
         /// <para>
-        /// The recurring schedule for the action, in Unix cron syntax format. 
+        /// The recurring schedule for the action, in Unix cron syntax format.
         /// </para>
         ///  
         /// <para>

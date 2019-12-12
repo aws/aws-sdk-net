@@ -43,8 +43,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property CommitId. 
         /// <para>
-        /// The full commit ID used as a reference for which version of the folder content is
-        /// returned.
+        /// The full commit ID used as a reference for the returned version of the folder content.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +62,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Files. 
         /// <para>
-        /// The list of files that exist in the specified folder, if any.
+        /// The list of files in the specified folder, if any.
         /// </para>
         /// </summary>
         public List<File> Files
@@ -81,7 +80,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property FolderPath. 
         /// <para>
-        /// The fully-qualified path of the folder whose contents are returned.
+        /// The fully qualified path of the folder whose contents are returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +99,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property SubFolders. 
         /// <para>
-        /// The list of folders that exist beneath the specified folder, if any.
+        /// The list of folders that exist under the specified folder, if any.
         /// </para>
         /// </summary>
         public List<Folder> SubFolders
@@ -118,7 +117,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property SubModules. 
         /// <para>
-        /// The list of submodules that exist in the specified folder, if any.
+        /// The list of submodules in the specified folder, if any.
         /// </para>
         /// </summary>
         public List<SubModule> SubModules
@@ -136,8 +135,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property SymbolicLinks. 
         /// <para>
-        /// The list of symbolic links to other files and folders that exist in the specified
-        /// folder, if any.
+        /// The list of symbolic links to other files and folders in the specified folder, if
+        /// any.
         /// </para>
         /// </summary>
         public List<SymbolicLink> SymbolicLinks

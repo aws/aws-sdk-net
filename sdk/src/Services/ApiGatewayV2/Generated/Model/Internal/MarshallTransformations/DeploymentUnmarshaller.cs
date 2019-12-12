@@ -64,6 +64,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("autoDeployed", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AutoDeployed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

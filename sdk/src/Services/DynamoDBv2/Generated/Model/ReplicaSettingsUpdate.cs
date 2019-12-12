@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the settings for a global table in a region that will be modified.
+    /// Represents the settings for a global table in a Region that will be modified.
     /// </summary>
     public partial class ReplicaSettingsUpdate
     {
@@ -40,7 +40,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The region of the replica to be added.
+        /// The Region of the replica to be added.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate.
         /// 
         /// <para>
-        /// Autoscaling settings for managing a global table replica's read capacity units.
+        /// Auto scaling settings for managing a global table replica's read capacity units.
         /// </para>
         /// </summary>
         public AutoScalingSettingsUpdate ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate

@@ -72,6 +72,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("InstanceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LaunchConfigurationName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -94,6 +100,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.ProtectedFromScaleIn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("WeightedCapacity", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.WeightedCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

@@ -37,6 +37,9 @@ using System.Threading;
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
+#if NETSTANDARD
+using System.Net.Http;
+#endif
 
 namespace Amazon.Util
 {
@@ -46,7 +49,7 @@ namespace Amazon.Util
     /// </summary>
     public static partial class AWSSDKUtils
     {
-        #region Internal Constants
+#region Internal Constants
 
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
@@ -83,9 +86,9 @@ namespace Amazon.Util
 
         private static readonly string _userAgent = InternalSDKUtils.BuildUserAgentString(string.Empty);
 
-        #endregion
+#endregion
 
-        #region Public Constants
+#region Public Constants
 
 
         /// <summary>
@@ -163,11 +166,11 @@ namespace Amazon.Util
         /// </summary>
         public const string RFC822DateFormat = "ddd, dd MMM yyyy HH:mm:ss \\G\\M\\T";
 
-        #endregion
+#endregion
 
 
 
-        #region Internal Methods
+#region Internal Methods
 
         /// <summary>
         /// Returns an extension of a path.
@@ -822,9 +825,9 @@ namespace Amazon.Util
                 destination.Write(array, 0, count);
             }
         }
-        #endregion
+#endregion
 
-        #region Public Methods and Properties
+#region Public Methods and Properties
 
         /// <summary>
         /// Formats the current date as a GMT timestamp
@@ -1129,26 +1132,133 @@ namespace Amazon.Util
         {
             return DownloadStringContent(uri, TimeSpan.Zero, proxy);
         }
-        
+
         public static string DownloadStringContent(Uri uri, TimeSpan timeout, IWebProxy proxy)
         {
-#if NETSTANDARD 
-            using (var client = new System.Net.Http.HttpClient(new System.Net.Http.HttpClientHandler() { Proxy = proxy }))
+#if NETSTANDARD
+            using (var client = CreateClient(uri, timeout, proxy, null))
             {
-                if (timeout > TimeSpan.Zero)
-                {
-                    client.Timeout = timeout;
-                }
-                
-                client.DefaultRequestHeaders.TryAddWithoutValidation(UserAgentHeader, _userAgent);
-                                
-                var content = AsyncHelpers.RunSync<string>(() =>
+                return AsyncHelpers.RunSync<string>(() =>
                 {
                     return client.GetStringAsync(uri);
-                });
-                return content;
+                });             
             }
 #else
+            var request = CreateClient(uri, timeout, proxy, null);
+
+            using (var response = request.GetResponse() as HttpWebResponse)
+            using (var reader = new StreamReader(response.GetResponseStream()))
+            {
+                return reader.ReadToEnd();
+            }
+#endif
+        }
+
+        /// <summary>
+        /// Executes an HTTP request and returns the response as a string. This method
+        /// throws WebException and HttpRequestException. In the event HttpRequestException
+        /// is thrown the StatusCode is sent as user defined data on the exception under
+        /// the key "StatusCode".
+        /// </summary>
+        /// <param name="uri">The URI to make the request to</param>
+        /// <param name="requestType">The request type: GET, PUT, POST</param>
+        /// <param name="content">null or the content to send with the request</param>
+        /// <param name="timeout">Timeout for the request</param>
+        /// <param name="proxy">Proxy for the request</param>
+        /// <param name="headers">null or any headers to send with the request</param>
+        /// <returns>The response as a string.</returns>
+        public static string ExecuteHttpRequest(Uri uri, string requestType, string content, TimeSpan timeout, IWebProxy proxy, IDictionary<string, string> headers)
+        {
+#if NETSTANDARD
+            using (var client = CreateClient(uri, timeout, proxy, headers))
+            {                   
+                var response = AsyncHelpers.RunSync<HttpResponseMessage>(() =>
+                {
+                    var requestMessage = new HttpRequestMessage(new HttpMethod(requestType), uri);
+                    if(!string.IsNullOrEmpty(content))
+                    {
+                        requestMessage.Content = new StringContent(content);
+                    }
+                    
+                    return client.SendAsync(requestMessage);
+                });
+
+                try
+                {
+                    response.EnsureSuccessStatusCode();
+                }
+                catch(HttpRequestException e)
+                {
+                    var httpRequestException = new HttpRequestException(e.Message, e);
+                    httpRequestException.Data.Add(nameof(response.StatusCode), response.StatusCode);
+
+                    response.Dispose();
+                    throw httpRequestException;
+                }
+                            
+                try
+                {
+                    return AsyncHelpers.RunSync<string>(() =>
+                    {                    
+                        return response.Content.ReadAsStringAsync();
+                    });
+                }
+                finally 
+                {
+                    response.Dispose();
+                }
+            }
+#else
+            var request = CreateClient(uri, timeout, proxy, headers);
+            request.Method = requestType;
+            request.ContentLength = 0;
+                        
+            if (!string.IsNullOrEmpty(content))
+            {
+                var contentBytes = Encoding.UTF8.GetBytes(content);
+                request.ContentLength = contentBytes.Length;
+                using (var requestStream = request.GetRequestStream())
+                {
+                    requestStream.Write(contentBytes, 0, contentBytes.Length);
+                }                
+            }
+                        
+            using (var response = request.GetResponse() as HttpWebResponse)
+            {
+                using (var reader = new StreamReader(response.GetResponseStream()))
+                {
+                    return reader.ReadToEnd();
+                }
+            }            
+#endif
+        }
+
+
+#if NETSTANDARD
+        private static HttpClient CreateClient(Uri uri, TimeSpan timeout, IWebProxy proxy, IDictionary<string, string> headers)
+        {
+            var client = new HttpClient(new System.Net.Http.HttpClientHandler() { Proxy = proxy });
+
+            if (timeout > TimeSpan.Zero)
+            {
+                client.Timeout = timeout;
+            }
+
+            //DefaultRequestHeaders should not be used if we reuse the HttpClient. It is currently created for each request.
+            client.DefaultRequestHeaders.TryAddWithoutValidation(UserAgentHeader, _userAgent);
+            if(headers != null)
+            {
+                foreach(var nameValue in headers)
+                {
+                    client.DefaultRequestHeaders.TryAddWithoutValidation(nameValue.Key, nameValue.Value);
+                }
+            }
+
+            return client;
+        }
+#else
+        private static HttpWebRequest CreateClient(Uri uri, TimeSpan timeout, IWebProxy proxy, IDictionary<string, string> headers)
+        { 
             HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
             request.Proxy = proxy ?? WebRequest.DefaultWebProxy;
 
@@ -1157,15 +1267,19 @@ namespace Amazon.Util
                 request.Timeout = (int)timeout.TotalMilliseconds;
             }
 
-            request.UserAgent = _userAgent;            
-            
-            using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
-            using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+            request.UserAgent = _userAgent;
+            if (headers != null)
             {
-                return reader.ReadToEnd();
+                foreach (var header in headers)
+                {
+                    request.Headers.Add(header.Key, header.Value);
+                }
             }
-#endif
+
+            return request;
         }
+#endif
+
 
         public static Stream OpenStream(Uri uri)
         {

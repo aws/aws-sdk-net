@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     {
         private string _id;
         private List<MediaPackageOutputDestinationSettings> _mediaPackageSettings = new List<MediaPackageOutputDestinationSettings>();
+        private MultiplexProgramChannelDestinationSettings _multiplexSettings;
         private List<OutputDestinationSettings> _settings = new List<OutputDestinationSettings>();
 
         /// <summary>
@@ -66,6 +67,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetMediaPackageSettings()
         {
             return this._mediaPackageSettings != null && this._mediaPackageSettings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiplexSettings. Destination settings for a Multiplex
+        /// output; one destination for both encoders.
+        /// </summary>
+        public MultiplexProgramChannelDestinationSettings MultiplexSettings
+        {
+            get { return this._multiplexSettings; }
+            set { this._multiplexSettings = value; }
+        }
+
+        // Check to see if MultiplexSettings property is set
+        internal bool IsSetMultiplexSettings()
+        {
+            return this._multiplexSettings != null;
         }
 
         /// <summary>

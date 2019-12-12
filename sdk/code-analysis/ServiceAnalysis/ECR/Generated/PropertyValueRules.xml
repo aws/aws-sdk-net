@@ -144,6 +144,31 @@
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.DescribeImageScanFindingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.DescribeImageScanFindingsRequest.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.DescribeImageScanFindingsRequest.RepositoryName</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.DescribeImageScanFindingsResponse.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.DescribeImageScanFindingsResponse.RepositoryName</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.DescribeRepositoriesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -284,6 +309,11 @@
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.PutImageRequest.ImageManifest</property>
+    <min>1</min>
+    <max>4194304</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.PutImageRequest.ImageTag</property>
     <min>1</min>
     <max>300</max>
@@ -294,6 +324,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.PutImageRequest.RepositoryName</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.PutImageScanningConfigurationRequest.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.PutImageScanningConfigurationRequest.RepositoryName</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.PutImageScanningConfigurationResponse.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.PutImageScanningConfigurationResponse.RepositoryName</property>
     <min>2</min>
     <max>256</max>
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
@@ -379,6 +429,26 @@
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.StartImageScanRequest.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.StartImageScanRequest.RepositoryName</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.StartImageScanResponse.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.StartImageScanResponse.RepositoryName</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.StartLifecyclePolicyPreviewRequest.LifecyclePolicyText</property>
     <min>100</min>
     <max>30720</max>
@@ -407,6 +477,11 @@
     <min>2</min>
     <max>256</max>
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.UploadLayerPartRequest.LayerPartBlob</property>
+    <min>0</min>
+    <max>20971520</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.UploadLayerPartRequest.PartFirstByte</property>
@@ -449,8 +524,23 @@
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.Attribute.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.Attribute.Value</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.AuthorizationData.AuthorizationToken</property>
     <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.Image.ImageManifest</property>
+    <min>1</min>
+    <max>4194304</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.Image.RegistryId</property>

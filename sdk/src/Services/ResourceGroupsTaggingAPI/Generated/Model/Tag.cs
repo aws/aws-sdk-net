@@ -30,8 +30,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// <summary>
     /// The metadata that you apply to AWS resources to help you categorize and organize them.
     /// Each tag consists of a key and an optional value, both of which you define. For more
-    /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-basics">Tag
-    /// Basics</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+    /// information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+    /// AWS Resources</a> in the <i>AWS General Reference</i>.
     /// </summary>
     public partial class Tag
     {
@@ -41,7 +41,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// One part of a key-value pair that make up a tag. A key is a general label that acts
+        /// One part of a key-value pair that makes up a tag. A key is a general label that acts
         /// like a category for more specific tag values.
         /// </para>
         /// </summary>

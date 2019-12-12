@@ -38,7 +38,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationUsageList. 
         /// <para>
-        /// An array of <code>LicenseConfigurationUsage</code> objects.
+        /// Information about the license configurations.
         /// </para>
         /// </summary>
         public List<LicenseConfigurationUsage> LicenseConfigurationUsageList

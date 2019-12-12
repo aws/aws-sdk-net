@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the document about which you want version information.
+        /// The name of the document. You can specify an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

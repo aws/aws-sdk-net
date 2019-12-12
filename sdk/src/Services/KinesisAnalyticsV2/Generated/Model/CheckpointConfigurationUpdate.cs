@@ -43,6 +43,13 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <para>
         /// Describes updates to whether checkpointing is enabled for an application.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+        /// the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>,
+        /// even if this value is set to another value using this API or in application code.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool CheckpointingEnabledUpdate
         {
@@ -61,8 +68,15 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <para>
         /// Describes updates to the interval in milliseconds between checkpoint operations.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+        /// the application will use a <code>CheckpointInterval</code> vaue of 60000, even if
+        /// this value is set to another value using this API or in application code.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=1)]
         public long CheckpointIntervalUpdate
         {
             get { return this._checkpointIntervalUpdate.GetValueOrDefault(); }
@@ -79,8 +93,28 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property ConfigurationTypeUpdate. 
         /// <para>
         /// Describes updates to whether the application uses the default checkpointing behavior
-        /// of Kinesis Data Analytics.
+        /// of Kinesis Data Analytics. You must set this property to <code>CUSTOM</code> in order
+        /// to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or
+        /// <code>MinPauseBetweenCheckpoints</code> parameters. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If this value is set to <code>DEFAULT</code>, the application will use the following
+        /// values, even if they are set to other values using APIs or application code:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>CheckpointingEnabled:</b> true
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>CheckpointInterval:</b> 60000
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MinPauseBetweenCheckpoints:</b> 5000
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public ConfigurationType ConfigurationTypeUpdate
         {
@@ -100,6 +134,13 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes updates to the minimum time in milliseconds after a checkpoint operation
         /// completes that a new checkpoint operation can start.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+        /// the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000,
+        /// even if this value is set using this API or in application code.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
         public long MinPauseBetweenCheckpointsUpdate

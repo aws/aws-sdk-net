@@ -31,9 +31,17 @@ namespace Amazon.Cloud9
     {
 
         /// <summary>
+        /// Constant CREATE_FAILED for EnvironmentLifecycleStatus
+        /// </summary>
+        public static readonly EnvironmentLifecycleStatus CREATE_FAILED = new EnvironmentLifecycleStatus("CREATE_FAILED");
+        /// <summary>
         /// Constant CREATED for EnvironmentLifecycleStatus
         /// </summary>
         public static readonly EnvironmentLifecycleStatus CREATED = new EnvironmentLifecycleStatus("CREATED");
+        /// <summary>
+        /// Constant CREATING for EnvironmentLifecycleStatus
+        /// </summary>
+        public static readonly EnvironmentLifecycleStatus CREATING = new EnvironmentLifecycleStatus("CREATING");
         /// <summary>
         /// Constant DELETE_FAILED for EnvironmentLifecycleStatus
         /// </summary>

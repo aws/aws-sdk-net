@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Provides a single value and metadata about that value as part of an array of query
-    /// results for a standard metric that applies to an application or campaign.
+    /// results for a standard metric that applies to an application, campaign, or journey.
     /// </summary>
     public partial class ResultRowValue
     {
@@ -40,8 +40,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The name of the field that Amazon Pinpoint uses to store the value specified by the
-        /// Value property.
+        /// The friendly name of the metric whose value is specified by the Value property.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +57,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.  
+        /// Gets and sets the property Type. 
         /// <para>
         /// The data type of the value specified by the Value property.
         /// </para>

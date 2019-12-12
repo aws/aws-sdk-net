@@ -104,6 +104,7 @@ namespace Amazon.ApplicationInsights.Model
         /// The ID of the problem.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=38, Max=38)]
         public string Id
         {
             get { return this._id; }
@@ -140,6 +141,7 @@ namespace Amazon.ApplicationInsights.Model
         /// The name of the resource group affected by the problem.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ResourceGroupName
         {
             get { return this._resourceGroupName; }

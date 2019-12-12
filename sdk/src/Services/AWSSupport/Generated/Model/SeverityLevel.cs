@@ -28,8 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// A code and name pair that represent a severity level that can be applied to a support
-    /// case.
+    /// A code and name pair that represents the severity level of a support case. The available
+    /// values depend on the support plan for the account. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+    /// a Severity</a>.
     /// </summary>
     public partial class SeverityLevel
     {
@@ -39,8 +40,12 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// One of four values: "low," "medium," "high," and "urgent". These values correspond
-        /// to response times returned to the caller in <code>severityLevel.name</code>. 
+        /// The code for case severity level.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code>
+        /// | <code>critical</code> 
         /// </para>
         /// </summary>
         public string Code
@@ -59,6 +64,38 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the severity level that corresponds to the severity level code.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The values returned by the API differ from the values that are displayed in the AWS
+        /// Support Center. For example, for the code "low", the API name is "Low", but the name
+        /// in the Support Center is "General guidance". These are the Support Center code/name
+        /// mappings:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>low</code>: General guidance
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>normal</code>: System impaired
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>high</code>: Production system impaired
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>urgent</code>: Production system down
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>critical</code>: Business-critical system down
+        /// </para>
+        ///  </li> </ul> </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+        /// a Severity</a> 
         /// </para>
         /// </summary>
         public string Name

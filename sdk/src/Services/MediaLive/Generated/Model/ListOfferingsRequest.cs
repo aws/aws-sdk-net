@@ -36,6 +36,7 @@ namespace Amazon.MediaLive.Model
         private string _channelClass;
         private string _channelConfiguration;
         private string _codec;
+        private string _duration;
         private string _maximumBitrate;
         private string _maximumFramerate;
         private int? _maxResults;
@@ -89,6 +90,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetCodec()
         {
             return this._codec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Duration. Filter by offering duration, e.g. '12'
+        /// </summary>
+        public string Duration
+        {
+            get { return this._duration; }
+            set { this._duration = value; }
+        }
+
+        // Check to see if Duration property is set
+        internal bool IsSetDuration()
+        {
+            return this._duration != null;
         }
 
         /// <summary>
@@ -155,7 +171,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Resolution. Filter by resolution, 'SD', 'HD', or 'UHD'
+        /// Gets and sets the property Resolution. Filter by resolution, 'SD', 'HD', 'FHD', or
+        /// 'UHD'
         /// </summary>
         public string Resolution
         {
@@ -171,7 +188,7 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property ResourceType. Filter by resource type, 'INPUT', 'OUTPUT',
-        /// or 'CHANNEL'
+        /// 'MULTIPLEX', or 'CHANNEL'
         /// </summary>
         public string ResourceType
         {

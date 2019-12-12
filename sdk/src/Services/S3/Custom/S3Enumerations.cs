@@ -996,6 +996,11 @@ namespace Amazon.S3
         public static readonly EventType ReducedRedundancyLostObject = new EventType("s3:ReducedRedundancyLostObject");
 
         /// <summary>
+        /// Event for all object restore
+        /// </summary>
+        public static readonly EventType ObjectRestoreAll = new EventType("s3:ObjectRestore:*");
+
+        /// <summary>
         /// Event for restore post operations.
         /// </summary>
         public static readonly EventType ObjectRestorePost = new EventType("s3:ObjectRestore:Post");
@@ -1004,6 +1009,31 @@ namespace Amazon.S3
         /// Event for when object restore is completed.
         /// </summary>
         public static readonly EventType ObjectRestoreCompleted = new EventType("s3:ObjectRestore:Completed");
+
+        /// <summary>
+        /// Event for replication of all
+        /// </summary>
+        public static readonly EventType ReplicationAll = new EventType("s3:Replication:*");
+
+        /// <summary>
+        /// Event for operation failed replication
+        /// </summary>
+        public static readonly EventType ReplicationOperationFailedReplication = new EventType("s3:Replication:OperationFailedReplication");
+
+        /// <summary>
+        /// Evemt for replication operation not tracked
+        /// </summary>
+        public static readonly EventType ReplicationOperationNotTracked = new EventType("s3:Replication:OperationNotTracked");
+
+        /// <summary>
+        /// Event for replication operation missed threshold
+        /// </summary>
+        public static readonly EventType ReplicationOperationMissedThreshold = new EventType("s3:Replication:OperationMissedThreshold");
+
+        /// <summary>
+        /// Event for operation replicated after threshold
+        /// </summary>
+        public static readonly EventType ReplicationOperationReplicatedAfterThreshold = new EventType("s3:Replication:OperationReplicatedAfterThreshold");
 
         /// <summary>
         /// Constructs instance of EventType.
@@ -1269,6 +1299,11 @@ namespace Amazon.S3
         ///  InventoryOptionalField for ObjectLockLegalHoldStatus
         /// </summary>
         public static readonly InventoryOptionalField ObjectLockLegalHoldStatus = new InventoryOptionalField("ObjectLockLegalHoldStatus");
+
+        /// <summary>
+        /// InventoryOptionalField for IntelligentTieringAccessTier
+        /// </summary>
+        public static readonly InventoryOptionalField IntelligentTieringAccessTier = new InventoryOptionalField("IntelligentTieringAccessTier");
 
         /// <summary>
         /// Construct instance of InventoryOptionalField.
@@ -1739,6 +1774,45 @@ namespace Amazon.S3
     }
 
     /// <summary>
+    /// Specifies whether existing object replication is enabled.
+    /// </summary>
+    public sealed class ExistingObjectReplicationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Enable the replication of existing objects
+        /// </summary>
+        public static readonly ExistingObjectReplicationStatus Enabled = new ExistingObjectReplicationStatus("Enabled");
+
+        /// <summary>
+        /// Disable the replication of existing objects
+        /// </summary>
+        public static readonly ExistingObjectReplicationStatus Disabled = new ExistingObjectReplicationStatus("Disabled");
+
+        private ExistingObjectReplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the ExistingObjectReplicationStatus instance for the string value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static ExistingObjectReplicationStatus FindValue(string value)
+        {
+            return FindValue<ExistingObjectReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to ExistingObjectReplicationStatus instance
+        /// </summary>
+        public static implicit operator ExistingObjectReplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Describes when fields in output should be surrounded with quotes.
     /// </summary>
     public sealed class QuoteFields : ConstantClass
@@ -2015,6 +2089,88 @@ namespace Amazon.S3
         /// Converts the string to ObjectLockMode instance
         /// </summary>
         public static implicit operator ObjectLockMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Specifies whether the replication time is enabled.
+    /// </summary>
+    public sealed class ReplicationTimeStatus : ConstantClass
+    {
+        public ReplicationTimeStatus(string value)
+            : base(value)
+        {
+
+        }
+
+        /// <summary>
+        /// Replication time is enabled.
+        /// </summary>
+        public static readonly ReplicationTimeStatus Enabled = new ReplicationTimeStatus("Enabled");
+
+        /// <summary>
+        /// Replication time is disabled.
+        /// </summary>
+        public static readonly ReplicationTimeStatus Disabled = new ReplicationTimeStatus("Disabled");
+
+        /// <summary>
+        /// Finds the ReplicationTimeStatus instance for the string value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static ReplicationTimeStatus FindValue(string value)
+        {
+            return FindValue<ReplicationTimeStatus>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to ReplicationTimeStatus instance
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator ReplicationTimeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Specifies whether the replication metrics are enabled.
+    /// </summary>
+    public sealed class MetricsStatus : ConstantClass
+    {
+        private MetricsStatus(string value)
+            : base(value)
+        {
+
+        }
+
+        /// <summary>
+        /// Replication metrics are enabled.
+        /// </summary>
+        public static readonly MetricsStatus Enabled = new MetricsStatus("Enabled");
+
+        /// <summary>
+        /// Replication metrics are disabled.
+        /// </summary>
+        public static readonly MetricsStatus Disabled = new MetricsStatus("Disabled");
+
+        /// <summary>
+        /// Finds the MetricsStatus instance for the string value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MetricsStatus FindValue(string value)
+        {
+            return FindValue<MetricsStatus>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to MetricsStatus instance
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator MetricsStatus(string value)
         {
             return FindValue(value);
         }

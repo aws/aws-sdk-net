@@ -33,7 +33,7 @@ namespace Amazon.AWSSupport.Model
     /// you can filter the cases by date by setting values for the <code>afterTime</code>
     /// and <code>beforeTime</code> request parameters. You can set values for the <code>includeResolvedCases</code>
     /// and <code>includeCommunications</code> request parameters to control how much information
-    /// is returned. 
+    /// is returned.
     /// 
     ///  
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// One or more <a>CaseDetails</a> data types. 
+    /// One or more <a>CaseDetails</a> data types.
     /// </para>
     ///  </li> <li> 
     /// <para>

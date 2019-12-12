@@ -29,7 +29,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDetector operation.
-    /// Updates an Amazon GuardDuty detector specified by the detectorId.
+    /// Updates the Amazon GuardDuty detector specified by the detectorId.
     /// </summary>
     public partial class UpdateDetectorRequest : AmazonGuardDutyRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector that you want to update.
+        /// The unique ID of the detector to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -59,7 +59,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Enable. 
         /// <para>
-        /// Updated boolean value for the detector that specifies whether the detector is enabled.
+        /// Specifies whether the detector is enabled or not enabled.
         /// </para>
         /// </summary>
         public bool Enable
@@ -77,7 +77,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingPublishingFrequency. 
         /// <para>
-        /// A enum value that specifies how frequently customer got Finding updates published.
+        /// A enum value that specifies how frequently findings are exported, such as to CloudWatch
+        /// Events.
         /// </para>
         /// </summary>
         public FindingPublishingFrequency FindingPublishingFrequency

@@ -35,7 +35,7 @@ namespace Amazon.DAX.Model
     /// 
     ///  
     /// <para>
-    /// By default, only the events occurring within the last hour are returned; however,
+    /// By default, only the events occurring within the last 24 hours are returned; however,
     /// you can retrieve up to 14 days' worth of events if necessary.
     /// </para>
     /// </summary>

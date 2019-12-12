@@ -33,11 +33,30 @@ namespace Amazon.ApiGatewayV2.Model
     /// </summary>
     public partial class Deployment
     {
+        private bool? _autoDeployed;
         private DateTime? _createdDate;
         private string _deploymentId;
         private DeploymentStatus _deploymentStatus;
         private string _deploymentStatusMessage;
         private string _description;
+
+        /// <summary>
+        /// Gets and sets the property AutoDeployed. 
+        /// <para>
+        /// Specifies whether a deployment was automatically released.
+        /// </para>
+        /// </summary>
+        public bool AutoDeployed
+        {
+            get { return this._autoDeployed.GetValueOrDefault(); }
+            set { this._autoDeployed = value; }
+        }
+
+        // Check to see if AutoDeployed property is set
+        internal bool IsSetAutoDeployed()
+        {
+            return this._autoDeployed.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 

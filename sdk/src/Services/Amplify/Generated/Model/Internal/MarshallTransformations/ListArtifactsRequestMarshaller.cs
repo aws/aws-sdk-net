@@ -75,23 +75,6 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/apps/{appId}/branches/{branchName}/jobs/{jobId}/artifacts";
             request.MarshallerVersion = 2;
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArtifactType())
-                {
-                    context.Writer.WritePropertyName("artifactType");
-                    context.Writer.Write(publicRequest.ArtifactType);
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
             request.UseQueryString = true;
 
             return request;

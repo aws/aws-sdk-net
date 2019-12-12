@@ -79,8 +79,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The user friendly name to identify the IPSet. This name is displayed in all findings
-        /// that are triggered by activity that involves IP addresses included in this IPSet.
+        /// The user friendly name for the IPSet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

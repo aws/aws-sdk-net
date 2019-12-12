@@ -117,6 +117,22 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetReplicaUpdates())
+                {
+                    context.Writer.WritePropertyName("ReplicaUpdates");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestReplicaUpdatesListValue in publicRequest.ReplicaUpdates)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ReplicationGroupUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequestReplicaUpdatesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetSSESpecification())
                 {
                     context.Writer.WritePropertyName("SSESpecification");

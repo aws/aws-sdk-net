@@ -32,6 +32,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class ComputeResource
     {
+        private CRAllocationStrategy _allocationStrategy;
         private int? _bidPercentage;
         private int? _desiredvCpus;
         private string _ec2KeyPair;
@@ -49,14 +50,43 @@ namespace Amazon.Batch.Model
         private CRType _type;
 
         /// <summary>
+        /// Gets and sets the property AllocationStrategy. 
+        /// <para>
+        /// The allocation strategy to use for the compute resource in case not enough instances
+        /// of the best fitting instance type can be allocated. This could be due to availability
+        /// of the instance type in the region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+        /// EC2 service limits</a>. If this is not specified, the default is <code>BEST_FIT</code>,
+        /// which will use only the best fitting instance type, waiting for additional capacity
+        /// if it's not available. This allocation strategy keeps costs lower but can limit scaling.
+        /// <code>BEST_FIT_PROGRESSIVE</code> will select an additional instance type that is
+        /// large enough to meet the requirements of the jobs in the queue, with a preference
+        /// for an instance type with a lower cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only
+        /// available for Spot Instance compute resources and will select an additional instance
+        /// type that is large enough to meet the requirements of the jobs in the queue, with
+        /// a preference for an instance type that is less likely to be interrupted.
+        /// </para>
+        /// </summary>
+        public CRAllocationStrategy AllocationStrategy
+        {
+            get { return this._allocationStrategy; }
+            set { this._allocationStrategy = value; }
+        }
+
+        // Check to see if AllocationStrategy property is set
+        internal bool IsSetAllocationStrategy()
+        {
+            return this._allocationStrategy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BidPercentage. 
         /// <para>
         /// The maximum percentage that a Spot Instance price can be when compared with the On-Demand
         /// price for that instance type before instances are launched. For example, if your maximum
         /// percentage is 20%, then the Spot price must be below 20% of the current On-Demand
-        /// price for that EC2 instance. You always pay the lowest (market) price and never more
-        /// than your maximum percentage. If you leave this field empty, the default value is
-        /// 100% of the On-Demand price.
+        /// price for that Amazon EC2 instance. You always pay the lowest (market) price and never
+        /// more than your maximum percentage. If you leave this field empty, the default value
+        /// is 100% of the On-Demand price.
         /// </para>
         /// </summary>
         public int BidPercentage
@@ -74,7 +104,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property DesiredvCpus. 
         /// <para>
-        /// The desired number of EC2 vCPUS in the compute environment. 
+        /// The desired number of Amazon EC2 vCPUS in the compute environment.
         /// </para>
         /// </summary>
         public int DesiredvCpus
@@ -92,7 +122,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Ec2KeyPair. 
         /// <para>
-        /// The EC2 key pair that is used for instances launched in the compute environment.
+        /// The Amazon EC2 key pair that is used for instances launched in the compute environment.
         /// </para>
         /// </summary>
         public string Ec2KeyPair
@@ -152,8 +182,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property InstanceTypes. 
         /// <para>
         /// The instances types that may be launched. You can specify instance families to launch
-        /// any instance type within those families (for example, <code>c4</code> or <code>p3</code>),
-        /// or you can specify specific sizes within a family (such as <code>c4.8xlarge</code>).
+        /// any instance type within those families (for example, <code>c5</code> or <code>p3</code>),
+        /// or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>).
         /// You can also choose <code>optimal</code> to pick instance types (from the C, M, and
         /// R instance families) on the fly that match the demand of your job queues.
         /// </para>
@@ -197,7 +227,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property MaxvCpus. 
         /// <para>
-        /// The maximum number of EC2 vCPUs that an environment can reach. 
+        /// The maximum number of Amazon EC2 vCPUs that an environment can reach.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -216,8 +246,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property MinvCpus. 
         /// <para>
-        /// The minimum number of EC2 vCPUs that an environment should maintain (even if the compute
-        /// environment is <code>DISABLED</code>). 
+        /// The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if
+        /// the compute environment is <code>DISABLED</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -259,8 +289,11 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The EC2 security group that is associated with instances launched in the compute environment.
-        /// 
+        /// The Amazon EC2 security groups associated with instances launched in the compute environment.
+        /// One or more security groups must be specified, either in <code>securityGroupIds</code>
+        /// or using a launch template referenced in <code>launchTemplate</code>. If security
+        /// groups are specified using both <code>securityGroupIds</code> and <code>launchTemplate</code>,
+        /// the values in <code>securityGroupIds</code> will be used.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -340,7 +373,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of compute environment: EC2 or SPOT.
+        /// The type of compute environment: <code>EC2</code> or <code>SPOT</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

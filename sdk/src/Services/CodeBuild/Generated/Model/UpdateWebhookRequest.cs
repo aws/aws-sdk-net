@@ -74,7 +74,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property FilterGroups. 
         /// <para>
         ///  An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook
-        /// event can trigger a build. A filter group must pcontain at least one <code>EVENT</code>
+        /// event can trigger a build. A filter group must contain at least one <code>EVENT</code>
         /// <code>WebhookFilter</code>. 
         /// </para>
         /// </summary>

@@ -80,9 +80,28 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that run the training
-        /// job. The <code>VolumeKmsKeyId</code> can be any of the following formats:
+        /// The AWS KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached
+        /// to the ML compute instance(s) that run the training job.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Certain Nitro-based instances include local storage, dependent on the instance type.
+        /// Local storage volumes are encrypted using a hardware module on the instance. You can't
+        /// request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+        /// Store Volumes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
+        /// Instance Store Volumes</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The <code>VolumeKmsKeyId</code> can be in any of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -136,6 +155,19 @@ namespace Amazon.SageMaker.Model
         /// <para>
         ///  Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
         /// 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Certain Nitro-based instances include local storage with a fixed total size, dependent
+        /// on the instance type. When using these instances for training, Amazon SageMaker mounts
+        /// the local instance storage instead of Amazon EBS gp2 storage. You can't request a
+        /// <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of instance types that support local instance storage, including the total
+        /// size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+        /// Store Volumes</a>.
         /// </para>
         ///  </note>
         /// </summary>

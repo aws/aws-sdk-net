@@ -106,6 +106,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.Framework = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pullRequestEnvironmentName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PullRequestEnvironmentName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("stage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

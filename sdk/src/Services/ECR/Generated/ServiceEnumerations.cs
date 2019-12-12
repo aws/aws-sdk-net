@@ -25,6 +25,72 @@ namespace Amazon.ECR
 {
 
     /// <summary>
+    /// Constants used for properties of type FindingSeverity.
+    /// </summary>
+    public class FindingSeverity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRITICAL for FindingSeverity
+        /// </summary>
+        public static readonly FindingSeverity CRITICAL = new FindingSeverity("CRITICAL");
+        /// <summary>
+        /// Constant HIGH for FindingSeverity
+        /// </summary>
+        public static readonly FindingSeverity HIGH = new FindingSeverity("HIGH");
+        /// <summary>
+        /// Constant INFORMATIONAL for FindingSeverity
+        /// </summary>
+        public static readonly FindingSeverity INFORMATIONAL = new FindingSeverity("INFORMATIONAL");
+        /// <summary>
+        /// Constant LOW for FindingSeverity
+        /// </summary>
+        public static readonly FindingSeverity LOW = new FindingSeverity("LOW");
+        /// <summary>
+        /// Constant MEDIUM for FindingSeverity
+        /// </summary>
+        public static readonly FindingSeverity MEDIUM = new FindingSeverity("MEDIUM");
+        /// <summary>
+        /// Constant UNDEFINED for FindingSeverity
+        /// </summary>
+        public static readonly FindingSeverity UNDEFINED = new FindingSeverity("UNDEFINED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FindingSeverity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingSeverity FindValue(string value)
+        {
+            return FindValue<FindingSeverity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingSeverity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImageActionType.
     /// </summary>
     public class ImageActionType : ConstantClass
@@ -334,6 +400,60 @@ namespace Amazon.ECR
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LifecyclePolicyPreviewStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScanStatus.
+    /// </summary>
+    public class ScanStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for ScanStatus
+        /// </summary>
+        public static readonly ScanStatus COMPLETE = new ScanStatus("COMPLETE");
+        /// <summary>
+        /// Constant FAILED for ScanStatus
+        /// </summary>
+        public static readonly ScanStatus FAILED = new ScanStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ScanStatus
+        /// </summary>
+        public static readonly ScanStatus IN_PROGRESS = new ScanStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScanStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScanStatus FindValue(string value)
+        {
+            return FindValue<ScanStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScanStatus(string value)
         {
             return FindValue(value);
         }

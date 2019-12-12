@@ -68,6 +68,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCategory())
+                {
+                    context.Writer.WritePropertyName("Category");
+                    context.Writer.Write(publicRequest.Category);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");
@@ -129,6 +135,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetSeverity())
+                {
+                    context.Writer.WritePropertyName("Severity");
+                    context.Writer.Write(publicRequest.Severity);
                 }
 
                 if(publicRequest.IsSetSource())

@@ -63,6 +63,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The ARN of the backup. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string BackupArn
         {
             get { return this._backupArn; }
@@ -140,6 +141,7 @@ namespace Amazon.OpsWorksCM.Model
         /// backups. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string Description
         {
             get { return this._description; }
@@ -158,6 +160,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  The engine type that is obtained from the server when the backup is created. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string Engine
         {
             get { return this._engine; }
@@ -176,6 +179,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  The engine model that is obtained from the server when the backup is created. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string EngineModel
         {
             get { return this._engineModel; }
@@ -194,6 +198,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  The engine version that is obtained from the server when the backup is created. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string EngineVersion
         {
             get { return this._engineVersion; }
@@ -214,6 +219,7 @@ namespace Amazon.OpsWorksCM.Model
         /// again if you restore a backup. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string InstanceProfileArn
         {
             get { return this._instanceProfileArn; }
@@ -232,6 +238,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  The instance type that is obtained from the server when the backup is created. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -250,6 +257,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  The key pair that is obtained from the server when the backup is created. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string KeyPair
         {
             get { return this._keyPair; }
@@ -269,6 +277,7 @@ namespace Amazon.OpsWorksCM.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string PreferredBackupWindow
         {
             get { return this._preferredBackupWindow; }
@@ -288,6 +297,7 @@ namespace Amazon.OpsWorksCM.Model
         /// is created. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string PreferredMaintenanceWindow
         {
             get { return this._preferredMaintenanceWindow; }
@@ -326,6 +336,7 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated and is no longer used")]
+        [AWSProperty(Max=10000)]
         public string S3DataUrl
         {
             get { return this._s3DataUrl; }
@@ -344,6 +355,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  The Amazon S3 URL of the backup's log file. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string S3LogUrl
         {
             get { return this._s3LogUrl; }
@@ -401,6 +413,7 @@ namespace Amazon.OpsWorksCM.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string ServiceRoleArn
         {
             get { return this._serviceRoleArn; }
@@ -437,6 +450,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  An informational message about backup status. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string StatusDescription
         {
             get { return this._statusDescription; }
@@ -474,6 +488,7 @@ namespace Amazon.OpsWorksCM.Model
         /// the backup is created. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string ToolsVersion
         {
             get { return this._toolsVersion; }
@@ -493,6 +508,7 @@ namespace Amazon.OpsWorksCM.Model
         /// backups. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string UserArn
         {
             get { return this._userArn; }

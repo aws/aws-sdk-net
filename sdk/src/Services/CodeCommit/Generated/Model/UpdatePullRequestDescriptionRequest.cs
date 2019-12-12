@@ -39,7 +39,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The updated content of the description for the pull request. This content will replace
+        /// The updated content of the description for the pull request. This content replaces
         /// the existing description.
         /// </para>
         /// </summary>

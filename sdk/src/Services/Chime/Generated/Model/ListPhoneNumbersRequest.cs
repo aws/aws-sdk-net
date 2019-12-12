@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the ListPhoneNumbers operation.
     /// Lists the phone numbers for the specified Amazon Chime account, Amazon Chime user,
-    /// or Amazon Chime Voice Connector.
+    /// Amazon Chime Voice Connector, or Amazon Chime Voice Connector group.
     /// </summary>
     public partial class ListPhoneNumbersRequest : AmazonChimeRequest
     {

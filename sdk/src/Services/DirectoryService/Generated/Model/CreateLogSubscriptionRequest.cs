@@ -29,8 +29,8 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLogSubscription operation.
-    /// Creates a subscription to forward real time Directory Service domain controller security
-    /// logs to the specified CloudWatch log group in your AWS account.
+    /// Creates a subscription to forward real-time Directory Service domain controller security
+    /// logs to the specified Amazon CloudWatch log group in your AWS account.
     /// </summary>
     public partial class CreateLogSubscriptionRequest : AmazonDirectoryServiceRequest
     {
@@ -40,8 +40,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// Identifier (ID) of the directory to which you want to subscribe and receive real-time
-        /// logs to your specified CloudWatch log group.
+        /// Identifier of the directory to which you want to subscribe and receive real-time logs
+        /// to your specified CloudWatch log group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

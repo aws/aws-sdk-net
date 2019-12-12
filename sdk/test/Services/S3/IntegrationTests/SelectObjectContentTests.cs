@@ -140,7 +140,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 OutputSerialization = new OutputSerialization()
                 {
                     JSON = new JSONOutput()
-                }
+                },
+                ScanRange = new ScanRange()
+                {
+                    End = 0,
+                    Start = 1
+                },
             }).Payload;
         }
 

@@ -44,6 +44,7 @@ namespace Amazon.RDS.Model
         private string _endpointType;
         private List<string> _excludedMembers = new List<string>();
         private List<string> _staticMembers = new List<string>();
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property DBClusterEndpointIdentifier. 
@@ -140,6 +141,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetStaticMembers()
         {
             return this._staticMembers != null && this._staticMembers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to be assigned to the Amazon RDS resource.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

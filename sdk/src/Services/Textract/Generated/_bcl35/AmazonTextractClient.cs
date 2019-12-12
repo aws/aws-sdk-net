@@ -248,34 +248,39 @@ namespace Amazon.Textract
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Words and lines that are related to nearby lines and words. The related information
-        /// is returned in two <a>Block</a> objects each of type <code>KEY_VALUE_SET</code>: a
-        /// KEY Block object and a VALUE Block object. For example, <i>Name: Ana Silva Carolina</i>
+        /// Form data (key-value pairs). The related information is returned in two <a>Block</a>
+        /// objects, each of type <code>KEY_VALUE_SET</code>: a KEY <code>Block</code> object
+        /// and a VALUE <code>Block</code> object. For example, <i>Name: Ana Silva Carolina</i>
         /// contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the
         /// value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Table and table cell data. A TABLE Block object contains information about a detected
-        /// table. A CELL Block object is returned for each cell in a table.
+        /// Table and table cell data. A TABLE <code>Block</code> object contains information
+        /// about a detected table. A CELL <code>Block</code> object is returned for each cell
+        /// in a table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Selectable elements such as checkboxes and radio buttons. A SELECTION_ELEMENT Block
-        /// object contains information about a selectable element.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Lines and words of text. A LINE Block object contains one or more WORD Block objects.
+        /// Lines and words of text. A LINE <code>Block</code> object contains one or more WORD
+        /// <code>Block</code> objects. All lines and words that are detected in the document
+        /// are returned (including text that doesn't have a relationship with the value of <code>FeatureTypes</code>).
+        /// 
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// Selection elements such as check boxes and option buttons (radio buttons) can be detected
+        /// in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object contains
+        /// information about a selection element, including the selection status.
+        /// </para>
+        ///  
         /// <para>
         /// You can choose which type of analysis to perform by specifying the <code>FeatureTypes</code>
         /// list. 
         /// </para>
         ///  
         /// <para>
-        /// The output is returned in a list of <code>BLOCK</code> objects.
+        /// The output is returned in a list of <code>Block</code> objects.
         /// </para>
         ///  
         /// <para>
@@ -300,7 +305,11 @@ namespace Amazon.Textract
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
         /// for synchronous operations 5 MB. The maximum document size for asynchronous operations
-        /// is 500 MB for PDF format files.
+        /// is 500 MB for PDF files.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.HumanLoopQuotaExceededException">
+        /// Indicates you have exceeded the maximum number of active human in the loop workflows
+        /// available
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
         /// Amazon Textract experienced a service issue. Try your call again.
@@ -322,8 +331,9 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Amazon Textract supports documents
-        /// that are .png or .jpg format.
+        /// The format of the input document isn't supported. Documents for synchronous operations
+        /// can be in PNG or JPEG format. Documents for asynchronous operations can also be in
+        /// PDF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeDocument">REST API Reference for AnalyzeDocument Operation</seealso>
         public virtual AnalyzeDocumentResponse AnalyzeDocument(AnalyzeDocumentRequest request)
@@ -375,9 +385,9 @@ namespace Amazon.Textract
 
         /// <summary>
         /// Detects text in the input document. Amazon Textract can detect lines of text and the
-        /// words that make up a line of text. The input document must be an image in JPG or PNG
-        /// format. <code>DetectDocumentText</code> returns the detected text in an array of <a>Block</a>
-        /// objects. 
+        /// words that make up a line of text. The input document must be an image in JPEG or
+        /// PNG format. <code>DetectDocumentText</code> returns the detected text in an array
+        /// of <a>Block</a> objects. 
         /// 
         ///  
         /// <para>
@@ -410,7 +420,7 @@ namespace Amazon.Textract
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
         /// for synchronous operations 5 MB. The maximum document size for asynchronous operations
-        /// is 500 MB for PDF format files.
+        /// is 500 MB for PDF files.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
         /// Amazon Textract experienced a service issue. Try your call again.
@@ -432,8 +442,9 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Amazon Textract supports documents
-        /// that are .png or .jpg format.
+        /// The format of the input document isn't supported. Documents for synchronous operations
+        /// can be in PNG or JPEG format. Documents for asynchronous operations can also be in
+        /// PDF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DetectDocumentText">REST API Reference for DetectDocumentText Operation</seealso>
         public virtual DetectDocumentTextResponse DetectDocumentText(DetectDocumentTextRequest request)
@@ -504,29 +515,34 @@ namespace Amazon.Textract
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Words and lines that are related to nearby lines and words. The related information
-        /// is returned in two <a>Block</a> objects each of type <code>KEY_VALUE_SET</code>: a
-        /// KEY Block object and a VALUE Block object. For example, <i>Name: Ana Silva Carolina</i>
+        /// Form data (key-value pairs). The related information is returned in two <a>Block</a>
+        /// objects, each of type <code>KEY_VALUE_SET</code>: a KEY <code>Block</code> object
+        /// and a VALUE <code>Block</code> object. For example, <i>Name: Ana Silva Carolina</i>
         /// contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the
         /// value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Table and table cell data. A TABLE Block object contains information about a detected
-        /// table. A CELL Block object is returned for each cell in a table.
+        /// Table and table cell data. A TABLE <code>Block</code> object contains information
+        /// about a detected table. A CELL <code>Block</code> object is returned for each cell
+        /// in a table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Selectable elements such as checkboxes and radio buttons. A SELECTION_ELEMENT Block
-        /// object contains information about a selectable element.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Lines and words of text. A LINE Block object contains one or more WORD Block objects.
+        /// Lines and words of text. A LINE <code>Block</code> object contains one or more WORD
+        /// <code>Block</code> objects. All lines and words that are detected in the document
+        /// are returned (including text that doesn't have a relationship with the value of the
+        /// <code>StartDocumentAnalysis</code> <code>FeatureTypes</code> input parameter). 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Use the <code>MaxResults</code> parameter to limit the number of blocks returned.
+        /// Selection elements such as check boxes and option buttons (radio buttons) can be detected
+        /// in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object contains
+        /// information about a selection element, including the selection status.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <code>MaxResults</code> parameter to limit the number of blocks that are returned.
         /// If there are more results than specified in <code>MaxResults</code>, the value of
         /// <code>NextToken</code> in the operation response contains a pagination token for getting
         /// the next set of results. To get the next page of results, call <code>GetDocumentAnalysis</code>,
@@ -728,12 +744,12 @@ namespace Amazon.Textract
         #region  StartDocumentAnalysis
 
         /// <summary>
-        /// Starts asynchronous analysis of an input document for relationships between detected
-        /// items such as key and value pairs, tables, and selection elements.
+        /// Starts the asynchronous analysis of an input document for relationships between detected
+        /// items such as key-value pairs, tables, and selection elements.
         /// 
         ///  
         /// <para>
-        ///  <code>StartDocumentAnalysis</code> can analyze text in documents that are in JPG,
+        ///  <code>StartDocumentAnalysis</code> can analyze text in documents that are in JPEG,
         /// PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
         /// to specify the bucket name and file name of the document. 
         /// </para>
@@ -765,7 +781,7 @@ namespace Amazon.Textract
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
         /// for synchronous operations 5 MB. The maximum document size for asynchronous operations
-        /// is 500 MB for PDF format files.
+        /// is 500 MB for PDF files.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.IdempotentParameterMismatchException">
         /// A <code>ClientRequestToken</code> input parameter was reused with an operation, but
@@ -798,8 +814,9 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Amazon Textract supports documents
-        /// that are .png or .jpg format.
+        /// The format of the input document isn't supported. Documents for synchronous operations
+        /// can be in PNG or JPEG format. Documents for asynchronous operations can also be in
+        /// PDF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentAnalysis">REST API Reference for StartDocumentAnalysis Operation</seealso>
         public virtual StartDocumentAnalysisResponse StartDocumentAnalysis(StartDocumentAnalysisRequest request)
@@ -856,7 +873,7 @@ namespace Amazon.Textract
         ///  
         /// <para>
         ///  <code>StartDocumentTextDetection</code> can analyze text in documents that are in
-        /// JPG, PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
+        /// JPEG, PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
         /// to specify the bucket name and file name of the document. 
         /// </para>
         ///  
@@ -887,7 +904,7 @@ namespace Amazon.Textract
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
         /// for synchronous operations 5 MB. The maximum document size for asynchronous operations
-        /// is 500 MB for PDF format files.
+        /// is 500 MB for PDF files.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.IdempotentParameterMismatchException">
         /// A <code>ClientRequestToken</code> input parameter was reused with an operation, but
@@ -920,8 +937,9 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Amazon Textract supports documents
-        /// that are .png or .jpg format.
+        /// The format of the input document isn't supported. Documents for synchronous operations
+        /// can be in PNG or JPEG format. Documents for asynchronous operations can also be in
+        /// PDF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentTextDetection">REST API Reference for StartDocumentTextDetection Operation</seealso>
         public virtual StartDocumentTextDetectionResponse StartDocumentTextDetection(StartDocumentTextDetectionRequest request)

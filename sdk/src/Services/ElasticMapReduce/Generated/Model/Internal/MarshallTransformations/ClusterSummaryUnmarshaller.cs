@@ -64,6 +64,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ClusterArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.NormalizedInstanceHours = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OutpostArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

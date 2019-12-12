@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Creates crash-consistent snapshots of multiple EBS volumes and stores the data in
     /// S3. Volumes are chosen by specifying an instance. Any attached volumes will produce
     /// one snapshot each that is crash-consistent across the instance. Boot volumes can be
-    /// excluded by changing the paramaters.
+    /// excluded by changing the parameters.
     /// </summary>
     public partial class CreateSnapshotsRequest : AmazonEC2Request
     {

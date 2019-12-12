@@ -39,7 +39,7 @@ namespace Amazon.ApplicationInsights.Model
         private string _componentName;
         private bool? _monitor;
         private string _resourceGroupName;
-        private string _tier;
+        private Tier _tier;
 
         /// <summary>
         /// Gets and sets the property ComponentConfiguration. 
@@ -47,9 +47,12 @@ namespace Amazon.ApplicationInsights.Model
         /// The configuration settings of the component. The value is the escaped JSON of the
         /// configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working
         /// with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code>
-        /// to see the recommended configuration for a component.
+        /// to see the recommended configuration for a component. For the complete format of the
+        /// component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+        /// Configuration</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public string ComponentConfiguration
         {
             get { return this._componentConfiguration; }
@@ -105,7 +108,7 @@ namespace Amazon.ApplicationInsights.Model
         /// The name of the resource group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ResourceGroupName
         {
             get { return this._resourceGroupName; }
@@ -122,10 +125,12 @@ namespace Amazon.ApplicationInsights.Model
         /// Gets and sets the property Tier. 
         /// <para>
         /// The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-        /// <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+        /// <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and
+        /// <code>DEFAULT</code>.
         /// </para>
         /// </summary>
-        public string Tier
+        [AWSProperty(Min=1, Max=50)]
+        public Tier Tier
         {
             get { return this._tier; }
             set { this._tier = value; }

@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model
     ///  
     /// <para>
     /// In addition to listing the properties provided by the user in the <code>CreateForecastExportJob</code>
-    /// request, this operation includes the following properties:
+    /// request, this operation lists the following properties:
     /// </para>
     ///  <ul> <li> 
     /// <para>

@@ -29,11 +29,9 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetParametersByPath operation.
-    /// Retrieve parameters in a specific hierarchy. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-    /// with Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// Retrieve information about one or more parameters in a specific hierarchy. 
     /// 
-    /// 
-    ///  
+    ///  <note> 
     /// <para>
     /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
     /// in the request, the response includes information up to the limit specified. The number
@@ -42,10 +40,6 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// operation and returns the matching values up to that point and a <code>NextToken</code>.
     /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
     /// of results.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// This API action doesn't support filtering by tags. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -101,11 +95,6 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Filters to limit the request results.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can't filter using the parameter name.
-        /// </para>
-        ///  </note>
         /// </summary>
         public List<ParameterStringFilter> ParameterFilters
         {

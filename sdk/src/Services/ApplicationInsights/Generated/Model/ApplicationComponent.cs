@@ -36,7 +36,7 @@ namespace Amazon.ApplicationInsights.Model
         private string _componentName;
         private bool? _monitor;
         private string _resourceType;
-        private string _tier;
+        private Tier _tier;
 
         /// <summary>
         /// Gets and sets the property ComponentName. 
@@ -99,7 +99,8 @@ namespace Amazon.ApplicationInsights.Model
         /// The stack tier of the application component.
         /// </para>
         /// </summary>
-        public string Tier
+        [AWSProperty(Min=1, Max=50)]
+        public Tier Tier
         {
             get { return this._tier; }
             set { this._tier = value; }

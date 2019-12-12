@@ -118,7 +118,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType. Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+        /// Gets and sets the property ResourceType. Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX',
+        /// or 'CHANNEL'
         /// </summary>
         public ReservationResourceType ResourceType
         {

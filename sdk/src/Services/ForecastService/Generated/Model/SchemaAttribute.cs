@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// An attribute of a schema, which defines a field of a dataset. A schema attribute is
-    /// required for every field in a dataset. The <a>Schema</a> object contains an array
-    /// of <code>SchemaAttribute</code> objects.
+    /// An attribute of a schema, which defines a dataset field. A schema attribute is required
+    /// for every field in a dataset. The <a>Schema</a> object contains an array of <code>SchemaAttribute</code>
+    /// objects.
     /// </summary>
     public partial class SchemaAttribute
     {

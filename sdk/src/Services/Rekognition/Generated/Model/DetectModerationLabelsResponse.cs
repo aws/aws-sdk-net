@@ -32,8 +32,27 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DetectModerationLabelsResponse : AmazonWebServiceResponse
     {
+        private HumanLoopActivationOutput _humanLoopActivationOutput;
         private List<ModerationLabel> _moderationLabels = new List<ModerationLabel>();
         private string _moderationModelVersion;
+
+        /// <summary>
+        /// Gets and sets the property HumanLoopActivationOutput. 
+        /// <para>
+        /// Shows the results of the human in the loop evaluation.
+        /// </para>
+        /// </summary>
+        public HumanLoopActivationOutput HumanLoopActivationOutput
+        {
+            get { return this._humanLoopActivationOutput; }
+            set { this._humanLoopActivationOutput = value; }
+        }
+
+        // Check to see if HumanLoopActivationOutput property is set
+        internal bool IsSetHumanLoopActivationOutput()
+        {
+            return this._humanLoopActivationOutput != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ModerationLabels. 

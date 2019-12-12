@@ -726,6 +726,109 @@ namespace Amazon.KinesisAnalyticsV2
 
         #endregion
         
+        #region  AddApplicationVpcConfiguration
+
+
+        /// <summary>
+        /// Adds a Virtual Private Cloud (VPC) configuration to the application. Applications
+        /// can use VPCs to store and access resources securely.
+        /// 
+        ///  
+        /// <para>
+        /// Note the following about VPC configurations for Kinesis Data Analytics applications:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC configurations are not supported for SQL applications.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When a VPC is added to a Kinesis Data Analytics application, the application can no
+        /// longer be accessed from the Internet directly. To enable Internet access to the application,
+        /// add an Internet gateway to your VPC.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddApplicationVpcConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the AddApplicationVpcConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationVpcConfiguration">REST API Reference for AddApplicationVpcConfiguration Operation</seealso>
+        public virtual AddApplicationVpcConfigurationResponse AddApplicationVpcConfiguration(AddApplicationVpcConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddApplicationVpcConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddApplicationVpcConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<AddApplicationVpcConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds a Virtual Private Cloud (VPC) configuration to the application. Applications
+        /// can use VPCs to store and access resources securely.
+        /// 
+        ///  
+        /// <para>
+        /// Note the following about VPC configurations for Kinesis Data Analytics applications:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC configurations are not supported for SQL applications.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When a VPC is added to a Kinesis Data Analytics application, the application can no
+        /// longer be accessed from the Internet directly. To enable Internet access to the application,
+        /// add an Internet gateway to your VPC.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddApplicationVpcConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddApplicationVpcConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationVpcConfiguration">REST API Reference for AddApplicationVpcConfiguration Operation</seealso>
+        public virtual Task<AddApplicationVpcConfigurationResponse> AddApplicationVpcConfigurationAsync(AddApplicationVpcConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddApplicationVpcConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddApplicationVpcConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AddApplicationVpcConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateApplication
 
 
@@ -1384,6 +1487,75 @@ namespace Amazon.KinesisAnalyticsV2
 
         #endregion
         
+        #region  DeleteApplicationVpcConfiguration
+
+
+        /// <summary>
+        /// Removes a VPC configuration from a Kinesis Data Analytics application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationVpcConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplicationVpcConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationVpcConfiguration">REST API Reference for DeleteApplicationVpcConfiguration Operation</seealso>
+        public virtual DeleteApplicationVpcConfigurationResponse DeleteApplicationVpcConfiguration(DeleteApplicationVpcConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationVpcConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationVpcConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApplicationVpcConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes a VPC configuration from a Kinesis Data Analytics application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationVpcConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteApplicationVpcConfiguration service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationVpcConfiguration">REST API Reference for DeleteApplicationVpcConfiguration Operation</seealso>
+        public virtual Task<DeleteApplicationVpcConfigurationResponse> DeleteApplicationVpcConfigurationAsync(DeleteApplicationVpcConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationVpcConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationVpcConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteApplicationVpcConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeApplication
 
 
@@ -1737,7 +1909,9 @@ namespace Amazon.KinesisAnalyticsV2
 
 
         /// <summary>
-        /// Retrieves the list of key-value tags assigned to the application.
+        /// Retrieves the list of key-value tags assigned to the application. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+        /// Tagging</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1765,7 +1939,9 @@ namespace Amazon.KinesisAnalyticsV2
 
 
         /// <summary>
-        /// Retrieves the list of key-value tags assigned to the application.
+        /// Retrieves the list of key-value tags assigned to the application. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+        /// Tagging</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1950,7 +2126,8 @@ namespace Amazon.KinesisAnalyticsV2
         /// <summary>
         /// Adds one or more key-value tags to a Kinesis Analytics application. Note that the
         /// maximum number of application tags includes system tags. The maximum number of user-defined
-        /// application tags is 50.
+        /// application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+        /// Tagging</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1988,7 +2165,8 @@ namespace Amazon.KinesisAnalyticsV2
         /// <summary>
         /// Adds one or more key-value tags to a Kinesis Analytics application. Note that the
         /// maximum number of application tags includes system tags. The maximum number of user-defined
-        /// application tags is 50.
+        /// application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+        /// Tagging</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2031,7 +2209,9 @@ namespace Amazon.KinesisAnalyticsV2
 
 
         /// <summary>
-        /// Removes one or more tags from a Kinesis Analytics application.
+        /// Removes one or more tags from a Kinesis Analytics application. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+        /// Tagging</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -2067,7 +2247,9 @@ namespace Amazon.KinesisAnalyticsV2
 
 
         /// <summary>
-        /// Removes one or more tags from a Kinesis Analytics application.
+        /// Removes one or more tags from a Kinesis Analytics application. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+        /// Tagging</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

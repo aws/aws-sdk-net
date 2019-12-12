@@ -29,13 +29,14 @@ namespace Amazon.ForecastService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteForecast operation.
-    /// Deletes a forecast created using the <a>CreateForecast</a> operation. To be deleted,
-    /// the forecast must have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
-    /// Use the <a>DescribeForecast</a> operation to get the status.
+    /// Deletes a forecast created using the <a>CreateForecast</a> operation. You can delete
+    /// only forecasts that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
+    /// To get the status, use the <a>DescribeForecast</a> operation.
     /// 
     ///  
     /// <para>
-    /// You can't delete a forecast while it is being exported.
+    /// You can't delete a forecast while it is being exported. After a forecast is deleted,
+    /// you can no longer query the forecast.
     /// </para>
     /// </summary>
     public partial class DeleteForecastRequest : AmazonForecastServiceRequest

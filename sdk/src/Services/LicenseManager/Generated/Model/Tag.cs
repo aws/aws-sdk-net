@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Tag for a resource in a key-value format.
+    /// Details about a tag for a license configuration.
     /// </summary>
     public partial class Tag
     {
@@ -38,7 +38,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Key for the resource tag.
+        /// Tag key.
         /// </para>
         /// </summary>
         public string Key
@@ -56,7 +56,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Value for the resource tag.
+        /// Tag value.
         /// </para>
         /// </summary>
         public string Value

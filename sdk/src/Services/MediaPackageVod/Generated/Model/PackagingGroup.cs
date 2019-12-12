@@ -33,6 +33,7 @@ namespace Amazon.MediaPackageVod.Model
     public partial class PackagingGroup
     {
         private string _arn;
+        private string _domainName;
         private string _id;
 
         /// <summary>
@@ -48,6 +49,22 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainName. The fully qualified domain name for Assets
+        /// in the PackagingGroup.
+        /// </summary>
+        public string DomainName
+        {
+            get { return this._domainName; }
+            set { this._domainName = value; }
+        }
+
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
+        {
+            return this._domainName != null;
         }
 
         /// <summary>

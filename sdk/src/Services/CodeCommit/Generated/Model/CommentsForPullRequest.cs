@@ -62,7 +62,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AfterCommitId. 
         /// <para>
-        /// he full commit ID of the commit that was the tip of the source branch at the time
+        /// The full commit ID of the commit that was the tip of the source branch at the time
         /// the comment was made. 
         /// </para>
         /// </summary>
@@ -100,8 +100,8 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property BeforeCommitId. 
         /// <para>
         /// The full commit ID of the commit that was the tip of the destination branch when the
-        /// pull request was created. This commit will be superceded by the after commit in the
-        /// source branch when and if you merge the source branch into the destination branch.
+        /// pull request was created. This commit is superceded by the after commit in the source
+        /// branch when and if you merge the source branch into the destination branch.
         /// </para>
         /// </summary>
         public string BeforeCommitId
@@ -139,8 +139,8 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// Location information about the comment on the pull request, including the file name,
-        /// line number, and whether the version of the file where the comment was made is 'BEFORE'
-        /// (destination branch) or 'AFTER' (source branch).
+        /// line number, and whether the version of the file where the comment was made is BEFORE
+        /// (destination branch) or AFTER (source branch).
         /// </para>
         /// </summary>
         public Location Location

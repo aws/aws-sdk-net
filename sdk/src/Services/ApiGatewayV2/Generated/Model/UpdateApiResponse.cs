@@ -35,9 +35,11 @@ namespace Amazon.ApiGatewayV2.Model
         private string _apiEndpoint;
         private string _apiId;
         private string _apiKeySelectionExpression;
+        private Cors _corsConfiguration;
         private DateTime? _createdDate;
         private string _description;
         private bool? _disableSchemaValidation;
+        private List<string> _importInfo = new List<string>();
         private string _name;
         private ProtocolType _protocolType;
         private string _routeSelectionExpression;
@@ -85,7 +87,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ApiKeySelectionExpression. 
         /// <para>
-        /// An API key selection expression. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
+        /// An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
         /// Key Selection Expressions</a>.
         /// </para>
         /// </summary>
@@ -99,6 +101,24 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetApiKeySelectionExpression()
         {
             return this._apiKeySelectionExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CorsConfiguration. 
+        /// <para>
+        /// A CORS configuration. Supported only for HTTP APIs.
+        /// </para>
+        /// </summary>
+        public Cors CorsConfiguration
+        {
+            get { return this._corsConfiguration; }
+            set { this._corsConfiguration = value; }
+        }
+
+        // Check to see if CorsConfiguration property is set
+        internal bool IsSetCorsConfiguration()
+        {
+            return this._corsConfiguration != null;
         }
 
         /// <summary>
@@ -140,7 +160,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property DisableSchemaValidation. 
         /// <para>
-        /// Avoid validating models when creating a deployment.
+        /// Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
         /// </para>
         /// </summary>
         public bool DisableSchemaValidation
@@ -153,6 +173,26 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetDisableSchemaValidation()
         {
             return this._disableSchemaValidation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportInfo. 
+        /// <para>
+        /// The validation information during API import. This may include particular properties
+        /// of your OpenAPI definition which are ignored during import. Supported only for HTTP
+        /// APIs.
+        /// </para>
+        /// </summary>
+        public List<string> ImportInfo
+        {
+            get { return this._importInfo; }
+            set { this._importInfo = value; }
+        }
+
+        // Check to see if ImportInfo property is set
+        internal bool IsSetImportInfo()
+        {
+            return this._importInfo != null && this._importInfo.Count > 0; 
         }
 
         /// <summary>
@@ -176,7 +216,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ProtocolType. 
         /// <para>
-        /// The API protocol: Currently only WEBSOCKET is supported.
+        /// The API protocol.
         /// </para>
         /// </summary>
         public ProtocolType ProtocolType
@@ -194,7 +234,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property RouteSelectionExpression. 
         /// <para>
-        /// The route selection expression for the API.
+        /// The route selection expression for the API. For HTTP APIs, the routeSelectionExpression
+        /// must be ${request.method} ${request.path}. If not provided, this will be the default
+        /// for HTTP APIs. This property is required for WebSocket APIs.
         /// </para>
         /// </summary>
         public string RouteSelectionExpression
@@ -212,9 +254,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag
-        /// key can be up to 128 characters and must not start with aws:. The tag value can be
-        /// up to 256 characters..
+        /// A collection of tags associated with the API.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

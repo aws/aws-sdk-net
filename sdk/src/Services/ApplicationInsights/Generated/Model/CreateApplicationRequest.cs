@@ -36,6 +36,7 @@ namespace Amazon.ApplicationInsights.Model
         private bool? _opsCenterEnabled;
         private string _opsItemSNSTopicArn;
         private string _resourceGroupName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property OpsCenterEnabled. 
@@ -63,6 +64,7 @@ namespace Amazon.ApplicationInsights.Model
         /// opsItem. Allows you to receive notifications for updates to the opsItem. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=300)]
         public string OpsItemSNSTopicArn
         {
             get { return this._opsItemSNSTopicArn; }
@@ -81,7 +83,7 @@ namespace Amazon.ApplicationInsights.Model
         /// The name of the resource group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ResourceGroupName
         {
             get { return this._resourceGroupName; }
@@ -92,6 +94,27 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetResourceGroupName()
         {
             return this._resourceGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// List of tags to add to the application. tag key (<code>Key</code>) and an associated
+        /// tag value (<code>Value</code>). The maximum length of a tag key is 128 characters.
+        /// The maximum length of a tag value is 256 characters.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

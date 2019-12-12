@@ -59,6 +59,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string EndpointType
         {
             get { return this._endpointType; }

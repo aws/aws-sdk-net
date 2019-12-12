@@ -15,6 +15,8 @@
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5.2,)" />
   </Dependencies>
   <Assets>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AccessAnalyzer.CodeAnalysis" Path="|AWSSDK.AccessAnalyzer.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AccessAnalyzer.CodeAnalysis" Path="|AWSSDK.AccessAnalyzer.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ACMPCA.CodeAnalysis" Path="|AWSSDK.ACMPCA.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ACMPCA.CodeAnalysis" Path="|AWSSDK.ACMPCA.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AlexaForBusiness.CodeAnalysis" Path="|AWSSDK.AlexaForBusiness.CodeAnalysis|"/>
@@ -27,6 +29,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ApiGatewayManagementApi.CodeAnalysis" Path="|AWSSDK.ApiGatewayManagementApi.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ApiGatewayV2.CodeAnalysis" Path="|AWSSDK.ApiGatewayV2.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ApiGatewayV2.CodeAnalysis" Path="|AWSSDK.ApiGatewayV2.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AppConfig.CodeAnalysis" Path="|AWSSDK.AppConfig.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AppConfig.CodeAnalysis" Path="|AWSSDK.AppConfig.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ApplicationAutoScaling.CodeAnalysis" Path="|AWSSDK.ApplicationAutoScaling.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ApplicationAutoScaling.CodeAnalysis" Path="|AWSSDK.ApplicationAutoScaling.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ApplicationDiscoveryService.CodeAnalysis" Path="|AWSSDK.ApplicationDiscoveryService.CodeAnalysis|"/>
@@ -41,6 +45,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AppSync.CodeAnalysis" Path="|AWSSDK.AppSync.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Athena.CodeAnalysis" Path="|AWSSDK.Athena.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Athena.CodeAnalysis" Path="|AWSSDK.Athena.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AugmentedAIRuntime.CodeAnalysis" Path="|AWSSDK.AugmentedAIRuntime.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AugmentedAIRuntime.CodeAnalysis" Path="|AWSSDK.AugmentedAIRuntime.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AutoScaling.CodeAnalysis" Path="|AWSSDK.AutoScaling.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AutoScaling.CodeAnalysis" Path="|AWSSDK.AutoScaling.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AutoScalingPlans.CodeAnalysis" Path="|AWSSDK.AutoScalingPlans.CodeAnalysis|"/>
@@ -93,10 +99,16 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CodeCommit.CodeAnalysis" Path="|AWSSDK.CodeCommit.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CodeDeploy.CodeAnalysis" Path="|AWSSDK.CodeDeploy.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CodeDeploy.CodeAnalysis" Path="|AWSSDK.CodeDeploy.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CodeGuruProfiler.CodeAnalysis" Path="|AWSSDK.CodeGuruProfiler.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CodeGuruProfiler.CodeAnalysis" Path="|AWSSDK.CodeGuruProfiler.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CodeGuruReviewer.CodeAnalysis" Path="|AWSSDK.CodeGuruReviewer.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CodeGuruReviewer.CodeAnalysis" Path="|AWSSDK.CodeGuruReviewer.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CodePipeline.CodeAnalysis" Path="|AWSSDK.CodePipeline.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CodePipeline.CodeAnalysis" Path="|AWSSDK.CodePipeline.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CodeStar.CodeAnalysis" Path="|AWSSDK.CodeStar.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CodeStar.CodeAnalysis" Path="|AWSSDK.CodeStar.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CodeStarNotifications.CodeAnalysis" Path="|AWSSDK.CodeStarNotifications.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CodeStarNotifications.CodeAnalysis" Path="|AWSSDK.CodeStarNotifications.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CognitoIdentity.CodeAnalysis" Path="|AWSSDK.CognitoIdentity.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CognitoIdentity.CodeAnalysis" Path="|AWSSDK.CognitoIdentity.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CognitoIdentityProvider.CodeAnalysis" Path="|AWSSDK.CognitoIdentityProvider.CodeAnalysis|"/>
@@ -107,16 +119,22 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Comprehend.CodeAnalysis" Path="|AWSSDK.Comprehend.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ComprehendMedical.CodeAnalysis" Path="|AWSSDK.ComprehendMedical.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ComprehendMedical.CodeAnalysis" Path="|AWSSDK.ComprehendMedical.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ComputeOptimizer.CodeAnalysis" Path="|AWSSDK.ComputeOptimizer.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ComputeOptimizer.CodeAnalysis" Path="|AWSSDK.ComputeOptimizer.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ConfigService.CodeAnalysis" Path="|AWSSDK.ConfigService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ConfigService.CodeAnalysis" Path="|AWSSDK.ConfigService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Connect.CodeAnalysis" Path="|AWSSDK.Connect.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Connect.CodeAnalysis" Path="|AWSSDK.Connect.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ConnectParticipant.CodeAnalysis" Path="|AWSSDK.ConnectParticipant.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ConnectParticipant.CodeAnalysis" Path="|AWSSDK.ConnectParticipant.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CostAndUsageReport.CodeAnalysis" Path="|AWSSDK.CostAndUsageReport.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CostAndUsageReport.CodeAnalysis" Path="|AWSSDK.CostAndUsageReport.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CostExplorer.CodeAnalysis" Path="|AWSSDK.CostExplorer.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CostExplorer.CodeAnalysis" Path="|AWSSDK.CostExplorer.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.DatabaseMigrationService.CodeAnalysis" Path="|AWSSDK.DatabaseMigrationService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.DatabaseMigrationService.CodeAnalysis" Path="|AWSSDK.DatabaseMigrationService.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.DataExchange.CodeAnalysis" Path="|AWSSDK.DataExchange.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.DataExchange.CodeAnalysis" Path="|AWSSDK.DataExchange.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.DataPipeline.CodeAnalysis" Path="|AWSSDK.DataPipeline.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.DataPipeline.CodeAnalysis" Path="|AWSSDK.DataPipeline.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.DataSync.CodeAnalysis" Path="|AWSSDK.DataSync.CodeAnalysis|"/>
@@ -135,6 +153,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.DocDB.CodeAnalysis" Path="|AWSSDK.DocDB.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.DynamoDBv2.CodeAnalysis" Path="|AWSSDK.DynamoDBv2.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.DynamoDBv2.CodeAnalysis" Path="|AWSSDK.DynamoDBv2.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.EBS.CodeAnalysis" Path="|AWSSDK.EBS.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.EBS.CodeAnalysis" Path="|AWSSDK.EBS.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.EC2.CodeAnalysis" Path="|AWSSDK.EC2.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.EC2.CodeAnalysis" Path="|AWSSDK.EC2.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.EC2InstanceConnect.CodeAnalysis" Path="|AWSSDK.EC2InstanceConnect.CodeAnalysis|"/>
@@ -151,6 +171,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ElasticBeanstalk.CodeAnalysis" Path="|AWSSDK.ElasticBeanstalk.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ElasticFileSystem.CodeAnalysis" Path="|AWSSDK.ElasticFileSystem.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ElasticFileSystem.CodeAnalysis" Path="|AWSSDK.ElasticFileSystem.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ElasticInference.CodeAnalysis" Path="|AWSSDK.ElasticInference.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ElasticInference.CodeAnalysis" Path="|AWSSDK.ElasticInference.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ElasticLoadBalancing.CodeAnalysis" Path="|AWSSDK.ElasticLoadBalancing.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ElasticLoadBalancing.CodeAnalysis" Path="|AWSSDK.ElasticLoadBalancing.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ElasticLoadBalancingV2.CodeAnalysis" Path="|AWSSDK.ElasticLoadBalancingV2.CodeAnalysis|"/>
@@ -169,6 +191,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ForecastQueryService.CodeAnalysis" Path="|AWSSDK.ForecastQueryService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ForecastService.CodeAnalysis" Path="|AWSSDK.ForecastService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ForecastService.CodeAnalysis" Path="|AWSSDK.ForecastService.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.FraudDetector.CodeAnalysis" Path="|AWSSDK.FraudDetector.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.FraudDetector.CodeAnalysis" Path="|AWSSDK.FraudDetector.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.FSx.CodeAnalysis" Path="|AWSSDK.FSx.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.FSx.CodeAnalysis" Path="|AWSSDK.FSx.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.GameLift.CodeAnalysis" Path="|AWSSDK.GameLift.CodeAnalysis|"/>
@@ -187,6 +211,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.GuardDuty.CodeAnalysis" Path="|AWSSDK.GuardDuty.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IdentityManagement.CodeAnalysis" Path="|AWSSDK.IdentityManagement.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IdentityManagement.CodeAnalysis" Path="|AWSSDK.IdentityManagement.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Imagebuilder.CodeAnalysis" Path="|AWSSDK.Imagebuilder.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Imagebuilder.CodeAnalysis" Path="|AWSSDK.Imagebuilder.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ImportExport.CodeAnalysis" Path="|AWSSDK.ImportExport.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ImportExport.CodeAnalysis" Path="|AWSSDK.ImportExport.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Inspector.CodeAnalysis" Path="|AWSSDK.Inspector.CodeAnalysis|"/>
@@ -207,10 +233,14 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTEventsData.CodeAnalysis" Path="|AWSSDK.IoTEventsData.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoTJobsDataPlane.CodeAnalysis" Path="|AWSSDK.IoTJobsDataPlane.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTJobsDataPlane.CodeAnalysis" Path="|AWSSDK.IoTJobsDataPlane.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoTSecureTunneling.CodeAnalysis" Path="|AWSSDK.IoTSecureTunneling.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTSecureTunneling.CodeAnalysis" Path="|AWSSDK.IoTSecureTunneling.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoTThingsGraph.CodeAnalysis" Path="|AWSSDK.IoTThingsGraph.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTThingsGraph.CodeAnalysis" Path="|AWSSDK.IoTThingsGraph.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Kafka.CodeAnalysis" Path="|AWSSDK.Kafka.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Kafka.CodeAnalysis" Path="|AWSSDK.Kafka.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Kendra.CodeAnalysis" Path="|AWSSDK.Kendra.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Kendra.CodeAnalysis" Path="|AWSSDK.Kendra.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.KeyManagementService.CodeAnalysis" Path="|AWSSDK.KeyManagementService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.KeyManagementService.CodeAnalysis" Path="|AWSSDK.KeyManagementService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Kinesis.CodeAnalysis" Path="|AWSSDK.Kinesis.CodeAnalysis|"/>
@@ -227,6 +257,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.KinesisVideoArchivedMedia.CodeAnalysis" Path="|AWSSDK.KinesisVideoArchivedMedia.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.KinesisVideoMedia.CodeAnalysis" Path="|AWSSDK.KinesisVideoMedia.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.KinesisVideoMedia.CodeAnalysis" Path="|AWSSDK.KinesisVideoMedia.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.KinesisVideoSignalingChannels.CodeAnalysis" Path="|AWSSDK.KinesisVideoSignalingChannels.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.KinesisVideoSignalingChannels.CodeAnalysis" Path="|AWSSDK.KinesisVideoSignalingChannels.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.LakeFormation.CodeAnalysis" Path="|AWSSDK.LakeFormation.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.LakeFormation.CodeAnalysis" Path="|AWSSDK.LakeFormation.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Lambda.CodeAnalysis" Path="|AWSSDK.Lambda.CodeAnalysis|"/>
@@ -245,6 +277,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Macie.CodeAnalysis" Path="|AWSSDK.Macie.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ManagedBlockchain.CodeAnalysis" Path="|AWSSDK.ManagedBlockchain.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ManagedBlockchain.CodeAnalysis" Path="|AWSSDK.ManagedBlockchain.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.MarketplaceCatalog.CodeAnalysis" Path="|AWSSDK.MarketplaceCatalog.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.MarketplaceCatalog.CodeAnalysis" Path="|AWSSDK.MarketplaceCatalog.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.MarketplaceEntitlementService.CodeAnalysis" Path="|AWSSDK.MarketplaceEntitlementService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.MarketplaceEntitlementService.CodeAnalysis" Path="|AWSSDK.MarketplaceEntitlementService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.MediaConnect.CodeAnalysis" Path="|AWSSDK.MediaConnect.CodeAnalysis|"/>
@@ -265,6 +299,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.MediaTailor.CodeAnalysis" Path="|AWSSDK.MediaTailor.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.MigrationHub.CodeAnalysis" Path="|AWSSDK.MigrationHub.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.MigrationHub.CodeAnalysis" Path="|AWSSDK.MigrationHub.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.MigrationHubConfig.CodeAnalysis" Path="|AWSSDK.MigrationHubConfig.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.MigrationHubConfig.CodeAnalysis" Path="|AWSSDK.MigrationHubConfig.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Mobile.CodeAnalysis" Path="|AWSSDK.Mobile.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Mobile.CodeAnalysis" Path="|AWSSDK.Mobile.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.MobileAnalytics.CodeAnalysis" Path="|AWSSDK.MobileAnalytics.CodeAnalysis|"/>
@@ -275,12 +311,16 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.MTurk.CodeAnalysis" Path="|AWSSDK.MTurk.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Neptune.CodeAnalysis" Path="|AWSSDK.Neptune.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Neptune.CodeAnalysis" Path="|AWSSDK.Neptune.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.NetworkManager.CodeAnalysis" Path="|AWSSDK.NetworkManager.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.NetworkManager.CodeAnalysis" Path="|AWSSDK.NetworkManager.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.OpsWorks.CodeAnalysis" Path="|AWSSDK.OpsWorks.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.OpsWorks.CodeAnalysis" Path="|AWSSDK.OpsWorks.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.OpsWorksCM.CodeAnalysis" Path="|AWSSDK.OpsWorksCM.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.OpsWorksCM.CodeAnalysis" Path="|AWSSDK.OpsWorksCM.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Organizations.CodeAnalysis" Path="|AWSSDK.Organizations.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Organizations.CodeAnalysis" Path="|AWSSDK.Organizations.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Outposts.CodeAnalysis" Path="|AWSSDK.Outposts.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Outposts.CodeAnalysis" Path="|AWSSDK.Outposts.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Personalize.CodeAnalysis" Path="|AWSSDK.Personalize.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Personalize.CodeAnalysis" Path="|AWSSDK.Personalize.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.PersonalizeEvents.CodeAnalysis" Path="|AWSSDK.PersonalizeEvents.CodeAnalysis|"/>
@@ -335,6 +375,10 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SageMaker.CodeAnalysis" Path="|AWSSDK.SageMaker.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SageMakerRuntime.CodeAnalysis" Path="|AWSSDK.SageMakerRuntime.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SageMakerRuntime.CodeAnalysis" Path="|AWSSDK.SageMakerRuntime.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SavingsPlans.CodeAnalysis" Path="|AWSSDK.SavingsPlans.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SavingsPlans.CodeAnalysis" Path="|AWSSDK.SavingsPlans.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Schemas.CodeAnalysis" Path="|AWSSDK.Schemas.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Schemas.CodeAnalysis" Path="|AWSSDK.Schemas.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SecretsManager.CodeAnalysis" Path="|AWSSDK.SecretsManager.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SecretsManager.CodeAnalysis" Path="|AWSSDK.SecretsManager.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SecurityHub.CodeAnalysis" Path="|AWSSDK.SecurityHub.CodeAnalysis|"/>
@@ -359,6 +403,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SimpleDB.CodeAnalysis" Path="|AWSSDK.SimpleDB.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SimpleEmail.CodeAnalysis" Path="|AWSSDK.SimpleEmail.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SimpleEmail.CodeAnalysis" Path="|AWSSDK.SimpleEmail.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SimpleEmailV2.CodeAnalysis" Path="|AWSSDK.SimpleEmailV2.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SimpleEmailV2.CodeAnalysis" Path="|AWSSDK.SimpleEmailV2.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SimpleNotificationService.CodeAnalysis" Path="|AWSSDK.SimpleNotificationService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SimpleNotificationService.CodeAnalysis" Path="|AWSSDK.SimpleNotificationService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SimpleSystemsManagement.CodeAnalysis" Path="|AWSSDK.SimpleSystemsManagement.CodeAnalysis|"/>
@@ -369,6 +415,10 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Snowball.CodeAnalysis" Path="|AWSSDK.Snowball.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SQS.CodeAnalysis" Path="|AWSSDK.SQS.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SQS.CodeAnalysis" Path="|AWSSDK.SQS.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SSO.CodeAnalysis" Path="|AWSSDK.SSO.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SSO.CodeAnalysis" Path="|AWSSDK.SSO.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SSOOIDC.CodeAnalysis" Path="|AWSSDK.SSOOIDC.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SSOOIDC.CodeAnalysis" Path="|AWSSDK.SSOOIDC.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.StepFunctions.CodeAnalysis" Path="|AWSSDK.StepFunctions.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.StepFunctions.CodeAnalysis" Path="|AWSSDK.StepFunctions.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.StorageGateway.CodeAnalysis" Path="|AWSSDK.StorageGateway.CodeAnalysis|"/>
@@ -385,6 +435,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WAF.CodeAnalysis" Path="|AWSSDK.WAF.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WAFRegional.CodeAnalysis" Path="|AWSSDK.WAFRegional.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WAFRegional.CodeAnalysis" Path="|AWSSDK.WAFRegional.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WAFV2.CodeAnalysis" Path="|AWSSDK.WAFV2.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WAFV2.CodeAnalysis" Path="|AWSSDK.WAFV2.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WorkDocs.CodeAnalysis" Path="|AWSSDK.WorkDocs.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WorkDocs.CodeAnalysis" Path="|AWSSDK.WorkDocs.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WorkLink.CodeAnalysis" Path="|AWSSDK.WorkLink.CodeAnalysis|"/>

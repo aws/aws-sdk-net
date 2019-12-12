@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// The configuration of an AWS Signer operation.
+    /// The configuration of a code signing operation.
     /// </summary>
     public partial class SigningConfiguration
     {
@@ -38,7 +38,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property EncryptionAlgorithmOptions. 
         /// <para>
-        /// The encryption algorithm options that are available for an AWS Signer job.
+        /// The encryption algorithm options that are available for a code signing job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -57,7 +57,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property HashAlgorithmOptions. 
         /// <para>
-        /// The hash algorithm options that are available for an AWS Signer job.
+        /// The hash algorithm options that are available for a a code signing job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

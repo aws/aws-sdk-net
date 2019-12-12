@@ -88,6 +88,12 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                     unmarshalledObject.DetectorModelVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("evaluationMethod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EvaluationMethod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

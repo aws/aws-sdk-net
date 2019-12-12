@@ -335,7 +335,9 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Creates an image repository.
+        /// Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where users
+        /// can push and pull Docker images. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon
+        /// ECR Repositories</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRepository service method.</param>
         /// 
@@ -368,7 +370,9 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Creates an image repository.
+        /// Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where users
+        /// can push and pull Docker images. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon
+        /// ECR Repositories</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRepository service method.</param>
         /// <param name="cancellationToken">
@@ -642,6 +646,68 @@ namespace Amazon.ECR
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeImageScanFindings
+
+
+        /// <summary>
+        /// Describes the image scan findings for the specified image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageScanFindings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageScanFindings service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ScanNotFoundException">
+        /// The specified image scan could not be found. Ensure that image scanning is enabled
+        /// on the repository and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">REST API Reference for DescribeImageScanFindings Operation</seealso>
+        DescribeImageScanFindingsResponse DescribeImageScanFindings(DescribeImageScanFindingsRequest request);
+
+
+
+        /// <summary>
+        /// Describes the image scan findings for the specified image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageScanFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImageScanFindings service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ScanNotFoundException">
+        /// The specified image scan could not be found. Ensure that image scanning is enabled
+        /// on the repository and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">REST API Reference for DescribeImageScanFindings Operation</seealso>
+        Task<DescribeImageScanFindingsResponse> DescribeImageScanFindingsAsync(DescribeImageScanFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1275,11 +1341,62 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  PutImageScanningConfiguration
+
+
+        /// <summary>
+        /// Updates the image scanning configuration for a repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutImageScanningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutImageScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">REST API Reference for PutImageScanningConfiguration Operation</seealso>
+        PutImageScanningConfigurationResponse PutImageScanningConfiguration(PutImageScanningConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Updates the image scanning configuration for a repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutImageScanningConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutImageScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">REST API Reference for PutImageScanningConfiguration Operation</seealso>
+        Task<PutImageScanningConfigurationResponse> PutImageScanningConfigurationAsync(PutImageScanningConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutImageTagMutability
 
 
         /// <summary>
-        /// Updates the image tag mutability settings for a repository.
+        /// Updates the image tag mutability settings for a repository. When a repository is configured
+        /// with tag immutability, all image tags within the repository will be prevented them
+        /// from being overwritten. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
+        /// Tag Mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImageTagMutability service method.</param>
         /// 
@@ -1300,7 +1417,10 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Updates the image tag mutability settings for a repository.
+        /// Updates the image tag mutability settings for a repository. When a repository is configured
+        /// with tag immutability, all image tags within the repository will be prevented them
+        /// from being overwritten. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
+        /// Tag Mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImageTagMutability service method.</param>
         /// <param name="cancellationToken">
@@ -1424,6 +1544,66 @@ namespace Amazon.ECR
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
         Task<SetRepositoryPolicyResponse> SetRepositoryPolicyAsync(SetRepositoryPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartImageScan
+
+
+        /// <summary>
+        /// Starts an image vulnerability scan. An image scan can only be started once per day
+        /// on an individual image. This limit includes if an image was scanned on initial push.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
+        /// Scanning</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImageScan service method.</param>
+        /// 
+        /// <returns>The response from the StartImageScan service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">REST API Reference for StartImageScan Operation</seealso>
+        StartImageScanResponse StartImageScan(StartImageScanRequest request);
+
+
+
+        /// <summary>
+        /// Starts an image vulnerability scan. An image scan can only be started once per day
+        /// on an individual image. This limit includes if an image was scanned on initial push.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
+        /// Scanning</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImageScan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartImageScan service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">REST API Reference for StartImageScan Operation</seealso>
+        Task<StartImageScanResponse> StartImageScanAsync(StartImageScanRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

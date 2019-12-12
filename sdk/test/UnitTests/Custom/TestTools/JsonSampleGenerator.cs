@@ -76,7 +76,12 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         {
             var pushed = this._tcr.Push(structure.Name);
             if (!pushed)
+            {
+                // Circular reference found. Closing the structure
+                writer.WriteObjectStart();
+                writer.WriteObjectEnd();
                 return;
+            }
 
             if (structure.PayloadMemberName != null)
             {
@@ -114,7 +119,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 this._tcr.Pop();
         }
 
-        
+
         private void WriteArray(JsonWriter writer, Member member, Shape array)
         {
 

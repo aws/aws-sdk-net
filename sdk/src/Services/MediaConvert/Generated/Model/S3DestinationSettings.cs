@@ -32,7 +32,25 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class S3DestinationSettings
     {
+        private S3DestinationAccessControl _accessControl;
         private S3EncryptionSettings _encryption;
+
+        /// <summary>
+        /// Gets and sets the property AccessControl. Optional. Have MediaConvert automatically
+        /// apply Amazon S3 access control for the outputs in this output group. When you don't
+        /// use this setting, S3 automatically applies the default access control list PRIVATE.
+        /// </summary>
+        public S3DestinationAccessControl AccessControl
+        {
+            get { return this._accessControl; }
+            set { this._accessControl = value; }
+        }
+
+        // Check to see if AccessControl property is set
+        internal bool IsSetAccessControl()
+        {
+            return this._accessControl != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Encryption. Settings for how your job outputs are encrypted

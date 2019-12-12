@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         private M3u8Settings _m3u8Settings;
         private MovSettings _movSettings;
         private Mp4Settings _mp4Settings;
+        private MpdSettings _mpdSettings;
 
         /// <summary>
         /// Gets and sets the property Container. Container for this output. Some containers require
@@ -137,6 +138,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetMp4Settings()
         {
             return this._mp4Settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MpdSettings. Settings for MP4 segments in DASH
+        /// </summary>
+        public MpdSettings MpdSettings
+        {
+            get { return this._mpdSettings; }
+            set { this._mpdSettings = value; }
+        }
+
+        // Check to see if MpdSettings property is set
+        internal bool IsSetMpdSettings()
+        {
+            return this._mpdSettings != null;
         }
 
     }

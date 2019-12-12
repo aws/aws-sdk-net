@@ -64,6 +64,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("additionalManifests", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HlsAdditionalManifest, HlsAdditionalManifestUnmarshaller>(HlsAdditionalManifestUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalManifests = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("adMarkers", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

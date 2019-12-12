@@ -64,6 +64,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AutomatedDiscoveryInformation", targetDepth))
+                {
+                    var unmarshaller = AutomatedDiscoveryInformationUnmarshaller.Instance;
+                    unmarshalledObject.AutomatedDiscoveryInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConsumedLicenses", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -134,6 +140,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProductInformationList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProductInformation, ProductInformationUnmarshaller>(ProductInformationUnmarshaller.Instance);
+                    unmarshalledObject.ProductInformationList = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

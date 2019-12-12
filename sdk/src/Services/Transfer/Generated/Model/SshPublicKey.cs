@@ -84,7 +84,7 @@ namespace Amazon.Transfer.Model
         /// The <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=21, Max=21)]
         public string SshPublicKeyId
         {
             get { return this._sshPublicKeyId; }

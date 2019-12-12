@@ -29,11 +29,12 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociatePhoneNumbersWithVoiceConnector operation.
-    /// Associates a phone number with the specified Amazon Chime Voice Connector.
+    /// Associates phone numbers with the specified Amazon Chime Voice Connector.
     /// </summary>
     public partial class AssociatePhoneNumbersWithVoiceConnectorRequest : AmazonChimeRequest
     {
         private List<string> _e164PhoneNumbers = new List<string>();
+        private bool? _forceAssociate;
         private string _voiceConnectorId;
 
         /// <summary>
@@ -52,6 +53,26 @@ namespace Amazon.Chime.Model
         internal bool IsSetE164PhoneNumbers()
         {
             return this._e164PhoneNumbers != null && this._e164PhoneNumbers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForceAssociate. 
+        /// <para>
+        /// If true, associates the provided phone numbers with the provided Amazon Chime Voice
+        /// Connector and removes any previously existing associations. If false, does not associate
+        /// any phone numbers that have previously existing associations.
+        /// </para>
+        /// </summary>
+        public bool ForceAssociate
+        {
+            get { return this._forceAssociate.GetValueOrDefault(); }
+            set { this._forceAssociate = value; }
+        }
+
+        // Check to see if ForceAssociate property is set
+        internal bool IsSetForceAssociate()
+        {
+            return this._forceAssociate.HasValue; 
         }
 
         /// <summary>

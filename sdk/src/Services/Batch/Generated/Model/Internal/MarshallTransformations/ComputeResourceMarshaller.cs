@@ -45,6 +45,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ComputeResource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAllocationStrategy())
+            {
+                context.Writer.WritePropertyName("allocationStrategy");
+                context.Writer.Write(requestObject.AllocationStrategy);
+            }
+
             if(requestObject.IsSetBidPercentage())
             {
                 context.Writer.WritePropertyName("bidPercentage");

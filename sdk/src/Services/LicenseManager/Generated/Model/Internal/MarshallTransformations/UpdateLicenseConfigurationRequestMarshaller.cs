@@ -115,6 +115,22 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetProductInformationList())
+                {
+                    context.Writer.WritePropertyName("ProductInformationList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestProductInformationListListValue in publicRequest.ProductInformationList)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProductInformationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestProductInformationListListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

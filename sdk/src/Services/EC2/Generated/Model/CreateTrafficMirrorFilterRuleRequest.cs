@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTrafficMirrorFilterRule operation.
-    /// Creates a Traffic Mirror rule. 
+    /// Creates a Traffic Mirror filter rule. 
     /// 
     ///  
     /// <para>

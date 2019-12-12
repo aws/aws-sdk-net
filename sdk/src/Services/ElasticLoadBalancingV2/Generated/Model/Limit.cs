@@ -84,6 +84,18 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// target-groups-per-action-on-application-load-balancer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// target-groups-per-action-on-network-load-balancer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// target-groups-per-application-load-balancer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// targets-per-application-load-balancer
         /// </para>
         ///  </li> <li> 

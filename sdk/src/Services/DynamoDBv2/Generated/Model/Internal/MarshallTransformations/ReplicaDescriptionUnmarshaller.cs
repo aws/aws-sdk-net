@@ -64,10 +64,46 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ReplicaGlobalSecondaryIndexDescription, ReplicaGlobalSecondaryIndexDescriptionUnmarshaller>(ReplicaGlobalSecondaryIndexDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KMSMasterKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KMSMasterKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProvisionedThroughputOverride", targetDepth))
+                {
+                    var unmarshaller = ProvisionedThroughputOverrideUnmarshaller.Instance;
+                    unmarshalledObject.ProvisionedThroughputOverride = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RegionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReplicaStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReplicaStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReplicaStatusDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReplicaStatusDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReplicaStatusPercentProgress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReplicaStatusPercentProgress = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

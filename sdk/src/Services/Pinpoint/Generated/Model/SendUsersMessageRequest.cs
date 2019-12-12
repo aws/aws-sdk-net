@@ -63,7 +63,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property MessageConfiguration. 
         /// <para>
-        /// The message definitions for the default message and any default messages that you
+        /// The settings and content for the default message and any default messages that you
         /// defined for specific channels.
         /// </para>
         /// </summary>

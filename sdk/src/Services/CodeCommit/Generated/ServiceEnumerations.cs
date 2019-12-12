@@ -25,6 +25,56 @@ namespace Amazon.CodeCommit
 {
 
     /// <summary>
+    /// Constants used for properties of type ApprovalState.
+    /// </summary>
+    public class ApprovalState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVE for ApprovalState
+        /// </summary>
+        public static readonly ApprovalState APPROVE = new ApprovalState("APPROVE");
+        /// <summary>
+        /// Constant REVOKE for ApprovalState
+        /// </summary>
+        public static readonly ApprovalState REVOKE = new ApprovalState("REVOKE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApprovalState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApprovalState FindValue(string value)
+        {
+            return FindValue<ApprovalState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApprovalState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChangeTypeEnum.
     /// </summary>
     public class ChangeTypeEnum : ConstantClass
@@ -403,11 +453,81 @@ namespace Amazon.CodeCommit
 
 
     /// <summary>
+    /// Constants used for properties of type OverrideStatus.
+    /// </summary>
+    public class OverrideStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OVERRIDE for OverrideStatus
+        /// </summary>
+        public static readonly OverrideStatus OVERRIDE = new OverrideStatus("OVERRIDE");
+        /// <summary>
+        /// Constant REVOKE for OverrideStatus
+        /// </summary>
+        public static readonly OverrideStatus REVOKE = new OverrideStatus("REVOKE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OverrideStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverrideStatus FindValue(string value)
+        {
+            return FindValue<OverrideStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverrideStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PullRequestEventType.
     /// </summary>
     public class PullRequestEventType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant PULL_REQUEST_APPROVAL_RULE_CREATED for PullRequestEventType
+        /// </summary>
+        public static readonly PullRequestEventType PULL_REQUEST_APPROVAL_RULE_CREATED = new PullRequestEventType("PULL_REQUEST_APPROVAL_RULE_CREATED");
+        /// <summary>
+        /// Constant PULL_REQUEST_APPROVAL_RULE_DELETED for PullRequestEventType
+        /// </summary>
+        public static readonly PullRequestEventType PULL_REQUEST_APPROVAL_RULE_DELETED = new PullRequestEventType("PULL_REQUEST_APPROVAL_RULE_DELETED");
+        /// <summary>
+        /// Constant PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN for PullRequestEventType
+        /// </summary>
+        public static readonly PullRequestEventType PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN = new PullRequestEventType("PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN");
+        /// <summary>
+        /// Constant PULL_REQUEST_APPROVAL_RULE_UPDATED for PullRequestEventType
+        /// </summary>
+        public static readonly PullRequestEventType PULL_REQUEST_APPROVAL_RULE_UPDATED = new PullRequestEventType("PULL_REQUEST_APPROVAL_RULE_UPDATED");
+        /// <summary>
+        /// Constant PULL_REQUEST_APPROVAL_STATE_CHANGED for PullRequestEventType
+        /// </summary>
+        public static readonly PullRequestEventType PULL_REQUEST_APPROVAL_STATE_CHANGED = new PullRequestEventType("PULL_REQUEST_APPROVAL_STATE_CHANGED");
         /// <summary>
         /// Constant PULL_REQUEST_CREATED for PullRequestEventType
         /// </summary>

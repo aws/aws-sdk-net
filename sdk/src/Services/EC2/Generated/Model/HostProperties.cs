@@ -28,11 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes properties of a Dedicated Host.
+    /// Describes the properties of a Dedicated Host.
     /// </summary>
     public partial class HostProperties
     {
         private int? _cores;
+        private string _instanceFamily;
         private string _instanceType;
         private int? _sockets;
         private int? _totalVCpus;
@@ -56,9 +57,28 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceFamily. 
+        /// <para>
+        /// The instance family supported by the Dedicated Host. For example, <code>m5</code>.
+        /// </para>
+        /// </summary>
+        public string InstanceFamily
+        {
+            get { return this._instanceFamily; }
+            set { this._instanceFamily = value; }
+        }
+
+        // Check to see if InstanceFamily property is set
+        internal bool IsSetInstanceFamily()
+        {
+            return this._instanceFamily != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
+        /// The instance type supported by the Dedicated Host. For example, <code>m5.large</code>.
+        /// If the host supports multiple instance types, no <b>instanceType</b> is returned.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -94,7 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TotalVCpus. 
         /// <para>
-        /// The number of vCPUs on the Dedicated Host.
+        /// The total number of vCPUs on the Dedicated Host.
         /// </para>
         /// </summary>
         public int TotalVCpus

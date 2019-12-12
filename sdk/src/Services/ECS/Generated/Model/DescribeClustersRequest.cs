@@ -58,7 +58,22 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Include. 
         /// <para>
-        /// Additional information about your clusters to be separated by launch type, including:
+        /// Whether to include additional information about your clusters in the response. If
+        /// this field is omitted, the attachments, statistics, and tags are not included.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>ATTACHMENTS</code> is specified, the attachments for the container instances
+        /// or tasks within the cluster are included.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>SETTINGS</code> is specified, the settings for the cluster are included.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>STATISTICS</code> is specified, the following additional information, separated
+        /// by launch type, is included:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -92,7 +107,11 @@ namespace Amazon.ECS.Model
         /// <para>
         /// drainingFargateServiceCount
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// If <code>TAGS</code> is specified, the metadata tags associated with the cluster are
+        /// included.
+        /// </para>
         /// </summary>
         public List<string> Include
         {

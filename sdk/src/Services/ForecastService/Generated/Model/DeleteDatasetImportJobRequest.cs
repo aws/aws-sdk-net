@@ -30,8 +30,9 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Container for the parameters to the DeleteDatasetImportJob operation.
     /// Deletes a dataset import job created using the <a>CreateDatasetImportJob</a> operation.
-    /// To be deleted, the import job must have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
-    /// Use the <a>DescribeDatasetImportJob</a> operation to get the status.
+    /// You can delete only dataset import jobs that have a status of <code>ACTIVE</code>
+    /// or <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeDatasetImportJob</a>
+    /// operation.
     /// </summary>
     public partial class DeleteDatasetImportJobRequest : AmazonForecastServiceRequest
     {

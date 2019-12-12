@@ -61,7 +61,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The identifier of an application snapshot. You can retrieve this value using .
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string SnapshotName
         {
             get { return this._snapshotName; }

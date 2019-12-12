@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A conditional statement for a search expression that includes a Boolean operator,
-    /// a resource property, and a value.
+    /// A conditional statement for a search expression that includes a resource property,
+    /// a Boolean operator, and a value.
     /// 
     ///  
     /// <para>
@@ -173,7 +173,8 @@ namespace Amazon.SageMaker.Model
         ///  </dd> <dt>Contains</dt> <dd> 
         /// <para>
         /// Only supported for text-based properties. The word-list of the property contains the
-        /// specified <code>Value</code>.
+        /// specified <code>Value</code>. A <code>SearchExpression</code> can include only one
+        /// <code>Contains</code> operator.
         /// </para>
         ///  </dd> </dl> 
         /// <para>

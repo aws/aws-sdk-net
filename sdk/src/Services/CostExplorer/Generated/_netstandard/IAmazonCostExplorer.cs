@@ -57,6 +57,118 @@ namespace Amazon.CostExplorer
     public partial interface IAmazonCostExplorer : IAmazonService, IDisposable
     {
                 
+        #region  CreateCostCategoryDefinition
+
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Creates a new Cost Category with the requested name and rules.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCostCategoryDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCostCategoryDefinition service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
+        /// You've reached the limit on the number of resources you can create, or exceeded the
+        /// size of an individual resources.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">REST API Reference for CreateCostCategoryDefinition Operation</seealso>
+        Task<CreateCostCategoryDefinitionResponse> CreateCostCategoryDefinitionAsync(CreateCostCategoryDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteCostCategoryDefinition
+
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Deletes a Cost Category. Expenses from this month going forward will no longer be
+        /// categorized with this Cost Category.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCostCategoryDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCostCategoryDefinition service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteCostCategoryDefinition">REST API Reference for DeleteCostCategoryDefinition Operation</seealso>
+        Task<DeleteCostCategoryDefinitionResponse> DeleteCostCategoryDefinitionAsync(DeleteCostCategoryDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeCostCategoryDefinition
+
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's
+        /// defined in the account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You have the option to use <code>EffectiveOn</code> to return a Cost Category that
+        /// is active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll
+        /// see a Cost Category that is effective on the current date. If Cost Category is still
+        /// effective, <code>EffectiveEnd</code> is omitted in the response. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCostCategoryDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCostCategoryDefinition service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DescribeCostCategoryDefinition">REST API Reference for DescribeCostCategoryDefinition Operation</seealso>
+        Task<DescribeCostCategoryDefinitionResponse> DescribeCostCategoryDefinitionAsync(DescribeCostCategoryDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetCostAndUsage
 
 
@@ -94,6 +206,55 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">REST API Reference for GetCostAndUsage Operation</seealso>
         Task<GetCostAndUsageResponse> GetCostAndUsageAsync(GetCostAndUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCostAndUsageWithResources
+
+
+
+        /// <summary>
+        /// Retrieves cost and usage metrics with resources for your account. You can specify
+        /// which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
+        /// that you want the request to return. You can also filter and group your data by various
+        /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
+        /// For a complete list of valid dimensions, see the <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+        /// operation. Master accounts in an organization in AWS Organizations have access to
+        /// all member accounts. This API is currently available for the Amazon Elastic Compute
+        /// Cloud – Compute service only.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This is an opt-in only feature. You can enable this feature from the Cost Explorer
+        /// Settings page. For information on how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
+        /// Access for Cost Explorer</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsageWithResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCostAndUsageWithResources service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
+        /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
+        /// Your request parameters changed between pages. Try again with the old parameters or
+        /// without a pagination token.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources">REST API Reference for GetCostAndUsageWithResources Operation</seealso>
+        Task<GetCostAndUsageWithResourcesResponse> GetCostAndUsageWithResourcesAsync(GetCostAndUsageWithResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -354,6 +515,153 @@ namespace Amazon.CostExplorer
 
         #endregion
                 
+        #region  GetSavingsPlansCoverage
+
+
+
+        /// <summary>
+        /// Retrieves the Savings Plans covered for your account. This enables you to see how
+        /// much of your cost is covered by a Savings Plan. An organization’s master account can
+        /// see the coverage of the associated member accounts. For any time period, you can filter
+        /// data for Savings Plans usage with the following dimensions:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LINKED_ACCOUNT</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REGION</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SERVICE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INSTANCE_FAMILY</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To determine valid values for a dimension, use the <code>GetDimensionValues</code>
+        /// operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansCoverage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansCoverage service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage">REST API Reference for GetSavingsPlansCoverage Operation</seealso>
+        Task<GetSavingsPlansCoverageResponse> GetSavingsPlansCoverageAsync(GetSavingsPlansCoverageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSavingsPlansPurchaseRecommendation
+
+
+
+        /// <summary>
+        /// Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansPurchaseRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansPurchaseRecommendation service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation">REST API Reference for GetSavingsPlansPurchaseRecommendation Operation</seealso>
+        Task<GetSavingsPlansPurchaseRecommendationResponse> GetSavingsPlansPurchaseRecommendationAsync(GetSavingsPlansPurchaseRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSavingsPlansUtilization
+
+
+
+        /// <summary>
+        /// Retrieves the Savings Plans utilization for your account across date ranges with daily
+        /// or monthly granularity. Master accounts in an organization have access to member accounts.
+        /// You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine
+        /// the possible dimension values.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansUtilization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansUtilization service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">REST API Reference for GetSavingsPlansUtilization Operation</seealso>
+        Task<GetSavingsPlansUtilizationResponse> GetSavingsPlansUtilizationAsync(GetSavingsPlansUtilizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSavingsPlansUtilizationDetails
+
+
+
+        /// <summary>
+        /// Retrieves attribute data along with aggregate utilization and savings data for a given
+        /// time period. This doesn't support granular or grouped data (daily/monthly) in response.
+        /// You can't retrieve data by dates in a single response similar to <code>GetSavingsPlanUtilization</code>,
+        /// but you have the option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code>
+        /// by providing individual dates. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code>
+        /// to determine the possible dimension values.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansUtilizationDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansUtilizationDetails service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">REST API Reference for GetSavingsPlansUtilizationDetails Operation</seealso>
+        Task<GetSavingsPlansUtilizationDetailsResponse> GetSavingsPlansUtilizationDetailsAsync(GetSavingsPlansUtilizationDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetTags
 
 
@@ -415,6 +723,81 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast">REST API Reference for GetUsageForecast Operation</seealso>
         Task<GetUsageForecastResponse> GetUsageForecastAsync(GetUsageForecastRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCostCategoryDefinitions
+
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Returns the name, ARN and effective dates of all Cost Categories defined in the account.
+        /// You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories
+        /// that were active on a specific date. If there is no <code>EffectiveOn</code> specified,
+        /// you’ll see Cost Categories that are effective on the current date. If Cost Category
+        /// is still effective, <code>EffectiveEnd</code> is omitted in the response. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCostCategoryDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCostCategoryDefinitions service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions">REST API Reference for ListCostCategoryDefinitions Operation</seealso>
+        Task<ListCostCategoryDefinitionsResponse> ListCostCategoryDefinitionsAsync(ListCostCategoryDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateCostCategoryDefinition
+
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and
+        /// is subject to change. Your use of Cost Categories is subject to the Beta Service Participation
+        /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Updates an existing Cost Category. Changes made to the Cost Category rules will be
+        /// used to categorize the current month’s expenses and future expenses. This won’t change
+        /// categorization for the previous months.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCostCategoryDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCostCategoryDefinition service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
+        /// You've reached the limit on the number of resources you can create, or exceeded the
+        /// size of an individual resources.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostCategoryDefinition">REST API Reference for UpdateCostCategoryDefinition Operation</seealso>
+        Task<UpdateCostCategoryDefinitionResponse> UpdateCostCategoryDefinitionAsync(UpdateCostCategoryDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -29,22 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUserByPrincipalId operation.
-    /// Deletes a user identified by its principal ID. 
-    /// 
-    ///  
-    /// <para>
-    /// The permission resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;
-    /// </i> </code>.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>CLI Sample:</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight delete-user-by-principal-id --aws-account-id=111122223333 --namespace=default
-    /// --principal-id=ABCDEFJA26JLI7EUUOEHS </code> 
-    /// </para>
+    /// Deletes a user identified by its principal ID.
     /// </summary>
     public partial class DeleteUserByPrincipalIdRequest : AmazonQuickSightRequest
     {
@@ -78,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// The namespace. Currently, you should set this to <code>default</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=64)]
         public string Namespace
         {
             get { return this._awsNamespace; }

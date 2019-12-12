@@ -181,6 +181,9 @@ namespace Amazon.ApiGatewayV2
         /// </param>
         /// 
         /// <returns>The response from the CreateDomainName service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
         /// The request is not valid, for example, the input is incomplete or incorrect. See the
         /// accompanying error message for details.
@@ -475,6 +478,30 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
                 
+        #region  DeleteCorsConfiguration
+
+
+
+        /// <summary>
+        /// Deletes a CORS configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCorsConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCorsConfiguration service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        Task<DeleteCorsConfigurationResponse> DeleteCorsConfigurationAsync(DeleteCorsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteDeployment
 
 
@@ -643,6 +670,30 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
                 
+        #region  DeleteRouteSettings
+
+
+
+        /// <summary>
+        /// Deletes the RouteSettings for a stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRouteSettings service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        Task<DeleteRouteSettingsResponse> DeleteRouteSettingsAsync(DeleteRouteSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteStage
 
 
@@ -696,7 +747,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// The API mapping.
+        /// Gets an API mapping.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApiMapping service method.</param>
         /// <param name="cancellationToken">
@@ -724,7 +775,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// The API mappings.
+        /// Gets API mappings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApiMappings service method.</param>
         /// <param name="cancellationToken">
@@ -1272,7 +1323,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// Gets the Tags for an API.
+        /// Gets a collection of Tag resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
         /// <param name="cancellationToken">
@@ -1300,12 +1351,78 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
                 
+        #region  ImportApi
+
+
+
+        /// <summary>
+        /// Imports an API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportApi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportApi service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        Task<ImportApiResponse> ImportApiAsync(ImportApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ReimportApi
+
+
+
+        /// <summary>
+        /// Puts an Api resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReimportApi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReimportApi service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        Task<ReimportApiResponse> ReimportApiAsync(ReimportApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  TagResource
 
 
 
         /// <summary>
-        /// Tag an APIGW resource
+        /// Creates a new Tag resource to represent a tag.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1338,7 +1455,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// Untag an APIGW resource
+        /// Deletes a Tag.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

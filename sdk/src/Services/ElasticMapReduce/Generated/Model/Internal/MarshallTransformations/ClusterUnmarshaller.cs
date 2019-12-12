@@ -82,6 +82,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoTerminate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ClusterArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Configurations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Configuration, ConfigurationUnmarshaller>(ConfigurationUnmarshaller.Instance);
@@ -148,6 +154,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.NormalizedInstanceHours = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OutpostArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReleaseLabel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -194,6 +206,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ClusterStatusUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StepConcurrencyLevel", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StepConcurrencyLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))

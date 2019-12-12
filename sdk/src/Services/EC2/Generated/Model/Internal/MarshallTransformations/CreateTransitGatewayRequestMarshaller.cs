@@ -84,6 +84,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Options" + "." + "DnsSupport", StringUtils.FromString(publicRequest.Options.DnsSupport));
                     }
+                    if(publicRequest.Options.IsSetMulticastSupport())
+                    {
+                        request.Parameters.Add("Options" + "." + "MulticastSupport", StringUtils.FromString(publicRequest.Options.MulticastSupport));
+                    }
                     if(publicRequest.Options.IsSetVpnEcmpSupport())
                     {
                         request.Parameters.Add("Options" + "." + "VpnEcmpSupport", StringUtils.FromString(publicRequest.Options.VpnEcmpSupport));

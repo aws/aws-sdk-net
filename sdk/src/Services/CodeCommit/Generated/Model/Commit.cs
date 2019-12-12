@@ -43,7 +43,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AdditionalData. 
         /// <para>
-        /// Any additional data associated with the specified commit.
+        /// Any other data associated with the specified commit.
         /// </para>
         /// </summary>
         public string AdditionalData
@@ -81,7 +81,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property CommitId. 
         /// <para>
-        /// The full SHA of the specified commit. 
+        /// The full SHA ID of the specified commit. 
         /// </para>
         /// </summary>
         public string CommitId

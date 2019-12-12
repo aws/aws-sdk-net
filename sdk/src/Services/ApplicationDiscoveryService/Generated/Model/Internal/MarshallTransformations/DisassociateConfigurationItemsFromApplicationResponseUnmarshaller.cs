@@ -65,6 +65,10 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             {
                 return new AuthorizationErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("HomeRegionNotSetException"))
+            {
+                return new HomeRegionNotSetException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
             {
                 return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

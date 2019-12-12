@@ -43,7 +43,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AfterBlobId. 
         /// <para>
-        /// The full blob ID of the commit used to establish the 'after' of the comparison.
+        /// The full blob ID of the commit used to establish the after of the comparison.
         /// </para>
         /// </summary>
         public string AfterBlobId
@@ -61,7 +61,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AfterCommitId. 
         /// <para>
-        /// The full commit ID of the commit used to establish the 'after' of the comparison.
+        /// The full commit ID of the commit used to establish the after of the comparison.
         /// </para>
         /// </summary>
         public string AfterCommitId
@@ -79,7 +79,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property BeforeBlobId. 
         /// <para>
-        /// The full blob ID of the commit used to establish the 'before' of the comparison.
+        /// The full blob ID of the commit used to establish the before of the comparison.
         /// </para>
         /// </summary>
         public string BeforeBlobId
@@ -97,7 +97,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property BeforeCommitId. 
         /// <para>
-        /// The full commit ID of the commit used to establish the 'before' of the comparison.
+        /// The full commit ID of the commit used to establish the before of the comparison.
         /// </para>
         /// </summary>
         public string BeforeCommitId
@@ -135,8 +135,8 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// Location information about the comment on the comparison, including the file name,
-        /// line number, and whether the version of the file where the comment was made is 'BEFORE'
-        /// or 'AFTER'.
+        /// line number, and whether the version of the file where the comment was made is BEFORE
+        /// or AFTER.
         /// </para>
         /// </summary>
         public Location Location

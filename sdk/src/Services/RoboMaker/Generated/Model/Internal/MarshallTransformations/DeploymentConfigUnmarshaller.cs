@@ -70,6 +70,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConcurrentDeploymentPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("downloadConditionFile", targetDepth))
+                {
+                    var unmarshaller = S3ObjectUnmarshaller.Instance;
+                    unmarshalledObject.DownloadConditionFile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("failureThresholdPercentage", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -29,12 +29,12 @@ namespace Amazon.Textract.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDocumentAnalysis operation.
-    /// Starts asynchronous analysis of an input document for relationships between detected
-    /// items such as key and value pairs, tables, and selection elements.
+    /// Starts the asynchronous analysis of an input document for relationships between detected
+    /// items such as key-value pairs, tables, and selection elements.
     /// 
     ///  
     /// <para>
-    ///  <code>StartDocumentAnalysis</code> can analyze text in documents that are in JPG,
+    ///  <code>StartDocumentAnalysis</code> can analyze text in documents that are in JPEG,
     /// PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
     /// to specify the bucket name and file name of the document. 
     /// </para>
@@ -68,7 +68,8 @@ namespace Amazon.Textract.Model
         /// The idempotent token that you use to identify the start request. If you use the same
         /// token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code>
         /// is returned. Use <code>ClientRequestToken</code> to prevent the same job from being
-        /// accidentally started more than once. 
+        /// accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+        /// Amazon Textract Asynchronous Operations</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -108,9 +109,9 @@ namespace Amazon.Textract.Model
         /// <para>
         /// A list of the types of analysis to perform. Add TABLES to the list to return information
         /// about the tables that are detected in the input document. Add FORMS to return detected
-        /// fields and the associated text. To perform both types of analysis, add TABLES and
-        /// FORMS to <code>FeatureTypes</code>. All selectable elements (<code>SELECTION_ELEMENT</code>)
-        /// that are detected are returned, whatever the value of <code>FeatureTypes</code>. 
+        /// form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+        /// All lines and words detected in the document are included in the response (including
+        /// text that isn't related to the value of <code>FeatureTypes</code>). 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -129,10 +130,10 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property JobTag. 
         /// <para>
-        /// An identifier you specify that's included in the completion notification that's published
+        /// An identifier that you specify that's included in the completion notification published
         /// to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify
-        /// the type of document, such as a tax form or a receipt, that the completion notification
-        /// corresponds to.
+        /// the type of document that the completion notification corresponds to (such as a tax
+        /// form or a receipt).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

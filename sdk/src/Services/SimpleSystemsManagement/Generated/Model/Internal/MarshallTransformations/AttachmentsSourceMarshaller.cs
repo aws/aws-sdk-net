@@ -51,6 +51,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Key);
             }
 
+            if(requestObject.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.Write(requestObject.Name);
+            }
+
             if(requestObject.IsSetValues())
             {
                 context.Writer.WritePropertyName("Values");

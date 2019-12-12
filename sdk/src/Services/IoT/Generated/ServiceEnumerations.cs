@@ -1215,6 +1215,110 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type DomainConfigurationStatus.
+    /// </summary>
+    public class DomainConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DomainConfigurationStatus
+        /// </summary>
+        public static readonly DomainConfigurationStatus DISABLED = new DomainConfigurationStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for DomainConfigurationStatus
+        /// </summary>
+        public static readonly DomainConfigurationStatus ENABLED = new DomainConfigurationStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainConfigurationStatus FindValue(string value)
+        {
+            return FindValue<DomainConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DomainType.
+    /// </summary>
+    public class DomainType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_MANAGED for DomainType
+        /// </summary>
+        public static readonly DomainType AWS_MANAGED = new DomainType("AWS_MANAGED");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED for DomainType
+        /// </summary>
+        public static readonly DomainType CUSTOMER_MANAGED = new DomainType("CUSTOMER_MANAGED");
+        /// <summary>
+        /// Constant ENDPOINT for DomainType
+        /// </summary>
+        public static readonly DomainType ENDPOINT = new DomainType("ENDPOINT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainType FindValue(string value)
+        {
+            return FindValue<DomainType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DynamicGroupStatus.
     /// </summary>
     public class DynamicGroupStatus : ConstantClass
@@ -1398,6 +1502,60 @@ namespace Amazon.IoT
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FieldType.
+    /// </summary>
+    public class FieldType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Boolean for FieldType
+        /// </summary>
+        public static readonly FieldType Boolean = new FieldType("Boolean");
+        /// <summary>
+        /// Constant Number for FieldType
+        /// </summary>
+        public static readonly FieldType Number = new FieldType("Number");
+        /// <summary>
+        /// Constant String for FieldType
+        /// </summary>
+        public static readonly FieldType String = new FieldType("String");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FieldType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FieldType FindValue(string value)
+        {
+            return FindValue<FieldType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FieldType(string value)
         {
             return FindValue(value);
         }
@@ -2057,9 +2215,17 @@ namespace Amazon.IoT
         /// </summary>
         public static readonly ResourceType DEVICE_CERTIFICATE = new ResourceType("DEVICE_CERTIFICATE");
         /// <summary>
+        /// Constant IAM_ROLE for ResourceType
+        /// </summary>
+        public static readonly ResourceType IAM_ROLE = new ResourceType("IAM_ROLE");
+        /// <summary>
         /// Constant IOT_POLICY for ResourceType
         /// </summary>
         public static readonly ResourceType IOT_POLICY = new ResourceType("IOT_POLICY");
+        /// <summary>
+        /// Constant ROLE_ALIAS for ResourceType
+        /// </summary>
+        public static readonly ResourceType ROLE_ALIAS = new ResourceType("ROLE_ALIAS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2090,6 +2256,110 @@ namespace Amazon.IoT
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServerCertificateStatus.
+    /// </summary>
+    public class ServerCertificateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INVALID for ServerCertificateStatus
+        /// </summary>
+        public static readonly ServerCertificateStatus INVALID = new ServerCertificateStatus("INVALID");
+        /// <summary>
+        /// Constant VALID for ServerCertificateStatus
+        /// </summary>
+        public static readonly ServerCertificateStatus VALID = new ServerCertificateStatus("VALID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServerCertificateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServerCertificateStatus FindValue(string value)
+        {
+            return FindValue<ServerCertificateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServerCertificateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceType.
+    /// </summary>
+    public class ServiceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREDENTIAL_PROVIDER for ServiceType
+        /// </summary>
+        public static readonly ServiceType CREDENTIAL_PROVIDER = new ServiceType("CREDENTIAL_PROVIDER");
+        /// <summary>
+        /// Constant DATA for ServiceType
+        /// </summary>
+        public static readonly ServiceType DATA = new ServiceType("DATA");
+        /// <summary>
+        /// Constant JOBS for ServiceType
+        /// </summary>
+        public static readonly ServiceType JOBS = new ServiceType("JOBS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceType FindValue(string value)
+        {
+            return FindValue<ServiceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceType(string value)
         {
             return FindValue(value);
         }
@@ -2356,6 +2626,64 @@ namespace Amazon.IoT
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ThingIndexingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TopicRuleDestinationStatus.
+    /// </summary>
+    public class TopicRuleDestinationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for TopicRuleDestinationStatus
+        /// </summary>
+        public static readonly TopicRuleDestinationStatus DISABLED = new TopicRuleDestinationStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for TopicRuleDestinationStatus
+        /// </summary>
+        public static readonly TopicRuleDestinationStatus ENABLED = new TopicRuleDestinationStatus("ENABLED");
+        /// <summary>
+        /// Constant ERROR for TopicRuleDestinationStatus
+        /// </summary>
+        public static readonly TopicRuleDestinationStatus ERROR = new TopicRuleDestinationStatus("ERROR");
+        /// <summary>
+        /// Constant IN_PROGRESS for TopicRuleDestinationStatus
+        /// </summary>
+        public static readonly TopicRuleDestinationStatus IN_PROGRESS = new TopicRuleDestinationStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TopicRuleDestinationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TopicRuleDestinationStatus FindValue(string value)
+        {
+            return FindValue<TopicRuleDestinationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TopicRuleDestinationStatus(string value)
         {
             return FindValue(value);
         }

@@ -44,6 +44,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("S3Control")]
+        public void CreateAccessPointMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAccessPoint");
+
+            var request = InstantiateClassGenerator.Execute<CreateAccessPointRequest>();
+            var marshaller = new CreateAccessPointRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateAccessPoint", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
         public void CreateJobMarshallTest()
         {
             var operation = service_model.FindOperation("CreateJob");
@@ -68,6 +85,40 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = unmarshaller.Unmarshall(context)
                 as CreateJobResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void DeleteAccessPointMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAccessPoint");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAccessPointRequest>();
+            var marshaller = new DeleteAccessPointRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteAccessPoint", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void DeleteAccessPointPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAccessPointPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAccessPointPolicyRequest>();
+            var marshaller = new DeleteAccessPointPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteAccessPointPolicy", request, internalRequest, service_model);            
+
         }
 
         
@@ -123,6 +174,99 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("S3Control")]
+        public void GetAccessPointMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAccessPoint");
+
+            var request = InstantiateClassGenerator.Execute<GetAccessPointRequest>();
+            var marshaller = new GetAccessPointRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetAccessPoint", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetAccessPointResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetAccessPointResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void GetAccessPointPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAccessPointPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetAccessPointPolicyRequest>();
+            var marshaller = new GetAccessPointPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetAccessPointPolicy", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetAccessPointPolicyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetAccessPointPolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void GetAccessPointPolicyStatusMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAccessPointPolicyStatus");
+
+            var request = InstantiateClassGenerator.Execute<GetAccessPointPolicyStatusRequest>();
+            var marshaller = new GetAccessPointPolicyStatusRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetAccessPointPolicyStatus", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetAccessPointPolicyStatusResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetAccessPointPolicyStatusResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
         public void GetPublicAccessBlockMarshallTest()
         {
             var operation = service_model.FindOperation("GetPublicAccessBlock");
@@ -146,6 +290,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetPublicAccessBlockResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void ListAccessPointsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAccessPoints");
+
+            var request = InstantiateClassGenerator.Execute<ListAccessPointsRequest>();
+            var marshaller = new ListAccessPointsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListAccessPoints", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListAccessPointsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListAccessPointsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -178,6 +353,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = unmarshaller.Unmarshall(context)
                 as ListJobsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void PutAccessPointPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutAccessPointPolicy");
+
+            var request = InstantiateClassGenerator.Execute<PutAccessPointPolicyRequest>();
+            var marshaller = new PutAccessPointPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutAccessPointPolicy", request, internalRequest, service_model);            
+
         }
 
         

@@ -98,7 +98,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The instance to connect to for the session.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=400)]
         public string Target
         {
             get { return this._target; }

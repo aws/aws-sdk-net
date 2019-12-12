@@ -36,9 +36,12 @@ namespace Amazon.DLM.Model
         private DateTime? _dateModified;
         private string _description;
         private string _executionRoleArn;
+        private string _policyArn;
         private PolicyDetails _policyDetails;
         private string _policyId;
         private GettablePolicyStateValues _state;
+        private string _statusMessage;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property DateCreated. 
@@ -102,6 +105,7 @@ namespace Amazon.DLM.Model
         /// by the lifecycle policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string ExecutionRoleArn
         {
             get { return this._executionRoleArn; }
@@ -112,6 +116,24 @@ namespace Amazon.DLM.Model
         internal bool IsSetExecutionRoleArn()
         {
             return this._executionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the policy.
+        /// </para>
+        /// </summary>
+        public string PolicyArn
+        {
+            get { return this._policyArn; }
+            set { this._policyArn = value; }
+        }
+
+        // Check to see if PolicyArn property is set
+        internal bool IsSetPolicyArn()
+        {
+            return this._policyArn != null;
         }
 
         /// <summary>
@@ -138,6 +160,7 @@ namespace Amazon.DLM.Model
         /// The identifier of the lifecycle policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string PolicyId
         {
             get { return this._policyId; }
@@ -166,6 +189,44 @@ namespace Amazon.DLM.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// The description of the status.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=500)]
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

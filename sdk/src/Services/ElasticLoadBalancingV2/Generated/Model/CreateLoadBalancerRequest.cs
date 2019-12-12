@@ -131,7 +131,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The nodes of an internal load balancer have only private IP addresses. The DNS name
         /// of an internal load balancer is publicly resolvable to the private IP addresses of
-        /// the nodes. Therefore, internal load balancers can only route requests from clients
+        /// the nodes. Therefore, internal load balancers can route requests only from clients
         /// with access to the VPC for the load balancer.
         /// </para>
         ///  
@@ -184,7 +184,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// [Network Load Balancers] You can specify subnets from one or more Availability Zones.
         /// You can specify one Elastic IP address per subnet if you need static IP addresses
-        /// for your load balancer.
+        /// for your internet-facing load balancer. For internal load balancers, you can specify
+        /// one private IP address per subnet from the IPv4 range of the subnet.
         /// </para>
         /// </summary>
         public List<SubnetMapping> SubnetMappings

@@ -40,10 +40,10 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property CommitSpecifier. 
         /// <para>
-        /// A fully-qualified reference used to identify a commit that contains the version of
-        /// the folder's content to return. A fully-qualified reference can be a commit ID, branch
+        /// A fully qualified reference used to identify a commit that contains the version of
+        /// the folder's content to return. A fully qualified reference can be a commit ID, branch
         /// name, tag, or reference such as HEAD. If no specifier is provided, the folder content
-        /// will be returned as it exists in the HEAD commit.
+        /// is returned as it exists in the HEAD commit.
         /// </para>
         /// </summary>
         public string CommitSpecifier
@@ -61,9 +61,9 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property FolderPath. 
         /// <para>
-        /// The fully-qualified path to the folder whose contents will be returned, including
-        /// the folder name. For example, /examples is a fully-qualified path to a folder named
-        /// examples that was created off of the root directory (/) of a repository. 
+        /// The fully qualified path to the folder whose contents are returned, including the
+        /// folder name. For example, /examples is a fully-qualified path to a folder named examples
+        /// that was created off of the root directory (/) of a repository. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

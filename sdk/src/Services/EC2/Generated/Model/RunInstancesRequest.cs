@@ -135,6 +135,7 @@ namespace Amazon.EC2.Model
         private LaunchTemplateSpecification _launchTemplate;
         private List<LicenseConfigurationRequest> _licenseSpecifications = new List<LicenseConfigurationRequest>();
         private int? _maxCount;
+        private InstanceMetadataOptionsRequest _metadataOptions;
         private int? _minCount;
         private bool? _monitoring;
         private List<InstanceNetworkInterfaceSpecification> _networkInterfaces = new List<InstanceNetworkInterfaceSpecification>();
@@ -268,14 +269,15 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CreditSpecification. 
         /// <para>
-        /// The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code>
-        /// and <code>unlimited</code>. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+        /// The credit option for CPU usage of the burstable performance instance. Valid values
+        /// are <code>standard</code> and <code>unlimited</code>. To change this attribute after
+        /// launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
         /// ModifyInstanceCreditSpecification</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
         /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3 instances)
+        /// Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
         /// </para>
         /// </summary>
         public CreditSpecificationRequest CreditSpecification
@@ -672,6 +674,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetMaxCount()
         {
             return this._maxCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataOptions. 
+        /// <para>
+        /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+        /// Metadata and User Data</a>.
+        /// </para>
+        /// </summary>
+        public InstanceMetadataOptionsRequest MetadataOptions
+        {
+            get { return this._metadataOptions; }
+            set { this._metadataOptions = value; }
+        }
+
+        // Check to see if MetadataOptions property is set
+        internal bool IsSetMetadataOptions()
+        {
+            return this._metadataOptions != null;
         }
 
         /// <summary>

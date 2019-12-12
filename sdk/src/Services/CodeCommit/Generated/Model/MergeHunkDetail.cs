@@ -58,8 +58,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property HunkContent. 
         /// <para>
-        /// The base-64 encoded content of the hunk merged region that might or might not contain
-        /// a conflict.
+        /// The base-64 encoded content of the hunk merged region that might contain a conflict.
         /// </para>
         /// </summary>
         public string HunkContent

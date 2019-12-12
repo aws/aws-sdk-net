@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// The S3 bucket name and key where AWS Signer saved your signed code image.
+    /// The S3 bucket name and key where code signing saved your signed code image.
     /// </summary>
     public partial class S3SignedObject
     {

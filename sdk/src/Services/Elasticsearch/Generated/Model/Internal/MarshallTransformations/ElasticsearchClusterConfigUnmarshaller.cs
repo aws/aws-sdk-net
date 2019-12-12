@@ -94,6 +94,24 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WarmCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.WarmCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WarmEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.WarmEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WarmType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WarmType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ZoneAwarenessConfig", targetDepth))
                 {
                     var unmarshaller = ZoneAwarenessConfigUnmarshaller.Instance;

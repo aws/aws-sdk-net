@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ECS.Model.CapacityProviderStrategyItem.Base</property>
+    <min>0</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECS.Model.CapacityProviderStrategyItem.Weight</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECS.Model.ManagedScaling.MaximumScalingStepSize</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECS.Model.ManagedScaling.MinimumScalingStepSize</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECS.Model.ManagedScaling.TargetCapacity</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECS.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>

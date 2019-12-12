@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the allocation strategy is <code>lowestPrice</code>, EC2 Fleet launches instances
+        /// If the allocation strategy is <code>lowest-price</code>, EC2 Fleet launches instances
         /// from the Spot Instance pools with the lowest price. This is the default allocation
         /// strategy.
         /// </para>
@@ -59,9 +59,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances
-        /// from Spot Instance pools with optimal capacity for the number of instances that are
-        /// launching.
+        /// If the allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches
+        /// instances from Spot Instance pools with optimal capacity for the number of instances
+        /// that are launching.
         /// </para>
         /// </summary>
         public SpotAllocationStrategy AllocationStrategy
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InstancePoolsToUseCount. 
         /// <para>
         /// The number of Spot pools across which to allocate your target Spot capacity. Valid
-        /// only when <b>AllocationStrategy</b> is set to <code>lowestPrice</code>. EC2 Fleet
+        /// only when <b>AllocationStrategy</b> is set to <code>lowest-price</code>. EC2 Fleet
         /// selects the cheapest Spot pools and evenly allocates your target Spot capacity across
         /// the number of Spot pools that you specify.
         /// </para>

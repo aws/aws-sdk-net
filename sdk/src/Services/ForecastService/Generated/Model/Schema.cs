@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// Defines the fields of a dataset. This object is specified in the <a>CreateDataset</a>
+    /// Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a>
     /// request.
     /// </summary>
     public partial class Schema

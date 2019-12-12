@@ -68,6 +68,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetCodec())
                 request.Parameters.Add("codec", StringUtils.FromString(publicRequest.Codec));
             
+            if (publicRequest.IsSetDuration())
+                request.Parameters.Add("duration", StringUtils.FromString(publicRequest.Duration));
+            
             if (publicRequest.IsSetMaximumBitrate())
                 request.Parameters.Add("maximumBitrate", StringUtils.FromString(publicRequest.MaximumBitrate));
             

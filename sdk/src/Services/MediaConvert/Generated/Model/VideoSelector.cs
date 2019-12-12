@@ -32,12 +32,32 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class VideoSelector
     {
+        private AlphaBehavior _alphaBehavior;
         private ColorSpace _colorSpace;
         private ColorSpaceUsage _colorSpaceUsage;
         private Hdr10Metadata _hdr10Metadata;
         private int? _pid;
         private int? _programNumber;
         private InputRotate _rotate;
+
+        /// <summary>
+        /// Gets and sets the property AlphaBehavior. Ignore this setting unless this input is
+        /// a QuickTime animation. Specify which part of this input MediaConvert uses for your
+        /// outputs. Leave this setting set to DISCARD in order to delete the alpha channel and
+        /// preserve the video. Use REMAP_TO_LUMA for this setting to delete the video and map
+        /// the alpha channel to the luma channel of your outputs.
+        /// </summary>
+        public AlphaBehavior AlphaBehavior
+        {
+            get { return this._alphaBehavior; }
+            set { this._alphaBehavior = value; }
+        }
+
+        // Check to see if AlphaBehavior property is set
+        internal bool IsSetAlphaBehavior()
+        {
+            return this._alphaBehavior != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ColorSpace. If your input video has accurate color space

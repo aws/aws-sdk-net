@@ -55,11 +55,9 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// You cannot create more than one customer gateway with the same VPN type, IP address,
-    /// and BGP ASN parameter values. If you run an identical request more than one time,
-    /// the first request creates the customer gateway, and subsequent requests return information
-    /// about the existing customer gateway. The subsequent requests do not create new customer
-    /// gateway resources.
+    /// To create more than one customer gateway with the same VPN type, IP address, and BGP
+    /// ASN, specify a unique device name for each customer gateway. Identical requests return
+    /// information about the existing customer gateway and do not create new customer gateways.
     /// </para>
     ///  </important>
     /// </summary>
@@ -67,6 +65,7 @@ namespace Amazon.EC2.Model
     {
         private int? _bgpAsn;
         private string _certificateArn;
+        private string _deviceName;
         private string _publicIp;
         private GatewayType _type;
 
@@ -127,6 +126,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetCertificateArn()
         {
             return this._certificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceName. 
+        /// <para>
+        /// A name for the customer gateway device.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Up to 255 characters.
+        /// </para>
+        /// </summary>
+        public string DeviceName
+        {
+            get { return this._deviceName; }
+            set { this._deviceName = value; }
+        }
+
+        // Check to see if DeviceName property is set
+        internal bool IsSetDeviceName()
+        {
+            return this._deviceName != null;
         }
 
         /// <summary>

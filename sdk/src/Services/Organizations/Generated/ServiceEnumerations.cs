@@ -361,6 +361,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason OU_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("OU_NUMBER_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant POLICY_CONTENT_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason POLICY_CONTENT_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("POLICY_CONTENT_LIMIT_EXCEEDED");
+        /// <summary>
         /// Constant POLICY_NUMBER_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason POLICY_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("POLICY_NUMBER_LIMIT_EXCEEDED");
@@ -426,6 +430,10 @@ namespace Amazon.Organizations
         /// Constant EMAIL_ALREADY_EXISTS for CreateAccountFailureReason
         /// </summary>
         public static readonly CreateAccountFailureReason EMAIL_ALREADY_EXISTS = new CreateAccountFailureReason("EMAIL_ALREADY_EXISTS");
+        /// <summary>
+        /// Constant GOVCLOUD_ACCOUNT_ALREADY_EXISTS for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason GOVCLOUD_ACCOUNT_ALREADY_EXISTS = new CreateAccountFailureReason("GOVCLOUD_ACCOUNT_ALREADY_EXISTS");
         /// <summary>
         /// Constant INTERNAL_FAILURE for CreateAccountFailureReason
         /// </summary>
@@ -522,6 +530,52 @@ namespace Amazon.Organizations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CreateAccountState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EffectivePolicyType.
+    /// </summary>
+    public class EffectivePolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TAG_POLICY for EffectivePolicyType
+        /// </summary>
+        public static readonly EffectivePolicyType TAG_POLICY = new EffectivePolicyType("TAG_POLICY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EffectivePolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EffectivePolicyType FindValue(string value)
+        {
+            return FindValue<EffectivePolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EffectivePolicyType(string value)
         {
             return FindValue(value);
         }
@@ -865,6 +919,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_ENUM = new InvalidInputExceptionReason("INVALID_ENUM");
         /// <summary>
+        /// Constant INVALID_ENUM_POLICY_TYPE for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason INVALID_ENUM_POLICY_TYPE = new InvalidInputExceptionReason("INVALID_ENUM_POLICY_TYPE");
+        /// <summary>
         /// Constant INVALID_FULL_NAME_TARGET for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_FULL_NAME_TARGET = new InvalidInputExceptionReason("INVALID_FULL_NAME_TARGET");
@@ -928,6 +986,10 @@ namespace Amazon.Organizations
         /// Constant MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS = new InvalidInputExceptionReason("MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS");
+        /// <summary>
+        /// Constant TARGET_NOT_SUPPORTED for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason TARGET_NOT_SUPPORTED = new InvalidInputExceptionReason("TARGET_NOT_SUPPORTED");
         /// <summary>
         /// Constant UNRECOGNIZED_SERVICE_PRINCIPAL for InvalidInputExceptionReason
         /// </summary>
@@ -1078,6 +1140,10 @@ namespace Amazon.Organizations
         /// Constant SERVICE_CONTROL_POLICY for PolicyType
         /// </summary>
         public static readonly PolicyType SERVICE_CONTROL_POLICY = new PolicyType("SERVICE_CONTROL_POLICY");
+        /// <summary>
+        /// Constant TAG_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType TAG_POLICY = new PolicyType("TAG_POLICY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

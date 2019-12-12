@@ -30,27 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the UpdateUser operation.
     /// Updates an Amazon QuickSight user.
-    /// 
-    ///  
-    /// <para>
-    /// The permission resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
-    /// </code>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// The response is a user object that contains the user's Amazon QuickSight user name,
-    /// email address, active or inactive status in Amazon QuickSight, Amazon QuickSight role,
-    /// and Amazon Resource Name (ARN). 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>CLI Sample:</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight update-user --user-name=Pat --role=ADMIN --email=new_address@amazon.com
-    /// --aws-account-id=111122223333 --namespace=default --region=us-east-1 </code> 
-    /// </para>
     /// </summary>
     public partial class UpdateUserRequest : AmazonQuickSightRequest
     {
@@ -105,7 +84,7 @@ namespace Amazon.QuickSight.Model
         /// The namespace. Currently, you should set this to <code>default</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=64)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -129,7 +108,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and
+        ///  <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
         /// dashboards.
         /// </para>
         ///  </li> <li> 

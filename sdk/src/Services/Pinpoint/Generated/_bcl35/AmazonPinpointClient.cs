@@ -580,6 +580,75 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  CreateJourney
+
+        /// <summary>
+        /// Creates a journey for an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJourney service method.</param>
+        /// 
+        /// <returns>The response from the CreateJourney service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual CreateJourneyResponse CreateJourney(CreateJourneyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJourneyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJourneyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateJourneyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateJourney operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJourney
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginCreateJourney(CreateJourneyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJourneyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJourneyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJourney.</param>
+        /// 
+        /// <returns>Returns a  CreateJourneyResult from Pinpoint.</returns>
+        public virtual CreateJourneyResponse EndCreateJourney(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateJourneyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreatePushTemplate
 
         /// <summary>
@@ -780,6 +849,73 @@ namespace Amazon.Pinpoint
         public virtual CreateSmsTemplateResponse EndCreateSmsTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSmsTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateVoiceTemplate
+
+        /// <summary>
+        /// Creates a message template that you can use in messages that are sent through the
+        /// voice channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVoiceTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateVoiceTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual CreateVoiceTemplateResponse CreateVoiceTemplate(CreateVoiceTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVoiceTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVoiceTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVoiceTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVoiceTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVoiceTemplate
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginCreateVoiceTemplate(CreateVoiceTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVoiceTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVoiceTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVoiceTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateVoiceTemplateResult from Pinpoint.</returns>
+        public virtual CreateVoiceTemplateResponse EndCreateVoiceTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVoiceTemplateResponse>(asyncResult);
         }
 
         #endregion
@@ -1690,6 +1826,75 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteJourney
+
+        /// <summary>
+        /// Deletes a journey from an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJourney service method.</param>
+        /// 
+        /// <returns>The response from the DeleteJourney service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual DeleteJourneyResponse DeleteJourney(DeleteJourneyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJourneyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJourneyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteJourneyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJourney operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteJourney
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteJourney(DeleteJourneyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJourneyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJourneyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteJourney.</param>
+        /// 
+        /// <returns>Returns a  DeleteJourneyResult from Pinpoint.</returns>
+        public virtual DeleteJourneyResponse EndDeleteJourney(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteJourneyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePushTemplate
 
         /// <summary>
@@ -2104,6 +2309,76 @@ namespace Amazon.Pinpoint
         public virtual DeleteVoiceChannelResponse EndDeleteVoiceChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVoiceChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVoiceTemplate
+
+        /// <summary>
+        /// Deletes a message template that was designed for use in messages that were sent through
+        /// the voice channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVoiceTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual DeleteVoiceTemplateResponse DeleteVoiceTemplate(DeleteVoiceTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVoiceTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVoiceTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVoiceTemplate
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteVoiceTemplate(DeleteVoiceTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVoiceTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVoiceTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteVoiceTemplateResult from Pinpoint.</returns>
+        public virtual DeleteVoiceTemplateResponse EndDeleteVoiceTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVoiceTemplateResponse>(asyncResult);
         }
 
         #endregion
@@ -2873,7 +3148,7 @@ namespace Amazon.Pinpoint
         #region  GetCampaignActivities
 
         /// <summary>
-        /// Retrieves information about the activity performed by a campaign.
+        /// Retrieves information about all the activities for a campaign.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCampaignActivities service method.</param>
         /// 
@@ -3152,7 +3427,7 @@ namespace Amazon.Pinpoint
 
         /// <summary>
         /// Retrieves information about the status, configuration, and other settings for all
-        /// versions of a specific campaign.
+        /// versions of a campaign.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCampaignVersions service method.</param>
         /// 
@@ -3910,6 +4185,285 @@ namespace Amazon.Pinpoint
         public virtual GetImportJobsResponse EndGetImportJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<GetImportJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetJourney
+
+        /// <summary>
+        /// Retrieves information about the status, configuration, and other settings for a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourney service method.</param>
+        /// 
+        /// <returns>The response from the GetJourney service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual GetJourneyResponse GetJourney(GetJourneyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJourneyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJourneyResponseUnmarshaller.Instance;
+
+            return Invoke<GetJourneyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetJourney operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourney
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetJourney(GetJourneyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJourneyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJourneyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourney.</param>
+        /// 
+        /// <returns>Returns a  GetJourneyResult from Pinpoint.</returns>
+        public virtual GetJourneyResponse EndGetJourney(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetJourneyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetJourneyDateRangeKpi
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard engagement metric that applies
+        /// to a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyDateRangeKpi service method.</param>
+        /// 
+        /// <returns>The response from the GetJourneyDateRangeKpi service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual GetJourneyDateRangeKpiResponse GetJourneyDateRangeKpi(GetJourneyDateRangeKpiRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJourneyDateRangeKpiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJourneyDateRangeKpiResponseUnmarshaller.Instance;
+
+            return Invoke<GetJourneyDateRangeKpiResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetJourneyDateRangeKpi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyDateRangeKpi operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourneyDateRangeKpi
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetJourneyDateRangeKpi(GetJourneyDateRangeKpiRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJourneyDateRangeKpiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJourneyDateRangeKpiResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetJourneyDateRangeKpi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourneyDateRangeKpi.</param>
+        /// 
+        /// <returns>Returns a  GetJourneyDateRangeKpiResult from Pinpoint.</returns>
+        public virtual GetJourneyDateRangeKpiResponse EndGetJourneyDateRangeKpi(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetJourneyDateRangeKpiResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetJourneyExecutionActivityMetrics
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard execution metric that applies
+        /// to a journey activity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyExecutionActivityMetrics service method.</param>
+        /// 
+        /// <returns>The response from the GetJourneyExecutionActivityMetrics service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual GetJourneyExecutionActivityMetricsResponse GetJourneyExecutionActivityMetrics(GetJourneyExecutionActivityMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJourneyExecutionActivityMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJourneyExecutionActivityMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<GetJourneyExecutionActivityMetricsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetJourneyExecutionActivityMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyExecutionActivityMetrics operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourneyExecutionActivityMetrics
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetJourneyExecutionActivityMetrics(GetJourneyExecutionActivityMetricsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJourneyExecutionActivityMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJourneyExecutionActivityMetricsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetJourneyExecutionActivityMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourneyExecutionActivityMetrics.</param>
+        /// 
+        /// <returns>Returns a  GetJourneyExecutionActivityMetricsResult from Pinpoint.</returns>
+        public virtual GetJourneyExecutionActivityMetricsResponse EndGetJourneyExecutionActivityMetrics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetJourneyExecutionActivityMetricsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetJourneyExecutionMetrics
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard execution metric that applies
+        /// to a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyExecutionMetrics service method.</param>
+        /// 
+        /// <returns>The response from the GetJourneyExecutionMetrics service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual GetJourneyExecutionMetricsResponse GetJourneyExecutionMetrics(GetJourneyExecutionMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJourneyExecutionMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJourneyExecutionMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<GetJourneyExecutionMetricsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetJourneyExecutionMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyExecutionMetrics operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourneyExecutionMetrics
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetJourneyExecutionMetrics(GetJourneyExecutionMetricsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJourneyExecutionMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJourneyExecutionMetricsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetJourneyExecutionMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourneyExecutionMetrics.</param>
+        /// 
+        /// <returns>Returns a  GetJourneyExecutionMetricsResult from Pinpoint.</returns>
+        public virtual GetJourneyExecutionMetricsResponse EndGetJourneyExecutionMetrics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetJourneyExecutionMetricsResponse>(asyncResult);
         }
 
         #endregion
@@ -4680,11 +5234,151 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetVoiceTemplate
+
+        /// <summary>
+        /// Retrieves the content and settings for a message template that you can use in messages
+        /// that are sent through the voice channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetVoiceTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual GetVoiceTemplateResponse GetVoiceTemplate(GetVoiceTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetVoiceTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVoiceTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVoiceTemplate
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetVoiceTemplate(GetVoiceTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVoiceTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVoiceTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetVoiceTemplateResult from Pinpoint.</returns>
+        public virtual GetVoiceTemplateResponse EndGetVoiceTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVoiceTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListJourneys
+
+        /// <summary>
+        /// Retrieves information about the status, configuration, and other settings for all
+        /// the journeys that are associated with an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJourneys service method.</param>
+        /// 
+        /// <returns>The response from the ListJourneys service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual ListJourneysResponse ListJourneys(ListJourneysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJourneysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJourneysResponseUnmarshaller.Instance;
+
+            return Invoke<ListJourneysResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJourneys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJourneys operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJourneys
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginListJourneys(ListJourneysRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJourneysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJourneysResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListJourneys operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJourneys.</param>
+        /// 
+        /// <returns>Returns a  ListJourneysResult from Pinpoint.</returns>
+        public virtual ListJourneysResponse EndListJourneys(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListJourneysResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
         /// Retrieves all the tags (keys and values) that are associated with an application,
-        /// campaign, message template, or segment.
+        /// campaign, journey, message template, or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -4751,9 +5445,6 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// Provides information about an API request or response.
-        /// </exception>
-        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -5222,8 +5913,8 @@ namespace Amazon.Pinpoint
         #region  TagResource
 
         /// <summary>
-        /// Adds one or more tags (keys and values) to an application, campaign, message template,
-        /// or segment.
+        /// Adds one or more tags (keys and values) to an application, campaign, journey, message
+        /// template, or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -5274,8 +5965,8 @@ namespace Amazon.Pinpoint
         #region  UntagResource
 
         /// <summary>
-        /// Removes one or more tags (keys and values) from an application, campaign, message
-        /// template, or segment.
+        /// Removes one or more tags (keys and values) from an application, campaign, journey,
+        /// message template, or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -5815,7 +6506,7 @@ namespace Amazon.Pinpoint
         #region  UpdateCampaign
 
         /// <summary>
-        /// Updates the settings for a campaign.
+        /// Updates the configuration and other settings for a campaign.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCampaign service method.</param>
         /// 
@@ -6234,6 +6925,144 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  UpdateJourney
+
+        /// <summary>
+        /// Updates the configuration and other settings for a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJourney service method.</param>
+        /// 
+        /// <returns>The response from the UpdateJourney service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual UpdateJourneyResponse UpdateJourney(UpdateJourneyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJourneyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJourneyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateJourneyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJourney operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJourney
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginUpdateJourney(UpdateJourneyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJourneyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJourneyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJourney.</param>
+        /// 
+        /// <returns>Returns a  UpdateJourneyResult from Pinpoint.</returns>
+        public virtual UpdateJourneyResponse EndUpdateJourney(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateJourneyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateJourneyState
+
+        /// <summary>
+        /// Cancels an active journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJourneyState service method.</param>
+        /// 
+        /// <returns>The response from the UpdateJourneyState service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual UpdateJourneyStateResponse UpdateJourneyState(UpdateJourneyStateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJourneyStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJourneyStateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateJourneyStateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateJourneyState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJourneyState operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJourneyState
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginUpdateJourneyState(UpdateJourneyStateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJourneyStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJourneyStateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateJourneyState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJourneyState.</param>
+        /// 
+        /// <returns>Returns a  UpdateJourneyStateResult from Pinpoint.</returns>
+        public virtual UpdateJourneyStateResponse EndUpdateJourneyState(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateJourneyStateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdatePushTemplate
 
         /// <summary>
@@ -6580,6 +7409,76 @@ namespace Amazon.Pinpoint
         public virtual UpdateVoiceChannelResponse EndUpdateVoiceChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateVoiceChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateVoiceTemplate
+
+        /// <summary>
+        /// Updates an existing message template that you can use in messages that are sent through
+        /// the voice channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVoiceTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual UpdateVoiceTemplateResponse UpdateVoiceTemplate(UpdateVoiceTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVoiceTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVoiceTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVoiceTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVoiceTemplate
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginUpdateVoiceTemplate(UpdateVoiceTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVoiceTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVoiceTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVoiceTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateVoiceTemplateResult from Pinpoint.</returns>
+        public virtual UpdateVoiceTemplateResponse EndUpdateVoiceTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateVoiceTemplateResponse>(asyncResult);
         }
 
         #endregion

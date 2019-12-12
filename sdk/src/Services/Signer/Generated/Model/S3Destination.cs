@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// The name and prefix of the S3 bucket where AWS Signer saves your signed objects.
+    /// The name and prefix of the S3 bucket where code signing saves your signed objects.
     /// </summary>
     public partial class S3Destination
     {

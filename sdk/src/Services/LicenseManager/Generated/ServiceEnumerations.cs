@@ -208,6 +208,14 @@ namespace Amazon.LicenseManager
         /// Constant EC2_INSTANCE for ResourceType
         /// </summary>
         public static readonly ResourceType EC2_INSTANCE = new ResourceType("EC2_INSTANCE");
+        /// <summary>
+        /// Constant RDS for ResourceType
+        /// </summary>
+        public static readonly ResourceType RDS = new ResourceType("RDS");
+        /// <summary>
+        /// Constant SYSTEMS_MANAGER_MANAGED_INSTANCE for ResourceType
+        /// </summary>
+        public static readonly ResourceType SYSTEMS_MANAGER_MANAGED_INSTANCE = new ResourceType("SYSTEMS_MANAGER_MANAGED_INSTANCE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

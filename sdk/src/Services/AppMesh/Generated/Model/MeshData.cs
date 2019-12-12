@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing a service mesh returned by a describe operation.
+    /// An object that represents a service mesh returned by a describe operation.
     /// </summary>
     public partial class MeshData
     {

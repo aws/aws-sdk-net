@@ -116,6 +116,10 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             {
                 return new PullRequestAlreadyClosedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("PullRequestApprovalRulesNotSatisfiedException"))
+            {
+                return new PullRequestApprovalRulesNotSatisfiedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("PullRequestDoesNotExistException"))
             {
                 return new PullRequestDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

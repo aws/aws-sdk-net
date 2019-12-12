@@ -150,7 +150,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property RootId. 
         /// <para>
         /// For nested stacks--stacks created as resources for another stack--the stack ID of
-        /// the the top-level stack to which the nested stack ultimately belongs.
+        /// the top-level stack to which the nested stack ultimately belongs.
         /// </para>
         ///  
         /// <para>

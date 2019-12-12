@@ -37,7 +37,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property PullRequest. 
         /// <para>
-        /// Information about the specified pull request, including information about the merge.
+        /// Information about the specified pull request, including the merge.
         /// </para>
         /// </summary>
         public PullRequest PullRequest

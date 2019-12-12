@@ -42,7 +42,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code> https://s3-&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
+        ///  <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
         /// </code> 
         /// </para>
         ///  
@@ -51,11 +51,11 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>https://s3-us-east-1.amazonaws.com/examplebucket/example.mp4</code> 
+        ///  <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>https://s3-us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
+        ///  <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
         /// 
         /// </para>
         ///  

@@ -105,8 +105,7 @@ namespace Amazon.CodeCommit.Model
         ///  <note> 
         /// <para>
         /// The file mode permissions returned by this API are not the standard file mode permission
-        /// values, such as 100644, but rather extrapolated values. See below for a full list
-        /// of supported return values.
+        /// values, such as 100644, but rather extrapolated values. See the supported return values.
         /// </para>
         ///  </note>
         /// </summary>
@@ -126,8 +125,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property FilePath. 
         /// <para>
-        /// The fully qualified path to the specified file. This returns the name and extension
-        /// of the file.
+        /// The fully qualified path to the specified file. Returns the name and extension of
+        /// the file.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -1,0 +1,120 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the s3control-2018-08-20.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.S3Control.Model
+{
+    /// <summary>
+    /// An access point used to access a bucket.
+    /// </summary>
+    public partial class AccessPoint
+    {
+        private string _bucket;
+        private string _name;
+        private NetworkOrigin _networkOrigin;
+        private VpcConfiguration _vpcConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property Bucket. 
+        /// <para>
+        /// The name of the bucket associated with this access point.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
+        public string Bucket
+        {
+            get { return this._bucket; }
+            set { this._bucket = value; }
+        }
+
+        // Check to see if Bucket property is set
+        internal bool IsSetBucket()
+        {
+            return this._bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of this access point.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=50)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkOrigin. 
+        /// <para>
+        /// Indicates whether this access point allows access from the public Internet. If <code>VpcConfiguration</code>
+        /// is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>,
+        /// and the access point doesn't allow access from the public Internet. Otherwise, <code>NetworkOrigin</code>
+        /// is <code>Internet</code>, and the access point allows access from the public Internet,
+        /// subject to the access point and bucket access policies.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public NetworkOrigin NetworkOrigin
+        {
+            get { return this._networkOrigin; }
+            set { this._networkOrigin = value; }
+        }
+
+        // Check to see if NetworkOrigin property is set
+        internal bool IsSetNetworkOrigin()
+        {
+            return this._networkOrigin != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// The Virtual Private Cloud (VPC) configuration for this access point, if one exists.
+        /// </para>
+        /// </summary>
+        public VpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
+        }
+
+    }
+}

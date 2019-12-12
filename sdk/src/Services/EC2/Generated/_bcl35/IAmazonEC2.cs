@@ -106,6 +106,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AcceptTransitGatewayPeeringAttachment
+
+
+        /// <summary>
+        /// Accepts a transit gateway peering attachment request. The peering attachment must
+        /// be in the <code>pendingAcceptance</code> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayPeeringAttachment service method.</param>
+        /// 
+        /// <returns>The response from the AcceptTransitGatewayPeeringAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayPeeringAttachment">REST API Reference for AcceptTransitGatewayPeeringAttachment Operation</seealso>
+        AcceptTransitGatewayPeeringAttachmentResponse AcceptTransitGatewayPeeringAttachment(AcceptTransitGatewayPeeringAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptTransitGatewayPeeringAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayPeeringAttachment operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptTransitGatewayPeeringAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayPeeringAttachment">REST API Reference for AcceptTransitGatewayPeeringAttachment Operation</seealso>
+        IAsyncResult BeginAcceptTransitGatewayPeeringAttachment(AcceptTransitGatewayPeeringAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptTransitGatewayPeeringAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptTransitGatewayPeeringAttachment.</param>
+        /// 
+        /// <returns>Returns a  AcceptTransitGatewayPeeringAttachmentResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayPeeringAttachment">REST API Reference for AcceptTransitGatewayPeeringAttachment Operation</seealso>
+        AcceptTransitGatewayPeeringAttachmentResponse EndAcceptTransitGatewayPeeringAttachment(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AcceptTransitGatewayVpcAttachment
 
 
@@ -418,8 +459,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Allocates a Dedicated Host to your account. At a minimum, specify the instance size
-        /// type, Availability Zone, and quantity of hosts to allocate.
+        /// Allocates a Dedicated Host to your account. At a minimum, specify the supported instance
+        /// type or instance family, the Availability Zone in which to allocate the host, and
+        /// the number of hosts to allocate.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateHosts service method.</param>
         /// 
@@ -820,11 +862,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Associates a subnet with a route table. The subnet and route table must be in the
-        /// same VPC. This association causes traffic originating from the subnet to be routed
-        /// according to the routes in the route table. The action returns an association ID,
-        /// which you need in order to disassociate the route table from the subnet later. A route
-        /// table can be associated with multiple subnets.
+        /// Associates a subnet in your VPC or an internet gateway or virtual private gateway
+        /// attached to your VPC with a route table in your VPC. This association causes traffic
+        /// from the subnet or gateway to be routed according to the routes in the route table.
+        /// The action returns an association ID, which you need in order to disassociate the
+        /// route table later. A route table can be associated with multiple subnets.
         /// 
         ///  
         /// <para>
@@ -904,6 +946,54 @@ namespace Amazon.EC2
         /// <returns>Returns a  AssociateSubnetCidrBlockResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock">REST API Reference for AssociateSubnetCidrBlock Operation</seealso>
         AssociateSubnetCidrBlockResponse EndAssociateSubnetCidrBlock(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AssociateTransitGatewayMulticastDomain
+
+
+        /// <summary>
+        /// Associates the specified subnets and transit gateway attachments with the specified
+        /// transit gateway multicast domain.
+        /// 
+        ///  
+        /// <para>
+        /// The transit gateway attachment must be in the available state before you can add a
+        /// resource. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayAttachments.html">DescribeTransitGatewayAttachments</a>
+        /// to see the state of the attachment.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTransitGatewayMulticastDomain service method.</param>
+        /// 
+        /// <returns>The response from the AssociateTransitGatewayMulticastDomain service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayMulticastDomain">REST API Reference for AssociateTransitGatewayMulticastDomain Operation</seealso>
+        AssociateTransitGatewayMulticastDomainResponse AssociateTransitGatewayMulticastDomain(AssociateTransitGatewayMulticastDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateTransitGatewayMulticastDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTransitGatewayMulticastDomain operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateTransitGatewayMulticastDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayMulticastDomain">REST API Reference for AssociateTransitGatewayMulticastDomain Operation</seealso>
+        IAsyncResult BeginAssociateTransitGatewayMulticastDomain(AssociateTransitGatewayMulticastDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateTransitGatewayMulticastDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateTransitGatewayMulticastDomain.</param>
+        /// 
+        /// <returns>Returns a  AssociateTransitGatewayMulticastDomainResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayMulticastDomain">REST API Reference for AssociateTransitGatewayMulticastDomain Operation</seealso>
+        AssociateTransitGatewayMulticastDomainResponse EndAssociateTransitGatewayMulticastDomain(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1056,10 +1146,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Attaches an internet gateway to a VPC, enabling connectivity between the internet
-        /// and the VPC. For more information about your VPC and internet gateway, see the <a
-        /// href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud
-        /// User Guide</a>.
+        /// Attaches an internet gateway or a virtual private gateway to a VPC, enabling connectivity
+        /// between the internet and the VPC. For more information about your VPC and internet
+        /// gateway, see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon
+        /// Virtual Private Cloud User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachInternetGateway service method.</param>
         /// 
@@ -2232,11 +2322,9 @@ namespace Amazon.EC2
         /// </para>
         ///  <important> 
         /// <para>
-        /// You cannot create more than one customer gateway with the same VPN type, IP address,
-        /// and BGP ASN parameter values. If you run an identical request more than one time,
-        /// the first request creates the customer gateway, and subsequent requests return information
-        /// about the existing customer gateway. The subsequent requests do not create new customer
-        /// gateway resources.
+        /// To create more than one customer gateway with the same VPN type, IP address, and BGP
+        /// ASN, specify a unique device name for each customer gateway. Identical requests return
+        /// information about the existing customer gateway and do not create new customer gateways.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2984,6 +3072,86 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateLocalGatewayRoute
+
+
+        /// <summary>
+        /// Creates a static route for the specified local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRoute service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRoute">REST API Reference for CreateLocalGatewayRoute Operation</seealso>
+        CreateLocalGatewayRouteResponse CreateLocalGatewayRoute(CreateLocalGatewayRouteRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLocalGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRoute operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLocalGatewayRoute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRoute">REST API Reference for CreateLocalGatewayRoute Operation</seealso>
+        IAsyncResult BeginCreateLocalGatewayRoute(CreateLocalGatewayRouteRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLocalGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLocalGatewayRoute.</param>
+        /// 
+        /// <returns>Returns a  CreateLocalGatewayRouteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRoute">REST API Reference for CreateLocalGatewayRoute Operation</seealso>
+        CreateLocalGatewayRouteResponse EndCreateLocalGatewayRoute(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateLocalGatewayRouteTableVpcAssociation
+
+
+        /// <summary>
+        /// Associates the specified VPC with the specified local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRouteTableVpcAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayRouteTableVpcAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVpcAssociation">REST API Reference for CreateLocalGatewayRouteTableVpcAssociation Operation</seealso>
+        CreateLocalGatewayRouteTableVpcAssociationResponse CreateLocalGatewayRouteTableVpcAssociation(CreateLocalGatewayRouteTableVpcAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLocalGatewayRouteTableVpcAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRouteTableVpcAssociation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLocalGatewayRouteTableVpcAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVpcAssociation">REST API Reference for CreateLocalGatewayRouteTableVpcAssociation Operation</seealso>
+        IAsyncResult BeginCreateLocalGatewayRouteTableVpcAssociation(CreateLocalGatewayRouteTableVpcAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLocalGatewayRouteTableVpcAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLocalGatewayRouteTableVpcAssociation.</param>
+        /// 
+        /// <returns>Returns a  CreateLocalGatewayRouteTableVpcAssociationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVpcAssociation">REST API Reference for CreateLocalGatewayRouteTableVpcAssociation Operation</seealso>
+        CreateLocalGatewayRouteTableVpcAssociationResponse EndCreateLocalGatewayRouteTableVpcAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateNatGateway
 
 
@@ -3366,8 +3534,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You must specify one of the following targets: internet gateway or virtual private
-        /// gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or
-        /// egress-only internet gateway.
+        /// gateway, NAT instance, NAT gateway, VPC peering connection, network interface, egress-only
+        /// internet gateway, or transit gateway.
         /// </para>
         ///  
         /// <para>
@@ -3638,7 +3806,7 @@ namespace Amazon.EC2
         /// Creates crash-consistent snapshots of multiple EBS volumes and stores the data in
         /// S3. Volumes are chosen by specifying an instance. Any attached volumes will produce
         /// one snapshot each that is crash-consistent across the instance. Boot volumes can be
-        /// excluded by changing the paramaters.
+        /// excluded by changing the parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshots service method.</param>
         /// 
@@ -3858,10 +4026,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// By default, no traffic is mirrored. To mirror traffic, use <a>CreateTrafficMirrorFilterRule</a>
+        /// By default, no traffic is mirrored. To mirror traffic, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilterRule.htm">CreateTrafficMirrorFilterRule</a>
         /// to add Traffic Mirror rules to the filter. The rules you add define what traffic gets
-        /// mirrored. You can also use <a>ModifyTrafficMirrorFilterNetworkServices</a> to mirror
-        /// supported network services.
+        /// mirrored. You can also use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorFilterNetworkServices.html">ModifyTrafficMirrorFilterNetworkServices</a>
+        /// to mirror supported network services.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrafficMirrorFilter service method.</param>
@@ -3902,7 +4070,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a Traffic Mirror rule. 
+        /// Creates a Traffic Mirror filter rule. 
         /// 
         ///  
         /// <para>
@@ -3967,8 +4135,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// By default, no traffic is mirrored. Use <a>CreateTrafficMirrorFilter</a> to create
-        /// filter rules that specify the traffic to mirror.
+        /// By default, no traffic is mirrored. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.htm">CreateTrafficMirrorFilter</a>
+        /// to create filter rules that specify the traffic to mirror.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrafficMirrorSession service method.</param>
@@ -4023,7 +4191,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// To use the target in a Traffic Mirror session, use <a>CreateTrafficMirrorSession</a>.
+        /// To use the target in a Traffic Mirror session, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorSession.htm">CreateTrafficMirrorSession</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrafficMirrorTarget service method.</param>
@@ -4125,6 +4293,102 @@ namespace Amazon.EC2
         /// <returns>Returns a  CreateTransitGatewayResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGateway">REST API Reference for CreateTransitGateway Operation</seealso>
         CreateTransitGatewayResponse EndCreateTransitGateway(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateTransitGatewayMulticastDomain
+
+
+        /// <summary>
+        /// Creates a multicast domain using the specified transit gateway.
+        /// 
+        ///  
+        /// <para>
+        /// The transit gateway must be in the available state before you create a domain. Use
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGateways.html">DescribeTransitGateways</a>
+        /// to see the state of transit gateway.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMulticastDomain service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayMulticastDomain service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMulticastDomain">REST API Reference for CreateTransitGatewayMulticastDomain Operation</seealso>
+        CreateTransitGatewayMulticastDomainResponse CreateTransitGatewayMulticastDomain(CreateTransitGatewayMulticastDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayMulticastDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMulticastDomain operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGatewayMulticastDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMulticastDomain">REST API Reference for CreateTransitGatewayMulticastDomain Operation</seealso>
+        IAsyncResult BeginCreateTransitGatewayMulticastDomain(CreateTransitGatewayMulticastDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGatewayMulticastDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGatewayMulticastDomain.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayMulticastDomainResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMulticastDomain">REST API Reference for CreateTransitGatewayMulticastDomain Operation</seealso>
+        CreateTransitGatewayMulticastDomainResponse EndCreateTransitGatewayMulticastDomain(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateTransitGatewayPeeringAttachment
+
+
+        /// <summary>
+        /// Requests a transit gateway peering attachment between the specified transit gateway
+        /// (requester) and a peer transit gateway (accepter). The transit gateways must be in
+        /// different Regions. The peer transit gateway can be in your account or a different
+        /// AWS account. 
+        /// 
+        ///  
+        /// <para>
+        /// After you create the peering attachment, the owner of the accepter transit gateway
+        /// must accept the attachment request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayPeeringAttachment service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayPeeringAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">REST API Reference for CreateTransitGatewayPeeringAttachment Operation</seealso>
+        CreateTransitGatewayPeeringAttachmentResponse CreateTransitGatewayPeeringAttachment(CreateTransitGatewayPeeringAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayPeeringAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayPeeringAttachment operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGatewayPeeringAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">REST API Reference for CreateTransitGatewayPeeringAttachment Operation</seealso>
+        IAsyncResult BeginCreateTransitGatewayPeeringAttachment(CreateTransitGatewayPeeringAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGatewayPeeringAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGatewayPeeringAttachment.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayPeeringAttachmentResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">REST API Reference for CreateTransitGatewayPeeringAttachment Operation</seealso>
+        CreateTransitGatewayPeeringAttachmentResponse EndCreateTransitGatewayPeeringAttachment(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5274,6 +5538,86 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteLocalGatewayRoute
+
+
+        /// <summary>
+        /// Deletes the specified route from the specified local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayRoute service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRoute">REST API Reference for DeleteLocalGatewayRoute Operation</seealso>
+        DeleteLocalGatewayRouteResponse DeleteLocalGatewayRoute(DeleteLocalGatewayRouteRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLocalGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayRoute operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLocalGatewayRoute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRoute">REST API Reference for DeleteLocalGatewayRoute Operation</seealso>
+        IAsyncResult BeginDeleteLocalGatewayRoute(DeleteLocalGatewayRouteRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLocalGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLocalGatewayRoute.</param>
+        /// 
+        /// <returns>Returns a  DeleteLocalGatewayRouteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRoute">REST API Reference for DeleteLocalGatewayRoute Operation</seealso>
+        DeleteLocalGatewayRouteResponse EndDeleteLocalGatewayRoute(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteLocalGatewayRouteTableVpcAssociation
+
+
+        /// <summary>
+        /// Deletes the specified association between a VPC and local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayRouteTableVpcAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayRouteTableVpcAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation">REST API Reference for DeleteLocalGatewayRouteTableVpcAssociation Operation</seealso>
+        DeleteLocalGatewayRouteTableVpcAssociationResponse DeleteLocalGatewayRouteTableVpcAssociation(DeleteLocalGatewayRouteTableVpcAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLocalGatewayRouteTableVpcAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayRouteTableVpcAssociation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLocalGatewayRouteTableVpcAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation">REST API Reference for DeleteLocalGatewayRouteTableVpcAssociation Operation</seealso>
+        IAsyncResult BeginDeleteLocalGatewayRouteTableVpcAssociation(DeleteLocalGatewayRouteTableVpcAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLocalGatewayRouteTableVpcAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLocalGatewayRouteTableVpcAssociation.</param>
+        /// 
+        /// <returns>Returns a  DeleteLocalGatewayRouteTableVpcAssociationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation">REST API Reference for DeleteLocalGatewayRouteTableVpcAssociation Operation</seealso>
+        DeleteLocalGatewayRouteTableVpcAssociationResponse EndDeleteLocalGatewayRouteTableVpcAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteNatGateway
 
 
@@ -6095,6 +6439,86 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteTransitGatewayMulticastDomain
+
+
+        /// <summary>
+        /// Deletes the specified transit gateway multicast domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMulticastDomain service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayMulticastDomain service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMulticastDomain">REST API Reference for DeleteTransitGatewayMulticastDomain Operation</seealso>
+        DeleteTransitGatewayMulticastDomainResponse DeleteTransitGatewayMulticastDomain(DeleteTransitGatewayMulticastDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayMulticastDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMulticastDomain operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTransitGatewayMulticastDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMulticastDomain">REST API Reference for DeleteTransitGatewayMulticastDomain Operation</seealso>
+        IAsyncResult BeginDeleteTransitGatewayMulticastDomain(DeleteTransitGatewayMulticastDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTransitGatewayMulticastDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTransitGatewayMulticastDomain.</param>
+        /// 
+        /// <returns>Returns a  DeleteTransitGatewayMulticastDomainResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMulticastDomain">REST API Reference for DeleteTransitGatewayMulticastDomain Operation</seealso>
+        DeleteTransitGatewayMulticastDomainResponse EndDeleteTransitGatewayMulticastDomain(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTransitGatewayPeeringAttachment
+
+
+        /// <summary>
+        /// Deletes a transit gateway peering attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayPeeringAttachment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayPeeringAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPeeringAttachment">REST API Reference for DeleteTransitGatewayPeeringAttachment Operation</seealso>
+        DeleteTransitGatewayPeeringAttachmentResponse DeleteTransitGatewayPeeringAttachment(DeleteTransitGatewayPeeringAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayPeeringAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayPeeringAttachment operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTransitGatewayPeeringAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPeeringAttachment">REST API Reference for DeleteTransitGatewayPeeringAttachment Operation</seealso>
+        IAsyncResult BeginDeleteTransitGatewayPeeringAttachment(DeleteTransitGatewayPeeringAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTransitGatewayPeeringAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTransitGatewayPeeringAttachment.</param>
+        /// 
+        /// <returns>Returns a  DeleteTransitGatewayPeeringAttachmentResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPeeringAttachment">REST API Reference for DeleteTransitGatewayPeeringAttachment Operation</seealso>
+        DeleteTransitGatewayPeeringAttachmentResponse EndDeleteTransitGatewayPeeringAttachment(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteTransitGatewayRoute
 
 
@@ -6715,6 +7139,88 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeregisterTransitGatewayMulticastGroupMembers
+
+
+        /// <summary>
+        /// Deregisters the specified members (network interfaces) from the transit gateway multicast
+        /// group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterTransitGatewayMulticastGroupMembers service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterTransitGatewayMulticastGroupMembers service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupMembers">REST API Reference for DeregisterTransitGatewayMulticastGroupMembers Operation</seealso>
+        DeregisterTransitGatewayMulticastGroupMembersResponse DeregisterTransitGatewayMulticastGroupMembers(DeregisterTransitGatewayMulticastGroupMembersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterTransitGatewayMulticastGroupMembers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterTransitGatewayMulticastGroupMembers operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterTransitGatewayMulticastGroupMembers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupMembers">REST API Reference for DeregisterTransitGatewayMulticastGroupMembers Operation</seealso>
+        IAsyncResult BeginDeregisterTransitGatewayMulticastGroupMembers(DeregisterTransitGatewayMulticastGroupMembersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterTransitGatewayMulticastGroupMembers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterTransitGatewayMulticastGroupMembers.</param>
+        /// 
+        /// <returns>Returns a  DeregisterTransitGatewayMulticastGroupMembersResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupMembers">REST API Reference for DeregisterTransitGatewayMulticastGroupMembers Operation</seealso>
+        DeregisterTransitGatewayMulticastGroupMembersResponse EndDeregisterTransitGatewayMulticastGroupMembers(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeregisterTransitGatewayMulticastGroupSources
+
+
+        /// <summary>
+        /// Deregisters the specified sources (network interfaces) from the transit gateway multicast
+        /// group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterTransitGatewayMulticastGroupSources service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterTransitGatewayMulticastGroupSources service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupSources">REST API Reference for DeregisterTransitGatewayMulticastGroupSources Operation</seealso>
+        DeregisterTransitGatewayMulticastGroupSourcesResponse DeregisterTransitGatewayMulticastGroupSources(DeregisterTransitGatewayMulticastGroupSourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterTransitGatewayMulticastGroupSources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterTransitGatewayMulticastGroupSources operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterTransitGatewayMulticastGroupSources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupSources">REST API Reference for DeregisterTransitGatewayMulticastGroupSources Operation</seealso>
+        IAsyncResult BeginDeregisterTransitGatewayMulticastGroupSources(DeregisterTransitGatewayMulticastGroupSourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterTransitGatewayMulticastGroupSources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterTransitGatewayMulticastGroupSources.</param>
+        /// 
+        /// <returns>Returns a  DeregisterTransitGatewayMulticastGroupSourcesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupSources">REST API Reference for DeregisterTransitGatewayMulticastGroupSources Operation</seealso>
+        DeregisterTransitGatewayMulticastGroupSourcesResponse EndDeregisterTransitGatewayMulticastGroupSources(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeAccountAttributes
 
 
@@ -6954,14 +7460,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Availability Zones that are available to you. The results include zones
-        /// only for the Region you're currently using. If there is an event impacting an Availability
-        /// Zone, you can use this request to view the state and any provided message for that
-        /// Availability Zone.
+        /// Describes the Availability Zones and Local Zones that are available to you. If there
+        /// is an event impacting an Availability Zone or Local Zone, you can use this request
+        /// to view the state and any provided messages for that Availability Zone or Local Zone.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+        /// For more information about Availability Zones and Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
         /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6971,14 +7476,13 @@ namespace Amazon.EC2
         DescribeAvailabilityZonesResponse DescribeAvailabilityZones();
 
         /// <summary>
-        /// Describes the Availability Zones that are available to you. The results include zones
-        /// only for the Region you're currently using. If there is an event impacting an Availability
-        /// Zone, you can use this request to view the state and any provided message for that
-        /// Availability Zone.
+        /// Describes the Availability Zones and Local Zones that are available to you. If there
+        /// is an event impacting an Availability Zone or Local Zone, you can use this request
+        /// to view the state and any provided messages for that Availability Zone or Local Zone.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+        /// For more information about Availability Zones and Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
         /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -7412,6 +7916,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeCoipPools
+
+
+        /// <summary>
+        /// Describes the specified customer-owned address pools or all of your customer-owned
+        /// address pools.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCoipPools service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCoipPools service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCoipPools">REST API Reference for DescribeCoipPools Operation</seealso>
+        DescribeCoipPoolsResponse DescribeCoipPools(DescribeCoipPoolsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCoipPools operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCoipPools operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCoipPools
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCoipPools">REST API Reference for DescribeCoipPools Operation</seealso>
+        IAsyncResult BeginDescribeCoipPools(DescribeCoipPoolsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCoipPools operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCoipPools.</param>
+        /// 
+        /// <returns>Returns a  DescribeCoipPoolsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCoipPools">REST API Reference for DescribeCoipPools Operation</seealso>
+        DescribeCoipPoolsResponse EndDescribeCoipPools(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeConversionTasks
 
 
@@ -7766,11 +8311,58 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeFastSnapshotRestores
+
+
+        /// <summary>
+        /// Describes the state of fast snapshot restores for your snapshots.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFastSnapshotRestores service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFastSnapshotRestores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores">REST API Reference for DescribeFastSnapshotRestores Operation</seealso>
+        DescribeFastSnapshotRestoresResponse DescribeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFastSnapshotRestores operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFastSnapshotRestores operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFastSnapshotRestores
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores">REST API Reference for DescribeFastSnapshotRestores Operation</seealso>
+        IAsyncResult BeginDescribeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFastSnapshotRestores operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFastSnapshotRestores.</param>
+        /// 
+        /// <returns>Returns a  DescribeFastSnapshotRestoresResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores">REST API Reference for DescribeFastSnapshotRestores Operation</seealso>
+        DescribeFastSnapshotRestoresResponse EndDescribeFastSnapshotRestores(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeFleetHistory
 
 
         /// <summary>
         /// Describes the events for the specified EC2 Fleet during the specified time.
+        /// 
+        ///  
+        /// <para>
+        /// EC2 Fleet events are delayed by up to 30 seconds before they can be described. This
+        /// ensures that you can query by the last evaluated time and not miss a recorded event.
+        /// EC2 Fleet events are available for 48 hours.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetHistory service method.</param>
         /// 
@@ -8018,11 +8610,11 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The results describe all the Dedicated Host reservation offerings, including offerings
-        /// that may not match the instance family and Region of your Dedicated Hosts. When purchasing
-        /// an offering, ensure that the instance family and Region of the offering matches that
-        /// of the Dedicated Hosts with which it is to be associated. For more information about
-        /// supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+        /// The results describe all of the Dedicated Host reservation offerings, including offerings
+        /// that might not match the instance family and Region of your Dedicated Hosts. When
+        /// purchasing an offering, ensure that the instance family and Region of the offering
+        /// matches that of the Dedicated Hosts with which it is to be associated. For more information
+        /// about supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
         /// Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
         /// </para>
         /// </summary>
@@ -8566,14 +9158,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the credit option for CPU usage of the specified T2 or T3 instances. The
-        /// credit options are <code>standard</code> and <code>unlimited</code>.
+        /// Describes the credit option for CPU usage of the specified burstable performance instances.
+        /// The credit options are <code>standard</code> and <code>unlimited</code>.
         /// 
         ///  
         /// <para>
-        /// If you do not specify an instance ID, Amazon EC2 returns T2 and T3 instances with
-        /// the <code>unlimited</code> credit option, as well as instances that were previously
-        /// configured as T2 or T3 with the <code>unlimited</code> credit option. For example,
+        /// If you do not specify an instance ID, Amazon EC2 returns burstable performance instances
+        /// with the <code>unlimited</code> credit option, as well as instances that were previously
+        /// configured as T2, T3, and T3a with the <code>unlimited</code> credit option. For example,
         /// if you resize a T2 instance, while it is configured as <code>unlimited</code>, to
         /// an M4 instance, Amazon EC2 returns the M4 instance.
         /// </para>
@@ -8581,7 +9173,8 @@ namespace Amazon.EC2
         /// <para>
         /// If you specify one or more instance IDs, Amazon EC2 returns the credit option (<code>standard</code>
         /// or <code>unlimited</code>) of those instances. If you specify an instance ID that
-        /// is not valid, such as an instance that is not a T2 or T3 instance, an error is returned.
+        /// is not valid, such as an instance that is not a burstable performance instance, an
+        /// error is returned.
         /// </para>
         ///  
         /// <para>
@@ -8830,6 +9423,89 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeInstanceTypeOfferings
+
+
+        /// <summary>
+        /// Returns a list of all instance types offered. The results can be filtered by location
+        /// (Region or Availability Zone). If no location is specified, the instance types offered
+        /// in the current Region are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypeOfferings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceTypeOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings">REST API Reference for DescribeInstanceTypeOfferings Operation</seealso>
+        DescribeInstanceTypeOfferingsResponse DescribeInstanceTypeOfferings(DescribeInstanceTypeOfferingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceTypeOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypeOfferings operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceTypeOfferings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings">REST API Reference for DescribeInstanceTypeOfferings Operation</seealso>
+        IAsyncResult BeginDescribeInstanceTypeOfferings(DescribeInstanceTypeOfferingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceTypeOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceTypeOfferings.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceTypeOfferingsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings">REST API Reference for DescribeInstanceTypeOfferings Operation</seealso>
+        DescribeInstanceTypeOfferingsResponse EndDescribeInstanceTypeOfferings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeInstanceTypes
+
+
+        /// <summary>
+        /// Returns a list of all instance types offered in your current AWS Region. The results
+        /// can be filtered by the attributes of the instance types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceTypes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">REST API Reference for DescribeInstanceTypes Operation</seealso>
+        DescribeInstanceTypesResponse DescribeInstanceTypes(DescribeInstanceTypesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypes operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">REST API Reference for DescribeInstanceTypes Operation</seealso>
+        IAsyncResult BeginDescribeInstanceTypes(DescribeInstanceTypesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceTypes.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceTypesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">REST API Reference for DescribeInstanceTypes Operation</seealso>
+        DescribeInstanceTypesResponse EndDescribeInstanceTypes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeInternetGateways
 
 
@@ -9016,6 +9692,249 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeLaunchTemplateVersionsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplateVersions">REST API Reference for DescribeLaunchTemplateVersions Operation</seealso>
         DescribeLaunchTemplateVersionsResponse EndDescribeLaunchTemplateVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeLocalGatewayRouteTables
+
+
+        /// <summary>
+        /// Describes one or more local gateway route tables. By default, all local gateway route
+        /// tables are described. Alternatively, you can filter the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayRouteTables service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocalGatewayRouteTables service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTables">REST API Reference for DescribeLocalGatewayRouteTables Operation</seealso>
+        DescribeLocalGatewayRouteTablesResponse DescribeLocalGatewayRouteTables(DescribeLocalGatewayRouteTablesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLocalGatewayRouteTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayRouteTables operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLocalGatewayRouteTables
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTables">REST API Reference for DescribeLocalGatewayRouteTables Operation</seealso>
+        IAsyncResult BeginDescribeLocalGatewayRouteTables(DescribeLocalGatewayRouteTablesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLocalGatewayRouteTables operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLocalGatewayRouteTables.</param>
+        /// 
+        /// <returns>Returns a  DescribeLocalGatewayRouteTablesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTables">REST API Reference for DescribeLocalGatewayRouteTables Operation</seealso>
+        DescribeLocalGatewayRouteTablesResponse EndDescribeLocalGatewayRouteTables(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations
+
+
+        /// <summary>
+        /// Describes the associations between virtual interface groups and local gateway route
+        /// tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations">REST API Reference for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations Operation</seealso>
+        DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations">REST API Reference for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations Operation</seealso>
+        IAsyncResult BeginDescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations">REST API Reference for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations Operation</seealso>
+        DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse EndDescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeLocalGatewayRouteTableVpcAssociations
+
+
+        /// <summary>
+        /// Describes the specified associations between VPCs and local gateway route tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayRouteTableVpcAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocalGatewayRouteTableVpcAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVpcAssociations">REST API Reference for DescribeLocalGatewayRouteTableVpcAssociations Operation</seealso>
+        DescribeLocalGatewayRouteTableVpcAssociationsResponse DescribeLocalGatewayRouteTableVpcAssociations(DescribeLocalGatewayRouteTableVpcAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLocalGatewayRouteTableVpcAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayRouteTableVpcAssociations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLocalGatewayRouteTableVpcAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVpcAssociations">REST API Reference for DescribeLocalGatewayRouteTableVpcAssociations Operation</seealso>
+        IAsyncResult BeginDescribeLocalGatewayRouteTableVpcAssociations(DescribeLocalGatewayRouteTableVpcAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLocalGatewayRouteTableVpcAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLocalGatewayRouteTableVpcAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeLocalGatewayRouteTableVpcAssociationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVpcAssociations">REST API Reference for DescribeLocalGatewayRouteTableVpcAssociations Operation</seealso>
+        DescribeLocalGatewayRouteTableVpcAssociationsResponse EndDescribeLocalGatewayRouteTableVpcAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeLocalGateways
+
+
+        /// <summary>
+        /// Describes one or more local gateways. By default, all local gateways are described.
+        /// Alternatively, you can filter the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGateways service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocalGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGateways">REST API Reference for DescribeLocalGateways Operation</seealso>
+        DescribeLocalGatewaysResponse DescribeLocalGateways(DescribeLocalGatewaysRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLocalGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGateways operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLocalGateways
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGateways">REST API Reference for DescribeLocalGateways Operation</seealso>
+        IAsyncResult BeginDescribeLocalGateways(DescribeLocalGatewaysRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLocalGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLocalGateways.</param>
+        /// 
+        /// <returns>Returns a  DescribeLocalGatewaysResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGateways">REST API Reference for DescribeLocalGateways Operation</seealso>
+        DescribeLocalGatewaysResponse EndDescribeLocalGateways(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeLocalGatewayVirtualInterfaceGroups
+
+
+        /// <summary>
+        /// Describes the specified local gateway virtual interface groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayVirtualInterfaceGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocalGatewayVirtualInterfaceGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaceGroups">REST API Reference for DescribeLocalGatewayVirtualInterfaceGroups Operation</seealso>
+        DescribeLocalGatewayVirtualInterfaceGroupsResponse DescribeLocalGatewayVirtualInterfaceGroups(DescribeLocalGatewayVirtualInterfaceGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLocalGatewayVirtualInterfaceGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayVirtualInterfaceGroups operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLocalGatewayVirtualInterfaceGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaceGroups">REST API Reference for DescribeLocalGatewayVirtualInterfaceGroups Operation</seealso>
+        IAsyncResult BeginDescribeLocalGatewayVirtualInterfaceGroups(DescribeLocalGatewayVirtualInterfaceGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLocalGatewayVirtualInterfaceGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLocalGatewayVirtualInterfaceGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeLocalGatewayVirtualInterfaceGroupsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaceGroups">REST API Reference for DescribeLocalGatewayVirtualInterfaceGroups Operation</seealso>
+        DescribeLocalGatewayVirtualInterfaceGroupsResponse EndDescribeLocalGatewayVirtualInterfaceGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeLocalGatewayVirtualInterfaces
+
+
+        /// <summary>
+        /// Describes the specified local gateway virtual interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayVirtualInterfaces service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocalGatewayVirtualInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaces">REST API Reference for DescribeLocalGatewayVirtualInterfaces Operation</seealso>
+        DescribeLocalGatewayVirtualInterfacesResponse DescribeLocalGatewayVirtualInterfaces(DescribeLocalGatewayVirtualInterfacesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLocalGatewayVirtualInterfaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocalGatewayVirtualInterfaces operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLocalGatewayVirtualInterfaces
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaces">REST API Reference for DescribeLocalGatewayVirtualInterfaces Operation</seealso>
+        IAsyncResult BeginDescribeLocalGatewayVirtualInterfaces(DescribeLocalGatewayVirtualInterfacesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLocalGatewayVirtualInterfaces operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLocalGatewayVirtualInterfaces.</param>
+        /// 
+        /// <returns>Returns a  DescribeLocalGatewayVirtualInterfacesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaces">REST API Reference for DescribeLocalGatewayVirtualInterfaces Operation</seealso>
+        DescribeLocalGatewayVirtualInterfacesResponse EndDescribeLocalGatewayVirtualInterfaces(IAsyncResult asyncResult);
 
         #endregion
         
@@ -11036,6 +11955,86 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeTransitGatewayMulticastDomains
+
+
+        /// <summary>
+        /// Describes one or more transit gateway multicast domains.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayMulticastDomains service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayMulticastDomains service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMulticastDomains">REST API Reference for DescribeTransitGatewayMulticastDomains Operation</seealso>
+        DescribeTransitGatewayMulticastDomainsResponse DescribeTransitGatewayMulticastDomains(DescribeTransitGatewayMulticastDomainsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayMulticastDomains operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayMulticastDomains operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTransitGatewayMulticastDomains
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMulticastDomains">REST API Reference for DescribeTransitGatewayMulticastDomains Operation</seealso>
+        IAsyncResult BeginDescribeTransitGatewayMulticastDomains(DescribeTransitGatewayMulticastDomainsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTransitGatewayMulticastDomains operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTransitGatewayMulticastDomains.</param>
+        /// 
+        /// <returns>Returns a  DescribeTransitGatewayMulticastDomainsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMulticastDomains">REST API Reference for DescribeTransitGatewayMulticastDomains Operation</seealso>
+        DescribeTransitGatewayMulticastDomainsResponse EndDescribeTransitGatewayMulticastDomains(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeTransitGatewayPeeringAttachments
+
+
+        /// <summary>
+        /// Describes your transit gateway peering attachments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayPeeringAttachments service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayPeeringAttachments service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPeeringAttachments">REST API Reference for DescribeTransitGatewayPeeringAttachments Operation</seealso>
+        DescribeTransitGatewayPeeringAttachmentsResponse DescribeTransitGatewayPeeringAttachments(DescribeTransitGatewayPeeringAttachmentsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayPeeringAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayPeeringAttachments operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTransitGatewayPeeringAttachments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPeeringAttachments">REST API Reference for DescribeTransitGatewayPeeringAttachments Operation</seealso>
+        IAsyncResult BeginDescribeTransitGatewayPeeringAttachments(DescribeTransitGatewayPeeringAttachmentsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTransitGatewayPeeringAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTransitGatewayPeeringAttachments.</param>
+        /// 
+        /// <returns>Returns a  DescribeTransitGatewayPeeringAttachmentsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPeeringAttachments">REST API Reference for DescribeTransitGatewayPeeringAttachments Operation</seealso>
+        DescribeTransitGatewayPeeringAttachmentsResponse EndDescribeTransitGatewayPeeringAttachments(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeTransitGatewayRouteTables
 
 
@@ -12348,6 +13347,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableFastSnapshotRestores
+
+
+        /// <summary>
+        /// Disables fast snapshot restores for the specified snapshots in the specified Availability
+        /// Zones.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableFastSnapshotRestores service method.</param>
+        /// 
+        /// <returns>The response from the DisableFastSnapshotRestores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores">REST API Reference for DisableFastSnapshotRestores Operation</seealso>
+        DisableFastSnapshotRestoresResponse DisableFastSnapshotRestores(DisableFastSnapshotRestoresRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableFastSnapshotRestores operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableFastSnapshotRestores operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableFastSnapshotRestores
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores">REST API Reference for DisableFastSnapshotRestores Operation</seealso>
+        IAsyncResult BeginDisableFastSnapshotRestores(DisableFastSnapshotRestoresRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableFastSnapshotRestores operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableFastSnapshotRestores.</param>
+        /// 
+        /// <returns>Returns a  DisableFastSnapshotRestoresResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores">REST API Reference for DisableFastSnapshotRestores Operation</seealso>
+        DisableFastSnapshotRestoresResponse EndDisableFastSnapshotRestores(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableTransitGatewayRouteTablePropagation
 
 
@@ -12761,6 +13801,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateTransitGatewayMulticastDomain
+
+
+        /// <summary>
+        /// Disassociates the specified subnets from the transit gateway multicast domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTransitGatewayMulticastDomain service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateTransitGatewayMulticastDomain service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayMulticastDomain">REST API Reference for DisassociateTransitGatewayMulticastDomain Operation</seealso>
+        DisassociateTransitGatewayMulticastDomainResponse DisassociateTransitGatewayMulticastDomain(DisassociateTransitGatewayMulticastDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateTransitGatewayMulticastDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTransitGatewayMulticastDomain operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateTransitGatewayMulticastDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayMulticastDomain">REST API Reference for DisassociateTransitGatewayMulticastDomain Operation</seealso>
+        IAsyncResult BeginDisassociateTransitGatewayMulticastDomain(DisassociateTransitGatewayMulticastDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateTransitGatewayMulticastDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateTransitGatewayMulticastDomain.</param>
+        /// 
+        /// <returns>Returns a  DisassociateTransitGatewayMulticastDomainResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayMulticastDomain">REST API Reference for DisassociateTransitGatewayMulticastDomain Operation</seealso>
+        DisassociateTransitGatewayMulticastDomainResponse EndDisassociateTransitGatewayMulticastDomain(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateTransitGatewayRouteTable
 
 
@@ -12911,6 +13991,54 @@ namespace Amazon.EC2
         /// <returns>Returns a  EnableEbsEncryptionByDefaultResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">REST API Reference for EnableEbsEncryptionByDefault Operation</seealso>
         EnableEbsEncryptionByDefaultResponse EndEnableEbsEncryptionByDefault(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableFastSnapshotRestores
+
+
+        /// <summary>
+        /// Enables fast snapshot restores for the specified snapshots in the specified Availability
+        /// Zones.
+        /// 
+        ///  
+        /// <para>
+        /// You get the full benefit of fast snapshot restores after they enter the <code>enabled</code>
+        /// state. To get the current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>.
+        /// To disable fast snapshot restores, use <a>DisableFastSnapshotRestores</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableFastSnapshotRestores service method.</param>
+        /// 
+        /// <returns>The response from the EnableFastSnapshotRestores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
+        EnableFastSnapshotRestoresResponse EnableFastSnapshotRestores(EnableFastSnapshotRestoresRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableFastSnapshotRestores operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableFastSnapshotRestores operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableFastSnapshotRestores
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
+        IAsyncResult BeginEnableFastSnapshotRestores(EnableFastSnapshotRestoresRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableFastSnapshotRestores operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableFastSnapshotRestores.</param>
+        /// 
+        /// <returns>Returns a  EnableFastSnapshotRestoresResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
+        EnableFastSnapshotRestoresResponse EndEnableFastSnapshotRestores(IAsyncResult asyncResult);
 
         #endregion
         
@@ -13338,6 +14466,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetCoipPoolUsage
+
+
+        /// <summary>
+        /// Describes the allocations from the specified customer-owned address pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoipPoolUsage service method.</param>
+        /// 
+        /// <returns>The response from the GetCoipPoolUsage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCoipPoolUsage">REST API Reference for GetCoipPoolUsage Operation</seealso>
+        GetCoipPoolUsageResponse GetCoipPoolUsage(GetCoipPoolUsageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCoipPoolUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCoipPoolUsage operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCoipPoolUsage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCoipPoolUsage">REST API Reference for GetCoipPoolUsage Operation</seealso>
+        IAsyncResult BeginGetCoipPoolUsage(GetCoipPoolUsageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCoipPoolUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCoipPoolUsage.</param>
+        /// 
+        /// <returns>Returns a  GetCoipPoolUsageResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCoipPoolUsage">REST API Reference for GetCoipPoolUsage Operation</seealso>
+        GetCoipPoolUsageResponse EndGetCoipPoolUsage(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetConsoleOutput
 
 
@@ -13442,6 +14610,53 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetConsoleScreenshotResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot">REST API Reference for GetConsoleScreenshot Operation</seealso>
         GetConsoleScreenshotResponse EndGetConsoleScreenshot(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetDefaultCreditSpecification
+
+
+        /// <summary>
+        /// Describes the default credit option for CPU usage of a burstable performance instance
+        /// family.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+        /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultCreditSpecification service method.</param>
+        /// 
+        /// <returns>The response from the GetDefaultCreditSpecification service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">REST API Reference for GetDefaultCreditSpecification Operation</seealso>
+        GetDefaultCreditSpecificationResponse GetDefaultCreditSpecification(GetDefaultCreditSpecificationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDefaultCreditSpecification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultCreditSpecification operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDefaultCreditSpecification
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">REST API Reference for GetDefaultCreditSpecification Operation</seealso>
+        IAsyncResult BeginGetDefaultCreditSpecification(GetDefaultCreditSpecificationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDefaultCreditSpecification operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDefaultCreditSpecification.</param>
+        /// 
+        /// <returns>Returns a  GetDefaultCreditSpecificationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">REST API Reference for GetDefaultCreditSpecification Operation</seealso>
+        GetDefaultCreditSpecificationResponse EndGetDefaultCreditSpecification(IAsyncResult asyncResult);
 
         #endregion
         
@@ -13774,6 +14989,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetTransitGatewayAttachmentPropagationsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentPropagations">REST API Reference for GetTransitGatewayAttachmentPropagations Operation</seealso>
         GetTransitGatewayAttachmentPropagationsResponse EndGetTransitGatewayAttachmentPropagations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetTransitGatewayMulticastDomainAssociations
+
+
+        /// <summary>
+        /// Gets information about the associations for the transit gateway multicast domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayMulticastDomainAssociations service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayMulticastDomainAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations">REST API Reference for GetTransitGatewayMulticastDomainAssociations Operation</seealso>
+        GetTransitGatewayMulticastDomainAssociationsResponse GetTransitGatewayMulticastDomainAssociations(GetTransitGatewayMulticastDomainAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayMulticastDomainAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayMulticastDomainAssociations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTransitGatewayMulticastDomainAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations">REST API Reference for GetTransitGatewayMulticastDomainAssociations Operation</seealso>
+        IAsyncResult BeginGetTransitGatewayMulticastDomainAssociations(GetTransitGatewayMulticastDomainAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTransitGatewayMulticastDomainAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTransitGatewayMulticastDomainAssociations.</param>
+        /// 
+        /// <returns>Returns a  GetTransitGatewayMulticastDomainAssociationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations">REST API Reference for GetTransitGatewayMulticastDomainAssociations Operation</seealso>
+        GetTransitGatewayMulticastDomainAssociationsResponse EndGetTransitGatewayMulticastDomainAssociations(IAsyncResult asyncResult);
 
         #endregion
         
@@ -14220,6 +15475,64 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyDefaultCreditSpecification
+
+
+        /// <summary>
+        /// Modifies the default credit option for CPU usage of burstable performance instances.
+        /// The default credit option is set at the account level per AWS Region, and is specified
+        /// per instance family. All new burstable performance instances in the account launch
+        /// using the default credit option.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which
+        /// works at an AWS Region level and modifies the credit option for each Availability
+        /// Zone. All zones in a Region are updated within five minutes. But if instances are
+        /// launched during this operation, they might not get the new credit option until the
+        /// zone is updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code>
+        /// and check <code>DefaultCreditSpecification</code> for updates.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+        /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDefaultCreditSpecification service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDefaultCreditSpecification service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">REST API Reference for ModifyDefaultCreditSpecification Operation</seealso>
+        ModifyDefaultCreditSpecificationResponse ModifyDefaultCreditSpecification(ModifyDefaultCreditSpecificationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDefaultCreditSpecification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDefaultCreditSpecification operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDefaultCreditSpecification
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">REST API Reference for ModifyDefaultCreditSpecification Operation</seealso>
+        IAsyncResult BeginModifyDefaultCreditSpecification(ModifyDefaultCreditSpecificationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyDefaultCreditSpecification operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDefaultCreditSpecification.</param>
+        /// 
+        /// <returns>Returns a  ModifyDefaultCreditSpecificationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">REST API Reference for ModifyDefaultCreditSpecification Operation</seealso>
+        ModifyDefaultCreditSpecificationResponse EndModifyDefaultCreditSpecification(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyEbsDefaultKmsKeyId
 
 
@@ -14296,10 +15609,10 @@ namespace Amazon.EC2
         /// <para>
         /// To scale up your EC2 Fleet, increase its target capacity. The EC2 Fleet launches the
         /// additional Spot Instances according to the allocation strategy for the EC2 Fleet request.
-        /// If the allocation strategy is <code>lowestPrice</code>, the EC2 Fleet launches instances
+        /// If the allocation strategy is <code>lowest-price</code>, the EC2 Fleet launches instances
         /// using the Spot Instance pool with the lowest price. If the allocation strategy is
         /// <code>diversified</code>, the EC2 Fleet distributes the instances across the Spot
-        /// Instance pools. If the allocation strategy is <code>capacityOptimized</code>, EC2
+        /// Instance pools. If the allocation strategy is <code>capacity-optimized</code>, EC2
         /// Fleet launches instances from Spot Instance pools with optimal capacity for the number
         /// of instances that are launching.
         /// </para>
@@ -14308,14 +15621,14 @@ namespace Amazon.EC2
         /// To scale down your EC2 Fleet, decrease its target capacity. First, the EC2 Fleet cancels
         /// any open requests that exceed the new target capacity. You can request that the EC2
         /// Fleet terminate Spot Instances until the size of the fleet no longer exceeds the new
-        /// target capacity. If the allocation strategy is <code>lowestPrice</code>, the EC2 Fleet
-        /// terminates the instances with the highest price per unit. If the allocation strategy
-        /// is <code>capacityOptimized</code>, the EC2 Fleet terminates the instances in the Spot
-        /// Instance pools that have the least available Spot Instance capacity. If the allocation
-        /// strategy is <code>diversified</code>, the EC2 Fleet terminates instances across the
-        /// Spot Instance pools. Alternatively, you can request that the EC2 Fleet keep the fleet
-        /// at its current size, but not replace any Spot Instances that are interrupted or that
-        /// you terminate manually.
+        /// target capacity. If the allocation strategy is <code>lowest-price</code>, the EC2
+        /// Fleet terminates the instances with the highest price per unit. If the allocation
+        /// strategy is <code>capacity-optimized</code>, the EC2 Fleet terminates the instances
+        /// in the Spot Instance pools that have the least available Spot Instance capacity. If
+        /// the allocation strategy is <code>diversified</code>, the EC2 Fleet terminates instances
+        /// across the Spot Instance pools. Alternatively, you can request that the EC2 Fleet
+        /// keep the fleet at its current size, but not replace any Spot Instances that are interrupted
+        /// or that you terminate manually.
         /// </para>
         ///  
         /// <para>
@@ -14407,6 +15720,12 @@ namespace Amazon.EC2
         /// enabled. When auto-placement is disabled, you need to provide a host ID to have the
         /// instance launch onto a specific host. If no host ID is provided, the instance is launched
         /// onto a suitable host with auto-placement enabled.
+        /// 
+        ///  
+        /// <para>
+        /// You can also use this API action to modify a Dedicated Host to support either multiple
+        /// instance types in an instance family, or to support a specific instance type only.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyHosts service method.</param>
         /// 
@@ -14743,8 +16062,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the credit option for CPU usage on a running or stopped T2 or T3 instance.
-        /// The credit options are <code>standard</code> and <code>unlimited</code>.
+        /// Modifies the credit option for CPU usage on a running or stopped burstable performance
+        /// instance. The credit options are <code>standard</code> and <code>unlimited</code>.
         /// 
         ///  
         /// <para>
@@ -14823,6 +16142,52 @@ namespace Amazon.EC2
         /// <returns>Returns a  ModifyInstanceEventStartTimeResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime">REST API Reference for ModifyInstanceEventStartTime Operation</seealso>
         ModifyInstanceEventStartTimeResponse EndModifyInstanceEventStartTime(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyInstanceMetadataOptions
+
+
+        /// <summary>
+        /// Modify the instance metadata parameters on a running or stopped instance. When you
+        /// modify the parameters on a stopped instance, they are applied when the instance is
+        /// started. When you modify the parameters on a running instance, the API responds with
+        /// a state of “pending”. After the parameter modifications are successfully applied to
+        /// the instance, the state of the modifications changes from “pending” to “applied” in
+        /// subsequent describe-instances API calls. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+        /// Metadata and User Data</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMetadataOptions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceMetadataOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">REST API Reference for ModifyInstanceMetadataOptions Operation</seealso>
+        ModifyInstanceMetadataOptionsResponse ModifyInstanceMetadataOptions(ModifyInstanceMetadataOptionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceMetadataOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMetadataOptions operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstanceMetadataOptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">REST API Reference for ModifyInstanceMetadataOptions Operation</seealso>
+        IAsyncResult BeginModifyInstanceMetadataOptions(ModifyInstanceMetadataOptionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyInstanceMetadataOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceMetadataOptions.</param>
+        /// 
+        /// <returns>Returns a  ModifyInstanceMetadataOptionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">REST API Reference for ModifyInstanceMetadataOptions Operation</seealso>
+        ModifyInstanceMetadataOptionsResponse EndModifyInstanceMetadataOptions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -15224,7 +16589,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// FFor information about filter rule properties, see <a href="https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html#traffic-mirroring-network-services">Network
+        /// For information about filter rule properties, see <a href="https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html">Network
         /// Services</a> in the <i>Traffic Mirroring User Guide </i>.
         /// </para>
         /// </summary>
@@ -16439,18 +17804,31 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// Some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise
-        /// Server (SLES), use the EC2 billing product code associated with an AMI to verify the
-        /// subscription status for package updates. Creating an AMI from an EBS snapshot does
-        /// not maintain this billing code, and instances launched from such an AMI are not able
-        /// to connect to package update infrastructure. If you purchase a Reserved Instance offering
-        /// for one of these Linux distributions and launch instances using an AMI that does not
-        /// contain the required billing code, your Reserved Instance is not applied to these
-        /// instances.
+        /// Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and
+        /// SUSE Linux Enterprise Server (SLES), use the EC2 billing product code associated with
+        /// an AMI to verify the subscription status for package updates. To create a new AMI
+        /// for operating systems that require a billing product code, do the following:
         /// </para>
-        ///  
+        ///  <ol> <li> 
         /// <para>
-        /// To create an AMI for operating systems that require a billing code, see <a>CreateImage</a>.
+        /// Launch an instance from an existing AMI with that billing product code.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Customize the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create a new AMI from the instance using <a>CreateImage</a> to preserve the billing
+        /// product code association.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// If you purchase a Reserved Instance to apply to an On-Demand Instance that was launched
+        /// from an AMI with a billing product code, make sure that the Reserved Instance has
+        /// the matching billing product code. If you purchase a Reserved Instance without the
+        /// matching billing product code, the Reserved Instance will not be applied to the On-Demand
+        /// Instance. 
         /// </para>
         ///  
         /// <para>
@@ -16490,6 +17868,148 @@ namespace Amazon.EC2
         /// <returns>Returns a  RegisterImageResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">REST API Reference for RegisterImage Operation</seealso>
         RegisterImageResponse EndRegisterImage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RegisterTransitGatewayMulticastGroupMembers
+
+
+        /// <summary>
+        /// Registers members (network interfaces) with the transit gateway multicast group. A
+        /// member is a network interface associated with a supported EC2 instance that receives
+        /// multicast traffic. For information about supported instances, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
+        /// Consideration</a> in <i>Amazon VPC Transit Gateways</i>.
+        /// 
+        ///  
+        /// <para>
+        /// After you add the members, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html">SearchTransitGatewayMulticastGroups</a>
+        /// to verify that the members were added to the transit gateway multicast group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterTransitGatewayMulticastGroupMembers service method.</param>
+        /// 
+        /// <returns>The response from the RegisterTransitGatewayMulticastGroupMembers service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupMembers">REST API Reference for RegisterTransitGatewayMulticastGroupMembers Operation</seealso>
+        RegisterTransitGatewayMulticastGroupMembersResponse RegisterTransitGatewayMulticastGroupMembers(RegisterTransitGatewayMulticastGroupMembersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterTransitGatewayMulticastGroupMembers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterTransitGatewayMulticastGroupMembers operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterTransitGatewayMulticastGroupMembers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupMembers">REST API Reference for RegisterTransitGatewayMulticastGroupMembers Operation</seealso>
+        IAsyncResult BeginRegisterTransitGatewayMulticastGroupMembers(RegisterTransitGatewayMulticastGroupMembersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterTransitGatewayMulticastGroupMembers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterTransitGatewayMulticastGroupMembers.</param>
+        /// 
+        /// <returns>Returns a  RegisterTransitGatewayMulticastGroupMembersResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupMembers">REST API Reference for RegisterTransitGatewayMulticastGroupMembers Operation</seealso>
+        RegisterTransitGatewayMulticastGroupMembersResponse EndRegisterTransitGatewayMulticastGroupMembers(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RegisterTransitGatewayMulticastGroupSources
+
+
+        /// <summary>
+        /// Registers sources (network interfaces) with the specified transit gateway multicast
+        /// group.
+        /// 
+        ///  
+        /// <para>
+        /// A multicast source is a network interface attached to a supported instance that sends
+        /// multicast traffic. For information about supported instances, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
+        /// Considerations</a> in <i>Amazon VPC Transit Gateways</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you add the source, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html">SearchTransitGatewayMulticastGroups</a>
+        /// to verify that the source was added to the multicast group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterTransitGatewayMulticastGroupSources service method.</param>
+        /// 
+        /// <returns>The response from the RegisterTransitGatewayMulticastGroupSources service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupSources">REST API Reference for RegisterTransitGatewayMulticastGroupSources Operation</seealso>
+        RegisterTransitGatewayMulticastGroupSourcesResponse RegisterTransitGatewayMulticastGroupSources(RegisterTransitGatewayMulticastGroupSourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterTransitGatewayMulticastGroupSources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterTransitGatewayMulticastGroupSources operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterTransitGatewayMulticastGroupSources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupSources">REST API Reference for RegisterTransitGatewayMulticastGroupSources Operation</seealso>
+        IAsyncResult BeginRegisterTransitGatewayMulticastGroupSources(RegisterTransitGatewayMulticastGroupSourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterTransitGatewayMulticastGroupSources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterTransitGatewayMulticastGroupSources.</param>
+        /// 
+        /// <returns>Returns a  RegisterTransitGatewayMulticastGroupSourcesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupSources">REST API Reference for RegisterTransitGatewayMulticastGroupSources Operation</seealso>
+        RegisterTransitGatewayMulticastGroupSourcesResponse EndRegisterTransitGatewayMulticastGroupSources(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RejectTransitGatewayPeeringAttachment
+
+
+        /// <summary>
+        /// Rejects a transit gateway peering attachment request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayPeeringAttachment service method.</param>
+        /// 
+        /// <returns>The response from the RejectTransitGatewayPeeringAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayPeeringAttachment">REST API Reference for RejectTransitGatewayPeeringAttachment Operation</seealso>
+        RejectTransitGatewayPeeringAttachmentResponse RejectTransitGatewayPeeringAttachment(RejectTransitGatewayPeeringAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectTransitGatewayPeeringAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayPeeringAttachment operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectTransitGatewayPeeringAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayPeeringAttachment">REST API Reference for RejectTransitGatewayPeeringAttachment Operation</seealso>
+        IAsyncResult BeginRejectTransitGatewayPeeringAttachment(RejectTransitGatewayPeeringAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RejectTransitGatewayPeeringAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectTransitGatewayPeeringAttachment.</param>
+        /// 
+        /// <returns>Returns a  RejectTransitGatewayPeeringAttachmentResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayPeeringAttachment">REST API Reference for RejectTransitGatewayPeeringAttachment Operation</seealso>
+        RejectTransitGatewayPeeringAttachmentResponse EndRejectTransitGatewayPeeringAttachment(IAsyncResult asyncResult);
 
         #endregion
         
@@ -16885,8 +18405,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Replaces an existing route within a route table in a VPC. You must provide only one
-        /// of the following: internet gateway or virtual private gateway, NAT instance, NAT gateway,
-        /// VPC peering connection, network interface, or egress-only internet gateway.
+        /// of the following: internet gateway, virtual private gateway, NAT instance, NAT gateway,
+        /// VPC peering connection, network interface, egress-only internet gateway, or transit
+        /// gateway.
         /// 
         ///  
         /// <para>
@@ -16932,16 +18453,17 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Changes the route table associated with a given subnet in a VPC. After the operation
-        /// completes, the subnet uses the routes in the new route table it's associated with.
-        /// For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+        /// Changes the route table associated with a given subnet, internet gateway, or virtual
+        /// private gateway in a VPC. After the operation completes, the subnet or gateway uses
+        /// the routes in the new route table. For more information about route tables, see <a
+        /// href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You can also use ReplaceRouteTableAssociation to change which table is the main route
-        /// table in the VPC. You just specify the main route table's association ID and the route
-        /// table to be the new main route table.
+        /// You can also use this operation to change which table is the main route table in the
+        /// VPC. Specify the main route table's association ID and the route table ID of the new
+        /// main route table.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplaceRouteTableAssociation service method.</param>
@@ -17832,6 +19354,87 @@ namespace Amazon.EC2
         /// <returns>Returns a  RunScheduledInstancesResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">REST API Reference for RunScheduledInstances Operation</seealso>
         RunScheduledInstancesResponse EndRunScheduledInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SearchLocalGatewayRoutes
+
+
+        /// <summary>
+        /// Searches for routes in the specified local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchLocalGatewayRoutes service method.</param>
+        /// 
+        /// <returns>The response from the SearchLocalGatewayRoutes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchLocalGatewayRoutes">REST API Reference for SearchLocalGatewayRoutes Operation</seealso>
+        SearchLocalGatewayRoutesResponse SearchLocalGatewayRoutes(SearchLocalGatewayRoutesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchLocalGatewayRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchLocalGatewayRoutes operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchLocalGatewayRoutes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchLocalGatewayRoutes">REST API Reference for SearchLocalGatewayRoutes Operation</seealso>
+        IAsyncResult BeginSearchLocalGatewayRoutes(SearchLocalGatewayRoutesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchLocalGatewayRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchLocalGatewayRoutes.</param>
+        /// 
+        /// <returns>Returns a  SearchLocalGatewayRoutesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchLocalGatewayRoutes">REST API Reference for SearchLocalGatewayRoutes Operation</seealso>
+        SearchLocalGatewayRoutesResponse EndSearchLocalGatewayRoutes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SearchTransitGatewayMulticastGroups
+
+
+        /// <summary>
+        /// Searches one or more transit gateway multicast groups and returns the group membership
+        /// information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchTransitGatewayMulticastGroups service method.</param>
+        /// 
+        /// <returns>The response from the SearchTransitGatewayMulticastGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayMulticastGroups">REST API Reference for SearchTransitGatewayMulticastGroups Operation</seealso>
+        SearchTransitGatewayMulticastGroupsResponse SearchTransitGatewayMulticastGroups(SearchTransitGatewayMulticastGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchTransitGatewayMulticastGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchTransitGatewayMulticastGroups operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchTransitGatewayMulticastGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayMulticastGroups">REST API Reference for SearchTransitGatewayMulticastGroups Operation</seealso>
+        IAsyncResult BeginSearchTransitGatewayMulticastGroups(SearchTransitGatewayMulticastGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchTransitGatewayMulticastGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchTransitGatewayMulticastGroups.</param>
+        /// 
+        /// <returns>Returns a  SearchTransitGatewayMulticastGroupsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayMulticastGroups">REST API Reference for SearchTransitGatewayMulticastGroups Operation</seealso>
+        SearchTransitGatewayMulticastGroupsResponse EndSearchTransitGatewayMulticastGroups(IAsyncResult asyncResult);
 
         #endregion
         

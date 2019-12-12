@@ -64,6 +64,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ArchivalSummary", targetDepth))
+                {
+                    var unmarshaller = ArchivalSummaryUnmarshaller.Instance;
+                    unmarshalledObject.ArchivalSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AttributeDefinitions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AttributeDefinition, AttributeDefinitionUnmarshaller>(AttributeDefinitionUnmarshaller.Instance);
@@ -86,6 +92,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<GlobalSecondaryIndexDescription, GlobalSecondaryIndexDescriptionUnmarshaller>(GlobalSecondaryIndexDescriptionUnmarshaller.Instance);
                     unmarshalledObject.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("GlobalTableVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GlobalTableVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ItemCount", targetDepth))
@@ -122,6 +134,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ProvisionedThroughputDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Replicas", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ReplicaDescription, ReplicaDescriptionUnmarshaller>(ReplicaDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.Replicas = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RestoreSummary", targetDepth))

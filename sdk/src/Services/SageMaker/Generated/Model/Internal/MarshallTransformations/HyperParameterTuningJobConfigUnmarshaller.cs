@@ -94,6 +94,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrainingJobEarlyStoppingType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TuningJobCompletionCriteria", targetDepth))
+                {
+                    var unmarshaller = TuningJobCompletionCriteriaUnmarshaller.Instance;
+                    unmarshalledObject.TuningJobCompletionCriteria = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

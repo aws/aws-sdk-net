@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the status of a virtual router.
+    /// An object that represents the status of a virtual router.
     /// </summary>
     public partial class VirtualRouterStatus
     {

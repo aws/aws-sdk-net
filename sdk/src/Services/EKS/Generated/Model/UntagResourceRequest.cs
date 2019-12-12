@@ -40,7 +40,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently,
-        /// the supported resources are Amazon EKS clusters.
+        /// the supported resources are Amazon EKS clusters and managed node groups.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

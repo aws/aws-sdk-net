@@ -33,7 +33,7 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    /// In addition to listing the properties provided by the user in the <code>CreateDatasetImportJob</code>
+    /// In addition to listing the parameters provided in the <code>CreateDatasetImportJob</code>
     /// request, this operation includes the following properties:
     /// </para>
     ///  <ul> <li> 

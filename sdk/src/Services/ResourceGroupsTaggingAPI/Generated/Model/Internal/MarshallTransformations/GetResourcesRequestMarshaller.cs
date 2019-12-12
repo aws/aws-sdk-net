@@ -68,6 +68,18 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetExcludeCompliantResources())
+                {
+                    context.Writer.WritePropertyName("ExcludeCompliantResources");
+                    context.Writer.Write(publicRequest.ExcludeCompliantResources);
+                }
+
+                if(publicRequest.IsSetIncludeComplianceDetails())
+                {
+                    context.Writer.WritePropertyName("IncludeComplianceDetails");
+                    context.Writer.Write(publicRequest.IncludeComplianceDetails);
+                }
+
                 if(publicRequest.IsSetPaginationToken())
                 {
                     context.Writer.WritePropertyName("PaginationToken");

@@ -100,6 +100,22 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetVpcConfigurations())
+            {
+                context.Writer.WritePropertyName("VpcConfigurations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectVpcConfigurationsListValue in requestObject.VpcConfigurations)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectVpcConfigurationsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

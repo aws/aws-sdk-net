@@ -31,7 +31,7 @@ namespace Amazon.CodeCommit.Model
     /// Container for the parameters to the ListTagsForResource operation.
     /// Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
     /// CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-    /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+    /// Resources and Operations</a> in the<i> AWS CodeCommit User Guide</i>.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonCodeCommitRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An enumeration token that when provided in a request, returns the next batch of the
+        /// An enumeration token that, when provided in a request, returns the next batch of the
         /// results.
         /// </para>
         /// </summary>

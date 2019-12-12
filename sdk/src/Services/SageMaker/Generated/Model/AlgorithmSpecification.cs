@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
     public partial class AlgorithmSpecification
     {
         private string _algorithmName;
+        private bool? _enableSageMakerMetricsTimeSeries;
         private List<MetricDefinition> _metricDefinitions = new List<MetricDefinition>();
         private string _trainingImage;
         private TrainingInputMode _trainingInputMode;
@@ -64,6 +65,51 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAlgorithmName()
         {
             return this._algorithmName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableSageMakerMetricsTimeSeries. 
+        /// <para>
+        /// To generate and save time-series metrics during training, set to <code>true</code>.
+        /// The default is <code>false</code> and time-series metrics aren't generated except
+        /// in the following cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You use one of the Amazon SageMaker built-in algorithms
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You use one of the following prebuilt Amazon SageMaker Docker images:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Tensorflow
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MXNet
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PyTorch
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// You specify at least one <a>MetricDefinition</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool EnableSageMakerMetricsTimeSeries
+        {
+            get { return this._enableSageMakerMetricsTimeSeries.GetValueOrDefault(); }
+            set { this._enableSageMakerMetricsTimeSeries = value; }
+        }
+
+        // Check to see if EnableSageMakerMetricsTimeSeries property is set
+        internal bool IsSetEnableSageMakerMetricsTimeSeries()
+        {
+            return this._enableSageMakerMetricsTimeSeries.HasValue; 
         }
 
         /// <summary>

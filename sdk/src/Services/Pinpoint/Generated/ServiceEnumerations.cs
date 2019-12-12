@@ -709,6 +709,14 @@ namespace Amazon.Pinpoint
         /// </summary>
         public static readonly JobStatus INITIALIZING = new JobStatus("INITIALIZING");
         /// <summary>
+        /// Constant PENDING_JOB for JobStatus
+        /// </summary>
+        public static readonly JobStatus PENDING_JOB = new JobStatus("PENDING_JOB");
+        /// <summary>
+        /// Constant PREPARING_FOR_INITIALIZATION for JobStatus
+        /// </summary>
+        public static readonly JobStatus PREPARING_FOR_INITIALIZATION = new JobStatus("PREPARING_FOR_INITIALIZATION");
+        /// <summary>
         /// Constant PROCESSING for JobStatus
         /// </summary>
         public static readonly JobStatus PROCESSING = new JobStatus("PROCESSING");
@@ -842,6 +850,56 @@ namespace Amazon.Pinpoint
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Mode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Operator.
+    /// </summary>
+    public class Operator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for Operator
+        /// </summary>
+        public static readonly Operator ALL = new Operator("ALL");
+        /// <summary>
+        /// Constant ANY for Operator
+        /// </summary>
+        public static readonly Operator ANY = new Operator("ANY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Operator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Operator FindValue(string value)
+        {
+            return FindValue<Operator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Operator(string value)
         {
             return FindValue(value);
         }
@@ -1003,6 +1061,68 @@ namespace Amazon.Pinpoint
 
 
     /// <summary>
+    /// Constants used for properties of type State.
+    /// </summary>
+    public class State : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for State
+        /// </summary>
+        public static readonly State ACTIVE = new State("ACTIVE");
+        /// <summary>
+        /// Constant CANCELLED for State
+        /// </summary>
+        public static readonly State CANCELLED = new State("CANCELLED");
+        /// <summary>
+        /// Constant CLOSED for State
+        /// </summary>
+        public static readonly State CLOSED = new State("CLOSED");
+        /// <summary>
+        /// Constant COMPLETED for State
+        /// </summary>
+        public static readonly State COMPLETED = new State("COMPLETED");
+        /// <summary>
+        /// Constant DRAFT for State
+        /// </summary>
+        public static readonly State DRAFT = new State("DRAFT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public State(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static State FindValue(string value)
+        {
+            return FindValue<State>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator State(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TemplateType.
     /// </summary>
     public class TemplateType : ConstantClass
@@ -1020,6 +1140,10 @@ namespace Amazon.Pinpoint
         /// Constant SMS for TemplateType
         /// </summary>
         public static readonly TemplateType SMS = new TemplateType("SMS");
+        /// <summary>
+        /// Constant VOICE for TemplateType
+        /// </summary>
+        public static readonly TemplateType VOICE = new TemplateType("VOICE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

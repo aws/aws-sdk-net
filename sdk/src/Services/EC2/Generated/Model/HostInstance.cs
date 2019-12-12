@@ -34,11 +34,12 @@ namespace Amazon.EC2.Model
     {
         private string _instanceId;
         private string _instanceType;
+        private string _ownerId;
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// the IDs of instances that are running on the Dedicated Host.
+        /// The ID of instance that is running on the Dedicated Host.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -56,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type size (for example, <code>m3.medium</code>) of the running instance.
+        /// The instance type (for example, <code>m3.medium</code>) of the running instance.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -69,6 +70,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The ID of the AWS account that owns the instance.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
         }
 
     }

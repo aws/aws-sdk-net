@@ -274,6 +274,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void DeregisterTypeMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeregisterType");
+
+            var request = InstantiateClassGenerator.Execute<DeregisterTypeRequest>();
+            var marshaller = new DeregisterTypeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeregisterTypeResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeregisterTypeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void DescribeAccountLimitsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeAccountLimits");
@@ -538,6 +562,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void DescribeTypeMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeType");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTypeRequest>();
+            var marshaller = new DescribeTypeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeTypeResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeTypeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void DescribeTypeRegistrationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTypeRegistration");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTypeRegistrationRequest>();
+            var marshaller = new DescribeTypeRegistrationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeTypeRegistrationResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeTypeRegistrationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void DetectStackDriftMarshallTest()
         {
             var operation = service_model.FindOperation("DetectStackDrift");
@@ -577,6 +649,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DetectStackResourceDriftResponseUnmarshaller.Instance.Unmarshall(context)
                 as DetectStackResourceDriftResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void DetectStackSetDriftMarshallTest()
+        {
+            var operation = service_model.FindOperation("DetectStackSetDrift");
+
+            var request = InstantiateClassGenerator.Execute<DetectStackSetDriftRequest>();
+            var marshaller = new DetectStackSetDriftRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DetectStackSetDriftResponseUnmarshaller.Instance.Unmarshall(context)
+                as DetectStackSetDriftResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -922,6 +1018,126 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void ListTypeRegistrationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTypeRegistrations");
+
+            var request = InstantiateClassGenerator.Execute<ListTypeRegistrationsRequest>();
+            var marshaller = new ListTypeRegistrationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListTypeRegistrationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListTypeRegistrationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void ListTypesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTypes");
+
+            var request = InstantiateClassGenerator.Execute<ListTypesRequest>();
+            var marshaller = new ListTypesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListTypesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListTypesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void ListTypeVersionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTypeVersions");
+
+            var request = InstantiateClassGenerator.Execute<ListTypeVersionsRequest>();
+            var marshaller = new ListTypeVersionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListTypeVersionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListTypeVersionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void RecordHandlerProgressMarshallTest()
+        {
+            var operation = service_model.FindOperation("RecordHandlerProgress");
+
+            var request = InstantiateClassGenerator.Execute<RecordHandlerProgressRequest>();
+            var marshaller = new RecordHandlerProgressRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RecordHandlerProgressResponseUnmarshaller.Instance.Unmarshall(context)
+                as RecordHandlerProgressResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void RegisterTypeMarshallTest()
+        {
+            var operation = service_model.FindOperation("RegisterType");
+
+            var request = InstantiateClassGenerator.Execute<RegisterTypeRequest>();
+            var marshaller = new RegisterTypeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RegisterTypeResponseUnmarshaller.Instance.Unmarshall(context)
+                as RegisterTypeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void SetStackPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("SetStackPolicy");
@@ -933,6 +1149,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void SetTypeDefaultVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("SetTypeDefaultVersion");
+
+            var request = InstantiateClassGenerator.Execute<SetTypeDefaultVersionRequest>();
+            var marshaller = new SetTypeDefaultVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = SetTypeDefaultVersionResponseUnmarshaller.Instance.Unmarshall(context)
+                as SetTypeDefaultVersionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         

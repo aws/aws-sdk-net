@@ -38,7 +38,8 @@ namespace Amazon.MigrationHub.Model
         /// <summary>
         /// Gets and sets the property ProgressUpdateStreamName. 
         /// <para>
-        /// The name of the ProgressUpdateStream. 
+        /// The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

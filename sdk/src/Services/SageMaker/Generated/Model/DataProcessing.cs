@@ -73,7 +73,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property JoinSource. 
         /// <para>
         /// Specifies the source of the data to join with the transformed data. The valid values
-        /// are <code>None</code> and <code>Input</code> The default value is <code>None</code>
+        /// are <code>None</code> and <code>Input</code>. The default value is <code>None</code>,
         /// which specifies not to join the input with the transformed data. If you want the batch
         /// transform job to join the original input data with the transformed data, set <code>JoinSource</code>
         /// to <code>Input</code>. 

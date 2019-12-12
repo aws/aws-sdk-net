@@ -131,6 +131,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 }
                                 xmlWriter.WriteEndElement();
                             }
+                            if (rule.IsSetExistingObjectReplication())
+                            {
+                                xmlWriter.WriteStartElement("ExistingObjectReplication");
+                                if (rule.ExistingObjectReplication.IsSetExistingObjectReplicationStatus())
+                                {
+                                    xmlWriter.WriteElementString("Status", "", rule.ExistingObjectReplication.Status);
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
                             if (rule.IsSetDeleteMarkerReplication())
                             {
                                 xmlWriter.WriteStartElement("DeleteMarkerReplication");
@@ -161,6 +170,42 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     if (rule.Destination.EncryptionConfiguration.isSetReplicaKmsKeyID())
                                     {
                                         xmlWriter.WriteElementString("ReplicaKmsKeyID", "", S3Transforms.ToXmlStringValue(rule.Destination.EncryptionConfiguration.ReplicaKmsKeyID));
+                                    }
+                                    xmlWriter.WriteEndElement();
+                                }
+                                if (rule.Destination.IsSetMetrics())
+                                {
+                                    xmlWriter.WriteStartElement("Metrics");
+                                    if (rule.Destination.Metrics.IsSetStatus())
+                                    {
+                                        xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(rule.Destination.Metrics.Status));
+                                    }
+                                    if (rule.Destination.Metrics.IsSetEventThreshold())
+                                    {
+                                        xmlWriter.WriteStartElement("EventThreshold");
+                                        if (rule.Destination.Metrics.EventThreshold.IsSetMinutes())
+                                        {
+                                            xmlWriter.WriteElementString("Minutes", "", S3Transforms.ToXmlStringValue(rule.Destination.Metrics.EventThreshold.Minutes));
+                                        }
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    xmlWriter.WriteEndElement();
+                                }
+                                if (rule.Destination.IsSetReplicationTime())
+                                {
+                                    xmlWriter.WriteStartElement("ReplicationTime");
+                                    if (rule.Destination.ReplicationTime.IsSetStatus())
+                                    {
+                                        xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(rule.Destination.ReplicationTime.Status));
+                                    }
+                                    if (rule.Destination.ReplicationTime.IsSetTime())
+                                    {
+                                        xmlWriter.WriteStartElement("Time");
+                                        if (rule.Destination.ReplicationTime.Time.IsSetMinutes())
+                                        {
+                                            xmlWriter.WriteElementString("Minutes", "", S3Transforms.ToXmlStringValue(rule.Destination.ReplicationTime.Time.Minutes));
+                                        }
+                                        xmlWriter.WriteEndElement();
                                     }
                                     xmlWriter.WriteEndElement();
                                 }

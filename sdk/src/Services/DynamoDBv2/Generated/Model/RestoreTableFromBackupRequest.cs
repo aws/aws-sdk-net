@@ -70,6 +70,10 @@ namespace Amazon.DynamoDBv2.Model
     public partial class RestoreTableFromBackupRequest : AmazonDynamoDBRequest
     {
         private string _backupArn;
+        private BillingMode _billingModeOverride;
+        private List<GlobalSecondaryIndex> _globalSecondaryIndexOverride = new List<GlobalSecondaryIndex>();
+        private List<LocalSecondaryIndex> _localSecondaryIndexOverride = new List<LocalSecondaryIndex>();
+        private ProvisionedThroughput _provisionedThroughputOverride;
         private string _targetTableName;
 
         /// <summary>
@@ -89,6 +93,82 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetBackupArn()
         {
             return this._backupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingModeOverride. 
+        /// <para>
+        /// The billing mode of the restored table.
+        /// </para>
+        /// </summary>
+        public BillingMode BillingModeOverride
+        {
+            get { return this._billingModeOverride; }
+            set { this._billingModeOverride = value; }
+        }
+
+        // Check to see if BillingModeOverride property is set
+        internal bool IsSetBillingModeOverride()
+        {
+            return this._billingModeOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalSecondaryIndexOverride. 
+        /// <para>
+        /// List of global secondary indexes for the restored table. The indexes provided should
+        /// match existing secondary indexes. You can choose to exclude some or all of the indexes
+        /// at the time of restore.
+        /// </para>
+        /// </summary>
+        public List<GlobalSecondaryIndex> GlobalSecondaryIndexOverride
+        {
+            get { return this._globalSecondaryIndexOverride; }
+            set { this._globalSecondaryIndexOverride = value; }
+        }
+
+        // Check to see if GlobalSecondaryIndexOverride property is set
+        internal bool IsSetGlobalSecondaryIndexOverride()
+        {
+            return this._globalSecondaryIndexOverride != null && this._globalSecondaryIndexOverride.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalSecondaryIndexOverride. 
+        /// <para>
+        /// List of local secondary indexes for the restored table. The indexes provided should
+        /// match existing secondary indexes. You can choose to exclude some or all of the indexes
+        /// at the time of restore.
+        /// </para>
+        /// </summary>
+        public List<LocalSecondaryIndex> LocalSecondaryIndexOverride
+        {
+            get { return this._localSecondaryIndexOverride; }
+            set { this._localSecondaryIndexOverride = value; }
+        }
+
+        // Check to see if LocalSecondaryIndexOverride property is set
+        internal bool IsSetLocalSecondaryIndexOverride()
+        {
+            return this._localSecondaryIndexOverride != null && this._localSecondaryIndexOverride.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedThroughputOverride. 
+        /// <para>
+        /// Provisioned throughput settings for the restored table.
+        /// </para>
+        /// </summary>
+        public ProvisionedThroughput ProvisionedThroughputOverride
+        {
+            get { return this._provisionedThroughputOverride; }
+            set { this._provisionedThroughputOverride = value; }
+        }
+
+        // Check to see if ProvisionedThroughputOverride property is set
+        internal bool IsSetProvisionedThroughputOverride()
+        {
+            return this._provisionedThroughputOverride != null;
         }
 
         /// <summary>

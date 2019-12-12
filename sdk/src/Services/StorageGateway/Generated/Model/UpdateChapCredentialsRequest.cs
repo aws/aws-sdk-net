@@ -31,7 +31,8 @@ namespace Amazon.StorageGateway.Model
     /// Container for the parameters to the UpdateChapCredentials operation.
     /// Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified
     /// iSCSI target. By default, a gateway does not have CHAP enabled; however, for added
-    /// security, you might use it.
+    /// security, you might use it. This operation is supported in the volume and tape gateway
+    /// types.
     /// 
     ///  <important> 
     /// <para>

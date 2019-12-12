@@ -76,6 +76,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void AssociatePhoneNumbersWithVoiceConnectorGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociatePhoneNumbersWithVoiceConnectorGroup");
+
+            var request = InstantiateClassGenerator.Execute<AssociatePhoneNumbersWithVoiceConnectorGroupRequest>();
+            var marshaller = new AssociatePhoneNumbersWithVoiceConnectorGroupRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("AssociatePhoneNumbersWithVoiceConnectorGroup", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = AssociatePhoneNumbersWithVoiceConnectorGroupResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as AssociatePhoneNumbersWithVoiceConnectorGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void AssociatePhoneNumberWithUserMarshallTest()
         {
             var operation = service_model.FindOperation("AssociatePhoneNumberWithUser");
@@ -100,6 +132,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = AssociatePhoneNumberWithUserResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as AssociatePhoneNumberWithUserResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void BatchCreateAttendeeMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchCreateAttendee");
+
+            var request = InstantiateClassGenerator.Execute<BatchCreateAttendeeRequest>();
+            var marshaller = new BatchCreateAttendeeRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("BatchCreateAttendee", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = BatchCreateAttendeeResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as BatchCreateAttendeeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void BatchCreateRoomMembershipMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchCreateRoomMembership");
+
+            var request = InstantiateClassGenerator.Execute<BatchCreateRoomMembershipRequest>();
+            var marshaller = new BatchCreateRoomMembershipRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("BatchCreateRoomMembership", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = BatchCreateRoomMembershipResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as BatchCreateRoomMembershipResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -300,6 +396,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void CreateAttendeeMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAttendee");
+
+            var request = InstantiateClassGenerator.Execute<CreateAttendeeRequest>();
+            var marshaller = new CreateAttendeeRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateAttendee", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateAttendeeResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateAttendeeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void CreateBotMarshallTest()
         {
             var operation = service_model.FindOperation("CreateBot");
@@ -324,6 +452,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = CreateBotResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as CreateBotResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void CreateMeetingMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateMeeting");
+
+            var request = InstantiateClassGenerator.Execute<CreateMeetingRequest>();
+            var marshaller = new CreateMeetingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateMeeting", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateMeetingResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateMeetingResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -364,6 +524,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void CreateRoomMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateRoom");
+
+            var request = InstantiateClassGenerator.Execute<CreateRoomRequest>();
+            var marshaller = new CreateRoomRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateRoom", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateRoomResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateRoomResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void CreateRoomMembershipMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateRoomMembership");
+
+            var request = InstantiateClassGenerator.Execute<CreateRoomMembershipRequest>();
+            var marshaller = new CreateRoomMembershipRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateRoomMembership", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateRoomMembershipResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateRoomMembershipResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void CreateVoiceConnectorMarshallTest()
         {
             var operation = service_model.FindOperation("CreateVoiceConnector");
@@ -388,6 +612,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = CreateVoiceConnectorResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as CreateVoiceConnectorResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void CreateVoiceConnectorGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceConnectorGroup");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceConnectorGroupRequest>();
+            var marshaller = new CreateVoiceConnectorGroupRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateVoiceConnectorGroup", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateVoiceConnectorGroupResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateVoiceConnectorGroupResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -428,6 +684,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void DeleteAttendeeMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAttendee");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAttendeeRequest>();
+            var marshaller = new DeleteAttendeeRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteAttendee", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void DeleteEventsConfigurationMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteEventsConfiguration");
@@ -437,6 +710,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("DeleteEventsConfiguration", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void DeleteMeetingMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteMeeting");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMeetingRequest>();
+            var marshaller = new DeleteMeetingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteMeeting", request, internalRequest, service_model);            
 
         }
 
@@ -462,6 +752,40 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void DeleteRoomMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteRoom");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRoomRequest>();
+            var marshaller = new DeleteRoomRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteRoom", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void DeleteRoomMembershipMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteRoomMembership");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRoomMembershipRequest>();
+            var marshaller = new DeleteRoomMembershipRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteRoomMembership", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void DeleteVoiceConnectorMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteVoiceConnector");
@@ -479,6 +803,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void DeleteVoiceConnectorGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceConnectorGroup");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceConnectorGroupRequest>();
+            var marshaller = new DeleteVoiceConnectorGroupRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteVoiceConnectorGroup", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void DeleteVoiceConnectorOriginationMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteVoiceConnectorOrigination");
@@ -488,6 +829,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("DeleteVoiceConnectorOrigination", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void DeleteVoiceConnectorStreamingConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceConnectorStreamingConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceConnectorStreamingConfigurationRequest>();
+            var marshaller = new DeleteVoiceConnectorStreamingConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteVoiceConnectorStreamingConfiguration", request, internalRequest, service_model);            
 
         }
 
@@ -594,6 +952,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void DisassociatePhoneNumbersFromVoiceConnectorGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociatePhoneNumbersFromVoiceConnectorGroup");
+
+            var request = InstantiateClassGenerator.Execute<DisassociatePhoneNumbersFromVoiceConnectorGroupRequest>();
+            var marshaller = new DisassociatePhoneNumbersFromVoiceConnectorGroupRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DisassociatePhoneNumbersFromVoiceConnectorGroup", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DisassociatePhoneNumbersFromVoiceConnectorGroupResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DisassociatePhoneNumbersFromVoiceConnectorGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void GetAccountMarshallTest()
         {
             var operation = service_model.FindOperation("GetAccount");
@@ -650,6 +1040,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetAccountSettingsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void GetAttendeeMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAttendee");
+
+            var request = InstantiateClassGenerator.Execute<GetAttendeeRequest>();
+            var marshaller = new GetAttendeeRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetAttendee", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetAttendeeResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetAttendeeResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -754,6 +1176,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void GetMeetingMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetMeeting");
+
+            var request = InstantiateClassGenerator.Execute<GetMeetingRequest>();
+            var marshaller = new GetMeetingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetMeeting", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetMeetingResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetMeetingResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void GetPhoneNumberMarshallTest()
         {
             var operation = service_model.FindOperation("GetPhoneNumber");
@@ -810,6 +1264,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetPhoneNumberOrderResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetPhoneNumberOrderResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void GetPhoneNumberSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetPhoneNumberSettings");
+
+            var request = InstantiateClassGenerator.Execute<GetPhoneNumberSettingsRequest>();
+            var marshaller = new GetPhoneNumberSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetPhoneNumberSettings", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetPhoneNumberSettingsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetPhoneNumberSettingsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void GetRoomMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetRoom");
+
+            var request = InstantiateClassGenerator.Execute<GetRoomRequest>();
+            var marshaller = new GetRoomRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetRoom", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetRoomResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetRoomResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -914,6 +1432,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void GetVoiceConnectorGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceConnectorGroup");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceConnectorGroupRequest>();
+            var marshaller = new GetVoiceConnectorGroupRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetVoiceConnectorGroup", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetVoiceConnectorGroupResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetVoiceConnectorGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void GetVoiceConnectorLoggingConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceConnectorLoggingConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceConnectorLoggingConfigurationRequest>();
+            var marshaller = new GetVoiceConnectorLoggingConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetVoiceConnectorLoggingConfiguration", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetVoiceConnectorLoggingConfigurationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetVoiceConnectorLoggingConfigurationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void GetVoiceConnectorOriginationMarshallTest()
         {
             var operation = service_model.FindOperation("GetVoiceConnectorOrigination");
@@ -938,6 +1520,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetVoiceConnectorOriginationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetVoiceConnectorOriginationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void GetVoiceConnectorStreamingConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceConnectorStreamingConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceConnectorStreamingConfigurationRequest>();
+            var marshaller = new GetVoiceConnectorStreamingConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetVoiceConnectorStreamingConfiguration", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetVoiceConnectorStreamingConfigurationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetVoiceConnectorStreamingConfigurationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -1074,6 +1688,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void ListAttendeesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAttendees");
+
+            var request = InstantiateClassGenerator.Execute<ListAttendeesRequest>();
+            var marshaller = new ListAttendeesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListAttendees", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListAttendeesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListAttendeesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void ListBotsMarshallTest()
         {
             var operation = service_model.FindOperation("ListBots");
@@ -1098,6 +1744,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListBotsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListBotsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void ListMeetingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListMeetings");
+
+            var request = InstantiateClassGenerator.Execute<ListMeetingsRequest>();
+            var marshaller = new ListMeetingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListMeetings", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListMeetingsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListMeetingsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -1170,6 +1848,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void ListRoomMembershipsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListRoomMemberships");
+
+            var request = InstantiateClassGenerator.Execute<ListRoomMembershipsRequest>();
+            var marshaller = new ListRoomMembershipsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListRoomMemberships", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListRoomMembershipsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListRoomMembershipsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void ListRoomsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListRooms");
+
+            var request = InstantiateClassGenerator.Execute<ListRoomsRequest>();
+            var marshaller = new ListRoomsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListRooms", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListRoomsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListRoomsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void ListUsersMarshallTest()
         {
             var operation = service_model.FindOperation("ListUsers");
@@ -1194,6 +1936,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListUsersResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListUsersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void ListVoiceConnectorGroupsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceConnectorGroups");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceConnectorGroupsRequest>();
+            var marshaller = new ListVoiceConnectorGroupsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListVoiceConnectorGroups", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListVoiceConnectorGroupsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListVoiceConnectorGroupsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -1330,6 +2104,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void PutVoiceConnectorLoggingConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutVoiceConnectorLoggingConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<PutVoiceConnectorLoggingConfigurationRequest>();
+            var marshaller = new PutVoiceConnectorLoggingConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutVoiceConnectorLoggingConfiguration", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutVoiceConnectorLoggingConfigurationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutVoiceConnectorLoggingConfigurationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void PutVoiceConnectorOriginationMarshallTest()
         {
             var operation = service_model.FindOperation("PutVoiceConnectorOrigination");
@@ -1354,6 +2160,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PutVoiceConnectorOriginationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PutVoiceConnectorOriginationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void PutVoiceConnectorStreamingConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutVoiceConnectorStreamingConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<PutVoiceConnectorStreamingConfigurationRequest>();
+            var marshaller = new PutVoiceConnectorStreamingConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutVoiceConnectorStreamingConfiguration", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutVoiceConnectorStreamingConfigurationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutVoiceConnectorStreamingConfigurationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -1684,6 +2522,87 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void UpdatePhoneNumberSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdatePhoneNumberSettings");
+
+            var request = InstantiateClassGenerator.Execute<UpdatePhoneNumberSettingsRequest>();
+            var marshaller = new UpdatePhoneNumberSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdatePhoneNumberSettings", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void UpdateRoomMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateRoom");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRoomRequest>();
+            var marshaller = new UpdateRoomRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateRoom", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateRoomResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateRoomResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void UpdateRoomMembershipMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateRoomMembership");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRoomMembershipRequest>();
+            var marshaller = new UpdateRoomMembershipRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateRoomMembership", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateRoomMembershipResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateRoomMembershipResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void UpdateUserMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateUser");
@@ -1757,6 +2676,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = UpdateVoiceConnectorResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as UpdateVoiceConnectorResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void UpdateVoiceConnectorGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceConnectorGroup");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceConnectorGroupRequest>();
+            var marshaller = new UpdateVoiceConnectorGroupRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateVoiceConnectorGroup", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateVoiceConnectorGroupResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateVoiceConnectorGroupResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

@@ -74,6 +74,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DocumentVersion);
                 }
 
+                if(publicRequest.IsSetForce())
+                {
+                    context.Writer.WritePropertyName("Force");
+                    context.Writer.Write(publicRequest.Force);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

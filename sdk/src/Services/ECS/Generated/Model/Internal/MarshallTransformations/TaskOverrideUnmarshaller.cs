@@ -70,6 +70,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContainerOverrides = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cpu", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Cpu = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("executionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<InferenceAcceleratorOverride, InferenceAcceleratorOverrideUnmarshaller>(InferenceAcceleratorOverrideUnmarshaller.Instance);
                     unmarshalledObject.InferenceAcceleratorOverrides = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("memory", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Memory = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("taskRoleArn", targetDepth))

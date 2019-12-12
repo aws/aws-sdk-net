@@ -34,7 +34,9 @@ namespace Amazon.Kafka.Model
     {
         private List<BrokerEBSVolumeInfo> _brokerEBSVolumeInfo = new List<BrokerEBSVolumeInfo>();
         private ConfigurationInfo _configurationInfo;
+        private EnhancedMonitoring _enhancedMonitoring;
         private int? _numberOfBrokerNodes;
+        private OpenMonitoring _openMonitoring;
 
         /// <summary>
         /// Gets and sets the property BrokerEBSVolumeInfo.             
@@ -73,6 +75,25 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnhancedMonitoring.             
+        /// <para>
+        /// Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch
+        /// for this cluster.
+        /// </para>
+        /// </summary>
+        public EnhancedMonitoring EnhancedMonitoring
+        {
+            get { return this._enhancedMonitoring; }
+            set { this._enhancedMonitoring = value; }
+        }
+
+        // Check to see if EnhancedMonitoring property is set
+        internal bool IsSetEnhancedMonitoring()
+        {
+            return this._enhancedMonitoring != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NumberOfBrokerNodes.             
         /// <para>
         /// The number of broker nodes in the cluster.
@@ -88,6 +109,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetNumberOfBrokerNodes()
         {
             return this._numberOfBrokerNodes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenMonitoring.             
+        /// <para>
+        /// The settings for open monitoring.
+        /// </para>
+        /// </summary>
+        public OpenMonitoring OpenMonitoring
+        {
+            get { return this._openMonitoring; }
+            set { this._openMonitoring = value; }
+        }
+
+        // Check to see if OpenMonitoring property is set
+        internal bool IsSetOpenMonitoring()
+        {
+            return this._openMonitoring != null;
         }
 
     }

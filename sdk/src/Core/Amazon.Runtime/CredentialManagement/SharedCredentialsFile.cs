@@ -14,6 +14,7 @@
  */
 using Amazon.Runtime.CredentialManagement.Internal;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -42,6 +43,8 @@ namespace Amazon.Runtime.CredentialManagement
         private const string DefaultDirectoryName = ".aws";
         private const string DefaultFileName = "credentials";
         private const string CredentialProcess = "credential_process";
+        private const string StsRegionalEndpointsField = "sts_regional_endpoints";
+        private const string S3UseArnRegionField = "s3_use_arn_region";
 
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
@@ -50,7 +53,9 @@ namespace Amazon.Runtime.CredentialManagement
             ToolkitArtifactGuidField,
             RegionField,
             EndpointDiscoveryEnabledField,
-            CredentialProcess
+            CredentialProcess,
+            StsRegionalEndpointsField,
+            S3UseArnRegionField
         };
 
         /// <summary>
@@ -221,6 +226,12 @@ namespace Amazon.Runtime.CredentialManagement
             if (profile.EndpointDiscoveryEnabled != null)
                 reservedProperties[EndpointDiscoveryEnabledField] = profile.EndpointDiscoveryEnabled.Value.ToString().ToLowerInvariant();
 
+            if (profile.StsRegionalEndpoints != null)
+                reservedProperties[StsRegionalEndpointsField] = profile.StsRegionalEndpoints.ToString().ToLowerInvariant();
+
+            if (profile.S3UseArnRegion != null)
+                reservedProperties[S3UseArnRegionField] = profile.S3UseArnRegion.Value.ToString().ToLowerInvariant();
+
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
 
@@ -362,13 +373,54 @@ namespace Amazon.Runtime.CredentialManagement
                     endpointDiscoveryEnabled = endpointDiscoveryEnabledOut;
                 }
 
+                StsRegionalEndpointsValue? stsRegionalEndpoints = null;
+                if (reservedProperties.TryGetValue(StsRegionalEndpointsField, out var stsRegionalEndpointsString))
+                {
+#if BCL35
+                    try
+                    {
+                        stsRegionalEndpoints = (StsRegionalEndpointsValue) Enum.Parse(typeof(StsRegionalEndpointsValue), stsRegionalEndpointsString, true);
+                    }
+                    catch (Exception)
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string regional/legacy is expected.", stsRegionalEndpointsString, StsRegionalEndpointsField, profileName);
+                        profile = null;
+                        return false;
+                    }
+#else 
+                    if (!Enum.TryParse<StsRegionalEndpointsValue>(stsRegionalEndpointsString, true, out var stsRegionalEndpointsTemp))
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string regional/legacy is expected.", stsRegionalEndpointsString, StsRegionalEndpointsField, profileName);
+                        profile = null;
+                        return false;
+                    }
+                    stsRegionalEndpoints = stsRegionalEndpointsTemp;
+#endif
+                }
+
+                string s3UseArnRegionString;
+                bool? s3UseArnRegion = null;
+                if (reservedProperties.TryGetValue(S3UseArnRegionField, out s3UseArnRegionString))
+                {
+                    bool s3UseArnRegionOut;
+                    if (!bool.TryParse(s3UseArnRegionString, out s3UseArnRegionOut))
+                    {
+                        profile = null;
+                        return false;
+                    }
+
+                    s3UseArnRegion = s3UseArnRegionOut;
+                }
+
                 profile = new CredentialProfile(profileName, profileOptions)
                 {
                     UniqueKey = toolkitArtifactGuid,
                     Properties = userProperties,
                     Region = region,
                     CredentialProfileStore = this,
-                    EndpointDiscoveryEnabled = endpointDiscoveryEnabled
+                    EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
+                    StsRegionalEndpoints = stsRegionalEndpoints,
+                    S3UseArnRegion = s3UseArnRegion
                 };
 
                 if (!IsSupportedProfileType(profile.ProfileType))

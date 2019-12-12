@@ -29,27 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
-    /// Returns a list of all of the Amazon QuickSight users belonging to this account. 
-    /// 
-    ///  
-    /// <para>
-    /// The permission resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>*</i>
-    /// </code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// The response is a list of user objects, containing each user's Amazon Resource Name
-    /// (ARN), AWS Identity and Access Management (IAM) role, and email address. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>CLI Sample:</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight list-users --aws-account-id=111122223333 --namespace=default
-    /// </code> 
-    /// </para>
+    /// Returns a list of all of the Amazon QuickSight users belonging to this account.
     /// </summary>
     public partial class ListUsersRequest : AmazonQuickSightRequest
     {
@@ -103,7 +83,7 @@ namespace Amazon.QuickSight.Model
         /// The namespace. Currently, you should set this to <code>default</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=64)]
         public string Namespace
         {
             get { return this._awsNamespace; }

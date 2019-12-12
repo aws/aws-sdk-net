@@ -37,7 +37,9 @@ namespace Amazon.Lex.Model
         private string _message;
         private MessageFormatType _messageFormat;
         private ResponseCard _responseCard;
+        private SentimentResponse _sentimentResponse;
         private Dictionary<string, string> _sessionAttributes = new Dictionary<string, string>();
+        private string _sessionId;
         private Dictionary<string, string> _slots = new Dictionary<string, string>();
         private string _slotToElicit;
 
@@ -237,6 +239,29 @@ namespace Amazon.Lex.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SentimentResponse. 
+        /// <para>
+        /// The sentiment expressed in and utterance.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis,
+        /// this field contains the result of the analysis.
+        /// </para>
+        /// </summary>
+        public SentimentResponse SentimentResponse
+        {
+            get { return this._sentimentResponse; }
+            set { this._sentimentResponse = value; }
+        }
+
+        // Check to see if SentimentResponse property is set
+        internal bool IsSetSentimentResponse()
+        {
+            return this._sentimentResponse != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SessionAttributes. 
         /// <para>
         /// A map of key-value pairs representing the session-specific context information.
@@ -252,6 +277,24 @@ namespace Amazon.Lex.Model
         internal bool IsSetSessionAttributes()
         {
             return this._sessionAttributes != null && this._sessionAttributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// A unique identifier for the session.
+        /// </para>
+        /// </summary>
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return this._sessionId != null;
         }
 
         /// <summary>

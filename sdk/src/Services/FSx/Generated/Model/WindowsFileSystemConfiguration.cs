@@ -36,7 +36,11 @@ namespace Amazon.FSx.Model
         private int? _automaticBackupRetentionDays;
         private bool? _copyTagsToBackups;
         private string _dailyAutomaticBackupStartTime;
+        private WindowsDeploymentType _deploymentType;
         private List<string> _maintenanceOperationsInProgress = new List<string>();
+        private string _preferredFileServerIp;
+        private string _preferredSubnetId;
+        private string _remoteAdministrationEndpoint;
         private SelfManagedActiveDirectoryAttributes _selfManagedActiveDirectoryConfiguration;
         private int? _throughputCapacity;
         private string _weeklyMaintenanceStartTime;
@@ -123,6 +127,35 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeploymentType. 
+        /// <para>
+        /// Specifies the file system deployment type, valid values are the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>MULTI_AZ_1</code> - Specifies a high availability file system that is configured
+        /// for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for
+        /// single AZ redundancy.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public WindowsDeploymentType DeploymentType
+        {
+            get { return this._deploymentType; }
+            set { this._deploymentType = value; }
+        }
+
+        // Check to see if DeploymentType property is set
+        internal bool IsSetDeploymentType()
+        {
+            return this._deploymentType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaintenanceOperationsInProgress. 
         /// <para>
         /// The list of maintenance operations in progress for this file system.
@@ -139,6 +172,90 @@ namespace Amazon.FSx.Model
         internal bool IsSetMaintenanceOperationsInProgress()
         {
             return this._maintenanceOperationsInProgress != null && this._maintenanceOperationsInProgress.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredFileServerIp. 
+        /// <para>
+        /// For <code>MULTI_AZ_1</code> deployment types, the IP address of the primary, or preferred,
+        /// file server.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this IP address when mounting the file system on Linux SMB clients or Windows
+        /// SMB clients that are not joined to a Microsoft Active Directory. Applicable for both
+        /// <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code> deployment types. This IP address
+        /// is temporarily unavailable when the file system is undergoing maintenance. For Linux
+        /// and Windows SMB clients that are joined to an Active Directory, use the file system's
+        /// DNSName instead. For more information and instruction on mapping and mounting file
+        /// shares, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.
+        /// </para>
+        /// </summary>
+        public string PreferredFileServerIp
+        {
+            get { return this._preferredFileServerIp; }
+            set { this._preferredFileServerIp = value; }
+        }
+
+        // Check to see if PreferredFileServerIp property is set
+        internal bool IsSetPreferredFileServerIp()
+        {
+            return this._preferredFileServerIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredSubnetId. 
+        /// <para>
+        /// For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the subnet where
+        /// the preferred file server is located. Must be one of the two subnet IDs specified
+        /// in <code>SubnetIds</code> property. Amazon FSx serves traffic from this subnet except
+        /// in the event of a failover to the secondary file server.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that for
+        /// <code>SubnetIDs</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=15, Max=24)]
+        public string PreferredSubnetId
+        {
+            get { return this._preferredSubnetId; }
+            set { this._preferredSubnetId = value; }
+        }
+
+        // Check to see if PreferredSubnetId property is set
+        internal bool IsSetPreferredSubnetId()
+        {
+            return this._preferredSubnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteAdministrationEndpoint. 
+        /// <para>
+        /// For <code>MULTI_AZ_1</code> deployment types, use this endpoint when performing administrative
+        /// tasks on the file system using Amazon FSx Remote PowerShell.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <code>SINGLE_AZ_1</code> deployment types, this is the DNS name of the file system.
+        /// </para>
+        ///  
+        /// <para>
+        /// This endpoint is temporarily unavailable when the file system is undergoing maintenance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=16, Max=275)]
+        public string RemoteAdministrationEndpoint
+        {
+            get { return this._remoteAdministrationEndpoint; }
+            set { this._remoteAdministrationEndpoint = value; }
+        }
+
+        // Check to see if RemoteAdministrationEndpoint property is set
+        internal bool IsSetRemoteAdministrationEndpoint()
+        {
+            return this._remoteAdministrationEndpoint != null;
         }
 
         /// <summary>

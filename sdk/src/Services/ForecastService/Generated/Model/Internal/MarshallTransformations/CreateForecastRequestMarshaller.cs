@@ -74,6 +74,17 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ForecastName);
                 }
 
+                if(publicRequest.IsSetForecastTypes())
+                {
+                    context.Writer.WritePropertyName("ForecastTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestForecastTypesListValue in publicRequest.ForecastTypes)
+                    {
+                            context.Writer.Write(publicRequestForecastTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetPredictorArn())
                 {
                     context.Writer.WritePropertyName("PredictorArn");

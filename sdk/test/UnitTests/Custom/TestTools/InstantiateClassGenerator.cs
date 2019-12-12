@@ -169,36 +169,47 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         public static void ValidateObjectFullyInstantiated(object owningObject)
         {
+            ValidateObjectFullyInstantiated(owningObject, new TypeCircularReference<Type>());
+        }
+
+        private static void ValidateObjectFullyInstantiated(object owningObject, TypeCircularReference<Type> tcr)
+        {
             Assert.IsNotNull(owningObject, "Root object null");
 
             var owningType = owningObject.GetType();
-            foreach (var info in owningType.GetProperties())
+
+            if (tcr?.Push(owningType) == true) // No circular reference found
             {
-                if (info.SetMethod == null || info.Name == "ContentLength")
-                    continue;
-
-                var type = info.PropertyType;
-                var propertyValue = info.GetMethod.Invoke(owningObject, new object[] { });
-
-                if(type == typeof(int))
+                foreach (var info in owningType.GetProperties())
                 {
-                    if (info.Name == "Status" ||
-                    info.Name == "StatusCode")
+                    if (info.SetMethod == null || info.Name == "ContentLength")
+                        continue;
+
+                    var type = info.PropertyType;
+                    var propertyValue = info.GetMethod.Invoke(owningObject, new object[] { });
+
+                    if (type == typeof(int))
                     {
-                        if (Enum.IsDefined(typeof(HttpStatusCode), propertyValue))
+                        if (info.Name == "Status" ||
+                        info.Name == "StatusCode")
                         {
-                            // Special case for GetJobOutputResponse.Status property which is unmarshalled from 
-                            // HttpResponse's Status code.
-                            Assert.AreEqual(200, propertyValue);
-                            continue;
+                            if (Enum.IsDefined(typeof(HttpStatusCode), propertyValue))
+                            {
+                                // Special case for GetJobOutputResponse.Status property which is unmarshalled from 
+                                // HttpResponse's Status code.
+                                Assert.AreEqual(200, propertyValue);
+                                continue;
+                            }
                         }
                     }
+
+                    ValidatePropertyValueInstantiated(type, propertyValue, info.Name, tcr);
                 }
-                ValidatePropertyValueInstantiated(type, propertyValue, info.Name);
-            }
+                tcr.Pop();
+            } 
         }
 
-        private static void ValidatePropertyValueInstantiated(Type type, object propertyValue, string propertyName)
+        private static void ValidatePropertyValueInstantiated(Type type, object propertyValue, string propertyName, TypeCircularReference<Type> tcr = null)
         {
             if (type == typeof(string))
             {
@@ -253,7 +264,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     var listType = type.GenericTypeArguments[0];
                     foreach (var item in list)
                     {
-                        ValidatePropertyValueInstantiated(listType, item, propertyValue + "_Dictionary");
+                        ValidatePropertyValueInstantiated(listType, item, propertyValue + "_Dictionary", tcr);
                     }
                 }
                 else if (type.GetInterface("System.Collections.IDictionary") != null)
@@ -263,12 +274,17 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     var valueType = type.GenericTypeArguments[1];
                     foreach (var key in map.Keys)
                     {
-                        ValidatePropertyValueInstantiated(valueType, map[key], propertyValue + "_Dictionary");
+                        ValidatePropertyValueInstantiated(valueType, map[key], propertyValue + "_Dictionary", tcr);
                     }
+                }
+                else if (propertyValue == null && tcr != null && tcr.Contains(type))
+                {
+                    // Circular reference found, stop here
+                    return;
                 }
                 else
                 {
-                    ValidateObjectFullyInstantiated(propertyValue);
+                    ValidateObjectFullyInstantiated(propertyValue, tcr);
                 }
             }
         }

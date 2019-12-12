@@ -100,6 +100,13 @@ namespace Amazon.ApplicationDiscoveryService
     /// This guide is intended for use with the <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">
     /// <i>AWS Application Discovery Service User Guide</i> </a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Remember that you must set your AWS Migration Hub home region before you call any
+    /// of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned.
+    /// Also, you must make the API calls while in your home region.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial interface IAmazonApplicationDiscoveryService : IAmazonService, IDisposable
     {
@@ -117,6 +124,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
@@ -182,6 +192,12 @@ namespace Amazon.ApplicationDiscoveryService
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
         /// The value of one or more parameters are either invalid or out of range. Verify the
         /// parameter values and try again.
@@ -232,6 +248,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
@@ -287,6 +306,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
@@ -346,6 +368,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
         /// </exception>
@@ -400,6 +425,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
@@ -460,6 +488,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
@@ -548,6 +579,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
         /// </exception>
@@ -603,6 +637,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
@@ -666,6 +703,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
         /// </exception>
@@ -728,6 +768,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
         /// </exception>
@@ -782,6 +825,12 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
         /// The value of one or more parameters are either invalid or out of range. Verify the
@@ -857,6 +906,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
         /// </exception>
@@ -914,6 +966,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
@@ -977,6 +1032,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
@@ -1044,6 +1102,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
         /// </exception>
@@ -1099,6 +1160,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
@@ -1158,6 +1222,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
         /// </exception>
@@ -1214,6 +1281,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ConflictErrorException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
@@ -1278,6 +1348,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
@@ -1347,6 +1420,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
@@ -1446,6 +1522,12 @@ namespace Amazon.ApplicationDiscoveryService
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
         /// The value of one or more parameters are either invalid or out of range. Verify the
         /// parameter values and try again.
@@ -1503,6 +1585,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
@@ -1572,6 +1657,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.
         /// </exception>
@@ -1625,6 +1713,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
         /// The AWS user account does not have permission to perform the action. Check the IAM
         /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
         /// One or more parameters are not valid. Verify the parameters and try again.

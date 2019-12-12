@@ -246,7 +246,7 @@ namespace Amazon.Batch
         ///  
         /// <para>
         /// It is not necessary to disassociate compute environments from a queue before submitting
-        /// a <code>DeleteJobQueue</code> request. 
+        /// a <code>DeleteJobQueue</code> request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJobQueue service method.</param>

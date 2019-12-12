@@ -70,6 +70,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataResources = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExcludeManagementEventSources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ExcludeManagementEventSources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IncludeManagementEvents", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

@@ -356,6 +356,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudSearch")]
+        public void DescribeDomainEndpointOptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDomainEndpointOptions");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDomainEndpointOptionsRequest>();
+            var marshaller = new DescribeDomainEndpointOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeDomainEndpointOptionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDomainEndpointOptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudSearch")]
         public void DescribeDomainsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeDomains");
@@ -563,6 +587,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = UpdateAvailabilityOptionsResponseUnmarshaller.Instance.Unmarshall(context)
                 as UpdateAvailabilityOptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudSearch")]
+        public void UpdateDomainEndpointOptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateDomainEndpointOptions");
+
+            var request = InstantiateClassGenerator.Execute<UpdateDomainEndpointOptionsRequest>();
+            var marshaller = new UpdateDomainEndpointOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = UpdateDomainEndpointOptionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateDomainEndpointOptionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

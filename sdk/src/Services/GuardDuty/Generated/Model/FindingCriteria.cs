@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains finding criteria information.
+    /// Contains information about the criteria used for querying findings.
     /// </summary>
     public partial class FindingCriteria
     {

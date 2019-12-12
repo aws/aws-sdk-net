@@ -30,8 +30,16 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// Container for the parameters to the DeleteBot operation.
     /// Deletes all versions of the bot, including the <code>$LATEST</code> version. To delete
-    /// a specific version of the bot, use the <a>DeleteBotVersion</a> operation.
+    /// a specific version of the bot, use the <a>DeleteBotVersion</a> operation. The <code>DeleteBot</code>
+    /// operation doesn't immediately remove the bot schema. Instead, it is marked for deletion
+    /// and removed later.
     /// 
+    ///  
+    /// <para>
+    /// Amazon Lex stores utterances indefinitely for improving the ability of your bot to
+    /// respond to user inputs. These utterances are not removed when the bot is deleted.
+    /// To remove the utterances, use the <a>DeleteUtterances</a> operation.
+    /// </para>
     ///  
     /// <para>
     /// If a bot has an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation

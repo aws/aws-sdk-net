@@ -29,8 +29,7 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLicenseConfigurations operation.
-    /// Lists license configuration objects for an account, each containing the name, description,
-    /// license type, and other license terms modeled from a license agreement.
+    /// Lists the license configurations for your account.
     /// </summary>
     public partial class ListLicenseConfigurationsRequest : AmazonLicenseManagerRequest
     {
@@ -42,8 +41,24 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// Filters to scope the results. The following filters and logical operators are supported:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>licenseCountingType</code> - The dimension on which licenses are counted (vCPU).
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license
+        /// enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available
+        /// licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
@@ -60,7 +75,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationArns. 
         /// <para>
-        /// An array of ARNs for the calling account’s license configurations.
+        /// Amazon Resource Names (ARN) of the license configurations.
         /// </para>
         /// </summary>
         public List<string> LicenseConfigurationArns
@@ -78,8 +93,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of results to return in a single call. To retrieve the remaining results,
-        /// make another call with the returned <code>NextToken</code> value.
+        /// Maximum number of results to return in a single call.
         /// </para>
         /// </summary>
         public int MaxResults

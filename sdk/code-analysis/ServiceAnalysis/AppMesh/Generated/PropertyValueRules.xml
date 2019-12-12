@@ -269,6 +269,40 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.GrpcRetryPolicy.MaxRetries</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GrpcRouteMatch.MethodName</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GrpcRouteMetadata.Name</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GrpcRouteMetadataMatchMethod.Exact</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GrpcRouteMetadataMatchMethod.Prefix</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GrpcRouteMetadataMatchMethod.Regex</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GrpcRouteMetadataMatchMethod.Suffix</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.HeaderMatchMethod.Exact</property>
     <min>1</min>
     <max>255</max>

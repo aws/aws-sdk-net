@@ -39,6 +39,7 @@ namespace Amazon.AppStream.Model
         private bool? _deleteStorageConnectors;
         private string _description;
         private string _displayName;
+        private List<string> _embedHostDomains = new List<string>();
         private string _feedbackURL;
         private string _name;
         private string _redirectURL;
@@ -158,6 +159,26 @@ namespace Amazon.AppStream.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmbedHostDomains. 
+        /// <para>
+        /// The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You
+        /// must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<string> EmbedHostDomains
+        {
+            get { return this._embedHostDomains; }
+            set { this._embedHostDomains = value; }
+        }
+
+        // Check to see if EmbedHostDomains property is set
+        internal bool IsSetEmbedHostDomains()
+        {
+            return this._embedHostDomains != null && this._embedHostDomains.Count > 0; 
         }
 
         /// <summary>

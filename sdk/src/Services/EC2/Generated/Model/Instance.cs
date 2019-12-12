@@ -54,8 +54,10 @@ namespace Amazon.EC2.Model
         private string _keyName;
         private DateTime? _launchTime;
         private List<LicenseConfiguration> _licenses = new List<LicenseConfiguration>();
+        private InstanceMetadataOptionsResponse _metadataOptions;
         private Monitoring _monitoring;
         private List<InstanceNetworkInterface> _networkInterfaces = new List<InstanceNetworkInterface>();
+        private string _outpostArn;
         private Placement _placement;
         private PlatformValues _platform;
         private string _privateDnsName;
@@ -246,7 +248,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticInferenceAcceleratorAssociations. 
         /// <para>
-        ///  The elastic inference accelerator associated with the instance. 
+        ///  The elastic inference accelerator associated with the instance.
         /// </para>
         /// </summary>
         public List<ElasticInferenceAcceleratorAssociation> ElasticInferenceAcceleratorAssociations
@@ -478,6 +480,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MetadataOptions. 
+        /// <para>
+        /// The metadata options for the instance.
+        /// </para>
+        /// </summary>
+        public InstanceMetadataOptionsResponse MetadataOptions
+        {
+            get { return this._metadataOptions; }
+            set { this._metadataOptions = value; }
+        }
+
+        // Check to see if MetadataOptions property is set
+        internal bool IsSetMetadataOptions()
+        {
+            return this._metadataOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Monitoring. 
         /// <para>
         /// The monitoring for the instance.
@@ -511,6 +531,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaces()
         {
             return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Outpost.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>

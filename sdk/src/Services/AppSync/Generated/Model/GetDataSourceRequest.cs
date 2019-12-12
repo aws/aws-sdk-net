@@ -61,7 +61,7 @@ namespace Amazon.AppSync.Model
         /// The name of the data source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string Name
         {
             get { return this._name; }

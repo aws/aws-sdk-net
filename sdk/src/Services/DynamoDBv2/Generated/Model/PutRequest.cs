@@ -42,7 +42,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates PutRequest with the parameterized properties
         /// </summary>
-        /// <param name="item">A map of attribute name to attribute values, representing the primary key of an item to be processed by <code>PutItem</code>. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item which are part of an index key schema for the table, their types must match the index key schema.</param>
+        /// <param name="item">A map of attribute name to attribute values, representing the primary key of an item to be processed by <code>PutItem</code>. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item that are part of an index key schema for the table, their types must match the index key schema.</param>
         public PutRequest(Dictionary<string, AttributeValue> item)
         {
             _item = item;
@@ -54,7 +54,7 @@ namespace Amazon.DynamoDBv2.Model
         /// A map of attribute name to attribute values, representing the primary key of an item
         /// to be processed by <code>PutItem</code>. All of the table's primary key attributes
         /// must be specified, and their data types must match those of the table's key schema.
-        /// If any attributes are present in the item which are part of an index key schema for
+        /// If any attributes are present in the item that are part of an index key schema for
         /// the table, their types must match the index key schema.
         /// </para>
         /// </summary>

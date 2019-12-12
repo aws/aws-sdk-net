@@ -82,6 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.EcmPid = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nielsenId3Behavior", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NielsenId3Behavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("patInterval", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

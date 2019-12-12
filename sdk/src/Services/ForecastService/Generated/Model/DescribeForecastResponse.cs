@@ -36,6 +36,7 @@ namespace Amazon.ForecastService.Model
         private string _datasetGroupArn;
         private string _forecastArn;
         private string _forecastName;
+        private List<string> _forecastTypes = new List<string>();
         private DateTime? _lastModificationTime;
         private string _message;
         private string _predictorArn;
@@ -81,7 +82,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property ForecastArn. 
         /// <para>
-        /// The same forecast ARN as given in the request.
+        /// The forecast ARN as specified in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -114,6 +115,25 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetForecastName()
         {
             return this._forecastName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForecastTypes. 
+        /// <para>
+        /// The quantiles at which proababilistic forecasts were generated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<string> ForecastTypes
+        {
+            get { return this._forecastTypes; }
+            set { this._forecastTypes = value; }
+        }
+
+        // Check to see if ForecastTypes property is set
+        internal bool IsSetForecastTypes()
+        {
+            return this._forecastTypes != null && this._forecastTypes.Count > 0; 
         }
 
         /// <summary>

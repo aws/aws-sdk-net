@@ -45,7 +45,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ComputeEnvironment. 
         /// <para>
-        /// The name or Amazon Resource Name (ARN) of the compute environment to delete. 
+        /// The name or Amazon Resource Name (ARN) of the compute environment to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

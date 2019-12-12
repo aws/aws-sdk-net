@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing metadata for a resource.
+    /// An object that represents metadata for a resource.
     /// </summary>
     public partial class ResourceMetadata
     {

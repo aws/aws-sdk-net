@@ -141,6 +141,7 @@ namespace Amazon.Transfer.Model
         /// Amazon S3 events to be logged in Amazon CloudWatch, turning logging on or off.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string LoggingRole
         {
             get { return this._loggingRole; }
@@ -160,7 +161,7 @@ namespace Amazon.Transfer.Model
         /// is assigned to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=19, Max=19)]
         public string ServerId
         {
             get { return this._serverId; }

@@ -30,25 +30,6 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the ListUserGroups operation.
     /// Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
-    /// 
-    ///  
-    /// <para>
-    /// The permission resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
-    /// </code>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// The response is a one or more group objects. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>CLI Sample:</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight list-user-groups -\-user-name=Pat -\-aws-account-id=111122223333
-    /// -\-namespace=default -\-region=us-east-1 </code> 
-    /// </para>
     /// </summary>
     public partial class ListUserGroupsRequest : AmazonQuickSightRequest
     {
@@ -61,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS Account ID that the user is in. Currently, you use the ID for the AWS account
+        /// The AWS account ID that the user is in. Currently, you use the ID for the AWS account
         /// that contains your Amazon QuickSight account.
         /// </para>
         /// </summary>
@@ -103,7 +84,7 @@ namespace Amazon.QuickSight.Model
         /// The namespace. Currently, you should set this to <code>default</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=64)]
         public string Namespace
         {
             get { return this._awsNamespace; }

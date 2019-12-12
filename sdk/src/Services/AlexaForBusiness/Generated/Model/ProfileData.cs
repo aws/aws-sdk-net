@@ -100,7 +100,8 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// The locale of a room profile.
+        /// The locale of a room profile. (This is currently available only to a limited preview
+        /// audience.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -174,7 +175,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// The timezone of a room profile.
+        /// The time zone of a room profile.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

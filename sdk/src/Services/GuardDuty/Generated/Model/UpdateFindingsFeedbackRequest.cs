@@ -29,7 +29,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFindingsFeedback operation.
-    /// Marks specified Amazon GuardDuty findings as useful or not useful.
+    /// Marks the specified GuardDuty findings as useful or not useful.
     /// </summary>
     public partial class UpdateFindingsFeedbackRequest : AmazonGuardDutyRequest
     {
@@ -59,8 +59,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The ID of the detector that specifies the GuardDuty service whose findings you want
-        /// to mark as useful or not useful.
+        /// The ID of the detector associated with the findings to update feedback for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -79,7 +78,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Feedback. 
         /// <para>
-        /// Valid values: USEFUL | NOT_USEFUL
+        /// The feedback for the finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

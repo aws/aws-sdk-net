@@ -33,7 +33,7 @@ namespace Amazon.Textract.Model
     /// 
     ///  
     /// <para>
-    /// The input document can be an image file in JPG or PNG format. It can also be a file
+    /// The input document can be an image file in JPEG or PNG format. It can also be a file
     /// in PDF format.
     /// </para>
     /// </summary>

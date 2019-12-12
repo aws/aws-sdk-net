@@ -397,7 +397,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancing.Generated
             var response = client.DeleteLoadBalancerListeners(new DeleteLoadBalancerListenersRequest 
             {
                 LoadBalancerName = "my-load-balancer",
-                LoadBalancerPorts = new List<integer> {
+                LoadBalancerPorts = new List<int> {
                     80
                 }
             });

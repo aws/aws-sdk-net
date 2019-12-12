@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Contains details of the usage of each resource from the license pool.
+    /// Details about the usage of a resource associated with a license configuration.
     /// </summary>
     public partial class LicenseConfigurationUsage
     {
@@ -42,7 +42,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property AssociationTime. 
         /// <para>
-        /// Time when the license configuration was initially associated with a resource.
+        /// Time when the license configuration was initially associated with the resource.
         /// </para>
         /// </summary>
         public DateTime AssociationTime
@@ -60,7 +60,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ConsumedLicenses. 
         /// <para>
-        /// Number of licenses consumed out of the total provisioned in the license configuration.
+        /// Number of licenses consumed by the resource.
         /// </para>
         /// </summary>
         public long ConsumedLicenses
@@ -78,7 +78,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// ARN of the resource associated with a license configuration.
+        /// Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -96,7 +96,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceOwnerId. 
         /// <para>
-        /// ID of the account that owns a resource that is associated with the license configuration.
+        /// ID of the account that owns the resource.
         /// </para>
         /// </summary>
         public string ResourceOwnerId
@@ -114,7 +114,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceStatus. 
         /// <para>
-        /// Status of a resource associated with the license configuration.
+        /// Status of the resource.
         /// </para>
         /// </summary>
         public string ResourceStatus
@@ -132,7 +132,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Type of resource associated with athe license configuration.
+        /// Type of resource.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

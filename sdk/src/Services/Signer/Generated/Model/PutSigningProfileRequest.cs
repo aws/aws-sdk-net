@@ -29,7 +29,7 @@ namespace Amazon.Signer.Model
 {
     /// <summary>
     /// Container for the parameters to the PutSigningProfile operation.
-    /// Creates a signing profile. A signing profile is an AWS Signer template that can be
+    /// Creates a signing profile. A signing profile is a code signing template that can be
     /// used to carry out a pre-defined signing job. For more information, see <a href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
     /// </summary>
     public partial class PutSigningProfileRequest : AmazonSignerRequest
@@ -39,6 +39,7 @@ namespace Amazon.Signer.Model
         private string _profileName;
         private SigningMaterial _signingMaterial;
         private Dictionary<string, string> _signingParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Overrides. 
@@ -135,6 +136,25 @@ namespace Amazon.Signer.Model
         internal bool IsSetSigningParameters()
         {
             return this._signingParameters != null && this._signingParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to be associated with the signing profile being created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

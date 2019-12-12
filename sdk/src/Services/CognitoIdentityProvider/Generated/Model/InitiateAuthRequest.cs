@@ -104,6 +104,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// are passed directly. If a user migration Lambda trigger is set, this flow will invoke
         /// the user migration Lambda if the USERNAME is not found in the user pool. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
+        /// This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow,
+        /// Cognito receives the password in the request instead of using the SRP process to verify
+        /// passwords.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.

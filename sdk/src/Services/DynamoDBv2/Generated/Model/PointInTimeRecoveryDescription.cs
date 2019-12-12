@@ -39,7 +39,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property EarliestRestorableDateTime. 
         /// <para>
-        /// Specifies the earliest point in time you can restore your table to. It You can restore
+        /// Specifies the earliest point in time you can restore your table to. You can restore
         /// your table to any point in time during the last 35 days. 
         /// </para>
         /// </summary>

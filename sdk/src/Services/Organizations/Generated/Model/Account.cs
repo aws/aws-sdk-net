@@ -71,7 +71,7 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-        /// is a string of characters that represents a standard Internet email address.
+        /// is a string of characters that represents a standard internet email address.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=64)]

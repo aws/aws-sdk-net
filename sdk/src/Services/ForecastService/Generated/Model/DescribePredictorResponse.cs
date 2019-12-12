@@ -47,6 +47,7 @@ namespace Amazon.ForecastService.Model
         private bool? _performAutoML;
         private bool? _performHPO;
         private string _predictorArn;
+        private PredictorExecutionDetails _predictorExecutionDetails;
         private string _predictorName;
         private string _status;
         private Dictionary<string, string> _trainingParameters = new Dictionary<string, string>();
@@ -109,7 +110,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property DatasetImportJobArns. 
         /// <para>
-        /// An array of ARNs of the dataset import jobs used to import training data for the predictor.
+        /// An array of the ARNs of the dataset import jobs used to import training data for the
+        /// predictor.
         /// </para>
         /// </summary>
         public List<string> DatasetImportJobArns
@@ -240,10 +242,10 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property LastModificationTime. 
         /// <para>
-        /// Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>).
-        /// Updated when training starts (status changed to <code>CREATE_IN_PROGRESS</code>),
-        /// and when training is complete (status changed to <code>ACTIVE</code>) or fails (status
-        /// changed to <code>CREATE_FAILED</code>).
+        /// Initially, the same as <code>CreationTime</code> (when the status is <code>CREATE_PENDING</code>).
+        /// This value is updated when training starts (when the status changes to <code>CREATE_IN_PROGRESS</code>),
+        /// and when training has completed (when the status changes to <code>ACTIVE</code>) or
+        /// fails (when the status changes to <code>CREATE_FAILED</code>).
         /// </para>
         /// </summary>
         public DateTime LastModificationTime
@@ -297,7 +299,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property PerformHPO. 
         /// <para>
-        /// Whether the predictor is set to perform HPO.
+        /// Whether the predictor is set to perform hyperparameter optimization (HPO).
         /// </para>
         /// </summary>
         public bool PerformHPO
@@ -329,6 +331,26 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetPredictorArn()
         {
             return this._predictorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PredictorExecutionDetails. 
+        /// <para>
+        /// Details on the the status and results of the backtests performed to evaluate the accuracy
+        /// of the predictor. You specify the number of backtests to perform when you call the
+        /// operation.
+        /// </para>
+        /// </summary>
+        public PredictorExecutionDetails PredictorExecutionDetails
+        {
+            get { return this._predictorExecutionDetails; }
+            set { this._predictorExecutionDetails = value; }
+        }
+
+        // Check to see if PredictorExecutionDetails property is set
+        internal bool IsSetPredictorExecutionDetails()
+        {
+            return this._predictorExecutionDetails != null;
         }
 
         /// <summary>
@@ -376,8 +398,8 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using
-        /// the predictor to create a forecast.
+        /// The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can
+        /// use the predictor to create a forecast.
         /// </para>
         ///  </note>
         /// </summary>
@@ -397,8 +419,10 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property TrainingParameters. 
         /// <para>
-        /// The training parameters to override for model training. The parameters that you can
-        /// override are listed in the individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+        /// The default training parameters or overrides selected during model training. If using
+        /// the AutoML algorithm or if HPO is turned on while using the DeepAR+ algorithms, the
+        /// optimized values for the chosen hyperparameters are returned. For more information,
+        /// see <a>aws-forecast-choosing-recipes</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

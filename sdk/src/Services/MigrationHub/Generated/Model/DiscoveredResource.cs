@@ -38,7 +38,8 @@ namespace Amazon.MigrationHub.Model
         /// <summary>
         /// Gets and sets the property ConfigurationId. 
         /// <para>
-        /// The configurationId in ADS that uniquely identifies the on-premise resource.
+        /// The configurationId in Application Discovery Service that uniquely identifies the
+        /// on-premise resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

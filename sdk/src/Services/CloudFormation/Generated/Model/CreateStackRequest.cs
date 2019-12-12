@@ -56,7 +56,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Capabilities. 
         /// <para>
-        /// In some cases, you must explicity acknowledge that your stack template contains certain
+        /// In some cases, you must explicitly acknowledge that your stack template contains certain
         /// capabilities in order for AWS CloudFormation to create the stack.
         /// </para>
         ///  <ul> <li> 

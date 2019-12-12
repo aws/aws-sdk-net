@@ -100,6 +100,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EmbedHostDomains", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.EmbedHostDomains = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FeedbackURL", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

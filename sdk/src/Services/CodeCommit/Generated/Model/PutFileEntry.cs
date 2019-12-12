@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Information about a file that will be added or updated as part of a commit.
+    /// Information about a file added or updated as part of a commit.
     /// </summary>
     public partial class PutFileEntry
     {

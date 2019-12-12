@@ -36,7 +36,7 @@ namespace Amazon.AutoScaling.Model
     /// To update an Auto Scaling group, specify the name of the group and the parameter that
     /// you want to change. Any parameters that you don't specify are not changed by this
     /// update request. The new settings take effect on any scaling activities after this
-    /// call returns. Scaling activities that are currently in progress aren't affected.
+    /// call returns. 
     /// </para>
     ///  
     /// <para>
@@ -94,6 +94,7 @@ namespace Amazon.AutoScaling.Model
         private string _healthCheckType;
         private string _launchConfigurationName;
         private LaunchTemplateSpecification _launchTemplate;
+        private int? _maxInstanceLifetime;
         private int? _maxSize;
         private int? _minSize;
         private MixedInstancesPolicy _mixedInstancesPolicy;
@@ -245,14 +246,6 @@ namespace Amazon.AutoScaling.Model
         /// The name of the launch configuration. If you specify <code>LaunchConfigurationName</code>
         /// in your update request, you can't specify <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code>
-        /// set to <code>false</code>, you must first disable the collection of group metrics.
-        /// Otherwise, you get an error. If you have previously enabled the collection of group
-        /// metrics, you can disable it using <a>DisableMetricsCollection</a>.
-        /// </para>
-        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
         public string LaunchConfigurationName
@@ -290,6 +283,28 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetLaunchTemplate()
         {
             return this._launchTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxInstanceLifetime. 
+        /// <para>
+        /// The maximum amount of time, in seconds, that an instance can be in service.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 604800.
+        /// </para>
+        /// </summary>
+        public int MaxInstanceLifetime
+        {
+            get { return this._maxInstanceLifetime.GetValueOrDefault(); }
+            set { this._maxInstanceLifetime = value; }
+        }
+
+        // Check to see if MaxInstanceLifetime property is set
+        internal bool IsSetMaxInstanceLifetime()
+        {
+            return this._maxInstanceLifetime.HasValue; 
         }
 
         /// <summary>

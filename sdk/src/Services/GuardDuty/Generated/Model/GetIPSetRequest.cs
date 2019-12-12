@@ -29,7 +29,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIPSet operation.
-    /// Retrieves the IPSet specified by the IPSet ID.
+    /// Retrieves the IPSet specified by the <code>ipSetId</code>.
     /// </summary>
     public partial class GetIPSetRequest : AmazonGuardDutyRequest
     {
@@ -58,7 +58,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property IpSetId. 
         /// <para>
-        /// The unique ID of the ipSet you want to get.
+        /// The unique ID of the IPSet to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

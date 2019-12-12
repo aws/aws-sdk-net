@@ -82,6 +82,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApiKeySelectionExpression = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("corsConfiguration", targetDepth))
+                {
+                    var unmarshaller = CorsUnmarshaller.Instance;
+                    unmarshalledObject.CorsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.DisableSchemaValidation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("importInfo", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ImportInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))

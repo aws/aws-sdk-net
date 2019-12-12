@@ -53,7 +53,7 @@ namespace Amazon.Transfer.Model
         /// assigned to it.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=19, Max=19)]
         public string ServerId
         {
             get { return this._serverId; }
@@ -72,7 +72,7 @@ namespace Amazon.Transfer.Model
         /// A unique string that identifies a user that is being deleted from the server.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=3, Max=32)]
         public string UserName
         {
             get { return this._userName; }

@@ -32,6 +32,7 @@ namespace Amazon.ApiGatewayV2.Model
     /// </summary>
     public partial class GetIntegrationResponse : AmazonWebServiceResponse
     {
+        private bool? _apiGatewayManaged;
         private string _connectionId;
         private ConnectionType _connectionType;
         private ContentHandlingStrategy _contentHandlingStrategy;
@@ -43,10 +44,31 @@ namespace Amazon.ApiGatewayV2.Model
         private IntegrationType _integrationType;
         private string _integrationUri;
         private PassthroughBehavior _passthroughBehavior;
+        private string _payloadFormatVersion;
         private Dictionary<string, string> _requestParameters = new Dictionary<string, string>();
         private Dictionary<string, string> _requestTemplates = new Dictionary<string, string>();
         private string _templateSelectionExpression;
         private int? _timeoutInMillis;
+
+        /// <summary>
+        /// Gets and sets the property ApiGatewayManaged. 
+        /// <para>
+        /// Specifies whether an integration is managed by API Gateway. If you created an API
+        /// using using quick create, the resulting integration is managed by API Gateway. You
+        /// can update a managed integration, but you can't delete it.
+        /// </para>
+        /// </summary>
+        public bool ApiGatewayManaged
+        {
+            get { return this._apiGatewayManaged.GetValueOrDefault(); }
+            set { this._apiGatewayManaged = value; }
+        }
+
+        // Check to see if ApiGatewayManaged property is set
+        internal bool IsSetApiGatewayManaged()
+        {
+            return this._apiGatewayManaged.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ConnectionId. 
@@ -88,20 +110,21 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ContentHandlingStrategy. 
         /// <para>
-        /// Specifies how to handle response payload content type conversions. Supported values
-        /// are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
+        /// Supported only for WebSocket APIs. Specifies how to handle response payload content
+        /// type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with
+        /// the following behaviors:
         /// </para>
-        /// 
+        ///  
         /// <para>
-        ///  CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the
+        /// CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the
         /// corresponding binary blob.
         /// </para>
-        /// 
+        ///  
         /// <para>
-        ///  CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded
+        /// CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded
         /// string.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// If this property is not defined, the response payload will be passed through from
         /// the integration response to the route response or method response without modification.
@@ -198,7 +221,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property IntegrationResponseSelectionExpression. 
         /// <para>
-        /// The integration response selection expression for the integration. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration
+        /// The integration response selection expression for the integration. Supported only
+        /// for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration
         /// Response Selection Expressions</a>.
         /// </para>
         /// </summary>
@@ -219,33 +243,33 @@ namespace Amazon.ApiGatewayV2.Model
         /// <para>
         /// The integration type of an integration. One of the following:
         /// </para>
-        /// 
+        ///  
         /// <para>
-        ///  AWS: for integrating the route or method request with an AWS service action, including
+        /// AWS: for integrating the route or method request with an AWS service action, including
         /// the Lambda function-invoking action. With the Lambda function-invoking action, this
         /// is referred to as the Lambda custom integration. With any other AWS service action,
-        /// this is known as AWS integration.
+        /// this is known as AWS integration. Supported only for WebSocket APIs.
         /// </para>
-        /// 
+        ///  
         /// <para>
-        ///  AWS_PROXY: for integrating the route or method request with the Lambda function-invoking
+        /// AWS_PROXY: for integrating the route or method request with the Lambda function-invoking
         /// action with the client request passed through as-is. This integration is also referred
         /// to as Lambda proxy integration.
         /// </para>
-        /// 
+        ///  
         /// <para>
-        ///  HTTP: for integrating the route or method request with an HTTP endpoint. This integration
-        /// is also referred to as the HTTP custom integration.
+        /// HTTP: for integrating the route or method request with an HTTP endpoint. This integration
+        /// is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.
         /// </para>
-        /// 
+        ///  
         /// <para>
-        ///  HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the
+        /// HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the
         /// client request passed through as-is. This is also referred to as HTTP proxy integration.
         /// </para>
-        /// 
+        ///  
         /// <para>
-        ///  MOCK: for integrating the route or method request with API Gateway as a "loopback"
-        /// endpoint without invoking any backend.
+        /// MOCK: for integrating the route or method request with API Gateway as a "loopback"
+        /// endpoint without invoking any backend. Supported only for WebSocket APIs.
         /// </para>
         /// </summary>
         public IntegrationType IntegrationType
@@ -284,20 +308,20 @@ namespace Amazon.ApiGatewayV2.Model
         /// Specifies the pass-through behavior for incoming requests based on the Content-Type
         /// header in the request, and the available mapping templates specified as the requestTemplates
         /// property on the Integration resource. There are three valid values: WHEN_NO_MATCH,
-        /// WHEN_NO_TEMPLATES, and NEVER.
+        /// WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.
         /// </para>
-        /// 
+        ///  
         /// <para>
-        ///  WHEN_NO_MATCH passes the request body for unmapped content types through to the integration
+        /// WHEN_NO_MATCH passes the request body for unmapped content types through to the integration
         /// backend without transformation.
         /// </para>
-        /// 
+        ///  
         /// <para>
-        ///  NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.
+        /// NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.
         /// </para>
-        /// 
+        ///  
         /// <para>
-        ///  WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped
+        /// WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped
         /// to templates. However, if there is at least one content type defined, unmapped content
         /// types will be rejected with the same HTTP 415 Unsupported Media Type response.
         /// </para>
@@ -315,15 +339,36 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PayloadFormatVersion. 
+        /// <para>
+        /// Specifies the format of the payload sent to an integration. Required for HTTP APIs.
+        /// Currently, the only supported value is 1.0.
+        /// </para>
+        /// </summary>
+        public string PayloadFormatVersion
+        {
+            get { return this._payloadFormatVersion; }
+            set { this._payloadFormatVersion = value; }
+        }
+
+        // Check to see if PayloadFormatVersion property is set
+        internal bool IsSetPayloadFormatVersion()
+        {
+            return this._payloadFormatVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RequestParameters. 
         /// <para>
         /// A key-value map specifying request parameters that are passed from the method request
         /// to the backend. The key is an integration request parameter name and the associated
         /// value is a method request parameter value or static value that must be enclosed within
         /// single quotes and pre-encoded as required by the backend. The method request parameter
-        /// value must match the pattern of method.request.{location}.{name} , where  {location}
-        ///  is querystring, path, or header; and  {name}  must be a valid and unique method request
-        /// parameter name.
+        /// value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
+        ///               , where                   <replaceable>{location}</replaceable>    
+        ///            is querystring, path, or header; and                   <replaceable>{name}</replaceable>
+        ///                must be a valid and unique method request parameter name. Supported
+        /// only for WebSocket APIs.
         /// </para>
         /// </summary>
         public Dictionary<string, string> RequestParameters
@@ -343,7 +388,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// <para>
         /// Represents a map of Velocity templates that are applied on the request payload based
         /// on the value of the Content-Type header sent by the client. The content type value
-        /// is the key in this map, and the template (as a String) is the value.
+        /// is the key in this map, and the template (as a String) is the value. Supported only
+        /// for WebSocket APIs.
         /// </para>
         /// </summary>
         public Dictionary<string, string> RequestTemplates
@@ -361,7 +407,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property TemplateSelectionExpression. 
         /// <para>
-        /// The template selection expression for the integration.
+        /// The template selection expression for the integration. Supported only for WebSocket
+        /// APIs.
         /// </para>
         /// </summary>
         public string TemplateSelectionExpression
@@ -380,10 +427,11 @@ namespace Amazon.ApiGatewayV2.Model
         /// Gets and sets the property TimeoutInMillis. 
         /// <para>
         /// Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds
-        /// or 29 seconds.
+        /// or 29 seconds for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds
+        /// for HTTP APIs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=-2147483648, Max=2147483647)]
+        [AWSProperty(Min=50, Max=29000)]
         public int TimeoutInMillis
         {
             get { return this._timeoutInMillis.GetValueOrDefault(); }

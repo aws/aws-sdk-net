@@ -75,6 +75,23 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApiKeySelectionExpression);
                 }
 
+                if(publicRequest.IsSetCorsConfiguration())
+                {
+                    context.Writer.WritePropertyName("corsConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CorsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CorsConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetCredentialsArn())
+                {
+                    context.Writer.WritePropertyName("credentialsArn");
+                    context.Writer.Write(publicRequest.CredentialsArn);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
@@ -93,10 +110,22 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetRouteKey())
+                {
+                    context.Writer.WritePropertyName("routeKey");
+                    context.Writer.Write(publicRequest.RouteKey);
+                }
+
                 if(publicRequest.IsSetRouteSelectionExpression())
                 {
                     context.Writer.WritePropertyName("routeSelectionExpression");
                     context.Writer.Write(publicRequest.RouteSelectionExpression);
+                }
+
+                if(publicRequest.IsSetTarget())
+                {
+                    context.Writer.WritePropertyName("target");
+                    context.Writer.Write(publicRequest.Target);
                 }
 
                 if(publicRequest.IsSetVersion())

@@ -74,6 +74,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
+                if(publicRequest.IsSetOutpostArn())
+                {
+                    request.Parameters.Add("OutpostArn", StringUtils.FromString(publicRequest.OutpostArn));
+                }
                 if(publicRequest.IsSetSize())
                 {
                     request.Parameters.Add("Size", StringUtils.FromInt(publicRequest.Size));

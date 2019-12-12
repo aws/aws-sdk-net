@@ -32,6 +32,7 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class GetDocumentAnalysisResponse : AmazonWebServiceResponse
     {
+        private string _analyzeDocumentModelVersion;
         private List<Block> _blocks = new List<Block>();
         private DocumentMetadata _documentMetadata;
         private JobStatus _jobStatus;
@@ -40,9 +41,24 @@ namespace Amazon.Textract.Model
         private List<Warning> _warnings = new List<Warning>();
 
         /// <summary>
+        /// Gets and sets the property AnalyzeDocumentModelVersion.
+        /// </summary>
+        public string AnalyzeDocumentModelVersion
+        {
+            get { return this._analyzeDocumentModelVersion; }
+            set { this._analyzeDocumentModelVersion = value; }
+        }
+
+        // Check to see if AnalyzeDocumentModelVersion property is set
+        internal bool IsSetAnalyzeDocumentModelVersion()
+        {
+            return this._analyzeDocumentModelVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Blocks. 
         /// <para>
-        /// The results of the text analysis operation.
+        /// The results of the text-analysis operation.
         /// </para>
         /// </summary>
         public List<Block> Blocks
@@ -117,7 +133,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// The current status of an asynchronous document analysis operation.
+        /// The current status of an asynchronous document-analysis operation.
         /// </para>
         /// </summary>
         public string StatusMessage
@@ -135,7 +151,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Warnings. 
         /// <para>
-        /// A list of warnings that occurred during the document analysis operation.
+        /// A list of warnings that occurred during the document-analysis operation.
         /// </para>
         /// </summary>
         public List<Warning> Warnings

@@ -62,9 +62,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Address", StringUtils.FromString(publicRequest.Address));
                 }
+                if(publicRequest.IsSetCustomerOwnedIpv4Pool())
+                {
+                    request.Parameters.Add("CustomerOwnedIpv4Pool", StringUtils.FromString(publicRequest.CustomerOwnedIpv4Pool));
+                }
                 if(publicRequest.IsSetDomain())
                 {
                     request.Parameters.Add("Domain", StringUtils.FromString(publicRequest.Domain));
+                }
+                if(publicRequest.IsSetNetworkBorderGroup())
+                {
+                    request.Parameters.Add("NetworkBorderGroup", StringUtils.FromString(publicRequest.NetworkBorderGroup));
                 }
                 if(publicRequest.IsSetPublicIpv4Pool())
                 {

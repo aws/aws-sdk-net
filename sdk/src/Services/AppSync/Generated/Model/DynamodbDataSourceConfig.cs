@@ -33,8 +33,10 @@ namespace Amazon.AppSync.Model
     public partial class DynamodbDataSourceConfig
     {
         private string _awsRegion;
+        private DeltaSyncConfig _deltaSyncConfig;
         private string _tableName;
         private bool? _useCallerCredentials;
+        private bool? _versioned;
 
         /// <summary>
         /// Gets and sets the property AwsRegion. 
@@ -53,6 +55,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetAwsRegion()
         {
             return this._awsRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeltaSyncConfig. 
+        /// <para>
+        /// The <code>DeltaSyncConfig</code> for a versioned datasource.
+        /// </para>
+        /// </summary>
+        public DeltaSyncConfig DeltaSyncConfig
+        {
+            get { return this._deltaSyncConfig; }
+            set { this._deltaSyncConfig = value; }
+        }
+
+        // Check to see if DeltaSyncConfig property is set
+        internal bool IsSetDeltaSyncConfig()
+        {
+            return this._deltaSyncConfig != null;
         }
 
         /// <summary>
@@ -90,6 +110,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetUseCallerCredentials()
         {
             return this._useCallerCredentials.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Versioned. 
+        /// <para>
+        /// Set to TRUE to use Conflict Detection and Resolution with this data source.
+        /// </para>
+        /// </summary>
+        public bool Versioned
+        {
+            get { return this._versioned.GetValueOrDefault(); }
+            set { this._versioned = value; }
+        }
+
+        // Check to see if Versioned property is set
+        internal bool IsSetVersioned()
+        {
+            return this._versioned.HasValue; 
         }
 
     }

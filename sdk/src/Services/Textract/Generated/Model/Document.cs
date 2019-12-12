@@ -69,16 +69,16 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Bytes. 
         /// <para>
-        /// A blob of base-64 encoded documents bytes. The maximum size of a document that's provided
-        /// in a blob of bytes is 5 MB. The document bytes must be in PNG or JPG format.
+        /// A blob of base64-encoded document bytes. The maximum size of a document that's provided
+        /// in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.
         /// </para>
         ///  
         /// <para>
-        /// If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+        /// If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
         /// image bytes passed using the <code>Bytes</code> field. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5242880)]
+        [AWSProperty(Min=1, Max=10485760)]
         public MemoryStream Bytes
         {
             get { return this._bytes; }
@@ -94,8 +94,8 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property S3Object. 
         /// <para>
-        /// Identifies an S3 object as the document source. The maximum size of a document stored
-        /// in an S3 bucket is 5 MB.
+        /// Identifies an S3 object as the document source. The maximum size of a document that's
+        /// stored in an S3 bucket is 5 MB.
         /// </para>
         /// </summary>
         public S3Object S3Object

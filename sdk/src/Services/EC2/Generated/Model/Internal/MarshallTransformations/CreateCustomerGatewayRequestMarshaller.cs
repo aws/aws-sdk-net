@@ -66,6 +66,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CertificateArn", StringUtils.FromString(publicRequest.CertificateArn));
                 }
+                if(publicRequest.IsSetDeviceName())
+                {
+                    request.Parameters.Add("DeviceName", StringUtils.FromString(publicRequest.DeviceName));
+                }
                 if(publicRequest.IsSetPublicIp())
                 {
                     request.Parameters.Add("IpAddress", StringUtils.FromString(publicRequest.PublicIp));

@@ -29,7 +29,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyAccount operation.
-    /// Modifies the configuration of bring your own license (BYOL) for the specified account.
+    /// Modifies the configuration of Bring Your Own License (BYOL) for the specified account.
     /// </summary>
     public partial class ModifyAccountRequest : AmazonWorkSpacesRequest
     {

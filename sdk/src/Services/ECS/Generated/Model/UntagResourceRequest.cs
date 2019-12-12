@@ -40,8 +40,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently,
-        /// the supported resources are Amazon ECS tasks, services, task definitions, clusters,
-        /// and container instances.
+        /// the supported resources are Amazon ECS capacity providers, tasks, services, task definitions,
+        /// clusters, and container instances.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,14 +30,27 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// <summary>
     /// Container for the parameters to the GetResources operation.
     /// Returns all the tagged or previously tagged resources that are located in the specified
-    /// region for the AWS account. You can optionally specify <i>filters</i> (tags and resource
-    /// types) in your request, depending on what information you want returned. The response
-    /// includes all tags that are associated with the requested resources.
+    /// Region for the AWS account.
     /// 
-    ///  <note> 
+    ///  
+    /// <para>
+    /// Depending on what information you want returned, you can also specify the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>Filters</i> that specify what tags and resource types you want returned. The response
+    /// includes all tags that are associated with the requested resources.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Information about compliance with the account's effective tag policy. For more information
+    /// on tag policies, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
+    /// Policies</a> in the <i>AWS Organizations User Guide.</i> 
+    /// </para>
+    ///  </li> </ul> <note> 
     /// <para>
     /// You can check the <code>PaginationToken</code> response parameter to determine if
-    /// a query completed. Queries can occasionally return fewer results on a page than allowed.
+    /// a query is complete. Queries occasionally return fewer results on a page than allowed.
     /// The <code>PaginationToken</code> response parameter value is <code>null</code> <i>only</i>
     /// when there are no more results to display. 
     /// </para>
@@ -45,11 +58,58 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// </summary>
     public partial class GetResourcesRequest : AmazonResourceGroupsTaggingAPIRequest
     {
+        private bool? _excludeCompliantResources;
+        private bool? _includeComplianceDetails;
         private string _paginationToken;
         private int? _resourcesPerPage;
         private List<string> _resourceTypeFilters = new List<string>();
         private List<TagFilter> _tagFilters = new List<TagFilter>();
         private int? _tagsPerPage;
+
+        /// <summary>
+        /// Gets and sets the property ExcludeCompliantResources. 
+        /// <para>
+        /// Specifies whether to exclude resources that are compliant with the tag policy. Set
+        /// this to <code>true</code> if you are interested in retrieving information on noncompliant
+        /// resources only.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter
+        /// is also set to <code>true</code>.
+        /// </para>
+        /// </summary>
+        public bool ExcludeCompliantResources
+        {
+            get { return this._excludeCompliantResources.GetValueOrDefault(); }
+            set { this._excludeCompliantResources = value; }
+        }
+
+        // Check to see if ExcludeCompliantResources property is set
+        internal bool IsSetExcludeCompliantResources()
+        {
+            return this._excludeCompliantResources.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeComplianceDetails. 
+        /// <para>
+        /// Specifies whether to include details regarding the compliance with the effective tag
+        /// policy. Set this to <code>true</code> to determine whether resources are compliant
+        /// with the tag policy and to get details.
+        /// </para>
+        /// </summary>
+        public bool IncludeComplianceDetails
+        {
+            get { return this._includeComplianceDetails.GetValueOrDefault(); }
+            set { this._includeComplianceDetails = value; }
+        }
+
+        // Check to see if IncludeComplianceDetails property is set
+        internal bool IsSetIncludeComplianceDetails()
+        {
+            return this._includeComplianceDetails.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property PaginationToken. 
@@ -220,6 +280,10 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property TagsPerPage. 
         /// <para>
+        /// AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.
+        /// </para>
+        ///  
+        /// <para>
         /// A limit that restricts the number of tags (key and value pairs) returned by GetResources
         /// in paginated output. A resource with no tags is counted as having one tag (one key
         /// and value pair).
@@ -231,9 +295,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// is returned in place of the affected resource and its tags. Use that token in another
         /// request to get the remaining data. For example, if you specify a <code>TagsPerPage</code>
         /// of <code>100</code> and the account has 22 resources with 10 tags each (meaning that
-        /// each resource has 10 key and value pairs), the output will consist of 3 pages, with
-        /// the first page displaying the first 10 resources, each with its 10 tags, the second
-        /// page displaying the next 10 resources each with its 10 tags, and the third page displaying
+        /// each resource has 10 key and value pairs), the output will consist of three pages.
+        /// The first page displays the first 10 resources, each with its 10 tags. The second
+        /// page displays the next 10 resources, each with its 10 tags. The third page displays
         /// the remaining 2 resources, each with its 10 tags.
         /// </para>
         ///  

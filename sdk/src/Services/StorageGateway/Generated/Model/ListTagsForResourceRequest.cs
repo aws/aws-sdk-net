@@ -29,8 +29,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags that have been added to the specified resource. This operation is only
-    /// supported in the cached volume, stored volume and tape gateway type.
+    /// Lists the tags that have been added to the specified resource. This operation is supported
+    /// in storage gateways of all types.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonStorageGatewayRequest
     {

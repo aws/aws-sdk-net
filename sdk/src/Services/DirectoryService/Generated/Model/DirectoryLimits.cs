@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Contains directory limit information for a region.
+    /// Contains directory limit information for a Region.
     /// </summary>
     public partial class DirectoryLimits
     {
@@ -45,7 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property CloudOnlyDirectoriesCurrentCount. 
         /// <para>
-        /// The current number of cloud directories in the region.
+        /// The current number of cloud directories in the Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -64,7 +64,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property CloudOnlyDirectoriesLimit. 
         /// <para>
-        /// The maximum number of cloud directories allowed in the region.
+        /// The maximum number of cloud directories allowed in the Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -157,7 +157,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property ConnectedDirectoriesCurrentCount. 
         /// <para>
-        /// The current number of connected directories in the region.
+        /// The current number of connected directories in the Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -176,7 +176,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property ConnectedDirectoriesLimit. 
         /// <para>
-        /// The maximum number of connected directories allowed in the region.
+        /// The maximum number of connected directories allowed in the Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

@@ -37,6 +37,7 @@ namespace Amazon.IoTEvents.Model
         private DetectorModelDefinition _detectorModelDefinition;
         private string _detectorModelDescription;
         private string _detectorModelName;
+        private EvaluationMethod _evaluationMethod;
         private string _roleArn;
 
         /// <summary>
@@ -94,6 +95,26 @@ namespace Amazon.IoTEvents.Model
         internal bool IsSetDetectorModelName()
         {
             return this._detectorModelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationMethod. 
+        /// <para>
+        /// When set to <code>SERIAL</code>, variables are updated and event conditions evaluated
+        /// in the order that the events are defined. When set to <code>BATCH</code>, variables
+        /// are updated and events performed only after all event conditions are evaluated.
+        /// </para>
+        /// </summary>
+        public EvaluationMethod EvaluationMethod
+        {
+            get { return this._evaluationMethod; }
+            set { this._evaluationMethod = value; }
+        }
+
+        // Check to see if EvaluationMethod property is set
+        internal bool IsSetEvaluationMethod()
+        {
+            return this._evaluationMethod != null;
         }
 
         /// <summary>

@@ -69,6 +69,10 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
             {
                 return new DryRunOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("HomeRegionNotSetException"))
+            {
+                return new HomeRegionNotSetException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
             {
                 return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

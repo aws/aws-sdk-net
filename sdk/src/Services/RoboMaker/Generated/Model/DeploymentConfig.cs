@@ -33,6 +33,7 @@ namespace Amazon.RoboMaker.Model
     public partial class DeploymentConfig
     {
         private int? _concurrentDeploymentPercentage;
+        private S3Object _downloadConditionFile;
         private int? _failureThresholdPercentage;
         private long? _robotDeploymentTimeoutInSeconds;
 
@@ -53,6 +54,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetConcurrentDeploymentPercentage()
         {
             return this._concurrentDeploymentPercentage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DownloadConditionFile. 
+        /// <para>
+        /// The download condition file.
+        /// </para>
+        /// </summary>
+        public S3Object DownloadConditionFile
+        {
+            get { return this._downloadConditionFile; }
+            set { this._downloadConditionFile = value; }
+        }
+
+        // Check to see if DownloadConditionFile property is set
+        internal bool IsSetDownloadConditionFile()
+        {
+            return this._downloadConditionFile != null;
         }
 
         /// <summary>

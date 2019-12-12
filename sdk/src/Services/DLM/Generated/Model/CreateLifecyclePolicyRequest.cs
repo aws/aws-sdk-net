@@ -38,6 +38,7 @@ namespace Amazon.DLM.Model
         private string _executionRoleArn;
         private PolicyDetails _policyDetails;
         private SettablePolicyStateValues _state;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -65,7 +66,7 @@ namespace Amazon.DLM.Model
         /// by the lifecycle policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string ExecutionRoleArn
         {
             get { return this._executionRoleArn; }
@@ -82,10 +83,6 @@ namespace Amazon.DLM.Model
         /// Gets and sets the property PolicyDetails. 
         /// <para>
         /// The configuration details of the lifecycle policy.
-        /// </para>
-        ///  
-        /// <para>
-        /// Target tags cannot be re-used across lifecycle policies.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -118,6 +115,25 @@ namespace Amazon.DLM.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to apply to the lifecycle policy during creation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

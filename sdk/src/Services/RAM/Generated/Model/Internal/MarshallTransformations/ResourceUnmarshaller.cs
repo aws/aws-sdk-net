@@ -82,6 +82,12 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("resourceGroupArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceGroupArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceShareArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

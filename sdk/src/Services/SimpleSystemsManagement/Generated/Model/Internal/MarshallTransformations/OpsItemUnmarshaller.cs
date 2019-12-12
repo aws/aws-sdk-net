@@ -64,6 +64,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Category", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Category = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +128,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<RelatedOpsItem, RelatedOpsItemUnmarshaller>(RelatedOpsItemUnmarshaller.Instance);
                     unmarshalledObject.RelatedOpsItems = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Severity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Severity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Source", targetDepth))

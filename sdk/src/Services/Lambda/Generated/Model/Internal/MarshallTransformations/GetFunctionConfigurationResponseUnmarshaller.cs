@@ -111,6 +111,24 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastUpdateStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LastUpdateStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastUpdateStatusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LastUpdateStatusReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastUpdateStatusReasonCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LastUpdateStatusReasonCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Layers", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Layer, LayerUnmarshaller>(LayerUnmarshaller.Instance);
@@ -145,6 +163,24 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Runtime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("State", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StateReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StateReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StateReasonCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StateReasonCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Timeout", targetDepth))

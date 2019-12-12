@@ -29,14 +29,15 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUpdates operation.
-    /// Lists the updates associated with an Amazon EKS cluster in your AWS account, in the
-    /// specified Region.
+    /// Lists the updates associated with an Amazon EKS cluster or managed node group in your
+    /// AWS account, in the specified Region.
     /// </summary>
     public partial class ListUpdatesRequest : AmazonEKSRequest
     {
         private int? _maxResults;
         private string _name;
         private string _nextToken;
+        private string _nodegroupName;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -101,6 +102,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodegroupName. 
+        /// <para>
+        /// The name of the Amazon EKS managed node group to list updates for.
+        /// </para>
+        /// </summary>
+        public string NodegroupName
+        {
+            get { return this._nodegroupName; }
+            set { this._nodegroupName = value; }
+        }
+
+        // Check to see if NodegroupName property is set
+        internal bool IsSetNodegroupName()
+        {
+            return this._nodegroupName != null;
         }
 
     }

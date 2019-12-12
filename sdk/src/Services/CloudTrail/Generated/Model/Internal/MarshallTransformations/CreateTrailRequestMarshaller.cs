@@ -134,6 +134,22 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SnsTopicName);
                 }
 
+                if(publicRequest.IsSetTagsList())
+                {
+                    context.Writer.WritePropertyName("TagsList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListListValue in publicRequest.TagsList)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

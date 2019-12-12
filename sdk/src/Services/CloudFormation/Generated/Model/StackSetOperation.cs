@@ -40,6 +40,7 @@ namespace Amazon.CloudFormation.Model
         private string _operationId;
         private StackSetOperationPreferences _operationPreferences;
         private bool? _retainStacks;
+        private StackSetDriftDetectionDetails _stackSetDriftDetectionDetails;
         private string _stackSetId;
         private StackSetOperationStatus _status;
 
@@ -212,6 +213,35 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetRetainStacks()
         {
             return this._retainStacks.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackSetDriftDetectionDetails. 
+        /// <para>
+        /// Detailed information about the drift status of the stack set. This includes information
+        /// about drift operations currently being performed on the stack set.
+        /// </para>
+        ///  
+        /// <para>
+        /// this information will only be present for stack set operations whose <code>Action</code>
+        /// type is <code>DETECT_DRIFT</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
+        /// Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.
+        /// </para>
+        /// </summary>
+        public StackSetDriftDetectionDetails StackSetDriftDetectionDetails
+        {
+            get { return this._stackSetDriftDetectionDetails; }
+            set { this._stackSetDriftDetectionDetails = value; }
+        }
+
+        // Check to see if StackSetDriftDetectionDetails property is set
+        internal bool IsSetStackSetDriftDetectionDetails()
+        {
+            return this._stackSetDriftDetectionDetails != null;
         }
 
         /// <summary>

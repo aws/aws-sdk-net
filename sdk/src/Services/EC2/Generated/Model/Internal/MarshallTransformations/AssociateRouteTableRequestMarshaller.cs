@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetGatewayId())
+                {
+                    request.Parameters.Add("GatewayId", StringUtils.FromString(publicRequest.GatewayId));
+                }
                 if(publicRequest.IsSetRouteTableId())
                 {
                     request.Parameters.Add("RouteTableId", StringUtils.FromString(publicRequest.RouteTableId));

@@ -102,6 +102,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PermissionType);
                 }
 
+                if(publicRequest.IsSetSharedDocumentVersion())
+                {
+                    context.Writer.WritePropertyName("SharedDocumentVersion");
+                    context.Writer.Write(publicRequest.SharedDocumentVersion);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

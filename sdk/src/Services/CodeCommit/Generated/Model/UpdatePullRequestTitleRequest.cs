@@ -58,7 +58,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// The updated title of the pull request. This will replace the existing title.
+        /// The updated title of the pull request. This replaces the existing title.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=150)]

@@ -32,7 +32,51 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ThingGroupIndexingConfiguration
     {
+        private List<Field> _customFields = new List<Field>();
+        private List<Field> _managedFields = new List<Field>();
         private ThingGroupIndexingMode _thingGroupIndexingMode;
+
+        /// <summary>
+        /// Gets and sets the property CustomFields. 
+        /// <para>
+        /// A list of thing group fields to index. This list cannot contain any managed fields.
+        /// Use the GetIndexingConfiguration API to get a list of managed fields.
+        /// </para>
+        ///  
+        /// <para>
+        /// Contains custom field names and their data type.
+        /// </para>
+        /// </summary>
+        public List<Field> CustomFields
+        {
+            get { return this._customFields; }
+            set { this._customFields = value; }
+        }
+
+        // Check to see if CustomFields property is set
+        internal bool IsSetCustomFields()
+        {
+            return this._customFields != null && this._customFields.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedFields. 
+        /// <para>
+        /// Contains fields that are indexed and whose types are already known by the Fleet Indexing
+        /// service.
+        /// </para>
+        /// </summary>
+        public List<Field> ManagedFields
+        {
+            get { return this._managedFields; }
+            set { this._managedFields = value; }
+        }
+
+        // Check to see if ManagedFields property is set
+        internal bool IsSetManagedFields()
+        {
+            return this._managedFields != null && this._managedFields.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ThingGroupIndexingMode. 

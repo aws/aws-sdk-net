@@ -64,6 +64,24 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("FailureDescription", targetDepth))
+                {
+                    var unmarshaller = FailureDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.FailureDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -68,6 +68,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetHumanLoopConfig())
+                {
+                    context.Writer.WritePropertyName("HumanLoopConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HumanLoopConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.HumanLoopConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetImage())
                 {
                     context.Writer.WritePropertyName("Image");

@@ -69,6 +69,39 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetHttpContext())
+                {
+                    context.Writer.WritePropertyName("httpContext");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HttpContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.HttpContext, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMqttContext())
+                {
+                    context.Writer.WritePropertyName("mqttContext");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MqttContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MqttContext, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTlsContext())
+                {
+                    context.Writer.WritePropertyName("tlsContext");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TlsContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TlsContext, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetToken())
                 {
                     context.Writer.WritePropertyName("token");

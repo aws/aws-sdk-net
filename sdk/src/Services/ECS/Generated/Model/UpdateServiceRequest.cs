@@ -158,6 +158,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class UpdateServiceRequest : AmazonECSRequest
     {
+        private List<CapacityProviderStrategyItem> _capacityProviderStrategy = new List<CapacityProviderStrategyItem>();
         private string _cluster;
         private DeploymentConfiguration _deploymentConfiguration;
         private int? _desiredCount;
@@ -167,6 +168,31 @@ namespace Amazon.ECS.Model
         private string _platformVersion;
         private string _service;
         private string _taskDefinition;
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderStrategy. 
+        /// <para>
+        /// The capacity provider strategy to update the service to use.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the service is using the default capacity provider strategy for the cluster, the
+        /// service can be updated to use one or more capacity providers. However, when a service
+        /// is using a non-default capacity provider strategy, the service cannot be updated to
+        /// use the cluster's default capacity provider strategy.
+        /// </para>
+        /// </summary>
+        public List<CapacityProviderStrategyItem> CapacityProviderStrategy
+        {
+            get { return this._capacityProviderStrategy; }
+            set { this._capacityProviderStrategy = value; }
+        }
+
+        // Check to see if CapacityProviderStrategy property is set
+        internal bool IsSetCapacityProviderStrategy()
+        {
+            return this._capacityProviderStrategy != null && this._capacityProviderStrategy.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Cluster. 
@@ -254,9 +280,9 @@ namespace Amazon.ECS.Model
         /// This is only valid if your service is configured to use a load balancer. If your service's
         /// tasks take a while to start and respond to Elastic Load Balancing health checks, you
         /// can specify a health check grace period of up to 2,147,483,647 seconds. During that
-        /// time, the ECS service scheduler ignores the Elastic Load Balancing health check status.
-        /// This grace period can prevent the ECS service scheduler from marking tasks as unhealthy
-        /// and stopping them before they have time to come up.
+        /// time, the Amazon ECS service scheduler ignores the Elastic Load Balancing health check
+        /// status. This grace period can prevent the ECS service scheduler from marking tasks
+        /// as unhealthy and stopping them before they have time to come up.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriodSeconds
@@ -272,22 +298,7 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkConfiguration. 
-        /// <para>
-        /// The network configuration for the service. This parameter is required for task definitions
-        /// that use the <code>awsvpc</code> network mode to receive their own elastic network
-        /// interface, and it is not supported for other network modes. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-        /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Updating a service to add a subnet to a list of existing subnets does not trigger
-        /// a service deployment. For example, if your network configuration change is to keep
-        /// the existing subnets and simply add another subnet to the network configuration, this
-        /// does not trigger a new service deployment.
-        /// </para>
-        ///  </note>
+        /// Gets and sets the property NetworkConfiguration.
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
         {
@@ -305,9 +316,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PlatformVersion. 
         /// <para>
         /// The platform version on which your tasks in the service are running. A platform version
-        /// is only specified for tasks using the Fargate launch type. If one is not specified,
-        /// the <code>LATEST</code> platform version is used by default. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+        /// is only specified for tasks using the Fargate launch type. If a platform version is
+        /// not specified, the <code>LATEST</code> platform version is used by default. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
         /// Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>

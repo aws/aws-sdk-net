@@ -165,6 +165,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ConfigService")]
+        public void DeleteConformancePackMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteConformancePackRequest>();
+            var marshaller = new DeleteConformancePackRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteConformancePackRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
         public void DeleteDeliveryChannelMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteDeliveryChannelRequest>();
@@ -218,6 +234,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
             Comparer.CompareObjectToJson<DeleteOrganizationConfigRuleRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
+        public void DeleteOrganizationConformancePackMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteOrganizationConformancePackRequest>();
+            var marshaller = new DeleteOrganizationConformancePackRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteOrganizationConformancePackRequest>(request,jsonRequest);
 
         }
 
@@ -293,6 +325,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = DeleteRemediationExceptionsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DeleteRemediationExceptionsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
+        public void DeleteResourceConfigMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteResourceConfigRequest>();
+            var marshaller = new DeleteResourceConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteResourceConfigRequest>(request,jsonRequest);
+
         }
 
         
@@ -635,6 +683,93 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ConfigService")]
+        public void DescribeConformancePackComplianceMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeConformancePackComplianceRequest>();
+            var marshaller = new DescribeConformancePackComplianceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeConformancePackComplianceRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeConformancePackCompliance").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeConformancePackComplianceResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeConformancePackComplianceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
+        public void DescribeConformancePacksMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeConformancePacksRequest>();
+            var marshaller = new DescribeConformancePacksRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeConformancePacksRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeConformancePacks").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeConformancePacksResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeConformancePacksResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
+        public void DescribeConformancePackStatusMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeConformancePackStatusRequest>();
+            var marshaller = new DescribeConformancePackStatusRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeConformancePackStatusRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeConformancePackStatus").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeConformancePackStatusResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeConformancePackStatusResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
         public void DescribeDeliveryChannelsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeDeliveryChannelsRequest>();
@@ -743,6 +878,64 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeOrganizationConfigRuleStatusesResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeOrganizationConfigRuleStatusesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
+        public void DescribeOrganizationConformancePacksMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeOrganizationConformancePacksRequest>();
+            var marshaller = new DescribeOrganizationConformancePacksRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeOrganizationConformancePacksRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeOrganizationConformancePacks").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeOrganizationConformancePacksResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeOrganizationConformancePacksResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
+        public void DescribeOrganizationConformancePackStatusesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeOrganizationConformancePackStatusesRequest>();
+            var marshaller = new DescribeOrganizationConformancePackStatusesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeOrganizationConformancePackStatusesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeOrganizationConformancePackStatuses").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeOrganizationConformancePackStatusesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeOrganizationConformancePackStatusesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1125,6 +1318,64 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ConfigService")]
+        public void GetConformancePackComplianceDetailsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetConformancePackComplianceDetailsRequest>();
+            var marshaller = new GetConformancePackComplianceDetailsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetConformancePackComplianceDetailsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetConformancePackComplianceDetails").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetConformancePackComplianceDetailsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetConformancePackComplianceDetailsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
+        public void GetConformancePackComplianceSummaryMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetConformancePackComplianceSummaryRequest>();
+            var marshaller = new GetConformancePackComplianceSummaryRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetConformancePackComplianceSummaryRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetConformancePackComplianceSummary").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetConformancePackComplianceSummaryResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetConformancePackComplianceSummaryResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
         public void GetDiscoveredResourceCountsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<GetDiscoveredResourceCountsRequest>();
@@ -1175,6 +1426,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetOrganizationConfigRuleDetailedStatusResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetOrganizationConfigRuleDetailedStatusResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
+        public void GetOrganizationConformancePackDetailedStatusMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetOrganizationConformancePackDetailedStatusRequest>();
+            var marshaller = new GetOrganizationConformancePackDetailedStatusRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetOrganizationConformancePackDetailedStatusRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetOrganizationConformancePackDetailedStatus").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetOrganizationConformancePackDetailedStatusResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetOrganizationConformancePackDetailedStatusResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1389,6 +1669,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ConfigService")]
+        public void PutConformancePackMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<PutConformancePackRequest>();
+            var marshaller = new PutConformancePackRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<PutConformancePackRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutConformancePack").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = PutConformancePackResponseUnmarshaller.Instance.Unmarshall(context)
+                as PutConformancePackResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
         public void PutDeliveryChannelMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<PutDeliveryChannelRequest>();
@@ -1463,6 +1772,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ConfigService")]
+        public void PutOrganizationConformancePackMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<PutOrganizationConformancePackRequest>();
+            var marshaller = new PutOrganizationConformancePackRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<PutOrganizationConformancePackRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutOrganizationConformancePack").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = PutOrganizationConformancePackResponseUnmarshaller.Instance.Unmarshall(context)
+                as PutOrganizationConformancePackResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
         public void PutRemediationConfigurationsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<PutRemediationConfigurationsRequest>();
@@ -1514,6 +1852,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = PutRemediationExceptionsResponseUnmarshaller.Instance.Unmarshall(context)
                 as PutRemediationExceptionsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
+        public void PutResourceConfigMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<PutResourceConfigRequest>();
+            var marshaller = new PutResourceConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<PutResourceConfigRequest>(request,jsonRequest);
+
         }
 
         

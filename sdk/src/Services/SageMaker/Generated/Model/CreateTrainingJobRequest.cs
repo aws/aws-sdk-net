@@ -89,7 +89,7 @@ namespace Amazon.SageMaker.Model
     /// <para>
     ///  <code>StoppingCondition</code> - To help cap training costs, use <code>MaxRuntimeInSeconds</code>
     /// to set a time limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify
-    /// how long you are willing to to wait for a managed spot training job to complete. 
+    /// how long you are willing to wait for a managed spot training job to complete. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -101,9 +101,12 @@ namespace Amazon.SageMaker.Model
     {
         private AlgorithmSpecification _algorithmSpecification;
         private CheckpointConfig _checkpointConfig;
+        private DebugHookConfig _debugHookConfig;
+        private List<DebugRuleConfiguration> _debugRuleConfigurations = new List<DebugRuleConfiguration>();
         private bool? _enableInterContainerTrafficEncryption;
         private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
+        private ExperimentConfig _experimentConfig;
         private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
         private List<Channel> _inputDataConfig = new List<Channel>();
         private OutputDataConfig _outputDataConfig;
@@ -111,6 +114,7 @@ namespace Amazon.SageMaker.Model
         private string _roleArn;
         private StoppingCondition _stoppingCondition;
         private List<Tag> _tags = new List<Tag>();
+        private TensorBoardOutputConfig _tensorBoardOutputConfig;
         private string _trainingJobName;
         private VpcConfig _vpcConfig;
 
@@ -154,6 +158,40 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCheckpointConfig()
         {
             return this._checkpointConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DebugHookConfig.
+        /// </summary>
+        public DebugHookConfig DebugHookConfig
+        {
+            get { return this._debugHookConfig; }
+            set { this._debugHookConfig = value; }
+        }
+
+        // Check to see if DebugHookConfig property is set
+        internal bool IsSetDebugHookConfig()
+        {
+            return this._debugHookConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DebugRuleConfigurations. 
+        /// <para>
+        /// Configuration information for debugging rules.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<DebugRuleConfiguration> DebugRuleConfigurations
+        {
+            get { return this._debugRuleConfigurations; }
+            set { this._debugRuleConfigurations = value; }
+        }
+
+        // Check to see if DebugRuleConfigurations property is set
+        internal bool IsSetDebugRuleConfigurations()
+        {
+            return this._debugRuleConfigurations != null && this._debugRuleConfigurations.Count > 0; 
         }
 
         /// <summary>
@@ -232,6 +270,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnableNetworkIsolation()
         {
             return this._enableNetworkIsolation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentConfig.
+        /// </summary>
+        public ExperimentConfig ExperimentConfig
+        {
+            get { return this._experimentConfig; }
+            set { this._experimentConfig = value; }
+        }
+
+        // Check to see if ExperimentConfig property is set
+        internal bool IsSetExperimentConfig()
+        {
+            return this._experimentConfig != null;
         }
 
         /// <summary>
@@ -426,6 +479,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TensorBoardOutputConfig.
+        /// </summary>
+        public TensorBoardOutputConfig TensorBoardOutputConfig
+        {
+            get { return this._tensorBoardOutputConfig; }
+            set { this._tensorBoardOutputConfig = value; }
+        }
+
+        // Check to see if TensorBoardOutputConfig property is set
+        internal bool IsSetTensorBoardOutputConfig()
+        {
+            return this._tensorBoardOutputConfig != null;
         }
 
         /// <summary>

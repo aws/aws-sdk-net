@@ -1,0 +1,78 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the ce-2017-10-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.CostExplorer.Model
+{
+    /// <summary>
+    /// The amount of savings you're accumulating, against the public On-Demand rate of the
+    /// usage accrued in an account.
+    /// </summary>
+    public partial class SavingsPlansSavings
+    {
+        private string _netSavings;
+        private string _onDemandCostEquivalent;
+
+        /// <summary>
+        /// Gets and sets the property NetSavings. 
+        /// <para>
+        /// The savings amount that you are accumulating for the usage that is covered by a Savings
+        /// Plans, when compared to the On-Demand equivalent of the same usage.
+        /// </para>
+        /// </summary>
+        public string NetSavings
+        {
+            get { return this._netSavings; }
+            set { this._netSavings = value; }
+        }
+
+        // Check to see if NetSavings property is set
+        internal bool IsSetNetSavings()
+        {
+            return this._netSavings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDemandCostEquivalent. 
+        /// <para>
+        /// How much the amount that the usage would have cost if it was accrued at the On-Demand
+        /// rate.
+        /// </para>
+        /// </summary>
+        public string OnDemandCostEquivalent
+        {
+            get { return this._onDemandCostEquivalent; }
+            set { this._onDemandCostEquivalent = value; }
+        }
+
+        // Check to see if OnDemandCostEquivalent property is set
+        internal bool IsSetOnDemandCostEquivalent()
+        {
+            return this._onDemandCostEquivalent != null;
+        }
+
+    }
+}

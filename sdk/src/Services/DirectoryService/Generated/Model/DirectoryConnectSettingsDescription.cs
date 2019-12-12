@@ -115,7 +115,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// A list of subnet identifiers in the VPC that the AD connector is in.
+        /// A list of subnet identifiers in the VPC that the AD Connector is in.
         /// </para>
         /// </summary>
         public List<string> SubnetIds

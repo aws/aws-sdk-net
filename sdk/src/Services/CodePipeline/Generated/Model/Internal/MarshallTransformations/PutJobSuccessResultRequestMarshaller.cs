@@ -102,6 +102,20 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobId);
                 }
 
+                if(publicRequest.IsSetOutputVariables())
+                {
+                    context.Writer.WritePropertyName("outputVariables");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestOutputVariablesKvp in publicRequest.OutputVariables)
+                    {
+                        context.Writer.WritePropertyName(publicRequestOutputVariablesKvp.Key);
+                        var publicRequestOutputVariablesValue = publicRequestOutputVariablesKvp.Value;
+
+                            context.Writer.Write(publicRequestOutputVariablesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

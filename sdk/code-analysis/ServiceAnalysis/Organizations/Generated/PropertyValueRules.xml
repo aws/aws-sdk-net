@@ -92,6 +92,10 @@
     <pattern>^car-[a-z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Organizations.Model.DescribeEffectivePolicyRequest.TargetId</property>
+    <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Organizations.Model.DescribeHandshakeRequest.HandshakeId</property>
     <pattern>^h-[0-9a-z]{8,32}$</pattern>
   </property-value-rule>
@@ -320,6 +324,15 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateAccountStatus.Id</property>
     <pattern>^car-[a-z0-9]{8,32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.EffectivePolicy.PolicyContent</property>
+    <min>1</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.EffectivePolicy.TargetId</property>
+    <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.EnabledServicePrincipal.ServicePrincipal</property>

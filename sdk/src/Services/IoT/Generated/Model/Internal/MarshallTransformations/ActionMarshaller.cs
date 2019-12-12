@@ -111,6 +111,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetHttp())
+            {
+                context.Writer.WritePropertyName("http");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HttpActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Http, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIotAnalytics())
             {
                 context.Writer.WritePropertyName("iotAnalytics");
@@ -129,6 +140,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
                 var marshaller = IotEventsActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.IotEvents, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetIotSiteWise())
+            {
+                context.Writer.WritePropertyName("iotSiteWise");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IotSiteWiseActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.IotSiteWise, context);
 
                 context.Writer.WriteObjectEnd();
             }

@@ -74,6 +74,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EndTime);
                 }
 
+                if(publicRequest.IsSetEventCategory())
+                {
+                    context.Writer.WritePropertyName("EventCategory");
+                    context.Writer.Write(publicRequest.EventCategory);
+                }
+
                 if(publicRequest.IsSetLookupAttributes())
                 {
                     context.Writer.WritePropertyName("LookupAttributes");

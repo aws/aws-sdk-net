@@ -78,6 +78,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetVoiceTemplate())
+            {
+                context.Writer.WritePropertyName("VoiceTemplate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TemplateMarshaller.Instance;
+                marshaller.Marshall(requestObject.VoiceTemplate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -84,16 +84,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (selectObjectContentRequest.IsSetServerSideEncryptionCustomerProvidedKey())
             {
-                request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyHeader,
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader,
                     selectObjectContentRequest.ServerSideEncryptionCustomerProvidedKey);
                 if (selectObjectContentRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
                 {
-                    request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyMD5Header,
+                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header,
                         selectObjectContentRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
                 }
                 else
                 {
-                    request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyMD5Header,
+                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header,
                         AmazonS3Util.ComputeEncodedMD5FromEncodedString(selectObjectContentRequest
                             .ServerSideEncryptionCustomerProvidedKey));
                 }
@@ -124,6 +124,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("Enabled",
                         selectObjectContentRequest.RequestProgress.GetValueOrDefault(false).ToString()
                             .ToUpperInvariant());
+                    if (selectObjectContentRequest.IsSetScanRange())
+                    {
+                        selectObjectContentRequest.ScanRange.Marshall("ScanRange", xmlWriter);
+                    }
                     xmlWriter.WriteEndElement();
                     xmlWriter.WriteEndElement();
                 }

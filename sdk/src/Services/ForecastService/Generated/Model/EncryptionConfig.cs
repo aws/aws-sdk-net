@@ -29,8 +29,8 @@ namespace Amazon.ForecastService.Model
 {
     /// <summary>
     /// An AWS Key Management Service (KMS) key and an AWS Identity and Access Management
-    /// (IAM) role that Amazon Forecast can assume to access the key. This object is optionally
-    /// submitted in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests.
+    /// (IAM) role that Amazon Forecast can assume to access the key. You can specify this
+    /// optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests.
     /// </summary>
     public partial class EncryptionConfig
     {
@@ -40,7 +40,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.
+        /// The Amazon Resource Name (ARN) of the KMS key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -59,13 +59,12 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast
-        /// can assume to access the AWS KMS key.
+        /// The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS key.
         /// </para>
         ///  
         /// <para>
-        /// Cross-account pass role is not allowed. If you pass a role that doesn't belong to
-        /// your account, an <code>InvalidInputException</code> is thrown.
+        /// Passing a role across AWS accounts is not allowed. If you pass a role that isn't in
+        /// your account, you get an <code>InvalidInputException</code> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

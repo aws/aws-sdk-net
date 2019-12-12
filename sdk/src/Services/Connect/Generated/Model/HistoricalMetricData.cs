@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>HistoricalMetricData</code> object than contains a <code>Metric</code> and
-    /// a <code>Value</code>.
+    /// Contains the data for a historical metric.
     /// </summary>
     public partial class HistoricalMetricData
     {
@@ -39,7 +38,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Metric. 
         /// <para>
-        /// A <code>HistoricalMetric</code> object.
+        /// Information about the metric.
         /// </para>
         /// </summary>
         public HistoricalMetric Metric
@@ -57,7 +56,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The <code>Value</code> of the metric.
+        /// The value of the metric.
         /// </para>
         /// </summary>
         public double Value

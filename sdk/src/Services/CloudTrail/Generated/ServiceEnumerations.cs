@@ -25,6 +25,98 @@ namespace Amazon.CloudTrail
 {
 
     /// <summary>
+    /// Constants used for properties of type EventCategory.
+    /// </summary>
+    public class EventCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Insight for EventCategory
+        /// </summary>
+        public static readonly EventCategory Insight = new EventCategory("insight");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventCategory FindValue(string value)
+        {
+            return FindValue<EventCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InsightType.
+    /// </summary>
+    public class InsightType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ApiCallRateInsight for InsightType
+        /// </summary>
+        public static readonly InsightType ApiCallRateInsight = new InsightType("ApiCallRateInsight");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightType FindValue(string value)
+        {
+            return FindValue<InsightType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LookupAttributeKey.
     /// </summary>
     public class LookupAttributeKey : ConstantClass

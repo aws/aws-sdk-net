@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing a virtual service returned by a list operation.
+    /// An object that represents a virtual service returned by a list operation.
     /// </summary>
     public partial class VirtualServiceRef
     {

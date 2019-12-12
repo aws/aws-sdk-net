@@ -76,4 +76,23 @@
             </example>
         </value>
     </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EKS.IAmazonEKS.ListTagsForResource(Amazon.EKS.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.EKS.AmazonEKSClient.ListTagsForResource(Amazon.EKS.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.EKS.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.EKS.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all of the tags for the `beta` cluster.
+                </para>
+                <code
+                    title="To list tags for a cluster"
+                    source=".\AWSSDKDocSamples\EKS\EKS.GeneratedSamples.cs"
+                    region="to-list-tags-for-a-cluster-1568666903378" />
+            </example>
+        </value>
+    </doc>
 </docs>

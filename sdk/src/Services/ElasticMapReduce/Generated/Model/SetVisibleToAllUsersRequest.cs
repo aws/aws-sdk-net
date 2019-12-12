@@ -29,16 +29,15 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the SetVisibleToAllUsers operation.
-    /// <i>This member will be deprecated.</i> 
-    /// 
-    ///  
-    /// <para>
-    /// Sets whether all AWS Identity and Access Management (IAM) users under your account
-    /// can access the specified clusters (job flows). This action works on running clusters.
-    /// You can also set the visibility of a cluster when you launch it using the <code>VisibleToAllUsers</code>
-    /// parameter of <a>RunJobFlow</a>. The SetVisibleToAllUsers action can be called only
-    /// by an IAM user who created the cluster or the AWS account that owns the cluster.
-    /// </para>
+    /// Sets the <a>Cluster$VisibleToAllUsers</a> value, which determines whether the cluster
+    /// is visible to all IAM users of the AWS account associated with the cluster. Only the
+    /// IAM user who created the cluster or the AWS account root user can call this action.
+    /// The default value, <code>true</code>, indicates that all IAM users in the AWS account
+    /// can perform cluster actions if they have the proper IAM policy permissions. If set
+    /// to <code>false</code>, only the IAM user that created the cluster can perform actions.
+    /// This action works on running clusters. You can override the default <code>true</code>
+    /// setting when you create a cluster by using the <code>VisibleToAllUsers</code> parameter
+    /// with <code>RunJobFlow</code>.
     /// </summary>
     public partial class SetVisibleToAllUsersRequest : AmazonElasticMapReduceRequest
     {
@@ -48,7 +47,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property JobFlowIds. 
         /// <para>
-        /// Identifiers of the job flows to receive the new visibility setting.
+        /// The unique identifier of the job flow (cluster).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,15 +66,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VisibleToAllUsers. 
         /// <para>
-        ///  <i>This member will be deprecated.</i> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Whether the specified clusters are visible to all IAM users of the AWS account associated
-        /// with the cluster. If this value is set to True, all IAM users of that AWS account
-        /// can view and, if they have the proper IAM policy permissions set, manage the clusters.
-        /// If it is set to False, only the IAM user that created a cluster can view and manage
-        /// it.
+        /// A value of <code>true</code> indicates that all IAM users in the AWS account can perform
+        /// cluster actions if they have the proper IAM policy permissions. This is the default.
+        /// A value of <code>false</code> indicates that only the IAM user who created the cluster
+        /// can perform actions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -40,8 +40,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French
-        /// ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.
+        /// supported by Amazon Comprehend. All documents must be in the same language.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

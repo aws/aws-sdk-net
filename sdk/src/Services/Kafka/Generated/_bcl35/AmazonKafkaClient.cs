@@ -1543,5 +1543,76 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  UpdateMonitoring
+
+        /// <summary>
+        /// Updates the monitoring settings for the cluster. You can use this operation to specify
+        /// which Apache Kafka metrics you want Amazon MSK to send to Amazon CloudWatch. You can
+        /// also specify settings for open monitoring with Prometheus.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMonitoring service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMonitoring service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateMonitoring">REST API Reference for UpdateMonitoring Operation</seealso>
+        public virtual UpdateMonitoringResponse UpdateMonitoring(UpdateMonitoringRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMonitoringRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMonitoringResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMonitoringResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMonitoring operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMonitoring operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMonitoring
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateMonitoring">REST API Reference for UpdateMonitoring Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMonitoring(UpdateMonitoringRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMonitoringRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMonitoringResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMonitoring operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMonitoring.</param>
+        /// 
+        /// <returns>Returns a  UpdateMonitoringResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateMonitoring">REST API Reference for UpdateMonitoring Operation</seealso>
+        public virtual UpdateMonitoringResponse EndUpdateMonitoring(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMonitoringResponse>(asyncResult);
+        }
+
+        #endregion
+        
     }
 }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the specification of a virtual router.
+    /// An object that represents the specification of a virtual router.
     /// </summary>
     public partial class VirtualRouterSpec
     {
@@ -38,7 +38,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Listeners. 
         /// <para>
         /// The listeners that the virtual router is expected to receive inbound traffic from.
-        ///         Currently only one listener is supported per virtual router.
+        ///         You can specify one listener.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

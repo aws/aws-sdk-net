@@ -90,6 +90,17 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetHumanLoopConfig())
+                {
+                    context.Writer.WritePropertyName("HumanLoopConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HumanLoopConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.HumanLoopConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// A file that will be added, updated, or deleted as part of a commit.
+    /// A file to be added, updated, or deleted as part of a commit.
     /// </summary>
     public partial class FileMetadata
     {
@@ -39,8 +39,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AbsolutePath. 
         /// <para>
-        /// The full path to the file that will be added or updated, including the name of the
-        /// file.
+        /// The full path to the file to be added or updated, including the name of the file.
         /// </para>
         /// </summary>
         public string AbsolutePath

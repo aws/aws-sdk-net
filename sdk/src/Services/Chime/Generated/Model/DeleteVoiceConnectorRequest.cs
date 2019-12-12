@@ -29,8 +29,8 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVoiceConnector operation.
-    /// Deletes the specified Amazon Chime Voice Connector. Any phone numbers assigned to
-    /// the Amazon Chime Voice Connector must be unassigned from it before it can be deleted.
+    /// Deletes the specified Amazon Chime Voice Connector. Any phone numbers associated with
+    /// the Amazon Chime Voice Connector must be disassociated from it before it can be deleted.
     /// </summary>
     public partial class DeleteVoiceConnectorRequest : AmazonChimeRequest
     {

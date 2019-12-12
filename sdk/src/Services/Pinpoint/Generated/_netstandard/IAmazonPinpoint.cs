@@ -210,6 +210,41 @@ namespace Amazon.Pinpoint
 
         #endregion
                 
+        #region  CreateJourney
+
+
+
+        /// <summary>
+        /// Creates a journey for an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJourney service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateJourney service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<CreateJourneyResponse> CreateJourneyAsync(CreateJourneyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreatePushTemplate
 
 
@@ -309,6 +344,39 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         Task<CreateSmsTemplateResponse> CreateSmsTemplateAsync(CreateSmsTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateVoiceTemplate
+
+
+
+        /// <summary>
+        /// Creates a message template that you can use in messages that are sent through the
+        /// voice channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVoiceTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVoiceTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<CreateVoiceTemplateResponse> CreateVoiceTemplateAsync(CreateVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -776,6 +844,41 @@ namespace Amazon.Pinpoint
 
         #endregion
                 
+        #region  DeleteJourney
+
+
+
+        /// <summary>
+        /// Deletes a journey from an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJourney service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteJourney service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<DeleteJourneyResponse> DeleteJourneyAsync(DeleteJourneyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeletePushTemplate
 
 
@@ -987,6 +1090,42 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         Task<DeleteVoiceChannelResponse> DeleteVoiceChannelAsync(DeleteVoiceChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteVoiceTemplate
+
+
+
+        /// <summary>
+        /// Deletes a message template that was designed for use in messages that were sent through
+        /// the voice channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVoiceTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<DeleteVoiceTemplateResponse> DeleteVoiceTemplateAsync(DeleteVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1383,7 +1522,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Retrieves information about the activity performed by a campaign.
+        /// Retrieves information about all the activities for a campaign.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCampaignActivities service method.</param>
         /// <param name="cancellationToken">
@@ -1526,7 +1665,7 @@ namespace Amazon.Pinpoint
 
         /// <summary>
         /// Retrieves information about the status, configuration, and other settings for all
-        /// versions of a specific campaign.
+        /// versions of a campaign.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCampaignVersions service method.</param>
         /// <param name="cancellationToken">
@@ -1909,6 +2048,149 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         Task<GetImportJobsResponse> GetImportJobsAsync(GetImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetJourney
+
+
+
+        /// <summary>
+        /// Retrieves information about the status, configuration, and other settings for a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourney service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJourney service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<GetJourneyResponse> GetJourneyAsync(GetJourneyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetJourneyDateRangeKpi
+
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard engagement metric that applies
+        /// to a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyDateRangeKpi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJourneyDateRangeKpi service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<GetJourneyDateRangeKpiResponse> GetJourneyDateRangeKpiAsync(GetJourneyDateRangeKpiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetJourneyExecutionActivityMetrics
+
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard execution metric that applies
+        /// to a journey activity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyExecutionActivityMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJourneyExecutionActivityMetrics service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<GetJourneyExecutionActivityMetricsResponse> GetJourneyExecutionActivityMetricsAsync(GetJourneyExecutionActivityMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetJourneyExecutionMetrics
+
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard execution metric that applies
+        /// to a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyExecutionMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJourneyExecutionMetrics service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<GetJourneyExecutionMetricsResponse> GetJourneyExecutionMetricsAsync(GetJourneyExecutionMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2304,13 +2586,85 @@ namespace Amazon.Pinpoint
 
         #endregion
                 
+        #region  GetVoiceTemplate
+
+
+
+        /// <summary>
+        /// Retrieves the content and settings for a message template that you can use in messages
+        /// that are sent through the voice channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<GetVoiceTemplateResponse> GetVoiceTemplateAsync(GetVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListJourneys
+
+
+
+        /// <summary>
+        /// Retrieves information about the status, configuration, and other settings for all
+        /// the journeys that are associated with an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJourneys service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJourneys service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<ListJourneysResponse> ListJourneysAsync(ListJourneysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTagsForResource
 
 
 
         /// <summary>
         /// Retrieves all the tags (keys and values) that are associated with an application,
-        /// campaign, message template, or segment.
+        /// campaign, journey, message template, or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -2346,9 +2700,6 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// Provides information about an API request or response.
-        /// </exception>
-        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -2576,8 +2927,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Adds one or more tags (keys and values) to an application, campaign, message template,
-        /// or segment.
+        /// Adds one or more tags (keys and values) to an application, campaign, journey, message
+        /// template, or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2594,8 +2945,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Removes one or more tags (keys and values) from an application, campaign, message
-        /// template, or segment.
+        /// Removes one or more tags (keys and values) from an application, campaign, journey,
+        /// message template, or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2863,7 +3214,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates the settings for a campaign.
+        /// Updates the configuration and other settings for a campaign.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCampaign service method.</param>
         /// <param name="cancellationToken">
@@ -3076,6 +3427,76 @@ namespace Amazon.Pinpoint
 
         #endregion
                 
+        #region  UpdateJourney
+
+
+
+        /// <summary>
+        /// Updates the configuration and other settings for a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJourney service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateJourney service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<UpdateJourneyResponse> UpdateJourneyAsync(UpdateJourneyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateJourneyState
+
+
+
+        /// <summary>
+        /// Cancels an active journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJourneyState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateJourneyState service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<UpdateJourneyStateResponse> UpdateJourneyStateAsync(UpdateJourneyStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdatePushTemplate
 
 
@@ -3253,6 +3674,42 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         Task<UpdateVoiceChannelResponse> UpdateVoiceChannelAsync(UpdateVoiceChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateVoiceTemplate
+
+
+
+        /// <summary>
+        /// Updates an existing message template that you can use in messages that are sent through
+        /// the voice channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVoiceTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<UpdateVoiceTemplateResponse> UpdateVoiceTemplateAsync(UpdateVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

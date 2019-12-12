@@ -51,6 +51,12 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetTypeHint())
+            {
+                context.Writer.WritePropertyName("typeHint");
+                context.Writer.Write(requestObject.TypeHint);
+            }
+
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");

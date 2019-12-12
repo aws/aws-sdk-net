@@ -97,6 +97,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.KmsKeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("licenseSpecifications/item", targetDepth))
+                    {
+                        var unmarshaller = ImportImageLicenseConfigurationResponseUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.LicenseSpecifications.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("licenseType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

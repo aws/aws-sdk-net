@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         private BlackoutSlate _blackoutSlate;
         private List<CaptionDescription> _captionDescriptions = new List<CaptionDescription>();
         private GlobalConfiguration _globalConfiguration;
+        private NielsenConfiguration _nielsenConfiguration;
         private List<OutputGroup> _outputGroups = new List<OutputGroup>();
         private TimecodeConfig _timecodeConfig;
         private List<VideoDescription> _videoDescriptions = new List<VideoDescription>();
@@ -133,6 +134,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetGlobalConfiguration()
         {
             return this._globalConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NielsenConfiguration. Nielsen configuration settings.
+        /// </summary>
+        public NielsenConfiguration NielsenConfiguration
+        {
+            get { return this._nielsenConfiguration; }
+            set { this._nielsenConfiguration = value; }
+        }
+
+        // Check to see if NielsenConfiguration property is set
+        internal bool IsSetNielsenConfiguration()
+        {
+            return this._nielsenConfiguration != null;
         }
 
         /// <summary>

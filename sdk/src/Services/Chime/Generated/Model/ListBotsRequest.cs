@@ -60,7 +60,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. Default is 10.
+        /// The maximum number of results to return in a single call. The default is 10.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=99)]

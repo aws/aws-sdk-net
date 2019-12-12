@@ -36,6 +36,64 @@ namespace Amazon.AppSync
     {
 
         
+        #region  CreateApiCache
+
+
+        /// <summary>
+        /// Creates a cache for the GraphQL API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApiCache service method.</param>
+        /// 
+        /// <returns>The response from the CreateApiCache service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiCache">REST API Reference for CreateApiCache Operation</seealso>
+        CreateApiCacheResponse CreateApiCache(CreateApiCacheRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateApiCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateApiCache operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApiCache
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiCache">REST API Reference for CreateApiCache Operation</seealso>
+        IAsyncResult BeginCreateApiCache(CreateApiCacheRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateApiCache operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApiCache.</param>
+        /// 
+        /// <returns>Returns a  CreateApiCacheResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiCache">REST API Reference for CreateApiCache Operation</seealso>
+        CreateApiCacheResponse EndCreateApiCache(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateApiKey
 
 
@@ -399,6 +457,64 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  DeleteApiCache
+
+
+        /// <summary>
+        /// Deletes an <code>ApiCache</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApiCache service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApiCache service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiCache">REST API Reference for DeleteApiCache Operation</seealso>
+        DeleteApiCacheResponse DeleteApiCache(DeleteApiCacheRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApiCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApiCache operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApiCache
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiCache">REST API Reference for DeleteApiCache Operation</seealso>
+        IAsyncResult BeginDeleteApiCache(DeleteApiCacheRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApiCache operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApiCache.</param>
+        /// 
+        /// <returns>Returns a  DeleteApiCacheResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiCache">REST API Reference for DeleteApiCache Operation</seealso>
+        DeleteApiCacheResponse EndDeleteApiCache(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteApiKey
 
 
@@ -735,6 +851,122 @@ namespace Amazon.AppSync
         /// <returns>Returns a  DeleteTypeResult from AppSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteType">REST API Reference for DeleteType Operation</seealso>
         DeleteTypeResponse EndDeleteType(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  FlushApiCache
+
+
+        /// <summary>
+        /// Flushes an <code>ApiCache</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FlushApiCache service method.</param>
+        /// 
+        /// <returns>The response from the FlushApiCache service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FlushApiCache">REST API Reference for FlushApiCache Operation</seealso>
+        FlushApiCacheResponse FlushApiCache(FlushApiCacheRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the FlushApiCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the FlushApiCache operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndFlushApiCache
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FlushApiCache">REST API Reference for FlushApiCache Operation</seealso>
+        IAsyncResult BeginFlushApiCache(FlushApiCacheRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  FlushApiCache operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginFlushApiCache.</param>
+        /// 
+        /// <returns>Returns a  FlushApiCacheResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FlushApiCache">REST API Reference for FlushApiCache Operation</seealso>
+        FlushApiCacheResponse EndFlushApiCache(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetApiCache
+
+
+        /// <summary>
+        /// Retrieves an <code>ApiCache</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApiCache service method.</param>
+        /// 
+        /// <returns>The response from the GetApiCache service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiCache">REST API Reference for GetApiCache Operation</seealso>
+        GetApiCacheResponse GetApiCache(GetApiCacheRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApiCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApiCache operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApiCache
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiCache">REST API Reference for GetApiCache Operation</seealso>
+        IAsyncResult BeginGetApiCache(GetApiCacheRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApiCache operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApiCache.</param>
+        /// 
+        /// <returns>Returns a  GetApiCacheResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiCache">REST API Reference for GetApiCache Operation</seealso>
+        GetApiCacheResponse EndGetApiCache(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1747,6 +1979,64 @@ namespace Amazon.AppSync
         /// <returns>Returns a  UntagResourceResult from AppSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateApiCache
+
+
+        /// <summary>
+        /// Updates the cache for the GraphQL API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApiCache service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApiCache service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiCache">REST API Reference for UpdateApiCache Operation</seealso>
+        UpdateApiCacheResponse UpdateApiCache(UpdateApiCacheRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateApiCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApiCache operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApiCache
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiCache">REST API Reference for UpdateApiCache Operation</seealso>
+        IAsyncResult BeginUpdateApiCache(UpdateApiCacheRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateApiCache operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApiCache.</param>
+        /// 
+        /// <returns>Returns a  UpdateApiCacheResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiCache">REST API Reference for UpdateApiCache Operation</seealso>
+        UpdateApiCacheResponse EndUpdateApiCache(IAsyncResult asyncResult);
 
         #endregion
         

@@ -39,7 +39,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobDefinitionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the job definition. 
+        /// The Amazon Resource Name (ARN) of the job definition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

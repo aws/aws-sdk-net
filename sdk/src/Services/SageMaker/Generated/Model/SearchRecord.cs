@@ -32,7 +32,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class SearchRecord
     {
+        private Experiment _experiment;
         private TrainingJob _trainingJob;
+        private Trial _trial;
+        private TrialComponent _trialComponent;
+
+        /// <summary>
+        /// Gets and sets the property Experiment. 
+        /// <para>
+        /// A summary of the properties of an experiment.
+        /// </para>
+        /// </summary>
+        public Experiment Experiment
+        {
+            get { return this._experiment; }
+            set { this._experiment = value; }
+        }
+
+        // Check to see if Experiment property is set
+        internal bool IsSetExperiment()
+        {
+            return this._experiment != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TrainingJob. 
@@ -51,6 +72,42 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingJob()
         {
             return this._trainingJob != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Trial. 
+        /// <para>
+        /// A summary of the properties of a trial.
+        /// </para>
+        /// </summary>
+        public Trial Trial
+        {
+            get { return this._trial; }
+            set { this._trial = value; }
+        }
+
+        // Check to see if Trial property is set
+        internal bool IsSetTrial()
+        {
+            return this._trial != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrialComponent. 
+        /// <para>
+        /// A summary of the properties of a trial component.
+        /// </para>
+        /// </summary>
+        public TrialComponent TrialComponent
+        {
+            get { return this._trialComponent; }
+            set { this._trialComponent = value; }
+        }
+
+        // Check to see if TrialComponent property is set
+        internal bool IsSetTrialComponent()
+        {
+            return this._trialComponent != null;
         }
 
     }

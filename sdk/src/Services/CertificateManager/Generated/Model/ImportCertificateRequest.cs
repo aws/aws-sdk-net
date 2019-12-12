@@ -85,7 +85,7 @@ namespace Amazon.CertificateManager.Model
     ///  </li> <li> 
     /// <para>
     /// To import a new certificate, omit the <code>CertificateArn</code> argument. Include
-    /// this argument only when you want to replace a previously imported certificate.
+    /// this argument only when you want to replace a previously imported certifica
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -101,6 +101,12 @@ namespace Amazon.CertificateManager.Model
     /// certificate chain, and the private key files in the manner required by the programming
     /// language you're using. 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The cryptographic algorithm of an imported certificate must match the algorithm of
+    /// the signing CA. For example, if the signing CA key type is RSA, then the certificate
+    /// key type must also be RSA.
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// This operation returns the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
@@ -113,6 +119,7 @@ namespace Amazon.CertificateManager.Model
         private string _certificateArn;
         private MemoryStream _certificateChain;
         private MemoryStream _privateKey;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Certificate. 
@@ -190,6 +197,29 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetPrivateKey()
         {
             return this._privateKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// One or more resource tags to associate with the imported certificate. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: You cannot apply tags when reimporting a certificate.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

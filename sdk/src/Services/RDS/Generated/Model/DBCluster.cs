@@ -169,7 +169,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies
         /// the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code>
-        /// always returns 1, because Aurora DB cluster storage size is not fixed, but instead
+        /// always returns 1, because Aurora DB cluster storage size isn't fixed, but instead
         /// automatically adjusts as needed.
         /// </para>
         /// </summary>

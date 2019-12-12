@@ -41,6 +41,7 @@ namespace Amazon.CloudFormation.Model
         private string _executionRoleName;
         private List<Parameter> _parameters = new List<Parameter>();
         private string _stackSetARN;
+        private StackSetDriftDetectionDetails _stackSetDriftDetectionDetails;
         private string _stackSetId;
         private string _stackSetName;
         private StackSetStatus _status;
@@ -173,6 +174,30 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStackSetARN()
         {
             return this._stackSetARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackSetDriftDetectionDetails. 
+        /// <para>
+        /// Detailed information about the drift status of the stack set.
+        /// </para>
+        ///  
+        /// <para>
+        /// For stack sets, contains information about the last <i>completed</i> drift operation
+        /// performed on the stack set. Information about drift operations currently in progress
+        /// is not included.
+        /// </para>
+        /// </summary>
+        public StackSetDriftDetectionDetails StackSetDriftDetectionDetails
+        {
+            get { return this._stackSetDriftDetectionDetails; }
+            set { this._stackSetDriftDetectionDetails = value; }
+        }
+
+        // Check to see if StackSetDriftDetectionDetails property is set
+        internal bool IsSetStackSetDriftDetectionDetails()
+        {
+            return this._stackSetDriftDetectionDetails != null;
         }
 
         /// <summary>

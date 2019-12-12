@@ -32,6 +32,7 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class GetLicenseConfigurationResponse : AmazonWebServiceResponse
     {
+        private AutomatedDiscoveryInformation _automatedDiscoveryInformation;
         private long? _consumedLicenses;
         private List<ConsumedLicenseSummary> _consumedLicenseSummaryList = new List<ConsumedLicenseSummary>();
         private string _description;
@@ -44,8 +45,27 @@ namespace Amazon.LicenseManager.Model
         private List<ManagedResourceSummary> _managedResourceSummaryList = new List<ManagedResourceSummary>();
         private string _name;
         private string _ownerAccountId;
+        private List<ProductInformation> _productInformationList = new List<ProductInformation>();
         private string _status;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property AutomatedDiscoveryInformation. 
+        /// <para>
+        /// Automated discovery information.
+        /// </para>
+        /// </summary>
+        public AutomatedDiscoveryInformation AutomatedDiscoveryInformation
+        {
+            get { return this._automatedDiscoveryInformation; }
+            set { this._automatedDiscoveryInformation = value; }
+        }
+
+        // Check to see if AutomatedDiscoveryInformation property is set
+        internal bool IsSetAutomatedDiscoveryInformation()
+        {
+            return this._automatedDiscoveryInformation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConsumedLicenses. 
@@ -68,7 +88,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ConsumedLicenseSummaryList. 
         /// <para>
-        /// List of summaries for consumed licenses used by various resources.
+        /// Summaries of the licenses consumed by resources.
         /// </para>
         /// </summary>
         public List<ConsumedLicenseSummary> ConsumedLicenseSummaryList
@@ -104,7 +124,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationArn. 
         /// <para>
-        /// ARN of the license configuration requested.
+        /// Amazon Resource Name (ARN) of the license configuration.
         /// </para>
         /// </summary>
         public string LicenseConfigurationArn
@@ -176,8 +196,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseCountingType. 
         /// <para>
-        /// Dimension on which the licenses are counted (for example, instances, cores, sockets,
-        /// or VCPUs).
+        /// Dimension on which the licenses are counted.
         /// </para>
         /// </summary>
         public LicenseCountingType LicenseCountingType
@@ -195,7 +214,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseRules. 
         /// <para>
-        /// List of flexible text strings designating license rules.
+        /// License rules.
         /// </para>
         /// </summary>
         public List<string> LicenseRules
@@ -213,7 +232,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ManagedResourceSummaryList. 
         /// <para>
-        /// List of summaries of managed resources.
+        /// Summaries of the managed resources.
         /// </para>
         /// </summary>
         public List<ManagedResourceSummary> ManagedResourceSummaryList
@@ -249,7 +268,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property OwnerAccountId. 
         /// <para>
-        /// Owner account ID for the license configuration.
+        /// Account ID of the owner of the license configuration.
         /// </para>
         /// </summary>
         public string OwnerAccountId
@@ -265,9 +284,27 @@ namespace Amazon.LicenseManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProductInformationList. 
+        /// <para>
+        /// Product information.
+        /// </para>
+        /// </summary>
+        public List<ProductInformation> ProductInformationList
+        {
+            get { return this._productInformationList; }
+            set { this._productInformationList = value; }
+        }
+
+        // Check to see if ProductInformationList property is set
+        internal bool IsSetProductInformationList()
+        {
+            return this._productInformationList != null && this._productInformationList.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// License configuration status (active, etc.).
+        /// License configuration status.
         /// </para>
         /// </summary>
         public string Status
@@ -285,7 +322,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// List of tags attached to the license configuration.
+        /// Tags for the license configuration.
         /// </para>
         /// </summary>
         public List<Tag> Tags

@@ -78,12 +78,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(copyPartRequest.CopySourceServerSideEncryptionCustomerProvidedKey));
             }
 
-            if (copyPartRequest.IsSetServerSideEncryptionMethod())
-                request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionHeader, S3Transforms.ToStringValue(copyPartRequest.ServerSideEncryptionMethod));
-
-            if (copyPartRequest.IsSetServerSideEncryptionKeyManagementServiceKeyId())
-                request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader, copyPartRequest.ServerSideEncryptionKeyManagementServiceKeyId);
-
             if(copyPartRequest.IsSetFirstByte() && copyPartRequest.IsSetLastByte())
             	request.Headers.Add(HeaderKeys.XAmzCopySourceRangeHeader, ConstructCopySourceRangeHeader(copyPartRequest.FirstByte, copyPartRequest.LastByte));
 

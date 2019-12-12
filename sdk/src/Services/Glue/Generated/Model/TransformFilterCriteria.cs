@@ -34,6 +34,7 @@ namespace Amazon.Glue.Model
     {
         private DateTime? _createdAfter;
         private DateTime? _createdBefore;
+        private string _glueVersion;
         private DateTime? _lastModifiedAfter;
         private DateTime? _lastModifiedBefore;
         private string _name;
@@ -75,6 +76,28 @@ namespace Amazon.Glue.Model
         internal bool IsSetCreatedBefore()
         {
             return this._createdBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlueVersion. 
+        /// <para>
+        /// This value determines which version of AWS Glue this machine learning transform is
+        /// compatible with. Glue 1.0 is recommended for most customers. If the value is not set,
+        /// the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+        /// Glue Versions</a> in the developer guide.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GlueVersion
+        {
+            get { return this._glueVersion; }
+            set { this._glueVersion = value; }
+        }
+
+        // Check to see if GlueVersion property is set
+        internal bool IsSetGlueVersion()
+        {
+            return this._glueVersion != null;
         }
 
         /// <summary>

@@ -100,7 +100,7 @@ namespace Amazon.AppSync.Model
         /// The new type name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string TypeName
         {
             get { return this._typeName; }

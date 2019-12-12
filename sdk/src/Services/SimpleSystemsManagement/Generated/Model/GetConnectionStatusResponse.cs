@@ -59,7 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the instance to check connection status. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=400)]
         public string Target
         {
             get { return this._target; }

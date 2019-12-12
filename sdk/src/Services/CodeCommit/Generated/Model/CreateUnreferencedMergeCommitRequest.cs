@@ -31,7 +31,7 @@ namespace Amazon.CodeCommit.Model
     /// Container for the parameters to the CreateUnreferencedMergeCommit operation.
     /// Creates an unreferenced commit that represents the result of merging two branches
     /// using a specified merge strategy. This can help you determine the outcome of a potential
-    /// merge. This API cannot be used with the fast-forward merge strategy, as that strategy
+    /// merge. This API cannot be used with the fast-forward merge strategy because that strategy
     /// does not create a merge commit.
     /// 
     ///  <note> 
@@ -59,8 +59,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AuthorName. 
         /// <para>
-        /// The name of the author who created the unreferenced commit. This information will
-        /// be used as both the author and committer for the commit.
+        /// The name of the author who created the unreferenced commit. This information is used
+        /// as both the author and committer for the commit.
         /// </para>
         /// </summary>
         public string AuthorName
@@ -97,9 +97,9 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property ConflictDetailLevel. 
         /// <para>
         /// The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which will return a not mergeable result if the same file has differences in both
-        /// branches. If LINE_LEVEL is specified, a conflict will be considered not mergeable
-        /// if the same file in both branches has differences on the same line.
+        /// which returns a not-mergeable result if the same file has differences in both branches.
+        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file
+        /// in both branches has differences on the same line.
         /// </para>
         /// </summary>
         public ConflictDetailLevelTypeEnum ConflictDetailLevel
@@ -117,8 +117,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property ConflictResolution. 
         /// <para>
-        /// A list of inputs to use when resolving conflicts during a merge if AUTOMERGE is chosen
-        /// as the conflict resolution strategy.
+        /// If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving
+        /// conflicts during a merge.
         /// </para>
         /// </summary>
         public ConflictResolution ConflictResolution
@@ -138,7 +138,7 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// Specifies which branch to use when resolving conflicts, or whether to attempt automatically
         /// merging two versions of a file. The default is NONE, which requires any conflicts
-        /// to be resolved manually before the merge operation will be successful.
+        /// to be resolved manually before the merge operation is successful.
         /// </para>
         /// </summary>
         public ConflictResolutionStrategyTypeEnum ConflictResolutionStrategy
@@ -156,8 +156,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property DestinationCommitSpecifier. 
         /// <para>
-        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit.
-        /// For example, a branch name or a full commit ID.
+        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+        /// (for example, a branch name or a full commit ID).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -196,7 +196,7 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// If the commit contains deletions, whether to keep a folder or folder structure if
         /// the changes leave the folders empty. If this is specified as true, a .gitkeep file
-        /// will be created for empty folders. The default is false.
+        /// is created for empty folders. The default is false.
         /// </para>
         /// </summary>
         public bool KeepEmptyFolders
@@ -252,8 +252,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property SourceCommitSpecifier. 
         /// <para>
-        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit.
-        /// For example, a branch name or a full commit ID.
+        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+        /// (for example, a branch name or a full commit ID).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

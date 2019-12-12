@@ -39,7 +39,9 @@ namespace Amazon.Lex.Model
         private string _intentName;
         private string _message;
         private MessageFormatType _messageFormat;
+        private string _sentimentResponse;
         private string _sessionAttributes;
+        private string _sessionId;
         private string _slots;
         private string _slotToElicit;
 
@@ -284,6 +286,29 @@ namespace Amazon.Lex.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SentimentResponse. 
+        /// <para>
+        /// The sentiment expressed in and utterance.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis,
+        /// this field contains the result of the analysis.
+        /// </para>
+        /// </summary>
+        public string SentimentResponse
+        {
+            get { return this._sentimentResponse; }
+            set { this._sentimentResponse = value; }
+        }
+
+        // Check to see if SentimentResponse property is set
+        internal bool IsSetSentimentResponse()
+        {
+            return this._sentimentResponse != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SessionAttributes. 
         /// <para>
         ///  Map of key/value pairs representing the session-specific context information. 
@@ -299,6 +324,24 @@ namespace Amazon.Lex.Model
         internal bool IsSetSessionAttributes()
         {
             return this._sessionAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The unique identifier for the session.
+        /// </para>
+        /// </summary>
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return this._sessionId != null;
         }
 
         /// <summary>

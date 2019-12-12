@@ -62,6 +62,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
                 }
+                if(publicRequest.IsSetAuthToken())
+                {
+                    request.Parameters.Add("AuthToken", StringUtils.FromString(publicRequest.AuthToken));
+                }
+                if(publicRequest.IsSetAuthTokenUpdateStrategy())
+                {
+                    request.Parameters.Add("AuthTokenUpdateStrategy", StringUtils.FromString(publicRequest.AuthTokenUpdateStrategy));
+                }
                 if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
                     request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(publicRequest.AutoMinorVersionUpgrade));

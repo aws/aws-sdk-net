@@ -33,6 +33,7 @@ namespace Amazon.ECR.Model
     public partial class Repository
     {
         private DateTime? _createdAt;
+        private ImageScanningConfiguration _imageScanningConfiguration;
         private ImageTagMutability _imageTagMutability;
         private string _registryId;
         private string _repositoryArn;
@@ -55,6 +56,21 @@ namespace Amazon.ECR.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageScanningConfiguration.
+        /// </summary>
+        public ImageScanningConfiguration ImageScanningConfiguration
+        {
+            get { return this._imageScanningConfiguration; }
+            set { this._imageScanningConfiguration = value; }
+        }
+
+        // Check to see if ImageScanningConfiguration property is set
+        internal bool IsSetImageScanningConfiguration()
+        {
+            return this._imageScanningConfiguration != null;
         }
 
         /// <summary>

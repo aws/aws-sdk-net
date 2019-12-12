@@ -119,7 +119,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The status of the treatment.
+        /// The current status of the treatment.
         /// </para>
         /// </summary>
         public CampaignState State
@@ -135,7 +135,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TemplateConfiguration.
+        /// Gets and sets the property TemplateConfiguration. 
+        /// <para>
+        /// The message template to use for the treatment.
+        /// </para>
         /// </summary>
         public TemplateConfiguration TemplateConfiguration
         {

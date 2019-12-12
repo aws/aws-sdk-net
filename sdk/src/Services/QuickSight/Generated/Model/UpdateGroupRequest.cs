@@ -29,26 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGroup operation.
-    /// Changes a group description. 
-    /// 
-    ///  
-    /// <para>
-    /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-    /// </code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// The response is a group object.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>CLI Sample:</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>aws quicksight update-group --aws-account-id=111122223333 --namespace=default
-    /// --group-name=Sales --description="Sales BI Dashboards" </code> 
-    /// </para>
+    /// Changes a group description.
     /// </summary>
     public partial class UpdateGroupRequest : AmazonQuickSightRequest
     {
@@ -121,7 +102,7 @@ namespace Amazon.QuickSight.Model
         /// The namespace. Currently, you should set this to <code>default</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=64)]
         public string Namespace
         {
             get { return this._awsNamespace; }

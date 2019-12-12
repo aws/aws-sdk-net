@@ -74,6 +74,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("HostRecovery", StringUtils.FromString(publicRequest.HostRecovery));
                 }
+                if(publicRequest.IsSetInstanceFamily())
+                {
+                    request.Parameters.Add("InstanceFamily", StringUtils.FromString(publicRequest.InstanceFamily));
+                }
                 if(publicRequest.IsSetInstanceType())
                 {
                     request.Parameters.Add("InstanceType", StringUtils.FromString(publicRequest.InstanceType));

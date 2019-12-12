@@ -30,7 +30,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Contains details about an organization. An organization is a collection of accounts
     /// that are centrally managed together using consolidated billing, organized hierarchically
-    /// with organizational units (OUs), and controlled with policies .
+    /// with organizational units (OUs), and controlled with policies.
     /// </summary>
     public partial class Organization
     {

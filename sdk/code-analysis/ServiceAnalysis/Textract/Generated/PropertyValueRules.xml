@@ -112,11 +112,29 @@
   <property-value-rule>
     <property>Amazon.Textract.Model.Document.Bytes</property>
     <min>1</min>
-    <max>5242880</max>
+    <max>10485760</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Textract.Model.DocumentMetadata.Pages</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.HumanLoopActivationOutput.HumanLoopActivationConditionsEvaluationResults</property>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.HumanLoopActivationOutput.HumanLoopArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.HumanLoopConfig.FlowDefinitionArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.HumanLoopConfig.HumanLoopName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9](-*[a-z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Textract.Model.NotificationChannel.RoleArn</property>

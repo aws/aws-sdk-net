@@ -63,6 +63,7 @@
       <Directory>$(ProjectDir)/src/Services/codedeploy/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/codepipeline/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/codestar/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/codestarnotifications/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitoidentity/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitoidentityprovider/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitosync/bin/Release/net35/</Directory>
@@ -70,9 +71,11 @@
       <Directory>$(ProjectDir)/src/Services/comprehendmedical/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/configservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/connect/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/connectparticipant/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/costandusagereport/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/costexplorer/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/databasemigrationservice/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/dataexchange/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/datapipeline/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/datasync/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/dax/bin/Release/net35/</Directory>
@@ -137,6 +140,7 @@
       <Directory>$(ProjectDir)/src/Services/machinelearning/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/macie/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/managedblockchain/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/marketplacecatalog/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/marketplaceentitlementservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediaconnect/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediaconvert/bin/Release/net35/</Directory>
@@ -147,6 +151,7 @@
       <Directory>$(ProjectDir)/src/Services/mediastoredata/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediatailor/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/migrationhub/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/migrationhubconfig/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobile/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mq/bin/Release/net35/</Directory>
@@ -182,6 +187,7 @@
       <Directory>$(ProjectDir)/src/Services/s3control/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/sagemaker/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/sagemakerruntime/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/savingsplans/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/secretsmanager/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/securityhub/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/securitytoken/bin/Release/net35/</Directory>
@@ -194,11 +200,14 @@
       <Directory>$(ProjectDir)/src/Services/signer/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpledb/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpleemail/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/simpleemailv2/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/simplenotificationservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/simplesystemsmanagement/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpleworkflow/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/snowball/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/sqs/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/sso/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/ssooidc/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/stepfunctions/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/storagegateway/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/textract/bin/Release/net35/</Directory>
@@ -256,6 +265,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CodeDeploy.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CodePipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CodeStar.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CodeStarNotifications.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CognitoIdentity.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CognitoIdentityProvider.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CognitoSync.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -263,9 +273,11 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ComprehendMedical.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ConfigService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Connect.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ConnectParticipant.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CostAndUsageReport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CostExplorer.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DatabaseMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DataExchange.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DataPipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DataSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DAX.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -330,6 +342,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Macie.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ManagedBlockchain.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MarketplaceCatalog.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MarketplaceEntitlementService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaConnect.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaConvert.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -340,6 +353,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaStoreData.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaTailor.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MigrationHub.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MigrationHubConfig.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Mobile.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MQ.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -375,6 +389,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.S3Control.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SageMaker.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SageMakerRuntime.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SavingsPlans.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SecretsManager.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SecurityHub.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SecurityToken.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -387,11 +402,14 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Signer.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SimpleDB.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SimpleEmail.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SimpleEmailV2.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SimpleNotificationService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SimpleSystemsManagement.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SimpleWorkflow.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Snowball.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SQS.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SSO.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SSOOIDC.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.StepFunctions.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.StorageGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Textract.dll" Analyze="True" AnalyzeAllChildren="True" />

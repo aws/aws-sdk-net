@@ -1431,6 +1431,74 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CreateScheduledAction
+
+
+        /// <summary>
+        /// Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift
+        /// API action. For example, you can create a schedule of when to run the <code>ResizeCluster</code>
+        /// API operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduledAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateScheduledAction service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduledActionException">
+        /// The scheduled action is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduleException">
+        /// The schedule you submitted isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionAlreadyExistsException">
+        /// The scheduled action already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionQuotaExceededException">
+        /// The quota for scheduled actions exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionTypeUnsupportedException">
+        /// The action type specified for a scheduled action is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
+        CreateScheduledActionResponse CreateScheduledAction(CreateScheduledActionRequest request);
+
+
+
+        /// <summary>
+        /// Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift
+        /// API action. For example, you can create a schedule of when to run the <code>ResizeCluster</code>
+        /// API operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduledAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateScheduledAction service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduledActionException">
+        /// The scheduled action is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduleException">
+        /// The schedule you submitted isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionAlreadyExistsException">
+        /// The scheduled action already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionQuotaExceededException">
+        /// The quota for scheduled actions exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionTypeUnsupportedException">
+        /// The action type specified for a scheduled action is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
+        Task<CreateScheduledActionResponse> CreateScheduledActionAsync(CreateScheduledActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateSnapshotCopyGrant
 
 
@@ -2102,6 +2170,46 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmConfiguration">REST API Reference for DeleteHsmConfiguration Operation</seealso>
         Task<DeleteHsmConfigurationResponse> DeleteHsmConfigurationAsync(DeleteHsmConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteScheduledAction
+
+
+        /// <summary>
+        /// Deletes a scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteScheduledAction service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionNotFoundException">
+        /// The scheduled action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
+        DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteScheduledAction service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionNotFoundException">
+        /// The scheduled action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
+        Task<DeleteScheduledActionResponse> DeleteScheduledActionAsync(DeleteScheduledActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3842,6 +3950,13 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeNodeConfigurationOptions service method.</param>
         /// 
         /// <returns>The response from the DescribeNodeConfigurationOptions service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AccessToSnapshotDeniedException">
+        /// The owner of the specified snapshot has not authorized your account to access the
+        /// snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
@@ -3864,6 +3979,13 @@ namespace Amazon.Redshift
         /// </param>
         /// 
         /// <returns>The response from the DescribeNodeConfigurationOptions service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.AccessToSnapshotDeniedException">
+        /// The owner of the specified snapshot has not authorized your account to access the
+        /// snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
@@ -4218,6 +4340,46 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeResize">REST API Reference for DescribeResize Operation</seealso>
         Task<DescribeResizeResponse> DescribeResizeAsync(DescribeResizeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeScheduledActions
+
+
+        /// <summary>
+        /// Describes properties of scheduled actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeScheduledActions service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionNotFoundException">
+        /// The scheduled action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
+        DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request);
+
+
+
+        /// <summary>
+        /// Describes properties of scheduled actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeScheduledActions service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionNotFoundException">
+        /// The scheduled action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
+        Task<DescribeScheduledActionsResponse> DescribeScheduledActionsAsync(DescribeScheduledActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5592,6 +5754,64 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyScheduledAction
+
+
+        /// <summary>
+        /// Modify a scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyScheduledAction service method.</param>
+        /// 
+        /// <returns>The response from the ModifyScheduledAction service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduledActionException">
+        /// The scheduled action is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduleException">
+        /// The schedule you submitted isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionNotFoundException">
+        /// The scheduled action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionTypeUnsupportedException">
+        /// The action type specified for a scheduled action is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyScheduledAction">REST API Reference for ModifyScheduledAction Operation</seealso>
+        ModifyScheduledActionResponse ModifyScheduledAction(ModifyScheduledActionRequest request);
+
+
+
+        /// <summary>
+        /// Modify a scheduled action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyScheduledAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyScheduledAction service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduledActionException">
+        /// The scheduled action is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidScheduleException">
+        /// The schedule you submitted isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionNotFoundException">
+        /// The scheduled action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ScheduledActionTypeUnsupportedException">
+        /// The action type specified for a scheduled action is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyScheduledAction">REST API Reference for ModifyScheduledAction Operation</seealso>
+        Task<ModifyScheduledActionResponse> ModifyScheduledActionAsync(ModifyScheduledActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

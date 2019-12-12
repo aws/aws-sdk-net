@@ -33,12 +33,31 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class VoiceConnector
     {
+        private VoiceConnectorAwsRegion _awsRegion;
         private DateTime? _createdTimestamp;
         private string _name;
         private string _outboundHostName;
         private bool? _requireEncryption;
         private DateTime? _updatedTimestamp;
         private string _voiceConnectorId;
+
+        /// <summary>
+        /// Gets and sets the property AwsRegion. 
+        /// <para>
+        /// The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>.
+        /// </para>
+        /// </summary>
+        public VoiceConnectorAwsRegion AwsRegion
+        {
+            get { return this._awsRegion; }
+            set { this._awsRegion = value; }
+        }
+
+        // Check to see if AwsRegion property is set
+        internal bool IsSetAwsRegion()
+        {
+            return this._awsRegion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 

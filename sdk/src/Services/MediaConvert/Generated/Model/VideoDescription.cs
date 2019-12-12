@@ -182,7 +182,7 @@ namespace Amazon.MediaConvert.Model
         /// resolution height for this output. Specify in pixels. If you don't provide a value
         /// here, the service will use the input height.
         /// </summary>
-        [AWSProperty(Min=32, Max=4096)]
+        [AWSProperty(Min=32, Max=8192)]
         public int Height
         {
             get { return this._height.GetValueOrDefault(); }
@@ -321,7 +321,7 @@ namespace Amazon.MediaConvert.Model
         /// width, in pixels, for this output. If you don't provide a value here, the service
         /// will use the input width.
         /// </summary>
-        [AWSProperty(Min=32, Max=4096)]
+        [AWSProperty(Min=32, Max=8192)]
         public int Width
         {
             get { return this._width.GetValueOrDefault(); }

@@ -29,8 +29,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocateHosts operation.
-    /// Allocates a Dedicated Host to your account. At a minimum, specify the instance size
-    /// type, Availability Zone, and quantity of hosts to allocate.
+    /// Allocates a Dedicated Host to your account. At a minimum, specify the supported instance
+    /// type or instance family, the Availability Zone in which to allocate the host, and
+    /// the number of hosts to allocate.
     /// </summary>
     public partial class AllocateHostsRequest : AmazonEC2Request
     {
@@ -38,6 +39,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private string _clientToken;
         private HostRecovery _hostRecovery;
+        private string _instanceFamily;
         private string _instanceType;
         private int? _quantity;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
@@ -132,14 +134,45 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceType. 
+        /// Gets and sets the property InstanceFamily. 
         /// <para>
-        /// Specifies the instance type for which to configure your Dedicated Hosts. When you
-        /// specify the instance type, that is the only instance type that you can launch onto
-        /// that host.
+        /// Specifies the instance family to be supported by the Dedicated Hosts. If you specify
+        /// an instance family, the Dedicated Hosts support multiple instance types within that
+        /// instance family.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want the Dedicated Hosts to support a specific instance type only, omit this
+        /// parameter and specify <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b>
+        /// and <b>InstanceType</b> in the same request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public string InstanceFamily
+        {
+            get { return this._instanceFamily; }
+            set { this._instanceFamily = value; }
+        }
+
+        // Check to see if InstanceFamily property is set
+        internal bool IsSetInstanceFamily()
+        {
+            return this._instanceFamily != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// Specifies the instance type to be supported by the Dedicated Hosts. If you specify
+        /// an instance type, the Dedicated Hosts support instances of the specified instance
+        /// type only.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want the Dedicated Hosts to support multiple instance types in a specific instance
+        /// family, omit this parameter and specify <b>InstanceFamily</b> instead. You cannot
+        /// specify <b>InstanceType</b> and <b>InstanceFamily</b> in the same request.
+        /// </para>
+        /// </summary>
         public string InstanceType
         {
             get { return this._instanceType; }

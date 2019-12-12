@@ -92,7 +92,10 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Metrics.
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        /// Provides metrics used to evaluate the performance of a predictor.
+        /// </para>
         /// </summary>
         public Metrics Metrics
         {

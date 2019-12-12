@@ -33,6 +33,9 @@ namespace Amazon.CodeCommit.Model
     public partial class PullRequestEvent
     {
         private string _actorArn;
+        private ApprovalRuleEventMetadata _approvalRuleEventMetadata;
+        private ApprovalRuleOverriddenEventMetadata _approvalRuleOverriddenEventMetadata;
+        private ApprovalStateChangedEventMetadata _approvalStateChangedEventMetadata;
         private DateTime? _eventDate;
         private PullRequestCreatedEventMetadata _pullRequestCreatedEventMetadata;
         private PullRequestEventType _pullRequestEventType;
@@ -45,8 +48,8 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property ActorArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples
-        /// include updating the pull request with additional commits or changing the status of
-        /// a pull request.
+        /// include updating the pull request with more commits or changing the status of a pull
+        /// request.
         /// </para>
         /// </summary>
         public string ActorArn
@@ -59,6 +62,60 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetActorArn()
         {
             return this._actorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApprovalRuleEventMetadata. 
+        /// <para>
+        /// Information about a pull request event.
+        /// </para>
+        /// </summary>
+        public ApprovalRuleEventMetadata ApprovalRuleEventMetadata
+        {
+            get { return this._approvalRuleEventMetadata; }
+            set { this._approvalRuleEventMetadata = value; }
+        }
+
+        // Check to see if ApprovalRuleEventMetadata property is set
+        internal bool IsSetApprovalRuleEventMetadata()
+        {
+            return this._approvalRuleEventMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApprovalRuleOverriddenEventMetadata. 
+        /// <para>
+        /// Information about an approval rule override event for a pull request.
+        /// </para>
+        /// </summary>
+        public ApprovalRuleOverriddenEventMetadata ApprovalRuleOverriddenEventMetadata
+        {
+            get { return this._approvalRuleOverriddenEventMetadata; }
+            set { this._approvalRuleOverriddenEventMetadata = value; }
+        }
+
+        // Check to see if ApprovalRuleOverriddenEventMetadata property is set
+        internal bool IsSetApprovalRuleOverriddenEventMetadata()
+        {
+            return this._approvalRuleOverriddenEventMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApprovalStateChangedEventMetadata. 
+        /// <para>
+        /// Information about an approval state change for a pull request.
+        /// </para>
+        /// </summary>
+        public ApprovalStateChangedEventMetadata ApprovalStateChangedEventMetadata
+        {
+            get { return this._approvalStateChangedEventMetadata; }
+            set { this._approvalStateChangedEventMetadata = value; }
+        }
+
+        // Check to see if ApprovalStateChangedEventMetadata property is set
+        internal bool IsSetApprovalStateChangedEventMetadata()
+        {
+            return this._approvalStateChangedEventMetadata != null;
         }
 
         /// <summary>
@@ -100,8 +157,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property PullRequestEventType. 
         /// <para>
-        /// The type of the pull request event, for example a status change event (PULL_REQUEST_STATUS_CHANGED)
-        /// or update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).
+        /// The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED)
+        /// or update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).
         /// </para>
         /// </summary>
         public PullRequestEventType PullRequestEventType

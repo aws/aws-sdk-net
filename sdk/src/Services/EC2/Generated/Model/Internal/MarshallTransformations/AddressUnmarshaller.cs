@@ -66,6 +66,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("customerOwnedIp", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CustomerOwnedIp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("customerOwnedIpv4Pool", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CustomerOwnedIpv4Pool = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("domain", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -76,6 +88,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("networkBorderGroup", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NetworkBorderGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("networkInterfaceId", targetDepth))

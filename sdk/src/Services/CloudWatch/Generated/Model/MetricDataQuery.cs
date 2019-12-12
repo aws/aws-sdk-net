@@ -70,6 +70,7 @@ namespace Amazon.CloudWatch.Model
         private string _id;
         private string _label;
         private MetricStat _metricStat;
+        private int? _period;
         private bool? _returnData;
 
         /// <summary>
@@ -168,6 +169,36 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetMetricStat()
         {
             return this._metricStat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Period. 
+        /// <para>
+        /// The granularity, in seconds, of the returned data points. For metrics with regular
+        /// resolution, a period can be as short as one minute (60 seconds) and must be a multiple
+        /// of 60. For high-resolution metrics that are collected at intervals of less than one
+        /// minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution
+        /// metrics are those metrics stored by a <code>PutMetricData</code> operation that includes
+        /// a <code>StorageResolution of 1 second</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are performing a <code>GetMetricData</code> operation, use this field only
+        /// if you are specifying an <code>Expression</code>. Do not use this field when you are
+        /// specifying a <code>MetricStat</code> in a <code>GetMetricData</code> operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int Period
+        {
+            get { return this._period.GetValueOrDefault(); }
+            set { this._period = value; }
+        }
+
+        // Check to see if Period property is set
+        internal bool IsSetPeriod()
+        {
+            return this._period.HasValue; 
         }
 
         /// <summary>

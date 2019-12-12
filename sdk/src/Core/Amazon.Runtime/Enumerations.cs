@@ -46,4 +46,22 @@ namespace Amazon.Runtime
         /// </summary>
         Unknown
     }
+
+    /// <summary>
+    /// Sts Regional Endpoints Value determines whether or not
+    /// to send the sts request to the regional endpoint or to
+    /// the global sts endpoint
+    /// </summary>
+    public enum StsRegionalEndpointsValue
+    {
+        /// <summary>
+        /// Send the request to the global sts endpoint
+        /// if the region is a legacy global region
+        /// </summary>
+        Legacy,
+        /// <summary>
+        /// Send the request to the regional endpoint
+        /// </summary>
+        Regional
+    };
 }

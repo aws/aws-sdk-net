@@ -74,6 +74,17 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Definition);
                 }
 
+                if(publicRequest.IsSetLoggingConfiguration())
+                {
+                    context.Writer.WritePropertyName("loggingConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LoggingConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LoggingConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("roleArn");

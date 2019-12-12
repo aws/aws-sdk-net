@@ -41,43 +41,54 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TopicArn</code> – the topic's ARN
+        ///  <code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Owner</code> – the AWS account ID of the topic's owner
+        ///  <code>DisplayName</code> – The human-readable name used in the <code>From</code>
+        /// field for notifications to <code>email</code> and <code>email-json</code> endpoints.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Policy</code> – the JSON serialization of the topic's access control policy
+        ///  <code>Owner</code> – The AWS account ID of the topic's owner.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DisplayName</code> – the human-readable name used in the "From" field for notifications
-        /// to email and email-json endpoints
+        ///  <code>Policy</code> – The JSON serialization of the topic's access control policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation
-        /// on this topic
+        ///  <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for the
+        /// topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this
-        /// topic
+        ///  <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
+        ///  <code>SubscriptionsPending</code> – The number of subscriptions pending confirmation
+        /// for the topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
+        ///  <code>TopicArn</code> – The topic's ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery
-        /// policy that takes into account system defaults
+        ///  <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery
+        /// policy, taking system defaults into account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK)
+        /// for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+        /// in the <i>AWS Key Management Service API Reference</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

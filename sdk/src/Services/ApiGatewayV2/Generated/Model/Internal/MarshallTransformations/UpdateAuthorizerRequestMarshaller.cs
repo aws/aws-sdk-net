@@ -113,21 +113,21 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdentityValidationExpression);
                 }
 
+                if(publicRequest.IsSetJwtConfiguration())
+                {
+                    context.Writer.WritePropertyName("jwtConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = JWTConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.JwtConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetProviderArns())
-                {
-                    context.Writer.WritePropertyName("providerArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProviderArnsListValue in publicRequest.ProviderArns)
-                    {
-                            context.Writer.Write(publicRequestProviderArnsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
                 }
 
         

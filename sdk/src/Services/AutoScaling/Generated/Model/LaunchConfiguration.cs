@@ -56,7 +56,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property AssociatePublicIpAddress. 
         /// <para>
         /// For Auto Scaling groups that are running in a VPC, specifies whether to assign a public
-        /// IP address to the group's instances. 
+        /// IP address to the group's instances.
         /// </para>
         ///  
         /// <para>
@@ -102,7 +102,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ClassicLinkVPCId. 
         /// <para>
-        /// The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. 
+        /// The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
         /// </para>
         ///  
         /// <para>
@@ -128,7 +128,6 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property ClassicLinkVPCSecurityGroups. 
         /// <para>
         /// The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -172,7 +171,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property EbsOptimized. 
         /// <para>
         /// Specifies whether the launch configuration is optimized for EBS I/O (<code>true</code>)
-        /// or not (<code>false</code>). 
+        /// or not (<code>false</code>).
         /// </para>
         ///  
         /// <para>
@@ -196,7 +195,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property IamInstanceProfile. 
         /// <para>
         /// The name or the Amazon Resource Name (ARN) of the instance profile associated with
-        /// the IAM role for the instance. The instance profile contains the IAM role. 
+        /// the IAM role for the instance. The instance profile contains the IAM role.
         /// </para>
         ///  
         /// <para>
@@ -221,7 +220,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. 
+        /// The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
         /// </para>
         ///  
         /// <para>
@@ -246,13 +245,12 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property InstanceMonitoring. 
         /// <para>
         /// Controls whether instances in this group are launched with detailed (<code>true</code>)
-        /// or basic (<code>false</code>) monitoring. 
+        /// or basic (<code>false</code>) monitoring.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
         /// Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-        /// 
         /// </para>
         /// </summary>
         public InstanceMonitoring InstanceMonitoring
@@ -421,7 +419,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property SecurityGroups. 
         /// <para>
         /// A list that contains the security groups to assign to the instances in the Auto Scaling
-        /// group. 
+        /// group.
         /// </para>
         ///  
         /// <para>
@@ -446,7 +444,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The maximum hourly price to be paid for any Spot Instance launched to fulfill the
         /// request. Spot Instances are launched when the price you specify exceeds the current
-        /// Spot market price. 
+        /// Spot price.
         /// </para>
         ///  
         /// <para>
@@ -471,7 +469,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// The Base64-encoded user data to make available to the launched EC2 instances. 
+        /// The Base64-encoded user data to make available to the launched EC2 instances.
         /// </para>
         ///  
         /// <para>

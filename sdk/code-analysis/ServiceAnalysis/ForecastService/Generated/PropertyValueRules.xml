@@ -8,7 +8,7 @@
     <property>Amazon.ForecastService.Model.CreateDatasetRequest.DatasetName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.CreateDatasetResponse.DatasetArn</property>
@@ -18,7 +18,7 @@
     <property>Amazon.ForecastService.Model.CreateDatasetGroupRequest.DatasetGroupName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.CreateDatasetGroupResponse.DatasetGroupArn</property>
@@ -32,7 +32,7 @@
     <property>Amazon.ForecastService.Model.CreateDatasetImportJobRequest.DatasetImportJobName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.CreateDatasetImportJobRequest.TimestampFormat</property>
@@ -47,7 +47,7 @@
     <property>Amazon.ForecastService.Model.CreateForecastRequest.ForecastName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.CreateForecastRequest.PredictorArn</property>
@@ -65,7 +65,7 @@
     <property>Amazon.ForecastService.Model.CreateForecastExportJobRequest.ForecastExportJobName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.CreateForecastExportJobResponse.ForecastExportJobArn</property>
@@ -79,7 +79,7 @@
     <property>Amazon.ForecastService.Model.CreatePredictorRequest.PredictorName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.CreatePredictorResponse.PredictorArn</property>
@@ -125,7 +125,7 @@
     <property>Amazon.ForecastService.Model.DescribeDatasetResponse.DatasetName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribeDatasetResponse.Status</property>
@@ -143,7 +143,7 @@
     <property>Amazon.ForecastService.Model.DescribeDatasetGroupResponse.DatasetGroupName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribeDatasetGroupResponse.Status</property>
@@ -165,7 +165,7 @@
     <property>Amazon.ForecastService.Model.DescribeDatasetImportJobResponse.DatasetImportJobName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribeDatasetImportJobResponse.Status</property>
@@ -192,7 +192,7 @@
     <property>Amazon.ForecastService.Model.DescribeForecastResponse.ForecastName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribeForecastResponse.PredictorArn</property>
@@ -218,7 +218,7 @@
     <property>Amazon.ForecastService.Model.DescribeForecastExportJobResponse.ForecastExportJobName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribeForecastExportJobResponse.Status</property>
@@ -236,13 +236,13 @@
     <property>Amazon.ForecastService.Model.DescribePredictorResponse.PredictorArn</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribePredictorResponse.PredictorName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribePredictorResponse.Status</property>
@@ -350,13 +350,13 @@
     <property>Amazon.ForecastService.Model.CategoricalParameterRange.Name</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ContinuousParameterRange.Name</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DatasetGroupSummary.DatasetGroupArn</property>
@@ -366,7 +366,7 @@
     <property>Amazon.ForecastService.Model.DatasetGroupSummary.DatasetGroupName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DatasetImportJobSummary.DatasetImportJobArn</property>
@@ -376,7 +376,7 @@
     <property>Amazon.ForecastService.Model.DatasetImportJobSummary.DatasetImportJobName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DatasetImportJobSummary.Status</property>
@@ -390,7 +390,7 @@
     <property>Amazon.ForecastService.Model.DatasetSummary.DatasetName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.EncryptionConfig.KMSKeyArn</property>
@@ -409,7 +409,7 @@
     <property>Amazon.ForecastService.Model.Featurization.AttributeName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.FeaturizationConfig.ForecastFrequency</property>
@@ -431,7 +431,7 @@
     <property>Amazon.ForecastService.Model.ForecastExportJobSummary.ForecastExportJobName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ForecastExportJobSummary.Status</property>
@@ -449,7 +449,7 @@
     <property>Amazon.ForecastService.Model.ForecastSummary.ForecastName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ForecastSummary.PredictorArn</property>
@@ -467,7 +467,11 @@
     <property>Amazon.ForecastService.Model.IntegerParameterRange.Name</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.PredictorExecution.AlgorithmArn</property>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.PredictorSummary.DatasetGroupArn</property>
@@ -481,7 +485,7 @@
     <property>Amazon.ForecastService.Model.PredictorSummary.PredictorName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.PredictorSummary.Status</property>
@@ -494,7 +498,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.S3Config.Path</property>
-    <pattern>^s3://.+$</pattern>
+    <pattern>^s3://[a-z0-9].+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.S3Config.RoleArn</property>
@@ -504,7 +508,7 @@
     <property>Amazon.ForecastService.Model.SchemaAttribute.AttributeName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.Statistics.Max</property>
@@ -518,10 +522,14 @@
     <property>Amazon.ForecastService.Model.SupplementaryFeature.Name</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.SupplementaryFeature.Value</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.TestWindowSummary.Status</property>
     <max>256</max>
   </property-value-rule>
 </property-value-rules>

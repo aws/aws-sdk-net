@@ -34,6 +34,8 @@ namespace Amazon.ECR.Model
     {
         private string _imageDigest;
         private DateTime? _imagePushedAt;
+        private ImageScanFindingsSummary _imageScanFindingsSummary;
+        private ImageScanStatus _imageScanStatus;
         private long? _imageSizeInBytes;
         private List<string> _imageTags = new List<string>();
         private string _registryId;
@@ -74,6 +76,42 @@ namespace Amazon.ECR.Model
         internal bool IsSetImagePushedAt()
         {
             return this._imagePushedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageScanFindingsSummary. 
+        /// <para>
+        /// A summary of the last completed image scan.
+        /// </para>
+        /// </summary>
+        public ImageScanFindingsSummary ImageScanFindingsSummary
+        {
+            get { return this._imageScanFindingsSummary; }
+            set { this._imageScanFindingsSummary = value; }
+        }
+
+        // Check to see if ImageScanFindingsSummary property is set
+        internal bool IsSetImageScanFindingsSummary()
+        {
+            return this._imageScanFindingsSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageScanStatus. 
+        /// <para>
+        /// The current state of the scan.
+        /// </para>
+        /// </summary>
+        public ImageScanStatus ImageScanStatus
+        {
+            get { return this._imageScanStatus; }
+            set { this._imageScanStatus = value; }
+        }
+
+        // Check to see if ImageScanStatus property is set
+        internal bool IsSetImageScanStatus()
+        {
+            return this._imageScanStatus != null;
         }
 
         /// <summary>

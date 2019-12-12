@@ -36,6 +36,7 @@ namespace Amazon.RAM.Model
         private bool? _allowExternalPrincipals;
         private string _clientToken;
         private string _name;
+        private List<string> _permissionArns = new List<string>();
         private List<string> _principals = new List<string>();
         private List<string> _resourceArns = new List<string>();
         private List<Tag> _tags = new List<Tag>();
@@ -95,6 +96,26 @@ namespace Amazon.RAM.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PermissionArns. 
+        /// <para>
+        /// The ARNs of the permissions to associate with the resource share. If you do not specify
+        /// an ARN for the permission, AWS RAM automatically attaches the default version of the
+        /// permission for each resource type.
+        /// </para>
+        /// </summary>
+        public List<string> PermissionArns
+        {
+            get { return this._permissionArns; }
+            set { this._permissionArns = value; }
+        }
+
+        // Check to see if PermissionArns property is set
+        internal bool IsSetPermissionArns()
+        {
+            return this._permissionArns != null && this._permissionArns.Count > 0; 
         }
 
         /// <summary>

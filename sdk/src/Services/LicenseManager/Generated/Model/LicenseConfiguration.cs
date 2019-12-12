@@ -30,13 +30,14 @@ namespace Amazon.LicenseManager.Model
     /// <summary>
     /// A license configuration is an abstraction of a customer license agreement that can
     /// be consumed and enforced by License Manager. Components include specifications for
-    /// the license type (licensing by instance, socket, CPU, or VCPU), tenancy (shared tenancy,
-    /// Amazon EC2 Dedicated Instance, Amazon EC2 Dedicated Host, or any of these), host affinity
-    /// (how long a VM must be associated with a host), the number of licenses purchased and
+    /// the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared
+    /// tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how
+    /// long a VM must be associated with a host), and the number of licenses purchased and
     /// used.
     /// </summary>
     public partial class LicenseConfiguration
     {
+        private AutomatedDiscoveryInformation _automatedDiscoveryInformation;
         private long? _consumedLicenses;
         private List<ConsumedLicenseSummary> _consumedLicenseSummaryList = new List<ConsumedLicenseSummary>();
         private string _description;
@@ -49,7 +50,26 @@ namespace Amazon.LicenseManager.Model
         private List<ManagedResourceSummary> _managedResourceSummaryList = new List<ManagedResourceSummary>();
         private string _name;
         private string _ownerAccountId;
+        private List<ProductInformation> _productInformationList = new List<ProductInformation>();
         private string _status;
+
+        /// <summary>
+        /// Gets and sets the property AutomatedDiscoveryInformation. 
+        /// <para>
+        /// Automated discovery information.
+        /// </para>
+        /// </summary>
+        public AutomatedDiscoveryInformation AutomatedDiscoveryInformation
+        {
+            get { return this._automatedDiscoveryInformation; }
+            set { this._automatedDiscoveryInformation = value; }
+        }
+
+        // Check to see if AutomatedDiscoveryInformation property is set
+        internal bool IsSetAutomatedDiscoveryInformation()
+        {
+            return this._automatedDiscoveryInformation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConsumedLicenses. 
@@ -72,7 +92,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ConsumedLicenseSummaryList. 
         /// <para>
-        /// List of summaries for licenses consumed by various resources.
+        /// Summaries for licenses consumed by various resources.
         /// </para>
         /// </summary>
         public List<ConsumedLicenseSummary> ConsumedLicenseSummaryList
@@ -108,7 +128,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationArn. 
         /// <para>
-        /// ARN of the <code>LicenseConfiguration</code> object.
+        /// Amazon Resource Name (ARN) of the license configuration.
         /// </para>
         /// </summary>
         public string LicenseConfigurationArn
@@ -126,7 +146,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurationId. 
         /// <para>
-        /// Unique ID of the <code>LicenseConfiguration</code> object.
+        /// Unique ID of the license configuration.
         /// </para>
         /// </summary>
         public string LicenseConfigurationId
@@ -162,7 +182,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseCountHardLimit. 
         /// <para>
-        /// Sets the number of available licenses as a hard limit.
+        /// Number of available licenses as a hard limit.
         /// </para>
         /// </summary>
         public bool LicenseCountHardLimit
@@ -180,7 +200,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseCountingType. 
         /// <para>
-        /// Dimension to use to track license inventory.
+        /// Dimension to use to track the license inventory.
         /// </para>
         /// </summary>
         public LicenseCountingType LicenseCountingType
@@ -198,7 +218,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseRules. 
         /// <para>
-        /// Array of configured License Manager rules.
+        /// License rules.
         /// </para>
         /// </summary>
         public List<string> LicenseRules
@@ -216,7 +236,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ManagedResourceSummaryList. 
         /// <para>
-        /// List of summaries for managed resources.
+        /// Summaries for managed resources.
         /// </para>
         /// </summary>
         public List<ManagedResourceSummary> ManagedResourceSummaryList
@@ -265,6 +285,24 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetOwnerAccountId()
         {
             return this._ownerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductInformationList. 
+        /// <para>
+        /// Product information.
+        /// </para>
+        /// </summary>
+        public List<ProductInformation> ProductInformationList
+        {
+            get { return this._productInformationList; }
+            set { this._productInformationList = value; }
+        }
+
+        // Check to see if ProductInformationList property is set
+        internal bool IsSetProductInformationList()
+        {
+            return this._productInformationList != null && this._productInformationList.Count > 0; 
         }
 
         /// <summary>

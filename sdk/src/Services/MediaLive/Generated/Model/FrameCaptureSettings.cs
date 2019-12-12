@@ -35,11 +35,11 @@ namespace Amazon.MediaLive.Model
         private int? _captureInterval;
 
         /// <summary>
-        /// Gets and sets the property CaptureInterval. The frequency, in seconds, for capturing
-        /// frames for inclusion in the output.  For example, "10" means capture a frame every
-        /// 10 seconds.
+        /// Gets and sets the property CaptureInterval. The frequency at which to capture frames
+        /// for inclusion in the output. May be specified in either seconds or milliseconds, as
+        /// specified by captureIntervalUnits.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=3600)]
+        [AWSProperty(Required=true, Min=1, Max=3600000)]
         public int CaptureInterval
         {
             get { return this._captureInterval.GetValueOrDefault(); }

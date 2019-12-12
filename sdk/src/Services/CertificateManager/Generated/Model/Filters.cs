@@ -60,6 +60,13 @@ namespace Amazon.CertificateManager.Model
         /// <para>
         /// Specify one or more algorithms that can be used to generate key pairs.
         /// </para>
+        ///  
+        /// <para>
+        /// Default filtering returns only <code>RSA_2048</code> certificates. To return other
+        /// certificate types, provide the desired type signatures in a comma-separated list.
+        /// For example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code>
+        /// and <code>RSA_4096</code> certificates.
+        /// </para>
         /// </summary>
         public List<string> KeyTypes
         {

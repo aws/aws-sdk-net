@@ -32,7 +32,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
             string creationToken = response.CreationToken;
             string fileSystemId = response.FileSystemId;
             string lifeCycleState = response.LifeCycleState;
-            integer numberOfMountTargets = response.NumberOfMountTargets;
+            int numberOfMountTargets = response.NumberOfMountTargets;
             string ownerId = response.OwnerId;
             string performanceMode = response.PerformanceMode;
             FileSystemSize sizeInBytes = response.SizeInBytes;

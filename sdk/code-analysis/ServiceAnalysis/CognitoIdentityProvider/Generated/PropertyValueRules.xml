@@ -1549,6 +1549,12 @@
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.EmailConfigurationType.ConfigurationSet</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.EmailConfigurationType.ReplyToEmailAddress</property>
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+@[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
   </property-value-rule>
@@ -1731,6 +1737,11 @@
     <min>1</min>
     <max>32</max>
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.RecoveryOptionType.Priority</property>
+    <min>1</min>
+    <max>2</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ResourceServerScopeType.ScopeDescription</property>

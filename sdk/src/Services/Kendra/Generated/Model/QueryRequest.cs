@@ -1,0 +1,236 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the kendra-2019-02-03.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Kendra.Model
+{
+    /// <summary>
+    /// Container for the parameters to the Query operation.
+    /// Searches an active index. Use this API to search your documents using query. The <code>Query</code>
+    /// operation enables to do faceted search and to filter results based on document attributes.
+    /// 
+    ///  
+    /// <para>
+    /// It also enables you to provide user context that Amazon Kendra uses to enforce document
+    /// access control in the search results. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Amazon Kendra searches your index for text content and question and answer (FAQ) content.
+    /// By default the response contains three types of results.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Relevant passages
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Matching FAQs
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Relevant documents
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can specify that the query return only one type of result using the <code>QueryResultTypeConfig</code>
+    /// parameter.
+    /// </para>
+    /// </summary>
+    public partial class QueryRequest : AmazonKendraRequest
+    {
+        private AttributeFilter _attributeFilter;
+        private List<Facet> _facets = new List<Facet>();
+        private string _indexId;
+        private int? _pageNumber;
+        private int? _pageSize;
+        private QueryResultType _queryResultTypeFilter;
+        private string _queryText;
+        private List<string> _requestedDocumentAttributes = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AttributeFilter. 
+        /// <para>
+        /// Enables filtered searches based on document attributes. You can only provide one attribute
+        /// filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code>
+        /// parameters contain a list of other filters.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>AttributeFilter</code> parameter enables you to create a set of filtering
+        /// rules that a document must satisfy to be included in the query results.
+        /// </para>
+        /// </summary>
+        public AttributeFilter AttributeFilter
+        {
+            get { return this._attributeFilter; }
+            set { this._attributeFilter = value; }
+        }
+
+        // Check to see if AttributeFilter property is set
+        internal bool IsSetAttributeFilter()
+        {
+            return this._attributeFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Facets. 
+        /// <para>
+        /// An array of documents attributes. Amazon Kendra returns a count for each attribute
+        /// key specified. You can use this information to help narrow the search for your user.
+        /// </para>
+        /// </summary>
+        public List<Facet> Facets
+        {
+            get { return this._facets; }
+            set { this._facets = value; }
+        }
+
+        // Check to see if Facets property is set
+        internal bool IsSetFacets()
+        {
+            return this._facets != null && this._facets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IndexId. 
+        /// <para>
+        /// The unique identifier of the index to search. The identifier is returned in the response
+        /// from the operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
+        public string IndexId
+        {
+            get { return this._indexId; }
+            set { this._indexId = value; }
+        }
+
+        // Check to see if IndexId property is set
+        internal bool IsSetIndexId()
+        {
+            return this._indexId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PageNumber. 
+        /// <para>
+        /// Query results are returned in pages the size of the <code>PageSize</code> parameter.
+        /// By default, Amazon Kendra returns the first page of results. Use this parameter to
+        /// get result pages after the first one.
+        /// </para>
+        /// </summary>
+        public int PageNumber
+        {
+            get { return this._pageNumber.GetValueOrDefault(); }
+            set { this._pageNumber = value; }
+        }
+
+        // Check to see if PageNumber property is set
+        internal bool IsSetPageNumber()
+        {
+            return this._pageNumber.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PageSize. 
+        /// <para>
+        /// Sets the number of results that are returned in each page of results. The default
+        /// page size is 100.
+        /// </para>
+        /// </summary>
+        public int PageSize
+        {
+            get { return this._pageSize.GetValueOrDefault(); }
+            set { this._pageSize = value; }
+        }
+
+        // Check to see if PageSize property is set
+        internal bool IsSetPageSize()
+        {
+            return this._pageSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryResultTypeFilter. 
+        /// <para>
+        /// Sets the type of query. Only results for the specified query type are returned.
+        /// </para>
+        /// </summary>
+        public QueryResultType QueryResultTypeFilter
+        {
+            get { return this._queryResultTypeFilter; }
+            set { this._queryResultTypeFilter = value; }
+        }
+
+        // Check to see if QueryResultTypeFilter property is set
+        internal bool IsSetQueryResultTypeFilter()
+        {
+            return this._queryResultTypeFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryText. 
+        /// <para>
+        /// The text to search for.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
+        public string QueryText
+        {
+            get { return this._queryText; }
+            set { this._queryText = value; }
+        }
+
+        // Check to see if QueryText property is set
+        internal bool IsSetQueryText()
+        {
+            return this._queryText != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestedDocumentAttributes. 
+        /// <para>
+        /// An array of document attributes to include in the response. No other document attributes
+        /// are included in the response. By default all document attributes are included in the
+        /// response. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<string> RequestedDocumentAttributes
+        {
+            get { return this._requestedDocumentAttributes; }
+            set { this._requestedDocumentAttributes = value; }
+        }
+
+        // Check to see if RequestedDocumentAttributes property is set
+        internal bool IsSetRequestedDocumentAttributes()
+        {
+            return this._requestedDocumentAttributes != null && this._requestedDocumentAttributes.Count > 0; 
+        }
+
+    }
+}

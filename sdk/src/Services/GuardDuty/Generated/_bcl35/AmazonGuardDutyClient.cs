@@ -47,8 +47,8 @@ namespace Amazon.GuardDuty
     /// that has never been used, or unusual API calls, like a password policy change to reduce
     /// password strength. GuardDuty informs you of the status of your AWS environment by
     /// producing security findings that you can view in the GuardDuty console or through
-    /// Amazon CloudWatch events. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">
-    /// Amazon GuardDuty User Guide</a>.
+    /// Amazon CloudWatch events. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon
+    /// GuardDuty User Guide</a>.
     /// </summary>
     public partial class AmazonGuardDutyClient : AmazonServiceClient, IAmazonGuardDuty
     {
@@ -502,8 +502,10 @@ namespace Amazon.GuardDuty
         #region  CreateIPSet
 
         /// <summary>
-        /// Creates a new IPSet - a list of trusted IP addresses that have been whitelisted for
-        /// secure communication with AWS infrastructure and applications.
+        /// Creates a new IPSet, called Trusted IP list in the consoler user interface. An IPSet
+        /// is a list IP addresses trusted for secure communication with AWS infrastructure and
+        /// applications. GuardDuty does not generate findings for IP addresses included in IPSets.
+        /// Only users from the master account can use this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIPSet service method.</param>
         /// 
@@ -622,12 +624,73 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  CreatePublishingDestination
+
+        /// <summary>
+        /// Creates a publishing destination to send findings to. The resource to send findings
+        /// to must exist before you use this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublishingDestination service method.</param>
+        /// 
+        /// <returns>The response from the CreatePublishingDestination service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreatePublishingDestination">REST API Reference for CreatePublishingDestination Operation</seealso>
+        public virtual CreatePublishingDestinationResponse CreatePublishingDestination(CreatePublishingDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePublishingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePublishingDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePublishingDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePublishingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublishingDestination operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePublishingDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreatePublishingDestination">REST API Reference for CreatePublishingDestination Operation</seealso>
+        public virtual IAsyncResult BeginCreatePublishingDestination(CreatePublishingDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePublishingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePublishingDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePublishingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePublishingDestination.</param>
+        /// 
+        /// <returns>Returns a  CreatePublishingDestinationResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreatePublishingDestination">REST API Reference for CreatePublishingDestination Operation</seealso>
+        public virtual CreatePublishingDestinationResponse EndCreatePublishingDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePublishingDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateSampleFindings
 
         /// <summary>
         /// Generates example findings of types specified by the list of finding types. If 'NULL'
-        /// is specified for findingTypes, the API generates example findings of all supported
-        /// finding types.
+        /// is specified for <code>findingTypes</code>, the API generates example findings of
+        /// all supported finding types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSampleFindings service method.</param>
         /// 
@@ -688,7 +751,8 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses.
-        /// GuardDuty generates findings based on ThreatIntelSets.
+        /// GuardDuty generates findings based on ThreatIntelSets. Only users of the master account
+        /// can use this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThreatIntelSet service method.</param>
         /// 
@@ -990,7 +1054,8 @@ namespace Amazon.GuardDuty
         #region  DeleteIPSet
 
         /// <summary>
-        /// Deletes the IPSet specified by the IPSet ID.
+        /// Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called Trusted
+        /// IP lists in the console user interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIPSet service method.</param>
         /// 
@@ -1108,6 +1173,66 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  DeletePublishingDestination
+
+        /// <summary>
+        /// Deletes the publishing definition with the specified <code>destinationId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublishingDestination service method.</param>
+        /// 
+        /// <returns>The response from the DeletePublishingDestination service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeletePublishingDestination">REST API Reference for DeletePublishingDestination Operation</seealso>
+        public virtual DeletePublishingDestinationResponse DeletePublishingDestination(DeletePublishingDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePublishingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublishingDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePublishingDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePublishingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublishingDestination operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePublishingDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeletePublishingDestination">REST API Reference for DeletePublishingDestination Operation</seealso>
+        public virtual IAsyncResult BeginDeletePublishingDestination(DeletePublishingDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePublishingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublishingDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePublishingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePublishingDestination.</param>
+        /// 
+        /// <returns>Returns a  DeletePublishingDestinationResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeletePublishingDestination">REST API Reference for DeletePublishingDestination Operation</seealso>
+        public virtual DeletePublishingDestinationResponse EndDeletePublishingDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePublishingDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteThreatIntelSet
 
         /// <summary>
@@ -1164,6 +1289,66 @@ namespace Amazon.GuardDuty
         public virtual DeleteThreatIntelSetResponse EndDeleteThreatIntelSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteThreatIntelSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribePublishingDestination
+
+        /// <summary>
+        /// Returns information about the publishing destination specified by the provided <code>destinationId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePublishingDestination service method.</param>
+        /// 
+        /// <returns>The response from the DescribePublishingDestination service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribePublishingDestination">REST API Reference for DescribePublishingDestination Operation</seealso>
+        public virtual DescribePublishingDestinationResponse DescribePublishingDestination(DescribePublishingDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePublishingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePublishingDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePublishingDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePublishingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePublishingDestination operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePublishingDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribePublishingDestination">REST API Reference for DescribePublishingDestination Operation</seealso>
+        public virtual IAsyncResult BeginDescribePublishingDestination(DescribePublishingDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePublishingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePublishingDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePublishingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePublishingDestination.</param>
+        /// 
+        /// <returns>Returns a  DescribePublishingDestinationResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribePublishingDestination">REST API Reference for DescribePublishingDestination Operation</seealso>
+        public virtual DescribePublishingDestinationResponse EndDescribePublishingDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribePublishingDestinationResponse>(asyncResult);
         }
 
         #endregion
@@ -1593,7 +1778,7 @@ namespace Amazon.GuardDuty
         #region  GetIPSet
 
         /// <summary>
-        /// Retrieves the IPSet specified by the IPSet ID.
+        /// Retrieves the IPSet specified by the <code>ipSetId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIPSet service method.</param>
         /// 
@@ -2137,7 +2322,9 @@ namespace Amazon.GuardDuty
         #region  ListIPSets
 
         /// <summary>
-        /// Lists the IPSets of the GuardDuty service specified by the detector ID.
+        /// Lists the IPSets of the GuardDuty service specified by the detector ID. If you use
+        /// this operation from a member account, the IPSets returned are the IPSets from the
+        /// associated master account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIPSets service method.</param>
         /// 
@@ -2254,6 +2441,66 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  ListPublishingDestinations
+
+        /// <summary>
+        /// Returns a list of publishing destinations associated with the specified <code>dectectorId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPublishingDestinations service method.</param>
+        /// 
+        /// <returns>The response from the ListPublishingDestinations service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListPublishingDestinations">REST API Reference for ListPublishingDestinations Operation</seealso>
+        public virtual ListPublishingDestinationsResponse ListPublishingDestinations(ListPublishingDestinationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPublishingDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPublishingDestinationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPublishingDestinationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPublishingDestinations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPublishingDestinations operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPublishingDestinations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListPublishingDestinations">REST API Reference for ListPublishingDestinations Operation</seealso>
+        public virtual IAsyncResult BeginListPublishingDestinations(ListPublishingDestinationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPublishingDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPublishingDestinationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPublishingDestinations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPublishingDestinations.</param>
+        /// 
+        /// <returns>Returns a  ListPublishingDestinationsResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListPublishingDestinations">REST API Reference for ListPublishingDestinations Operation</seealso>
+        public virtual ListPublishingDestinationsResponse EndListPublishingDestinations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPublishingDestinationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -2319,7 +2566,9 @@ namespace Amazon.GuardDuty
         #region  ListThreatIntelSets
 
         /// <summary>
-        /// Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID.
+        /// Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If
+        /// you use this operation from a member account, the ThreatIntelSets associated with
+        /// the master account are returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThreatIntelSets service method.</param>
         /// 
@@ -2379,9 +2628,9 @@ namespace Amazon.GuardDuty
         #region  StartMonitoringMembers
 
         /// <summary>
-        /// Re-enables GuardDuty to monitor findings of the member accounts specified by the account
-        /// IDs. A master GuardDuty account can run this command after disabling GuardDuty from
-        /// monitoring these members' findings by running StopMonitoringMembers.
+        /// Turns on GuardDuty monitoring of the specified member accounts. Use this operation
+        /// to restart monitoring of accounts that you stopped monitoring with the <code>StopMonitoringMembers</code>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMonitoringMembers service method.</param>
         /// 
@@ -2441,9 +2690,8 @@ namespace Amazon.GuardDuty
         #region  StopMonitoringMembers
 
         /// <summary>
-        /// Disables GuardDuty from monitoring findings of the member accounts specified by the
-        /// account IDs. After running this command, a master GuardDuty account can run StartMonitoringMembers
-        /// to re-enable GuardDuty to monitor these members’ findings.
+        /// Stops GuardDuty monitoring for the specified member accounnts. Use the <code>StartMonitoringMembers</code>
+        /// to restart monitoring for those accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopMonitoringMembers service method.</param>
         /// 
@@ -2563,7 +2811,7 @@ namespace Amazon.GuardDuty
         #region  UnarchiveFindings
 
         /// <summary>
-        /// Unarchives Amazon GuardDuty findings specified by the list of finding IDs.
+        /// Unarchives GuardDuty findings specified by the <code>findingIds</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnarchiveFindings service method.</param>
         /// 
@@ -2683,7 +2931,7 @@ namespace Amazon.GuardDuty
         #region  UpdateDetector
 
         /// <summary>
-        /// Updates an Amazon GuardDuty detector specified by the detectorId.
+        /// Updates the Amazon GuardDuty detector specified by the detectorId.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDetector service method.</param>
         /// 
@@ -2803,7 +3051,7 @@ namespace Amazon.GuardDuty
         #region  UpdateFindingsFeedback
 
         /// <summary>
-        /// Marks specified Amazon GuardDuty findings as useful or not useful.
+        /// Marks the specified GuardDuty findings as useful or not useful.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindingsFeedback service method.</param>
         /// 
@@ -2916,6 +3164,66 @@ namespace Amazon.GuardDuty
         public virtual UpdateIPSetResponse EndUpdateIPSet(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateIPSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdatePublishingDestination
+
+        /// <summary>
+        /// Updates information about the publishing destination specified by the <code>destinationId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePublishingDestination service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePublishingDestination service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdatePublishingDestination">REST API Reference for UpdatePublishingDestination Operation</seealso>
+        public virtual UpdatePublishingDestinationResponse UpdatePublishingDestination(UpdatePublishingDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePublishingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePublishingDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePublishingDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePublishingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePublishingDestination operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePublishingDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdatePublishingDestination">REST API Reference for UpdatePublishingDestination Operation</seealso>
+        public virtual IAsyncResult BeginUpdatePublishingDestination(UpdatePublishingDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePublishingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePublishingDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePublishingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePublishingDestination.</param>
+        /// 
+        /// <returns>Returns a  UpdatePublishingDestinationResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdatePublishingDestination">REST API Reference for UpdatePublishingDestination Operation</seealso>
+        public virtual UpdatePublishingDestinationResponse EndUpdatePublishingDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdatePublishingDestinationResponse>(asyncResult);
         }
 
         #endregion

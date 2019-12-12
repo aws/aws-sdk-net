@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the autoscaling policy to be modified.
+    /// Represents the auto scaling policy to be modified.
     /// </summary>
     public partial class AutoScalingPolicyUpdate
     {

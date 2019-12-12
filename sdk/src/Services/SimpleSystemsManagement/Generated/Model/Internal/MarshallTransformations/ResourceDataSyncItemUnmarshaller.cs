@@ -100,10 +100,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.SyncCreatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SyncLastModifiedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.SyncLastModifiedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SyncName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SyncName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SyncSource", targetDepth))
+                {
+                    var unmarshaller = ResourceDataSyncSourceWithStateUnmarshaller.Instance;
+                    unmarshalledObject.SyncSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SyncType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SyncType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

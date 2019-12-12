@@ -140,6 +140,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElastiCache")]
+        public void CompleteMigrationMarshallTest()
+        {
+            var operation = service_model.FindOperation("CompleteMigration");
+
+            var request = InstantiateClassGenerator.Execute<CompleteMigrationRequest>();
+            var marshaller = new CompleteMigrationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CompleteMigrationResponseUnmarshaller.Instance.Unmarshall(context)
+                as CompleteMigrationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
         public void CopySnapshotMarshallTest()
         {
             var operation = service_model.FindOperation("CopySnapshot");
@@ -1100,6 +1124,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = RevokeCacheSecurityGroupIngressResponseUnmarshaller.Instance.Unmarshall(context)
                 as RevokeCacheSecurityGroupIngressResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
+        public void StartMigrationMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartMigration");
+
+            var request = InstantiateClassGenerator.Execute<StartMigrationRequest>();
+            var marshaller = new StartMigrationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = StartMigrationResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartMigrationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

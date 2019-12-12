@@ -304,6 +304,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("WorkSpaces")]
+        public void DeregisterWorkspaceDirectoryMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeregisterWorkspaceDirectoryRequest>();
+            var marshaller = new DeregisterWorkspaceDirectoryRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeregisterWorkspaceDirectoryRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeregisterWorkspaceDirectory").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DeregisterWorkspaceDirectoryResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeregisterWorkspaceDirectoryResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("WorkSpaces")]
         public void DescribeAccountMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeAccountRequest>();
@@ -768,6 +797,93 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("WorkSpaces")]
+        public void ModifySelfservicePermissionsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ModifySelfservicePermissionsRequest>();
+            var marshaller = new ModifySelfservicePermissionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ModifySelfservicePermissionsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ModifySelfservicePermissions").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ModifySelfservicePermissionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifySelfservicePermissionsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("WorkSpaces")]
+        public void ModifyWorkspaceAccessPropertiesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ModifyWorkspaceAccessPropertiesRequest>();
+            var marshaller = new ModifyWorkspaceAccessPropertiesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ModifyWorkspaceAccessPropertiesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ModifyWorkspaceAccessProperties").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ModifyWorkspaceAccessPropertiesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyWorkspaceAccessPropertiesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("WorkSpaces")]
+        public void ModifyWorkspaceCreationPropertiesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ModifyWorkspaceCreationPropertiesRequest>();
+            var marshaller = new ModifyWorkspaceCreationPropertiesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ModifyWorkspaceCreationPropertiesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ModifyWorkspaceCreationProperties").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ModifyWorkspaceCreationPropertiesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyWorkspaceCreationPropertiesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("WorkSpaces")]
         public void ModifyWorkspacePropertiesMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<ModifyWorkspacePropertiesRequest>();
@@ -876,6 +992,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = RebuildWorkspacesResponseUnmarshaller.Instance.Unmarshall(context)
                 as RebuildWorkspacesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("WorkSpaces")]
+        public void RegisterWorkspaceDirectoryMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<RegisterWorkspaceDirectoryRequest>();
+            var marshaller = new RegisterWorkspaceDirectoryRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<RegisterWorkspaceDirectoryRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RegisterWorkspaceDirectory").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = RegisterWorkspaceDirectoryResponseUnmarshaller.Instance.Unmarshall(context)
+                as RegisterWorkspaceDirectoryResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

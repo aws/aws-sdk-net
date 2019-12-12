@@ -73,4 +73,62 @@ namespace Amazon.RDSDataService
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type TypeHint.
+    /// </summary>
+    public class TypeHint : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATE for TypeHint
+        /// </summary>
+        public static readonly TypeHint DATE = new TypeHint("DATE");
+        /// <summary>
+        /// Constant DECIMAL for TypeHint
+        /// </summary>
+        public static readonly TypeHint DECIMAL = new TypeHint("DECIMAL");
+        /// <summary>
+        /// Constant TIME for TypeHint
+        /// </summary>
+        public static readonly TypeHint TIME = new TypeHint("TIME");
+        /// <summary>
+        /// Constant TIMESTAMP for TypeHint
+        /// </summary>
+        public static readonly TypeHint TIMESTAMP = new TypeHint("TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TypeHint(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TypeHint FindValue(string value)
+        {
+            return FindValue<TypeHint>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TypeHint(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

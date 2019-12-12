@@ -210,7 +210,12 @@ namespace Amazon.LexModelBuildingService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreateVersion.
+        /// Gets and sets the property CreateVersion. 
+        /// <para>
+        /// When set to <code>true</code> a new numbered version of the intent is created. This
+        /// is the same as calling the <code>CreateIntentVersion</code> operation. If you do not
+        /// specify <code>createVersion</code>, the default is <code>false</code>.
+        /// </para>
         /// </summary>
         public bool CreateVersion
         {

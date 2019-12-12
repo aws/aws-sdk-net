@@ -73,6 +73,7 @@ namespace Amazon.WorkSpaces.Model
         /// any other filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=65)]
         public string DirectoryId
         {
             get { return this._directoryId; }

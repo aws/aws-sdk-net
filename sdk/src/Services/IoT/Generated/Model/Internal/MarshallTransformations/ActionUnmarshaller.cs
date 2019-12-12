@@ -100,6 +100,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Firehose = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("http", targetDepth))
+                {
+                    var unmarshaller = HttpActionUnmarshaller.Instance;
+                    unmarshalledObject.Http = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("iotAnalytics", targetDepth))
                 {
                     var unmarshaller = IotAnalyticsActionUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IotEventsActionUnmarshaller.Instance;
                     unmarshalledObject.IotEvents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("iotSiteWise", targetDepth))
+                {
+                    var unmarshaller = IotSiteWiseActionUnmarshaller.Instance;
+                    unmarshalledObject.IotSiteWise = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("kinesis", targetDepth))

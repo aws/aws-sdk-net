@@ -29,22 +29,45 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAvailabilityZones operation.
-    /// Describes the Availability Zones that are available to you. The results include zones
-    /// only for the Region you're currently using. If there is an event impacting an Availability
-    /// Zone, you can use this request to view the state and any provided message for that
-    /// Availability Zone.
+    /// Describes the Availability Zones and Local Zones that are available to you. If there
+    /// is an event impacting an Availability Zone or Local Zone, you can use this request
+    /// to view the state and any provided messages for that Availability Zone or Local Zone.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+    /// For more information about Availability Zones and Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
     /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeAvailabilityZonesRequest : AmazonEC2Request
     {
+        private bool? _allAvailabilityZones;
         private List<Filter> _filters = new List<Filter>();
         private List<string> _zoneIds = new List<string>();
         private List<string> _zoneNames = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AllAvailabilityZones. 
+        /// <para>
+        /// Include all Availability Zones and Local Zones regardless of your opt in status.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not use this parameter, the results include only the zones for the Regions
+        /// where you have chosen the option to opt in.
+        /// </para>
+        /// </summary>
+        public bool AllAvailabilityZones
+        {
+            get { return this._allAvailabilityZones.GetValueOrDefault(); }
+            set { this._allAvailabilityZones = value; }
+        }
+
+        // Check to see if AllAvailabilityZones property is set
+        internal bool IsSetAllAvailabilityZones()
+        {
+            return this._allAvailabilityZones.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -53,25 +76,37 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>message</code> - Information about the Availability Zone.
+        ///  <code>group-name</code> - For Availability Zones, use the Region name. For Local
+        /// Zones, use the name of the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>region-name</code> - The name of the Region for the Availability Zone (for
-        /// example, <code>us-east-1</code>).
+        ///  <code>message</code> - The Availability Zone or Local Zone message.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the Availability Zone (<code>available</code> |
-        /// <code>information</code> | <code>impaired</code> | <code>unavailable</code>).
+        ///  <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and <code>not-opted-in</code>
+        /// | <code>opt-in-not-required</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>).
+        ///  <code>region-name</code> - The name of the Region for the Availability Zone or Local
+        /// Zone (for example, <code>us-east-1</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>).
+        ///  <code>state</code> - The state of the Availability Zone or Local Zone (<code>available</code>
+        /// | <code>information</code> | <code>impaired</code> | <code>unavailable</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>)
+        /// or the Local Zone (for example, use <code>usw2-lax1-az1</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>)
+        /// or the Local Zone (for example, use <code>us-west-2-lax-1a</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -90,7 +125,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ZoneIds. 
         /// <para>
-        /// The IDs of the Availability Zones.
+        /// The IDs of the Availability Zones and Local Zones.
         /// </para>
         /// </summary>
         public List<string> ZoneIds
@@ -108,7 +143,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ZoneNames. 
         /// <para>
-        /// The names of the Availability Zones.
+        /// The names of the Availability Zones and Local Zones.
         /// </para>
         /// </summary>
         public List<string> ZoneNames

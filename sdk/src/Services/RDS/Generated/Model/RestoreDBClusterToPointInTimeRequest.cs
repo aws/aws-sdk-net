@@ -324,12 +324,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+        /// If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted,
-        /// then the restore request is rejected.
+        /// If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then
+        /// the restore request is rejected.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -407,7 +407,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided
+        /// Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -520,7 +520,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property UseLatestRestorableTime. 
         /// <para>
         /// A value that indicates whether to restore the DB cluster to the latest restorable
-        /// backup time. By default, the DB cluster is not restored to the latest restorable backup
+        /// backup time. By default, the DB cluster isn't restored to the latest restorable backup
         /// time. 
         /// </para>
         ///  
@@ -589,7 +589,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided
+        /// Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided
         /// </para>
         ///  </li> <li> 
         /// <para>

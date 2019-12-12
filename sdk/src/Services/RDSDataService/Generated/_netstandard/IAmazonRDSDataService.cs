@@ -169,6 +169,9 @@ namespace Amazon.RDSDataService
         /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
         /// The service specified by the <code>resourceArn</code> parameter is not available.
         /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.StatementTimeoutException">
+        /// The execution of the SQL statement timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/CommitTransaction">REST API Reference for CommitTransaction Operation</seealso>
         Task<CommitTransactionResponse> CommitTransactionAsync(CommitTransactionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -284,6 +287,9 @@ namespace Amazon.RDSDataService
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
         /// The service specified by the <code>resourceArn</code> parameter is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.StatementTimeoutException">
+        /// The execution of the SQL statement timed out.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/RollbackTransaction">REST API Reference for RollbackTransaction Operation</seealso>
         Task<RollbackTransactionResponse> RollbackTransactionAsync(RollbackTransactionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

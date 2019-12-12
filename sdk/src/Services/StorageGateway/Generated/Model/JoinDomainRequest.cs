@@ -39,6 +39,7 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayARN;
         private string _organizationalUnit;
         private string _password;
+        private int? _timeoutInSeconds;
         private string _userName;
 
         /// <summary>
@@ -141,10 +142,32 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TimeoutInSeconds. 
+        /// <para>
+        /// Specifies the time in seconds, in which the <code>JoinDomain</code> operation must
+        /// complete. The default is 20 seconds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3600)]
+        public int TimeoutInSeconds
+        {
+            get { return this._timeoutInSeconds.GetValueOrDefault(); }
+            set { this._timeoutInSeconds = value; }
+        }
+
+        // Check to see if TimeoutInSeconds property is set
+        internal bool IsSetTimeoutInSeconds()
+        {
+            return this._timeoutInSeconds.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
         /// Sets the user name of user who has permission to add the gateway to the Active Directory
-        /// domain.
+        /// domain. The domain user account should be enabled to join computers to the domain.
+        /// For example, you can use the domain administrator account or an account with delegated
+        /// permissions to join computers to the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

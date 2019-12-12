@@ -29,7 +29,7 @@ namespace Amazon.CodeCommit.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBranch operation.
-    /// Creates a new branch in a repository and points the branch to a commit.
+    /// Creates a branch in a repository and points the branch to a commit.
     /// 
     ///  <note> 
     /// <para>

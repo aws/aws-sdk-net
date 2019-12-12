@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>User</code> object that contains information about a user account in your
-    /// Amazon Connect instance, including configuration settings.
+    /// Contains information about a user account for a Amazon Connect instance.
     /// </summary>
     public partial class User
     {
@@ -41,12 +40,13 @@ namespace Amazon.Connect.Model
         private UserPhoneConfig _phoneConfig;
         private string _routingProfileId;
         private List<string> _securityProfileIds = new List<string>();
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _username;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the user account.
+        /// The Amazon Resource Name (ARN) of the user account.
         /// </para>
         /// </summary>
         public string Arn
@@ -64,8 +64,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property DirectoryUserId. 
         /// <para>
-        /// The directory Id for the user account in the existing directory used for identity
-        /// management.
+        /// The identifier of the user account in the directory used for identity management.
         /// </para>
         /// </summary>
         public string DirectoryUserId
@@ -83,7 +82,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property HierarchyGroupId. 
         /// <para>
-        /// The identifier for the hierarchy group assigned to the user.
+        /// The identifier of the hierarchy group for the user.
         /// </para>
         /// </summary>
         public string HierarchyGroupId
@@ -119,7 +118,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property IdentityInfo. 
         /// <para>
-        /// A <code>UserIdentityInfo</code> object.
+        /// Information about the user identity.
         /// </para>
         /// </summary>
         public UserIdentityInfo IdentityInfo
@@ -137,7 +136,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property PhoneConfig. 
         /// <para>
-        /// A <code>UserPhoneConfig</code> object.
+        /// Information about the phone configuration for the user.
         /// </para>
         /// </summary>
         public UserPhoneConfig PhoneConfig
@@ -155,7 +154,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property RoutingProfileId. 
         /// <para>
-        /// The identifier of the routing profile assigned to the user.
+        /// The identifier of the routing profile for the user.
         /// </para>
         /// </summary>
         public string RoutingProfileId
@@ -173,7 +172,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SecurityProfileIds. 
         /// <para>
-        /// The identifier(s) for the security profile assigned to the user.
+        /// The identifiers of the security profiles for the user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -190,12 +189,31 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
         /// The user name assigned to the user account.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20)]
+        [AWSProperty(Min=1, Max=100)]
         public string Username
         {
             get { return this._username; }

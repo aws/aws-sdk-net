@@ -38,9 +38,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         private int? _failedCount;
         private int? _installedCount;
         private int? _installedOtherCount;
+        private int? _installedPendingRebootCount;
         private int? _installedRejectedCount;
         private string _installOverrideList;
         private string _instanceId;
+        private DateTime? _lastNoRebootInstallOperationTime;
         private int? _missingCount;
         private int? _notApplicableCount;
         private PatchOperationType _operation;
@@ -48,6 +50,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _operationStartTime;
         private string _ownerInformation;
         private string _patchGroup;
+        private RebootOption _rebootOption;
         private string _snapshotId;
         private int? _unreportedNotApplicableCount;
 
@@ -127,6 +130,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstalledPendingRebootCount. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public int InstalledPendingRebootCount
+        {
+            get { return this._installedPendingRebootCount.GetValueOrDefault(); }
+            set { this._installedPendingRebootCount = value; }
+        }
+
+        // Check to see if InstalledPendingRebootCount property is set
+        internal bool IsSetInstalledPendingRebootCount()
+        {
+            return this._installedPendingRebootCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property InstalledRejectedCount. 
         /// <para>
         /// The number of instances with patches installed that are specified in a RejectedPatches
@@ -198,6 +219,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastNoRebootInstallOperationTime. 
+        /// <para>
+        /// Reserved for future use. 
+        /// </para>
+        /// </summary>
+        public DateTime LastNoRebootInstallOperationTime
+        {
+            get { return this._lastNoRebootInstallOperationTime.GetValueOrDefault(); }
+            set { this._lastNoRebootInstallOperationTime = value; }
+        }
+
+        // Check to see if LastNoRebootInstallOperationTime property is set
+        internal bool IsSetLastNoRebootInstallOperationTime()
+        {
+            return this._lastNoRebootInstallOperationTime.HasValue; 
         }
 
         /// <summary>
@@ -335,6 +374,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetPatchGroup()
         {
             return this._patchGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RebootOption. 
+        /// <para>
+        /// Reserved for future use. 
+        /// </para>
+        /// </summary>
+        public RebootOption RebootOption
+        {
+            get { return this._rebootOption; }
+            set { this._rebootOption = value; }
+        }
+
+        // Check to see if RebootOption property is set
+        internal bool IsSetRebootOption()
+        {
+            return this._rebootOption != null;
         }
 
         /// <summary>

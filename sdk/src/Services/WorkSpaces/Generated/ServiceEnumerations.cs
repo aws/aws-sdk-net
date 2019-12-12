@@ -25,6 +25,56 @@ namespace Amazon.WorkSpaces
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessPropertyValue.
+    /// </summary>
+    public class AccessPropertyValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for AccessPropertyValue
+        /// </summary>
+        public static readonly AccessPropertyValue ALLOW = new AccessPropertyValue("ALLOW");
+        /// <summary>
+        /// Constant DENY for AccessPropertyValue
+        /// </summary>
+        public static readonly AccessPropertyValue DENY = new AccessPropertyValue("DENY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessPropertyValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessPropertyValue FindValue(string value)
+        {
+            return FindValue<AccessPropertyValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessPropertyValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Compute.
     /// </summary>
     public class Compute : ConstantClass
@@ -596,6 +646,56 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TargetWorkspaceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Tenancy.
+    /// </summary>
+    public class Tenancy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEDICATED for Tenancy
+        /// </summary>
+        public static readonly Tenancy DEDICATED = new Tenancy("DEDICATED");
+        /// <summary>
+        /// Constant SHARED for Tenancy
+        /// </summary>
+        public static readonly Tenancy SHARED = new Tenancy("SHARED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Tenancy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Tenancy FindValue(string value)
+        {
+            return FindValue<Tenancy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Tenancy(string value)
         {
             return FindValue(value);
         }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.DescribeGlobalNetworksRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetCustomerGatewayAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetDevicesRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetLinkAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetLinksRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetSitesRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetTransitGatewayRegistrationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+</property-value-rules>

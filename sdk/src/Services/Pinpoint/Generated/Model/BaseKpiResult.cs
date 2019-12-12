@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Provides the results of a query that retrieved the data for a standard metric that
-    /// applies to an application or campaign.
+    /// applies to an application, campaign, or journey.
     /// </summary>
     public partial class BaseKpiResult
     {
@@ -39,7 +39,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property Rows. 
         /// <para>
         /// An array of objects that provides the results of a query that retrieved the data for
-        /// a standard metric that applies to an application or campaign.
+        /// a standard metric that applies to an application, campaign, or journey.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

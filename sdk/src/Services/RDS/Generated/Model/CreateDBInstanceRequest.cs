@@ -302,6 +302,17 @@ namespace Amazon.RDS.Model
         /// DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the
         /// same AWS Region as the current endpoint. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you're creating a DB instance in an RDS on VMware environment, specify the identifier
+        /// of the custom Availability Zone to create the DB instance in.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
+        /// <i>RDS on VMware User Guide.</i> </a> 
+        /// </para>
+        ///  </note>
         /// </summary>
         public string AvailabilityZone
         {
@@ -508,7 +519,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The name of the database to create when the DB instance is created. If this parameter
-        /// is not specified, no database is created in the DB instance.
+        /// isn't specified, no database is created in the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -529,7 +540,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The name of the database to create when the DB instance is created. If this parameter
-        /// is not specified, no database is created in the DB instance.
+        /// isn't specified, no database is created in the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -550,7 +561,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The name of the database to create when the DB instance is created. If this parameter
-        /// is not specified, the default "postgres" database is created in the DB instance.
+        /// isn't specified, the default "postgres" database is created in the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -606,7 +617,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The name of the database to create when the primary instance of the DB cluster is
-        /// created. If this parameter is not specified, no database is created in the DB instance.
+        /// created. If this parameter isn't specified, no database is created in the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -638,8 +649,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBParameterGroupName. 
         /// <para>
         /// The name of the DB parameter group to associate with this DB instance. If you do not
-        /// specify a value for <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code>
-        /// for the specified DB engine is used.
+        /// specify a value, then the default DB parameter group for the specified DB engine and
+        /// version is used.
         /// </para>
         ///  
         /// <para>
@@ -722,6 +733,16 @@ namespace Amazon.RDS.Model
         /// database can't be deleted when deletion protection is enabled. By default, deletion
         /// protection is disabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon Aurora</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Not applicable. You can enable or disable deletion protection for the DB cluster.
+        /// For more information, see <code>CreateDBCluster</code>. DB instances in a DB cluster
+        /// can be deleted even when deletion protection is enabled for the DB cluster. 
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -1082,8 +1103,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB
-        /// instance. 
+        /// Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple
+        /// between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances,
+        /// must be a multiple between 1 and 50 of the storage amount for the DB instance. 
         /// </para>
         /// </summary>
         public int Iops
@@ -1792,9 +1814,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether the DB instance is publicly accessible. When the DB
         /// instance is publicly accessible, it is an Internet-facing instance with a publicly
-        /// resolvable DNS name, which resolves to a public IP address. When the DB instance is
-        /// not publicly accessible, it is an internal instance with a DNS name that resolves
-        /// to a private IP address.
+        /// resolvable DNS name, which resolves to a public IP address. When the DB instance isn't
+        /// publicly accessible, it is an internal instance with a DNS name that resolves to a
+        /// private IP address.
         /// </para>
         ///  
         /// <para>
@@ -1803,8 +1825,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code>
-        /// is not specified, the following applies:
+        /// If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code>
+        /// isn't specified, the following applies:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1819,7 +1841,7 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> 
         /// <para>
         /// If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code>
-        /// is not specified, the following applies:
+        /// isn't specified, the following applies:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1848,7 +1870,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// A value that indicates whether the DB instance is encrypted. By default, it is not
+        /// A value that indicates whether the DB instance is encrypted. By default, it isn't
         /// encrypted.
         /// </para>
         ///  

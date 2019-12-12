@@ -57,8 +57,8 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code>
-        /// regex.
+        /// When you create a subscriber, the value of <code>Address</code> can't contain line
+        /// breaks.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2147483647)]

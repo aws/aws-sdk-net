@@ -10,7 +10,7 @@
     <property>Amazon.CognitoIdentity.Model.CreateIdentityPoolRequest.IdentityPoolName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w ]+</pattern>
+    <pattern>[\w\s+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.CreateIdentityPoolResponse.DeveloperProviderName</property>
@@ -28,7 +28,7 @@
     <property>Amazon.CognitoIdentity.Model.CreateIdentityPoolResponse.IdentityPoolName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w ]+</pattern>
+    <pattern>[\w\s+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.DeleteIdentityPoolRequest.IdentityPoolId</property>
@@ -70,7 +70,7 @@
     <property>Amazon.CognitoIdentity.Model.DescribeIdentityPoolResponse.IdentityPoolName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w ]+</pattern>
+    <pattern>[\w\s+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.GetCredentialsForIdentityRequest.CustomRoleArn</property>
@@ -328,7 +328,7 @@
     <property>Amazon.CognitoIdentity.Model.UpdateIdentityPoolRequest.IdentityPoolName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w ]+</pattern>
+    <pattern>[\w\s+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.UpdateIdentityPoolResponse.DeveloperProviderName</property>
@@ -346,7 +346,7 @@
     <property>Amazon.CognitoIdentity.Model.UpdateIdentityPoolResponse.IdentityPoolName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w ]+</pattern>
+    <pattern>[\w\s+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.CognitoIdentityProviderInfo.ClientId</property>
@@ -370,7 +370,7 @@
     <property>Amazon.CognitoIdentity.Model.IdentityPoolShortDescription.IdentityPoolName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w ]+</pattern>
+    <pattern>[\w\s+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.MappingRule.Claim</property>

@@ -96,5 +96,8 @@ namespace Amazon.Util
         public const string XAmzAbortDateHeader = "x-amz-abort-date";
         public const string XAmzAbortRuleIdHeader = "x-amz-abort-rule-id";
         public const string XAmznTraceIdHeader = "x-amzn-trace-id";
+
+        public const string XAwsEc2MetadataTokenTtlSeconds = "x-aws-ec2-metadata-token-ttl-seconds";
+        public const string XAwsEc2MetadataToken = "x-aws-ec2-metadata-token";
     }
 }

@@ -41,8 +41,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// After you decline a handshake, it continues to appear in the results of relevant APIs
-    /// for only 30 days. After that, it's deleted.
+    /// After you decline a handshake, it continues to appear in the results of relevant API
+    /// operations for only 30 days. After that, it's deleted.
     /// </para>
     /// </summary>
     public partial class DeclineHandshakeRequest : AmazonOrganizationsRequest
@@ -58,7 +58,7 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-        /// requires "h-" followed by from 8 to 32 lower-case letters or digits.
+        /// requires "h-" followed by from 8 to 32 lowercase letters or digits.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

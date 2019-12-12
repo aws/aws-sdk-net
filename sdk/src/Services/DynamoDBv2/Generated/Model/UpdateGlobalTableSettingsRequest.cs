@@ -47,6 +47,20 @@ namespace Amazon.DynamoDBv2.Model
         /// specified, the global table defaults to <code>PROVISIONED</code> capacity billing
         /// mode.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable
+        /// workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
+        /// Mode</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for
+        /// unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a
+        /// href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
+        /// Mode</a>. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public BillingMode GlobalTableBillingMode
         {

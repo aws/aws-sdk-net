@@ -131,6 +131,10 @@ namespace Amazon.DataSync
     {
 
         /// <summary>
+        /// Constant FIPS for EndpointType
+        /// </summary>
+        public static readonly EndpointType FIPS = new EndpointType("FIPS");
+        /// <summary>
         /// Constant PRIVATE_LINK for EndpointType
         /// </summary>
         public static readonly EndpointType PRIVATE_LINK = new EndpointType("PRIVATE_LINK");
@@ -496,10 +500,6 @@ namespace Amazon.DataSync
     public class PosixPermissions : ConstantClass
     {
 
-        /// <summary>
-        /// Constant BEST_EFFORT for PosixPermissions
-        /// </summary>
-        public static readonly PosixPermissions BEST_EFFORT = new PosixPermissions("BEST_EFFORT");
         /// <summary>
         /// Constant NONE for PosixPermissions
         /// </summary>

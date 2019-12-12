@@ -64,7 +64,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property ConfigurationType. 
         /// <para>
         /// Describes whether the application uses the default parallelism for the Kinesis Data
-        /// Analytics service.
+        /// Analytics service. You must set this property to <code>CUSTOM</code> in order to change
+        /// your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code>
+        /// properties.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,8 +86,14 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property Parallelism. 
         /// <para>
         /// Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics
-        /// application can perform. The Kinesis Data Analytics service can increase this number
-        /// automatically if <a>ParallelismConfiguration$AutoScalingEnabled</a> is set to <code>true</code>.
+        /// application can perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis
+        /// Data Analytics increases the <code>CurrentParallelism</code> value in response to
+        /// application load. The service can increase the <code>CurrentParallelism</code> value
+        /// up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum
+        /// KPUs for the application. The maximum KPUs for an application is 32 by default, and
+        /// can be increased by requesting a limit increase. If application load is reduced, the
+        /// service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code>
+        /// setting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

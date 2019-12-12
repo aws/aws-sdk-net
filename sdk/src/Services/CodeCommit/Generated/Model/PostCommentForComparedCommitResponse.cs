@@ -43,7 +43,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AfterBlobId. 
         /// <para>
-        /// In the directionality you established, the blob ID of the 'after' blob.
+        /// In the directionality you established, the blob ID of the after blob.
         /// </para>
         /// </summary>
         public string AfterBlobId
@@ -61,7 +61,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AfterCommitId. 
         /// <para>
-        /// In the directionality you established, the full commit ID of the 'after' commit.
+        /// In the directionality you established, the full commit ID of the after commit.
         /// </para>
         /// </summary>
         public string AfterCommitId
@@ -79,7 +79,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property BeforeBlobId. 
         /// <para>
-        /// In the directionality you established, the blob ID of the 'before' blob.
+        /// In the directionality you established, the blob ID of the before blob.
         /// </para>
         /// </summary>
         public string BeforeBlobId
@@ -97,7 +97,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property BeforeCommitId. 
         /// <para>
-        /// In the directionality you established, the full commit ID of the 'before' commit.
+        /// In the directionality you established, the full commit ID of the before commit.
         /// </para>
         /// </summary>
         public string BeforeCommitId

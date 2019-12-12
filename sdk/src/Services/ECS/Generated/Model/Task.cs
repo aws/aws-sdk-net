@@ -33,6 +33,9 @@ namespace Amazon.ECS.Model
     public partial class Task
     {
         private List<Attachment> _attachments = new List<Attachment>();
+        private List<Attribute> _attributes = new List<Attribute>();
+        private string _availabilityZone;
+        private string _capacityProviderName;
         private string _clusterArn;
         private Connectivity _connectivity;
         private DateTime? _connectivityAt;
@@ -80,6 +83,60 @@ namespace Amazon.ECS.Model
         internal bool IsSetAttachments()
         {
             return this._attachments != null && this._attachments.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// The attributes of the task
+        /// </para>
+        /// </summary>
+        public List<Attribute> Attributes
+        {
+            get { return this._attributes; }
+            set { this._attributes = value; }
+        }
+
+        // Check to see if Attributes property is set
+        internal bool IsSetAttributes()
+        {
+            return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The availability zone of the task.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderName. 
+        /// <para>
+        /// The capacity provider associated with the task.
+        /// </para>
+        /// </summary>
+        public string CapacityProviderName
+        {
+            get { return this._capacityProviderName; }
+            set { this._capacityProviderName = value; }
+        }
+
+        // Check to see if CapacityProviderName property is set
+        internal bool IsSetCapacityProviderName()
+        {
+            return this._capacityProviderName != null;
         }
 
         /// <summary>

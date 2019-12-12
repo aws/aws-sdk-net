@@ -37,6 +37,7 @@ namespace Amazon.ECS.Model
         private AgentUpdateStatus _agentUpdateStatus;
         private List<Attachment> _attachments = new List<Attachment>();
         private List<Attribute> _attributes = new List<Attribute>();
+        private string _capacityProviderName;
         private string _containerInstanceArn;
         private string _ec2InstanceId;
         private int? _pendingTasksCount;
@@ -124,6 +125,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderName. 
+        /// <para>
+        /// The capacity provider associated with the container instance.
+        /// </para>
+        /// </summary>
+        public string CapacityProviderName
+        {
+            get { return this._capacityProviderName; }
+            set { this._capacityProviderName = value; }
+        }
+
+        // Check to see if CapacityProviderName property is set
+        internal bool IsSetCapacityProviderName()
+        {
+            return this._capacityProviderName != null;
         }
 
         /// <summary>

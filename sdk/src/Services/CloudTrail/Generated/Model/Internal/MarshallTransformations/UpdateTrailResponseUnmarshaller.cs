@@ -176,6 +176,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             {
                 return new InvalidCloudWatchLogsRoleArnException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidEventSelectorsException"))
+            {
+                return new InvalidEventSelectorsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidHomeRegionException"))
             {
                 return new InvalidHomeRegionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

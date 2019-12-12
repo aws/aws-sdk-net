@@ -33,6 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class PutAutoScalingPolicyResponse : AmazonWebServiceResponse
     {
         private AutoScalingPolicyDescription _autoScalingPolicy;
+        private string _clusterArn;
         private string _clusterId;
         private string _instanceGroupId;
 
@@ -52,6 +53,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetAutoScalingPolicy()
         {
             return this._autoScalingPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterArn. 
+        /// <para>
+        /// The Amazon Resource Name of the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ClusterArn
+        {
+            get { return this._clusterArn; }
+            set { this._clusterArn = value; }
+        }
+
+        // Check to see if ClusterArn property is set
+        internal bool IsSetClusterArn()
+        {
+            return this._clusterArn != null;
         }
 
         /// <summary>

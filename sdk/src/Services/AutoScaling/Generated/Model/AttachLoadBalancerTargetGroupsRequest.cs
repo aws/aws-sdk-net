@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachLoadBalancerTargetGroups operation.
-    /// Attaches one or more target groups to the specified Auto Scaling group. 
+    /// Attaches one or more target groups to the specified Auto Scaling group.
     /// 
     ///  
     /// <para>

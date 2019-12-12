@@ -143,6 +143,11 @@
     <pattern>(s3://|http(s*)://).+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TranscribeService.Model.Settings.MaxAlternatives</property>
+    <min>2</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeService.Model.Settings.MaxSpeakerLabels</property>
     <min>2</min>
     <max>10</max>

@@ -106,6 +106,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceUtilization = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SavingsPlansCoveredHoursInLookbackPeriod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SavingsPlansCoveredHoursInLookbackPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<TagValues, TagValuesUnmarshaller>(TagValuesUnmarshaller.Instance);

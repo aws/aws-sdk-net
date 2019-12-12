@@ -60,6 +60,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.EstimatedDiskUtilizationPercent = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Mode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("NodeType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

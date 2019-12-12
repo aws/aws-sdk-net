@@ -124,7 +124,12 @@ namespace Amazon.LexModelBuildingService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreateVersion.
+        /// Gets and sets the property CreateVersion. 
+        /// <para>
+        ///  <code>True</code> if a new version of the intent was created. If the <code>createVersion</code>
+        /// field was not specified in the request, the <code>createVersion</code> field is set
+        /// to false in the response.
+        /// </para>
         /// </summary>
         public bool CreateVersion
         {

@@ -149,6 +149,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// The token for the next set of items to return. (You received this token from a previous
         /// call.)
         /// </para>
+        ///  
+        /// <para>
+        /// Using this token works only when you specify <code>true</code> for <code>startFromHead</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public string NextToken

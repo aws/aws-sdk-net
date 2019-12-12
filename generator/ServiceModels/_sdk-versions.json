@@ -1537,6 +1537,214 @@
                 "Core" : "3.5.0.0"
             },
             "InPreview"               : false
+        },
+        "CodeStarNotifications"           : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "SavingsPlans"                    : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "SSO"                             : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "SSOOIDC"                         : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "MarketplaceCatalog"              : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "SimpleEmailV2"                   : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "DataExchange"                    : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "MigrationHubConfig"              : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "ConnectParticipant"              : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "WAFV2"                           : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "AppConfig"                       : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "IoTSecureTunneling"              : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "ElasticInference"                : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "Imagebuilder"                    : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "Schemas"                         : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "AccessAnalyzer"                  : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "ComputeOptimizer"                : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "NetworkManager"                  : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "Kendra"                          : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "FraudDetector"                   : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "CodeGuruReviewer"                : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "CodeGuruProfiler"                : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "Outposts"                        : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "AugmentedAIRuntime"              : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "EBS"                             : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "KinesisVideoSignalingChannels"   : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
         }
     }
 }

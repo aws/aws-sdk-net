@@ -29,7 +29,7 @@ namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetApiMappings operation.
-    /// The API mappings.
+    /// Gets API mappings.
     /// </summary>
     public partial class GetApiMappingsRequest : AmazonApiGatewayV2Request
     {

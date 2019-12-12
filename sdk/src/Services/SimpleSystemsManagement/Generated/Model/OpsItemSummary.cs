@@ -32,6 +32,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class OpsItemSummary
     {
+        private string _category;
         private string _createdBy;
         private DateTime? _createdTime;
         private string _lastModifiedBy;
@@ -39,9 +40,29 @@ namespace Amazon.SimpleSystemsManagement.Model
         private Dictionary<string, OpsItemDataValue> _operationalData = new Dictionary<string, OpsItemDataValue>();
         private string _opsItemId;
         private int? _priority;
+        private string _severity;
         private string _source;
         private OpsItemStatus _status;
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// A list of OpsItems by category.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Category
+        {
+            get { return this._category; }
+            set { this._category = value; }
+        }
+
+        // Check to see if Category property is set
+        internal bool IsSetCategory()
+        {
+            return this._category != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedBy. 
@@ -169,6 +190,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetPriority()
         {
             return this._priority.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// A list of OpsItems by severity.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Severity
+        {
+            get { return this._severity; }
+            set { this._severity = value; }
+        }
+
+        // Check to see if Severity property is set
+        internal bool IsSetSeverity()
+        {
+            return this._severity != null;
         }
 
         /// <summary>

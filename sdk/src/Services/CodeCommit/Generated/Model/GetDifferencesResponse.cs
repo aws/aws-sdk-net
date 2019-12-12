@@ -38,8 +38,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Differences. 
         /// <para>
-        /// A differences data type object that contains information about the differences, including
-        /// whether the difference is added, modified, or deleted (A, D, M).
+        /// A data type object that contains information about the differences, including whether
+        /// the difference is added, modified, or deleted (A, D, M).
         /// </para>
         /// </summary>
         public List<Difference> Differences

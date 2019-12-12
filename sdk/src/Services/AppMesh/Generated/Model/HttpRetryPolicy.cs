@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents a retry policy.
+    /// An object that represents a retry policy. Specify at least one value for at least
+    /// one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>,
+    /// and a value for <code>perRetryTimeout</code>.
     /// </summary>
     public partial class HttpRetryPolicy
     {
@@ -45,11 +47,11 @@ namespace Amazon.AppMesh.Model
         ///          <ul>            <li>               
         /// <para>
         ///                   <b>server-error</b> – HTTP status codes 500, 501,              
-        /// 502, 503, 504, 505, 506, 507, 508, 510, and 511
+        ///    502, 503, 504, 505, 506, 507, 508, 510, and 511
         /// </para>
         ///             </li>            <li>               
         /// <para>
-        ///                   <b>gateway-error</b> – HTTP status codes 502,               503,
+        ///                   <b>gateway-error</b> – HTTP status codes 502,                  503,
         /// and 504
         /// </para>
         ///             </li>            <li>               
@@ -58,7 +60,7 @@ namespace Amazon.AppMesh.Model
         /// </para>
         ///             </li>            <li>               
         /// <para>
-        ///                   <b>stream-error</b> – Retry on refused               stream
+        ///                   <b>stream-error</b> – Retry on refused                  stream
         /// </para>
         ///             </li>         </ul>
         /// </summary>
@@ -78,7 +80,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property MaxRetries. 
         /// <para>
-        /// The maximum number of retry attempts. If no value is specified, the default is 1.
+        /// The maximum number of retry attempts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -97,7 +99,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property PerRetryTimeout. 
         /// <para>
-        /// An object that represents the retry duration.
+        /// An object that represents a duration of time.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

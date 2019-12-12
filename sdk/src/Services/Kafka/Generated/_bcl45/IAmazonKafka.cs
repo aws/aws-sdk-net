@@ -1131,5 +1131,67 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  UpdateMonitoring
+
+
+        /// <summary>
+        /// Updates the monitoring settings for the cluster. You can use this operation to specify
+        /// which Apache Kafka metrics you want Amazon MSK to send to Amazon CloudWatch. You can
+        /// also specify settings for open monitoring with Prometheus.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMonitoring service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMonitoring service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateMonitoring">REST API Reference for UpdateMonitoring Operation</seealso>
+        UpdateMonitoringResponse UpdateMonitoring(UpdateMonitoringRequest request);
+
+
+
+        /// <summary>
+        /// Updates the monitoring settings for the cluster. You can use this operation to specify
+        /// which Apache Kafka metrics you want Amazon MSK to send to Amazon CloudWatch. You can
+        /// also specify settings for open monitoring with Prometheus.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMonitoring service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMonitoring service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateMonitoring">REST API Reference for UpdateMonitoring Operation</seealso>
+        Task<UpdateMonitoringResponse> UpdateMonitoringAsync(UpdateMonitoringRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
     }
 }

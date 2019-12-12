@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the TCP routing specification for a route.
+    /// An object that represents a TCP route type.
     /// </summary>
     public partial class TcpRoute
     {

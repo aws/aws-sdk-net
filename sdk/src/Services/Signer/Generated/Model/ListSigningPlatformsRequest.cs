@@ -29,12 +29,12 @@ namespace Amazon.Signer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSigningPlatforms operation.
-    /// Lists all signing platforms available in AWS Signer that match the request parameters.
-    /// If additional jobs remain to be listed, AWS Signer returns a <code>nextToken</code>
+    /// Lists all signing platforms available in code signing that match the request parameters.
+    /// If additional jobs remain to be listed, code signing returns a <code>nextToken</code>
     /// value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch
     /// the remaining values. You can continue calling <code>ListSigningJobs</code> with your
-    /// <code>maxResults</code> parameter and with new values that AWS Signer returns in the
-    /// <code>nextToken</code> parameter until all of your signing jobs have been returned.
+    /// <code>maxResults</code> parameter and with new values that code signing returns in
+    /// the <code>nextToken</code> parameter until all of your signing jobs have been returned.
     /// </summary>
     public partial class ListSigningPlatformsRequest : AmazonSignerRequest
     {

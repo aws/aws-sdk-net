@@ -1,0 +1,96 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the application-insights-2018-11-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.ApplicationInsights.Model
+{
+    /// <summary>
+    /// This is the response object from the ListLogPatterns operation.
+    /// </summary>
+    public partial class ListLogPatternsResponse : AmazonWebServiceResponse
+    {
+        private List<LogPattern> _logPatterns = new List<LogPattern>();
+        private string _nextToken;
+        private string _resourceGroupName;
+
+        /// <summary>
+        /// Gets and sets the property LogPatterns. 
+        /// <para>
+        /// The list of log patterns.
+        /// </para>
+        /// </summary>
+        public List<LogPattern> LogPatterns
+        {
+            get { return this._logPatterns; }
+            set { this._logPatterns = value; }
+        }
+
+        // Check to see if LogPatterns property is set
+        internal bool IsSetLogPatterns()
+        {
+            return this._logPatterns != null && this._logPatterns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token used to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return. 
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceGroupName. 
+        /// <para>
+        /// The name of the resource group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ResourceGroupName
+        {
+            get { return this._resourceGroupName; }
+            set { this._resourceGroupName = value; }
+        }
+
+        // Check to see if ResourceGroupName property is set
+        internal bool IsSetResourceGroupName()
+        {
+            return this._resourceGroupName != null;
+        }
+
+    }
+}

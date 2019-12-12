@@ -56,6 +56,17 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFlinkRunConfiguration())
+            {
+                context.Writer.WritePropertyName("FlinkRunConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FlinkRunConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FlinkRunConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSqlRunConfigurations())
             {
                 context.Writer.WritePropertyName("SqlRunConfigurations");

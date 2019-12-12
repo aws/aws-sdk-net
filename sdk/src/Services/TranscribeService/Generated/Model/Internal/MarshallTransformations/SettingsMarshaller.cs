@@ -51,10 +51,22 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ChannelIdentification);
             }
 
+            if(requestObject.IsSetMaxAlternatives())
+            {
+                context.Writer.WritePropertyName("MaxAlternatives");
+                context.Writer.Write(requestObject.MaxAlternatives);
+            }
+
             if(requestObject.IsSetMaxSpeakerLabels())
             {
                 context.Writer.WritePropertyName("MaxSpeakerLabels");
                 context.Writer.Write(requestObject.MaxSpeakerLabels);
+            }
+
+            if(requestObject.IsSetShowAlternatives())
+            {
+                context.Writer.WritePropertyName("ShowAlternatives");
+                context.Writer.Write(requestObject.ShowAlternatives);
             }
 
             if(requestObject.IsSetShowSpeakerLabels())

@@ -78,6 +78,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.HostId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("hostResourceGroupArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HostResourceGroupArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("spreadDomain", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

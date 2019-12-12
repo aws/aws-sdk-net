@@ -41,8 +41,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property DestinationCommitSpecifier. 
         /// <para>
-        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit.
-        /// For example, a branch name or a full commit ID.
+        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+        /// (for example, a branch name or a full commit ID).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,8 +80,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property SourceCommitSpecifier. 
         /// <para>
-        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit.
-        /// For example, a branch name or a full commit ID.
+        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+        /// (for example, a branch name or a full commit ID).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property TargetBranch. 
         /// <para>
-        /// The branch where the merge will be applied.
+        /// The branch where the merge is applied.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

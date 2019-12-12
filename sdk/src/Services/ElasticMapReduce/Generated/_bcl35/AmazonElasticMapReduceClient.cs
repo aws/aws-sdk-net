@@ -1574,8 +1574,9 @@ namespace Amazon.ElasticMapReduce
         #region  ListSteps
 
         /// <summary>
-        /// Provides a list of steps for the cluster in reverse order unless you specify stepIds
-        /// with the request.
+        /// Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code>
+        /// with the request of filter by <code>StepStates</code>. You can specify a maximum of
+        /// ten <code>stepIDs</code>.
         /// </summary>
         /// 
         /// <returns>The response from the ListSteps service method, as returned by ElasticMapReduce.</returns>
@@ -1592,8 +1593,9 @@ namespace Amazon.ElasticMapReduce
         }
 
         /// <summary>
-        /// Provides a list of steps for the cluster in reverse order unless you specify stepIds
-        /// with the request.
+        /// Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code>
+        /// with the request of filter by <code>StepStates</code>. You can specify a maximum of
+        /// ten <code>stepIDs</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSteps service method.</param>
         /// 
@@ -1646,6 +1648,68 @@ namespace Amazon.ElasticMapReduce
         public virtual ListStepsResponse EndListSteps(IAsyncResult asyncResult)
         {
             return EndInvoke<ListStepsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyCluster
+
+        /// <summary>
+        /// Modifies the number of steps that can be executed concurrently for the cluster specified
+        /// using ClusterID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCluster service method.</param>
+        /// 
+        /// <returns>The response from the ModifyCluster service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
+        public virtual ModifyClusterResponse ModifyCluster(ModifyClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCluster operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
+        public virtual IAsyncResult BeginModifyCluster(ModifyClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyCluster.</param>
+        /// 
+        /// <returns>Returns a  ModifyClusterResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
+        public virtual ModifyClusterResponse EndModifyCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyClusterResponse>(asyncResult);
         }
 
         #endregion
@@ -2198,16 +2262,15 @@ namespace Amazon.ElasticMapReduce
         #region  SetVisibleToAllUsers
 
         /// <summary>
-        /// <i>This member will be deprecated.</i> 
-        /// 
-        ///  
-        /// <para>
-        /// Sets whether all AWS Identity and Access Management (IAM) users under your account
-        /// can access the specified clusters (job flows). This action works on running clusters.
-        /// You can also set the visibility of a cluster when you launch it using the <code>VisibleToAllUsers</code>
-        /// parameter of <a>RunJobFlow</a>. The SetVisibleToAllUsers action can be called only
-        /// by an IAM user who created the cluster or the AWS account that owns the cluster.
-        /// </para>
+        /// Sets the <a>Cluster$VisibleToAllUsers</a> value, which determines whether the cluster
+        /// is visible to all IAM users of the AWS account associated with the cluster. Only the
+        /// IAM user who created the cluster or the AWS account root user can call this action.
+        /// The default value, <code>true</code>, indicates that all IAM users in the AWS account
+        /// can perform cluster actions if they have the proper IAM policy permissions. If set
+        /// to <code>false</code>, only the IAM user that created the cluster can perform actions.
+        /// This action works on running clusters. You can override the default <code>true</code>
+        /// setting when you create a cluster by using the <code>VisibleToAllUsers</code> parameter
+        /// with <code>RunJobFlow</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetVisibleToAllUsers service method.</param>
         /// 

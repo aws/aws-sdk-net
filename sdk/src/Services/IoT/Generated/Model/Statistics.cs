@@ -32,7 +32,32 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class Statistics
     {
+        private double? _average;
         private int? _count;
+        private double? _maximum;
+        private double? _minimum;
+        private double? _stdDeviation;
+        private double? _sum;
+        private double? _sumOfSquares;
+        private double? _variance;
+
+        /// <summary>
+        /// Gets and sets the property Average. 
+        /// <para>
+        /// The average of the aggregated field values.
+        /// </para>
+        /// </summary>
+        public double Average
+        {
+            get { return this._average.GetValueOrDefault(); }
+            set { this._average = value; }
+        }
+
+        // Check to see if Average property is set
+        internal bool IsSetAverage()
+        {
+            return this._average.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Count. 
@@ -50,6 +75,114 @@ namespace Amazon.IoT.Model
         internal bool IsSetCount()
         {
             return this._count.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Maximum. 
+        /// <para>
+        /// The maximum aggregated field value.
+        /// </para>
+        /// </summary>
+        public double Maximum
+        {
+            get { return this._maximum.GetValueOrDefault(); }
+            set { this._maximum = value; }
+        }
+
+        // Check to see if Maximum property is set
+        internal bool IsSetMaximum()
+        {
+            return this._maximum.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Minimum. 
+        /// <para>
+        /// The minimum aggregated field value.
+        /// </para>
+        /// </summary>
+        public double Minimum
+        {
+            get { return this._minimum.GetValueOrDefault(); }
+            set { this._minimum = value; }
+        }
+
+        // Check to see if Minimum property is set
+        internal bool IsSetMinimum()
+        {
+            return this._minimum.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StdDeviation. 
+        /// <para>
+        /// The standard deviation of the aggregated field values.
+        /// </para>
+        /// </summary>
+        public double StdDeviation
+        {
+            get { return this._stdDeviation.GetValueOrDefault(); }
+            set { this._stdDeviation = value; }
+        }
+
+        // Check to see if StdDeviation property is set
+        internal bool IsSetStdDeviation()
+        {
+            return this._stdDeviation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sum. 
+        /// <para>
+        /// The sum of the aggregated field values.
+        /// </para>
+        /// </summary>
+        public double Sum
+        {
+            get { return this._sum.GetValueOrDefault(); }
+            set { this._sum = value; }
+        }
+
+        // Check to see if Sum property is set
+        internal bool IsSetSum()
+        {
+            return this._sum.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SumOfSquares. 
+        /// <para>
+        /// The sum of the squares of the aggregated field values.
+        /// </para>
+        /// </summary>
+        public double SumOfSquares
+        {
+            get { return this._sumOfSquares.GetValueOrDefault(); }
+            set { this._sumOfSquares = value; }
+        }
+
+        // Check to see if SumOfSquares property is set
+        internal bool IsSetSumOfSquares()
+        {
+            return this._sumOfSquares.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Variance. 
+        /// <para>
+        /// The variance of the aggregated field values.
+        /// </para>
+        /// </summary>
+        public double Variance
+        {
+            get { return this._variance.GetValueOrDefault(); }
+            set { this._variance = value; }
+        }
+
+        // Check to see if Variance property is set
+        internal bool IsSetVariance()
+        {
+            return this._variance.HasValue; 
         }
 
     }

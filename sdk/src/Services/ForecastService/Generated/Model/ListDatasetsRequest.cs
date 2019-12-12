@@ -31,8 +31,8 @@ namespace Amazon.ForecastService.Model
     /// Container for the parameters to the ListDatasets operation.
     /// Returns a list of datasets created using the <a>CreateDataset</a> operation. For each
     /// dataset, a summary of its properties, including its Amazon Resource Name (ARN), is
-    /// returned. You can retrieve the complete set of properties by using the ARN with the
-    /// <a>DescribeDataset</a> operation.
+    /// returned. To retrieve the complete set of properties, use the ARN with the <a>DescribeDataset</a>
+    /// operation.
     /// </summary>
     public partial class ListDatasetsRequest : AmazonForecastServiceRequest
     {

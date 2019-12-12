@@ -44,24 +44,19 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>,
-        /// <code>splunk</code>, and <code>awsfirelens</code>.
+        /// For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>
+        /// and <code>splunk</code>.
         /// </para>
         ///  
         /// <para>
         /// For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
         /// <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-        /// <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
+        /// <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.
         /// </para>
         ///  
         /// <para>
         /// For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
         /// the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about using the <code>awsfirelens</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
-        /// Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>

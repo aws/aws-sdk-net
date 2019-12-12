@@ -33,9 +33,10 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    /// For this release, the only supported feature is a holiday calendar. If the calendar
-    /// is used, all data should belong to the same country as the calendar. For the calendar
-    /// data, see <a href="http://jollyday.sourceforge.net/data.html">http://jollyday.sourceforge.net/data.html</a>.
+    /// The only supported feature is a holiday calendar. If you use the calendar, all data
+    /// in the datasets should belong to the same country as the calendar. For the holiday
+    /// calendar data, see the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a>
+    /// web site.
     /// </para>
     /// </summary>
     public partial class SupplementaryFeature

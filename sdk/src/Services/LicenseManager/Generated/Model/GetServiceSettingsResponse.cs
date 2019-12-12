@@ -33,6 +33,7 @@ namespace Amazon.LicenseManager.Model
     public partial class GetServiceSettingsResponse : AmazonWebServiceResponse
     {
         private bool? _enableCrossAccountsDiscovery;
+        private string _licenseManagerResourceShareArn;
         private OrganizationConfiguration _organizationConfiguration;
         private string _s3BucketArn;
         private string _snsTopicArn;
@@ -53,6 +54,25 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetEnableCrossAccountsDiscovery()
         {
             return this._enableCrossAccountsDiscovery.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseManagerResourceShareArn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account
+        /// will provide member accounts with access to this share.
+        /// </para>
+        /// </summary>
+        public string LicenseManagerResourceShareArn
+        {
+            get { return this._licenseManagerResourceShareArn; }
+            set { this._licenseManagerResourceShareArn = value; }
+        }
+
+        // Check to see if LicenseManagerResourceShareArn property is set
+        internal bool IsSetLicenseManagerResourceShareArn()
+        {
+            return this._licenseManagerResourceShareArn != null;
         }
 
         /// <summary>
@@ -78,7 +98,7 @@ namespace Amazon.LicenseManager.Model
         /// Gets and sets the property S3BucketArn. 
         /// <para>
         /// Regional S3 bucket path for storing reports, license trail event data, discovery data,
-        /// etc.
+        /// and so on.
         /// </para>
         /// </summary>
         public string S3BucketArn

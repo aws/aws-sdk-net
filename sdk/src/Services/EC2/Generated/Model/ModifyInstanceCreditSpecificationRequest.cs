@@ -29,8 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyInstanceCreditSpecification operation.
-    /// Modifies the credit option for CPU usage on a running or stopped T2 or T3 instance.
-    /// The credit options are <code>standard</code> and <code>unlimited</code>.
+    /// Modifies the credit option for CPU usage on a running or stopped burstable performance
+    /// instance. The credit options are <code>standard</code> and <code>unlimited</code>.
     /// 
     ///  
     /// <para>

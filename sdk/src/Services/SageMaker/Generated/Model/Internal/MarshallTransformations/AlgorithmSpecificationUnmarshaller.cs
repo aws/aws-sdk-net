@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.AlgorithmName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EnableSageMakerMetricsTimeSeries", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableSageMakerMetricsTimeSeries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MetricDefinitions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<MetricDefinition, MetricDefinitionUnmarshaller>(MetricDefinitionUnmarshaller.Instance);

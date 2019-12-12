@@ -51,6 +51,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Action);
             }
 
+            if(requestObject.IsSetAPNSPushType())
+            {
+                context.Writer.WritePropertyName("APNSPushType");
+                context.Writer.Write(requestObject.APNSPushType);
+            }
+
             if(requestObject.IsSetBadge())
             {
                 context.Writer.WritePropertyName("Badge");

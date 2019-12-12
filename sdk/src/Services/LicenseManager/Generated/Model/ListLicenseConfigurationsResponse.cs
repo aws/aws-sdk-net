@@ -38,7 +38,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseConfigurations. 
         /// <para>
-        /// Array of license configuration objects.
+        /// Information about the license configurations.
         /// </para>
         /// </summary>
         public List<LicenseConfiguration> LicenseConfigurations

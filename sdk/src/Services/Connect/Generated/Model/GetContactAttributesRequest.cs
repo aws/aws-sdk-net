@@ -29,7 +29,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the GetContactAttributes operation.
-    /// Retrieves the contact attributes associated with a contact.
+    /// Retrieves the contact attributes for the specified contact.
     /// </summary>
     public partial class GetContactAttributesRequest : AmazonConnectRequest
     {
@@ -39,8 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InitialContactId. 
         /// <para>
-        /// The ID for the initial contact in Amazon Connect associated with the attributes to
-        /// update.
+        /// The identifier of the initial contact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -59,7 +58,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID for the instance from which to retrieve contact attributes.
+        /// The identifier of the Amazon Connect instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

@@ -52,7 +52,7 @@ namespace Amazon.OpsWorksCM.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=10000)]
         public string NodeAssociationStatusToken
         {
             get { return this._nodeAssociationStatusToken; }

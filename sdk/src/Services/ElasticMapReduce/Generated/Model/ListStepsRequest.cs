@@ -29,8 +29,9 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSteps operation.
-    /// Provides a list of steps for the cluster in reverse order unless you specify stepIds
-    /// with the request.
+    /// Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code>
+    /// with the request of filter by <code>StepStates</code>. You can specify a maximum of
+    /// ten <code>stepIDs</code>.
     /// </summary>
     public partial class ListStepsRequest : AmazonElasticMapReduceRequest
     {
@@ -79,7 +80,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property StepIds. 
         /// <para>
-        /// The filter to limit the step list based on the identifier of the steps.
+        /// The filter to limit the step list based on the identifier of the steps. You can specify
+        /// a maximum of ten Step IDs. The character constraint applies to the overall length
+        /// of the array.
         /// </para>
         /// </summary>
         public List<string> StepIds
