@@ -1,3 +1,12 @@
+### 3.3.648.0 (2019-12-12 19:14 UTC)
+* AccessAnalyzer (3.3.101.0)
+	* This release includes improvements and fixes bugs for the IAM Access Analyzer feature.
+* Core 3.3.104.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.647.1 (2019-12-12 00:11 UTC)
 * S3 (3.3.109.3)
 	* Updated to use new Core, version 3.3.104.3
