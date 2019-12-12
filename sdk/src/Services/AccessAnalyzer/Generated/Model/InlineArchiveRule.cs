@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
-    /// An inline archive rule.
+    /// An criterion statement in an archive rule. Each archive rule may have multiple criteria.
     /// </summary>
     public partial class InlineArchiveRule
     {
@@ -38,7 +38,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// The criteria for the rule.
+        /// The condition and values for a criterion.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

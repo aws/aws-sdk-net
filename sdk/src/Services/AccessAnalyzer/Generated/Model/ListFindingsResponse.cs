@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
-    /// The resposne to the request.
+    /// The response to the request.
     /// </summary>
     public partial class ListFindingsResponse : AmazonWebServiceResponse
     {

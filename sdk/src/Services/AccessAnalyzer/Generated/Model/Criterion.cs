@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
-    /// The criteria to use in the filter that defines the rule.
+    /// The criteria to use in the filter that defines the archive rule.
     /// </summary>
     public partial class Criterion
     {

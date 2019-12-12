@@ -29,7 +29,7 @@ namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFindings operation.
-    /// Updates findings with the new values provided in the request.
+    /// Updates the status for the specified findings.
     /// </summary>
     public partial class UpdateFindingsRequest : AmazonAccessAnalyzerRequest
     {

@@ -38,7 +38,19 @@ namespace Amazon.AccessAnalyzer
     /// <summary>
     /// Implementation for accessing AccessAnalyzer
     ///
-    /// AWS IAM Access Analyzer API Reference
+    /// AWS IAM Access Analyzer helps identify potential resource-access risks by enabling
+    /// you to identify any policies that grant access to an external principal. It does this
+    /// by using logic-based reasoning to analyze resource-based policies in your AWS environment.
+    /// An external principal can be another AWS account, a root user, an IAM user or role,
+    /// a federated user, an AWS service, or an anonymous user. This guide describes the AWS
+    /// IAM Access Analyzer operations that you can call programmatically. For general information
+    /// about Access Analyzer, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">AWS
+    /// IAM Access Analyzer section of the IAM User Guide</a>.
+    /// 
+    ///  
+    /// <para>
+    /// To start using Access Analyzer, you first need to create an analyzer.
+    /// </para>
     /// </summary>
     public partial class AmazonAccessAnalyzerClient : AmazonServiceClient, IAmazonAccessAnalyzer
     {
@@ -242,7 +254,7 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Creates an analyzer with a zone of trust set to your account.
+        /// Creates an analyzer for your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAnalyzer service method.</param>
         /// 
@@ -277,7 +289,7 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Creates an analyzer with a zone of trust set to your account.
+        /// Creates an analyzer for your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAnalyzer service method.</param>
         /// <param name="cancellationToken">
@@ -319,7 +331,8 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Creates an archive rule for the specified analyzer.
+        /// Creates an archive rule for the specified analyzer. Archive rules automatically archive
+        /// findings that meet the criteria you define when you create the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateArchiveRule service method.</param>
         /// 
@@ -357,7 +370,8 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Creates an archive rule for the specified analyzer.
+        /// Creates an archive rule for the specified analyzer. Archive rules automatically archive
+        /// findings that meet the criteria you define when you create the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateArchiveRule service method.</param>
         /// <param name="cancellationToken">
@@ -548,7 +562,7 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Retrieves information about an analyzed resource.
+        /// Retrieves information about a resource that was analyzed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAnalyzedResource service method.</param>
         /// 
@@ -580,7 +594,7 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Retrieves information about an analyzed resource.
+        /// Retrieves information about a resource that was analyzed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAnalyzedResource service method.</param>
         /// <param name="cancellationToken">
@@ -832,7 +846,8 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Retrieves a list of resources that have been analyzed.
+        /// Retrieves a list of resources of the specified type that have been analyzed by the
+        /// specified analyzer..
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnalyzedResources service method.</param>
         /// 
@@ -864,7 +879,8 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Retrieves a list of resources that have been analyzed.
+        /// Retrieves a list of resources of the specified type that have been analyzed by the
+        /// specified analyzer..
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnalyzedResources service method.</param>
         /// <param name="cancellationToken">
@@ -1175,7 +1191,7 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Starts a scan of the policies applied to the specified resource.
+        /// Immediately starts a scan of the policies applied to the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartResourceScan service method.</param>
         /// 
@@ -1207,7 +1223,7 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Starts a scan of the policies applied to the specified resource.
+        /// Immediately starts a scan of the policies applied to the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartResourceScan service method.</param>
         /// <param name="cancellationToken">
@@ -1388,7 +1404,7 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Updates the specified archive rule.
+        /// Updates the criteria and values for the specified archive rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateArchiveRule service method.</param>
         /// 
@@ -1420,7 +1436,7 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Updates the specified archive rule.
+        /// Updates the criteria and values for the specified archive rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateArchiveRule service method.</param>
         /// <param name="cancellationToken">
@@ -1459,7 +1475,7 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Updates findings with the new values provided in the request.
+        /// Updates the status for the specified findings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindings service method.</param>
         /// 
@@ -1491,7 +1507,7 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Updates findings with the new values provided in the request.
+        /// Updates the status for the specified findings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindings service method.</param>
         /// <param name="cancellationToken">
