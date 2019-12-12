@@ -1,3 +1,11 @@
+### 3.3.647.1 (2019-12-12 00:11 UTC)
+* S3 (3.3.109.3)
+	* Updated to use new Core, version 3.3.104.3
+	* Fixes to prevent TransferUtility commands from partially succeeding
+* Core 3.3.104.3
+	* Changes to handle and retry OperationCanceledException exceptions in Net Standard versions of the SDK when thrown by HttpClient where it isn't a user issued cancellation.
+	* All services packages updated to require new Core
+
 ### 3.3.647.0 (2019-12-11 19:13 UTC)
 * EC2 (3.3.143.0)
 	* This release allows customers to attach multiple Elastic Inference Accelerators to a single EC2 instance. It adds support for a Count parameter for each Elastic Inference Accelerator type you specify on the RunInstances and LaunchTemplate APIs.
