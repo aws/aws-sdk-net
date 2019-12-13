@@ -29,7 +29,7 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// Container for the parameters to the PutSuppressedDestination operation.
-    /// Puts (overwrites) an email destination in your suppression list.
+    /// Adds an email address to the suppression list for your account.
     /// </summary>
     public partial class PutSuppressedDestinationRequest : AmazonSimpleEmailServiceV2Request
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// Email destination to be suppressed.
+        /// The email address that should be added to the suppression list for your account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// Reason for which the email destination is suppressed.
+        /// The factors that should cause the email address to be added to the suppression list
+        /// for your account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.DkimSigningAttributes.DomainSigningPrivateKey</property>
+    <min>1</min>
+    <max>20480</max>
+    <pattern>^[a-zA-Z0-9+\/]+={0,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.DkimSigningAttributes.DomainSigningSelector</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.Template.TemplateData</property>
     <max>262144</max>
   </property-value-rule>

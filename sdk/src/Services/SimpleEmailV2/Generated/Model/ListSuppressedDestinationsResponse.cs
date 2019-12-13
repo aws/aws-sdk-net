@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// A list of suppressed email destinations.
+    /// A list of suppressed email addresses.
     /// </summary>
     public partial class ListSuppressedDestinationsResponse : AmazonWebServiceResponse
     {
@@ -38,9 +38,10 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token that indicates that there are additional suppressed destinations to list.
-        /// To view additional suppressed destinations, issue another request to <code>ListSuppressedDestinations</code>,
-        /// and pass this token in the <code>NextToken</code> parameter.
+        /// A token that indicates that there are additional email addresses on the suppression
+        /// list for your account. To view additional suppressed addresses, issue another request
+        /// to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code>
+        /// parameter.
         /// </para>
         /// </summary>
         public string NextToken

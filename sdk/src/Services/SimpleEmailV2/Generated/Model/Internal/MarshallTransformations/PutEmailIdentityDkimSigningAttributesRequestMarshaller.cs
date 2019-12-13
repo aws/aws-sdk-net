@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateEmailIdentity Request Marshaller
+    /// PutEmailIdentityDkimSigningAttributes Request Marshaller
     /// </summary>       
-    public class CreateEmailIdentityRequestMarshaller : IMarshaller<IRequest, CreateEmailIdentityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutEmailIdentityDkimSigningAttributesRequestMarshaller : IMarshaller<IRequest, PutEmailIdentityDkimSigningAttributesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateEmailIdentityRequest)input);
+            return this.Marshall((PutEmailIdentityDkimSigningAttributesRequest)input);
         }
 
         /// <summary>
@@ -52,51 +52,38 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateEmailIdentityRequest publicRequest)
+        public IRequest Marshall(PutEmailIdentityDkimSigningAttributesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmailV2");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-27";            
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/v2/email/identities";
+            if (!publicRequest.IsSetEmailIdentity())
+                throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field EmailIdentity set");
+            request.AddPathResource("{EmailIdentity}", StringUtils.FromString(publicRequest.EmailIdentity));
+            request.ResourcePath = "/v1/email/identities/{EmailIdentity}/dkim/signing";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDkimSigningAttributes())
+                if(publicRequest.IsSetSigningAttributes())
                 {
-                    context.Writer.WritePropertyName("DkimSigningAttributes");
+                    context.Writer.WritePropertyName("SigningAttributes");
                     context.Writer.WriteObjectStart();
 
                     var marshaller = DkimSigningAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DkimSigningAttributes, context);
+                    marshaller.Marshall(publicRequest.SigningAttributes, context);
 
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEmailIdentity())
+                if(publicRequest.IsSetSigningAttributesOrigin())
                 {
-                    context.Writer.WritePropertyName("EmailIdentity");
-                    context.Writer.Write(publicRequest.EmailIdentity);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("SigningAttributesOrigin");
+                    context.Writer.Write(publicRequest.SigningAttributesOrigin);
                 }
 
         
@@ -108,9 +95,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateEmailIdentityRequestMarshaller _instance = new CreateEmailIdentityRequestMarshaller();        
+        private static PutEmailIdentityDkimSigningAttributesRequestMarshaller _instance = new PutEmailIdentityDkimSigningAttributesRequestMarshaller();        
 
-        internal static CreateEmailIdentityRequestMarshaller GetInstance()
+        internal static PutEmailIdentityDkimSigningAttributesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -118,7 +105,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateEmailIdentityRequestMarshaller Instance
+        public static PutEmailIdentityDkimSigningAttributesRequestMarshaller Instance
         {
             get
             {

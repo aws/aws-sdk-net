@@ -64,6 +64,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("SigningAttributesOrigin", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SigningAttributesOrigin = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SigningEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

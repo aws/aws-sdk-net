@@ -39,7 +39,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// When you use the Deliverability dashboard, you pay a monthly subscription charge,
     /// in addition to any other fees that you accrue by using Amazon SES and other AWS services.
     /// For more information about the features and cost of a Deliverability dashboard subscription,
-    /// see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.
+    /// see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.
     /// </para>
     /// </summary>
     public partial class PutDeliverabilityDashboardOptionRequest : AmazonSimpleEmailServiceV2Request

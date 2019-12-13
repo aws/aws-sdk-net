@@ -29,7 +29,8 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSuppressedDestination operation.
-    /// Used to fetch a single suppressed email destination from your suppression list.
+    /// Retrieves information about a specific email address that's on the suppression list
+    /// for your account.
     /// </summary>
     public partial class GetSuppressedDestinationRequest : AmazonSimpleEmailServiceV2Request
     {
@@ -38,7 +39,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// Email destination to fetch from the suppression list.
+        /// The email address that's on the account suppression list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

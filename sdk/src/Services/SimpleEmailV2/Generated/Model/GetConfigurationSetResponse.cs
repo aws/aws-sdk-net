@@ -118,7 +118,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property SuppressionOptions. 
         /// <para>
-        /// An object that contains information about your account's suppression preferences.
+        /// An object that contains information about the suppression list preferences for your
+        /// account.
         /// </para>
         /// </summary>
         public SuppressionOptions SuppressionOptions

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// An object containing information about the suppressed email destination.
+    /// An object that contains information about an email address that is on the suppression
+    /// list for your account.
     /// </summary>
     public partial class SuppressedDestination
     {
@@ -40,7 +41,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        ///  <code>Optional</code> value with information about the sources of the suppression.
+        /// An optional value that can contain additional information about the reasons that the
+        /// address was added to the suppression list for your account.
         /// </para>
         /// </summary>
         public SuppressedDestinationAttributes Attributes
@@ -58,7 +60,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The suppressed email destination.
+        /// The email address that is on the suppression list for your account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,7 +79,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property LastUpdateTime. 
         /// <para>
-        /// The last time the suppressed destination was updated.
+        /// The date and time when the suppressed destination was last updated, shown in Unix
+        /// time format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -96,7 +99,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason for which the email destination is suppressed.
+        /// The reason that the address was added to the suppression list for your account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

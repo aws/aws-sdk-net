@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// An object containing additional attributes related to a suppressed destination.
+    /// An object that contains additional attributes that are related an email address that
+    /// is on the suppression list for your account.
     /// </summary>
     public partial class SuppressedDestinationAttributes
     {
@@ -38,7 +39,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property FeedbackId. 
         /// <para>
-        /// A unique identifier of the suppression cause.
+        /// A unique identifier that's generated when an email address is added to the suppression
+        /// list for your account.
         /// </para>
         /// </summary>
         public string FeedbackId
@@ -56,7 +58,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// A unique identifier of the message that caused the suppression of the email destination.
+        /// The unique identifier of the email message that caused the email address to be added
+        /// to the suppression list for your account.
         /// </para>
         /// </summary>
         public string MessageId

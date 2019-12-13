@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateEmailIdentity operation
+    /// Response Unmarshaller for PutEmailIdentityDkimSigningAttributes operation
     /// </summary>  
-    public class CreateEmailIdentityResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutEmailIdentityDkimSigningAttributesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,28 +45,22 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateEmailIdentityResponse response = new CreateEmailIdentityResponse();
+            PutEmailIdentityDkimSigningAttributesResponse response = new PutEmailIdentityDkimSigningAttributesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DkimAttributes", targetDepth))
-                {
-                    var unmarshaller = DkimAttributesUnmarshaller.Instance;
-                    response.DkimAttributes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IdentityType", targetDepth))
+                if (context.TestExpression("DkimStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.IdentityType = unmarshaller.Unmarshall(context);
+                    response.DkimStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("VerifiedForSendingStatus", targetDepth))
+                if (context.TestExpression("DkimTokens", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.VerifiedForSendingStatus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.DkimTokens = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -84,21 +78,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AlreadyExistsException"))
-            {
-                return new AlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
             {
                 return new BadRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
             {
-                return new ConcurrentModificationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
             {
@@ -107,9 +93,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             return new AmazonSimpleEmailServiceV2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateEmailIdentityResponseUnmarshaller _instance = new CreateEmailIdentityResponseUnmarshaller();        
+        private static PutEmailIdentityDkimSigningAttributesResponseUnmarshaller _instance = new PutEmailIdentityDkimSigningAttributesResponseUnmarshaller();        
 
-        internal static CreateEmailIdentityResponseUnmarshaller GetInstance()
+        internal static PutEmailIdentityDkimSigningAttributesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -117,7 +103,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateEmailIdentityResponseUnmarshaller Instance
+        public static PutEmailIdentityDkimSigningAttributesResponseUnmarshaller Instance
         {
             get
             {
