@@ -1,3 +1,11 @@
+### 3.3.649.0 (2019-12-13 19:49 UTC)
+* CodeBuild (3.3.107.0)
+	* CodeBuild adds support for cross account
+* Detective (3.3.100.0)
+	* This is the initial release of Amazon Detective.
+* SimpleEmailV2 (3.3.102.0)
+	* Added the ability to use your own public-private key pair to configure DKIM authentication for a domain identity.
+
 ### 3.3.648.0 (2019-12-12 19:14 UTC)
 * AccessAnalyzer (3.3.101.0)
 	* This release includes improvements and fixes bugs for the IAM Access Analyzer feature.

@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.648.0",
+    "ProductVersion" : "3.3.649.0",
     "CoreVersion"    : "3.3.104.4",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -657,7 +657,7 @@
             "InPreview"               : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.3.106.7",
+            "Version" : "3.3.107.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.4"
@@ -1577,7 +1577,7 @@
             "InPreview"               : false
         },
         "SimpleEmailV2"                   : {
-            "Version" : "3.3.101.7",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.4"
@@ -1738,6 +1738,14 @@
         },
         "KinesisVideoSignalingChannels"   : {
             "Version" : "3.3.100.4",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.104.4"
+            },
+            "InPreview"               : false
+        },
+        "Detective"                       : {
+            "Version" : "3.3.100.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.4"
