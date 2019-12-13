@@ -141,6 +141,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.DataSync.CodeAnalysis" Path="|AWSSDK.DataSync.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.DAX.CodeAnalysis" Path="|AWSSDK.DAX.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.DAX.CodeAnalysis" Path="|AWSSDK.DAX.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Detective.CodeAnalysis" Path="|AWSSDK.Detective.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Detective.CodeAnalysis" Path="|AWSSDK.Detective.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.DeviceFarm.CodeAnalysis" Path="|AWSSDK.DeviceFarm.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.DeviceFarm.CodeAnalysis" Path="|AWSSDK.DeviceFarm.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.DirectConnect.CodeAnalysis" Path="|AWSSDK.DirectConnect.CodeAnalysis|"/>

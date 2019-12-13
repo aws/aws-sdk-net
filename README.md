@@ -201,6 +201,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.
 * [AWSSDK.DAX](https://www.nuget.org/packages/AWSSDK.DAX/)
 	* Amazon DynamoDB Accelerator (DAX) is a fully managed, highly available, in-memory cache for DynamoDB that delivers up to a 10x performance improvement - from milliseconds to microseconds - even at millions of requests per second. DAX does all the heavy lifting required to add in-memory acceleration to your DynamoDB tables, without requiring developers to manage cache invalidation, data population, or cluster management.
+* [AWSSDK.Detective](https://www.nuget.org/packages/AWSSDK.Detective/)
+	* This is the initial release of Amazon Detective.
 * [AWSSDK.DeviceFarm](https://www.nuget.org/packages/AWSSDK.DeviceFarm/)
 	* AWS Device Farm is an app testing service that enables you to test your Android and Fire OS apps on real, physical phones and tablets that are hosted by AWS. The service allows you to upload your own tests or use built-in, script-free compatibility tests.
 * [AWSSDK.DirectConnect](https://www.nuget.org/packages/AWSSDK.DirectConnect/)

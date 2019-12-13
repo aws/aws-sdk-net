@@ -304,6 +304,10 @@
       <Project>{058AC9AA-575E-41B0-BB07-ACB97F16D056}</Project>
       <Name>AWSSDK.DAX.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Detective/AWSSDK.Detective.CodeAnalysis.csproj">
+      <Project>{B967EBEA-32C3-4867-BF5E-29C3C35AD368}</Project>
+      <Name>AWSSDK.Detective.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/DeviceFarm/AWSSDK.DeviceFarm.CodeAnalysis.csproj">
       <Project>{5243BCF3-1EF1-4878-BFC0-6ED9CAF57881}</Project>
       <Name>AWSSDK.DeviceFarm.CodeAnalysis</Name>
