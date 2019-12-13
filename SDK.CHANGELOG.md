@@ -1,3 +1,13 @@
+### 3.3.650.0 (2019-12-13 21:43 UTC)
+* S3 (3.3.110.0)
+	* Updated to use new Core, version 3.3.104.5
+	* The S3 client now supports a regional endpoint property for us-east-1
+* Core 3.3.104.5
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.649.0 (2019-12-13 19:49 UTC)
 * CodeBuild (3.3.107.0)
 	* CodeBuild adds support for cross account
