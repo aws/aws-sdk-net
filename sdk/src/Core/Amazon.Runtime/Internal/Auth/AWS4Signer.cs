@@ -570,6 +570,11 @@ namespace Amazon.Runtime.Internal.Auth
                 if (!string.IsNullOrEmpty(serviceEndpoint.AuthRegion))
                     return serviceEndpoint.AuthRegion;
 
+                // Check if the region is overridden in the endpoints.json file
+                var overrideRegion = RegionEndpoint.GetRegionEndpointOverride(endpoint);
+                if (overrideRegion != null)
+                    return overrideRegion.SystemName;
+
                 return endpoint.SystemName; 
             }
 

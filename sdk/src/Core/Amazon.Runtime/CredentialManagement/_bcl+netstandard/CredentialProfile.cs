@@ -67,6 +67,11 @@ namespace Amazon.Runtime.CredentialManagement
         public StsRegionalEndpointsValue? StsRegionalEndpoints { get; set; }
 
         /// <summary>
+        /// The S3 Regional Endpoint Value as either legacy or regional
+        /// </summary>
+        public S3UsEast1RegionalEndpointValue? S3RegionalEndpoint { get; set; }
+
+        /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
         internal Dictionary<string, string> Properties

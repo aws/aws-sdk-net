@@ -45,7 +45,7 @@ namespace Amazon.Runtime.CredentialManagement
         private const string CredentialProcess = "credential_process";
         private const string StsRegionalEndpointsField = "sts_regional_endpoints";
         private const string S3UseArnRegionField = "s3_use_arn_region";
-
+        private const string S3RegionalEndpointField = "s3_us_east_1_regional_endpoint";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -55,7 +55,8 @@ namespace Amazon.Runtime.CredentialManagement
             EndpointDiscoveryEnabledField,
             CredentialProcess,
             StsRegionalEndpointsField,
-            S3UseArnRegionField
+            S3UseArnRegionField,
+            S3RegionalEndpointField
         };
 
         /// <summary>
@@ -231,6 +232,9 @@ namespace Amazon.Runtime.CredentialManagement
 
             if (profile.S3UseArnRegion != null)
                 reservedProperties[S3UseArnRegionField] = profile.S3UseArnRegion.Value.ToString().ToLowerInvariant();
+                
+            if (profile.S3RegionalEndpoint != null)
+                reservedProperties[S3RegionalEndpointField] = profile.S3RegionalEndpoint.ToString().ToLowerInvariant();
 
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
@@ -408,8 +412,32 @@ namespace Amazon.Runtime.CredentialManagement
                         profile = null;
                         return false;
                     }
-
                     s3UseArnRegion = s3UseArnRegionOut;
+                }
+
+                S3UsEast1RegionalEndpointValue? s3RegionalEndpoint = null;
+                if (reservedProperties.TryGetValue(S3RegionalEndpointField, out var s3RegionalEndpointString))
+                {
+#if BCL35
+                    try
+                    {
+                        s3RegionalEndpoint = (S3UsEast1RegionalEndpointValue) Enum.Parse(typeof(S3UsEast1RegionalEndpointValue), s3RegionalEndpointString, true);
+                    }
+                    catch (Exception)
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string regional/legacy is expected.", s3RegionalEndpointString, S3RegionalEndpointField, profileName);
+                        profile = null;
+                        return false;
+                    }
+#else 
+                    if (!Enum.TryParse<S3UsEast1RegionalEndpointValue>(s3RegionalEndpointString, true, out var s3RegionalEndpointTemp))
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string regional/legacy is expected.", s3RegionalEndpointString, S3RegionalEndpointField, profileName);
+                        profile = null;
+                        return false;
+                    }
+                    s3RegionalEndpoint = s3RegionalEndpointTemp;
+#endif
                 }
 
                 profile = new CredentialProfile(profileName, profileOptions)
@@ -420,7 +448,8 @@ namespace Amazon.Runtime.CredentialManagement
                     CredentialProfileStore = this,
                     EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
                     StsRegionalEndpoints = stsRegionalEndpoints,
-                    S3UseArnRegion = s3UseArnRegion
+                    S3UseArnRegion = s3UseArnRegion,
+                    S3RegionalEndpoint = s3RegionalEndpoint
                 };
 
                 if (!IsSupportedProfileType(profile.ProfileType))

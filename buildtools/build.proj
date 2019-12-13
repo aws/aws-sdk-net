@@ -118,8 +118,10 @@
     <UsingTask TaskName="CustomTasks.UnityBuild" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="CustomTasks.TimingTask" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="CustomTasks.ValidateIntegTests" AssemblyFile="$(CustomTasksAssembly)"/>
+    <UsingTask TaskName="CustomTasks.Endpoint.EndpointOverriderTask" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="TestWrapper.MsTestWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
     <UsingTask TaskName="TestWrapper.XUnitWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
+    
 
     <Target Name="init" DependsOnTargets="clean-buildtools;build-buildtools">
         <Message Text="Running SDK generation and build for configuration: $(Configuration)" Importance="normal" />
@@ -129,6 +131,15 @@
         <Copy
             SourceFiles="trx-transform.xsl"
             DestinationFolder="$(Deployment)" />
+    </Target>
+
+    <Target Name="override-endpoints-file">
+        <Message Text="Applying overrides to the endpoints-original.json file and save it as endpoints.json" Importance="normal" />
+
+        <EndpointOverriderTask 
+            EndpointsJsonSourceLocation = "..\sdk\src\Core\endpoints-original.json"
+            EndpointsOverrideLocation = ".\CustomTasks\Endpoint\endpoints-override.json"
+        />  
     </Target>
 
     <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;copy-service-models;unity-pack;keyscan;consolidate-docartifacts;save-build"/>
@@ -181,7 +192,7 @@
             DestinationFolder="$(Deployment)" />
     </Target>
 
-    <Target Name="build-sdk-desktop" DependsOnTargets="run-generator;ValidateRepo;restore-nuget">
+    <Target Name="build-sdk-desktop" DependsOnTargets="run-generator;override-endpoints-file;ValidateRepo;restore-nuget">
         <Message Text="Restore and compile .Net35 SDK"/>
         <Exec Command="dotnet restore -f  $(Net35SolutionsFile)" WorkingDirectory="..\sdk"/>
         <Exec Command="dotnet clean -c $(Configuration) $(Net35SolutionsFile)" WorkingDirectory="..\sdk"/>
@@ -193,7 +204,7 @@
         <Exec Command="dotnet build -c $(Configuration) --no-incremental $(Net45SolutionsFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\sdk"/>
     </Target>
 
-    <Target Name="build-sdk-desktop-service" DependsOnTargets="run-generator;restore-nuget-service;">
+    <Target Name="build-sdk-desktop-service" DependsOnTargets="run-generator;override-endpoints-file;restore-nuget-service;">
         <Message Text="Restore and compile service solution "/>
         <Exec Command="dotnet restore -f  %(ServiceName.Filename).sln" WorkingDirectory="..\sdk\src\Services\%(ServiceName.Filename)"/>
         <Exec Command="dotnet clean -c $(Configuration) %(ServiceName.FileName).sln" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)"/>
@@ -201,27 +212,27 @@
     </Target>
 
 
-  <Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator">
+  <Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator;override-endpoints-file">
     <MSBuild Projects="..\sdk\AWSSDK.CodeAnalysis.sln"
           Targets="Clean;Build"
           Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />
   </Target>
 
-    <Target Name="build-sdk-pcl" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisablePCLSupport)">
+    <Target Name="build-sdk-pcl" DependsOnTargets="restore-nuget;run-generator;override-endpoints-file" Condition="!$(DisablePCLSupport)">
         <Message Text="Compile the Portable Class Library SDK"/>
         <MSBuild Projects="..\sdk\$(PCLSolutionsFile)"
             Targets="Clean;Build"
             Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
     </Target>
 
-    <Target Name="build-sdk-netstandard">
+    <Target Name="build-sdk-netstandard" DependsOnTargets="restore-nuget;run-generator;override-endpoints-file">
         <Message Text="Restore and compile NetStandard versions of the SDK"/>
         <Exec Command="dotnet restore -f  $(NetStandardSolutionFile)" WorkingDirectory="..\sdk"/>
         <Exec Command="dotnet clean -c $(Configuration) $(NetStandardSolutionFile)" WorkingDirectory="..\sdk"/>
         <Exec Command="dotnet build -c $(Configuration) --no-incremental $(NetStandardSolutionFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\sdk"/>        
     </Target>
 
-  <Target Name="build-sdk-unity" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisableUnitySupport)">
+  <Target Name="build-sdk-unity" DependsOnTargets="restore-nuget;run-generator;override-endpoints-file" Condition="!$(DisableUnitySupport)">
     <Message Text="Compile the Unity SDK"/>
     <MSBuild Projects="..\sdk\$(UnitySolutionsFile)"
       Targets="Clean;Build"
