@@ -28,32 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchGetProjects operation.
-    /// Gets information about one or more build projects.
+    /// This is the response object from the GetResourcePolicy operation.
     /// </summary>
-    public partial class BatchGetProjectsRequest : AmazonCodeBuildRequest
+    public partial class GetResourcePolicyResponse : AmazonWebServiceResponse
     {
-        private List<string> _names = new List<string>();
+        private string _policy;
 
         /// <summary>
-        /// Gets and sets the property Names. 
+        /// Gets and sets the property Policy. 
         /// <para>
-        /// The names or ARNs of the build projects. To get information about a project shared
-        /// with your AWS account, its ARN must be specified. You cannot specify a shared project
-        /// using its name.
+        ///  The resource policy for the resource identified by the input ARN parameter. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public List<string> Names
+        [AWSProperty(Min=1)]
+        public string Policy
         {
-            get { return this._names; }
-            set { this._names = value; }
+            get { return this._policy; }
+            set { this._policy = value; }
         }
 
-        // Check to see if Names property is set
-        internal bool IsSetNames()
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._policy != null;
         }
 
     }

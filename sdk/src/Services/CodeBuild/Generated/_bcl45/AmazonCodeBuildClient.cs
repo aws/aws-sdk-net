@@ -74,14 +74,6 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>BatchGetReportGroups</code>: Returns an array of report groups. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>BatchGetReports</code>: Returns an array of reports. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <code>CreateProject</code>: Creates a build project.
     /// </para>
     ///  </li> <li> 
@@ -109,6 +101,11 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>DeleteResourcePolicy</code>: Deletes a resource policy that is identified by
+    /// its resource ARN. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise,
     /// or Bitbucket source credentials.
     /// </para>
@@ -122,6 +119,11 @@ namespace Amazon.CodeBuild
     /// <para>
     ///  <code>DescribeTestCases</code>: Returns a list of details about test cases for a
     /// report. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>GetResourcePolicy</code>: Gets a resource policy that is identified by its
+    /// resource ARN. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -170,9 +172,24 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>ListSharedProjects</code>: Gets a list of ARNs associated with projects shared
+    /// with the current AWS account or user.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ListSharedReportGroups</code>: Gets a list of ARNs associated with report groups
+    /// shared with the current AWS account or user
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code>
     /// objects. Each <code>SourceCredentialsInfo</code> object includes the authentication
     /// type, token ARN, and type of source provider for one set of credentials.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>PutResourcePolicy</code>: Stores a resource policy for the ARN of a <code>Project</code>
+    /// or <code>ReportGroup</code> object. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -997,6 +1014,53 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Deletes a resource policy that is identified by its resource ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a resource policy that is identified by its resource ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteSourceCredentials
 
 
@@ -1162,6 +1226,59 @@ namespace Amazon.CodeBuild
             options.ResponseUnmarshaller = DescribeTestCasesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeTestCasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetResourcePolicy
+
+
+        /// <summary>
+        /// Gets a resource policy that is identified by its resource ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a resource policy that is identified by its resource ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1621,6 +1738,100 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  ListSharedProjects
+
+
+        /// <summary>
+        /// Gets a list of projects that are shared with other AWS accounts or users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSharedProjects service method.</param>
+        /// 
+        /// <returns>The response from the ListSharedProjects service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedProjects">REST API Reference for ListSharedProjects Operation</seealso>
+        public virtual ListSharedProjectsResponse ListSharedProjects(ListSharedProjectsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSharedProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSharedProjectsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSharedProjectsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a list of projects that are shared with other AWS accounts or users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSharedProjects service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSharedProjects service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedProjects">REST API Reference for ListSharedProjects Operation</seealso>
+        public virtual Task<ListSharedProjectsResponse> ListSharedProjectsAsync(ListSharedProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSharedProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSharedProjectsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSharedProjectsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSharedReportGroups
+
+
+        /// <summary>
+        /// Gets a list of report groups that are shared with other AWS accounts or users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSharedReportGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListSharedReportGroups service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedReportGroups">REST API Reference for ListSharedReportGroups Operation</seealso>
+        public virtual ListSharedReportGroupsResponse ListSharedReportGroups(ListSharedReportGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSharedReportGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSharedReportGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSharedReportGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a list of report groups that are shared with other AWS accounts or users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSharedReportGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSharedReportGroups service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedReportGroups">REST API Reference for ListSharedReportGroups Operation</seealso>
+        public virtual Task<ListSharedReportGroupsResponse> ListSharedReportGroupsAsync(ListSharedReportGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSharedReportGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSharedReportGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSharedReportGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSourceCredentials
 
 
@@ -1658,6 +1869,61 @@ namespace Amazon.CodeBuild
             options.ResponseUnmarshaller = ListSourceCredentialsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListSourceCredentialsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Stores a resource policy for the ARN of a <code>Project</code> or <code>ReportGroup</code>
+        /// object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stores a resource policy for the ARN of a <code>Project</code> or <code>ReportGroup</code>
+        /// object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion

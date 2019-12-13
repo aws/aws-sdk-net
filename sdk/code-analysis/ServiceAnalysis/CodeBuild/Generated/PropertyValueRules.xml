@@ -53,6 +53,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.DeleteResourcePolicyRequest.ResourceArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.DeleteSourceCredentialsRequest.Arn</property>
     <min>1</min>
   </property-value-rule>
@@ -70,6 +74,14 @@
     <property>Amazon.CodeBuild.Model.DescribeTestCasesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.GetResourcePolicyRequest.ResourceArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.GetResourcePolicyResponse.Policy</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.ImportSourceCredentialsRequest.Token</property>
@@ -109,6 +121,32 @@
     <property>Amazon.CodeBuild.Model.ListReportsForReportGroupRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListSharedProjectsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListSharedProjectsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListSharedReportGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.PutResourcePolicyRequest.Policy</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.PutResourcePolicyRequest.ResourceArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.PutResourcePolicyResponse.ResourceArn</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.StartBuildRequest.GitCloneDepthOverride</property>
