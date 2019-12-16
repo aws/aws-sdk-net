@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OnDemandOptions Object
+    /// Response Unmarshaller for CapacityReservationOptions Object
     /// </summary>  
-    public class OnDemandOptionsUnmarshaller : IUnmarshaller<OnDemandOptions, XmlUnmarshallerContext>, IUnmarshaller<OnDemandOptions, JsonUnmarshallerContext>
+    public class CapacityReservationOptionsUnmarshaller : IUnmarshaller<CapacityReservationOptions, XmlUnmarshallerContext>, IUnmarshaller<CapacityReservationOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OnDemandOptions Unmarshall(XmlUnmarshallerContext context)
+        public CapacityReservationOptions Unmarshall(XmlUnmarshallerContext context)
         {
-            OnDemandOptions unmarshalledObject = new OnDemandOptions();
+            CapacityReservationOptions unmarshalledObject = new CapacityReservationOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,40 +54,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("allocationStrategy", targetDepth))
+                    if (context.TestExpression("usageStrategy", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("capacityReservationOptions", targetDepth))
-                    {
-                        var unmarshaller = CapacityReservationOptionsUnmarshaller.Instance;
-                        unmarshalledObject.CapacityReservationOptions = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("maxTotalPrice", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.MaxTotalPrice = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("minTargetCapacity", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.MinTargetCapacity = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("singleAvailabilityZone", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.SingleAvailabilityZone = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("singleInstanceType", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.SingleInstanceType = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.UsageStrategy = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -105,18 +75,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OnDemandOptions Unmarshall(JsonUnmarshallerContext context)
+        public CapacityReservationOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static OnDemandOptionsUnmarshaller _instance = new OnDemandOptionsUnmarshaller();        
+        private static CapacityReservationOptionsUnmarshaller _instance = new CapacityReservationOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OnDemandOptionsUnmarshaller Instance
+        public static CapacityReservationOptionsUnmarshaller Instance
         {
             get
             {

@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class OnDemandOptionsRequest
     {
         private FleetOnDemandAllocationStrategy _allocationStrategy;
+        private CapacityReservationOptionsRequest _capacityReservationOptions;
         private string _maxTotalPrice;
         private int? _minTargetCapacity;
         private bool? _singleAvailabilityZone;
@@ -58,6 +59,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetAllocationStrategy()
         {
             return this._allocationStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationOptions. 
+        /// <para>
+        /// The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
+        /// Only available for fleets of type <code>instant</code>.
+        /// </para>
+        /// </summary>
+        public CapacityReservationOptionsRequest CapacityReservationOptions
+        {
+            get { return this._capacityReservationOptions; }
+            set { this._capacityReservationOptions = value; }
+        }
+
+        // Check to see if CapacityReservationOptions property is set
+        internal bool IsSetCapacityReservationOptions()
+        {
+            return this._capacityReservationOptions != null;
         }
 
         /// <summary>
