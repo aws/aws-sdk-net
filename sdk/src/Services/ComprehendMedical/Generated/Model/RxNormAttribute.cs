@@ -28,43 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// Provides information about an extracted medical entity.
+    /// The extracted attributes that relate to this entity. The attributes recognized by
+    /// InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>,
+    /// <code>RATE</code>, <code>ROUTE_OR_MODE</code>.
     /// </summary>
-    public partial class Entity
+    public partial class RxNormAttribute
     {
-        private List<Attribute> _attributes = new List<Attribute>();
         private int? _beginOffset;
-        private EntityType _category;
         private int? _endOffset;
         private int? _id;
+        private float? _relationshipScore;
         private float? _score;
         private string _text;
-        private List<Trait> _traits = new List<Trait>();
-        private EntitySubType _type;
-
-        /// <summary>
-        /// Gets and sets the property Attributes. 
-        /// <para>
-        ///  The extracted attributes that relate to this entity.
-        /// </para>
-        /// </summary>
-        public List<Attribute> Attributes
-        {
-            get { return this._attributes; }
-            set { this._attributes = value; }
-        }
-
-        // Check to see if Attributes property is set
-        internal bool IsSetAttributes()
-        {
-            return this._attributes != null && this._attributes.Count > 0; 
-        }
+        private List<RxNormTrait> _traits = new List<RxNormTrait>();
+        private RxNormAttributeType _type;
 
         /// <summary>
         /// Gets and sets the property BeginOffset. 
         /// <para>
-        ///  The 0-based character offset in the input text that shows where the entity begins.
-        /// The offset returns the UTF-8 code point in the string. 
+        /// The 0-based character offset in the input text that shows where the attribute begins.
+        /// The offset returns the UTF-8 code point in the string.
         /// </para>
         /// </summary>
         public int BeginOffset
@@ -80,28 +63,10 @@ namespace Amazon.ComprehendMedical.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Category. 
-        /// <para>
-        ///  The category of the entity.
-        /// </para>
-        /// </summary>
-        public EntityType Category
-        {
-            get { return this._category; }
-            set { this._category = value; }
-        }
-
-        // Check to see if Category property is set
-        internal bool IsSetCategory()
-        {
-            return this._category != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property EndOffset. 
         /// <para>
-        ///  The 0-based character offset in the input text that shows where the entity ends.
-        /// The offset returns the UTF-8 code point in the string. 
+        /// The 0-based character offset in the input text that shows where the attribute ends.
+        /// The offset returns the UTF-8 code point in the string.
         /// </para>
         /// </summary>
         public int EndOffset
@@ -119,8 +84,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The numeric identifier for the entity. This is a monotonically increasing id unique
-        /// within this response rather than a global unique identifier. 
+        /// The numeric identifier for this attribute. This is a monotonically increasing id unique
+        /// within this response rather than a global unique identifier.
         /// </para>
         /// </summary>
         public int Id
@@ -136,10 +101,29 @@ namespace Amazon.ComprehendMedical.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RelationshipScore. 
+        /// <para>
+        /// The level of confidence that Amazon Comprehend Medical has that the attribute is accurately
+        /// linked to an entity.
+        /// </para>
+        /// </summary>
+        public float RelationshipScore
+        {
+            get { return this._relationshipScore.GetValueOrDefault(); }
+            set { this._relationshipScore = value; }
+        }
+
+        // Check to see if RelationshipScore property is set
+        internal bool IsSetRelationshipScore()
+        {
+            return this._relationshipScore.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        /// The level of confidence that Amazon Comprehend Medical has in the accuracy of the
-        /// detection.
+        /// The level of confidence that Comprehend Medical has that the segment of text is correctly
+        /// recognized as an attribute.
         /// </para>
         /// </summary>
         public float Score
@@ -157,7 +141,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        ///  The segment of input text extracted as this entity.
+        /// The segment of input text which corresponds to the detected attribute.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -176,10 +160,11 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Traits. 
         /// <para>
-        /// Contextual information for the entity.
+        /// Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code>
+        /// for attributes, i.e. that the patient is not taking a specific dose or form of a medication.
         /// </para>
         /// </summary>
-        public List<Trait> Traits
+        public List<RxNormTrait> Traits
         {
             get { return this._traits; }
             set { this._traits = value; }
@@ -194,10 +179,11 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  Describes the specific type of entity with category of entities.
+        /// The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code>
+        /// and <code>GENERIC_NAME</code>.
         /// </para>
         /// </summary>
-        public EntitySubType Type
+        public RxNormAttributeType Type
         {
             get { return this._type; }
             set { this._type = value; }

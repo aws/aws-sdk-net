@@ -28,27 +28,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// Provides information about an extracted medical entity.
+    /// The collection of medical entities extracted from the input text and their associated
+    /// information. For each entity, the response provides the entity text, the entity category,
+    /// where the entity text begins and ends, and the level of confidence that Amazon Comprehend
+    /// Medical has in the detection and analysis. Attributes and traits of the entity are
+    /// also returned.
     /// </summary>
-    public partial class Entity
+    public partial class ICD10CMEntity
     {
-        private List<Attribute> _attributes = new List<Attribute>();
+        private List<ICD10CMAttribute> _attributes = new List<ICD10CMAttribute>();
         private int? _beginOffset;
-        private EntityType _category;
+        private ICD10CMEntityCategory _category;
         private int? _endOffset;
+        private List<ICD10CMConcept> _icd10cmConcepts = new List<ICD10CMConcept>();
         private int? _id;
         private float? _score;
         private string _text;
-        private List<Trait> _traits = new List<Trait>();
-        private EntitySubType _type;
+        private List<ICD10CMTrait> _traits = new List<ICD10CMTrait>();
+        private ICD10CMEntityType _type;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        ///  The extracted attributes that relate to this entity.
+        /// The detected attributes that relate to the entity. An extracted segment of the text
+        /// that is an attribute of an entity, or otherwise related to an entity, such as the
+        /// nature of a medical condition.
         /// </para>
         /// </summary>
-        public List<Attribute> Attributes
+        public List<ICD10CMAttribute> Attributes
         {
             get { return this._attributes; }
             set { this._attributes = value; }
@@ -63,8 +70,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property BeginOffset. 
         /// <para>
-        ///  The 0-based character offset in the input text that shows where the entity begins.
-        /// The offset returns the UTF-8 code point in the string. 
+        /// The 0-based character offset in the input text that shows where the entity begins.
+        /// The offset returns the UTF-8 code point in the string.
         /// </para>
         /// </summary>
         public int BeginOffset
@@ -82,10 +89,11 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        ///  The category of the entity.
+        ///  The category of the entity. InferICD10CM detects entities in the <code>MEDICAL_CONDITION</code>
+        /// category. 
         /// </para>
         /// </summary>
-        public EntityType Category
+        public ICD10CMEntityCategory Category
         {
             get { return this._category; }
             set { this._category = value; }
@@ -100,8 +108,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property EndOffset. 
         /// <para>
-        ///  The 0-based character offset in the input text that shows where the entity ends.
-        /// The offset returns the UTF-8 code point in the string. 
+        /// The 0-based character offset in the input text that shows where the entity ends. The
+        /// offset returns the UTF-8 code point in the string.
         /// </para>
         /// </summary>
         public int EndOffset
@@ -117,10 +125,29 @@ namespace Amazon.ComprehendMedical.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ICD10CMConcepts. 
+        /// <para>
+        /// The ICD-10-CM concepts that the entity could refer to, along with a score indicating
+        /// the likelihood of the match.
+        /// </para>
+        /// </summary>
+        public List<ICD10CMConcept> ICD10CMConcepts
+        {
+            get { return this._icd10cmConcepts; }
+            set { this._icd10cmConcepts = value; }
+        }
+
+        // Check to see if ICD10CMConcepts property is set
+        internal bool IsSetICD10CMConcepts()
+        {
+            return this._icd10cmConcepts != null && this._icd10cmConcepts.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The numeric identifier for the entity. This is a monotonically increasing id unique
-        /// within this response rather than a global unique identifier. 
+        /// The numeric identifier for the entity. This is a monotonically increasing id unique
+        /// within this response rather than a global unique identifier.
         /// </para>
         /// </summary>
         public int Id
@@ -157,10 +184,10 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        ///  The segment of input text extracted as this entity.
+        /// The segment of input text that is matched to the detected entity.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=10000)]
         public string Text
         {
             get { return this._text; }
@@ -176,10 +203,12 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Traits. 
         /// <para>
-        /// Contextual information for the entity.
+        /// Provides Contextual information for the entity. The traits recognized by InferICD10CM
+        /// are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION.</code>
+        /// 
         /// </para>
         /// </summary>
-        public List<Trait> Traits
+        public List<ICD10CMTrait> Traits
         {
             get { return this._traits; }
             set { this._traits = value; }
@@ -194,10 +223,11 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  Describes the specific type of entity with category of entities.
+        /// Describes the specific type of entity with category of entities. InferICD10CM detects
+        /// entities of the type <code>DX_NAME</code>.
         /// </para>
         /// </summary>
-        public EntitySubType Type
+        public ICD10CMEntityType Type
         {
             get { return this._type; }
             set { this._type = value; }

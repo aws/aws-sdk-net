@@ -28,36 +28,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// Container for the parameters to the DetectEntitiesV2 operation.
-    /// Inspects the clinical text for a variety of medical entities and returns specific
-    /// information about them such as entity category, location, and confidence score on
-    /// that information.
-    /// 
-    ///  
-    /// <para>
-    /// The <code>DetectEntitiesV2</code> operation replaces the <a>DetectEntities</a> operation.
-    /// This new action uses a different model for determining the entities in your medical
-    /// text and changes the way that some entities are returned in the output. You should
-    /// use the <code>DetectEntitiesV2</code> operation in all new applications.
-    /// </para>
-    ///  
-    /// <para>
-    /// The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and <code>Direction</code>
-    /// entities as attributes instead of types. 
-    /// </para>
+    /// Container for the parameters to the InferRxNorm operation.
+    /// InferRxNorm detects medications as entities listed in a patient record and links to
+    /// the normalized concept identifiers in the RxNorm database from the National Library
+    /// of Medicine.
     /// </summary>
-    public partial class DetectEntitiesV2Request : AmazonComprehendMedicalRequest
+    public partial class InferRxNormRequest : AmazonComprehendMedicalRequest
     {
         private string _text;
 
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// A UTF-8 string containing the clinical content being examined for entities. Each string
-        /// must contain fewer than 20,000 bytes of characters.
+        /// The input text used for analysis. The input for InferRxNorm is a string from 1 to
+        /// 10000 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20000)]
+        [AWSProperty(Required=true, Min=1, Max=10000)]
         public string Text
         {
             get { return this._text; }

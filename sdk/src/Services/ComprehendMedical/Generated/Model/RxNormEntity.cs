@@ -28,27 +28,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// Provides information about an extracted medical entity.
+    /// The collection of medical entities extracted from the input text and their associated
+    /// information. For each entity, the response provides the entity text, the entity category,
+    /// where the entity text begins and ends, and the level of confidence that Amazon Comprehend
+    /// Medical has in the detection and analysis. Attributes and traits of the entity are
+    /// also returned.
     /// </summary>
-    public partial class Entity
+    public partial class RxNormEntity
     {
-        private List<Attribute> _attributes = new List<Attribute>();
+        private List<RxNormAttribute> _attributes = new List<RxNormAttribute>();
         private int? _beginOffset;
-        private EntityType _category;
+        private RxNormEntityCategory _category;
         private int? _endOffset;
         private int? _id;
+        private List<RxNormConcept> _rxNormConcepts = new List<RxNormConcept>();
         private float? _score;
         private string _text;
-        private List<Trait> _traits = new List<Trait>();
-        private EntitySubType _type;
+        private List<RxNormTrait> _traits = new List<RxNormTrait>();
+        private RxNormEntityType _type;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        ///  The extracted attributes that relate to this entity.
+        /// The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm
+        /// are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>,
+        /// <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.
         /// </para>
         /// </summary>
-        public List<Attribute> Attributes
+        public List<RxNormAttribute> Attributes
         {
             get { return this._attributes; }
             set { this._attributes = value; }
@@ -63,8 +70,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property BeginOffset. 
         /// <para>
-        ///  The 0-based character offset in the input text that shows where the entity begins.
-        /// The offset returns the UTF-8 code point in the string. 
+        /// The 0-based character offset in the input text that shows where the entity begins.
+        /// The offset returns the UTF-8 code point in the string.
         /// </para>
         /// </summary>
         public int BeginOffset
@@ -82,10 +89,11 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        ///  The category of the entity.
+        /// The category of the entity. The recognized categories are <code>GENERIC</code> or
+        /// <code>BRAND_NAME</code>.
         /// </para>
         /// </summary>
-        public EntityType Category
+        public RxNormEntityCategory Category
         {
             get { return this._category; }
             set { this._category = value; }
@@ -100,8 +108,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property EndOffset. 
         /// <para>
-        ///  The 0-based character offset in the input text that shows where the entity ends.
-        /// The offset returns the UTF-8 code point in the string. 
+        /// The 0-based character offset in the input text that shows where the entity ends. The
+        /// offset returns the UTF-8 code point in the string.
         /// </para>
         /// </summary>
         public int EndOffset
@@ -119,8 +127,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The numeric identifier for the entity. This is a monotonically increasing id unique
-        /// within this response rather than a global unique identifier. 
+        /// The numeric identifier for the entity. This is a monotonically increasing id unique
+        /// within this response rather than a global unique identifier.
         /// </para>
         /// </summary>
         public int Id
@@ -136,10 +144,29 @@ namespace Amazon.ComprehendMedical.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RxNormConcepts. 
+        /// <para>
+        ///  The RxNorm concepts that the entity could refer to, along with a score indicating
+        /// the likelihood of the match.
+        /// </para>
+        /// </summary>
+        public List<RxNormConcept> RxNormConcepts
+        {
+            get { return this._rxNormConcepts; }
+            set { this._rxNormConcepts = value; }
+        }
+
+        // Check to see if RxNormConcepts property is set
+        internal bool IsSetRxNormConcepts()
+        {
+            return this._rxNormConcepts != null && this._rxNormConcepts.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
         /// The level of confidence that Amazon Comprehend Medical has in the accuracy of the
-        /// detection.
+        /// detected entity.
         /// </para>
         /// </summary>
         public float Score
@@ -157,10 +184,10 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        ///  The segment of input text extracted as this entity.
+        /// The segment of input text extracted from which the entity was detected.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=10000)]
         public string Text
         {
             get { return this._text; }
@@ -176,10 +203,10 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Traits. 
         /// <para>
-        /// Contextual information for the entity.
+        ///  Contextual information for the entity.
         /// </para>
         /// </summary>
-        public List<Trait> Traits
+        public List<RxNormTrait> Traits
         {
             get { return this._traits; }
             set { this._traits = value; }
@@ -194,10 +221,11 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  Describes the specific type of entity with category of entities.
+        ///  Describes the specific type of entity. For InferRxNorm, the recognized entity type
+        /// is <code>MEDICATION</code>.
         /// </para>
         /// </summary>
-        public EntitySubType Type
+        public RxNormEntityType Type
         {
             get { return this._type; }
             set { this._type = value; }

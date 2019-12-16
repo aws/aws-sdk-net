@@ -514,8 +514,7 @@ namespace Amazon.ComprehendMedical
         ///  
         /// <para>
         /// The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and <code>Direction</code>
-        /// entities as attributes instead of types. It does not return the <code>Quality</code>
-        /// or <code>Quantity</code> entities.
+        /// entities as attributes instead of types. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectEntitiesV2 service method.</param>
@@ -571,8 +570,7 @@ namespace Amazon.ComprehendMedical
         ///  
         /// <para>
         /// The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and <code>Direction</code>
-        /// entities as attributes instead of types. It does not return the <code>Quality</code>
-        /// or <code>Quantity</code> entities.
+        /// entities as attributes instead of types. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectEntitiesV2 service method.</param>
@@ -704,6 +702,192 @@ namespace Amazon.ComprehendMedical
             options.ResponseUnmarshaller = DetectPHIResponseUnmarshaller.Instance;
             
             return InvokeAsync<DetectPHIResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  InferICD10CM
+
+
+        /// <summary>
+        /// InferICD10CM detects medical conditions as entities listed in a patient record and
+        /// links those entities to normalized concept identifiers in the ICD-10-CM knowledge
+        /// base from the Centers for Disease Control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InferICD10CM service method.</param>
+        /// 
+        /// <returns>The response from the InferICD10CM service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidEncodingException">
+        /// The input text was not in valid UTF-8 character encoding. Check your text then retry
+        /// your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
+        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
+        /// then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
+        /// The size of the text you submitted exceeds the size limit. Reduce the size of the
+        /// text or use a smaller document and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">REST API Reference for InferICD10CM Operation</seealso>
+        public virtual InferICD10CMResponse InferICD10CM(InferICD10CMRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InferICD10CMRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InferICD10CMResponseUnmarshaller.Instance;
+
+            return Invoke<InferICD10CMResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// InferICD10CM detects medical conditions as entities listed in a patient record and
+        /// links those entities to normalized concept identifiers in the ICD-10-CM knowledge
+        /// base from the Centers for Disease Control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InferICD10CM service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InferICD10CM service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidEncodingException">
+        /// The input text was not in valid UTF-8 character encoding. Check your text then retry
+        /// your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
+        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
+        /// then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
+        /// The size of the text you submitted exceeds the size limit. Reduce the size of the
+        /// text or use a smaller document and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">REST API Reference for InferICD10CM Operation</seealso>
+        public virtual Task<InferICD10CMResponse> InferICD10CMAsync(InferICD10CMRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InferICD10CMRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InferICD10CMResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<InferICD10CMResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  InferRxNorm
+
+
+        /// <summary>
+        /// InferRxNorm detects medications as entities listed in a patient record and links to
+        /// the normalized concept identifiers in the RxNorm database from the National Library
+        /// of Medicine.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InferRxNorm service method.</param>
+        /// 
+        /// <returns>The response from the InferRxNorm service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidEncodingException">
+        /// The input text was not in valid UTF-8 character encoding. Check your text then retry
+        /// your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
+        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
+        /// then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
+        /// The size of the text you submitted exceeds the size limit. Reduce the size of the
+        /// text or use a smaller document and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">REST API Reference for InferRxNorm Operation</seealso>
+        public virtual InferRxNormResponse InferRxNorm(InferRxNormRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InferRxNormRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InferRxNormResponseUnmarshaller.Instance;
+
+            return Invoke<InferRxNormResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// InferRxNorm detects medications as entities listed in a patient record and links to
+        /// the normalized concept identifiers in the RxNorm database from the National Library
+        /// of Medicine.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InferRxNorm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InferRxNorm service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidEncodingException">
+        /// The input text was not in valid UTF-8 character encoding. Check your text then retry
+        /// your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
+        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
+        /// then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
+        /// The size of the text you submitted exceeds the size limit. Reduce the size of the
+        /// text or use a smaller document and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">REST API Reference for InferRxNorm Operation</seealso>
+        public virtual Task<InferRxNormResponse> InferRxNormAsync(InferRxNormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InferRxNormRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InferRxNormResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<InferRxNormResponse>(request, options, cancellationToken);
         }
 
         #endregion

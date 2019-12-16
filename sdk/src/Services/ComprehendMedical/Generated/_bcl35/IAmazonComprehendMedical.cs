@@ -243,8 +243,7 @@ namespace Amazon.ComprehendMedical
         ///  
         /// <para>
         /// The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and <code>Direction</code>
-        /// entities as attributes instead of types. It does not return the <code>Quality</code>
-        /// or <code>Quantity</code> entities.
+        /// entities as attributes instead of types. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectEntitiesV2 service method.</param>
@@ -367,6 +366,138 @@ namespace Amazon.ComprehendMedical
         /// <returns>Returns a  DetectPHIResult from ComprehendMedical.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectPHI">REST API Reference for DetectPHI Operation</seealso>
         DetectPHIResponse EndDetectPHI(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  InferICD10CM
+
+
+        /// <summary>
+        /// InferICD10CM detects medical conditions as entities listed in a patient record and
+        /// links those entities to normalized concept identifiers in the ICD-10-CM knowledge
+        /// base from the Centers for Disease Control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InferICD10CM service method.</param>
+        /// 
+        /// <returns>The response from the InferICD10CM service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidEncodingException">
+        /// The input text was not in valid UTF-8 character encoding. Check your text then retry
+        /// your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
+        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
+        /// then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
+        /// The size of the text you submitted exceeds the size limit. Reduce the size of the
+        /// text or use a smaller document and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">REST API Reference for InferICD10CM Operation</seealso>
+        InferICD10CMResponse InferICD10CM(InferICD10CMRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InferICD10CM operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InferICD10CM operation on AmazonComprehendMedicalClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInferICD10CM
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">REST API Reference for InferICD10CM Operation</seealso>
+        IAsyncResult BeginInferICD10CM(InferICD10CMRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  InferICD10CM operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInferICD10CM.</param>
+        /// 
+        /// <returns>Returns a  InferICD10CMResult from ComprehendMedical.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">REST API Reference for InferICD10CM Operation</seealso>
+        InferICD10CMResponse EndInferICD10CM(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  InferRxNorm
+
+
+        /// <summary>
+        /// InferRxNorm detects medications as entities listed in a patient record and links to
+        /// the normalized concept identifiers in the RxNorm database from the National Library
+        /// of Medicine.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InferRxNorm service method.</param>
+        /// 
+        /// <returns>The response from the InferRxNorm service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidEncodingException">
+        /// The input text was not in valid UTF-8 character encoding. Check your text then retry
+        /// your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
+        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
+        /// then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
+        /// The size of the text you submitted exceeds the size limit. Reduce the size of the
+        /// text or use a smaller document and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">REST API Reference for InferRxNorm Operation</seealso>
+        InferRxNormResponse InferRxNorm(InferRxNormRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InferRxNorm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InferRxNorm operation on AmazonComprehendMedicalClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInferRxNorm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">REST API Reference for InferRxNorm Operation</seealso>
+        IAsyncResult BeginInferRxNorm(InferRxNormRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  InferRxNorm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInferRxNorm.</param>
+        /// 
+        /// <returns>Returns a  InferRxNormResult from ComprehendMedical.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">REST API Reference for InferRxNorm Operation</seealso>
+        InferRxNormResponse EndInferRxNorm(IAsyncResult asyncResult);
 
         #endregion
         
