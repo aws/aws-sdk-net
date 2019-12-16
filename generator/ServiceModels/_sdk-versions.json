@@ -105,18 +105,18 @@
         "CognitoIdentity"   : {
             "Version" : "3.5.0.0",
             "AssemblyVersionOverride" : "3.3",
-            "Dependencies"            : {
-                "Core" : "3.5.0.0",
-                "SecurityToken" : "3.5.0.0"
+            "Dependencies": {
+                "Core": "3.5.0.0",
+                "SecurityToken": "3.5.0.0"
             },
             "InPreview"               : false
         },
         "CognitoSync"       : {
             "Version" : "3.5.0.0",
             "AssemblyVersionOverride" : "3.3",
-            "Dependencies"            : {
-                "Core" : "3.5.0.0",
-                "CognitoIdentity" : "3.5.0.0"
+            "Dependencies": {
+                "Core": "3.5.0.0",
+                "CognitoIdentity": "3.5.0.0"
             },
             "InPreview"               : false
         },
@@ -211,10 +211,10 @@
         "Glacier"              : {
             "Version" : "3.5.0.0",
             "AssemblyVersionOverride" : "3.3",
-            "Dependencies"            : {
-                "Core" : "3.5.0.0",
-                "SQS"  : "3.5.0.0",
-                "SimpleNotificationService" : "3.5.0.0"
+            "Dependencies": {
+                "Core": "3.5.0.0",
+                "SQS": "3.5.0.0",
+                "SimpleNotificationService": "3.5.0.0"
             },
             "InPreview"               : false
         },
