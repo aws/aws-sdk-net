@@ -4609,6 +4609,12 @@
             }
           }
         },
+        "secretsmanager": {
+          "endpoints": {
+            "cn-north-1": {},
+            "cn-northwest-1": {}
+          }
+        },
         "sms": {
           "endpoints": {
             "cn-north-1": {},
