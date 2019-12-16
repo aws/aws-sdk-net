@@ -1,3 +1,16 @@
+### 3.3.651.0 (2019-12-16 19:11 UTC)
+* ComprehendMedical (3.3.102.0)
+	* New Ontology linking APIs will provides medication concepts normalization and Diagnoses codes from input text. In this release we will provide two APIs -  RxNorm and ICD10-CM. 
+* EC2 (3.3.144.0)
+	* You can now configure your EC2 Fleet to preferentially use EC2 Capacity Reservations for launching On-Demand instances, enabling you to fully utilize the available (and unused) Capacity Reservations before launching On-Demand instances on net new capacity.
+* MQ (3.3.105.0)
+	* Amazon MQ now supports throughput-optimized message brokers, backed by Amazon EBS.
+* Core 3.3.104.6
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.650.0 (2019-12-13 21:43 UTC)
 * S3 (3.3.110.0)
 	* Updated to use new Core, version 3.3.104.5
