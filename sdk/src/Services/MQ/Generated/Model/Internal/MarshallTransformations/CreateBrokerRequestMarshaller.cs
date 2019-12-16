@@ -174,6 +174,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetStorageType())
+                {
+                    context.Writer.WritePropertyName("storageType");
+                    context.Writer.Write(publicRequest.StorageType);
+                }
+
                 if(publicRequest.IsSetSubnetIds())
                 {
                     context.Writer.WritePropertyName("subnetIds");

@@ -46,6 +46,7 @@ namespace Amazon.MQ.Model
         private WeeklyStartTime _maintenanceWindowStartTime;
         private bool? _publiclyAccessible;
         private List<string> _securityGroups = new List<string>();
+        private BrokerStorageType _storageType;
         private List<string> _subnetIds = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<User> _users = new List<User>();
@@ -245,7 +246,7 @@ namespace Amazon.MQ.Model
 
         /// <summary>
         /// Gets and sets the property SecurityGroups. The list of security groups (1 minimum,
-        /// 5 maximum) that authorize connections to brokers.
+        /// 5 maximum) that authorizes connections to brokers.
         /// </summary>
         public List<string> SecurityGroups
         {
@@ -257,6 +258,21 @@ namespace Amazon.MQ.Model
         internal bool IsSetSecurityGroups()
         {
             return this._securityGroups != null && this._securityGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. The broker's storage type.
+        /// </summary>
+        public BrokerStorageType StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>

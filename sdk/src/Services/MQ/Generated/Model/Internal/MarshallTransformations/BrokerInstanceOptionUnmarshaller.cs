@@ -82,6 +82,18 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     unmarshalledObject.HostInstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("storageType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("supportedDeploymentModes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedDeploymentModes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("supportedEngineVersions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

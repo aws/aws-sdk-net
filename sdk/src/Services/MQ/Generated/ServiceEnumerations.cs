@@ -87,6 +87,56 @@ namespace Amazon.MQ
 
 
     /// <summary>
+    /// Constants used for properties of type BrokerStorageType.
+    /// </summary>
+    public class BrokerStorageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EBS for BrokerStorageType
+        /// </summary>
+        public static readonly BrokerStorageType EBS = new BrokerStorageType("EBS");
+        /// <summary>
+        /// Constant EFS for BrokerStorageType
+        /// </summary>
+        public static readonly BrokerStorageType EFS = new BrokerStorageType("EFS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BrokerStorageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BrokerStorageType FindValue(string value)
+        {
+            return FindValue<BrokerStorageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BrokerStorageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChangeType.
     /// </summary>
     public class ChangeType : ConstantClass

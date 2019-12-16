@@ -37,6 +37,7 @@ namespace Amazon.MQ.Model
         private string _hostInstanceType;
         private int? _maxResults;
         private string _nextToken;
+        private string _storageType;
 
         /// <summary>
         /// Gets and sets the property EngineType. Filter response by engine type.
@@ -100,6 +101,21 @@ namespace Amazon.MQ.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. Filter response by storage type.
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
     }
