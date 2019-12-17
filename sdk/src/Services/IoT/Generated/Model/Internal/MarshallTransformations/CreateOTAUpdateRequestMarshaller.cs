@@ -94,6 +94,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetAwsJobPresignedUrlConfig())
+                {
+                    context.Writer.WritePropertyName("awsJobPresignedUrlConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsJobPresignedUrlConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AwsJobPresignedUrlConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
@@ -112,6 +123,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                         marshaller.Marshall(publicRequestFilesListValue, context);
 
                         context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetProtocols())
+                {
+                    context.Writer.WritePropertyName("protocols");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestProtocolsListValue in publicRequest.Protocols)
+                    {
+                            context.Writer.Write(publicRequestProtocolsListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
