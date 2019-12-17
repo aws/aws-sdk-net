@@ -2173,7 +2173,6 @@
     <property>Amazon.SimpleSystemsManagement.Model.CloudWatchOutputConfig.CloudWatchLogGroupName</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Command.CommandId</property>
@@ -2830,6 +2829,10 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowRunCommandParameters.DocumentHash</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowRunCommandParameters.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowRunCommandParameters.OutputS3BucketName</property>

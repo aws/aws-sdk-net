@@ -45,6 +45,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MaintenanceWindowRunCommandParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCloudWatchOutputConfig())
+            {
+                context.Writer.WritePropertyName("CloudWatchOutputConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CloudWatchOutputConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CloudWatchOutputConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetComment())
             {
                 context.Writer.WritePropertyName("Comment");
@@ -61,6 +72,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("DocumentHashType");
                 context.Writer.Write(requestObject.DocumentHashType);
+            }
+
+            if(requestObject.IsSetDocumentVersion())
+            {
+                context.Writer.WritePropertyName("DocumentVersion");
+                context.Writer.Write(requestObject.DocumentVersion);
             }
 
             if(requestObject.IsSetNotificationConfig())
