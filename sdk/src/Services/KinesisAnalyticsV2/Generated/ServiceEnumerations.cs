@@ -475,6 +475,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// </summary>
         public static readonly RuntimeEnvironment FLINK1_6 = new RuntimeEnvironment("FLINK-1_6");
         /// <summary>
+        /// Constant FLINK1_8 for RuntimeEnvironment
+        /// </summary>
+        public static readonly RuntimeEnvironment FLINK1_8 = new RuntimeEnvironment("FLINK-1_8");
+        /// <summary>
         /// Constant SQL1_0 for RuntimeEnvironment
         /// </summary>
         public static readonly RuntimeEnvironment SQL1_0 = new RuntimeEnvironment("SQL-1_0");
