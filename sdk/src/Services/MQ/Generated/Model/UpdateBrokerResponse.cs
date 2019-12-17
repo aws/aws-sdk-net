@@ -137,7 +137,7 @@ namespace Amazon.MQ.Model
 
         /// <summary>
         /// Gets and sets the property SecurityGroups. The list of security groups (1 minimum,
-        /// 5 maximum) that authorize connections to brokers.
+        /// 5 maximum) that authorizes connections to brokers.
         /// </summary>
         public List<string> SecurityGroups
         {

@@ -35,6 +35,8 @@ namespace Amazon.MQ.Model
         private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
         private EngineType _engineType;
         private string _hostInstanceType;
+        private BrokerStorageType _storageType;
+        private List<string> _supportedDeploymentModes = new List<string>();
         private List<string> _supportedEngineVersions = new List<string>();
 
         /// <summary>
@@ -80,6 +82,37 @@ namespace Amazon.MQ.Model
         internal bool IsSetHostInstanceType()
         {
             return this._hostInstanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. The broker's storage type.
+        /// </summary>
+        public BrokerStorageType StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedDeploymentModes. The list of supported deployment
+        /// modes.
+        /// </summary>
+        public List<string> SupportedDeploymentModes
+        {
+            get { return this._supportedDeploymentModes; }
+            set { this._supportedDeploymentModes = value; }
+        }
+
+        // Check to see if SupportedDeploymentModes property is set
+        internal bool IsSetSupportedDeploymentModes()
+        {
+            return this._supportedDeploymentModes != null && this._supportedDeploymentModes.Count > 0; 
         }
 
         /// <summary>

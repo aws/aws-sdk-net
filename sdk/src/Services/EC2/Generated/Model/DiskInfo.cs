@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SizeInGB. 
         /// <para>
-        /// The size of the disk in GiB.
+        /// The size of the disk in GB.
         /// </para>
         /// </summary>
         public long SizeInGB

@@ -52,6 +52,32 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.InferICD10CMRequest.Text</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.InferICD10CMResponse.ModelVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.InferICD10CMResponse.PaginationToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.InferRxNormRequest.Text</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.InferRxNormResponse.ModelVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.InferRxNormResponse.PaginationToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.ListEntitiesDetectionV2JobsRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>
@@ -205,6 +231,23 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ICD10CMAttribute.Text</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ICD10CMConcept.Code</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ICD10CMConcept.Description</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ICD10CMEntity.Text</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.InputDataConfig.S3Bucket</property>
     <min>3</min>
     <max>63</max>
@@ -241,6 +284,23 @@
   <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.ResourceNotFoundException.Message</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.RxNormAttribute.Text</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.RxNormConcept.Code</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.RxNormConcept.Description</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.RxNormEntity.Text</property>
+    <min>1</min>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.ServiceUnavailableException.Message</property>
