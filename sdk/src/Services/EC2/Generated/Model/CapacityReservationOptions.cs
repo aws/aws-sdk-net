@@ -38,7 +38,9 @@ namespace Amazon.EC2.Model
     ///  </note> 
     /// <para>
     /// For more information about Capacity Reservations, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">On-Demand
-    /// Capacity Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Capacity Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For
+    /// examples of using Capacity Reservations in an EC2 Fleet, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-examples.html">EC2
+    /// Fleet Example Configurations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CapacityReservationOptions
@@ -54,14 +56,16 @@ namespace Amazon.EC2.Model
         /// <para>
         /// If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused
         /// Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity.
-        /// If the number of unused Capacity Reservations is less than the On-Demand target capacity,
-        /// the remaining On-Demand target capacity is launched as usual. When unused Capacity
-        /// Reservations are used to fulfil On-Demand capacity, the On-Demand allocation strategy
-        /// (<code>lowest-price</code> or <code>prioritized</code>) is applied to them.
+        /// If multiple instance pools have unused Capacity Reservations, the On-Demand allocation
+        /// strategy (<code>lowest-price</code> or <code>prioritized</code>) is applied. If the
+        /// number of unused Capacity Reservations is less than the On-Demand target capacity,
+        /// the remaining On-Demand target capacity is launched according to the On-Demand allocation
+        /// strategy (<code>lowest-price</code> or <code>prioritized</code>).
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a value, the fleet fulfils the On-Demand capacity as usual.
+        /// If you do not specify a value, the fleet fulfils the On-Demand capacity according
+        /// to the chosen On-Demand allocation strategy.
         /// </para>
         /// </summary>
         public FleetCapacityReservationUsageStrategy UsageStrategy

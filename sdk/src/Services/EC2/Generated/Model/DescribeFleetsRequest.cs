@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleets operation.
-    /// Describes the specified EC2 Fleets or all your EC2 Fleets.
+    /// Describes the specified EC2 Fleets or all of your EC2 Fleets.
     /// </summary>
     public partial class DescribeFleetsRequest : AmazonEC2Request
     {

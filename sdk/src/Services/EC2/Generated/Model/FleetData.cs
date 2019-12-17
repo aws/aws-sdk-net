@@ -78,8 +78,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// Idempotency</a>.
         /// </para>
         ///  
@@ -383,8 +383,8 @@ namespace Amazon.EC2.Model
         /// The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the
         /// target capacity, or also attempts to <code>maintain</code> it. If you request a certain
         /// target capacity, EC2 Fleet only places the required requests; it does not attempt
-        /// to replenish instances if capacity is diminished, and does not submit requests in
-        /// alternative capacity pools if capacity is unavailable. To maintain a certain target
+        /// to replenish instances if capacity is diminished, and it does not submit requests
+        /// in alternative capacity pools if capacity is unavailable. To maintain a certain target
         /// capacity, EC2 Fleet places the required requests to meet this target capacity. It
         /// also automatically replenishes any interrupted Spot Instances. Default: <code>maintain</code>.
         /// </para>

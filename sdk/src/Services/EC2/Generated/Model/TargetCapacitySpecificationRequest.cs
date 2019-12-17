@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
     /// Instance <code>MaxTotalPrice</code> parameter, or both parameters to ensure that your
     /// fleet cost does not exceed your budget. If you set a maximum price per hour for the
     /// On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances
-    /// until it reaches the maximum amount you're willing to pay. When the maximum amount
+    /// until it reaches the maximum amount that you're willing to pay. When the maximum amount
     /// you're willing to pay is reached, the fleet stops launching instances even if it hasn’t
     /// met the target capacity. The <code>MaxTotalPrice</code> parameters are located in
     /// and .

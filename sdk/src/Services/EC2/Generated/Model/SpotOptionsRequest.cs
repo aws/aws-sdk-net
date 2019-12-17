@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances
-        /// from all the Spot Instance pools that you specify.
+        /// from all of the Spot Instance pools that you specify.
         /// </para>
         ///  
         /// <para>
