@@ -1,3 +1,17 @@
+### 3.3.652.0 (2019-12-17 19:48 UTC)
+* EC2 (3.3.144.1)
+	* Documentation updates for Amazon EC2
+* ECS (3.3.112.7)
+	* Documentation updates for Amazon ECS.
+* IoT (3.3.106.0)
+	* Added a new Over-the-Air (OTA) Update feature that allows you to use different, or multiple, protocols to transfer an image from the AWS cloud to IoT devices.
+* KinesisAnalyticsV2 (3.3.103.0)
+	* Kinesis Data Analytics service now supports running Java applications using Flink 1.8.
+* MediaLive (3.3.107.0)
+	* AWS Elemental MediaLive now supports HLS ID3 segment tagging, HLS redundant manifests for CDNs that support different publishing/viewing endpoints, fragmented MP4 (fMP4), and frame capture intervals specified in milliseconds.
+* SimpleSystemsManagement (3.3.115.0)
+	* Added support for Cloud Watch Output and Document Version to the Run Command tasks in Maintenance Windows.
+
 ### 3.3.651.0 (2019-12-16 19:11 UTC)
 * ComprehendMedical (3.3.102.0)
 	* New Ontology linking APIs will provides medication concepts normalization and Diagnoses codes from input text. In this release we will provide two APIs -  RxNorm and ICD10-CM. 
