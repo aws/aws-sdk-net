@@ -87,19 +87,20 @@ namespace Amazon
         /// </summary>
         /// <param name="arnString">String to parse into an ARN.</param>
         /// <param name="arn">The out parameter for the ARN object created by TryParse.</param>
-        /// <returns>True if the string can be parsed into an ARN object.</returns>
+        /// <returns>True if the string was parsed into an ARN object.</returns>
         public static bool TryParse(string arnString, out Arn arn)
         {
             try
             {
-                arn = Parse(arnString);
-                return true;
+                if (IsArn(arnString))
+                {
+                    arn = Parse(arnString);
+                    return true;
+                }
             }
-            catch(ArgumentException)
-            {
-                arn = null;
-                return false;
-            }
+            catch (ArgumentException) { }
+            arn = null;
+            return false;
         }
 
         /// <summary>
@@ -116,7 +117,7 @@ namespace Amazon
                 throw new ArgumentNullException(nameof(arnString));
             }
 
-            const string malformedErrorMessage = "ARN is in incorrect format. ARN format is: arn:<parition>:<service>:<region>:<account-id>:<resource>";
+            const string malformedErrorMessage = "ARN is in incorrect format. ARN format is: arn:<partition>:<service>:<region>:<account-id>:<resource>";
 
             var tokens = arnString.Split(new char[] { ':' }, 6);
             if (tokens.Length != 6)
