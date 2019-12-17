@@ -33,6 +33,7 @@ namespace Amazon.MediaLive.Model
     public partial class FrameCaptureSettings
     {
         private int? _captureInterval;
+        private FrameCaptureIntervalUnit _captureIntervalUnits;
 
         /// <summary>
         /// Gets and sets the property CaptureInterval. The frequency at which to capture frames
@@ -50,6 +51,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetCaptureInterval()
         {
             return this._captureInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaptureIntervalUnits. Unit for the frame capture interval.
+        /// </summary>
+        public FrameCaptureIntervalUnit CaptureIntervalUnits
+        {
+            get { return this._captureIntervalUnits; }
+            set { this._captureIntervalUnits = value; }
+        }
+
+        // Check to see if CaptureIntervalUnits property is set
+        internal bool IsSetCaptureIntervalUnits()
+        {
+            return this._captureIntervalUnits != null;
         }
 
     }

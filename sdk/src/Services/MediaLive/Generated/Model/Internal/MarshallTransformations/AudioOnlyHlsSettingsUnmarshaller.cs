@@ -82,6 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.AudioTrackType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("segmentType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SegmentType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -34,7 +34,9 @@ namespace Amazon.MediaLive.Model
     {
         private List<string> _adMarkers = new List<string>();
         private string _baseUrlContent;
+        private string _baseUrlContent1;
         private string _baseUrlManifest;
+        private string _baseUrlManifest1;
         private List<CaptionLanguageMapping> _captionLanguageMappings = new List<CaptionLanguageMapping>();
         private HlsCaptionLanguageSetting _captionLanguageSetting;
         private HlsClientCache _clientCache;
@@ -44,6 +46,7 @@ namespace Amazon.MediaLive.Model
         private HlsDirectoryStructure _directoryStructure;
         private HlsEncryptionType _encryptionType;
         private HlsCdnSettings _hlsCdnSettings;
+        private HlsId3SegmentTaggingState _hlsId3SegmentTagging;
         private IFrameOnlyPlaylistType _iFrameOnlyPlaylists;
         private int? _indexNSegments;
         private InputLossActionForHlsOut _inputLossAction;
@@ -104,6 +107,24 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BaseUrlContent1. Optional. One value per output group.This
+        /// field is required only if you are completing Base URL content A, and the downstream
+        /// system has notified you that the media files for pipeline 1 of all outputs are in
+        /// a location different from the media files for pipeline 0.
+        /// </summary>
+        public string BaseUrlContent1
+        {
+            get { return this._baseUrlContent1; }
+            set { this._baseUrlContent1 = value; }
+        }
+
+        // Check to see if BaseUrlContent1 property is set
+        internal bool IsSetBaseUrlContent1()
+        {
+            return this._baseUrlContent1 != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BaseUrlManifest. A partial URI prefix that will be prepended
         /// to each output in the media .m3u8 file. Can be used if base manifest is delivered
         /// from a different URL than the main .m3u8 file.
@@ -118,6 +139,24 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetBaseUrlManifest()
         {
             return this._baseUrlManifest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BaseUrlManifest1. Optional. One value per output group.Complete
+        /// this field only if you are completing Base URL manifest A, and the downstream system
+        /// has notified you that the child manifest files for pipeline 1 of all outputs are in
+        /// a location different from the child manifest files for pipeline 0.
+        /// </summary>
+        public string BaseUrlManifest1
+        {
+            get { return this._baseUrlManifest1; }
+            set { this._baseUrlManifest1 = value; }
+        }
+
+        // Check to see if BaseUrlManifest1 property is set
+        internal bool IsSetBaseUrlManifest1()
+        {
+            return this._baseUrlManifest1 != null;
         }
 
         /// <summary>
@@ -271,6 +310,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetHlsCdnSettings()
         {
             return this._hlsCdnSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HlsId3SegmentTagging. State of HLS ID3 Segment Tagging
+        /// </summary>
+        public HlsId3SegmentTaggingState HlsId3SegmentTagging
+        {
+            get { return this._hlsId3SegmentTagging; }
+            set { this._hlsId3SegmentTagging = value; }
+        }
+
+        // Check to see if HlsId3SegmentTagging property is set
+        internal bool IsSetHlsId3SegmentTagging()
+        {
+            return this._hlsId3SegmentTagging != null;
         }
 
         /// <summary>

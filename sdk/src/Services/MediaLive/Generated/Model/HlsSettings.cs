@@ -33,6 +33,7 @@ namespace Amazon.MediaLive.Model
     public partial class HlsSettings
     {
         private AudioOnlyHlsSettings _audioOnlyHlsSettings;
+        private Fmp4HlsSettings _fmp4HlsSettings;
         private StandardHlsSettings _standardHlsSettings;
 
         /// <summary>
@@ -48,6 +49,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetAudioOnlyHlsSettings()
         {
             return this._audioOnlyHlsSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Fmp4HlsSettings.
+        /// </summary>
+        public Fmp4HlsSettings Fmp4HlsSettings
+        {
+            get { return this._fmp4HlsSettings; }
+            set { this._fmp4HlsSettings = value; }
+        }
+
+        // Check to see if Fmp4HlsSettings property is set
+        internal bool IsSetFmp4HlsSettings()
+        {
+            return this._fmp4HlsSettings != null;
         }
 
         /// <summary>

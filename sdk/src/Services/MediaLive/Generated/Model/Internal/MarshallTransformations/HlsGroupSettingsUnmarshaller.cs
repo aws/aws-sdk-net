@@ -76,10 +76,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.BaseUrlContent = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("baseUrlContent1", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BaseUrlContent1 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("baseUrlManifest", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BaseUrlManifest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("baseUrlManifest1", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BaseUrlManifest1 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("captionLanguageMappings", targetDepth))
@@ -134,6 +146,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = HlsCdnSettingsUnmarshaller.Instance;
                     unmarshalledObject.HlsCdnSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hlsId3SegmentTagging", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HlsId3SegmentTagging = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("iFrameOnlyPlaylists", targetDepth))

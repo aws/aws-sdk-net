@@ -70,6 +70,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.AudioOnlyHlsSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fmp4HlsSettings", targetDepth))
+                {
+                    var unmarshaller = Fmp4HlsSettingsUnmarshaller.Instance;
+                    unmarshalledObject.Fmp4HlsSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("standardHlsSettings", targetDepth))
                 {
                     var unmarshaller = StandardHlsSettingsUnmarshaller.Instance;

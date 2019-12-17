@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FrameCaptureSettings Object
+    /// Response Unmarshaller for Fmp4HlsSettings Object
     /// </summary>  
-    public class FrameCaptureSettingsUnmarshaller : IUnmarshaller<FrameCaptureSettings, XmlUnmarshallerContext>, IUnmarshaller<FrameCaptureSettings, JsonUnmarshallerContext>
+    public class Fmp4HlsSettingsUnmarshaller : IUnmarshaller<Fmp4HlsSettings, XmlUnmarshallerContext>, IUnmarshaller<Fmp4HlsSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FrameCaptureSettings IUnmarshaller<FrameCaptureSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Fmp4HlsSettings IUnmarshaller<Fmp4HlsSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FrameCaptureSettings Unmarshall(JsonUnmarshallerContext context)
+        public Fmp4HlsSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FrameCaptureSettings unmarshalledObject = new FrameCaptureSettings();
+            Fmp4HlsSettings unmarshalledObject = new Fmp4HlsSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("captureInterval", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.CaptureInterval = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("captureIntervalUnits", targetDepth))
+                if (context.TestExpression("audioRenditionSets", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CaptureIntervalUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioRenditionSets = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static FrameCaptureSettingsUnmarshaller _instance = new FrameCaptureSettingsUnmarshaller();        
+        private static Fmp4HlsSettingsUnmarshaller _instance = new Fmp4HlsSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FrameCaptureSettingsUnmarshaller Instance
+        public static Fmp4HlsSettingsUnmarshaller Instance
         {
             get
             {

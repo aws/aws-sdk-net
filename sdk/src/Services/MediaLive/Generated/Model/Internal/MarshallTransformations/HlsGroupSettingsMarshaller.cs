@@ -62,10 +62,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BaseUrlContent);
             }
 
+            if(requestObject.IsSetBaseUrlContent1())
+            {
+                context.Writer.WritePropertyName("baseUrlContent1");
+                context.Writer.Write(requestObject.BaseUrlContent1);
+            }
+
             if(requestObject.IsSetBaseUrlManifest())
             {
                 context.Writer.WritePropertyName("baseUrlManifest");
                 context.Writer.Write(requestObject.BaseUrlManifest);
+            }
+
+            if(requestObject.IsSetBaseUrlManifest1())
+            {
+                context.Writer.WritePropertyName("baseUrlManifest1");
+                context.Writer.Write(requestObject.BaseUrlManifest1);
             }
 
             if(requestObject.IsSetCaptionLanguageMappings())
@@ -140,6 +152,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.HlsCdnSettings, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetHlsId3SegmentTagging())
+            {
+                context.Writer.WritePropertyName("hlsId3SegmentTagging");
+                context.Writer.Write(requestObject.HlsId3SegmentTagging);
             }
 
             if(requestObject.IsSetIFrameOnlyPlaylists())
