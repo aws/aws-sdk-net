@@ -1,3 +1,20 @@
+### 3.3.653.0 (2019-12-18 19:46 UTC)
+* CloudFront (3.3.101.82)
+	* Documentation updates for CloudFront
+* EC2 (3.3.145.0)
+	* This release introduces the ability to tag Elastic Graphics accelerators. You can use tags to organize and identify your accelerators for cost allocation.
+* OpsWorksCM (3.3.103.0)
+	* AWS OpsWorks CM now supports tagging, and tag-based access control, of servers and backups.
+* ResourceGroupsTaggingAPI (3.3.103.10)
+	* Documentation updates for resourcegroupstaggingapi
+* S3 (3.3.110.3)
+	* Updates Amazon S3 endpoints allowing you to configure your client to opt-in to using S3 with the us-east-1 regional endpoint, instead of global.
+* Core 3.3.104.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.652.1 (2019-12-17 23:29 UTC)
 * SecurityToken (3.3.104.11)
 	* Updated to use new Core, version 3.3.104.7
