@@ -1,3 +1,11 @@
+### 3.3.652.1 (2019-12-17 23:29 UTC)
+* SecurityToken (3.3.104.11)
+	* Updated to use new Core, version 3.3.104.7
+	* Adds extension methods, tests, and custom retry logic for creating AssumeRoleImmutableCredentials using the AssumeRoleWithWebIdentity operation.  More information on the use of these credentials can be found in the Core project.
+* Core 3.3.104.7
+	* Adds a means to use web identity tokens, such as OIDC tokens, to assume roles using the Security Token Service as part of the regular credential chain.  Users may specify a WebIdentityTokenFile, RoleArn, and optionally a RoleSessionName to create these refreshing credentials.
+	* All services packages updated to require new Core
+
 ### 3.3.652.0 (2019-12-17 19:48 UTC)
 * EC2 (3.3.144.1)
 	* Documentation updates for Amazon EC2
