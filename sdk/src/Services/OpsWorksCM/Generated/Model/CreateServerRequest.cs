@@ -99,6 +99,7 @@ namespace Amazon.OpsWorksCM.Model
         private string _serverName;
         private string _serviceRoleArn;
         private List<string> _subnetIds = new List<string>();
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AssociatePublicIpAddress. 
@@ -164,10 +165,11 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property CustomCertificate. 
         /// <para>
-        /// A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate,
-        /// or a certificate chain. If you specify a custom certificate, you must also specify
-        /// values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following
-        /// are requirements for the <code>CustomCertificate</code> value:
+        /// Supported on servers running Chef Automate 2. A PEM-formatted HTTPS certificate. The
+        /// value can be be a single, self-signed certificate, or a certificate chain. If you
+        /// specify a custom certificate, you must also specify values for <code>CustomDomain</code>
+        /// and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code>
+        /// value:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -211,13 +213,13 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property CustomDomain. 
         /// <para>
-        /// An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>.
-        /// To access the server, create a CNAME DNS record in your preferred DNS service that
-        /// points the custom domain to the endpoint that is generated when the server is created
-        /// (the value of the CreateServer Endpoint attribute). You cannot access the server by
-        /// using the generated <code>Endpoint</code> value if the server is using a custom domain.
-        /// If you specify a custom domain, you must also specify values for <code>CustomCertificate</code>
-        /// and <code>CustomPrivateKey</code>.
+        /// Supported on servers running Chef Automate 2. An optional public endpoint of a server,
+        /// such as <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+        /// DNS record in your preferred DNS service that points the custom domain to the endpoint
+        /// that is generated when the server is created (the value of the CreateServer Endpoint
+        /// attribute). You cannot access the server by using the generated <code>Endpoint</code>
+        /// value if the server is using a custom domain. If you specify a custom domain, you
+        /// must also specify values for <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=253)]
@@ -236,10 +238,10 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property CustomPrivateKey. 
         /// <para>
-        /// A private key in PEM format for connecting to the server by using HTTPS. The private
-        /// key must not be encrypted; it cannot be protected by a password or passphrase. If
-        /// you specify a custom private key, you must also specify values for <code>CustomDomain</code>
-        /// and <code>CustomCertificate</code>.
+        /// Supported on servers running Chef Automate 2. A private key in PEM format for connecting
+        /// to the server by using HTTPS. The private key must not be encrypted; it cannot be
+        /// protected by a password or passphrase. If you specify a custom private key, you must
+        /// also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -627,6 +629,50 @@ namespace Amazon.OpsWorksCM.Model
         internal bool IsSetSubnetIds()
         {
             return this._subnetIds != null && this._subnetIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef
+        /// Automate or AWS OpsWorks for Puppet Enterprise server.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key cannot be empty.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The key can be a maximum of 127 characters, and can contain only Unicode letters,
+        /// numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The value can be a maximum 255 characters, and contain only Unicode letters, numbers,
+        /// or separators, or the following special characters: <code>+ - = . _ : /</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Leading and trailing white spaces are trimmed from both the key and value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

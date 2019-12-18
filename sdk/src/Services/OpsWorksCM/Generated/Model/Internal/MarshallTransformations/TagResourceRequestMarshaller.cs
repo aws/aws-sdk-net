@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateBackup Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateBackupRequestMarshaller : IMarshaller<IRequest, CreateBackupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateBackupRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateBackupRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorksCM");
-            string target = "OpsWorksCM_V2016_11_01.CreateBackup";
+            string target = "OpsWorksCM_V2016_11_01.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-01";            
@@ -68,16 +68,10 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetServerName())
-                {
-                    context.Writer.WritePropertyName("ServerName");
-                    context.Writer.Write(publicRequest.ServerName);
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -105,9 +99,9 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateBackupRequestMarshaller _instance = new CreateBackupRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateBackupRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +109,7 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateBackupRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

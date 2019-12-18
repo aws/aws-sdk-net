@@ -656,6 +656,31 @@ namespace Amazon.OpsWorksCM
 
         #endregion
                 
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// Returns a list of tags that are applied to the specified AWS OpsWorks for Chef Automate
+        /// or AWS OpsWorks for Puppet Enterprise servers or backups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by OpsWorksCM.</returns>
+        /// <exception cref="Amazon.OpsWorksCM.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
+        /// One or more of the provided request parameters are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RestoreServer
 
 
@@ -667,6 +692,14 @@ namespace Amazon.OpsWorksCM
         /// is configured. RestoreServer maintains the existing server endpoint, so configuration
         /// management of the server's client devices (nodes) should continue to work. 
         /// 
+        ///  
+        /// <para>
+        /// Restoring from a backup is performed by creating a new EC2 instance. If restoration
+        /// is successful, and the server is in a <code>HEALTHY</code> state, AWS OpsWorks CM
+        /// switches traffic over to the new instance. After restoration is finished, the old
+        /// EC2 instance is maintained in a <code>Running</code> or <code>Stopped</code> state,
+        /// but is eventually terminated.
+        /// </para>
         ///  
         /// <para>
         ///  This operation is asynchronous. 
@@ -734,6 +767,61 @@ namespace Amazon.OpsWorksCM
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/StartMaintenance">REST API Reference for StartMaintenance Operation</seealso>
         Task<StartMaintenanceResponse> StartMaintenanceAsync(StartMaintenanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise
+        /// server, or to server backups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by OpsWorksCM.</returns>
+        /// <exception cref="Amazon.OpsWorksCM.Model.InvalidStateException">
+        /// The resource is in a state that does not allow you to perform a specified action.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorksCM.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
+        /// One or more of the provided request parameters are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Removes specified tags from an AWS OpsWorks-CM server or backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by OpsWorksCM.</returns>
+        /// <exception cref="Amazon.OpsWorksCM.Model.InvalidStateException">
+        /// The resource is in a state that does not allow you to perform a specified action.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorksCM.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
+        /// One or more of the provided request parameters are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

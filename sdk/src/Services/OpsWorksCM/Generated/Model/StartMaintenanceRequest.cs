@@ -51,7 +51,6 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property EngineAttributes. 
         /// <para>
         /// Engine attributes that are specific to the server on which you want to run maintenance.
-        /// 
         /// </para>
         /// </summary>
         public List<EngineAttribute> EngineAttributes

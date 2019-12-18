@@ -221,6 +221,24 @@
     <pattern>[a-zA-Z][a-zA-Z0-9\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpsWorksCM.Model.ListTagsForResourceRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpsWorksCM.Model.ListTagsForResourceRequest.NextToken</property>
+    <max>10000</max>
+    <pattern>(?s).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpsWorksCM.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <pattern>arn:aws.*:opsworks-cm:.*:[0-9]{12}:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpsWorksCM.Model.ListTagsForResourceResponse.NextToken</property>
+    <max>10000</max>
+    <pattern>(?s).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpsWorksCM.Model.RestoreServerRequest.BackupId</property>
     <max>79</max>
     <pattern>[a-zA-Z][a-zA-Z0-9\-\.\:]*</pattern>
@@ -246,6 +264,14 @@
     <min>1</min>
     <max>40</max>
     <pattern>[a-zA-Z][a-zA-Z0-9\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpsWorksCM.Model.TagResourceRequest.ResourceArn</property>
+    <pattern>arn:aws.*:opsworks-cm:.*:[0-9]{12}:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpsWorksCM.Model.UntagResourceRequest.ResourceArn</property>
+    <pattern>arn:aws.*:opsworks-cm:.*:[0-9]{12}:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpsWorksCM.Model.UpdateServerRequest.PreferredBackupWindow</property>
@@ -500,6 +526,18 @@
     <property>Amazon.OpsWorksCM.Model.ServerEvent.ServerName</property>
     <max>10000</max>
     <pattern>(?s).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpsWorksCM.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\\\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpsWorksCM.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\\\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpsWorksCM.Model.ValidationException.Message</property>
