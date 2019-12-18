@@ -62,11 +62,6 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't want to specify a value, include an empty element, <code>&lt;ErrorCachingMinTTL&gt;</code>,
-        /// in the XML document.
-        /// </para>
-        ///  
-        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
         /// Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
@@ -131,8 +126,7 @@ namespace Amazon.CloudFront.Model
         ///  </li> </ul> 
         /// <para>
         /// If you specify a value for <code>ResponseCode</code>, you must also specify a value
-        /// for <code>ResponsePagePath</code>. If you don't want to specify a value, include an
-        /// empty element, <code>&lt;ResponseCode&gt;</code>, in the XML document.
+        /// for <code>ResponsePagePath</code>.
         /// </para>
         /// </summary>
         public string ResponseCode
@@ -172,8 +166,7 @@ namespace Amazon.CloudFront.Model
         ///  </li> </ul> 
         /// <para>
         /// If you specify a value for <code>ResponsePagePath</code>, you must also specify a
-        /// value for <code>ResponseCode</code>. If you don't want to specify a value, include
-        /// an empty element, <code>&lt;ResponsePagePath&gt;</code>, in the XML document.
+        /// value for <code>ResponseCode</code>.
         /// </para>
         ///  
         /// <para>

@@ -426,7 +426,9 @@ namespace Amazon.CloudFront
         /// A viewer certificate specified in the response body is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
-        /// A web ACL id specified in the response body is not valid.
+        /// A web ACL ID specified in the response body is not valid. To specify a web ACL created
+        /// using the latest version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
@@ -628,7 +630,9 @@ namespace Amazon.CloudFront
         /// A viewer certificate specified in the response body is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
-        /// A web ACL id specified in the response body is not valid.
+        /// A web ACL ID specified in the response body is not valid. To specify a web ACL created
+        /// using the latest version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
@@ -2909,7 +2913,9 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
-        /// A web ACL id specified in the response body is not valid.
+        /// A web ACL ID specified in the response body is not valid. To specify a web ACL created
+        /// using the latest version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         public virtual ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request)
@@ -3723,7 +3729,9 @@ namespace Amazon.CloudFront
         /// A viewer certificate specified in the response body is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
-        /// A web ACL id specified in the response body is not valid.
+        /// A web ACL ID specified in the response body is not valid. To specify a web ACL created
+        /// using the latest version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
