@@ -37,6 +37,7 @@ namespace Amazon.TranscribeService.Model
         private string _failureReason;
         private LanguageCode _languageCode;
         private OutputLocationType _outputLocationType;
+        private DateTime? _startTime;
         private string _transcriptionJobName;
         private TranscriptionJobStatus _transcriptionJobStatus;
 
@@ -141,6 +142,24 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetOutputLocationType()
         {
             return this._outputLocationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// A timestamp that shows when the job started processing.
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
         }
 
         /// <summary>

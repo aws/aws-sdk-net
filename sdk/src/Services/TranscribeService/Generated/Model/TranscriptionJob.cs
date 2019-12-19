@@ -36,11 +36,13 @@ namespace Amazon.TranscribeService.Model
         private DateTime? _completionTime;
         private DateTime? _creationTime;
         private string _failureReason;
+        private JobExecutionSettings _jobExecutionSettings;
         private LanguageCode _languageCode;
         private Media _media;
         private MediaFormat _mediaFormat;
         private int? _mediaSampleRateHertz;
         private Settings _settings;
+        private DateTime? _startTime;
         private Transcript _transcript;
         private string _transcriptionJobName;
         private TranscriptionJobStatus _transcriptionJobStatus;
@@ -145,6 +147,24 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JobExecutionSettings. 
+        /// <para>
+        /// Provides information about how a transcription job is executed.
+        /// </para>
+        /// </summary>
+        public JobExecutionSettings JobExecutionSettings
+        {
+            get { return this._jobExecutionSettings; }
+            set { this._jobExecutionSettings = value; }
+        }
+
+        // Check to see if JobExecutionSettings property is set
+        internal bool IsSetJobExecutionSettings()
+        {
+            return this._jobExecutionSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// The language code for the input speech.
@@ -235,6 +255,24 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetSettings()
         {
             return this._settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// A timestamp that shows with the job was started processing.
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
         }
 
         /// <summary>

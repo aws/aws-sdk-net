@@ -316,6 +316,10 @@ namespace Amazon.TranscribeService
         /// Constant IN_PROGRESS for TranscriptionJobStatus
         /// </summary>
         public static readonly TranscriptionJobStatus IN_PROGRESS = new TranscriptionJobStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant QUEUED for TranscriptionJobStatus
+        /// </summary>
+        public static readonly TranscriptionJobStatus QUEUED = new TranscriptionJobStatus("QUEUED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
