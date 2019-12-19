@@ -1,3 +1,7 @@
+### 3.3.654.1 (2019-12-19 22:06 UTC)
+* S3 (3.3.110.4)
+	* Adding configuration of S3 timeouts to MaxTimeout for .NET Standard
+
 ### 3.3.654.0 (2019-12-19 19:42 UTC)
 * CodeStarconnections (3.3.100.0)
 	* Public beta for Bitbucket Cloud support in AWS CodePipeline through integration with AWS CodeStar connections.
