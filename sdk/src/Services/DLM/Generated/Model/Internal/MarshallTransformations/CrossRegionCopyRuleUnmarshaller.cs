@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Schedule Object
+    /// Response Unmarshaller for CrossRegionCopyRule Object
     /// </summary>  
-    public class ScheduleUnmarshaller : IUnmarshaller<Schedule, XmlUnmarshallerContext>, IUnmarshaller<Schedule, JsonUnmarshallerContext>
+    public class CrossRegionCopyRuleUnmarshaller : IUnmarshaller<CrossRegionCopyRule, XmlUnmarshallerContext>, IUnmarshaller<CrossRegionCopyRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Schedule IUnmarshaller<Schedule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CrossRegionCopyRule IUnmarshaller<CrossRegionCopyRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,63 +53,45 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Schedule Unmarshall(JsonUnmarshallerContext context)
+        public CrossRegionCopyRule Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Schedule unmarshalledObject = new Schedule();
+            CrossRegionCopyRule unmarshalledObject = new CrossRegionCopyRule();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CmkArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CmkArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CopyTags", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.CopyTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreateRule", targetDepth))
+                if (context.TestExpression("Encrypted", targetDepth))
                 {
-                    var unmarshaller = CreateRuleUnmarshaller.Instance;
-                    unmarshalledObject.CreateRule = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CrossRegionCopyRules", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<CrossRegionCopyRule, CrossRegionCopyRuleUnmarshaller>(CrossRegionCopyRuleUnmarshaller.Instance);
-                    unmarshalledObject.CrossRegionCopyRules = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FastRestoreRule", targetDepth))
-                {
-                    var unmarshaller = FastRestoreRuleUnmarshaller.Instance;
-                    unmarshalledObject.FastRestoreRule = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RetainRule", targetDepth))
                 {
-                    var unmarshaller = RetainRuleUnmarshaller.Instance;
+                    var unmarshaller = CrossRegionCopyRetainRuleUnmarshaller.Instance;
                     unmarshalledObject.RetainRule = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TagsToAdd", targetDepth))
+                if (context.TestExpression("TargetRegion", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.TagsToAdd = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VariableTags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.VariableTags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,12 +100,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         }
 
 
-        private static ScheduleUnmarshaller _instance = new ScheduleUnmarshaller();        
+        private static CrossRegionCopyRuleUnmarshaller _instance = new CrossRegionCopyRuleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ScheduleUnmarshaller Instance
+        public static CrossRegionCopyRuleUnmarshaller Instance
         {
             get
             {

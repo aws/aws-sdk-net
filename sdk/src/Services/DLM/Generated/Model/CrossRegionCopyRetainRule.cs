@@ -28,50 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Container for the parameters to the UntagResource operation.
-    /// Removes the specified tags from the specified resource.
+    /// Specifies the retention rule for cross-Region snapshot copies.
     /// </summary>
-    public partial class UntagResourceRequest : AmazonDLMRequest
+    public partial class CrossRegionCopyRetainRule
     {
-        private string _resourceArn;
-        private List<string> _tagKeys = new List<string>();
+        private int? _interval;
+        private RetentionIntervalUnitValues _intervalUnit;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property Interval. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource.
+        /// The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent
+        /// to 1200 months, 5200 weeks, or 36500 days.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=2048)]
-        public string ResourceArn
+        [AWSProperty(Min=1)]
+        public int Interval
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._interval.GetValueOrDefault(); }
+            set { this._interval = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if Interval property is set
+        internal bool IsSetInterval()
         {
-            return this._resourceArn != null;
+            return this._interval.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. 
+        /// Gets and sets the property IntervalUnit. 
         /// <para>
-        /// The tag keys.
+        /// The unit of time for time-based retention.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
-        public List<string> TagKeys
+        public RetentionIntervalUnitValues IntervalUnit
         {
-            get { return this._tagKeys; }
-            set { this._tagKeys = value; }
+            get { return this._intervalUnit; }
+            set { this._intervalUnit = value; }
         }
 
-        // Check to see if TagKeys property is set
-        internal bool IsSetTagKeys()
+        // Check to see if IntervalUnit property is set
+        internal bool IsSetIntervalUnit()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._intervalUnit != null;
         }
 
     }

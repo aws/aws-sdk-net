@@ -34,6 +34,7 @@ namespace Amazon.DLM.Model
     {
         private bool? _copyTags;
         private CreateRule _createRule;
+        private List<CrossRegionCopyRule> _crossRegionCopyRules = new List<CrossRegionCopyRule>();
         private FastRestoreRule _fastRestoreRule;
         private string _name;
         private RetainRule _retainRule;
@@ -62,7 +63,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property CreateRule. 
         /// <para>
-        /// The create rule.
+        /// The creation rule.
         /// </para>
         /// </summary>
         public CreateRule CreateRule
@@ -78,9 +79,28 @@ namespace Amazon.DLM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CrossRegionCopyRules. 
+        /// <para>
+        /// The rule for cross-Region snapshot copies.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<CrossRegionCopyRule> CrossRegionCopyRules
+        {
+            get { return this._crossRegionCopyRules; }
+            set { this._crossRegionCopyRules = value; }
+        }
+
+        // Check to see if CrossRegionCopyRules property is set
+        internal bool IsSetCrossRegionCopyRules()
+        {
+            return this._crossRegionCopyRules != null && this._crossRegionCopyRules.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FastRestoreRule. 
         /// <para>
-        /// Enable fast snapshot restore.
+        /// The rule for enabling fast snapshot restore.
         /// </para>
         /// </summary>
         public FastRestoreRule FastRestoreRule
