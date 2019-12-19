@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _maxErrors;
         private ExecutionMode _mode;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private List<Tag> _tags = new List<Tag>();
         private List<TargetLocation> _targetLocations = new List<TargetLocation>();
         private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
         private string _targetParameterName;
@@ -192,6 +193,42 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Optional metadata that you assign to a resource. You can specify a maximum of five
+        /// tags for an automation. Tags enable you to categorize a resource in different ways,
+        /// such as by purpose, owner, or environment. For example, you might want to tag an automation
+        /// to identify an environment or operating system. In this case, you could specify the
+        /// following key name/value pairs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Key=environment,Value=test</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=OS,Value=Windows</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// To add tags to an existing patch baseline, use the <a>AddTagsToResource</a> action.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Max=1000)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
