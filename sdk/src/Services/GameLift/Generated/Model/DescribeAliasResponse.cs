@@ -37,7 +37,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Alias. 
         /// <para>
-        /// Object that contains the requested alias.
+        /// The requested alias resource.
         /// </para>
         /// </summary>
         public Alias Alias

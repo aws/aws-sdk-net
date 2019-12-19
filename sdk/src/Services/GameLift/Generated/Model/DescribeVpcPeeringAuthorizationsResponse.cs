@@ -37,7 +37,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property VpcPeeringAuthorizations. 
         /// <para>
-        /// Collection of objects that describe all valid VPC peering operations for the current
+        /// A collection of objects that describe all valid VPC peering operations for the current
         /// AWS account.
         /// </para>
         /// </summary>

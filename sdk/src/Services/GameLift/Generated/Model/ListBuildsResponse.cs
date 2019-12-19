@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Builds. 
         /// <para>
-        /// Collection of build records that match the request.
+        /// A collection of build records that match the request.
         /// </para>
         /// </summary>
         public List<Build> Builds

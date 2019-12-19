@@ -49,11 +49,11 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// Alternatively, when requesting a game session with players, you can also provide latency
-    /// data for each player in relevant regions. Latency data indicates the performance lag
-    /// a player experiences when connected to a fleet in the region. Amazon GameLift uses
-    /// latency data to reorder the list of destinations to place the game session in a region
+    /// data for each player in relevant Regions. Latency data indicates the performance lag
+    /// a player experiences when connected to a fleet in the Region. Amazon GameLift uses
+    /// latency data to reorder the list of destinations to place the game session in a Region
     /// with minimal lag. If latency data is provided for multiple players, Amazon GameLift
-    /// calculates each region's average lag for all players and reorders to get the best
+    /// calculates each Region's average lag for all players and reorders to get the best
     /// game play across all players. 
     /// </para>
     ///  
@@ -87,7 +87,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// To track the status of a placement request, call <a>DescribeGameSessionPlacement</a>
     /// and check the request's status. If the status is <code>FULFILLED</code>, a new game
-    /// session has been created and a game session ARN and region are referenced. If the
+    /// session has been created and a game session ARN and Region are referenced. If the
     /// placement request times out, you can resubmit the request or retry it with a different
     /// queue. 
     /// </para>
@@ -209,7 +209,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionName. 
         /// <para>
-        /// Descriptive label that is associated with a game session. Session names do not need
+        /// A descriptive label that is associated with a game session. Session names do not need
         /// to be unique.
         /// </para>
         /// </summary>
@@ -229,10 +229,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionQueueName. 
         /// <para>
-        /// Name of the queue to use to place the new game session.
+        /// Name of the queue to use to place the new game session. You can use either the qieue
+        /// name or ARN value. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string GameSessionQueueName
         {
             get { return this._gameSessionQueueName; }
@@ -248,7 +249,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MaximumPlayerSessionCount. 
         /// <para>
-        /// Maximum number of players that can be connected simultaneously to the game session.
+        /// The maximum number of players that can be connected simultaneously to the game session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -267,8 +268,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlacementId. 
         /// <para>
-        /// Unique identifier to assign to the new game session placement. This value is developer-defined.
-        /// The value must be unique across all regions and cannot be reused unless you are resubmitting
+        /// A unique identifier to assign to the new game session placement. This value is developer-defined.
+        /// The value must be unique across all Regions and cannot be reused unless you are resubmitting
         /// a canceled or timed-out placement request.
         /// </para>
         /// </summary>
@@ -289,7 +290,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PlayerLatencies. 
         /// <para>
         /// Set of values, expressed in milliseconds, indicating the amount of latency that a
-        /// player experiences when connected to AWS regions. This information is used to try
+        /// player experiences when connected to AWS Regions. This information is used to try
         /// to place the new game session where it can offer the best possible gameplay experience
         /// for the players. 
         /// </para>

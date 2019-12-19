@@ -37,8 +37,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceAccess. 
         /// <para>
-        /// Object that contains connection information for a fleet instance, including IP address
-        /// and access credentials.
+        /// The connection information for a fleet instance, including IP address and access credentials.
         /// </para>
         /// </summary>
         public InstanceAccess InstanceAccess

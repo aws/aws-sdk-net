@@ -63,37 +63,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Describe fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
     ///  <a>DescribeFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetUtilization</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetEvents</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
     /// <para>
     /// Update fleets:
     /// </para>
@@ -136,7 +108,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet to update port settings for.
+        /// A unique identifier for a fleet to update port settings for. You can use either the
+        /// fleet ID or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -155,7 +128,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InboundPermissionAuthorizations. 
         /// <para>
-        /// Collection of port settings to be added to the fleet record.
+        /// A collection of port settings to be added to the fleet record.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -174,7 +147,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InboundPermissionRevocations. 
         /// <para>
-        /// Collection of port settings to be removed from the fleet record.
+        /// A collection of port settings to be removed from the fleet record.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

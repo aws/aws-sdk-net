@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Policy that limits the number of game sessions a player can create on the same fleet.
+    /// A policy that limits the number of game sessions a player can create on the same fleet.
     /// This optional policy gives game owners control over how players can consume available
     /// game server resources. A resource creation policy makes the following statement: "An
     /// individual player can create a maximum number of new game sessions within a specified
@@ -36,11 +36,11 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// The policy is evaluated when a player tries to create a new game session. For example,
-    /// with a policy of 10 new game sessions and a time period of 60 minutes, on receiving
-    /// a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified
-    /// by <code>CreatorId</code>) has created fewer than 10 game sessions in the past 60
-    /// minutes.
+    /// The policy is evaluated when a player tries to create a new game session. For example:
+    /// Assume you have a policy of 10 new game sessions and a time period of 60 minutes.
+    /// On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that
+    /// the player (identified by <code>CreatorId</code>) has created fewer than 10 game sessions
+    /// in the past 60 minutes.
     /// </para>
     /// </summary>
     public partial class ResourceCreationLimitPolicy
@@ -51,8 +51,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NewGameSessionsPerCreator. 
         /// <para>
-        /// Maximum number of game sessions that an individual can create during the policy period.
-        /// 
+        /// The maximum number of game sessions that an individual can create during the policy
+        /// period. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -71,7 +71,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PolicyPeriodInMinutes. 
         /// <para>
-        /// Time span used in evaluating the resource creation limit policy. 
+        /// The time span used in evaluating the resource creation limit policy. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

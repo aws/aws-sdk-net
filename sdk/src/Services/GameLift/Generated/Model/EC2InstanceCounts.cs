@@ -47,57 +47,13 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Describe fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
     ///  <a>DescribeFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetUtilization</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetEvents</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    /// Update fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
     ///  <a>UpdateFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
     /// <para>
     /// Manage fleet actions:
     /// </para>
@@ -181,7 +137,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MAXIMUM. 
         /// <para>
-        /// Maximum value allowed for the fleet's instance count.
+        /// The maximum value allowed for the fleet's instance count.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -200,7 +156,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MINIMUM. 
         /// <para>
-        /// Minimum value allowed for the fleet's instance count.
+        /// The minimum value allowed for the fleet's instance count.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

@@ -70,6 +70,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RuleSetArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuleSetArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RuleSetBody", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

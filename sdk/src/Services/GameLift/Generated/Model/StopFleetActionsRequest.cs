@@ -161,7 +161,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet
+        /// A unique identifier for a fleet to stop actions on. You can use either the fleet ID
+        /// or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

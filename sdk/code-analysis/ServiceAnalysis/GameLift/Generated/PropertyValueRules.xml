@@ -28,7 +28,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateFleetRequest.BuildId</property>
-    <pattern>^build-\S+</pattern>
+    <pattern>^build-\S+|^arn:.*:build\/build-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateFleetRequest.Description</property>
@@ -56,7 +56,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateFleetRequest.ScriptId</property>
-    <pattern>^script-\S+|^arn:.*script-\S+</pattern>
+    <pattern>^script-\S+|^arn:.*:script\/script-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateFleetRequest.ServerLaunchParameters</property>
@@ -70,7 +70,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateGameSessionRequest.AliasId</property>
-    <pattern>^alias-\S+</pattern>
+    <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateGameSessionRequest.CreatorId</property>
@@ -79,7 +79,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateGameSessionRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateGameSessionRequest.GameSessionData</property>
@@ -110,8 +110,8 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateGameSessionQueueRequest.Name</property>
     <min>1</min>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-]+</pattern>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateGameSessionQueueRequest.TimeoutInSeconds</property>
@@ -159,8 +159,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.RuleSetName</property>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]*</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateMatchmakingRuleSetRequest.Name</property>
@@ -220,7 +221,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateVpcPeeringConnectionRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateVpcPeeringConnectionRequest.PeerVpcAwsAccountId</property>
@@ -234,35 +235,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteAliasRequest.AliasId</property>
-    <pattern>^alias-\S+</pattern>
+    <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteBuildRequest.BuildId</property>
-    <pattern>^build-\S+</pattern>
+    <pattern>^build-\S+|^arn:.*:build\/build-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteFleetRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteGameSessionQueueRequest.Name</property>
     <min>1</min>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-]+</pattern>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteMatchmakingConfigurationRequest.Name</property>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]*</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteMatchmakingRuleSetRequest.Name</property>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]*</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteScalingPolicyRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteScalingPolicyRequest.Name</property>
@@ -271,7 +274,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteScriptRequest.ScriptId</property>
-    <pattern>^script-\S+|^arn:.*script-\S+</pattern>
+    <pattern>^script-\S+|^arn:.*:script\/script-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteVpcPeeringAuthorizationRequest.GameLiftAwsAccountId</property>
@@ -285,7 +288,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteVpcPeeringConnectionRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteVpcPeeringConnectionRequest.VpcPeeringConnectionId</property>
@@ -294,11 +297,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeAliasRequest.AliasId</property>
-    <pattern>^alias-\S+</pattern>
+    <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeBuildRequest.BuildId</property>
-    <pattern>^build-\S+</pattern>
+    <pattern>^build-\S+|^arn:.*:build\/build-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeFleetAttributesRequest.Limit</property>
@@ -330,7 +333,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeFleetEventsRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeFleetEventsRequest.Limit</property>
@@ -348,7 +351,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeFleetPortSettingsRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeFleetUtilizationRequest.Limit</property>
@@ -366,11 +369,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeGameSessionDetailsRequest.AliasId</property>
-    <pattern>^alias-\S+</pattern>
+    <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeGameSessionDetailsRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeGameSessionDetailsRequest.GameSessionId</property>
@@ -419,11 +422,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeGameSessionsRequest.AliasId</property>
-    <pattern>^alias-\S+</pattern>
+    <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeGameSessionsRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeGameSessionsRequest.GameSessionId</property>
@@ -452,7 +455,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeInstancesRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeInstancesRequest.InstanceId</property>
@@ -483,8 +486,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeMatchmakingConfigurationsRequest.RuleSetName</property>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]*</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeMatchmakingConfigurationsResponse.NextToken</property>
@@ -542,11 +546,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeRuntimeConfigurationRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeScalingPoliciesRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeScalingPoliciesRequest.Limit</property>
@@ -564,11 +568,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeScriptRequest.ScriptId</property>
-    <pattern>^script-\S+|^arn:.*script-\S+</pattern>
+    <pattern>^script-\S+|^arn:.*:script\/script-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeVpcPeeringConnectionsRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GetGameSessionLogUrlRequest.GameSessionId</property>
@@ -583,7 +587,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GetInstanceAccessRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GetInstanceAccessRequest.InstanceId</property>
@@ -619,7 +623,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ListFleetsRequest.BuildId</property>
-    <pattern>^build-\S+</pattern>
+    <pattern>^build-\S+|^arn:.*:build\/build-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ListFleetsRequest.Limit</property>
@@ -632,7 +636,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ListFleetsRequest.ScriptId</property>
-    <pattern>^script-\S+|^arn:.*script-\S+</pattern>
+    <pattern>^script-\S+|^arn:.*:script\/script-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ListFleetsResponse.NextToken</property>
@@ -652,12 +656,17 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.PutScalingPolicyRequest.EvaluationPeriods</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.PutScalingPolicyRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.PutScalingPolicyRequest.Name</property>
@@ -671,19 +680,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.RequestUploadCredentialsRequest.BuildId</property>
-    <pattern>^build-\S+</pattern>
+    <pattern>^build-\S+|^arn:.*:build\/build-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ResolveAliasRequest.AliasId</property>
-    <pattern>^alias-\S+</pattern>
+    <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ResolveAliasResponse.FleetArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ResolveAliasResponse.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.SearchGameSessionsRequest.AliasId</property>
-    <pattern>^alias-\S+</pattern>
+    <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.SearchGameSessionsRequest.FilterExpression</property>
@@ -692,7 +707,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.SearchGameSessionsRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.SearchGameSessionsRequest.Limit</property>
@@ -715,7 +730,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StartFleetActionsRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StartGameSessionPlacementRequest.GameSessionData</property>
@@ -730,8 +745,8 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.StartGameSessionPlacementRequest.GameSessionQueueName</property>
     <min>1</min>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-]+</pattern>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StartGameSessionPlacementRequest.MaximumPlayerSessionCount</property>
@@ -745,8 +760,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StartMatchBackfillRequest.ConfigurationName</property>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]*</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StartMatchBackfillRequest.GameSessionArn</property>
@@ -761,8 +777,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StartMatchmakingRequest.ConfigurationName</property>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]*</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StartMatchmakingRequest.TicketId</property>
@@ -771,7 +788,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StopFleetActionsRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StopGameSessionPlacementRequest.PlacementId</property>
@@ -785,8 +802,18 @@
     <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UntagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateAliasRequest.AliasId</property>
-    <pattern>^alias-\S+</pattern>
+    <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateAliasRequest.Description</property>
@@ -801,7 +828,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateBuildRequest.BuildId</property>
-    <pattern>^build-\S+</pattern>
+    <pattern>^build-\S+|^arn:.*:build\/build-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateBuildRequest.Name</property>
@@ -820,7 +847,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateFleetAttributesRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateFleetAttributesRequest.Name</property>
@@ -829,7 +856,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateFleetAttributesResponse.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateFleetCapacityRequest.DesiredInstances</property>
@@ -837,7 +864,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateFleetCapacityRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateFleetCapacityRequest.MaxSize</property>
@@ -849,15 +876,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateFleetCapacityResponse.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateFleetPortSettingsRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateFleetPortSettingsResponse.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateGameSessionRequest.GameSessionId</property>
@@ -877,8 +904,8 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateGameSessionQueueRequest.Name</property>
     <min>1</min>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-]+</pattern>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateGameSessionQueueRequest.TimeoutInSeconds</property>
@@ -910,8 +937,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.Name</property>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]*</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.NotificationTarget</property>
@@ -926,12 +954,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.RuleSetName</property>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]*</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateRuntimeConfigurationRequest.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateScriptRequest.Name</property>
@@ -940,7 +969,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateScriptRequest.ScriptId</property>
-    <pattern>^script-\S+|^arn:.*script-\S+</pattern>
+    <pattern>^script-\S+|^arn:.*:script\/script-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateScriptRequest.Version</property>
@@ -964,7 +993,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Alias.AliasId</property>
-    <pattern>^alias-\S+</pattern>
+    <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Alias.Name</property>
@@ -978,8 +1007,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.Build.BuildArn</property>
+    <pattern>^arn:.*:build\/build-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.Build.BuildId</property>
-    <pattern>^build-\S+</pattern>
+    <pattern>^build-\S+|^arn:.*:build\/build-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Build.SizeOnDisk</property>
@@ -1067,8 +1100,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.FleetAttributes.BuildArn</property>
+    <pattern>^arn:.*:build\/build-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.FleetAttributes.BuildId</property>
-    <pattern>^build-\S+</pattern>
+    <pattern>^build-\S+|^arn:.*:build\/build-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.FleetAttributes.Description</property>
@@ -1083,7 +1120,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.FleetAttributes.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.FleetAttributes.InstanceRoleArn</property>
@@ -1095,8 +1132,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.FleetAttributes.ScriptArn</property>
+    <pattern>^arn:.*:script\/script-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.FleetAttributes.ScriptId</property>
-    <pattern>^script-\S+|^arn:.*script-\S+</pattern>
+    <pattern>^script-\S+|^arn:.*:script\/script-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.FleetAttributes.ServerLaunchParameters</property>
@@ -1110,7 +1151,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.FleetCapacity.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.FleetCapacityExceededException.Message</property>
@@ -1130,7 +1171,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.FleetUtilization.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.FleetUtilization.MaximumPlayerSessionCount</property>
@@ -1154,8 +1195,14 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSession.FleetArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.GameSession.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSession.GameSessionData</property>
@@ -1223,8 +1270,8 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSessionPlacement.GameSessionQueueName</property>
     <min>1</min>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-]+</pattern>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSessionPlacement.GameSessionRegion</property>
@@ -1260,8 +1307,8 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSessionQueue.Name</property>
     <min>1</min>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-]+</pattern>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSessionQueue.TimeoutInSeconds</property>
@@ -1279,7 +1326,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Instance.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Instance.InstanceId</property>
@@ -1287,7 +1334,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.InstanceAccess.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.InstanceAccess.InstanceId</property>
@@ -1354,6 +1401,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingConfiguration.ConfigurationArn</property>
+    <pattern>^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingConfiguration.CustomEventData</property>
     <min>0</min>
     <max>256</max>
@@ -1385,9 +1436,17 @@
     <max>43200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingConfiguration.RuleSetArn</property>
+    <pattern>^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingConfiguration.RuleSetName</property>
     <max>128</max>
     <pattern>[a-zA-Z0-9-\.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingRuleSet.RuleSetArn</property>
+    <pattern>^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingRuleSet.RuleSetBody</property>
@@ -1398,6 +1457,10 @@
     <property>Amazon.GameLift.Model.MatchmakingRuleSet.RuleSetName</property>
     <max>128</max>
     <pattern>[a-zA-Z0-9-\.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.MatchmakingTicket.ConfigurationArn</property>
+    <pattern>^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingTicket.ConfigurationName</property>
@@ -1455,8 +1518,14 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.PlayerSession.FleetArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.PlayerSession.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.PlayerSession.GameSessionId</property>
@@ -1492,7 +1561,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.RoutingStrategy.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.RuntimeConfiguration.GameSessionActivationTimeoutSeconds</property>
@@ -1526,7 +1595,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ScalingPolicy.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ScalingPolicy.Name</property>
@@ -1539,8 +1608,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.Script.ScriptArn</property>
+    <pattern>^arn:.*:script\/script-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.Script.ScriptId</property>
-    <pattern>^script-\S+|^arn:.*script-\S+</pattern>
+    <pattern>^script-\S+|^arn:.*:script\/script-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Script.SizeOnDisk</property>
@@ -1564,6 +1637,20 @@
     <property>Amazon.GameLift.Model.ServerProcess.Parameters</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.TaggingFailedException.Message</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.TerminalRoutingStrategyException.Message</property>
@@ -1593,8 +1680,14 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.VpcPeeringConnection.FleetArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.VpcPeeringConnection.FleetId</property>
-    <pattern>^fleet-\S+</pattern>
+    <pattern>^fleet-\S+|^arn:.*:fleet\/fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.VpcPeeringConnection.GameLiftVpcId</property>

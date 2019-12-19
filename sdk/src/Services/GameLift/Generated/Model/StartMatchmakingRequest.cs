@@ -166,10 +166,11 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ConfigurationName. 
         /// <para>
         /// Name of the matchmaking configuration to use for this request. Matchmaking configurations
-        /// must exist in the same region as this request.
+        /// must exist in the same Region as this request. You can use either the configuration
+        /// name or ARN value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ConfigurationName
         {
             get { return this._configurationName; }
@@ -207,7 +208,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TicketId. 
         /// <para>
-        /// Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon
+        /// A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon
         /// GameLift will generate one in the form of a UUID. Use this identifier to track the
         /// matchmaking ticket status and retrieve match results.
         /// </para>

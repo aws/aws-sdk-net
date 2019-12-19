@@ -31,19 +31,19 @@ namespace Amazon.GameLift.Model
     /// A collection of server process configurations that describe what processes to run
     /// on each instance in a fleet. Server processes run either a custom game build executable
     /// or a Realtime Servers script. Each instance in the fleet starts the specified server
-    /// processes and continues to start new processes as existing processes end. An instance
-    /// regularly checks for an updated run-time configuration. 
+    /// processes and continues to start new processes as existing processes end. Each instance
+    /// regularly checks for an updated runtime configuration. 
     /// 
     ///  
     /// <para>
-    /// The run-time configuration enables the instances in a fleet to run multiple processes
+    /// The runtime configuration enables the instances in a fleet to run multiple processes
     /// simultaneously. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">
     /// Running Multiple Processes on a Fleet </a>.
     /// </para>
     ///  
     /// <para>
     /// A Amazon GameLift instance is limited to 50 processes running simultaneously. To calculate
-    /// the total number of processes in a run-time configuration, add the values of the <code>ConcurrentExecutions</code>
+    /// the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code>
     /// parameter for each <a>ServerProcess</a> object.
     /// </para>
     ///  <ul> <li> 
@@ -60,57 +60,13 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Describe fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
     ///  <a>DescribeFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetUtilization</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetEvents</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    /// Update fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
     ///  <a>UpdateFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
     /// <para>
     /// Manage fleet actions:
     /// </para>
@@ -133,7 +89,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionActivationTimeoutSeconds. 
         /// <para>
-        /// Maximum amount of time (in seconds) that a game session can remain in status <code>ACTIVATING</code>.
+        /// The maximum amount of time (in seconds) that a game session can remain in status <code>ACTIVATING</code>.
         /// If the game session is not active before the timeout, activation is terminated and
         /// the game session status is changed to <code>TERMINATED</code>.
         /// </para>
@@ -154,8 +110,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MaxConcurrentGameSessionActivations. 
         /// <para>
-        /// Maximum number of game sessions with status <code>ACTIVATING</code> to allow on an
-        /// instance simultaneously. This setting limits the amount of instance resources that
+        /// The maximum number of game sessions with status <code>ACTIVATING</code> to allow on
+        /// an instance simultaneously. This setting limits the amount of instance resources that
         /// can be used for new game activations at any one time.
         /// </para>
         /// </summary>
@@ -175,8 +131,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ServerProcesses. 
         /// <para>
-        /// Collection of server process configurations that describe which server processes to
-        /// run on each instance in a fleet.
+        /// A collection of server process configurations that describe which server processes
+        /// to run on each instance in a fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

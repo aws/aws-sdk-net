@@ -30,10 +30,9 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the CreateAlias operation.
     /// Creates an alias for a fleet. In most situations, you can use an alias ID in place
-    /// of a fleet ID. By using a fleet alias instead of a specific fleet ID, you can switch
-    /// gameplay and players to a new fleet without changing your game client or other game
-    /// components. For example, for games in production, using an alias allows you to seamlessly
-    /// redirect your player base to a new game server update. 
+    /// of a fleet ID. An alias provides a level of abstraction for a fleet that is useful
+    /// when redirecting player traffic from one fleet to another, such as when updating your
+    /// game build. 
     /// 
     ///  
     /// <para>
@@ -47,9 +46,8 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// To create a fleet alias, specify an alias name, routing strategy, and optional description.
     /// Each simple alias can point to only one fleet, but a fleet can have multiple aliases.
-    /// If successful, a new alias record is returned, including an alias ID, which you can
-    /// reference when creating a game session. You can reassign an alias to another fleet
-    /// by calling <code>UpdateAlias</code>.
+    /// If successful, a new alias record is returned, including an alias ID and an ARN. You
+    /// can reassign an alias to another fleet by calling <code>UpdateAlias</code>.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -82,11 +80,12 @@ namespace Amazon.GameLift.Model
         private string _description;
         private string _name;
         private RoutingStrategy _routingStrategy;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Human-readable description of an alias.
+        /// A human-readable description of the alias.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -105,7 +104,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with an alias. Alias names do not need to be
+        /// A descriptive label that is associated with an alias. Alias names do not need to be
         /// unique.
         /// </para>
         /// </summary>
@@ -125,7 +124,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RoutingStrategy. 
         /// <para>
-        /// Object that specifies the fleet and routing type to use for the alias.
+        /// The routing configuration, including routing type and fleet target, for the alias.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -139,6 +139,31 @@ namespace Amazon.GameLift.Model
         internal bool IsSetRoutingStrategy()
         {
             return this._routingStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of labels to assign to the new alias resource. Tags are developer-defined key-value
+        /// pairs. Tagging AWS resources are useful for resource management, access management
+        /// and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+        /// Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+        /// created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
+        /// to add, remove, and view tags. The maximum tag limit may be lower than stated. See
+        /// the AWS General Reference for actual tagging limits.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

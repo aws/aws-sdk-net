@@ -64,6 +64,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BuildArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BuildArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BuildId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -152,6 +158,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ResourceCreationLimitPolicyUnmarshaller.Instance;
                     unmarshalledObject.ResourceCreationLimitPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ScriptArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScriptArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ScriptId", targetDepth))

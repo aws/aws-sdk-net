@@ -32,7 +32,7 @@ namespace Amazon.GameLift.Model
     /// Establishes a new queue for processing requests to place new game sessions. A queue
     /// identifies where new game sessions can be hosted -- by specifying a list of destinations
     /// (fleets or aliases) -- and how long requests can wait in the queue before timing out.
-    /// You can set up a queue to try to place game sessions on fleets in multiple regions.
+    /// You can set up a queue to try to place game sessions on fleets in multiple Regions.
     /// To add placement requests to a queue, call <a>StartGameSessionPlacement</a> and reference
     /// the queue name.
     /// 
@@ -87,12 +87,13 @@ namespace Amazon.GameLift.Model
         private List<GameSessionQueueDestination> _destinations = new List<GameSessionQueueDestination>();
         private string _name;
         private List<PlayerLatencyPolicy> _playerLatencyPolicies = new List<PlayerLatencyPolicy>();
+        private List<Tag> _tags = new List<Tag>();
         private int? _timeoutInSeconds;
 
         /// <summary>
         /// Gets and sets the property Destinations. 
         /// <para>
-        /// List of fleets that can be used to fulfill game session placement requests in the
+        /// A list of fleets that can be used to fulfill game session placement requests in the
         /// queue. Fleets are identified by either a fleet ARN or a fleet alias ARN. Destinations
         /// are listed in default preference order.
         /// </para>
@@ -112,11 +113,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with game session queue. Queue names must be
-        /// unique within each region.
+        /// A descriptive label that is associated with game session queue. Queue names must be
+        /// unique within each Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -132,15 +133,15 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerLatencyPolicies. 
         /// <para>
-        /// Collection of latency policies to apply when processing game sessions placement requests
-        /// with player latency information. Multiple policies are evaluated in order of the maximum
-        /// latency value, starting with the lowest latency values. With just one policy, it is
-        /// enforced at the start of the game session placement for the duration period. With
-        /// multiple policies, each policy is enforced consecutively for its duration period.
-        /// For example, a queue might enforce a 60-second policy followed by a 120-second policy,
-        /// and then no policy for the remainder of the placement. A player latency policy must
-        /// set a value for MaximumIndividualPlayerLatencyMilliseconds; if none is set, this API
-        /// requests will fail.
+        /// A collection of latency policies to apply when processing game sessions placement
+        /// requests with player latency information. Multiple policies are evaluated in order
+        /// of the maximum latency value, starting with the lowest latency values. With just one
+        /// policy, the policy is enforced at the start of the game session placement for the
+        /// duration period. With multiple policies, each policy is enforced consecutively for
+        /// its duration period. For example, a queue might enforce a 60-second policy followed
+        /// by a 120-second policy, and then no policy for the remainder of the placement. A player
+        /// latency policy must set a value for <code>MaximumIndividualPlayerLatencyMilliseconds</code>.
+        /// If none is set, this API request fails.
         /// </para>
         /// </summary>
         public List<PlayerLatencyPolicy> PlayerLatencyPolicies
@@ -156,11 +157,36 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of labels to assign to the new game session queue resource. Tags are developer-defined
+        /// key-value pairs. Tagging AWS resources are useful for resource management, access
+        /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+        /// Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+        /// created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
+        /// to add, remove, and view tags. The maximum tag limit may be lower than stated. See
+        /// the AWS General Reference for actual tagging limits.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TimeoutInSeconds. 
         /// <para>
-        /// Maximum time, in seconds, that a new game session placement request remains in the
-        /// queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code>
-        /// status.
+        /// The maximum time, in seconds, that a new game session placement request remains in
+        /// the queue. When a request exceeds this time, the game session placement changes to
+        /// a <code>TIMED_OUT</code> status.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

@@ -38,8 +38,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token that indicates where to resume retrieving results on the next call to this action.
-        /// If no token is returned, these results represent the end of the list.
+        /// A token that indicates where to resume retrieving results on the next call to this
+        /// action. If no token is returned, these results represent the end of the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -58,7 +58,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Scripts. 
         /// <para>
-        /// Set of properties describing the requested script.
+        /// A set of properties describing the requested script.
         /// </para>
         /// </summary>
         public List<Script> Scripts

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Maximum number of instances allowed based on the Amazon Elastic Compute Cloud (Amazon
-    /// EC2) instance type. Instance limits can be retrieved by calling <a>DescribeEC2InstanceLimits</a>.
+    /// The maximum number of instances allowed based on the Amazon Elastic Compute Cloud
+    /// (Amazon EC2) instance type. Instance limits can be retrieved by calling <a>DescribeEC2InstanceLimits</a>.
     /// </summary>
     public partial class EC2InstanceLimit
     {

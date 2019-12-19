@@ -58,8 +58,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerSessions. 
         /// <para>
-        /// Collection of objects containing properties for each player session that matches the
-        /// request.
+        /// A collection of objects containing properties for each player session that matches
+        /// the request.
         /// </para>
         /// </summary>
         public List<PlayerSession> PlayerSessions

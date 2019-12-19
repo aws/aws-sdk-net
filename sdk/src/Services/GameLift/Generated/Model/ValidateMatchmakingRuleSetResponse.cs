@@ -37,7 +37,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Valid. 
         /// <para>
-        /// Response indicating whether the rule set is valid.
+        /// A response indicating whether the rule set is valid.
         /// </para>
         /// </summary>
         public bool Valid

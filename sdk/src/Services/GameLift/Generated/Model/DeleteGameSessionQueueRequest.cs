@@ -58,11 +58,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with game session queue. Queue names must be
-        /// unique within each region.
+        /// A descriptive label that is associated with game session queue. Queue names must be
+        /// unique within each Region. You can use either the queue ID or ARN value. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

@@ -86,7 +86,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// Unique identifier for the game session to add a player to.
+        /// A unique identifier for the game session to add a player to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -125,7 +125,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerId. 
         /// <para>
-        /// Unique identifier for a player. Player IDs are developer-defined.
+        /// A unique identifier for a player. Player IDs are developer-defined.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

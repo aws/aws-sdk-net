@@ -29,23 +29,23 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRuntimeConfiguration operation.
-    /// Updates the current run-time configuration for the specified fleet, which tells Amazon
+    /// Updates the current runtime configuration for the specified fleet, which tells Amazon
     /// GameLift how to launch server processes on instances in the fleet. You can update
-    /// a fleet's run-time configuration at any time after the fleet is created; it does not
+    /// a fleet's runtime configuration at any time after the fleet is created; it does not
     /// need to be in an <code>ACTIVE</code> status.
     /// 
     ///  
     /// <para>
-    /// To update run-time configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code>
+    /// To update runtime configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code>
     /// object with an updated set of server process configurations.
     /// </para>
     ///  
     /// <para>
-    /// Each instance in a Amazon GameLift fleet checks regularly for an updated run-time
-    /// configuration and changes how it launches server processes to comply with the latest
-    /// version. Existing server processes are not affected by the update; run-time configuration
-    /// changes are applied gradually as existing processes shut down and new processes are
-    /// launched during Amazon GameLift's normal process recycling activity.
+    /// Each instance in a Amazon GameLift fleet checks regularly for an updated runtime configuration
+    /// and changes how it launches server processes to comply with the latest version. Existing
+    /// server processes are not affected by the update; runtime configuration changes are
+    /// applied gradually as existing processes shut down and new processes are launched during
+    /// Amazon GameLift's normal process recycling activity.
     /// </para>
     ///  
     /// <para>
@@ -74,37 +74,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Describe fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
     ///  <a>DescribeFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetUtilization</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetEvents</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
     /// <para>
     /// Update fleets:
     /// </para>
@@ -146,7 +118,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet to update run-time configuration for.
+        /// A unique identifier for a fleet to update runtime configuration for. You can use either
+        /// the fleet ID or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -167,10 +140,10 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Instructions for launching server processes on each instance in the fleet. Server
         /// processes run either a custom game build executable or a Realtime Servers script.
-        /// The run-time configuration lists the types of server processes to run on an instance
+        /// The runtime configuration lists the types of server processes to run on an instance
         /// and includes the following configuration settings: the server executable or launch
         /// script file, launch parameters, and the number of processes to run concurrently on
-        /// each instance. A CreateFleet request must include a run-time configuration with at
+        /// each instance. A CreateFleet request must include a runtime configuration with at
         /// least one server process configuration.
         /// </para>
         /// </summary>

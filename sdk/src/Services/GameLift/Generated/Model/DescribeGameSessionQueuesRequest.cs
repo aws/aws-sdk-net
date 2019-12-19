@@ -33,7 +33,7 @@ namespace Amazon.GameLift.Model
     /// queues, use the pagination parameters to retrieve results as a set of sequential pages.
     /// If successful, a <a>GameSessionQueue</a> object is returned for each requested queue.
     /// When specifying a list of queues, objects are returned only for queues that currently
-    /// exist in the region.
+    /// exist in the Region.
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -62,7 +62,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
@@ -82,8 +82,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// List of queue names to retrieve information for. To request settings for all queues,
-        /// leave this parameter empty.
+        /// A list of queue names to retrieve information for. You can use either the queue ID
+        /// or ARN value. To request settings for all queues, leave this parameter empty. 
         /// </para>
         /// </summary>
         public List<string> Names
@@ -101,7 +101,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token that indicates the start of the next sequential page of results. Use the token
+        /// A token that indicates the start of the next sequential page of results. Use the token
         /// that is returned with a previous call to this action. To start at the beginning of
         /// the result set, do not specify a value.
         /// </para>

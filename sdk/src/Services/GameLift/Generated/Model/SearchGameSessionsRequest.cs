@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <b>gameSessionId</b> -- Unique identifier for the game session. You can use either
+    ///  <b>gameSessionId</b> -- A unique identifier for the game session. You can use either
     /// a <code>GameSessionId</code> or <code>GameSessionArn</code> value. 
     /// </para>
     ///  </li> <li> 
@@ -150,8 +150,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AliasId. 
         /// <para>
-        /// Unique identifier for an alias associated with the fleet to search for active game
-        /// sessions. Each request must reference either a fleet ID or alias ID, but not both.
+        /// A unique identifier for an alias associated with the fleet to search for active game
+        /// sessions. You can use either the alias ID or ARN value. Each request must reference
+        /// either a fleet ID or alias ID, but not both.
         /// </para>
         /// </summary>
         public string AliasId
@@ -253,8 +254,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet to search for active game sessions. Each request must
-        /// reference either a fleet ID or alias ID, but not both.
+        /// A unique identifier for a fleet to search for active game sessions. You can use either
+        /// the fleet ID or ARN value. Each request must reference either a fleet ID or alias
+        /// ID, but not both.
         /// </para>
         /// </summary>
         public string FleetId
@@ -272,7 +274,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages. The maximum number of results returned
         /// is 20, even if this value is not set or is set higher than 20. 
         /// </para>

@@ -32,12 +32,33 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class ResolveAliasResponse : AmazonWebServiceResponse
     {
+        private string _fleetArn;
         private string _fleetId;
+
+        /// <summary>
+        /// Gets and sets the property FleetArn. 
+        /// <para>
+        ///  The Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+        /// associated with the GameLift fleet resource that this alias points to. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string FleetArn
+        {
+            get { return this._fleetArn; }
+            set { this._fleetArn = value; }
+        }
+
+        // Check to see if FleetArn property is set
+        internal bool IsSetFleetArn()
+        {
+            return this._fleetArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Fleet identifier that is associated with the requested alias.
+        /// The fleet identifier that the alias is pointing to.
         /// </para>
         /// </summary>
         public string FleetId

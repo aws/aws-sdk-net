@@ -30,7 +30,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the DescribeMatchmakingRuleSets operation.
     /// Retrieves the details for FlexMatch matchmaking rule sets. You can request all existing
-    /// rule sets for the region, or provide a list of one or more rule set names. When requesting
+    /// rule sets for the Region, or provide a list of one or more rule set names. When requesting
     /// multiple items, use the pagination parameters to retrieve results as a set of sequential
     /// pages. If successful, a rule set is returned for each requested name. 
     /// 
@@ -90,7 +90,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
@@ -110,8 +110,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// List of one or more matchmaking rule set names to retrieve details for. (Note: The
-        /// rule set name is different from the optional "name" field in the rule set body.) 
+        /// A list of one or more matchmaking rule set names to retrieve details for. (Note: The
+        /// rule set name is different from the optional "name" field in the rule set body.) You
+        /// can use either the rule set name or ARN value. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -130,7 +131,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token that indicates the start of the next sequential page of results. Use the token
+        /// A token that indicates the start of the next sequential page of results. Use the token
         /// that is returned with a previous call to this action. To start at the beginning of
         /// the result set, do not specify a value.
         /// </para>

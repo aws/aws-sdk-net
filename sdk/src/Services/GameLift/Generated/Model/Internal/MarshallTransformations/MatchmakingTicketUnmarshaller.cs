@@ -64,6 +64,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ConfigurationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConfigurationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConfigurationName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

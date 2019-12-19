@@ -56,7 +56,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguidematch-notification.html">
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
     /// Set Up FlexMatch Event Notification</a> 
     /// </para>
     ///  
@@ -92,7 +92,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TicketIds. 
         /// <para>
-        /// Unique identifier for a matchmaking ticket. You can include up to 10 ID values. 
+        /// A unique identifier for a matchmaking ticket. You can include up to 10 ID values.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

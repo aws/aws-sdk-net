@@ -78,7 +78,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ScriptId. 
         /// <para>
-        /// Unique identifier for a Realtime script to retrieve properties for.
+        /// A unique identifier for a Realtime script to retrieve properties for. You can use
+        /// either the script ID or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

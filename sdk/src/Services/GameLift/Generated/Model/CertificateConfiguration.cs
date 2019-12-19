@@ -28,14 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// 
+    /// Information about the use of a TLS/SSL certificate for a fleet. TLS certificate generation
+    /// is enabled at the fleet level, with one certificate generated for the fleet. When
+    /// this feature is enabled, the certificate can be retrieved using the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift
+    /// Server SDK</a> call <code>GetInstanceCertificate</code>. All instances in a fleet
+    /// share the same certificate.
     /// </summary>
     public partial class CertificateConfiguration
     {
         private CertificateType _certificateType;
 
         /// <summary>
-        /// Gets and sets the property CertificateType.
+        /// Gets and sets the property CertificateType. 
+        /// <para>
+        /// Indicates whether a TLS/SSL certificate was generated for a fleet. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  
+        /// </para>
+        ///  
+        /// <para>
+        ///  
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public CertificateType CertificateType

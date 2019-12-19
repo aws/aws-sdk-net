@@ -74,8 +74,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet. This value must match the fleet ID referenced in the
-        /// VPC peering connection record.
+        /// A unique identifier for a fleet. This fleet specified must match the fleet referenced
+        /// in the VPC peering connection record. You can use either the fleet ID or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -94,7 +94,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property VpcPeeringConnectionId. 
         /// <para>
-        /// Unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a>
+        /// A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a>
         /// object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.
         /// </para>
         /// </summary>

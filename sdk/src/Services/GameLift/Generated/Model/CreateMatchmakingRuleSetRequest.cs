@@ -30,14 +30,14 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the CreateMatchmakingRuleSet operation.
     /// Creates a new rule set for FlexMatch matchmaking. A rule set describes the type of
-    /// match to create, such as the number and size of teams, and sets the parameters for
-    /// acceptable player matches, such as minimum skill level or character type. A rule set
-    /// is used by a <a>MatchmakingConfiguration</a>. 
+    /// match to create, such as the number and size of teams. It also sets the parameters
+    /// for acceptable player matches, such as minimum skill level or character type. A rule
+    /// set is used by a <a>MatchmakingConfiguration</a>. 
     /// 
     ///  
     /// <para>
     /// To create a matchmaking rule set, provide unique rule set name and the rule set body
-    /// in JSON format. Rule sets must be defined in the same region as the matchmaking configuration
+    /// in JSON format. Rule sets must be defined in the same Region as the matchmaking configuration
     /// they are used with.
     /// </para>
     ///  
@@ -106,13 +106,14 @@ namespace Amazon.GameLift.Model
     {
         private string _name;
         private string _ruleSetBody;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Unique identifier for a matchmaking rule set. A matchmaking configuration identifies
-        /// the rule set it uses by this name value. (Note: The rule set name is different from
-        /// the optional "name" field in the rule set body.) 
+        /// A unique identifier for a matchmaking rule set. A matchmaking configuration identifies
+        /// the rule set it uses by this name value. Note that the rule set name is different
+        /// from the optional <code>name</code> field in the rule set body.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -131,7 +132,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuleSetBody. 
         /// <para>
-        /// Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed
+        /// A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed
         /// in JSON, but most elements support a description field.
         /// </para>
         /// </summary>
@@ -146,6 +147,31 @@ namespace Amazon.GameLift.Model
         internal bool IsSetRuleSetBody()
         {
             return this._ruleSetBody != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined
+        /// key-value pairs. Tagging AWS resources are useful for resource management, access
+        /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+        /// Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+        /// created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
+        /// to add, remove, and view tags. The maximum tag limit may be lower than stated. See
+        /// the AWS General Reference for actual tagging limits.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

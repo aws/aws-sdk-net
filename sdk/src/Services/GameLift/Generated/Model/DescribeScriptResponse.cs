@@ -37,7 +37,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Script. 
         /// <para>
-        /// Set of properties describing the requested script.
+        /// A set of properties describing the requested script.
         /// </para>
         /// </summary>
         public Script Script

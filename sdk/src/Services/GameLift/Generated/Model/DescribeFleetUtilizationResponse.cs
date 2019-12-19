@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetUtilization. 
         /// <para>
-        /// Collection of objects containing utilization information for each requested fleet
+        /// A collection of objects containing utilization information for each requested fleet
         /// ID.
         /// </para>
         /// </summary>

@@ -37,7 +37,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TicketList. 
         /// <para>
-        /// Collection of existing matchmaking ticket objects matching the request.
+        /// A collection of existing matchmaking ticket objects matching the request.
         /// </para>
         /// </summary>
         public List<MatchmakingTicket> TicketList

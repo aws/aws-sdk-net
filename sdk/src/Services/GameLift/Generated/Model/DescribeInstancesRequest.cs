@@ -51,7 +51,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet to retrieve instance information for.
+        /// A unique identifier for a fleet to retrieve instance information for. You can use
+        /// either the fleet ID or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,7 +71,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// Unique identifier for an instance to retrieve. Specify an instance ID or leave blank
+        /// A unique identifier for an instance to retrieve. Specify an instance ID or leave blank
         /// to retrieve all instances in the fleet.
         /// </para>
         /// </summary>
@@ -89,7 +90,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>

@@ -43,7 +43,26 @@ namespace Amazon.GameLift.Model
         private int? _port;
 
         /// <summary>
-        /// Gets and sets the property DnsName.
+        /// Gets and sets the property DnsName. 
+        /// <para>
+        /// DNS identifier assigned to the instance that is running the game session. Values have
+        /// the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>.
+        /// (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
+        /// EC2 Instance IP Addressing</a>.)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When connecting to a game session that is running on a TLS-enabled fleet, you must
+        /// use the DNS name, not the IP address.
+        /// </para>
         /// </summary>
         public string DnsName
         {
@@ -60,7 +79,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionArn. 
         /// <para>
-        /// Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+        /// Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
         /// that is assigned to a game session and uniquely identifies it.
         /// </para>
         /// </summary>
@@ -80,8 +99,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// IP address of the game session. To connect to a Amazon GameLift game server, an app
-        /// needs both the IP address and port number.
+        /// IP address of the instance that is running the game session. When connecting to a
+        /// Amazon GameLift game server, a client needs to reference an IP address (or DNS name)
+        /// and port number.
         /// </para>
         /// </summary>
         public string IpAddress
@@ -99,7 +119,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MatchedPlayerSessions. 
         /// <para>
-        /// Collection of player session IDs, one for each player ID that was included in the
+        /// A collection of player session IDs, one for each player ID that was included in the
         /// original matchmaking request. 
         /// </para>
         /// </summary>
