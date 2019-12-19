@@ -41,6 +41,7 @@ namespace Amazon.PersonalizeRuntime.Model
     public partial class GetPersonalizedRankingRequest : AmazonPersonalizeRuntimeRequest
     {
         private string _campaignArn;
+        private Dictionary<string, string> _context = new Dictionary<string, string>();
         private List<string> _inputList = new List<string>();
         private string _userId;
 
@@ -65,10 +66,32 @@ namespace Amazon.PersonalizeRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// The contextual metadata to use when getting recommendations. Contextual metadata includes
+        /// any interaction information that might be relevant when getting a user's recommendations,
+        /// such as the user's current location or device type. For more information, see Contextual
+        /// Metadata.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=150)]
+        public Dictionary<string, string> Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null && this._context.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property InputList. 
         /// <para>
         /// A list of items (itemId's) to rank. If an item was not included in the training dataset,
-        /// the item is appended to the end of the reranked list.
+        /// the item is appended to the end of the reranked list. The maximum is 500.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

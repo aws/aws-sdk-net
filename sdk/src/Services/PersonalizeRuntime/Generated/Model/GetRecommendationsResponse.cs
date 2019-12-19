@@ -37,7 +37,8 @@ namespace Amazon.PersonalizeRuntime.Model
         /// <summary>
         /// Gets and sets the property ItemList. 
         /// <para>
-        /// A list of recommendations.
+        /// A list of recommendations sorted in ascending order by prediction score. There can
+        /// be a maximum of 500 items in the list.
         /// </para>
         /// </summary>
         public List<PredictedItem> ItemList

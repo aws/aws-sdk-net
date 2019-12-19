@@ -72,6 +72,20 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CampaignArn);
                 }
 
+                if(publicRequest.IsSetContext())
+                {
+                    context.Writer.WritePropertyName("context");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestContextKvp in publicRequest.Context)
+                    {
+                        context.Writer.WritePropertyName(publicRequestContextKvp.Key);
+                        var publicRequestContextValue = publicRequestContextKvp.Value;
+
+                            context.Writer.Write(publicRequestContextValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetInputList())
                 {
                     context.Writer.WritePropertyName("inputList");
