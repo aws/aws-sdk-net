@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.653.0",
+    "ProductVersion" : "3.3.654.0",
     "CoreVersion"    : "3.3.104.8",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.145.0",
+            "Version" : "3.3.146.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.8"
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.115.2",
+            "Version" : "3.3.116.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.8"
@@ -513,7 +513,7 @@
             "InPreview"               : false
         },
         "GameLift"                        : {
-            "Version" : "3.3.104.26",
+            "Version" : "3.3.105.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.8"
@@ -777,7 +777,7 @@
             "InPreview"               : false
         },
         "LexModelBuildingService"         : {
-            "Version" : "3.3.101.13",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.8"
@@ -1049,7 +1049,7 @@
             "InPreview"               : false
         },
         "TranscribeService"               : {
-            "Version" : "3.3.111.13",
+            "Version" : "3.3.112.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.8"
@@ -1153,7 +1153,7 @@
             "InPreview"               : false
         },
         "DLM"                             : {
-            "Version" : "3.3.104.11",
+            "Version" : "3.3.105.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.8"
@@ -1433,7 +1433,7 @@
             "InPreview"               : false
         },
         "PersonalizeRuntime"              : {
-            "Version" : "3.3.101.50",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.8"
@@ -1746,6 +1746,14 @@
         },
         "Detective"                       : {
             "Version" : "3.3.100.4",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.104.8"
+            },
+            "InPreview"               : false
+        },
+        "CodeStarconnections"             : {
+            "Version" : "3.3.100.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.8"

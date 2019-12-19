@@ -1,3 +1,21 @@
+### 3.3.654.0 (2019-12-19 19:42 UTC)
+* CodeStarconnections (3.3.100.0)
+	* Public beta for Bitbucket Cloud support in AWS CodePipeline through integration with AWS CodeStar connections.
+* DLM (3.3.105.0)
+	* You can now copy snapshots across regions using Data Lifecycle Manager (DLM). You can enable policies which, along with create, can now also copy snapshots to one or more AWS region(s). Copies can be scheduled for up to three regions from a single policy and retention periods are set for each region separately. 
+* EC2 (3.3.146.0)
+	* We are updating the supportedRootDevices field to supportedRootDeviceTypes for DescribeInstanceTypes API to ensure that the actual value is returned, correcting a previous error in the model.
+* GameLift (3.3.105.0)
+	* Amazon GameLift now supports ARNs for all key GameLift resources, tagging for GameLift resource authorization management, and updated documentation that articulates GameLift's resource authorization strategy.
+* LexModelBuildingService (3.3.102.0)
+	* Amazon Lex now supports conversation logs and slot obfuscation.
+* PersonalizeRuntime (3.3.102.0)
+	* Add context map to get-recommendations and get-personalized-ranking request objects to provide contextual metadata at inference time
+* SimpleSystemsManagement (3.3.116.0)
+	* This release allows customers to add tags to Automation execution, enabling them to sort and filter executions in different ways, such as by resource, purpose, owner, or environment.
+* TranscribeService (3.3.112.0)
+	* Amazon Transcribe supports job queuing for the StartTranscriptionJob API.
+
 ### 3.3.653.0 (2019-12-18 19:46 UTC)
 * CloudFront (3.3.101.82)
 	* Documentation updates for CloudFront
