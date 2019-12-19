@@ -43,6 +43,7 @@ namespace Amazon.LexModelBuildingService.Model
         private string _botName;
         private string _botVersion;
         private string _checksum;
+        private ConversationLogsRequest _conversationLogs;
         private string _description;
         private string _name;
 
@@ -112,6 +113,24 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetChecksum()
         {
             return this._checksum != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConversationLogs. 
+        /// <para>
+        /// Settings that determine how Amazon Lex uses conversation logs for the alias.
+        /// </para>
+        /// </summary>
+        public ConversationLogsRequest ConversationLogs
+        {
+            get { return this._conversationLogs; }
+            set { this._conversationLogs = value; }
+        }
+
+        // Check to see if ConversationLogs property is set
+        internal bool IsSetConversationLogs()
+        {
+            return this._conversationLogs != null;
         }
 
         /// <summary>

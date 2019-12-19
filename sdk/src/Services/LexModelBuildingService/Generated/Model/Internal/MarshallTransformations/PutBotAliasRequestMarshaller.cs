@@ -84,6 +84,17 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Checksum);
                 }
 
+                if(publicRequest.IsSetConversationLogs())
+                {
+                    context.Writer.WritePropertyName("conversationLogs");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConversationLogsRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ConversationLogs, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

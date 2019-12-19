@@ -69,6 +69,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     response.Checksum = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("conversationLogs", targetDepth))
+                {
+                    var unmarshaller = ConversationLogsResponseUnmarshaller.Instance;
+                    response.ConversationLogs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

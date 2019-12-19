@@ -191,6 +191,56 @@ namespace Amazon.LexModelBuildingService
 
 
     /// <summary>
+    /// Constants used for properties of type Destination.
+    /// </summary>
+    public class Destination : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUDWATCH_LOGS for Destination
+        /// </summary>
+        public static readonly Destination CLOUDWATCH_LOGS = new Destination("CLOUDWATCH_LOGS");
+        /// <summary>
+        /// Constant S3 for Destination
+        /// </summary>
+        public static readonly Destination S3 = new Destination("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Destination(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Destination FindValue(string value)
+        {
+            return FindValue<Destination>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Destination(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExportStatus.
     /// </summary>
     public class ExportStatus : ConstantClass
@@ -453,6 +503,56 @@ namespace Amazon.LexModelBuildingService
 
 
     /// <summary>
+    /// Constants used for properties of type LogType.
+    /// </summary>
+    public class LogType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUDIO for LogType
+        /// </summary>
+        public static readonly LogType AUDIO = new LogType("AUDIO");
+        /// <summary>
+        /// Constant TEXT for LogType
+        /// </summary>
+        public static readonly LogType TEXT = new LogType("TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogType FindValue(string value)
+        {
+            return FindValue<LogType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MergeStrategy.
     /// </summary>
     public class MergeStrategy : ConstantClass
@@ -496,6 +596,56 @@ namespace Amazon.LexModelBuildingService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MergeStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ObfuscationSetting.
+    /// </summary>
+    public class ObfuscationSetting : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT_OBFUSCATION for ObfuscationSetting
+        /// </summary>
+        public static readonly ObfuscationSetting DEFAULT_OBFUSCATION = new ObfuscationSetting("DEFAULT_OBFUSCATION");
+        /// <summary>
+        /// Constant NONE for ObfuscationSetting
+        /// </summary>
+        public static readonly ObfuscationSetting NONE = new ObfuscationSetting("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObfuscationSetting(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObfuscationSetting FindValue(string value)
+        {
+            return FindValue<ObfuscationSetting>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObfuscationSetting(string value)
         {
             return FindValue(value);
         }

@@ -34,6 +34,7 @@ namespace Amazon.LexModelBuildingService.Model
     {
         private string _description;
         private string _name;
+        private ObfuscationSetting _obfuscationSetting;
         private int? _priority;
         private string _responseCard;
         private List<string> _sampleUtterances = new List<string>();
@@ -78,6 +79,28 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObfuscationSetting. 
+        /// <para>
+        /// Determines whether a slot is obfuscated in conversation logs and stored utterances.
+        /// When you obfuscate a slot, the value is replaced by the slot name in curly braces
+        /// ({}). For example, if the slot name is "full_name", obfuscated values are replaced
+        /// with "{full_name}". For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html">
+        /// Slot Obfuscation </a>. 
+        /// </para>
+        /// </summary>
+        public ObfuscationSetting ObfuscationSetting
+        {
+            get { return this._obfuscationSetting; }
+            set { this._obfuscationSetting = value; }
+        }
+
+        // Check to see if ObfuscationSetting property is set
+        internal bool IsSetObfuscationSetting()
+        {
+            return this._obfuscationSetting != null;
         }
 
         /// <summary>

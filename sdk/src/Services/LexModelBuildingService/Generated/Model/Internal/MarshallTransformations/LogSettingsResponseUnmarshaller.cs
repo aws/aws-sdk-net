@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BotAliasMetadata Object
+    /// Response Unmarshaller for LogSettingsResponse Object
     /// </summary>  
-    public class BotAliasMetadataUnmarshaller : IUnmarshaller<BotAliasMetadata, XmlUnmarshallerContext>, IUnmarshaller<BotAliasMetadata, JsonUnmarshallerContext>
+    public class LogSettingsResponseUnmarshaller : IUnmarshaller<LogSettingsResponse, XmlUnmarshallerContext>, IUnmarshaller<LogSettingsResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BotAliasMetadata IUnmarshaller<BotAliasMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LogSettingsResponse IUnmarshaller<LogSettingsResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,63 +53,45 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BotAliasMetadata Unmarshall(JsonUnmarshallerContext context)
+        public LogSettingsResponse Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BotAliasMetadata unmarshalledObject = new BotAliasMetadata();
+            LogSettingsResponse unmarshalledObject = new LogSettingsResponse();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("botName", targetDepth))
+                if (context.TestExpression("destination", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BotName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("botVersion", targetDepth))
+                if (context.TestExpression("kmsKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BotVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("checksum", targetDepth))
+                if (context.TestExpression("logType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Checksum = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("conversationLogs", targetDepth))
-                {
-                    var unmarshaller = ConversationLogsResponseUnmarshaller.Instance;
-                    unmarshalledObject.ConversationLogs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("resourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("resourcePrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourcePrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,12 +100,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         }
 
 
-        private static BotAliasMetadataUnmarshaller _instance = new BotAliasMetadataUnmarshaller();        
+        private static LogSettingsResponseUnmarshaller _instance = new LogSettingsResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BotAliasMetadataUnmarshaller Instance
+        public static LogSettingsResponseUnmarshaller Instance
         {
             get
             {

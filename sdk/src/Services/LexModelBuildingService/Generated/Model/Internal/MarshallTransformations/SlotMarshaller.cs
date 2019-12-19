@@ -57,6 +57,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetObfuscationSetting())
+            {
+                context.Writer.WritePropertyName("obfuscationSetting");
+                context.Writer.Write(requestObject.ObfuscationSetting);
+            }
+
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("priority");
