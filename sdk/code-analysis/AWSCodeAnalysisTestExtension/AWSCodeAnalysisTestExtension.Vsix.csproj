@@ -236,6 +236,10 @@
       <Project>{57676728-2C35-44E9-8990-0CD0EE3A6E2E}</Project>
       <Name>AWSSDK.CodeStar.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CodeStarconnections/AWSSDK.CodeStarconnections.CodeAnalysis.csproj">
+      <Project>{9F19D6D8-7B75-43AC-8819-74B822450464}</Project>
+      <Name>AWSSDK.CodeStarconnections.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CodeStarNotifications/AWSSDK.CodeStarNotifications.CodeAnalysis.csproj">
       <Project>{24E912CD-1CEE-4CA3-9E36-3AA0EBB3BF5B}</Project>
       <Name>AWSSDK.CodeStarNotifications.CodeAnalysis</Name>
