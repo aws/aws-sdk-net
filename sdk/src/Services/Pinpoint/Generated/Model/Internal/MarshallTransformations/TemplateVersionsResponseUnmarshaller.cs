@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EmailMessageActivity Object
+    /// Response Unmarshaller for TemplateVersionsResponse Object
     /// </summary>  
-    public class EmailMessageActivityUnmarshaller : IUnmarshaller<EmailMessageActivity, XmlUnmarshallerContext>, IUnmarshaller<EmailMessageActivity, JsonUnmarshallerContext>
+    public class TemplateVersionsResponseUnmarshaller : IUnmarshaller<TemplateVersionsResponse, XmlUnmarshallerContext>, IUnmarshaller<TemplateVersionsResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EmailMessageActivity IUnmarshaller<EmailMessageActivity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TemplateVersionsResponse IUnmarshaller<TemplateVersionsResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,39 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EmailMessageActivity Unmarshall(JsonUnmarshallerContext context)
+        public TemplateVersionsResponse Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EmailMessageActivity unmarshalledObject = new EmailMessageActivity();
+            TemplateVersionsResponse unmarshalledObject = new TemplateVersionsResponse();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MessageConfig", targetDepth))
+                if (context.TestExpression("Item", targetDepth))
                 {
-                    var unmarshaller = JourneyEmailMessageUnmarshaller.Instance;
-                    unmarshalledObject.MessageConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<TemplateVersionResponse, TemplateVersionResponseUnmarshaller>(TemplateVersionResponseUnmarshaller.Instance);
+                    unmarshalledObject.Item = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NextActivity", targetDepth))
+                if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NextActivity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TemplateName", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TemplateName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TemplateVersion", targetDepth))
+                if (context.TestExpression("RequestID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TemplateVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequestID = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +94,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         }
 
 
-        private static EmailMessageActivityUnmarshaller _instance = new EmailMessageActivityUnmarshaller();        
+        private static TemplateVersionsResponseUnmarshaller _instance = new TemplateVersionsResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EmailMessageActivityUnmarshaller Instance
+        public static TemplateVersionsResponseUnmarshaller Instance
         {
             get
             {

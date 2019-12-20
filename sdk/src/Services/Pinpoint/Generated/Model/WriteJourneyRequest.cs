@@ -48,7 +48,10 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Activities. 
         /// <para>
-        /// The configuration and other settings for the activities that comprise the journey.
+        /// A map that contains a set of Activity objects, one object for each activity in the
+        /// journey. For each Activity object, the key is the unique identifier (string) for an
+        /// activity and the value is the settings for the activity. An activity identifier can
+        /// contain a maximum of 128 characters. The characters must be alphanumeric characters.
         /// </para>
         /// </summary>
         public Dictionary<string, Activity> Activities
@@ -238,7 +241,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property StartActivity. 
         /// <para>
-        /// The unique identifier for the first activity in the journey.
+        /// The unique identifier for the first activity in the journey. An activity identifier
+        /// can contain a maximum of 128 characters. The characters must be alphanumeric characters.
         /// </para>
         /// </summary>
         public string StartActivity

@@ -2476,6 +2476,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Pinpoint")]
+        public void ListTemplateVersionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTemplateVersions");
+
+            var request = InstantiateClassGenerator.Execute<ListTemplateVersionsRequest>();
+            var marshaller = new ListTemplateVersionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListTemplateVersions", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListTemplateVersionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListTemplateVersionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
         public void PhoneNumberValidateMarshallTest()
         {
             var operation = service_model.FindOperation("PhoneNumberValidate");
@@ -3302,6 +3334,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = UpdateSmsTemplateResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as UpdateSmsTemplateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
+        public void UpdateTemplateActiveVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateTemplateActiveVersion");
+
+            var request = InstantiateClassGenerator.Execute<UpdateTemplateActiveVersionRequest>();
+            var marshaller = new UpdateTemplateActiveVersionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateTemplateActiveVersion", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateTemplateActiveVersionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateTemplateActiveVersionResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

@@ -68,6 +68,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TemplateName);
             }
 
+            if(requestObject.IsSetTemplateVersion())
+            {
+                context.Writer.WritePropertyName("TemplateVersion");
+                context.Writer.Write(requestObject.TemplateVersion);
+            }
+
         }
 
         /// <summary>

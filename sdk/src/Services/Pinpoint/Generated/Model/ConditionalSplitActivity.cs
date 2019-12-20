@@ -80,7 +80,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property FalseActivity. 
         /// <para>
-        /// The unique identifier for the activity to perform if the condition isn't met.
+        /// The unique identifier for the activity to perform if the conditions aren't met.
         /// </para>
         /// </summary>
         public string FalseActivity
@@ -98,7 +98,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TrueActivity. 
         /// <para>
-        /// The unique identifier for the activity to perform if the condition is met.
+        /// The unique identifier for the activity to perform if the conditions are met.
         /// </para>
         /// </summary>
         public string TrueActivity

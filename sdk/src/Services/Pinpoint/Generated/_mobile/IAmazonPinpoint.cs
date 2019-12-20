@@ -112,8 +112,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Creates a message template that you can use in messages that are sent through the
-        /// email channel.
+        /// Creates a message template for messages that are sent through the email channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEmailTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -250,8 +249,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Creates a message template that you can use in messages that are sent through a push
-        /// notification channel.
+        /// Creates a message template for messages that are sent through a push notification
+        /// channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePushTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -319,8 +318,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Creates a message template that you can use in messages that are sent through the
-        /// SMS channel.
+        /// Creates a message template for messages that are sent through the SMS channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSmsTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -352,8 +350,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Creates a message template that you can use in messages that are sent through the
-        /// voice channel.
+        /// Creates a message template for messages that are sent through the voice channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVoiceTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -707,8 +704,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Deletes a message template that was designed for use in messages that were sent through
-        /// the email channel.
+        /// Deletes a message template for messages that were sent through the email channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEmailTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -884,8 +880,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Deletes a message template that was designed for use in messages that were sent through
-        /// a push notification channel.
+        /// Deletes a message template for messages that were sent through a push notification
+        /// channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePushTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -991,8 +987,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Deletes a message template that was designed for use in messages that were sent through
-        /// the SMS channel.
+        /// Deletes a message template for messages that were sent through the SMS channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSmsTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -1098,8 +1093,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Deletes a message template that was designed for use in messages that were sent through
-        /// the voice channel.
+        /// Deletes a message template for messages that were sent through the voice channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -1417,7 +1411,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Retrieves information about all of your applications.
+        /// Retrieves information about all the applications that are associated with your Amazon
+        /// Pinpoint account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApps service method.</param>
         /// <param name="cancellationToken">
@@ -1770,8 +1765,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Retrieves the content and settings for a message template that you can use in messages
-        /// that are sent through the email channel.
+        /// Retrieves the content and settings of a message template for messages that are sent
+        /// through the email channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEmailTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -2199,8 +2194,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Retrieves the content and settings for a message template that you can use in messages
-        /// that are sent through a push notification channel.
+        /// Retrieves the content and settings of a message template for messages that are sent
+        /// through a push notification channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPushTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -2414,7 +2409,7 @@ namespace Amazon.Pinpoint
 
         /// <summary>
         /// Retrieves information about the configuration, dimension, and other settings for all
-        /// versions of a specific segment that's associated with an application.
+        /// the versions of a specific segment that's associated with an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSegmentVersions service method.</param>
         /// <param name="cancellationToken">
@@ -2484,8 +2479,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Retrieves the content and settings for a message template that you can use in messages
-        /// that are sent through the SMS channel.
+        /// Retrieves the content and settings of a message template for messages that are sent
+        /// through the SMS channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSmsTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -2591,8 +2586,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Retrieves the content and settings for a message template that you can use in messages
-        /// that are sent through the voice channel.
+        /// Retrieves the content and settings of a message template for messages that are sent
+        /// through the voice channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVoiceTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -2706,6 +2701,41 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         Task<ListTemplatesResponse> ListTemplatesAsync(ListTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTemplateVersions
+
+
+
+        /// <summary>
+        /// Retrieves information about all the versions of a specific message template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTemplateVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTemplateVersions service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<ListTemplateVersionsResponse> ListTemplateVersionsAsync(ListTemplateVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3285,8 +3315,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates an existing message template that you can use in messages that are sent through
-        /// the email channel.
+        /// Updates an existing message template for messages that are sent through the email
+        /// channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEmailTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -3467,7 +3497,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Cancels an active journey.
+        /// Cancels (stops) an active journey.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJourneyState service method.</param>
         /// <param name="cancellationToken">
@@ -3502,8 +3532,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates an existing message template that you can use in messages that are sent through
-        /// a push notification channel.
+        /// Updates an existing message template for messages that are sent through a push notification
+        /// channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePushTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -3610,8 +3640,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates an existing message template that you can use in messages that are sent through
-        /// the SMS channel.
+        /// Updates an existing message template for messages that are sent through the SMS channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSmsTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -3638,6 +3667,41 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         Task<UpdateSmsTemplateResponse> UpdateSmsTemplateAsync(UpdateSmsTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateTemplateActiveVersion
+
+
+
+        /// <summary>
+        /// Changes the status of a specific version of a message template to <i>active</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTemplateActiveVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTemplateActiveVersion service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        Task<UpdateTemplateActiveVersionResponse> UpdateTemplateActiveVersionAsync(UpdateTemplateActiveVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3682,8 +3746,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates an existing message template that you can use in messages that are sent through
-        /// the voice channel.
+        /// Updates an existing message template for messages that are sent through the voice
+        /// channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceTemplate service method.</param>
         /// <param name="cancellationToken">

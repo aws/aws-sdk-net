@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetVoiceTemplate Request Marshaller
+    /// ListTemplateVersions Request Marshaller
     /// </summary>       
-    public class GetVoiceTemplateRequestMarshaller : IMarshaller<IRequest, GetVoiceTemplateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListTemplateVersionsRequestMarshaller : IMarshaller<IRequest, ListTemplateVersionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetVoiceTemplateRequest)input);
+            return this.Marshall((ListTemplateVersionsRequest)input);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetVoiceTemplateRequest publicRequest)
+        public IRequest Marshall(ListTemplateVersionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Pinpoint");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
@@ -61,18 +61,24 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetTemplateName())
                 throw new AmazonPinpointException("Request object does not have required field TemplateName set");
             request.AddPathResource("{template-name}", StringUtils.FromString(publicRequest.TemplateName));
+            if (!publicRequest.IsSetTemplateType())
+                throw new AmazonPinpointException("Request object does not have required field TemplateType set");
+            request.AddPathResource("{template-type}", StringUtils.FromString(publicRequest.TemplateType));
             
-            if (publicRequest.IsSetVersion())
-                request.Parameters.Add("version", StringUtils.FromString(publicRequest.Version));
-            request.ResourcePath = "/v1/templates/{template-name}/voice";
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetPageSize())
+                request.Parameters.Add("page-size", StringUtils.FromString(publicRequest.PageSize));
+            request.ResourcePath = "/v1/templates/{template-name}/{template-type}/versions";
             request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;
         }
-        private static GetVoiceTemplateRequestMarshaller _instance = new GetVoiceTemplateRequestMarshaller();        
+        private static ListTemplateVersionsRequestMarshaller _instance = new ListTemplateVersionsRequestMarshaller();        
 
-        internal static GetVoiceTemplateRequestMarshaller GetInstance()
+        internal static ListTemplateVersionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -80,7 +86,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetVoiceTemplateRequestMarshaller Instance
+        public static ListTemplateVersionsRequestMarshaller Instance
         {
             get
             {

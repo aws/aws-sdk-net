@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Template Marshaller
+    /// TemplateActiveVersionRequest Marshaller
     /// </summary>       
-    public class TemplateMarshaller : IRequestMarshaller<Template, JsonMarshallerContext> 
+    public class TemplateActiveVersionRequestMarshaller : IRequestMarshaller<TemplateActiveVersionRequest, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,14 +43,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Template requestObject, JsonMarshallerContext context)
+        public void Marshall(TemplateActiveVersionRequest requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
-            }
-
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
@@ -62,7 +56,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static TemplateMarshaller Instance = new TemplateMarshaller();
+        public readonly static TemplateActiveVersionRequestMarshaller Instance = new TemplateActiveVersionRequestMarshaller();
 
     }
 }

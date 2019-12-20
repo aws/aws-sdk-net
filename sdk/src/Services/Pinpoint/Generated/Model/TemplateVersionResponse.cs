@@ -28,43 +28,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Provides information about a message template that's associated with your Amazon Pinpoint
-    /// account.
+    /// Provides information about a specific version of a message template.
     /// </summary>
-    public partial class TemplateResponse
+    public partial class TemplateVersionResponse
     {
-        private string _arn;
         private string _creationDate;
         private string _defaultSubstitutions;
         private string _lastModifiedDate;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _templateDescription;
         private string _templateName;
-        private TemplateType _templateType;
+        private string _templateType;
         private string _version;
-
-        /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the message template.
-        /// </para>
-        /// </summary>
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
 
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date, in ISO 8601 format, when the message template was created.
+        /// The date, in ISO 8601 format, when the version of the message template was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,10 +62,10 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property DefaultSubstitutions. 
         /// <para>
-        /// The JSON object that specifies the default values that are used for message variables
-        /// in the message template. This object is a set of key-value pairs. Each key defines
-        /// a message variable in the template. The corresponding value defines the default value
-        /// for that variable.
+        /// A JSON object that specifies the default values that are used for message variables
+        /// in the version of the message template. This object is a set of key-value pairs. Each
+        /// key defines a message variable in the template. The corresponding value defines the
+        /// default value for that variable.
         /// </para>
         /// </summary>
         public string DefaultSubstitutions
@@ -104,7 +83,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        /// The date, in ISO 8601 format, when the message template was last modified.
+        /// The date, in ISO 8601 format, when the version of the message template was last modified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -121,29 +100,9 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// A string-to-string map of key-value pairs that identifies the tags that are associated
-        /// with the message template. Each tag consists of a required tag key and an associated
-        /// tag value.
-        /// </para>
-        /// </summary>
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property TemplateDescription. 
         /// <para>
-        /// The custom description of the message template.
+        /// The custom description of the version of the message template.
         /// </para>
         /// </summary>
         public string TemplateDescription
@@ -185,7 +144,7 @@ namespace Amazon.Pinpoint.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public TemplateType TemplateType
+        public string TemplateType
         {
             get { return this._templateType; }
             set { this._templateType = value; }
@@ -200,7 +159,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The unique identifier, as an integer, for the active version of the message template.
+        /// The unique identifier for the version of the message template. This value is an integer
+        /// that Amazon Pinpoint automatically increments and assigns to each new version of a
+        /// template.
         /// </para>
         /// </summary>
         public string Version

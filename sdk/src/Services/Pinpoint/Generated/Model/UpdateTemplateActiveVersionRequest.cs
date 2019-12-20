@@ -28,13 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateVoiceTemplate operation.
-    /// Creates a message template for messages that are sent through the voice channel.
+    /// Container for the parameters to the UpdateTemplateActiveVersion operation.
+    /// Changes the status of a specific version of a message template to <i>active</i>.
     /// </summary>
-    public partial class CreateVoiceTemplateRequest : AmazonPinpointRequest
+    public partial class UpdateTemplateActiveVersionRequest : AmazonPinpointRequest
     {
+        private TemplateActiveVersionRequest _templateActiveVersionRequest;
         private string _templateName;
-        private VoiceTemplateRequest _voiceTemplateRequest;
+        private string _templateType;
+
+        /// <summary>
+        /// Gets and sets the property TemplateActiveVersionRequest.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public TemplateActiveVersionRequest TemplateActiveVersionRequest
+        {
+            get { return this._templateActiveVersionRequest; }
+            set { this._templateActiveVersionRequest = value; }
+        }
+
+        // Check to see if TemplateActiveVersionRequest property is set
+        internal bool IsSetTemplateActiveVersionRequest()
+        {
+            return this._templateActiveVersionRequest != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TemplateName. 
@@ -58,19 +75,23 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceTemplateRequest.
+        /// Gets and sets the property TemplateType. 
+        /// <para>
+        /// The type of channel that the message template is designed for. Valid values are: EMAIL,
+        /// PUSH, SMS, and VOICE.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public VoiceTemplateRequest VoiceTemplateRequest
+        public string TemplateType
         {
-            get { return this._voiceTemplateRequest; }
-            set { this._voiceTemplateRequest = value; }
+            get { return this._templateType; }
+            set { this._templateType = value; }
         }
 
-        // Check to see if VoiceTemplateRequest property is set
-        internal bool IsSetVoiceTemplateRequest()
+        // Check to see if TemplateType property is set
+        internal bool IsSetTemplateType()
         {
-            return this._voiceTemplateRequest != null;
+            return this._templateType != null;
         }
 
     }

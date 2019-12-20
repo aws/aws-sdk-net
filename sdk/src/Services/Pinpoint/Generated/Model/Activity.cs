@@ -119,7 +119,8 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property MultiCondition. 
         /// <para>
         /// The settings for a multivariate split activity. This type of activity sends participants
-        /// down one of as many as five paths in a journey, based on conditions that you specify.
+        /// down one of as many as five paths (including a default <i>Else</i> path) in a journey,
+        /// based on conditions that you specify.
         /// </para>
         /// </summary>
         public MultiConditionalSplitActivity MultiCondition

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetVoiceTemplate Request Marshaller
+    /// UpdateTemplateActiveVersion Request Marshaller
     /// </summary>       
-    public class GetVoiceTemplateRequestMarshaller : IMarshaller<IRequest, GetVoiceTemplateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateTemplateActiveVersionRequestMarshaller : IMarshaller<IRequest, UpdateTemplateActiveVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetVoiceTemplateRequest)input);
+            return this.Marshall((UpdateTemplateActiveVersionRequest)input);
         }
 
         /// <summary>
@@ -52,27 +52,41 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetVoiceTemplateRequest publicRequest)
+        public IRequest Marshall(UpdateTemplateActiveVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Pinpoint");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
-            request.HttpMethod = "GET";
+            request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetTemplateName())
                 throw new AmazonPinpointException("Request object does not have required field TemplateName set");
             request.AddPathResource("{template-name}", StringUtils.FromString(publicRequest.TemplateName));
-            
-            if (publicRequest.IsSetVersion())
-                request.Parameters.Add("version", StringUtils.FromString(publicRequest.Version));
-            request.ResourcePath = "/v1/templates/{template-name}/voice";
+            if (!publicRequest.IsSetTemplateType())
+                throw new AmazonPinpointException("Request object does not have required field TemplateType set");
+            request.AddPathResource("{template-type}", StringUtils.FromString(publicRequest.TemplateType));
+            request.ResourcePath = "/v1/templates/{template-name}/{template-type}/active-version";
             request.MarshallerVersion = 2;
-            request.UseQueryString = true;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                var context = new JsonMarshallerContext(request, writer);
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TemplateActiveVersionRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TemplateActiveVersionRequest, context);
+
+                context.Writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
 
             return request;
         }
-        private static GetVoiceTemplateRequestMarshaller _instance = new GetVoiceTemplateRequestMarshaller();        
+        private static UpdateTemplateActiveVersionRequestMarshaller _instance = new UpdateTemplateActiveVersionRequestMarshaller();        
 
-        internal static GetVoiceTemplateRequestMarshaller GetInstance()
+        internal static UpdateTemplateActiveVersionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -80,7 +94,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetVoiceTemplateRequestMarshaller Instance
+        public static UpdateTemplateActiveVersionRequestMarshaller Instance
         {
             get
             {

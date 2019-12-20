@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the GetApps operation.
-    /// Retrieves information about all of your applications.
+    /// Retrieves information about all the applications that are associated with your Amazon
+    /// Pinpoint account.
     /// </summary>
     public partial class GetAppsRequest : AmazonPinpointRequest
     {

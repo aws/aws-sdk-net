@@ -28,35 +28,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetSegmentVersions operation.
-    /// Retrieves information about the configuration, dimension, and other settings for all
-    /// the versions of a specific segment that's associated with an application.
+    /// Container for the parameters to the ListTemplateVersions operation.
+    /// Retrieves information about all the versions of a specific message template.
     /// </summary>
-    public partial class GetSegmentVersionsRequest : AmazonPinpointRequest
+    public partial class ListTemplateVersionsRequest : AmazonPinpointRequest
     {
-        private string _applicationId;
+        private string _nextToken;
         private string _pageSize;
-        private string _segmentId;
-        private string _token;
+        private string _templateName;
+        private string _templateType;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The unique identifier for the application. This identifier is displayed as the <b>Project
-        /// ID</b> on the Amazon Pinpoint console.
+        /// The  string that specifies which page of results to return in a paginated response.
+        /// This parameter is currently not supported for application, campaign, and journey metrics.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string ApplicationId
+        public string NextToken
         {
-            get { return this._applicationId; }
-            set { this._applicationId = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if ApplicationId property is set
-        internal bool IsSetApplicationId()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._applicationId != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
@@ -79,41 +77,44 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentId. 
+        /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The unique identifier for the segment.
+        /// The name of the message template. A template name must start with an alphanumeric
+        /// character and can contain a maximum of 128 characters. The characters can be alphanumeric
+        /// characters, underscores (_), or hyphens (-). Template names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string SegmentId
+        public string TemplateName
         {
-            get { return this._segmentId; }
-            set { this._segmentId = value; }
+            get { return this._templateName; }
+            set { this._templateName = value; }
         }
 
-        // Check to see if SegmentId property is set
-        internal bool IsSetSegmentId()
+        // Check to see if TemplateName property is set
+        internal bool IsSetTemplateName()
         {
-            return this._segmentId != null;
+            return this._templateName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Token. 
+        /// Gets and sets the property TemplateType. 
         /// <para>
-        /// The NextToken string that specifies which page of results to return in a paginated
-        /// response.
+        /// The type of channel that the message template is designed for. Valid values are: EMAIL,
+        /// PUSH, SMS, and VOICE.
         /// </para>
         /// </summary>
-        public string Token
+        [AWSProperty(Required=true)]
+        public string TemplateType
         {
-            get { return this._token; }
-            set { this._token = value; }
+            get { return this._templateType; }
+            set { this._templateType = value; }
         }
 
-        // Check to see if Token property is set
-        internal bool IsSetToken()
+        // Check to see if TemplateType property is set
+        internal bool IsSetTemplateType()
         {
-            return this._token != null;
+            return this._templateType != null;
         }
 
     }
