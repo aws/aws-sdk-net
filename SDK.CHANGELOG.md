@@ -1,3 +1,28 @@
+### 3.3.655.0 (2019-12-20 19:20 UTC)
+* DeviceFarm (3.3.102.0)
+	* Introduced browser testing support through AWS Device Farm
+* EC2 (3.3.147.0)
+	* This release introduces the ability to tag key pairs, placement groups, export tasks, import image tasks, import snapshot tasks and export image tasks. You can use tags to organize and identify your resources for cost allocation. 
+* EKS (3.3.106.0)
+	* Amazon EKS now supports restricting access to the API server public endpoint by applying CIDR blocks
+* Pinpoint (3.3.105.0)
+	* This release of the Amazon Pinpoint API introduces versioning support for message templates.
+* RDS (3.3.115.0)
+	* This release adds an operation that enables users to specify whether a database is restarted when its SSL/TLS certificate is rotated. Only customers who do not use SSL/TLS should use this operation.
+* Redshift (3.3.105.12)
+	* Documentation updates for Amazon Redshift RA3 node types.
+* SecurityHub (3.3.105.0)
+	* Additional resource types are now fully supported in the AWS Security Finding Format (ASFF). These resources include AwsElbv2LoadBalancer, AwsKmsKey, AwsIamRole, AwsSqsQueue, AwsLambdaFunction, AwsSnsTopic, and AwsCloudFrontDistribution. Each of these resource types includes an accompanying resource details object with fields for security finding providers to populate. Updates were made to the AwsIamAccessKey resource details object to include information on principal ID and name. To learn more, visit our documentation on the ASFF.
+* SimpleSystemsManagement (3.3.117.0)
+	* This release updates the attachments support to include AttachmentReference source for Automation documents.
+* TranscribeService (3.3.113.0)
+	* AWS Transcribe now supports vocabulary filtering that allows customers to input words to the service that they don't want to see in the output transcript.
+* Core 3.3.104.9
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.654.1 (2019-12-19 22:06 UTC)
 * S3 (3.3.110.4)
 	* Adding configuration of S3 timeouts to MaxTimeout for .NET Standard
