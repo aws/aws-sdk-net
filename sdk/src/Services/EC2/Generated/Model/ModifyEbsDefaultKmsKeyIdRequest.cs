@@ -35,8 +35,9 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// AWS creates a unique AWS managed CMK in each Region for use with encryption by default.
-    /// If you change the default CMK to a customer managed CMK, it is used instead of the
-    /// AWS managed CMK. To reset the default CMK to the AWS managed CMK for EBS, use <a>ResetEbsDefaultKmsKeyId</a>.
+    /// If you change the default CMK to a symmetric customer managed CMK, it is used instead
+    /// of the AWS managed CMK. To reset the default CMK to the AWS managed CMK for EBS, use
+    /// <a>ResetEbsDefaultKmsKeyId</a>. Amazon EBS does not support asymmetric CMKs.
     /// </para>
     ///  
     /// <para>
@@ -85,6 +86,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias,
         /// or ARN that is not valid, the action can appear to complete, but eventually fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon EBS does not support asymmetric CMKs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -32,10 +32,12 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class PlacementGroup
     {
+        private string _groupId;
         private string _groupName;
         private int? _partitionCount;
         private PlacementGroupState _state;
         private PlacementStrategy _strategy;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -49,6 +51,24 @@ namespace Amazon.EC2.Model
         public PlacementGroup(string groupName)
         {
             _groupName = groupName;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupId. 
+        /// <para>
+        /// The ID of the placement group.
+        /// </para>
+        /// </summary>
+        public string GroupId
+        {
+            get { return this._groupId; }
+            set { this._groupId = value; }
+        }
+
+        // Check to see if GroupId property is set
+        internal bool IsSetGroupId()
+        {
+            return this._groupId != null;
         }
 
         /// <summary>
@@ -121,6 +141,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetStrategy()
         {
             return this._strategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Any tags applied to the placement group.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

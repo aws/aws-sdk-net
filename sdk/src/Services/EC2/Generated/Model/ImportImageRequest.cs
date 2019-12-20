@@ -188,11 +188,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK)
-        /// to use when creating the encrypted AMI. This parameter is only required if you want
-        /// to use a non-default CMK; if this parameter is not specified, the default CMK for
-        /// EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag
-        /// must also be set. 
+        /// An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master
+        /// key (CMK) to use when creating the encrypted AMI. This parameter is only required
+        /// if you want to use a non-default CMK; if this parameter is not specified, the default
+        /// CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+        /// flag must also be set. 
         /// </para>
         ///  
         /// <para>
@@ -230,6 +230,10 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// The specified CMK must exist in the Region that the AMI is being copied to.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon EBS does not support asymmetric CMKs.
         /// </para>
         /// </summary>
         public string KmsKeyId

@@ -62,6 +62,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The new VPC attachment options.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot modify the IPv6 options.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ModifyTransitGatewayVpcAttachmentRequestOptions Options
         {

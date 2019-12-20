@@ -156,6 +156,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SingleAvailabilityZone. 
         /// <para>
         /// Indicates that the fleet launches all Spot Instances into a single Availability Zone.
+        /// Supported only for fleets of type <code>instant</code>.
         /// </para>
         /// </summary>
         public bool SingleAvailabilityZone
@@ -174,7 +175,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SingleInstanceType. 
         /// <para>
         /// Indicates that the fleet uses a single instance type to launch all Spot Instances
-        /// in the fleet.
+        /// in the fleet. Supported only for fleets of type <code>instant</code>.
         /// </para>
         /// </summary>
         public bool SingleInstanceType

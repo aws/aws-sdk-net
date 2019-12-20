@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CapacityReservationOptions. 
         /// <para>
         /// The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
-        /// Only available for fleets of type <code>instant</code>. 
+        /// Supported only for fleets of type <code>instant</code>.
         /// </para>
         /// </summary>
         public CapacityReservationOptions CapacityReservationOptions
@@ -121,7 +121,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SingleAvailabilityZone. 
         /// <para>
         /// Indicates that the fleet launches all On-Demand Instances into a single Availability
-        /// Zone.
+        /// Zone. Supported only for fleets of type <code>instant</code>.
         /// </para>
         /// </summary>
         public bool SingleAvailabilityZone
@@ -140,7 +140,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SingleInstanceType. 
         /// <para>
         /// Indicates that the fleet uses a single instance type to launch all On-Demand Instances
-        /// in the fleet.
+        /// in the fleet. Supported only for fleets of type <code>instant</code>.
         /// </para>
         /// </summary>
         public bool SingleInstanceType

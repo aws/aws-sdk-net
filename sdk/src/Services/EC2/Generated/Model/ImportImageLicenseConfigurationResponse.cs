@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The response information of license configurations.
+    /// The response information for license configurations.
     /// </summary>
     public partial class ImportImageLicenseConfigurationResponse
     {

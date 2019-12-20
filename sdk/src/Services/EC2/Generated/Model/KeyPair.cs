@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private string _keyFingerprint;
         private string _keyMaterial;
         private string _keyName;
+        private string _keyPairId;
 
         /// <summary>
         /// Gets and sets the property KeyFingerprint. 
@@ -88,6 +89,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetKeyName()
         {
             return this._keyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyPairId. 
+        /// <para>
+        /// The ID of the key pair.
+        /// </para>
+        /// </summary>
+        public string KeyPairId
+        {
+            get { return this._keyPairId; }
+            set { this._keyPairId = value; }
+        }
+
+        // Check to see if KeyPairId property is set
+        internal bool IsSetKeyPairId()
+        {
+            return this._keyPairId != null;
         }
 
     }

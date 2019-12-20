@@ -693,6 +693,11 @@ namespace Amazon.EC2
         /// unless you allow reassociation. You cannot associate an Elastic IP address with an
         /// instance or network interface that has an existing Elastic IP address.
         /// </para>
+        ///  
+        /// <para>
+        /// You cannot associate an Elastic IP address with an interface in a different network
+        /// border group.
+        /// </para>
         ///  <important> 
         /// <para>
         /// This is an idempotent operation. If you perform the operation more than once, Amazon
@@ -735,6 +740,11 @@ namespace Amazon.EC2
         /// already associated with a different instance or a network interface, you get an error
         /// unless you allow reassociation. You cannot associate an Elastic IP address with an
         /// instance or network interface that has an existing Elastic IP address.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot associate an Elastic IP address with an interface in a different network
+        /// border group.
         /// </para>
         ///  <important> 
         /// <para>
@@ -15091,8 +15101,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// AWS creates a unique AWS managed CMK in each Region for use with encryption by default.
-        /// If you change the default CMK to a customer managed CMK, it is used instead of the
-        /// AWS managed CMK. To reset the default CMK to the AWS managed CMK for EBS, use <a>ResetEbsDefaultKmsKeyId</a>.
+        /// If you change the default CMK to a symmetric customer managed CMK, it is used instead
+        /// of the AWS managed CMK. To reset the default CMK to the AWS managed CMK for EBS, use
+        /// <a>ResetEbsDefaultKmsKeyId</a>. Amazon EBS does not support asymmetric CMKs.
         /// </para>
         ///  
         /// <para>
@@ -15120,8 +15131,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// AWS creates a unique AWS managed CMK in each Region for use with encryption by default.
-        /// If you change the default CMK to a customer managed CMK, it is used instead of the
-        /// AWS managed CMK. To reset the default CMK to the AWS managed CMK for EBS, use <a>ResetEbsDefaultKmsKeyId</a>.
+        /// If you change the default CMK to a symmetric customer managed CMK, it is used instead
+        /// of the AWS managed CMK. To reset the default CMK to the AWS managed CMK for EBS, use
+        /// <a>ResetEbsDefaultKmsKeyId</a>. Amazon EBS does not support asymmetric CMKs.
         /// </para>
         ///  
         /// <para>

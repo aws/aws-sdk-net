@@ -8175,6 +8175,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType InternetGateway = new ResourceType("internet-gateway");
         /// <summary>
+        /// Constant KeyPair for ResourceType
+        /// </summary>
+        public static readonly ResourceType KeyPair = new ResourceType("key-pair");
+        /// <summary>
         /// Constant LaunchTemplate for ResourceType
         /// </summary>
         public static readonly ResourceType LaunchTemplate = new ResourceType("launch-template");
@@ -8190,6 +8194,10 @@ namespace Amazon.EC2
         /// Constant NetworkInterface for ResourceType
         /// </summary>
         public static readonly ResourceType NetworkInterface = new ResourceType("network-interface");
+        /// <summary>
+        /// Constant PlacementGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType PlacementGroup = new ResourceType("placement-group");
         /// <summary>
         /// Constant ReservedInstances for ResourceType
         /// </summary>

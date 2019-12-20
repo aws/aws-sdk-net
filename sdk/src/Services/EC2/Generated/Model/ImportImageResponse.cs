@@ -158,8 +158,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK)
-        /// that was used to create the encrypted AMI.
+        /// The identifier for the symmetric AWS Key Management Service (AWS KMS) customer master
+        /// key (CMK) that was used to create the encrypted AMI.
         /// </para>
         /// </summary>
         public string KmsKeyId

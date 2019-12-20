@@ -87,6 +87,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>network-border-group</code> - The location from where the IP address is advertised.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that
         /// the address is associated with, if any.
         /// </para>

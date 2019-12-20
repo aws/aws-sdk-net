@@ -38,8 +38,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        ///  The number of elastic inference accelerators of given type to be attached to the
-        /// instance. Only positive values allowed. If not specified defaults to 1. 
+        ///  The number of elastic inference accelerators to attach to the instance. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 1
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

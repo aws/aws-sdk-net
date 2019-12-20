@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9,
-        /// spaces, and ._-:/()#,@[]+=;{}!$*
+        /// spaces, and ._-:/()#,@[]+=&amp;;{}!$*
         /// </para>
         /// </summary>
         public string Description
