@@ -33,6 +33,9 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsIamAccessKeyDetails
     {
         private string _createdAt;
+        private string _principalId;
+        private string _principalName;
+        private string _principalType;
         private AwsIamAccessKeyStatus _status;
         private string _userName;
 
@@ -52,6 +55,60 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrincipalId. 
+        /// <para>
+        /// The ID of the principal associated with an access key.
+        /// </para>
+        /// </summary>
+        public string PrincipalId
+        {
+            get { return this._principalId; }
+            set { this._principalId = value; }
+        }
+
+        // Check to see if PrincipalId property is set
+        internal bool IsSetPrincipalId()
+        {
+            return this._principalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrincipalName. 
+        /// <para>
+        /// The name of the principal.
+        /// </para>
+        /// </summary>
+        public string PrincipalName
+        {
+            get { return this._principalName; }
+            set { this._principalName = value; }
+        }
+
+        // Check to see if PrincipalName property is set
+        internal bool IsSetPrincipalName()
+        {
+            return this._principalName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrincipalType. 
+        /// <para>
+        /// The type of principal associated with an access key.
+        /// </para>
+        /// </summary>
+        public string PrincipalType
+        {
+            get { return this._principalType; }
+            set { this._principalType = value; }
+        }
+
+        // Check to see if PrincipalType property is set
+        internal bool IsSetPrincipalType()
+        {
+            return this._principalType != null;
         }
 
         /// <summary>
@@ -77,7 +134,14 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The user associated with the IAM access key related to a finding.
         /// </para>
+        ///  
+        /// <para>
+        /// The <code>UserName</code> parameter has been replaced with the <code>PrincipalName</code>
+        /// parameter because access keys can also be assigned to principals that are not IAM
+        /// users.
+        /// </para>
         /// </summary>
+        [Obsolete("This field is deprecated, use PrincipalName instead.")]
         public string UserName
         {
             get { return this._userName; }

@@ -51,6 +51,26 @@ namespace Amazon.SecurityHub
     /// account is created only in the us-west-2 Region. Security Hub must be enabled for
     /// the member account in the same Region that the invite was sent from.
     /// </para>
+    ///  
+    /// <para>
+    /// The following throttling limits apply to using Security Hub API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>GetFindings</code> - RateLimit of 3 requests per second, and a BurstLimit of
+    /// 6 requests per second.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UpdateFindings</code> - RateLimit of 1 request per second, and a BurstLimit
+    /// of 5 requests per second.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// All other operations - RateLimit of 10 request per second, and a BurstLimit of 30
+    /// requests per second.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonSecurityHub : IAmazonService, IDisposable
     {
@@ -786,9 +806,10 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Enables Security Hub for your account in the current Region or the Region you specify
-        /// in the request. When you enable Security Hub, you grant to Security Hub the permissions
-        /// necessary to gather findings from AWS Config, Amazon GuardDuty, Amazon Inspector,
-        /// and Amazon Macie. To learn more, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
+        /// in the request. Enabling Security Hub also enables the CIS AWS Foundations standard.
+        /// When you enable Security Hub, you grant to Security Hub the permissions necessary
+        /// to gather findings from AWS Config, Amazon GuardDuty, Amazon Inspector, and Amazon
+        /// Macie. To learn more, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
         /// Up AWS Security Hub</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHub service method.</param>
