@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
+        /// The Amazon Resource Name (ARN) of the Device Farm device pool to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=32, Max=1011)]
@@ -68,7 +68,7 @@ namespace Amazon.DeviceFarm.Model
         /// you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter
         /// does not apply, and Device Farm does not limit the number of devices that it adds
         /// to your device pool. In this case, Device Farm adds all available devices that meet
-        /// the criteria that are specified for the <code>rules</code> parameter.
+        /// the criteria specified in the <code>rules</code> parameter.
         /// </para>
         ///  
         /// <para>
@@ -91,7 +91,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the device pool you wish to update.
+        /// A description of the device pool to update.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=16384)]
@@ -141,7 +141,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A string representing the name of the device pool you wish to update.
+        /// A string that represents the name of the device pool to update.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -160,9 +160,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// Represents the rules you wish to modify for the device pool. Updating rules is optional;
-        /// however, if you choose to update rules for your request, the update will replace the
-        /// existing rules.
+        /// Represents the rules to modify for the device pool. Updating rules is optional. If
+        /// you update rules for your request, the update replaces the existing rules.
         /// </para>
         /// </summary>
         public List<Rule> Rules

@@ -51,42 +51,40 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>CONTAINS</code> 
+        /// Supported operators: <code>CONTAINS</code> 
         /// </para>
         ///  </dd> <dt>ARN</dt> <dd> 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the device. For example, "arn:aws:devicefarm:us-west-2::device:12345Example".
+        /// The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-        /// 
+        /// Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> 
         /// </para>
         ///  </dd> <dt>AVAILABILITY</dt> <dd> 
         /// <para>
-        /// The current availability of the device. Valid values are "AVAILABLE", "HIGHLY_AVAILABLE",
-        /// "BUSY", or "TEMPORARY_NOT_AVAILABLE".
+        /// The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE,
+        /// BUSY, or TEMPORARY_NOT_AVAILABLE.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// Supported operators: <code>EQUALS</code> 
         /// </para>
         ///  </dd> <dt>FLEET_TYPE</dt> <dd> 
         /// <para>
-        /// The fleet type. Valid values are "PUBLIC" or "PRIVATE".
+        /// The fleet type. Valid values are PUBLIC or PRIVATE.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// Supported operators: <code>EQUALS</code> 
         /// </para>
         ///  </dd> <dt>FORM_FACTOR</dt> <dd> 
         /// <para>
-        /// The device form factor. Valid values are "PHONE" or "TABLET".
+        /// The device form factor. Valid values are PHONE or TABLET.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-        /// 
+        /// Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> 
         /// </para>
         ///  </dd> <dt>INSTANCE_ARN</dt> <dd> 
         /// <para>
@@ -94,7 +92,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>IN</code>, <code>NOT_IN</code> 
+        /// Supported operators: <code>IN</code>, <code>NOT_IN</code> 
         /// </para>
         ///  </dd> <dt>INSTANCE_LABELS</dt> <dd> 
         /// <para>
@@ -102,65 +100,63 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>CONTAINS</code> 
+        /// Supported operators: <code>CONTAINS</code> 
         /// </para>
         ///  </dd> <dt>MANUFACTURER</dt> <dd> 
         /// <para>
-        /// The device manufacturer. For example, "Apple".
+        /// The device manufacturer (for example, Apple).
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-        /// 
+        /// Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> 
         /// </para>
         ///  </dd> <dt>MODEL</dt> <dd> 
         /// <para>
-        /// The device model, such as "Apple iPad Air 2" or "Google Pixel".
+        /// The device model, such as Apple iPad Air 2 or Google Pixel.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>,
+        /// Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>,
         /// <code>NOT_IN</code> 
         /// </para>
         ///  </dd> <dt>OS_VERSION</dt> <dd> 
         /// <para>
-        /// The operating system version. For example, "10.3.2".
+        /// The operating system version (for example, 10.3.2).
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>,
+        /// Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>,
         /// <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code>
         /// 
         /// </para>
         ///  </dd> <dt>PLATFORM</dt> <dd> 
         /// <para>
-        /// The device platform. Valid values are "ANDROID" or "IOS".
+        /// The device platform. Valid values are ANDROID or IOS.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-        /// 
+        /// Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> 
         /// </para>
         ///  </dd> <dt>REMOTE_ACCESS_ENABLED</dt> <dd> 
         /// <para>
-        /// Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
+        /// Whether the device is enabled for remote access. Valid values are TRUE or FALSE.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// Supported operators: <code>EQUALS</code> 
         /// </para>
         ///  </dd> <dt>REMOTE_DEBUG_ENABLED</dt> <dd> 
         /// <para>
-        /// Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+        /// Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// Supported operators: <code>EQUALS</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <i>This filter will be ignored, as remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</i> 
+        /// Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>, this filter is ignored.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

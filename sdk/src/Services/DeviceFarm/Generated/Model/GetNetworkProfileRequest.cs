@@ -38,8 +38,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the network profile you want to return information
-        /// about.
+        /// The ARN of the network profile to return information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=32, Max=1011)]

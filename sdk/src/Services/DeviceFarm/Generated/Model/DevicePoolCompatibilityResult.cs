@@ -57,7 +57,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Device. 
         /// <para>
-        /// The device (phone or tablet) that you wish to return information about.
+        /// The device (phone or tablet) to return information about.
         /// </para>
         /// </summary>
         public Device Device

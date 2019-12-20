@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Contains the run results requested by the device selection configuration as well as
-    /// how many devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>.
+    /// Contains the run results requested by the device selection configuration and how many
+    /// devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>.
     /// </summary>
     public partial class DeviceSelectionResult
     {

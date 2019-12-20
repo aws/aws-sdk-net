@@ -77,8 +77,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property DefaultJobTimeoutMinutes. 
         /// <para>
-        /// The default number of minutes (at the project level) a test run will execute before
-        /// it times out. The default value is 150 minutes.
+        /// The default number of minutes (at the project level) a test run executes before it
+        /// times out. The default value is 150 minutes.
         /// </para>
         /// </summary>
         public int DefaultJobTimeoutMinutes

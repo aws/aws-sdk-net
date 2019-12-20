@@ -29,8 +29,8 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountSettings operation.
-    /// Returns the number of unmetered iOS and/or unmetered Android devices that have been
-    /// purchased by the account.
+    /// Returns the number of unmetered iOS or unmetered Android devices that have been purchased
+    /// by the account.
     /// </summary>
     public partial class GetAccountSettingsRequest : AmazonDeviceFarmRequest
     {

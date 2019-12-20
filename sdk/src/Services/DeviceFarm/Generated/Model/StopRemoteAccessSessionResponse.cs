@@ -38,8 +38,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property RemoteAccessSession. 
         /// <para>
-        /// A container representing the metadata from the service about the remote access session
-        /// you are stopping.
+        /// A container that represents the metadata from the service about the remote access
+        /// session you are stopping.
         /// </para>
         /// </summary>
         public RemoteAccessSession RemoteAccessSession

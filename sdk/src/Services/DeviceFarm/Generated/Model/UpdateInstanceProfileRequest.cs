@@ -81,7 +81,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property ExcludeAppPackagesFromCleanup. 
         /// <para>
-        /// An array of strings specifying the list of app packages that should not be cleaned
+        /// An array of strings that specifies the list of app packages that should not be cleaned
         /// up from the device after a test run is over.
         /// </para>
         ///  

@@ -39,8 +39,8 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the number of items that are returned is significantly large, this is an identifier
-        /// that is also returned, which can be used in a subsequent call to this operation to
-        /// return the next set of items in the list.
+        /// that is also returned. It can be used in a subsequent call to this operation to return
+        /// the next set of items in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=1024)]
@@ -67,31 +67,31 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// PENDING: A pending condition.
+        /// PENDING
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PASSED: A passing condition.
+        /// PASSED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WARNED: A warning condition.
+        /// WARNED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FAILED: A failed condition.
+        /// FAILED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SKIPPED: A skipped condition.
+        /// SKIPPED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ERRORED: An error condition.
+        /// ERRORED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// STOPPED: A stopped condition.
+        /// STOPPED
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -37,7 +37,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property VpceConfiguration. 
         /// <para>
-        /// An object containing information about your VPC endpoint configuration.
+        /// An object that contains information about your VPC endpoint configuration.
         /// </para>
         /// </summary>
         public VPCEConfiguration VpceConfiguration

@@ -29,7 +29,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Represents a test run on a set of devices with a given app package, test parameters,
-    /// etc.
+    /// and so on.
     /// </summary>
     public partial class Run
     {
@@ -109,6 +109,12 @@ namespace Amazon.DeviceFarm.Model
         /// Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>.
         /// If the parameter is not specified, the default value is <code>metered</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you have unmetered device slots, you must set this to <code>unmetered</code> to
+        /// use them. Otherwise, the run is counted toward metered device minutes.
+        /// </para>
+        ///  </note>
         /// </summary>
         public BillingMethod BillingMethod
         {
@@ -271,7 +277,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property JobTimeoutMinutes. 
         /// <para>
-        /// The number of minutes the job will execute before it times out.
+        /// The number of minutes the job executes before it times out.
         /// </para>
         /// </summary>
         public int JobTimeoutMinutes
@@ -381,9 +387,9 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property ParsingResultUrl. 
         /// <para>
-        /// Read-only URL for an object in S3 bucket where you can get the parsing results of
-        /// the test package. If the test package doesn't parse, the reason why it doesn't parse
-        /// appears in the file that this URL points to.
+        /// Read-only URL for an object in an S3 bucket where you can get the parsing results
+        /// of the test package. If the test package doesn't parse, the reason why it doesn't
+        /// parse appears in the file that this URL points to.
         /// </para>
         /// </summary>
         public string ParsingResultUrl
@@ -409,11 +415,11 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ANDROID: The Android platform.
+        /// ANDROID
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IOS: The iOS platform.
+        /// IOS
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -458,31 +464,31 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// PENDING: A pending condition.
+        /// PENDING
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PASSED: A passing condition.
+        /// PASSED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WARNED: A warning condition.
+        /// WARNED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FAILED: A failed condition.
+        /// FAILED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SKIPPED: A skipped condition.
+        /// SKIPPED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ERRORED: An error condition.
+        /// ERRORED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// STOPPED: A stopped condition.
+        /// STOPPED
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -540,13 +546,12 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property SkipAppResign. 
         /// <para>
-        /// When set to <code>true</code>, for private devices, Device Farm will not sign your
-        /// app again. For public devices, Device Farm always signs your apps again and this parameter
-        /// has no effect.
+        /// When set to <code>true</code>, for private devices, Device Farm does not sign your
+        /// app again. For public devices, Device Farm always signs your apps again.
         /// </para>
         ///  
         /// <para>
-        /// For more information about how Device Farm re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+        /// For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do
         /// you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
         /// </para>
         /// </summary>
@@ -591,39 +596,39 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// PENDING: A pending status.
+        /// PENDING
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PENDING_CONCURRENCY: A pending concurrency status.
+        /// PENDING_CONCURRENCY
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PENDING_DEVICE: A pending device status.
+        /// PENDING_DEVICE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PROCESSING: A processing status.
+        /// PROCESSING
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SCHEDULING: A scheduling status.
+        /// SCHEDULING
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PREPARING: A preparing status.
+        /// PREPARING
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RUNNING: A running status.
+        /// RUNNING
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// COMPLETED: A completed status.
+        /// COMPLETED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// STOPPING: A stopping status.
+        /// STOPPING
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -705,76 +710,80 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// BUILTIN_FUZZ: The built-in fuzz type.
+        /// BUILTIN_FUZZ
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app,
-        /// interacting with it and capturing screenshots at the same time.
+        /// BUILTIN_EXPLORER
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For Android, an app explorer that traverses an Android app, interacting with it and
+        /// capturing screenshots at the same time.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// APPIUM_JAVA_JUNIT
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+        /// APPIUM_JAVA_TESTNG
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+        /// APPIUM_PYTHON
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_PYTHON: The Appium Python type.
+        /// APPIUM_NODE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_NODE: The Appium Node.js type.
+        /// APPIUM_RUBY
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_RUBY: The Appium Ruby type.
+        /// APPIUM_WEB_JAVA_JUNIT
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+        /// APPIUM_WEB_JAVA_TESTNG
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+        /// APPIUM_WEB_PYTHON
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+        /// APPIUM_WEB_NODE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+        /// APPIUM_WEB_RUBY
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+        /// CALABASH
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CALABASH: The Calabash type.
+        /// INSTRUMENTATION
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTRUMENTATION: The Instrumentation type.
+        /// UIAUTOMATION
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UIAUTOMATION: The uiautomation type.
+        /// UIAUTOMATOR
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UIAUTOMATOR: The uiautomator type.
+        /// XCTEST
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST: The Xcode test type.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// XCTEST_UI: The Xcode UI test type.
+        /// XCTEST_UI
         /// </para>
         ///  </li> </ul>
         /// </summary>

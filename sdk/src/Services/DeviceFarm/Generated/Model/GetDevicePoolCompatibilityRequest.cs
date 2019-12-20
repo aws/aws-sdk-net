@@ -61,7 +61,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// An object containing information about the settings for a run.
+        /// An object that contains information about the settings for a run.
         /// </para>
         /// </summary>
         public ScheduleRunConfiguration Configuration
@@ -124,76 +124,76 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// BUILTIN_FUZZ: The built-in fuzz type.
+        /// BUILTIN_FUZZ.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app,
-        /// interacting with it and capturing screenshots at the same time.
+        /// BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting
+        /// with it and capturing screenshots at the same time.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+        /// APPIUM_JAVA_JUNIT.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+        /// APPIUM_JAVA_TESTNG.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_PYTHON: The Appium Python type.
+        /// APPIUM_PYTHON.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_NODE: The Appium Node.js type.
+        /// APPIUM_NODE.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_RUBY: The Appium Ruby type.
+        /// APPIUM_RUBY.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+        /// APPIUM_WEB_JAVA_JUNIT.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+        /// APPIUM_WEB_JAVA_TESTNG.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+        /// APPIUM_WEB_PYTHON.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+        /// APPIUM_WEB_NODE.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+        /// APPIUM_WEB_RUBY.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CALABASH: The Calabash type.
+        /// CALABASH.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTRUMENTATION: The Instrumentation type.
+        /// INSTRUMENTATION.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UIAUTOMATION: The uiautomation type.
+        /// UIAUTOMATION.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UIAUTOMATOR: The uiautomator type.
+        /// UIAUTOMATOR.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST: The Xcode test type.
+        /// XCTEST.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST_UI: The Xcode UI test type.
+        /// XCTEST_UI.
         /// </para>
         ///  </li> </ul>
         /// </summary>

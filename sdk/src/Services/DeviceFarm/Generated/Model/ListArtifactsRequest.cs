@@ -40,7 +40,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Run, Job, Suite, or Test ARN.
+        /// The run, job, suite, or test ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=32, Max=1011)]
@@ -87,15 +87,15 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// FILE: The artifacts are files.
+        /// FILE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// LOG: The artifacts are logs.
+        /// LOG
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SCREENSHOT: The artifacts are screenshots.
+        /// SCREENSHOT
         /// </para>
         ///  </li> </ul>
         /// </summary>

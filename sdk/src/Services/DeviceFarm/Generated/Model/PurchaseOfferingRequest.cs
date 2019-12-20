@@ -32,8 +32,7 @@ namespace Amazon.DeviceFarm.Model
     /// Immediately purchases offerings for an AWS account. Offerings renew with the latest
     /// total purchased quantity for an offering, unless the renewal was overridden. The API
     /// returns a <code>NotEligible</code> error if the user is not permitted to invoke the
-    /// operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-    /// if you believe that you should be able to invoke this operation.
+    /// operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
     /// </summary>
     public partial class PurchaseOfferingRequest : AmazonDeviceFarmRequest
     {
@@ -82,7 +81,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of device slots you wish to purchase in an offering request.
+        /// The number of device slots to purchase in an offering request.
         /// </para>
         /// </summary>
         public int Quantity

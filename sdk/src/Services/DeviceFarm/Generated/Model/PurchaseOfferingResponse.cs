@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// The result of the purchase offering (e.g., success or failure).
+    /// The result of the purchase offering (for example, success or failure).
     /// </summary>
     public partial class PurchaseOfferingResponse : AmazonWebServiceResponse
     {

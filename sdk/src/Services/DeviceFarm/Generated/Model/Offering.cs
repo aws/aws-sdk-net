@@ -41,7 +41,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A string describing the offering.
+        /// A string that describes the offering.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=16384)]
@@ -79,7 +79,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the device (e.g., ANDROID or IOS).
+        /// The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).
         /// </para>
         /// </summary>
         public DevicePlatform Platform
@@ -115,7 +115,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of offering (e.g., "RECURRING") for a device.
+        /// The type of offering (for example, <code>RECURRING</code>) for a device.
         /// </para>
         /// </summary>
         public OfferingType Type

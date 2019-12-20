@@ -61,7 +61,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property DeviceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the device.
+        /// The ARN of the device.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=1011)]
@@ -80,7 +80,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property InstanceProfile. 
         /// <para>
-        /// A object containing information about the instance profile.
+        /// A object that contains information about the instance profile.
         /// </para>
         /// </summary>
         public InstanceProfile InstanceProfile
@@ -98,7 +98,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Labels. 
         /// <para>
-        /// An array of strings describing the device instance.
+        /// An array of strings that describe the device instance.
         /// </para>
         /// </summary>
         public List<string> Labels
@@ -116,7 +116,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the device instance. Valid values are listed below.
+        /// The status of the device instance. Valid values are listed here.
         /// </para>
         /// </summary>
         public InstanceStatus Status

@@ -29,7 +29,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateNetworkProfile operation.
-    /// Updates the network profile with specific settings.
+    /// Updates the network profile.
     /// </summary>
     public partial class UpdateNetworkProfileRequest : AmazonDeviceFarmRequest
     {
@@ -182,8 +182,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of network profile you wish to return information about. Valid values are
-        /// listed below.
+        /// The type of network profile to return information about. Valid values are listed here.
         /// </para>
         /// </summary>
         public NetworkProfileType Type

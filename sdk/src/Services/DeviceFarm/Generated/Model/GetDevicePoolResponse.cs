@@ -37,7 +37,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property DevicePool. 
         /// <para>
-        /// An object containing information about the requested device pool.
+        /// An object that contains information about the requested device pool.
         /// </para>
         /// </summary>
         public DevicePool DevicePool

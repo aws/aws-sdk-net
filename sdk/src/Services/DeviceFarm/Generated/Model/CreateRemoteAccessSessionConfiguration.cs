@@ -56,7 +56,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property VpceConfigurationArns. 
         /// <para>
-        /// An array of Amazon Resource Names (ARNs) included in the VPC endpoint configuration.
+        /// An array of ARNs included in the VPC endpoint configuration.
         /// </para>
         /// </summary>
         public List<string> VpceConfigurationArns

@@ -33,7 +33,7 @@ namespace Amazon.DeviceFarm.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Note</b> Deleting this resource does not stop an in-progress run.
+    ///  Deleting this resource does not stop an in-progress run.
     /// </para>
     /// </summary>
     public partial class DeleteRunRequest : AmazonDeviceFarmRequest
@@ -43,7 +43,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the run you wish to delete.
+        /// The Amazon Resource Name (ARN) for the run to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=32, Max=1011)]

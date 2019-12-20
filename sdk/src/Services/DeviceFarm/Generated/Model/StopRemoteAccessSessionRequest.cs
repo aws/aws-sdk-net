@@ -38,7 +38,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the remote access session you wish to stop.
+        /// The Amazon Resource Name (ARN) of the remote access session to stop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=32, Max=1011)]

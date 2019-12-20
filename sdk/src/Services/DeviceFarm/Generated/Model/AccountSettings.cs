@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// A container for account-level settings within AWS Device Farm.
+    /// A container for account-level settings in AWS Device Farm.
     /// </summary>
     public partial class AccountSettings
     {
@@ -63,8 +63,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property DefaultJobTimeoutMinutes. 
         /// <para>
-        /// The default number of minutes (at the account level) a test run will execute before
-        /// it times out. The default value is 150 minutes.
+        /// The default number of minutes (at the account level) a test run executes before it
+        /// times out. The default value is 150 minutes.
         /// </para>
         /// </summary>
         public int DefaultJobTimeoutMinutes
@@ -82,7 +82,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property MaxJobTimeoutMinutes. 
         /// <para>
-        /// The maximum number of minutes a test run will execute before it times out.
+        /// The maximum number of minutes a test run executes before it times out.
         /// </para>
         /// </summary>
         public int MaxJobTimeoutMinutes
@@ -120,13 +120,12 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property SkipAppResign. 
         /// <para>
-        /// When set to <code>true</code>, for private devices, Device Farm will not sign your
-        /// app again. For public devices, Device Farm always signs your apps again and this parameter
-        /// has no effect.
+        /// When set to <code>true</code>, for private devices, Device Farm does not sign your
+        /// app again. For public devices, Device Farm always signs your apps again.
         /// </para>
         ///  
         /// <para>
-        /// For more information about how Device Farm re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+        /// For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do
         /// you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
         /// </para>
         /// </summary>

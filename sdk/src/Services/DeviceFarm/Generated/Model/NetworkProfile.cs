@@ -180,7 +180,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of network profile. Valid values are listed below.
+        /// The type of network profile. Valid values are listed here.
         /// </para>
         /// </summary>
         public NetworkProfileType Type

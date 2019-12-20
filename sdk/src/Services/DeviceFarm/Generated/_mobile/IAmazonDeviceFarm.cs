@@ -31,8 +31,30 @@ namespace Amazon.DeviceFarm
     /// <summary>
     /// Interface for accessing DeviceFarm
     ///
-    /// AWS Device Farm is a service that enables mobile app developers to test Android, iOS,
-    /// and Fire OS apps on physical phones, tablets, and other devices in the cloud.
+    /// Welcome to the AWS Device Farm API documentation, which contains APIs for:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Testing on desktop browsers
+    /// </para>
+    ///  
+    /// <para>
+    ///  Device Farm makes it possible for you to test your web applications on desktop browsers
+    /// using Selenium. The APIs for desktop browser testing contain <code>TestGrid</code>
+    /// in their names. For more information, see <a href="https://docs.aws.amazon.com/devicefarm/latest/testgrid/">Testing
+    /// Web Applications on Selenium with Device Farm</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Testing on real mobile devices
+    /// </para>
+    ///  
+    /// <para>
+    /// Device Farm makes it possible for you to test apps on physical phones, tablets, and
+    /// other devices in the cloud. For more information, see the <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/">Device
+    /// Farm Developer Guide</a>.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonDeviceFarm : IAmazonService, IDisposable
     {
@@ -131,7 +153,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Creates a new project.
+        /// Creates a project.
         /// </summary>
         /// <param name="name">The project's name.</param>
         /// <param name="cancellationToken">
@@ -159,7 +181,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Creates a new project.
+        /// Creates a project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
         /// <param name="cancellationToken">
@@ -214,6 +236,58 @@ namespace Amazon.DeviceFarm
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession">REST API Reference for CreateRemoteAccessSession Operation</seealso>
         Task<CreateRemoteAccessSessionResponse> CreateRemoteAccessSessionAsync(CreateRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTestGridProject
+
+
+
+        /// <summary>
+        /// Creates a Selenium testing project. Projects are used to track <a>TestGridSession</a>
+        /// instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTestGridProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTestGridProject service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.InternalServiceException">
+        /// An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you see this error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridProject">REST API Reference for CreateTestGridProject Operation</seealso>
+        Task<CreateTestGridProjectResponse> CreateTestGridProjectAsync(CreateTestGridProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTestGridUrl
+
+
+
+        /// <summary>
+        /// Creates a signed, short-term URL that can be passed to a Selenium <code>RemoteWebDriver</code>
+        /// constructor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTestGridUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTestGridUrl service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.InternalServiceException">
+        /// An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you see this error.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridUrl">REST API Reference for CreateTestGridUrl Operation</seealso>
+        Task<CreateTestGridUrlResponse> CreateTestGridUrlAsync(CreateTestGridUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -375,7 +449,7 @@ namespace Amazon.DeviceFarm
         /// 
         ///  
         /// <para>
-        ///  <b>Note</b> Deleting this resource does not stop an in-progress run.
+        ///  Deleting this resource does not stop an in-progress run.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
@@ -440,7 +514,7 @@ namespace Amazon.DeviceFarm
         /// 
         ///  
         /// <para>
-        ///  <b>Note</b> Deleting this resource does not stop an in-progress run.
+        ///  Deleting this resource does not stop an in-progress run.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRun service method.</param>
@@ -463,6 +537,47 @@ namespace Amazon.DeviceFarm
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">REST API Reference for DeleteRun Operation</seealso>
         Task<DeleteRunResponse> DeleteRunAsync(DeleteRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteTestGridProject
+
+
+
+        /// <summary>
+        /// Deletes a Selenium testing project and all content generated under it. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You cannot undo this operation.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// You cannot delete a project if it has active sessions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTestGridProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTestGridProject service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.CannotDeleteException">
+        /// The requested object could not be deleted.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.InternalServiceException">
+        /// An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you see this error.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject">REST API Reference for DeleteTestGridProject Operation</seealso>
+        Task<DeleteTestGridProjectResponse> DeleteTestGridProjectAsync(DeleteTestGridProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -531,8 +646,8 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Returns the number of unmetered iOS and/or unmetered Android devices that have been
-        /// purchased by the account.
+        /// Returns the number of unmetered iOS or unmetered Android devices that have been purchased
+        /// by the account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -557,8 +672,8 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Returns the number of unmetered iOS and/or unmetered Android devices that have been
-        /// purchased by the account.
+        /// Returns the number of unmetered iOS or unmetered Android devices that have been purchased
+        /// by the account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
         /// <param name="cancellationToken">
@@ -642,7 +757,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Returns information about a device instance belonging to a private device fleet.
+        /// Returns information about a device instance that belongs to a private device fleet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDeviceInstance service method.</param>
         /// <param name="cancellationToken">
@@ -873,8 +988,8 @@ namespace Amazon.DeviceFarm
         /// Gets the current status and future status of all offerings purchased by an AWS account.
         /// The response indicates how many offerings are currently available and the offerings
         /// that will be available in the next period. The API returns a <code>NotEligible</code>
-        /// error if the user is not permitted to invoke the operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-        /// if you believe that you should be able to invoke this operation.
+        /// error if the user is not permitted to invoke the operation. If you must be able to
+        /// invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOfferingStatus service method.</param>
         /// <param name="cancellationToken">
@@ -1145,6 +1260,75 @@ namespace Amazon.DeviceFarm
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest">REST API Reference for GetTest Operation</seealso>
         Task<GetTestResponse> GetTestAsync(GetTestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTestGridProject
+
+
+
+        /// <summary>
+        /// Retrieves information about a Selenium testing project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTestGridProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTestGridProject service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.InternalServiceException">
+        /// An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you see this error.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridProject">REST API Reference for GetTestGridProject Operation</seealso>
+        Task<GetTestGridProjectResponse> GetTestGridProjectAsync(GetTestGridProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTestGridSession
+
+
+
+        /// <summary>
+        /// A session is an instance of a browser created through a <code>RemoteWebDriver</code>
+        /// with the URL from <a>CreateTestGridUrlResult$url</a>. You can use the following to
+        /// look up sessions:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The session ARN (<a>GetTestGridSessionRequest$sessionArn</a>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The project ARN and a session ID (<a>GetTestGridSessionRequest$projectArn</a> and
+        /// <a>GetTestGridSessionRequest$sessionId</a>).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTestGridSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTestGridSession service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.InternalServiceException">
+        /// An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you see this error.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridSession">REST API Reference for GetTestGridSession Operation</seealso>
+        Task<GetTestGridSessionResponse> GetTestGridSessionAsync(GetTestGridSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1480,7 +1664,7 @@ namespace Amazon.DeviceFarm
         /// Returns a list of offering promotions. Each offering promotion record contains the
         /// ID and description of the promotion. The API returns a <code>NotEligible</code> error
         /// if the caller is not permitted to invoke the operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-        /// if you believe that you should be able to invoke this operation.
+        /// if you must be able to invoke this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOfferingPromotions service method.</param>
         /// <param name="cancellationToken">
@@ -1516,8 +1700,8 @@ namespace Amazon.DeviceFarm
         /// Returns a list of products or offerings that the user can manage through the API.
         /// Each offering record indicates the recurring price per unit and the frequency for
         /// that offering. The API returns a <code>NotEligible</code> error if the user is not
-        /// permitted to invoke the operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-        /// if you believe that you should be able to invoke this operation.
+        /// permitted to invoke the operation. If you must be able to invoke this operation, contact
+        /// <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOfferings service method.</param>
         /// <param name="cancellationToken">
@@ -1553,8 +1737,8 @@ namespace Amazon.DeviceFarm
         /// Returns a list of all historical purchases, renewals, and system renewal transactions
         /// for an AWS account. The list is paginated and ordered by a descending timestamp (most
         /// recent transactions are first). The API returns a <code>NotEligible</code> error if
-        /// the user is not permitted to invoke the operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-        /// if you believe that you should be able to invoke this operation.
+        /// the user is not permitted to invoke the operation. If you must be able to invoke this
+        /// operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOfferingTransactions service method.</param>
         /// <param name="cancellationToken">
@@ -1745,6 +1929,9 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
         /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
         /// The specified entity was not found.
         /// </exception>
@@ -1753,6 +1940,115 @@ namespace Amazon.DeviceFarm
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTestGridProjects
+
+
+
+        /// <summary>
+        /// Gets a list of all Selenium testing projects in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestGridProjects service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestGridProjects service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.InternalServiceException">
+        /// An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you see this error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridProjects">REST API Reference for ListTestGridProjects Operation</seealso>
+        Task<ListTestGridProjectsResponse> ListTestGridProjectsAsync(ListTestGridProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTestGridSessionActions
+
+
+
+        /// <summary>
+        /// Returns a list of the actions taken in a <a>TestGridSession</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestGridSessionActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestGridSessionActions service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.InternalServiceException">
+        /// An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you see this error.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionActions">REST API Reference for ListTestGridSessionActions Operation</seealso>
+        Task<ListTestGridSessionActionsResponse> ListTestGridSessionActionsAsync(ListTestGridSessionActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTestGridSessionArtifacts
+
+
+
+        /// <summary>
+        /// Retrieves a list of artifacts created during the session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestGridSessionArtifacts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestGridSessionArtifacts service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.InternalServiceException">
+        /// An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you see this error.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionArtifacts">REST API Reference for ListTestGridSessionArtifacts Operation</seealso>
+        Task<ListTestGridSessionArtifactsResponse> ListTestGridSessionArtifactsAsync(ListTestGridSessionArtifactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTestGridSessions
+
+
+
+        /// <summary>
+        /// Retrieves a list of sessions for a <a>TestGridProject</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestGridSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestGridSessions service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.InternalServiceException">
+        /// An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you see this error.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessions">REST API Reference for ListTestGridSessions Operation</seealso>
+        Task<ListTestGridSessionsResponse> ListTestGridSessionsAsync(ListTestGridSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1791,7 +2087,15 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Gets information about unique problems.
+        /// Gets information about unique problems, such as exceptions or crashes.
+        /// 
+        ///  
+        /// <para>
+        /// Unique problems are defined as a single instance of an error across a run, job, or
+        /// suite. For example, if a call in your application consistently raises an exception
+        /// (<code>OutOfBoundsException in MyActivity.java:386</code>), <code>ListUniqueProblems</code>
+        /// returns a single entry instead of many individual entries for that exception.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUniqueProblems service method.</param>
         /// <param name="cancellationToken">
@@ -1879,8 +2183,7 @@ namespace Amazon.DeviceFarm
         /// Immediately purchases offerings for an AWS account. Offerings renew with the latest
         /// total purchased quantity for an offering, unless the renewal was overridden. The API
         /// returns a <code>NotEligible</code> error if the user is not permitted to invoke the
-        /// operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-        /// if you believe that you should be able to invoke this operation.
+        /// operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseOffering service method.</param>
         /// <param name="cancellationToken">
@@ -1915,8 +2218,8 @@ namespace Amazon.DeviceFarm
         /// <summary>
         /// Explicitly sets the quantity of devices to renew for an offering, starting from the
         /// <code>effectiveDate</code> of the next period. The API returns a <code>NotEligible</code>
-        /// error if the user is not permitted to invoke the operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-        /// if you believe that you should be able to invoke this operation.
+        /// error if the user is not permitted to invoke the operation. If you must be able to
+        /// invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RenewOffering service method.</param>
         /// <param name="cancellationToken">
@@ -1982,12 +2285,11 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Initiates a stop request for the current job. AWS Device Farm will immediately stop
-        /// the job on the device where tests have not started executing, and you will not be
-        /// billed for this device. On the device where tests have started executing, Setup Suite
-        /// and Teardown Suite tests will run to completion before stopping execution on the device.
-        /// You will be billed for Setup, Teardown, and any tests that were in progress or already
-        /// completed.
+        /// Initiates a stop request for the current job. AWS Device Farm immediately stops the
+        /// job on the device where tests have not started. You are not billed for this device.
+        /// On the device where tests have started, setup suite and teardown suite tests run to
+        /// completion on the device. You are billed for setup, teardown, and any tests that were
+        /// in progress or already completed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopJob service method.</param>
         /// <param name="cancellationToken">
@@ -2047,12 +2349,11 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Initiates a stop request for the current test run. AWS Device Farm will immediately
-        /// stop the run on devices where tests have not started executing, and you will not be
-        /// billed for these devices. On devices where tests have started executing, Setup Suite
-        /// and Teardown Suite tests will run to completion before stopping execution on those
-        /// devices. You will be billed for Setup, Teardown, and any tests that were in progress
-        /// or already completed.
+        /// Initiates a stop request for the current test run. AWS Device Farm immediately stops
+        /// the run on devices where tests have not started. You are not billed for these devices.
+        /// On devices where tests have started executing, setup suite and teardown suite tests
+        /// run to completion on those devices. You are billed for setup, teardown, and any tests
+        /// that were in progress or already completed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopRun service method.</param>
         /// <param name="cancellationToken">
@@ -2085,7 +2386,7 @@ namespace Amazon.DeviceFarm
         /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
         /// If existing tags on a resource are not specified in the request parameters, they are
         /// not changed. When a resource is deleted, the tags associated with that resource are
-        /// deleted as well.
+        /// also deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2093,6 +2394,9 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
         /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
         /// The specified entity was not found.
         /// </exception>
@@ -2125,6 +2429,9 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
         /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
         /// The specified entity was not found.
         /// </exception>
@@ -2141,7 +2448,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Updates information about an existing private device instance.
+        /// Updates information about a private device instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDeviceInstance service method.</param>
         /// <param name="cancellationToken">
@@ -2233,7 +2540,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Updates the network profile with specific settings.
+        /// Updates the network profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkProfile service method.</param>
         /// <param name="cancellationToken">
@@ -2288,12 +2595,40 @@ namespace Amazon.DeviceFarm
 
         #endregion
                 
+        #region  UpdateTestGridProject
+
+
+
+        /// <summary>
+        /// Change details of a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTestGridProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTestGridProject service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.InternalServiceException">
+        /// An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you see this error.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateTestGridProject">REST API Reference for UpdateTestGridProject Operation</seealso>
+        Task<UpdateTestGridProjectResponse> UpdateTestGridProjectAsync(UpdateTestGridProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateUpload
 
 
 
         /// <summary>
-        /// Update an uploaded test specification (test spec).
+        /// Updates an uploaded test spec.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUpload service method.</param>
         /// <param name="cancellationToken">
@@ -2323,8 +2658,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Updates information about an existing Amazon Virtual Private Cloud (VPC) endpoint
-        /// configuration.
+        /// Updates information about an Amazon Virtual Private Cloud (VPC) endpoint configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVPCEConfiguration service method.</param>
         /// <param name="cancellationToken">

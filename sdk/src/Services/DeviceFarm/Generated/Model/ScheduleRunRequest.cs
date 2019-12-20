@@ -45,7 +45,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The ARN of the app to schedule a run.
+        /// The ARN of an application package to run tests against, created with <a>CreateUpload</a>.
+        /// See <a>ListUploads</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=1011)]
@@ -101,8 +102,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property DeviceSelectionConfiguration. 
         /// <para>
-        /// The filter criteria used to dynamically select a set of devices for a test run, as
-        /// well as the maximum number of devices to be included in the run.
+        /// The filter criteria used to dynamically select a set of devices for a test run and
+        /// the maximum number of devices to be included in the run.
         /// </para>
         ///  
         /// <para>

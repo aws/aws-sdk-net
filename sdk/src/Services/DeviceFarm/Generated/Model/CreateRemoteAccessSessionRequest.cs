@@ -51,12 +51,12 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Unique identifier for the client. If you want access to multiple devices on the same
         /// client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>.
-        /// This is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+        /// This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</i> 
+        /// Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
@@ -93,8 +93,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property DeviceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the device for which you want to create a remote
-        /// access session.
+        /// The ARN of the device for which you want to create a remote access session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=32, Max=1011)]
@@ -138,18 +137,18 @@ namespace Amazon.DeviceFarm.Model
         ///  <ul> <li> 
         /// <para>
         /// INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating
-        /// the screen. You <b>cannot</b> run XCUITest framework-based tests in this mode.
+        /// the screen. You cannot run XCUITest framework-based tests in this mode.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// NO_VIDEO: You are connected to the device but cannot interact with it or view the
-        /// screen. This mode has the fastest test execution speed. You <b>can</b> run XCUITest
-        /// framework-based tests in this mode.
+        /// NO_VIDEO: You are connected to the device, but cannot interact with it or view the
+        /// screen. This mode has the fastest test execution speed. You can run XCUITest framework-based
+        /// tests in this mode.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b>
-        /// run XCUITest framework-based tests and watch the screen in this mode.
+        /// VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
+        /// framework-based tests and watch the screen in this mode.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -169,7 +168,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the remote access session that you wish to create.
+        /// The name of the remote access session to create.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -213,8 +212,8 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  
         /// <para>
-        ///  <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</i> 
+        /// Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.
         /// </para>
         /// </summary>
         public bool RemoteDebugEnabled
@@ -269,14 +268,13 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property SkipAppResign. 
         /// <para>
-        /// When set to <code>true</code>, for private devices, Device Farm will not sign your
-        /// app again. For public devices, Device Farm always signs your apps again and this parameter
-        /// has no effect.
+        /// When set to <code>true</code>, for private devices, Device Farm does not sign your
+        /// app again. For public devices, Device Farm always signs your apps again.
         /// </para>
         ///  
         /// <para>
-        /// For more information about how Device Farm re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
-        /// you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+        /// For more information on how Device Farm modifies your uploads during tests, see <a
+        /// href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> 
         /// </para>
         /// </summary>
         public bool SkipAppResign
@@ -294,14 +292,14 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property SshPublicKey. 
         /// <para>
-        ///  <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to use for
-        /// connecting to remote devices in your remote debugging session. This is only required
-        /// if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+        /// Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting
+        /// to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code>
+        /// is set to <code>true</code>.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</i> 
+        /// Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

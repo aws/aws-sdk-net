@@ -29,7 +29,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateUpload operation.
-    /// Update an uploaded test specification (test spec).
+    /// Updates an uploaded test spec.
     /// </summary>
     public partial class UpdateUploadRequest : AmazonDeviceFarmRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The upload's content type (for example, "application/x-yaml").
+        /// The upload's content type (for example, <code>application/x-yaml</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
@@ -79,8 +79,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property EditContent. 
         /// <para>
-        /// Set to true if the YAML file has changed and needs to be updated; otherwise, set to
-        /// false.
+        /// Set to true if the YAML file has changed and must be updated. Otherwise, set to false.
         /// </para>
         /// </summary>
         public bool EditContent
@@ -98,9 +97,9 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The upload's test spec file name. The name should not contain the '/' character. The
-        /// test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file
-        /// extension.
+        /// The upload's test spec file name. The name must not contain any forward slashes (/).
+        /// The test spec file name must end with the <code>.yaml</code> or <code>.yml</code>
+        /// file extension.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

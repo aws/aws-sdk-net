@@ -142,7 +142,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the instance.
+        /// The ARN of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=1011)]
@@ -207,31 +207,31 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// PENDING: A pending condition.
+        /// PENDING
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PASSED: A passing condition.
+        /// PASSED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WARNED: A warning condition.
+        /// WARNED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FAILED: A failed condition.
+        /// FAILED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SKIPPED: A skipped condition.
+        /// SKIPPED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ERRORED: An error condition.
+        /// ERRORED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// STOPPED: A stopped condition.
+        /// STOPPED
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -276,39 +276,39 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// PENDING: A pending status.
+        /// PENDING
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PENDING_CONCURRENCY: A pending concurrency status.
+        /// PENDING_CONCURRENCY
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PENDING_DEVICE: A pending device status.
+        /// PENDING_DEVICE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PROCESSING: A processing status.
+        /// PROCESSING
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SCHEDULING: A scheduling status.
+        /// SCHEDULING
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PREPARING: A preparing status.
+        /// PREPARING
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RUNNING: A running status.
+        /// RUNNING
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// COMPLETED: A completed status.
+        /// COMPLETED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// STOPPING: A stopping status.
+        /// STOPPING
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -353,76 +353,76 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// BUILTIN_FUZZ: The built-in fuzz type.
+        /// BUILTIN_FUZZ
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app,
-        /// interacting with it and capturing screenshots at the same time.
+        /// BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting
+        /// with it and capturing screenshots at the same time.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+        /// APPIUM_JAVA_JUNIT
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+        /// APPIUM_JAVA_TESTNG
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_PYTHON: The Appium Python type.
+        /// APPIUM_PYTHON
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_NODE: The Appium Node.js type.
+        /// APPIUM_NODE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_RUBY: The Appium Ruby type.
+        /// APPIUM_RUBY
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+        /// APPIUM_WEB_JAVA_JUNIT
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+        /// APPIUM_WEB_JAVA_TESTNG
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+        /// APPIUM_WEB_PYTHON
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+        /// APPIUM_WEB_NODE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_RUBY: The Appium Ruby test type for web apps.
+        /// APPIUM_WEB_RUBY
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CALABASH: The Calabash type.
+        /// CALABASH
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTRUMENTATION: The Instrumentation type.
+        /// INSTRUMENTATION
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UIAUTOMATION: The uiautomation type.
+        /// UIAUTOMATION
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UIAUTOMATOR: The uiautomator type.
+        /// UIAUTOMATOR
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST: The Xcode test type.
+        /// XCTEST
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST_UI: The Xcode UI test type.
+        /// XCTEST_UI
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -441,7 +441,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property VideoCapture. 
         /// <para>
-        /// This value is set to true if video capture is enabled; otherwise, it is set to false.
+        /// This value is set to true if video capture is enabled. Otherwise, it is set to false.
         /// </para>
         /// </summary>
         public bool VideoCapture

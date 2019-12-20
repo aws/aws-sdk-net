@@ -154,8 +154,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The pre-signed Amazon S3 URL that can be used with a corresponding GET request to
-        /// download the sample's file.
+        /// The presigned Amazon S3 URL that can be used with a GET request to download the sample's
+        /// file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

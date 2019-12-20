@@ -38,7 +38,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property DeviceInstances. 
         /// <para>
-        /// An object containing information about your device instances.
+        /// An object that contains information about your device instances.
         /// </para>
         /// </summary>
         public List<DeviceInstance> DeviceInstances

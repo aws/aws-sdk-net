@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Specifies whether charges for devices will be recurring.
+    /// Specifies whether charges for devices are recurring.
     /// </summary>
     public partial class RecurringCharge
     {
@@ -56,7 +56,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Frequency. 
         /// <para>
-        /// The frequency in which charges will recur.
+        /// The frequency in which charges recur.
         /// </para>
         /// </summary>
         public RecurringChargeFrequency Frequency

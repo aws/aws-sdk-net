@@ -29,8 +29,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateVPCEConfiguration operation.
-    /// Updates information about an existing Amazon Virtual Private Cloud (VPC) endpoint
-    /// configuration.
+    /// Updates information about an Amazon Virtual Private Cloud (VPC) endpoint configuration.
     /// </summary>
     public partial class UpdateVPCEConfigurationRequest : AmazonDeviceFarmRequest
     {
@@ -62,8 +61,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property ServiceDnsName. 
         /// <para>
-        /// The DNS (domain) name used to connect to your private service in your Amazon VPC.
-        /// The DNS name must not already be in use on the Internet.
+        /// The DNS (domain) name used to connect to your private service in your VPC. The DNS
+        /// name must not already be in use on the internet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -82,7 +81,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property VpceConfigurationDescription. 
         /// <para>
-        /// An optional description, providing more details about your VPC endpoint configuration.
+        /// An optional description that provides details about your VPC endpoint configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -101,7 +100,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property VpceConfigurationName. 
         /// <para>
-        /// The friendly name you give to your VPC endpoint configuration, to manage your configurations
+        /// The friendly name you give to your VPC endpoint configuration to manage your configurations
         /// more easily.
         /// </para>
         /// </summary>
@@ -121,8 +120,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property VpceServiceName. 
         /// <para>
-        /// The name of the VPC endpoint service running inside your AWS account that you want
-        /// Device Farm to test.
+        /// The name of the VPC endpoint service running in your AWS account that you want Device
+        /// Farm to test.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

@@ -37,7 +37,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Run. 
         /// <para>
-        /// The run you wish to get results from.
+        /// The run to get results from.
         /// </para>
         /// </summary>
         public Run Run
