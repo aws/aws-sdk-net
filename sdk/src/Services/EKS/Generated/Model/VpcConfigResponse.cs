@@ -35,6 +35,7 @@ namespace Amazon.EKS.Model
         private string _clusterSecurityGroupId;
         private bool? _endpointPrivateAccess;
         private bool? _endpointPublicAccess;
+        private List<string> _publicAccessCidrs = new List<string>();
         private List<string> _securityGroupIds = new List<string>();
         private List<string> _subnetIds = new List<string>();
         private string _vpcId;
@@ -64,7 +65,11 @@ namespace Amazon.EKS.Model
         /// This parameter indicates whether the Amazon EKS private API server endpoint is enabled.
         /// If the Amazon EKS private API server endpoint is enabled, Kubernetes API requests
         /// that originate from within your cluster's VPC use the private VPC endpoint instead
-        /// of traversing the internet.
+        /// of traversing the internet. If this value is disabled and you have worker nodes or
+        /// AWS Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes
+        /// the necessary CIDR blocks for communication with the worker nodes or Fargate pods.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+        /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         /// </summary>
         public bool EndpointPrivateAccess
@@ -84,7 +89,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// This parameter indicates whether the Amazon EKS public API server endpoint is enabled.
         /// If the Amazon EKS public API server endpoint is disabled, your cluster's Kubernetes
-        /// API server can receive only requests that originate from within the cluster VPC. 
+        /// API server can only receive requests that originate from within the cluster VPC.
         /// </para>
         /// </summary>
         public bool EndpointPublicAccess
@@ -97,6 +102,30 @@ namespace Amazon.EKS.Model
         internal bool IsSetEndpointPublicAccess()
         {
             return this._endpointPublicAccess.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicAccessCidrs. 
+        /// <para>
+        /// The CIDR blocks that are allowed access to your cluster's public Kubernetes API server
+        /// endpoint. Communication to the endpoint from addresses outside of the listed CIDR
+        /// blocks is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled
+        /// private endpoint access and you have worker nodes or AWS Fargate pods in the cluster,
+        /// then ensure that the necessary CIDR blocks are listed. For more information, see <a
+        /// href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+        /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// </para>
+        /// </summary>
+        public List<string> PublicAccessCidrs
+        {
+            get { return this._publicAccessCidrs; }
+            set { this._publicAccessCidrs = value; }
+        }
+
+        // Check to see if PublicAccessCidrs property is set
+        internal bool IsSetPublicAccessCidrs()
+        {
+            return this._publicAccessCidrs != null && this._publicAccessCidrs.Count > 0; 
         }
 
         /// <summary>

@@ -118,7 +118,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property PodExecutionRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the pod execution role to use for pods that match
-        /// the selectors in the Fargate profile. For more information, see <a href="eks/latest/userguide/pod-execution-role.html">Pod
+        /// the selectors in the Fargate profile. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
         /// Execution Role</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
@@ -173,7 +173,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// The IDs of subnets to launch Fargate pods into.
+        /// The IDs of subnets to launch pods into.
         /// </para>
         /// </summary>
         public List<string> Subnets
