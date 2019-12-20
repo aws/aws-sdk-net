@@ -72,6 +72,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("TranscribeService")]
+        public void CreateVocabularyFilterMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<CreateVocabularyFilterRequest>();
+            var marshaller = new CreateVocabularyFilterRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<CreateVocabularyFilterRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateVocabularyFilter").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = CreateVocabularyFilterResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateVocabularyFilterResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TranscribeService")]
         public void DeleteTranscriptionJobMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteTranscriptionJobRequest>();
@@ -96,6 +125,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
             Comparer.CompareObjectToJson<DeleteVocabularyRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TranscribeService")]
+        public void DeleteVocabularyFilterMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteVocabularyFilterRequest>();
+            var marshaller = new DeleteVocabularyFilterRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteVocabularyFilterRequest>(request,jsonRequest);
 
         }
 
@@ -162,6 +207,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("TranscribeService")]
+        public void GetVocabularyFilterMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetVocabularyFilterRequest>();
+            var marshaller = new GetVocabularyFilterRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetVocabularyFilterRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetVocabularyFilter").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetVocabularyFilterResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetVocabularyFilterResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TranscribeService")]
         public void ListTranscriptionJobsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<ListTranscriptionJobsRequest>();
@@ -220,6 +294,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("TranscribeService")]
+        public void ListVocabularyFiltersMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListVocabularyFiltersRequest>();
+            var marshaller = new ListVocabularyFiltersRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListVocabularyFiltersRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListVocabularyFilters").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListVocabularyFiltersResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListVocabularyFiltersResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TranscribeService")]
         public void StartTranscriptionJobMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<StartTranscriptionJobRequest>();
@@ -270,6 +373,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateVocabularyResponseUnmarshaller.Instance.Unmarshall(context)
                 as UpdateVocabularyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TranscribeService")]
+        public void UpdateVocabularyFilterMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UpdateVocabularyFilterRequest>();
+            var marshaller = new UpdateVocabularyFilterRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UpdateVocabularyFilterRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateVocabularyFilter").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = UpdateVocabularyFilterResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateVocabularyFilterResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

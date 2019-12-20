@@ -37,6 +37,8 @@ namespace Amazon.TranscribeService.Model
         private int? _maxSpeakerLabels;
         private bool? _showAlternatives;
         private bool? _showSpeakerLabels;
+        private VocabularyFilterMethod _vocabularyFilterMethod;
+        private string _vocabularyFilterName;
         private string _vocabularyName;
 
         /// <summary>
@@ -156,6 +158,46 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetShowSpeakerLabels()
         {
             return this._showSpeakerLabels.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VocabularyFilterMethod. 
+        /// <para>
+        /// Set to <code>mask</code> to remove filtered text from the transcript and replace it
+        /// with three asterisks ("***") as placeholder text. Set to <code>remove</code> to remove
+        /// filtered text from the transcript without using placeholder text.
+        /// </para>
+        /// </summary>
+        public VocabularyFilterMethod VocabularyFilterMethod
+        {
+            get { return this._vocabularyFilterMethod; }
+            set { this._vocabularyFilterMethod = value; }
+        }
+
+        // Check to see if VocabularyFilterMethod property is set
+        internal bool IsSetVocabularyFilterMethod()
+        {
+            return this._vocabularyFilterMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VocabularyFilterName. 
+        /// <para>
+        /// The name of the vocabulary filter to use when transcribing the audio. The filter that
+        /// you specify must have the same language code as the transcription job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public string VocabularyFilterName
+        {
+            get { return this._vocabularyFilterName; }
+            set { this._vocabularyFilterName = value; }
+        }
+
+        // Check to see if VocabularyFilterName property is set
+        internal bool IsSetVocabularyFilterName()
+        {
+            return this._vocabularyFilterName != null;
         }
 
         /// <summary>

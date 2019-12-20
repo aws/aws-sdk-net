@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Settings Object
+    /// Response Unmarshaller for VocabularyFilterInfo Object
     /// </summary>  
-    public class SettingsUnmarshaller : IUnmarshaller<Settings, XmlUnmarshallerContext>, IUnmarshaller<Settings, JsonUnmarshallerContext>
+    public class VocabularyFilterInfoUnmarshaller : IUnmarshaller<VocabularyFilterInfo, XmlUnmarshallerContext>, IUnmarshaller<VocabularyFilterInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Settings IUnmarshaller<Settings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VocabularyFilterInfo IUnmarshaller<VocabularyFilterInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Settings Unmarshall(JsonUnmarshallerContext context)
+        public VocabularyFilterInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Settings unmarshalledObject = new Settings();
+            VocabularyFilterInfo unmarshalledObject = new VocabularyFilterInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ChannelIdentification", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.ChannelIdentification = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MaxAlternatives", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxAlternatives = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MaxSpeakerLabels", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxSpeakerLabels = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ShowAlternatives", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.ShowAlternatives = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ShowSpeakerLabels", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.ShowSpeakerLabels = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VocabularyFilterMethod", targetDepth))
+                if (context.TestExpression("LanguageCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyFilterMethod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastModifiedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VocabularyFilterName", targetDepth))
@@ -106,24 +82,18 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.VocabularyFilterName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("VocabularyName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static SettingsUnmarshaller _instance = new SettingsUnmarshaller();        
+        private static VocabularyFilterInfoUnmarshaller _instance = new VocabularyFilterInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SettingsUnmarshaller Instance
+        public static VocabularyFilterInfoUnmarshaller Instance
         {
             get
             {
