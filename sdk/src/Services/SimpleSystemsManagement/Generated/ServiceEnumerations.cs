@@ -425,6 +425,10 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant AttachmentReference for AttachmentsSourceKey
+        /// </summary>
+        public static readonly AttachmentsSourceKey AttachmentReference = new AttachmentsSourceKey("AttachmentReference");
+        /// <summary>
         /// Constant S3FileUrl for AttachmentsSourceKey
         /// </summary>
         public static readonly AttachmentsSourceKey S3FileUrl = new AttachmentsSourceKey("S3FileUrl");
