@@ -28,33 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeEventTypes operation.
+    /// This is the response object from the DescribeAffectedAccountsForOrganization operation.
     /// </summary>
-    public partial class DescribeEventTypesResponse : AmazonWebServiceResponse
+    public partial class DescribeAffectedAccountsForOrganizationResponse : AmazonWebServiceResponse
     {
-        private List<EventType> _eventTypes = new List<EventType>();
+        private List<string> _affectedAccounts = new List<string>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property EventTypes. 
+        /// Gets and sets the property AffectedAccounts. 
         /// <para>
-        /// A list of event types that match the filter criteria. Event types have a category
-        /// (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>),
-        /// a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>,
-        /// <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
-        /// </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
+        /// A JSON set of elements of the affected accounts.
         /// </para>
         /// </summary>
-        public List<EventType> EventTypes
+        public List<string> AffectedAccounts
         {
-            get { return this._eventTypes; }
-            set { this._eventTypes = value; }
+            get { return this._affectedAccounts; }
+            set { this._affectedAccounts = value; }
         }
 
-        // Check to see if EventTypes property is set
-        internal bool IsSetEventTypes()
+        // Check to see if AffectedAccounts property is set
+        internal bool IsSetAffectedAccounts()
         {
-            return this._eventTypes != null && this._eventTypes.Count > 0; 
+            return this._affectedAccounts != null && this._affectedAccounts.Count > 0; 
         }
 
         /// <summary>

@@ -28,66 +28,60 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a>
-    /// operations.
+    /// The values to filter results from the <a>DescribeEventsForOrganization</a> operation.
     /// </summary>
-    public partial class EventFilter
+    public partial class OrganizationEventFilter
     {
-        private List<string> _availabilityZones = new List<string>();
-        private List<DateTimeRange> _endTimes = new List<DateTimeRange>();
+        private List<string> _awsAccountIds = new List<string>();
+        private DateTimeRange _endTime;
         private List<string> _entityArns = new List<string>();
         private List<string> _entityValues = new List<string>();
-        private List<string> _eventArns = new List<string>();
         private List<string> _eventStatusCodes = new List<string>();
         private List<string> _eventTypeCategories = new List<string>();
         private List<string> _eventTypeCodes = new List<string>();
-        private List<DateTimeRange> _lastUpdatedTimes = new List<DateTimeRange>();
+        private DateTimeRange _lastUpdatedTime;
         private List<string> _regions = new List<string>();
         private List<string> _services = new List<string>();
-        private List<DateTimeRange> _startTimes = new List<DateTimeRange>();
-        private List<Dictionary<string, string>> _tags = new List<Dictionary<string, string>>();
+        private DateTimeRange _startTime;
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZones. 
+        /// Gets and sets the property AwsAccountIds. 
         /// <para>
-        /// A list of AWS availability zones.
+        /// A list of 12-digit AWS account numbers that contains the affected entities.
         /// </para>
         /// </summary>
-        public List<string> AvailabilityZones
+        [AWSProperty(Min=1, Max=50)]
+        public List<string> AwsAccountIds
         {
-            get { return this._availabilityZones; }
-            set { this._availabilityZones = value; }
+            get { return this._awsAccountIds; }
+            set { this._awsAccountIds = value; }
         }
 
-        // Check to see if AvailabilityZones property is set
-        internal bool IsSetAvailabilityZones()
+        // Check to see if AwsAccountIds property is set
+        internal bool IsSetAwsAccountIds()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._awsAccountIds != null && this._awsAccountIds.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property EndTimes. 
-        /// <para>
-        /// A list of dates and times that the event ended.
-        /// </para>
+        /// Gets and sets the property EndTime.
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
-        public List<DateTimeRange> EndTimes
+        public DateTimeRange EndTime
         {
-            get { return this._endTimes; }
-            set { this._endTimes = value; }
+            get { return this._endTime; }
+            set { this._endTime = value; }
         }
 
-        // Check to see if EndTimes property is set
-        internal bool IsSetEndTimes()
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
         {
-            return this._endTimes != null && this._endTimes.Count > 0; 
+            return this._endTime != null;
         }
 
         /// <summary>
         /// Gets and sets the property EntityArns. 
         /// <para>
-        /// A list of entity ARNs (unique identifiers).
+        /// REPLACEME
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -106,8 +100,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EntityValues. 
         /// <para>
-        /// A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or
-        /// EBS volumes (<code>vol-426ab23e</code>).
+        /// A list of entity identifiers, such as EC2 instance IDs (i-34ab692e) or EBS volumes
+        /// (vol-426ab23e).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -121,27 +115,6 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetEntityValues()
         {
             return this._entityValues != null && this._entityValues.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property EventArns. 
-        /// <para>
-        /// A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456",
-        /// "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
-        /// 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=10)]
-        public List<string> EventArns
-        {
-            get { return this._eventArns; }
-            set { this._eventArns = value; }
-        }
-
-        // Check to see if EventArns property is set
-        internal bool IsSetEventArns()
-        {
-            return this._eventArns != null && this._eventArns.Count > 0; 
         }
 
         /// <summary>
@@ -166,8 +139,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCategories. 
         /// <para>
-        /// A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>,
-        /// or <code>accountNotification</code>).
+        /// REPLACEME
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -204,28 +176,24 @@ namespace Amazon.AWSHealth.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdatedTimes. 
-        /// <para>
-        /// A list of dates and times that the event was last updated.
-        /// </para>
+        /// Gets and sets the property LastUpdatedTime.
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
-        public List<DateTimeRange> LastUpdatedTimes
+        public DateTimeRange LastUpdatedTime
         {
-            get { return this._lastUpdatedTimes; }
-            set { this._lastUpdatedTimes = value; }
+            get { return this._lastUpdatedTime; }
+            set { this._lastUpdatedTime = value; }
         }
 
-        // Check to see if LastUpdatedTimes property is set
-        internal bool IsSetLastUpdatedTimes()
+        // Check to see if LastUpdatedTime property is set
+        internal bool IsSetLastUpdatedTime()
         {
-            return this._lastUpdatedTimes != null && this._lastUpdatedTimes.Count > 0; 
+            return this._lastUpdatedTime != null;
         }
 
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// A list of AWS regions.
+        /// A list of AWS Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -261,41 +229,18 @@ namespace Amazon.AWSHealth.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTimes. 
-        /// <para>
-        /// A list of dates and times that the event began.
-        /// </para>
+        /// Gets and sets the property StartTime.
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
-        public List<DateTimeRange> StartTimes
+        public DateTimeRange StartTime
         {
-            get { return this._startTimes; }
-            set { this._startTimes = value; }
+            get { return this._startTime; }
+            set { this._startTime = value; }
         }
 
-        // Check to see if StartTimes property is set
-        internal bool IsSetStartTimes()
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
         {
-            return this._startTimes != null && this._startTimes.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// A map of entity tags attached to the affected entity.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=50)]
-        public List<Dictionary<string, string>> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._startTime != null;
         }
 
     }

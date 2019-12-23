@@ -28,53 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeEventAggregates operation.
-    /// Returns the number of events of each event type (issue, scheduled change, and account
-    /// notification). If no filter is specified, the counts of all events in each category
-    /// are returned.
+    /// Container for the parameters to the DescribeAffectedEntitiesForOrganization operation.
+    /// Returns a list of entities that have been affected by one or more events for one or
+    /// more accounts in your organization in AWS Organizations, based on the filter criteria.
+    /// Entities can refer to individual customer resources, groups of customer resources,
+    /// or any other construct, depending on the AWS service.
+    /// 
+    ///  
+    /// <para>
+    /// At least one event ARN and account ID are required. Results are sorted by the <code>lastUpdatedTime</code>
+    /// of the entity, starting with the most recent.
+    /// </para>
+    ///  
+    /// <para>
+    /// Before you can call this operation, you must first enable AWS Health to work with
+    /// AWS Organizations. To do this, call the <a>EnableHealthServiceAccessForOrganization</a>
+    /// operation from your organization's master account. 
+    /// </para>
     /// </summary>
-    public partial class DescribeEventAggregatesRequest : AmazonAWSHealthRequest
+    public partial class DescribeAffectedEntitiesForOrganizationRequest : AmazonAWSHealthRequest
     {
-        private EventAggregateField _aggregateField;
-        private EventFilter _filter;
+        private string _locale;
         private int? _maxResults;
         private string _nextToken;
+        private List<EventAccountFilter> _organizationEntityFilters = new List<EventAccountFilter>();
 
         /// <summary>
-        /// Gets and sets the property AggregateField. 
+        /// Gets and sets the property Locale. 
         /// <para>
-        /// The only currently supported value is <code>eventTypeCategory</code>.
+        /// The locale (language) to return information in. English (en) is the default and the
+        /// only supported value at this time.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public EventAggregateField AggregateField
+        [AWSProperty(Min=2, Max=256)]
+        public string Locale
         {
-            get { return this._aggregateField; }
-            set { this._aggregateField = value; }
+            get { return this._locale; }
+            set { this._locale = value; }
         }
 
-        // Check to see if AggregateField property is set
-        internal bool IsSetAggregateField()
+        // Check to see if Locale property is set
+        internal bool IsSetLocale()
         {
-            return this._aggregateField != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Filter. 
-        /// <para>
-        /// Values to narrow the results returned.
-        /// </para>
-        /// </summary>
-        public EventFilter Filter
-        {
-            get { return this._filter; }
-            set { this._filter = value; }
-        }
-
-        // Check to see if Filter property is set
-        internal bool IsSetFilter()
-        {
-            return this._filter != null;
+            return this._locale != null;
         }
 
         /// <summary>
@@ -117,6 +113,25 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationEntityFilters. 
+        /// <para>
+        /// A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
+        public List<EventAccountFilter> OrganizationEntityFilters
+        {
+            get { return this._organizationEntityFilters; }
+            set { this._organizationEntityFilters = value; }
+        }
+
+        // Check to see if OrganizationEntityFilters property is set
+        internal bool IsSetOrganizationEntityFilters()
+        {
+            return this._organizationEntityFilters != null && this._organizationEntityFilters.Count > 0; 
         }
 
     }

@@ -28,33 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeEventTypes operation.
+    /// This is the response object from the DescribeEventsForOrganization operation.
     /// </summary>
-    public partial class DescribeEventTypesResponse : AmazonWebServiceResponse
+    public partial class DescribeEventsForOrganizationResponse : AmazonWebServiceResponse
     {
-        private List<EventType> _eventTypes = new List<EventType>();
+        private List<OrganizationEvent> _events = new List<OrganizationEvent>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property EventTypes. 
+        /// Gets and sets the property Events. 
         /// <para>
-        /// A list of event types that match the filter criteria. Event types have a category
-        /// (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>),
-        /// a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>,
-        /// <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
-        /// </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
+        /// The events that match the specified filter criteria.
         /// </para>
         /// </summary>
-        public List<EventType> EventTypes
+        public List<OrganizationEvent> Events
         {
-            get { return this._eventTypes; }
-            set { this._eventTypes = value; }
+            get { return this._events; }
+            set { this._events = value; }
         }
 
-        // Check to see if EventTypes property is set
-        internal bool IsSetEventTypes()
+        // Check to see if Events property is set
+        internal bool IsSetEvents()
         {
-            return this._eventTypes != null && this._eventTypes.Count > 0; 
+            return this._events != null && this._events.Count > 0; 
         }
 
         /// <summary>

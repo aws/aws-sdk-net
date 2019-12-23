@@ -72,9 +72,54 @@ namespace Amazon.AWSHealth
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// AWS Health integrates with AWS Organizations to provide a centralized view of AWS
+    /// Health events across all accounts in your organization.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeEventsForOrganization</a>: Summary information about events across the
+    /// organization.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeAffectedAccountsForOrganization</a>: List of accounts in your organization
+    /// impacted by an event.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEventDetailsForOrganization</a>: Detailed information about events in
+    /// your organization.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeAffectedEntitiesForOrganization</a>: Information about AWS resources in
+    /// your organization that are affected by events.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can use the following operations to enable or disable AWS Health from working
+    /// with AWS Organizations.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>EnableHealthServiceAccessForOrganization</a>: Enables AWS Health to work with
+    /// AWS Organizations.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DisableHealthServiceAccessForOrganization</a>: Disables AWS Health from working
+    /// with AWS Organizations.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeHealthServiceStatusForOrganization</a>: Status information about enabling
+    /// or disabling AWS Health from working with AWS Organizations.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// The Health API requires a Business or Enterprise support plan from <a href="http://aws.amazon.com/premiumsupport/">AWS
     /// Support</a>. Calling the Health API from an account that does not have a Business
-    /// or Enterprise support plan causes a <code>SubscriptionRequiredException</code>. 
+    /// or Enterprise support plan causes a <code>SubscriptionRequiredException</code>.
     /// </para>
     ///  
     /// <para>
@@ -102,6 +147,35 @@ namespace Amazon.AWSHealth
     /// </summary>
     public partial interface IAmazonAWSHealth : IAmazonService, IDisposable
     {
+                
+        #region  DescribeAffectedAccountsForOrganization
+
+
+
+        /// <summary>
+        /// Returns a list of accounts in the organization from AWS Organizations that are affected
+        /// by the provided event.
+        /// 
+        ///  
+        /// <para>
+        /// Before you can call this operation, you must first enable AWS Health to work with
+        /// AWS Organizations. To do this, call the <a>EnableHealthServiceAccessForOrganization</a>
+        /// operation from your organization's master account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAffectedAccountsForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAffectedAccountsForOrganization service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
+        /// The specified pagination token (<code>nextToken</code>) is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedAccountsForOrganization">REST API Reference for DescribeAffectedAccountsForOrganization Operation</seealso>
+        Task<DescribeAffectedAccountsForOrganizationResponse> DescribeAffectedAccountsForOrganizationAsync(DescribeAffectedAccountsForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
                 
         #region  DescribeAffectedEntities
 
@@ -134,6 +208,45 @@ namespace Amazon.AWSHealth
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         Task<DescribeAffectedEntitiesResponse> DescribeAffectedEntitiesAsync(DescribeAffectedEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeAffectedEntitiesForOrganization
+
+
+
+        /// <summary>
+        /// Returns a list of entities that have been affected by one or more events for one or
+        /// more accounts in your organization in AWS Organizations, based on the filter criteria.
+        /// Entities can refer to individual customer resources, groups of customer resources,
+        /// or any other construct, depending on the AWS service.
+        /// 
+        ///  
+        /// <para>
+        /// At least one event ARN and account ID are required. Results are sorted by the <code>lastUpdatedTime</code>
+        /// of the entity, starting with the most recent.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you can call this operation, you must first enable AWS Health to work with
+        /// AWS Organizations. To do this, call the <a>EnableHealthServiceAccessForOrganization</a>
+        /// operation from your organization's master account. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAffectedEntitiesForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAffectedEntitiesForOrganization service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
+        /// The specified pagination token (<code>nextToken</code>) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
+        /// The specified locale is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntitiesForOrganization">REST API Reference for DescribeAffectedEntitiesForOrganization Operation</seealso>
+        Task<DescribeAffectedEntitiesForOrganizationResponse> DescribeAffectedEntitiesForOrganizationAsync(DescribeAffectedEntitiesForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -185,7 +298,7 @@ namespace Amazon.AWSHealth
 
         /// <summary>
         /// Returns detailed information about one or more specified events. Information includes
-        /// standard event data (region, service, etc., as returned by <a>DescribeEvents</a>),
+        /// standard event data (region, service, and so on, as returned by <a>DescribeEvents</a>),
         /// a detailed event description, and possible additional metadata that depends upon the
         /// nature of the event. Affected entities are not included; to retrieve those, use the
         /// <a>DescribeAffectedEntities</a> operation.
@@ -206,6 +319,39 @@ namespace Amazon.AWSHealth
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         Task<DescribeEventDetailsResponse> DescribeEventDetailsAsync(DescribeEventDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeEventDetailsForOrganization
+
+
+
+        /// <summary>
+        /// Returns detailed information about one or more specified events for one or more accounts
+        /// in your organization. Information includes standard event data (Region, service, and
+        /// so on, as returned by <a>DescribeEventsForOrganization</a>, a detailed event description,
+        /// and possible additional metadata that depends upon the nature of the event. Affected
+        /// entities are not included; to retrieve those, use the <a>DescribeAffectedEntitiesForOrganization</a>
+        /// operation.
+        /// 
+        ///  
+        /// <para>
+        /// Before you can call this operation, you must first enable AWS Health to work with
+        /// AWS Organizations. To do this, call the <a>EnableHealthServiceAccessForOrganization</a>
+        /// operation from your organization's master account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventDetailsForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEventDetailsForOrganization service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
+        /// The specified locale is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetailsForOrganization">REST API Reference for DescribeEventDetailsForOrganization Operation</seealso>
+        Task<DescribeEventDetailsForOrganizationResponse> DescribeEventDetailsForOrganizationAsync(DescribeEventDetailsForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -243,6 +389,47 @@ namespace Amazon.AWSHealth
 
         #endregion
                 
+        #region  DescribeEventsForOrganization
+
+
+
+        /// <summary>
+        /// Returns information about events across your organization in AWS Organizations, meeting
+        /// the specified filter criteria. Events are returned in a summary form and do not include
+        /// the accounts impacted, detailed description, any additional metadata that depends
+        /// on the event type, or any affected resources. To retrieve that information, use the
+        /// <a>DescribeAffectedAccountsForOrganization</a>, <a>DescribeEventDetailsForOrganization</a>,
+        /// and <a>DescribeAffectedEntitiesForOrganization</a> operations.
+        /// 
+        ///  
+        /// <para>
+        /// If no filter criteria are specified, all events across your organization are returned.
+        /// Results are sorted by <code>lastModifiedTime</code>, starting with the most recent.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you can call this operation, you must first enable Health to work with AWS
+        /// Organizations. To do this, call the <a>EnableHealthServiceAccessForOrganization</a>
+        /// operation from your organization's master account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventsForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEventsForOrganization service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
+        /// The specified pagination token (<code>nextToken</code>) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
+        /// The specified locale is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventsForOrganization">REST API Reference for DescribeEventsForOrganization Operation</seealso>
+        Task<DescribeEventsForOrganizationResponse> DescribeEventsForOrganizationAsync(DescribeEventsForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeEventTypes
 
 
@@ -265,6 +452,82 @@ namespace Amazon.AWSHealth
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         Task<DescribeEventTypesResponse> DescribeEventTypesAsync(DescribeEventTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeHealthServiceStatusForOrganization
+
+
+
+        /// <summary>
+        /// This operation provides status information on enabling or disabling AWS Health to
+        /// work with your organization. To call this operation, you must sign in as an IAM user,
+        /// assume an IAM role, or sign in as the root user (not recommended) in the organization's
+        /// master account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHealthServiceStatusForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeHealthServiceStatusForOrganization service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeHealthServiceStatusForOrganization">REST API Reference for DescribeHealthServiceStatusForOrganization Operation</seealso>
+        Task<DescribeHealthServiceStatusForOrganizationResponse> DescribeHealthServiceStatusForOrganizationAsync(DescribeHealthServiceStatusForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisableHealthServiceAccessForOrganization
+
+
+
+        /// <summary>
+        /// Calling this operation disables Health from working with AWS Organizations. This does
+        /// not remove the Service Linked Role (SLR) from the the master account in your organization.
+        /// Use the IAM console, API, or AWS CLI to remove the SLR if desired. To call this operation,
+        /// you must sign in as an IAM user, assume an IAM role, or sign in as the root user (not
+        /// recommended) in the organization's master account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableHealthServiceAccessForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableHealthServiceAccessForOrganization service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.ConcurrentModificationException">
+        /// <a>EnableHealthServiceAccessForOrganization</a> is already in progress. Wait for
+        /// the action to complete before trying again. To get the current status, use the <a>DescribeHealthServiceStatusForOrganization</a>
+        /// operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DisableHealthServiceAccessForOrganization">REST API Reference for DisableHealthServiceAccessForOrganization Operation</seealso>
+        Task<DisableHealthServiceAccessForOrganizationResponse> DisableHealthServiceAccessForOrganizationAsync(DisableHealthServiceAccessForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  EnableHealthServiceAccessForOrganization
+
+
+
+        /// <summary>
+        /// Calling this operation enables AWS Health to work with AWS Organizations. This applies
+        /// a Service Linked Role (SLR) to the master account in the organization. To learn more
+        /// about the steps in this process, visit enabling service access for AWS Health in AWS
+        /// Organizations. To call this operation, you must sign in as an IAM user, assume an
+        /// IAM role, or sign in as the root user (not recommended) in the organization's master
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableHealthServiceAccessForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableHealthServiceAccessForOrganization service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.ConcurrentModificationException">
+        /// <a>EnableHealthServiceAccessForOrganization</a> is already in progress. Wait for
+        /// the action to complete before trying again. To get the current status, use the <a>DescribeHealthServiceStatusForOrganization</a>
+        /// operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EnableHealthServiceAccessForOrganization">REST API Reference for EnableHealthServiceAccessForOrganization Operation</seealso>
+        Task<EnableHealthServiceAccessForOrganizationResponse> EnableHealthServiceAccessForOrganizationAsync(EnableHealthServiceAccessForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

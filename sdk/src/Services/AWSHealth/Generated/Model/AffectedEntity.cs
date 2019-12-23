@@ -47,6 +47,7 @@ namespace Amazon.AWSHealth.Model
         /// The 12-digit AWS account number that contains the affected entity.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=12)]
         public string AwsAccountId
         {
             get { return this._awsAccountId; }
@@ -81,7 +82,10 @@ namespace Amazon.AWSHealth.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntityUrl.
+        /// Gets and sets the property EntityUrl. 
+        /// <para>
+        /// The URL of the affected entity.
+        /// </para>
         /// </summary>
         public string EntityUrl
         {

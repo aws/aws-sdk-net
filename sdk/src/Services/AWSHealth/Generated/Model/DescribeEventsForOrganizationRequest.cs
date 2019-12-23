@@ -28,36 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeEventAggregates operation.
-    /// Returns the number of events of each event type (issue, scheduled change, and account
-    /// notification). If no filter is specified, the counts of all events in each category
-    /// are returned.
+    /// Container for the parameters to the DescribeEventsForOrganization operation.
+    /// Returns information about events across your organization in AWS Organizations, meeting
+    /// the specified filter criteria. Events are returned in a summary form and do not include
+    /// the accounts impacted, detailed description, any additional metadata that depends
+    /// on the event type, or any affected resources. To retrieve that information, use the
+    /// <a>DescribeAffectedAccountsForOrganization</a>, <a>DescribeEventDetailsForOrganization</a>,
+    /// and <a>DescribeAffectedEntitiesForOrganization</a> operations.
+    /// 
+    ///  
+    /// <para>
+    /// If no filter criteria are specified, all events across your organization are returned.
+    /// Results are sorted by <code>lastModifiedTime</code>, starting with the most recent.
+    /// </para>
+    ///  
+    /// <para>
+    /// Before you can call this operation, you must first enable Health to work with AWS
+    /// Organizations. To do this, call the <a>EnableHealthServiceAccessForOrganization</a>
+    /// operation from your organization's master account.
+    /// </para>
     /// </summary>
-    public partial class DescribeEventAggregatesRequest : AmazonAWSHealthRequest
+    public partial class DescribeEventsForOrganizationRequest : AmazonAWSHealthRequest
     {
-        private EventAggregateField _aggregateField;
-        private EventFilter _filter;
+        private OrganizationEventFilter _filter;
+        private string _locale;
         private int? _maxResults;
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property AggregateField. 
-        /// <para>
-        /// The only currently supported value is <code>eventTypeCategory</code>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public EventAggregateField AggregateField
-        {
-            get { return this._aggregateField; }
-            set { this._aggregateField = value; }
-        }
-
-        // Check to see if AggregateField property is set
-        internal bool IsSetAggregateField()
-        {
-            return this._aggregateField != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Filter. 
@@ -65,7 +61,7 @@ namespace Amazon.AWSHealth.Model
         /// Values to narrow the results returned.
         /// </para>
         /// </summary>
-        public EventFilter Filter
+        public OrganizationEventFilter Filter
         {
             get { return this._filter; }
             set { this._filter = value; }
@@ -75,6 +71,26 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetFilter()
         {
             return this._filter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Locale. 
+        /// <para>
+        /// The locale (language) to return information in. English (en) is the default and the
+        /// only supported value at this time.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=256)]
+        public string Locale
+        {
+            get { return this._locale; }
+            set { this._locale = value; }
+        }
+
+        // Check to see if Locale property is set
+        internal bool IsSetLocale()
+        {
+            return this._locale != null;
         }
 
         /// <summary>

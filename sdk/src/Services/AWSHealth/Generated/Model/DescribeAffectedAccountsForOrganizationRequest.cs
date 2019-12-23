@@ -28,33 +28,61 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeEventTypes operation.
+    /// Container for the parameters to the DescribeAffectedAccountsForOrganization operation.
+    /// Returns a list of accounts in the organization from AWS Organizations that are affected
+    /// by the provided event.
+    /// 
+    ///  
+    /// <para>
+    /// Before you can call this operation, you must first enable AWS Health to work with
+    /// AWS Organizations. To do this, call the <a>EnableHealthServiceAccessForOrganization</a>
+    /// operation from your organization's master account.
+    /// </para>
     /// </summary>
-    public partial class DescribeEventTypesResponse : AmazonWebServiceResponse
+    public partial class DescribeAffectedAccountsForOrganizationRequest : AmazonAWSHealthRequest
     {
-        private List<EventType> _eventTypes = new List<EventType>();
+        private string _eventArn;
+        private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property EventTypes. 
+        /// Gets and sets the property EventArn. 
         /// <para>
-        /// A list of event types that match the filter criteria. Event types have a category
-        /// (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>),
-        /// a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>,
-        /// <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
-        /// </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
+        /// The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+        /// 
         /// </para>
         /// </summary>
-        public List<EventType> EventTypes
+        [AWSProperty(Required=true, Max=1600)]
+        public string EventArn
         {
-            get { return this._eventTypes; }
-            set { this._eventTypes = value; }
+            get { return this._eventArn; }
+            set { this._eventArn = value; }
         }
 
-        // Check to see if EventTypes property is set
-        internal bool IsSetEventTypes()
+        // Check to see if EventArn property is set
+        internal bool IsSetEventArn()
         {
-            return this._eventTypes != null && this._eventTypes.Count > 0; 
+            return this._eventArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of items to return in one batch, between 10 and 100, inclusive.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=100)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
