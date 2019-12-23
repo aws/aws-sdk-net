@@ -143,7 +143,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's
-        /// data for an Amazon FSx for Windows File Server file system.
+        /// data for an Amazon FSx for Windows File Server file system. Amazon FSx for Lustre
+        /// does not support KMS encryption. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -295,7 +296,7 @@ namespace Amazon.FSx.Model
         /// The storage capacity of the file system in gigabytes (GB).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0)]
         public int StorageCapacity
         {
             get { return this._storageCapacity.GetValueOrDefault(); }

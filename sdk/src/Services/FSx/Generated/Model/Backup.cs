@@ -143,8 +143,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this backup's
-        /// data.
+        /// The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this backup
+        /// of the Amazon FSx for Windows file system's data at rest. Amazon FSx for Lustre does
+        /// not support KMS encryption.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

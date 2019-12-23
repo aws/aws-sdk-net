@@ -46,7 +46,7 @@ namespace Amazon.FSx.Model
         /// Line Interface (AWS CLI) or an AWS SDK.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=63)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }

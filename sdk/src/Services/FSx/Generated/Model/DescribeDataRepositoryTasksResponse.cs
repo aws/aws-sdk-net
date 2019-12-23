@@ -28,50 +28,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The Microsoft AD attributes of the Amazon FSx for Windows File Server file system.
+    /// This is the response object from the DescribeDataRepositoryTasks operation.
     /// </summary>
-    public partial class ActiveDirectoryBackupAttributes
+    public partial class DescribeDataRepositoryTasksResponse : AmazonWebServiceResponse
     {
-        private string _activeDirectoryId;
-        private string _domainName;
+        private List<DataRepositoryTask> _dataRepositoryTasks = new List<DataRepositoryTask>();
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ActiveDirectoryId. 
+        /// Gets and sets the property DataRepositoryTasks. 
         /// <para>
-        /// The ID of the AWS Managed Microsoft Active Directory instance to which the file system
-        /// is joined.
+        /// The collection of data repository task descriptions returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=12, Max=12)]
-        public string ActiveDirectoryId
+        [AWSProperty(Max=50)]
+        public List<DataRepositoryTask> DataRepositoryTasks
         {
-            get { return this._activeDirectoryId; }
-            set { this._activeDirectoryId = value; }
+            get { return this._dataRepositoryTasks; }
+            set { this._dataRepositoryTasks = value; }
         }
 
-        // Check to see if ActiveDirectoryId property is set
-        internal bool IsSetActiveDirectoryId()
+        // Check to see if DataRepositoryTasks property is set
+        internal bool IsSetDataRepositoryTasks()
         {
-            return this._activeDirectoryId != null;
+            return this._dataRepositoryTasks != null && this._dataRepositoryTasks.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property DomainName. 
-        /// <para>
-        /// The fully qualified domain name of the self-managed AD directory.
-        /// </para>
+        /// Gets and sets the property NextToken.
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
-        public string DomainName
+        public string NextToken
         {
-            get { return this._domainName; }
-            set { this._domainName = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._domainName != null;
+            return this._nextToken != null;
         }
 
     }
