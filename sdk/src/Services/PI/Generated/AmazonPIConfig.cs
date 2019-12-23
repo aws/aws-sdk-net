@@ -32,7 +32,7 @@ namespace Amazon.PI
     public partial class AmazonPIConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.100.116");
+            InternalSDKUtils.BuildUserAgentString("3.3.100.117");
 
         private string _userAgent = UserAgentString;
 
