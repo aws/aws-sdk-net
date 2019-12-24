@@ -33,7 +33,12 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         Session,
         CredentialProcess,
         AssumeRoleWithWebIdentity,
-        AssumeRoleWithWebIdentitySessionName
+        AssumeRoleWithWebIdentitySessionName,
+        AssumeRoleSessionName,
+        AssumeRoleCredentialSourceSessionName,
+        AssumeRoleExternalSessionName,
+        AssumeRoleExternalMFASessionName,
+        AssumeRoleMFASessionName,
     }
 
     public enum CredentialSourceType
@@ -160,6 +165,50 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         Token,
                     }
                 },
+                {
+                    CredentialProfileType.AssumeRoleSessionName, new HashSet<string>()
+                    {
+                        RoleArn,
+                        SourceProfile,
+                        RoleSessionName
+                    }
+                },
+                {
+                    CredentialProfileType.AssumeRoleCredentialSourceSessionName, new HashSet<string>()
+                    {
+                        RoleArn,
+                        CredentialSource,
+                        RoleSessionName
+                    }
+                },
+                {
+                    CredentialProfileType.AssumeRoleExternalSessionName, new HashSet<string>()
+                    {
+                        ExternalID,
+                        RoleArn,
+                        SourceProfile,
+                        RoleSessionName
+                    }
+                },
+                {
+                    CredentialProfileType.AssumeRoleExternalMFASessionName, new HashSet<string>()
+                    {
+                        ExternalID,
+                        MfaSerial,
+                        RoleArn,
+                        SourceProfile,
+                        RoleSessionName
+                    }
+                },
+                {
+                    CredentialProfileType.AssumeRoleMFASessionName, new HashSet<string>()
+                    {
+                        MfaSerial,
+                        RoleArn,
+                        SourceProfile,
+                        RoleSessionName
+                    }
+                }
             };
 
         private static Dictionary<CredentialProfileType, string> CredentialTypeDictionary =
@@ -171,6 +220,10 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                 { CredentialProfileType.AssumeRoleMFA, AssumeRoleCredentials },
                 { CredentialProfileType.AssumeRoleWithWebIdentity, AssumeRoleWithWebIdentityCredentials },
                 { CredentialProfileType.AssumeRoleWithWebIdentitySessionName, AssumeRoleWithWebIdentityCredentials },
+                { CredentialProfileType.AssumeRoleSessionName, AssumeRoleCredentials },
+                { CredentialProfileType.AssumeRoleExternalSessionName, AssumeRoleCredentials },
+                { CredentialProfileType.AssumeRoleExternalMFASessionName, AssumeRoleCredentials },
+                { CredentialProfileType.AssumeRoleMFASessionName, AssumeRoleCredentials },
                 { CredentialProfileType.Basic, BasicCredentials },
 #if !NETSTANDARD13
                 { CredentialProfileType.SAMLRole, SAMLCredentials },

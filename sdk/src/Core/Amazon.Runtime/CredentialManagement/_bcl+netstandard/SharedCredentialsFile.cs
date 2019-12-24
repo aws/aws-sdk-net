@@ -75,7 +75,12 @@ namespace Amazon.Runtime.CredentialManagement
                 CredentialProfileType.AssumeRoleWithWebIdentitySessionName,
                 CredentialProfileType.Basic,
                 CredentialProfileType.Session,
-                CredentialProfileType.CredentialProcess
+                CredentialProfileType.CredentialProcess,
+                CredentialProfileType.AssumeRoleSessionName,
+                CredentialProfileType.AssumeRoleCredentialSourceSessionName,
+                CredentialProfileType.AssumeRoleExternalSessionName,
+                CredentialProfileType.AssumeRoleExternalMFASessionName,
+                CredentialProfileType.AssumeRoleMFASessionName
             };
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
