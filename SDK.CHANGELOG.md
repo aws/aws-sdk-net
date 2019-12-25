@@ -1,3 +1,8 @@
+### 3.3.656.1 (2019-12-25 00:21 UTC)
+* Core 3.3.104.11
+	* Fix support of the role_session_name property in the shared credentials file
+	* All services packages updated to require new Core
+
 ### 3.3.656.0 (2019-12-23 19:12 UTC)
 * AWSHealth (3.3.102.0)
 	* With this release, you can now centrally aggregate AWS Health events from all accounts in your AWS organization. Visit AWS Health documentation to learn more about enabling and using this feature: https://docs.aws.amazon.com/health/latest/ug/organizational-view-health.html. 
