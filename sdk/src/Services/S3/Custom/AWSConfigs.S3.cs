@@ -91,11 +91,14 @@ namespace Amazon
 
         /// <summary>
         /// Configures if the S3 client should use Signature Version 4 signing with requests.
-        /// By default, this setting is true.
-        /// When the setting is true, Signature Version 4 will be used for all requests.
-        /// When it is false, Signature Version 2 will be used.
-        /// Note that when the setting is false, Signature Version 4 may still be used by
-        /// default in some cases or with some regions.
+        /// By default, this setting is set to true which will use Signature Version 4 for all
+        /// requests except presigned URL requests when the region is set to us-east-1. When 
+        /// UseSignatureVersion4 is explicitly set to true by directly setting this property or
+        /// directly setting this property through configuration, Signature Version 4 will be 
+        /// used for all requests when able to do so.
+        /// When this setting is false, Signature Version 2 will be used. Note that when the 
+        /// setting is false, Signature Version 4 may still be used by default in some cases 
+        /// or with some regions.
         /// </summary>
         public static bool UseSignatureVersion4 {
             get
