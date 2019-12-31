@@ -228,7 +228,7 @@ namespace Amazon.Runtime
                 }
 
                 return ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS_WebIdentity>(
-                            ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, region);
+                            ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, new AnonymousAWSCredentials(), region);
             }
             catch (Exception e)
             {
