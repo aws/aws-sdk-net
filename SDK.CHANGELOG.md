@@ -1,3 +1,18 @@
+### 3.3.657.0 (2020-01-02 19:14 UTC)
+* CostExplorer (3.3.106.15)
+	* Documentation updates for GetReservationUtilization for the Cost Explorer API.
+* ECR (3.3.103.0)
+	* Adds waiters for ImageScanComplete and LifecyclePolicyPreviewComplete
+* LexModelBuildingService (3.3.102.4)
+	* Documentation updates for Amazon Lex.
+* Lightsail (3.3.102.0)
+	* This release adds support for Certificate Authority (CA) certificate identifier to managed databases in Amazon Lightsail.
+* Core 3.3.104.12
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.656.1 (2019-12-25 00:21 UTC)
 * Core 3.3.104.11
 	* Fix support of the role_session_name property in the shared credentials file
