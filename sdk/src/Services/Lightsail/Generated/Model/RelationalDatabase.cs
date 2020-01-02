@@ -34,6 +34,7 @@ namespace Amazon.Lightsail.Model
     {
         private string _arn;
         private bool? _backupRetentionEnabled;
+        private string _caCertificateIdentifier;
         private DateTime? _createdAt;
         private string _engine;
         private string _engineVersion;
@@ -92,6 +93,24 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetBackupRetentionEnabled()
         {
             return this._backupRetentionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaCertificateIdentifier. 
+        /// <para>
+        /// The certificate associated with the database.
+        /// </para>
+        /// </summary>
+        public string CaCertificateIdentifier
+        {
+            get { return this._caCertificateIdentifier; }
+            set { this._caCertificateIdentifier = value; }
+        }
+
+        // Check to see if CaCertificateIdentifier property is set
+        internal bool IsSetCaCertificateIdentifier()
+        {
+            return this._caCertificateIdentifier != null;
         }
 
         /// <summary>

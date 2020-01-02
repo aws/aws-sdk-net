@@ -60,7 +60,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// The name of the source resource from which to disable the add-on.
+        /// The name of the source resource for which to disable the add-on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

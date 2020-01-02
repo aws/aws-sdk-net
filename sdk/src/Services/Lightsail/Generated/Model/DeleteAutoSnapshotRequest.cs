@@ -29,7 +29,9 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAutoSnapshot operation.
-    /// Deletes an automatic snapshot for an instance or disk.
+    /// Deletes an automatic snapshot of an instance or disk. For more information, see the
+    /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
+    /// Dev Guide</a>.
     /// </summary>
     public partial class DeleteAutoSnapshotRequest : AmazonLightsailRequest
     {
@@ -39,11 +41,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Date. 
         /// <para>
-        /// The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format.
-        /// </para>
-        ///  
-        /// <para>
-        /// Use the <code>get auto snapshots</code> operation to get the available automatic snapshots
+        /// The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use
+        /// the <code>get auto snapshots</code> operation to get the available automatic snapshots
         /// for a resource.
         /// </para>
         /// </summary>
@@ -63,7 +62,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// The name of the source resource from which to delete the automatic snapshot.
+        /// The name of the source instance or disk from which to delete the automatic snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

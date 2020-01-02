@@ -29,8 +29,8 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAutoSnapshots operation.
-    /// Returns the available automatic snapshots for the specified resource name. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
+    /// Returns the available automatic snapshots for an instance or disk. For more information,
+    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
     /// Dev Guide</a>.
     /// </summary>
     public partial class GetAutoSnapshotsRequest : AmazonLightsailRequest
@@ -40,7 +40,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// The name of the source resource from which to get automatic snapshot information.
+        /// The name of the source instance or disk from which to get automatic snapshot information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

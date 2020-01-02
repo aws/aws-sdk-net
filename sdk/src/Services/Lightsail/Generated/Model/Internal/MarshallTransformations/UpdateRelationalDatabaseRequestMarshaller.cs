@@ -74,6 +74,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApplyImmediately);
                 }
 
+                if(publicRequest.IsSetCaCertificateIdentifier())
+                {
+                    context.Writer.WritePropertyName("caCertificateIdentifier");
+                    context.Writer.Write(publicRequest.CaCertificateIdentifier);
+                }
+
                 if(publicRequest.IsSetDisableBackupRetention())
                 {
                     context.Writer.WritePropertyName("disableBackupRetention");
