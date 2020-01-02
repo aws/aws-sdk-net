@@ -90,7 +90,8 @@ namespace Amazon.Runtime.Internal
             "ThrottlingException",
             "ProvisionedThroughputExceededException",
             "RequestTimeout",
-            "RequestThrottledException"
+            "RequestThrottledException",
+            "TooManyRequestsException"
         };
 
         /// <summary>
