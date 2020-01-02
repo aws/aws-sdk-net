@@ -57,10 +57,6 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DATABASE_ENGINE
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// DEPLOYMENT_OPTION
         /// </para>
         ///  </li> <li> 
