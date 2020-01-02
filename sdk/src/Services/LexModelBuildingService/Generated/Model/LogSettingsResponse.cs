@@ -116,12 +116,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property ResourcePrefix. 
         /// <para>
-        /// The resource prefix of the S3 object or CloudWatch Logs log entry where logs are delivered.
-        /// For both S3 and CloudWatch Logs, the prefix is:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws/lex/bot-name/bot-alias/bot-version</code> 
+        /// The resource prefix is the first part of the S3 object key within the S3 bucket that
+        /// you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log
+        /// stream name within the log group that you specified. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

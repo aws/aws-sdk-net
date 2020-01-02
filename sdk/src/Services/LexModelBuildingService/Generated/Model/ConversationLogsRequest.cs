@@ -39,9 +39,10 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch
-        /// Logs for text logs and your S3 bucket for audio logs. For more information, see <a
-        /// href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating Conversation
-        /// Logs</a>.
+        /// Logs for text logs and your S3 bucket for audio logs. If audio encryption is enabled,
+        /// this role also provides access permission for the AWS KMS key used for encrypting
+        /// audio logs. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating
+        /// an IAM Role and Policy for Conversation Logs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

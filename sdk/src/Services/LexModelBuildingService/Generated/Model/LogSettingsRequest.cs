@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
-    /// Settings used to configure conversation logs.
+    /// Settings used to configure delivery mode and destination for conversation logs.
     /// </summary>
     public partial class LogSettingsRequest
     {

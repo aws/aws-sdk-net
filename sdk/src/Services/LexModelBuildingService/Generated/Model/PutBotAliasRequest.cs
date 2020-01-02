@@ -118,7 +118,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property ConversationLogs. 
         /// <para>
-        /// Settings that determine how Amazon Lex uses conversation logs for the alias.
+        /// Settings for conversation logs for the alias.
         /// </para>
         /// </summary>
         public ConversationLogsRequest ConversationLogs

@@ -58,7 +58,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property LogSettings. 
         /// <para>
-        /// The settings for your conversation logs.
+        /// The settings for your conversation logs. You can log text, audio, or both.
         /// </para>
         /// </summary>
         public List<LogSettingsResponse> LogSettings
