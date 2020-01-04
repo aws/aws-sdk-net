@@ -7,7 +7,6 @@ The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web
 * [SDK Homepage][sdk-website]
 * [Forum][sdk-forum]
 * [GitHub Issues][sdk-issues]
-* [SDK Samples](https://github.com/awslabs/aws-sdk-net-samples)
 
 ## Getting Help
 
@@ -533,5 +532,6 @@ uses the service models defined in the **generator\ServiceModels** folder.
 [credentials-management]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-config-creds.html
 [dotnet-blog]: http://blogs.aws.amazon.com/net/
 [github-aws-sdk-net-v2]: https://github.com/aws/aws-sdk-net/tree/aws-sdk-net-v2
+
 
 
