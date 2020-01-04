@@ -18,13 +18,13 @@ Please use these community resources for getting help. We use the [GitHub issues
 
 ### Opening Issues
 
-If you encounter a bug with AWS SDK for .NET we would like to hear about it. Search the existing [issues](https://github.com/aws/aws-sdk-net/issues?q=is%3Aissue) and try to make sure your problem doesn’t already exist before opening a new issue. It’s helpful if you include the version of AWS SDK .NET and the OS you’re using. Please include a stack trace and reduced repro case when appropriate, too.
+If you encounter a bug with AWS SDK for .NET we would like to hear about it. Search the existinand try to make sure your problem doesn’t already exist before opening a new issue. It’s helpful if you include the version of AWS SDK .NET and the OS you’re using. Please include a stack trace and reduced repro case when appropriate, too.
 
 The [GitHub issues][sdk-issues] are intended for bug reports and feature requests. For help and questions with using AWS SDK for .NET please make use of the resources listed in the Getting Help section. There are limited resources available for handling issues and by keeping the list of open issues clean we can respond in a timely manner.
 
 ## SDK Change Log
 
-The change log for the SDK can be found in the [SDK.CHANGELOG.md](https://github.com/aws/aws-sdk-net/blob/master/SDK.CHANGELOG.md) file.
+The change log for the SDK can be found in the [SDK.CHANGELOG.md] file.
 
 ## Looking for Version 2?
 
