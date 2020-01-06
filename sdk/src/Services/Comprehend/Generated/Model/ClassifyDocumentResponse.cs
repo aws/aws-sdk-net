@@ -33,6 +33,7 @@ namespace Amazon.Comprehend.Model
     public partial class ClassifyDocumentResponse : AmazonWebServiceResponse
     {
         private List<DocumentClass> _classes = new List<DocumentClass>();
+        private List<DocumentLabel> _labels = new List<DocumentLabel>();
 
         /// <summary>
         /// Gets and sets the property Classes. 
@@ -53,6 +54,28 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetClasses()
         {
             return this._classes != null && this._classes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Labels. 
+        /// <para>
+        /// The labels used the document being analyzed. These are used for multi-label trained
+        /// models. Individual labels represent different categories that are related in some
+        /// manner and are not multually exclusive. For example, a movie can be just an action
+        /// movie, or it can be an action movie, a science fiction movie, and a comedy, all at
+        /// the same time. 
+        /// </para>
+        /// </summary>
+        public List<DocumentLabel> Labels
+        {
+            get { return this._labels; }
+            set { this._labels = value; }
+        }
+
+        // Check to see if Labels property is set
+        internal bool IsSetLabels()
+        {
+            return this._labels != null && this._labels.Count > 0; 
         }
 
     }

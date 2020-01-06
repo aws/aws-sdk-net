@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DocumentClassifierInputDataConfig Object
+    /// Response Unmarshaller for DocumentLabel Object
     /// </summary>  
-    public class DocumentClassifierInputDataConfigUnmarshaller : IUnmarshaller<DocumentClassifierInputDataConfig, XmlUnmarshallerContext>, IUnmarshaller<DocumentClassifierInputDataConfig, JsonUnmarshallerContext>
+    public class DocumentLabelUnmarshaller : IUnmarshaller<DocumentLabel, XmlUnmarshallerContext>, IUnmarshaller<DocumentLabel, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DocumentClassifierInputDataConfig IUnmarshaller<DocumentClassifierInputDataConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DocumentLabel IUnmarshaller<DocumentLabel, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DocumentClassifierInputDataConfig Unmarshall(JsonUnmarshallerContext context)
+        public DocumentLabel Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DocumentClassifierInputDataConfig unmarshalledObject = new DocumentClassifierInputDataConfig();
+            DocumentLabel unmarshalledObject = new DocumentLabel();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("LabelDelimiter", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LabelDelimiter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("S3Uri", targetDepth))
+                if (context.TestExpression("Score", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.Score = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         }
 
 
-        private static DocumentClassifierInputDataConfigUnmarshaller _instance = new DocumentClassifierInputDataConfigUnmarshaller();        
+        private static DocumentLabelUnmarshaller _instance = new DocumentLabelUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DocumentClassifierInputDataConfigUnmarshaller Instance
+        public static DocumentLabelUnmarshaller Instance
         {
             get
             {

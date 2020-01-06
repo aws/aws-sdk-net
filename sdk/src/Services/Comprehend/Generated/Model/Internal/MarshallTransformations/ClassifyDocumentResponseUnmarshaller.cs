@@ -57,6 +57,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     response.Classes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Labels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DocumentLabel, DocumentLabelUnmarshaller>(DocumentLabelUnmarshaller.Instance);
+                    response.Labels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

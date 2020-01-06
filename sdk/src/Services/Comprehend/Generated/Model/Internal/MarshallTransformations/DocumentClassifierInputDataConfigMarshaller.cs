@@ -45,6 +45,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DocumentClassifierInputDataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetLabelDelimiter())
+            {
+                context.Writer.WritePropertyName("LabelDelimiter");
+                context.Writer.Write(requestObject.LabelDelimiter);
+            }
+
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");

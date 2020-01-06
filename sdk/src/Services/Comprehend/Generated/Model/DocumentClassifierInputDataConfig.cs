@@ -38,7 +38,32 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class DocumentClassifierInputDataConfig
     {
+        private string _labelDelimiter;
         private string _s3Uri;
+
+        /// <summary>
+        /// Gets and sets the property LabelDelimiter. 
+        /// <para>
+        /// Indicates the delimiter used to separate each label for training a multi-label classifier.
+        /// The default delimiter between labels is a pipe (|). You can use a different character
+        /// as a delimiter (if it's an allowed character) by specifying it under Delimiter for
+        /// labels. If the training documents use a delimiter other than the default or the delimiter
+        /// you specify, the labels on that line will be combined to make a single unique label,
+        /// such as LABELLABELLABEL.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public string LabelDelimiter
+        {
+            get { return this._labelDelimiter; }
+            set { this._labelDelimiter = value; }
+        }
+
+        // Check to see if LabelDelimiter property is set
+        internal bool IsSetLabelDelimiter()
+        {
+            return this._labelDelimiter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3Uri. 

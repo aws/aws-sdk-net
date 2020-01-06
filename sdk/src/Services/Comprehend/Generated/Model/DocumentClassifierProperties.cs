@@ -39,6 +39,7 @@ namespace Amazon.Comprehend.Model
         private DocumentClassifierInputDataConfig _inputDataConfig;
         private LanguageCode _languageCode;
         private string _message;
+        private DocumentClassifierMode _mode;
         private DocumentClassifierOutputDataConfig _outputDataConfig;
         private ModelStatus _status;
         private DateTime? _submitTime;
@@ -178,6 +179,27 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetMessage()
         {
             return this._message != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// Indicates the mode in which the specific classifier was trained. This also indicates
+        /// the format of input documents and the format of the confusion matrix. Each classifier
+        /// can only be trained in one mode and this cannot be changed once the classifier is
+        /// trained.
+        /// </para>
+        /// </summary>
+        public DocumentClassifierMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
         }
 
         /// <summary>

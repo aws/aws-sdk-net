@@ -76,6 +76,30 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.F1Score = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HammingLoss", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.HammingLoss = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MicroF1Score", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.MicroF1Score = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MicroPrecision", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.MicroPrecision = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MicroRecall", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.MicroRecall = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Precision", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;

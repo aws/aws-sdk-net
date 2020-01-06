@@ -613,6 +613,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Comprehend.Model.DocumentClassifierInputDataConfig.LabelDelimiter</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>^[ ~!@#$%^*\-_+=|\\:;\t&gt;?/]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Comprehend.Model.DocumentClassifierInputDataConfig.S3Uri</property>
     <max>1024</max>
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
@@ -640,6 +646,10 @@
   <property-value-rule>
     <property>Amazon.Comprehend.Model.DocumentClassifierProperties.VolumeKmsKeyId</property>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.DocumentLabel.Name</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.DominantLanguage.LanguageCode</property>
