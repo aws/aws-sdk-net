@@ -39,17 +39,25 @@ namespace Amazon.EC2.Model
     /// Balancer for your service. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
     /// Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. 
     /// </para>
+    ///  
+    /// <para>
+    /// If you set the private DNS name, you must prove that you own the private DNS domain
+    /// name. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
+    /// Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual Private
+    /// Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateVpcEndpointServiceConfigurationRequest : AmazonEC2Request
     {
         private bool? _acceptanceRequired;
         private string _clientToken;
         private List<string> _networkLoadBalancerArns = new List<string>();
+        private string _privateDnsName;
 
         /// <summary>
         /// Gets and sets the property AcceptanceRequired. 
         /// <para>
-        /// Indicate whether requests from service consumers to create an endpoint to your service
+        /// Indicates whether requests from service consumers to create an endpoint to your service
         /// must be accepted. To accept a request, use <a>AcceptVpcEndpointConnections</a>.
         /// </para>
         /// </summary>
@@ -68,8 +76,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
         /// to Ensure Idempotency</a>.
         /// </para>
         /// </summary>
@@ -102,6 +110,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkLoadBalancerArns()
         {
             return this._networkLoadBalancerArns != null && this._networkLoadBalancerArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsName. 
+        /// <para>
+        /// The private DNS name to assign to the VPC endpoint service.
+        /// </para>
+        /// </summary>
+        public string PrivateDnsName
+        {
+            get { return this._privateDnsName; }
+            set { this._privateDnsName = value; }
+        }
+
+        // Check to see if PrivateDnsName property is set
+        internal bool IsSetPrivateDnsName()
+        {
+            return this._privateDnsName != null;
         }
 
     }

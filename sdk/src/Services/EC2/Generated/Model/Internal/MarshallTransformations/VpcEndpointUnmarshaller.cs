@@ -74,6 +74,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Groups.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("lastError", targetDepth))
+                    {
+                        var unmarshaller = LastErrorUnmarshaller.Instance;
+                        unmarshalledObject.LastError = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("networkInterfaceIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

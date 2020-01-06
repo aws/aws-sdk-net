@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CreationTimestamp. 
         /// <para>
-        /// The date and time the VPC endpoint was created.
+        /// The date and time that the VPC endpoint was created.
         /// </para>
         /// </summary>
         public DateTime CreationTimestamp

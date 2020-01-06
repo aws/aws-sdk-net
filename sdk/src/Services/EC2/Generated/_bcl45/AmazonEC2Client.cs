@@ -6097,7 +6097,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a VPC endpoint for a specified service. An endpoint enables you to create
         /// a private connection between your VPC and the service. The service may be provided
-        /// by AWS, an AWS Marketplace partner, or another AWS account. For more information,
+        /// by AWS, an AWS Marketplace Partner, or another AWS account. For more information,
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
         /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
@@ -6105,7 +6105,7 @@ namespace Amazon.EC2
         /// <para>
         /// A <code>gateway</code> endpoint serves as a target for a route in your route table
         /// for traffic destined for the AWS service. You can specify an endpoint policy to attach
-        /// to the endpoint that will control access to the service from your VPC. You can also
+        /// to the endpoint, which will control access to the service from your VPC. You can also
         /// specify the VPC route tables that use the endpoint.
         /// </para>
         ///  
@@ -6137,7 +6137,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a VPC endpoint for a specified service. An endpoint enables you to create
         /// a private connection between your VPC and the service. The service may be provided
-        /// by AWS, an AWS Marketplace partner, or another AWS account. For more information,
+        /// by AWS, an AWS Marketplace Partner, or another AWS account. For more information,
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
         /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
@@ -6145,7 +6145,7 @@ namespace Amazon.EC2
         /// <para>
         /// A <code>gateway</code> endpoint serves as a target for a route in your route table
         /// for traffic destined for the AWS service. You can specify an endpoint policy to attach
-        /// to the endpoint that will control access to the service from your VPC. You can also
+        /// to the endpoint, which will control access to the service from your VPC. You can also
         /// specify the VPC route tables that use the endpoint.
         /// </para>
         ///  
@@ -6249,6 +6249,13 @@ namespace Amazon.EC2
         /// Balancer for your service. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
         /// Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. 
         /// </para>
+        ///  
+        /// <para>
+        /// If you set the private DNS name, you must prove that you own the private DNS domain
+        /// name. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
+        /// Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual Private
+        /// Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpointServiceConfiguration service method.</param>
         /// 
@@ -6274,6 +6281,13 @@ namespace Amazon.EC2
         /// To create an endpoint service configuration, you must first create a Network Load
         /// Balancer for your service. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
         /// Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set the private DNS name, you must prove that you own the private DNS domain
+        /// name. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
+        /// Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual Private
+        /// Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpointServiceConfiguration service method.</param>
@@ -21394,6 +21408,14 @@ namespace Amazon.EC2
         /// the Network Load Balancers for your service, and you can specify whether acceptance
         /// is required for requests to connect to your endpoint service through an interface
         /// VPC endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// If you set or modify the private DNS name, you must prove that you own the private
+        /// DNS domain name. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
+        /// Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual Private
+        /// Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServiceConfiguration service method.</param>
         /// 
@@ -21414,6 +21436,14 @@ namespace Amazon.EC2
         /// the Network Load Balancers for your service, and you can specify whether acceptance
         /// is required for requests to connect to your endpoint service through an interface
         /// VPC endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// If you set or modify the private DNS name, you must prove that you own the private
+        /// DNS domain name. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
+        /// Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual Private
+        /// Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServiceConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -24671,6 +24701,73 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = StartInstancesResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartVpcEndpointServicePrivateDnsVerification
+
+
+        /// <summary>
+        /// Initiates the verification process to prove that the service provider owns the private
+        /// DNS name domain for the endpoint service.
+        /// 
+        ///  
+        /// <para>
+        /// The service provider must successfully perform the verification before the consumer
+        /// can use the name to access the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before the service provider runs this command, they must add a record to the DNS server.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html#add-dns-txt-record">Adding
+        /// a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartVpcEndpointServicePrivateDnsVerification service method.</param>
+        /// 
+        /// <returns>The response from the StartVpcEndpointServicePrivateDnsVerification service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartVpcEndpointServicePrivateDnsVerification">REST API Reference for StartVpcEndpointServicePrivateDnsVerification Operation</seealso>
+        public virtual StartVpcEndpointServicePrivateDnsVerificationResponse StartVpcEndpointServicePrivateDnsVerification(StartVpcEndpointServicePrivateDnsVerificationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartVpcEndpointServicePrivateDnsVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartVpcEndpointServicePrivateDnsVerificationResponseUnmarshaller.Instance;
+
+            return Invoke<StartVpcEndpointServicePrivateDnsVerificationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the verification process to prove that the service provider owns the private
+        /// DNS name domain for the endpoint service.
+        /// 
+        ///  
+        /// <para>
+        /// The service provider must successfully perform the verification before the consumer
+        /// can use the name to access the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before the service provider runs this command, they must add a record to the DNS server.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html#add-dns-txt-record">Adding
+        /// a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartVpcEndpointServicePrivateDnsVerification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartVpcEndpointServicePrivateDnsVerification service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartVpcEndpointServicePrivateDnsVerification">REST API Reference for StartVpcEndpointServicePrivateDnsVerification Operation</seealso>
+        public virtual Task<StartVpcEndpointServicePrivateDnsVerificationResponse> StartVpcEndpointServicePrivateDnsVerificationAsync(StartVpcEndpointServicePrivateDnsVerificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartVpcEndpointServicePrivateDnsVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartVpcEndpointServicePrivateDnsVerificationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartVpcEndpointServicePrivateDnsVerificationResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>connection-notification-arn</code> - The ARN of SNS topic for the notification.
+        ///  <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.
         /// </para>
         ///  </li> <li> 
         /// <para>

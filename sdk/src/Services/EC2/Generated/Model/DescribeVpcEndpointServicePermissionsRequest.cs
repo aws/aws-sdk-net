@@ -72,8 +72,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum number of results to return for the request in a single page. The remaining
         /// results of the initial request can be seen by sending another request with the returned
-        /// <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code>
-        /// is given a value larger than 1000, only 1000 results are returned.
+        /// <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code>
+        /// is given a value larger than 1,000, only 1,000 results are returned.
         /// </para>
         /// </summary>
         public int MaxResults

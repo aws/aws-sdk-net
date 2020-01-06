@@ -33,18 +33,28 @@ namespace Amazon.EC2.Model
     /// the Network Load Balancers for your service, and you can specify whether acceptance
     /// is required for requests to connect to your endpoint service through an interface
     /// VPC endpoint.
+    /// 
+    ///  
+    /// <para>
+    /// If you set or modify the private DNS name, you must prove that you own the private
+    /// DNS domain name. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
+    /// Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual Private
+    /// Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ModifyVpcEndpointServiceConfigurationRequest : AmazonEC2Request
     {
         private bool? _acceptanceRequired;
         private List<string> _addNetworkLoadBalancerArns = new List<string>();
+        private string _privateDnsName;
         private List<string> _removeNetworkLoadBalancerArns = new List<string>();
+        private bool? _removePrivateDnsName;
         private string _serviceId;
 
         /// <summary>
         /// Gets and sets the property AcceptanceRequired. 
         /// <para>
-        /// Indicate whether requests to create an endpoint to your service must be accepted.
+        /// Indicates whether requests to create an endpoint to your service must be accepted.
         /// </para>
         /// </summary>
         public bool AcceptanceRequired
@@ -79,6 +89,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PrivateDnsName. 
+        /// <para>
+        /// The private DNS name to assign to the endpoint service.
+        /// </para>
+        /// </summary>
+        public string PrivateDnsName
+        {
+            get { return this._privateDnsName; }
+            set { this._privateDnsName = value; }
+        }
+
+        // Check to see if PrivateDnsName property is set
+        internal bool IsSetPrivateDnsName()
+        {
+            return this._privateDnsName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RemoveNetworkLoadBalancerArns. 
         /// <para>
         /// The Amazon Resource Names (ARNs) of Network Load Balancers to remove from your service
@@ -95,6 +123,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetRemoveNetworkLoadBalancerArns()
         {
             return this._removeNetworkLoadBalancerArns != null && this._removeNetworkLoadBalancerArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemovePrivateDnsName. 
+        /// <para>
+        /// Removes the private DNS name of the endpoint service.
+        /// </para>
+        /// </summary>
+        public bool RemovePrivateDnsName
+        {
+            get { return this._removePrivateDnsName.GetValueOrDefault(); }
+            set { this._removePrivateDnsName = value; }
+        }
+
+        // Check to see if RemovePrivateDnsName property is set
+        internal bool IsSetRemovePrivateDnsName()
+        {
+            return this._removePrivateDnsName.HasValue; 
         }
 
         /// <summary>

@@ -71,6 +71,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetPrivateDnsName())
+                {
+                    request.Parameters.Add("PrivateDnsName", StringUtils.FromString(publicRequest.PrivateDnsName));
+                }
                 if(publicRequest.IsSetRemoveNetworkLoadBalancerArns())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -79,6 +83,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("RemoveNetworkLoadBalancerArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
+                }
+                if(publicRequest.IsSetRemovePrivateDnsName())
+                {
+                    request.Parameters.Add("RemovePrivateDnsName", StringUtils.FromBool(publicRequest.RemovePrivateDnsName));
                 }
                 if(publicRequest.IsSetServiceId())
                 {

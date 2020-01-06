@@ -28,19 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the AcceptVpcEndpointConnections operation.
-    /// Accepts one or more interface VPC endpoint connection requests to your VPC endpoint
-    /// service.
+    /// Container for the parameters to the StartVpcEndpointServicePrivateDnsVerification operation.
+    /// Initiates the verification process to prove that the service provider owns the private
+    /// DNS name domain for the endpoint service.
+    /// 
+    ///  
+    /// <para>
+    /// The service provider must successfully perform the verification before the consumer
+    /// can use the name to access the service.
+    /// </para>
+    ///  
+    /// <para>
+    /// Before the service provider runs this command, they must add a record to the DNS server.
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html#add-dns-txt-record">Adding
+    /// a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User Guide</i>.
+    /// </para>
     /// </summary>
-    public partial class AcceptVpcEndpointConnectionsRequest : AmazonEC2Request
+    public partial class StartVpcEndpointServicePrivateDnsVerificationRequest : AmazonEC2Request
     {
         private string _serviceId;
-        private List<string> _vpcEndpointIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ServiceId. 
         /// <para>
-        /// The ID of the VPC endpoint service.
+        /// The ID of the endpoint service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -54,25 +65,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetServiceId()
         {
             return this._serviceId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VpcEndpointIds. 
-        /// <para>
-        /// The IDs of one or more interface VPC endpoints.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> VpcEndpointIds
-        {
-            get { return this._vpcEndpointIds; }
-            set { this._vpcEndpointIds = value; }
-        }
-
-        // Check to see if VpcEndpointIds property is set
-        internal bool IsSetVpcEndpointIds()
-        {
-            return this._vpcEndpointIds != null && this._vpcEndpointIds.Count > 0; 
         }
 
     }

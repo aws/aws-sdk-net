@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private DateTime? _creationTimestamp;
         private List<DnsEntry> _dnsEntries = new List<DnsEntry>();
         private List<SecurityGroupIdentifier> _groups = new List<SecurityGroupIdentifier>();
+        private LastError _lastError;
         private List<string> _networkInterfaceIds = new List<string>();
         private string _ownerId;
         private string _policyDocument;
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CreationTimestamp. 
         /// <para>
-        /// The date and time the VPC endpoint was created.
+        /// The date and time that the VPC endpoint was created.
         /// </para>
         /// </summary>
         public DateTime CreationTimestamp
@@ -88,8 +89,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// (Interface endpoint) Information about the security groups associated with the network
-        /// interface.
+        /// (Interface endpoint) Information about the security groups that are associated with
+        /// the network interface.
         /// </para>
         /// </summary>
         public List<SecurityGroupIdentifier> Groups
@@ -102,6 +103,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetGroups()
         {
             return this._groups != null && this._groups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastError. 
+        /// <para>
+        /// The last error that occurred for VPC endpoint.
+        /// </para>
+        /// </summary>
+        public LastError LastError
+        {
+            get { return this._lastError; }
+            set { this._lastError = value; }
+        }
+
+        // Check to see if LastError property is set
+        internal bool IsSetLastError()
+        {
+            return this._lastError != null;
         }
 
         /// <summary>

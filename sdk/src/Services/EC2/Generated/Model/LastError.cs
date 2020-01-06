@@ -28,48 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of CreateVpcEndpoint.
+    /// The last error that occurred for a VPC endpoint.
     /// </summary>
-    public partial class CreateVpcEndpointResponse : AmazonWebServiceResponse
+    public partial class LastError
     {
-        private string _clientToken;
-        private VpcEndpoint _vpcEndpoint;
+        private string _code;
+        private string _message;
 
         /// <summary>
-        /// Gets and sets the property ClientToken. 
+        /// Gets and sets the property Code. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.
+        /// The error code for the VPC endpoint error.
         /// </para>
         /// </summary>
-        public string ClientToken
+        public string Code
         {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
+            get { return this._code; }
+            set { this._code = value; }
         }
 
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
+        // Check to see if Code property is set
+        internal bool IsSetCode()
         {
-            return this._clientToken != null;
+            return this._code != null;
         }
 
         /// <summary>
-        /// Gets and sets the property VpcEndpoint. 
+        /// Gets and sets the property Message. 
         /// <para>
-        /// Information about the endpoint.
+        /// The error message for the VPC endpoint error.
         /// </para>
         /// </summary>
-        public VpcEndpoint VpcEndpoint
+        public string Message
         {
-            get { return this._vpcEndpoint; }
-            set { this._vpcEndpoint = value; }
+            get { return this._message; }
+            set { this._message = value; }
         }
 
-        // Check to see if VpcEndpoint property is set
-        internal bool IsSetVpcEndpoint()
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
         {
-            return this._vpcEndpoint != null;
+            return this._message != null;
         }
 
     }

@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateVpcEndpointServiceConfiguration Request Marshaller
+    /// StartVpcEndpointServicePrivateDnsVerification Request Marshaller
     /// </summary>       
-    public class CreateVpcEndpointServiceConfigurationRequestMarshaller : IMarshaller<IRequest, CreateVpcEndpointServiceConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StartVpcEndpointServicePrivateDnsVerificationRequestMarshaller : IMarshaller<IRequest, StartVpcEndpointServicePrivateDnsVerificationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateVpcEndpointServiceConfigurationRequest)input);
+            return this.Marshall((StartVpcEndpointServicePrivateDnsVerificationRequest)input);
         }
     
         /// <summary>
@@ -50,41 +50,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateVpcEndpointServiceConfigurationRequest publicRequest)
+        public IRequest Marshall(StartVpcEndpointServicePrivateDnsVerificationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
-            request.Parameters.Add("Action", "CreateVpcEndpointServiceConfiguration");
+            request.Parameters.Add("Action", "StartVpcEndpointServicePrivateDnsVerification");
             request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetAcceptanceRequired())
+                if(publicRequest.IsSetServiceId())
                 {
-                    request.Parameters.Add("AcceptanceRequired", StringUtils.FromBool(publicRequest.AcceptanceRequired));
-                }
-                if(publicRequest.IsSetClientToken())
-                {
-                    request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
-                }
-                if(publicRequest.IsSetNetworkLoadBalancerArns())
-                {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.NetworkLoadBalancerArns)
-                    {
-                        request.Parameters.Add("NetworkLoadBalancerArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
-                    }
-                }
-                if(publicRequest.IsSetPrivateDnsName())
-                {
-                    request.Parameters.Add("PrivateDnsName", StringUtils.FromString(publicRequest.PrivateDnsName));
+                    request.Parameters.Add("ServiceId", StringUtils.FromString(publicRequest.ServiceId));
                 }
             }
             return request;
         }
-                    private static CreateVpcEndpointServiceConfigurationRequestMarshaller _instance = new CreateVpcEndpointServiceConfigurationRequestMarshaller();        
+                    private static StartVpcEndpointServicePrivateDnsVerificationRequestMarshaller _instance = new StartVpcEndpointServicePrivateDnsVerificationRequestMarshaller();        
 
-        internal static CreateVpcEndpointServiceConfigurationRequestMarshaller GetInstance()
+        internal static StartVpcEndpointServicePrivateDnsVerificationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -92,7 +75,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateVpcEndpointServiceConfigurationRequestMarshaller Instance
+        public static StartVpcEndpointServicePrivateDnsVerificationRequestMarshaller Instance
         {
             get
             {

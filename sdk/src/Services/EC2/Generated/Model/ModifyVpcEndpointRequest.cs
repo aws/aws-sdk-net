@@ -124,7 +124,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateDnsEnabled. 
         /// <para>
-        /// (Interface endpoint) Indicate whether a private hosted zone is associated with the
+        /// (Interface endpoint) Indicates whether a private hosted zone is associated with the
         /// VPC.
         /// </para>
         /// </summary>

@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>service-name</code>: The name of the service.
+        ///  <code>service-name</code> - The name of the service.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -82,7 +82,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: If the value is greater than 1000, we return only 1000 items.
+        /// Constraint: If the value is greater than 1,000, we return only 1,000 items.
         /// </para>
         /// </summary>
         public int MaxResults
