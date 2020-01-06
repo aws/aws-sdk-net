@@ -1,3 +1,16 @@
+### 3.3.658.0 (2020-01-06 19:11 UTC)
+* Comprehend (3.3.108.0)
+	* Amazon Comprehend now supports Multilabel document classification
+* EC2 (3.3.148.0)
+	* This release supports service providers configuring a private DNS name for services other than AWS services and services available in the AWS marketplace. This feature allows consumers to access the service using an existing DNS name without making changes to their applications.
+* MediaPackage (3.3.104.0)
+	* You can now restrict direct access to AWS Elemental MediaPackage by securing requests for live content using CDN authorization. With CDN authorization, content requests require a specific HTTP header and authorization code.
+* Core 3.3.104.13
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.657.0 (2020-01-02 19:14 UTC)
 * CostExplorer (3.3.106.15)
 	* Documentation updates for GetReservationUtilization for the Cost Explorer API.

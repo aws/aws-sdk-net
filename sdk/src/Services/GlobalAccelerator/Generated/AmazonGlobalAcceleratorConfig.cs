@@ -32,7 +32,7 @@ namespace Amazon.GlobalAccelerator
     public partial class AmazonGlobalAcceleratorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.102.40");
+            InternalSDKUtils.BuildUserAgentString("3.3.102.41");
 
         private string _userAgent = UserAgentString;
 
