@@ -66,6 +66,17 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAuthorization())
+                {
+                    context.Writer.WritePropertyName("authorization");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AuthorizationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Authorization, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetChannelId())
                 {
                     context.Writer.WritePropertyName("channelId");

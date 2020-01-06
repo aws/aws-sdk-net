@@ -57,6 +57,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("authorization", targetDepth))
+                {
+                    var unmarshaller = AuthorizationUnmarshaller.Instance;
+                    response.Authorization = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("channelId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

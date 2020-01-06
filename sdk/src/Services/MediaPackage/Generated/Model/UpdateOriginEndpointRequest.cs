@@ -33,6 +33,7 @@ namespace Amazon.MediaPackage.Model
     /// </summary>
     public partial class UpdateOriginEndpointRequest : AmazonMediaPackageRequest
     {
+        private Authorization _authorization;
         private CmafPackageCreateOrUpdateParameters _cmafPackage;
         private DashPackage _dashPackage;
         private string _description;
@@ -44,6 +45,21 @@ namespace Amazon.MediaPackage.Model
         private int? _startoverWindowSeconds;
         private int? _timeDelaySeconds;
         private List<string> _whitelist = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property Authorization.
+        /// </summary>
+        public Authorization Authorization
+        {
+            get { return this._authorization; }
+            set { this._authorization = value; }
+        }
+
+        // Check to see if Authorization property is set
+        internal bool IsSetAuthorization()
+        {
+            return this._authorization != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CmafPackage.
