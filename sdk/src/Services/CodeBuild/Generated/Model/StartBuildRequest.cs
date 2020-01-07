@@ -38,6 +38,7 @@ namespace Amazon.CodeBuild.Model
         private ProjectCache _cacheOverride;
         private string _certificateOverride;
         private ComputeType _computeTypeOverride;
+        private string _encryptionKeyOverride;
         private EnvironmentType _environmentTypeOverride;
         private List<EnvironmentVariable> _environmentVariablesOverride = new List<EnvironmentVariable>();
         private int? _gitCloneDepthOverride;
@@ -155,6 +156,36 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetComputeTypeOverride()
         {
             return this._computeTypeOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKeyOverride. 
+        /// <para>
+        /// The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides
+        /// the one specified in the build project. The CMK key encrypts the build output artifacts.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  You can use a cross-account KMS key to encrypt the build output artifacts if your
+        /// service role has permission to that key. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can specify either the Amazon Resource Name (ARN) of the CMK or, if available,
+        /// the CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string EncryptionKeyOverride
+        {
+            get { return this._encryptionKeyOverride; }
+            set { this._encryptionKeyOverride = value; }
+        }
+
+        // Check to see if EncryptionKeyOverride property is set
+        internal bool IsSetEncryptionKeyOverride()
+        {
+            return this._encryptionKeyOverride != null;
         }
 
         /// <summary>

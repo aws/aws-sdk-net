@@ -74,6 +74,14 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>BatchGetReportGroups</code>: Returns an array of report groups. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>BatchGetReports</code>: Returns an array of reports. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>CreateProject</code>: Creates a build project.
     /// </para>
     ///  </li> <li> 
