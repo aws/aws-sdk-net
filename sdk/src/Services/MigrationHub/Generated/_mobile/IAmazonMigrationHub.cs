@@ -539,6 +539,41 @@ namespace Amazon.MigrationHub
 
         #endregion
                 
+        #region  ListApplicationStates
+
+
+
+        /// <summary>
+        /// Lists all the migration statuses for your applications. If you use the optional <code>ApplicationIds</code>
+        /// parameter, only the migration statuses for those applications will be returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationStates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApplicationStates service method, as returned by MigrationHub.</returns>
+        /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.HomeRegionNotSetException">
+        /// The home region is not set. Set the home region to continue.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
+        /// Exception raised when the provided input violates a policy constraint or is entered
+        /// in the wrong format or data type.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListApplicationStates">REST API Reference for ListApplicationStates Operation</seealso>
+        Task<ListApplicationStatesResponse> ListApplicationStatesAsync(ListApplicationStatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListCreatedArtifacts
 
 
