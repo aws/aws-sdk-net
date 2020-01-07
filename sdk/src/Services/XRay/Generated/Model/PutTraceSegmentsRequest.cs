@@ -29,9 +29,10 @@ namespace Amazon.XRay.Model
 {
     /// <summary>
     /// Container for the parameters to the PutTraceSegments operation.
-    /// Uploads segment documents to AWS X-Ray. The X-Ray SDK generates segment documents
-    /// and sends them to the X-Ray daemon, which uploads them in batches. A segment document
-    /// can be a completed segment, an in-progress segment, or an array of subsegments.
+    /// Uploads segment documents to AWS X-Ray. The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray
+    /// SDK</a> generates segment documents and sends them to the X-Ray daemon, which uploads
+    /// them in batches. A segment document can be a completed segment, an in-progress segment,
+    /// or an array of subsegments.
     /// 
     ///  
     /// <para>

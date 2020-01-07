@@ -165,7 +165,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property HasError. 
         /// <para>
-        /// One or more of the segment documents has a 400 series error.
+        /// The root segment document has a 400 series error.
         /// </para>
         /// </summary>
         public bool HasError
@@ -183,7 +183,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property HasFault. 
         /// <para>
-        /// One or more of the segment documents has a 500 series error.
+        /// The root segment document has a 500 series error.
         /// </para>
         /// </summary>
         public bool HasFault

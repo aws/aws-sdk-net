@@ -31,9 +31,9 @@ namespace Amazon.XRay.Model
     /// Container for the parameters to the GetServiceGraph operation.
     /// Retrieves a document that describes services that process incoming requests, and downstream
     /// services that they call as a result. Root services process incoming requests and make
-    /// calls to downstream services. Root services are applications that use the AWS X-Ray
-    /// SDK. Downstream services can be other applications, AWS resources, HTTP web APIs,
-    /// or SQL databases.
+    /// calls to downstream services. Root services are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">AWS
+    /// X-Ray SDK</a>. Downstream services can be other applications, AWS resources, HTTP
+    /// web APIs, or SQL databases.
     /// </summary>
     public partial class GetServiceGraphRequest : AmazonXRayRequest
     {
@@ -103,7 +103,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token. Not used.
+        /// Pagination token.
         /// </para>
         /// </summary>
         public string NextToken
