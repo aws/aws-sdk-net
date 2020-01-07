@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.658.0",
+    "ProductVersion" : "3.3.659.0",
     "CoreVersion"    : "3.3.104.13",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -657,7 +657,7 @@
             "InPreview"               : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.3.107.9",
+            "Version" : "3.3.108.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.13"
@@ -689,7 +689,7 @@
             "InPreview"               : false
         },
         "XRay"                            : {
-            "Version" : "3.3.101.107",
+            "Version" : "3.3.101.108",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.13"
@@ -817,7 +817,7 @@
             "InPreview"               : false
         },
         "MigrationHub"                    : {
-            "Version" : "3.3.101.19",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.13"

@@ -1,3 +1,11 @@
+### 3.3.659.0 (2020-01-07 19:37 UTC)
+* CodeBuild (3.3.108.0)
+	* Add encryption key override to StartBuild API in AWS CodeBuild.
+* MigrationHub (3.3.102.0)
+	* ListApplicationStates API provides a list of all application migration states
+* XRay (3.3.101.108)
+	* Documentation updates for xray
+
 ### 3.3.658.0 (2020-01-06 19:11 UTC)
 * Comprehend (3.3.108.0)
 	* Amazon Comprehend now supports Multilabel document classification
