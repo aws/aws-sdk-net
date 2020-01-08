@@ -23,7 +23,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     public class AssumeRoleWithWebIdentityAWSCredentialsTests : TestBase<AmazonIdentityManagementServiceClient>
     {
-        [Fact]
+        [Fact(Skip="Disabling to avoid requiring permissions to create an IAM role.")]
         [Trait(CategoryAttribute, "SecurityTokenService")]
         public async void TestAssumeRoleWithWebIdentityCredentialsUsesAnonymousAWSCredentialsToFetch()
         {
