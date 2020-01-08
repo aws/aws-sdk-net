@@ -1,3 +1,12 @@
+### 3.3.659.1 (2020-01-08 00:36 UTC)
+* Lambda (3.3.106.14)
+	* Add ability to clear Layers for a Lambda function
+* S3 (3.3.110.10)
+	* Updated docs for UseSignatureVersion4 property on the AWSConfigs
+* Core 3.3.104.14
+	* Fixed issue resolving AWS credentials using JWT tokens with EKS.
+	* All services packages updated to require new Core
+
 ### 3.3.659.0 (2020-01-07 19:37 UTC)
 * CodeBuild (3.3.108.0)
 	* Add encryption key override to StartBuild API in AWS CodeBuild.
