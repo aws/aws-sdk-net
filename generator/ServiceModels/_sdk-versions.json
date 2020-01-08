@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.659.1",
+    "ProductVersion" : "3.3.660.0",
     "CoreVersion"    : "3.3.104.14",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -857,7 +857,7 @@
             "InPreview"               : false
         },
         "CostExplorer"                    : {
-            "Version" : "3.3.106.17",
+            "Version" : "3.3.106.18",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.14"
@@ -953,7 +953,7 @@
             "InPreview"               : false
         },
         "Translate"                       : {
-            "Version" : "3.3.100.121",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.14"
@@ -1065,7 +1065,7 @@
             "InPreview"               : false
         },
         "FMS"                             : {
-            "Version" : "3.3.102.38",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.14"
