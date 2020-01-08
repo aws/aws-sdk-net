@@ -28,51 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// The data associated with the custom terminology.
+    /// This is the response object from the StopTextTranslationJob operation.
     /// </summary>
-    public partial class TerminologyData
+    public partial class StopTextTranslationJobResponse : AmazonWebServiceResponse
     {
-        private MemoryStream _file;
-        private TerminologyDataFormat _format;
+        private string _jobId;
+        private JobStatus _jobStatus;
 
         /// <summary>
-        /// Gets and sets the property File. 
+        /// Gets and sets the property JobId. 
         /// <para>
-        /// The file containing the custom terminology data. Your version of the AWS SDK performs
-        /// a Base64-encoding on this field before sending a request to the AWS service. Users
-        /// of the SDK should not perform Base64-encoding themselves.
+        /// The job ID of the stopped batch translation job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=10485760)]
-        public MemoryStream File
+        [AWSProperty(Min=1, Max=32)]
+        public string JobId
         {
-            get { return this._file; }
-            set { this._file = value; }
+            get { return this._jobId; }
+            set { this._jobId = value; }
         }
 
-        // Check to see if File property is set
-        internal bool IsSetFile()
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
         {
-            return this._file != null;
+            return this._jobId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Format. 
+        /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The data format of the custom terminology. Either CSV or TMX.
+        /// The status of the designated job. Upon successful completion, the job's status will
+        /// be <code>STOPPED</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public TerminologyDataFormat Format
+        public JobStatus JobStatus
         {
-            get { return this._format; }
-            set { this._format = value; }
+            get { return this._jobStatus; }
+            set { this._jobStatus = value; }
         }
 
-        // Check to see if Format property is set
-        internal bool IsSetFormat()
+        // Check to see if JobStatus property is set
+        internal bool IsSetJobStatus()
         {
-            return this._format != null;
+            return this._jobStatus != null;
         }
 
     }

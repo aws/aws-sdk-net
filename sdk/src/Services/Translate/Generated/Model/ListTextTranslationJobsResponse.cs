@@ -28,18 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// This is the response object from the ListTerminologies operation.
+    /// This is the response object from the ListTextTranslationJobs operation.
     /// </summary>
-    public partial class ListTerminologiesResponse : AmazonWebServiceResponse
+    public partial class ListTextTranslationJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TerminologyProperties> _terminologyPropertiesList = new List<TerminologyProperties>();
+        private List<TextTranslationJobProperties> _textTranslationJobPropertiesList = new List<TextTranslationJobProperties>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  If the response to the ListTerminologies was truncated, the NextToken fetches the
-        /// next group of custom terminologies.
+        /// The token to use to retreive the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -56,21 +56,21 @@ namespace Amazon.Translate.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TerminologyPropertiesList. 
+        /// Gets and sets the property TextTranslationJobPropertiesList. 
         /// <para>
-        /// The properties list of the custom terminologies returned on the list request.
+        /// A list containing the properties of each job that is returned.
         /// </para>
         /// </summary>
-        public List<TerminologyProperties> TerminologyPropertiesList
+        public List<TextTranslationJobProperties> TextTranslationJobPropertiesList
         {
-            get { return this._terminologyPropertiesList; }
-            set { this._terminologyPropertiesList = value; }
+            get { return this._textTranslationJobPropertiesList; }
+            set { this._textTranslationJobPropertiesList = value; }
         }
 
-        // Check to see if TerminologyPropertiesList property is set
-        internal bool IsSetTerminologyPropertiesList()
+        // Check to see if TextTranslationJobPropertiesList property is set
+        internal bool IsSetTextTranslationJobPropertiesList()
         {
-            return this._terminologyPropertiesList != null && this._terminologyPropertiesList.Count > 0; 
+            return this._textTranslationJobPropertiesList != null && this._textTranslationJobPropertiesList.Count > 0; 
         }
 
     }

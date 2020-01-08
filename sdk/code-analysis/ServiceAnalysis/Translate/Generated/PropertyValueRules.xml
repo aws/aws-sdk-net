@@ -7,6 +7,12 @@
     <pattern>^([A-Za-z0-9-]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Translate.Model.DescribeTextTranslationJobRequest.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Translate.Model.GetTerminologyRequest.Name</property>
     <min>1</min>
     <max>256</max>
@@ -35,6 +41,60 @@
   <property-value-rule>
     <property>Amazon.Translate.Model.ListTerminologiesResponse.NextToken</property>
     <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.ListTextTranslationJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.ListTextTranslationJobsRequest.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.ListTextTranslationJobsResponse.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.StartTextTranslationJobRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.StartTextTranslationJobRequest.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.StartTextTranslationJobRequest.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.StartTextTranslationJobRequest.SourceLanguageCode</property>
+    <min>2</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.StartTextTranslationJobResponse.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.StopTextTranslationJobRequest.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.StopTextTranslationJobResponse.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.TranslateTextRequest.SourceLanguageCode</property>
@@ -87,10 +147,25 @@
     <property>Amazon.Translate.Model.EncryptionKey.Id</property>
     <min>1</min>
     <max>400</max>
-    <pattern>(arn:aws((-us-gov)|(-cn))?:kms:)?([a-z]{2}-[a-z]+-\d:)?(\d{12}:)?(((key/)?[a-zA-Z0-9-_]+)|(alias/[a-zA-Z0-9:/_-]+))</pattern>
+    <pattern>(arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:kms:)?([a-z]{2}-[a-z]+(-[a-z]+)?-\d:)?(\d{12}:)?(((key/)?[a-zA-Z0-9-_]+)|(alias/[a-zA-Z0-9:/_-]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.InputDataConfig.ContentType</property>
+    <max>256</max>
+    <pattern>^[-\w.]+\/[-\w.+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.InputDataConfig.S3Uri</property>
+    <max>1024</max>
+    <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.InternalServerException.Message</property>
+    <max>10000</max>
+    <pattern>[\P{M}\p{M}]{0,10000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.InvalidFilterException.Message</property>
     <max>10000</max>
     <pattern>[\P{M}\p{M}]{0,10000}</pattern>
   </property-value-rule>
@@ -108,6 +183,11 @@
     <property>Amazon.Translate.Model.LimitExceededException.Message</property>
     <max>10000</max>
     <pattern>[\P{M}\p{M}]{0,10000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.OutputDataConfig.S3Uri</property>
+    <max>1024</max>
+    <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.ResourceNotFoundException.Message</property>
@@ -145,7 +225,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.TerminologyProperties.Arn</property>
-    <pattern>^arn:aws((-us-gov)|(-cn))?:translate:[a-zA-Z0-9-]+:[0-9]{12}:terminology/.+?/.+?$</pattern>
+    <pattern>^arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:translate:[a-zA-Z0-9-]+:[0-9]{12}:terminology/.+?/.+?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.TerminologyProperties.Description</property>
@@ -167,6 +247,35 @@
     <property>Amazon.Translate.Model.TextSizeLimitExceededException.Message</property>
     <max>10000</max>
     <pattern>[\P{M}\p{M}]{0,10000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.TextTranslationJobFilter.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.TextTranslationJobProperties.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.TextTranslationJobProperties.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.TextTranslationJobProperties.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.TextTranslationJobProperties.SourceLanguageCode</property>
+    <min>2</min>
+    <max>5</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.TooManyRequestsException.Message</property>
