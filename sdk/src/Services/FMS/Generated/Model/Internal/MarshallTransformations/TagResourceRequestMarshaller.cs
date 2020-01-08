@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutPolicy Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class PutPolicyRequestMarshaller : IMarshaller<IRequest, PutPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutPolicyRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutPolicyRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.FMS");
-            string target = "AWSFMS_20180101.PutPolicy";
+            string target = "AWSFMS_20180101.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-01";            
@@ -68,15 +68,10 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPolicy())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("Policy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PolicyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Policy, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
                 if(publicRequest.IsSetTagList())
@@ -104,9 +99,9 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static PutPolicyRequestMarshaller _instance = new PutPolicyRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static PutPolicyRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +109,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutPolicyRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

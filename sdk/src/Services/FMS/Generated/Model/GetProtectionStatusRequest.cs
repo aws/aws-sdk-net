@@ -114,7 +114,7 @@ namespace Amazon.FMS.Model
         /// about another batch of objects.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

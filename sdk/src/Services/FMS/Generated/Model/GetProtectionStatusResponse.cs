@@ -115,7 +115,7 @@ namespace Amazon.FMS.Model
         /// with <code>NextToken</code> using your own processes. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

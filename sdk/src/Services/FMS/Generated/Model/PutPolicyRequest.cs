@@ -65,6 +65,7 @@ namespace Amazon.FMS.Model
     public partial class PutPolicyRequest : AmazonFMSRequest
     {
         private Policy _policy;
+        private List<Tag> _tagList = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Policy. 
@@ -83,6 +84,25 @@ namespace Amazon.FMS.Model
         internal bool IsSetPolicy()
         {
             return this._policy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList. 
+        /// <para>
+        /// The tags to add to the AWS resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && this._tagList.Count > 0; 
         }
 
     }
