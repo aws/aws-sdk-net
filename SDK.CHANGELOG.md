@@ -1,3 +1,9 @@
+### 3.3.660.1 (2020-01-09 19:22 UTC)
+* CloudWatchLogs (3.3.101.71)
+	* Documentation updates for logs
+* SecurityToken (3.3.104.19)
+	* Documentation updates for sts
+
 ### 3.3.660.0 (2020-01-08 20:41 UTC)
 * CostExplorer (3.3.106.18)
 	* Documentation updates for CreateCostCategoryDefinition and UpdateCostCategoryDefinition API
