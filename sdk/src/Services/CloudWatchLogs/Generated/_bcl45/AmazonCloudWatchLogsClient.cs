@@ -288,7 +288,13 @@ namespace Amazon.CloudWatchLogs
         /// as the data encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
         /// Amazon CloudWatch Logs to decrypt this data whenever it is requested.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <b>Important:</b> CloudWatch Logs supports only symmetric CMKs. Do not use an associate
+        /// an asymmetric CMK with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// Symmetric and Asymmetric Keys</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Note that it can take up to 5 minutes for this operation to take effect.
         /// </para>
@@ -337,7 +343,13 @@ namespace Amazon.CloudWatchLogs
         /// as the data encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
         /// Amazon CloudWatch Logs to decrypt this data whenever it is requested.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <b>Important:</b> CloudWatch Logs supports only symmetric CMKs. Do not use an associate
+        /// an asymmetric CMK with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// Symmetric and Asymmetric Keys</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Note that it can take up to 5 minutes for this operation to take effect.
         /// </para>
@@ -612,6 +624,13 @@ namespace Amazon.CloudWatchLogs
         /// the CMK is disabled, you will receive an <code>InvalidParameterException</code> error.
         /// 
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Important:</b> CloudWatch Logs supports only symmetric CMKs. Do not associate
+        /// an asymmetric CMK with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// Symmetric and Asymmetric Keys</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLogGroup service method.</param>
         /// 
@@ -679,6 +698,13 @@ namespace Amazon.CloudWatchLogs
         /// the CMK is disabled, you will receive an <code>InvalidParameterException</code> error.
         /// 
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Important:</b> CloudWatch Logs supports only symmetric CMKs. Do not associate
+        /// an asymmetric CMK with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// Symmetric and Asymmetric Keys</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLogGroup service method.</param>
         /// <param name="cancellationToken">
@@ -722,6 +748,8 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// There is no limit on the number of log streams that you can create for a log group.
+        /// There is a limit of 50 TPS on <code>CreateLogStream</code> operations, after which
+        /// transactions are throttled.
         /// </para>
         ///  
         /// <para>
@@ -773,6 +801,8 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// There is no limit on the number of log streams that you can create for a log group.
+        /// There is a limit of 50 TPS on <code>CreateLogStream</code> operations, after which
+        /// transactions are throttled.
         /// </para>
         ///  
         /// <para>
@@ -2536,9 +2566,10 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// You must include the sequence token obtained from the response of the previous call.
         /// An upload in a newly created log stream does not require a sequence token. You can
-        /// also get the sequence token using <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code>
-        /// twice within a narrow time period using the same value for <code>sequenceToken</code>,
-        /// both calls may be successful, or one may be rejected.
+        /// also get the sequence token in the <code>expectedSequenceToken</code> field from <code>InvalidSequenceTokenException</code>.
+        /// If you call <code>PutLogEvents</code> twice within a narrow time period using the
+        /// same value for <code>sequenceToken</code>, both calls may be successful, or one may
+        /// be rejected.
         /// </para>
         ///  
         /// <para>
@@ -2568,12 +2599,17 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// A batch of log events in a single request cannot span more than 24 hours. Otherwise,
+        /// the operation fails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// The maximum number of log events in a batch is 10,000.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A batch of log events in a single request cannot span more than 24 hours. Otherwise,
-        /// the operation fails.
+        /// There is a quota of 5 requests per second per log stream. Additional requests are
+        /// throttled. This quota can't be changed.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2591,7 +2627,8 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidSequenceTokenException">
-        /// The sequence token is not valid.
+        /// The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code>
+        /// field in the <code>InvalidSequenceTokenException</code> message.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -2620,9 +2657,10 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// You must include the sequence token obtained from the response of the previous call.
         /// An upload in a newly created log stream does not require a sequence token. You can
-        /// also get the sequence token using <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code>
-        /// twice within a narrow time period using the same value for <code>sequenceToken</code>,
-        /// both calls may be successful, or one may be rejected.
+        /// also get the sequence token in the <code>expectedSequenceToken</code> field from <code>InvalidSequenceTokenException</code>.
+        /// If you call <code>PutLogEvents</code> twice within a narrow time period using the
+        /// same value for <code>sequenceToken</code>, both calls may be successful, or one may
+        /// be rejected.
         /// </para>
         ///  
         /// <para>
@@ -2652,12 +2690,17 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// A batch of log events in a single request cannot span more than 24 hours. Otherwise,
+        /// the operation fails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// The maximum number of log events in a batch is 10,000.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A batch of log events in a single request cannot span more than 24 hours. Otherwise,
-        /// the operation fails.
+        /// There is a quota of 5 requests per second per log stream. Additional requests are
+        /// throttled. This quota can't be changed.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2678,7 +2721,8 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidSequenceTokenException">
-        /// The sequence token is not valid.
+        /// The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code>
+        /// field in the <code>InvalidSequenceTokenException</code> message.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.

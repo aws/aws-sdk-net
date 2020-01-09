@@ -34,6 +34,8 @@ namespace Amazon.CloudWatchLogs.Model
     ///  
     /// <para>
     /// There is no limit on the number of log streams that you can create for a log group.
+    /// There is a limit of 50 TPS on <code>CreateLogStream</code> operations, after which
+    /// transactions are throttled.
     /// </para>
     ///  
     /// <para>
