@@ -49,6 +49,30 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             #endregion
         }
 
+        public void SecurityTokenServiceAssumeRoleWithSAML()
+        {
+            #region to-assume-role-with-saml-14882749597814
+
+            var response = client.AssumeRoleWithSAML(new AssumeRoleWithSAMLRequest 
+            {
+                DurationSeconds = 3600,
+                PrincipalArn = "arn:aws:iam::123456789012:saml-provider/SAML-test",
+                RoleArn = "arn:aws:iam::123456789012:role/TestSaml",
+                SAMLAssertion = "VERYLONGENCODEDASSERTIONEXAMPLExzYW1sOkF1ZGllbmNlPmJsYW5rPC9zYW1sOkF1ZGllbmNlPjwvc2FtbDpBdWRpZW5jZVJlc3RyaWN0aW9uPjwvc2FtbDpDb25kaXRpb25zPjxzYW1sOlN1YmplY3Q+PHNhbWw6TmFtZUlEIEZvcm1hdD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOm5hbWVpZC1mb3JtYXQ6dHJhbnNpZW50Ij5TYW1sRXhhbXBsZTwvc2FtbDpOYW1lSUQ+PHNhbWw6U3ViamVjdENvbmZpcm1hdGlvbiBNZXRob2Q9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpjbTpiZWFyZXIiPjxzYW1sOlN1YmplY3RDb25maXJtYXRpb25EYXRhIE5vdE9uT3JBZnRlcj0iMjAxOS0xMS0wMVQyMDoyNTowNS4xNDVaIiBSZWNpcGllbnQ9Imh0dHBzOi8vc2lnbmluLmF3cy5hbWF6b24uY29tL3NhbWwiLz48L3NhbWw6U3ViamVjdENvbmZpcm1hdGlvbj48L3NhbWw6U3ViamVjdD48c2FtbDpBdXRoblN0YXRlbWVudCBBdXRoPD94bWwgdmpSZXNwb25zZT4="
+            });
+
+            AssumedRoleUser assumedRoleUser = response.AssumedRoleUser;
+            string audience = response.Audience;
+            Credentials credentials = response.Credentials;
+            string issuer = response.Issuer;
+            string nameQualifier = response.NameQualifier;
+            int packedPolicySize = response.PackedPolicySize;
+            string subject = response.Subject;
+            string subjectType = response.SubjectType;
+
+            #endregion
+        }
+
         public void SecurityTokenServiceAssumeRoleWithWebIdentity()
         {
             #region to-assume-a-role-as-an-openid-connect-federated-user-1480533445696
