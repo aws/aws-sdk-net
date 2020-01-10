@@ -80,19 +80,20 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You use one of the following prebuilt Amazon SageMaker Docker images:
+        /// You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt
+        /// Amazon SageMaker Docker Images</a>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Tensorflow
+        /// Tensorflow (version &gt;= 1.15)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MXNet
+        /// MXNet (version &gt;= 1.6)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PyTorch
+        /// PyTorch (version &gt;= 1.3)
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

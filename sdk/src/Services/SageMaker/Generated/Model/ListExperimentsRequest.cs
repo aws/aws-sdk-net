@@ -81,7 +81,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of experiments to return in the response.
+        /// The maximum number of experiments to return in the response. The default value is
+        /// 10.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

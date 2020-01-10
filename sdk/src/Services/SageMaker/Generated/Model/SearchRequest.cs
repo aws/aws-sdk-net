@@ -35,7 +35,7 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// You can query against the following value types: numerical, text, Booleans, and timestamps.
+    /// You can query against the following value types: numeric, text, Boolean, and timestamp.
     /// </para>
     /// </summary>
     public partial class SearchRequest : AmazonSageMakerRequest
@@ -91,8 +91,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The name of the Amazon SageMaker resource to search for. Currently, the only valid
-        /// <code>Resource</code> value is <code>TrainingJob</code>.
+        /// The name of the Amazon SageMaker resource to search for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

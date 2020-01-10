@@ -80,6 +80,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CreatedBefore);
                 }
 
+                if(publicRequest.IsSetExperimentName())
+                {
+                    context.Writer.WritePropertyName("ExperimentName");
+                    context.Writer.Write(publicRequest.ExperimentName);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
@@ -108,6 +114,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("SourceArn");
                     context.Writer.Write(publicRequest.SourceArn);
+                }
+
+                if(publicRequest.IsSetTrialName())
+                {
+                    context.Writer.WritePropertyName("TrialName");
+                    context.Writer.Write(publicRequest.TrialName);
                 }
 
         

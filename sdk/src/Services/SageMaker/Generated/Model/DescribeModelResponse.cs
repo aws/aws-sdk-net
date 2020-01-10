@@ -85,11 +85,6 @@ namespace Amazon.SageMaker.Model
         /// If <code>True</code>, no inbound or outbound network calls can be made to or from
         /// the model container.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Semantic Segmentation built-in algorithm does not support network isolation.
-        /// </para>
-        ///  </note>
         /// </summary>
         public bool EnableNetworkIsolation
         {

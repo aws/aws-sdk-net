@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Limits the property names that are included in the response.
+    /// Specified in the <a>GetSearchSuggestions</a> request. Limits the property names that
+    /// are included in the response.
     /// </summary>
     public partial class SuggestionQuery
     {
@@ -37,8 +38,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PropertyNameQuery. 
         /// <para>
-        /// A type of <code>SuggestionQuery</code>. Defines a property name hint. Only property
-        /// names that match the specified hint are included in the response.
+        /// Defines a property name hint. Only property names that begin with the specified hint
+        /// are included in the response.
         /// </para>
         /// </summary>
         public PropertyNameQuery PropertyNameQuery

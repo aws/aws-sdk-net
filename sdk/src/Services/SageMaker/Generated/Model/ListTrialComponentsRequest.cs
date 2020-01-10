@@ -37,11 +37,13 @@ namespace Amazon.SageMaker.Model
     {
         private DateTime? _createdAfter;
         private DateTime? _createdBefore;
+        private string _experimentName;
         private int? _maxResults;
         private string _nextToken;
         private SortTrialComponentsBy _sortBy;
         private SortOrder _sortOrder;
         private string _sourceArn;
+        private string _trialName;
 
         /// <summary>
         /// Gets and sets the property CreatedAfter. 
@@ -80,9 +82,29 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExperimentName. 
+        /// <para>
+        /// A filter that returns only components that are part of the specified experiment. If
+        /// you specify <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=82)]
+        public string ExperimentName
+        {
+            get { return this._experimentName; }
+            set { this._experimentName = value; }
+        }
+
+        // Check to see if ExperimentName property is set
+        internal bool IsSetExperimentName()
+        {
+            return this._experimentName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of components to return in the response.
+        /// The maximum number of components to return in the response. The default value is 10.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -172,6 +194,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSourceArn()
         {
             return this._sourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrialName. 
+        /// <para>
+        /// A filter that returns only components that are part of the specified trial. If you
+        /// specify <code>TrialName</code>, you can't specify <code>ExperimentName</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=82)]
+        public string TrialName
+        {
+            get { return this._trialName; }
+            set { this._trialName = value; }
+        }
+
+        // Check to see if TrialName property is set
+        internal bool IsSetTrialName()
+        {
+            return this._trialName != null;
         }
 
     }

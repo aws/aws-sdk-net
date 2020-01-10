@@ -42,8 +42,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The name of the Amazon SageMaker resource to Search for. The only valid <code>Resource</code>
-        /// value is <code>TrainingJob</code>.
+        /// The name of the Amazon SageMaker resource to Search for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
