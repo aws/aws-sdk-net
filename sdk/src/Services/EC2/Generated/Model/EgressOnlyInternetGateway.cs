@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     {
         private List<InternetGatewayAttachment> _attachments = new List<InternetGatewayAttachment>();
         private string _egressOnlyInternetGatewayId;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Attachments. 
@@ -69,6 +70,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetEgressOnlyInternetGatewayId()
         {
             return this._egressOnlyInternetGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags assigned to the egress-only internet gateway.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

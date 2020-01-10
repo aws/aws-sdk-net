@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private string _localGatewayVirtualInterfaceId;
         private string _peerAddress;
         private int? _peerBgpAsn;
+        private List<Tag> _tags = new List<Tag>();
         private int? _vlan;
 
         /// <summary>
@@ -146,6 +147,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPeerBgpAsn()
         {
             return this._peerBgpAsn.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags assigned to the virtual interface.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
