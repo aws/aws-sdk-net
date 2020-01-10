@@ -270,7 +270,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property VolumeEncryptionKey. 
         /// <para>
-        /// The KMS key used to encrypt data stored on your WorkSpace.
+        /// The symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your
+        /// WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.
         /// </para>
         /// </summary>
         public string VolumeEncryptionKey

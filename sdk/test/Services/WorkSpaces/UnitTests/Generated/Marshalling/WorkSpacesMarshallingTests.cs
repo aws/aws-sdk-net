@@ -739,6 +739,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("WorkSpaces")]
+        public void MigrateWorkspaceMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<MigrateWorkspaceRequest>();
+            var marshaller = new MigrateWorkspaceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<MigrateWorkspaceRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("MigrateWorkspace").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = MigrateWorkspaceResponseUnmarshaller.Instance.Unmarshall(context)
+                as MigrateWorkspaceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("WorkSpaces")]
         public void ModifyAccountMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<ModifyAccountRequest>();
