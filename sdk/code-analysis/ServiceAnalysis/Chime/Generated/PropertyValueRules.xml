@@ -13,6 +13,10 @@
     <pattern>^\+?[1-9]\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.AssociateSigninDelegateGroupsWithAccountRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.BatchCreateAttendeeRequest.MeetingId</property>
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
@@ -91,6 +95,14 @@
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateRoomMembershipRequest.RoomId</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateUserRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateUserRequest.Email</property>
+    <pattern>.+@.+\..+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateVoiceConnectorRequest.Name</property>
@@ -176,6 +188,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.DisassociatePhoneNumbersFromVoiceConnectorGroupRequest.VoiceConnectorGroupId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DisassociateSigninDelegateGroupsFromAccountRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -645,6 +661,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.RoomMembership.RoomId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.SigninDelegateGroup.GroupName</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateUserRequestItem Marshaller
+    /// SigninDelegateGroup Marshaller
     /// </summary>       
-    public class UpdateUserRequestItemMarshaller : IRequestMarshaller<UpdateUserRequestItem, JsonMarshallerContext> 
+    public class SigninDelegateGroupMarshaller : IRequestMarshaller<SigninDelegateGroup, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UpdateUserRequestItem requestObject, JsonMarshallerContext context)
+        public void Marshall(SigninDelegateGroup requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAlexaForBusinessMetadata())
+            if(requestObject.IsSetGroupName())
             {
-                context.Writer.WritePropertyName("AlexaForBusinessMetadata");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AlexaForBusinessMetadataMarshaller.Instance;
-                marshaller.Marshall(requestObject.AlexaForBusinessMetadata, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetLicenseType())
-            {
-                context.Writer.WritePropertyName("LicenseType");
-                context.Writer.Write(requestObject.LicenseType);
-            }
-
-            if(requestObject.IsSetUserId())
-            {
-                context.Writer.WritePropertyName("UserId");
-                context.Writer.Write(requestObject.UserId);
-            }
-
-            if(requestObject.IsSetUserType())
-            {
-                context.Writer.WritePropertyName("UserType");
-                context.Writer.Write(requestObject.UserType);
+                context.Writer.WritePropertyName("GroupName");
+                context.Writer.Write(requestObject.GroupName);
             }
 
         }
@@ -79,7 +56,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static UpdateUserRequestItemMarshaller Instance = new UpdateUserRequestItemMarshaller();
+        public readonly static SigninDelegateGroupMarshaller Instance = new SigninDelegateGroupMarshaller();
 
     }
 }

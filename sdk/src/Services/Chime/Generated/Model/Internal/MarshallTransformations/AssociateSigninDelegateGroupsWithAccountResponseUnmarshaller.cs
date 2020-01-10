@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateBot operation
+    /// Response Unmarshaller for AssociateSigninDelegateGroupsWithAccount operation
     /// </summary>  
-    public class UpdateBotResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AssociateSigninDelegateGroupsWithAccountResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,19 +45,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateBotResponse response = new UpdateBotResponse();
+            AssociateSigninDelegateGroupsWithAccountResponse response = new AssociateSigninDelegateGroupsWithAccountResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("Bot", targetDepth))
-                {
-                    var unmarshaller = BotUnmarshaller.Instance;
-                    response.Bot = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -103,9 +92,9 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             return new AmazonChimeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateBotResponseUnmarshaller _instance = new UpdateBotResponseUnmarshaller();        
+        private static AssociateSigninDelegateGroupsWithAccountResponseUnmarshaller _instance = new AssociateSigninDelegateGroupsWithAccountResponseUnmarshaller();        
 
-        internal static UpdateBotResponseUnmarshaller GetInstance()
+        internal static AssociateSigninDelegateGroupsWithAccountResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +102,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateBotResponseUnmarshaller Instance
+        public static AssociateSigninDelegateGroupsWithAccountResponseUnmarshaller Instance
         {
             get
             {

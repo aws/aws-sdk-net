@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateBot operation
+    /// Response Unmarshaller for CreateUser operation
     /// </summary>  
-    public class UpdateBotResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateUserResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateBotResponse response = new UpdateBotResponse();
+            CreateUserResponse response = new CreateUserResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Bot", targetDepth))
+                if (context.TestExpression("User", targetDepth))
                 {
-                    var unmarshaller = BotUnmarshaller.Instance;
-                    response.Bot = unmarshaller.Unmarshall(context);
+                    var unmarshaller = UserUnmarshaller.Instance;
+                    response.User = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -75,6 +75,10 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
             {
                 return new BadRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+            {
+                return new ConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
             {
@@ -103,9 +107,9 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             return new AmazonChimeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateBotResponseUnmarshaller _instance = new UpdateBotResponseUnmarshaller();        
+        private static CreateUserResponseUnmarshaller _instance = new CreateUserResponseUnmarshaller();        
 
-        internal static UpdateBotResponseUnmarshaller GetInstance()
+        internal static CreateUserResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +117,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateBotResponseUnmarshaller Instance
+        public static CreateUserResponseUnmarshaller Instance
         {
             get
             {

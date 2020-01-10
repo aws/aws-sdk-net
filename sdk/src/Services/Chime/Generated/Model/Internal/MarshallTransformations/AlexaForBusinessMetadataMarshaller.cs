@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateUserRequestItem Marshaller
+    /// AlexaForBusinessMetadata Marshaller
     /// </summary>       
-    public class UpdateUserRequestItemMarshaller : IRequestMarshaller<UpdateUserRequestItem, JsonMarshallerContext> 
+    public class AlexaForBusinessMetadataMarshaller : IRequestMarshaller<AlexaForBusinessMetadata, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,18 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UpdateUserRequestItem requestObject, JsonMarshallerContext context)
+        public void Marshall(AlexaForBusinessMetadata requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAlexaForBusinessMetadata())
+            if(requestObject.IsSetAlexaForBusinessRoomArn())
             {
-                context.Writer.WritePropertyName("AlexaForBusinessMetadata");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AlexaForBusinessMetadataMarshaller.Instance;
-                marshaller.Marshall(requestObject.AlexaForBusinessMetadata, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("AlexaForBusinessRoomArn");
+                context.Writer.Write(requestObject.AlexaForBusinessRoomArn);
             }
 
-            if(requestObject.IsSetLicenseType())
+            if(requestObject.IsSetIsAlexaForBusinessEnabled())
             {
-                context.Writer.WritePropertyName("LicenseType");
-                context.Writer.Write(requestObject.LicenseType);
-            }
-
-            if(requestObject.IsSetUserId())
-            {
-                context.Writer.WritePropertyName("UserId");
-                context.Writer.Write(requestObject.UserId);
-            }
-
-            if(requestObject.IsSetUserType())
-            {
-                context.Writer.WritePropertyName("UserType");
-                context.Writer.Write(requestObject.UserType);
+                context.Writer.WritePropertyName("IsAlexaForBusinessEnabled");
+                context.Writer.Write(requestObject.IsAlexaForBusinessEnabled);
             }
 
         }
@@ -79,7 +62,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static UpdateUserRequestItemMarshaller Instance = new UpdateUserRequestItemMarshaller();
+        public readonly static AlexaForBusinessMetadataMarshaller Instance = new AlexaForBusinessMetadataMarshaller();
 
     }
 }

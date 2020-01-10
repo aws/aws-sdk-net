@@ -28,16 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Container for the parameters to the InviteUsers operation.
-    /// Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime
-    /// <code>Team</code> account. Only <code>Team</code> account types are currently supported
-    /// for this action.
+    /// Container for the parameters to the AssociateSigninDelegateGroupsWithAccount operation.
+    /// Associates the specified sign-in delegate groups with the specified Amazon Chime account.
     /// </summary>
-    public partial class InviteUsersRequest : AmazonChimeRequest
+    public partial class AssociateSigninDelegateGroupsWithAccountRequest : AmazonChimeRequest
     {
         private string _accountId;
-        private List<string> _userEmailList = new List<string>();
-        private UserType _userType;
+        private List<SigninDelegateGroup> _signinDelegateGroups = new List<SigninDelegateGroup>();
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -59,40 +56,22 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserEmailList. 
+        /// Gets and sets the property SigninDelegateGroups. 
         /// <para>
-        /// The user email addresses to which to send the email invitation.
+        /// The sign-in delegate groups.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=50)]
-        public List<string> UserEmailList
+        [AWSProperty(Required=true)]
+        public List<SigninDelegateGroup> SigninDelegateGroups
         {
-            get { return this._userEmailList; }
-            set { this._userEmailList = value; }
+            get { return this._signinDelegateGroups; }
+            set { this._signinDelegateGroups = value; }
         }
 
-        // Check to see if UserEmailList property is set
-        internal bool IsSetUserEmailList()
+        // Check to see if SigninDelegateGroups property is set
+        internal bool IsSetSigninDelegateGroups()
         {
-            return this._userEmailList != null && this._userEmailList.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property UserType. 
-        /// <para>
-        /// The user type.
-        /// </para>
-        /// </summary>
-        public UserType UserType
-        {
-            get { return this._userType; }
-            set { this._userType = value; }
-        }
-
-        // Check to see if UserType property is set
-        internal bool IsSetUserType()
-        {
-            return this._userType != null;
+            return this._signinDelegateGroups != null && this._signinDelegateGroups.Count > 0; 
         }
 
     }

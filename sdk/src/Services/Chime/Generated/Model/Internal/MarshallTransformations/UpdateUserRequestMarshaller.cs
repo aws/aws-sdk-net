@@ -72,10 +72,27 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAlexaForBusinessMetadata())
+                {
+                    context.Writer.WritePropertyName("AlexaForBusinessMetadata");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AlexaForBusinessMetadataMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AlexaForBusinessMetadata, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLicenseType())
                 {
                     context.Writer.WritePropertyName("LicenseType");
                     context.Writer.Write(publicRequest.LicenseType);
+                }
+
+                if(publicRequest.IsSetUserType())
+                {
+                    context.Writer.WritePropertyName("UserType");
+                    context.Writer.Write(publicRequest.UserType);
                 }
 
         

@@ -29,7 +29,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRoom operation.
-    /// Retrieves room details, such as name.
+    /// Retrieves room details, such as the room name.
     /// </summary>
     public partial class GetRoomRequest : AmazonChimeRequest
     {

@@ -467,6 +467,62 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  AssociateSigninDelegateGroupsWithAccount
+
+        internal virtual AssociateSigninDelegateGroupsWithAccountResponse AssociateSigninDelegateGroupsWithAccount(AssociateSigninDelegateGroupsWithAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSigninDelegateGroupsWithAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSigninDelegateGroupsWithAccountResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSigninDelegateGroupsWithAccountResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates the specified sign-in delegate groups with the specified Amazon Chime account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSigninDelegateGroupsWithAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateSigninDelegateGroupsWithAccount service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AssociateSigninDelegateGroupsWithAccount">REST API Reference for AssociateSigninDelegateGroupsWithAccount Operation</seealso>
+        public virtual Task<AssociateSigninDelegateGroupsWithAccountResponse> AssociateSigninDelegateGroupsWithAccountAsync(AssociateSigninDelegateGroupsWithAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSigninDelegateGroupsWithAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSigninDelegateGroupsWithAccountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateSigninDelegateGroupsWithAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchCreateAttendee
 
         internal virtual BatchCreateAttendeeResponse BatchCreateAttendee(BatchCreateAttendeeRequest request)
@@ -568,6 +624,9 @@ namespace Amazon.Chime
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.
         /// </exception>
@@ -666,7 +725,7 @@ namespace Amazon.Chime
         /// 
         ///  
         /// <para>
-        /// Users suspended from a <code>Team</code> account are dissasociated from the account,
+        /// Users suspended from a <code>Team</code> account are disassociated from the account,
         /// but they can continue to use Amazon Chime as free users. To remove the suspension
         /// from suspended <code>Team</code> account users, invite them to the <code>Team</code>
         /// account again. You can use the <a>InviteUsers</a> action to do so.
@@ -1078,6 +1137,9 @@ namespace Amazon.Chime
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.
         /// </exception>
@@ -1253,6 +1315,9 @@ namespace Amazon.Chime
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.
         /// </exception>
@@ -1315,6 +1380,9 @@ namespace Amazon.Chime
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.
         /// </exception>
@@ -1326,6 +1394,66 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = CreateRoomMembershipResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateRoomMembershipResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateUser
+
+        internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a user under the specified Amazon Chime account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateUser service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1816,6 +1944,9 @@ namespace Amazon.Chime
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.
         /// </exception>
@@ -1868,6 +1999,9 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.
@@ -2401,6 +2535,63 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  DisassociateSigninDelegateGroupsFromAccount
+
+        internal virtual DisassociateSigninDelegateGroupsFromAccountResponse DisassociateSigninDelegateGroupsFromAccount(DisassociateSigninDelegateGroupsFromAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSigninDelegateGroupsFromAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSigninDelegateGroupsFromAccountResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSigninDelegateGroupsFromAccountResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates the specified sign-in delegate groups from the specified Amazon Chime
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSigninDelegateGroupsFromAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateSigninDelegateGroupsFromAccount service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DisassociateSigninDelegateGroupsFromAccount">REST API Reference for DisassociateSigninDelegateGroupsFromAccount Operation</seealso>
+        public virtual Task<DisassociateSigninDelegateGroupsFromAccountResponse> DisassociateSigninDelegateGroupsFromAccountAsync(DisassociateSigninDelegateGroupsFromAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSigninDelegateGroupsFromAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSigninDelegateGroupsFromAccountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateSigninDelegateGroupsFromAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAccount
 
         internal virtual GetAccountResponse GetAccount(GetAccountRequest request)
@@ -2612,6 +2803,9 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.
@@ -2979,7 +3173,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Retrieves room details, such as name.
+        /// Retrieves room details, such as the room name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRoom service method.</param>
         /// <param name="cancellationToken">
@@ -3002,6 +3196,9 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.
@@ -3749,6 +3946,9 @@ namespace Amazon.Chime
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.
         /// </exception>
@@ -3940,8 +4140,8 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Lists the membership details for the specified room, such as member IDs, member email
-        /// addresses, and member names.
+        /// Lists the membership details for the specified room, such as the members' IDs, email
+        /// addresses, and names.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRoomMemberships service method.</param>
         /// <param name="cancellationToken">
@@ -3964,6 +4164,9 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.
@@ -4019,6 +4222,9 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.
@@ -4694,6 +4900,9 @@ namespace Amazon.Chime
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.
         /// </exception>
@@ -5040,6 +5249,9 @@ namespace Amazon.Chime
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.
         /// </exception>
@@ -5270,6 +5482,9 @@ namespace Amazon.Chime
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.
         /// </exception>
@@ -5299,9 +5514,9 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Updates room membership details, such as member role. The member role designates whether
-        /// the member is a chat room administrator or a general chat room member. Member role
-        /// can only be updated for user IDs.
+        /// Updates room membership details, such as the member role. The member role designates
+        /// whether the member is a chat room administrator or a general chat room member. The
+        /// member role can be updated only for user IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRoomMembership service method.</param>
         /// <param name="cancellationToken">
@@ -5324,6 +5539,9 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
         /// The client is not currently authorized to make the request.

@@ -28,16 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Container for the parameters to the InviteUsers operation.
-    /// Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime
-    /// <code>Team</code> account. Only <code>Team</code> account types are currently supported
-    /// for this action.
+    /// Container for the parameters to the DisassociateSigninDelegateGroupsFromAccount operation.
+    /// Disassociates the specified sign-in delegate groups from the specified Amazon Chime
+    /// account.
     /// </summary>
-    public partial class InviteUsersRequest : AmazonChimeRequest
+    public partial class DisassociateSigninDelegateGroupsFromAccountRequest : AmazonChimeRequest
     {
         private string _accountId;
-        private List<string> _userEmailList = new List<string>();
-        private UserType _userType;
+        private List<string> _groupNames = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -59,40 +57,22 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserEmailList. 
+        /// Gets and sets the property GroupNames. 
         /// <para>
-        /// The user email addresses to which to send the email invitation.
+        /// The sign-in delegate group names.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=50)]
-        public List<string> UserEmailList
+        [AWSProperty(Required=true, Min=1)]
+        public List<string> GroupNames
         {
-            get { return this._userEmailList; }
-            set { this._userEmailList = value; }
+            get { return this._groupNames; }
+            set { this._groupNames = value; }
         }
 
-        // Check to see if UserEmailList property is set
-        internal bool IsSetUserEmailList()
+        // Check to see if GroupNames property is set
+        internal bool IsSetGroupNames()
         {
-            return this._userEmailList != null && this._userEmailList.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property UserType. 
-        /// <para>
-        /// The user type.
-        /// </para>
-        /// </summary>
-        public UserType UserType
-        {
-            get { return this._userType; }
-            set { this._userType = value; }
-        }
-
-        // Check to see if UserType property is set
-        internal bool IsSetUserType()
-        {
-            return this._userType != null;
+            return this._groupNames != null && this._groupNames.Count > 0; 
         }
 
     }

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InviteUsers Request Marshaller
+    /// DisassociateSigninDelegateGroupsFromAccount Request Marshaller
     /// </summary>       
-    public class InviteUsersRequestMarshaller : IMarshaller<IRequest, InviteUsersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DisassociateSigninDelegateGroupsFromAccountRequestMarshaller : IMarshaller<IRequest, DisassociateSigninDelegateGroupsFromAccountRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((InviteUsersRequest)input);
+            return this.Marshall((DisassociateSigninDelegateGroupsFromAccountRequest)input);
         }
 
         /// <summary>
@@ -52,39 +52,33 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(InviteUsersRequest publicRequest)
+        public IRequest Marshall(DisassociateSigninDelegateGroupsFromAccountRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Chime");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "POST";
 
-            request.AddSubResource("operation", "add");
+            request.AddSubResource("operation", "disassociate-signin-delegate-groups");
             if (!publicRequest.IsSetAccountId())
                 throw new AmazonChimeException("Request object does not have required field AccountId set");
             request.AddPathResource("{accountId}", StringUtils.FromString(publicRequest.AccountId));
-            request.ResourcePath = "/accounts/{accountId}/users";
+            request.ResourcePath = "/accounts/{accountId}";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetUserEmailList())
+                if(publicRequest.IsSetGroupNames())
                 {
-                    context.Writer.WritePropertyName("UserEmailList");
+                    context.Writer.WritePropertyName("GroupNames");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUserEmailListListValue in publicRequest.UserEmailList)
+                    foreach(var publicRequestGroupNamesListValue in publicRequest.GroupNames)
                     {
-                            context.Writer.Write(publicRequestUserEmailListListValue);
+                            context.Writer.Write(publicRequestGroupNamesListValue);
                     }
                     context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetUserType())
-                {
-                    context.Writer.WritePropertyName("UserType");
-                    context.Writer.Write(publicRequest.UserType);
                 }
 
         
@@ -96,9 +90,9 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static InviteUsersRequestMarshaller _instance = new InviteUsersRequestMarshaller();        
+        private static DisassociateSigninDelegateGroupsFromAccountRequestMarshaller _instance = new DisassociateSigninDelegateGroupsFromAccountRequestMarshaller();        
 
-        internal static InviteUsersRequestMarshaller GetInstance()
+        internal static DisassociateSigninDelegateGroupsFromAccountRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -106,7 +100,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InviteUsersRequestMarshaller Instance
+        public static DisassociateSigninDelegateGroupsFromAccountRequestMarshaller Instance
         {
             get
             {

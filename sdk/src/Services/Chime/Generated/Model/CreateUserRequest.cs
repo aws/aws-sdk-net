@@ -28,16 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListUsers operation.
-    /// Lists the users that belong to the specified Amazon Chime account. You can specify
-    /// an email address to list only the user that the email address belongs to.
+    /// Container for the parameters to the CreateUser operation.
+    /// Creates a user under the specified Amazon Chime account.
     /// </summary>
-    public partial class ListUsersRequest : AmazonChimeRequest
+    public partial class CreateUserRequest : AmazonChimeRequest
     {
         private string _accountId;
-        private int? _maxResults;
-        private string _nextToken;
-        private string _userEmail;
+        private string _email;
+        private string _username;
         private UserType _userType;
 
         /// <summary>
@@ -60,58 +58,39 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property Email. 
         /// <para>
-        /// The maximum number of results to return in a single call. Defaults to 100.
+        /// The user's email address.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
-        public int MaxResults
+        public string Email
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._email; }
+            set { this._email = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if Email property is set
+        internal bool IsSetEmail()
         {
-            return this._maxResults.HasValue; 
+            return this._email != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Username. 
         /// <para>
-        /// The token to use to retrieve the next page of results.
+        /// The user name.
         /// </para>
         /// </summary>
-        public string NextToken
+        public string Username
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._username; }
+            set { this._username = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Username property is set
+        internal bool IsSetUsername()
         {
-            return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property UserEmail. 
-        /// <para>
-        /// Optional. The user email address used to filter results. Maximum 1.
-        /// </para>
-        /// </summary>
-        public string UserEmail
-        {
-            get { return this._userEmail; }
-            set { this._userEmail = value; }
-        }
-
-        // Check to see if UserEmail property is set
-        internal bool IsSetUserEmail()
-        {
-            return this._userEmail != null;
+            return this._username != null;
         }
 
         /// <summary>
