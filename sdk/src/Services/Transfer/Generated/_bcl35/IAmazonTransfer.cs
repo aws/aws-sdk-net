@@ -355,7 +355,8 @@ namespace Amazon.Transfer
         /// 
         ///  
         /// <para>
-        /// The response contains a description of the server's properties.
+        /// The response contains a description of the server's properties. When you set <code>EndpointType</code>
+        /// to VPC, the response will contain the <code>EndpointDetails</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeServer service method.</param>
@@ -1039,6 +1040,11 @@ namespace Amazon.Transfer
         /// <param name="request">Container for the necessary parameters to execute the UpdateServer service method.</param>
         /// 
         /// <returns>The response from the UpdateServer service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.ConflictException">
+        /// This exception is thrown when the <code>UpdatServer</code> is called for a server
+        /// that has VPC as the endpoint type and the server's <code>VpcEndpointID</code> is not
+        /// in the available state.
+        /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
         /// This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
         /// </exception>
