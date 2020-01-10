@@ -4853,7 +4853,8 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This operation can also return information for Amazon Neptune DB instances and Amazon
+        /// DocumentDB instances.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4884,7 +4885,8 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This operation can also return information for Amazon Neptune DB instances and Amazon
+        /// DocumentDB instances.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5206,6 +5208,13 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns information about provisioned RDS instances. This API supports pagination.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation can also return information for Amazon Neptune DB instances and Amazon
+        /// DocumentDB instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDBInstances service method, as returned by RDS.</returns>
@@ -5221,6 +5230,13 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns information about provisioned RDS instances. This API supports pagination.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation can also return information for Amazon Neptune DB instances and Amazon
+        /// DocumentDB instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBInstances service method.</param>
         /// 
@@ -5241,6 +5257,13 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns information about provisioned RDS instances. This API supports pagination.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation can also return information for Amazon Neptune DB instances and Amazon
+        /// DocumentDB instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5258,6 +5281,13 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns information about provisioned RDS instances. This API supports pagination.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation can also return information for Amazon Neptune DB instances and Amazon
+        /// DocumentDB instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBInstances service method.</param>
         /// <param name="cancellationToken">
@@ -7261,6 +7291,127 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyCertificates
+
+
+        /// <summary>
+        /// Override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS)
+        /// certificate for Amazon RDS for new DB instances, or remove the override.
+        /// 
+        ///  
+        /// <para>
+        /// By using this operation, you can specify an RDS-approved SSL/TLS certificate for new
+        /// DB instances that is different from the default certificate provided by RDS. You can
+        /// also use this operation to remove the override, so that new DB instances use the default
+        /// certificate provided by RDS.
+        /// </para>
+        ///  
+        /// <para>
+        /// You might need to override the default certificate in the following situations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You already migrated your applications to support the latest certificate authority
+        /// (CA) certificate, but the new CA certificate is not yet the RDS default CA certificate
+        /// for the specified AWS Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS has already moved to a new default CA certificate for the specified AWS Region,
+        /// but you are still in the process of supporting the new CA certificate. In this case,
+        /// you temporarily need additional time to finish your application changes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about rotating your SSL/TLS certificate for RDS DB engines, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+        /// Rotating Your SSL/TLS Certificate</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about rotating your SSL/TLS certificate for Aurora DB engines,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+        /// Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCertificates service method.</param>
+        /// 
+        /// <returns>The response from the ModifyCertificates service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
+        /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCertificates">REST API Reference for ModifyCertificates Operation</seealso>
+        public virtual ModifyCertificatesResponse ModifyCertificates(ModifyCertificatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyCertificatesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS)
+        /// certificate for Amazon RDS for new DB instances, or remove the override.
+        /// 
+        ///  
+        /// <para>
+        /// By using this operation, you can specify an RDS-approved SSL/TLS certificate for new
+        /// DB instances that is different from the default certificate provided by RDS. You can
+        /// also use this operation to remove the override, so that new DB instances use the default
+        /// certificate provided by RDS.
+        /// </para>
+        ///  
+        /// <para>
+        /// You might need to override the default certificate in the following situations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You already migrated your applications to support the latest certificate authority
+        /// (CA) certificate, but the new CA certificate is not yet the RDS default CA certificate
+        /// for the specified AWS Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS has already moved to a new default CA certificate for the specified AWS Region,
+        /// but you are still in the process of supporting the new CA certificate. In this case,
+        /// you temporarily need additional time to finish your application changes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about rotating your SSL/TLS certificate for RDS DB engines, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+        /// Rotating Your SSL/TLS Certificate</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about rotating your SSL/TLS certificate for Aurora DB engines,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+        /// Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCertificates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyCertificates service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
+        /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCertificates">REST API Reference for ModifyCertificates Operation</seealso>
+        public virtual Task<ModifyCertificatesResponse> ModifyCertificatesAsync(ModifyCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyCertificatesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyCertificatesResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -72,6 +72,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.CertificateType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CustomerOverride", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.CustomerOverride = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CustomerOverrideValidTill", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CustomerOverrideValidTill = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Thumbprint", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -38,7 +38,8 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This action only applies to Aurora DB clusters.
+    /// This operation can also return information for Amazon Neptune DB instances and Amazon
+    /// DocumentDB instances.
     /// </para>
     ///  </note>
     /// </summary>

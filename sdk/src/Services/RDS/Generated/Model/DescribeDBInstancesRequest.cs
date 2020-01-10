@@ -30,6 +30,13 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DescribeDBInstances operation.
     /// Returns information about provisioned RDS instances. This API supports pagination.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation can also return information for Amazon Neptune DB instances and Amazon
+    /// DocumentDB instances.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeDBInstancesRequest : AmazonRDSRequest
     {
