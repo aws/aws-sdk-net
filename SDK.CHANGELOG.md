@@ -1,3 +1,22 @@
+### 3.3.661.0 (2020-01-10 19:16 UTC)
+* Chime (3.3.106.0)
+	* Add shared profile support to new and existing users
+* EC2 (3.3.149.0)
+	* This release introduces the ability to tag egress only internet gateways, local gateways, local gateway route tables, local gateway virtual interfaces, local gateway virtual interface groups, local gateway route table VPC association and local gateway route table virtual interface group association. You can use tags to organize and identify your resources for cost allocation. 
+* RDS (3.3.116.0)
+	* This release adds an operation that enables users to override the system-default SSL/TLS certificate for new Amazon RDS DB instances temporarily, or remove the customer override.
+* SageMaker (3.3.109.0)
+	* SageMaker ListTrialComponents API filter by TrialName and ExperimentName.
+* Transfer (3.3.105.0)
+	* This release introduces a new endpoint type that allows you to attach Elastic IP addresses from your AWS account with your server's endpoint directly and whitelist access to your server by client's internet IP address(es) using VPC Security Groups.
+* WorkSpaces (3.3.108.0)
+	* Added the migrate feature to Amazon WorkSpaces.
+* Core 3.3.104.15
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.660.1 (2020-01-09 19:22 UTC)
 * CloudWatchLogs (3.3.101.71)
 	* Documentation updates for logs
