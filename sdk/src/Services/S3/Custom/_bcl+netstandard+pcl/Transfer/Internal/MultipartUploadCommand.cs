@@ -154,6 +154,12 @@ namespace Amazon.S3.Transfer.Internal
 
         private CompleteMultipartUploadRequest ConstructCompleteMultipartUploadRequest(InitiateMultipartUploadResponse initResponse)
         {
+            if(this._uploadResponses.Count != this._totalNumberOfParts)
+            {
+                throw new InvalidOperationException($"Cannot complete multipart upload request. The total number of completed parts ({this._uploadResponses.Count}) " +
+                    $"does not equal the total number of parts created ({this._totalNumberOfParts}).");
+            }
+
             var compRequest = new CompleteMultipartUploadRequest()
             {
                 BucketName = this._fileTransporterRequest.BucketName,
