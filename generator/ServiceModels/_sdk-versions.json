@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.661.0",
+    "ProductVersion" : "3.3.662.0",
     "CoreVersion"    : "3.3.104.15",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.149.0",
+            "Version" : "3.3.149.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.15"
@@ -401,7 +401,7 @@
             "InPreview"               : false
         },
         "ElasticFileSystem"         : {
-            "Version" : "3.3.103.28",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.15"
@@ -1361,7 +1361,7 @@
             "InPreview"               : false
         },
         "Backup"                          : {
-            "Version" : "3.3.100.122",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.15"

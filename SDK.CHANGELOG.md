@@ -1,3 +1,11 @@
+### 3.3.662.0 (2020-01-13 19:11 UTC)
+* Backup (3.3.101.0)
+	* Cross-region backup is a new AWS Backup feature that allows enterprises to copy backups across multiple AWS services to different regions. 
+* EC2 (3.3.149.1)
+	* Documentation updates for the StopInstances API. You can now stop and start an Amazon EBS-backed Spot Instance at will, instead of relying on the Stop interruption behavior to stop your Spot Instances when interrupted.
+* ElasticFileSystem (3.3.104.0)
+	* This release adds support for managing EFS file system policies and EFS Access Points.
+
 ### 3.3.661.0 (2020-01-10 19:16 UTC)
 * Chime (3.3.106.0)
 	* Add shared profile support to new and existing users
