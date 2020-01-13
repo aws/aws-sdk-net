@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListBackupJobs operation
+    /// Response Unmarshaller for DescribeCopyJob operation
     /// </summary>  
-    public class ListBackupJobsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeCopyJobResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,16 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListBackupJobsResponse response = new ListBackupJobsResponse();
+            DescribeCopyJobResponse response = new DescribeCopyJobResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BackupJobs", targetDepth))
+                if (context.TestExpression("CopyJob", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BackupJob, BackupJobUnmarshaller>(BackupJobUnmarshaller.Instance);
-                    response.BackupJobs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
+                    var unmarshaller = CopyJobUnmarshaller.Instance;
+                    response.CopyJob = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,9 +76,13 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             {
                 return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
             {
-                return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new MissingParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
             {
@@ -93,9 +91,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             return new AmazonBackupException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListBackupJobsResponseUnmarshaller _instance = new ListBackupJobsResponseUnmarshaller();        
+        private static DescribeCopyJobResponseUnmarshaller _instance = new DescribeCopyJobResponseUnmarshaller();        
 
-        internal static ListBackupJobsResponseUnmarshaller GetInstance()
+        internal static DescribeCopyJobResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +101,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListBackupJobsResponseUnmarshaller Instance
+        public static DescribeCopyJobResponseUnmarshaller Instance
         {
             get
             {

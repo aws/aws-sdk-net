@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Contains an array of triplets made up of a condition type (such as <code>StringEquals</code>),
+    /// Contains an array of triplets made up of a condition type (such as <code>STRINGEQUALS</code>),
     /// a key, and a value. Conditions are used to filter resources in a selection that is
     /// assigned to a backup plan.
     /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ConditionType. 
         /// <para>
-        /// An operation, such as <code>StringEquals</code>, that is applied to a key-value pair
+        /// An operation, such as <code>STRINGEQUALS</code>, that is applied to a key-value pair
         /// used to filter resources in a selection.
         /// </para>
         /// </summary>

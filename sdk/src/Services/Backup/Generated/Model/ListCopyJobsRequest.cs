@@ -28,45 +28,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListBackupJobs operation.
-    /// Returns metadata about your backup jobs.
+    /// Container for the parameters to the ListCopyJobs operation.
+    /// Returns metadata about your copy jobs.
     /// </summary>
-    public partial class ListBackupJobsRequest : AmazonBackupRequest
+    public partial class ListCopyJobsRequest : AmazonBackupRequest
     {
-        private string _byBackupVaultName;
         private DateTime? _byCreatedAfter;
         private DateTime? _byCreatedBefore;
+        private string _byDestinationVaultArn;
         private string _byResourceArn;
         private string _byResourceType;
-        private BackupJobState _byState;
+        private CopyJobState _byState;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ByBackupVaultName. 
-        /// <para>
-        /// Returns only backup jobs that will be stored in the specified backup vault. Backup
-        /// vaults are identified by names that are unique to the account used to create them
-        /// and the AWS Region where they are created. They consist of lowercase letters, numbers,
-        /// and hyphens.
-        /// </para>
-        /// </summary>
-        public string ByBackupVaultName
-        {
-            get { return this._byBackupVaultName; }
-            set { this._byBackupVaultName = value; }
-        }
-
-        // Check to see if ByBackupVaultName property is set
-        internal bool IsSetByBackupVaultName()
-        {
-            return this._byBackupVaultName != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ByCreatedAfter. 
         /// <para>
-        /// Returns only backup jobs that were created after the specified date.
+        /// Returns only copy jobs that were created after the specified date.
         /// </para>
         /// </summary>
         public DateTime ByCreatedAfter
@@ -84,7 +63,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ByCreatedBefore. 
         /// <para>
-        /// Returns only backup jobs that were created before the specified date.
+        /// Returns only copy jobs that were created before the specified date.
         /// </para>
         /// </summary>
         public DateTime ByCreatedBefore
@@ -100,9 +79,29 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ByDestinationVaultArn. 
+        /// <para>
+        /// An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy
+        /// from; for example, arn:aws:backup:us-east-1:123456789012:vault:aBackupVault. 
+        /// </para>
+        /// </summary>
+        public string ByDestinationVaultArn
+        {
+            get { return this._byDestinationVaultArn; }
+            set { this._byDestinationVaultArn = value; }
+        }
+
+        // Check to see if ByDestinationVaultArn property is set
+        internal bool IsSetByDestinationVaultArn()
+        {
+            return this._byDestinationVaultArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ByResourceArn. 
         /// <para>
-        /// Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).
+        /// Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).
+        /// 
         /// </para>
         /// </summary>
         public string ByResourceArn
@@ -159,10 +158,10 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ByState. 
         /// <para>
-        /// Returns only backup jobs that are in the specified state.
+        /// Returns only copy jobs that are in the specified state.
         /// </para>
         /// </summary>
-        public BackupJobState ByState
+        public CopyJobState ByState
         {
             get { return this._byState; }
             set { this._byState = value; }
@@ -197,9 +196,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The next item following a partial list of returned items. For example, if a request
-        /// is made to return <code>maxResults</code> number of items, <code>NextToken</code>
-        /// allows you to return more items in your list starting at the location pointed to by
-        /// the next token.
+        /// is made to return maxResults number of items, NextToken allows you to return more
+        /// items in your list starting at the location pointed to by the next token. 
         /// </para>
         /// </summary>
         public string NextToken

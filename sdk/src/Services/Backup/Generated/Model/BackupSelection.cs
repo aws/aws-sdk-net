@@ -61,7 +61,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ListOfTags. 
         /// <para>
         /// An array of conditions used to specify a set of resources to assign to a backup plan;
-        /// for example, <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+        /// for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
         /// </para>
         /// </summary>
         public List<Condition> ListOfTags
@@ -79,9 +79,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// An array of strings that either contain Amazon Resource Names (ARNs) or match patterns
-        /// such as "<code>arn:aws:ec2:us-east-1:123456789012:volume/*</code>" of resources to
-        /// assign to a backup plan.
+        /// An array of strings that contain Amazon Resource Names (ARNs) of resources to assign
+        /// to a backup plan.
         /// </para>
         /// </summary>
         public List<string> Resources

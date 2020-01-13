@@ -70,11 +70,6 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
         /// A customer chosen string that can be used to distinguish between calls to <code>StartRestoreJob</code>.
-        /// Idempotency tokens time out after one hour. Therefore, if you call <code>StartRestoreJob</code>
-        /// multiple times with the same idempotency token within one hour, AWS Backup recognizes
-        /// that you are requesting only one restore job and initiates only one. If you change
-        /// the idempotency token for each call, AWS Backup recognizes that you are requesting
-        /// to start multiple restores. 
         /// </para>
         /// </summary>
         public string IdempotencyToken
@@ -92,9 +87,53 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// A set of metadata key-value pairs. Lists the metadata that the recovery point was
-        /// created with.
+        /// A set of metadata key-value pairs. Contains information, such as a resource name,
+        /// required to restore a recovery point.
         /// </para>
+        ///  
+        /// <para>
+        ///  You can get configuration metadata about a resource at the time it was backed-up
+        /// by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition
+        /// to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
+        /// to restore a resource. For example, you might need to provide a new resource name
+        /// if the original already exists.
+        /// </para>
+        ///  
+        /// <para>
+        /// You need to specify specific metadata to restore an Amazon Elastic File System (Amazon
+        /// EFS) instance:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by
+        /// AWS Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system
+        /// is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be
+        /// set to <code>true</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored
+        /// file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PerformanceMode</code>: Specifies the throughput mode of the file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency)
+        /// of the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery
+        /// point is restored to a new Amazon EFS file system.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, string> Metadata
@@ -139,7 +178,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SGW</code> for AWS Storage Gateway
+        ///  <code>Storage Gateway</code> for AWS Storage Gateway
         /// </para>
         ///  </li> <li> 
         /// <para>

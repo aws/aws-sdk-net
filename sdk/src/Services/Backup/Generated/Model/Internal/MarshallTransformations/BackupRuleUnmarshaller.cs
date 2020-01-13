@@ -70,6 +70,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompletionWindowMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CopyActions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CopyAction, CopyActionUnmarshaller>(CopyActionUnmarshaller.Instance);
+                    unmarshalledObject.CopyActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Lifecycle", targetDepth))
                 {
                     var unmarshaller = LifecycleUnmarshaller.Instance;

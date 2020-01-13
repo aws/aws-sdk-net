@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListBackupJobs operation
+    /// Response Unmarshaller for ListCopyJobs operation
     /// </summary>  
-    public class ListBackupJobsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListCopyJobsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListBackupJobsResponse response = new ListBackupJobsResponse();
+            ListCopyJobsResponse response = new ListCopyJobsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BackupJobs", targetDepth))
+                if (context.TestExpression("CopyJobs", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BackupJob, BackupJobUnmarshaller>(BackupJobUnmarshaller.Instance);
-                    response.BackupJobs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<CopyJob, CopyJobUnmarshaller>(CopyJobUnmarshaller.Instance);
+                    response.CopyJobs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NextToken", targetDepth))
@@ -82,10 +82,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             {
                 return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
-            {
-                return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
             {
                 return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -93,9 +89,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             return new AmazonBackupException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListBackupJobsResponseUnmarshaller _instance = new ListBackupJobsResponseUnmarshaller();        
+        private static ListCopyJobsResponseUnmarshaller _instance = new ListCopyJobsResponseUnmarshaller();        
 
-        internal static ListBackupJobsResponseUnmarshaller GetInstance()
+        internal static ListCopyJobsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +99,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListBackupJobsResponseUnmarshaller Instance
+        public static ListCopyJobsResponseUnmarshaller Instance
         {
             get
             {

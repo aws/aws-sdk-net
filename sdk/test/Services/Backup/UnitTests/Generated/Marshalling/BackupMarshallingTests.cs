@@ -321,6 +321,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Backup")]
+        public void DescribeCopyJobMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeCopyJob");
+
+            var request = InstantiateClassGenerator.Execute<DescribeCopyJobRequest>();
+            var marshaller = new DescribeCopyJobRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeCopyJob", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeCopyJobResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DescribeCopyJobResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Backup")]
         public void DescribeProtectedResourceMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeProtectedResource");
@@ -897,6 +929,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Backup")]
+        public void ListCopyJobsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListCopyJobs");
+
+            var request = InstantiateClassGenerator.Execute<ListCopyJobsRequest>();
+            var marshaller = new ListCopyJobsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListCopyJobs", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListCopyJobsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListCopyJobsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Backup")]
         public void ListProtectedResourcesMarshallTest()
         {
             var operation = service_model.FindOperation("ListProtectedResources");
@@ -1115,6 +1179,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = StartBackupJobResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as StartBackupJobResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Backup")]
+        public void StartCopyJobMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartCopyJob");
+
+            var request = InstantiateClassGenerator.Execute<StartCopyJobRequest>();
+            var marshaller = new StartCopyJobRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StartCopyJob", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StartCopyJobResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as StartCopyJobResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

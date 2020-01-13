@@ -85,6 +85,14 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.ListCopyJobsRequest.ByResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListCopyJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.ListProtectedResourcesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -125,6 +133,9 @@
     <property>Amazon.Backup.Model.StartBackupJobRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.StartCopyJobRequest.SourceBackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.StartRestoreJobRequest.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
@@ -156,6 +167,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.BackupVaultListMember.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.CopyJob.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ProtectedResource.ResourceType</property>

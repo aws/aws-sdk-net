@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListBackupJobs operation
+    /// Response Unmarshaller for StartCopyJob operation
     /// </summary>  
-    public class ListBackupJobsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartCopyJobResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListBackupJobsResponse response = new ListBackupJobsResponse();
+            StartCopyJobResponse response = new StartCopyJobResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BackupJobs", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<BackupJob, BackupJobUnmarshaller>(BackupJobUnmarshaller.Instance);
-                    response.BackupJobs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("CopyJobId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
+                    response.CopyJobId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,9 +82,17 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             {
                 return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
             {
-                return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
+            {
+                return new MissingParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
             {
@@ -93,9 +101,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             return new AmazonBackupException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListBackupJobsResponseUnmarshaller _instance = new ListBackupJobsResponseUnmarshaller();        
+        private static StartCopyJobResponseUnmarshaller _instance = new StartCopyJobResponseUnmarshaller();        
 
-        internal static ListBackupJobsResponseUnmarshaller GetInstance()
+        internal static StartCopyJobResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +111,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListBackupJobsResponseUnmarshaller Instance
+        public static StartCopyJobResponseUnmarshaller Instance
         {
             get
             {
