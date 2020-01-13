@@ -126,7 +126,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string CreationToken
         {
             get { return this._creationToken; }

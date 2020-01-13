@@ -254,6 +254,111 @@ namespace Amazon.ElasticFileSystem
         #endregion
 
 
+        #region  CreateAccessPoint
+
+
+        /// <summary>
+        /// Creates an EFS access point. An access point is an application-specific view into
+        /// an EFS file system that applies an operating system user and group, and a file system
+        /// path, to any file system request made through the access point. The operating system
+        /// user and group override any identity information provided by the NFS client. The file
+        /// system path is exposed as the access point's root directory. Applications using the
+        /// access point can only access data in its own directory and below. To learn more, see
+        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
+        /// a File System Using EFS Access Points</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessPoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccessPoint service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointAlreadyExistsException">
+        /// Returned if the access point you are trying to create already exists, with the creation
+        /// token you provided in the request.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointLimitExceededException">
+        /// Returned if the AWS account has already created the maximum number of access points
+        /// allowed per file system.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
+        public virtual CreateAccessPointResponse CreateAccessPoint(CreateAccessPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessPointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAccessPointResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an EFS access point. An access point is an application-specific view into
+        /// an EFS file system that applies an operating system user and group, and a file system
+        /// path, to any file system request made through the access point. The operating system
+        /// user and group override any identity information provided by the NFS client. The file
+        /// system path is exposed as the access point's root directory. Applications using the
+        /// access point can only access data in its own directory and below. To learn more, see
+        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
+        /// a File System Using EFS Access Points</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessPoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAccessPoint service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointAlreadyExistsException">
+        /// Returned if the access point you are trying to create already exists, with the creation
+        /// token you provided in the request.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointLimitExceededException">
+        /// Returned if the AWS account has already created the maximum number of access points
+        /// allowed per file system.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
+        public virtual Task<CreateAccessPointResponse> CreateAccessPointAsync(CreateAccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessPointResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAccessPointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateFileSystem
 
 
@@ -1150,6 +1255,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
+        [Obsolete("Use TagResource.")]
         public virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
             var options = new InvokeOptions();
@@ -1191,6 +1297,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
+        [Obsolete("Use TagResource.")]
         public virtual Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1198,6 +1305,85 @@ namespace Amazon.ElasticFileSystem
             options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAccessPoint
+
+
+        /// <summary>
+        /// Deletes the specified access point. After deletion is complete, new clients can no
+        /// longer connect to the access points. Clients connected to the access point at the
+        /// time of deletion will continue to function until they terminate their connection.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:DeleteAccessPoint</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessPoint service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
+        /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteAccessPoint">REST API Reference for DeleteAccessPoint Operation</seealso>
+        public virtual DeleteAccessPointResponse DeleteAccessPoint(DeleteAccessPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessPointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessPointResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified access point. After deletion is complete, new clients can no
+        /// longer connect to the access points. Clients connected to the access point at the
+        /// time of deletion will continue to function until they terminate their connection.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:DeleteAccessPoint</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccessPoint service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
+        /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteAccessPoint">REST API Reference for DeleteAccessPoint Operation</seealso>
+        public virtual Task<DeleteAccessPointResponse> DeleteAccessPointAsync(DeleteAccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessPointResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAccessPointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1416,6 +1602,85 @@ namespace Amazon.ElasticFileSystem
             options.ResponseUnmarshaller = DeleteFileSystemResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteFileSystemResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFileSystemPolicy
+
+
+        /// <summary>
+        /// Deletes the <code>FileSystemPolicy</code> for the specified file system. The default
+        /// <code>FileSystemPolicy</code> goes into effect once the existing policy is deleted.
+        /// For more information about the default file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
+        /// Resource-based Policies with EFS</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:DeleteFileSystemPolicy</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFileSystemPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
+        /// Returned if the file system's lifecycle state is not "available".
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystemPolicy">REST API Reference for DeleteFileSystemPolicy Operation</seealso>
+        public virtual DeleteFileSystemPolicyResponse DeleteFileSystemPolicy(DeleteFileSystemPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFileSystemPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFileSystemPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFileSystemPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the <code>FileSystemPolicy</code> for the specified file system. The default
+        /// <code>FileSystemPolicy</code> goes into effect once the existing policy is deleted.
+        /// For more information about the default file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
+        /// Resource-based Policies with EFS</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:DeleteFileSystemPolicy</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFileSystemPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
+        /// Returned if the file system's lifecycle state is not "available".
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystemPolicy">REST API Reference for DeleteFileSystemPolicy Operation</seealso>
+        public virtual Task<DeleteFileSystemPolicyResponse> DeleteFileSystemPolicyAsync(DeleteFileSystemPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFileSystemPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFileSystemPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteFileSystemPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1724,6 +1989,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
+        [Obsolete("Use UntagResource.")]
         public virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
             var options = new InvokeOptions();
@@ -1764,6 +2030,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
+        [Obsolete("Use UntagResource.")]
         public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1771,6 +2038,168 @@ namespace Amazon.ElasticFileSystem
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAccessPoints
+
+
+        /// <summary>
+        /// Returns the description of a specific Amazon EFS access point if the <code>AccessPointId</code>
+        /// is provided. If you provide an EFS <code>FileSystemId</code>, it returns descriptions
+        /// of all access points for that file system. You can provide either an <code>AccessPointId</code>
+        /// or a <code>FileSystemId</code> in the request, but not both. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccessPoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccessPoints service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
+        /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccessPoints">REST API Reference for DescribeAccessPoints Operation</seealso>
+        public virtual DescribeAccessPointsResponse DescribeAccessPoints(DescribeAccessPointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccessPointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccessPointsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccessPointsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the description of a specific Amazon EFS access point if the <code>AccessPointId</code>
+        /// is provided. If you provide an EFS <code>FileSystemId</code>, it returns descriptions
+        /// of all access points for that file system. You can provide either an <code>AccessPointId</code>
+        /// or a <code>FileSystemId</code> in the request, but not both. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccessPoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccessPoints service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
+        /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccessPoints">REST API Reference for DescribeAccessPoints Operation</seealso>
+        public virtual Task<DescribeAccessPointsResponse> DescribeAccessPointsAsync(DescribeAccessPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccessPointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccessPointsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAccessPointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFileSystemPolicy
+
+
+        /// <summary>
+        /// Returns the <code>FileSystemPolicy</code> for the specified EFS file system.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:DescribeFileSystemPolicy</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFileSystemPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.PolicyNotFoundException">
+        /// Returned if the default file system policy is in effect for the EFS file system specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystemPolicy">REST API Reference for DescribeFileSystemPolicy Operation</seealso>
+        public virtual DescribeFileSystemPolicyResponse DescribeFileSystemPolicy(DescribeFileSystemPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFileSystemPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFileSystemPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFileSystemPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the <code>FileSystemPolicy</code> for the specified EFS file system.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:DescribeFileSystemPolicy</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFileSystemPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.PolicyNotFoundException">
+        /// Returned if the default file system policy is in effect for the EFS file system specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystemPolicy">REST API Reference for DescribeFileSystemPolicy Operation</seealso>
+        public virtual Task<DescribeFileSystemPolicyResponse> DescribeFileSystemPolicyAsync(DescribeFileSystemPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFileSystemPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFileSystemPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeFileSystemPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2000,9 +2429,13 @@ namespace Amazon.ElasticFileSystem
         /// or on the file system of the mount target that you specify in <code>MountTargetId</code>.
         /// </para>
         /// </summary>
-        /// <param name="fileSystemId">(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if <code>MountTargetId</code> is not included.</param>
+        /// <param name="fileSystemId">(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</param>
         /// 
         /// <returns>The response from the DescribeMountTargets service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
+        /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
         /// value or a missing required parameter.
@@ -2041,6 +2474,10 @@ namespace Amazon.ElasticFileSystem
         /// <param name="request">Container for the necessary parameters to execute the DescribeMountTargets service method.</param>
         /// 
         /// <returns>The response from the DescribeMountTargets service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
+        /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
         /// value or a missing required parameter.
@@ -2078,12 +2515,16 @@ namespace Amazon.ElasticFileSystem
         /// or on the file system of the mount target that you specify in <code>MountTargetId</code>.
         /// </para>
         /// </summary>
-        /// <param name="fileSystemId">(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if <code>MountTargetId</code> is not included.</param>
+        /// <param name="fileSystemId">(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the DescribeMountTargets service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
+        /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
         /// value or a missing required parameter.
@@ -2125,6 +2566,10 @@ namespace Amazon.ElasticFileSystem
         /// </param>
         /// 
         /// <returns>The response from the DescribeMountTargets service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
+        /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
         /// value or a missing required parameter.
@@ -2379,6 +2824,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
+        [Obsolete("Use ListTagsForResource.")]
         public virtual DescribeTagsResponse DescribeTags(string fileSystemId)
         {
             var request = new DescribeTagsRequest();
@@ -2414,6 +2860,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
+        [Obsolete("Use ListTagsForResource.")]
         public virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
             var options = new InvokeOptions();
@@ -2454,6 +2901,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
+        [Obsolete("Use ListTagsForResource.")]
         public virtual Task<DescribeTagsResponse> DescribeTagsAsync(string fileSystemId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeTagsRequest();
@@ -2492,6 +2940,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
+        [Obsolete("Use ListTagsForResource.")]
         public virtual Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2499,6 +2948,91 @@ namespace Amazon.ElasticFileSystem
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Lists all tags for a top-level EFS resource. You must provide the ID of the resource
+        /// that you want to retrieve the tags for.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
+        /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all tags for a top-level EFS resource. You must provide the ID of the resource
+        /// that you want to retrieve the tags for.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
+        /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2630,6 +3164,101 @@ namespace Amazon.ElasticFileSystem
             options.ResponseUnmarshaller = ModifyMountTargetSecurityGroupsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyMountTargetSecurityGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutFileSystemPolicy
+
+
+        /// <summary>
+        /// Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file system.
+        /// A file system policy is an IAM resource-based policy and can contain multiple policy
+        /// statements. A file system always has exactly one file system policy, which can be
+        /// the default policy or an explicit policy set or updated using this API operation.
+        /// When an explicit policy is set, it overrides the default policy. For more information
+        /// about the default file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
+        /// Resource-based Policies with EFS</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFileSystemPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
+        /// Returned if the file system's lifecycle state is not "available".
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InvalidPolicyException">
+        /// Returned if the <code>FileSystemPolicy</code> is is malformed or contains an error
+        /// such as an invalid parameter value or a missing required parameter. Returned in the
+        /// case of a policy lockout safety check error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy">REST API Reference for PutFileSystemPolicy Operation</seealso>
+        public virtual PutFileSystemPolicyResponse PutFileSystemPolicy(PutFileSystemPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutFileSystemPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutFileSystemPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutFileSystemPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file system.
+        /// A file system policy is an IAM resource-based policy and can contain multiple policy
+        /// statements. A file system always has exactly one file system policy, which can be
+        /// the default policy or an explicit policy set or updated using this API operation.
+        /// When an explicit policy is set, it overrides the default policy. For more information
+        /// about the default file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
+        /// Resource-based Policies with EFS</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFileSystemPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
+        /// Returned if the file system's lifecycle state is not "available".
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InvalidPolicyException">
+        /// Returned if the <code>FileSystemPolicy</code> is is malformed or contains an error
+        /// such as an invalid parameter value or a missing required parameter. Returned in the
+        /// case of a policy lockout safety check error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy">REST API Reference for PutFileSystemPolicy Operation</seealso>
+        public virtual Task<PutFileSystemPolicyResponse> PutFileSystemPolicyAsync(PutFileSystemPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutFileSystemPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutFileSystemPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutFileSystemPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2779,6 +3408,176 @@ namespace Amazon.ElasticFileSystem
             options.ResponseUnmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutLifecycleConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Creates a tag for an EFS resource. You can create tags for EFS file systems and access
+        /// points using this API operation.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:TagResource</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
+        /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a tag for an EFS resource. You can create tags for EFS file systems and access
+        /// points using this API operation.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:TagResource</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
+        /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes tags from an EFS resource. You can remove tags from EFS file systems and access
+        /// points using this API operation.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:UntagResource</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
+        /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes tags from an EFS resource. You can remove tags from EFS file systems and access
+        /// points using this API operation.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:UntagResource</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointNotFoundException">
+        /// Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

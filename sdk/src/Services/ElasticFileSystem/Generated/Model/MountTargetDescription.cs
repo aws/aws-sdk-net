@@ -32,6 +32,8 @@ namespace Amazon.ElasticFileSystem.Model
     /// </summary>
     public partial class MountTargetDescription
     {
+        private string _availabilityZoneId;
+        private string _availabilityZoneName;
         private string _fileSystemId;
         private string _ipAddress;
         private LifeCycleState _lifeCycleState;
@@ -39,6 +41,47 @@ namespace Amazon.ElasticFileSystem.Model
         private string _networkInterfaceId;
         private string _ownerId;
         private string _subnetId;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The unique and consistent identifier of the Availability Zone (AZ) that the mount
+        /// target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1
+        /// Region and it has the same location in every AWS account.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneName. 
+        /// <para>
+        /// The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently
+        /// mapped to names for each AWS account. For example, the Availability Zone <code>us-east-1a</code>
+        /// for your AWS account might not be the same location as <code>us-east-1a</code> for
+        /// another AWS account.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneName
+        {
+            get { return this._availabilityZoneName; }
+            set { this._availabilityZoneName = value; }
+        }
+
+        // Check to see if AvailabilityZoneName property is set
+        internal bool IsSetAvailabilityZoneName()
+        {
+            return this._availabilityZoneName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FileSystemId. 

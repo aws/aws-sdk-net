@@ -42,6 +42,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// </summary>
     public partial class DescribeMountTargetsRequest : AmazonElasticFileSystemRequest
     {
+        private string _accessPointId;
         private string _fileSystemId;
         private string _marker;
         private int? _maxItems;
@@ -55,17 +56,38 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Instantiates DescribeMountTargetsRequest with the parameterized properties
         /// </summary>
-        /// <param name="fileSystemId">(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if <code>MountTargetId</code> is not included.</param>
+        /// <param name="fileSystemId">(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</param>
         public DescribeMountTargetsRequest(string fileSystemId)
         {
             _fileSystemId = fileSystemId;
         }
 
         /// <summary>
+        /// Gets and sets the property AccessPointId. 
+        /// <para>
+        /// (Optional) The ID of the access point whose mount targets that you want to list. It
+        /// must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code>
+        /// is not included in your request. Accepts either an access point ID or ARN as input.
+        /// </para>
+        /// </summary>
+        public string AccessPointId
+        {
+            get { return this._accessPointId; }
+            set { this._accessPointId = value; }
+        }
+
+        // Check to see if AccessPointId property is set
+        internal bool IsSetAccessPointId()
+        {
+            return this._accessPointId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
         /// (Optional) ID of the file system whose mount targets you want to list (String). It
-        /// must be included in your request if <code>MountTargetId</code> is not included.
+        /// must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code>
+        /// is not included. Accepts either a file system ID or ARN as input.
         /// </para>
         /// </summary>
         public string FileSystemId
@@ -105,7 +127,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <para>
         /// (Optional) Maximum number of mount targets to return in the response. Currently, this
         /// number is automatically set to 10, and other values are ignored. The response is paginated
-        /// at 10 per page if you have more than 10 mount targets.
+        /// at 100 per page if you have more than 100 mount targets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -125,7 +147,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property MountTargetId. 
         /// <para>
         /// (Optional) ID of the mount target that you want to have described (String). It must
-        /// be included in your request if <code>FileSystemId</code> is not included.
+        /// be included in your request if <code>FileSystemId</code> is not included. Accepts
+        /// either a mount target ID or ARN as input.
         /// </para>
         /// </summary>
         public string MountTargetId

@@ -72,6 +72,11 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CreationToken);
                 }
 
+                else if(!(publicRequest.IsSetCreationToken()))
+                {
+                    context.Writer.WritePropertyName("CreationToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                }
                 if(publicRequest.IsSetEncrypted())
                 {
                     context.Writer.WritePropertyName("Encrypted");

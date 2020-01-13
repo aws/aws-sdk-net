@@ -59,6 +59,9 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetAccessPointId())
+                request.Parameters.Add("AccessPointId", StringUtils.FromString(publicRequest.AccessPointId));
+            
             if (publicRequest.IsSetFileSystemId())
                 request.Parameters.Add("FileSystemId", StringUtils.FromString(publicRequest.FileSystemId));
             
