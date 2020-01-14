@@ -1,3 +1,7 @@
+### 3.3.663.0 (2020-01-14 19:16 UTC)
+* EC2 (3.3.150.0)
+	* This release adds support for partition placement groups and instance metadata option in Launch Templates
+
 ### 3.3.662.0 (2020-01-13 19:11 UTC)
 * Backup (3.3.101.0)
 	* Cross-region backup is a new AWS Backup feature that allows enterprises to copy backups across multiple AWS services to different regions. 
