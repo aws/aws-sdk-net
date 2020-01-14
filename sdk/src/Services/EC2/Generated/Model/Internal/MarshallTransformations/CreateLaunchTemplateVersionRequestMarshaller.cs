@@ -263,6 +263,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+                    if(publicRequest.LaunchTemplateData.IsSetMetadataOptions())
+                    {
+                        if(publicRequest.LaunchTemplateData.MetadataOptions.IsSetHttpEndpoint())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "MetadataOptions" + "." + "HttpEndpoint", StringUtils.FromString(publicRequest.LaunchTemplateData.MetadataOptions.HttpEndpoint));
+                        }
+                        if(publicRequest.LaunchTemplateData.MetadataOptions.IsSetHttpPutResponseHopLimit())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "MetadataOptions" + "." + "HttpPutResponseHopLimit", StringUtils.FromInt(publicRequest.LaunchTemplateData.MetadataOptions.HttpPutResponseHopLimit));
+                        }
+                        if(publicRequest.LaunchTemplateData.MetadataOptions.IsSetHttpTokens())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "MetadataOptions" + "." + "HttpTokens", StringUtils.FromString(publicRequest.LaunchTemplateData.MetadataOptions.HttpTokens));
+                        }
+                    }
                     if(publicRequest.LaunchTemplateData.IsSetMonitoring())
                     {
                         if(publicRequest.LaunchTemplateData.Monitoring.IsSetEnabled())
@@ -376,6 +391,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         if(publicRequest.LaunchTemplateData.Placement.IsSetHostResourceGroupArn())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "HostResourceGroupArn", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.HostResourceGroupArn));
+                        }
+                        if(publicRequest.LaunchTemplateData.Placement.IsSetPartitionNumber())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "PartitionNumber", StringUtils.FromInt(publicRequest.LaunchTemplateData.Placement.PartitionNumber));
                         }
                         if(publicRequest.LaunchTemplateData.Placement.IsSetSpreadDomain())
                         {

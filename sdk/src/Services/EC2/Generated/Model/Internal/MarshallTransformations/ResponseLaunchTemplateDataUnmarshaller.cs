@@ -160,6 +160,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LicenseSpecifications.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("metadataOptions", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplateInstanceMetadataOptionsUnmarshaller.Instance;
+                        unmarshalledObject.MetadataOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("monitoring", targetDepth))
                     {
                         var unmarshaller = LaunchTemplatesMonitoringUnmarshaller.Instance;

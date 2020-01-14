@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LaunchTemplatePlacement Object
+    /// Response Unmarshaller for LaunchTemplateInstanceMetadataOptions Object
     /// </summary>  
-    public class LaunchTemplatePlacementUnmarshaller : IUnmarshaller<LaunchTemplatePlacement, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplatePlacement, JsonUnmarshallerContext>
+    public class LaunchTemplateInstanceMetadataOptionsUnmarshaller : IUnmarshaller<LaunchTemplateInstanceMetadataOptions, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplateInstanceMetadataOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LaunchTemplatePlacement Unmarshall(XmlUnmarshallerContext context)
+        public LaunchTemplateInstanceMetadataOptions Unmarshall(XmlUnmarshallerContext context)
         {
-            LaunchTemplatePlacement unmarshalledObject = new LaunchTemplatePlacement();
+            LaunchTemplateInstanceMetadataOptions unmarshalledObject = new LaunchTemplateInstanceMetadataOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,52 +54,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("affinity", targetDepth))
+                    if (context.TestExpression("httpEndpoint", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Affinity = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.HttpEndpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("availabilityZone", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("groupName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("hostId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HostId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("hostResourceGroupArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HostResourceGroupArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("partitionNumber", targetDepth))
+                    if (context.TestExpression("httpPutResponseHopLimit", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.PartitionNumber = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.HttpPutResponseHopLimit = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("spreadDomain", targetDepth))
+                    if (context.TestExpression("httpTokens", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SpreadDomain = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.HttpTokens = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("tenancy", targetDepth))
+                    if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -117,18 +93,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LaunchTemplatePlacement Unmarshall(JsonUnmarshallerContext context)
+        public LaunchTemplateInstanceMetadataOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static LaunchTemplatePlacementUnmarshaller _instance = new LaunchTemplatePlacementUnmarshaller();        
+        private static LaunchTemplateInstanceMetadataOptionsUnmarshaller _instance = new LaunchTemplateInstanceMetadataOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LaunchTemplatePlacementUnmarshaller Instance
+        public static LaunchTemplateInstanceMetadataOptionsUnmarshaller Instance
         {
             get
             {
