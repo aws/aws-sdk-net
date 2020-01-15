@@ -1,3 +1,18 @@
+### 3.3.664.0 (2020-01-15 20:03 UTC)
+* EC2 (3.3.151.0)
+	* General Update to EC2 Docs and SDKs
+* Organizations (3.3.104.18)
+	* Updated description for PolicyID parameter and ConstraintViolationException.
+* SecurityHub (3.3.106.0)
+	* Add support for DescribeStandardsControls and UpdateStandardsControl. These new Security Hub API operations are used to track and manage whether a compliance standards control is enabled.
+* SimpleSystemsManagement (3.3.117.7)
+	* Document updates for Patch Manager 'NoReboot' feature.
+* Core 3.3.104.16
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.663.0 (2020-01-14 19:16 UTC)
 * EC2 (3.3.150.0)
 	* This release adds support for partition placement groups and instance metadata option in Launch Templates
