@@ -62,6 +62,21 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more filters. Filter names and values are case-sensitive.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>description</code> - The description of the authorization rule.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>destination-cidr</code> - The CIDR of the network to which the authorization
+        /// rule applies.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>group-id</code> - The ID of the Active Directory group to which the authorization
+        /// rule grants access.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

@@ -159,7 +159,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>vcpu-info.default-threads-per-core</code> - The default number of threads per
-        /// cores for the instance type.
+        /// core for the instance type.
         /// </para>
         ///  </li> <li> 
         /// <para>

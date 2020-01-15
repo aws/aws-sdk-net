@@ -61,6 +61,15 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more filters. Filter names and values are case-sensitive.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>endpoint-id</code> - The ID of the Client VPN endpoint.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

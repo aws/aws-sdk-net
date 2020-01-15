@@ -312,7 +312,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Any tags applied to the import image task.
+        /// The tags for the import image task.
         /// </para>
         /// </summary>
         public List<Tag> Tags

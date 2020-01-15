@@ -55,7 +55,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Filters.
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// the filters for the export tasks.
+        /// </para>
         /// </summary>
         public List<Filter> Filters
         {

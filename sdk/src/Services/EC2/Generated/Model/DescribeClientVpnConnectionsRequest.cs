@@ -63,6 +63,16 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more filters. Filter names and values are case-sensitive.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>connection-id</code> - The ID of the connection.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>username</code> - For Active Directory client authentication, the user name
+        /// of the client who established the client connection.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

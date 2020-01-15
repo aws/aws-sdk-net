@@ -81,6 +81,19 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more filters. Filter names and values are case-sensitive.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>association-id</code> - The ID of the association.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>target-network-id</code> - The ID of the subnet specified as the target network.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>vpc-id</code> - The ID of the VPC in which the target network is located.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

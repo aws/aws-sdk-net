@@ -62,6 +62,20 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more filters. Filter names and values are case-sensitive.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>destination-cidr</code> - The CIDR of the route destination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code>
+        /// | <code>add-route</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>target-subnet</code> - The ID of the subnet through which traffic is routed.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

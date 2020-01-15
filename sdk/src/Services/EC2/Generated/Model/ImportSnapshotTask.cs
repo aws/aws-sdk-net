@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Any tags applied to the import snapshot task.
+        /// The tags for the import snapshot task.
         /// </para>
         /// </summary>
         public List<Tag> Tags
