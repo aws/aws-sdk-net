@@ -942,6 +942,65 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  DescribeStandardsControls
+
+
+        /// <summary>
+        /// Returns a list of compliance standards controls.
+        /// 
+        ///  
+        /// <para>
+        /// For each control, the results include information about whether it is currently enabled,
+        /// the severity, and a link to remediation information.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStandardsControls service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStandardsControls service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls">REST API Reference for DescribeStandardsControls Operation</seealso>
+        DescribeStandardsControlsResponse DescribeStandardsControls(DescribeStandardsControlsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStandardsControls operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStandardsControls operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStandardsControls
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls">REST API Reference for DescribeStandardsControls Operation</seealso>
+        IAsyncResult BeginDescribeStandardsControls(DescribeStandardsControlsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStandardsControls operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStandardsControls.</param>
+        /// 
+        /// <returns>Returns a  DescribeStandardsControlsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls">REST API Reference for DescribeStandardsControls Operation</seealso>
+        DescribeStandardsControlsResponse EndDescribeStandardsControls(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableImportFindingsForProduct
 
 
@@ -2231,6 +2290,59 @@ namespace Amazon.SecurityHub
         /// <returns>Returns a  UpdateInsightResult from SecurityHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateInsight">REST API Reference for UpdateInsight Operation</seealso>
         UpdateInsightResponse EndUpdateInsight(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateStandardsControl
+
+
+        /// <summary>
+        /// Used to control whether an individual compliance standard control is enabled or disabled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStandardsControl service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStandardsControl service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl">REST API Reference for UpdateStandardsControl Operation</seealso>
+        UpdateStandardsControlResponse UpdateStandardsControl(UpdateStandardsControlRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStandardsControl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStandardsControl operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStandardsControl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl">REST API Reference for UpdateStandardsControl Operation</seealso>
+        IAsyncResult BeginUpdateStandardsControl(UpdateStandardsControlRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateStandardsControl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStandardsControl.</param>
+        /// 
+        /// <returns>Returns a  UpdateStandardsControlResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl">REST API Reference for UpdateStandardsControl Operation</seealso>
+        UpdateStandardsControlResponse EndUpdateStandardsControl(IAsyncResult asyncResult);
 
         #endregion
         

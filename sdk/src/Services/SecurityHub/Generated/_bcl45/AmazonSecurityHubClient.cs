@@ -1428,6 +1428,85 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  DescribeStandardsControls
+
+
+        /// <summary>
+        /// Returns a list of compliance standards controls.
+        /// 
+        ///  
+        /// <para>
+        /// For each control, the results include information about whether it is currently enabled,
+        /// the severity, and a link to remediation information.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStandardsControls service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStandardsControls service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls">REST API Reference for DescribeStandardsControls Operation</seealso>
+        public virtual DescribeStandardsControlsResponse DescribeStandardsControls(DescribeStandardsControlsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStandardsControlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStandardsControlsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStandardsControlsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of compliance standards controls.
+        /// 
+        ///  
+        /// <para>
+        /// For each control, the results include information about whether it is currently enabled,
+        /// the severity, and a link to remediation information.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStandardsControls service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStandardsControls service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls">REST API Reference for DescribeStandardsControls Operation</seealso>
+        public virtual Task<DescribeStandardsControlsResponse> DescribeStandardsControlsAsync(DescribeStandardsControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStandardsControlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStandardsControlsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeStandardsControlsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableImportFindingsForProduct
 
 
@@ -3111,6 +3190,73 @@ namespace Amazon.SecurityHub
             options.ResponseUnmarshaller = UpdateInsightResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateInsightResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateStandardsControl
+
+
+        /// <summary>
+        /// Used to control whether an individual compliance standard control is enabled or disabled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStandardsControl service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStandardsControl service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl">REST API Reference for UpdateStandardsControl Operation</seealso>
+        public virtual UpdateStandardsControlResponse UpdateStandardsControl(UpdateStandardsControlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStandardsControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStandardsControlResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStandardsControlResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Used to control whether an individual compliance standard control is enabled or disabled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStandardsControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateStandardsControl service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl">REST API Reference for UpdateStandardsControl Operation</seealso>
+        public virtual Task<UpdateStandardsControlResponse> UpdateStandardsControlAsync(UpdateStandardsControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStandardsControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStandardsControlResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateStandardsControlResponse>(request, options, cancellationToken);
         }
 
         #endregion

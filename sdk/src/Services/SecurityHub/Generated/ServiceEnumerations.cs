@@ -133,6 +133,56 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type ControlStatus.
+    /// </summary>
+    public class ControlStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ControlStatus
+        /// </summary>
+        public static readonly ControlStatus DISABLED = new ControlStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ControlStatus
+        /// </summary>
+        public static readonly ControlStatus ENABLED = new ControlStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ControlStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ControlStatus FindValue(string value)
+        {
+            return FindValue<ControlStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ControlStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DateRangeUnit.
     /// </summary>
     public class DateRangeUnit : ConstantClass
@@ -528,6 +578,64 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RecordState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SeverityRating.
+    /// </summary>
+    public class SeverityRating : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRITICAL for SeverityRating
+        /// </summary>
+        public static readonly SeverityRating CRITICAL = new SeverityRating("CRITICAL");
+        /// <summary>
+        /// Constant HIGH for SeverityRating
+        /// </summary>
+        public static readonly SeverityRating HIGH = new SeverityRating("HIGH");
+        /// <summary>
+        /// Constant LOW for SeverityRating
+        /// </summary>
+        public static readonly SeverityRating LOW = new SeverityRating("LOW");
+        /// <summary>
+        /// Constant MEDIUM for SeverityRating
+        /// </summary>
+        public static readonly SeverityRating MEDIUM = new SeverityRating("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SeverityRating(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SeverityRating FindValue(string value)
+        {
+            return FindValue<SeverityRating>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SeverityRating(string value)
         {
             return FindValue(value);
         }

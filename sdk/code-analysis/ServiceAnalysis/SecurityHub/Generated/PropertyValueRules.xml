@@ -75,6 +75,15 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.DescribeStandardsControlsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.DescribeStandardsControlsRequest.StandardsSubscriptionArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.DisableImportFindingsForProductRequest.ProductSubscriptionArn</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -162,6 +171,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.UpdateInsightRequest.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UpdateStandardsControlRequest.DisabledReason</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UpdateStandardsControlRequest.StandardsControlArn</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -812,6 +829,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.SortCriterion.Field</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControl.ControlId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControl.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControl.DisabledReason</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControl.RemediationUrl</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControl.StandardsControlArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StandardsControl.Title</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
