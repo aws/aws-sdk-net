@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeExportTasksRequest : AmazonEC2Request
     {
         private List<string> _exportTaskIds = new List<string>();
+        private List<Filter> _filters = new List<Filter>();
 
         /// <summary>
         /// Gets and sets the property ExportTaskIds. 
@@ -51,6 +52,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetExportTaskIds()
         {
             return this._exportTaskIds != null && this._exportTaskIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filters.
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
         }
 
     }

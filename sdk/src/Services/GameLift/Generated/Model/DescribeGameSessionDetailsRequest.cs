@@ -96,8 +96,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AliasId. 
         /// <para>
-        /// Unique identifier for an alias associated with the fleet to retrieve all game sessions
-        /// for.
+        /// A unique identifier for an alias associated with the fleet to retrieve all game sessions
+        /// for. You can use either the alias ID or ARN value.
         /// </para>
         /// </summary>
         public string AliasId
@@ -115,7 +115,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet to retrieve all game sessions active on the fleet.
+        /// A unique identifier for a fleet to retrieve all game sessions active on the fleet.
+        /// You can use either the fleet ID or ARN value.
         /// </para>
         /// </summary>
         public string FleetId
@@ -133,7 +134,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// Unique identifier for the game session to retrieve.
+        /// A unique identifier for the game session to retrieve. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -152,7 +153,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>

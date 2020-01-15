@@ -178,7 +178,7 @@ namespace Amazon.GameLift
         /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
-        /// The requested operation is not supported in the region specified.
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">REST API Reference for AcceptMatch Operation</seealso>
         Task<AcceptMatchResponse> AcceptMatchAsync(AcceptMatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -191,10 +191,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Creates an alias for a fleet. In most situations, you can use an alias ID in place
-        /// of a fleet ID. By using a fleet alias instead of a specific fleet ID, you can switch
-        /// gameplay and players to a new fleet without changing your game client or other game
-        /// components. For example, for games in production, using an alias allows you to seamlessly
-        /// redirect your player base to a new game server update. 
+        /// of a fleet ID. An alias provides a level of abstraction for a fleet that is useful
+        /// when redirecting player traffic from one fleet to another, such as when updating your
+        /// game build. 
         /// 
         ///  
         /// <para>
@@ -208,9 +207,8 @@ namespace Amazon.GameLift
         /// <para>
         /// To create a fleet alias, specify an alias name, routing strategy, and optional description.
         /// Each simple alias can point to only one fleet, but a fleet can have multiple aliases.
-        /// If successful, a new alias record is returned, including an alias ID, which you can
-        /// reference when creating a game session. You can reassign an alias to another fleet
-        /// by calling <code>UpdateAlias</code>.
+        /// If successful, a new alias record is returned, including an alias ID and an ARN. You
+        /// can reassign an alias to another fleet by calling <code>UpdateAlias</code>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -260,6 +258,10 @@ namespace Amazon.GameLift
         /// The requested operation would cause the resource to exceed the allowed service limit.
         /// Resolve the issue before retrying.
         /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
@@ -279,36 +281,37 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// Game server binaries must be combined into a <code>.zip</code> file for use with Amazon
-        /// GameLift. 
+        /// Game server binaries must be combined into a zip file for use with Amazon GameLift.
+        /// 
         /// </para>
         ///  <important> 
         /// <para>
-        /// To create new builds quickly and easily, use the AWS CLI command <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
-        /// </b>. This helper command uploads your build and creates a new build record in one
+        /// To create new builds directly from a file directory, use the AWS CLI command <b> <a
+        /// href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+        /// </b>. This helper command uploads build files and creates a new build record in one
         /// step, and automatically handles the necessary permissions. 
         /// </para>
         ///  </important> 
         /// <para>
-        /// The <code>CreateBuild</code> operation should be used only when you need to manually
-        /// upload your build files, as in the following scenarios:
+        /// The <code>CreateBuild</code> operation should be used only in the following scenarios:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Store a build file in an Amazon S3 bucket under your own AWS account. To use this
-        /// option, you must first give Amazon GameLift access to that Amazon S3 bucket. To create
-        /// a new build record using files in your Amazon S3 bucket, call <code>CreateBuild</code>
-        /// and specify a build name, operating system, and the storage location of your game
-        /// build.
+        /// To create a new game build with build files that are in an Amazon S3 bucket under
+        /// your own AWS account. To use this option, you must first give Amazon GameLift access
+        /// to that Amazon S3 bucket. Then call <code>CreateBuild</code> and specify a build name,
+        /// operating system, and the Amazon S3 storage location of your game build.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Upload a build file directly to Amazon GameLift's Amazon S3 account. To use this option,
-        /// you first call <code>CreateBuild</code> with a build name and operating system. This
-        /// action creates a new build record and returns an Amazon S3 storage location (bucket
-        /// and key only) and temporary access credentials. Use the credentials to manually upload
-        /// your build file to the storage location (see the Amazon S3 topic <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
-        /// Objects</a>). You can upload files to a location only once. 
+        /// To upload build files directly to Amazon GameLift's Amazon S3 account. To use this
+        /// option, first call <code>CreateBuild</code> and specify a build name and operating
+        /// system. This action creates a new build record and returns an Amazon S3 storage location
+        /// (bucket and key only) and temporary access credentials. Use the credentials to manually
+        /// upload your build file to the provided storage location (see the Amazon S3 topic <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+        /// Objects</a>). You can upload build files to the GameLift Amazon S3 location only once.
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -324,7 +327,8 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
-        /// Your Game</a> 
+        /// Your Game</a> <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html</a>
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -375,6 +379,10 @@ namespace Amazon.GameLift
         /// One or more parameter values in the request are invalid. Correct the invalid parameter
         /// values before retrying.
         /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
@@ -398,18 +406,10 @@ namespace Amazon.GameLift
         /// <para>
         /// To create a new fleet, you must provide the following: (1) a fleet name, (2) an EC2
         /// instance type and fleet type (spot or on-demand), (3) the build ID for your game build
-        /// or script ID if using Realtime Servers, and (4) a run-time configuration, which determines
+        /// or script ID if using Realtime Servers, and (4) a runtime configuration, which determines
         /// how game servers will run on each instance in the fleet. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// When creating a Realtime Servers fleet, we recommend using a minimal version of the
-        /// Realtime script (see this <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-script.html#realtime-script-examples">
-        /// working code example </a>). This will make it much easier to troubleshoot any fleet
-        /// creation issues. Once the fleet is active, you can update your Realtime script as
-        /// needed.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// If the <code>CreateFleet</code> call is successful, Amazon GameLift performs the following
         /// tasks. You can track the process of a fleet by checking the fleet status or by monitoring
@@ -424,7 +424,7 @@ namespace Amazon.GameLift
         /// Begins writing events to the fleet event log, which can be accessed in the Amazon
         /// GameLift console.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// Sets the fleet's target capacity to 1 (desired instances), which triggers Amazon GameLift
         /// to start one new EC2 instance.
@@ -437,8 +437,8 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         /// Starts launching server processes on the instance. If the fleet is configured to run
-        /// multiple server processes per instance, Amazon GameLift staggers each launch by a
-        /// few seconds. Status: <code>ACTIVATING</code>.
+        /// multiple server processes per instance, Amazon GameLift staggers each process launch
+        /// by a few seconds. Status: <code>ACTIVATING</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -452,11 +452,11 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-        /// Working with Fleets</a> 
+        /// Setting Up Fleets</a> 
         /// </para>
         ///  
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">
         /// Debug Fleet Creation Issues</a> 
         /// </para>
         ///  
@@ -477,57 +477,13 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Describe fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>DescribeFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetUtilization</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetEvents</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>UpdateFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Manage fleet actions:
         /// </para>
@@ -566,6 +522,10 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
         /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -724,7 +684,7 @@ namespace Amazon.GameLift
         /// Establishes a new queue for processing requests to place new game sessions. A queue
         /// identifies where new game sessions can be hosted -- by specifying a list of destinations
         /// (fleets or aliases) -- and how long requests can wait in the queue before timing out.
-        /// You can set up a queue to try to place game sessions on fleets in multiple regions.
+        /// You can set up a queue to try to place game sessions on fleets in multiple Regions.
         /// To add placement requests to a queue, call <a>StartGameSessionPlacement</a> and reference
         /// the queue name.
         /// 
@@ -791,6 +751,10 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.LimitExceededException">
         /// The requested operation would cause the resource to exceed the allowed service limit.
         /// Resolve the issue before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -903,8 +867,12 @@ namespace Amazon.GameLift
         /// A service resource associated with the request could not be found. Clients should
         /// not retry such requests.
         /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
-        /// The requested operation is not supported in the region specified.
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">REST API Reference for CreateMatchmakingConfiguration Operation</seealso>
         Task<CreateMatchmakingConfigurationResponse> CreateMatchmakingConfigurationAsync(CreateMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -917,14 +885,14 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Creates a new rule set for FlexMatch matchmaking. A rule set describes the type of
-        /// match to create, such as the number and size of teams, and sets the parameters for
-        /// acceptable player matches, such as minimum skill level or character type. A rule set
-        /// is used by a <a>MatchmakingConfiguration</a>. 
+        /// match to create, such as the number and size of teams. It also sets the parameters
+        /// for acceptable player matches, such as minimum skill level or character type. A rule
+        /// set is used by a <a>MatchmakingConfiguration</a>. 
         /// 
         ///  
         /// <para>
         /// To create a matchmaking rule set, provide unique rule set name and the rule set body
-        /// in JSON format. Rule sets must be defined in the same region as the matchmaking configuration
+        /// in JSON format. Rule sets must be defined in the same Region as the matchmaking configuration
         /// they are used with.
         /// </para>
         ///  
@@ -1003,8 +971,12 @@ namespace Amazon.GameLift
         /// One or more parameter values in the request are invalid. Correct the invalid parameter
         /// values before retrying.
         /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
-        /// The requested operation is not supported in the region specified.
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">REST API Reference for CreateMatchmakingRuleSet Operation</seealso>
         Task<CreateMatchmakingRuleSetResponse> CreateMatchmakingRuleSetAsync(CreateMatchmakingRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1063,8 +1035,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
-        /// <param name="gameSessionId">Unique identifier for the game session to add a player to.</param>
-        /// <param name="playerId">Unique identifier for a player. Player IDs are developer-defined.</param>
+        /// <param name="gameSessionId">A unique identifier for the game session to add a player to.</param>
+        /// <param name="playerId">A unique identifier for a player. Player IDs are developer-defined.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1246,7 +1218,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
-        /// <param name="gameSessionId">Unique identifier for the game session to add players to.</param>
+        /// <param name="gameSessionId">A unique identifier for the game session to add players to.</param>
         /// <param name="playerIds">List of unique identifiers for the players to be added.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1470,6 +1442,10 @@ namespace Amazon.GameLift
         /// One or more parameter values in the request are invalid. Correct the invalid parameter
         /// values before retrying.
         /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
@@ -1494,7 +1470,7 @@ namespace Amazon.GameLift
         /// <para>
         /// You can peer with VPCs that are owned by any AWS account you have access to, including
         /// the account that you use to manage your Amazon GameLift fleets. You cannot peer with
-        /// VPCs that are in different regions.
+        /// VPCs that are in different Regions.
         /// </para>
         ///  
         /// <para>
@@ -1581,7 +1557,7 @@ namespace Amazon.GameLift
         /// servers on your fleet to communicate directly with other AWS resources. You can peer
         /// with VPCs in any AWS account that you have access to, including the account that you
         /// use to manage your Amazon GameLift fleets. You cannot peer with VPCs that are in different
-        /// regions. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// Regions. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
         /// Peering with Amazon GameLift Fleets</a>.
         /// 
         ///  
@@ -1689,7 +1665,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="aliasId">Unique identifier for a fleet alias. Specify the alias you want to delete.</param>
+        /// <param name="aliasId">A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1706,6 +1682,10 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
         /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -1763,6 +1743,10 @@ namespace Amazon.GameLift
         /// A service resource associated with the request could not be found. Clients should
         /// not retry such requests.
         /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
@@ -1819,7 +1803,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="buildId">Unique identifier for a build to delete.</param>
+        /// <param name="buildId">A unique identifier for a build to delete. You can use either the build ID or ARN value. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1836,6 +1820,10 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
         /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -1907,6 +1895,10 @@ namespace Amazon.GameLift
         /// A service resource associated with the request could not be found. Clients should
         /// not retry such requests.
         /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
@@ -1961,57 +1953,13 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Describe fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>DescribeFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetUtilization</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetEvents</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>UpdateFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Manage fleet actions:
         /// </para>
@@ -2025,7 +1973,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
-        /// <param name="fleetId">Unique identifier for a fleet to be deleted.</param>
+        /// <param name="fleetId">A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2046,6 +1994,10 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
         /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -2097,57 +2049,13 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Describe fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>DescribeFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetUtilization</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetEvents</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>UpdateFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Manage fleet actions:
         /// </para>
@@ -2182,6 +2090,10 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
         /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -2235,6 +2147,10 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
         /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -2309,8 +2225,12 @@ namespace Amazon.GameLift
         /// A service resource associated with the request could not be found. Clients should
         /// not retry such requests.
         /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
-        /// The requested operation is not supported in the region specified.
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">REST API Reference for DeleteMatchmakingConfiguration Operation</seealso>
         Task<DeleteMatchmakingConfigurationResponse> DeleteMatchmakingConfigurationAsync(DeleteMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2391,8 +2311,12 @@ namespace Amazon.GameLift
         /// A service resource associated with the request could not be found. Clients should
         /// not retry such requests.
         /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
-        /// The requested operation is not supported in the region specified.
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingRuleSet">REST API Reference for DeleteMatchmakingRuleSet Operation</seealso>
         Task<DeleteMatchmakingRuleSetResponse> DeleteMatchmakingRuleSetAsync(DeleteMatchmakingRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2549,6 +2473,10 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
         /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -2725,7 +2653,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="aliasId">Unique identifier for a fleet alias. Specify the alias you want to retrieve.</param>
+        /// <param name="aliasId">The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2853,7 +2781,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="buildId">Unique identifier for a build to retrieve properties for.</param>
+        /// <param name="buildId">A unique identifier for a build to retrieve properties for. You can use either the build ID or ARN value. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2959,7 +2887,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Service limits vary depending on region. Available regions for Amazon GameLift can
+        /// Service limits vary depending on Region. Available Regions for Amazon GameLift can
         /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
         /// in the upper right corner).
         /// </para>
@@ -3088,7 +3016,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Service limits vary depending on region. Available regions for Amazon GameLift can
+        /// Service limits vary depending on Region. Available Regions for Amazon GameLift can
         /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
         /// in the upper right corner).
         /// </para>
@@ -3281,25 +3209,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>UpdateFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Manage fleet actions:
         /// </para>
@@ -3416,25 +3328,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>UpdateFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Manage fleet actions:
         /// </para>
@@ -3543,25 +3439,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>UpdateFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Manage fleet actions:
         /// </para>
@@ -3671,25 +3551,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>UpdateFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Manage fleet actions:
         /// </para>
@@ -3703,7 +3567,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
-        /// <param name="fleetId">Unique identifier for a fleet to retrieve port settings for.</param>
+        /// <param name="fleetId">A unique identifier for a fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -3795,25 +3659,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>UpdateFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Manage fleet actions:
         /// </para>
@@ -3929,25 +3777,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>UpdateFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Manage fleet actions:
         /// </para>
@@ -4165,7 +3997,7 @@ namespace Amazon.GameLift
         /// queues, use the pagination parameters to retrieve results as a set of sequential pages.
         /// If successful, a <a>GameSessionQueue</a> object is returned for each requested queue.
         /// When specifying a list of queues, objects are returned only for queues that currently
-        /// exist in the region.
+        /// exist in the Region.
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -4381,7 +4213,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguidematch-notification.html">
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
         /// Set Up FlexMatch Event Notification</a> 
         /// </para>
         ///  
@@ -4425,7 +4257,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
-        /// The requested operation is not supported in the region specified.
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">REST API Reference for DescribeMatchmaking Operation</seealso>
         Task<DescribeMatchmakingResponse> DescribeMatchmakingAsync(DescribeMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -4507,7 +4339,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
-        /// The requested operation is not supported in the region specified.
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">REST API Reference for DescribeMatchmakingConfigurations Operation</seealso>
         Task<DescribeMatchmakingConfigurationsResponse> DescribeMatchmakingConfigurationsAsync(DescribeMatchmakingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -4520,7 +4352,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves the details for FlexMatch matchmaking rule sets. You can request all existing
-        /// rule sets for the region, or provide a list of one or more rule set names. When requesting
+        /// rule sets for the Region, or provide a list of one or more rule set names. When requesting
         /// multiple items, use the pagination parameters to retrieve results as a set of sequential
         /// pages. If successful, a rule set is returned for each requested name. 
         /// 
@@ -4590,7 +4422,7 @@ namespace Amazon.GameLift
         /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
-        /// The requested operation is not supported in the region specified.
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">REST API Reference for DescribeMatchmakingRuleSets Operation</seealso>
         Task<DescribeMatchmakingRuleSetsResponse> DescribeMatchmakingRuleSetsAsync(DescribeMatchmakingRuleSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -4681,9 +4513,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves the current run-time configuration for the specified fleet. The run-time
-        /// configuration tells Amazon GameLift how to launch server processes on instances in
-        /// the fleet.
+        /// Retrieves the current runtime configuration for the specified fleet. The runtime configuration
+        /// tells Amazon GameLift how to launch server processes on instances in the fleet.
         /// 
         ///  
         /// <para>
@@ -4744,25 +4575,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>UpdateFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Manage fleet actions:
         /// </para>
@@ -5145,7 +4960,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
-        /// <param name="gameSessionId">Unique identifier for the game session to get logs for.</param>
+        /// <param name="gameSessionId">A unique identifier for the game session to get logs for. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -5475,57 +5290,13 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Describe fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>DescribeFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetUtilization</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetEvents</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>UpdateFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Manage fleet actions:
         /// </para>
@@ -5627,6 +5398,106 @@ namespace Amazon.GameLift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListScripts">REST API Reference for ListScripts Operation</seealso>
         Task<ListScriptsResponse> ListScriptsAsync(ListScriptsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// Retrieves all tags that are assigned to a GameLift resource. Resource tags are used
+        /// to organize AWS resources for a range of purposes. This action handles the permissions
+        /// necessary to manage tags for the following GameLift resource types:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Build
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Script
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Fleet
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GameSessionQueue
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MatchmakingConfiguration
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MatchmakingRuleSet
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To list tags for a resource, specify the unique ARN value for the resource.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS Resources</a> in the <i>AWS General Reference</i> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/">
+        /// AWS Tagging Strategies</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>TagResource</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UntagResource</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListTagsForResource</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -5855,7 +5726,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="buildId">Unique identifier for a build to get credentials for.</param>
+        /// <param name="buildId">A unique identifier for a build to get credentials for. You can use either the build ID or ARN value. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -5956,7 +5827,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves the fleet ID that a specified alias is currently pointing to.
+        /// Retrieves the fleet ID that an alias is currently pointing to.
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -5984,7 +5855,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="aliasId">Unique identifier for the alias you want to resolve.</param>
+        /// <param name="aliasId">The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -6016,7 +5887,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves the fleet ID that a specified alias is currently pointing to.
+        /// Retrieves the fleet ID that an alias is currently pointing to.
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -6086,7 +5957,7 @@ namespace Amazon.GameLift
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <b>gameSessionId</b> -- Unique identifier for the game session. You can use either
+        ///  <b>gameSessionId</b> -- A unique identifier for the game session. You can use either
         /// a <code>GameSessionId</code> or <code>GameSessionArn</code> value. 
         /// </para>
         ///  </li> <li> 
@@ -6380,11 +6251,11 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// Alternatively, when requesting a game session with players, you can also provide latency
-        /// data for each player in relevant regions. Latency data indicates the performance lag
-        /// a player experiences when connected to a fleet in the region. Amazon GameLift uses
-        /// latency data to reorder the list of destinations to place the game session in a region
+        /// data for each player in relevant Regions. Latency data indicates the performance lag
+        /// a player experiences when connected to a fleet in the Region. Amazon GameLift uses
+        /// latency data to reorder the list of destinations to place the game session in a Region
         /// with minimal lag. If latency data is provided for multiple players, Amazon GameLift
-        /// calculates each region's average lag for all players and reorders to get the best
+        /// calculates each Region's average lag for all players and reorders to get the best
         /// game play across all players. 
         /// </para>
         ///  
@@ -6418,7 +6289,7 @@ namespace Amazon.GameLift
         /// <para>
         /// To track the status of a placement request, call <a>DescribeGameSessionPlacement</a>
         /// and check the request's status. If the status is <code>FULFILLED</code>, a new game
-        /// session has been created and a game session ARN and region are referenced. If the
+        /// session has been created and a game session ARN and Region are referenced. If the
         /// placement request times out, you can resubmit the request or retry it with a different
         /// queue. 
         /// </para>
@@ -6580,7 +6451,7 @@ namespace Amazon.GameLift
         /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
-        /// The requested operation is not supported in the region specified.
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">REST API Reference for StartMatchBackfill Operation</seealso>
         Task<StartMatchBackfillResponse> StartMatchBackfillAsync(StartMatchBackfillRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -6738,7 +6609,7 @@ namespace Amazon.GameLift
         /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
-        /// The requested operation is not supported in the region specified.
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">REST API Reference for StartMatchmaking Operation</seealso>
         Task<StartMatchmakingResponse> StartMatchmakingAsync(StartMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -7033,10 +6904,216 @@ namespace Amazon.GameLift
         /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
-        /// The requested operation is not supported in the region specified.
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">REST API Reference for StopMatchmaking Operation</seealso>
         Task<StopMatchmakingResponse> StopMatchmakingAsync(StopMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Assigns a tag to a GameLift resource. AWS resource tags provide an additional management
+        /// tool set. You can use tags to organize resources, create IAM permissions policies
+        /// to manage access to groups of resources, customize AWS cost breakdowns, etc. This
+        /// action handles the permissions necessary to manage tags for the following GameLift
+        /// resource types:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Build
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Script
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Fleet
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GameSessionQueue
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MatchmakingConfiguration
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MatchmakingRuleSet
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To add a tag to a resource, specify the unique ARN value for the resource and provide
+        /// a trig list containing one or more tags. The operation succeeds even if the list includes
+        /// tags that are already assigned to the specified resource. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS Resources</a> in the <i>AWS General Reference</i> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/">
+        /// AWS Tagging Strategies</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>TagResource</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UntagResource</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListTagsForResource</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Removes a tag that is assigned to a GameLift resource. Resource tags are used to organize
+        /// AWS resources for a range of purposes. This action handles the permissions necessary
+        /// to manage tags for the following GameLift resource types:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Build
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Script
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Fleet
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GameSessionQueue
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MatchmakingConfiguration
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MatchmakingRuleSet
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To remove a tag from a resource, specify the unique ARN value for the resource and
+        /// provide a string list containing one or more tags to be removed. This action succeeds
+        /// even if the list includes tags that are not currently assigned to the specified resource.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS Resources</a> in the <i>AWS General Reference</i> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/">
+        /// AWS Tagging Strategies</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>TagResource</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UntagResource</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListTagsForResource</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -7208,37 +7285,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Describe fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>DescribeFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetUtilization</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetEvents</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Update fleets:
         /// </para>
@@ -7363,37 +7412,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Describe fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>DescribeFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetUtilization</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetEvents</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Update fleets:
         /// </para>
@@ -7504,37 +7525,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Describe fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>DescribeFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetUtilization</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetEvents</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Update fleets:
         /// </para>
@@ -7824,7 +7817,7 @@ namespace Amazon.GameLift
         /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
-        /// The requested operation is not supported in the region specified.
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">REST API Reference for UpdateMatchmakingConfiguration Operation</seealso>
         Task<UpdateMatchmakingConfigurationResponse> UpdateMatchmakingConfigurationAsync(UpdateMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -7836,23 +7829,23 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Updates the current run-time configuration for the specified fleet, which tells Amazon
+        /// Updates the current runtime configuration for the specified fleet, which tells Amazon
         /// GameLift how to launch server processes on instances in the fleet. You can update
-        /// a fleet's run-time configuration at any time after the fleet is created; it does not
+        /// a fleet's runtime configuration at any time after the fleet is created; it does not
         /// need to be in an <code>ACTIVE</code> status.
         /// 
         ///  
         /// <para>
-        /// To update run-time configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code>
+        /// To update runtime configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code>
         /// object with an updated set of server process configurations.
         /// </para>
         ///  
         /// <para>
-        /// Each instance in a Amazon GameLift fleet checks regularly for an updated run-time
-        /// configuration and changes how it launches server processes to comply with the latest
-        /// version. Existing server processes are not affected by the update; run-time configuration
-        /// changes are applied gradually as existing processes shut down and new processes are
-        /// launched during Amazon GameLift's normal process recycling activity.
+        /// Each instance in a Amazon GameLift fleet checks regularly for an updated runtime configuration
+        /// and changes how it launches server processes to comply with the latest version. Existing
+        /// server processes are not affected by the update; runtime configuration changes are
+        /// applied gradually as existing processes shut down and new processes are launched during
+        /// Amazon GameLift's normal process recycling activity.
         /// </para>
         ///  
         /// <para>
@@ -7881,37 +7874,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Describe fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <a>DescribeFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetUtilization</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetEvents</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Update fleets:
         /// </para>
@@ -8133,7 +8098,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
-        /// The requested operation is not supported in the region specified.
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">REST API Reference for ValidateMatchmakingRuleSet Operation</seealso>
         Task<ValidateMatchmakingRuleSetResponse> ValidateMatchmakingRuleSetAsync(ValidateMatchmakingRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateJourneyState operation.
-    /// Cancels an active journey.
+    /// Cancels (stops) an active journey.
     /// </summary>
     public partial class UpdateJourneyStateRequest : AmazonPinpointRequest
     {

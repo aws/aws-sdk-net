@@ -44,6 +44,7 @@ namespace Amazon.Pinpoint.Model
         private string _templateName;
         private TemplateType _templateType;
         private string _textPart;
+        private string _version;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -66,7 +67,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date when the message template was created.
+        /// The date, in ISO 8601 format, when the message template was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -125,7 +126,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        /// The date when the message template was last modified.
+        /// The date, in ISO 8601 format, when the message template was last modified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -254,6 +255,26 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetTextPart()
         {
             return this._textPart != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The unique identifier, as an integer, for the active version of the message template,
+        /// or the version of the template that you specified by using the version parameter in
+        /// your request.
+        /// </para>
+        /// </summary>
+        public string Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
         }
 
     }

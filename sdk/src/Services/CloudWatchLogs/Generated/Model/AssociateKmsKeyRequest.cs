@@ -40,7 +40,13 @@ namespace Amazon.CloudWatchLogs.Model
     /// as the data encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
     /// Amazon CloudWatch Logs to decrypt this data whenever it is requested.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    ///  <b>Important:</b> CloudWatch Logs supports only symmetric CMKs. Do not use an associate
+    /// an asymmetric CMK with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+    /// Symmetric and Asymmetric Keys</a>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Note that it can take up to 5 minutes for this operation to take effect.
     /// </para>
@@ -59,9 +65,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-        /// Resource Names - AWS Key Management Service (AWS KMS)</a>.
+        /// The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must
+        /// be a symmetric CMK. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+        /// Resource Names - AWS Key Management Service (AWS KMS)</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// Symmetric and Asymmetric Keys</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

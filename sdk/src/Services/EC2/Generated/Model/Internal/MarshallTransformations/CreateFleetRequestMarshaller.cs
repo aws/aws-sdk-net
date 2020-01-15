@@ -162,6 +162,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("OnDemandOptions" + "." + "AllocationStrategy", StringUtils.FromString(publicRequest.OnDemandOptions.AllocationStrategy));
                     }
+                    if(publicRequest.OnDemandOptions.IsSetCapacityReservationOptions())
+                    {
+                        if(publicRequest.OnDemandOptions.CapacityReservationOptions.IsSetUsageStrategy())
+                        {
+                            request.Parameters.Add("OnDemandOptions" + "." + "CapacityReservationOptions" + "." + "UsageStrategy", StringUtils.FromString(publicRequest.OnDemandOptions.CapacityReservationOptions.UsageStrategy));
+                        }
+                    }
                     if(publicRequest.OnDemandOptions.IsSetMaxTotalPrice())
                     {
                         request.Parameters.Add("OnDemandOptions" + "." + "MaxTotalPrice", StringUtils.FromString(publicRequest.OnDemandOptions.MaxTotalPrice));

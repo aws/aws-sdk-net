@@ -64,10 +64,28 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AddressAllocationIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AddressAllocationIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SubnetIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VpcEndpointId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpcEndpointId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpcId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

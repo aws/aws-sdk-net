@@ -45,10 +45,38 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EndpointDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAddressAllocationIds())
+            {
+                context.Writer.WritePropertyName("AddressAllocationIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAddressAllocationIdsListValue in requestObject.AddressAllocationIds)
+                {
+                        context.Writer.Write(requestObjectAddressAllocationIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetSubnetIds())
+            {
+                context.Writer.WritePropertyName("SubnetIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
+                {
+                        context.Writer.Write(requestObjectSubnetIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetVpcEndpointId())
             {
                 context.Writer.WritePropertyName("VpcEndpointId");
                 context.Writer.Write(requestObject.VpcEndpointId);
+            }
+
+            if(requestObject.IsSetVpcId())
+            {
+                context.Writer.WritePropertyName("VpcId");
+                context.Writer.Write(requestObject.VpcId);
             }
 
         }

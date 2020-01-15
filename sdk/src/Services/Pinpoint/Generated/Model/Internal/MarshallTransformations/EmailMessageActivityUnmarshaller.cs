@@ -82,6 +82,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.TemplateName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TemplateVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TemplateVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

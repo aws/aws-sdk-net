@@ -15,18 +15,20 @@
 using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
-using Amazon.Runtime.Internal;
-using Amazon.Runtime.CredentialManagement.Internal;
+using Amazon.Runtime.SharedInterfaces;
+using Amazon.SecurityToken;
+using Amazon.SecurityToken.Model;
 using AWSSDK_DotNet.CommonTest.Utils;
-using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
+using System.Linq.Expressions;
 using System.Text;
-using System.Text.RegularExpressions;
+#if ASYNC_AWAIT
+using System.Threading.Tasks;
+#endif
 
 namespace AWSSDK.UnitTests
 {
@@ -37,7 +39,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("[default]")
             .AppendLine("region=us-west-2")
             .AppendLine("aws_access_key_id=default_aws_access_key_id")
-            .AppendLine("aws_secret_access_key=default_aws_secret_access_key")            
+            .AppendLine("aws_secret_access_key=default_aws_secret_access_key")
             .AppendLine("[other]")
             .AppendLine("region=us-west-1")
             .AppendLine("aws_access_key_id=other_aws_access_key_id")
@@ -123,23 +125,451 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        /// <summary>
+        /// Tests that the properties in the AssumeRoleWithWebIdentityCredentialsObject are used for
+        /// the AssumeRoleWithWebIdentity call.
+        /// The WebIdentityTokenFile should be read and its value used.
+        /// </summary>
+        [TestMethod]
+        public void TestAssumeRoleWithWebIdentityCredentialsPropertiesUsedInSTSCall()
+        {
+#region Setup
+            // Set up request variables
+            var dummyToken = "dummyToken";
+            var dummyRoleArn = "dummyRoleArn";
+            var dummyRoleSessionName = "dummyRoleSessionName";
+            var dummyOptions = new AssumeRoleWithWebIdentityCredentialsOptions();
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var webIdentityTokenFilePath = Path.Combine(currentDirectory, "my-token.jwt");
+            File.WriteAllText(webIdentityTokenFilePath, dummyToken);
+            var equalityCheck = new Func<AssumeRoleWithWebIdentityRequest, bool>(req =>
+            {
+                return req.DurationSeconds.Equals(dummyOptions.DurationSeconds ?? 0) &&
+                string.Equals(req.Policy, dummyOptions.Policy) &&
+                Equals(req.PolicyArns, dummyOptions.PolicyArns) &&
+                Equals(req.ProviderId, dummyOptions.ProviderId) &&
+                req.RoleArn.Equals(dummyRoleArn) &&
+                req.RoleSessionName.Equals(dummyRoleSessionName) &&
+                req.WebIdentityToken.Equals(dummyToken);
+            });
+            var envVariables = new Dictionary<string, string>()
+            {
+                {  AssumeRoleWithWebIdentityCredentials.WebIdentityTokenFileEnvVariable, webIdentityTokenFilePath },
+                {  AssumeRoleWithWebIdentityCredentials.RoleArnEnvVariable, dummyRoleArn },
+                {  AssumeRoleWithWebIdentityCredentials.RoleSessionNameEnvVariable, dummyRoleSessionName },
+            };
+            // Set up response
+            var dummyAccessKeyId = "dummyAccessKeyId";
+            var dummySecretAccessKey = "dummySecretAccessKey";
+            var dummySessionToken = "dummySessionToken";
+            var dummyExpiration = DateTime.UtcNow.AddDays(1);
+            var forcedResponse = new AssumeRoleWithWebIdentityResponse()
+            {
+                Credentials = new Credentials(dummyAccessKeyId, dummySecretAccessKey, dummySessionToken, dummyExpiration)
+            };
+            // Setup service client mock
+            var mock = new Mock<AmazonSecurityTokenServiceClient>();
+            Expression<Func<AmazonSecurityTokenServiceClient, AssumeRoleWithWebIdentityResponse>> stsCall =
+                c => c.AssumeRoleWithWebIdentity(It.Is<AssumeRoleWithWebIdentityRequest>(req => equalityCheck(req)));
+            mock.Setup(stsCall).Returns(forcedResponse);
+            // Setup credentials
+            using (var testCredentials = new AssumeRoleWithWebIdentityTestCredentials(webIdentityTokenFilePath, dummyRoleArn, dummyRoleSessionName, dummyOptions)
+            {
+                Client = mock.Object
+            })
+            {
+                using (new FallbackFactoryTestFixture(ProfileText, "default", null, envVariables))
+                {
+#endregion Setup
+
+#region Act
+                    testCredentials.GetCredentials();
+#endregion Act
+                }
+            }
+
+            // Verify that the credential properties were used for the STS call
+            mock.Verify(stsCall, Times.Once);
+        }
+
+#if ASYNC_AWAIT
+        /// <summary>
+        /// Tests that the properties in the AssumeRoleWithWebIdentityCredentialsObject are used for
+        /// the AssumeRoleWithWebIdentityAsync call.
+        /// The WebIdentityTokenFile should be read and its value used.
+        /// </summary>
+        [TestMethod]
+        public async Task TestAssumeRoleWithWebIdentityCredentialsPropertiesUsedInAsyncSTSCallAsync()
+        {
+#region Setup
+            // Set up request variables
+            var dummyToken = "dummyToken";
+            var dummyRoleArn = "dummyRoleArn";
+            var dummyRoleSessionName = "dummyRoleSessionName";
+            var dummyOptions = new AssumeRoleWithWebIdentityCredentialsOptions();
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var webIdentityTokenFilePath = Path.Combine(currentDirectory, "my-token.jwt");
+            File.WriteAllText(webIdentityTokenFilePath, dummyToken);
+            var equalityCheck = new Func<AssumeRoleWithWebIdentityRequest, bool>(req =>
+            {
+                return req.DurationSeconds.Equals(dummyOptions.DurationSeconds ?? 0) &&
+                string.Equals(req.Policy, dummyOptions.Policy) &&
+                Equals(req.PolicyArns, dummyOptions.PolicyArns) &&
+                Equals(req.ProviderId, dummyOptions.ProviderId) &&
+                req.RoleArn.Equals(dummyRoleArn) &&
+                req.RoleSessionName.Equals(dummyRoleSessionName) &&
+                req.WebIdentityToken.Equals(dummyToken);
+            });
+            var envVariables = new Dictionary<string, string>()
+            {
+                {  AssumeRoleWithWebIdentityCredentials.WebIdentityTokenFileEnvVariable, webIdentityTokenFilePath },
+                {  AssumeRoleWithWebIdentityCredentials.RoleArnEnvVariable, dummyRoleArn },
+                {  AssumeRoleWithWebIdentityCredentials.RoleSessionNameEnvVariable, dummyRoleSessionName },
+            };
+            // Set up response
+            var dummyAccessKeyId = "dummyAccessKeyId";
+            var dummySecretAccessKey = "dummySecretAccessKey";
+            var dummySessionToken = "dummySessionToken";
+            var dummyExpiration = DateTime.UtcNow.AddDays(1);
+            var forcedResponse = new AssumeRoleWithWebIdentityResponse()
+            {
+                Credentials = new Credentials(dummyAccessKeyId, dummySecretAccessKey, dummySessionToken, dummyExpiration)
+            };
+            // Setup service client mock
+            var mock = new Mock<AmazonSecurityTokenServiceClient>();
+            Expression<Func<AmazonSecurityTokenServiceClient, Task<AssumeRoleWithWebIdentityResponse>>> stsCall = c => c.AssumeRoleWithWebIdentityAsync(It.Is<AssumeRoleWithWebIdentityRequest>(req => equalityCheck(req)), new System.Threading.CancellationToken());
+            mock.Setup(stsCall).Returns(Task.FromResult(forcedResponse));
+            // Setup credentials
+            using (var testCredentials = new AssumeRoleWithWebIdentityTestCredentials(webIdentityTokenFilePath, dummyRoleArn, dummyRoleSessionName, dummyOptions)
+            {
+                Client = mock.Object
+            })
+            {
+                using (new FallbackFactoryTestFixture(ProfileText, "default", null, envVariables))
+                {
+#endregion Setup
+
+#region Act
+                    await testCredentials.GetCredentialsAsync().ConfigureAwait(false);
+#endregion Act
+                }
+            }
+
+            // Verify that the credential properties were used for the STS call
+            mock.Verify(stsCall, Times.Once);
+        }
+#endif
+
+        [TestMethod]
+        public void TestAssumeRoleWithWebIdentity_FromEnvironmentVariables()
+        {
+#region Setup
+            var webIdentityToken = "Dummy.OIDC.Token";
+            var roleArn = "someRoleArn";
+            var roleSessionName = "someRoleSessionName";
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var webIdentityTokenFilePath = Path.Combine(currentDirectory, "my-token.jwt");
+            File.WriteAllText(webIdentityTokenFilePath, webIdentityToken);
+
+            var envVariables = new Dictionary<string, string>()
+            {
+                {  AssumeRoleWithWebIdentityCredentials.WebIdentityTokenFileEnvVariable, webIdentityTokenFilePath },
+                {  AssumeRoleWithWebIdentityCredentials.RoleArnEnvVariable, roleArn },
+                {  AssumeRoleWithWebIdentityCredentials.RoleSessionNameEnvVariable, roleSessionName },
+            };
+
+            AssumeRoleWithWebIdentityTestCredentials webIdentityCredentials;
+            var mockClient = new Mock<ICoreAmazonSTS_WebIdentity>();
+            mockClient.Setup(c => c.CredentialsFromAssumeRoleWithWebIdentityAuthentication(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<AssumeRoleWithWebIdentityCredentialsOptions>()))
+                .Returns(new AssumeRoleImmutableCredentials("dummyAccessKeyId", "dummySecret", "dummyToken", DateTime.UtcNow.AddDays(1)));
+            using (new FallbackFactoryTestFixture(ProfileText, "default", null, envVariables))
+            {
+#endregion Setup
+
+#region Act
+                var awsCredentials = FallbackCredentialsFactory.GetCredentials();
+                webIdentityCredentials = new AssumeRoleWithWebIdentityTestCredentials((AssumeRoleWithWebIdentityCredentials)awsCredentials, null)
+                {
+                    Client = mockClient.Object
+                };
+                webIdentityCredentials.GetCredentials();
+#endregion Act
+            }
+
+#region Assert
+            Assert.AreEqual(webIdentityTokenFilePath, webIdentityCredentials.WebIdentityTokenFile);
+            Assert.AreEqual(roleArn, webIdentityCredentials.RoleArn);
+            Assert.AreEqual(roleSessionName, webIdentityCredentials.RoleSessionName);
+#endregion Assert
+
+            webIdentityCredentials.Dispose();
+        }
+
+        private string GetAssumeRoleWithWebIdentityProfileText(string tokenFilePath)
+        {
+            return new StringBuilder()
+            .AppendLine("[default]")
+            .AppendLine($"web_identity_token_file={tokenFilePath}")
+            .AppendLine("role_arn=some-arn-2")
+            .AppendLine("role_session_name=some-session-name-2")
+            .ToString();
+        }
+
+        [TestMethod]
+        public void TestAssumeRoleWithWebIdentity_FromSharedProfile()
+        {
+#region Setup
+            var webIdentityToken = "Dummy.OIDC.Token";
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var webIdentityTokenFilePath = Path.Combine(currentDirectory, "my-token.jwt");
+            File.WriteAllText(webIdentityTokenFilePath, webIdentityToken);
+            var profileText = GetAssumeRoleWithWebIdentityProfileText(webIdentityTokenFilePath);
+            AssumeRoleWithWebIdentityTestCredentials webIdentityCredentials;
+            var mockClient = new Mock<ICoreAmazonSTS_WebIdentity>();
+            mockClient.Setup(c => c.CredentialsFromAssumeRoleWithWebIdentityAuthentication(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<AssumeRoleWithWebIdentityCredentialsOptions>()))
+                .Returns(new AssumeRoleImmutableCredentials("dummyAccessKeyId", "dummySecret", "dummyToken", DateTime.UtcNow.AddDays(1)));
+            using (new FallbackFactoryTestFixture(profileText, "default"))
+            {
+#endregion Setup
+
+#region Act
+                var awsCredentials = FallbackCredentialsFactory.GetCredentials();
+                webIdentityCredentials = new AssumeRoleWithWebIdentityTestCredentials((AssumeRoleWithWebIdentityCredentials)awsCredentials, null)
+                {
+                    Client = mockClient.Object
+                };
+                webIdentityCredentials.GetCredentials();
+#endregion Act
+            }
+
+#region Assert
+            Assert.AreEqual(webIdentityTokenFilePath, webIdentityCredentials.WebIdentityTokenFile);
+            Assert.AreEqual("some-arn-2", webIdentityCredentials.RoleArn);
+            Assert.AreEqual("some-session-name-2", webIdentityCredentials.RoleSessionName);
+#endregion Assert
+
+            webIdentityCredentials.Dispose();
+        }
+
+        [TestMethod]
+        public void TestAssumeRoleWithWebIdentity_DefinedBothInEnvAndConfig()
+        {
+#region Setup
+            var webIdentityToken = "Dummy.OIDC.Token";
+            var webIdentityToken2 = "Dummy.OIDC.Token2";
+            var roleArn = "someRoleArn";
+            var roleSessionName = "someRoleSessionName";
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var webIdentityTokenFilePath = Path.Combine(currentDirectory, "my-token.jwt");
+            File.WriteAllText(webIdentityTokenFilePath, webIdentityToken);
+            var webIdentityTokenFilePath2 = Path.Combine(currentDirectory, "my-token2.jwt");
+            File.WriteAllText(webIdentityTokenFilePath2, webIdentityToken2);
+
+            var envVariables = new Dictionary<string, string>()
+            {
+                {  AssumeRoleWithWebIdentityCredentials.WebIdentityTokenFileEnvVariable, webIdentityTokenFilePath },
+                {  AssumeRoleWithWebIdentityCredentials.RoleArnEnvVariable, roleArn },
+                {  AssumeRoleWithWebIdentityCredentials.RoleSessionNameEnvVariable, roleSessionName },
+            };
+
+            var profileText = GetAssumeRoleWithWebIdentityProfileText(webIdentityTokenFilePath2);
+            AssumeRoleWithWebIdentityTestCredentials webIdentityCredentials;
+            var mockClient = new Mock<ICoreAmazonSTS_WebIdentity>();
+            mockClient.Setup(c => c.CredentialsFromAssumeRoleWithWebIdentityAuthentication(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<AssumeRoleWithWebIdentityCredentialsOptions>()))
+                .Returns(new AssumeRoleImmutableCredentials("dummyAccessKeyId", "dummySecret", "dummyToken", DateTime.UtcNow.AddDays(1)));
+            using (new FallbackFactoryTestFixture(profileText, "default", null, envVariables))
+            {
+#endregion Setup
+
+#region Action
+                var awsCredentials = FallbackCredentialsFactory.GetCredentials();
+                webIdentityCredentials = new AssumeRoleWithWebIdentityTestCredentials((AssumeRoleWithWebIdentityCredentials)awsCredentials, null)
+                {
+                    Client = mockClient.Object
+                };
+                webIdentityCredentials.GetCredentials();
+#endregion Action
+            }
+
+#region Assert
+            Assert.AreEqual(webIdentityTokenFilePath, webIdentityCredentials.WebIdentityTokenFile);
+            Assert.AreEqual(roleArn, webIdentityCredentials.RoleArn);
+            Assert.AreEqual(roleSessionName, webIdentityCredentials.RoleSessionName);
+#endregion Assert
+
+            webIdentityCredentials.Dispose();
+        }
+
+        [TestMethod]
+        public void TestAssumeRoleWithWebIdentity_TokenDoesNotExistAtGivenLocation()
+        {
+#region Setup
+            var roleArn = "someRoleArn";
+            var roleSessionName = "someRoleSessionName";
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var webIdentityTokenFilePath = Path.Combine(currentDirectory, "my-token.jwt");
+
+            var retry = 1;
+            while (retry-- > 0) {
+                try
+                {
+                    File.Delete(webIdentityTokenFilePath);
+                    break;
+                }
+                catch
+                {
+                    retry--;
+                }
+            }
+
+            var envVariables = new Dictionary<string, string>()
+            {
+                {  AssumeRoleWithWebIdentityCredentials.WebIdentityTokenFileEnvVariable, webIdentityTokenFilePath },
+                {  AssumeRoleWithWebIdentityCredentials.RoleArnEnvVariable, roleArn },
+                {  AssumeRoleWithWebIdentityCredentials.RoleSessionNameEnvVariable, roleSessionName },
+            };
+
+            using (new FallbackFactoryTestFixture(ProfileText, "default", null, envVariables))
+            {
+#endregion Setup
+                try
+                {
+                    var credentials = FallbackCredentialsFactory.GetCredentials();
+#region Assert
+                    Assert.IsInstanceOfType(credentials, typeof(AssumeRoleWithWebIdentityCredentials));
+                    credentials.GetCredentials();
+                }
+                catch (Exception e)
+                {
+                    Assert.IsTrue(e.Message.Contains("A token could not be loaded from the WebIdentityTokenFile."));
+#endregion Assert
+                }
+            }
+        }
+
+        [TestMethod]
+        public void TestAssumeRoleWithWebIdentity_SessionNameNotProvided()
+        {
+#region Setup
+            var webIdentityToken = "Dummy.OIDC.Token";
+            var roleArn = "someRoleArn";
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var webIdentityTokenFilePath = Path.Combine(currentDirectory, "my-token.jwt");
+            File.WriteAllText(webIdentityTokenFilePath, webIdentityToken);
+
+            var envVariables = new Dictionary<string, string>()
+            {
+                {  AssumeRoleWithWebIdentityCredentials.WebIdentityTokenFileEnvVariable, webIdentityTokenFilePath },
+                {  AssumeRoleWithWebIdentityCredentials.RoleArnEnvVariable, roleArn },
+                {  AssumeRoleWithWebIdentityCredentials.RoleSessionNameEnvVariable, "" },
+            };
+
+            AssumeRoleWithWebIdentityTestCredentials webIdentityCredentials;
+            AssumeRoleWithWebIdentityTestCredentials webIdentityCredentials2;
+            var mockClient = new Mock<ICoreAmazonSTS_WebIdentity>();
+            mockClient.Setup(c => c.CredentialsFromAssumeRoleWithWebIdentityAuthentication(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<AssumeRoleWithWebIdentityCredentialsOptions>()))
+                .Returns(new AssumeRoleImmutableCredentials("dummyAccessKeyId", "dummySecret", "dummyToken", DateTime.UtcNow.AddDays(1)));
+            using (new FallbackFactoryTestFixture(ProfileText, "default", null, envVariables))
+            {
+#endregion Setup
+
+#region Action
+                // Get credentials once
+                var awsCredentials = FallbackCredentialsFactory.GetCredentials();
+                webIdentityCredentials = new AssumeRoleWithWebIdentityTestCredentials((AssumeRoleWithWebIdentityCredentials)awsCredentials, null)
+                {
+                    Client = mockClient.Object
+                };
+                webIdentityCredentials.GetCredentials();
+                // Get credentials again
+                var awsCredentials2 = FallbackCredentialsFactory.GetCredentials();
+                webIdentityCredentials2 = new AssumeRoleWithWebIdentityTestCredentials((AssumeRoleWithWebIdentityCredentials)awsCredentials, null)
+                {
+                    Client = mockClient.Object
+                };
+                webIdentityCredentials2.GetCredentials();
+#endregion Action
+            }
+
+#region Assert
+            Assert.AreEqual(webIdentityTokenFilePath, webIdentityCredentials.WebIdentityTokenFile);
+            Assert.AreEqual(roleArn, webIdentityCredentials.RoleArn);
+            var guidRoleSessionName = webIdentityCredentials.RoleSessionName;
+            Assert.IsTrue(Guid.TryParse(guidRoleSessionName, out Guid guid));
+            Assert.AreEqual(guidRoleSessionName, webIdentityCredentials2.RoleSessionName);
+#endregion Assert
+
+            webIdentityCredentials.Dispose();
+            webIdentityCredentials2.Dispose();
+        }
+
+        [TestMethod]
+        public void TestAssumeRoleWithWebIdentity_TokenPathIsNotAbsolute()
+        {
+            Assert.ThrowsException<ArgumentException>(() => new AssumeRoleWithWebIdentityCredentials("myToken.jwt", "someRoleArn", "someRoleSessionName"));
+        }
+
+        [TestMethod]
+        public void TestAssumeRoleWithWebIdentity_SessionNameInvalid()
+        {
+            var roleSessionName = "invalid()#Session%name";
+            var roleArn = "someRoleArn";
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var webIdentityTokenFilePath = Path.Combine(currentDirectory, "my-token.jwt");
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => new AssumeRoleWithWebIdentityCredentials(webIdentityTokenFilePath, roleArn, roleSessionName));
+        }
+
+        [TestMethod]
+        public void TestAssumeRoleWithWebIdentity_NullRoleArn()
+        {
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var webIdentityTokenFilePath = Path.Combine(currentDirectory, "my-token.jwt");
+            Assert.ThrowsException<ArgumentNullException>(() => new AssumeRoleWithWebIdentityCredentials(webIdentityTokenFilePath, null, "validRoleSessionName"));
+        }
+
+        /// Further FallbackFactory tests involving retries live in AWSSDK.UnitTests.SecurityToken.NET45.Custom.FallbackCredentialsFactorySTSTests.
+
+        public class AssumeRoleWithWebIdentityTestCredentials : AssumeRoleWithWebIdentityCredentials
+        {
+            public ICoreAmazonSTS_WebIdentity Client { get; set; }
+            public AssumeRoleWithWebIdentityTestCredentials(string webIdentityTokenFile, string roleArn, string roleSessionName, AssumeRoleWithWebIdentityCredentialsOptions options)
+                : base(webIdentityTokenFile, roleArn, roleSessionName, options)
+            {
+                Client = base.CreateClient();
+            }
+
+            public AssumeRoleWithWebIdentityTestCredentials(AssumeRoleWithWebIdentityCredentials baseCreds, AssumeRoleWithWebIdentityCredentialsOptions options)
+                : base(baseCreds.WebIdentityTokenFile, baseCreds.RoleArn, baseCreds.RoleSessionName, options)
+            {
+                Client = base.CreateClient();
+            }
+
+            protected override ICoreAmazonSTS_WebIdentity CreateClient()
+            {
+                return Client;
+            }
+        }
+
         public class FallbackFactoryTestFixture : IDisposable
         {
             private const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
             private const string AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE = "AWS_ENABLE_ENDPOINT_DISCOVERY";
 
-            private SharedCredentialsFileTestFixture sharedFixture;
-            private NetSDKCredentialsFileTestFixture netSdkFixture;
+            private readonly SharedCredentialsFileTestFixture sharedFixture;
+            private readonly NetSDKCredentialsFileTestFixture netSdkFixture;
 
-            private CredentialProfileStoreChain originalCredsChain;
-            private CredentialProfileStoreChain originalRegionChain;
-            private CredentialProfileStoreChain originalEndpointDiscoveryEnabledChain;
+            private readonly CredentialProfileStoreChain originalCredsChain;
+            private readonly CredentialProfileStoreChain originalRegionChain;
+            private readonly CredentialProfileStoreChain originalEndpointDiscoveryEnabledChain;
 
-            private string originalAWSProfileValue;
-            private string originalAWSEnableEndpointDiscoveryValue;
-            
+            private readonly string originalAWSProfileValue;
+            private readonly string originalAWSEnableEndpointDiscoveryValue;
 
-            public FallbackFactoryTestFixture(string sharedCredsFileContent, string awsProfileValue, string enableEndpointDiscoveryValue = null)
+            private readonly Dictionary<string, string> originalEnvironmentVariables = new Dictionary<string, string>();
+
+            public FallbackFactoryTestFixture(string sharedCredsFileContent, string awsProfileValue, string enableEndpointDiscoveryValue = null, Dictionary<string, string> newEnvironmentVariables = null)
             {
                 sharedFixture = new SharedCredentialsFileTestFixture(sharedCredsFileContent);
                 netSdkFixture = new NetSDKCredentialsFileTestFixture();
@@ -159,6 +589,16 @@ namespace AWSSDK.UnitTests
                 originalAWSEnableEndpointDiscoveryValue = Environment.GetEnvironmentVariable(AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE);
                 Environment.SetEnvironmentVariable(AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE, enableEndpointDiscoveryValue);
 
+                if (newEnvironmentVariables != null)
+                {
+                    foreach (var envVariable in newEnvironmentVariables)
+                    {
+                        var originalValue = Environment.GetEnvironmentVariable(envVariable.Key);
+                        Environment.SetEnvironmentVariable(envVariable.Key, envVariable.Value);
+                        originalEnvironmentVariables.Add(envVariable.Key, originalValue);
+                    }
+                }
+
                 // reset before use to ensure the new credentialProfileChains are used.
                 FallbackCredentialsFactory.Reset();
                 FallbackRegionFactory.Reset();
@@ -167,6 +607,11 @@ namespace AWSSDK.UnitTests
 
             public void Dispose()
             {
+                foreach (var envVariable in originalEnvironmentVariables)
+                {
+                    Environment.SetEnvironmentVariable(envVariable.Key, envVariable.Value);
+                }
+
                 Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, originalAWSProfileValue);
                 Environment.SetEnvironmentVariable(AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE, originalAWSEnableEndpointDiscoveryValue);
 

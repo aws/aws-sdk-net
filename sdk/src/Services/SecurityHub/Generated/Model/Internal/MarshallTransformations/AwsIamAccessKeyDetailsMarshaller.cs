@@ -51,6 +51,24 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CreatedAt);
             }
 
+            if(requestObject.IsSetPrincipalId())
+            {
+                context.Writer.WritePropertyName("PrincipalId");
+                context.Writer.Write(requestObject.PrincipalId);
+            }
+
+            if(requestObject.IsSetPrincipalName())
+            {
+                context.Writer.WritePropertyName("PrincipalName");
+                context.Writer.Write(requestObject.PrincipalName);
+            }
+
+            if(requestObject.IsSetPrincipalType())
+            {
+                context.Writer.WritePropertyName("PrincipalType");
+                context.Writer.Write(requestObject.PrincipalType);
+            }
+
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");

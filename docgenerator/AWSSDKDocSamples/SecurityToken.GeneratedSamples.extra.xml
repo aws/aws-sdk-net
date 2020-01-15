@@ -21,6 +21,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.AssumeRoleWithSAML(Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest)" />
+            <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.AssumeRoleWithSAML(Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest)" />
+            <member name="T:Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest" />
+            <member name="T:Amazon.SecurityToken.Model.AssumeRoleWithSAMLResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To assume a role using a SAML assertion"
+                    source=".\AWSSDKDocSamples\SecurityToken\SecurityToken.GeneratedSamples.cs"
+                    region="to-assume-role-with-saml-14882749597814" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.AssumeRoleWithWebIdentity(Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest)" />
             <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.AssumeRoleWithWebIdentity(Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest)" />
             <member name="T:Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest" />

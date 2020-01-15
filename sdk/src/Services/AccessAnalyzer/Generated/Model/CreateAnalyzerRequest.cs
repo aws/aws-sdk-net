@@ -29,7 +29,7 @@ namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAnalyzer operation.
-    /// Creates an analyzer with a zone of trust set to your account.
+    /// Creates an analyzer for your account.
     /// </summary>
     public partial class CreateAnalyzerRequest : AmazonAccessAnalyzerRequest
     {
@@ -61,7 +61,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property ArchiveRules. 
         /// <para>
-        /// Specifies the archive rules to add for the analyzer.
+        /// Specifies the archive rules to add for the analyzer. Archive rules automatically archive
+        /// findings that meet the criteria you define for the rule.
         /// </para>
         /// </summary>
         public List<InlineArchiveRule> ArchiveRules
@@ -115,8 +116,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The zone of trust for the analyzer. You can create only one analyzer per account per
-        /// Region.
+        /// The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create
+        /// only one analyzer per account per Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

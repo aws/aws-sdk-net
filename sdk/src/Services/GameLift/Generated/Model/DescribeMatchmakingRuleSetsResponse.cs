@@ -38,8 +38,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token that indicates where to resume retrieving results on the next call to this action.
-        /// If no token is returned, these results represent the end of the list.
+        /// A token that indicates where to resume retrieving results on the next call to this
+        /// action. If no token is returned, these results represent the end of the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -58,7 +58,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuleSets. 
         /// <para>
-        /// Collection of requested matchmaking rule set objects. 
+        /// A collection of requested matchmaking rule set objects. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ErrorMessage. 
         /// <para>
         /// The error message that describes why the instance could not be launched. For more
-        /// information about error messages, see ee <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+        /// information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
         /// Codes</a>.
         /// </para>
         /// </summary>
@@ -80,9 +80,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateAndOverrides. 
         /// <para>
-        /// The launch templates and overrides that were used for launching the instances. Any
-        /// parameters that you specify in the Overrides override the same parameters in the launch
-        /// template.
+        /// The launch templates and overrides that were used for launching the instances. The
+        /// values that you specify in the Overrides replace the values in the launch template.
         /// </para>
         /// </summary>
         public LaunchTemplateAndOverridesResponse LaunchTemplateAndOverrides

@@ -39,8 +39,8 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the number of items that are returned is significantly large, this is an identifier
-        /// that is also returned, which can be used in a subsequent call to this operation to
-        /// return the next set of items in the list.
+        /// that is also returned. It can be used in a subsequent call to this operation to return
+        /// the next set of items in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=1024)]

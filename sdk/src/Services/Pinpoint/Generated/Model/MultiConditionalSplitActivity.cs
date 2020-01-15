@@ -29,8 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Specifies the settings for a multivariate split activity in a journey. This type of
-    /// activity sends participants down one of as many as five paths in a journey, based
-    /// on conditions that you specify.
+    /// activity sends participants down one of as many as five paths (including a default
+    /// <i>Else</i> path) in a journey, based on conditions that you specify.
     /// </summary>
     public partial class MultiConditionalSplitActivity
     {
@@ -60,7 +60,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property DefaultActivity. 
         /// <para>
-        /// The activity to perform by default for any path in the activity.
+        /// The unique identifier for the activity to perform for participants who don't meet
+        /// any of the conditions specified for other paths in the activity.
         /// </para>
         /// </summary>
         public string DefaultActivity

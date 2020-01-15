@@ -51,7 +51,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Activities. 
         /// <para>
-        /// The configuration and other settings for the activities that comprise the journey.
+        /// A map that contains a set of Activity objects, one object for each activity in the
+        /// journey. For each Activity object, the key is the unique identifier (string) for an
+        /// activity and the value is the settings for the activity.
         /// </para>
         /// </summary>
         public Dictionary<string, Activity> Activities
@@ -342,7 +344,7 @@ namespace Amazon.Pinpoint.Model
         /// passed its scheduled end time, or passed its scheduled start time and a refresh frequency
         /// hasn't been specified for it. If a journey's status is CLOSED, you can't add participants
         /// to it, and no existing participants can enter the journey for the first time. However,
-        /// any existing participants who are currently waiting to start an activity may resume
+        /// any existing participants who are currently waiting to start an activity may continue
         /// the journey.
         /// </para>
         /// </li></ul>

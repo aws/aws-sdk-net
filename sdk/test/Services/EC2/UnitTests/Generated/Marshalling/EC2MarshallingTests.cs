@@ -9033,6 +9033,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void StartVpcEndpointServicePrivateDnsVerificationMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartVpcEndpointServicePrivateDnsVerification");
+
+            var request = InstantiateClassGenerator.Execute<StartVpcEndpointServicePrivateDnsVerificationRequest>();
+            var marshaller = new StartVpcEndpointServicePrivateDnsVerificationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = StartVpcEndpointServicePrivateDnsVerificationResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartVpcEndpointServicePrivateDnsVerificationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void StopInstancesMarshallTest()
         {
             var operation = service_model.FindOperation("StopInstances");

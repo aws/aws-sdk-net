@@ -28,9 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// If the email identity is a domain, this object contains tokens that you can use to
-    /// create a set of CNAME records. To sucessfully verify your domain, you have to add
-    /// these records to the DNS configuration for your domain.
+    /// If the email identity is a domain, this object contains information about the DKIM
+    /// verification status for the domain.
     /// 
     ///  
     /// <para>
@@ -46,9 +45,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property DkimAttributes. 
         /// <para>
-        /// An object that contains information about the DKIM attributes for the identity. This
-        /// object includes the tokens that you use to create the CNAME records that are required
-        /// to complete the DKIM verification process.
+        /// An object that contains information about the DKIM attributes for the identity.
         /// </para>
         /// </summary>
         public DkimAttributes DkimAttributes

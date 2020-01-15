@@ -45,6 +45,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAwsCloudFrontDistribution())
+            {
+                context.Writer.WritePropertyName("AwsCloudFrontDistribution");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsCloudFrontDistributionDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsCloudFrontDistribution, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsEc2Instance())
             {
                 context.Writer.WritePropertyName("AwsEc2Instance");
@@ -52,6 +63,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsEc2InstanceDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsEc2Instance, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsElbv2LoadBalancer())
+            {
+                context.Writer.WritePropertyName("AwsElbv2LoadBalancer");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsElbv2LoadBalancerDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsElbv2LoadBalancer, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -67,6 +89,39 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsIamRole())
+            {
+                context.Writer.WritePropertyName("AwsIamRole");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsIamRoleDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsIamRole, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsKmsKey())
+            {
+                context.Writer.WritePropertyName("AwsKmsKey");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsKmsKeyDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsKmsKey, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsLambdaFunction())
+            {
+                context.Writer.WritePropertyName("AwsLambdaFunction");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsLambdaFunctionDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsLambdaFunction, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsS3Bucket())
             {
                 context.Writer.WritePropertyName("AwsS3Bucket");
@@ -74,6 +129,28 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsS3BucketDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsS3Bucket, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsSnsTopic())
+            {
+                context.Writer.WritePropertyName("AwsSnsTopic");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsSnsTopicDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsSnsTopic, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsSqsQueue())
+            {
+                context.Writer.WritePropertyName("AwsSqsQueue");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsSqsQueueDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsSqsQueue, context);
 
                 context.Writer.WriteObjectEnd();
             }

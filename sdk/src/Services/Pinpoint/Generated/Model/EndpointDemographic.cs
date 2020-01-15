@@ -82,7 +82,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Make. 
         /// <para>
-        /// The manufacturer of the endpoint device, such as Apple or Samsung.
+        /// The manufacturer of the endpoint device, such as apple or samsung.
         /// </para>
         /// </summary>
         public string Make
@@ -100,7 +100,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Model. 
         /// <para>
-        /// The model name or number of the endpoint device, such as iPhone.
+        /// The model name or number of the endpoint device, such as iPhone or SM-G900F.
         /// </para>
         /// </summary>
         public string Model
@@ -136,7 +136,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the endpoint device, such as iOS or Android.
+        /// The platform of the endpoint device, such as ios.
         /// </para>
         /// </summary>
         public string Platform

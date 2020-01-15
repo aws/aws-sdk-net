@@ -152,11 +152,6 @@ namespace Amazon.SageMaker.Model
         /// SageMaker downloads and uploads customer data and model artifacts through the specified
         /// VPC, but the training container does not have network access.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Semantic Segmentation built-in algorithm does not support network isolation.
-        /// </para>
-        ///  </note>
         /// </summary>
         public bool EnableNetworkIsolation
         {

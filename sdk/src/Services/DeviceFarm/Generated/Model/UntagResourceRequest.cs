@@ -39,9 +39,9 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource(s) from which to delete tags. You can
-        /// associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
+        /// The Amazon Resource Name (ARN) of the resource or resources from which to delete tags.
+        /// You can associate tags with the following Device Farm resources: <code>PROJECT</code>,
+        /// <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
         /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
         /// </para>
         /// </summary>

@@ -29,8 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVoiceTemplate operation.
-    /// Creates a message template that you can use in messages that are sent through the
-    /// voice channel.
+    /// Creates a message template for messages that are sent through the voice channel.
     /// </summary>
     public partial class CreateVoiceTemplateRequest : AmazonPinpointRequest
     {

@@ -82,6 +82,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CACertificateIdentifier", StringUtils.FromString(publicRequest.CACertificateIdentifier));
                 }
+                if(publicRequest.IsSetCertificateRotationRestart())
+                {
+                    request.Parameters.Add("CertificateRotationRestart", StringUtils.FromBool(publicRequest.CertificateRotationRestart));
+                }
                 if(publicRequest.IsSetCloudwatchLogsExportConfiguration())
                 {
                     if(publicRequest.CloudwatchLogsExportConfiguration.IsSetDisableLogTypes())

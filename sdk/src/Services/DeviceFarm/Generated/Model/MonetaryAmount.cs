@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// A number representing the monetary amount for an offering or transaction.
+    /// A number that represents the monetary amount for an offering or transaction.
     /// </summary>
     public partial class MonetaryAmount
     {
@@ -56,8 +56,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency code of a monetary amount. For example, <code>USD</code> means "U.S.
-        /// dollars."
+        /// The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.
         /// </para>
         /// </summary>
         public CurrencyCode CurrencyCode

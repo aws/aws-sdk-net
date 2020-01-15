@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// An object that contains information about your account's suppression preferences.
+    /// An object that contains information about the suppression list preferences for your
+    /// account.
     /// </summary>
     public partial class SuppressionOptions
     {
@@ -37,16 +38,18 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property SuppressedReasons. 
         /// <para>
-        /// A list of reasons to suppress email addresses. The only valid reasons are:
+        /// A list that contains the reasons that email addresses are automatically added to the
+        /// suppression list for your account. This list can contain any or all of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives
-        /// a complaint.
+        ///  <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list
+        /// for your account when a message sent to that address results in a complaint.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.
+        ///  <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for
+        /// your account when a message sent to that address results in a hard bounce.
         /// </para>
         ///  </li> </ul>
         /// </summary>

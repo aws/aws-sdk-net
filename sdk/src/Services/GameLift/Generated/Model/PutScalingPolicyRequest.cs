@@ -228,8 +228,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet to apply this policy to. The fleet cannot be in any
-        /// of the following statuses: ERROR or DELETING.
+        /// A unique identifier for a fleet to apply this policy to. You can use either the fleet
+        /// ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -325,8 +325,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with a scaling policy. Policy names do not need
-        /// to be unique. A fleet can have only one scaling policy with the same name.
+        /// A descriptive label that is associated with a scaling policy. Policy names do not
+        /// need to be unique. A fleet can have only one scaling policy with the same name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -345,9 +345,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i>
-        /// to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a
-        /// rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>,
+        /// The type of scaling policy to create. For a target-based policy, set the parameter
+        /// <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>.
+        /// For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>,
         /// <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
         /// </para>
         /// </summary>
@@ -384,7 +384,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ScalingAdjustmentType. 
         /// <para>
-        /// Type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+        /// The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -418,7 +418,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TargetConfiguration. 
         /// <para>
-        /// Object that contains settings for a target-based scaling policy.
+        /// The settings for a target-based scaling policy.
         /// </para>
         /// </summary>
         public TargetConfiguration TargetConfiguration

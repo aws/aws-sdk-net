@@ -72,7 +72,26 @@ namespace Amazon.GameLift.Model
         private GameSessionPlacementState _status;
 
         /// <summary>
-        /// Gets and sets the property DnsName.
+        /// Gets and sets the property DnsName. 
+        /// <para>
+        /// DNS identifier assigned to the instance that is running the game session. Values have
+        /// the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>.
+        /// (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
+        /// EC2 Instance IP Addressing</a>.)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When connecting to a game session that is running on a TLS-enabled fleet, you must
+        /// use the DNS name, not the IP address.
+        /// </para>
         /// </summary>
         public string DnsName
         {
@@ -131,7 +150,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Identifier for the game session created by this placement request. This value is set
         /// once the new game session is placed (placement status is <code>FULFILLED</code>).
-        /// This identifier is unique across all regions. You can use this value as a <code>GameSessionId</code>
+        /// This identifier is unique across all Regions. You can use this value as a <code>GameSessionId</code>
         /// value as needed.
         /// </para>
         /// </summary>
@@ -173,7 +192,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// Unique identifier for the game session. This value is set once the new game session
+        /// A unique identifier for the game session. This value is set once the new game session
         /// is placed (placement status is <code>FULFILLED</code>).
         /// </para>
         /// </summary>
@@ -193,7 +212,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionName. 
         /// <para>
-        /// Descriptive label that is associated with a game session. Session names do not need
+        /// A descriptive label that is associated with a game session. Session names do not need
         /// to be unique.
         /// </para>
         /// </summary>
@@ -213,11 +232,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionQueueName. 
         /// <para>
-        /// Descriptive label that is associated with game session queue. Queue names must be
-        /// unique within each region.
+        /// A descriptive label that is associated with game session queue. Queue names must be
+        /// unique within each Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=256)]
         public string GameSessionQueueName
         {
             get { return this._gameSessionQueueName; }
@@ -233,7 +252,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionRegion. 
         /// <para>
-        /// Name of the region where the game session created by this placement request is running.
+        /// Name of the Region where the game session created by this placement request is running.
         /// This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).
         /// </para>
         /// </summary>
@@ -253,9 +272,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// IP address of the game session. To connect to a Amazon GameLift game server, an app
-        /// needs both the IP address and port number. This value is set once the new game session
-        /// is placed (placement status is <code>FULFILLED</code>). 
+        /// IP address of the instance that is running the game session. When connecting to a
+        /// Amazon GameLift game server, a client needs to reference an IP address (or DNS name)
+        /// and port number. This value is set once the new game session is placed (placement
+        /// status is <code>FULFILLED</code>). 
         /// </para>
         /// </summary>
         public string IpAddress
@@ -296,7 +316,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MaximumPlayerSessionCount. 
         /// <para>
-        /// Maximum number of players that can be connected simultaneously to the game session.
+        /// The maximum number of players that can be connected simultaneously to the game session.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -315,7 +335,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlacedPlayerSessions. 
         /// <para>
-        /// Collection of information on player sessions created in response to the game session
+        /// A collection of information on player sessions created in response to the game session
         /// placement request. These player sessions are created only once a new game session
         /// is successfully placed (placement status is <code>FULFILLED</code>). This information
         /// includes the player ID (as provided in the placement request) and the corresponding
@@ -338,7 +358,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlacementId. 
         /// <para>
-        /// Unique identifier for a game session placement.
+        /// A unique identifier for a game session placement.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=48)]
@@ -358,7 +378,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PlayerLatencies. 
         /// <para>
         /// Set of values, expressed in milliseconds, indicating the amount of latency that a
-        /// player experiences when connected to AWS regions.
+        /// player experiences when connected to AWS Regions.
         /// </para>
         /// </summary>
         public List<PlayerLatency> PlayerLatencies
@@ -436,6 +456,12 @@ namespace Amazon.GameLift.Model
         /// <para>
         ///  <b>TIMED_OUT</b> -- A new game session was not successfully created before the time
         /// limit expired. You can resubmit the placement request as needed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FAILED</b> -- GameLift is not able to complete the process of placing the game
+        /// session. Common reasons are the game session terminated before the placement process
+        /// was completed, or an unexpected internal error.
         /// </para>
         ///  </li> </ul>
         /// </summary>

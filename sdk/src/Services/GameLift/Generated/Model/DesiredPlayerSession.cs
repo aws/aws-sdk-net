@@ -59,7 +59,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerId. 
         /// <para>
-        /// Unique identifier for a player to associate with the player session.
+        /// A unique identifier for a player to associate with the player session.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

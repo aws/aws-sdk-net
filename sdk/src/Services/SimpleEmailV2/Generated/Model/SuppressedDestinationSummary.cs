@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// A summary for the suppressed email destination.
+    /// A summary that describes the suppressed email address.
     /// </summary>
     public partial class SuppressedDestinationSummary
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The suppressed email destination.
+        /// The email address that's on the suppression list for your account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property LastUpdateTime. 
         /// <para>
-        /// The last time the suppressed destination was updated.
+        /// The date and time when the suppressed destination was last updated, shown in Unix
+        /// time format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,7 +78,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason for which the email destination is suppressed.
+        /// The reason that the address was added to the suppression list for your account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

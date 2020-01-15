@@ -1,3 +1,245 @@
+### 3.3.663.0 (2020-01-14 19:16 UTC)
+* EC2 (3.3.150.0)
+	* This release adds support for partition placement groups and instance metadata option in Launch Templates
+
+### 3.3.662.0 (2020-01-13 19:11 UTC)
+* Backup (3.3.101.0)
+	* Cross-region backup is a new AWS Backup feature that allows enterprises to copy backups across multiple AWS services to different regions. 
+* EC2 (3.3.149.1)
+	* Documentation updates for the StopInstances API. You can now stop and start an Amazon EBS-backed Spot Instance at will, instead of relying on the Stop interruption behavior to stop your Spot Instances when interrupted.
+* ElasticFileSystem (3.3.104.0)
+	* This release adds support for managing EFS file system policies and EFS Access Points.
+
+### 3.3.661.0 (2020-01-10 19:16 UTC)
+* Chime (3.3.106.0)
+	* Add shared profile support to new and existing users
+* EC2 (3.3.149.0)
+	* This release introduces the ability to tag egress only internet gateways, local gateways, local gateway route tables, local gateway virtual interfaces, local gateway virtual interface groups, local gateway route table VPC association and local gateway route table virtual interface group association. You can use tags to organize and identify your resources for cost allocation. 
+* RDS (3.3.116.0)
+	* This release adds an operation that enables users to override the system-default SSL/TLS certificate for new Amazon RDS DB instances temporarily, or remove the customer override.
+* SageMaker (3.3.109.0)
+	* SageMaker ListTrialComponents API filter by TrialName and ExperimentName.
+* Transfer (3.3.105.0)
+	* This release introduces a new endpoint type that allows you to attach Elastic IP addresses from your AWS account with your server's endpoint directly and whitelist access to your server by client's internet IP address(es) using VPC Security Groups.
+* WorkSpaces (3.3.108.0)
+	* Added the migrate feature to Amazon WorkSpaces.
+* Core 3.3.104.15
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
+### 3.3.660.1 (2020-01-09 19:22 UTC)
+* CloudWatchLogs (3.3.101.71)
+	* Documentation updates for logs
+* SecurityToken (3.3.104.19)
+	* Documentation updates for sts
+
+### 3.3.660.0 (2020-01-08 20:41 UTC)
+* CostExplorer (3.3.106.18)
+	* Documentation updates for CreateCostCategoryDefinition and UpdateCostCategoryDefinition API
+* FMS (3.3.103.0)
+	* AWS Firewall Manager now supports tagging, and tag-based access control, of policies.
+* Translate (3.3.101.0)
+	* This release adds a new family of APIs for asynchronous batch translation service that provides option to translate large collection of text or HTML documents stored in Amazon S3 folder. This service accepts a batch of up to 5 GB in size per API call with each document not exceeding 1 MB size and the number of documents not exceeding 1 million per batch. See documentation for more information. 
+
+### 3.3.659.1 (2020-01-08 00:36 UTC)
+* Lambda (3.3.106.14)
+	* Add ability to clear Layers for a Lambda function
+* S3 (3.3.110.10)
+	* Updated docs for UseSignatureVersion4 property on the AWSConfigs
+* Core 3.3.104.14
+	* Fixed issue resolving AWS credentials using JWT tokens with EKS.
+	* All services packages updated to require new Core
+
+### 3.3.659.0 (2020-01-07 19:37 UTC)
+* CodeBuild (3.3.108.0)
+	* Add encryption key override to StartBuild API in AWS CodeBuild.
+* MigrationHub (3.3.102.0)
+	* ListApplicationStates API provides a list of all application migration states
+* XRay (3.3.101.108)
+	* Documentation updates for xray
+
+### 3.3.658.0 (2020-01-06 19:11 UTC)
+* Comprehend (3.3.108.0)
+	* Amazon Comprehend now supports Multilabel document classification
+* EC2 (3.3.148.0)
+	* This release supports service providers configuring a private DNS name for services other than AWS services and services available in the AWS marketplace. This feature allows consumers to access the service using an existing DNS name without making changes to their applications.
+* MediaPackage (3.3.104.0)
+	* You can now restrict direct access to AWS Elemental MediaPackage by securing requests for live content using CDN authorization. With CDN authorization, content requests require a specific HTTP header and authorization code.
+* Core 3.3.104.13
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
+### 3.3.657.0 (2020-01-02 19:14 UTC)
+* CostExplorer (3.3.106.15)
+	* Documentation updates for GetReservationUtilization for the Cost Explorer API.
+* ECR (3.3.103.0)
+	* Adds waiters for ImageScanComplete and LifecyclePolicyPreviewComplete
+* LexModelBuildingService (3.3.102.4)
+	* Documentation updates for Amazon Lex.
+* Lightsail (3.3.102.0)
+	* This release adds support for Certificate Authority (CA) certificate identifier to managed databases in Amazon Lightsail.
+* Core 3.3.104.12
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
+### 3.3.656.1 (2019-12-25 00:21 UTC)
+* Core 3.3.104.11
+	* Fix support of the role_session_name property in the shared credentials file
+	* All services packages updated to require new Core
+
+### 3.3.656.0 (2019-12-23 19:12 UTC)
+* AWSHealth (3.3.102.0)
+	* With this release, you can now centrally aggregate AWS Health events from all accounts in your AWS organization. Visit AWS Health documentation to learn more about enabling and using this feature: https://docs.aws.amazon.com/health/latest/ug/organizational-view-health.html. 
+* Detective (3.3.100.6)
+	* Updated the documentation for Amazon Detective.
+* FSx (3.3.103.0)
+	* This release adds a new family of APIs (create-data-repository-task, describe-data-repository-task, and cancel-data-repository-task) that allow users to perform operations between their file system and its linked data repository.
+* Core 3.3.104.10
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
+### 3.3.655.0 (2019-12-20 19:20 UTC)
+* DeviceFarm (3.3.102.0)
+	* Introduced browser testing support through AWS Device Farm
+* EC2 (3.3.147.0)
+	* This release introduces the ability to tag key pairs, placement groups, export tasks, import image tasks, import snapshot tasks and export image tasks. You can use tags to organize and identify your resources for cost allocation. 
+* EKS (3.3.106.0)
+	* Amazon EKS now supports restricting access to the API server public endpoint by applying CIDR blocks
+* Pinpoint (3.3.105.0)
+	* This release of the Amazon Pinpoint API introduces versioning support for message templates.
+* RDS (3.3.115.0)
+	* This release adds an operation that enables users to specify whether a database is restarted when its SSL/TLS certificate is rotated. Only customers who do not use SSL/TLS should use this operation.
+* Redshift (3.3.105.12)
+	* Documentation updates for Amazon Redshift RA3 node types.
+* SecurityHub (3.3.105.0)
+	* Additional resource types are now fully supported in the AWS Security Finding Format (ASFF). These resources include AwsElbv2LoadBalancer, AwsKmsKey, AwsIamRole, AwsSqsQueue, AwsLambdaFunction, AwsSnsTopic, and AwsCloudFrontDistribution. Each of these resource types includes an accompanying resource details object with fields for security finding providers to populate. Updates were made to the AwsIamAccessKey resource details object to include information on principal ID and name. To learn more, visit our documentation on the ASFF.
+* SimpleSystemsManagement (3.3.117.0)
+	* This release updates the attachments support to include AttachmentReference source for Automation documents.
+* TranscribeService (3.3.113.0)
+	* AWS Transcribe now supports vocabulary filtering that allows customers to input words to the service that they don't want to see in the output transcript.
+* Core 3.3.104.9
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
+### 3.3.654.1 (2019-12-19 22:06 UTC)
+* S3 (3.3.110.4)
+	* Adding configuration of S3 timeouts to MaxTimeout for .NET Standard
+
+### 3.3.654.0 (2019-12-19 19:42 UTC)
+* CodeStarconnections (3.3.100.0)
+	* Public beta for Bitbucket Cloud support in AWS CodePipeline through integration with AWS CodeStar connections.
+* DLM (3.3.105.0)
+	* You can now copy snapshots across regions using Data Lifecycle Manager (DLM). You can enable policies which, along with create, can now also copy snapshots to one or more AWS region(s). Copies can be scheduled for up to three regions from a single policy and retention periods are set for each region separately. 
+* EC2 (3.3.146.0)
+	* We are updating the supportedRootDevices field to supportedRootDeviceTypes for DescribeInstanceTypes API to ensure that the actual value is returned, correcting a previous error in the model.
+* GameLift (3.3.105.0)
+	* Amazon GameLift now supports ARNs for all key GameLift resources, tagging for GameLift resource authorization management, and updated documentation that articulates GameLift's resource authorization strategy.
+* LexModelBuildingService (3.3.102.0)
+	* Amazon Lex now supports conversation logs and slot obfuscation.
+* PersonalizeRuntime (3.3.102.0)
+	* Add context map to get-recommendations and get-personalized-ranking request objects to provide contextual metadata at inference time
+* SimpleSystemsManagement (3.3.116.0)
+	* This release allows customers to add tags to Automation execution, enabling them to sort and filter executions in different ways, such as by resource, purpose, owner, or environment.
+* TranscribeService (3.3.112.0)
+	* Amazon Transcribe supports job queuing for the StartTranscriptionJob API.
+
+### 3.3.653.0 (2019-12-18 19:46 UTC)
+* CloudFront (3.3.101.82)
+	* Documentation updates for CloudFront
+* EC2 (3.3.145.0)
+	* This release introduces the ability to tag Elastic Graphics accelerators. You can use tags to organize and identify your accelerators for cost allocation.
+* OpsWorksCM (3.3.103.0)
+	* AWS OpsWorks CM now supports tagging, and tag-based access control, of servers and backups.
+* ResourceGroupsTaggingAPI (3.3.103.10)
+	* Documentation updates for resourcegroupstaggingapi
+* S3 (3.3.110.3)
+	* Updates Amazon S3 endpoints allowing you to configure your client to opt-in to using S3 with the us-east-1 regional endpoint, instead of global.
+* Core 3.3.104.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
+### 3.3.652.1 (2019-12-17 23:29 UTC)
+* SecurityToken (3.3.104.11)
+	* Updated to use new Core, version 3.3.104.7
+	* Adds extension methods, tests, and custom retry logic for creating AssumeRoleImmutableCredentials using the AssumeRoleWithWebIdentity operation.  More information on the use of these credentials can be found in the Core project.
+* Core 3.3.104.7
+	* Adds a means to use web identity tokens, such as OIDC tokens, to assume roles using the Security Token Service as part of the regular credential chain.  Users may specify a WebIdentityTokenFile, RoleArn, and optionally a RoleSessionName to create these refreshing credentials.
+	* All services packages updated to require new Core
+
+### 3.3.652.0 (2019-12-17 19:48 UTC)
+* EC2 (3.3.144.1)
+	* Documentation updates for Amazon EC2
+* ECS (3.3.112.7)
+	* Documentation updates for Amazon ECS.
+* IoT (3.3.106.0)
+	* Added a new Over-the-Air (OTA) Update feature that allows you to use different, or multiple, protocols to transfer an image from the AWS cloud to IoT devices.
+* KinesisAnalyticsV2 (3.3.103.0)
+	* Kinesis Data Analytics service now supports running Java applications using Flink 1.8.
+* MediaLive (3.3.107.0)
+	* AWS Elemental MediaLive now supports HLS ID3 segment tagging, HLS redundant manifests for CDNs that support different publishing/viewing endpoints, fragmented MP4 (fMP4), and frame capture intervals specified in milliseconds.
+* SimpleSystemsManagement (3.3.115.0)
+	* Added support for Cloud Watch Output and Document Version to the Run Command tasks in Maintenance Windows.
+
+### 3.3.651.0 (2019-12-16 19:11 UTC)
+* ComprehendMedical (3.3.102.0)
+	* New Ontology linking APIs will provides medication concepts normalization and Diagnoses codes from input text. In this release we will provide two APIs -  RxNorm and ICD10-CM. 
+* EC2 (3.3.144.0)
+	* You can now configure your EC2 Fleet to preferentially use EC2 Capacity Reservations for launching On-Demand instances, enabling you to fully utilize the available (and unused) Capacity Reservations before launching On-Demand instances on net new capacity.
+* MQ (3.3.105.0)
+	* Amazon MQ now supports throughput-optimized message brokers, backed by Amazon EBS.
+* Core 3.3.104.6
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
+### 3.3.650.0 (2019-12-13 21:43 UTC)
+* S3 (3.3.110.0)
+	* Updated to use new Core, version 3.3.104.5
+	* The S3 client now supports a regional endpoint property for us-east-1
+* Core 3.3.104.5
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
+### 3.3.649.0 (2019-12-13 19:49 UTC)
+* CodeBuild (3.3.107.0)
+	* CodeBuild adds support for cross account
+* Detective (3.3.100.0)
+	* This is the initial release of Amazon Detective.
+* SimpleEmailV2 (3.3.102.0)
+	* Added the ability to use your own public-private key pair to configure DKIM authentication for a domain identity.
+
+### 3.3.648.0 (2019-12-12 19:14 UTC)
+* AccessAnalyzer (3.3.101.0)
+	* This release includes improvements and fixes bugs for the IAM Access Analyzer feature.
+* Core 3.3.104.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
+### 3.3.647.1 (2019-12-12 00:11 UTC)
+* S3 (3.3.109.3)
+	* Updated to use new Core, version 3.3.104.3
+	* Fixes to prevent TransferUtility commands from partially succeeding
+* Core 3.3.104.3
+	* Changes to handle and retry OperationCanceledException exceptions in Net Standard versions of the SDK when thrown by HttpClient where it isn't a user issued cancellation.
+	* All services packages updated to require new Core
+
 ### 3.3.647.0 (2019-12-11 19:13 UTC)
 * EC2 (3.3.143.0)
 	* This release allows customers to attach multiple Elastic Inference Accelerators to a single EC2 instance. It adds support for a Count parameter for each Elastic Inference Accelerator type you specify on the RunInstances and LaunchTemplate APIs.

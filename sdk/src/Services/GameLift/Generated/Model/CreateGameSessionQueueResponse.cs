@@ -37,7 +37,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionQueue. 
         /// <para>
-        /// Object that describes the newly created game session queue.
+        /// An object that describes the newly created game session queue.
         /// </para>
         /// </summary>
         public GameSessionQueue GameSessionQueue

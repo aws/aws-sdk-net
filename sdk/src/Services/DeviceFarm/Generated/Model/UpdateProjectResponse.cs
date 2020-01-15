@@ -37,7 +37,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Project. 
         /// <para>
-        /// The project you wish to update.
+        /// The project to update.
         /// </para>
         /// </summary>
         public Project Project

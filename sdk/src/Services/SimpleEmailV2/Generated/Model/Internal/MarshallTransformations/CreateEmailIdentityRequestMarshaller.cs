@@ -66,6 +66,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDkimSigningAttributes())
+                {
+                    context.Writer.WritePropertyName("DkimSigningAttributes");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DkimSigningAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DkimSigningAttributes, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEmailIdentity())
                 {
                     context.Writer.WritePropertyName("EmailIdentity");

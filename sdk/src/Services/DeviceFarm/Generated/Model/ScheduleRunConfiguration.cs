@@ -46,7 +46,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property AuxiliaryApps. 
         /// <para>
-        /// A list of Upload ARNs for app packages that will be installed alongside your app.
+        /// A list of upload ARNs for app packages to be installed with your app.
         /// </para>
         /// </summary>
         public List<string> AuxiliaryApps
@@ -67,6 +67,12 @@ namespace Amazon.DeviceFarm.Model
         /// Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>.
         /// If the parameter is not specified, the default value is <code>metered</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code>
+        /// to make use of them. Otherwise, your run counts against your metered time.
+        /// </para>
+        ///  </note>
         /// </summary>
         public BillingMethod BillingMethod
         {
@@ -102,7 +108,7 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property ExtraDataPackageArn. 
         /// <para>
         /// The ARN of the extra data for the run. The extra data is a .zip file that AWS Device
-        /// Farm will extract to external data for Android or the app's sandbox for iOS.
+        /// Farm extracts to external data for Android or the app's sandbox for iOS.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=1011)]
@@ -194,7 +200,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property VpceConfigurationArns. 
         /// <para>
-        /// An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+        /// An array of ARNs for your VPC endpoint configurations.
         /// </para>
         /// </summary>
         public List<string> VpceConfigurationArns

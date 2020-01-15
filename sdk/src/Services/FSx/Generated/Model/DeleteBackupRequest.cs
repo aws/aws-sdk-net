@@ -74,7 +74,7 @@ namespace Amazon.FSx.Model
         /// deletion. This is automatically filled on your behalf when using the AWS CLI or SDK.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=63)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }

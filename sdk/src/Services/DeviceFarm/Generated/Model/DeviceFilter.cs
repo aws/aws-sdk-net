@@ -30,12 +30,13 @@ namespace Amazon.DeviceFarm.Model
     /// <summary>
     /// Represents a device filter used to select a set of devices to be included in a test
     /// run. This data structure is passed in as the <code>deviceSelectionConfiguration</code>
-    /// parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
+    /// parameter to <code>ScheduleRun</code>. For an example of the JSON request syntax,
+    /// see <a>ScheduleRun</a>.
     /// 
     ///  
     /// <para>
-    /// It is also passed in as the <code>filters</code> parameter to ListDevices. For an
-    /// example of the JSON request syntax, see <a>ListDevices</a>.
+    /// It is also passed in as the <code>filters</code> parameter to <code>ListDevices</code>.
+    /// For an example of the JSON request syntax, see <a>ListDevices</a>.
     /// </para>
     /// </summary>
     public partial class DeviceFilter
@@ -56,87 +57,84 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <dl> <dt>ARN</dt> <dd> 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the device. For example, "arn:aws:devicefarm:us-west-2::device:12345Example".
+        /// The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-        /// 
+        /// Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> 
         /// </para>
         ///  </dd> <dt>PLATFORM</dt> <dd> 
         /// <para>
-        /// The device platform. Valid values are "ANDROID" or "IOS".
+        /// The device platform. Valid values are ANDROID or IOS.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// Supported operators: <code>EQUALS</code> 
         /// </para>
         ///  </dd> <dt>OS_VERSION</dt> <dd> 
         /// <para>
-        /// The operating system version. For example, "10.3.2".
+        /// The operating system version (for example, 10.3.2).
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>,
+        /// Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>,
         /// <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code>
         /// 
         /// </para>
         ///  </dd> <dt>MODEL</dt> <dd> 
         /// <para>
-        /// The device model. For example, "iPad 5th Gen".
+        /// The device model (for example, iPad 5th Gen).
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>,
+        /// Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>,
         /// <code>NOT_IN</code> 
         /// </para>
         ///  </dd> <dt>AVAILABILITY</dt> <dd> 
         /// <para>
-        /// The current availability of the device. Valid values are "AVAILABLE", "HIGHLY_AVAILABLE",
-        /// "BUSY", or "TEMPORARY_NOT_AVAILABLE".
+        /// The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE,
+        /// BUSY, or TEMPORARY_NOT_AVAILABLE.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// Supported operators: <code>EQUALS</code> 
         /// </para>
         ///  </dd> <dt>FORM_FACTOR</dt> <dd> 
         /// <para>
-        /// The device form factor. Valid values are "PHONE" or "TABLET".
+        /// The device form factor. Valid values are PHONE or TABLET.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// Supported operators: <code>EQUALS</code> 
         /// </para>
         ///  </dd> <dt>MANUFACTURER</dt> <dd> 
         /// <para>
-        /// The device manufacturer. For example, "Apple".
+        /// The device manufacturer (for example, Apple).
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-        /// 
+        /// Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> 
         /// </para>
         ///  </dd> <dt>REMOTE_ACCESS_ENABLED</dt> <dd> 
         /// <para>
-        /// Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
+        /// Whether the device is enabled for remote access. Valid values are TRUE or FALSE.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// Supported operators: <code>EQUALS</code> 
         /// </para>
         ///  </dd> <dt>REMOTE_DEBUG_ENABLED</dt> <dd> 
         /// <para>
-        ///  <i>Ignored.</i>Whether the device is enabled for remote debugging. Valid values are
-        /// "TRUE" or "FALSE".
+        /// Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// Supported operators: <code>EQUALS</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <i>This filter will be ignored, as remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</i> 
+        /// Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>, this filter is ignored.
         /// </para>
         ///  </dd> <dt>INSTANCE_ARN</dt> <dd> 
         /// <para>
@@ -144,8 +142,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-        /// 
+        /// Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> 
         /// </para>
         ///  </dd> <dt>INSTANCE_LABELS</dt> <dd> 
         /// <para>
@@ -153,15 +150,15 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>CONTAINS</code> 
+        /// Supported operators: <code>CONTAINS</code> 
         /// </para>
         ///  </dd> <dt>FLEET_TYPE</dt> <dd> 
         /// <para>
-        /// The fleet type. Valid values are "PUBLIC" or "PRIVATE".
+        /// The fleet type. Valid values are PUBLIC or PRIVATE.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// Supported operators: <code>EQUALS</code> 
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -180,8 +177,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// Specifies how Device Farm compares the filter's attribute to the value. For the operators
-        /// that are supported by each attribute, see the attribute descriptions.
+        /// Specifies how Device Farm compares the filter's attribute to the value. See the attribute
+        /// descriptions.
         /// </para>
         /// </summary>
         public RuleOperator Operator
@@ -215,20 +212,19 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The PLATFORM attribute can be set to "ANDROID" or "IOS".
+        /// The PLATFORM attribute can be set to ANDROID or IOS.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The AVAILABILITY attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY",
-        /// or "TEMPORARY_NOT_AVAILABLE".
+        /// The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The FORM_FACTOR attribute can be set to "PHONE" or "TABLET".
+        /// The FORM_FACTOR attribute can be set to PHONE or TABLET.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".
+        /// The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.
         /// </para>
         ///  </li> </ul>
         /// </summary>

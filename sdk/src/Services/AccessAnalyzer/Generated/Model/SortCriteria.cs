@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
-    /// The sort criteria.
+    /// The criteria used to sort.
     /// </summary>
     public partial class SortCriteria
     {

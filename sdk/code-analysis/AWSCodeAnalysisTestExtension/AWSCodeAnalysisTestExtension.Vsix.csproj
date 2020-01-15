@@ -236,6 +236,10 @@
       <Project>{57676728-2C35-44E9-8990-0CD0EE3A6E2E}</Project>
       <Name>AWSSDK.CodeStar.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CodeStarconnections/AWSSDK.CodeStarconnections.CodeAnalysis.csproj">
+      <Project>{9F19D6D8-7B75-43AC-8819-74B822450464}</Project>
+      <Name>AWSSDK.CodeStarconnections.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CodeStarNotifications/AWSSDK.CodeStarNotifications.CodeAnalysis.csproj">
       <Project>{24E912CD-1CEE-4CA3-9E36-3AA0EBB3BF5B}</Project>
       <Name>AWSSDK.CodeStarNotifications.CodeAnalysis</Name>
@@ -303,6 +307,10 @@
     <ProjectReference Include="../ServiceAnalysis/DAX/AWSSDK.DAX.CodeAnalysis.csproj">
       <Project>{058AC9AA-575E-41B0-BB07-ACB97F16D056}</Project>
       <Name>AWSSDK.DAX.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Detective/AWSSDK.Detective.CodeAnalysis.csproj">
+      <Project>{B967EBEA-32C3-4867-BF5E-29C3C35AD368}</Project>
+      <Name>AWSSDK.Detective.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/DeviceFarm/AWSSDK.DeviceFarm.CodeAnalysis.csproj">
       <Project>{5243BCF3-1EF1-4878-BFC0-6ED9CAF57881}</Project>

@@ -50,6 +50,7 @@ namespace Amazon.PersonalizeRuntime.Model
     public partial class GetRecommendationsRequest : AmazonPersonalizeRuntimeRequest
     {
         private string _campaignArn;
+        private Dictionary<string, string> _context = new Dictionary<string, string>();
         private string _itemId;
         private int? _numResults;
         private string _userId;
@@ -71,6 +72,28 @@ namespace Amazon.PersonalizeRuntime.Model
         internal bool IsSetCampaignArn()
         {
             return this._campaignArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// The contextual metadata to use when getting recommendations. Contextual metadata includes
+        /// any interaction information that might be relevant when getting a user's recommendations,
+        /// such as the user's current location or device type. For more information, see Contextual
+        /// Metadata.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=150)]
+        public Dictionary<string, string> Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null && this._context.Count > 0; 
         }
 
         /// <summary>
@@ -99,7 +122,7 @@ namespace Amazon.PersonalizeRuntime.Model
         /// <summary>
         /// Gets and sets the property NumResults. 
         /// <para>
-        /// The number of results to return. The default is 25. The maximum is 100.
+        /// The number of results to return. The default is 25. The maximum is 500.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

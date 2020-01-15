@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        /// Collection of objects containing properties for each instance returned.
+        /// A collection of objects containing properties for each instance returned.
         /// </para>
         /// </summary>
         public List<Instance> Instances

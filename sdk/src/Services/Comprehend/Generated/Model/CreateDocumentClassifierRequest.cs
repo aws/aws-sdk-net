@@ -41,6 +41,7 @@ namespace Amazon.Comprehend.Model
         private string _documentClassifierName;
         private DocumentClassifierInputDataConfig _inputDataConfig;
         private LanguageCode _languageCode;
+        private DocumentClassifierMode _mode;
         private DocumentClassifierOutputDataConfig _outputDataConfig;
         private List<Tag> _tags = new List<Tag>();
         private string _volumeKmsKeyId;
@@ -143,6 +144,28 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetLanguageCode()
         {
             return this._languageCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// Indicates the mode in which the classifier will be trained. The classifier can be
+        /// trained in multi-class mode, which identifies one and only one class for each document,
+        /// or multi-label mode, which identifies one or more labels for each document. In multi-label
+        /// mode, multiple labels for an individual document are separated by a delimiter. The
+        /// default delimiter between labels is a pipe (|).
+        /// </para>
+        /// </summary>
+        public DocumentClassifierMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
         }
 
         /// <summary>

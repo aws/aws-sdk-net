@@ -29,9 +29,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRuntimeConfiguration operation.
-    /// Retrieves the current run-time configuration for the specified fleet. The run-time
-    /// configuration tells Amazon GameLift how to launch server processes on instances in
-    /// the fleet.
+    /// Retrieves the current runtime configuration for the specified fleet. The runtime configuration
+    /// tells Amazon GameLift how to launch server processes on instances in the fleet.
     /// 
     ///  
     /// <para>
@@ -92,25 +91,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Update fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
     ///  <a>UpdateFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
     /// <para>
     /// Manage fleet actions:
     /// </para>
@@ -131,7 +114,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet to get the run-time configuration for.
+        /// A unique identifier for a fleet to get the runtime configuration for. You can use
+        /// either the fleet ID or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

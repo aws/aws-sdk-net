@@ -33,6 +33,7 @@ namespace Amazon.Backup.Model
     public partial class BackupRuleInput
     {
         private long? _completionWindowMinutes;
+        private List<CopyAction> _copyActions = new List<CopyAction>();
         private Lifecycle _lifecycle;
         private Dictionary<string, string> _recoveryPointTags = new Dictionary<string, string>();
         private string _ruleName;
@@ -57,6 +58,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetCompletionWindowMinutes()
         {
             return this._completionWindowMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyActions. 
+        /// <para>
+        /// An array of <code>CopyAction</code> objects, which contains the details of the copy
+        /// operation.
+        /// </para>
+        /// </summary>
+        public List<CopyAction> CopyActions
+        {
+            get { return this._copyActions; }
+            set { this._copyActions = value; }
+        }
+
+        // Check to see if CopyActions property is set
+        internal bool IsSetCopyActions()
+        {
+            return this._copyActions != null && this._copyActions.Count > 0; 
         }
 
         /// <summary>

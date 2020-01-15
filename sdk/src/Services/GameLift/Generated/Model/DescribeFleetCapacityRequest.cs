@@ -101,25 +101,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Update fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
     ///  <a>UpdateFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
     /// <para>
     /// Manage fleet actions:
     /// </para>
@@ -142,8 +126,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetIds. 
         /// <para>
-        /// Unique identifier for a fleet(s) to retrieve capacity information for. To request
-        /// capacity information for all fleets, leave this parameter empty.
+        /// A unique identifier for a fleet(s) to retrieve capacity information for. You can use
+        /// either the fleet ID or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -162,7 +146,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages. This parameter is ignored when the request
         /// specifies one or a list of fleet IDs.
         /// </para>

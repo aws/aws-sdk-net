@@ -94,10 +94,16 @@ namespace Amazon.Transfer.Model
         /// user down to the designated home directory ("chroot"). To do this, you can set <code>Entry</code>
         /// to '/' and set <code>Target</code> to the HomeDirectory parameter value. 
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        ///  
+        /// If the target of a logical directory entry does not exist in S3, the entry will be
+        /// ignored. As a workaround, you can use the S3 api to create 0 byte objects as place
+        /// holders for your directory. If using the CLI, use the s3api call instead of s3 so
+        /// you can use the put-object operation. For example, you use the following: <code>aws
+        /// s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that
+        /// the end of the key name ends in a / for it to be considered a folder. 
         /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<HomeDirectoryMapEntry> HomeDirectoryMappings

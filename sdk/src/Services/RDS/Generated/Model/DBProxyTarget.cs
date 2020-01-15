@@ -132,7 +132,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property TrackedClusterId. 
         /// <para>
         /// The DB cluster identifier when the target represents an Aurora DB cluster. This field
-        /// is blank when the target represents an 
+        /// is blank when the target represents an RDS DB instance.
         /// </para>
         /// </summary>
         public string TrackedClusterId

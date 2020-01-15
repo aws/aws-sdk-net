@@ -100,6 +100,11 @@
     <pattern>[^/:|\000-\037]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHub.Model.ListApplicationStatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHub.Model.ListCreatedArtifactsRequest.MaxResults</property>
     <min>1</min>
     <max>10</max>
@@ -180,6 +185,11 @@
     <min>1</min>
     <max>50</max>
     <pattern>[^/:|\000-\037]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHub.Model.ApplicationState.ApplicationId</property>
+    <min>1</min>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHub.Model.CreatedArtifact.Description</property>

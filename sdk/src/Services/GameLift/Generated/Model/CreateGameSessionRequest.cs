@@ -128,8 +128,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AliasId. 
         /// <para>
-        /// Unique identifier for an alias associated with the fleet to create a game session
-        /// in. Each request must reference either a fleet ID or alias ID, but not both.
+        /// A unique identifier for an alias associated with the fleet to create a game session
+        /// in. You can use either the alias ID or ARN value. Each request must reference either
+        /// a fleet ID or alias ID, but not both.
         /// </para>
         /// </summary>
         public string AliasId
@@ -147,7 +148,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CreatorId. 
         /// <para>
-        /// Unique identifier for a player or entity creating the game session. This ID is used
+        /// A unique identifier for a player or entity creating the game session. This ID is used
         /// to enforce a resource protection policy (if one exists) that limits the number of
         /// concurrent active game sessions one player can have.
         /// </para>
@@ -168,8 +169,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet to create a game session in. Each request must reference
-        /// either a fleet ID or alias ID, but not both.
+        /// A unique identifier for a fleet to create a game session in. You can use either the
+        /// fleet ID or ARN value. Each request must reference either a fleet ID or alias ID,
+        /// but not both.
         /// </para>
         /// </summary>
         public string FleetId
@@ -278,7 +280,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MaximumPlayerSessionCount. 
         /// <para>
-        /// Maximum number of players that can be connected simultaneously to the game session.
+        /// The maximum number of players that can be connected simultaneously to the game session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -297,7 +299,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with a game session. Session names do not need
+        /// A descriptive label that is associated with a game session. Session names do not need
         /// to be unique.
         /// </para>
         /// </summary>

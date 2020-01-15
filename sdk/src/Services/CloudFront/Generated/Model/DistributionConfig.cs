@@ -514,7 +514,9 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property WebACLId. 
         /// <para>
         /// A unique identifier that specifies the AWS WAF web ACL, if any, to associate with
-        /// this distribution.
+        /// this distribution. To specify a web ACL created using the latest version of AWS WAF,
+        /// use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// </para>
         ///  
         /// <para>
@@ -524,7 +526,7 @@ namespace Amazon.CloudFront.Model
         /// or the values of query strings, CloudFront responds to requests either with the requested
         /// content or with an HTTP 403 status code (Forbidden). You can also configure CloudFront
         /// to return a custom error page when a request is blocked. For more information about
-        /// AWS WAF, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">AWS
+        /// AWS WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">AWS
         /// WAF Developer Guide</a>. 
         /// </para>
         /// </summary>

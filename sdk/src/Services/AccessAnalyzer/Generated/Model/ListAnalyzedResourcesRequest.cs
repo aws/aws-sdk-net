@@ -29,7 +29,8 @@ namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAnalyzedResources operation.
-    /// Retrieves a list of resources that have been analyzed.
+    /// Retrieves a list of resources of the specified type that have been analyzed by the
+    /// specified analyzer..
     /// </summary>
     public partial class ListAnalyzedResourcesRequest : AmazonAccessAnalyzerRequest
     {

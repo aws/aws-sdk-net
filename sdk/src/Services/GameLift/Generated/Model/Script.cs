@@ -60,6 +60,7 @@ namespace Amazon.GameLift.Model
     {
         private DateTime? _creationTime;
         private string _name;
+        private string _scriptArn;
         private string _scriptId;
         private long? _sizeOnDisk;
         private S3Location _storageLocation;
@@ -68,8 +69,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Time stamp indicating when this data object was created. Format is a number expressed
-        /// in Unix time as milliseconds (for example "1469498468.057").
+        /// A time stamp indicating when this data object was created. The format is a number
+        /// expressed in Unix time as milliseconds (for example "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -87,8 +88,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with a script. Script names do not need to be
-        /// unique.
+        /// A descriptive label that is associated with a script. Script names do not need to
+        /// be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -105,9 +106,30 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ScriptArn. 
+        /// <para>
+        /// Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+        /// that is assigned to a GameLift script resource and uniquely identifies it. ARNs are
+        /// unique across all Regions. In a GameLift script ARN, the resource ID matches the <i>ScriptId</i>
+        /// value.
+        /// </para>
+        /// </summary>
+        public string ScriptArn
+        {
+            get { return this._scriptArn; }
+            set { this._scriptArn = value; }
+        }
+
+        // Check to see if ScriptArn property is set
+        internal bool IsSetScriptArn()
+        {
+            return this._scriptArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ScriptId. 
         /// <para>
-        /// Unique identifier for a Realtime script
+        /// A unique identifier for a Realtime script
         /// </para>
         /// </summary>
         public string ScriptId
@@ -125,8 +147,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property SizeOnDisk. 
         /// <para>
-        /// File size of the uploaded Realtime script, expressed in bytes. When files are uploaded
-        /// from an S3 location, this value remains at "0".
+        /// The file size of the uploaded Realtime script, expressed in bytes. When files are
+        /// uploaded from an S3 location, this value remains at "0".
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -160,8 +182,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version that is associated with a build or script. Version strings do not need to
-        /// be unique.
+        /// The version that is associated with a build or script. Version strings do not need
+        /// to be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

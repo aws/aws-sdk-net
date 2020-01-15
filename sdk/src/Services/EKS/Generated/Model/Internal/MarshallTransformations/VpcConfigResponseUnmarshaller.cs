@@ -82,6 +82,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndpointPublicAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("publicAccessCidrs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PublicAccessCidrs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("securityGroupIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

@@ -29,9 +29,9 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRoomMembership operation.
-    /// Updates room membership details, such as member role. The member role designates whether
-    /// the member is a chat room administrator or a general chat room member. Member role
-    /// can only be updated for user IDs.
+    /// Updates room membership details, such as the member role. The member role designates
+    /// whether the member is a chat room administrator or a general chat room member. The
+    /// member role can be updated only for user IDs.
     /// </summary>
     public partial class UpdateRoomMembershipRequest : AmazonChimeRequest
     {

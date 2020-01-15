@@ -58,7 +58,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property KeysWithNoncompliantValues. 
         /// <para>
-        /// The tag value is noncompliant with the effective tag policy.
+        /// These are keys defined in the effective policy that are on the resource with either
+        /// incorrect case treatment or noncompliant values. 
         /// </para>
         /// </summary>
         public List<string> KeysWithNoncompliantValues
@@ -76,7 +77,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property NoncompliantKeys. 
         /// <para>
-        /// The tag key is noncompliant with the effective tag policy.
+        /// These tag keys on the resource are noncompliant with the effective tag policy.
         /// </para>
         /// </summary>
         public List<string> NoncompliantKeys

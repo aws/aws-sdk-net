@@ -33,6 +33,7 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class StartTranscriptionJobRequest : AmazonTranscribeServiceRequest
     {
+        private JobExecutionSettings _jobExecutionSettings;
         private LanguageCode _languageCode;
         private Media _media;
         private MediaFormat _mediaFormat;
@@ -41,6 +42,26 @@ namespace Amazon.TranscribeService.Model
         private string _outputEncryptionKMSKeyId;
         private Settings _settings;
         private string _transcriptionJobName;
+
+        /// <summary>
+        /// Gets and sets the property JobExecutionSettings. 
+        /// <para>
+        /// Provides information about how a transcription job is executed. Use this field to
+        /// indicate that the job can be queued for deferred execution if the concurrency limit
+        /// is reached and there are no slots available to immediately run the job.
+        /// </para>
+        /// </summary>
+        public JobExecutionSettings JobExecutionSettings
+        {
+            get { return this._jobExecutionSettings; }
+            set { this._jobExecutionSettings = value; }
+        }
+
+        // Check to see if JobExecutionSettings property is set
+        internal bool IsSetJobExecutionSettings()
+        {
+            return this._jobExecutionSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LanguageCode. 

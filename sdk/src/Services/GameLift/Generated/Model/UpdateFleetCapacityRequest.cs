@@ -77,37 +77,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Describe fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
     ///  <a>DescribeFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetUtilization</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetEvents</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
     /// <para>
     /// Update fleets:
     /// </para>
@@ -170,7 +142,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet to update capacity for.
+        /// A unique identifier for a fleet to update capacity for. You can use either the fleet
+        /// ID or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -189,7 +162,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        /// Maximum value allowed for the fleet's instance count. Default if not set is 1.
+        /// The maximum value allowed for the fleet's instance count. Default if not set is 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -208,7 +181,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        /// Minimum value allowed for the fleet's instance count. Default if not set is 0.
+        /// The minimum value allowed for the fleet's instance count. Default if not set is 0.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

@@ -37,7 +37,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property VpcPeeringConnections. 
         /// <para>
-        /// Collection of VPC peering connection records that match the request.
+        /// A collection of VPC peering connection records that match the request.
         /// </para>
         /// </summary>
         public List<VpcPeeringConnection> VpcPeeringConnections

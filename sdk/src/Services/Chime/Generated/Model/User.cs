@@ -33,6 +33,7 @@ namespace Amazon.Chime.Model
     public partial class User
     {
         private string _accountId;
+        private AlexaForBusinessMetadata _alexaForBusinessMetadata;
         private string _displayName;
         private DateTime? _invitedOn;
         private License _licenseType;
@@ -43,6 +44,7 @@ namespace Amazon.Chime.Model
         private string _userId;
         private InviteStatus _userInvitationStatus;
         private RegistrationStatus _userRegistrationStatus;
+        private UserType _userType;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -60,6 +62,24 @@ namespace Amazon.Chime.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AlexaForBusinessMetadata. 
+        /// <para>
+        /// The Alexa for Business metadata.
+        /// </para>
+        /// </summary>
+        public AlexaForBusinessMetadata AlexaForBusinessMetadata
+        {
+            get { return this._alexaForBusinessMetadata; }
+            set { this._alexaForBusinessMetadata = value; }
+        }
+
+        // Check to see if AlexaForBusinessMetadata property is set
+        internal bool IsSetAlexaForBusinessMetadata()
+        {
+            return this._alexaForBusinessMetadata != null;
         }
 
         /// <summary>
@@ -241,6 +261,24 @@ namespace Amazon.Chime.Model
         internal bool IsSetUserRegistrationStatus()
         {
             return this._userRegistrationStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserType. 
+        /// <para>
+        /// The user type.
+        /// </para>
+        /// </summary>
+        public UserType UserType
+        {
+            get { return this._userType; }
+            set { this._userType = value; }
+        }
+
+        // Check to see if UserType property is set
+        internal bool IsSetUserType()
+        {
+            return this._userType != null;
         }
 
     }

@@ -83,8 +83,10 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 }
                 else
                 {
-                    foreach (var property in this.Request.GetType().GetProperties(BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance))
+                    var properties = this.Request.GetType().GetProperties(BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+                    foreach (var childMember in this.Operation.RequestBodyMembers)
                     {
+                        var property = properties.Single(p => childMember.PropertyName == p.Name);
                         if (this.Operation.RequestHeaderMembers.Any(m => m.PropertyName == property.Name) ||
                             this.Operation.RequestQueryStringMembers.Any(m => m.PropertyName == property.Name) ||
                             this.Operation.RequestUriMembers.Any(m => m.PropertyName == property.Name))
@@ -97,10 +99,10 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                             continue;
                         }
 
-                        var childMember = this.Operation.RequestBodyMembers.Single(m => m.PropertyName == property.Name);
                         var childValue = property.GetValue(this.Request);
                         var childMarshalledData = GetMarshalledProperty(marshalledData, childMember.MarshallName);
                         Visit(childValue, childMember, childMarshalledData, new TypeCircularReference<Type>());
+                        
                     }
                 }
             }

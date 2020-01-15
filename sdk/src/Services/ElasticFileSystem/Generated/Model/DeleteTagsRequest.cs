@@ -70,7 +70,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// A list of tag keys to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

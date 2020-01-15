@@ -33,6 +33,7 @@ namespace Amazon.MediaPackage.Model
     /// </summary>
     public partial class CreateOriginEndpointRequest : AmazonMediaPackageRequest
     {
+        private Authorization _authorization;
         private string _channelId;
         private CmafPackageCreateOrUpdateParameters _cmafPackage;
         private DashPackage _dashPackage;
@@ -46,6 +47,21 @@ namespace Amazon.MediaPackage.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private int? _timeDelaySeconds;
         private List<string> _whitelist = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property Authorization.
+        /// </summary>
+        public Authorization Authorization
+        {
+            get { return this._authorization; }
+            set { this._authorization = value; }
+        }
+
+        // Check to see if Authorization property is set
+        internal bool IsSetAuthorization()
+        {
+            return this._authorization != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ChannelId. The ID of the Channel that the OriginEndpoint

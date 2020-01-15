@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private bool? _managesVpcEndpoints;
         private List<string> _networkLoadBalancerArns = new List<string>();
         private string _privateDnsName;
+        private PrivateDnsNameConfiguration _privateDnsNameConfiguration;
         private string _serviceId;
         private string _serviceName;
         private ServiceState _serviceState;
@@ -66,7 +67,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// In the Availability Zones in which the service is available.
+        /// The Availability Zones in which the service is available.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -102,7 +103,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ManagesVpcEndpoints. 
         /// <para>
-        /// Indicates whether the service manages it's VPC endpoints. Management of the service
+        /// Indicates whether the service manages its VPC endpoints. Management of the service
         /// VPC endpoints using the VPC endpoint API is restricted.
         /// </para>
         /// </summary>
@@ -152,6 +153,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPrivateDnsName()
         {
             return this._privateDnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsNameConfiguration. 
+        /// <para>
+        /// Information about the endpoint service private DNS name configuration.
+        /// </para>
+        /// </summary>
+        public PrivateDnsNameConfiguration PrivateDnsNameConfiguration
+        {
+            get { return this._privateDnsNameConfiguration; }
+            set { this._privateDnsNameConfiguration = value; }
+        }
+
+        // Check to see if PrivateDnsNameConfiguration property is set
+        internal bool IsSetPrivateDnsNameConfiguration()
+        {
+            return this._privateDnsNameConfiguration != null;
         }
 
         /// <summary>

@@ -504,10 +504,9 @@ namespace Amazon.SimpleEmailV2
         /// help you predict how your messages will be handled by various email providers around
         /// the world. When you perform a predictive inbox placement test, you provide a sample
         /// message that contains the content that you plan to send to your customers. Amazon
-        /// SES API v2 then sends that message to special email addresses spread across several
-        /// major email providers. After about 24 hours, the test is complete, and you can use
-        /// the <code>GetDeliverabilityTestReport</code> operation to view the results of the
-        /// test.
+        /// SES then sends that message to special email addresses spread across several major
+        /// email providers. After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
+        /// operation to view the results of the test.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeliverabilityTestReport service method.</param>
         /// 
@@ -603,16 +602,29 @@ namespace Amazon.SimpleEmailV2
         /// </para>
         ///  
         /// <para>
-        /// When you verify a domain, this operation provides a set of DKIM tokens, which you
-        /// can convert into CNAME tokens. You add these CNAME tokens to the DNS configuration
-        /// for your domain. Your domain is verified when Amazon SES detects these records in
-        /// the DNS configuration for your domain. For some DNS providers, it can take 72 hours
-        /// or more to complete the domain verification process.
+        /// When you verify a domain without specifying the <code>DkimSigningAttributes</code>
+        /// object, this operation provides a set of DKIM tokens. You can convert these tokens
+        /// into CNAME records, which you then add to the DNS configuration for your domain. Your
+        /// domain is verified when Amazon SES detects these records in the DNS configuration
+        /// for your domain. This verification method is known as <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+        /// DKIM</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Alternatively, you can perform the verification process by providing your own public-private
+        /// key pair. This verification method is known as Bring Your Own DKIM (BYODKIM). To use
+        /// BYODKIM, your call to the <code>CreateEmailIdentity</code> operation has to include
+        /// the <code>DkimSigningAttributes</code> object. When you specify this object, you provide
+        /// a selector (a component of the DNS record name that identifies the public key that
+        /// you want to use for DKIM authentication) and a private key.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEmailIdentity service method.</param>
         /// 
         /// <returns>The response from the CreateEmailIdentity service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
         /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
         /// The input you provided is invalid.
         /// </exception>
@@ -953,7 +965,7 @@ namespace Amazon.SimpleEmailV2
         #region  DeleteSuppressedDestination
 
         /// <summary>
-        /// Used to delete a suppressed email destination from your suppression list.
+        /// Removes an email address from the suppression list for your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSuppressedDestination service method.</param>
         /// 
@@ -1422,7 +1434,7 @@ namespace Amazon.SimpleEmailV2
         /// When you use the Deliverability dashboard, you pay a monthly subscription charge,
         /// in addition to any other fees that you accrue by using Amazon SES and other AWS services.
         /// For more information about the features and cost of a Deliverability dashboard subscription,
-        /// see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.
+        /// see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDeliverabilityDashboardOptions service method.</param>
@@ -1742,7 +1754,8 @@ namespace Amazon.SimpleEmailV2
         #region  GetSuppressedDestination
 
         /// <summary>
-        /// Used to fetch a single suppressed email destination from your suppression list.
+        /// Retrieves information about a specific email address that's on the suppression list
+        /// for your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSuppressedDestination service method.</param>
         /// 
@@ -2126,7 +2139,7 @@ namespace Amazon.SimpleEmailV2
         #region  ListSuppressedDestinations
 
         /// <summary>
-        /// Used to fetch a list suppressed email destinations from your suppression list.
+        /// Retrieves a list of email addresses that are on the suppression list for your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSuppressedDestinations service method.</param>
         /// 
@@ -2135,8 +2148,7 @@ namespace Amazon.SimpleEmailV2
         /// The input you provided is invalid.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmailV2.Model.InvalidNextTokenException">
-        /// The specified request includes an invalid or expired token. Please attempt to get
-        /// a new token.
+        /// The specified request includes an invalid or expired token.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
@@ -2377,7 +2389,7 @@ namespace Amazon.SimpleEmailV2
         #region  PutAccountSuppressionAttributes
 
         /// <summary>
-        /// Change your account's suppression preferences for your account.
+        /// Change the settings for the account-level suppression list.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountSuppressionAttributes service method.</param>
         /// 
@@ -2629,7 +2641,7 @@ namespace Amazon.SimpleEmailV2
         #region  PutConfigurationSetSuppressionOptions
 
         /// <summary>
-        /// Specify your account's suppression preferences for a configuration set.
+        /// Specify the account suppression list preferences for a configuration set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetSuppressionOptions service method.</param>
         /// 
@@ -2904,7 +2916,7 @@ namespace Amazon.SimpleEmailV2
         /// When you use the Deliverability dashboard, you pay a monthly subscription charge,
         /// in addition to any other fees that you accrue by using Amazon SES and other AWS services.
         /// For more information about the features and cost of a Deliverability dashboard subscription,
-        /// see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.
+        /// see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDeliverabilityDashboardOption service method.</param>
@@ -3030,6 +3042,92 @@ namespace Amazon.SimpleEmailV2
         public virtual PutEmailIdentityDkimAttributesResponse EndPutEmailIdentityDkimAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<PutEmailIdentityDkimAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutEmailIdentityDkimSigningAttributes
+
+        /// <summary>
+        /// Used to configure or change the DKIM authentication settings for an email domain identity.
+        /// You can use this operation to do any of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Update the signing attributes for an identity that uses Bring Your Own DKIM (BYODKIM).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Change from using no DKIM authentication to using Easy DKIM.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Change from using no DKIM authentication to using BYODKIM.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Change from using Easy DKIM to using BYODKIM.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Change from using BYODKIM to using Easy DKIM.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEmailIdentityDkimSigningAttributes service method.</param>
+        /// 
+        /// <returns>The response from the PutEmailIdentityDkimSigningAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimSigningAttributes">REST API Reference for PutEmailIdentityDkimSigningAttributes Operation</seealso>
+        public virtual PutEmailIdentityDkimSigningAttributesResponse PutEmailIdentityDkimSigningAttributes(PutEmailIdentityDkimSigningAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityDkimSigningAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityDkimSigningAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<PutEmailIdentityDkimSigningAttributesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEmailIdentityDkimSigningAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEmailIdentityDkimSigningAttributes operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEmailIdentityDkimSigningAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimSigningAttributes">REST API Reference for PutEmailIdentityDkimSigningAttributes Operation</seealso>
+        public virtual IAsyncResult BeginPutEmailIdentityDkimSigningAttributes(PutEmailIdentityDkimSigningAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityDkimSigningAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityDkimSigningAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutEmailIdentityDkimSigningAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEmailIdentityDkimSigningAttributes.</param>
+        /// 
+        /// <returns>Returns a  PutEmailIdentityDkimSigningAttributesResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimSigningAttributes">REST API Reference for PutEmailIdentityDkimSigningAttributes Operation</seealso>
+        public virtual PutEmailIdentityDkimSigningAttributesResponse EndPutEmailIdentityDkimSigningAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutEmailIdentityDkimSigningAttributesResponse>(asyncResult);
         }
 
         #endregion
@@ -3179,7 +3277,7 @@ namespace Amazon.SimpleEmailV2
         #region  PutSuppressedDestination
 
         /// <summary>
-        /// Puts (overwrites) an email destination in your suppression list.
+        /// Adds an email address to the suppression list for your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSuppressedDestination service method.</param>
         /// 
@@ -3244,8 +3342,8 @@ namespace Amazon.SimpleEmailV2
         ///  <ul> <li> 
         /// <para>
         ///  <b>Simple</b> – A standard email message. When you create this type of message, you
-        /// specify the sender, the recipient, and the message body, and the Amazon SES API v2
-        /// assembles the message for you.
+        /// specify the sender, the recipient, and the message body, and Amazon SES assembles
+        /// the message for you.
         /// </para>
         ///  </li> <li> 
         /// <para>

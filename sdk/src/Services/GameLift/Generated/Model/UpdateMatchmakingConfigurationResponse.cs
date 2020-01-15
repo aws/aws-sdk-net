@@ -37,7 +37,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Object that describes the updated matchmaking configuration.
+        /// The updated matchmaking configuration.
         /// </para>
         /// </summary>
         public MatchmakingConfiguration Configuration

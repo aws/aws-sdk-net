@@ -29,7 +29,7 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// Contains information about a dedicated IP address that is associated with your Amazon
-    /// SES API v2 account.
+    /// SES account.
     /// 
     ///  
     /// <para>

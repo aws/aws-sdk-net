@@ -37,7 +37,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuleSet. 
         /// <para>
-        /// Object that describes the newly created matchmaking rule set.
+        /// The newly created matchmaking rule set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

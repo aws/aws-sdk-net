@@ -58,6 +58,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class Build
     {
+        private string _buildArn;
         private string _buildId;
         private DateTime? _creationTime;
         private string _name;
@@ -67,9 +68,30 @@ namespace Amazon.GameLift.Model
         private string _version;
 
         /// <summary>
+        /// Gets and sets the property BuildArn. 
+        /// <para>
+        /// Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+        /// that is assigned to a GameLift build resource and uniquely identifies it. ARNs are
+        /// unique across all Regions. In a GameLift build ARN, the resource ID matches the <i>BuildId</i>
+        /// value.
+        /// </para>
+        /// </summary>
+        public string BuildArn
+        {
+            get { return this._buildArn; }
+            set { this._buildArn = value; }
+        }
+
+        // Check to see if BuildArn property is set
+        internal bool IsSetBuildArn()
+        {
+            return this._buildArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BuildId. 
         /// <para>
-        /// Unique identifier for a build.
+        /// A unique identifier for a build.
         /// </para>
         /// </summary>
         public string BuildId
@@ -106,8 +128,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with a build. Build names do not need to be unique.
-        /// It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+        /// A descriptive label that is associated with a build. Build names do not need to be
+        /// unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
         /// </para>
         /// </summary>
         public string Name
@@ -203,8 +225,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version that is associated with a build or script. Version strings do not need to
-        /// be unique. This value can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+        /// Version information that is associated with a build or script. Version strings do
+        /// not need to be unique. This value can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
         /// </para>
         /// </summary>
         public string Version

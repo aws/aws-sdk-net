@@ -59,7 +59,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property SourceLanguageCode. 
         /// <para>
-        /// The language code for the language of the source text. 
+        /// The language code for the language of the source text.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=5)]
@@ -97,7 +97,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property TranslatedText. 
         /// <para>
-        /// The the translated text. The maximum length of this text is 5kb.
+        /// The translated text.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10000)]

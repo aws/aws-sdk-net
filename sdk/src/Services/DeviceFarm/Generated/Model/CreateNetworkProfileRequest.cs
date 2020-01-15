@@ -143,7 +143,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name you wish to specify for the new network profile.
+        /// The name for the new network profile.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -182,7 +182,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of network profile you wish to create. Valid values are listed below.
+        /// The type of network profile to create. Valid values are listed here.
         /// </para>
         /// </summary>
         public NetworkProfileType Type

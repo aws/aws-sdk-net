@@ -38,7 +38,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A string describing the offering promotion.
+        /// A string that describes the offering promotion.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=16384)]

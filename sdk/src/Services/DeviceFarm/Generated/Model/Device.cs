@@ -76,8 +76,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Availability. 
         /// <para>
-        /// Reflects how likely a device will be available for a test run. It is currently available
-        /// in the ListDevices and GetDevice API methods.
+        /// Indicates how likely a device is available for a test run. Currently available in
+        /// the <a>ListDevices</a> and GetDevice API methods.
         /// </para>
         /// </summary>
         public DeviceAvailability Availability
@@ -149,8 +149,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property FleetType. 
         /// <para>
-        /// The type of fleet to which this device belongs. Possible values for fleet type are
-        /// PRIVATE and PUBLIC.
+        /// The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.
         /// </para>
         /// </summary>
         public string FleetType
@@ -176,11 +175,11 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// PHONE: The phone form factor.
+        /// PHONE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// TABLET: The tablet form factor.
+        /// TABLET
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -235,7 +234,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        /// The instances belonging to this device.
+        /// The instances that belong to this device.
         /// </para>
         /// </summary>
         public List<DeviceInstance> Instances
@@ -370,11 +369,11 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ANDROID: The Android platform.
+        /// ANDROID
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IOS: The iOS platform.
+        /// IOS
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -433,8 +432,8 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  
         /// <para>
-        ///  <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</i> 
+        /// Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.
         /// </para>
         /// </summary>
         public bool RemoteDebugEnabled

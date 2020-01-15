@@ -78,10 +78,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Unique identifier for a matchmaking configuration
+        /// A unique identifier for a matchmaking configuration. You can use either the configuration
+        /// name or ARN value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

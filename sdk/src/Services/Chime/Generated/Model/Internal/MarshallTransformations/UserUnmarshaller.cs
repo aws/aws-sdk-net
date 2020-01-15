@@ -70,6 +70,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AlexaForBusinessMetadata", targetDepth))
+                {
+                    var unmarshaller = AlexaForBusinessMetadataUnmarshaller.Instance;
+                    unmarshalledObject.AlexaForBusinessMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DisplayName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -128,6 +134,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserRegistrationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UserType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

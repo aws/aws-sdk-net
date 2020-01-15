@@ -81,6 +81,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetUserType())
+                {
+                    context.Writer.WritePropertyName("UserType");
+                    context.Writer.Write(publicRequest.UserType);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

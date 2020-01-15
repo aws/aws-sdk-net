@@ -191,6 +191,168 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type DataRepositoryTaskFilterName.
+    /// </summary>
+    public class DataRepositoryTaskFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FileSystemId for DataRepositoryTaskFilterName
+        /// </summary>
+        public static readonly DataRepositoryTaskFilterName FileSystemId = new DataRepositoryTaskFilterName("file-system-id");
+        /// <summary>
+        /// Constant TaskLifecycle for DataRepositoryTaskFilterName
+        /// </summary>
+        public static readonly DataRepositoryTaskFilterName TaskLifecycle = new DataRepositoryTaskFilterName("task-lifecycle");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataRepositoryTaskFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataRepositoryTaskFilterName FindValue(string value)
+        {
+            return FindValue<DataRepositoryTaskFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataRepositoryTaskFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataRepositoryTaskLifecycle.
+    /// </summary>
+    public class DataRepositoryTaskLifecycle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELED for DataRepositoryTaskLifecycle
+        /// </summary>
+        public static readonly DataRepositoryTaskLifecycle CANCELED = new DataRepositoryTaskLifecycle("CANCELED");
+        /// <summary>
+        /// Constant CANCELING for DataRepositoryTaskLifecycle
+        /// </summary>
+        public static readonly DataRepositoryTaskLifecycle CANCELING = new DataRepositoryTaskLifecycle("CANCELING");
+        /// <summary>
+        /// Constant EXECUTING for DataRepositoryTaskLifecycle
+        /// </summary>
+        public static readonly DataRepositoryTaskLifecycle EXECUTING = new DataRepositoryTaskLifecycle("EXECUTING");
+        /// <summary>
+        /// Constant FAILED for DataRepositoryTaskLifecycle
+        /// </summary>
+        public static readonly DataRepositoryTaskLifecycle FAILED = new DataRepositoryTaskLifecycle("FAILED");
+        /// <summary>
+        /// Constant PENDING for DataRepositoryTaskLifecycle
+        /// </summary>
+        public static readonly DataRepositoryTaskLifecycle PENDING = new DataRepositoryTaskLifecycle("PENDING");
+        /// <summary>
+        /// Constant SUCCEEDED for DataRepositoryTaskLifecycle
+        /// </summary>
+        public static readonly DataRepositoryTaskLifecycle SUCCEEDED = new DataRepositoryTaskLifecycle("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataRepositoryTaskLifecycle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataRepositoryTaskLifecycle FindValue(string value)
+        {
+            return FindValue<DataRepositoryTaskLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataRepositoryTaskLifecycle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataRepositoryTaskType.
+    /// </summary>
+    public class DataRepositoryTaskType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXPORT_TO_REPOSITORY for DataRepositoryTaskType
+        /// </summary>
+        public static readonly DataRepositoryTaskType EXPORT_TO_REPOSITORY = new DataRepositoryTaskType("EXPORT_TO_REPOSITORY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataRepositoryTaskType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataRepositoryTaskType FindValue(string value)
+        {
+            return FindValue<DataRepositoryTaskType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataRepositoryTaskType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FileSystemLifecycle.
     /// </summary>
     public class FileSystemLifecycle : ConstantClass
@@ -400,6 +562,98 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReportFormat.
+    /// </summary>
+    public class ReportFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REPORT_CSV_20191124 for ReportFormat
+        /// </summary>
+        public static readonly ReportFormat REPORT_CSV_20191124 = new ReportFormat("REPORT_CSV_20191124");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReportFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReportFormat FindValue(string value)
+        {
+            return FindValue<ReportFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReportFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReportScope.
+    /// </summary>
+    public class ReportScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED_FILES_ONLY for ReportScope
+        /// </summary>
+        public static readonly ReportScope FAILED_FILES_ONLY = new ReportScope("FAILED_FILES_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReportScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReportScope FindValue(string value)
+        {
+            return FindValue<ReportScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReportScope(string value)
         {
             return FindValue(value);
         }

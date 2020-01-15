@@ -51,7 +51,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// Values to narrow the results returned. At least one event ARN is required. 
+        /// Values to narrow the results returned. At least one event ARN is required.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -116,6 +116,7 @@ namespace Amazon.AWSHealth.Model
         /// value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=10000)]
         public string NextToken
         {
             get { return this._nextToken; }

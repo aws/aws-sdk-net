@@ -108,6 +108,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LanguageCode);
                 }
 
+                if(publicRequest.IsSetMode())
+                {
+                    context.Writer.WritePropertyName("Mode");
+                    context.Writer.Write(publicRequest.Mode);
+                }
+
                 if(publicRequest.IsSetOutputDataConfig())
                 {
                     context.Writer.WritePropertyName("OutputDataConfig");

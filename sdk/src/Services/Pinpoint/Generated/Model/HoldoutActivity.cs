@@ -60,6 +60,12 @@ namespace Amazon.Pinpoint.Model
         /// <para>
         /// The percentage of participants who shouldn't continue the journey.
         /// </para>
+        ///  
+        /// <para>
+        /// To determine which participants are held out, Amazon Pinpoint applies a probability-based
+        /// algorithm to the percentage that you specify. Therefore, the actual percentage of
+        /// participants who are held out may not be equal to the percentage that you specify.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int Percentage

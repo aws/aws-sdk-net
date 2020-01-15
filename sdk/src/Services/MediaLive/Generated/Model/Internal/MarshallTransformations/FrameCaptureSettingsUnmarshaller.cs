@@ -70,6 +70,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.CaptureInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("captureIntervalUnits", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CaptureIntervalUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

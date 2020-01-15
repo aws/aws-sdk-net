@@ -57,6 +57,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EndpointPublicAccess);
             }
 
+            if(requestObject.IsSetPublicAccessCidrs())
+            {
+                context.Writer.WritePropertyName("publicAccessCidrs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPublicAccessCidrsListValue in requestObject.PublicAccessCidrs)
+                {
+                        context.Writer.Write(requestObjectPublicAccessCidrsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("securityGroupIds");

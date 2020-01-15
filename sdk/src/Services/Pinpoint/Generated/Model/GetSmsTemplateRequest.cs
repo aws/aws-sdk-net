@@ -29,12 +29,13 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSmsTemplate operation.
-    /// Retrieves the content and settings for a message template that you can use in messages
-    /// that are sent through the SMS channel.
+    /// Retrieves the content and settings of a message template for messages that are sent
+    /// through the SMS channel.
     /// </summary>
     public partial class GetSmsTemplateRequest : AmazonPinpointRequest
     {
         private string _templateName;
+        private string _version;
 
         /// <summary>
         /// Gets and sets the property TemplateName. 
@@ -55,6 +56,52 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetTemplateName()
         {
             return this._templateName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The unique identifier for the version of the message template to update, retrieve
+        /// information about, or delete. To retrieve identifiers and other information for all
+        /// the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template
+        /// Versions</link> resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// If specified, this value must match the identifier of an existing template version.
+        /// If specified for an update operation, this value must match the identifier of the
+        /// latest existing version of the template. This restriction helps ensure that race conditions
+        /// don't occur.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value for this parameter, Amazon Pinpoint does the following:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// For a get operation, retrieves information about the active version of the template.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// For an update operation, saves the updates to the latest existing version of the template,
+        /// if the create-new-version parameter isn't used or is set to false.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// For a delete operation, deletes the template, including all versions of the template.
+        /// </para>
+        /// </li></ul>
+        /// </summary>
+        public string Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
         }
 
     }

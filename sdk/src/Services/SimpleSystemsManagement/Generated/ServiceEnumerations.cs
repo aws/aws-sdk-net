@@ -425,6 +425,10 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant AttachmentReference for AttachmentsSourceKey
+        /// </summary>
+        public static readonly AttachmentsSourceKey AttachmentReference = new AttachmentsSourceKey("AttachmentReference");
+        /// <summary>
         /// Constant S3FileUrl for AttachmentsSourceKey
         /// </summary>
         public static readonly AttachmentsSourceKey S3FileUrl = new AttachmentsSourceKey("S3FileUrl");
@@ -506,6 +510,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant StartTimeBefore for AutomationExecutionFilterKey
         /// </summary>
         public static readonly AutomationExecutionFilterKey StartTimeBefore = new AutomationExecutionFilterKey("StartTimeBefore");
+        /// <summary>
+        /// Constant TagKey for AutomationExecutionFilterKey
+        /// </summary>
+        public static readonly AutomationExecutionFilterKey TagKey = new AutomationExecutionFilterKey("TagKey");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

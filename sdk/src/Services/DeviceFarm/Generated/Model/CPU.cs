@@ -28,12 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents the amount of CPU that an app is using on a physical device.
-    /// 
-    ///  
-    /// <para>
-    /// Note that this does not represent system-wide CPU usage.
-    /// </para>
+    /// Represents the amount of CPU that an app is using on a physical device. Does not represent
+    /// system-wide CPU usage.
     /// </summary>
     public partial class CPU
     {
@@ -44,7 +40,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Architecture. 
         /// <para>
-        /// The CPU's architecture, for example x86 or ARM.
+        /// The CPU's architecture (for example, x86 or ARM).
         /// </para>
         /// </summary>
         public string Architecture

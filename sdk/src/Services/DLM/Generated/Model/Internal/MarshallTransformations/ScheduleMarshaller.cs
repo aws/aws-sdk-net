@@ -62,6 +62,22 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCrossRegionCopyRules())
+            {
+                context.Writer.WritePropertyName("CrossRegionCopyRules");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCrossRegionCopyRulesListValue in requestObject.CrossRegionCopyRules)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CrossRegionCopyRuleMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCrossRegionCopyRulesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetFastRestoreRule())
             {
                 context.Writer.WritePropertyName("FastRestoreRule");

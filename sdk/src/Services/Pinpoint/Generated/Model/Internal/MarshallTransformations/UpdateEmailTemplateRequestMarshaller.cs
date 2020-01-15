@@ -62,6 +62,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetTemplateName())
                 throw new AmazonPinpointException("Request object does not have required field TemplateName set");
             request.AddPathResource("{template-name}", StringUtils.FromString(publicRequest.TemplateName));
+            
+            if (publicRequest.IsSetCreateNewVersion())
+                request.Parameters.Add("create-new-version", StringUtils.FromBool(publicRequest.CreateNewVersion));
+            
+            if (publicRequest.IsSetVersion())
+                request.Parameters.Add("version", StringUtils.FromString(publicRequest.Version));
             request.ResourcePath = "/v1/templates/{template-name}/email";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
@@ -78,6 +84,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            request.UseQueryString = true;
 
             return request;
         }

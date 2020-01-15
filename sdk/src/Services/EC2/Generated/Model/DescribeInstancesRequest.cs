@@ -140,8 +140,11 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>iam-instance-profile.arn</code> - The instance profile associated with the
-        /// instance. Specified as an ARN. <code>image-id</code> - The ID of the image used to
-        /// launch the instance.
+        /// instance. Specified as an ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>image-id</code> - The ID of the image used to launch the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that specifies how CloudFront handles query strings and cookies.
+    /// A complex type that specifies how CloudFront handles query strings, cookies, and HTTP
+    /// headers.
     /// </summary>
     public partial class ForwardedValues
     {

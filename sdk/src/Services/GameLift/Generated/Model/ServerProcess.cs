@@ -44,7 +44,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ConcurrentExecutions. 
         /// <para>
-        /// Number of server processes using this configuration to run concurrently on an instance.
+        /// The number of server processes that use this configuration to run concurrently on
+        /// an instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -63,7 +64,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LaunchPath. 
         /// <para>
-        /// Location of the server executable in a custom game build or the name of the Realtime
+        /// The location of the server executable in a custom game build or the name of the Realtime
         /// script file that contains the <code>Init()</code> function. Game builds and Realtime
         /// scripts are installed on instances at the root: 
         /// </para>
@@ -95,8 +96,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Optional list of parameters to pass to the server executable or Realtime script on
-        /// launch.
+        /// An optional list of parameters to pass to the server executable or Realtime script
+        /// on launch.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -29,8 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePushTemplate operation.
-    /// Creates a message template that you can use in messages that are sent through a push
-    /// notification channel.
+    /// Creates a message template for messages that are sent through a push notification
+    /// channel.
     /// </summary>
     public partial class CreatePushTemplateRequest : AmazonPinpointRequest
     {
@@ -38,11 +38,7 @@ namespace Amazon.Pinpoint.Model
         private string _templateName;
 
         /// <summary>
-        /// Gets and sets the property PushNotificationTemplateRequest. 
-        /// <para>
-        /// Creates a message template that you can use in messages that are sent through a push
-        /// notification channel.
-        /// </para>
+        /// Gets and sets the property PushNotificationTemplateRequest.
         /// </summary>
         [AWSProperty(Required=true)]
         public PushNotificationTemplateRequest PushNotificationTemplateRequest

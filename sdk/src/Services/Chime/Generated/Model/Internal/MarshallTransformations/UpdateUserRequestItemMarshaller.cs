@@ -45,6 +45,17 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateUserRequestItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAlexaForBusinessMetadata())
+            {
+                context.Writer.WritePropertyName("AlexaForBusinessMetadata");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AlexaForBusinessMetadataMarshaller.Instance;
+                marshaller.Marshall(requestObject.AlexaForBusinessMetadata, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLicenseType())
             {
                 context.Writer.WritePropertyName("LicenseType");
@@ -55,6 +66,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("UserId");
                 context.Writer.Write(requestObject.UserId);
+            }
+
+            if(requestObject.IsSetUserType())
+            {
+                context.Writer.WritePropertyName("UserType");
+                context.Writer.Write(requestObject.UserType);
             }
 
         }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// The raw email message.
+    /// Represents the raw content of an email message.
     /// </summary>
     public partial class RawMessage
     {
@@ -53,7 +53,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Attachments must be in a file format that the Amazon SES API v2 supports. 
+        /// Attachments must be in a file format that the Amazon SES supports.
         /// </para>
         ///  </li> <li> 
         /// <para>

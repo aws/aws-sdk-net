@@ -29,7 +29,7 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSuppressedDestinations operation.
-    /// Used to fetch a list suppressed email destinations from your suppression list.
+    /// Retrieves a list of email addresses that are on the suppression list for your account.
     /// </summary>
     public partial class ListSuppressedDestinationsRequest : AmazonSimpleEmailServiceV2Request
     {
@@ -42,7 +42,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EndDate. 
         /// <para>
-        /// Filters email destinations suppressed after the given time.
+        /// Used to filter the list of suppressed email destinations so that it only includes
+        /// addresses that were added to the list before a specific date. The date that you specify
+        /// should be in Unix time format.
         /// </para>
         /// </summary>
         public DateTime EndDate
@@ -61,7 +63,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token returned from a previous call to <code>ListSuppressedDestinations</code> to
-        /// indicate the position in the list of suppressed email destinations.
+        /// indicate the position in the list of suppressed email addresses.
         /// </para>
         /// </summary>
         public string NextToken
@@ -100,7 +102,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Reasons. 
         /// <para>
-        /// Filters email destinations suppressed by the given reasons.
+        /// The factors that caused the email address to be added to .
         /// </para>
         /// </summary>
         public List<string> Reasons
@@ -118,7 +120,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        /// Filters email destinations suppressed before the given time.
+        /// Used to filter the list of suppressed email destinations so that it only includes
+        /// addresses that were added to the list after a specific date. The date that you specify
+        /// should be in Unix time format.
         /// </para>
         /// </summary>
         public DateTime StartDate

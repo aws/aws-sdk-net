@@ -89,7 +89,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// Unique identifier for the game session to update.
+        /// A unique identifier for the game session to update. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -108,7 +108,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MaximumPlayerSessionCount. 
         /// <para>
-        /// Maximum number of players that can be connected simultaneously to the game session.
+        /// The maximum number of players that can be connected simultaneously to the game session.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -127,7 +127,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with a game session. Session names do not need
+        /// A descriptive label that is associated with a game session. Session names do not need
         /// to be unique.
         /// </para>
         /// </summary>

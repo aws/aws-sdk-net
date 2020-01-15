@@ -36,6 +36,78 @@ namespace Amazon.FSx
     {
 
         
+        #region  CancelDataRepositoryTask
+
+
+        /// <summary>
+        /// Cancels an existing Amazon FSx for Lustre data repository task if that task is in
+        /// either the <code>PENDING</code> or <code>EXECUTING</code> state. When you cancel a
+        /// task, Amazon FSx does the following.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Any files that FSx has already exported are not reverted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FSx continues to export any files that are "in-flight" when the cancel operation is
+        /// received.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FSx does not export any files that have not yet been exported.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelDataRepositoryTask service method.</param>
+        /// 
+        /// <returns>The response from the CancelDataRepositoryTask service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.DataRepositoryTaskEndedException">
+        /// The data repository task could not be canceled because the task has already ended.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.DataRepositoryTaskNotFoundException">
+        /// The data repository task or tasks you specified could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CancelDataRepositoryTask">REST API Reference for CancelDataRepositoryTask Operation</seealso>
+        CancelDataRepositoryTaskResponse CancelDataRepositoryTask(CancelDataRepositoryTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelDataRepositoryTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelDataRepositoryTask operation on AmazonFSxClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelDataRepositoryTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CancelDataRepositoryTask">REST API Reference for CancelDataRepositoryTask Operation</seealso>
+        IAsyncResult BeginCancelDataRepositoryTask(CancelDataRepositoryTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelDataRepositoryTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelDataRepositoryTask.</param>
+        /// 
+        /// <returns>Returns a  CancelDataRepositoryTaskResult from FSx.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CancelDataRepositoryTask">REST API Reference for CancelDataRepositoryTask Operation</seealso>
+        CancelDataRepositoryTaskResponse EndCancelDataRepositoryTask(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateBackup
 
 
@@ -105,7 +177,7 @@ namespace Amazon.FSx
         /// some service limits by contacting AWS Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
-        /// An error occured.
+        /// The requested operation is not supported for this resource or API.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         CreateBackupResponse CreateBackup(CreateBackupRequest request);
@@ -135,6 +207,80 @@ namespace Amazon.FSx
         /// <returns>Returns a  CreateBackupResult from FSx.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         CreateBackupResponse EndCreateBackup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateDataRepositoryTask
+
+
+        /// <summary>
+        /// Creates an Amazon FSx for Lustre data repository task. You use data repository tasks
+        /// to perform bulk operations between your Amazon FSx file system and its linked data
+        /// repository. An example of a data repository task is exporting any data and metadata
+        /// changes, including POSIX metadata, to files, directories, and symbolic links (symlinks)
+        /// from your FSx file system to its linked data repository. A <code>CreateDataRepositoryTask</code>
+        /// operation will fail if a data repository is not linked to the FSx file system. To
+        /// learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using
+        /// Data Repository Tasks</a>. To learn more about linking a data repository to your file
+        /// system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/getting-started-step1.html">Step
+        /// 1: Create Your Amazon FSx for Lustre File System</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataRepositoryTask service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataRepositoryTask service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.DataRepositoryTaskExecutingException">
+        /// An existing data repository task is currently executing on the file system. Wait until
+        /// the existing task has completed, then create the new task.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryTask">REST API Reference for CreateDataRepositoryTask Operation</seealso>
+        CreateDataRepositoryTaskResponse CreateDataRepositoryTask(CreateDataRepositoryTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataRepositoryTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataRepositoryTask operation on AmazonFSxClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataRepositoryTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryTask">REST API Reference for CreateDataRepositoryTask Operation</seealso>
+        IAsyncResult BeginCreateDataRepositoryTask(CreateDataRepositoryTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataRepositoryTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataRepositoryTask.</param>
+        /// 
+        /// <returns>Returns a  CreateDataRepositoryTaskResult from FSx.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryTask">REST API Reference for CreateDataRepositoryTask Operation</seealso>
+        CreateDataRepositoryTaskResponse EndCreateDataRepositoryTask(IAsyncResult asyncResult);
 
         #endregion
         
@@ -458,7 +604,12 @@ namespace Amazon.FSx
         /// system ID for a deleted file system, the <a>DescribeFileSystems</a> returns a <code>FileSystemNotFound</code>
         /// error.
         /// </para>
-        ///  <important> 
+        ///  <note> 
+        /// <para>
+        /// Deleting an Amazon FSx for Lustre file system will fail with a 400 BadRequest if a
+        /// data repository task is in a <code>PENDING</code> or <code>EXECUTING</code> state.
+        /// </para>
+        ///  </note> <important> 
         /// <para>
         /// The data in a deleted file system is also deleted and can't be recovered by any means.
         /// </para>
@@ -600,6 +751,72 @@ namespace Amazon.FSx
         /// <returns>Returns a  DescribeBackupsResult from FSx.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         DescribeBackupsResponse EndDescribeBackups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeDataRepositoryTasks
+
+
+        /// <summary>
+        /// Returns the description of specific Amazon FSx for Lustre data repository tasks, if
+        /// one or more <code>TaskIds</code> values are provided in the request, or if filters
+        /// are used in the request. You can use filters to narrow the response to include just
+        /// tasks for specific file systems, or tasks in a specific lifecycle state. Otherwise,
+        /// it returns all data repository tasks owned by your AWS account in the AWS Region of
+        /// the endpoint that you're calling.
+        /// 
+        ///  
+        /// <para>
+        /// When retrieving all tasks, you can paginate the response by using the optional <code>MaxResults</code>
+        /// parameter to limit the number of tasks returned in a response. If more tasks remain,
+        /// Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send
+        /// a later request with the <code>NextToken</code> request parameter set to the value
+        /// of <code>NextToken</code> from the last response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataRepositoryTasks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDataRepositoryTasks service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.DataRepositoryTaskNotFoundException">
+        /// The data repository task or tasks you specified could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks">REST API Reference for DescribeDataRepositoryTasks Operation</seealso>
+        DescribeDataRepositoryTasksResponse DescribeDataRepositoryTasks(DescribeDataRepositoryTasksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDataRepositoryTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataRepositoryTasks operation on AmazonFSxClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDataRepositoryTasks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks">REST API Reference for DescribeDataRepositoryTasks Operation</seealso>
+        IAsyncResult BeginDescribeDataRepositoryTasks(DescribeDataRepositoryTasksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDataRepositoryTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDataRepositoryTasks.</param>
+        /// 
+        /// <returns>Returns a  DescribeDataRepositoryTasksResult from FSx.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks">REST API Reference for DescribeDataRepositoryTasks Operation</seealso>
+        DescribeDataRepositoryTasksResponse EndDescribeDataRepositoryTasks(IAsyncResult asyncResult);
 
         #endregion
         
@@ -915,7 +1132,7 @@ namespace Amazon.FSx
         /// File system configuration is required for this operation.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
-        /// An error occured.
+        /// The requested operation is not supported for this resource or API.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">REST API Reference for UpdateFileSystem Operation</seealso>
         UpdateFileSystemResponse UpdateFileSystem(UpdateFileSystemRequest request);

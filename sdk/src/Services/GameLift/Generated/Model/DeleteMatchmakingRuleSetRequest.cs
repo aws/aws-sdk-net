@@ -87,11 +87,12 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Unique identifier for a matchmaking rule set to be deleted. (Note: The rule set name
-        /// is different from the optional "name" field in the rule set body.) 
+        /// A unique identifier for a matchmaking rule set to be deleted. (Note: The rule set
+        /// name is different from the optional "name" field in the rule set body.) You can use
+        /// either the rule set name or ARN value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

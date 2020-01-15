@@ -89,7 +89,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// Unique identifier for the game session to retrieve player sessions for.
+        /// A unique identifier for the game session to retrieve player sessions for.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -108,7 +108,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages. If a player session ID is specified,
         /// this parameter is ignored.
         /// </para>
@@ -151,7 +151,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerId. 
         /// <para>
-        /// Unique identifier for a player to retrieve player sessions for.
+        /// A unique identifier for a player to retrieve player sessions for.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -170,7 +170,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerSessionId. 
         /// <para>
-        /// Unique identifier for a player session to retrieve.
+        /// A unique identifier for a player session to retrieve.
         /// </para>
         /// </summary>
         public string PlayerSessionId

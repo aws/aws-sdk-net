@@ -32,6 +32,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class ScheduleActionSettings
     {
+        private HlsId3SegmentTaggingScheduleActionSettings _hlsId3SegmentTaggingSettings;
         private HlsTimedMetadataScheduleActionSettings _hlsTimedMetadataSettings;
         private InputSwitchScheduleActionSettings _inputSwitchSettings;
         private PauseStateScheduleActionSettings _pauseStateSettings;
@@ -40,6 +41,22 @@ namespace Amazon.MediaLive.Model
         private Scte35TimeSignalScheduleActionSettings _scte35TimeSignalSettings;
         private StaticImageActivateScheduleActionSettings _staticImageActivateSettings;
         private StaticImageDeactivateScheduleActionSettings _staticImageDeactivateSettings;
+
+        /// <summary>
+        /// Gets and sets the property HlsId3SegmentTaggingSettings. Action to insert HLS ID3
+        /// segment tagging
+        /// </summary>
+        public HlsId3SegmentTaggingScheduleActionSettings HlsId3SegmentTaggingSettings
+        {
+            get { return this._hlsId3SegmentTaggingSettings; }
+            set { this._hlsId3SegmentTaggingSettings = value; }
+        }
+
+        // Check to see if HlsId3SegmentTaggingSettings property is set
+        internal bool IsSetHlsId3SegmentTaggingSettings()
+        {
+            return this._hlsId3SegmentTaggingSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property HlsTimedMetadataSettings. Action to insert HLS metadata

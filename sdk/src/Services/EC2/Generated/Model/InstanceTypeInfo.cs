@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         private NetworkInfo _networkInfo;
         private PlacementGroupInfo _placementGroupInfo;
         private ProcessorInfo _processorInfo;
-        private List<string> _supportedRootDevices = new List<string>();
+        private List<string> _supportedRootDeviceTypes = new List<string>();
         private List<string> _supportedUsageClasses = new List<string>();
         private VCpuInfo _vCpuInfo;
 
@@ -399,21 +399,21 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SupportedRootDevices. 
+        /// Gets and sets the property SupportedRootDeviceTypes. 
         /// <para>
-        /// Indicates the supported root devices.
+        /// Indicates the supported root device types.
         /// </para>
         /// </summary>
-        public List<string> SupportedRootDevices
+        public List<string> SupportedRootDeviceTypes
         {
-            get { return this._supportedRootDevices; }
-            set { this._supportedRootDevices = value; }
+            get { return this._supportedRootDeviceTypes; }
+            set { this._supportedRootDeviceTypes = value; }
         }
 
-        // Check to see if SupportedRootDevices property is set
-        internal bool IsSetSupportedRootDevices()
+        // Check to see if SupportedRootDeviceTypes property is set
+        internal bool IsSetSupportedRootDeviceTypes()
         {
-            return this._supportedRootDevices != null && this._supportedRootDevices.Count > 0; 
+            return this._supportedRootDeviceTypes != null && this._supportedRootDeviceTypes.Count > 0; 
         }
 
         /// <summary>

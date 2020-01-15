@@ -115,6 +115,7 @@ namespace Amazon.AWSHealth.Model
         /// value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=10000)]
         public string NextToken
         {
             get { return this._nextToken; }

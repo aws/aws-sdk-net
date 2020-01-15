@@ -40,7 +40,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property AutoSnapshots. 
         /// <para>
         /// An array of objects that describe the automatic snapshots that are available for the
-        /// specified source resource.asdf
+        /// specified source instance or disk.
         /// </para>
         /// </summary>
         public List<AutoSnapshotDetails> AutoSnapshots
@@ -58,7 +58,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// The name of the source resource for the automatic snapshots.
+        /// The name of the source instance or disk for the automatic snapshots.
         /// </para>
         /// </summary>
         public string ResourceName

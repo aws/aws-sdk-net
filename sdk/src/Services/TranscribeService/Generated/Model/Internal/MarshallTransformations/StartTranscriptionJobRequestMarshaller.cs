@@ -68,6 +68,17 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetJobExecutionSettings())
+                {
+                    context.Writer.WritePropertyName("JobExecutionSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = JobExecutionSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.JobExecutionSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLanguageCode())
                 {
                     context.Writer.WritePropertyName("LanguageCode");

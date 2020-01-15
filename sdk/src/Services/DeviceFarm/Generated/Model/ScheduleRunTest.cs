@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents test settings. This data structure is passed in as the "test" parameter
-    /// to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
+    /// Represents test settings. This data structure is passed in as the test parameter to
+    /// ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
     /// </summary>
     public partial class ScheduleRunTest
     {
@@ -70,8 +70,8 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// app_performance_monitoring: Performance monitoring is enabled by default. Set this
-        /// parameter to "false" to disable it.
+        ///  <code>app_performance_monitoring</code>: Performance monitoring is enabled by default.
+        /// Set this parameter to false to disable it.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -79,12 +79,12 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// profile: A cucumber profile, for example, "my_profile_name".
+        /// profile: A cucumber profile (for example, <code>my_profile_name</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// tags: You can limit execution to features or scenarios that have (or don't have) certain
-        /// tags, for example, "@smoke" or "@smoke,~@wip".
+        /// tags (for example, @smoke or @smoke,~@wip).
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -92,17 +92,17 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// appium_version: The Appium version. Currently supported values are "1.6.5" (and higher),
-        /// "latest", and "default".
+        /// appium_version: The Appium version. Currently supported values are 1.6.5 (and later),
+        /// latest, and default.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// “latest” will run the latest Appium version supported by Device Farm (1.9.1).
+        /// latest runs the latest Appium version supported by Device Farm (1.9.1).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For “default”, Device Farm will choose a compatible version of Appium for the device.
-        /// The current behavior is to run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2
+        /// For default, Device Farm selects a compatible version of Appium for the device. The
+        /// current behavior is to run 1.7.2 on Android devices and iOS 9 and earlier and 1.7.2
         /// for iOS 10 and later.
         /// </para>
         ///  </li> <li> 
@@ -111,7 +111,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// For Fuzz tests (Android only):
+        /// For fuzz tests (Android only):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -134,13 +134,13 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// username: A username to use if the Explorer encounters a login form. If not supplied,
-        /// no username will be inserted.
+        /// username: A user name to use if the Explorer encounters a login form. If not supplied,
+        /// no user name is inserted.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// password: A password to use if the Explorer encounters a login form. If not supplied,
-        /// no password will be inserted.
+        /// no password is inserted.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -152,15 +152,15 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Running a single test case: "com.android.abc.Test1"
+        /// Running a single test case: <code>com.android.abc.Test1</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Running a single test: "com.android.abc.Test1#smoke"
+        /// Running a single test: <code>com.android.abc.Test1#smoke</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+        /// Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -172,19 +172,19 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Running a single test class: "LoginTests"
+        /// Running a single test class: <code>LoginTests</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Running a multiple test classes: "LoginTests,SmokeTests"
+        /// Running a multiple test classes: <code>LoginTests,SmokeTests</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Running a single test: "LoginTests/testValid"
+        /// Running a single test: <code>LoginTests/testValid</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Running multiple tests: "LoginTests/testValid,LoginTests/testInvalid"
+        /// Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -196,15 +196,15 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Running a single test case: "com.android.abc.Test1"
+        /// Running a single test case: <code>com.android.abc.Test1</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Running a single test: "com.android.abc.Test1#smoke"
+        /// Running a single test: <code>com.android.abc.Test1#smoke</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+        /// Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -223,7 +223,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property TestPackageArn. 
         /// <para>
-        /// The ARN of the uploaded test that will be run.
+        /// The ARN of the uploaded test to be run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=1011)]
@@ -269,76 +269,76 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// BUILTIN_FUZZ: The built-in fuzz type.
+        /// BUILTIN_FUZZ
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app,
-        /// interacting with it and capturing screenshots at the same time.
+        /// BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting
+        /// with it and capturing screenshots at the same time.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+        /// APPIUM_JAVA_JUNIT
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+        /// APPIUM_JAVA_TESTNG
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_PYTHON: The Appium Python type.
+        /// APPIUM_PYTHON
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_NODE: The Appium Node.js type.
+        /// APPIUM_NODE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_RUBY: The Appium Ruby type.
+        /// APPIUM_RUBY
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+        /// APPIUM_WEB_JAVA_JUNIT
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+        /// APPIUM_WEB_JAVA_TESTNG
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+        /// APPIUM_WEB_PYTHON
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+        /// APPIUM_WEB_NODE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+        /// APPIUM_WEB_RUBY
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CALABASH: The Calabash type.
+        /// CALABASH
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTRUMENTATION: The Instrumentation type.
+        /// INSTRUMENTATION
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UIAUTOMATION: The uiautomation type.
+        /// UIAUTOMATION
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UIAUTOMATOR: The uiautomator type.
+        /// UIAUTOMATOR
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST: The Xcode test type.
+        /// XCTEST
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST_UI: The Xcode UI test type.
+        /// XCTEST_UI
         /// </para>
         ///  </li> </ul>
         /// </summary>

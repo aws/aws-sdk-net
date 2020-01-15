@@ -76,6 +76,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScriptArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScriptArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ScriptId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

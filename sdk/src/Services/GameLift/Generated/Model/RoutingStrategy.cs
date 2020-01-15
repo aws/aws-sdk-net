@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Routing configuration for a fleet alias.
+    /// The routing configuration for a fleet alias.
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -65,7 +65,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet that the alias points to.
+        /// The unique identifier for a fleet that the alias points to. This value is the fleet
+        /// ID, not the fleet ARN.
         /// </para>
         /// </summary>
         public string FleetId
@@ -83,7 +84,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Message text to be used with a terminal routing strategy.
+        /// The message text to be used with a terminal routing strategy.
         /// </para>
         /// </summary>
         public string Message
@@ -101,7 +102,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Type of routing strategy.
+        /// The type of routing strategy for the alias.
         /// </para>
         ///  
         /// <para>
@@ -109,13 +110,13 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing
+        ///  <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing
         /// to active fleets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used
-        /// to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException
+        ///  <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to
+        /// display a message to the user. A terminal alias throws a TerminalRoutingStrategyException
         /// with the <a>RoutingStrategy</a> message embedded.
         /// </para>
         ///  </li> </ul>

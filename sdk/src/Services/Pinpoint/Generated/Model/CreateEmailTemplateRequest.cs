@@ -29,8 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEmailTemplate operation.
-    /// Creates a message template that you can use in messages that are sent through the
-    /// email channel.
+    /// Creates a message template for messages that are sent through the email channel.
     /// </summary>
     public partial class CreateEmailTemplateRequest : AmazonPinpointRequest
     {
@@ -38,11 +37,7 @@ namespace Amazon.Pinpoint.Model
         private string _templateName;
 
         /// <summary>
-        /// Gets and sets the property EmailTemplateRequest. 
-        /// <para>
-        /// Creates a new message template that you can use in messages that are sent through
-        /// the email channel.
-        /// </para>
+        /// Gets and sets the property EmailTemplateRequest.
         /// </summary>
         [AWSProperty(Required=true)]
         public EmailTemplateRequest EmailTemplateRequest

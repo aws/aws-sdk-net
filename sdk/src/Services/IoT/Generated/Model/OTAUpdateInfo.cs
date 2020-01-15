@@ -36,6 +36,7 @@ namespace Amazon.IoT.Model
         private string _awsIotJobArn;
         private string _awsIotJobId;
         private AwsJobExecutionsRolloutConfig _awsJobExecutionsRolloutConfig;
+        private AwsJobPresignedUrlConfig _awsJobPresignedUrlConfig;
         private DateTime? _creationDate;
         private string _description;
         private ErrorInfo _errorInfo;
@@ -44,6 +45,7 @@ namespace Amazon.IoT.Model
         private List<OTAUpdateFile> _otaUpdateFiles = new List<OTAUpdateFile>();
         private string _otaUpdateId;
         private OTAUpdateStatus _otaUpdateStatus;
+        private List<string> _protocols = new List<string>();
         private List<string> _targets = new List<string>();
         private TargetSelection _targetSelection;
 
@@ -117,6 +119,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetAwsJobExecutionsRolloutConfig()
         {
             return this._awsJobExecutionsRolloutConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsJobPresignedUrlConfig. 
+        /// <para>
+        /// Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains
+        /// HTTP.
+        /// </para>
+        /// </summary>
+        public AwsJobPresignedUrlConfig AwsJobPresignedUrlConfig
+        {
+            get { return this._awsJobPresignedUrlConfig; }
+            set { this._awsJobPresignedUrlConfig = value; }
+        }
+
+        // Check to see if AwsJobPresignedUrlConfig property is set
+        internal bool IsSetAwsJobPresignedUrlConfig()
+        {
+            return this._awsJobPresignedUrlConfig != null;
         }
 
         /// <summary>
@@ -264,6 +285,27 @@ namespace Amazon.IoT.Model
         internal bool IsSetOtaUpdateStatus()
         {
             return this._otaUpdateStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Protocols. 
+        /// <para>
+        /// The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT],
+        /// [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose
+        /// the protocol.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> Protocols
+        {
+            get { return this._protocols; }
+            set { this._protocols = value; }
+        }
+
+        // Check to see if Protocols property is set
+        internal bool IsSetProtocols()
+        {
+            return this._protocols != null && this._protocols.Count > 0; 
         }
 
         /// <summary>

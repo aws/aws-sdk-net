@@ -37,59 +37,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         [TestMethod]
         [TestCategory("CloudWatch")]
-        public void UseDoubleForData()
-        {
-            var currentCulture = Thread.CurrentThread.CurrentCulture;
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("sv-SE", false);
-            try
-            {
-                var data = new List<MetricDatum> 
-                { 
-                    new MetricDatum() 
-                    {
-                        MetricName="SDK-TEST-CloudWatchAppender", 
-                        Unit="Seconds", 
-                        Timestamp=DateTime.Now,
-                        Value=1.1
-                    }
-                };
-
-                Client.PutMetricData(new PutMetricDataRequest()
-                {
-                    Namespace = "SDK-TEST-CloudWatchAppender",
-                    MetricData = data
-                });
-
-                Thread.Sleep(1000);
-                GetMetricStatisticsResponse gmsRes = Client.GetMetricStatistics(new GetMetricStatisticsRequest()
-                {
-                    Namespace = "SDK-TEST-CloudWatchAppender",
-                    MetricName = "SDK-TEST-CloudWatchAppender",
-                    StartTime = DateTime.Today.AddDays(-2),
-                    Period = 60 * 60,
-                    Statistics = new List<string> { "Maximum" },
-                    EndTime = DateTime.Today.AddDays(2)
-                });
-
-                bool found = false;
-                foreach (var dp in gmsRes.Datapoints)
-                {
-                    if (dp.Maximum == 1.1)
-                    {
-                        found = true;
-                        break;
-                    }
-                }
-                Assert.IsTrue(found, "Did not found the 1.1 value");
-            }
-            finally
-            {
-                Thread.CurrentThread.CurrentCulture = currentCulture;
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("CloudWatch")]
         [ExpectedException(typeof(InvalidParameterCombinationException))]
         public void CWExceptionTest()
         {
@@ -487,61 +434,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.IsTrue(rq1.AlarmName.Equals(alarm.AlarmName) || rq2.AlarmName.Equals(alarm.AlarmName));
                 Assert.IsTrue(alarm.ActionsEnabled);
             }
-        }
-
-        [TestMethod]
-        [TestCategory("CloudWatch")]
-        public void TestPutMetricData()
-        {
-            string metricName = "DotNetSDKTestMetric";
-            string nameSpace = "AWS-EC2";
-
-            List<MetricDatum> data = new List<MetricDatum>();
-
-            DateTime ts = DateTime.Now;
-
-            data.Add(new MetricDatum()
-            {
-                MetricName = metricName,
-                Timestamp = ts.AddHours(-1),
-                Unit = "None",
-                Value = 23.0
-            });
-
-            data.Add(new MetricDatum()
-            {
-                MetricName = metricName,
-                Timestamp = ts,
-                Unit = "None",
-                Value = 21.0
-            });
-
-            data.Add(new MetricDatum()
-            {
-                MetricName = metricName,
-                Timestamp = DateTime.Now.AddHours(1),
-                Unit = "None",
-                Value = 22.0
-            });
-
-            Client.PutMetricData(new PutMetricDataRequest()
-            {
-                Namespace = nameSpace,
-                MetricData = data
-            });
-
-            Thread.Sleep(1 * 1000);
-            GetMetricStatisticsResponse gmsRes = Client.GetMetricStatistics(new GetMetricStatisticsRequest()
-            {
-                Namespace = nameSpace,
-                MetricName = metricName,
-                StartTime = ts.AddDays(-1),
-                Period = 60 * 60,
-                Statistics = new List<string> { "Minimum", "Maximum" },
-                EndTime = ts.AddDays(1)
-            });
-
-            Assert.IsTrue(gmsRes.Datapoints.Count > 0);
         }
 
         /**

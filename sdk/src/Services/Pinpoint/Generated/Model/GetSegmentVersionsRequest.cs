@@ -30,7 +30,7 @@ namespace Amazon.Pinpoint.Model
     /// <summary>
     /// Container for the parameters to the GetSegmentVersions operation.
     /// Retrieves information about the configuration, dimension, and other settings for all
-    /// versions of a specific segment that's associated with an application.
+    /// the versions of a specific segment that's associated with an application.
     /// </summary>
     public partial class GetSegmentVersionsRequest : AmazonPinpointRequest
     {

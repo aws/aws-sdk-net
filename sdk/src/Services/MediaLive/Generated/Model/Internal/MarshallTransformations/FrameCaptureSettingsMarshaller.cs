@@ -51,6 +51,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CaptureInterval);
             }
 
+            if(requestObject.IsSetCaptureIntervalUnits())
+            {
+                context.Writer.WritePropertyName("captureIntervalUnits");
+                context.Writer.Write(requestObject.CaptureIntervalUnits);
+            }
+
         }
 
         /// <summary>

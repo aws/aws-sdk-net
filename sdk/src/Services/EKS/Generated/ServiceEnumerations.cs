@@ -549,6 +549,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType PlatformVersion = new UpdateParamType("PlatformVersion");
         /// <summary>
+        /// Constant PublicAccessCidrs for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType PublicAccessCidrs = new UpdateParamType("PublicAccessCidrs");
+        /// <summary>
         /// Constant ReleaseVersion for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ReleaseVersion = new UpdateParamType("ReleaseVersion");

@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private bool? _managesVpcEndpoints;
         private string _owner;
         private string _privateDnsName;
+        private DnsNameState _privateDnsNameVerificationState;
         private string _serviceId;
         private string _serviceName;
         private List<ServiceTypeDetail> _serviceType = new List<ServiceTypeDetail>();
@@ -102,7 +103,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ManagesVpcEndpoints. 
         /// <para>
-        /// Indicates whether the service manages it's VPC endpoints. Management of the service
+        /// Indicates whether the service manages its VPC endpoints. Management of the service
         /// VPC endpoints using the VPC endpoint API is restricted.
         /// </para>
         /// </summary>
@@ -152,6 +153,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetPrivateDnsName()
         {
             return this._privateDnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsNameVerificationState. 
+        /// <para>
+        /// The verification state of the VPC endpoint service.
+        /// </para>
+        ///  
+        /// <para>
+        /// Consumers of the endpoint service cannot use the private name when the state is not
+        /// <code>verified</code>.
+        /// </para>
+        /// </summary>
+        public DnsNameState PrivateDnsNameVerificationState
+        {
+            get { return this._privateDnsNameVerificationState; }
+            set { this._privateDnsNameVerificationState = value; }
+        }
+
+        // Check to see if PrivateDnsNameVerificationState property is set
+        internal bool IsSetPrivateDnsNameVerificationState()
+        {
+            return this._privateDnsNameVerificationState != null;
         }
 
         /// <summary>

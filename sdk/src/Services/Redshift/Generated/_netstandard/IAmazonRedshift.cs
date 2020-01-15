@@ -3468,6 +3468,10 @@ namespace Amazon.Redshift
         /// <para>
         /// ds2.8xlarge
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ra3.16xlarge
+        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         /// The type of nodes that you add must match the node type for the cluster.

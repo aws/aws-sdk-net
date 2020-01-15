@@ -40,7 +40,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property AnalyzerName. 
         /// <para>
-        /// The name of the analyzer that was deleted.
+        /// The name of the analyzer that associated with the archive rule to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

@@ -97,7 +97,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property TraceSummaries. 
         /// <para>
-        /// Trace IDs and metadata for traces that were found in the specified time frame.
+        /// Trace IDs and annotations for traces that were found in the specified time frame.
         /// </para>
         /// </summary>
         public List<TraceSummary> TraceSummaries

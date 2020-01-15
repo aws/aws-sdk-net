@@ -92,7 +92,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The upload's content type (for example, "application/octet-stream").
+        /// The upload's content type (for example, <code>application/octet-stream</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
@@ -196,19 +196,19 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// FAILED: A failed status.
+        /// FAILED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INITIALIZED: An initialized status.
+        /// INITIALIZED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PROCESSING: A processing status.
+        /// PROCESSING
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SUCCEEDED: A succeeded status.
+        /// SUCCEEDED
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -235,134 +235,131 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ANDROID_APP: An Android upload.
+        /// ANDROID_APP
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IOS_APP: An iOS upload.
+        /// IOS_APP
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WEB_APP: A web application upload.
+        /// WEB_APP
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// EXTERNAL_DATA: An external data upload.
+        /// EXTERNAL_DATA
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+        /// APPIUM_JAVA_JUNIT_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+        /// APPIUM_JAVA_TESTNG_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+        /// APPIUM_PYTHON_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
+        /// APPIUM_NODE_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
+        /// APPIUM_RUBY_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for web
-        /// apps.
+        /// APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for
-        /// web apps.
+        /// APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for web apps.
+        /// APPIUM_WEB_PYTHON_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for web apps.
+        /// APPIUM_WEB_NODE_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for web apps.
+        /// APPIUM_WEB_RUBY_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CALABASH_TEST_PACKAGE: A Calabash test package upload.
+        /// CALABASH_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+        /// INSTRUMENTATION_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+        /// UIAUTOMATION_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+        /// UIAUTOMATOR_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST_TEST_PACKAGE: An Xcode test package upload.
+        /// XCTEST_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+        /// XCTEST_UI_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+        /// APPIUM_JAVA_JUNIT_TEST_SPEC
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+        /// APPIUM_JAVA_TESTNG_TEST_SPEC
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+        /// APPIUM_PYTHON_TEST_SPEC
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+        /// APPIUM_NODE_TEST_SPEC
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+        /// APPIUM_RUBY_TEST_SPEC
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+        /// APPIUM_WEB_JAVA_JUNIT_TEST_SPEC
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web
-        /// app.
+        /// APPIUM_WEB_JAVA_TESTNG_TEST_SPEC
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+        /// APPIUM_WEB_PYTHON_TEST_SPEC
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+        /// APPIUM_WEB_NODE_TEST_SPEC
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+        /// APPIUM_WEB_RUBY_TEST_SPEC
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+        /// INSTRUMENTATION_TEST_SPEC
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
+        /// XCTEST_UI_TEST_SPEC
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -381,8 +378,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The pre-signed Amazon S3 URL that was used to store a file through a corresponding
-        /// PUT request.
+        /// The presigned Amazon S3 URL that was used to store a file using a PUT request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

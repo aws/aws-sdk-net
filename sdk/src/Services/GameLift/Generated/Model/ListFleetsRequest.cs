@@ -64,57 +64,13 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Describe fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
     ///  <a>DescribeFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetUtilization</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetEvents</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    /// Update fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
     ///  <a>UpdateFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
     /// <para>
     /// Manage fleet actions:
     /// </para>
@@ -138,8 +94,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property BuildId. 
         /// <para>
-        /// Unique identifier for a build to return fleets for. Use this parameter to return only
-        /// fleets using the specified build. To retrieve all fleets, leave this parameter empty.
+        /// A unique identifier for a build to return fleets for. Use this parameter to return
+        /// only fleets using the specified build. Use either the build ID or ARN value.To retrieve
+        /// all fleets, leave this parameter empty.
         /// </para>
         /// </summary>
         public string BuildId
@@ -157,7 +114,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
@@ -198,9 +155,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ScriptId. 
         /// <para>
-        /// Unique identifier for a Realtime script to return fleets for. Use this parameter to
-        /// return only fleets using the specified script. To retrieve all fleets, leave this
-        /// parameter empty.
+        /// A unique identifier for a Realtime script to return fleets for. Use this parameter
+        /// to return only fleets using the specified script. Use either the script ID or ARN
+        /// value.To retrieve all fleets, leave this parameter empty.
         /// </para>
         /// </summary>
         public string ScriptId

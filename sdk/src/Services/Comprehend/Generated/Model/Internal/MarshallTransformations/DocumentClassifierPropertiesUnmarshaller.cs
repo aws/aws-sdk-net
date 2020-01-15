@@ -106,6 +106,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Mode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OutputDataConfig", targetDepth))
                 {
                     var unmarshaller = DocumentClassifierOutputDataConfigUnmarshaller.Instance;

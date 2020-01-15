@@ -29,8 +29,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Fleet designated in a game session queue. Requests for new game sessions in the queue
-    /// are fulfilled by starting a new game session on any destination configured for a queue.
-    /// 
+    /// are fulfilled by starting a new game session on any destination that is configured
+    /// for a queue. 
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -57,9 +57,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DestinationArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) assigned to fleet or fleet alias. ARNs, which include a
-        /// fleet ID or alias ID and a region name, provide a unique identifier across all regions.
-        /// 
+        /// The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which
+        /// include a fleet ID or alias ID and a Region name, provide a unique identifier across
+        /// all Regions. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

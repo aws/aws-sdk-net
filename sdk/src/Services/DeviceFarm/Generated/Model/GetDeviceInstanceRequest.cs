@@ -29,7 +29,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDeviceInstance operation.
-    /// Returns information about a device instance belonging to a private device fleet.
+    /// Returns information about a device instance that belongs to a private device fleet.
     /// </summary>
     public partial class GetDeviceInstanceRequest : AmazonDeviceFarmRequest
     {

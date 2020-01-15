@@ -75,8 +75,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreMetadata. 
         /// <para>
-        /// A set of metadata key-value pairs that lists the metadata key-value pairs that are
-        /// required to restore the recovery point.
+        /// The set of metadata key-value pairs that describes the original configuration of the
+        /// backed-up resource. These values vary depending on the service that is being restored.
         /// </para>
         /// </summary>
         public Dictionary<string, string> RestoreMetadata

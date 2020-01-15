@@ -38,7 +38,9 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property File. 
         /// <para>
-        /// The file containing the custom terminology data.
+        /// The file containing the custom terminology data. Your version of the AWS SDK performs
+        /// a Base64-encoding on this field before sending a request to the AWS service. Users
+        /// of the SDK should not perform Base64-encoding themselves.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10485760)]

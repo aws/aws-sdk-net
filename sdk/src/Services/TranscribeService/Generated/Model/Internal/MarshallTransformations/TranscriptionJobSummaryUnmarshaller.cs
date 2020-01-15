@@ -94,6 +94,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.OutputLocationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TranscriptionJobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

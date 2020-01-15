@@ -29,10 +29,10 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the CopySnapshot operation.
-    /// Copies a manual instance or disk snapshot as another manual snapshot, or copies an
-    /// automatic instance or disk snapshot as a manual snapshot. This operation can also
-    /// be used to copy a manual or automatic snapshot of an instance or a disk from one AWS
-    /// Region to another in Amazon Lightsail.
+    /// Copies a manual snapshot of an instance or disk as another manual snapshot, or copies
+    /// an automatic snapshot of an instance or disk as a manual snapshot. This operation
+    /// can also be used to copy a manual or automatic snapshot of an instance or a disk from
+    /// one AWS Region to another in Amazon Lightsail.
     /// 
     ///  
     /// <para>
@@ -46,11 +46,6 @@ namespace Amazon.Lightsail.Model
     /// <code>restore date</code> or the <code>use latest restorable auto snapshot</code>
     /// parameters.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// Database snapshots cannot be copied at this time.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class CopySnapshotRequest : AmazonLightsailRequest
     {
@@ -64,12 +59,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property RestoreDate. 
         /// <para>
-        /// The date of the automatic snapshot to copy for the new manual snapshot.
-        /// </para>
-        ///  
-        /// <para>
-        /// Use the <code>get auto snapshots</code> operation to identify the dates of the available
-        /// automatic snapshots.
+        /// The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code>
+        /// operation to identify the dates of the available automatic snapshots.
         /// </para>
         ///  
         /// <para>
@@ -85,13 +76,13 @@ namespace Amazon.Lightsail.Model
         /// snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable
         /// auto snapshot</code> parameters are mutually exclusive.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> <li> 
         /// <para>
         /// Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Lightsail
         /// Dev Guide</a>.
         /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         public string RestoreDate
         {
@@ -127,15 +118,20 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SourceResourceName. 
         /// <para>
-        /// The name of the source resource from which the automatic snapshot was created.
+        /// The name of the source instance or disk from which the source automatic snapshot was
+        /// created.
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// Constraint:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Lightsail
         /// Dev Guide</a>.
         /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         public string SourceResourceName
         {
@@ -152,13 +148,17 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SourceSnapshotName. 
         /// <para>
-        /// The name of the source instance or disk snapshot to be copied.
+        /// The name of the source manual snapshot to copy.
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// Constraint:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// Define this parameter only when copying a manual snapshot as another manual snapshot.
         /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         public string SourceSnapshotName
         {
@@ -175,7 +175,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property TargetSnapshotName. 
         /// <para>
-        /// The name of the new instance or disk snapshot to be created as a copy.
+        /// The name of the new manual snapshot to be created as a copy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -194,21 +194,26 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property UseLatestRestorableAutoSnapshot. 
         /// <para>
-        /// A Boolean value to indicate whether to use the latest available automatic snapshot.
+        /// A Boolean value to indicate whether to use the latest available automatic snapshot
+        /// of the specified source instance or disk.
         /// </para>
         ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// This parameter cannot be defined together with the <code>restore date</code> parameter.
         /// The <code>use latest restorable auto snapshot</code> and <code>restore date</code>
         /// parameters are mutually exclusive.
         /// </para>
-        ///  <note> 
+        ///  </li> <li> 
         /// <para>
         /// Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Lightsail
         /// Dev Guide</a>.
         /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         public bool UseLatestRestorableAutoSnapshot
         {

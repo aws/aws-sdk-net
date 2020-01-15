@@ -184,6 +184,10 @@ namespace Amazon.Runtime.CredentialManagement
                     case CredentialProfileType.AssumeRoleExternal:
                     case CredentialProfileType.AssumeRoleMFA:
                     case CredentialProfileType.AssumeRoleExternalMFA:
+                    case CredentialProfileType.AssumeRoleSessionName:
+                    case CredentialProfileType.AssumeRoleExternalSessionName:
+                    case CredentialProfileType.AssumeRoleMFASessionName:
+                    case CredentialProfileType.AssumeRoleExternalMFASessionName:
                         if (profileName != null)
                         {
                             if (profileLoopAvoidance == null)
@@ -215,7 +219,7 @@ namespace Amazon.Runtime.CredentialManagement
                         }
 
 #pragma warning disable CS0612 // Type or member is obsolete
-                        var roleSessionName = RoleSessionNamePrefix + AWSSDKUtils.CorrectedUtcNow.Ticks;
+                        var roleSessionName = options.RoleSessionName ?? RoleSessionNamePrefix + AWSSDKUtils.CorrectedUtcNow.Ticks;
 #pragma warning restore CS0612 // Type or member is obsolete
                         var assumeRoleOptions = new AssumeRoleAWSCredentialsOptions()
                         {
@@ -224,6 +228,7 @@ namespace Amazon.Runtime.CredentialManagement
                         };
                         return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
                     case CredentialProfileType.AssumeRoleCredentialSource:
+                    case CredentialProfileType.AssumeRoleCredentialSourceSessionName:
                         // get credentials specified by credentialSource
                         try
                         {
@@ -240,10 +245,13 @@ namespace Amazon.Runtime.CredentialManagement
                         }
 
 #pragma warning disable CS0612 // Type or member is obsolete
-                        roleSessionName = RoleSessionNamePrefix + AWSSDKUtils.CorrectedUtcNow.Ticks;
+                        roleSessionName = options.RoleSessionName ?? RoleSessionNamePrefix + AWSSDKUtils.CorrectedUtcNow.Ticks;
 #pragma warning restore CS0612 // Type or member is obsolete
                         assumeRoleOptions = new AssumeRoleAWSCredentialsOptions();
                         return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
+                    case CredentialProfileType.AssumeRoleWithWebIdentity:
+                    case CredentialProfileType.AssumeRoleWithWebIdentitySessionName:
+                        return new AssumeRoleWithWebIdentityCredentials(options.WebIdentityTokenFile, options.RoleArn, options.RoleSessionName);
 #if !NETSTANDARD13
                     case CredentialProfileType.SAMLRole:
                     case CredentialProfileType.SAMLRoleUserIdentity:

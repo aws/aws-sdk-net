@@ -61,8 +61,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetTemplateName())
                 throw new AmazonPinpointException("Request object does not have required field TemplateName set");
             request.AddPathResource("{template-name}", StringUtils.FromString(publicRequest.TemplateName));
+            
+            if (publicRequest.IsSetVersion())
+                request.Parameters.Add("version", StringUtils.FromString(publicRequest.Version));
             request.ResourcePath = "/v1/templates/{template-name}/voice";
             request.MarshallerVersion = 2;
+            request.UseQueryString = true;
 
             return request;
         }

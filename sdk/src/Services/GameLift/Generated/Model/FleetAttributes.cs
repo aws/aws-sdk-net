@@ -44,57 +44,13 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Describe fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
     ///  <a>DescribeFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetUtilization</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetEvents</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    /// Update fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
     ///  <a>UpdateFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
     /// <para>
     /// Manage fleet actions:
     /// </para>
@@ -110,6 +66,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class FleetAttributes
     {
+        private string _buildArn;
         private string _buildId;
         private CertificateConfiguration _certificateConfiguration;
         private DateTime? _creationTime;
@@ -125,6 +82,7 @@ namespace Amazon.GameLift.Model
         private ProtectionPolicy _newGameSessionProtectionPolicy;
         private OperatingSystem _operatingSystem;
         private ResourceCreationLimitPolicy _resourceCreationLimitPolicy;
+        private string _scriptArn;
         private string _scriptId;
         private string _serverLaunchParameters;
         private string _serverLaunchPath;
@@ -133,9 +91,29 @@ namespace Amazon.GameLift.Model
         private DateTime? _terminationTime;
 
         /// <summary>
+        /// Gets and sets the property BuildArn. 
+        /// <para>
+        ///  The Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+        /// associated with the GameLift build resource that is deployed on instances in this
+        /// fleet. In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.
+        /// </para>
+        /// </summary>
+        public string BuildArn
+        {
+            get { return this._buildArn; }
+            set { this._buildArn = value; }
+        }
+
+        // Check to see if BuildArn property is set
+        internal bool IsSetBuildArn()
+        {
+            return this._buildArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BuildId. 
         /// <para>
-        /// Unique identifier for a build.
+        /// A unique identifier for a build.
         /// </para>
         /// </summary>
         public string BuildId
@@ -151,7 +129,10 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CertificateConfiguration.
+        /// Gets and sets the property CertificateConfiguration. 
+        /// <para>
+        /// Indicates whether a TLS/SSL certificate was generated for the fleet. 
+        /// </para>
         /// </summary>
         public CertificateConfiguration CertificateConfiguration
         {
@@ -206,7 +187,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetArn. 
         /// <para>
-        /// Identifier for a fleet that is unique across all regions.
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+        /// that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are
+        /// unique across all Regions. In a GameLift fleet ARN, the resource ID matches the <i>FleetId</i>
+        /// value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -225,7 +209,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet.
+        /// A unique identifier for a fleet.
         /// </para>
         /// </summary>
         public string FleetId
@@ -262,10 +246,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceRoleArn. 
         /// <para>
-        /// Unique identifier for an AWS IAM role that manages access to your AWS services. With
-        /// an instance role ARN set, any application that runs on an instance in this fleet can
-        /// assume the role, including install scripts, server processes, daemons (background
-        /// processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
+        /// A unique identifier for an AWS IAM role that manages access to your AWS services.
+        /// With an instance role ARN set, any application that runs on an instance in this fleet
+        /// can assume the role, including install scripts, server processes, and daemons (background
+        /// processes). Create a role or look up a role's ARN from the <a href="https://console.aws.amazon.com/iam/">IAM
         /// dashboard</a> in the AWS Management Console. Learn more about using on-box credentials
         /// for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
         /// Access external resources from a game server</a>.
@@ -352,7 +336,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+        /// A descriptive label that is associated with a fleet. Fleet names do not need to be
+        /// unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -371,7 +356,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NewGameSessionProtectionPolicy. 
         /// <para>
-        /// Type of game session protection to set for all new instances started in the fleet.
+        /// The type of game session protection to set for all new instances started in the fleet.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -435,9 +420,29 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ScriptArn. 
+        /// <para>
+        ///  The Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+        /// associated with the GameLift script resource that is deployed on instances in this
+        /// fleet. In a GameLift script ARN, the resource ID matches the <i>ScriptId</i> value.
+        /// </para>
+        /// </summary>
+        public string ScriptArn
+        {
+            get { return this._scriptArn; }
+            set { this._scriptArn = value; }
+        }
+
+        // Check to see if ScriptArn property is set
+        internal bool IsSetScriptArn()
+        {
+            return this._scriptArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ScriptId. 
         /// <para>
-        /// Unique identifier for a Realtime script.
+        /// A unique identifier for a Realtime script.
         /// </para>
         /// </summary>
         public string ScriptId

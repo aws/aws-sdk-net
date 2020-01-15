@@ -116,7 +116,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date, ISO 8601 format, when the campaign was created.
+        /// The date, in ISO 8601 format, when the campaign was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

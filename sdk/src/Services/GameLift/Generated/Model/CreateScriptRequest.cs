@@ -103,14 +103,15 @@ namespace Amazon.GameLift.Model
     {
         private string _name;
         private S3Location _storageLocation;
+        private List<Tag> _tags = new List<Tag>();
         private string _version;
         private MemoryStream _zipFile;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with a script. Script names do not need to be
-        /// unique. You can use <a>UpdateScript</a> to change this value later. 
+        /// A descriptive label that is associated with a script. Script names do not need to
+        /// be unique. You can use <a>UpdateScript</a> to change this value later. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -129,12 +130,12 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property StorageLocation. 
         /// <para>
-        /// Location of the Amazon S3 bucket where a zipped file containing your Realtime scripts
-        /// is stored. The storage location must specify the Amazon S3 bucket name, the zip file
-        /// name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon
-        /// S3 storage location. The S3 bucket must be in the same region where you want to create
-        /// a new script. By default, Amazon GameLift uploads the latest version of the zip file;
-        /// if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code>
+        /// The location of the Amazon S3 bucket where a zipped file containing your Realtime
+        /// scripts is stored. The storage location must specify the Amazon S3 bucket name, the
+        /// zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the
+        /// Amazon S3 storage location. The S3 bucket must be in the same Region where you want
+        /// to create a new script. By default, Amazon GameLift uploads the latest version of
+        /// the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code>
         /// parameter to specify an earlier version. 
         /// </para>
         /// </summary>
@@ -151,10 +152,35 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of labels to assign to the new script resource. Tags are developer-defined
+        /// key-value pairs. Tagging AWS resources are useful for resource management, access
+        /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+        /// Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+        /// created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
+        /// to add, remove, and view tags. The maximum tag limit may be lower than stated. See
+        /// the AWS General Reference for actual tagging limits.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version that is associated with a build or script. Version strings do not need to
-        /// be unique. You can use <a>UpdateScript</a> to change this value later. 
+        /// The version that is associated with a build or script. Version strings do not need
+        /// to be unique. You can use <a>UpdateScript</a> to change this value later. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -173,8 +199,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ZipFile. 
         /// <para>
-        /// Data object containing your Realtime scripts and dependencies as a zip file. The zip
-        /// file can have one or multiple files. Maximum size of a zip file is 5 MB.
+        /// A data object containing your Realtime scripts and dependencies as a zip file. The
+        /// zip file can have one or multiple files. Maximum size of a zip file is 5 MB.
         /// </para>
         ///  
         /// <para>

@@ -981,6 +981,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type AudioOnlyHlsSegmentType.
+    /// </summary>
+    public class AudioOnlyHlsSegmentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AAC for AudioOnlyHlsSegmentType
+        /// </summary>
+        public static readonly AudioOnlyHlsSegmentType AAC = new AudioOnlyHlsSegmentType("AAC");
+        /// <summary>
+        /// Constant FMP4 for AudioOnlyHlsSegmentType
+        /// </summary>
+        public static readonly AudioOnlyHlsSegmentType FMP4 = new AudioOnlyHlsSegmentType("FMP4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AudioOnlyHlsSegmentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioOnlyHlsSegmentType FindValue(string value)
+        {
+            return FindValue<AudioOnlyHlsSegmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioOnlyHlsSegmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AudioOnlyHlsTrackType.
     /// </summary>
     public class AudioOnlyHlsTrackType : ConstantClass
@@ -3222,6 +3272,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FollowPoint(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FrameCaptureIntervalUnit.
+    /// </summary>
+    public class FrameCaptureIntervalUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MILLISECONDS for FrameCaptureIntervalUnit
+        /// </summary>
+        public static readonly FrameCaptureIntervalUnit MILLISECONDS = new FrameCaptureIntervalUnit("MILLISECONDS");
+        /// <summary>
+        /// Constant SECONDS for FrameCaptureIntervalUnit
+        /// </summary>
+        public static readonly FrameCaptureIntervalUnit SECONDS = new FrameCaptureIntervalUnit("SECONDS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FrameCaptureIntervalUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FrameCaptureIntervalUnit FindValue(string value)
+        {
+            return FindValue<FrameCaptureIntervalUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FrameCaptureIntervalUnit(string value)
         {
             return FindValue(value);
         }
@@ -5552,6 +5652,106 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HlsEncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HlsH265PackagingType.
+    /// </summary>
+    public class HlsH265PackagingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HEV1 for HlsH265PackagingType
+        /// </summary>
+        public static readonly HlsH265PackagingType HEV1 = new HlsH265PackagingType("HEV1");
+        /// <summary>
+        /// Constant HVC1 for HlsH265PackagingType
+        /// </summary>
+        public static readonly HlsH265PackagingType HVC1 = new HlsH265PackagingType("HVC1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsH265PackagingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsH265PackagingType FindValue(string value)
+        {
+            return FindValue<HlsH265PackagingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsH265PackagingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HlsId3SegmentTaggingState.
+    /// </summary>
+    public class HlsId3SegmentTaggingState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for HlsId3SegmentTaggingState
+        /// </summary>
+        public static readonly HlsId3SegmentTaggingState DISABLED = new HlsId3SegmentTaggingState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for HlsId3SegmentTaggingState
+        /// </summary>
+        public static readonly HlsId3SegmentTaggingState ENABLED = new HlsId3SegmentTaggingState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsId3SegmentTaggingState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsId3SegmentTaggingState FindValue(string value)
+        {
+            return FindValue<HlsId3SegmentTaggingState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsId3SegmentTaggingState(string value)
         {
             return FindValue(value);
         }

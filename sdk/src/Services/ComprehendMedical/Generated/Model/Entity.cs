@@ -176,7 +176,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Traits. 
         /// <para>
-        /// Contextual information for the entity
+        /// Contextual information for the entity.
         /// </para>
         /// </summary>
         public List<Trait> Traits
@@ -194,7 +194,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  Describes the specific type of entity with category of entities. 
+        ///  Describes the specific type of entity with category of entities.
         /// </para>
         /// </summary>
         public EntitySubType Type

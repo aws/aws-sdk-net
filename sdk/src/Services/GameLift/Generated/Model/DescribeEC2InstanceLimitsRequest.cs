@@ -41,7 +41,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Service limits vary depending on region. Available regions for Amazon GameLift can
+    /// Service limits vary depending on Region. Available Regions for Amazon GameLift can
     /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
     /// in the upper right corner).
     /// </para>

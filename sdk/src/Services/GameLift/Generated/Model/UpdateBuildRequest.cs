@@ -77,7 +77,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property BuildId. 
         /// <para>
-        /// Unique identifier for a build to update.
+        /// A unique identifier for a build to update. You can use either the build ID or ARN
+        /// value. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -96,8 +97,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with a build. Build names do not need to be unique.
-        /// 
+        /// A descriptive label that is associated with a build. Build names do not need to be
+        /// unique. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -116,8 +117,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version that is associated with a build or script. Version strings do not need to
-        /// be unique.
+        /// Version information that is associated with a build or script. Version strings do
+        /// not need to be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

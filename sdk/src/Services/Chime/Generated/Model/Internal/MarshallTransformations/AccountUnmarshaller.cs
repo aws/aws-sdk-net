@@ -100,6 +100,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SigninDelegateGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SigninDelegateGroup, SigninDelegateGroupUnmarshaller>(SigninDelegateGroupUnmarshaller.Instance);
+                    unmarshalledObject.SigninDelegateGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SupportedLicenses", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

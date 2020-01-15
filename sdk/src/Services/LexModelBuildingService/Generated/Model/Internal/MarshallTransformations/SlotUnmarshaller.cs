@@ -76,6 +76,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("obfuscationSetting", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ObfuscationSetting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("priority", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

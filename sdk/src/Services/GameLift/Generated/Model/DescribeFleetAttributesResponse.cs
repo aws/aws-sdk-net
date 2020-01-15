@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetAttributes. 
         /// <para>
-        /// Collection of objects containing attribute metadata for each requested fleet ID.
+        /// A collection of objects containing attribute metadata for each requested fleet ID.
         /// </para>
         /// </summary>
         public List<FleetAttributes> FleetAttributes

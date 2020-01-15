@@ -167,7 +167,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property SuppressionAttributes. 
         /// <para>
-        /// An object that contains information about your account's suppression preferences.
+        /// An object that contains information about the email address suppression preferences
+        /// for your account in the current AWS Region.
         /// </para>
         /// </summary>
         public SuppressionAttributes SuppressionAttributes

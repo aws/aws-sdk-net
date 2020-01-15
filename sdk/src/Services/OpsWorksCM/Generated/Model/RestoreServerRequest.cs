@@ -37,6 +37,14 @@ namespace Amazon.OpsWorksCM.Model
     /// 
     ///  
     /// <para>
+    /// Restoring from a backup is performed by creating a new EC2 instance. If restoration
+    /// is successful, and the server is in a <code>HEALTHY</code> state, AWS OpsWorks CM
+    /// switches traffic over to the new instance. After restoration is finished, the old
+    /// EC2 instance is maintained in a <code>Running</code> or <code>Stopped</code> state,
+    /// but is eventually terminated.
+    /// </para>
+    ///  
+    /// <para>
     ///  This operation is asynchronous. 
     /// </para>
     ///  

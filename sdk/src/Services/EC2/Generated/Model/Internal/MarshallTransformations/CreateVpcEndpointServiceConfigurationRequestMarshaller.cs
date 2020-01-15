@@ -75,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetPrivateDnsName())
+                {
+                    request.Parameters.Add("PrivateDnsName", StringUtils.FromString(publicRequest.PrivateDnsName));
+                }
             }
             return request;
         }

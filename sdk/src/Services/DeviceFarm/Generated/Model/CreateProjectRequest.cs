@@ -29,7 +29,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateProject operation.
-    /// Creates a new project.
+    /// Creates a project.
     /// </summary>
     public partial class CreateProjectRequest : AmazonDeviceFarmRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property DefaultJobTimeoutMinutes. 
         /// <para>
         /// Sets the execution timeout value (in minutes) for a project. All test runs in this
-        /// project will use the specified execution timeout value unless overridden when scheduling
+        /// project use the specified execution timeout value unless overridden when scheduling
         /// a run.
         /// </para>
         /// </summary>

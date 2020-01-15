@@ -49,8 +49,8 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        /// If you call <code>CreateBackupPlan</code> with a plan that already exists, the existing
-        /// <code>backupPlanId</code> is returned.
+        /// If you call <code>CreateBackupPlan</code> with a plan that already exists, an <code>AlreadyExistsException</code>
+        /// is returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBackupPlan service method.</param>
@@ -130,7 +130,7 @@ namespace Amazon.Backup
         /// </para>
         ///  
         /// <para>
-        ///  <code>ConditionType:"StringEquals"</code> 
+        ///  <code>ConditionType:"STRINGEQUALS"</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -142,7 +142,7 @@ namespace Amazon.Backup
         /// </para>
         ///  
         /// <para>
-        ///  <code>ConditionType:"StringEquals"</code> 
+        ///  <code>ConditionType:"STRINGEQUALS"</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -719,6 +719,59 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  DescribeCopyJob
+
+
+        /// <summary>
+        /// Returns metadata associated with creating a copy of a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCopyJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCopyJob service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeCopyJob">REST API Reference for DescribeCopyJob Operation</seealso>
+        DescribeCopyJobResponse DescribeCopyJob(DescribeCopyJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCopyJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCopyJob operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCopyJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeCopyJob">REST API Reference for DescribeCopyJob Operation</seealso>
+        IAsyncResult BeginDescribeCopyJob(DescribeCopyJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCopyJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCopyJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeCopyJobResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeCopyJob">REST API Reference for DescribeCopyJob Operation</seealso>
+        DescribeCopyJobResponse EndDescribeCopyJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeProtectedResource
 
 
@@ -1265,16 +1318,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns two sets of metadata key-value pairs. The first set lists the metadata that
-        /// the recovery point was created with. The second set lists the metadata key-value pairs
-        /// that are required to restore the recovery point.
-        /// 
-        ///  
-        /// <para>
-        /// These sets can be the same, or the restore metadata set can contain different values
-        /// if the target service to be restored has changed since the recovery point was created
-        /// and now requires additional or different information in order to be restored.
-        /// </para>
+        /// Returns a set of metadata key-value pairs that were used to create the backup.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRecoveryPointRestoreMetadata service method.</param>
         /// 
@@ -1378,6 +1422,10 @@ namespace Amazon.Backup
         /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
         /// Indicates that something is wrong with a parameter's value. For example, the value
         /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
         /// </exception>
         /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
         /// The request failed due to a temporary failure of the server.
@@ -1680,6 +1728,53 @@ namespace Amazon.Backup
         /// <returns>Returns a  ListBackupVaultsResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupVaults">REST API Reference for ListBackupVaults Operation</seealso>
         ListBackupVaultsResponse EndListBackupVaults(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCopyJobs
+
+
+        /// <summary>
+        /// Returns metadata about your copy jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCopyJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListCopyJobs service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobs">REST API Reference for ListCopyJobs Operation</seealso>
+        ListCopyJobsResponse ListCopyJobs(ListCopyJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCopyJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCopyJobs operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCopyJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobs">REST API Reference for ListCopyJobs Operation</seealso>
+        IAsyncResult BeginListCopyJobs(ListCopyJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCopyJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCopyJobs.</param>
+        /// 
+        /// <returns>Returns a  ListCopyJobsResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobs">REST API Reference for ListCopyJobs Operation</seealso>
+        ListCopyJobsResponse EndListCopyJobs(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2108,6 +2203,63 @@ namespace Amazon.Backup
         /// <returns>Returns a  StartBackupJobResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartBackupJob">REST API Reference for StartBackupJob Operation</seealso>
         StartBackupJobResponse EndStartBackupJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartCopyJob
+
+
+        /// <summary>
+        /// Starts a job to create a one-time copy of the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCopyJob service method.</param>
+        /// 
+        /// <returns>The response from the StartCopyJob service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartCopyJob">REST API Reference for StartCopyJob Operation</seealso>
+        StartCopyJobResponse StartCopyJob(StartCopyJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartCopyJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartCopyJob operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartCopyJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartCopyJob">REST API Reference for StartCopyJob Operation</seealso>
+        IAsyncResult BeginStartCopyJob(StartCopyJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartCopyJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartCopyJob.</param>
+        /// 
+        /// <returns>Returns a  StartCopyJobResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartCopyJob">REST API Reference for StartCopyJob Operation</seealso>
+        StartCopyJobResponse EndStartCopyJob(IAsyncResult asyncResult);
 
         #endregion
         

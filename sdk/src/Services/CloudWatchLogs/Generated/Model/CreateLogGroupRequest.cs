@@ -65,6 +65,13 @@ namespace Amazon.CloudWatchLogs.Model
     /// the CMK is disabled, you will receive an <code>InvalidParameterException</code> error.
     /// 
     /// </para>
+    ///  <note> 
+    /// <para>
+    ///  <b>Important:</b> CloudWatch Logs supports only symmetric CMKs. Do not associate
+    /// an asymmetric CMK with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+    /// Symmetric and Asymmetric Keys</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateLogGroupRequest : AmazonCloudWatchLogsRequest
     {

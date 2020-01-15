@@ -1796,6 +1796,9 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the CreatePresignedDomainUrl service method.</param>
         /// 
         /// <returns>The response from the CreatePresignedDomainUrl service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">REST API Reference for CreatePresignedDomainUrl Operation</seealso>
         public virtual CreatePresignedDomainUrlResponse CreatePresignedDomainUrl(CreatePresignedDomainUrlRequest request)
         {
@@ -2323,12 +2326,10 @@ namespace Amazon.SageMaker
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can create a trial component through a direct call to the <code>CreateTrialComponent</code>
-        /// API. However, you can't specify the <code>Source</code> property of the component
-        /// in the request, therefore, the component isn't associated with an Amazon SageMaker
-        /// job. You must use Amazon SageMaker Studio, the Amazon SageMaker Python SDK, or the
-        /// AWS SDK for Python (Boto) to create the component with a valid <code>Source</code>
-        /// property.
+        ///  <code>CreateTrialComponent</code> can only be invoked from within an Amazon SageMaker
+        /// managed environment. This includes Amazon SageMaker training jobs, processing jobs,
+        /// transform jobs, and Amazon SageMaker notebooks. A call to <code>CreateTrialComponent</code>
+        /// from outside one of these environments results in an error.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6662,6 +6663,9 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the ListTrialComponents service method.</param>
         /// 
         /// <returns>The response from the ListTrialComponents service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrialComponents">REST API Reference for ListTrialComponents Operation</seealso>
         public virtual ListTrialComponentsResponse ListTrialComponents(ListTrialComponentsRequest request)
         {
@@ -6719,6 +6723,9 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the ListTrials service method.</param>
         /// 
         /// <returns>The response from the ListTrials service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials">REST API Reference for ListTrials Operation</seealso>
         public virtual ListTrialsResponse ListTrials(ListTrialsRequest request)
         {
@@ -6937,7 +6944,7 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// You can query against the following value types: numerical, text, Booleans, and timestamps.
+        /// You can query against the following value types: numeric, text, Boolean, and timestamp.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Search service method.</param>

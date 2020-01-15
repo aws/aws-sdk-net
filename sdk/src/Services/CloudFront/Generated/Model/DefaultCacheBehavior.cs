@@ -130,7 +130,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ForwardedValues. 
         /// <para>
-        /// A complex type that specifies how CloudFront handles query strings and cookies.
+        /// A complex type that specifies how CloudFront handles query strings, cookies, and HTTP
+        /// headers.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

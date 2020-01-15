@@ -36,9 +36,9 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you want viewers to use HTTPS, whether you're using an alternate domain name such
-    /// as <code>example.com</code> or the CloudFront domain name for your distribution, such
-    /// as <code>d111111abcdef8.cloudfront.net</code>.
+    /// If you want viewers to use HTTPS, whether you're using an alternate domain name, such
+    /// as <code>example.com</code>, or the CloudFront domain name for your distribution,
+    /// such as <code>d111111abcdef8.cloudfront.net</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -85,18 +85,15 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ACMCertificateArn. 
         /// <para>
         /// If you want viewers to use HTTPS to request your objects and you're using an alternate
-        /// domain name, you must choose the type of certificate that you want to use. Specify
-        /// the following value if ACM provided your certificate:
+        /// domain name, you must choose the type of certificate that you want to use. If ACM
+        /// provided your certificate, specify the Amazon Resource Name (ARN) for the ACM certificate
+        /// that you want to use for this distribution. CloudFront only supports ACM certificates
+        /// in the US East (N. Virginia) Region (us-east-1).
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>&lt;ACMCertificateArn&gt;<i>ARN for ACM SSL/TLS certificate</i>&lt;ACMCertificateArn&gt;</code>
-        /// where <code> <i>ARN for ACM SSL/TLS certificate</i> </code> is the ARN for the ACM
-        /// SSL/TLS certificate that you want to use for this distribution.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If you specify <code>ACMCertificateArn</code>, you must also specify a value for <code>SSLSupportMethod</code>.
+        /// If you specify an ACM certificate ARN, you must also specify an SSL support method
+        /// (<code>sni-only</code> or <code>vip</code>).
         /// </para>
         /// </summary>
         public string ACMCertificateArn
@@ -185,14 +182,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property CloudFrontDefaultCertificate. 
         /// <para>
         /// If you're using the CloudFront domain name for your distribution, such as <code>d111111abcdef8.cloudfront.net</code>,
-        /// specify the following value:
+        /// specify this value as <code>true</code>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;
-        /// </code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public bool CloudFrontDefaultCertificate
         {
@@ -210,19 +201,15 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property IAMCertificateId. 
         /// <para>
         /// If you want viewers to use HTTPS to request your objects and you're using an alternate
-        /// domain name, you must choose the type of certificate that you want to use. Specify
-        /// the following value if you purchased your certificate from a third-party certificate
-        /// authority:
+        /// domain name, you must choose the type of certificate that you want to use. If you
+        /// purchased your certificate from a third-party certificate authority and uploaded it
+        /// to the IAM certificate store, specify the certificate ID that you want to use for
+        /// this distribution.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>&lt;IAMCertificateId&gt;<i>IAM certificate ID</i>&lt;IAMCertificateId&gt;</code>
-        /// where <code> <i>IAM certificate ID</i> </code> is the ID that IAM returned when you
-        /// added the certificate to the IAM certificate store.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If you specify <code>IAMCertificateId</code>, you must also specify a value for <code>SSLSupportMethod</code>.
+        /// If you specify a certificate ID, you must also specify an SSL support method (<code>sni-only</code>
+        /// or <code>vip</code>).
         /// </para>
         /// </summary>
         public string IAMCertificateId
@@ -245,19 +232,19 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The minimum SSL/TLS protocol that CloudFront uses to communicate with viewers
+        /// The minimum SSL/TLS protocol that CloudFront uses to communicate with viewers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The cipher that CloudFront uses to encrypt the content that it returns to viewers
+        /// The cipher that CloudFront uses to encrypt the content that it returns to viewers.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// On the CloudFront console, this setting is called <b>Security policy</b>.
+        /// On the CloudFront console, this setting is called <b>Security Policy</b>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// We recommend that you specify <code>TLSv1.1_2016</code> unless your users are using
+        /// We recommend that you specify <code>TLSv1.1_2016</code> unless your viewers are using
         /// browsers or devices that do not support TLSv1.1 or later.
         /// </para>
         ///  
@@ -267,19 +254,18 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You're using a custom certificate: you specified a value for <code>ACMCertificateArn</code>
-        /// or for <code>IAMCertificateId</code> 
+        /// You're using a custom certificate; that is, you specified a value for <code>ACMCertificateArn</code>
+        /// or for <code>IAMCertificateId</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You're using SNI: you specified <code>sni-only</code> for <code>SSLSupportMethod</code>
-        /// 
+        /// You're using SNI; that is, you specified <code>sni-only</code> for <code>SSLSupportMethod</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you specify <code>true</code> for <code>CloudFrontDefaultCertificate</code>, CloudFront
         /// automatically sets the security policy to <code>TLSv1</code> regardless of the value
-        /// that you specify for <code>MinimumProtocolVersion</code>.
+        /// that you specify here.
         /// </para>
         ///  
         /// <para>
@@ -308,7 +294,7 @@ namespace Amazon.CloudFront.Model
         /// If you specify a value for <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn">ACMCertificateArn</a>
         /// or for <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId">IAMCertificateId</a>,
         /// you must also specify how you want CloudFront to serve HTTPS requests: using a method
-        /// that works for browsers and clients released after 2010 or one that works for all
+        /// that works for browsers and clients released after 2010, or one that works for all
         /// clients.
         /// </para>
         ///  <ul> <li> 
@@ -317,7 +303,7 @@ namespace Amazon.CloudFront.Model
         /// support Server Name Indication (SNI). All modern browsers support SNI, but there are
         /// a few that don't. For a current list of the browsers that support SNI, see the <a
         /// href="http://en.wikipedia.org/wiki/Server_Name_Indication">Wikipedia entry Server
-        /// Name Indication</a>. To learn about options to explore if you have users with browsers
+        /// Name Indication</a>. To learn about options to explore if you have viewers with browsers
         /// that don't include SNI support, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html">Choosing
         /// How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
@@ -330,7 +316,8 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Don't specify a value for <code>SSLSupportMethod</code> if you specified <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.
+        /// Don't specify a value here if you specified <code>CloudFrontDefaultCertificate</code>
+        /// as <code>true</code>.
         /// </para>
         ///  
         /// <para>

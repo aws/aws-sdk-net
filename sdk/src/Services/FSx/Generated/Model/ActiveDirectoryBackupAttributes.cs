@@ -61,6 +61,7 @@ namespace Amazon.FSx.Model
         /// The fully qualified domain name of the self-managed AD directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }

@@ -79,6 +79,22 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTagList())
+                {
+                    context.Writer.WritePropertyName("TagList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagListListValue in publicRequest.TagList)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagListListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

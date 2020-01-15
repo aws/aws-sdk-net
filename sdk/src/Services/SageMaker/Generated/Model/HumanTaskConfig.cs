@@ -69,7 +69,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Defines the maximum number of data objects that can be labeled by human workers at
         /// the same time. Also referred to as batch size. Each object may have more than one
-        /// worker at one time.
+        /// worker at one time. The default value is 1000 objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -724,10 +724,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The length of time that a task remains available for labeling by human workers. <b>If
         /// you choose the Amazon Mechanical Turk workforce, the maximum is 12 hours (43200)</b>.
-        /// For private and vendor workforces, the maximum is as listed.
+        /// The default value is 864000 seconds (1 day). For private and vendor workforces, the
+        /// maximum is as listed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=864000)]
+        [AWSProperty(Min=60, Max=864000)]
         public int TaskAvailabilityLifetimeInSeconds
         {
             get { return this._taskAvailabilityLifetimeInSeconds.GetValueOrDefault(); }

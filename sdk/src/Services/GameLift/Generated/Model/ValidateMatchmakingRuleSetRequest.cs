@@ -87,7 +87,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuleSetBody. 
         /// <para>
-        /// Collection of matchmaking rules to validate, formatted as a JSON string.
+        /// A collection of matchmaking rules to validate, formatted as a JSON string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65535)]

@@ -82,7 +82,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ScriptId. 
         /// <para>
-        /// Unique identifier for a Realtime script to delete.
+        /// A unique identifier for a Realtime script to delete. You can use either the script
+        /// ID or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

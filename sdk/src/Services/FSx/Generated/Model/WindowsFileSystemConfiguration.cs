@@ -191,6 +191,7 @@ namespace Amazon.FSx.Model
         /// shares, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=15)]
         public string PreferredFileServerIp
         {
             get { return this._preferredFileServerIp; }

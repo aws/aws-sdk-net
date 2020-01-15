@@ -41,6 +41,7 @@ namespace Amazon.Pinpoint.Model
         private string _templateDescription;
         private string _templateName;
         private TemplateType _templateType;
+        private string _version;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -63,7 +64,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date when the message template was created.
+        /// The date, in ISO 8601 format, when the message template was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -103,7 +104,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        /// The date when the message template was last modified.
+        /// The date, in ISO 8601 format, when the message template was last modified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -179,7 +180,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TemplateType. 
         /// <para>
-        /// The type of channel that the message template is designed for.
+        /// The type of channel that the message template is designed for. Possible values are:
+        /// EMAIL, PUSH, SMS, and VOICE.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -193,6 +195,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetTemplateType()
         {
             return this._templateType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The unique identifier, as an integer, for the active version of the message template.
+        /// </para>
+        /// </summary>
+        public string Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
         }
 
     }

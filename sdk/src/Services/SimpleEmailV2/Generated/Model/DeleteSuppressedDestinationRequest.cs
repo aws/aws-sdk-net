@@ -29,7 +29,7 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSuppressedDestination operation.
-    /// Used to delete a suppressed email destination from your suppression list.
+    /// Removes an email address from the suppression list for your account.
     /// </summary>
     public partial class DeleteSuppressedDestinationRequest : AmazonSimpleEmailServiceV2Request
     {
@@ -38,7 +38,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The suppressed email destination to delete.
+        /// The suppressed email destination to remove from the account suppression list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

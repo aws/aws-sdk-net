@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private string _groupName;
         private string _hostId;
         private string _hostResourceGroupArn;
+        private int? _partitionNumber;
         private string _spreadDomain;
         private Tenancy _tenancy;
 
@@ -129,6 +130,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetHostResourceGroupArn()
         {
             return this._hostResourceGroupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PartitionNumber. 
+        /// <para>
+        /// The number of the partition the instance should launch in. Valid only if the placement
+        /// group strategy is set to <code>partition</code>.
+        /// </para>
+        /// </summary>
+        public int PartitionNumber
+        {
+            get { return this._partitionNumber.GetValueOrDefault(); }
+            set { this._partitionNumber = value; }
+        }
+
+        // Check to see if PartitionNumber property is set
+        internal bool IsSetPartitionNumber()
+        {
+            return this._partitionNumber.HasValue; 
         }
 
         /// <summary>

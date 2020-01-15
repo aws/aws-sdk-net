@@ -47,6 +47,7 @@ namespace Amazon.Lightsail.Model
     public partial class UpdateRelationalDatabaseRequest : AmazonLightsailRequest
     {
         private bool? _applyImmediately;
+        private string _caCertificateIdentifier;
         private bool? _disableBackupRetention;
         private bool? _enableBackupRetention;
         private string _masterUserPassword;
@@ -77,6 +78,24 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetApplyImmediately()
         {
             return this._applyImmediately.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaCertificateIdentifier. 
+        /// <para>
+        /// Indicates the certificate that needs to be associated with the database.
+        /// </para>
+        /// </summary>
+        public string CaCertificateIdentifier
+        {
+            get { return this._caCertificateIdentifier; }
+            set { this._caCertificateIdentifier = value; }
+        }
+
+        // Check to see if CaCertificateIdentifier property is set
+        internal bool IsSetCaCertificateIdentifier()
+        {
+            return this._caCertificateIdentifier != null;
         }
 
         /// <summary>

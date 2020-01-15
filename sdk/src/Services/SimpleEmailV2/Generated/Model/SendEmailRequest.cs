@@ -34,8 +34,8 @@ namespace Amazon.SimpleEmailV2.Model
     ///  <ul> <li> 
     /// <para>
     ///  <b>Simple</b> – A standard email message. When you create this type of message, you
-    /// specify the sender, the recipient, and the message body, and the Amazon SES API v2
-    /// assembles the message for you.
+    /// specify the sender, the recipient, and the message body, and Amazon SES assembles
+    /// the message for you.
     /// </para>
     ///  </li> <li> 
     /// <para>

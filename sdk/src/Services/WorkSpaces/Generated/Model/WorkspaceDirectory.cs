@@ -295,7 +295,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property WorkspaceAccessProperties. 
         /// <para>
-        /// The devices and operating systems that users can use to access Workspaces.
+        /// The devices and operating systems that users can use to access WorkSpaces.
         /// </para>
         /// </summary>
         public WorkspaceAccessProperties WorkspaceAccessProperties

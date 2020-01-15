@@ -90,7 +90,7 @@ namespace Amazon.FSx.Model
         /// Command Line Interface (AWS CLI) or an AWS SDK.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=63)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -189,7 +189,7 @@ namespace Amazon.FSx.Model
         /// increments of 3600 GiB.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=0)]
         public int StorageCapacity
         {
             get { return this._storageCapacity.GetValueOrDefault(); }

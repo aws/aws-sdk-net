@@ -68,6 +68,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AudioTrackType);
             }
 
+            if(requestObject.IsSetSegmentType())
+            {
+                context.Writer.WritePropertyName("segmentType");
+                context.Writer.Write(requestObject.SegmentType);
+            }
+
         }
 
         /// <summary>

@@ -354,7 +354,7 @@ namespace Amazon.S3
         /// encryption keys or by using your own encryption key. You can do this regardless of
         /// the form of server-side encryption that was used to encrypt the source, or even if
         /// the source object was not encrypted. For more information about server-side encryption,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
         /// Server-Side Encryption</a>.
         /// </para>
         ///  
@@ -493,9 +493,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code> but don't provide
-        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-        /// managed customer master key (CMK) in AWS KMS to protect the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
+        /// CMK in AWS KMS to protect the data. If you want to use a customer managed AWS KMS
+        /// CMK, you must provide the <code>x-amz-server-side-encryption-aws-kms-key-id</code>
+        /// of the symmetric customer managed CMK. Amazon S3 only supports symmetric CMKs and
+        /// not asymmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -712,7 +716,7 @@ namespace Amazon.S3
         /// encryption keys or by using your own encryption key. You can do this regardless of
         /// the form of server-side encryption that was used to encrypt the source, or even if
         /// the source object was not encrypted. For more information about server-side encryption,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
         /// Server-Side Encryption</a>.
         /// </para>
         ///  
@@ -851,9 +855,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code> but don't provide
-        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-        /// managed customer master key (CMK) in AWS KMS to protect the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
+        /// CMK in AWS KMS to protect the data. If you want to use a customer managed AWS KMS
+        /// CMK, you must provide the <code>x-amz-server-side-encryption-aws-kms-key-id</code>
+        /// of the symmetric customer managed CMK. Amazon S3 only supports symmetric CMKs and
+        /// not asymmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -1072,7 +1080,7 @@ namespace Amazon.S3
         /// encryption keys or by using your own encryption key. You can do this regardless of
         /// the form of server-side encryption that was used to encrypt the source, or even if
         /// the source object was not encrypted. For more information about server-side encryption,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
         /// Server-Side Encryption</a>.
         /// </para>
         ///  
@@ -1211,9 +1219,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code> but don't provide
-        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-        /// managed customer master key (CMK) in AWS KMS to protect the data.
+        /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
+        /// CMK in AWS KMS to protect the data. If you want to use a customer managed AWS KMS
+        /// CMK, you must provide the <code>x-amz-server-side-encryption-aws-kms-key-id</code>
+        /// of the symmetric customer managed CMK. Amazon S3 only supports symmetric CMKs and
+        /// not asymmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -2925,7 +2937,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Removes the entire tag set from the specified object. For more information about managing
-        /// object tags, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html#MultiFactorAuthenticationDelete">
+        /// object tags, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">
         /// Object Tagging</a>.
         /// 
         ///  
@@ -5599,8 +5611,8 @@ namespace Amazon.S3
         ///  </li> </ul> <note> 
         /// <para>
         /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-        /// managed CMK in AWS KMS to protect the data.
+        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
+        /// CMK in AWS KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -5872,8 +5884,8 @@ namespace Amazon.S3
         ///  </li> </ul> <note> 
         /// <para>
         /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-        /// managed CMK in AWS KMS to protect the data.
+        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
+        /// CMK in AWS KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -7461,8 +7473,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// This implementation of the <code>PUT</code> operation sets default encryption for
-        /// a buckets using server-side encryption with Amazon S3-managed keys SSE-S3 or AWS KMS
-        /// customer master keys (CMKs) (SSE-KMS) bucket.
+        /// a bucket using server-side encryption with Amazon S3-managed keys SSE-S3 or AWS KMS
+        /// customer master keys (CMKs) (SSE-KMS).
         /// </para>
         ///  <important> 
         /// <para>
@@ -9158,8 +9170,12 @@ namespace Amazon.S3
         ///  </li> </ul> <note> 
         /// <para>
         /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-        /// managed CMK in AWS KMS to protect the data.
+        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
+        /// CMK in AWS KMS to protect the data. If you want to use a customer managed AWS KMS
+        /// CMK, you must provide the <code>x-amz-server-side-encryption-aws-kms-key-id</code>
+        /// of the symmetric customer managed CMK. Amazon S3 only supports symmetric CMKs and
+        /// not asymmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -9193,7 +9209,7 @@ namespace Amazon.S3
         /// <para>
         /// For more information about server-side encryption with CMKs stored in KMS (SSE-KMS),
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.
+        /// Data Using Server-Side Encryption with CMKs stored in AWS</a>.
         /// </para>
         ///  </li> </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
         /// 
@@ -9340,8 +9356,12 @@ namespace Amazon.S3
         ///  </li> </ul> <note> 
         /// <para>
         /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-        /// <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the default
-        /// AWS KMS CMK to protect the data.
+        /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS managed
+        /// CMK in AWS KMS to protect the data. If you want to use a customer managed AWS KMS
+        /// CMK, you must provide the <code>x-amz-server-side-encryption-aws-kms-key-id</code>
+        /// of the symmetric customer managed CMK. Amazon S3 only supports symmetric CMKs and
+        /// not asymmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  </note> <important> 
         /// <para>

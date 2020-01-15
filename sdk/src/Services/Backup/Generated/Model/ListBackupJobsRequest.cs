@@ -124,11 +124,15 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>DynamoDB</code> for Amazon DynamoDB
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>EBS</code> for Amazon Elastic Block Store
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SGW</code> for AWS Storage Gateway
+        ///  <code>EFS</code> for Amazon Elastic File System
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -136,11 +140,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DDB</code> for Amazon DynamoDB
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>EFS</code> for Amazon Elastic File System
+        ///  <code>Storage Gateway</code> for AWS Storage Gateway
         /// </para>
         ///  </li> </ul>
         /// </summary>

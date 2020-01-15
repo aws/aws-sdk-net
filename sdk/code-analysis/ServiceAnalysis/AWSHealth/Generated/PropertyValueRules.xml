@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeAffectedAccountsForOrganizationRequest.EventArn</property>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeAffectedAccountsForOrganizationRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeAffectedAccountsForOrganizationRequest.NextToken</property>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeAffectedAccountsForOrganizationResponse.NextToken</property>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeAffectedEntitiesRequest.Locale</property>
     <min>2</min>
     <max>256</max>
+    <pattern>.{2,256}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeAffectedEntitiesRequest.MaxResults</property>
@@ -12,11 +35,38 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeAffectedEntitiesRequest.NextToken</property>
-    <pattern>[a-zA-Z0-9=/+_.-]{4,512}</pattern>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeAffectedEntitiesResponse.NextToken</property>
-    <pattern>[a-zA-Z0-9=/+_.-]{4,512}</pattern>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeAffectedEntitiesForOrganizationRequest.Locale</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>.{2,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeAffectedEntitiesForOrganizationRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeAffectedEntitiesForOrganizationRequest.NextToken</property>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeAffectedEntitiesForOrganizationResponse.NextToken</property>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeEventAggregatesRequest.MaxResults</property>
@@ -25,21 +75,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeEventAggregatesRequest.NextToken</property>
-    <pattern>[a-zA-Z0-9=/+_.-]{4,512}</pattern>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeEventAggregatesResponse.NextToken</property>
-    <pattern>[a-zA-Z0-9=/+_.-]{4,512}</pattern>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeEventDetailsRequest.Locale</property>
     <min>2</min>
     <max>256</max>
+    <pattern>.{2,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeEventDetailsForOrganizationRequest.Locale</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>.{2,256}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeEventsRequest.Locale</property>
     <min>2</min>
     <max>256</max>
+    <pattern>.{2,256}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeEventsRequest.MaxResults</property>
@@ -48,16 +110,44 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeEventsRequest.NextToken</property>
-    <pattern>[a-zA-Z0-9=/+_.-]{4,512}</pattern>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeEventsResponse.NextToken</property>
-    <pattern>[a-zA-Z0-9=/+_.-]{4,512}</pattern>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeEventsForOrganizationRequest.Locale</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>.{2,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeEventsForOrganizationRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeEventsForOrganizationRequest.NextToken</property>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeEventsForOrganizationResponse.NextToken</property>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeEventTypesRequest.Locale</property>
     <min>2</min>
     <max>256</max>
+    <pattern>.{2,256}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeEventTypesRequest.MaxResults</property>
@@ -66,27 +156,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeEventTypesRequest.NextToken</property>
-    <pattern>[a-zA-Z0-9=/+_.-]{4,512}</pattern>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.DescribeEventTypesResponse.NextToken</property>
-    <pattern>[a-zA-Z0-9=/+_.-]{4,512}</pattern>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.AffectedEntity.AwsAccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <max>12</max>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.AffectedEntity.EntityArn</property>
     <max>1600</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AWSHealth.Model.AffectedEntity.EntityUrl</property>
-    <pattern>https?://.+\.(amazon\.com|amazonaws\.com|amazonaws\.cn|c2s\.ic\.gov|sc2s\.sgov\.gov|amazonaws-us-gov.com)/.*</pattern>
+    <pattern>.{0,1600}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.AffectedEntity.EntityValue</property>
     <max>256</max>
+    <pattern>.{0,256}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.AffectedEntity.EventArn</property>
@@ -105,6 +198,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.Event.AvailabilityZone</property>
+    <min>6</min>
+    <max>18</max>
     <pattern>[a-z]{2}\-[0-9a-z\-]{4,16}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -119,12 +214,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.Event.Region</property>
+    <min>2</min>
+    <max>25</max>
     <pattern>[^:/]{2,25}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.Event.Service</property>
     <min>2</min>
     <max>30</max>
+    <pattern>[^:/]{2,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.EventAccountFilter.AwsAccountId</property>
+    <max>12</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.EventAccountFilter.EventArn</property>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.EventDetailsErrorItem.EventArn</property>
@@ -145,5 +253,58 @@
     <property>Amazon.AWSHealth.Model.EventType.Service</property>
     <min>2</min>
     <max>30</max>
+    <pattern>[^:/]{2,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.OrganizationAffectedEntitiesErrorItem.AwsAccountId</property>
+    <max>12</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.OrganizationAffectedEntitiesErrorItem.EventArn</property>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.OrganizationEvent.Arn</property>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.OrganizationEvent.EventTypeCategory</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.OrganizationEvent.EventTypeCode</property>
+    <min>3</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.OrganizationEvent.Region</property>
+    <min>2</min>
+    <max>25</max>
+    <pattern>[^:/]{2,25}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.OrganizationEvent.Service</property>
+    <min>2</min>
+    <max>30</max>
+    <pattern>[^:/]{2,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.OrganizationEventDetails.AwsAccountId</property>
+    <max>12</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.OrganizationEventDetailsErrorItem.AwsAccountId</property>
+    <max>12</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.OrganizationEventDetailsErrorItem.EventArn</property>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}</pattern>
   </property-value-rule>
 </property-value-rules>

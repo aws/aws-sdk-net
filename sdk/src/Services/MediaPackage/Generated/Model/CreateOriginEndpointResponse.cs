@@ -33,6 +33,7 @@ namespace Amazon.MediaPackage.Model
     public partial class CreateOriginEndpointResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private Authorization _authorization;
         private string _channelId;
         private CmafPackage _cmafPackage;
         private DashPackage _dashPackage;
@@ -61,6 +62,21 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Authorization.
+        /// </summary>
+        public Authorization Authorization
+        {
+            get { return this._authorization; }
+            set { this._authorization = value; }
+        }
+
+        // Check to see if Authorization property is set
+        internal bool IsSetAuthorization()
+        {
+            return this._authorization != null;
         }
 
         /// <summary>

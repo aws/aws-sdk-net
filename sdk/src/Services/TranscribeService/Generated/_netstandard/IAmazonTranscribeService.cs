@@ -78,6 +78,48 @@ namespace Amazon.TranscribeService
 
         #endregion
                 
+        #region  CreateVocabularyFilter
+
+
+
+        /// <summary>
+        /// Creates a new vocabulary filter that you can use to filter words, such as profane
+        /// words, from the output of a transcription job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVocabularyFilter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVocabularyFilter service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code>
+        /// field is a duplicate of a previously entered job name. Resend your request with a
+        /// different name.
+        /// 
+        ///  
+        /// <para>
+        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
+        /// running at the same time. Resend the second request later.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabularyFilter">REST API Reference for CreateVocabularyFilter Operation</seealso>
+        Task<CreateVocabularyFilterResponse> CreateVocabularyFilterAsync(CreateVocabularyFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteTranscriptionJob
 
 
@@ -139,6 +181,39 @@ namespace Amazon.TranscribeService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabulary">REST API Reference for DeleteVocabulary Operation</seealso>
         Task<DeleteVocabularyResponse> DeleteVocabularyAsync(DeleteVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteVocabularyFilter
+
+
+
+        /// <summary>
+        /// Removes a vocabulary filter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVocabularyFilter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVocabularyFilter service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabularyFilter">REST API Reference for DeleteVocabularyFilter Operation</seealso>
+        Task<DeleteVocabularyFilterResponse> DeleteVocabularyFilterAsync(DeleteVocabularyFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -211,6 +286,39 @@ namespace Amazon.TranscribeService
 
         #endregion
                 
+        #region  GetVocabularyFilter
+
+
+
+        /// <summary>
+        /// Returns information about a vocabulary filter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVocabularyFilter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVocabularyFilter service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabularyFilter">REST API Reference for GetVocabularyFilter Operation</seealso>
+        Task<GetVocabularyFilterResponse> GetVocabularyFilterAsync(GetVocabularyFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTranscriptionJobs
 
 
@@ -269,6 +377,36 @@ namespace Amazon.TranscribeService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularies">REST API Reference for ListVocabularies Operation</seealso>
         Task<ListVocabulariesResponse> ListVocabulariesAsync(ListVocabulariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListVocabularyFilters
+
+
+
+        /// <summary>
+        /// Gets information about vocabulary filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVocabularyFilters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVocabularyFilters service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularyFilters">REST API Reference for ListVocabularyFilters Operation</seealso>
+        Task<ListVocabularyFiltersResponse> ListVocabularyFiltersAsync(ListVocabularyFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -356,6 +494,39 @@ namespace Amazon.TranscribeService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary">REST API Reference for UpdateVocabulary Operation</seealso>
         Task<UpdateVocabularyResponse> UpdateVocabularyAsync(UpdateVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateVocabularyFilter
+
+
+
+        /// <summary>
+        /// Updates a vocabulary filter with a new list of filtered words.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVocabularyFilter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVocabularyFilter service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// Either you have sent too many requests or your input file is too long. Wait before
+        /// you resend your request, or use a smaller file and resend the request.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check the name and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabularyFilter">REST API Reference for UpdateVocabularyFilter Operation</seealso>
+        Task<UpdateVocabularyFilterResponse> UpdateVocabularyFilterAsync(UpdateVocabularyFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

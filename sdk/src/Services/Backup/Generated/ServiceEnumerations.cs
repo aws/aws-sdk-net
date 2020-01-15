@@ -109,9 +109,21 @@ namespace Amazon.Backup
         /// </summary>
         public static readonly BackupVaultEvent BACKUP_JOB_COMPLETED = new BackupVaultEvent("BACKUP_JOB_COMPLETED");
         /// <summary>
+        /// Constant BACKUP_JOB_EXPIRED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent BACKUP_JOB_EXPIRED = new BackupVaultEvent("BACKUP_JOB_EXPIRED");
+        /// <summary>
+        /// Constant BACKUP_JOB_FAILED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent BACKUP_JOB_FAILED = new BackupVaultEvent("BACKUP_JOB_FAILED");
+        /// <summary>
         /// Constant BACKUP_JOB_STARTED for BackupVaultEvent
         /// </summary>
         public static readonly BackupVaultEvent BACKUP_JOB_STARTED = new BackupVaultEvent("BACKUP_JOB_STARTED");
+        /// <summary>
+        /// Constant BACKUP_JOB_SUCCESSFUL for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent BACKUP_JOB_SUCCESSFUL = new BackupVaultEvent("BACKUP_JOB_SUCCESSFUL");
         /// <summary>
         /// Constant BACKUP_PLAN_CREATED for BackupVaultEvent
         /// </summary>
@@ -121,6 +133,18 @@ namespace Amazon.Backup
         /// </summary>
         public static readonly BackupVaultEvent BACKUP_PLAN_MODIFIED = new BackupVaultEvent("BACKUP_PLAN_MODIFIED");
         /// <summary>
+        /// Constant COPY_JOB_FAILED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent COPY_JOB_FAILED = new BackupVaultEvent("COPY_JOB_FAILED");
+        /// <summary>
+        /// Constant COPY_JOB_STARTED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent COPY_JOB_STARTED = new BackupVaultEvent("COPY_JOB_STARTED");
+        /// <summary>
+        /// Constant COPY_JOB_SUCCESSFUL for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent COPY_JOB_SUCCESSFUL = new BackupVaultEvent("COPY_JOB_SUCCESSFUL");
+        /// <summary>
         /// Constant RECOVERY_POINT_MODIFIED for BackupVaultEvent
         /// </summary>
         public static readonly BackupVaultEvent RECOVERY_POINT_MODIFIED = new BackupVaultEvent("RECOVERY_POINT_MODIFIED");
@@ -129,9 +153,17 @@ namespace Amazon.Backup
         /// </summary>
         public static readonly BackupVaultEvent RESTORE_JOB_COMPLETED = new BackupVaultEvent("RESTORE_JOB_COMPLETED");
         /// <summary>
+        /// Constant RESTORE_JOB_FAILED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent RESTORE_JOB_FAILED = new BackupVaultEvent("RESTORE_JOB_FAILED");
+        /// <summary>
         /// Constant RESTORE_JOB_STARTED for BackupVaultEvent
         /// </summary>
         public static readonly BackupVaultEvent RESTORE_JOB_STARTED = new BackupVaultEvent("RESTORE_JOB_STARTED");
+        /// <summary>
+        /// Constant RESTORE_JOB_SUCCESSFUL for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent RESTORE_JOB_SUCCESSFUL = new BackupVaultEvent("RESTORE_JOB_SUCCESSFUL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -208,6 +240,64 @@ namespace Amazon.Backup
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConditionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CopyJobState.
+    /// </summary>
+    public class CopyJobState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for CopyJobState
+        /// </summary>
+        public static readonly CopyJobState COMPLETED = new CopyJobState("COMPLETED");
+        /// <summary>
+        /// Constant CREATED for CopyJobState
+        /// </summary>
+        public static readonly CopyJobState CREATED = new CopyJobState("CREATED");
+        /// <summary>
+        /// Constant FAILED for CopyJobState
+        /// </summary>
+        public static readonly CopyJobState FAILED = new CopyJobState("FAILED");
+        /// <summary>
+        /// Constant RUNNING for CopyJobState
+        /// </summary>
+        public static readonly CopyJobState RUNNING = new CopyJobState("RUNNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CopyJobState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CopyJobState FindValue(string value)
+        {
+            return FindValue<CopyJobState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CopyJobState(string value)
         {
             return FindValue(value);
         }

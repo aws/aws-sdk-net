@@ -46,7 +46,12 @@ namespace Amazon.FSx.Model
     /// system ID for a deleted file system, the <a>DescribeFileSystems</a> returns a <code>FileSystemNotFound</code>
     /// error.
     /// </para>
-    ///  <important> 
+    ///  <note> 
+    /// <para>
+    /// Deleting an Amazon FSx for Lustre file system will fail with a 400 BadRequest if a
+    /// data repository task is in a <code>PENDING</code> or <code>EXECUTING</code> state.
+    /// </para>
+    ///  </note> <important> 
     /// <para>
     /// The data in a deleted file system is also deleted and can't be recovered by any means.
     /// </para>
@@ -65,7 +70,7 @@ namespace Amazon.FSx.Model
         /// deletion. This is automatically filled on your behalf when using the AWS CLI or SDK.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=63)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }

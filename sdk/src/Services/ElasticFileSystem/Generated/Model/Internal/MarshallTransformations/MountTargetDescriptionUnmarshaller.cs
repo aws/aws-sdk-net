@@ -64,6 +64,18 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AvailabilityZoneId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AvailabilityZoneName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AvailabilityZoneName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FileSystemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

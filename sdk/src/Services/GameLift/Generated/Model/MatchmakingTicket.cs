@@ -35,6 +35,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class MatchmakingTicket
     {
+        private string _configurationArn;
         private string _configurationName;
         private DateTime? _endTime;
         private int? _estimatedWaitTime;
@@ -45,6 +46,26 @@ namespace Amazon.GameLift.Model
         private string _statusMessage;
         private string _statusReason;
         private string _ticketId;
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationArn. 
+        /// <para>
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+        /// associated with the GameLift matchmaking configuration resource that is used with
+        /// this ticket.
+        /// </para>
+        /// </summary>
+        public string ConfigurationArn
+        {
+            get { return this._configurationArn; }
+            set { this._configurationArn = value; }
+        }
+
+        // Check to see if ConfigurationArn property is set
+        internal bool IsSetConfigurationArn()
+        {
+            return this._configurationArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConfigurationName. 
@@ -273,7 +294,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TicketId. 
         /// <para>
-        /// Unique identifier for a matchmaking ticket.
+        /// A unique identifier for a matchmaking ticket.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

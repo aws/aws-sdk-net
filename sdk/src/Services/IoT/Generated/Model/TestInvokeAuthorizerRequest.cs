@@ -82,7 +82,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property MqttContext. 
         /// <para>
-        /// Specifies a test MQTT authorization request.&gt;
+        /// Specifies a test MQTT authorization request.
         /// </para>
         /// </summary>
         public MqttContext MqttContext

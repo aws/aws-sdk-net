@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         private string _kernelId;
         private string _keyName;
         private List<LaunchTemplateLicenseConfigurationRequest> _licenseSpecifications = new List<LaunchTemplateLicenseConfigurationRequest>();
+        private LaunchTemplateInstanceMetadataOptionsRequest _metadataOptions;
         private LaunchTemplatesMonitoringRequest _monitoring;
         private List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest> _networkInterfaces = new List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>();
         private LaunchTemplatePlacementRequest _placement;
@@ -405,6 +406,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetLicenseSpecifications()
         {
             return this._licenseSpecifications != null && this._licenseSpecifications.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataOptions. 
+        /// <para>
+        /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+        /// Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateInstanceMetadataOptionsRequest MetadataOptions
+        {
+            get { return this._metadataOptions; }
+            set { this._metadataOptions = value; }
+        }
+
+        // Check to see if MetadataOptions property is set
+        internal bool IsSetMetadataOptions()
+        {
+            return this._metadataOptions != null;
         }
 
         /// <summary>

@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     public partial class DescribePlacementGroupsRequest : AmazonEC2Request
     {
         private List<Filter> _filters = new List<Filter>();
+        private List<string> _groupIds = new List<string>();
         private List<string> _groupNames = new List<string>();
 
         /// <summary>
@@ -69,6 +70,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupIds. 
+        /// <para>
+        /// The IDs of the placement groups.
+        /// </para>
+        /// </summary>
+        public List<string> GroupIds
+        {
+            get { return this._groupIds; }
+            set { this._groupIds = value; }
+        }
+
+        // Check to see if GroupIds property is set
+        internal bool IsSetGroupIds()
+        {
+            return this._groupIds != null && this._groupIds.Count > 0; 
         }
 
         /// <summary>

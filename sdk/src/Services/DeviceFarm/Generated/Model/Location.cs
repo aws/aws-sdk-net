@@ -29,7 +29,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Represents a latitude and longitude pair, expressed in geographic coordinate system
-    /// degrees (for example 47.6204, -122.3491).
+    /// degrees (for example, 47.6204, -122.3491).
     /// 
     ///  
     /// <para>

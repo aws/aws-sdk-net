@@ -38,6 +38,7 @@ namespace Amazon.Chime.Model
         private DateTime? _createdTimestamp;
         private License _defaultLicense;
         private string _name;
+        private List<SigninDelegateGroup> _signinDelegateGroups = new List<SigninDelegateGroup>();
         private List<string> _supportedLicenses = new List<string>();
 
         /// <summary>
@@ -151,6 +152,24 @@ namespace Amazon.Chime.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SigninDelegateGroups. 
+        /// <para>
+        /// The sign-in delegate groups associated with the account.
+        /// </para>
+        /// </summary>
+        public List<SigninDelegateGroup> SigninDelegateGroups
+        {
+            get { return this._signinDelegateGroups; }
+            set { this._signinDelegateGroups = value; }
+        }
+
+        // Check to see if SigninDelegateGroups property is set
+        internal bool IsSetSigninDelegateGroups()
+        {
+            return this._signinDelegateGroups != null && this._signinDelegateGroups.Count > 0; 
         }
 
         /// <summary>

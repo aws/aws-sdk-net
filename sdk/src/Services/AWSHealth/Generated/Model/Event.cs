@@ -28,9 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// Summary information about an event, returned by the <a>DescribeEvents</a> operation.
-    /// The <a>DescribeEventDetails</a> operation also returns this information, as well as
-    /// the <a>EventDescription</a> and additional event metadata.
+    /// Summary information about an AWS Health event.
     /// </summary>
     public partial class Event
     {
@@ -72,6 +70,7 @@ namespace Amazon.AWSHealth.Model
         /// The AWS Availability Zone of the event. For example, us-east-1a.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=18)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -166,6 +165,7 @@ namespace Amazon.AWSHealth.Model
         /// The AWS region name of the event.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=25)]
         public string Region
         {
             get { return this._region; }

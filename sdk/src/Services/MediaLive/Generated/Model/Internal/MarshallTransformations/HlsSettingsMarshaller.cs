@@ -56,6 +56,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFmp4HlsSettings())
+            {
+                context.Writer.WritePropertyName("fmp4HlsSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Fmp4HlsSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Fmp4HlsSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStandardHlsSettings())
             {
                 context.Writer.WritePropertyName("standardHlsSettings");

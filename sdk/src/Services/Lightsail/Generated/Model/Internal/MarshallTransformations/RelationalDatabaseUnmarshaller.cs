@@ -76,6 +76,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.BackupRetentionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("caCertificateIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CaCertificateIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

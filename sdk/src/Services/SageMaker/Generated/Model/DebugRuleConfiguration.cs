@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LocalPath. 
         /// <para>
-        /// Path to local storage location for rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
+        /// Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -157,7 +157,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VolumeSizeInGB. 
         /// <para>
-        /// The size, in GB, of the ML storage volume attached to the notebook instance.
+        /// The size, in GB, of the ML storage volume attached to the processing instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

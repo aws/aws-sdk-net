@@ -47,9 +47,11 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property EndpointDetails. 
         /// <para>
-        /// The virtual private cloud (VPC) endpoint settings that you want to configure for your
-        /// SFTP server. This parameter is required when you specify a value for the <code>EndpointType</code>
-        /// parameter.
+        /// The virtual private cloud (VPC) endpoint settings that are configured for your SFTP
+        /// server. With a VPC endpoint, you can restrict access to your SFTP server to resources
+        /// only within your VPC. To control incoming internet traffic, you will need to invoke
+        /// the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint.
+        /// 
         /// </para>
         /// </summary>
         public EndpointDetails EndpointDetails
@@ -67,8 +69,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of VPC endpoint that you want your SFTP server to connect to. If you connect
-        /// to a VPC endpoint, your SFTP server isn't accessible over the public internet.
+        /// The type of VPC endpoint that you want your SFTP server to connect to. You can choose
+        /// to connect to the public internet or a virtual private cloud (VPC) endpoint. With
+        /// a VPC endpoint, you can restrict access to your SFTP server and resources only within
+        /// your VPC.
         /// </para>
         /// </summary>
         public EndpointType EndpointType

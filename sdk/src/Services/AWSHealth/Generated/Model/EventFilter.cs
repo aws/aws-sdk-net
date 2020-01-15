@@ -186,7 +186,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCodes. 
         /// <para>
-        /// A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED"</code>
+        /// A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
         /// 
         /// </para>
         /// </summary>

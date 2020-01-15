@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class OnDemandOptions
     {
         private FleetOnDemandAllocationStrategy _allocationStrategy;
+        private CapacityReservationOptions _capacityReservationOptions;
         private string _maxTotalPrice;
         private int? _minTargetCapacity;
         private bool? _singleAvailabilityZone;
@@ -58,6 +59,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetAllocationStrategy()
         {
             return this._allocationStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationOptions. 
+        /// <para>
+        /// The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
+        /// Supported only for fleets of type <code>instant</code>.
+        /// </para>
+        /// </summary>
+        public CapacityReservationOptions CapacityReservationOptions
+        {
+            get { return this._capacityReservationOptions; }
+            set { this._capacityReservationOptions = value; }
+        }
+
+        // Check to see if CapacityReservationOptions property is set
+        internal bool IsSetCapacityReservationOptions()
+        {
+            return this._capacityReservationOptions != null;
         }
 
         /// <summary>
@@ -101,7 +121,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SingleAvailabilityZone. 
         /// <para>
         /// Indicates that the fleet launches all On-Demand Instances into a single Availability
-        /// Zone.
+        /// Zone. Supported only for fleets of type <code>instant</code>.
         /// </para>
         /// </summary>
         public bool SingleAvailabilityZone
@@ -120,7 +140,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SingleInstanceType. 
         /// <para>
         /// Indicates that the fleet uses a single instance type to launch all On-Demand Instances
-        /// in the fleet.
+        /// in the fleet. Supported only for fleets of type <code>instant</code>.
         /// </para>
         /// </summary>
         public bool SingleInstanceType

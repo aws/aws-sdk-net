@@ -60,8 +60,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CapacityProviders. 
         /// <para>
-        /// The short name or full Amazon Resource Name (ARN) of one or more capacity providers
-        /// to associate with the cluster.
+        /// The name of one or more capacity providers to associate with the cluster.
         /// </para>
         ///  
         /// <para>

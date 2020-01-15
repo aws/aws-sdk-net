@@ -52,7 +52,7 @@ namespace Amazon.Translate
         /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
         /// The resource you are looking for has not been found. Review the resource you're looking
         /// for and see if a different resource will accomplish your needs before retrying the
-        /// revised request. .
+        /// revised request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
         /// You have made too many requests within a short period of time. Wait for a short time
@@ -78,7 +78,7 @@ namespace Amazon.Translate
         /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
         /// The resource you are looking for has not been found. Review the resource you're looking
         /// for and see if a different resource will accomplish your needs before retrying the
-        /// revised request. .
+        /// revised request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
         /// You have made too many requests within a short period of time. Wait for a short time
@@ -86,6 +86,60 @@ namespace Amazon.Translate
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteTerminology">REST API Reference for DeleteTerminology Operation</seealso>
         Task<DeleteTerminologyResponse> DeleteTerminologyAsync(DeleteTerminologyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeTextTranslationJob
+
+
+        /// <summary>
+        /// Gets the properties associated with an asycnhronous batch translation job including
+        /// name, ID, status, source and target languages, input/output S3 buckets, and so on.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTextTranslationJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTextTranslationJob service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DescribeTextTranslationJob">REST API Reference for DescribeTextTranslationJob Operation</seealso>
+        DescribeTextTranslationJobResponse DescribeTextTranslationJob(DescribeTextTranslationJobRequest request);
+
+
+
+        /// <summary>
+        /// Gets the properties associated with an asycnhronous batch translation job including
+        /// name, ID, status, source and target languages, input/output S3 buckets, and so on.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTextTranslationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTextTranslationJob service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DescribeTextTranslationJob">REST API Reference for DescribeTextTranslationJob Operation</seealso>
+        Task<DescribeTextTranslationJobResponse> DescribeTextTranslationJobAsync(DescribeTextTranslationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -108,7 +162,7 @@ namespace Amazon.Translate
         /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
         /// The resource you are looking for has not been found. Review the resource you're looking
         /// for and see if a different resource will accomplish your needs before retrying the
-        /// revised request. .
+        /// revised request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
         /// You have made too many requests within a short period of time. Wait for a short time
@@ -138,7 +192,7 @@ namespace Amazon.Translate
         /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
         /// The resource you are looking for has not been found. Review the resource you're looking
         /// for and see if a different resource will accomplish your needs before retrying the
-        /// revised request. .
+        /// revised request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
         /// You have made too many requests within a short period of time. Wait for a short time
@@ -279,105 +333,246 @@ namespace Amazon.Translate
 
         #endregion
         
+        #region  ListTextTranslationJobs
+
+
+        /// <summary>
+        /// Gets a list of the batch translation jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTextTranslationJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListTextTranslationJobs service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTextTranslationJobs">REST API Reference for ListTextTranslationJobs Operation</seealso>
+        ListTextTranslationJobsResponse ListTextTranslationJobs(ListTextTranslationJobsRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of the batch translation jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTextTranslationJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTextTranslationJobs service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTextTranslationJobs">REST API Reference for ListTextTranslationJobs Operation</seealso>
+        Task<ListTextTranslationJobsResponse> ListTextTranslationJobsAsync(ListTextTranslationJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartTextTranslationJob
+
+
+        /// <summary>
+        /// Starts an asynchronous batch translation job. Batch translation jobs can be used to
+        /// translate large volumes of text across multiple documents at once. For more information,
+        /// see <a>async</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Batch translation jobs can be described with the <a>DescribeTextTranslationJob</a>
+        /// operation, listed with the <a>ListTextTranslationJobs</a> operation, and stopped with
+        /// the <a>StopTextTranslationJob</a> operation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Translate does not support batch translation of multiple source languages at
+        /// once.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTextTranslationJob service method.</param>
+        /// 
+        /// <returns>The response from the StartTextTranslationJob service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.UnsupportedLanguagePairException">
+        /// Amazon Translate does not support translation from the language of the source text
+        /// into the requested target language. For more information, see <a>how-to-error-msg</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StartTextTranslationJob">REST API Reference for StartTextTranslationJob Operation</seealso>
+        StartTextTranslationJobResponse StartTextTranslationJob(StartTextTranslationJobRequest request);
+
+
+
+        /// <summary>
+        /// Starts an asynchronous batch translation job. Batch translation jobs can be used to
+        /// translate large volumes of text across multiple documents at once. For more information,
+        /// see <a>async</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Batch translation jobs can be described with the <a>DescribeTextTranslationJob</a>
+        /// operation, listed with the <a>ListTextTranslationJobs</a> operation, and stopped with
+        /// the <a>StopTextTranslationJob</a> operation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Translate does not support batch translation of multiple source languages at
+        /// once.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTextTranslationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartTextTranslationJob service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.UnsupportedLanguagePairException">
+        /// Amazon Translate does not support translation from the language of the source text
+        /// into the requested target language. For more information, see <a>how-to-error-msg</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StartTextTranslationJob">REST API Reference for StartTextTranslationJob Operation</seealso>
+        Task<StartTextTranslationJobResponse> StartTextTranslationJobAsync(StartTextTranslationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopTextTranslationJob
+
+
+        /// <summary>
+        /// Stops an asynchronous batch translation job that is in progress.
+        /// 
+        ///  
+        /// <para>
+        /// If the job's state is <code>IN_PROGRESS</code>, the job will be marked for termination
+        /// and put into the <code>STOP_REQUESTED</code> state. If the job completes before it
+        /// can be stopped, it is put into the <code>COMPLETED</code> state. Otherwise, the job
+        /// is put into the <code>STOPPED</code> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// Asynchronous batch translation jobs are started with the <a>StartTextTranslationJob</a>
+        /// operation. You can use the <a>DescribeTextTranslationJob</a> or <a>ListTextTranslationJobs</a>
+        /// operations to get a batch translation job's <code>JobId</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTextTranslationJob service method.</param>
+        /// 
+        /// <returns>The response from the StopTextTranslationJob service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StopTextTranslationJob">REST API Reference for StopTextTranslationJob Operation</seealso>
+        StopTextTranslationJobResponse StopTextTranslationJob(StopTextTranslationJobRequest request);
+
+
+
+        /// <summary>
+        /// Stops an asynchronous batch translation job that is in progress.
+        /// 
+        ///  
+        /// <para>
+        /// If the job's state is <code>IN_PROGRESS</code>, the job will be marked for termination
+        /// and put into the <code>STOP_REQUESTED</code> state. If the job completes before it
+        /// can be stopped, it is put into the <code>COMPLETED</code> state. Otherwise, the job
+        /// is put into the <code>STOPPED</code> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// Asynchronous batch translation jobs are started with the <a>StartTextTranslationJob</a>
+        /// operation. You can use the <a>DescribeTextTranslationJob</a> or <a>ListTextTranslationJobs</a>
+        /// operations to get a batch translation job's <code>JobId</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTextTranslationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopTextTranslationJob service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StopTextTranslationJob">REST API Reference for StopTextTranslationJob Operation</seealso>
+        Task<StopTextTranslationJobResponse> StopTextTranslationJobAsync(StopTextTranslationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  TranslateText
 
 
         /// <summary>
-        /// Translates input text from the source language to the target language. It is not necessary
-        /// to use English (en) as either the source or the target language but not all language
-        /// combinations are supported by Amazon Translate. For more information, see <a href="http://docs.aws.amazon.com/translate/latest/dg/pairs.html">Supported
-        /// Language Pairs</a>.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// Arabic (ar)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Chinese (Simplified) (zh)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Chinese (Traditional) (zh-TW)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Czech (cs)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Danish (da)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Dutch (nl)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// English (en)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Finnish (fi)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// French (fr)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// German (de)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Hebrew (he)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Indonesian (id)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Italian (it)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Japanese (ja)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Korean (ko)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Polish (pl)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Portuguese (pt)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Russian (ru)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Spanish (es)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Swedish (sv)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Turkish (tr)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To have Amazon Translate determine the source language of your text, you can specify
-        /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
-        /// Amazon Translate will call Amazon Comprehend to determine the source language.
-        /// </para>
+        /// Translates input text from the source language to the target language. For a list
+        /// of available languages and language codes, see <a>what-is-languages</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TranslateText service method.</param>
         /// 
@@ -399,7 +594,7 @@ namespace Amazon.Translate
         /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
         /// The resource you are looking for has not been found. Review the resource you're looking
         /// for and see if a different resource will accomplish your needs before retrying the
-        /// revised request. .
+        /// revised request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.ServiceUnavailableException">
         /// The Amazon Translate service is temporarily unavailable. Please wait a bit and then
@@ -423,101 +618,8 @@ namespace Amazon.Translate
 
 
         /// <summary>
-        /// Translates input text from the source language to the target language. It is not necessary
-        /// to use English (en) as either the source or the target language but not all language
-        /// combinations are supported by Amazon Translate. For more information, see <a href="http://docs.aws.amazon.com/translate/latest/dg/pairs.html">Supported
-        /// Language Pairs</a>.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// Arabic (ar)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Chinese (Simplified) (zh)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Chinese (Traditional) (zh-TW)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Czech (cs)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Danish (da)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Dutch (nl)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// English (en)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Finnish (fi)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// French (fr)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// German (de)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Hebrew (he)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Indonesian (id)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Italian (it)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Japanese (ja)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Korean (ko)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Polish (pl)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Portuguese (pt)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Russian (ru)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Spanish (es)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Swedish (sv)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Turkish (tr)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To have Amazon Translate determine the source language of your text, you can specify
-        /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
-        /// Amazon Translate will call Amazon Comprehend to determine the source language.
-        /// </para>
+        /// Translates input text from the source language to the target language. For a list
+        /// of available languages and language codes, see <a>what-is-languages</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TranslateText service method.</param>
         /// <param name="cancellationToken">
@@ -542,7 +644,7 @@ namespace Amazon.Translate
         /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
         /// The resource you are looking for has not been found. Review the resource you're looking
         /// for and see if a different resource will accomplish your needs before retrying the
-        /// revised request. .
+        /// revised request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.ServiceUnavailableException">
         /// The Amazon Translate service is temporarily unavailable. Please wait a bit and then

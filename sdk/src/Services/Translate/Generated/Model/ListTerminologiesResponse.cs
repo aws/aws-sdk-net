@@ -39,7 +39,7 @@ namespace Amazon.Translate.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         ///  If the response to the ListTerminologies was truncated, the NextToken fetches the
-        /// next group of custom terminologies. 
+        /// next group of custom terminologies.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

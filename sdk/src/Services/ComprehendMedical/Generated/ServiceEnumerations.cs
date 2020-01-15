@@ -299,6 +299,218 @@ namespace Amazon.ComprehendMedical
 
 
     /// <summary>
+    /// Constants used for properties of type ICD10CMAttributeType.
+    /// </summary>
+    public class ICD10CMAttributeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACUITY for ICD10CMAttributeType
+        /// </summary>
+        public static readonly ICD10CMAttributeType ACUITY = new ICD10CMAttributeType("ACUITY");
+        /// <summary>
+        /// Constant DIRECTION for ICD10CMAttributeType
+        /// </summary>
+        public static readonly ICD10CMAttributeType DIRECTION = new ICD10CMAttributeType("DIRECTION");
+        /// <summary>
+        /// Constant QUALITY for ICD10CMAttributeType
+        /// </summary>
+        public static readonly ICD10CMAttributeType QUALITY = new ICD10CMAttributeType("QUALITY");
+        /// <summary>
+        /// Constant QUANTITY for ICD10CMAttributeType
+        /// </summary>
+        public static readonly ICD10CMAttributeType QUANTITY = new ICD10CMAttributeType("QUANTITY");
+        /// <summary>
+        /// Constant SYSTEM_ORGAN_SITE for ICD10CMAttributeType
+        /// </summary>
+        public static readonly ICD10CMAttributeType SYSTEM_ORGAN_SITE = new ICD10CMAttributeType("SYSTEM_ORGAN_SITE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ICD10CMAttributeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ICD10CMAttributeType FindValue(string value)
+        {
+            return FindValue<ICD10CMAttributeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ICD10CMAttributeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ICD10CMEntityCategory.
+    /// </summary>
+    public class ICD10CMEntityCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MEDICAL_CONDITION for ICD10CMEntityCategory
+        /// </summary>
+        public static readonly ICD10CMEntityCategory MEDICAL_CONDITION = new ICD10CMEntityCategory("MEDICAL_CONDITION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ICD10CMEntityCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ICD10CMEntityCategory FindValue(string value)
+        {
+            return FindValue<ICD10CMEntityCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ICD10CMEntityCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ICD10CMEntityType.
+    /// </summary>
+    public class ICD10CMEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DX_NAME for ICD10CMEntityType
+        /// </summary>
+        public static readonly ICD10CMEntityType DX_NAME = new ICD10CMEntityType("DX_NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ICD10CMEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ICD10CMEntityType FindValue(string value)
+        {
+            return FindValue<ICD10CMEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ICD10CMEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ICD10CMTraitName.
+    /// </summary>
+    public class ICD10CMTraitName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIAGNOSIS for ICD10CMTraitName
+        /// </summary>
+        public static readonly ICD10CMTraitName DIAGNOSIS = new ICD10CMTraitName("DIAGNOSIS");
+        /// <summary>
+        /// Constant NEGATION for ICD10CMTraitName
+        /// </summary>
+        public static readonly ICD10CMTraitName NEGATION = new ICD10CMTraitName("NEGATION");
+        /// <summary>
+        /// Constant SIGN for ICD10CMTraitName
+        /// </summary>
+        public static readonly ICD10CMTraitName SIGN = new ICD10CMTraitName("SIGN");
+        /// <summary>
+        /// Constant SYMPTOM for ICD10CMTraitName
+        /// </summary>
+        public static readonly ICD10CMTraitName SYMPTOM = new ICD10CMTraitName("SYMPTOM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ICD10CMTraitName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ICD10CMTraitName FindValue(string value)
+        {
+            return FindValue<ICD10CMTraitName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ICD10CMTraitName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobStatus.
     /// </summary>
     public class JobStatus : ConstantClass
@@ -408,6 +620,218 @@ namespace Amazon.ComprehendMedical
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RxNormAttributeType.
+    /// </summary>
+    public class RxNormAttributeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOSAGE for RxNormAttributeType
+        /// </summary>
+        public static readonly RxNormAttributeType DOSAGE = new RxNormAttributeType("DOSAGE");
+        /// <summary>
+        /// Constant DURATION for RxNormAttributeType
+        /// </summary>
+        public static readonly RxNormAttributeType DURATION = new RxNormAttributeType("DURATION");
+        /// <summary>
+        /// Constant FORM for RxNormAttributeType
+        /// </summary>
+        public static readonly RxNormAttributeType FORM = new RxNormAttributeType("FORM");
+        /// <summary>
+        /// Constant FREQUENCY for RxNormAttributeType
+        /// </summary>
+        public static readonly RxNormAttributeType FREQUENCY = new RxNormAttributeType("FREQUENCY");
+        /// <summary>
+        /// Constant RATE for RxNormAttributeType
+        /// </summary>
+        public static readonly RxNormAttributeType RATE = new RxNormAttributeType("RATE");
+        /// <summary>
+        /// Constant ROUTE_OR_MODE for RxNormAttributeType
+        /// </summary>
+        public static readonly RxNormAttributeType ROUTE_OR_MODE = new RxNormAttributeType("ROUTE_OR_MODE");
+        /// <summary>
+        /// Constant STRENGTH for RxNormAttributeType
+        /// </summary>
+        public static readonly RxNormAttributeType STRENGTH = new RxNormAttributeType("STRENGTH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RxNormAttributeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RxNormAttributeType FindValue(string value)
+        {
+            return FindValue<RxNormAttributeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RxNormAttributeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RxNormEntityCategory.
+    /// </summary>
+    public class RxNormEntityCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MEDICATION for RxNormEntityCategory
+        /// </summary>
+        public static readonly RxNormEntityCategory MEDICATION = new RxNormEntityCategory("MEDICATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RxNormEntityCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RxNormEntityCategory FindValue(string value)
+        {
+            return FindValue<RxNormEntityCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RxNormEntityCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RxNormEntityType.
+    /// </summary>
+    public class RxNormEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BRAND_NAME for RxNormEntityType
+        /// </summary>
+        public static readonly RxNormEntityType BRAND_NAME = new RxNormEntityType("BRAND_NAME");
+        /// <summary>
+        /// Constant GENERIC_NAME for RxNormEntityType
+        /// </summary>
+        public static readonly RxNormEntityType GENERIC_NAME = new RxNormEntityType("GENERIC_NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RxNormEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RxNormEntityType FindValue(string value)
+        {
+            return FindValue<RxNormEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RxNormEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RxNormTraitName.
+    /// </summary>
+    public class RxNormTraitName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NEGATION for RxNormTraitName
+        /// </summary>
+        public static readonly RxNormTraitName NEGATION = new RxNormTraitName("NEGATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RxNormTraitName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RxNormTraitName FindValue(string value)
+        {
+            return FindValue<RxNormTraitName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RxNormTraitName(string value)
         {
             return FindValue(value);
         }

@@ -1411,6 +1411,164 @@ namespace Amazon.DeviceFarm
 
 
     /// <summary>
+    /// Constants used for properties of type TestGridSessionArtifactCategory.
+    /// </summary>
+    public class TestGridSessionArtifactCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LOG for TestGridSessionArtifactCategory
+        /// </summary>
+        public static readonly TestGridSessionArtifactCategory LOG = new TestGridSessionArtifactCategory("LOG");
+        /// <summary>
+        /// Constant VIDEO for TestGridSessionArtifactCategory
+        /// </summary>
+        public static readonly TestGridSessionArtifactCategory VIDEO = new TestGridSessionArtifactCategory("VIDEO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestGridSessionArtifactCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestGridSessionArtifactCategory FindValue(string value)
+        {
+            return FindValue<TestGridSessionArtifactCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestGridSessionArtifactCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestGridSessionArtifactType.
+    /// </summary>
+    public class TestGridSessionArtifactType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SELENIUM_LOG for TestGridSessionArtifactType
+        /// </summary>
+        public static readonly TestGridSessionArtifactType SELENIUM_LOG = new TestGridSessionArtifactType("SELENIUM_LOG");
+        /// <summary>
+        /// Constant UNKNOWN for TestGridSessionArtifactType
+        /// </summary>
+        public static readonly TestGridSessionArtifactType UNKNOWN = new TestGridSessionArtifactType("UNKNOWN");
+        /// <summary>
+        /// Constant VIDEO for TestGridSessionArtifactType
+        /// </summary>
+        public static readonly TestGridSessionArtifactType VIDEO = new TestGridSessionArtifactType("VIDEO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestGridSessionArtifactType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestGridSessionArtifactType FindValue(string value)
+        {
+            return FindValue<TestGridSessionArtifactType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestGridSessionArtifactType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestGridSessionStatus.
+    /// </summary>
+    public class TestGridSessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for TestGridSessionStatus
+        /// </summary>
+        public static readonly TestGridSessionStatus ACTIVE = new TestGridSessionStatus("ACTIVE");
+        /// <summary>
+        /// Constant CLOSED for TestGridSessionStatus
+        /// </summary>
+        public static readonly TestGridSessionStatus CLOSED = new TestGridSessionStatus("CLOSED");
+        /// <summary>
+        /// Constant ERRORED for TestGridSessionStatus
+        /// </summary>
+        public static readonly TestGridSessionStatus ERRORED = new TestGridSessionStatus("ERRORED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestGridSessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestGridSessionStatus FindValue(string value)
+        {
+            return FindValue<TestGridSessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestGridSessionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TestType.
     /// </summary>
     public class TestType : ConstantClass

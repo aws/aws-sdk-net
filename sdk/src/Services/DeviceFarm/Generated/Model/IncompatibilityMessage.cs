@@ -65,27 +65,27 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ARN: The ARN.
+        /// ARN
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FORM_FACTOR: The form factor (for example, phone or tablet).
+        /// FORM_FACTOR (for example, phone or tablet)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MANUFACTURER: The manufacturer.
+        /// MANUFACTURER
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PLATFORM: The platform (for example, Android or iOS).
+        /// PLATFORM (for example, Android or iOS)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+        /// REMOTE_ACCESS_ENABLED
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_VERSION: The Appium version for the test.
+        /// APPIUM_VERSION
         /// </para>
         ///  </li> </ul>
         /// </summary>

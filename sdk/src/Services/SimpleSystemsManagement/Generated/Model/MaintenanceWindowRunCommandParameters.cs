@@ -60,15 +60,32 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class MaintenanceWindowRunCommandParameters
     {
+        private CloudWatchOutputConfig _cloudWatchOutputConfig;
         private string _comment;
         private string _documentHash;
         private DocumentHashType _documentHashType;
+        private string _documentVersion;
         private NotificationConfig _notificationConfig;
         private string _outputS3BucketName;
         private string _outputS3KeyPrefix;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private string _serviceRoleArn;
         private int? _timeoutSeconds;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchOutputConfig.
+        /// </summary>
+        public CloudWatchOutputConfig CloudWatchOutputConfig
+        {
+            get { return this._cloudWatchOutputConfig; }
+            set { this._cloudWatchOutputConfig = value; }
+        }
+
+        // Check to see if CloudWatchOutputConfig property is set
+        internal bool IsSetCloudWatchOutputConfig()
+        {
+            return this._cloudWatchOutputConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Comment. 
@@ -125,6 +142,39 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetDocumentHashType()
         {
             return this._documentHashType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentVersion. 
+        /// <para>
+        /// The SSM document version to use in the request. You can specify $DEFAULT, $LATEST,
+        /// or a specific version number. If you run commands by using the AWS CLI, then you must
+        /// escape the first two options by using a backslash. If you specify a version number,
+        /// then you don't need to use the backslash. For example:
+        /// </para>
+        ///  
+        /// <para>
+        /// --document-version "\$DEFAULT"
+        /// </para>
+        ///  
+        /// <para>
+        /// --document-version "\$LATEST"
+        /// </para>
+        ///  
+        /// <para>
+        /// --document-version "3"
+        /// </para>
+        /// </summary>
+        public string DocumentVersion
+        {
+            get { return this._documentVersion; }
+            set { this._documentVersion = value; }
+        }
+
+        // Check to see if DocumentVersion property is set
+        internal bool IsSetDocumentVersion()
+        {
+            return this._documentVersion != null;
         }
 
         /// <summary>

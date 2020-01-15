@@ -45,7 +45,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SGW</code> for AWS Storage Gateway
+        ///  <code>Storage Gateway</code> for AWS Storage Gateway
         /// </para>
         ///  </li> <li> 
         /// <para>

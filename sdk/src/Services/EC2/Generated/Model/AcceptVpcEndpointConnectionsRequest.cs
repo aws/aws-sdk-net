@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServiceId. 
         /// <para>
-        /// The ID of the endpoint service.
+        /// The ID of the VPC endpoint service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

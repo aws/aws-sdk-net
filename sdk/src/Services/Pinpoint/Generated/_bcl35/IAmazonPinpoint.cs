@@ -150,8 +150,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Creates a message template that you can use in messages that are sent through the
-        /// email channel.
+        /// Creates a message template for messages that are sent through the email channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEmailTemplate service method.</param>
         /// 
@@ -368,8 +367,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Creates a message template that you can use in messages that are sent through a push
-        /// notification channel.
+        /// Creates a message template for messages that are sent through a push notification
+        /// channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePushTemplate service method.</param>
         /// 
@@ -477,8 +476,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Creates a message template that you can use in messages that are sent through the
-        /// SMS channel.
+        /// Creates a message template for messages that are sent through the SMS channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSmsTemplate service method.</param>
         /// 
@@ -530,8 +528,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Creates a message template that you can use in messages that are sent through the
-        /// voice channel.
+        /// Creates a message template for messages that are sent through the voice channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVoiceTemplate service method.</param>
         /// 
@@ -1085,8 +1082,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Deletes a message template that was designed for use in messages that were sent through
-        /// the email channel.
+        /// Deletes a message template for messages that were sent through the email channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEmailTemplate service method.</param>
         /// 
@@ -1362,8 +1358,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Deletes a message template that was designed for use in messages that were sent through
-        /// a push notification channel.
+        /// Deletes a message template for messages that were sent through a push notification
+        /// channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePushTemplate service method.</param>
         /// 
@@ -1529,8 +1525,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Deletes a message template that was designed for use in messages that were sent through
-        /// the SMS channel.
+        /// Deletes a message template for messages that were sent through the SMS channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSmsTemplate service method.</param>
         /// 
@@ -1696,8 +1691,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Deletes a message template that was designed for use in messages that were sent through
-        /// the voice channel.
+        /// Deletes a message template for messages that were sent through the voice channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceTemplate service method.</param>
         /// 
@@ -2195,7 +2189,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Retrieves information about all of your applications.
+        /// Retrieves information about all the applications that are associated with your Amazon
+        /// Pinpoint account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApps service method.</param>
         /// 
@@ -2748,8 +2743,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Retrieves the content and settings for a message template that you can use in messages
-        /// that are sent through the email channel.
+        /// Retrieves the content and settings of a message template for messages that are sent
+        /// through the email channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEmailTemplate service method.</param>
         /// 
@@ -3417,8 +3412,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Retrieves the content and settings for a message template that you can use in messages
-        /// that are sent through a push notification channel.
+        /// Retrieves the content and settings of a message template for messages that are sent
+        /// through a push notification channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPushTemplate service method.</param>
         /// 
@@ -3752,7 +3747,7 @@ namespace Amazon.Pinpoint
 
         /// <summary>
         /// Retrieves information about the configuration, dimension, and other settings for all
-        /// versions of a specific segment that's associated with an application.
+        /// the versions of a specific segment that's associated with an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSegmentVersions service method.</param>
         /// 
@@ -3862,8 +3857,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Retrieves the content and settings for a message template that you can use in messages
-        /// that are sent through the SMS channel.
+        /// Retrieves the content and settings of a message template for messages that are sent
+        /// through the SMS channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSmsTemplate service method.</param>
         /// 
@@ -4029,8 +4024,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Retrieves the content and settings for a message template that you can use in messages
-        /// that are sent through the voice channel.
+        /// Retrieves the content and settings of a message template for messages that are sent
+        /// through the voice channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVoiceTemplate service method.</param>
         /// 
@@ -4225,6 +4220,61 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  ListTemplatesResult from Pinpoint.</returns>
         ListTemplatesResponse EndListTemplates(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTemplateVersions
+
+
+        /// <summary>
+        /// Retrieves information about all the versions of a specific message template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTemplateVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListTemplateVersions service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        ListTemplateVersionsResponse ListTemplateVersions(ListTemplateVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTemplateVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTemplateVersions operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTemplateVersions
+        ///         operation.</returns>
+        IAsyncResult BeginListTemplateVersions(ListTemplateVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTemplateVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTemplateVersions.</param>
+        /// 
+        /// <returns>Returns a  ListTemplateVersionsResult from Pinpoint.</returns>
+        ListTemplateVersionsResponse EndListTemplateVersions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5143,8 +5193,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates an existing message template that you can use in messages that are sent through
-        /// the email channel.
+        /// Updates an existing message template for messages that are sent through the email
+        /// channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEmailTemplate service method.</param>
         /// 
@@ -5425,7 +5475,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Cancels an active journey.
+        /// Cancels (stops) an active journey.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJourneyState service method.</param>
         /// 
@@ -5480,8 +5530,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates an existing message template that you can use in messages that are sent through
-        /// a push notification channel.
+        /// Updates an existing message template for messages that are sent through a push notification
+        /// channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePushTemplate service method.</param>
         /// 
@@ -5648,8 +5698,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates an existing message template that you can use in messages that are sent through
-        /// the SMS channel.
+        /// Updates an existing message template for messages that are sent through the SMS channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSmsTemplate service method.</param>
         /// 
@@ -5697,6 +5746,61 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  UpdateSmsTemplateResult from Pinpoint.</returns>
         UpdateSmsTemplateResponse EndUpdateSmsTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateTemplateActiveVersion
+
+
+        /// <summary>
+        /// Changes the status of a specific version of a message template to <i>active</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTemplateActiveVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTemplateActiveVersion service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        UpdateTemplateActiveVersionResponse UpdateTemplateActiveVersion(UpdateTemplateActiveVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTemplateActiveVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTemplateActiveVersion operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTemplateActiveVersion
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateTemplateActiveVersion(UpdateTemplateActiveVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTemplateActiveVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTemplateActiveVersion.</param>
+        /// 
+        /// <returns>Returns a  UpdateTemplateActiveVersionResult from Pinpoint.</returns>
+        UpdateTemplateActiveVersionResponse EndUpdateTemplateActiveVersion(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5760,8 +5864,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates an existing message template that you can use in messages that are sent through
-        /// the voice channel.
+        /// Updates an existing message template for messages that are sent through the voice
+        /// channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceTemplate service method.</param>
         /// 

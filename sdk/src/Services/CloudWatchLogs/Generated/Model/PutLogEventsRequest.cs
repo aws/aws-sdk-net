@@ -35,9 +35,10 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     /// You must include the sequence token obtained from the response of the previous call.
     /// An upload in a newly created log stream does not require a sequence token. You can
-    /// also get the sequence token using <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code>
-    /// twice within a narrow time period using the same value for <code>sequenceToken</code>,
-    /// both calls may be successful, or one may be rejected.
+    /// also get the sequence token in the <code>expectedSequenceToken</code> field from <code>InvalidSequenceTokenException</code>.
+    /// If you call <code>PutLogEvents</code> twice within a narrow time period using the
+    /// same value for <code>sequenceToken</code>, both calls may be successful, or one may
+    /// be rejected.
     /// </para>
     ///  
     /// <para>
@@ -67,12 +68,17 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// A batch of log events in a single request cannot span more than 24 hours. Otherwise,
+    /// the operation fails.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// The maximum number of log events in a batch is 10,000.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A batch of log events in a single request cannot span more than 24 hours. Otherwise,
-    /// the operation fails.
+    /// There is a quota of 5 requests per second per log stream. Additional requests are
+    /// throttled. This quota can't be changed.
     /// </para>
     ///  </li> </ul> 
     /// <para>

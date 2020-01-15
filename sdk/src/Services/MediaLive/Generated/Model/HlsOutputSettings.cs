@@ -32,9 +32,27 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class HlsOutputSettings
     {
+        private HlsH265PackagingType _h265PackagingType;
         private HlsSettings _hlsSettings;
         private string _nameModifier;
         private string _segmentModifier;
+
+        /// <summary>
+        /// Gets and sets the property H265PackagingType. Only applicable when this output is
+        /// referencing an H.265 video description.Specifies whether MP4 segments should be packaged
+        /// as HEV1 or HVC1.
+        /// </summary>
+        public HlsH265PackagingType H265PackagingType
+        {
+            get { return this._h265PackagingType; }
+            set { this._h265PackagingType = value; }
+        }
+
+        // Check to see if H265PackagingType property is set
+        internal bool IsSetH265PackagingType()
+        {
+            return this._h265PackagingType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property HlsSettings. Settings regarding the underlying stream.

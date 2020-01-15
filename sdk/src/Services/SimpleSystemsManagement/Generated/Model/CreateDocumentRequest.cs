@@ -106,8 +106,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentFormat. 
         /// <para>
-        /// Specify the document format for the request. The document format can be either JSON
-        /// or YAML. JSON is the default format.
+        /// Specify the document format for the request. The document format can be JSON, YAML,
+        /// or TEXT. JSON is the default format.
         /// </para>
         /// </summary>
         public DocumentFormat DocumentFormat

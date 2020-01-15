@@ -79,7 +79,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property VpceConfigurationDescription. 
         /// <para>
-        /// An optional description, providing more details about your VPC endpoint configuration.
+        /// An optional description that provides details about your VPC endpoint configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -98,7 +98,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property VpceConfigurationName. 
         /// <para>
-        /// The friendly name you give to your VPC endpoint configuration, to manage your configurations
+        /// The friendly name you give to your VPC endpoint configuration to manage your configurations
         /// more easily.
         /// </para>
         /// </summary>
@@ -118,8 +118,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property VpceServiceName. 
         /// <para>
-        /// The name of the VPC endpoint service running inside your AWS account that you want
-        /// Device Farm to test.
+        /// The name of the VPC endpoint service running in your AWS account that you want Device
+        /// Farm to test.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

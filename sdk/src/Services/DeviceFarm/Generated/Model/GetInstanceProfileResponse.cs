@@ -37,7 +37,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property InstanceProfile. 
         /// <para>
-        /// An object containing information about your instance profile.
+        /// An object that contains information about an instance profile.
         /// </para>
         /// </summary>
         public InstanceProfile InstanceProfile

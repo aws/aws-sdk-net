@@ -106,6 +106,49 @@ namespace Amazon.SageMaker.Model
         /// uses to encrypt data on the storage volume attached to the ML compute instance that
         /// hosts the endpoint.
         /// </para>
+        ///  
+        /// <para>
+        /// The KmsKeyId can be any of the following formats: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// // KMS Key ID 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"1234abcd-12ab-34cd-56ef-1234567890ab" </code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// // Amazon Resource Name (ARN) (ARN) of a KMS Key 
+        /// </para>
+        ///  
+        /// <para>
+        /// "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// // KMS Key Alias
+        /// </para>
+        ///  
+        /// <para>
+        /// "alias/ExampleAlias" 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// // Amazon Resource Name (ARN) of a KMS Key Alias 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias" </code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The KMS key policy must grant permission to the IAM role that you specify in your
+        /// <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information,
+        /// refer to the AWS Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
+        /// Using Key Policies in AWS KMS </a> 
+        /// </para>
         ///  <note> 
         /// <para>
         /// Certain Nitro-based instances include local storage, dependent on the instance type.

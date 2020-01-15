@@ -1965,6 +1965,12 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListTrialComponentsRequest.ExperimentName</property>
+    <min>1</min>
+    <max>82</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTrialComponentsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -1977,6 +1983,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTrialComponentsRequest.SourceArn</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListTrialComponentsRequest.TrialName</property>
+    <min>1</min>
+    <max>82</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTrialComponentsResponse.NextToken</property>
@@ -2970,7 +2982,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HumanTaskConfig.TaskAvailabilityLifetimeInSeconds</property>
-    <min>1</min>
+    <min>60</min>
     <max>864000</max>
   </property-value-rule>
   <property-value-rule>

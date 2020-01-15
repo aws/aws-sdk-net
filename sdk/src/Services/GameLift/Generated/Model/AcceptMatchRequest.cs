@@ -125,7 +125,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerIds. 
         /// <para>
-        /// Unique identifier for a player delivering the response. This parameter can include
+        /// A unique identifier for a player delivering the response. This parameter can include
         /// one or multiple player IDs.
         /// </para>
         /// </summary>
@@ -145,7 +145,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TicketId. 
         /// <para>
-        /// Unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>;
+        /// A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>;
         /// otherwise this request will fail.
         /// </para>
         /// </summary>

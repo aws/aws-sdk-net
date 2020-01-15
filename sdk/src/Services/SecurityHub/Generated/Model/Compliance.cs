@@ -31,6 +31,34 @@ namespace Amazon.SecurityHub.Model
     /// Exclusive to findings that are generated as the result of a check run against a specific
     /// rule in a supported standard (for example, CIS AWS Foundations). Contains compliance-related
     /// finding details.
+    /// 
+    ///  
+    /// <para>
+    /// Values include the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Allowed values are the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>PASSED</code> - Compliance check passed for all evaluated resources.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>WARNING</code> - Some information is missing or this check is not supported
+    /// given your configuration.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>FAILED</code> - Compliance check failed for at least one evaluated resource.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage
+    /// or API error.
+    /// </para>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class Compliance
     {

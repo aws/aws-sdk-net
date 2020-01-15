@@ -2139,6 +2139,56 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type Protocol.
+    /// </summary>
+    public class Protocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HTTP for Protocol
+        /// </summary>
+        public static readonly Protocol HTTP = new Protocol("HTTP");
+        /// <summary>
+        /// Constant MQTT for Protocol
+        /// </summary>
+        public static readonly Protocol MQTT = new Protocol("MQTT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Protocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Protocol FindValue(string value)
+        {
+            return FindValue<Protocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Protocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReportType.
     /// </summary>
     public class ReportType : ConstantClass

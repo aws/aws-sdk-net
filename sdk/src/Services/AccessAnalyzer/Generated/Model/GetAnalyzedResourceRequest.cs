@@ -29,7 +29,7 @@ namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAnalyzedResource operation.
-    /// Retrieves information about an analyzed resource.
+    /// Retrieves information about a resource that was analyzed.
     /// </summary>
     public partial class GetAnalyzedResourceRequest : AmazonAccessAnalyzerRequest
     {

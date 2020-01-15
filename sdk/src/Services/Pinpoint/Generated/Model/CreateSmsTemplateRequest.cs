@@ -29,8 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSmsTemplate operation.
-    /// Creates a message template that you can use in messages that are sent through the
-    /// SMS channel.
+    /// Creates a message template for messages that are sent through the SMS channel.
     /// </summary>
     public partial class CreateSmsTemplateRequest : AmazonPinpointRequest
     {
@@ -38,11 +37,7 @@ namespace Amazon.Pinpoint.Model
         private string _templateName;
 
         /// <summary>
-        /// Gets and sets the property SMSTemplateRequest. 
-        /// <para>
-        /// Creates a message template that you can use in messages that are sent through the
-        /// SMS channel.
-        /// </para>
+        /// Gets and sets the property SMSTemplateRequest.
         /// </summary>
         [AWSProperty(Required=true)]
         public SMSTemplateRequest SMSTemplateRequest

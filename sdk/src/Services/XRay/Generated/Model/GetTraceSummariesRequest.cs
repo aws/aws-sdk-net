@@ -29,8 +29,8 @@ namespace Amazon.XRay.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTraceSummaries operation.
-    /// Retrieves IDs and metadata for traces available for a specified time frame using an
-    /// optional filter. To get the full traces, pass the trace IDs to <code>BatchGetTraces</code>.
+    /// Retrieves IDs and annotations for traces available for a specified time frame using
+    /// an optional filter. To get the full traces, pass the trace IDs to <code>BatchGetTraces</code>.
     /// 
     ///  
     /// <para>

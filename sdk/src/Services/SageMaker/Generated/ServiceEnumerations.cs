@@ -2355,6 +2355,10 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
+        /// Constant KERAS for Framework
+        /// </summary>
+        public static readonly Framework KERAS = new Framework("KERAS");
+        /// <summary>
         /// Constant MXNET for Framework
         /// </summary>
         public static readonly Framework MXNET = new Framework("MXNET");

@@ -58,7 +58,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Offerings. 
         /// <para>
-        /// A value representing the list offering results.
+        /// A value that represents the list offering results.
         /// </para>
         /// </summary>
         public List<Offering> Offerings

@@ -29,12 +29,11 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the StopJob operation.
-    /// Initiates a stop request for the current job. AWS Device Farm will immediately stop
-    /// the job on the device where tests have not started executing, and you will not be
-    /// billed for this device. On the device where tests have started executing, Setup Suite
-    /// and Teardown Suite tests will run to completion before stopping execution on the device.
-    /// You will be billed for Setup, Teardown, and any tests that were in progress or already
-    /// completed.
+    /// Initiates a stop request for the current job. AWS Device Farm immediately stops the
+    /// job on the device where tests have not started. You are not billed for this device.
+    /// On the device where tests have started, setup suite and teardown suite tests run to
+    /// completion on the device. You are billed for setup, teardown, and any tests that were
+    /// in progress or already completed.
     /// </summary>
     public partial class StopJobRequest : AmazonDeviceFarmRequest
     {
@@ -43,7 +42,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Represents the Amazon Resource Name (ARN) of the Device Farm job you wish to stop.
+        /// Represents the Amazon Resource Name (ARN) of the Device Farm job to stop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=32, Max=1011)]

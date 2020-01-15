@@ -42,17 +42,54 @@ namespace Amazon.SimpleEmailV2.Model
     /// </para>
     ///  
     /// <para>
-    /// When you verify a domain, this operation provides a set of DKIM tokens, which you
-    /// can convert into CNAME tokens. You add these CNAME tokens to the DNS configuration
-    /// for your domain. Your domain is verified when Amazon SES detects these records in
-    /// the DNS configuration for your domain. For some DNS providers, it can take 72 hours
-    /// or more to complete the domain verification process.
+    /// When you verify a domain without specifying the <code>DkimSigningAttributes</code>
+    /// object, this operation provides a set of DKIM tokens. You can convert these tokens
+    /// into CNAME records, which you then add to the DNS configuration for your domain. Your
+    /// domain is verified when Amazon SES detects these records in the DNS configuration
+    /// for your domain. This verification method is known as <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+    /// DKIM</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Alternatively, you can perform the verification process by providing your own public-private
+    /// key pair. This verification method is known as Bring Your Own DKIM (BYODKIM). To use
+    /// BYODKIM, your call to the <code>CreateEmailIdentity</code> operation has to include
+    /// the <code>DkimSigningAttributes</code> object. When you specify this object, you provide
+    /// a selector (a component of the DNS record name that identifies the public key that
+    /// you want to use for DKIM authentication) and a private key.
     /// </para>
     /// </summary>
     public partial class CreateEmailIdentityRequest : AmazonSimpleEmailServiceV2Request
     {
+        private DkimSigningAttributes _dkimSigningAttributes;
         private string _emailIdentity;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property DkimSigningAttributes. 
+        /// <para>
+        /// If your request includes this object, Amazon SES configures the identity to use Bring
+        /// Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed to the default
+        /// method, <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+        /// DKIM</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only specify this object if the email identity is a domain, as opposed to
+        /// an address.
+        /// </para>
+        /// </summary>
+        public DkimSigningAttributes DkimSigningAttributes
+        {
+            get { return this._dkimSigningAttributes; }
+            set { this._dkimSigningAttributes = value; }
+        }
+
+        // Check to see if DkimSigningAttributes property is set
+        internal bool IsSetDkimSigningAttributes()
+        {
+            return this._dkimSigningAttributes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EmailIdentity. 

@@ -58,7 +58,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ScalingPolicies. 
         /// <para>
-        /// Collection of objects containing the scaling policies matching the request.
+        /// A collection of objects containing the scaling policies matching the request.
         /// </para>
         /// </summary>
         public List<ScalingPolicy> ScalingPolicies

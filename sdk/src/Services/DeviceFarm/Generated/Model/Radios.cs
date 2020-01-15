@@ -41,7 +41,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Bluetooth. 
         /// <para>
-        /// True if Bluetooth is enabled at the beginning of the test; otherwise, false.
+        /// True if Bluetooth is enabled at the beginning of the test. Otherwise, false.
         /// </para>
         /// </summary>
         public bool Bluetooth
@@ -59,7 +59,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Gps. 
         /// <para>
-        /// True if GPS is enabled at the beginning of the test; otherwise, false.
+        /// True if GPS is enabled at the beginning of the test. Otherwise, false.
         /// </para>
         /// </summary>
         public bool Gps
@@ -77,7 +77,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Nfc. 
         /// <para>
-        /// True if NFC is enabled at the beginning of the test; otherwise, false.
+        /// True if NFC is enabled at the beginning of the test. Otherwise, false.
         /// </para>
         /// </summary>
         public bool Nfc
@@ -95,7 +95,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Wifi. 
         /// <para>
-        /// True if Wi-Fi is enabled at the beginning of the test; otherwise, false.
+        /// True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.
         /// </para>
         /// </summary>
         public bool Wifi

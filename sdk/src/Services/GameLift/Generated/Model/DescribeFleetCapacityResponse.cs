@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetCapacity. 
         /// <para>
-        /// Collection of objects containing capacity information for each requested fleet ID.
+        /// A collection of objects containing capacity information for each requested fleet ID.
         /// Leave this parameter empty to retrieve capacity information for all fleets.
         /// </para>
         /// </summary>

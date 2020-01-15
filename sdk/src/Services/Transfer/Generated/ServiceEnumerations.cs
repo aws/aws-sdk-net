@@ -35,6 +35,10 @@ namespace Amazon.Transfer
         /// </summary>
         public static readonly EndpointType PUBLIC = new EndpointType("PUBLIC");
         /// <summary>
+        /// Constant VPC for EndpointType
+        /// </summary>
+        public static readonly EndpointType VPC = new EndpointType("VPC");
+        /// <summary>
         /// Constant VPC_ENDPOINT for EndpointType
         /// </summary>
         public static readonly EndpointType VPC_ENDPOINT = new EndpointType("VPC_ENDPOINT");

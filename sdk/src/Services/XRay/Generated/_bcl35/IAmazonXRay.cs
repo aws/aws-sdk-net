@@ -526,9 +526,9 @@ namespace Amazon.XRay
         /// <summary>
         /// Retrieves a document that describes services that process incoming requests, and downstream
         /// services that they call as a result. Root services process incoming requests and make
-        /// calls to downstream services. Root services are applications that use the AWS X-Ray
-        /// SDK. Downstream services can be other applications, AWS resources, HTTP web APIs,
-        /// or SQL databases.
+        /// calls to downstream services. Root services are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">AWS
+        /// X-Ray SDK</a>. Downstream services can be other applications, AWS resources, HTTP
+        /// web APIs, or SQL databases.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceGraph service method.</param>
         /// 
@@ -657,8 +657,8 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Retrieves IDs and metadata for traces available for a specified time frame using an
-        /// optional filter. To get the full traces, pass the trace IDs to <code>BatchGetTraces</code>.
+        /// Retrieves IDs and annotations for traces available for a specified time frame using
+        /// an optional filter. To get the full traces, pass the trace IDs to <code>BatchGetTraces</code>.
         /// 
         ///  
         /// <para>
@@ -813,9 +813,10 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Uploads segment documents to AWS X-Ray. The X-Ray SDK generates segment documents
-        /// and sends them to the X-Ray daemon, which uploads them in batches. A segment document
-        /// can be a completed segment, an in-progress segment, or an array of subsegments.
+        /// Uploads segment documents to AWS X-Ray. The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray
+        /// SDK</a> generates segment documents and sends them to the X-Ray daemon, which uploads
+        /// them in batches. A segment document can be a completed segment, an in-progress segment,
+        /// or an array of subsegments.
         /// 
         ///  
         /// <para>

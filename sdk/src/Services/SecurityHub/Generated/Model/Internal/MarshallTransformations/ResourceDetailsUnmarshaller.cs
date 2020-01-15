@@ -64,10 +64,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AwsCloudFrontDistribution", targetDepth))
+                {
+                    var unmarshaller = AwsCloudFrontDistributionDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsCloudFrontDistribution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsEc2Instance", targetDepth))
                 {
                     var unmarshaller = AwsEc2InstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsEc2Instance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsElbv2LoadBalancer", targetDepth))
+                {
+                    var unmarshaller = AwsElbv2LoadBalancerDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsElbv2LoadBalancer = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsIamAccessKey", targetDepth))
@@ -76,10 +88,40 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsIamAccessKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsIamRole", targetDepth))
+                {
+                    var unmarshaller = AwsIamRoleDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsIamRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsKmsKey", targetDepth))
+                {
+                    var unmarshaller = AwsKmsKeyDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsKmsKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsLambdaFunction", targetDepth))
+                {
+                    var unmarshaller = AwsLambdaFunctionDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsLambdaFunction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsS3Bucket", targetDepth))
                 {
                     var unmarshaller = AwsS3BucketDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsS3Bucket = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsSnsTopic", targetDepth))
+                {
+                    var unmarshaller = AwsSnsTopicDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsSnsTopic = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsSqsQueue", targetDepth))
+                {
+                    var unmarshaller = AwsSqsQueueDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsSqsQueue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Container", targetDepth))

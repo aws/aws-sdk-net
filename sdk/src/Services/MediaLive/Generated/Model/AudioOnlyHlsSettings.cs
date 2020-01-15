@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
         private string _audioGroupId;
         private InputLocation _audioOnlyImage;
         private AudioOnlyHlsTrackType _audioTrackType;
+        private AudioOnlyHlsSegmentType _segmentType;
 
         /// <summary>
         /// Gets and sets the property AudioGroupId. Specifies the group to which the audio Rendition
@@ -93,6 +94,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetAudioTrackType()
         {
             return this._audioTrackType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentType. Specifies the segment type.
+        /// </summary>
+        public AudioOnlyHlsSegmentType SegmentType
+        {
+            get { return this._segmentType; }
+            set { this._segmentType = value; }
+        }
+
+        // Check to see if SegmentType property is set
+        internal bool IsSetSegmentType()
+        {
+            return this._segmentType != null;
         }
 
     }

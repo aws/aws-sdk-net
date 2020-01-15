@@ -35,6 +35,8 @@ namespace Amazon.RDS.Model
         private string _certificateArn;
         private string _certificateIdentifier;
         private string _certificateType;
+        private bool? _customerOverride;
+        private DateTime? _customerOverrideValidTill;
         private string _thumbprint;
         private DateTime? _validFrom;
         private DateTime? _validTill;
@@ -91,6 +93,43 @@ namespace Amazon.RDS.Model
         internal bool IsSetCertificateType()
         {
             return this._certificateType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerOverride. 
+        /// <para>
+        /// Whether there is an override for the default certificate identifier.
+        /// </para>
+        /// </summary>
+        public bool CustomerOverride
+        {
+            get { return this._customerOverride.GetValueOrDefault(); }
+            set { this._customerOverride = value; }
+        }
+
+        // Check to see if CustomerOverride property is set
+        internal bool IsSetCustomerOverride()
+        {
+            return this._customerOverride.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerOverrideValidTill. 
+        /// <para>
+        /// If there is an override for the default certificate identifier, when the override
+        /// expires.
+        /// </para>
+        /// </summary>
+        public DateTime CustomerOverrideValidTill
+        {
+            get { return this._customerOverrideValidTill.GetValueOrDefault(); }
+            set { this._customerOverrideValidTill = value; }
+        }
+
+        // Check to see if CustomerOverrideValidTill property is set
+        internal bool IsSetCustomerOverrideValidTill()
+        {
+            return this._customerOverrideValidTill.HasValue; 
         }
 
         /// <summary>

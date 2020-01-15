@@ -88,6 +88,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.BackfillMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConfigurationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConfigurationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -140,6 +146,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.RequestTimeoutSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RuleSetArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuleSetArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RuleSetName", targetDepth))

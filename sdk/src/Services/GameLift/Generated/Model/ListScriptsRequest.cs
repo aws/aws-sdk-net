@@ -75,7 +75,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
@@ -95,7 +95,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token that indicates the start of the next sequential page of results. Use the token
+        /// A token that indicates the start of the next sequential page of results. Use the token
         /// that is returned with a previous call to this action. To start at the beginning of
         /// the result set, do not specify a value.
         /// </para>

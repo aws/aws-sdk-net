@@ -37,7 +37,7 @@ namespace Amazon.PersonalizeRuntime.Model
         /// <summary>
         /// Gets and sets the property PersonalizedRanking. 
         /// <para>
-        /// A list of items in order of most likely interest to the user.
+        /// A list of items in order of most likely interest to the user. The maximum is 500.
         /// </para>
         /// </summary>
         public List<PredictedItem> PersonalizedRanking

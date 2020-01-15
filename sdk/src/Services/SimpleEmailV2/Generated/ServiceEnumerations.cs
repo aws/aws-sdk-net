@@ -233,6 +233,56 @@ namespace Amazon.SimpleEmailV2
 
 
     /// <summary>
+    /// Constants used for properties of type DkimSigningAttributesOrigin.
+    /// </summary>
+    public class DkimSigningAttributesOrigin : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_SES for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES = new DkimSigningAttributesOrigin("AWS_SES");
+        /// <summary>
+        /// Constant EXTERNAL for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin EXTERNAL = new DkimSigningAttributesOrigin("EXTERNAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DkimSigningAttributesOrigin(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DkimSigningAttributesOrigin FindValue(string value)
+        {
+            return FindValue<DkimSigningAttributesOrigin>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DkimSigningAttributesOrigin(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DkimStatus.
     /// </summary>
     public class DkimStatus : ConstantClass

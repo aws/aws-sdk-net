@@ -67,7 +67,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property EndOffset. 
         /// <para>
         ///  The 0-based character offset in the input text that shows where the attribute ends.
-        /// The offset returns the UTF-8 code point in the string. 
+        /// The offset returns the UTF-8 code point in the string.
         /// </para>
         /// </summary>
         public int EndOffset

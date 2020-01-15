@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// Information about the suppressed email destination.
+    /// Information about the suppressed email address.
     /// </summary>
     public partial class GetSuppressedDestinationResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property SuppressedDestination. 
         /// <para>
-        /// An object containing information about the suppressed email destination.
+        /// An object containing information about the suppressed email address.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

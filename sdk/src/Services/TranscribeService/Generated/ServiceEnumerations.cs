@@ -316,6 +316,10 @@ namespace Amazon.TranscribeService
         /// Constant IN_PROGRESS for TranscriptionJobStatus
         /// </summary>
         public static readonly TranscriptionJobStatus IN_PROGRESS = new TranscriptionJobStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant QUEUED for TranscriptionJobStatus
+        /// </summary>
+        public static readonly TranscriptionJobStatus QUEUED = new TranscriptionJobStatus("QUEUED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -346,6 +350,56 @@ namespace Amazon.TranscribeService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TranscriptionJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VocabularyFilterMethod.
+    /// </summary>
+    public class VocabularyFilterMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Mask for VocabularyFilterMethod
+        /// </summary>
+        public static readonly VocabularyFilterMethod Mask = new VocabularyFilterMethod("mask");
+        /// <summary>
+        /// Constant Remove for VocabularyFilterMethod
+        /// </summary>
+        public static readonly VocabularyFilterMethod Remove = new VocabularyFilterMethod("remove");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VocabularyFilterMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VocabularyFilterMethod FindValue(string value)
+        {
+            return FindValue<VocabularyFilterMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VocabularyFilterMethod(string value)
         {
             return FindValue(value);
         }

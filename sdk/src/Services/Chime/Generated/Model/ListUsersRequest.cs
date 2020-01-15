@@ -38,6 +38,7 @@ namespace Amazon.Chime.Model
         private int? _maxResults;
         private string _nextToken;
         private string _userEmail;
+        private UserType _userType;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -111,6 +112,24 @@ namespace Amazon.Chime.Model
         internal bool IsSetUserEmail()
         {
             return this._userEmail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserType. 
+        /// <para>
+        /// The user type.
+        /// </para>
+        /// </summary>
+        public UserType UserType
+        {
+            get { return this._userType; }
+            set { this._userType = value; }
+        }
+
+        // Check to see if UserType property is set
+        internal bool IsSetUserType()
+        {
+            return this._userType != null;
         }
 
     }

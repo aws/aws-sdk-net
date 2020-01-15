@@ -103,8 +103,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// (Optional) The maximum number of file system tags to return in the response. Currently,
-        /// this number is automatically set to 10, and other values are ignored. The response
-        /// is paginated at 10 per page if you have more than 10 tags.
+        /// this number is automatically set to 100, and other values are ignored. The response
+        /// is paginated at 100 per page if you have more than 100 tags.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

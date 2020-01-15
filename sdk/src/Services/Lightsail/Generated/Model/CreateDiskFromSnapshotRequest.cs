@@ -124,10 +124,15 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
+        /// Constraint:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
         /// This parameter cannot be defined together with the <code>source disk name</code> parameter.
         /// The <code>disk snapshot name</code> and <code>source disk name</code> parameters are
         /// mutually exclusive.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DiskSnapshotName
         {
@@ -144,12 +149,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property RestoreDate. 
         /// <para>
-        /// The date of the automatic snapshot to use for the new disk.
-        /// </para>
-        ///  
-        /// <para>
-        /// Use the <code>get auto snapshots</code> operation to identify the dates of the available
-        /// automatic snapshots.
+        /// The date of the automatic snapshot to use for the new disk. Use the <code>get auto
+        /// snapshots</code> operation to identify the dates of the available automatic snapshots.
         /// </para>
         ///  
         /// <para>
@@ -165,13 +166,13 @@ namespace Amazon.Lightsail.Model
         /// snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable
         /// auto snapshot</code> parameters are mutually exclusive.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> <li> 
         /// <para>
         /// Define this parameter only when creating a new disk from an automatic snapshot. For
         /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
         /// Dev Guide</a>.
         /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         public string RestoreDate
         {
@@ -211,17 +212,21 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
         /// This parameter cannot be defined together with the <code>disk snapshot name</code>
         /// parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters
         /// are mutually exclusive.
         /// </para>
-        ///  <note> 
+        ///  </li> <li> 
         /// <para>
         /// Define this parameter only when creating a new disk from an automatic snapshot. For
         /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
         /// Dev Guide</a>.
         /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         public string SourceDiskName
         {
@@ -264,17 +269,21 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
         /// This parameter cannot be defined together with the <code>restore date</code> parameter.
         /// The <code>use latest restorable auto snapshot</code> and <code>restore date</code>
         /// parameters are mutually exclusive.
         /// </para>
-        ///  <note> 
+        ///  </li> <li> 
         /// <para>
         /// Define this parameter only when creating a new disk from an automatic snapshot. For
         /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
         /// Dev Guide</a>.
         /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         public bool UseLatestRestorableAutoSnapshot
         {

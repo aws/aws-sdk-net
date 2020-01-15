@@ -333,6 +333,14 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
+        /// With Windows containers, this parameter can be used to reference a credential spec
+        /// file when configuring a container for Active Directory authentication. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
+        /// gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// This parameter maps to <code>SecurityOpt</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--security-opt</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
@@ -346,10 +354,6 @@ namespace Amazon.ECS.Model
         /// options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
         /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
-        /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// This parameter is not supported for Windows containers.
         /// </para>
         ///  </note>
         /// </summary>

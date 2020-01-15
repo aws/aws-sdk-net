@@ -554,7 +554,10 @@ namespace Amazon.MediaLive.Model
         /// depending on the video complexity. Recommended instead of QVBRif you want to maintain
         /// a specific average bitrate over the duration of the channel.CBR: Quality varies, depending
         /// on the video complexity. Recommended only if you distributeyour assets to devices
-        /// that cannot handle variable bitrates.
+        /// that cannot handle variable bitrates.Multiplex: This rate control mode is only supported
+        /// (and is required) when the video is beingdelivered to a MediaLive Multiplex in which
+        /// case the rate control configuration is controlledby the properties within the Multiplex
+        /// Program.
         /// </summary>
         public H264RateControlMode RateControlMode
         {

@@ -40,7 +40,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the app about which you are requesting information.
+        /// The ARN of the app about which you are requesting information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=32, Max=1011)]

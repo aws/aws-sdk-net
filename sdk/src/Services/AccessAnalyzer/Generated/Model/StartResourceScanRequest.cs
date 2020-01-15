@@ -29,7 +29,7 @@ namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
     /// Container for the parameters to the StartResourceScan operation.
-    /// Starts a scan of the policies applied to the specified resource.
+    /// Immediately starts a scan of the policies applied to the specified resource.
     /// </summary>
     public partial class StartResourceScanRequest : AmazonAccessAnalyzerRequest
     {

@@ -222,10 +222,32 @@ namespace Amazon.Lambda.Model
             set { this._layers = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="Layers"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsLayersSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._layers);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._layers);
+            }
+        }
+
         // Check to see if Layers property is set
         internal bool IsSetLayers()
         {
-            return this._layers != null && this._layers.Count > 0; 
+            return this.IsLayersSet; 
         }
 
         /// <summary>

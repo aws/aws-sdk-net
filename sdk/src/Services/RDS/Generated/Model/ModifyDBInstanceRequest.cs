@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
         private bool? _autoMinorVersionUpgrade;
         private int? _backupRetentionPeriod;
         private string _caCertificateIdentifier;
+        private bool? _certificateRotationRestart;
         private CloudwatchLogsExportConfiguration _cloudwatchLogsExportConfiguration;
         private bool? _copyTagsToSnapshot;
         private string _dbInstanceClass;
@@ -279,6 +280,52 @@ namespace Amazon.RDS.Model
         internal bool IsSetCACertificateIdentifier()
         {
             return this._caCertificateIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateRotationRestart. 
+        /// <para>
+        /// A value that indicates whether the DB instance is restarted when you rotate your SSL/TLS
+        /// certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, the DB instance is restarted when you rotate your SSL/TLS certificate.
+        /// The certificate is not updated until the DB instance is restarted.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions
+        /// for your DB engine to rotate your SSL/TLS certificate:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For more information about rotating your SSL/TLS certificate for RDS DB engines, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+        /// Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For more information about rotating your SSL/TLS certificate for Aurora DB engines,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+        /// Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool CertificateRotationRestart
+        {
+            get { return this._certificateRotationRestart.GetValueOrDefault(); }
+            set { this._certificateRotationRestart = value; }
+        }
+
+        // Check to see if CertificateRotationRestart property is set
+        internal bool IsSetCertificateRotationRestart()
+        {
+            return this._certificateRotationRestart.HasValue; 
         }
 
         /// <summary>

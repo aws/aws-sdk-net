@@ -38,7 +38,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CollectionName. 
         /// <para>
-        /// The name of the tensor collection.
+        /// The name of the tensor collection. The name must be unique relative to other rule
+        /// configuration names.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

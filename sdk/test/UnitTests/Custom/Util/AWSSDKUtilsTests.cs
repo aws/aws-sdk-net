@@ -138,6 +138,38 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Util")]
+        public void TestIsAbsolutePathBadInput()
+        {
+            Assert.IsFalse(AWSSDKUtils.IsAbsolutePath(new string(Path.GetInvalidPathChars())));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        public void TestIsAbsolutePathEmpty()
+        {
+            Assert.IsFalse(AWSSDKUtils.IsAbsolutePath(""));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        public void TestIsAbsolutePath()
+        {
+            Assert.IsTrue(AWSSDKUtils.IsAbsolutePath(Directory.GetCurrentDirectory()));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        public void TestIsAbsolutePathFailsForRelative()
+        {
+            Assert.IsFalse(AWSSDKUtils.IsAbsolutePath(Path.Combine(".", "File")));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
         public void TestIsPropertySet()
         {
             var shape = new Amazon.EC2.Model.CreateCapacityReservationRequest();

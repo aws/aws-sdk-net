@@ -1745,6 +1745,22 @@
                 "Core" : "3.5.0.0"
             },
             "InPreview"               : false
+        },
+        "Detective"                       : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "CodeStarconnections"             : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
         }
     }
 }

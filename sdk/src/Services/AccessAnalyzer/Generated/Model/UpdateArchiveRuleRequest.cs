@@ -29,7 +29,7 @@ namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateArchiveRule operation.
-    /// Updates the specified archive rule.
+    /// Updates the criteria and values for the specified archive rule.
     /// </summary>
     public partial class UpdateArchiveRuleRequest : AmazonAccessAnalyzerRequest
     {

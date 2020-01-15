@@ -108,6 +108,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ComputeTypeOverride);
                 }
 
+                if(publicRequest.IsSetEncryptionKeyOverride())
+                {
+                    context.Writer.WritePropertyName("encryptionKeyOverride");
+                    context.Writer.Write(publicRequest.EncryptionKeyOverride);
+                }
+
                 if(publicRequest.IsSetEnvironmentTypeOverride())
                 {
                     context.Writer.WritePropertyName("environmentTypeOverride");
