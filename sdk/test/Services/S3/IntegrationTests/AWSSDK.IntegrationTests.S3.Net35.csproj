@@ -40,6 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\src\Services\S3Control\AWSSDK.S3Control.Net35.csproj" />
     <ProjectReference Include="..\..\..\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net35.csproj" />
     <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net35.csproj" />
     <ProjectReference Include="..\..\..\..\src\Services\S3\AWSSDK.S3.Net35.csproj" />
