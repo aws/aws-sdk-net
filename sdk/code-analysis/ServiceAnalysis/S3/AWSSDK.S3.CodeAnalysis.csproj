@@ -35,6 +35,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Custom\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Generated\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -94,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Generated\PropertyValueRules.xml" />
+    <EmbeddedResource Include="Custom\PropertyValueRules.xml" />
   </ItemGroup>
   <Import Project="..\..\SharedAnalysisCode\SharedAnalysisCode.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\v4.6\Microsoft.Portable.CSharp.targets" />

@@ -672,6 +672,23 @@
         "LastModifiedTime":{"shape":"DateTime"}
       }
     },
+    "UpdateVocabularyFilterRequest":{
+      "type":"structure",
+      "required":["VocabularyFilterName"],
+      "members":{
+        "VocabularyFilterName":{"shape":"VocabularyFilterName"},
+        "Words":{"shape":"Words"},
+        "VocabularyFilterFileUri":{"shape":"Uri"}
+      }
+    },
+    "UpdateVocabularyFilterResponse":{
+      "type":"structure",
+      "members":{
+        "VocabularyFilterName":{"shape":"VocabularyFilterName"},
+        "LanguageCode":{"shape":"LanguageCode"},
+        "LastModifiedTime":{"shape":"DateTime"}
+      }
+    },
     "UpdateVocabularyRequest":{
       "type":"structure",
       "required":[

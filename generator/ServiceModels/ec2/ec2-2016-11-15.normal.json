@@ -21067,7 +21067,7 @@
           "locationName":"dryRun"
         },
         "KeyName":{
-          "shape":"String",
+          "shape":"KeyPairName",
           "documentation":"<p>A unique name for the key pair.</p>",
           "locationName":"keyName"
         },

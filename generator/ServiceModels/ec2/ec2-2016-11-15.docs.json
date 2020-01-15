@@ -12519,7 +12519,6 @@
         "ImportInstanceVolumeDetailItem$Description": "<p>A description of the task.</p>",
         "ImportInstanceVolumeDetailItem$Status": "<p>The status of the import of this particular disk image.</p>",
         "ImportInstanceVolumeDetailItem$StatusMessage": "<p>The status information or errors related to the disk image.</p>",
-        "ImportKeyPairRequest$KeyName": "<p>A unique name for the key pair.</p>",
         "ImportKeyPairResult$KeyFingerprint": "<p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>",
         "ImportKeyPairResult$KeyName": "<p>The key pair name you provided.</p>",
         "ImportSnapshotRequest$ClientToken": "<p>Token to enable idempotency for VM import requests.</p>",

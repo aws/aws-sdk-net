@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6B684805-09C1-4F33-9635-8920A8C030BE}</ProjectGuid>
+    <ProjectGuid>{B967EBEA-32C3-4867-BF5E-29C3C35AD368}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Detective.CodeAnalysis</RootNamespace>

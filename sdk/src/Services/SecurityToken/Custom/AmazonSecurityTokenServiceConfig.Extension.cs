@@ -18,9 +18,7 @@ using System.Linq;
 using System.Text;
 using Amazon.Util.Internal;
 using Amazon.Runtime;
-#if BCL || NETSTANDARD
 using Amazon.Runtime.CredentialManagement;
-#endif
 using Amazon;
 using System.Globalization;
 
@@ -142,7 +140,6 @@ namespace Amazon.SecurityToken
         /// the environment variable set the regional flag </returns>
         private static StsRegionalEndpointsValue? CheckSTSEnvironmentVariable()
         {
-#if BCL || NETSTANDARD
             string stsRegionalFlag = Environment.GetEnvironmentVariable(AwsStsRegionalEndpointsEnvironmentVariable);
             if (!string.IsNullOrEmpty(stsRegionalFlag))
             {
@@ -164,7 +161,6 @@ namespace Amazon.SecurityToken
 #endif
                 return stsRegionalFlagValue;
             }
-#endif
             return null;
         }
 
@@ -177,15 +173,10 @@ namespace Amazon.SecurityToken
         /// or not the credentials file set the regional flag </returns>
         private static StsRegionalEndpointsValue? CheckCredentialsFile()
         {
-#if BCL || NETSTANDARD
             CredentialProfile profile;
             var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
             credentialProfileChain.TryGetProfile(profileName, out profile);
             return profile?.StsRegionalEndpoints;
-#else
-            return null;
-#endif            
-
         }
     }
 }

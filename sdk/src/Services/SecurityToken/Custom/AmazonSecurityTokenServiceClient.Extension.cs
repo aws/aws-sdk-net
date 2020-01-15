@@ -29,10 +29,7 @@ using Amazon.SecurityToken.SAML;
 
 namespace Amazon.SecurityToken
 {
-    public partial class AmazonSecurityTokenServiceClient : AmazonServiceClient, IAmazonSecurityTokenService
-#if BCL || NETSTANDARD
-     , ICoreAmazonSTS_WebIdentity
-#endif
+    public partial class AmazonSecurityTokenServiceClient : AmazonServiceClient, IAmazonSecurityTokenService, ICoreAmazonSTS_WebIdentity
     {
 #if BCL || (NETSTANDARD && !NETSTANDARD13)
 #if NETSTANDARD20
@@ -69,7 +66,6 @@ namespace Amazon.SecurityToken
         }
 #endif
 
-#if BCL || NETSTANDARD
         private AssumeRoleWithWebIdentityRequest SetupAssumeRoleWithWebIdentityRequest(string webIdentityToken, string roleArn,
             string roleSessionName, AssumeRoleWithWebIdentityCredentialsOptions options)
         {
@@ -148,7 +144,6 @@ namespace Amazon.SecurityToken
             }
         }
 #endif
-#endif // BCL || NETSTANDARD
 
         /// <summary>
         /// <see cref="ICoreAmazonSTS"/>
@@ -193,7 +188,6 @@ namespace Amazon.SecurityToken
             }
         }
 
-#if BCL || NETSTANDARD
         /// <summary>
         /// Customizes the runtime pipeline by replacing the default retry handler with a custom one that retries certain STS errors.
         /// </summary>
@@ -202,6 +196,5 @@ namespace Amazon.SecurityToken
         {
             pipeline.ReplaceHandler<RetryHandler>(new RetryHandler(new SecurityTokenServiceRetryPolicy(this.Config)));
         }
-#endif
     }
 }

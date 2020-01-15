@@ -79,7 +79,6 @@ namespace Amazon.Runtime.SharedInterfaces
 #endif
     }
 
-#if BCL || NETSTANDARD
     public interface ICoreAmazonSTS_WebIdentity : IDisposable
     {
         /// <summary>
@@ -126,5 +125,4 @@ namespace Amazon.Runtime.SharedInterfaces
         Task<AssumeRoleImmutableCredentials> CredentialsFromAssumeRoleWithWebIdentityAuthenticationAsync(string webIdentityToken, string roleArn, string roleSessionName, AssumeRoleWithWebIdentityCredentialsOptions options);
 #endif
     }
-#endif
 }

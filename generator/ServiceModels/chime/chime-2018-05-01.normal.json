@@ -401,6 +401,27 @@
       ],
       "documentation":"<p>Creates a user under the specified Amazon Chime account.</p>"
     },
+    "CreateUser":{
+      "name":"CreateUser",
+      "http":{
+        "method":"POST",
+        "requestUri":"/accounts/{accountId}/users?operation=create",
+        "responseCode":201
+      },
+      "input":{"shape":"CreateUserRequest"},
+      "output":{"shape":"CreateUserResponse"},
+      "errors":[
+        {"shape":"UnauthorizedClientException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ConflictException"},
+        {"shape":"ForbiddenException"},
+        {"shape":"BadRequestException"},
+        {"shape":"ThrottledClientException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"}
+      ],
+      "documentation":"<p>Creates a user under the specified Amazon Chime account.</p>"
+    },
     "CreateVoiceConnector":{
       "name":"CreateVoiceConnector",
       "http":{

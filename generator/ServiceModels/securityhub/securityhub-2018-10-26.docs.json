@@ -183,6 +183,48 @@
         "AwsCodeBuildProjectDetails$VpcConfig": "<p>Information about the VPC configuration that AWS CodeBuild accesses.</p>"
       }
     },
+    "AvailabilityZone": {
+      "base": "<p>Information about an Availability Zone.</p>",
+      "refs": {
+        "AvailabilityZones$member": null
+      }
+    },
+    "AvailabilityZones": {
+      "base": null,
+      "refs": {
+        "AwsElbv2LoadBalancerDetails$AvailabilityZones": "<p>The Availability Zones for the load balancer.</p>"
+      }
+    },
+    "AwsCloudFrontDistributionDetails": {
+      "base": "<p>A distribution configuration.</p>",
+      "refs": {
+        "ResourceDetails$AwsCloudFrontDistribution": "<p>Details about a CloudFront distribution.</p>"
+      }
+    },
+    "AwsCloudFrontDistributionLogging": {
+      "base": "<p>A complex type that controls whether access logs are written for the distribution.</p>",
+      "refs": {
+        "AwsCloudFrontDistributionDetails$Logging": "<p>A complex type that controls whether access logs are written for the distribution.</p>"
+      }
+    },
+    "AwsCloudFrontDistributionOriginItem": {
+      "base": "<p>A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), Amazon MediaStore, or other server from which CloudFront gets your files.</p>",
+      "refs": {
+        "AwsCloudFrontDistributionOriginItemList$member": null
+      }
+    },
+    "AwsCloudFrontDistributionOriginItemList": {
+      "base": null,
+      "refs": {
+        "AwsCloudFrontDistributionOrigins$Items": "<p>A complex type that contains origins or origin groups for this distribution.</p>"
+      }
+    },
+    "AwsCloudFrontDistributionOrigins": {
+      "base": "<p>A complex type that contains information about origins and origin groups for this distribution.</p>",
+      "refs": {
+        "AwsCloudFrontDistributionDetails$Origins": "<p>A complex type that contains information about origins for this distribution.</p>"
+      }
+    },
     "AwsEc2InstanceDetails": {
       "base": "<p>The details of an Amazon EC2 instance.</p>",
       "refs": {
@@ -1570,6 +1612,13 @@
         "AwsLambdaLayerVersionDetails$CompatibleRuntimes": "<p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code> </p>"
       }
     },
+    "NonEmptyStringList": {
+      "base": null,
+      "refs": {
+        "AwsLambdaFunctionVpcConfig$SecurityGroupIds": "<p>A list of VPC security groups IDs.</p>",
+        "AwsLambdaFunctionVpcConfig$SubnetIds": "<p>A list of VPC subnet IDs.</p>"
+      }
+    },
     "Note": {
       "base": "<p>A user-defined note added to a finding.</p>",
       "refs": {
@@ -1720,6 +1769,12 @@
         "DeleteMembersResponse$UnprocessedAccounts": "<p>The list of AWS accounts that were not deleted. For each account, the list includes the account ID and the email address.</p>",
         "GetMembersResponse$UnprocessedAccounts": "<p>The list of AWS accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>",
         "InviteMembersResponse$UnprocessedAccounts": "<p>The list of AWS accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>"
+      }
+    },
+    "SecurityGroups": {
+      "base": null,
+      "refs": {
+        "AwsElbv2LoadBalancerDetails$SecurityGroups": "<p>The IDs of the security groups for the load balancer.</p>"
       }
     },
     "SecurityGroups": {

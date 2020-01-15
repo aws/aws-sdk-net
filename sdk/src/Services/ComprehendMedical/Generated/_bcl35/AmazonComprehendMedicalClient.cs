@@ -647,8 +647,7 @@ namespace Amazon.ComprehendMedical
         /// <summary>
         /// InferICD10CM detects medical conditions as entities listed in a patient record and
         /// links those entities to normalized concept identifiers in the ICD-10-CM knowledge
-        /// base from the Centers for Disease Control. Amazon Comprehend Medical only detects
-        /// medical entities in English language texts.
+        /// base from the Centers for Disease Control.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InferICD10CM service method.</param>
         /// 
@@ -728,8 +727,7 @@ namespace Amazon.ComprehendMedical
         /// <summary>
         /// InferRxNorm detects medications as entities listed in a patient record and links to
         /// the normalized concept identifiers in the RxNorm database from the National Library
-        /// of Medicine. Amazon Comprehend Medical only detects medical entities in English language
-        /// texts.
+        /// of Medicine.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InferRxNorm service method.</param>
         /// 
