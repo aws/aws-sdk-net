@@ -117,7 +117,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancesWithInstalledPendingRebootPatches. 
         /// <para>
-        /// Reserved for future use. 
+        /// The number of instances with patches installed by Patch Manager that have not been
+        /// rebooted after the patch installation. The status of these instances is NON_COMPLIANT.
         /// </para>
         /// </summary>
         public int InstancesWithInstalledPendingRebootPatches

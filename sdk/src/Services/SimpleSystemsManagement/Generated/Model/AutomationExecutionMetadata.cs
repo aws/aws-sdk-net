@@ -77,8 +77,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AutomationExecutionStatus. 
         /// <para>
-        /// The status of the execution. Valid values include: Running, Succeeded, Failed, Timed
-        /// out, or Cancelled.
+        /// The status of the execution.
         /// </para>
         /// </summary>
         public AutomationExecutionStatus AutomationExecutionStatus
@@ -227,7 +226,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutionStartTime. 
         /// <para>
-        /// The time the execution started.&gt;
+        /// The time the execution started.
         /// </para>
         /// </summary>
         public DateTime ExecutionStartTime

@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of filter. Valid values include the following: "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"
+        /// The type of filter.
         /// </para>
         /// </summary>
         public InventoryQueryOperatorType Type

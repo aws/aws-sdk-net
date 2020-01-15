@@ -29,7 +29,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDocuments operation.
-    /// Describes one or more of your Systems Manager documents.
+    /// Returns all Systems Manager (SSM) documents in the current AWS account and Region.
+    /// You can limit the results of this request by using a filter.
     /// </summary>
     public partial class ListDocumentsRequest : AmazonSimpleSystemsManagementRequest
     {

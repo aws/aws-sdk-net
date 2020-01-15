@@ -29,11 +29,21 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateActivation operation.
-    /// Registers your on-premises server or virtual machine with Amazon EC2 so that you can
-    /// manage these resources using Run Command. An on-premises server or virtual machine
-    /// that has been registered with EC2 is called a managed instance. For more information
-    /// about activations, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-    /// Up AWS Systems Manager for Hybrid Environments</a>.
+    /// Generates an activation code and activation ID you can use to register your on-premises
+    /// server or virtual machine (VM) with Systems Manager. Registering these machines with
+    /// Systems Manager makes it possible to manage them using Systems Manager capabilities.
+    /// You use the activation code and ID when installing SSM Agent on machines in your hybrid
+    /// environment. For more information about requirements for managing on-premises instances
+    /// and VMs using Systems Manager, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+    /// Up AWS Systems Manager for Hybrid Environments</a> in the <i>AWS Systems Manager User
+    /// Guide</i>. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// On-premises servers or VMs that are registered with Systems Manager and Amazon EC2
+    /// instances that you manage with Systems Manager are all called <i>managed instances</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateActivationRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -47,8 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DefaultInstanceName. 
         /// <para>
-        /// The name of the registered, managed instance as it will appear in the Amazon EC2 console
-        /// or when you use the AWS command line tools to list EC2 resources.
+        /// The name of the registered, managed instance as it will appear in the Systems Manager
+        /// console or when you use the AWS command line tools to list Systems Manager resources.
         /// </para>
         ///  <important> 
         /// <para>
@@ -72,8 +82,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A user-defined description of the resource that you want to register with Amazon EC2.
-        /// 
+        /// A user-defined description of the resource that you want to register with Systems
+        /// Manager. 
         /// </para>
         ///  <important> 
         /// <para>
@@ -116,7 +126,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property IamRole. 
         /// <para>
         /// The Amazon Identity and Access Management (IAM) role that you want to assign to the
-        /// managed instance. 
+        /// managed instance. This IAM role must provide AssumeRole permissions for the Systems
+        /// Manager service principal <code>ssm.amazonaws.com</code>. For more information, see
+        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+        /// an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

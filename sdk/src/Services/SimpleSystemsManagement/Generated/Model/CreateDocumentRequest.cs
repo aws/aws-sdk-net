@@ -125,8 +125,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentType. 
         /// <para>
-        /// The type of document to create. Valid document types include: <code>Command</code>,
-        /// <code>Policy</code>, <code>Automation</code>, <code>Session</code>, and <code>Package</code>.
+        /// The type of document to create.
         /// </para>
         /// </summary>
         public DocumentType DocumentType

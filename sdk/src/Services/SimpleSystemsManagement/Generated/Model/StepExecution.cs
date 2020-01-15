@@ -370,8 +370,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StepStatus. 
         /// <para>
-        /// The execution status for this step. Valid values include: Pending, InProgress, Success,
-        /// Cancelled, Failed, and TimedOut.
+        /// The execution status for this step.
         /// </para>
         /// </summary>
         public AutomationExecutionStatus StepStatus

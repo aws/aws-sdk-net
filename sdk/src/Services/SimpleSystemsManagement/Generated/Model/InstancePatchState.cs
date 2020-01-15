@@ -132,7 +132,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstalledPendingRebootCount. 
         /// <para>
-        /// Reserved for future use.
+        /// The number of patches installed by Patch Manager since the last time the instance
+        /// was rebooted.
         /// </para>
         /// </summary>
         public int InstalledPendingRebootCount
@@ -224,7 +225,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property LastNoRebootInstallOperationTime. 
         /// <para>
-        /// Reserved for future use. 
+        /// The time of the last attempt to patch the instance with <code>NoReboot</code> specified
+        /// as the reboot option.
         /// </para>
         /// </summary>
         public DateTime LastNoRebootInstallOperationTime
@@ -379,8 +381,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property RebootOption. 
         /// <para>
-        /// Reserved for future use. 
+        /// Indicates the reboot option specified in the patch baseline.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Reboot options apply to <code>Install</code> operations only. Reboots are not attempted
+        /// for Patch Manager <code>Scan</code> operations.
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        ///  <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed
+        /// any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying
+        /// to reboot the system. Patches installed with this option are assigned a status of
+        /// <code>InstalledPendingReboot</code>. These patches might not be in effect until a
+        /// reboot is performed.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public RebootOption RebootOption
         {

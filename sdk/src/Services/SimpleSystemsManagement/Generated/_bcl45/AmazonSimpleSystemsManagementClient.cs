@@ -762,11 +762,21 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Registers your on-premises server or virtual machine with Amazon EC2 so that you can
-        /// manage these resources using Run Command. An on-premises server or virtual machine
-        /// that has been registered with EC2 is called a managed instance. For more information
-        /// about activations, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-        /// Up AWS Systems Manager for Hybrid Environments</a>.
+        /// Generates an activation code and activation ID you can use to register your on-premises
+        /// server or virtual machine (VM) with Systems Manager. Registering these machines with
+        /// Systems Manager makes it possible to manage them using Systems Manager capabilities.
+        /// You use the activation code and ID when installing SSM Agent on machines in your hybrid
+        /// environment. For more information about requirements for managing on-premises instances
+        /// and VMs using Systems Manager, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+        /// Up AWS Systems Manager for Hybrid Environments</a> in the <i>AWS Systems Manager User
+        /// Guide</i>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// On-premises servers or VMs that are registered with Systems Manager and Amazon EC2
+        /// instances that you manage with Systems Manager are all called <i>managed instances</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateActivation service method.</param>
         /// 
@@ -786,11 +796,21 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Registers your on-premises server or virtual machine with Amazon EC2 so that you can
-        /// manage these resources using Run Command. An on-premises server or virtual machine
-        /// that has been registered with EC2 is called a managed instance. For more information
-        /// about activations, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-        /// Up AWS Systems Manager for Hybrid Environments</a>.
+        /// Generates an activation code and activation ID you can use to register your on-premises
+        /// server or virtual machine (VM) with Systems Manager. Registering these machines with
+        /// Systems Manager makes it possible to manage them using Systems Manager capabilities.
+        /// You use the activation code and ID when installing SSM Agent on machines in your hybrid
+        /// environment. For more information about requirements for managing on-premises instances
+        /// and VMs using Systems Manager, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+        /// Up AWS Systems Manager for Hybrid Environments</a> in the <i>AWS Systems Manager User
+        /// Guide</i>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// On-premises servers or VMs that are registered with Systems Manager and Amazon EC2
+        /// instances that you manage with Systems Manager are all called <i>managed instances</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateActivation service method.</param>
         /// <param name="cancellationToken">
@@ -7428,7 +7448,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists the associations for the specified Systems Manager document or instance.
+        /// Returns all State Manager associations in the current AWS account and Region. You
+        /// can limit the results to a specific State Manager association document or instance
+        /// by specifying a filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
         /// 
@@ -7451,7 +7473,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists the associations for the specified Systems Manager document or instance.
+        /// Returns all State Manager associations in the current AWS account and Region. You
+        /// can limit the results to a specific State Manager association document or instance
+        /// by specifying a filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -8300,7 +8324,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes one or more of your Systems Manager documents.
+        /// Returns all Systems Manager (SSM) documents in the current AWS account and Region.
+        /// You can limit the results of this request by using a filter.
         /// </summary>
         /// 
         /// <returns>The response from the ListDocuments service method, as returned by SimpleSystemsManagement.</returns>
@@ -8321,7 +8346,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes one or more of your Systems Manager documents.
+        /// Returns all Systems Manager (SSM) documents in the current AWS account and Region.
+        /// You can limit the results of this request by using a filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDocuments service method.</param>
         /// 
@@ -8347,7 +8373,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes one or more of your Systems Manager documents.
+        /// Returns all Systems Manager (SSM) documents in the current AWS account and Region.
+        /// You can limit the results of this request by using a filter.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -8370,7 +8397,8 @@ namespace Amazon.SimpleSystemsManagement
         }
 
         /// <summary>
-        /// Describes one or more of your Systems Manager documents.
+        /// Returns all Systems Manager (SSM) documents in the current AWS account and Region.
+        /// You can limit the results of this request by using a filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDocuments service method.</param>
         /// <param name="cancellationToken">
