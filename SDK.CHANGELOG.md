@@ -1,3 +1,16 @@
+### 3.3.665.0 (2020-01-16 21:20 UTC)
+* DirectoryService (3.3.102.0)
+	* To reduce the number of errors our customers are facing, we have modified the requirements of input parameters for two of Directory Service APIs.
+* EC2 (3.3.152.0)
+	* Client VPN now supports Port Configuration for VPN Endpoints, allowing usage of either port 443 or port 1194.
+* SageMaker (3.3.110.0)
+	* This release adds two new APIs (UpdateWorkforce and DescribeWorkforce) to SageMaker Ground Truth service for workforce IP whitelisting.
+* Core 3.3.104.17
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.664.0 (2020-01-15 20:03 UTC)
 * EC2 (3.3.151.0)
 	* General Update to EC2 Docs and SDKs
