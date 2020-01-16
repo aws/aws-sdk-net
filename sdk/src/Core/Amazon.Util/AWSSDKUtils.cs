@@ -39,6 +39,7 @@ using System.Threading.Tasks;
 #endif
 #if NETSTANDARD
 using System.Net.Http;
+using System.Runtime.InteropServices;
 #endif
 
 namespace Amazon.Util
