@@ -4938,6 +4938,65 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeWorkforce
+
+
+        /// <summary>
+        /// Lists private workforce information, including workforce name, Amazon Resource Name
+        /// (ARN), and, if applicable, allowed IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>).
+        /// Allowable IP address ranges are the IP addresses that workers can use to access tasks.
+        /// 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This operation applies only to private workforces.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkforce service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorkforce service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeWorkforce">REST API Reference for DescribeWorkforce Operation</seealso>
+        public virtual DescribeWorkforceResponse DescribeWorkforce(DescribeWorkforceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkforceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkforceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorkforceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists private workforce information, including workforce name, Amazon Resource Name
+        /// (ARN), and, if applicable, allowed IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>).
+        /// Allowable IP address ranges are the IP addresses that workers can use to access tasks.
+        /// 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This operation applies only to private workforces.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkforce service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkforce service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeWorkforce">REST API Reference for DescribeWorkforce Operation</seealso>
+        public virtual Task<DescribeWorkforceResponse> DescribeWorkforceAsync(DescribeWorkforceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkforceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkforceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeWorkforceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeWorkteam
 
 
@@ -6242,9 +6301,23 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Lists the trial components in your account. You can filter the list to show only components
-        /// that were created in a specific time range. You can sort the list by trial component
-        /// name or creation time.
+        /// Lists the trial components in your account. You can sort the list by trial component
+        /// name or creation time. You can filter the list to show only components that were created
+        /// in a specific time range. You can also filter on one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ExperimentName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SourceArn</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TrialName</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrialComponents service method.</param>
         /// 
@@ -6264,9 +6337,23 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Lists the trial components in your account. You can filter the list to show only components
-        /// that were created in a specific time range. You can sort the list by trial component
-        /// name or creation time.
+        /// Lists the trial components in your account. You can sort the list by trial component
+        /// name or creation time. You can filter the list to show only components that were created
+        /// in a specific time range. You can also filter on one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ExperimentName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SourceArn</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TrialName</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrialComponents service method.</param>
         /// <param name="cancellationToken">
@@ -7778,6 +7865,79 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateUserProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkforce
+
+
+        /// <summary>
+        /// Restricts access to tasks assigned to workers in the specified workforce to those
+        /// within specific ranges of IP addresses. You specify allowed IP addresses by creating
+        /// a list of up to four <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
+        /// 
+        ///  
+        /// <para>
+        /// By default, a workforce isn't restricted to specific IP addresses. If you specify
+        /// a range of IP addresses, workers who attempt to access tasks using any IP address
+        /// outside the specified range are denied access and get a <code>Not Found</code> error
+        /// message on the worker portal. After restricting access with this operation, you can
+        /// see the allowed IP values for a private workforce with the operation.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This operation applies only to private workforces.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkforce service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorkforce service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkforce">REST API Reference for UpdateWorkforce Operation</seealso>
+        public virtual UpdateWorkforceResponse UpdateWorkforce(UpdateWorkforceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkforceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkforceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkforceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Restricts access to tasks assigned to workers in the specified workforce to those
+        /// within specific ranges of IP addresses. You specify allowed IP addresses by creating
+        /// a list of up to four <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
+        /// 
+        ///  
+        /// <para>
+        /// By default, a workforce isn't restricted to specific IP addresses. If you specify
+        /// a range of IP addresses, workers who attempt to access tasks using any IP address
+        /// outside the specified range are denied access and get a <code>Not Found</code> error
+        /// message on the worker portal. After restricting access with this operation, you can
+        /// see the allowed IP values for a private workforce with the operation.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This operation applies only to private workforces.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkforce service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkforce service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkforce">REST API Reference for UpdateWorkforce Operation</seealso>
+        public virtual Task<UpdateWorkforceResponse> UpdateWorkforceAsync(UpdateWorkforceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkforceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkforceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateWorkforceResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -37,12 +37,13 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// For Pipe input mode, shuffling is done at the start of every epoch. With large datasets,
-    /// this ensures that the order of the training data is different for each epoch, and
-    /// it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code>
-    /// is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>,
-    /// the data is shuffled across nodes so that the content sent to a particular node on
-    /// the first epoch might be sent to a different node on the second epoch.
+    /// For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done
+    /// at the start of every epoch. With large datasets, this ensures that the order of the
+    /// training data is different for each epoch, and it helps reduce bias and possible overfitting.
+    /// In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code>
+    /// of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content
+    /// sent to a particular node on the first epoch might be sent to a different node on
+    /// the second epoch.
     /// </para>
     /// </summary>
     public partial class ShuffleConfig

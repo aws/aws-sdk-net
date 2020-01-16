@@ -6137,6 +6137,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TrainingInstanceType MlC5Xlarge = new TrainingInstanceType("ml.c5.xlarge");
         /// <summary>
+        /// Constant MlG4dn12xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG4dn12xlarge = new TrainingInstanceType("ml.g4dn.12xlarge");
+        /// <summary>
+        /// Constant MlG4dn16xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG4dn16xlarge = new TrainingInstanceType("ml.g4dn.16xlarge");
+        /// <summary>
+        /// Constant MlG4dn2xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG4dn2xlarge = new TrainingInstanceType("ml.g4dn.2xlarge");
+        /// <summary>
+        /// Constant MlG4dn4xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG4dn4xlarge = new TrainingInstanceType("ml.g4dn.4xlarge");
+        /// <summary>
+        /// Constant MlG4dn8xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG4dn8xlarge = new TrainingInstanceType("ml.g4dn.8xlarge");
+        /// <summary>
+        /// Constant MlG4dnXlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG4dnXlarge = new TrainingInstanceType("ml.g4dn.xlarge");
+        /// <summary>
         /// Constant MlM410xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlM410xlarge = new TrainingInstanceType("ml.m4.10xlarge");

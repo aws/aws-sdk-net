@@ -29,9 +29,23 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTrialComponents operation.
-    /// Lists the trial components in your account. You can filter the list to show only components
-    /// that were created in a specific time range. You can sort the list by trial component
-    /// name or creation time.
+    /// Lists the trial components in your account. You can sort the list by trial component
+    /// name or creation time. You can filter the list to show only components that were created
+    /// in a specific time range. You can also filter on one of the following:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>ExperimentName</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>SourceArn</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TrialName</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListTrialComponentsRequest : AmazonSageMakerRequest
     {
@@ -85,7 +99,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ExperimentName. 
         /// <para>
         /// A filter that returns only components that are part of the specified experiment. If
-        /// you specify <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+        /// you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code>
+        /// or <code>TrialName</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=82)]
@@ -180,7 +195,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property SourceArn. 
         /// <para>
         /// A filter that returns only components that have the specified source Amazon Resource
-        /// Name (ARN).
+        /// Name (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code>
+        /// or <code>TrialName</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -200,7 +216,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TrialName. 
         /// <para>
         /// A filter that returns only components that are part of the specified trial. If you
-        /// specify <code>TrialName</code>, you can't specify <code>ExperimentName</code>.
+        /// specify <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or
+        /// <code>SourceArn</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=82)]

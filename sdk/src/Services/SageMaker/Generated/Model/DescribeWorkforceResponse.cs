@@ -28,31 +28,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Defines under what conditions SageMaker creates a human loop. Used within .
+    /// This is the response object from the DescribeWorkforce operation.
     /// </summary>
-    public partial class HumanLoopActivationConditionsConfig
+    public partial class DescribeWorkforceResponse : AmazonWebServiceResponse
     {
-        private string _humanLoopActivationConditions;
+        private Workforce _workforce;
 
         /// <summary>
-        /// Gets and sets the property HumanLoopActivationConditions. 
+        /// Gets and sets the property Workforce. 
         /// <para>
-        /// JSON expressing use-case specific conditions declaratively. If any condition is matched,
-        /// atomic tasks are created against the configured work team. The set of conditions is
-        /// different for Rekognition and Textract.
+        /// A single private workforce, which is automatically created when you create your first
+        /// private work team. You can create one private work force in each AWS Region. By default,
+        /// any workforce related API operation used in a specific region will apply to the workforce
+        /// created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create
+        /// a Private Workforce</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=10240)]
-        public string HumanLoopActivationConditions
+        [AWSProperty(Required=true)]
+        public Workforce Workforce
         {
-            get { return this._humanLoopActivationConditions; }
-            set { this._humanLoopActivationConditions = value; }
+            get { return this._workforce; }
+            set { this._workforce = value; }
         }
 
-        // Check to see if HumanLoopActivationConditions property is set
-        internal bool IsSetHumanLoopActivationConditions()
+        // Check to see if Workforce property is set
+        internal bool IsSetWorkforce()
         {
-            return this._humanLoopActivationConditions != null;
+            return this._workforce != null;
         }
 
     }
