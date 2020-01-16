@@ -62,6 +62,7 @@ namespace Amazon.DirectoryService.Model
         /// server or client, but currently only the default <code>Client</code> is supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LDAPSType Type
         {
             get { return this._type; }
