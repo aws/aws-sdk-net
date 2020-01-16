@@ -164,6 +164,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TransportProtocol", StringUtils.FromString(publicRequest.TransportProtocol));
                 }
+                if(publicRequest.IsSetVpnPort())
+                {
+                    request.Parameters.Add("VpnPort", StringUtils.FromInt(publicRequest.VpnPort));
+                }
             }
             return request;
         }

@@ -148,6 +148,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.TransportProtocol = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("vpnPort", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.VpnPort = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("vpnProtocol", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

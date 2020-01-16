@@ -105,6 +105,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SplitTunnel", StringUtils.FromBool(publicRequest.SplitTunnel));
                 }
+                if(publicRequest.IsSetVpnPort())
+                {
+                    request.Parameters.Add("VpnPort", StringUtils.FromInt(publicRequest.VpnPort));
+                }
             }
             return request;
         }

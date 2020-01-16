@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         private bool? _splitTunnel;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private TransportProtocol _transportProtocol;
+        private int? _vpnPort;
 
         /// <summary>
         /// Gets and sets the property AuthenticationOptions. 
@@ -272,6 +273,32 @@ namespace Amazon.EC2.Model
         internal bool IsSetTransportProtocol()
         {
             return this._transportProtocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpnPort. 
+        /// <para>
+        /// The port number to assign to the Client VPN endpoint for TCP and UDP traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>443</code> | <code>1194</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default Value: <code>443</code> 
+        /// </para>
+        /// </summary>
+        public int VpnPort
+        {
+            get { return this._vpnPort.GetValueOrDefault(); }
+            set { this._vpnPort = value; }
+        }
+
+        // Check to see if VpnPort property is set
+        internal bool IsSetVpnPort()
+        {
+            return this._vpnPort.HasValue; 
         }
 
     }

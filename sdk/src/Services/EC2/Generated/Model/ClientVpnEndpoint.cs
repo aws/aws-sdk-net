@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         private ClientVpnEndpointStatus _status;
         private List<Tag> _tags = new List<Tag>();
         private TransportProtocol _transportProtocol;
+        private int? _vpnPort;
         private VpnProtocol _vpnProtocol;
 
         /// <summary>
@@ -324,6 +325,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTransportProtocol()
         {
             return this._transportProtocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpnPort. 
+        /// <para>
+        /// The port number for the Client VPN endpoint.
+        /// </para>
+        /// </summary>
+        public int VpnPort
+        {
+            get { return this._vpnPort.GetValueOrDefault(); }
+            set { this._vpnPort = value; }
+        }
+
+        // Check to see if VpnPort property is set
+        internal bool IsSetVpnPort()
+        {
+            return this._vpnPort.HasValue; 
         }
 
         /// <summary>
