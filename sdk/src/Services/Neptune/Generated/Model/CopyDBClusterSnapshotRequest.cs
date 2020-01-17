@@ -78,12 +78,6 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code>
-        /// parameter, Amazon Neptune encrypts the target DB cluster snapshot using the specified
-        /// KMS encryption key.
-        /// </para>
-        ///  
-        /// <para>
         /// If you copy an encrypted DB cluster snapshot from your AWS account, you can specify
         /// a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key.
         /// If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster
@@ -98,6 +92,12 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  KMS encryption keys are specific to the AWS Region that they are created in, and
         /// you can't use encryption keys from one AWS Region in another AWS Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try
+        /// to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter,
+        /// an error is returned.
         /// </para>
         /// </summary>
         public string KmsKeyId

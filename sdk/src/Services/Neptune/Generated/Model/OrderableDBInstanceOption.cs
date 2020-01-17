@@ -369,7 +369,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property SupportsPerformanceInsights. 
         /// <para>
-        /// True if a DB instance supports Performance Insights, otherwise false.
+        ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
         public bool SupportsPerformanceInsights

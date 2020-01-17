@@ -39,6 +39,7 @@ namespace Amazon.Neptune.Model
         private CloudwatchLogsExportConfiguration _cloudwatchLogsExportConfiguration;
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
+        private bool? _deletionProtection;
         private bool? _enableIAMDatabaseAuthentication;
         private string _engineVersion;
         private string _masterUserPassword;
@@ -181,6 +182,26 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// A value that indicates whether the DB cluster has deletion protection enabled. The
+        /// database can't be deleted when deletion protection is enabled. By default, deletion
+        /// protection is disabled. 
+        /// </para>
+        /// </summary>
+        public bool DeletionProtection
+        {
+            get { return this._deletionProtection.GetValueOrDefault(); }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
@@ -206,9 +227,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the database engine to which you want to upgrade. Changing this
-        /// parameter results in an outage. The change is applied during the next maintenance
-        /// window unless the ApplyImmediately parameter is set to true.
+        /// The version number of the database engine. Currently, setting this parameter has no
+        /// effect. To upgrade your database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a>
+        /// API.
         /// </para>
         ///  
         /// <para>
@@ -292,17 +313,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        /// A value that indicates that the DB cluster should be associated with the specified
-        /// option group. Changing this parameter doesn't result in an outage except in the following
-        /// case, and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
-        /// parameter is set to <code>true</code> for this request. If the parameter change results
-        /// in an option group that enables OEM, this change can cause a brief (sub-second) period
-        /// during which new connections are rejected but existing connections are not interrupted.
-        /// </para>
-        ///  
-        /// <para>
-        /// Permanent options can't be removed from an option group. The option group can't be
-        /// removed from a DB cluster once it is associated with a DB cluster.
+        ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
         public string OptionGroupName

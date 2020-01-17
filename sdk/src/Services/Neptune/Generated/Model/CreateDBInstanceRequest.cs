@@ -46,6 +46,7 @@ namespace Amazon.Neptune.Model
         private string _dbParameterGroupName;
         private List<string> _dbSecurityGroups = new List<string>();
         private string _dbSubnetGroupName;
+        private bool? _deletionProtection;
         private string _domain;
         private string _domainIAMRoleName;
         private List<string> _enableCloudwatchLogsExports = new List<string>();
@@ -202,12 +203,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property CharacterSetName. 
         /// <para>
-        /// Indicates that the DB instance should be associated with the specified CharacterSet.
-        /// </para>
-        ///  
-        /// <para>
-        /// Not applicable. The character set is managed by the DB cluster. For more information,
-        /// see <a>CreateDBCluster</a>.
+        ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
         public string CharacterSetName
@@ -425,6 +421,32 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// A value that indicates whether the DB instance has deletion protection enabled. The
+        /// database can't be deleted when deletion protection is enabled. By default, deletion
+        /// protection is disabled. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can enable or disable deletion protection for the DB cluster. For more information,
+        /// see <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when
+        /// deletion protection is enabled for the DB cluster. 
+        /// </para>
+        /// </summary>
+        public bool DeletionProtection
+        {
+            get { return this._deletionProtection.GetValueOrDefault(); }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
         /// Specify the Active Directory Domain to create the instance in.
@@ -504,7 +526,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EnablePerformanceInsights. 
         /// <para>
-        /// True to enable Performance Insights for the DB instance, and otherwise false.
+        ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
         public bool EnablePerformanceInsights
@@ -545,7 +567,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the database engine to use.
+        /// The version number of the database engine to use. Currently, setting this parameter
+        /// has no effect.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -755,13 +778,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        /// Indicates that the DB instance should be associated with the specified option group.
-        /// </para>
-        ///  
-        /// <para>
-        /// Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't
-        /// be removed from an option group, and that option group can't be removed from a DB
-        /// instance once it is associated with a DB instance
+        ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -779,9 +796,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsKMSKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for encryption of Performance Insights data. The KMS key
-        /// ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-        /// the KMS encryption key.
+        ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId

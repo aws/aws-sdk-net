@@ -55,6 +55,7 @@ namespace Amazon.Neptune.Model
         private List<DBParameterGroupStatus> _dbParameterGroups = new List<DBParameterGroupStatus>();
         private List<DBSecurityGroupMembership> _dbSecurityGroups = new List<DBSecurityGroupMembership>();
         private DBSubnetGroup _dbSubnetGroup;
+        private bool? _deletionProtection;
         private List<DomainMembership> _domainMemberships = new List<DomainMembership>();
         private List<string> _enabledCloudwatchLogsExports = new List<string>();
         private Endpoint _endpoint;
@@ -183,8 +184,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property CharacterSetName. 
         /// <para>
-        /// If present, specifies the name of the character set that this instance is associated
-        /// with.
+        ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
         public string CharacterSetName
@@ -420,6 +420,25 @@ namespace Amazon.Neptune.Model
         internal bool IsSetDBSubnetGroup()
         {
             return this._dbSubnetGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Indicates if the DB instance has deletion protection enabled. The database can't be
+        /// deleted when deletion protection is enabled. 
+        /// </para>
+        /// </summary>
+        public bool DeletionProtection
+        {
+            get { return this._deletionProtection.GetValueOrDefault(); }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection.HasValue; 
         }
 
         /// <summary>
@@ -717,7 +736,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property OptionGroupMemberships. 
         /// <para>
-        /// Provides the list of option group memberships for this DB instance.
+        ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
         public List<OptionGroupMembership> OptionGroupMemberships
@@ -754,7 +773,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsEnabled. 
         /// <para>
-        /// True if Performance Insights is enabled for the DB instance, and otherwise false.
+        ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
         public bool PerformanceInsightsEnabled
@@ -772,9 +791,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsKMSKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for encryption of Performance Insights data. The KMS key
-        /// ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-        /// the KMS encryption key.
+        ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId

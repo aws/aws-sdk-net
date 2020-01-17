@@ -258,7 +258,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PendingCloudwatchLogsExports. 
         /// <para>
-        /// Specifies the CloudWatch logs to be exported.
+        /// This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes
+        /// to which CloudWatch logs are enabled and which are disabled.
         /// </para>
         /// </summary>
         public PendingCloudwatchLogsExports PendingCloudwatchLogsExports

@@ -46,6 +46,7 @@ namespace Amazon.Neptune.Model
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
+        private bool? _deletionProtection;
         private List<string> _enableCloudwatchLogsExports = new List<string>();
         private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
@@ -116,8 +117,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property CharacterSetName. 
         /// <para>
-        /// A value that indicates that the DB cluster should be associated with the specified
-        /// CharacterSet.
+        ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
         public string CharacterSetName
@@ -245,6 +245,26 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// A value that indicates whether the DB cluster has deletion protection enabled. The
+        /// database can't be deleted when deletion protection is enabled. By default, deletion
+        /// protection is disabled. 
+        /// </para>
+        /// </summary>
+        public bool DeletionProtection
+        {
+            get { return this._deletionProtection.GetValueOrDefault(); }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableCloudwatchLogsExports. 
         /// <para>
         /// The list of log types that need to be enabled for exporting to CloudWatch Logs.
@@ -311,7 +331,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the database engine to use.
+        /// The version number of the database engine to use. Currently, setting this parameter
+        /// has no effect.
         /// </para>
         ///  
         /// <para>
@@ -442,13 +463,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        /// A value that indicates that the DB cluster should be associated with the specified
-        /// option group.
-        /// </para>
-        ///  
-        /// <para>
-        /// Permanent options can't be removed from an option group. The option group can't be
-        /// removed from a DB cluster once it is associated with a DB cluster.
+        ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
         public string OptionGroupName
