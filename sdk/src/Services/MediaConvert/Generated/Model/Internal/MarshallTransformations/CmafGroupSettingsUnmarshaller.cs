@@ -172,6 +172,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.WriteHlsManifest = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("writeSegmentTimelineInRepresentation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WriteSegmentTimelineInRepresentation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

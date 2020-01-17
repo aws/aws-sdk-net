@@ -42,10 +42,11 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property AlphaBehavior. Ignore this setting unless this input is
-        /// a QuickTime animation. Specify which part of this input MediaConvert uses for your
-        /// outputs. Leave this setting set to DISCARD in order to delete the alpha channel and
-        /// preserve the video. Use REMAP_TO_LUMA for this setting to delete the video and map
-        /// the alpha channel to the luma channel of your outputs.
+        /// a QuickTime animation with an alpha channel. Use this setting to create separate Key
+        /// and Fill outputs. In each output, specify which part of the input MediaConvert uses.
+        /// Leave this setting at the default value DISCARD to delete the alpha channel and preserve
+        /// the video. Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to
+        /// the luma channel of your outputs.
         /// </summary>
         public AlphaBehavior AlphaBehavior
         {

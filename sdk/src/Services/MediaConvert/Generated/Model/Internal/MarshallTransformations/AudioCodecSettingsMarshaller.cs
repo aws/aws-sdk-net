@@ -117,6 +117,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMp3Settings())
+            {
+                context.Writer.WritePropertyName("mp3Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Mp3SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Mp3Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetWavSettings())
             {
                 context.Writer.WritePropertyName("wavSettings");

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Mp4Settings Object
+    /// Response Unmarshaller for CmfcSettings Object
     /// </summary>  
-    public class Mp4SettingsUnmarshaller : IUnmarshaller<Mp4Settings, XmlUnmarshallerContext>, IUnmarshaller<Mp4Settings, JsonUnmarshallerContext>
+    public class CmfcSettingsUnmarshaller : IUnmarshaller<CmfcSettings, XmlUnmarshallerContext>, IUnmarshaller<CmfcSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Mp4Settings IUnmarshaller<Mp4Settings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CmfcSettings IUnmarshaller<CmfcSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Mp4Settings Unmarshall(JsonUnmarshallerContext context)
+        public CmfcSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Mp4Settings unmarshalledObject = new Mp4Settings();
+            CmfcSettings unmarshalledObject = new CmfcSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cslgAtom", targetDepth))
+                if (context.TestExpression("scte35Esam", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CslgAtom = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scte35Esam = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("cttsVersion", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.CttsVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("freeSpaceBox", targetDepth))
+                if (context.TestExpression("scte35Source", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FreeSpaceBox = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("moovPlacement", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MoovPlacement = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("mp4MajorBrand", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Mp4MajorBrand = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scte35Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static Mp4SettingsUnmarshaller _instance = new Mp4SettingsUnmarshaller();        
+        private static CmfcSettingsUnmarshaller _instance = new CmfcSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static Mp4SettingsUnmarshaller Instance
+        public static CmfcSettingsUnmarshaller Instance
         {
             get
             {

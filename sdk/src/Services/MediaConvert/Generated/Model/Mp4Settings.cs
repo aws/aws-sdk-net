@@ -33,6 +33,7 @@ namespace Amazon.MediaConvert.Model
     public partial class Mp4Settings
     {
         private Mp4CslgAtom _cslgAtom;
+        private int? _cttsVersion;
         private Mp4FreeSpaceBox _freeSpaceBox;
         private Mp4MoovPlacement _moovPlacement;
         private string _mp4MajorBrand;
@@ -53,6 +54,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCslgAtom()
         {
             return this._cslgAtom != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CttsVersion. Ignore this setting unless compliance to the
+        /// CTTS box version specification matters in your workflow. Specify a value of 1 to set
+        /// your CTTS box version to 1 and make your output compliant with the specification.
+        /// When you specify a value of 1, you must also set CSLG atom (cslgAtom) to the value
+        /// INCLUDE. Keep the default value 0 to set your CTTS box version to 0. This can provide
+        /// backward compatibility for some players and packagers.
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public int CttsVersion
+        {
+            get { return this._cttsVersion.GetValueOrDefault(); }
+            set { this._cttsVersion = value; }
+        }
+
+        // Check to see if CttsVersion property is set
+        internal bool IsSetCttsVersion()
+        {
+            return this._cttsVersion.HasValue; 
         }
 
         /// <summary>

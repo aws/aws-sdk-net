@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Mp4Settings Marshaller
+    /// Mp3Settings Marshaller
     /// </summary>       
-    public class Mp4SettingsMarshaller : IRequestMarshaller<Mp4Settings, JsonMarshallerContext> 
+    public class Mp3SettingsMarshaller : IRequestMarshaller<Mp3Settings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,36 +43,36 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Mp4Settings requestObject, JsonMarshallerContext context)
+        public void Marshall(Mp3Settings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCslgAtom())
+            if(requestObject.IsSetBitrate())
             {
-                context.Writer.WritePropertyName("cslgAtom");
-                context.Writer.Write(requestObject.CslgAtom);
+                context.Writer.WritePropertyName("bitrate");
+                context.Writer.Write(requestObject.Bitrate);
             }
 
-            if(requestObject.IsSetCttsVersion())
+            if(requestObject.IsSetChannels())
             {
-                context.Writer.WritePropertyName("cttsVersion");
-                context.Writer.Write(requestObject.CttsVersion);
+                context.Writer.WritePropertyName("channels");
+                context.Writer.Write(requestObject.Channels);
             }
 
-            if(requestObject.IsSetFreeSpaceBox())
+            if(requestObject.IsSetRateControlMode())
             {
-                context.Writer.WritePropertyName("freeSpaceBox");
-                context.Writer.Write(requestObject.FreeSpaceBox);
+                context.Writer.WritePropertyName("rateControlMode");
+                context.Writer.Write(requestObject.RateControlMode);
             }
 
-            if(requestObject.IsSetMoovPlacement())
+            if(requestObject.IsSetSampleRate())
             {
-                context.Writer.WritePropertyName("moovPlacement");
-                context.Writer.Write(requestObject.MoovPlacement);
+                context.Writer.WritePropertyName("sampleRate");
+                context.Writer.Write(requestObject.SampleRate);
             }
 
-            if(requestObject.IsSetMp4MajorBrand())
+            if(requestObject.IsSetVbrQuality())
             {
-                context.Writer.WritePropertyName("mp4MajorBrand");
-                context.Writer.Write(requestObject.Mp4MajorBrand);
+                context.Writer.WritePropertyName("vbrQuality");
+                context.Writer.Write(requestObject.VbrQuality);
             }
 
         }
@@ -80,7 +80,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static Mp4SettingsMarshaller Instance = new Mp4SettingsMarshaller();
+        public readonly static Mp3SettingsMarshaller Instance = new Mp3SettingsMarshaller();
 
     }
 }

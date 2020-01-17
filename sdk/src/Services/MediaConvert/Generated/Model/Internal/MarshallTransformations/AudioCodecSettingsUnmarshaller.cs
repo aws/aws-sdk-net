@@ -106,6 +106,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Mp2Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mp3Settings", targetDepth))
+                {
+                    var unmarshaller = Mp3SettingsUnmarshaller.Instance;
+                    unmarshalledObject.Mp3Settings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("wavSettings", targetDepth))
                 {
                     var unmarshaller = WavSettingsUnmarshaller.Instance;

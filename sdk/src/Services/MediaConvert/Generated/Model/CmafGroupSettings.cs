@@ -52,6 +52,7 @@ namespace Amazon.MediaConvert.Model
         private CmafStreamInfResolution _streamInfResolution;
         private CmafWriteDASHManifest _writeDashManifest;
         private CmafWriteHLSManifest _writeHlsManifest;
+        private CmafWriteSegmentTimelineInRepresentation _writeSegmentTimelineInRepresentation;
 
         /// <summary>
         /// Gets and sets the property AdditionalManifests. By default, the service creates one
@@ -372,6 +373,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetWriteHlsManifest()
         {
             return this._writeHlsManifest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WriteSegmentTimelineInRepresentation. When you enable Precise
+        /// segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your DASH
+        /// manifest shows precise segment durations. The segment duration information appears
+        /// inside the SegmentTimeline element, inside SegmentTemplate at the Representation level.
+        /// When this feature isn't enabled, the segment durations in your DASH manifest are approximate.
+        /// The segment duration information appears in the duration attribute of the SegmentTemplate
+        /// element.
+        /// </summary>
+        public CmafWriteSegmentTimelineInRepresentation WriteSegmentTimelineInRepresentation
+        {
+            get { return this._writeSegmentTimelineInRepresentation; }
+            set { this._writeSegmentTimelineInRepresentation = value; }
+        }
+
+        // Check to see if WriteSegmentTimelineInRepresentation property is set
+        internal bool IsSetWriteSegmentTimelineInRepresentation()
+        {
+            return this._writeSegmentTimelineInRepresentation != null;
         }
 
     }

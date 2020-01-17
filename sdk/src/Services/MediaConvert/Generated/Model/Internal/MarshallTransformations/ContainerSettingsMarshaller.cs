@@ -45,6 +45,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContainerSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCmfcSettings())
+            {
+                context.Writer.WritePropertyName("cmfcSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CmfcSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CmfcSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetContainer())
             {
                 context.Writer.WritePropertyName("container");

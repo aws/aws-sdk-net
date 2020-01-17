@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Mp4Settings Marshaller
+    /// CmfcSettings Marshaller
     /// </summary>       
-    public class Mp4SettingsMarshaller : IRequestMarshaller<Mp4Settings, JsonMarshallerContext> 
+    public class CmfcSettingsMarshaller : IRequestMarshaller<CmfcSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,36 +43,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Mp4Settings requestObject, JsonMarshallerContext context)
+        public void Marshall(CmfcSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCslgAtom())
+            if(requestObject.IsSetScte35Esam())
             {
-                context.Writer.WritePropertyName("cslgAtom");
-                context.Writer.Write(requestObject.CslgAtom);
+                context.Writer.WritePropertyName("scte35Esam");
+                context.Writer.Write(requestObject.Scte35Esam);
             }
 
-            if(requestObject.IsSetCttsVersion())
+            if(requestObject.IsSetScte35Source())
             {
-                context.Writer.WritePropertyName("cttsVersion");
-                context.Writer.Write(requestObject.CttsVersion);
-            }
-
-            if(requestObject.IsSetFreeSpaceBox())
-            {
-                context.Writer.WritePropertyName("freeSpaceBox");
-                context.Writer.Write(requestObject.FreeSpaceBox);
-            }
-
-            if(requestObject.IsSetMoovPlacement())
-            {
-                context.Writer.WritePropertyName("moovPlacement");
-                context.Writer.Write(requestObject.MoovPlacement);
-            }
-
-            if(requestObject.IsSetMp4MajorBrand())
-            {
-                context.Writer.WritePropertyName("mp4MajorBrand");
-                context.Writer.Write(requestObject.Mp4MajorBrand);
+                context.Writer.WritePropertyName("scte35Source");
+                context.Writer.Write(requestObject.Scte35Source);
             }
 
         }
@@ -80,7 +62,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static Mp4SettingsMarshaller Instance = new Mp4SettingsMarshaller();
+        public readonly static CmfcSettingsMarshaller Instance = new CmfcSettingsMarshaller();
 
     }
 }

@@ -32,6 +32,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class ContainerSettings
     {
+        private CmfcSettings _cmfcSettings;
         private ContainerType _container;
         private F4vSettings _f4vSettings;
         private M2tsSettings _m2tsSettings;
@@ -39,6 +40,21 @@ namespace Amazon.MediaConvert.Model
         private MovSettings _movSettings;
         private Mp4Settings _mp4Settings;
         private MpdSettings _mpdSettings;
+
+        /// <summary>
+        /// Gets and sets the property CmfcSettings. Settings for MP4 segments in CMAF
+        /// </summary>
+        public CmfcSettings CmfcSettings
+        {
+            get { return this._cmfcSettings; }
+            set { this._cmfcSettings = value; }
+        }
+
+        // Check to see if CmfcSettings property is set
+        internal bool IsSetCmfcSettings()
+        {
+            return this._cmfcSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Container. Container for this output. Some containers require

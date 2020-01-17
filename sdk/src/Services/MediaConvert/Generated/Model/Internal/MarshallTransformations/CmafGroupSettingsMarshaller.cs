@@ -173,6 +173,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.WriteHlsManifest);
             }
 
+            if(requestObject.IsSetWriteSegmentTimelineInRepresentation())
+            {
+                context.Writer.WritePropertyName("writeSegmentTimelineInRepresentation");
+                context.Writer.Write(requestObject.WriteSegmentTimelineInRepresentation);
+            }
+
         }
 
         /// <summary>

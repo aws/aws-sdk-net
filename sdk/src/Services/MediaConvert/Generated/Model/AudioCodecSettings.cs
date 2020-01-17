@@ -32,8 +32,8 @@ namespace Amazon.MediaConvert.Model
     /// of settings related to audio encoding. The settings in this group vary depending on
     /// the value that you choose for Audio codec (Codec). For each codec enum that you choose,
     /// define the corresponding settings object. The following lists the codec enum, settings
-    /// object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings
-    /// * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+    /// object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings
+    /// * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
     /// </summary>
     public partial class AudioCodecSettings
     {
@@ -44,6 +44,7 @@ namespace Amazon.MediaConvert.Model
         private Eac3AtmosSettings _eac3AtmosSettings;
         private Eac3Settings _eac3Settings;
         private Mp2Settings _mp2Settings;
+        private Mp3Settings _mp3Settings;
         private WavSettings _wavSettings;
 
         /// <summary>
@@ -159,6 +160,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetMp2Settings()
         {
             return this._mp2Settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mp3Settings. Required when you set Codec, under AudioDescriptions>CodecSettings,
+        /// to the value MP3.
+        /// </summary>
+        public Mp3Settings Mp3Settings
+        {
+            get { return this._mp3Settings; }
+            set { this._mp3Settings = value; }
+        }
+
+        // Check to see if Mp3Settings property is set
+        internal bool IsSetMp3Settings()
+        {
+            return this._mp3Settings != null;
         }
 
         /// <summary>
