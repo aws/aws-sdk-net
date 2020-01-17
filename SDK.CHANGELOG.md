@@ -1,3 +1,22 @@
+### 3.3.666.0 (2020-01-17 19:16 UTC)
+* Batch (3.3.104.0)
+	* This release ensures INACTIVE job definitions are permanently deleted after 180 days.
+* CloudHSMV2 (3.3.101.0)
+	* This release introduces resource-level and tag-based access control for AWS CloudHSM resources. You can now tag CloudHSM backups, tag CloudHSM clusters on creation, and tag a backup as you copy it to another region.
+* ECS (3.3.113.0)
+	* This release provides a public preview for specifying Amazon EFS file systems as volumes in your Amazon ECS task definitions.
+* MediaConvert (3.3.112.0)
+	* AWS Elemental MediaConvert SDK has added support for MP3 audio only outputs.
+* Neptune (3.3.102.0)
+	* This release includes Deletion Protection for Amazon Neptune databases.
+* Redshift (3.3.105.21)
+	* Documentation updates for redshift
+* Core 3.3.104.18
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.665.0 (2020-01-16 21:20 UTC)
 * DirectoryService (3.3.102.0)
 	* To reduce the number of errors our customers are facing, we have modified the requirements of input parameters for two of Directory Service APIs.
