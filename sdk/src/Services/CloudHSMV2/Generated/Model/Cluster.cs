@@ -44,6 +44,7 @@ namespace Amazon.CloudHSMV2.Model
         private ClusterState _state;
         private string _stateMessage;
         private Dictionary<string, string> _subnetMapping = new Dictionary<string, string>();
+        private List<Tag> _tagList = new List<Tag>();
         private string _vpcId;
 
         /// <summary>
@@ -250,7 +251,7 @@ namespace Amazon.CloudHSMV2.Model
         /// <summary>
         /// Gets and sets the property SubnetMapping. 
         /// <para>
-        /// A map of the cluster's subnets and their corresponding Availability Zones.
+        /// A map from availability zone to the cluster’s subnet in that availability zone.
         /// </para>
         /// </summary>
         public Dictionary<string, string> SubnetMapping
@@ -263,6 +264,22 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetSubnetMapping()
         {
             return this._subnetMapping != null && this._subnetMapping.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && this._tagList.Count > 0; 
         }
 
         /// <summary>

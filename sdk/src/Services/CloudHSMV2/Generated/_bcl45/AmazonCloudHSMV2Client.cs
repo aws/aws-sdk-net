@@ -39,7 +39,7 @@ namespace Amazon.CloudHSMV2
     /// Implementation for accessing CloudHSMV2
     ///
     /// For more information about AWS CloudHSM, see <a href="http://aws.amazon.com/cloudhsm/">AWS
-    /// CloudHSM</a> and the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
+    /// CloudHSM</a> and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
     /// CloudHSM User Guide</a>.
     /// </summary>
     public partial class AmazonCloudHSMV2Client : AmazonServiceClient, IAmazonCloudHSMV2
@@ -266,6 +266,9 @@ namespace Amazon.CloudHSMV2
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
         /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion">REST API Reference for CopyBackupToRegion Operation</seealso>
         public virtual CopyBackupToRegionResponse CopyBackupToRegion(CopyBackupToRegionRequest request)
         {
@@ -302,6 +305,9 @@ namespace Amazon.CloudHSMV2
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion">REST API Reference for CopyBackupToRegion Operation</seealso>
         public virtual Task<CopyBackupToRegionResponse> CopyBackupToRegionAsync(CopyBackupToRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -341,6 +347,9 @@ namespace Amazon.CloudHSMV2
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
         /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
@@ -377,6 +386,9 @@ namespace Amazon.CloudHSMV2
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -470,7 +482,8 @@ namespace Amazon.CloudHSMV2
 
         /// <summary>
         /// Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after
-        /// the DeleteBackup request. For more information on restoring a backup, see <a>RestoreBackup</a>
+        /// the DeleteBackup request is made. For more information on restoring a backup, see
+        /// <a>RestoreBackup</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBackup service method.</param>
         /// 
@@ -505,7 +518,8 @@ namespace Amazon.CloudHSMV2
 
         /// <summary>
         /// Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after
-        /// the DeleteBackup request. For more information on restoring a backup, see <a>RestoreBackup</a>
+        /// the DeleteBackup request is made. For more information on restoring a backup, see
+        /// <a>RestoreBackup</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBackup service method.</param>
         /// <param name="cancellationToken">
@@ -570,6 +584,9 @@ namespace Amazon.CloudHSMV2
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
         /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
@@ -608,6 +625,9 @@ namespace Amazon.CloudHSMV2
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -735,6 +755,9 @@ namespace Amazon.CloudHSMV2
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
         /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public virtual DescribeBackupsResponse DescribeBackups(DescribeBackupsRequest request)
         {
@@ -781,6 +804,9 @@ namespace Amazon.CloudHSMV2
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
         /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public virtual Task<DescribeBackupsResponse> DescribeBackupsAsync(DescribeBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -825,6 +851,9 @@ namespace Amazon.CloudHSMV2
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
         /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
@@ -867,6 +896,9 @@ namespace Amazon.CloudHSMV2
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -996,6 +1028,9 @@ namespace Amazon.CloudHSMV2
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
         /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
@@ -1042,6 +1077,9 @@ namespace Amazon.CloudHSMV2
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
         /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1059,7 +1097,7 @@ namespace Amazon.CloudHSMV2
 
         /// <summary>
         /// Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code>
-        /// state. For more information on deleting a backup, see <a>DeleteBackup</a>.
+        /// state. For mor information on deleting a backup, see <a>DeleteBackup</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreBackup service method.</param>
         /// 
@@ -1094,7 +1132,7 @@ namespace Amazon.CloudHSMV2
 
         /// <summary>
         /// Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code>
-        /// state. For more information on deleting a backup, see <a>DeleteBackup</a>.
+        /// state. For mor information on deleting a backup, see <a>DeleteBackup</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreBackup service method.</param>
         /// <param name="cancellationToken">
@@ -1157,6 +1195,9 @@ namespace Amazon.CloudHSMV2
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
         /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
@@ -1193,6 +1234,9 @@ namespace Amazon.CloudHSMV2
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1232,6 +1276,9 @@ namespace Amazon.CloudHSMV2
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
         /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
@@ -1268,6 +1315,9 @@ namespace Amazon.CloudHSMV2
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
         /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmTagException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

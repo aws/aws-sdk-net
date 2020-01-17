@@ -35,6 +35,7 @@ namespace Amazon.CloudHSMV2.Model
     {
         private string _backupId;
         private string _destinationRegion;
+        private List<Tag> _tagList = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property BackupId. 
@@ -72,6 +73,22 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetDestinationRegion()
         {
             return this._destinationRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && this._tagList.Count > 0; 
         }
 
     }

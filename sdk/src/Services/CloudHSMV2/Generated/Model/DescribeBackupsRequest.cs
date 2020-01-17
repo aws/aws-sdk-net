@@ -127,7 +127,11 @@ namespace Amazon.CloudHSMV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SortAscending.
+        /// Gets and sets the property SortAscending. 
+        /// <para>
+        /// Designates whether or not to sort the return backups by ascending chronological order
+        /// of generation.
+        /// </para>
         /// </summary>
         public bool SortAscending
         {

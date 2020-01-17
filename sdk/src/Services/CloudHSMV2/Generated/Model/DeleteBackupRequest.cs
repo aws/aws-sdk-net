@@ -30,7 +30,8 @@ namespace Amazon.CloudHSMV2.Model
     /// <summary>
     /// Container for the parameters to the DeleteBackup operation.
     /// Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after
-    /// the DeleteBackup request. For more information on restoring a backup, see <a>RestoreBackup</a>
+    /// the DeleteBackup request is made. For more information on restoring a backup, see
+    /// <a>RestoreBackup</a>.
     /// </summary>
     public partial class DeleteBackupRequest : AmazonCloudHSMV2Request
     {

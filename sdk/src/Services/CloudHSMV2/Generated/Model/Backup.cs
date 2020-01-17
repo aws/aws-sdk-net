@@ -28,7 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
-    /// Contains information about a backup of an AWS CloudHSM cluster.
+    /// Contains information about a backup of an AWS CloudHSM cluster. All backup objects
+    /// contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups
+    /// that were copied into a destination region additionally contain the CopyTimestamp,
+    /// SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending
+    /// deletion will include the DeleteTimestamp parameter.
     /// </summary>
     public partial class Backup
     {
@@ -41,6 +45,7 @@ namespace Amazon.CloudHSMV2.Model
         private string _sourceBackup;
         private string _sourceCluster;
         private string _sourceRegion;
+        private List<Tag> _tagList = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property BackupId. 
@@ -98,7 +103,10 @@ namespace Amazon.CloudHSMV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CopyTimestamp.
+        /// Gets and sets the property CopyTimestamp. 
+        /// <para>
+        /// The date and time when the backup was copied from a source backup.
+        /// </para>
         /// </summary>
         public DateTime CopyTimestamp
         {
@@ -149,7 +157,10 @@ namespace Amazon.CloudHSMV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceBackup.
+        /// Gets and sets the property SourceBackup. 
+        /// <para>
+        /// The identifier (ID) of the source backup from which the new backup was copied.
+        /// </para>
         /// </summary>
         public string SourceBackup
         {
@@ -164,7 +175,11 @@ namespace Amazon.CloudHSMV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceCluster.
+        /// Gets and sets the property SourceCluster. 
+        /// <para>
+        /// The identifier (ID) of the cluster containing the source backup from which the new
+        /// backup was copied. .
+        /// </para>
         /// </summary>
         public string SourceCluster
         {
@@ -179,7 +194,10 @@ namespace Amazon.CloudHSMV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceRegion.
+        /// Gets and sets the property SourceRegion. 
+        /// <para>
+        /// The AWS region that contains the source backup from which the new backup was copied.
+        /// </para>
         /// </summary>
         public string SourceRegion
         {
@@ -191,6 +209,22 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetSourceRegion()
         {
             return this._sourceRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && this._tagList.Count > 0; 
         }
 
     }

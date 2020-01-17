@@ -30,7 +30,7 @@ namespace Amazon.CloudHSMV2.Model
     /// <summary>
     /// Container for the parameters to the RestoreBackup operation.
     /// Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code>
-    /// state. For more information on deleting a backup, see <a>DeleteBackup</a>.
+    /// state. For mor information on deleting a backup, see <a>DeleteBackup</a>.
     /// </summary>
     public partial class RestoreBackupRequest : AmazonCloudHSMV2Request
     {

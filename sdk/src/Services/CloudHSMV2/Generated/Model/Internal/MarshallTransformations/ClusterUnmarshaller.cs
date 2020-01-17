@@ -136,6 +136,12 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.SubnetMapping = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TagList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.TagList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VpcId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

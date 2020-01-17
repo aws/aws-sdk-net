@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a>
+    /// operation.
     /// </summary>
     public partial class DestinationBackup
     {
@@ -38,7 +39,10 @@ namespace Amazon.CloudHSMV2.Model
         private string _sourceRegion;
 
         /// <summary>
-        /// Gets and sets the property CreateTimestamp.
+        /// Gets and sets the property CreateTimestamp. 
+        /// <para>
+        /// The date and time when both the source backup was created.
+        /// </para>
         /// </summary>
         public DateTime CreateTimestamp
         {
@@ -53,7 +57,10 @@ namespace Amazon.CloudHSMV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceBackup.
+        /// Gets and sets the property SourceBackup. 
+        /// <para>
+        /// The identifier (ID) of the source backup from which the new backup was copied.
+        /// </para>
         /// </summary>
         public string SourceBackup
         {
@@ -68,7 +75,11 @@ namespace Amazon.CloudHSMV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceCluster.
+        /// Gets and sets the property SourceCluster. 
+        /// <para>
+        /// The identifier (ID) of the cluster containing the source backup from which the new
+        /// backup was copied.
+        /// </para>
         /// </summary>
         public string SourceCluster
         {
@@ -83,7 +94,10 @@ namespace Amazon.CloudHSMV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceRegion.
+        /// Gets and sets the property SourceRegion. 
+        /// <para>
+        /// The AWS region that contains the source backup from which the new backup was copied.
+        /// </para>
         /// </summary>
         public string SourceRegion
         {
