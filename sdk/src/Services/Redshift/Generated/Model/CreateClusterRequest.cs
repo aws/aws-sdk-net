@@ -29,7 +29,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCluster operation.
-    /// Creates a new cluster.
+    /// Creates a new cluster with the specified parameters.
     /// 
     ///  
     /// <para>
@@ -163,7 +163,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>us-east-1d</code> 
+        /// Example: <code>us-east-2d</code> 
         /// </para>
         ///  
         /// <para>

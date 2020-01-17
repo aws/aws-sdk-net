@@ -29,8 +29,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyClusterMaintenance operation.
-    /// Modifies the maintenance settings of a cluster. For example, you can defer a maintenance
-    /// window. You can also update or cancel a deferment.
+    /// Modifies the maintenance settings of a cluster.
     /// </summary>
     public partial class ModifyClusterMaintenanceRequest : AmazonRedshiftRequest
     {

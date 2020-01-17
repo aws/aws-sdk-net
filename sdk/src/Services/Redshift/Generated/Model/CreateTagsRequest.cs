@@ -29,7 +29,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTags operation.
-    /// Adds one or more tags to a specified resource.
+    /// Adds tags to a cluster.
     /// 
     ///  
     /// <para>
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property ResourceName. 
         /// <para>
         /// The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example,
-        /// <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. 
+        /// <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -369,7 +369,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies the settings for a list of snapshots.
+        /// Modifies the settings for a set of cluster snapshots.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchModifyClusterSnapshots service method.</param>
         /// 
@@ -391,7 +391,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies the settings for a list of snapshots.
+        /// Modifies the settings for a set of cluster snapshots.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchModifyClusterSnapshots service method.</param>
         /// <param name="cancellationToken">
@@ -419,7 +419,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Cancels a resize operation.
+        /// Cancels a resize operation for a cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelResize service method.</param>
         /// 
@@ -442,7 +442,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Cancels a resize operation.
+        /// Cancels a resize operation for a cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelResize service method.</param>
         /// <param name="cancellationToken">
@@ -571,7 +571,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Creates a new cluster.
+        /// Creates a new cluster with the specified parameters.
         /// 
         ///  
         /// <para>
@@ -667,7 +667,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Creates a new cluster.
+        /// Creates a new cluster with the specified parameters.
         /// 
         ///  
         /// <para>
@@ -1589,7 +1589,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Creates a new snapshot schedule.
+        /// Creates a snapshot schedule with the rate of every 12 hours.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotSchedule service method.</param>
         /// 
@@ -1615,7 +1615,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Creates a new snapshot schedule.
+        /// Creates a snapshot schedule with the rate of every 12 hours.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotSchedule service method.</param>
         /// <param name="cancellationToken">
@@ -1647,7 +1647,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Adds one or more tags to a specified resource.
+        /// Adds tags to a cluster.
         /// 
         ///  
         /// <para>
@@ -1678,7 +1678,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Adds one or more tags to a specified resource.
+        /// Adds tags to a cluster.
         /// 
         ///  
         /// <para>
@@ -1715,10 +1715,11 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Deletes a previously provisioned cluster. A successful response from the web service
-        /// indicates that the request was received correctly. Use <a>DescribeClusters</a> to
-        /// monitor the status of the deletion. The delete operation cannot be canceled or reverted
-        /// once submitted. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+        /// Deletes a previously provisioned cluster without its final snapshot being created.
+        /// A successful response from the web service indicates that the request was received
+        /// correctly. Use <a>DescribeClusters</a> to monitor the status of the deletion. The
+        /// delete operation cannot be canceled or reverted once submitted. For more information
+        /// about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         ///  
@@ -1765,10 +1766,11 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Deletes a previously provisioned cluster. A successful response from the web service
-        /// indicates that the request was received correctly. Use <a>DescribeClusters</a> to
-        /// monitor the status of the deletion. The delete operation cannot be canceled or reverted
-        /// once submitted. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+        /// Deletes a previously provisioned cluster without its final snapshot being created.
+        /// A successful response from the web service indicates that the request was received
+        /// correctly. Use <a>DescribeClusters</a> to monitor the status of the deletion. The
+        /// delete operation cannot be canceled or reverted once submitted. For more information
+        /// about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         ///  
@@ -2299,8 +2301,8 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Deletes a tag or tags from a resource. You must provide the ARN of the resource from
-        /// which you want to delete the tag or tags.
+        /// Deletes tags from a resource. You must provide the ARN of the resource from which
+        /// you want to delete the tag or tags.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// 
@@ -2317,8 +2319,8 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Deletes a tag or tags from a resource. You must provide the ARN of the resource from
-        /// which you want to delete the tag or tags.
+        /// Deletes tags from a resource. You must provide the ARN of the resource from which
+        /// you want to delete the tag or tags.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// <param name="cancellationToken">
@@ -4473,7 +4475,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Returns the total amount of snapshot usage and provisioned storage in megabytes.
+        /// Returns account level backups storage size and provisional storage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStorage service method.</param>
         /// 
@@ -4484,7 +4486,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Returns the total amount of snapshot usage and provisioned storage in megabytes.
+        /// Returns account level backups storage size and provisional storage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStorage service method.</param>
         /// <param name="cancellationToken">
@@ -5113,19 +5115,21 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies the settings for a cluster. For example, you can add another security or
-        /// parameter group, update the preferred maintenance window, or change the master user
-        /// password. Resetting a cluster password or modifying the security groups associated
-        /// with a cluster do not need a reboot. However, modifying a parameter group requires
-        /// a reboot for parameters to take effect. For more information about managing clusters,
-        /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// Modifies the settings for a cluster.
         /// 
         ///  
         /// <para>
         /// You can also change node type and the number of nodes to scale up or down the cluster.
         /// When resizing a cluster, you must specify both the number of nodes and the node type
         /// even if one of the parameters does not change.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can add another security or parameter group, or change the master user password.
+        /// Resetting a cluster password or modifying the security groups associated with a cluster
+        /// do not need a reboot. However, modifying a parameter group requires a reboot for parameters
+        /// to take effect. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCluster service method.</param>
@@ -5203,19 +5207,21 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies the settings for a cluster. For example, you can add another security or
-        /// parameter group, update the preferred maintenance window, or change the master user
-        /// password. Resetting a cluster password or modifying the security groups associated
-        /// with a cluster do not need a reboot. However, modifying a parameter group requires
-        /// a reboot for parameters to take effect. For more information about managing clusters,
-        /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// Modifies the settings for a cluster.
         /// 
         ///  
         /// <para>
         /// You can also change node type and the number of nodes to scale up or down the cluster.
         /// When resizing a cluster, you must specify both the number of nodes and the node type
         /// even if one of the parameters does not change.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can add another security or parameter group, or change the master user password.
+        /// Resetting a cluster password or modifying the security groups associated with a cluster
+        /// do not need a reboot. However, modifying a parameter group requires a reboot for parameters
+        /// to take effect. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCluster service method.</param>
@@ -5399,8 +5405,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies the maintenance settings of a cluster. For example, you can defer a maintenance
-        /// window. You can also update or cancel a deferment.
+        /// Modifies the maintenance settings of a cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterMaintenance service method.</param>
         /// 
@@ -5414,8 +5419,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies the maintenance settings of a cluster. For example, you can defer a maintenance
-        /// window. You can also update or cancel a deferment.
+        /// Modifies the maintenance settings of a cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterMaintenance service method.</param>
         /// <param name="cancellationToken">
@@ -5492,6 +5496,11 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Modifies the settings for a snapshot.
+        /// 
+        ///  
+        /// <para>
+        /// This exanmple modifies the manual retention period setting for a cluster snapshot.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterSnapshot service method.</param>
         /// 
@@ -5518,6 +5527,11 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Modifies the settings for a snapshot.
+        /// 
+        ///  
+        /// <para>
+        /// This exanmple modifies the manual retention period setting for a cluster snapshot.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -5761,7 +5775,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modify a scheduled action.
+        /// Modifies a scheduled action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyScheduledAction service method.</param>
         /// 
@@ -5787,7 +5801,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modify a scheduled action.
+        /// Modifies a scheduled action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyScheduledAction service method.</param>
         /// <param name="cancellationToken">

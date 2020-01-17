@@ -121,7 +121,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property ResourceName. 
         /// <para>
         /// The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For
-        /// example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. 
+        /// example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. 
         /// </para>
         /// </summary>
         public string ResourceName

@@ -157,7 +157,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>us-east-1a</code> 
+        /// Example: <code>us-east-2a</code> 
         /// </para>
         /// </summary>
         public string AvailabilityZone

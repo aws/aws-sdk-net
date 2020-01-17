@@ -164,7 +164,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: cluster, cluster-parameter-group, cluster-security-group, and cluster-snapshot.
+        /// Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot,
+        /// and scheduled-action.
         /// </para>
         /// </summary>
         public string SourceType

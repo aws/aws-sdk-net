@@ -29,7 +29,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelResize operation.
-    /// Cancels a resize operation.
+    /// Cancels a resize operation for a cluster.
     /// </summary>
     public partial class CancelResizeRequest : AmazonRedshiftRequest
     {

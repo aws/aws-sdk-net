@@ -29,7 +29,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchModifyClusterSnapshots operation.
-    /// Modifies the settings for a list of snapshots.
+    /// Modifies the settings for a set of cluster snapshots.
     /// </summary>
     public partial class BatchModifyClusterSnapshotsRequest : AmazonRedshiftRequest
     {

@@ -30,6 +30,11 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the ModifyClusterSnapshot operation.
     /// Modifies the settings for a snapshot.
+    /// 
+    ///  
+    /// <para>
+    /// This exanmple modifies the manual retention period setting for a cluster snapshot.
+    /// </para>
     /// </summary>
     public partial class ModifyClusterSnapshotRequest : AmazonRedshiftRequest
     {

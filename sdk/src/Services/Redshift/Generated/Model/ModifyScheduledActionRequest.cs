@@ -29,7 +29,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyScheduledAction operation.
-    /// Modify a scheduled action.
+    /// Modifies a scheduled action.
     /// </summary>
     public partial class ModifyScheduledActionRequest : AmazonRedshiftRequest
     {

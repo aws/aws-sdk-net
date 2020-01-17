@@ -184,8 +184,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// The source type of the events returned the Amazon Redshift event notification, such
-        /// as cluster, or cluster-snapshot.
+        /// The source type of the events returned by the Amazon Redshift event notification,
+        /// such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group,
+        /// or scheduled-action. 
         /// </para>
         /// </summary>
         public string SourceType

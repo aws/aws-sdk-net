@@ -29,19 +29,21 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyCluster operation.
-    /// Modifies the settings for a cluster. For example, you can add another security or
-    /// parameter group, update the preferred maintenance window, or change the master user
-    /// password. Resetting a cluster password or modifying the security groups associated
-    /// with a cluster do not need a reboot. However, modifying a parameter group requires
-    /// a reboot for parameters to take effect. For more information about managing clusters,
-    /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+    /// Modifies the settings for a cluster.
     /// 
     ///  
     /// <para>
     /// You can also change node type and the number of nodes to scale up or down the cluster.
     /// When resizing a cluster, you must specify both the number of nodes and the node type
     /// even if one of the parameters does not change.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can add another security or parameter group, or change the master user password.
+    /// Resetting a cluster password or modifying the security groups associated with a cluster
+    /// do not need a reboot. However, modifying a parameter group requires a reboot for parameters
+    /// to take effect. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// </para>
     /// </summary>
     public partial class ModifyClusterRequest : AmazonRedshiftRequest
@@ -308,11 +310,15 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide
-        /// a value for the <code>KmsKeyId</code> parameter, we will encrypt the cluster with
+        /// Indicates whether the cluster is encrypted. If the value is encrypted (true) and you
+        /// provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with
         /// the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>,
-        /// we will encrypt with the default key. In the China region we will use legacy encryption
-        /// if you specify that the cluster is encrypted.
+        /// we encrypt with the default key. In the China region we use legacy encryption if you
+        /// specify that the cluster is encrypted.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is not encrypted (false), then the cluster is decrypted. 
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -573,12 +579,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// When you submit your request to resize a cluster, Amazon Redshift sets access permissions
-        /// for the cluster to read-only. After Amazon Redshift provisions a new cluster according
-        /// to your resize requirements, there will be a temporary outage while the old cluster
-        /// is deleted and your connection is switched to the new cluster. When the new connection
-        /// is complete, the original access permissions for the cluster are restored. You can
-        /// use <a>DescribeResize</a> to track the progress of the resize request. 
+        ///  For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing
+        /// Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -607,12 +609,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// When you submit your request to resize a cluster, Amazon Redshift sets access permissions
-        /// for the cluster to read-only. After Amazon Redshift provisions a new cluster according
-        /// to your resize requirements, there will be a temporary outage while the old cluster
-        /// is deleted and your connection is switched to the new cluster. When the new connection
-        /// is complete, the original access permissions for the cluster are restored. You can
-        /// use <a>DescribeResize</a> to track the progress of the resize request. 
+        ///  For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing
+        /// Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
         ///  
         /// <para>

@@ -29,7 +29,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStorage operation.
-    /// Returns the total amount of snapshot usage and provisioned storage in megabytes.
+    /// Returns account level backups storage size and provisional storage.
     /// </summary>
     public partial class DescribeStorageRequest : AmazonRedshiftRequest
     {

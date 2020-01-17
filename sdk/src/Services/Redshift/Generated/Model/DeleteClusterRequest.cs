@@ -29,10 +29,11 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCluster operation.
-    /// Deletes a previously provisioned cluster. A successful response from the web service
-    /// indicates that the request was received correctly. Use <a>DescribeClusters</a> to
-    /// monitor the status of the deletion. The delete operation cannot be canceled or reverted
-    /// once submitted. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+    /// Deletes a previously provisioned cluster without its final snapshot being created.
+    /// A successful response from the web service indicates that the request was received
+    /// correctly. Use <a>DescribeClusters</a> to monitor the status of the deletion. The
+    /// delete operation cannot be canceled or reverted once submitted. For more information
+    /// about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
     /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// 
     ///  
