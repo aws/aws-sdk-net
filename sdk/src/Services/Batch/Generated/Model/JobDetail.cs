@@ -129,7 +129,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property DependsOn. 
         /// <para>
-        /// A list of job names or IDs on which this job depends.
+        /// A list of job IDs on which this job depends.
         /// </para>
         /// </summary>
         public List<JobDependency> DependsOn

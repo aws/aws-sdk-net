@@ -569,7 +569,8 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Deregisters an AWS Batch job definition.
+        /// Deregisters an AWS Batch job definition. Job definitions will be permanently deleted
+        /// after 180 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterJobDefinition service method.</param>
         /// <param name="cancellationToken">
