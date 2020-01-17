@@ -56,6 +56,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEfsVolumeConfiguration())
+            {
+                context.Writer.WritePropertyName("efsVolumeConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EFSVolumeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EfsVolumeConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetHost())
             {
                 context.Writer.WritePropertyName("host");

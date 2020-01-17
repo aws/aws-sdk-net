@@ -79,7 +79,12 @@ namespace Amazon.ECS.Model
         /// The managed termination protection setting to use for the Auto Scaling group capacity
         /// provider. This determines whether the Auto Scaling group has managed termination protection.
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// When using managed termination protection, managed scaling must also be used otherwise
+        /// managed termination protection will not work.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2
         /// instances in an Auto Scaling group that contain tasks from being terminated during

@@ -37,6 +37,7 @@ namespace Amazon.ECS.Model
     public partial class Volume
     {
         private DockerVolumeConfiguration _dockerVolumeConfiguration;
+        private EFSVolumeConfiguration _efsVolumeConfiguration;
         private HostVolumeProperties _host;
         private string _name;
 
@@ -45,8 +46,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// This parameter is specified when you are using Docker volumes. Docker volumes are
         /// only supported when you are using the EC2 launch type. Windows containers only support
-        /// the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code>
-        /// instead.
+        /// the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code>
+        /// parameter instead.
         /// </para>
         /// </summary>
         public DockerVolumeConfiguration DockerVolumeConfiguration
@@ -59,6 +60,33 @@ namespace Amazon.ECS.Model
         internal bool IsSetDockerVolumeConfiguration()
         {
             return this._dockerVolumeConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EfsVolumeConfiguration. 
+        /// <para>
+        /// This parameter is specified when you are using an Amazon Elastic File System (Amazon
+        /// EFS) file storage. Amazon EFS file systems are only supported when you are using the
+        /// EC2 launch type.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        ///  <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined
+        /// by and subject to the Beta Service Participation Service Terms located at <a href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
+        /// ("Beta Terms"). These Beta Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public EFSVolumeConfiguration EfsVolumeConfiguration
+        {
+            get { return this._efsVolumeConfiguration; }
+            set { this._efsVolumeConfiguration = value; }
+        }
+
+        // Check to see if EfsVolumeConfiguration property is set
+        internal bool IsSetEfsVolumeConfiguration()
+        {
+            return this._efsVolumeConfiguration != null;
         }
 
         /// <summary>

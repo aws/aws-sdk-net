@@ -326,10 +326,36 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the cluster. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>.
-        /// <code>ACTIVE</code> indicates that you can register container instances with the cluster
-        /// and the associated instances can accept tasks.
+        /// The status of the cluster. The following are the possible states that will be returned.
         /// </para>
+        ///  <dl> <dt>ACTIVE</dt> <dd> 
+        /// <para>
+        /// The cluster is ready to accept tasks and if applicable you can register container
+        /// instances with the cluster.
+        /// </para>
+        ///  </dd> <dt>PROVISIONING</dt> <dd> 
+        /// <para>
+        /// The cluster has capacity providers associated with it and the resources needed for
+        /// the capacity provider are being created.
+        /// </para>
+        ///  </dd> <dt>DEPROVISIONING</dt> <dd> 
+        /// <para>
+        /// The cluster has capacity providers associated with it and the resources needed for
+        /// the capacity provider are being deleted.
+        /// </para>
+        ///  </dd> <dt>FAILED</dt> <dd> 
+        /// <para>
+        /// The cluster has capacity providers associated with it and the resources needed for
+        /// the capacity provider have failed to create.
+        /// </para>
+        ///  </dd> <dt>INACTIVE</dt> <dd> 
+        /// <para>
+        /// The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain
+        /// discoverable in your account for a period of time. However, this behavior is subject
+        /// to change in the future, so you should not rely on <code>INACTIVE</code> clusters
+        /// persisting.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public string Status
         {

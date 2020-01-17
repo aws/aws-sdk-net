@@ -119,17 +119,6 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For example, if you run a single-container task on a single-core instance type with
-        /// 512 CPU units specified for that container, and that is the only task running on the
-        /// container instance, that container could use the full 1,024 CPU unit share at any
-        /// given time. However, if you launched another copy of the same task on that container
-        /// instance, each task would be guaranteed a minimum of 512 CPU units when needed, and
-        /// each container could float to higher CPU usage if the other container was not using
-        /// it, but if both tasks were 100% active all of the time, they would be limited to 512
-        /// CPU units.
-        /// </para>
-        ///  
-        /// <para>
         /// Linux containers share unallocated CPU units with other containers on the container
         /// instance with the same ratio as their allocated amount. For example, if you run a
         /// single-container task on a single-core instance type with 512 CPU units specified

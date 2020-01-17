@@ -48,8 +48,8 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// If you are using tasks that use the Fargate launch type, container dependency parameters
-    /// are not supported.
+    /// For tasks using the Fargate launch type, this parameter requires that the task or
+    /// service uses platform version 1.3.0 or later.
     /// </para>
     ///  </note>
     /// </summary>
