@@ -22,6 +22,9 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for AWS Import Export.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
+    [Obsolete(
+            "The Amazon.Auth.AccessContolPolicy classes are out of date and are no longer being maintained.\n" +
+            "Please construct policy documents using the information found here: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json")]
     public static class ImportExportActionIdentifiers
     {
         public static readonly ActionIdentifier AllImportExportActions = new ActionIdentifier("importexport:*");
@@ -33,3 +36,4 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier GetStatus = new ActionIdentifier("importexport:GetStatus");
     }
 }
+
