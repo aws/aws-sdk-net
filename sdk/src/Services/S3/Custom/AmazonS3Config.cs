@@ -169,8 +169,8 @@ namespace Amazon.S3
         /// </summary>
         private void UpdateEndpointForUsEast1Regional()
         {
-            if (GetEndpointFlagValueForUsEast1Regional() == S3UsEast1RegionalEndpointValue.Regional &&
-                this.RegionEndpoint == legacyUSEast1GlobalRegion && !UseAccelerateEndpoint && !UseDualstackEndpoint)
+            if (this.RegionEndpoint == legacyUSEast1GlobalRegion && !UseAccelerateEndpoint && !UseDualstackEndpoint
+                && GetEndpointFlagValueForUsEast1Regional() == S3UsEast1RegionalEndpointValue.Regional)
             {
                 // override the regional endpoint
                 this.RegionEndpoint = RegionEndpoint.GetBySystemName("us-east-1-regional");
