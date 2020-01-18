@@ -31,9 +31,11 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
         public void GivenAConfigWithFlagNotSetThenTheEnvironmentVariableIsRespected(string s3FlagValue, string expectedEndpointSystemName)
         {
             var olds3EnvValue = Environment.GetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable);
+            var oldRegion = Environment.GetEnvironmentVariable("AWS_REGION");
             try
             {
                 Environment.SetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable, s3FlagValue);
+                Environment.SetEnvironmentVariable("AWS_REGION", "us-east-1");
                 var config = new AmazonS3Config()
                 {
                     RegionEndpoint = Amazon.RegionEndpoint.USEast1
@@ -44,6 +46,7 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
             }
             finally
             {
+                Environment.SetEnvironmentVariable("AWS_REGION", oldRegion);
                 Environment.SetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable, olds3EnvValue);
             }
         }
@@ -55,9 +58,11 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
         public void GivenAConfigWithFlagSetThenTheEnvironmentVariableIsNotUsed(string s3EnvValue, S3UsEast1RegionalEndpointValue configFlagValue, S3UsEast1RegionalEndpointValue expectedValue, string expectedEndpointSystemName)
         {
             var olds3EnvValue = Environment.GetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable);
+            var oldRegion = Environment.GetEnvironmentVariable("AWS_REGION");
             try
             {
                 Environment.SetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable, s3EnvValue);
+                Environment.SetEnvironmentVariable("AWS_REGION", "us-east-1");
                 var config = new AmazonS3Config()
                 {
                     RegionEndpoint = Amazon.RegionEndpoint.USEast1,
@@ -70,6 +75,7 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
             }
             finally
             {
+                Environment.SetEnvironmentVariable("AWS_REGION", oldRegion);
                 Environment.SetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable, olds3EnvValue);
             }
         }
@@ -82,8 +88,10 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
         public void GivenAConfigWithFlagSetAndAnEmptyEnvironmentVariableThenTheFlagIsNotAltered(S3UsEast1RegionalEndpointValue s3FlagValue)
         {
             var olds3EnvValue = Environment.GetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable);
+            var oldRegion = Environment.GetEnvironmentVariable("AWS_REGION");
             try
             {
+                Environment.SetEnvironmentVariable("AWS_REGION", "us-east-1");
                 Environment.SetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable, "");
                 var config = new AmazonS3Config()
                 {
@@ -94,6 +102,7 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
             finally
             {
                 Environment.SetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable, olds3EnvValue);
+                Environment.SetEnvironmentVariable("AWS_REGION", oldRegion);
             }
         }
 
@@ -105,14 +114,18 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
         public void GivenAConfigWithAndAnInvalidEnvironmentVariableThenInvalidOperationExceptionIsThrown(string invalidValue)
         {
             var olds3EnvValue = Environment.GetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable);
+            var oldRegion = Environment.GetEnvironmentVariable("AWS_REGION");
             try
             {
+                Environment.SetEnvironmentVariable("AWS_REGION", "us-east-1");
                 Environment.SetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable, invalidValue);
+                
                 Assert.ThrowsException<InvalidOperationException>(() => new AmazonS3Config());
             }
             finally
             {
                 Environment.SetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable, olds3EnvValue);
+                Environment.SetEnvironmentVariable("AWS_REGION", oldRegion);
             }
         }
     }
