@@ -22,6 +22,9 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for Auto Scaling.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
+    [Obsolete(
+            "The Amazon.Auth.AccessContolPolicy classes are out of date and are no longer being maintained.\n" +
+            "Please construct policy documents using the information found here: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json")]
     public static class AutoScalingActionIdentifiers
     {
         public static readonly ActionIdentifier AllAutoScalingActions = new ActionIdentifier("autoscaling:*");
@@ -64,3 +67,4 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier UpdateAutoScalingGroup = new ActionIdentifier("autoscaling:UpdateAutoScalingGroup");
     }
 }
+

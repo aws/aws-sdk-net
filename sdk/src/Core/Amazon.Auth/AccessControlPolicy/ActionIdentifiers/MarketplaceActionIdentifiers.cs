@@ -22,6 +22,9 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for AWS Marketplace.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
+    [Obsolete(
+            "The Amazon.Auth.AccessContolPolicy classes are out of date and are no longer being maintained.\n" +
+            "Please construct policy documents using the information found here: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json")]
     public static class MarketplaceActionIdentifiers
     {
         public static readonly ActionIdentifier AllMarketplaceActions = new ActionIdentifier("aws-marketplace:*");
@@ -31,3 +34,4 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier ViewSubscriptions = new ActionIdentifier("aws-marketplace:ViewSubscriptions");
     }
 }
+

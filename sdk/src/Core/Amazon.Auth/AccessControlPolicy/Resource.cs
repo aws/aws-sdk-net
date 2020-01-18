@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -32,6 +32,9 @@ namespace Amazon.Auth.AccessControlPolicy
     /// "A has permission to do B to C where D applies."
     /// </para>
     /// </summary>
+    [Obsolete(
+            "The Amazon.Auth.AccessContolPolicy classes are out of date and are no longer being maintained.\n" +
+            "Please construct policy documents using the information found here: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json")]
     public class Resource
     {
         private string resource;
@@ -86,3 +89,4 @@ namespace Amazon.Auth.AccessControlPolicy
         }
     }
 }
+

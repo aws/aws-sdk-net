@@ -22,6 +22,9 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for Amazon Cognito Identity.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
+    [Obsolete(
+            "The Amazon.Auth.AccessContolPolicy classes are out of date and are no longer being maintained.\n" +
+            "Please construct policy documents using the information found here: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json")]
     public static class CognitoIdentityActionIdentifiers
     {
         public static readonly ActionIdentifier AllCognitoIdentityActions = new ActionIdentifier("cognito-identity:*");
@@ -34,3 +37,4 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier UpdateIdentityPool = new ActionIdentifier("cognito-identity:UpdateIdentityPool");
     }
 }
+
