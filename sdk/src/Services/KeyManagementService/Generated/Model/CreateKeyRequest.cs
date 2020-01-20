@@ -43,7 +43,8 @@ namespace Amazon.KeyManagementService.Model
     ///  <b>Symmetric CMKs</b> contain a 256-bit symmetric key that never leaves AWS KMS unencrypted.
     /// To use the CMK, you must call AWS KMS. You can use a symmetric CMK to encrypt and
     /// decrypt small amounts of data, but they are typically used to generate <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
-    /// keys</a> or data key pairs. For details, see <a>GenerateDataKey</a> and <a>GenerateDataKeyPair</a>.
+    /// keys</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-key-pairs">data
+    /// keys pairs</a>. For details, see <a>GenerateDataKey</a> and <a>GenerateDataKeyPair</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -170,23 +171,32 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CustomerMasterKeySpec. 
         /// <para>
-        /// Specifies the type of CMK to create. The <code>CustomerMasterKeySpec</code> determines
-        /// whether the CMK contains a symmetric key or an asymmetric key pair. It also determines
-        /// the encryption algorithms or signing algorithms that the CMK supports. You can't change
-        /// the <code>CustomerMasterKeySpec</code> after the CMK is created. To further restrict
-        /// the algorithms that can be used with the CMK, use its key policy or IAM policy.
+        /// Specifies the type of CMK to create. The default value, <code>SYMMETRIC_DEFAULT</code>,
+        /// creates a CMK with a 256-bit symmetric key for encryption and decryption. For help
+        /// choosing a key spec for your CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose.html">How
+        /// to Choose Your CMK Configuration</a> in the <i>AWS Key Management Service Developer
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For help with choosing a key spec for your CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#cmk-key-spec">Selecting
-        /// a Customer Master Key Spec</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// The <code>CustomerMasterKeySpec</code> determines whether the CMK contains a symmetric
+        /// key or an asymmetric key pair. It also determines the encryption algorithms or signing
+        /// algorithms that the CMK supports. You can't change the <code>CustomerMasterKeySpec</code>
+        /// after the CMK is created. To further restrict the algorithms that can be used with
+        /// the CMK, use a condition key in its key policy or IAM policy. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>
+        /// or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
+        /// Algorithm</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
-        /// The default value, <code>SYMMETRIC_DEFAULT</code>, creates a CMK with a 256-bit symmetric
-        /// key.
+        ///  <a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services
+        /// that are integrated with AWS KMS</a> use symmetric CMKs to protect your data. These
+        /// services do not support asymmetric CMKs. For help determining whether a CMK is symmetric
+        /// or asymmetric, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
+        /// Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
-        ///  
+        ///  </important> 
         /// <para>
         /// AWS KMS supports the following key specs for CMKs:
         /// </para>
@@ -428,7 +438,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// The key policy size limit is 32 kilobytes (32768 bytes).
+        /// The key policy size quota is 32 kilobytes (32768 bytes).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=131072)]

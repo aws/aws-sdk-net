@@ -152,7 +152,9 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The key policy size limit is 32 kilobytes (32768 bytes).
+        /// The key policy cannot exceed 32 kilobytes (32768 bytes). For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource
+        /// Quotas</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=131072)]

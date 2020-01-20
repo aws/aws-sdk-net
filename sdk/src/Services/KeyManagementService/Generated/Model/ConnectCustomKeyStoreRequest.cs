@@ -43,7 +43,9 @@ namespace Amazon.KeyManagementService.Model
     /// To connect a custom key store, its associated AWS CloudHSM cluster must have at least
     /// one active HSM. To get the number of active HSMs in a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
     /// operation. To add HSMs to the cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
-    /// operation.
+    /// operation. Also, the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+    /// <code>kmsuser</code> crypto user</a> (CU) must not be logged into the cluster. This
+    /// prevents AWS KMS from using this account to log in.
     /// </para>
     ///  
     /// <para>
@@ -58,8 +60,8 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// During the connection process, AWS KMS finds the AWS CloudHSM cluster that is associated
     /// with the custom key store, creates the connection infrastructure, connects to the
-    /// cluster, logs into the AWS CloudHSM client as the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-    /// <code>kmsuser</code> crypto user</a> (CU), and rotates its password.
+    /// cluster, logs into the AWS CloudHSM client as the <code>kmsuser</code> CU, and rotates
+    /// its password.
     /// </para>
     ///  
     /// <para>

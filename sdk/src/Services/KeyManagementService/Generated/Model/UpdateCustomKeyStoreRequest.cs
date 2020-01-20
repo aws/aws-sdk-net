@@ -155,7 +155,7 @@ namespace Amazon.KeyManagementService.Model
         /// cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=7, Max=32)]
         public string KeyStorePassword
         {
             get { return this._keyStorePassword; }

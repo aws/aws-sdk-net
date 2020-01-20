@@ -138,7 +138,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// Specifies the CMK that encrypts the private key in the data key pair. You must specify
-        /// a symmetric CMK. You cannot use an asymmetric CMK. 
+        /// a symmetric CMK. You cannot use an asymmetric CMK. To get the type of your CMK, use
+        /// the <a>DescribeKey</a> operation. 
         /// </para>
         ///  
         /// <para>

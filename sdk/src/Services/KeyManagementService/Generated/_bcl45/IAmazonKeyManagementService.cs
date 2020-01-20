@@ -375,7 +375,9 @@ namespace Amazon.KeyManagementService
         /// To connect a custom key store, its associated AWS CloudHSM cluster must have at least
         /// one active HSM. To get the number of active HSMs in a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
         /// operation. To add HSMs to the cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
-        /// operation.
+        /// operation. Also, the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+        /// <code>kmsuser</code> crypto user</a> (CU) must not be logged into the cluster. This
+        /// prevents AWS KMS from using this account to log in.
         /// </para>
         ///  
         /// <para>
@@ -390,8 +392,8 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// During the connection process, AWS KMS finds the AWS CloudHSM cluster that is associated
         /// with the custom key store, creates the connection infrastructure, connects to the
-        /// cluster, logs into the AWS CloudHSM client as the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-        /// <code>kmsuser</code> crypto user</a> (CU), and rotates its password.
+        /// cluster, logs into the AWS CloudHSM client as the <code>kmsuser</code> CU, and rotates
+        /// its password.
         /// </para>
         ///  
         /// <para>
@@ -521,7 +523,9 @@ namespace Amazon.KeyManagementService
         /// To connect a custom key store, its associated AWS CloudHSM cluster must have at least
         /// one active HSM. To get the number of active HSMs in a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
         /// operation. To add HSMs to the cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
-        /// operation.
+        /// operation. Also, the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+        /// <code>kmsuser</code> crypto user</a> (CU) must not be logged into the cluster. This
+        /// prevents AWS KMS from using this account to log in.
         /// </para>
         ///  
         /// <para>
@@ -536,8 +540,8 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// During the connection process, AWS KMS finds the AWS CloudHSM cluster that is associated
         /// with the custom key store, creates the connection infrastructure, connects to the
-        /// cluster, logs into the AWS CloudHSM client as the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-        /// <code>kmsuser</code> crypto user</a> (CU), and rotates its password.
+        /// cluster, logs into the AWS CloudHSM client as the <code>kmsuser</code> CU, and rotates
+        /// its password.
         /// </para>
         ///  
         /// <para>
@@ -778,8 +782,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -907,8 +911,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1041,8 +1045,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1174,8 +1178,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1549,8 +1553,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1662,8 +1666,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1692,7 +1696,8 @@ namespace Amazon.KeyManagementService
         ///  <b>Symmetric CMKs</b> contain a 256-bit symmetric key that never leaves AWS KMS unencrypted.
         /// To use the CMK, you must call AWS KMS. You can use a symmetric CMK to encrypt and
         /// decrypt small amounts of data, but they are typically used to generate <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
-        /// keys</a> or data key pairs. For details, see <a>GenerateDataKey</a> and <a>GenerateDataKeyPair</a>.
+        /// keys</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-key-pairs">data
+        /// keys pairs</a>. For details, see <a>GenerateDataKey</a> and <a>GenerateDataKeyPair</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1858,8 +1863,8 @@ namespace Amazon.KeyManagementService
         /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
@@ -1893,7 +1898,8 @@ namespace Amazon.KeyManagementService
         ///  <b>Symmetric CMKs</b> contain a 256-bit symmetric key that never leaves AWS KMS unencrypted.
         /// To use the CMK, you must call AWS KMS. You can use a symmetric CMK to encrypt and
         /// decrypt small amounts of data, but they are typically used to generate <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
-        /// keys</a> or data key pairs. For details, see <a>GenerateDataKey</a> and <a>GenerateDataKeyPair</a>.
+        /// keys</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-key-pairs">data
+        /// keys pairs</a>. For details, see <a>GenerateDataKey</a> and <a>GenerateDataKeyPair</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2062,8 +2068,8 @@ namespace Amazon.KeyManagementService
         /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
@@ -3962,8 +3968,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -4011,8 +4017,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -4064,8 +4070,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -4117,8 +4123,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -4761,7 +4767,8 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To generate a data key, specify the symmetric CMK that will be used to encrypt the
-        /// data key. You cannot use an asymmetric CMK to generate data keys.
+        /// data key. You cannot use an asymmetric CMK to generate data keys. To get the type
+        /// of your CMK, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -4909,7 +4916,8 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To generate a data key, specify the symmetric CMK that will be used to encrypt the
-        /// data key. You cannot use an asymmetric CMK to generate data keys.
+        /// data key. You cannot use an asymmetric CMK to generate data keys. To get the type
+        /// of your CMK, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -5541,16 +5549,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// To generate a data key, you must specify the symmetric customer master key (CMK) that
         /// is used to encrypt the data key. You cannot use an asymmetric CMK to generate a data
-        /// key. To get the type of your CMK, use the <code>KeySpec</code> field in the <a>DescribeKey</a>
-        /// response. You must also specify the length of the data key using either the <code>KeySpec</code>
-        /// or <code>NumberOfBytes</code> field (but not both). For common key lengths (128-bit
-        /// and 256-bit symmetric keys), use the <code>KeySpec</code> parameter. 
+        /// key. To get the type of your CMK, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
-        /// If the operation succeeds, you will find the plaintext copy of the data key in the
-        /// <code>Plaintext</code> field of the response, and the encrypted copy of the data key
-        /// in the <code>CiphertextBlob</code> field.
+        /// If the operation succeeds, you will find the encrypted copy of the data key in the
+        /// <code>CiphertextBlob</code> field.
         /// </para>
         ///  
         /// <para>
@@ -5667,16 +5671,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// To generate a data key, you must specify the symmetric customer master key (CMK) that
         /// is used to encrypt the data key. You cannot use an asymmetric CMK to generate a data
-        /// key. To get the type of your CMK, use the <code>KeySpec</code> field in the <a>DescribeKey</a>
-        /// response. You must also specify the length of the data key using either the <code>KeySpec</code>
-        /// or <code>NumberOfBytes</code> field (but not both). For common key lengths (128-bit
-        /// and 256-bit symmetric keys), use the <code>KeySpec</code> parameter. 
+        /// key. To get the type of your CMK, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
-        /// If the operation succeeds, you will find the plaintext copy of the data key in the
-        /// <code>Plaintext</code> field of the response, and the encrypted copy of the data key
-        /// in the <code>CiphertextBlob</code> field.
+        /// If the operation succeeds, you will find the encrypted copy of the data key in the
+        /// <code>CiphertextBlob</code> field.
         /// </para>
         ///  
         /// <para>
@@ -7183,7 +7183,7 @@ namespace Amazon.KeyManagementService
         /// These are predefined aliases that AWS has created but has not yet associated with
         /// a CMK. Aliases that AWS creates in your account, including predefined aliases, do
         /// not count against your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS
-        /// KMS aliases limit</a>.
+        /// KMS aliases quota</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAliases service method.</param>
@@ -7235,7 +7235,7 @@ namespace Amazon.KeyManagementService
         /// These are predefined aliases that AWS has created but has not yet associated with
         /// a CMK. Aliases that AWS creates in your account, including predefined aliases, do
         /// not count against your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS
-        /// KMS aliases limit</a>.
+        /// KMS aliases quota</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAliases service method.</param>
@@ -7799,7 +7799,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to AWS KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User Guide</i>. </li> </ul> The key policy size limit is 32 kilobytes (32768 bytes).</param>
+        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to AWS KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User Guide</i>. </li> </ul> The key policy cannot exceed 32 kilobytes (32768 bytes). For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource Quotas</a> in the <i>AWS Key Management Service Developer Guide</i>.</param>
         /// <param name="policyName">The name of the key policy. The only valid value is <code>default</code>.</param>
         /// 
         /// <returns>The response from the PutKeyPolicy service method, as returned by KeyManagementService.</returns>
@@ -7826,8 +7826,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
@@ -7880,8 +7880,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
@@ -7910,7 +7910,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to AWS KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User Guide</i>. </li> </ul> The key policy size limit is 32 kilobytes (32768 bytes).</param>
+        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to AWS KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User Guide</i>. </li> </ul> The key policy cannot exceed 32 kilobytes (32768 bytes). For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource Quotas</a> in the <i>AWS Key Management Service Developer Guide</i>.</param>
         /// <param name="policyName">The name of the key policy. The only valid value is <code>default</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -7940,8 +7940,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
@@ -7998,8 +7998,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
@@ -9567,8 +9567,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -9635,8 +9635,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">

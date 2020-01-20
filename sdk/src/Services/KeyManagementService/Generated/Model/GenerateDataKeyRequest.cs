@@ -42,7 +42,8 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// To generate a data key, specify the symmetric CMK that will be used to encrypt the
-    /// data key. You cannot use an asymmetric CMK to generate data keys.
+    /// data key. You cannot use an asymmetric CMK to generate data keys. To get the type
+    /// of your CMK, use the <a>DescribeKey</a> operation.
     /// </para>
     ///  
     /// <para>

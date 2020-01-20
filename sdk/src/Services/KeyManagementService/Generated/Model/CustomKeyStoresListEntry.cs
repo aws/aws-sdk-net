@@ -63,7 +63,13 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property ConnectionErrorCode. 
         /// <para>
-        /// Describes the connection error. Valid values are:
+        /// Describes the connection error. This field appears in the response only when the <code>ConnectionState</code>
+        /// is <code>FAILED</code>. For help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How
+        /// to Fix a Connection Failure</a> in <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -85,7 +91,9 @@ namespace Amazon.KeyManagementService.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>INVALID_CREDENTIALS</code> - AWS KMS does not have the correct password for
-        /// the <code>kmsuser</code> crypto user in the AWS CloudHSM cluster.
+        /// the <code>kmsuser</code> crypto user in the AWS CloudHSM cluster. Before you can connect
+        /// your custom key store to its AWS CloudHSM cluster, you must change the <code>kmsuser</code>
+        /// account password and update the key store password value for the custom key store.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -97,14 +105,28 @@ namespace Amazon.KeyManagementService.Model
         ///  <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out
         /// of the associated AWS CloudHSM cluster due to too many failed password attempts. Before
         /// you can connect your custom key store to its AWS CloudHSM cluster, you must change
-        /// the <code>kmsuser</code> account password and update the password value for the custom
-        /// key store.
+        /// the <code>kmsuser</code> account password and update the key store password value
+        /// for the custom key store.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// For help with connection failures, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
-        /// Custom Key Stores</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        ///  <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into
+        /// the the associated AWS CloudHSM cluster. This prevents AWS KMS from rotating the <code>kmsuser</code>
+        /// account password and logging into the cluster. Before you can connect your custom
+        /// key store to its AWS CloudHSM cluster, you must log the <code>kmsuser</code> CU out
+        /// of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster,
+        /// you must also and update the key store password value for the custom key store. For
+        /// help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How
+        /// to Log Out and Reconnect</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>USER_NOT_FOUND</code> - AWS KMS cannot find a <code>kmsuser</code> CU account
+        /// in the associated AWS CloudHSM cluster. Before you can connect your custom key store
+        /// to its AWS CloudHSM cluster, you must create a <code>kmsuser</code> CU account in
+        /// the cluster, and then update the key store password value for the custom key store.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ConnectionErrorCodeType ConnectionErrorCode
         {
@@ -139,7 +161,8 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful.
-        /// For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
+        /// The <code>ConnectionErrorCode</code> field in the response indicates the cause of
+        /// the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
         /// a Custom Key Store</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>

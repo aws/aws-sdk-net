@@ -51,7 +51,7 @@ namespace Amazon.KeyManagementService.Model
     /// These are predefined aliases that AWS has created but has not yet associated with
     /// a CMK. Aliases that AWS creates in your account, including predefined aliases, do
     /// not count against your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS
-    /// KMS aliases limit</a>.
+    /// KMS aliases quota</a>.
     /// </para>
     /// </summary>
     public partial class ListAliasesRequest : AmazonKeyManagementServiceRequest

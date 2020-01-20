@@ -108,6 +108,14 @@ namespace Amazon.KeyManagementService
         /// Constant USER_LOCKED_OUT for ConnectionErrorCodeType
         /// </summary>
         public static readonly ConnectionErrorCodeType USER_LOCKED_OUT = new ConnectionErrorCodeType("USER_LOCKED_OUT");
+        /// <summary>
+        /// Constant USER_LOGGED_IN for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType USER_LOGGED_IN = new ConnectionErrorCodeType("USER_LOGGED_IN");
+        /// <summary>
+        /// Constant USER_NOT_FOUND for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType USER_NOT_FOUND = new ConnectionErrorCodeType("USER_NOT_FOUND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

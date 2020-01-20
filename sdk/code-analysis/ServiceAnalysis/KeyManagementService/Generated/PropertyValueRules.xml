@@ -38,7 +38,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.KeyStorePassword</property>
-    <min>1</min>
+    <min>7</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.TrustAnchorCertificate</property>
@@ -657,7 +658,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.KeyStorePassword</property>
-    <min>1</min>
+    <min>7</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.NewCustomKeyStoreName</property>

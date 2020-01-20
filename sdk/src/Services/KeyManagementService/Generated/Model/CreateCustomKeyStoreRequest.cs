@@ -119,11 +119,15 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
+        /// The password must be a string of 7 to 32 characters. Its value is case sensitive.
+        /// </para>
+        ///  
+        /// <para>
         /// This parameter tells AWS KMS the <code>kmsuser</code> account password; it does not
         /// change the password in the AWS CloudHSM cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=7, Max=32)]
         public string KeyStorePassword
         {
             get { return this._keyStorePassword; }
