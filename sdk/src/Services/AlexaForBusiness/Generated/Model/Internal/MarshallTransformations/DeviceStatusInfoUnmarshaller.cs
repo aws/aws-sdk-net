@@ -70,6 +70,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConnectionStatusUpdatedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionStatusUpdatedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeviceStatusDetails", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DeviceStatusDetail, DeviceStatusDetailUnmarshaller>(DeviceStatusDetailUnmarshaller.Instance);

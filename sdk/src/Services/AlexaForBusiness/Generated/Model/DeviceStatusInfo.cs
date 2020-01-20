@@ -33,6 +33,7 @@ namespace Amazon.AlexaForBusiness.Model
     public partial class DeviceStatusInfo
     {
         private ConnectionStatus _connectionStatus;
+        private DateTime? _connectionStatusUpdatedTime;
         private List<DeviceStatusDetail> _deviceStatusDetails = new List<DeviceStatusDetail>();
 
         /// <summary>
@@ -51,6 +52,24 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetConnectionStatus()
         {
             return this._connectionStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionStatusUpdatedTime. 
+        /// <para>
+        /// The time (in epoch) when the device connection status changed.
+        /// </para>
+        /// </summary>
+        public DateTime ConnectionStatusUpdatedTime
+        {
+            get { return this._connectionStatusUpdatedTime.GetValueOrDefault(); }
+            set { this._connectionStatusUpdatedTime = value; }
+        }
+
+        // Check to see if ConnectionStatusUpdatedTime property is set
+        internal bool IsSetConnectionStatusUpdatedTime()
+        {
+            return this._connectionStatusUpdatedTime.HasValue; 
         }
 
         /// <summary>

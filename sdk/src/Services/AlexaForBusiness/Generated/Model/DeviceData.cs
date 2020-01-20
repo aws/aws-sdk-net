@@ -32,6 +32,7 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class DeviceData
     {
+        private DateTime? _createdTime;
         private string _deviceArn;
         private string _deviceName;
         private string _deviceSerialNumber;
@@ -44,6 +45,24 @@ namespace Amazon.AlexaForBusiness.Model
         private string _roomArn;
         private string _roomName;
         private string _softwareVersion;
+
+        /// <summary>
+        /// Gets and sets the property CreatedTime. 
+        /// <para>
+        /// The time (in epoch) when the device data was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedTime
+        {
+            get { return this._createdTime.GetValueOrDefault(); }
+            set { this._createdTime = value; }
+        }
+
+        // Check to see if CreatedTime property is set
+        internal bool IsSetCreatedTime()
+        {
+            return this._createdTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DeviceArn. 
