@@ -57,6 +57,10 @@ namespace Amazon.Lambda.Model
     ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
     /// retries.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class UpdateEventSourceMappingRequest : AmazonLambdaRequest

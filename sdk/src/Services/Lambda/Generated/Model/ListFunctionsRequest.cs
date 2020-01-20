@@ -85,8 +85,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MasterRegion. 
         /// <para>
-        /// For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code>
-        /// or <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
+        /// For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-1</code>
+        /// filters the list of functions to only include Lambda@Edge functions replicated from
+        /// a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code>
+        /// to <code>ALL</code>.
         /// </para>
         /// </summary>
         public string MasterRegion

@@ -64,17 +64,6 @@ namespace Amazon.Lambda.Model
         /// If present, indicates that an error occurred during function execution. Details about
         /// the error are included in the response payload.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Handled</code> - The runtime caught an error thrown by the function and formatted
-        /// it into a JSON document.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Unhandled</code> - The runtime didn't handle the error. For example, the function
-        /// ran out of memory or timed out.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string FunctionError
         {

@@ -254,6 +254,18 @@ namespace Amazon.Lambda
         /// Constant InvalidConfiguration for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode InvalidConfiguration = new LastUpdateStatusReasonCode("InvalidConfiguration");
+        /// <summary>
+        /// Constant InvalidSecurityGroup for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode InvalidSecurityGroup = new LastUpdateStatusReasonCode("InvalidSecurityGroup");
+        /// <summary>
+        /// Constant InvalidSubnet for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode InvalidSubnet = new LastUpdateStatusReasonCode("InvalidSubnet");
+        /// <summary>
+        /// Constant SubnetOutOfIPAddresses for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode SubnetOutOfIPAddresses = new LastUpdateStatusReasonCode("SubnetOutOfIPAddresses");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -600,6 +612,14 @@ namespace Amazon.Lambda
         /// Constant InvalidConfiguration for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode InvalidConfiguration = new StateReasonCode("InvalidConfiguration");
+        /// <summary>
+        /// Constant InvalidSecurityGroup for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode InvalidSecurityGroup = new StateReasonCode("InvalidSecurityGroup");
+        /// <summary>
+        /// Constant InvalidSubnet for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode InvalidSubnet = new StateReasonCode("InvalidSubnet");
         /// <summary>
         /// Constant Restoring for StateReasonCode
         /// </summary>

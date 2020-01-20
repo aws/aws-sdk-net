@@ -559,6 +559,10 @@ namespace Amazon.Lambda
         ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
         /// retries.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSourceMapping service method.</param>
@@ -3605,6 +3609,9 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
         /// </exception>
@@ -3671,6 +3678,9 @@ namespace Amazon.Lambda
         /// <returns>The response from the UntagResource service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3831,6 +3841,10 @@ namespace Amazon.Lambda
         /// <para>
         ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
         /// retries.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul>
         /// </summary>

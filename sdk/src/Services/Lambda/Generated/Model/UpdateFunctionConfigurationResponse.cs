@@ -247,7 +247,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LastUpdateStatus. 
         /// <para>
-        /// The status of the last update that was performed on the function.
+        /// The status of the last update that was performed on the function. This is first set
+        /// to <code>Successful</code> after function creation completes.
         /// </para>
         /// </summary>
         public LastUpdateStatus LastUpdateStatus
