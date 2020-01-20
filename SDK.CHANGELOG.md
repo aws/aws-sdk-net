@@ -1,3 +1,7 @@
+### 3.3.667.1 (2020-01-20 22:11 UTC)
+* S3 (3.3.110.15)
+	* Added check to ensure the TransferUtility parts are all completed in a multipart upload and fix AmazonS3Config to check for the us-east-1 regional flag on minimal circumstances
+
 ### 3.3.667.0 (2020-01-20 19:17 UTC)
 * AlexaForBusiness (3.3.108.0)
 	* Add support for CreatedTime and ConnectionStatusUpdatedTime in response of SearchDevices API.
