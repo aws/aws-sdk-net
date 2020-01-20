@@ -99,8 +99,17 @@ namespace Amazon.ApplicationInsights.Model
         /// Gets and sets the property Remarks. 
         /// <para>
         /// The issues on the user side that block Application Insights from successfully monitoring
-        /// an application.
+        /// an application. Example remarks include:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// “Configuring application, detected 1 Errors, 3 Warnings”
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// “Configuring application, detected 1 Unconfigured Components”
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Remarks
         {

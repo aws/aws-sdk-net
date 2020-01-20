@@ -25,6 +25,114 @@ namespace Amazon.ApplicationInsights
 {
 
     /// <summary>
+    /// Constants used for properties of type ConfigurationEventResourceType.
+    /// </summary>
+    public class ConfigurationEventResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUDFORMATION for ConfigurationEventResourceType
+        /// </summary>
+        public static readonly ConfigurationEventResourceType CLOUDFORMATION = new ConfigurationEventResourceType("CLOUDFORMATION");
+        /// <summary>
+        /// Constant CLOUDWATCH_ALARM for ConfigurationEventResourceType
+        /// </summary>
+        public static readonly ConfigurationEventResourceType CLOUDWATCH_ALARM = new ConfigurationEventResourceType("CLOUDWATCH_ALARM");
+        /// <summary>
+        /// Constant SSM_ASSOCIATION for ConfigurationEventResourceType
+        /// </summary>
+        public static readonly ConfigurationEventResourceType SSM_ASSOCIATION = new ConfigurationEventResourceType("SSM_ASSOCIATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationEventResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationEventResourceType FindValue(string value)
+        {
+            return FindValue<ConfigurationEventResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationEventResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfigurationEventStatus.
+    /// </summary>
+    public class ConfigurationEventStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for ConfigurationEventStatus
+        /// </summary>
+        public static readonly ConfigurationEventStatus ERROR = new ConfigurationEventStatus("ERROR");
+        /// <summary>
+        /// Constant INFO for ConfigurationEventStatus
+        /// </summary>
+        public static readonly ConfigurationEventStatus INFO = new ConfigurationEventStatus("INFO");
+        /// <summary>
+        /// Constant WARN for ConfigurationEventStatus
+        /// </summary>
+        public static readonly ConfigurationEventStatus WARN = new ConfigurationEventStatus("WARN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationEventStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationEventStatus FindValue(string value)
+        {
+            return FindValue<ConfigurationEventStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationEventStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FeedbackKey.
     /// </summary>
     public class FeedbackKey : ConstantClass

@@ -824,6 +824,82 @@ namespace Amazon.ApplicationInsights
 
         #endregion
         
+        #region  ListConfigurationHistory
+
+
+        /// <summary>
+        /// Lists the INFO, WARN, and ERROR events for periodic configuration updates performed
+        /// by Application Insights. Examples of events represented are: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// INFO: creating a new alarm or updating an alarm threshold.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// WARN: alarm not created due to insufficient data points used to predict thresholds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ERROR: alarm not created due to permission errors or exceeding quotas. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationHistory service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurationHistory service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListConfigurationHistory">REST API Reference for ListConfigurationHistory Operation</seealso>
+        ListConfigurationHistoryResponse ListConfigurationHistory(ListConfigurationHistoryRequest request);
+
+
+
+        /// <summary>
+        /// Lists the INFO, WARN, and ERROR events for periodic configuration updates performed
+        /// by Application Insights. Examples of events represented are: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// INFO: creating a new alarm or updating an alarm threshold.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// WARN: alarm not created due to insufficient data points used to predict thresholds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ERROR: alarm not created due to permission errors or exceeding quotas. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConfigurationHistory service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListConfigurationHistory">REST API Reference for ListConfigurationHistory Operation</seealso>
+        Task<ListConfigurationHistoryResponse> ListConfigurationHistoryAsync(ListConfigurationHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListLogPatterns
 
 

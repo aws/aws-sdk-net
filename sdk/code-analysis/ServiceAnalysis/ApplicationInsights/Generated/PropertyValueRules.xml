@@ -179,6 +179,17 @@
     <pattern>[a-zA-Z0-9\.\-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListConfigurationHistoryRequest.MaxResults</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListConfigurationHistoryRequest.ResourceGroupName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListLogPatternsRequest.MaxResults</property>
     <min>1</min>
     <max>40</max>
