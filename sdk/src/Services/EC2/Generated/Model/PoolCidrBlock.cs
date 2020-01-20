@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the ProvisionByoipCidr operation.
+    /// Describes a CIDR block for an address pool.
     /// </summary>
-    public partial class ProvisionByoipCidrResponse : AmazonWebServiceResponse
+    public partial class PoolCidrBlock
     {
-        private ByoipCidr _byoipCidr;
+        private string _cidr;
 
         /// <summary>
-        /// Gets and sets the property ByoipCidr. 
+        /// Gets and sets the property Cidr. 
         /// <para>
-        /// Information about the address range.
+        /// The CIDR block.
         /// </para>
         /// </summary>
-        public ByoipCidr ByoipCidr
+        public string Cidr
         {
-            get { return this._byoipCidr; }
-            set { this._byoipCidr = value; }
+            get { return this._cidr; }
+            set { this._cidr = value; }
         }
 
-        // Check to see if ByoipCidr property is set
-        internal bool IsSetByoipCidr()
+        // Check to see if Cidr property is set
+        internal bool IsSetCidr()
         {
-            return this._byoipCidr != null;
+            return this._cidr != null;
         }
 
     }

@@ -28,44 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeByoipCidrs operation.
-    /// Describes the IP address ranges that were specified in calls to <a>ProvisionByoipCidr</a>.
-    /// 
-    ///  
-    /// <para>
-    /// To describe the address pools that were created when you provisioned the address ranges,
-    /// use <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.
-    /// </para>
+    /// This is the response object from the DescribeIpv6Pools operation.
     /// </summary>
-    public partial class DescribeByoipCidrsRequest : AmazonEC2Request
+    public partial class DescribeIpv6PoolsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<Ipv6Pool> _ipv6Pools = new List<Ipv6Pool>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property Ipv6Pools. 
         /// <para>
-        /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// Information about the IPv6 address pools.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public int MaxResults
+        public List<Ipv6Pool> Ipv6Pools
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._ipv6Pools; }
+            set { this._ipv6Pools = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if Ipv6Pools property is set
+        internal bool IsSetIpv6Pools()
         {
-            return this._maxResults.HasValue; 
+            return this._ipv6Pools != null && this._ipv6Pools.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next page of results.
+        /// The token to use to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken

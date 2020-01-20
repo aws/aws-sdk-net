@@ -28,20 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an IPv4 address pool.
+    /// Describes an IPv6 address pool.
     /// </summary>
-    public partial class PublicIpv4Pool
+    public partial class Ipv6Pool
     {
         private string _description;
-        private List<PublicIpv4PoolRange> _poolAddressRanges = new List<PublicIpv4PoolRange>();
+        private List<PoolCidrBlock> _poolCidrBlocks = new List<PoolCidrBlock>();
         private string _poolId;
-        private int? _totalAddressCount;
-        private int? _totalAvailableAddressCount;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the address pool.
+        /// The description for the address pool.
         /// </para>
         /// </summary>
         public string Description
@@ -57,21 +56,21 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PoolAddressRanges. 
+        /// Gets and sets the property PoolCidrBlocks. 
         /// <para>
-        /// The address ranges.
+        /// The CIDR blocks for the address pool.
         /// </para>
         /// </summary>
-        public List<PublicIpv4PoolRange> PoolAddressRanges
+        public List<PoolCidrBlock> PoolCidrBlocks
         {
-            get { return this._poolAddressRanges; }
-            set { this._poolAddressRanges = value; }
+            get { return this._poolCidrBlocks; }
+            set { this._poolCidrBlocks = value; }
         }
 
-        // Check to see if PoolAddressRanges property is set
-        internal bool IsSetPoolAddressRanges()
+        // Check to see if PoolCidrBlocks property is set
+        internal bool IsSetPoolCidrBlocks()
         {
-            return this._poolAddressRanges != null && this._poolAddressRanges.Count > 0; 
+            return this._poolCidrBlocks != null && this._poolCidrBlocks.Count > 0; 
         }
 
         /// <summary>
@@ -93,39 +92,21 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalAddressCount. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The total number of addresses.
+        /// Any tags for the address pool.
         /// </para>
         /// </summary>
-        public int TotalAddressCount
+        public List<Tag> Tags
         {
-            get { return this._totalAddressCount.GetValueOrDefault(); }
-            set { this._totalAddressCount = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if TotalAddressCount property is set
-        internal bool IsSetTotalAddressCount()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._totalAddressCount.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property TotalAvailableAddressCount. 
-        /// <para>
-        /// The total number of available addresses.
-        /// </para>
-        /// </summary>
-        public int TotalAvailableAddressCount
-        {
-            get { return this._totalAvailableAddressCount.GetValueOrDefault(); }
-            set { this._totalAvailableAddressCount = value; }
-        }
-
-        // Check to see if TotalAvailableAddressCount property is set
-        internal bool IsSetTotalAvailableAddressCount()
-        {
-            return this._totalAvailableAddressCount.HasValue; 
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

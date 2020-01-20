@@ -77,6 +77,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetPubliclyAdvertisable())
+                {
+                    request.Parameters.Add("PubliclyAdvertisable", StringUtils.FromBool(publicRequest.PubliclyAdvertisable));
+                }
             }
             return request;
         }

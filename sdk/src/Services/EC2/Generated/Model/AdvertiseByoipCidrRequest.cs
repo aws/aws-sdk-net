@@ -29,8 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AdvertiseByoipCidr operation.
-    /// Advertises an IPv4 address range that is provisioned for use with your AWS resources
-    /// through bring your own IP addresses (BYOIP).
+    /// Advertises an IPv4 or IPv6 address range that is provisioned for use with your AWS
+    /// resources through bring your own IP addresses (BYOIP).
     /// 
     ///  
     /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Cidr. 
         /// <para>
-        /// The IPv4 address range, in CIDR notation. This must be the exact range that you provisioned.
+        /// The address range, in CIDR notation. This must be the exact range that you provisioned.
         /// You can't advertise only a portion of the provisioned range.
         /// </para>
         /// </summary>

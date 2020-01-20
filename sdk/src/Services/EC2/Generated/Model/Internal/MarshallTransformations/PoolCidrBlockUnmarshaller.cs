@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VpcIpv6CidrBlockAssociation Object
+    /// Response Unmarshaller for PoolCidrBlock Object
     /// </summary>  
-    public class VpcIpv6CidrBlockAssociationUnmarshaller : IUnmarshaller<VpcIpv6CidrBlockAssociation, XmlUnmarshallerContext>, IUnmarshaller<VpcIpv6CidrBlockAssociation, JsonUnmarshallerContext>
+    public class PoolCidrBlockUnmarshaller : IUnmarshaller<PoolCidrBlock, XmlUnmarshallerContext>, IUnmarshaller<PoolCidrBlock, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VpcIpv6CidrBlockAssociation Unmarshall(XmlUnmarshallerContext context)
+        public PoolCidrBlock Unmarshall(XmlUnmarshallerContext context)
         {
-            VpcIpv6CidrBlockAssociation unmarshalledObject = new VpcIpv6CidrBlockAssociation();
+            PoolCidrBlock unmarshalledObject = new PoolCidrBlock();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,34 +54,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("associationId", targetDepth))
+                    if (context.TestExpression("poolCidrBlock", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ipv6CidrBlock", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Ipv6CidrBlock = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ipv6CidrBlockState", targetDepth))
-                    {
-                        var unmarshaller = VpcCidrBlockStateUnmarshaller.Instance;
-                        unmarshalledObject.Ipv6CidrBlockState = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ipv6Pool", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Ipv6Pool = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("networkBorderGroup", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.NetworkBorderGroup = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Cidr = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -99,18 +75,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VpcIpv6CidrBlockAssociation Unmarshall(JsonUnmarshallerContext context)
+        public PoolCidrBlock Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static VpcIpv6CidrBlockAssociationUnmarshaller _instance = new VpcIpv6CidrBlockAssociationUnmarshaller();        
+        private static PoolCidrBlockUnmarshaller _instance = new PoolCidrBlockUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VpcIpv6CidrBlockAssociationUnmarshaller Instance
+        public static PoolCidrBlockUnmarshaller Instance
         {
             get
             {

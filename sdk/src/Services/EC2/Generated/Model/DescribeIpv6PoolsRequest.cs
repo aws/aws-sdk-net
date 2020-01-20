@@ -28,19 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeByoipCidrs operation.
-    /// Describes the IP address ranges that were specified in calls to <a>ProvisionByoipCidr</a>.
-    /// 
-    ///  
-    /// <para>
-    /// To describe the address pools that were created when you provisioned the address ranges,
-    /// use <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.
-    /// </para>
+    /// Container for the parameters to the DescribeIpv6Pools operation.
+    /// Describes your IPv6 address pools.
     /// </summary>
-    public partial class DescribeByoipCidrsRequest : AmazonEC2Request
+    public partial class DescribeIpv6PoolsRequest : AmazonEC2Request
     {
+        private List<Filter> _filters = new List<Filter>();
         private int? _maxResults;
         private string _nextToken;
+        private List<string> _poolIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the
+        /// resource. Use the tag key in the filter name and the tag value as the filter value.
+        /// For example, to find all resources that have a tag with the key <code>Owner</code>
+        /// and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+        /// and <code>TeamA</code> for the filter value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter
+        /// to find all resources assigned a tag with a specific key, regardless of the tag value.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -49,7 +77,7 @@ namespace Amazon.EC2.Model
         /// results, make another call with the returned <code>nextToken</code> value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -78,6 +106,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PoolIds. 
+        /// <para>
+        /// The IDs of the IPv6 address pools.
+        /// </para>
+        /// </summary>
+        public List<string> PoolIds
+        {
+            get { return this._poolIds; }
+            set { this._poolIds = value; }
+        }
+
+        // Check to see if PoolIds property is set
+        internal bool IsSetPoolIds()
+        {
+            return this._poolIds != null && this._poolIds.Count > 0; 
         }
 
     }

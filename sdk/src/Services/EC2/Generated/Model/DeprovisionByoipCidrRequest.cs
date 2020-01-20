@@ -46,8 +46,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Cidr. 
         /// <para>
-        /// The public IPv4 address range, in CIDR notation. The prefix must be the same prefix
-        /// that you specified when you provisioned the address range.
+        /// The address range, in CIDR notation. The prefix must be the same prefix that you specified
+        /// when you provisioned the address range.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

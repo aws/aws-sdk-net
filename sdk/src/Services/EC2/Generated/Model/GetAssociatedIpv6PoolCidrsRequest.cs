@@ -28,19 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeByoipCidrs operation.
-    /// Describes the IP address ranges that were specified in calls to <a>ProvisionByoipCidr</a>.
-    /// 
-    ///  
-    /// <para>
-    /// To describe the address pools that were created when you provisioned the address ranges,
-    /// use <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.
-    /// </para>
+    /// Container for the parameters to the GetAssociatedIpv6PoolCidrs operation.
+    /// Gets information about the IPv6 CIDR block associations for a specified IPv6 address
+    /// pool.
     /// </summary>
-    public partial class DescribeByoipCidrsRequest : AmazonEC2Request
+    public partial class GetAssociatedIpv6PoolCidrsRequest : AmazonEC2Request
     {
         private int? _maxResults;
         private string _nextToken;
+        private string _poolId;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -49,7 +45,7 @@ namespace Amazon.EC2.Model
         /// results, make another call with the returned <code>nextToken</code> value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -78,6 +74,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PoolId. 
+        /// <para>
+        /// The ID of the IPv6 address pool.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string PoolId
+        {
+            get { return this._poolId; }
+            set { this._poolId = value; }
+        }
+
+        // Check to see if PoolId property is set
+        internal bool IsSetPoolId()
+        {
+            return this._poolId != null;
         }
 
     }

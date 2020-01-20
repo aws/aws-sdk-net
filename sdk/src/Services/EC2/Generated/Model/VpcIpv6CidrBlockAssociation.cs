@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private string _associationId;
         private string _ipv6CidrBlock;
         private VpcCidrBlockState _ipv6CidrBlockState;
+        private string _ipv6Pool;
         private string _networkBorderGroup;
 
         /// <summary>
@@ -89,6 +90,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6CidrBlockState()
         {
             return this._ipv6CidrBlockState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Pool. 
+        /// <para>
+        /// The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
+        /// </para>
+        /// </summary>
+        public string Ipv6Pool
+        {
+            get { return this._ipv6Pool; }
+            set { this._ipv6Pool = value; }
+        }
+
+        // Check to see if Ipv6Pool property is set
+        internal bool IsSetIpv6Pool()
+        {
+            return this._ipv6Pool != null;
         }
 
         /// <summary>

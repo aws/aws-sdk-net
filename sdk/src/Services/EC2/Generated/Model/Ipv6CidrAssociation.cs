@@ -28,28 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the ProvisionByoipCidr operation.
+    /// Describes an IPv6 CIDR block association.
     /// </summary>
-    public partial class ProvisionByoipCidrResponse : AmazonWebServiceResponse
+    public partial class Ipv6CidrAssociation
     {
-        private ByoipCidr _byoipCidr;
+        private string _associatedResource;
+        private string _ipv6Cidr;
 
         /// <summary>
-        /// Gets and sets the property ByoipCidr. 
+        /// Gets and sets the property AssociatedResource. 
         /// <para>
-        /// Information about the address range.
+        /// The resource that's associated with the IPv6 CIDR block.
         /// </para>
         /// </summary>
-        public ByoipCidr ByoipCidr
+        public string AssociatedResource
         {
-            get { return this._byoipCidr; }
-            set { this._byoipCidr = value; }
+            get { return this._associatedResource; }
+            set { this._associatedResource = value; }
         }
 
-        // Check to see if ByoipCidr property is set
-        internal bool IsSetByoipCidr()
+        // Check to see if AssociatedResource property is set
+        internal bool IsSetAssociatedResource()
         {
-            return this._byoipCidr != null;
+            return this._associatedResource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Cidr. 
+        /// <para>
+        /// The IPv6 CIDR block.
+        /// </para>
+        /// </summary>
+        public string Ipv6Cidr
+        {
+            get { return this._ipv6Cidr; }
+            set { this._ipv6Cidr = value; }
+        }
+
+        // Check to see if Ipv6Cidr property is set
+        internal bool IsSetIpv6Cidr()
+        {
+            return this._ipv6Cidr != null;
         }
 
     }

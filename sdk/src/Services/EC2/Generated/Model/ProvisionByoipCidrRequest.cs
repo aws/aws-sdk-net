@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ProvisionByoipCidr operation.
-    /// Provisions an address range for use with your AWS resources through bring your own
-    /// IP addresses (BYOIP) and creates a corresponding address pool. After the address range
-    /// is provisioned, it is ready to be advertised using <a>AdvertiseByoipCidr</a>.
+    /// Provisions an IPv4 or IPv6 address range for use with your AWS resources through bring
+    /// your own IP addresses (BYOIP) and creates a corresponding address pool. After the
+    /// address range is provisioned, it is ready to be advertised using <a>AdvertiseByoipCidr</a>.
     /// 
     ///  
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
     /// Provisioning an address range is an asynchronous operation, so the call returns immediately,
     /// but the address range is not ready to use until its status changes from <code>pending-provision</code>
     /// to <code>provisioned</code>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>.
-    /// To allocate an Elastic IP address from your address pool, use <a>AllocateAddress</a>
+    /// To allocate an Elastic IP address from your IPv4 address pool, use <a>AllocateAddress</a>
     /// with either the specific address from the address pool or the ID of the address pool.
     /// </para>
     /// </summary>
@@ -55,13 +55,15 @@ namespace Amazon.EC2.Model
         private string _cidr;
         private CidrAuthorizationContext _cidrAuthorizationContext;
         private string _description;
+        private bool? _publiclyAdvertisable;
 
         /// <summary>
         /// Gets and sets the property Cidr. 
         /// <para>
-        /// The public IPv4 address range, in CIDR notation. The most specific prefix that you
-        /// can specify is /24. The address range cannot overlap with another address range that
-        /// you've brought to this or another Region.
+        /// The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix
+        /// that you can specify is /24. The most specific IPv6 prefix you can specify is /56.
+        /// The address range cannot overlap with another address range that you've brought to
+        /// this or another Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -112,6 +114,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PubliclyAdvertisable. 
+        /// <para>
+        /// (IPv6 only) Indicate whether the address range will be publicly advertised to the
+        /// internet.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: true
+        /// </para>
+        /// </summary>
+        public bool PubliclyAdvertisable
+        {
+            get { return this._publiclyAdvertisable.GetValueOrDefault(); }
+            set { this._publiclyAdvertisable = value; }
+        }
+
+        // Check to see if PubliclyAdvertisable property is set
+        internal bool IsSetPubliclyAdvertisable()
+        {
+            return this._publiclyAdvertisable.HasValue; 
         }
 
     }

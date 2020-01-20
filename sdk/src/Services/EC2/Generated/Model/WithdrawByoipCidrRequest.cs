@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the WithdrawByoipCidr operation.
-    /// Stops advertising an IPv4 address range that is provisioned as an address pool.
+    /// Stops advertising an address range that is provisioned as an address pool.
     /// 
     ///  
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Cidr. 
         /// <para>
-        /// The public IPv4 address range, in CIDR notation.
+        /// The address range, in CIDR notation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

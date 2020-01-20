@@ -75,6 +75,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool
+        /// from which the IPv6 CIDR block is allocated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>ipv6-cidr-block-association.association-id</code> - The association ID for
         /// an IPv6 CIDR block associated with the VPC.
         /// </para>

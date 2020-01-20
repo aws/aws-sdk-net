@@ -4450,6 +4450,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeIpv6PoolsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeIpv6Pools");
+
+            var request = InstantiateClassGenerator.Execute<DescribeIpv6PoolsRequest>();
+            var marshaller = new DescribeIpv6PoolsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeIpv6PoolsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeIpv6PoolsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeKeyPairsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeKeyPairs");
@@ -6705,6 +6729,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ExportTransitGatewayRoutesResponseUnmarshaller.Instance.Unmarshall(context)
                 as ExportTransitGatewayRoutesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetAssociatedIpv6PoolCidrsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAssociatedIpv6PoolCidrs");
+
+            var request = InstantiateClassGenerator.Execute<GetAssociatedIpv6PoolCidrsRequest>();
+            var marshaller = new GetAssociatedIpv6PoolCidrsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetAssociatedIpv6PoolCidrsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetAssociatedIpv6PoolCidrsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

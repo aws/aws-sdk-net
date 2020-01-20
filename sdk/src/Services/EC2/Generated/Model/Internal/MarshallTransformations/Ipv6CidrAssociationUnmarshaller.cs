@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VpcIpv6CidrBlockAssociation Object
+    /// Response Unmarshaller for Ipv6CidrAssociation Object
     /// </summary>  
-    public class VpcIpv6CidrBlockAssociationUnmarshaller : IUnmarshaller<VpcIpv6CidrBlockAssociation, XmlUnmarshallerContext>, IUnmarshaller<VpcIpv6CidrBlockAssociation, JsonUnmarshallerContext>
+    public class Ipv6CidrAssociationUnmarshaller : IUnmarshaller<Ipv6CidrAssociation, XmlUnmarshallerContext>, IUnmarshaller<Ipv6CidrAssociation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VpcIpv6CidrBlockAssociation Unmarshall(XmlUnmarshallerContext context)
+        public Ipv6CidrAssociation Unmarshall(XmlUnmarshallerContext context)
         {
-            VpcIpv6CidrBlockAssociation unmarshalledObject = new VpcIpv6CidrBlockAssociation();
+            Ipv6CidrAssociation unmarshalledObject = new Ipv6CidrAssociation();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,34 +54,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("associationId", targetDepth))
+                    if (context.TestExpression("associatedResource", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AssociatedResource = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ipv6CidrBlock", targetDepth))
+                    if (context.TestExpression("ipv6Cidr", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Ipv6CidrBlock = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ipv6CidrBlockState", targetDepth))
-                    {
-                        var unmarshaller = VpcCidrBlockStateUnmarshaller.Instance;
-                        unmarshalledObject.Ipv6CidrBlockState = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ipv6Pool", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Ipv6Pool = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("networkBorderGroup", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.NetworkBorderGroup = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Ipv6Cidr = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -99,18 +81,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VpcIpv6CidrBlockAssociation Unmarshall(JsonUnmarshallerContext context)
+        public Ipv6CidrAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static VpcIpv6CidrBlockAssociationUnmarshaller _instance = new VpcIpv6CidrBlockAssociationUnmarshaller();        
+        private static Ipv6CidrAssociationUnmarshaller _instance = new Ipv6CidrAssociationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VpcIpv6CidrBlockAssociationUnmarshaller Instance
+        public static Ipv6CidrAssociationUnmarshaller Instance
         {
             get
             {
