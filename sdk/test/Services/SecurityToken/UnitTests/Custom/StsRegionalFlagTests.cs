@@ -124,6 +124,7 @@ namespace AWSSDK.UnitTests
             {
                 Environment.SetEnvironmentVariable(AwsStsRegionalEndpointsEnvironmentVariable, invalidValue);
                 var config = new AmazonSecurityTokenServiceConfig();
+                var getStsRegionalEndpoints = config.StsRegionalEndpoints;
                 Assert.Fail();
             }
             catch (InvalidOperationException e)

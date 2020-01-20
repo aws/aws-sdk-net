@@ -28,12 +28,29 @@ namespace Amazon.SecurityToken
 {
     public partial class AmazonSecurityTokenServiceConfig : ClientConfig
     {
+        private StsRegionalEndpointsValue? _stsRegionalEndpoints;
         /// <summary>
         /// StsRegionalEndpoints should be set to StsRegionalEndpointsValue.Legacy to resolve to the global
         /// sts endpoint (only for legacy global regions) or StsRegionalEndpointsValue.Regional to resolve to
         /// the regional sts endpoint. The default value for StsRegionalEndpoints is StsRegionalEndpointsValue.Legacy.
+        /// 
+        /// Get the Sts Regional Flag value
+        /// by checking the environment variable
+        /// and shared credentials file field
         /// </summary>
-        public StsRegionalEndpointsValue StsRegionalEndpoints { get; set; }
+        public StsRegionalEndpointsValue StsRegionalEndpoints {
+            get {
+                if (!this._stsRegionalEndpoints.HasValue)
+                {
+                    var tempStsRegionalEndpoints = CheckSTSEnvironmentVariable() ?? CheckCredentialsFile();
+                    this._stsRegionalEndpoints = tempStsRegionalEndpoints ?? StsRegionalEndpointsValue.Legacy;
+                }
+                return this._stsRegionalEndpoints.GetValueOrDefault();
+            }
+            set {
+                this._stsRegionalEndpoints = value;
+            }
+        }
 
         private const string AwsProfileEnvironmentVariable = "AWS_PROFILE";
 
@@ -85,17 +102,6 @@ namespace Amazon.SecurityToken
              RegionEndpoint.APNortheast1
          };
 #endif
-
-        /// <summary>
-        /// Initialize the Sts Regional Flag value
-        /// by checking the environment variable
-        /// and shared credentials file field
-        /// </summary>
-        protected override void Initialize()
-        {
-            var tempStsRegionalEndpoints = CheckSTSEnvironmentVariable() ?? CheckCredentialsFile();
-            this.StsRegionalEndpoints = tempStsRegionalEndpoints ?? StsRegionalEndpointsValue.Legacy;
-        }
 
         /// <summary>
         /// Override DetermineServiceURL to set the url to the 
