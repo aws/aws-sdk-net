@@ -39,6 +39,7 @@ namespace Amazon.CloudWatch.Model
         private string _metricName;
         private string _awsNamespace;
         private string _stat;
+        private AnomalyDetectorStateValue _stateValue;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -133,6 +134,25 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetStat()
         {
             return this._stat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateValue. 
+        /// <para>
+        /// The current status of the anomaly detector's training. The possible values are <code>TRAINED
+        /// | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> 
+        /// </para>
+        /// </summary>
+        public AnomalyDetectorStateValue StateValue
+        {
+            get { return this._stateValue; }
+            set { this._stateValue = value; }
+        }
+
+        // Check to see if StateValue property is set
+        internal bool IsSetStateValue()
+        {
+            return this._stateValue != null;
         }
 
     }
