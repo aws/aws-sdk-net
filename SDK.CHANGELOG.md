@@ -1,3 +1,20 @@
+### 3.3.668.0 (2020-01-21 19:16 UTC)
+* ApplicationDiscoveryService (3.3.102.25)
+	* Documentation updates for the AWS Application Discovery Service.
+* AWSMarketplaceCommerceAnalytics (3.3.103.0)
+	* Remove 4 deprecated data sets, change some data sets available dates to 2017-09-15
+* CodePipeline (3.3.105.0)
+	* AWS CodePipeline enables an ability to stop pipeline executions.
+* EC2 (3.3.154.0)
+	* Add an enum value to the result of DescribeByoipCidrs to support CIDRs that are not publicly advertisable.
+* IoTEvents (3.3.102.38)
+	* Documentation updates for iotcolumbo
+* Core 3.3.104.19
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.667.1 (2020-01-20 22:11 UTC)
 * S3 (3.3.110.15)
 	* Added check to ensure the TransferUtility parts are all completed in a multipart upload and fix AmazonS3Config to check for the us-east-1 regional flag on minimal circumstances
