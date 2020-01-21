@@ -1,3 +1,7 @@
+### 3.3.668.1 (2020-01-21 21:31 UTC)
+* S3 (3.3.110.17)
+	* Fix performance issue when creating an AmazonS3Config object.
+
 ### 3.3.668.0 (2020-01-21 19:16 UTC)
 * ApplicationDiscoveryService (3.3.102.25)
 	* Documentation updates for the AWS Application Discovery Service.
