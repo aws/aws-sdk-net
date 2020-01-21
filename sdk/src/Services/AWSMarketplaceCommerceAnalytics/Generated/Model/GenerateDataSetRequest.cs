@@ -97,55 +97,45 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// <para>
         ///  <ul> <li> <strong>customer_subscriber_hourly_monthly_subscriptions</strong> 
         /// <para>
-        /// From 2014-07-21 to present: Available daily by 24:00 UTC.
+        /// From 2017-09-15 to present: Available daily by 24:00 UTC.
         /// </para>
         ///  </li> <li> <strong>customer_subscriber_annual_subscriptions</strong> 
         /// <para>
-        /// From 2014-07-21 to present: Available daily by 24:00 UTC.
+        /// From 2017-09-15 to present: Available daily by 24:00 UTC.
         /// </para>
         ///  </li> <li> <strong>daily_business_usage_by_instance_type</strong> 
         /// <para>
-        /// From 2015-01-26 to present: Available daily by 24:00 UTC.
+        /// From 2017-09-15 to present: Available daily by 24:00 UTC.
         /// </para>
         ///  </li> <li> <strong>daily_business_fees</strong> 
         /// <para>
-        /// From 2015-01-26 to present: Available daily by 24:00 UTC.
+        /// From 2017-09-15 to present: Available daily by 24:00 UTC.
         /// </para>
         ///  </li> <li> <strong>daily_business_free_trial_conversions</strong> 
         /// <para>
-        /// From 2015-01-26 to present: Available daily by 24:00 UTC.
+        /// From 2017-09-15 to present: Available daily by 24:00 UTC.
         /// </para>
         ///  </li> <li> <strong>daily_business_new_instances</strong> 
         /// <para>
-        /// From 2015-01-26 to present: Available daily by 24:00 UTC.
+        /// From 2017-09-15 to present: Available daily by 24:00 UTC.
         /// </para>
         ///  </li> <li> <strong>daily_business_new_product_subscribers</strong> 
         /// <para>
-        /// From 2015-01-26 to present: Available daily by 24:00 UTC.
+        /// From 2017-09-15 to present: Available daily by 24:00 UTC.
         /// </para>
         ///  </li> <li> <strong>daily_business_canceled_product_subscribers</strong> 
         /// <para>
-        /// From 2015-01-26 to present: Available daily by 24:00 UTC.
+        /// From 2017-09-15 to present: Available daily by 24:00 UTC.
         /// </para>
         ///  </li> <li> <strong>monthly_revenue_billing_and_revenue_data</strong> 
         /// <para>
-        /// From 2015-02 to 2017-06: Available monthly on the 4th day of the month by 24:00 UTC.
-        /// Data includes metered transactions (e.g. hourly) from two months prior.
-        /// </para>
-        ///  
-        /// <para>
-        /// From 2017-07 to present: Available monthly on the 15th day of the month by 24:00 UTC.
-        /// Data includes metered transactions (e.g. hourly) from one month prior.
+        /// From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00
+        /// UTC. Data includes metered transactions (e.g. hourly) from one month prior.
         /// </para>
         ///  </li> <li> <strong>monthly_revenue_annual_subscriptions</strong> 
         /// <para>
-        /// From 2015-02 to 2017-06: Available monthly on the 4th day of the month by 24:00 UTC.
-        /// Data includes up-front software charges (e.g. annual) from one month prior.
-        /// </para>
-        ///  
-        /// <para>
-        /// From 2017-07 to present: Available monthly on the 15th day of the month by 24:00 UTC.
-        /// Data includes up-front software charges (e.g. annual) from one month prior.
+        /// From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00
+        /// UTC. Data includes up-front software charges (e.g. annual) from one month prior.
         /// </para>
         ///  </li> <li> <strong>monthly_revenue_field_demonstration_usage</strong> 
         /// <para>
@@ -159,32 +149,23 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// </para>
         ///  </li> <li> <strong>disbursed_amount_by_product</strong> 
         /// <para>
-        /// From 2015-01-26 to present: Available every 30 days by 24:00 UTC.
-        /// </para>
-        ///  </li> <li> <strong>disbursed_amount_by_product_with_uncollected_funds</strong> 
-        /// <para>
-        /// From 2012-04-19 to 2015-01-25: Available every 30 days by 24:00 UTC.
-        /// </para>
-        ///  
-        /// <para>
-        /// From 2015-01-26 to present: This data set was split into three data sets: disbursed_amount_by_product,
-        /// disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds.
+        /// From 2017-09-15 to present: Available every 30 days by 24:00 UTC.
         /// </para>
         ///  </li> <li> <strong>disbursed_amount_by_instance_hours</strong> 
         /// <para>
-        /// From 2012-09-04 to present: Available every 30 days by 24:00 UTC.
+        /// From 2017-09-15 to present: Available every 30 days by 24:00 UTC.
         /// </para>
         ///  </li> <li> <strong>disbursed_amount_by_customer_geo</strong> 
         /// <para>
-        /// From 2012-04-19 to present: Available every 30 days by 24:00 UTC.
+        /// From 2017-09-15 to present: Available every 30 days by 24:00 UTC.
         /// </para>
         ///  </li> <li> <strong>disbursed_amount_by_age_of_uncollected_funds</strong> 
         /// <para>
-        /// From 2015-01-26 to present: Available every 30 days by 24:00 UTC.
+        /// From 2017-09-15 to present: Available every 30 days by 24:00 UTC.
         /// </para>
         ///  </li> <li> <strong>disbursed_amount_by_age_of_disbursed_funds</strong> 
         /// <para>
-        /// From 2015-01-26 to present: Available every 30 days by 24:00 UTC.
+        /// From 2017-09-15 to present: Available every 30 days by 24:00 UTC.
         /// </para>
         ///  </li> <li> <strong>disbursed_amount_by_age_of_past_due_funds</strong> 
         /// <para>
@@ -194,45 +175,15 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// <para>
         /// From 2019-10-04 to present: Available every 30 days by 24:00 UTC.
         /// </para>
-        ///  </li> <li> <strong>customer_profile_by_industry</strong> 
-        /// <para>
-        /// From 2015-10-01 to 2017-06-29: Available daily by 24:00 UTC.
-        /// </para>
-        ///  
-        /// <para>
-        /// From 2017-06-30 to present: This data set is no longer available.
-        /// </para>
-        ///  </li> <li> <strong>customer_profile_by_revenue</strong> 
-        /// <para>
-        /// From 2015-10-01 to 2017-06-29: Available daily by 24:00 UTC.
-        /// </para>
-        ///  
-        /// <para>
-        /// From 2017-06-30 to present: This data set is no longer available.
-        /// </para>
-        ///  </li> <li> <strong>customer_profile_by_geography</strong> 
-        /// <para>
-        /// From 2015-10-01 to 2017-06-29: Available daily by 24:00 UTC.
-        /// </para>
-        ///  
-        /// <para>
-        /// From 2017-06-30 to present: This data set is no longer available.
-        /// </para>
         ///  </li> <li> <strong>sales_compensation_billed_revenue</strong> 
         /// <para>
-        /// From 2016-12 to 2017-06: Available monthly on the 4th day of the month by 24:00 UTC.
-        /// Data includes metered transactions (e.g. hourly) from two months prior, and up-front
-        /// software charges (e.g. annual) from one month prior.
-        /// </para>
-        ///  
-        /// <para>
-        /// From 2017-06 to present: Available monthly on the 15th day of the month by 24:00 UTC.
-        /// Data includes metered transactions (e.g. hourly) from one month prior, and up-front
+        /// From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00
+        /// UTC. Data includes metered transactions (e.g. hourly) from one month prior, and up-front
         /// software charges (e.g. annual) from one month prior.
         /// </para>
         ///  </li> <li> <strong>us_sales_and_use_tax_records</strong> 
         /// <para>
-        /// From 2017-02-15 to present: Available monthly on the 15th day of the month by 24:00
+        /// From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00
         /// UTC.
         /// </para>
         ///  </li> </ul> 
