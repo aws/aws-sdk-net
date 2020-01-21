@@ -1012,6 +1012,10 @@ namespace Amazon.EC2
         /// Constant Provisioned for ByoipCidrState
         /// </summary>
         public static readonly ByoipCidrState Provisioned = new ByoipCidrState("provisioned");
+        /// <summary>
+        /// Constant ProvisionedNotPubliclyAdvertisable for ByoipCidrState
+        /// </summary>
+        public static readonly ByoipCidrState ProvisionedNotPubliclyAdvertisable = new ByoipCidrState("provisioned-not-publicly-advertisable");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
