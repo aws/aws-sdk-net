@@ -4343,6 +4343,16 @@
             "cn-northwest-1": {}
           }
         },
+        "appsync": {
+          "endpoints": {
+            "cn-north-1": {}
+          }
+        },
+        "athena": {
+          "endpoints": {
+            "cn-northwest-1": {}
+          }
+        },
         "autoscaling": {
           "defaults": {
             "protocols": [
