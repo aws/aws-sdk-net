@@ -121,7 +121,14 @@ namespace Amazon.S3
         /// </summary>
         public S3UsEast1RegionalEndpointValue? USEast1RegionalEndpointValue
         {
-            get { return s3UsEast1RegionalEndpointValue; }
+            get
+            {
+                if (s3UsEast1RegionalEndpointValue == null)
+                {
+                    s3UsEast1RegionalEndpointValue = CheckS3EnvironmentVariable() ?? CheckCredentialsFile() ?? S3UsEast1RegionalEndpointValue.Legacy;
+                }
+                return s3UsEast1RegionalEndpointValue;
+            }
             set { s3UsEast1RegionalEndpointValue = value; }
         }
 
@@ -142,7 +149,6 @@ namespace Amazon.S3
             // timeouts are not supported.
             this.Timeout = ClientConfig.MaxTimeout;
 #endif
-            UpdateEndpointForUsEast1Regional();
         }
 
         /// <summary>
@@ -156,25 +162,14 @@ namespace Amazon.S3
                 return this.ServiceURL;
             }
 
-            UpdateEndpointForUsEast1Regional();
-
-            return GetUrl(this.RegionEndpoint, this.RegionEndpointServiceName, this.UseHttp, this.UseDualstackEndpoint);
-
-        }
-
-        /// <summary>
-        /// If the client is configured to hit us-east-1 with the S3UsEast1RegionalEndpointValue flag not set, 
-        /// this method checks whether the environment variable is present or the credential file contains a valid value
-        /// and Updates the endpoint property based on that.
-        /// </summary>
-        private void UpdateEndpointForUsEast1Regional()
-        {
-            if (this.RegionEndpoint == legacyUSEast1GlobalRegion && !UseAccelerateEndpoint && !UseDualstackEndpoint
-                && GetEndpointFlagValueForUsEast1Regional() == S3UsEast1RegionalEndpointValue.Regional)
+            var actual = this.RegionEndpoint;
+            if (actual == legacyUSEast1GlobalRegion && !UseAccelerateEndpoint && !UseDualstackEndpoint
+                && USEast1RegionalEndpointValue == S3UsEast1RegionalEndpointValue.Regional)
             {
-                // override the regional endpoint
-                this.RegionEndpoint = RegionEndpoint.GetBySystemName("us-east-1-regional");
+                actual = RegionEndpoint.GetBySystemName("us-east-1-regional");
             }
+
+            return GetUrl(actual, this.RegionEndpointServiceName, this.UseHttp, this.UseDualstackEndpoint);
         }
 
         /// <summary>

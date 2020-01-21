@@ -25,10 +25,10 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
         private const string AwsS3RegionalEndpointEnvironmentVariable = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
 
         [DataTestMethod]
-        [DataRow("legacy", "us-east-1")]
-        [DataRow("regional", "us-east-1-regional")]
+        [DataRow("legacy", "https://s3.amazonaws.com/")]
+        [DataRow("regional", "https://s3.us-east-1.amazonaws.com/")]
         [TestCategory("S3")]
-        public void GivenAConfigWithFlagNotSetThenTheEnvironmentVariableIsRespected(string s3FlagValue, string expectedEndpointSystemName)
+        public void GivenAConfigWithFlagNotSetThenTheEnvironmentVariableIsRespected(string s3FlagValue, string expectedEndpointUrl)
         {
             var olds3EnvValue = Environment.GetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable);
             var oldRegion = Environment.GetEnvironmentVariable("AWS_REGION");
@@ -41,8 +41,8 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
                     RegionEndpoint = Amazon.RegionEndpoint.USEast1
                 };
                 // Simulate a first service call
-                config.DetermineServiceURL();
-                Assert.AreEqual(expectedEndpointSystemName, config.RegionEndpoint.SystemName);
+                var url = config.DetermineServiceURL();
+                Assert.AreEqual(expectedEndpointUrl, url);
             }
             finally
             {
@@ -52,10 +52,10 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
         }
 
         [DataTestMethod]
-        [DataRow("legacy", S3UsEast1RegionalEndpointValue.Legacy, S3UsEast1RegionalEndpointValue.Legacy, "us-east-1")]
-        [DataRow("legacy", S3UsEast1RegionalEndpointValue.Regional, S3UsEast1RegionalEndpointValue.Regional, "us-east-1-regional")]
+        [DataRow("legacy", S3UsEast1RegionalEndpointValue.Legacy, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.amazonaws.com/")]
+        [DataRow("legacy", S3UsEast1RegionalEndpointValue.Regional, S3UsEast1RegionalEndpointValue.Regional, "https://s3.us-east-1.amazonaws.com/")]
         [TestCategory("S3")]
-        public void GivenAConfigWithFlagSetThenTheEnvironmentVariableIsNotUsed(string s3EnvValue, S3UsEast1RegionalEndpointValue configFlagValue, S3UsEast1RegionalEndpointValue expectedValue, string expectedEndpointSystemName)
+        public void GivenAConfigWithFlagSetThenTheEnvironmentVariableIsNotUsed(string s3EnvValue, S3UsEast1RegionalEndpointValue configFlagValue, S3UsEast1RegionalEndpointValue expectedValue, string expectedEndpointUrl)
         {
             var olds3EnvValue = Environment.GetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable);
             var oldRegion = Environment.GetEnvironmentVariable("AWS_REGION");
@@ -69,9 +69,9 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
                     USEast1RegionalEndpointValue = configFlagValue
                 };
                 // Simulate a first service call
-                config.DetermineServiceURL();
+                var url = config.DetermineServiceURL();
                 Assert.AreEqual(expectedValue, config.USEast1RegionalEndpointValue);
-                Assert.AreEqual(expectedEndpointSystemName, config.RegionEndpoint.SystemName);
+                Assert.AreEqual(expectedEndpointUrl, url);
             }
             finally
             {
@@ -120,7 +120,7 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
                 Environment.SetEnvironmentVariable("AWS_REGION", "us-east-1");
                 Environment.SetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable, invalidValue);
                 
-                Assert.ThrowsException<InvalidOperationException>(() => new AmazonS3Config());
+                Assert.ThrowsException<InvalidOperationException>(() => new AmazonS3Config().DetermineServiceURL());
             }
             finally
             {
