@@ -94,6 +94,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("stopTrigger", targetDepth))
+                {
+                    var unmarshaller = StopExecutionTriggerUnmarshaller.Instance;
+                    unmarshalledObject.StopTrigger = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("trigger", targetDepth))
                 {
                     var unmarshaller = ExecutionTriggerUnmarshaller.Instance;

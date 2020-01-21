@@ -151,6 +151,10 @@ namespace Amazon.CodePipeline
     {
 
         /// <summary>
+        /// Constant Abandoned for ActionExecutionStatus
+        /// </summary>
+        public static readonly ActionExecutionStatus Abandoned = new ActionExecutionStatus("Abandoned");
+        /// <summary>
         /// Constant Failed for ActionExecutionStatus
         /// </summary>
         public static readonly ActionExecutionStatus Failed = new ActionExecutionStatus("Failed");
@@ -637,6 +641,14 @@ namespace Amazon.CodePipeline
         /// </summary>
         public static readonly PipelineExecutionStatus InProgress = new PipelineExecutionStatus("InProgress");
         /// <summary>
+        /// Constant Stopped for PipelineExecutionStatus
+        /// </summary>
+        public static readonly PipelineExecutionStatus Stopped = new PipelineExecutionStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for PipelineExecutionStatus
+        /// </summary>
+        public static readonly PipelineExecutionStatus Stopping = new PipelineExecutionStatus("Stopping");
+        /// <summary>
         /// Constant Succeeded for PipelineExecutionStatus
         /// </summary>
         public static readonly PipelineExecutionStatus Succeeded = new PipelineExecutionStatus("Succeeded");
@@ -694,6 +706,14 @@ namespace Amazon.CodePipeline
         /// Constant InProgress for StageExecutionStatus
         /// </summary>
         public static readonly StageExecutionStatus InProgress = new StageExecutionStatus("InProgress");
+        /// <summary>
+        /// Constant Stopped for StageExecutionStatus
+        /// </summary>
+        public static readonly StageExecutionStatus Stopped = new StageExecutionStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for StageExecutionStatus
+        /// </summary>
+        public static readonly StageExecutionStatus Stopping = new StageExecutionStatus("Stopping");
         /// <summary>
         /// Constant Succeeded for StageExecutionStatus
         /// </summary>

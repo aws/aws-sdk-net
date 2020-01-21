@@ -101,6 +101,11 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>StopPipelineExecution</a>, which stops the specified pipeline execution from continuing
+    /// through the pipeline.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the structure
     /// of the pipeline.
     /// </para>
@@ -897,10 +902,10 @@ namespace Amazon.CodePipeline
         /// 
         ///  <important> 
         /// <para>
-        /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
-        /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
-        /// secret values defined for the action.
+        /// When this API is called, AWS CodePipeline returns temporary credentials for the S3
+        /// bucket used to store artifacts for the pipeline, if the action requires access to
+        /// that S3 bucket for input or output artifacts. This API also returns any secret values
+        /// defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -921,10 +926,10 @@ namespace Amazon.CodePipeline
         /// 
         ///  <important> 
         /// <para>
-        /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
-        /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
-        /// secret values defined for the action.
+        /// When this API is called, AWS CodePipeline returns temporary credentials for the S3
+        /// bucket used to store artifacts for the pipeline, if the action requires access to
+        /// that S3 bucket for input or output artifacts. This API also returns any secret values
+        /// defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1194,10 +1199,10 @@ namespace Amazon.CodePipeline
         /// 
         ///  <important> 
         /// <para>
-        /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
-        /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
-        /// secret values defined for the action.
+        /// When this API is called, AWS CodePipeline returns temporary credentials for the S3
+        /// bucket used to store artifacts for the pipeline, if the action requires access to
+        /// that S3 bucket for input or output artifacts. This API also returns any secret values
+        /// defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1225,10 +1230,10 @@ namespace Amazon.CodePipeline
         /// 
         ///  <important> 
         /// <para>
-        /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
-        /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
-        /// secret values defined for the action.
+        /// When this API is called, AWS CodePipeline returns temporary credentials for the S3
+        /// bucket used to store artifacts for the pipeline, if the action requires access to
+        /// that S3 bucket for input or output artifacts. This API also returns any secret values
+        /// defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1635,10 +1640,10 @@ namespace Amazon.CodePipeline
         /// 
         ///  <important> 
         /// <para>
-        /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
-        /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
-        /// secret values defined for the action.
+        /// When this API is called, AWS CodePipeline returns temporary credentials for the S3
+        /// bucket used to store artifacts for the pipeline, if the action requires access to
+        /// that S3 bucket for input or output artifacts. This API also returns any secret values
+        /// defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1691,9 +1696,9 @@ namespace Amazon.CodePipeline
         /// 
         ///  <important> 
         /// <para>
-        /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
-        /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts.
+        /// When this API is called, AWS CodePipeline returns temporary credentials for the S3
+        /// bucket used to store artifacts for the pipeline, if the action requires access to
+        /// that S3 bucket for input or output artifacts.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2339,6 +2344,67 @@ namespace Amazon.CodePipeline
         /// <returns>Returns a  StartPipelineExecutionResult from CodePipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
         StartPipelineExecutionResponse EndStartPipelineExecution(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopPipelineExecution
+
+
+        /// <summary>
+        /// Stops the specified pipeline execution. You choose to either stop the pipeline execution
+        /// by completing in-progress actions without starting subsequent actions, or by abandoning
+        /// in-progress actions. While completing or abandoning in-progress actions, the pipeline
+        /// execution is in a <code>Stopping</code> state. After all in-progress actions are completed
+        /// or abandoned, the pipeline execution is in a <code>Stopped</code> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopPipelineExecution service method.</param>
+        /// 
+        /// <returns>The response from the StopPipelineExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.DuplicatedStopRequestException">
+        /// The pipeline execution is already in a <code>Stopping</code> state. If you already
+        /// chose to stop and wait, you cannot make that request again. You can choose to stop
+        /// and abandon now, but be aware that this option can lead to failed tasks or out of
+        /// sequence tasks. If you already chose to stop and abandon, you cannot make that request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineExecutionNotStoppableException">
+        /// Unable to stop the pipeline execution. The execution might already be in a <code>Stopped</code>
+        /// state, or it might no longer be in progress.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StopPipelineExecution">REST API Reference for StopPipelineExecution Operation</seealso>
+        StopPipelineExecutionResponse StopPipelineExecution(StopPipelineExecutionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopPipelineExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopPipelineExecution operation on AmazonCodePipelineClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopPipelineExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StopPipelineExecution">REST API Reference for StopPipelineExecution Operation</seealso>
+        IAsyncResult BeginStopPipelineExecution(StopPipelineExecutionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopPipelineExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopPipelineExecution.</param>
+        /// 
+        /// <returns>Returns a  StopPipelineExecutionResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StopPipelineExecution">REST API Reference for StopPipelineExecution Operation</seealso>
+        StopPipelineExecutionResponse EndStopPipelineExecution(IAsyncResult asyncResult);
 
         #endregion
         

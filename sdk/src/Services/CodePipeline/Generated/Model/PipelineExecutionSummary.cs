@@ -37,6 +37,7 @@ namespace Amazon.CodePipeline.Model
         private List<SourceRevision> _sourceRevisions = new List<SourceRevision>();
         private DateTime? _startTime;
         private PipelineExecutionStatus _status;
+        private StopExecutionTrigger _stopTrigger;
         private ExecutionTrigger _trigger;
 
         /// <summary>
@@ -122,12 +123,27 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Stopped: The pipeline execution was manually stopped. For more information, see <a
+        /// href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
+        /// Executions</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Stopping: The pipeline execution received a request to be manually stopped. Depending
+        /// on the selected stop mode, the execution is either completing or abandoning in-progress
+        /// actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
+        /// Executions</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Succeeded: The pipeline execution was completed successfully. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Superseded: While this pipeline execution was waiting for the next stage to be completed,
-        /// a newer pipeline execution advanced and continued through the pipeline instead. 
+        /// a newer pipeline execution advanced and continued through the pipeline instead. For
+        /// more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded
+        /// Executions</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -145,6 +161,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StopTrigger. 
+        /// <para>
+        /// The interaction that stopped a pipeline execution.
+        /// </para>
+        /// </summary>
+        public StopExecutionTrigger StopTrigger
+        {
+            get { return this._stopTrigger; }
+            set { this._stopTrigger = value; }
+        }
+
+        // Check to see if StopTrigger property is set
+        internal bool IsSetStopTrigger()
+        {
+            return this._stopTrigger != null;
         }
 
         /// <summary>

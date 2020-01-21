@@ -28,47 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents information about the location of an artifact.
+    /// This is the response object from the StopPipelineExecution operation.
     /// </summary>
-    public partial class ArtifactLocation
+    public partial class StopPipelineExecutionResponse : AmazonWebServiceResponse
     {
-        private S3ArtifactLocation _s3Location;
-        private ArtifactLocationType _type;
+        private string _pipelineExecutionId;
 
         /// <summary>
-        /// Gets and sets the property S3Location. 
+        /// Gets and sets the property PipelineExecutionId. 
         /// <para>
-        /// The S3 bucket that contains the artifact.
+        /// The unique system-generated ID of the pipeline execution that was stopped.
         /// </para>
         /// </summary>
-        public S3ArtifactLocation S3Location
+        public string PipelineExecutionId
         {
-            get { return this._s3Location; }
-            set { this._s3Location = value; }
+            get { return this._pipelineExecutionId; }
+            set { this._pipelineExecutionId = value; }
         }
 
-        // Check to see if S3Location property is set
-        internal bool IsSetS3Location()
+        // Check to see if PipelineExecutionId property is set
+        internal bool IsSetPipelineExecutionId()
         {
-            return this._s3Location != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of artifact in the location.
-        /// </para>
-        /// </summary>
-        public ArtifactLocationType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
+            return this._pipelineExecutionId != null;
         }
 
     }

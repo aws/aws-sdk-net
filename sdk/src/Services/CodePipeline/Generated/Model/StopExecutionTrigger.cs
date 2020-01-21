@@ -28,47 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents information about the location of an artifact.
+    /// The interaction that stopped a pipeline execution.
     /// </summary>
-    public partial class ArtifactLocation
+    public partial class StopExecutionTrigger
     {
-        private S3ArtifactLocation _s3Location;
-        private ArtifactLocationType _type;
+        private string _reason;
 
         /// <summary>
-        /// Gets and sets the property S3Location. 
+        /// Gets and sets the property Reason. 
         /// <para>
-        /// The S3 bucket that contains the artifact.
+        /// The user-specified reason the pipeline was stopped.
         /// </para>
         /// </summary>
-        public S3ArtifactLocation S3Location
+        [AWSProperty(Max=200)]
+        public string Reason
         {
-            get { return this._s3Location; }
-            set { this._s3Location = value; }
+            get { return this._reason; }
+            set { this._reason = value; }
         }
 
-        // Check to see if S3Location property is set
-        internal bool IsSetS3Location()
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
         {
-            return this._s3Location != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of artifact in the location.
-        /// </para>
-        /// </summary>
-        public ArtifactLocationType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
+            return this._reason != null;
         }
 
     }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// The Amazon S3 bucket where artifacts for the pipeline are stored.
+    /// The S3 bucket where artifacts for the pipeline are stored.
     /// 
     ///  <note> 
     /// <para>
@@ -67,10 +67,10 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The Amazon S3 bucket used for storing the artifacts for a pipeline. You can specify
-        /// the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline
-        /// artifacts is created for you based on the name of the pipeline. You can use any Amazon
-        /// S3 bucket in the same AWS Region as the pipeline to store your pipeline artifacts.
+        /// The S3 bucket used for storing the artifacts for a pipeline. You can specify the name
+        /// of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts
+        /// is created for you based on the name of the pipeline. You can use any S3 bucket in
+        /// the same AWS Region as the pipeline to store your pipeline artifacts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]
