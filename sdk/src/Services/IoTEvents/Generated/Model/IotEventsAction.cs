@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// Sends an IoT Events input, passing in information about the detector model instance
-    /// and the event which triggered the action.
+    /// Sends an AWS IoT Events input, passing in information about the detector model instance
+    /// and the event that triggered the action.
     /// </summary>
     public partial class IotEventsAction
     {

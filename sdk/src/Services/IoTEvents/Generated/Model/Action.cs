@@ -64,8 +64,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property Firehose. 
         /// <para>
-        /// Sends information about the detector model instance and the event which triggered
-        /// the action to a Kinesis Data Firehose delivery stream.
+        /// Sends information about the detector model instance and the event that triggered the
+        /// action to a Kinesis Data Firehose delivery stream.
         /// </para>
         /// </summary>
         public FirehoseAction Firehose
@@ -84,7 +84,7 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property IotEvents. 
         /// <para>
         /// Sends an IoT Events input, passing in information about the detector model instance
-        /// and the event which triggered the action.
+        /// and the event that triggered the action.
         /// </para>
         /// </summary>
         public IotEventsAction IotEvents
@@ -120,8 +120,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property Lambda. 
         /// <para>
-        /// Calls an AWS Lambda function, passing in information about the detector model instance
-        /// and the event which triggered the action.
+        /// Calls a Lambda function, passing in information about the detector model instance
+        /// and the event that triggered the action.
         /// </para>
         /// </summary>
         public LambdaAction Lambda
@@ -211,8 +211,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property Sqs. 
         /// <para>
-        /// Sends information about the detector model instance and the event which triggered
-        /// the action to an Amazon SQS queue.
+        /// Sends information about the detector model instance and the event that triggered the
+        /// action to an Amazon SQS queue.
         /// </para>
         /// </summary>
         public SqsAction Sqs

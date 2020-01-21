@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// Calls an AWS Lambda function, passing in information about the detector model instance
-    /// and the event which triggered the action.
+    /// Calls a Lambda function, passing in information about the detector model instance
+    /// and the event that triggered the action.
     /// </summary>
     public partial class LambdaAction
     {
@@ -38,7 +38,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property FunctionArn. 
         /// <para>
-        /// The ARN of the AWS Lambda function which is executed.
+        /// The ARN of the Lambda function that is executed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
