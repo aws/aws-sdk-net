@@ -1495,7 +1495,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't
-        /// be removed from an option group, and that option group can't be removed from a DB
+        /// be removed from an option group. Also, that option group can't be removed from a DB
         /// instance once it is associated with a DB instance
         /// </para>
         /// </summary>

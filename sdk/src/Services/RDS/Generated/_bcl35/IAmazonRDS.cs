@@ -55,7 +55,7 @@ namespace Amazon.RDS
     ///  
     /// <para>
     /// This interface reference for Amazon RDS contains documentation for a programming or
-    /// command line interface you can use to manage Amazon RDS. Note that Amazon RDS is asynchronous,
+    /// command line interface you can use to manage Amazon RDS. Amazon RDS is asynchronous,
     /// which means that some interfaces might require techniques such as polling or callback
     /// functions to determine when a command has been applied. In this reference, the parameter
     /// descriptions indicate whether a command is applied immediately, on the next instance
@@ -508,6 +508,53 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CancelExportTask
+
+
+        /// <summary>
+        /// Cancels an export task in progress that is exporting a snapshot to Amazon S3. Any
+        /// data that has already been written to the S3 bucket isn't removed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelExportTask service method.</param>
+        /// 
+        /// <returns>The response from the CancelExportTask service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.ExportTaskNotFoundException">
+        /// The export task doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidExportTaskStateException">
+        /// You can't cancel an export task that has completed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
+        CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelExportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelExportTask operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelExportTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
+        IAsyncResult BeginCancelExportTask(CancelExportTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelExportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelExportTask.</param>
+        /// 
+        /// <returns>Returns a  CancelExportTaskResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
+        CancelExportTaskResponse EndCancelExportTask(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CopyDBClusterParameterGroup
 
 
@@ -611,7 +658,7 @@ namespace Amazon.RDS
         ///  </li> <li> 
         /// <para>
         ///  <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot
-        /// will be created in.
+        /// is to be created in.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1817,10 +1864,10 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates an RDS event notification subscription. This action requires a topic ARN (Amazon
-        /// Resource Name) created by either the RDS console, the SNS console, or the SNS API.
-        /// To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe to
-        /// the topic. The ARN is displayed in the SNS console.
+        /// Creates an RDS event notification subscription. This action requires a topic Amazon
+        /// Resource Name (ARN) created by either the RDS console, the SNS console, or the SNS
+        /// API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe
+        /// to the topic. The ARN is displayed in the SNS console.
         /// 
         ///  
         /// <para>
@@ -1836,7 +1883,7 @@ namespace Amazon.RDS
         /// and SourceIdentifier = myDBInstance1, you are notified of all the db-instance events
         /// for the specified source. If you specify a SourceType but do not specify a SourceIdentifier,
         /// you receive notice of the events for that source type for all your RDS sources. If
-        /// you do not specify either the SourceType nor the SourceIdentifier, you are notified
+        /// you don't specify either the SourceType or the SourceIdentifier, you are notified
         /// of events generated from all RDS sources belonging to your customer account.
         /// </para>
         ///  <note> 
@@ -2338,7 +2385,7 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
+        /// When a DB instance is in a failure state and has a status of <code>failed</code>,
         /// <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only
         /// delete it when you skip creation of the final snapshot with the <code>SkipFinalSnapshot</code>
         /// parameter.
@@ -4510,6 +4557,50 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeExportTasks
+
+
+        /// <summary>
+        /// Returns information about a snapshot export to Amazon S3. This API operation supports
+        /// pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExportTasks service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.ExportTaskNotFoundException">
+        /// The export task doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
+        DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExportTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExportTasks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
+        IAsyncResult BeginDescribeExportTasks(DescribeExportTasksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeExportTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExportTasks.</param>
+        /// 
+        /// <returns>Returns a  DescribeExportTasksResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
+        DescribeExportTasksResponse EndDescribeExportTasks(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeGlobalClusters
 
 
@@ -5212,7 +5303,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS)
-        /// certificate for Amazon RDS for new DB instances, or remove the override.
+        /// certificate for Amazon RDS for new DB instances temporarily, or remove the override.
         /// 
         ///  
         /// <para>
@@ -6155,9 +6246,9 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modifies an existing RDS event notification subscription. Note that you can't modify
-        /// the source identifiers using this call; to change source identifiers for a subscription,
-        /// use the <code>AddSourceIdentifierToSubscription</code> and <code>RemoveSourceIdentifierFromSubscription</code>
+        /// Modifies an existing RDS event notification subscription. You can't modify the source
+        /// identifiers using this call. To change source identifiers for a subscription, use
+        /// the <code>AddSourceIdentifierToSubscription</code> and <code>RemoveSourceIdentifierFromSubscription</code>
         /// calls.
         /// 
         ///  
@@ -8015,6 +8106,77 @@ namespace Amazon.RDS
         /// <returns>Returns a  StartDBInstanceResult from RDS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">REST API Reference for StartDBInstance Operation</seealso>
         StartDBInstanceResponse EndStartDBInstance(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartExportTask
+
+
+        /// <summary>
+        /// Starts an export of a snapshot to Amazon S3. The provided IAM role must have access
+        /// to the S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExportTask service method.</param>
+        /// 
+        /// <returns>The response from the StartExportTask service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
+        /// snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.ExportTaskAlreadyExistsException">
+        /// You can't start an export task that's already running.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IamRoleMissingPermissionsException">
+        /// The IAM role requires additional permissions to export to an Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IamRoleNotFoundException">
+        /// The IAM role is missing for exporting to an Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidExportOnlyException">
+        /// The export is invalid for exporting to an Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidExportSourceStateException">
+        /// The state of the export snapshot is invalid for exporting to an Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidS3BucketException">
+        /// The specified Amazon S3 bucket name can't be found or Amazon RDS isn't authorized
+        /// to access the specified Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and
+        /// <b>S3IngestionRoleArn</b> values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an AWS KMS key.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
+        StartExportTaskResponse StartExportTask(StartExportTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartExportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartExportTask operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartExportTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
+        IAsyncResult BeginStartExportTask(StartExportTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartExportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartExportTask.</param>
+        /// 
+        /// <returns>Returns a  StartExportTaskResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
+        StartExportTaskResponse EndStartExportTask(IAsyncResult asyncResult);
 
         #endregion
         

@@ -197,6 +197,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void CancelExportTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("CancelExportTask");
+
+            var request = InstantiateClassGenerator.Execute<CancelExportTaskRequest>();
+            var marshaller = new CancelExportTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CancelExportTaskResponseUnmarshaller.Instance.Unmarshall(context)
+                as CancelExportTaskResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CopyDBClusterParameterGroupMarshallTest()
         {
             var operation = service_model.FindOperation("CopyDBClusterParameterGroup");
@@ -1732,6 +1756,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DescribeExportTasksMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeExportTasks");
+
+            var request = InstantiateClassGenerator.Execute<DescribeExportTasksRequest>();
+            var marshaller = new DescribeExportTasksRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeExportTasksResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeExportTasksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DescribeGlobalClustersMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeGlobalClusters");
@@ -2956,6 +3004,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = StartDBInstanceResponseUnmarshaller.Instance.Unmarshall(context)
                 as StartDBInstanceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void StartExportTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartExportTask");
+
+            var request = InstantiateClassGenerator.Execute<StartExportTaskRequest>();
+            var marshaller = new StartExportTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = StartExportTaskResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartExportTaskResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

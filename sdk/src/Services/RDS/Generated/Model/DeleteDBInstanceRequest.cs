@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  
     /// <para>
-    /// Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
+    /// When a DB instance is in a failure state and has a status of <code>failed</code>,
     /// <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only
     /// delete it when you skip creation of the final snapshot with the <code>SkipFinalSnapshot</code>
     /// parameter.
@@ -194,7 +194,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore',
+        /// When a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore',
         /// or 'incompatible-network', it can only be deleted when skip is specified.
         /// </para>
         ///  

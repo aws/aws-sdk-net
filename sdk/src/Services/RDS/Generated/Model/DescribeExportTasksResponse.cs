@@ -28,37 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <code>DescribeDBClusterBacktracks</code>
-    /// action.
+    /// This is the response object from the DescribeExportTasks operation.
     /// </summary>
-    public partial class DescribeDBClusterBacktracksResponse : AmazonWebServiceResponse
+    public partial class DescribeExportTasksResponse : AmazonWebServiceResponse
     {
-        private List<DBClusterBacktrack> _dbClusterBacktracks = new List<DBClusterBacktrack>();
+        private List<ExportTask> _exportTasks = new List<ExportTask>();
         private string _marker;
 
         /// <summary>
-        /// Gets and sets the property DBClusterBacktracks. 
+        /// Gets and sets the property ExportTasks. 
         /// <para>
-        /// Contains a list of backtracks for the user.
+        /// Information about an export of a snapshot to Amazon S3.
         /// </para>
         /// </summary>
-        public List<DBClusterBacktrack> DBClusterBacktracks
+        public List<ExportTask> ExportTasks
         {
-            get { return this._dbClusterBacktracks; }
-            set { this._dbClusterBacktracks = value; }
+            get { return this._exportTasks; }
+            set { this._exportTasks = value; }
         }
 
-        // Check to see if DBClusterBacktracks property is set
-        internal bool IsSetDBClusterBacktracks()
+        // Check to see if ExportTasks property is set
+        internal bool IsSetExportTasks()
         {
-            return this._dbClusterBacktracks != null && this._dbClusterBacktracks.Count > 0; 
+            return this._exportTasks != null && this._exportTasks.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code>
-        /// request.
+        /// A pagination token that can be used in a later <code>DescribeExportTasks</code> request.
+        /// A marker is used for pagination to identify the location to begin output for the next
+        /// response of <code>DescribeExportTasks</code>.
         /// </para>
         /// </summary>
         public string Marker

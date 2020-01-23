@@ -72,7 +72,7 @@ namespace Amazon.RDS.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot
-    /// will be created in.
+    /// is to be created in.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -162,8 +162,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the
-        /// Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption
+        /// The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon
+        /// Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption
         /// key. 
         /// </para>
         ///  
@@ -230,7 +230,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot
-        /// will be created in.
+        /// is to be created in.
         /// </para>
         ///  </li> <li> 
         /// <para>
