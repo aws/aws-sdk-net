@@ -45,6 +45,7 @@ namespace Amazon.IdentityManagement.Model
         private List<Statement> _matchedStatements = new List<Statement>();
         private List<string> _missingContextValues = new List<string>();
         private OrganizationsDecisionDetail _organizationsDecisionDetail;
+        private PermissionsBoundaryDecisionDetail _permissionsBoundaryDecisionDetail;
         private List<ResourceSpecificResult> _resourceSpecificResults = new List<ResourceSpecificResult>();
 
         /// <summary>
@@ -88,12 +89,29 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property EvalDecisionDetails. 
         /// <para>
-        /// Additional details about the results of the evaluation decision. When there are both
-        /// IAM policies and resource policies, this parameter explains how each set of policies
-        /// contributes to the final evaluation decision. When simulating cross-account access
-        /// to a resource, both the resource-based policy and the caller's IAM policy must grant
-        /// access. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-        /// IAM Roles Differ from Resource-based Policies</a> 
+        /// Additional details about the results of the cross-account evaluation decision. This
+        /// parameter is populated for only cross-account simulations. It contains a brief summary
+        /// of how each policy type contributes to the final evaluation decision.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the simulation evaluates policies within the same account and includes a resource
+        /// ARN, then the parameter is present but the response is empty. If the simulation evaluates
+        /// policies within the same account and specifies all resources (<code>*</code>), then
+        /// the parameter is not returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you make a cross-account request, AWS evaluates the request in the trusting account
+        /// and the trusted account. The request is allowed only if both evaluations return <code>true</code>.
+        /// For more information about how policies are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
+        /// Policies Within a Single Account</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If an AWS Organizations SCP included in the evaluation denies access, the simulation
+        /// ends. In this case, policy evaluation does not proceed any further and this parameter
+        /// is not returned.
         /// </para>
         /// </summary>
         public Dictionary<string, string> EvalDecisionDetails
@@ -190,6 +208,25 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetOrganizationsDecisionDetail()
         {
             return this._organizationsDecisionDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PermissionsBoundaryDecisionDetail. 
+        /// <para>
+        /// Contains information about the effect that a permissions boundary has on a policy
+        /// simulation when the boundary is applied to an IAM entity.
+        /// </para>
+        /// </summary>
+        public PermissionsBoundaryDecisionDetail PermissionsBoundaryDecisionDetail
+        {
+            get { return this._permissionsBoundaryDecisionDetail; }
+            set { this._permissionsBoundaryDecisionDetail = value; }
+        }
+
+        // Check to see if PermissionsBoundaryDecisionDetail property is set
+        internal bool IsSetPermissionsBoundaryDecisionDetail()
+        {
+            return this._permissionsBoundaryDecisionDetail != null;
         }
 
         /// <summary>

@@ -99,6 +99,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.OrganizationsDecisionDetail = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PermissionsBoundaryDecisionDetail", targetDepth))
+                    {
+                        var unmarshaller = PermissionsBoundaryDecisionDetailUnmarshaller.Instance;
+                        unmarshalledObject.PermissionsBoundaryDecisionDetail = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ResourceSpecificResults/member", targetDepth))
                     {
                         var unmarshaller = ResourceSpecificResultUnmarshaller.Instance;

@@ -87,6 +87,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.MissingContextValues.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("PermissionsBoundaryDecisionDetail", targetDepth))
+                    {
+                        var unmarshaller = PermissionsBoundaryDecisionDetailUnmarshaller.Instance;
+                        unmarshalledObject.PermissionsBoundaryDecisionDetail = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

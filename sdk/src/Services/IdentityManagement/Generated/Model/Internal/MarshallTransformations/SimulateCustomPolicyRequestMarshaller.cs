@@ -104,6 +104,15 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
                 }
+                if(publicRequest.IsSetPermissionsBoundaryPolicyInputList())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.PermissionsBoundaryPolicyInputList)
+                    {
+                        request.Parameters.Add("PermissionsBoundaryPolicyInputList" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetPolicyInputList())
                 {
                     int publicRequestlistValueIndex = 1;

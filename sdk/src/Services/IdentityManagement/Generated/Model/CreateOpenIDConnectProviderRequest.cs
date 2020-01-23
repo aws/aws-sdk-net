@@ -53,7 +53,7 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A list of thumbprints of the server certificate(s) that the IdP uses
+    /// A list of thumbprints of one or more server certificates that the IdP uses
     /// </para>
     ///  </li> </ul> 
     /// <para>

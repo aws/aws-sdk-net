@@ -77,6 +77,7 @@ namespace Amazon.IdentityManagement.Model
         private List<ContextEntry> _contextEntries = new List<ContextEntry>();
         private string _marker;
         private int? _maxItems;
+        private List<string> _permissionsBoundaryPolicyInputList = new List<string>();
         private List<string> _policyInputList = new List<string>();
         private string _policySourceArn;
         private List<string> _resourceArns = new List<string>();
@@ -218,6 +219,54 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PermissionsBoundaryPolicyInputList. 
+        /// <para>
+        /// The IAM permissions boundary policy to simulate. The permissions boundary sets the
+        /// maximum permissions that the entity can have. You can input only one permissions boundary
+        /// when you pass a policy to this operation. An IAM entity can only have one permissions
+        /// boundary in effect at a time. For example, if a permissions boundary is attached to
+        /// an entity and you pass in a different permissions boundary policy using this parameter,
+        /// then the new permission boundary policy is used for the simulation. For more information
+        /// about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+        /// Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input is
+        /// specified as a string containing the complete, valid JSON text of a permissions boundary
+        /// policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+        /// parameter is a string of characters consisting of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Any printable ASCII character ranging from the space character (<code>\u0020</code>)
+        /// through the end of the ASCII character range
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The printable characters in the Basic Latin and Latin-1 Supplement character set (through
+        /// <code>\u00FF</code>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+        /// and carriage return (<code>\u000D</code>)
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<string> PermissionsBoundaryPolicyInputList
+        {
+            get { return this._permissionsBoundaryPolicyInputList; }
+            set { this._permissionsBoundaryPolicyInputList = value; }
+        }
+
+        // Check to see if PermissionsBoundaryPolicyInputList property is set
+        internal bool IsSetPermissionsBoundaryPolicyInputList()
+        {
+            return this._permissionsBoundaryPolicyInputList != null && this._permissionsBoundaryPolicyInputList.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyInputList. 
         /// <para>
         /// An optional list of additional policy documents to include in the simulation. Each
@@ -231,17 +280,18 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Any printable ASCII character ranging from the space character (\u0020) through the
-        /// end of the ASCII character range
+        /// Any printable ASCII character ranging from the space character (<code>\u0020</code>)
+        /// through the end of the ASCII character range
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The printable characters in the Basic Latin and Latin-1 Supplement character set (through
-        /// \u00FF)
+        /// <code>\u00FF</code>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D)
+        /// The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+        /// and carriage return (<code>\u000D</code>)
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -440,17 +490,18 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Any printable ASCII character ranging from the space character (\u0020) through the
-        /// end of the ASCII character range
+        /// Any printable ASCII character ranging from the space character (<code>\u0020</code>)
+        /// through the end of the ASCII character range
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The printable characters in the Basic Latin and Latin-1 Supplement character set (through
-        /// \u00FF)
+        /// <code>\u00FF</code>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D)
+        /// The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+        /// and carriage return (<code>\u000D</code>)
         /// </para>
         ///  </li> </ul>
         /// </summary>
