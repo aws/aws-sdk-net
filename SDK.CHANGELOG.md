@@ -1,3 +1,14 @@
+### 3.3.669.0 (2020-01-23 19:15 UTC)
+* IdentityManagement (3.3.105.0)
+	* This release enables the Identity and Access Management policy simulator to simulate permissions boundary policies.
+* RDS (3.3.117.0)
+	* This SDK release introduces APIs that automate the export of Amazon RDS snapshot data to Amazon S3. The new APIs include: StartExportTask, CancelExportTask, DescribeExportTasks. These APIs automate the extraction of data from an RDS snapshot and export it to an Amazon S3 bucket. The data is stored in a compressed, consistent, and query-able format. After the data is exported, you can query it directly using tools such as Amazon Athena or Redshift Spectrum. You can also consume the data as part of a data lake solution. If you archive the data in S3 Infrequent Access or Glacier, you can reduce long term data storage costs by applying data lifecycle policies.
+* Core 3.3.104.20
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.668.1 (2020-01-21 21:31 UTC)
 * S3 (3.3.110.17)
 	* Fix performance issue when creating an AmazonS3Config object.
