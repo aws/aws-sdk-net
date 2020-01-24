@@ -1,3 +1,20 @@
+### 3.3.670.0 (2020-01-24 19:12 UTC)
+* DataSync (3.3.108.0)
+	* AWS DataSync now supports FSx for Windows File Server Locations
+* ECS (3.3.114.0)
+	* This release provides support for tagging Amazon ECS task sets for services using external deployment controllers.
+* EKS (3.3.107.0)
+	* Adding new error codes for Nodegroups in EKS
+* OpsWorksCM (3.3.104.0)
+	* AWS OpsWorks for Chef Automate now supports in-place upgrade to Chef Automate 2. Eligible servers can be updated through the management console, CLI and APIs.
+* WorkSpaces (3.3.108.6)
+	* Documentation updates for WorkSpaces
+* Core 3.3.104.21
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.669.0 (2020-01-23 19:15 UTC)
 * IdentityManagement (3.3.105.0)
 	* This release enables the Identity and Access Management policy simulator to simulate permissions boundary policies.
