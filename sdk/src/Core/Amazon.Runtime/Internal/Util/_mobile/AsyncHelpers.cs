@@ -10,21 +10,14 @@ namespace Amazon.Runtime.Internal.Util
 {
     /// <summary>
     /// This is a utility class to be used in last resort for code paths that are synchronous but need to call an asynchronous method.
-    /// This should never be used for methods that are called at high volume as this utility class has a performance cost. For example this 
+    /// This should never be used for methods that are called at high volume as this utility class has a performance cost. For example this
     /// class was added for the refreshing credentials like Cognito which would need to use this about once an hour.
-    /// 
-    /// This code is taken from: http://stackoverflow.com/questions/5095183/how-would-i-run-an-async-taskt-method-synchronously
-    /// which is licensed under Creative Commons Attribution-ShareAlike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
     /// </summary>
     public static class AsyncHelpers
     {
-        /// <summary>
-        /// Execute's an async Task&lt;T&gt; which has a void return value synchronously
-        /// </summary>
-        /// <param name="task">Task&lt;T&gt; method to execute</param>
-        public static void RunSync(Func<Task> task)
+        public static void RunSync(Func<Task> workItem)
         {
-            var oldContext = SynchronizationContext.Current;
+            var prevContext = SynchronizationContext.Current;
             try
             {
                 var synch = new ExclusiveSynchronizationContext();
@@ -33,11 +26,11 @@ namespace Amazon.Runtime.Internal.Util
                 {
                     try
                     {
-                        await task();
+                        await workItem();
                     }
                     catch (Exception e)
                     {
-                        synch.InnerException = e;
+                        synch.ObjectException = e;
                         throw;
                     }
                     finally
@@ -49,19 +42,13 @@ namespace Amazon.Runtime.Internal.Util
             }
             finally
             {
-                SynchronizationContext.SetSynchronizationContext(oldContext);
+                SynchronizationContext.SetSynchronizationContext(prevContext);
             }
         }
 
-        /// <summary>
-        /// Execute's an async Task&lt;T&gt; method which has a T return type synchronously
-        /// </summary>
-        /// <typeparam name="T">Return Type</typeparam>
-        /// <param name="task">Task&lt;T&gt; method to execute</param>
-        /// <returns></returns>
-        public static T RunSync<T>(Func<Task<T>> task)
+        public static T RunSync<T>(Func<Task<T>> workItem)
         {
-            var oldContext = SynchronizationContext.Current;
+            var prevContext = SynchronizationContext.Current;
             try
             {
                 var synch = new ExclusiveSynchronizationContext();
@@ -71,11 +58,11 @@ namespace Amazon.Runtime.Internal.Util
                 {
                     try
                     {
-                        ret = await task();
+                        ret = await workItem();
                     }
                     catch (Exception e)
                     {
-                        synch.InnerException = e;
+                        synch.ObjectException = e;
                         throw;
                     }
                     finally
@@ -88,16 +75,16 @@ namespace Amazon.Runtime.Internal.Util
             }
             finally
             {
-                SynchronizationContext.SetSynchronizationContext(oldContext);
-            }            
+                SynchronizationContext.SetSynchronizationContext(prevContext);
+            }
         }
 
         private class ExclusiveSynchronizationContext : SynchronizationContext
         {
             private bool done;
-            public Exception InnerException { get; set; }
-            readonly AutoResetEvent workItemsWaiting = new AutoResetEvent(false);
-            readonly Queue<Tuple<SendOrPostCallback, object>> items =
+            public Exception ObjectException { get; set; }
+            readonly AutoResetEvent pendingObjects = new AutoResetEvent(false);
+            readonly Queue<Tuple<SendOrPostCallback, object>> objects =
                 new Queue<Tuple<SendOrPostCallback, object>>();
 
             public override void Send(SendOrPostCallback d, object state)
@@ -107,11 +94,11 @@ namespace Amazon.Runtime.Internal.Util
 
             public override void Post(SendOrPostCallback d, object state)
             {
-                lock (items)
+                lock (objects)
                 {
-                    items.Enqueue(Tuple.Create(d, state));
+                    objects.Enqueue(Tuple.Create(d, state));
                 }
-                workItemsWaiting.Set();
+                pendingObjects.Set();
             }
 
             public void EndMessageLoop()
@@ -123,23 +110,23 @@ namespace Amazon.Runtime.Internal.Util
             {
                 while (!done)
                 {
-                    Tuple<SendOrPostCallback, object> task = null;
-                    lock (items)
+                    Tuple<SendOrPostCallback, object> workItem = null;
+                    lock (objects)
                     {
-                        if (items.Count > 0)
+                        if (objects.Count > 0)
                         {
-                            task = items.Dequeue();
+                            workItem = objects.Dequeue();
                         }
                     }
-                    if (task != null)
+                    if (workItem != null)
                     {
-                        task.Item1(task.Item2);
-                        if (InnerException != null) // the method threw an exeption
-                            ExceptionDispatchInfo.Capture(InnerException).Throw();
+                        workItem.Item1(workItem.Item2);
+                        if (ObjectException != null)
+                            ExceptionDispatchInfo.Capture(ObjectException).Throw();
                     }
                     else
                     {
-                        workItemsWaiting.WaitOne();
+                        pendingObjects.WaitOne();
                     }
                 }
             }
