@@ -53,6 +53,7 @@ namespace Amazon.ECS.Model
         private DateTime? _stabilityStatusAt;
         private string _startedBy;
         private string _status;
+        private List<Tag> _tags = new List<Tag>();
         private string _taskDefinition;
         private string _taskSetArn;
         private DateTime? _updatedAt;
@@ -464,6 +465,66 @@ namespace Amazon.ECS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The metadata that you apply to the task set to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following basic restrictions apply to tags:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum number of tags per resource - 50
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For each resource, each tag key must be unique, and each tag key can have only one
+        /// value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum key length - 128 Unicode characters in UTF-8
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum value length - 256 Unicode characters in UTF-8
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If your tagging schema is used across multiple services and resources, remember that
+        /// other services may have restrictions on allowed characters. Generally allowed characters
+        /// are: letters, numbers, and spaces representable in UTF-8, and the following characters:
+        /// + - = . _ : / @.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tag keys and values are case-sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
+        /// of such as a prefix for either keys or values as it is reserved for AWS use. You cannot
+        /// edit or delete tag keys or values with this prefix. Tags with this prefix do not count
+        /// against your tags per resource limit.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

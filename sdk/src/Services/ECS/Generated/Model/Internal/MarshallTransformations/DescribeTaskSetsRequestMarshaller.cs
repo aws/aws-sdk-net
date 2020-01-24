@@ -74,6 +74,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Cluster);
                 }
 
+                if(publicRequest.IsSetInclude())
+                {
+                    context.Writer.WritePropertyName("include");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestIncludeListValue in publicRequest.Include)
+                    {
+                            context.Writer.Write(publicRequestIncludeListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetService())
                 {
                     context.Writer.WritePropertyName("service");
