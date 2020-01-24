@@ -1110,7 +1110,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>,
-        /// or <code>UNHEALTHY</code>.
+        /// <code>UNHEALTHY</code>, or <code>STOPPED</code>.
         /// </para>
         ///  
         /// <para>
@@ -1197,7 +1197,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// You cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>, <code>ERROR</code>,
-        /// or <code>UNHEALTHY</code>.
+        /// <code>UNHEALTHY</code>, or <code>STOPPED</code>.
         /// </para>
         ///  
         /// <para>
