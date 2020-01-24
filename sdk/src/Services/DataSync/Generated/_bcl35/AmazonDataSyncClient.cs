@@ -459,6 +459,66 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  CreateLocationFsxWindows
+
+        /// <summary>
+        /// Creates an endpoint for an Amazon FSx for Windows file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxWindows service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocationFsxWindows service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows">REST API Reference for CreateLocationFsxWindows Operation</seealso>
+        public virtual CreateLocationFsxWindowsResponse CreateLocationFsxWindows(CreateLocationFsxWindowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationFsxWindowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationFsxWindowsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocationFsxWindowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLocationFsxWindows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxWindows operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLocationFsxWindows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows">REST API Reference for CreateLocationFsxWindows Operation</seealso>
+        public virtual IAsyncResult BeginCreateLocationFsxWindows(CreateLocationFsxWindowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationFsxWindowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationFsxWindowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLocationFsxWindows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLocationFsxWindows.</param>
+        /// 
+        /// <returns>Returns a  CreateLocationFsxWindowsResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows">REST API Reference for CreateLocationFsxWindows Operation</seealso>
+        public virtual CreateLocationFsxWindowsResponse EndCreateLocationFsxWindows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLocationFsxWindowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateLocationNfs
 
         /// <summary>
@@ -1034,6 +1094,66 @@ namespace Amazon.DataSync
         public virtual DescribeLocationEfsResponse EndDescribeLocationEfs(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLocationEfsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeLocationFsxWindows
+
+        /// <summary>
+        /// Returns metadata, such as the path information about an Amazon FSx for Windows location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxWindows service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocationFsxWindows service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">REST API Reference for DescribeLocationFsxWindows Operation</seealso>
+        public virtual DescribeLocationFsxWindowsResponse DescribeLocationFsxWindows(DescribeLocationFsxWindowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationFsxWindowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationFsxWindowsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLocationFsxWindowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLocationFsxWindows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxWindows operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLocationFsxWindows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">REST API Reference for DescribeLocationFsxWindows Operation</seealso>
+        public virtual IAsyncResult BeginDescribeLocationFsxWindows(DescribeLocationFsxWindowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationFsxWindowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationFsxWindowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLocationFsxWindows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLocationFsxWindows.</param>
+        /// 
+        /// <returns>Returns a  DescribeLocationFsxWindowsResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">REST API Reference for DescribeLocationFsxWindows Operation</seealso>
+        public virtual DescribeLocationFsxWindowsResponse EndDescribeLocationFsxWindows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeLocationFsxWindowsResponse>(asyncResult);
         }
 
         #endregion

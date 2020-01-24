@@ -283,6 +283,60 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type LogLevel.
+    /// </summary>
+    public class LogLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASIC for LogLevel
+        /// </summary>
+        public static readonly LogLevel BASIC = new LogLevel("BASIC");
+        /// <summary>
+        /// Constant OFF for LogLevel
+        /// </summary>
+        public static readonly LogLevel OFF = new LogLevel("OFF");
+        /// <summary>
+        /// Constant TRANSFER for LogLevel
+        /// </summary>
+        public static readonly LogLevel TRANSFER = new LogLevel("TRANSFER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogLevel FindValue(string value)
+        {
+            return FindValue<LogLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Mtime.
     /// </summary>
     public class Mtime : ConstantClass

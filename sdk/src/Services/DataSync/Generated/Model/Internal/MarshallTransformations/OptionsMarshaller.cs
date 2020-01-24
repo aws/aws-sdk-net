@@ -63,6 +63,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Gid);
             }
 
+            if(requestObject.IsSetLogLevel())
+            {
+                context.Writer.WritePropertyName("LogLevel");
+                context.Writer.Write(requestObject.LogLevel);
+            }
+
             if(requestObject.IsSetMtime())
             {
                 context.Writer.WritePropertyName("Mtime");

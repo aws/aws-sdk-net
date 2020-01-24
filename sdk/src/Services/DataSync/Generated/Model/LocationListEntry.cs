@@ -86,7 +86,7 @@ namespace Amazon.DataSync.Model
         /// it's the prefix path that you mount to and treat as the root of the location.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4355)]
+        [AWSProperty(Max=4356)]
         public string LocationUri
         {
             get { return this._locationUri; }

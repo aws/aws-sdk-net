@@ -82,6 +82,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.Gid = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LogLevel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Mtime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

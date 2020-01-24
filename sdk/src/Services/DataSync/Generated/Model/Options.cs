@@ -46,6 +46,7 @@ namespace Amazon.DataSync.Model
         private Atime _atime;
         private long? _bytesPerSecond;
         private Gid _gid;
+        private LogLevel _logLevel;
         private Mtime _mtime;
         private OverwriteMode _overwriteMode;
         private PosixPermissions _posixPermissions;
@@ -148,6 +149,27 @@ namespace Amazon.DataSync.Model
         internal bool IsSetGid()
         {
             return this._gid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogLevel. 
+        /// <para>
+        /// A value that determines the type of logs DataSync will deliver to your AWS CloudWatch
+        /// Logs file. If set to <code>OFF</code>, no logs will be delivered. <code>BASIC</code>
+        /// will deliver a few logs per transfer operation and <code>TRANSFER</code> will deliver
+        /// a verbose log that contains logs for every file that is transferred.
+        /// </para>
+        /// </summary>
+        public LogLevel LogLevel
+        {
+            get { return this._logLevel; }
+            set { this._logLevel = value; }
+        }
+
+        // Check to see if LogLevel property is set
+        internal bool IsSetLogLevel()
+        {
+            return this._logLevel != null;
         }
 
         /// <summary>

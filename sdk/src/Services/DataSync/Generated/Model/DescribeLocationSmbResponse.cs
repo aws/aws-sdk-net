@@ -121,7 +121,7 @@ namespace Amazon.DataSync.Model
         /// The URL of the source SBM location that was described.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4355)]
+        [AWSProperty(Max=4356)]
         public string LocationUri
         {
             get { return this._locationUri; }

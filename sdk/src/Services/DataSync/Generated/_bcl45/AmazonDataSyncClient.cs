@@ -473,6 +473,59 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  CreateLocationFsxWindows
+
+
+        /// <summary>
+        /// Creates an endpoint for an Amazon FSx for Windows file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxWindows service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocationFsxWindows service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows">REST API Reference for CreateLocationFsxWindows Operation</seealso>
+        public virtual CreateLocationFsxWindowsResponse CreateLocationFsxWindows(CreateLocationFsxWindowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationFsxWindowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationFsxWindowsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocationFsxWindowsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an endpoint for an Amazon FSx for Windows file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxWindows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocationFsxWindows service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows">REST API Reference for CreateLocationFsxWindows Operation</seealso>
+        public virtual Task<CreateLocationFsxWindowsResponse> CreateLocationFsxWindowsAsync(CreateLocationFsxWindowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationFsxWindowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationFsxWindowsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLocationFsxWindowsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateLocationNfs
 
 
@@ -1024,6 +1077,59 @@ namespace Amazon.DataSync
             options.ResponseUnmarshaller = DescribeLocationEfsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeLocationEfsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLocationFsxWindows
+
+
+        /// <summary>
+        /// Returns metadata, such as the path information about an Amazon FSx for Windows location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxWindows service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocationFsxWindows service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">REST API Reference for DescribeLocationFsxWindows Operation</seealso>
+        public virtual DescribeLocationFsxWindowsResponse DescribeLocationFsxWindows(DescribeLocationFsxWindowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationFsxWindowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationFsxWindowsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLocationFsxWindowsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns metadata, such as the path information about an Amazon FSx for Windows location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxWindows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLocationFsxWindows service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">REST API Reference for DescribeLocationFsxWindows Operation</seealso>
+        public virtual Task<DescribeLocationFsxWindowsResponse> DescribeLocationFsxWindowsAsync(DescribeLocationFsxWindowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationFsxWindowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationFsxWindowsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeLocationFsxWindowsResponse>(request, options, cancellationToken);
         }
 
         #endregion

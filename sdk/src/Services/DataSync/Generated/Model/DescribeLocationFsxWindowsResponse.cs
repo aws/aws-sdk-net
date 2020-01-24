@@ -28,19 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// DescribeLocationEfsResponse
+    /// This is the response object from the DescribeLocationFsxWindows operation.
     /// </summary>
-    public partial class DescribeLocationEfsResponse : AmazonWebServiceResponse
+    public partial class DescribeLocationFsxWindowsResponse : AmazonWebServiceResponse
     {
         private DateTime? _creationTime;
-        private Ec2Config _ec2Config;
+        private string _domain;
         private string _locationArn;
         private string _locationUri;
+        private List<string> _securityGroupArns = new List<string>();
+        private string _user;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time that the EFS location was created.
+        /// The time that the FSx for Windows location was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -56,24 +58,28 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Ec2Config.
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// The name of the Windows domain that the FSx for Windows server belongs to.
+        /// </para>
         /// </summary>
-        public Ec2Config Ec2Config
+        [AWSProperty(Max=253)]
+        public string Domain
         {
-            get { return this._ec2Config; }
-            set { this._ec2Config = value; }
+            get { return this._domain; }
+            set { this._domain = value; }
         }
 
-        // Check to see if Ec2Config property is set
-        internal bool IsSetEc2Config()
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
         {
-            return this._ec2Config != null;
+            return this._domain != null;
         }
 
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon resource Name (ARN) of the EFS location that was described.
+        /// The Amazon resource Name (ARN) of the FSx for Windows location that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -92,7 +98,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// The URL of the EFS location that was described.
+        /// The URL of the FSx for Windows location that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4356)]
@@ -106,6 +112,46 @@ namespace Amazon.DataSync.Model
         internal bool IsSetLocationUri()
         {
             return this._locationUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the security groups that are configured for the
+        /// for the FSx for Windows file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> SecurityGroupArns
+        {
+            get { return this._securityGroupArns; }
+            set { this._securityGroupArns = value; }
+        }
+
+        // Check to see if SecurityGroupArns property is set
+        internal bool IsSetSecurityGroupArns()
+        {
+            return this._securityGroupArns != null && this._securityGroupArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property User. 
+        /// <para>
+        /// The user who has the permissions to access files and folders in the FSx for Windows
+        /// file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=104)]
+        public string User
+        {
+            get { return this._user; }
+            set { this._user = value; }
+        }
+
+        // Check to see if User property is set
+        internal bool IsSetUser()
+        {
+            return this._user != null;
         }
 
     }
