@@ -61,6 +61,13 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  
         /// <para>
+        ///  <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code>
+        /// includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to
+        /// Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
+        /// have had at least one successful maintenance run after November 1, 2019.
+        /// </para>
+        ///  
+        /// <para>
         ///  <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code>
         /// contains PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by
         /// the Puppet API over TCP port number 8140. The CA certificate is also used to sign
