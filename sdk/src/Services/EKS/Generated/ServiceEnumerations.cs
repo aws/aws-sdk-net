@@ -361,6 +361,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly NodegroupIssueCode AsgInstanceLaunchFailures = new NodegroupIssueCode("AsgInstanceLaunchFailures");
         /// <summary>
+        /// Constant AutoScalingGroupInvalidConfiguration for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode AutoScalingGroupInvalidConfiguration = new NodegroupIssueCode("AutoScalingGroupInvalidConfiguration");
+        /// <summary>
         /// Constant AutoScalingGroupNotFound for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode AutoScalingGroupNotFound = new NodegroupIssueCode("AutoScalingGroupNotFound");
@@ -380,6 +384,10 @@ namespace Amazon.EKS
         /// Constant Ec2SecurityGroupNotFound for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode Ec2SecurityGroupNotFound = new NodegroupIssueCode("Ec2SecurityGroupNotFound");
+        /// <summary>
+        /// Constant Ec2SubnetNotFound for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2SubnetNotFound = new NodegroupIssueCode("Ec2SubnetNotFound");
         /// <summary>
         /// Constant IamInstanceProfileNotFound for NodegroupIssueCode
         /// </summary>
