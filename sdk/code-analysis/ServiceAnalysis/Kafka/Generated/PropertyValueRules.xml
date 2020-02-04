@@ -36,6 +36,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kafka.Model.ListKafkaVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kafka.Model.ListNodesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>

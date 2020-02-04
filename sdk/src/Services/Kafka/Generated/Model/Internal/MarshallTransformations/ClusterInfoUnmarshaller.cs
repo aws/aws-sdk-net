@@ -142,6 +142,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("stateInfo", targetDepth))
+                {
+                    var unmarshaller = StateInfoUnmarshaller.Instance;
+                    unmarshalledObject.StateInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

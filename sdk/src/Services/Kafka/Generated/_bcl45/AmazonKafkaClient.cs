@@ -1118,6 +1118,71 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  ListKafkaVersions
+
+
+        /// <summary>
+        /// Returns a list of Kafka versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKafkaVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListKafkaVersions service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListKafkaVersions">REST API Reference for ListKafkaVersions Operation</seealso>
+        public virtual ListKafkaVersionsResponse ListKafkaVersions(ListKafkaVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListKafkaVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKafkaVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListKafkaVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of Kafka versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKafkaVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListKafkaVersions service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListKafkaVersions">REST API Reference for ListKafkaVersions Operation</seealso>
+        public virtual Task<ListKafkaVersionsResponse> ListKafkaVersionsAsync(ListKafkaVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListKafkaVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKafkaVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListKafkaVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListNodes
 
 

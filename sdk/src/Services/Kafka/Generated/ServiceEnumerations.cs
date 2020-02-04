@@ -241,6 +241,56 @@ namespace Amazon.Kafka
 
 
     /// <summary>
+    /// Constants used for properties of type KafkaVersionStatus.
+    /// </summary>
+    public class KafkaVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for KafkaVersionStatus
+        /// </summary>
+        public static readonly KafkaVersionStatus ACTIVE = new KafkaVersionStatus("ACTIVE");
+        /// <summary>
+        /// Constant DEPRECATED for KafkaVersionStatus
+        /// </summary>
+        public static readonly KafkaVersionStatus DEPRECATED = new KafkaVersionStatus("DEPRECATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KafkaVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KafkaVersionStatus FindValue(string value)
+        {
+            return FindValue<KafkaVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KafkaVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NodeType.
     /// </summary>
     public class NodeType : ConstantClass

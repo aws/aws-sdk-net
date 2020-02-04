@@ -45,6 +45,7 @@ namespace Amazon.Kafka.Model
         private int? _numberOfBrokerNodes;
         private OpenMonitoring _openMonitoring;
         private ClusterState _state;
+        private StateInfo _stateInfo;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _zookeeperConnectString;
 
@@ -283,6 +284,21 @@ namespace Amazon.Kafka.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateInfo.
+        /// </summary>
+        public StateInfo StateInfo
+        {
+            get { return this._stateInfo; }
+            set { this._stateInfo = value; }
+        }
+
+        // Check to see if StateInfo property is set
+        internal bool IsSetStateInfo()
+        {
+            return this._stateInfo != null;
         }
 
         /// <summary>
