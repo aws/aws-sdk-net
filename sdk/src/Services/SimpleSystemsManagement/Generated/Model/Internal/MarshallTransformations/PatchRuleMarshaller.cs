@@ -51,6 +51,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ApproveAfterDays);
             }
 
+            if(requestObject.IsSetApproveUntilDate())
+            {
+                context.Writer.WritePropertyName("ApproveUntilDate");
+                context.Writer.Write(requestObject.ApproveUntilDate);
+            }
+
             if(requestObject.IsSetComplianceLevel())
             {
                 context.Writer.WritePropertyName("ComplianceLevel");

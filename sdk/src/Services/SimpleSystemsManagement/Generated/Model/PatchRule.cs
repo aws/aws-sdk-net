@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class PatchRule
     {
         private int? _approveAfterDays;
+        private string _approveUntilDate;
         private PatchComplianceLevel _complianceLevel;
         private bool? _enableNonSecurity;
         private PatchFilterGroup _patchFilterGroup;
@@ -45,7 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// means that patches are approved seven days after they are released. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public int ApproveAfterDays
         {
             get { return this._approveAfterDays.GetValueOrDefault(); }
@@ -56,6 +57,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetApproveAfterDays()
         {
             return this._approveAfterDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApproveUntilDate. 
+        /// <para>
+        /// The cutoff date for auto approval of released patches. Any patches released on or
+        /// before this date will be installed automatically
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public string ApproveUntilDate
+        {
+            get { return this._approveUntilDate; }
+            set { this._approveUntilDate = value; }
+        }
+
+        // Check to see if ApproveUntilDate property is set
+        internal bool IsSetApproveUntilDate()
+        {
+            return this._approveUntilDate != null;
         }
 
         /// <summary>

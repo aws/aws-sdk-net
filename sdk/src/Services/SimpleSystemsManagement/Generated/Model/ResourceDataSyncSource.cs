@@ -40,8 +40,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AwsOrganizationsSource. 
         /// <para>
-        /// The field name in <code>SyncSource</code> for the <code>ResourceDataSyncAwsOrganizationsSource</code>
-        /// type.
+        /// Information about the AwsOrganizationsSource resource data sync source. A sync source
+        /// of this type can synchronize data from AWS Organizations.
         /// </para>
         /// </summary>
         public ResourceDataSyncAwsOrganizationsSource AwsOrganizationsSource
