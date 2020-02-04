@@ -1,3 +1,24 @@
+### 3.3.671.0 (2020-02-04 20:49 UTC)
+* CloudFront (3.3.101.96)
+	* Documentation updates for CloudFront
+* EC2 (3.3.155.0)
+	* Amazon VPC Flow Logs adds support for 1-minute aggregation intervals.
+* IoT (3.3.106.16)
+	* Updated ThrottlingException documentation to report that the error code is 400, and not 429, to reflect actual system behaviour.
+* Kafka (3.3.106.0)
+	* This release enables AWS MSK customers to list Apache Kafka versions that are supported on AWS MSK clusters. Also includes changes to expose additional details of a cluster's state in DescribeCluster and ListClusters APIs.
+* SimpleSystemsManagement (3.3.118.0)
+	* This feature ensures that an instance is patched up to the available patches on a particular date. It can be enabled by selecting the 'ApproveUntilDate' option as the auto-approval rule while creating the patch baseline. ApproveUntilDate - The cutoff date for auto approval of released patches. Any patches released on or before this date will be installed automatically.
+* StorageGateway (3.3.111.0)
+	* Adding KVM as a support hypervisor
+* WorkMail (3.3.102.0)
+	* This release adds support for tagging Amazon WorkMail organizations.
+* Core 3.3.104.22
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.670.0 (2020-01-24 19:12 UTC)
 * DataSync (3.3.108.0)
 	* AWS DataSync now supports FSx for Windows File Server Locations
