@@ -82,6 +82,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LogGroupName", StringUtils.FromString(publicRequest.LogGroupName));
                 }
+                if(publicRequest.IsSetMaxAggregationInterval())
+                {
+                    request.Parameters.Add("MaxAggregationInterval", StringUtils.FromInt(publicRequest.MaxAggregationInterval));
+                }
                 if(publicRequest.IsSetResourceIds())
                 {
                     int publicRequestlistValueIndex = 1;

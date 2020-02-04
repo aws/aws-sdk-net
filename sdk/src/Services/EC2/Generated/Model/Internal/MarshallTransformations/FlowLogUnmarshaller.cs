@@ -114,6 +114,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("maxAggregationInterval", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MaxAggregationInterval = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("resourceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         private LogDestinationType _logDestinationType;
         private string _logFormat;
         private string _logGroupName;
+        private int? _maxAggregationInterval;
         private string _resourceId;
         private TrafficType _trafficType;
 
@@ -234,6 +235,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetLogGroupName()
         {
             return this._logGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxAggregationInterval. 
+        /// <para>
+        /// The maximum interval of time, in seconds, during which a flow of packets is captured
+        /// and aggregated into a flow log record.
+        /// </para>
+        ///  
+        /// <para>
+        /// For network interfaces attached to <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+        /// instances</a>, the aggregation interval is always 60 seconds (1 minute), regardless
+        /// of the specified value.
+        /// </para>
+        /// </summary>
+        public int MaxAggregationInterval
+        {
+            get { return this._maxAggregationInterval.GetValueOrDefault(); }
+            set { this._maxAggregationInterval = value; }
+        }
+
+        // Check to see if MaxAggregationInterval property is set
+        internal bool IsSetMaxAggregationInterval()
+        {
+            return this._maxAggregationInterval.HasValue; 
         }
 
         /// <summary>
