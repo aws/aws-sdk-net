@@ -196,6 +196,11 @@
     <pattern>^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeOrganizationResponse.ARN</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeOrganizationResponse.DefaultMailDomain</property>
     <max>256</max>
   </property-value-rule>
@@ -467,6 +472,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.ListUsersRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -527,6 +537,16 @@
     <property>Amazon.WorkMail.Model.ResetPasswordRequest.UserId</property>
     <min>12</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.UntagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateMailboxQuotaRequest.MailboxQuota</property>
@@ -628,6 +648,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.LimitExceededException.Message</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.MailDomainNotFoundException.Message</property>
     <max>256</max>
   </property-value-rule>
@@ -698,6 +722,24 @@
     <min>1</min>
     <max>20</max>
     <pattern>[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ResourceNotFoundException.Message</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.TooManyTagsException.Message</property>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UnsupportedOperationException.Message</property>

@@ -57,6 +57,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     response.Alias = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompletedDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

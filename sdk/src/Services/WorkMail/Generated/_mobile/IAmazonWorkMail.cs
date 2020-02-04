@@ -182,6 +182,9 @@ namespace Amazon.WorkMail
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
         /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
         /// For an email or alias to be created in Amazon WorkMail, the included domain must be
         /// defined in the organization.
@@ -1029,6 +1032,27 @@ namespace Amazon.WorkMail
 
         #endregion
                 
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// Lists the tags applied to an Amazon WorkMail organization resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListUsers
 
 
@@ -1208,6 +1232,55 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ResetPassword">REST API Reference for ResetPassword Operation</seealso>
         Task<ResetPasswordResponse> ResetPasswordAsync(ResetPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Applies the specified tags to the specified Amazon WorkMail organization resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.TooManyTagsException">
+        /// The resource can have up to 50 user-applied tags.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Untags the specified tags from the specified Amazon WorkMail organization resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

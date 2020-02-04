@@ -33,6 +33,7 @@ namespace Amazon.WorkMail.Model
     public partial class DescribeOrganizationResponse : AmazonWebServiceResponse
     {
         private string _alias;
+        private string _arn;
         private DateTime? _completedDate;
         private string _defaultMailDomain;
         private string _directoryId;
@@ -58,6 +59,25 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetAlias()
         {
             return this._alias != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the organization.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1011)]
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
         }
 
         /// <summary>
