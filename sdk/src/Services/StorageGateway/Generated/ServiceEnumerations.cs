@@ -503,6 +503,10 @@ namespace Amazon.StorageGateway
         /// </summary>
         public static readonly HostEnvironment HYPERV = new HostEnvironment("HYPER-V");
         /// <summary>
+        /// Constant KVM for HostEnvironment
+        /// </summary>
+        public static readonly HostEnvironment KVM = new HostEnvironment("KVM");
+        /// <summary>
         /// Constant OTHER for HostEnvironment
         /// </summary>
         public static readonly HostEnvironment OTHER = new HostEnvironment("OTHER");
