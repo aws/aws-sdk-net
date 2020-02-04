@@ -406,7 +406,7 @@ namespace Amazon.CloudFront
         /// only clients that support Server Name Indication (SNI).
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
-        /// Query string parameters specified in the response body are not valid.
+        /// The query string parameters specified are not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
         /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
@@ -417,17 +417,17 @@ namespace Amazon.CloudFront
         /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
-        /// A response code specified in the response body is not valid.
+        /// A response code is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
-        /// TTL order specified in the response body is not valid.
+        /// The TTL order specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
-        /// A viewer certificate specified in the response body is not valid.
+        /// A viewer certificate specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
-        /// A web ACL ID specified in the response body is not valid. To specify a web ACL created
-        /// using the latest version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
@@ -607,7 +607,7 @@ namespace Amazon.CloudFront
         /// only clients that support Server Name Indication (SNI).
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
-        /// Query string parameters specified in the response body are not valid.
+        /// The query string parameters specified are not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
         /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
@@ -618,20 +618,20 @@ namespace Amazon.CloudFront
         /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
-        /// A response code specified in the response body is not valid.
+        /// A response code is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
-        /// Tagging specified in the response body is not valid.
+        /// The tagging specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
-        /// TTL order specified in the response body is not valid.
+        /// The TTL order specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
-        /// A viewer certificate specified in the response body is not valid.
+        /// A viewer certificate specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
-        /// A web ACL ID specified in the response body is not valid. To specify a web ACL created
-        /// using the latest version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
@@ -1193,7 +1193,7 @@ namespace Amazon.CloudFront
         /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
-        /// Tagging specified in the response body is not valid.
+        /// The tagging specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
@@ -2913,8 +2913,8 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
-        /// A web ACL ID specified in the response body is not valid. To specify a web ACL created
-        /// using the latest version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
@@ -3285,7 +3285,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
-        /// Tagging specified in the response body is not valid.
+        /// The tagging specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// A resource that was specified is not valid.
@@ -3351,7 +3351,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
-        /// Tagging specified in the response body is not valid.
+        /// The tagging specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// A resource that was specified is not valid.
@@ -3417,7 +3417,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
-        /// Tagging specified in the response body is not valid.
+        /// The tagging specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// A resource that was specified is not valid.
@@ -3709,7 +3709,7 @@ namespace Amazon.CloudFront
         /// The read timeout specified for the origin is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
-        /// Query string parameters specified in the response body are not valid.
+        /// The query string parameters specified are not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
         /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
@@ -3720,17 +3720,17 @@ namespace Amazon.CloudFront
         /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
-        /// A response code specified in the response body is not valid.
+        /// A response code is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
-        /// TTL order specified in the response body is not valid.
+        /// The TTL order specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
-        /// A viewer certificate specified in the response body is not valid.
+        /// A viewer certificate specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
-        /// A web ACL ID specified in the response body is not valid. To specify a web ACL created
-        /// using the latest version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of AWS WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">

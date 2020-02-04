@@ -47,7 +47,7 @@ namespace Amazon.CloudFront.Model
         ///  
         /// <para>
         /// Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests
-        /// to an Amazon S3 origin, specify none for the <code>Forward</code> element. 
+        /// to an Amazon S3 origin, specify none for the <code>Forward</code> element.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -66,17 +66,18 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property WhitelistedNames. 
         /// <para>
-        /// Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>.
+        /// Required if you specify <code>whitelist</code> for the value of <code>Forward</code>.
         /// A complex type that specifies how many different cookies you want CloudFront to forward
         /// to the origin for this cache behavior and, if you want to forward selected cookies,
         /// the names of those cookies.
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>all</code> or none for the value of <code>Forward</code>, omit
-        /// <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from
-        /// <code>whitelist</code> to all or none and you don't delete the <code>WhitelistedNames</code>
-        /// element and its child elements, CloudFront deletes them automatically.
+        /// If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>,
+        /// omit <code>WhitelistedNames</code>. If you change the value of <code>Forward</code>
+        /// from <code>whitelist</code> to <code>all</code> or <code>none</code> and you don't
+        /// delete the <code>WhitelistedNames</code> element and its child elements, CloudFront
+        /// deletes them automatically.
         /// </para>
         ///  
         /// <para>

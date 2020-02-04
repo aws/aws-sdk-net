@@ -43,7 +43,13 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Items. 
         /// <para>
         /// A complex type that contains one <code>Name</code> element for each cookie that you
-        /// want CloudFront to forward to the origin for this cache behavior.
+        /// want CloudFront to forward to the origin for this cache behavior. It must contain
+        /// the same number of items that is specified in the <code>Quantity</code> field.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code>
+        /// object), this field must contain at least one item.
         /// </para>
         /// </summary>
         public List<string> Items
@@ -62,7 +68,13 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Quantity. 
         /// <para>
         /// The number of different cookies that you want CloudFront to forward to the origin
-        /// for this cache behavior.
+        /// for this cache behavior. The value must equal the number of items that are in the
+        /// <code>Items</code> field.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code>
+        /// object), this value must be <code>1</code> or higher.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
