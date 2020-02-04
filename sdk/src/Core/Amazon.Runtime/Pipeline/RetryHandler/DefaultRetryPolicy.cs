@@ -50,7 +50,8 @@ namespace Amazon.Runtime.Internal
             HttpStatusCode.InternalServerError,
             HttpStatusCode.ServiceUnavailable,
             HttpStatusCode.BadGateway,
-            HttpStatusCode.GatewayTimeout
+            HttpStatusCode.GatewayTimeout,
+            HttpStatusCode.TooManyRequests
         };
 
         // Set of web exception status codes to retry on.
