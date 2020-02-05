@@ -219,6 +219,10 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// AWS Data Exchange
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// AWS Data Pipeline
     /// </para>
     ///  </li> <li> 
@@ -228,6 +232,10 @@ namespace Amazon.ResourceGroupsTaggingAPI
     ///  </li> <li> 
     /// <para>
     /// AWS DataSync
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// AWS Device Farm
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -256,6 +264,10 @@ namespace Amazon.ResourceGroupsTaggingAPI
     ///  </li> <li> 
     /// <para>
     /// Amazon ECS
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon EKS
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -336,6 +348,10 @@ namespace Amazon.ResourceGroupsTaggingAPI
     ///  </li> <li> 
     /// <para>
     /// AWS IoT Greengrass
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// AWS IoT 1-Click
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -444,6 +460,10 @@ namespace Amazon.ResourceGroupsTaggingAPI
     ///  </li> <li> 
     /// <para>
     /// Amazon Simple Queue Service (SQS)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon Simple Workflow Service
     /// </para>
     ///  </li> <li> 
     /// <para>
