@@ -29,9 +29,13 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteActionTarget operation.
-    /// Deletes a custom action target from Security Hub. Deleting a custom action target
-    /// doesn't affect any findings or insights that were already sent to Amazon CloudWatch
-    /// Events using the custom action.
+    /// Deletes a custom action target from Security Hub.
+    /// 
+    ///  
+    /// <para>
+    /// Deleting a custom action target does not affect any findings or insights that were
+    /// already sent to Amazon CloudWatch Events using the custom action.
+    /// </para>
     /// </summary>
     public partial class DeleteActionTargetRequest : AmazonSecurityHubRequest
     {

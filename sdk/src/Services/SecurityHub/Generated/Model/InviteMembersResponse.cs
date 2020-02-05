@@ -37,8 +37,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UnprocessedAccounts. 
         /// <para>
-        /// A list of account ID and email address pairs of the AWS accounts that couldn't be
-        /// processed. 
+        /// The list of AWS accounts that could not be processed. For each account, the list includes
+        /// the account ID and the email address.
         /// </para>
         /// </summary>
         public List<Result> UnprocessedAccounts

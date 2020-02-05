@@ -30,11 +30,23 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the EnableSecurityHub operation.
     /// Enables Security Hub for your account in the current Region or the Region you specify
-    /// in the request. Enabling Security Hub also enables the CIS AWS Foundations standard.
+    /// in the request.
+    /// 
+    ///  
+    /// <para>
+    /// Enabling Security Hub also enables the CIS AWS Foundations standard.
+    /// </para>
+    ///  
+    /// <para>
     /// When you enable Security Hub, you grant to Security Hub the permissions necessary
     /// to gather findings from AWS Config, Amazon GuardDuty, Amazon Inspector, and Amazon
-    /// Macie. To learn more, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
+    /// Macie.
+    /// </para>
+    ///  
+    /// <para>
+    /// To learn more, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
     /// Up AWS Security Hub</a>.
+    /// </para>
     /// </summary>
     public partial class EnableSecurityHubRequest : AmazonSecurityHubRequest
     {

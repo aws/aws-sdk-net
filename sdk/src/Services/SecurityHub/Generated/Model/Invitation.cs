@@ -94,7 +94,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MemberStatus. 
         /// <para>
-        /// The current status of the association between member and master accounts.
+        /// The current status of the association between the member and master accounts.
         /// </para>
         /// </summary>
         public string MemberStatus

@@ -29,8 +29,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProducts operation.
-    /// Returns information about the products available that you can subscribe to and integrate
-    /// with Security Hub to consolidate findings.
+    /// Returns information about the available products that you can subscribe to and integrate
+    /// with Security Hub in order to consolidate findings.
     /// </summary>
     public partial class DescribeProductsRequest : AmazonSecurityHubRequest
     {

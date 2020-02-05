@@ -178,9 +178,12 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Confidence. 
         /// <para>
         /// A finding's confidence. Confidence is defined as the likelihood that a finding accurately
-        /// identifies the behavior or issue that it was intended to identify. Confidence is scored
-        /// on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100
-        /// means 100 percent confidence.
+        /// identifies the behavior or issue that it was intended to identify.
+        /// </para>
+        ///  
+        /// <para>
+        /// Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
+        /// confidence and 100 means 100 percent confidence.
         /// </para>
         /// </summary>
         public List<NumberFilter> Confidence
@@ -217,9 +220,12 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Criticality. 
         /// <para>
-        /// The level of importance assigned to the resources associated with the finding. A score
-        /// of 0 means that the underlying resources have no criticality, and a score of 100 is
-        /// reserved for the most critical resources.
+        /// The level of importance assigned to the resources associated with the finding.
+        /// </para>
+        ///  
+        /// <para>
+        /// A score of 0 means that the underlying resources have no criticality, and a score
+        /// of 100 is reserved for the most critical resources.
         /// </para>
         /// </summary>
         public List<NumberFilter> Criticality
@@ -1001,7 +1007,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ResourceAwsEc2InstanceLaunchedAt. 
         /// <para>
-        /// The date/time the instance was launched.
+        /// The date and time the instance was launched.
         /// </para>
         /// </summary>
         public List<DateFilter> ResourceAwsEc2InstanceLaunchedAt
@@ -1418,7 +1424,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ThreatIntelIndicatorCategory. 
         /// <para>
-        /// The category of a threat intel indicator.
+        /// The category of a threat intelligence indicator.
         /// </para>
         /// </summary>
         public List<StringFilter> ThreatIntelIndicatorCategory
@@ -1436,7 +1442,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ThreatIntelIndicatorLastObservedAt. 
         /// <para>
-        /// The date/time of the last observation of a threat intel indicator.
+        /// The date/time of the last observation of a threat intelligence indicator.
         /// </para>
         /// </summary>
         public List<DateFilter> ThreatIntelIndicatorLastObservedAt
@@ -1454,7 +1460,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ThreatIntelIndicatorSource. 
         /// <para>
-        /// The source of the threat intel.
+        /// The source of the threat intelligence.
         /// </para>
         /// </summary>
         public List<StringFilter> ThreatIntelIndicatorSource
@@ -1472,7 +1478,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ThreatIntelIndicatorSourceUrl. 
         /// <para>
-        /// The URL for more details from the source of the threat intel.
+        /// The URL for more details from the source of the threat intelligence.
         /// </para>
         /// </summary>
         public List<StringFilter> ThreatIntelIndicatorSourceUrl
@@ -1490,7 +1496,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ThreatIntelIndicatorType. 
         /// <para>
-        /// The type of a threat intel indicator.
+        /// The type of a threat intelligence indicator.
         /// </para>
         /// </summary>
         public List<StringFilter> ThreatIntelIndicatorType
@@ -1508,7 +1514,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ThreatIntelIndicatorValue. 
         /// <para>
-        /// The value of a threat intel indicator.
+        /// The value of a threat intelligence indicator.
         /// </para>
         /// </summary>
         public List<StringFilter> ThreatIntelIndicatorValue

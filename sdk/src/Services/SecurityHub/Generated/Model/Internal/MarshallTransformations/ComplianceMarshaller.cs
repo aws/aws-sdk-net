@@ -45,6 +45,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Compliance requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetRelatedRequirements())
+            {
+                context.Writer.WritePropertyName("RelatedRequirements");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRelatedRequirementsListValue in requestObject.RelatedRequirements)
+                {
+                        context.Writer.Write(requestObjectRelatedRequirementsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Includes details of the list of the findings that can't be imported.
+    /// Includes details of the list of the findings that cannot be imported.
     /// </summary>
     public partial class ImportFindingsError
     {

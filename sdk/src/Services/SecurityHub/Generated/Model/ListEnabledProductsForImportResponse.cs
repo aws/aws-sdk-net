@@ -56,7 +56,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProductSubscriptions. 
         /// <para>
-        /// A list of ARNs for the resources that represent your subscriptions to products. 
+        /// The list of ARNs for the resources that represent your subscriptions to products.
+        /// 
         /// </para>
         /// </summary>
         public List<string> ProductSubscriptions

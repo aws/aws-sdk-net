@@ -38,8 +38,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// A list of account IDs that specify the accounts that invitations to Security Hub are
-        /// declined from.
+        /// The list of account IDs for the accounts from which to decline the invitations to
+        /// Security Hub.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

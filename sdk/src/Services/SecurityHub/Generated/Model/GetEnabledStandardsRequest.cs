@@ -60,9 +60,12 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Paginates results. On your first call to the <code>GetEnabledStandards</code> operation,
-        /// set the value of this parameter to <code>NULL</code>. For subsequent calls to the
-        /// operation, fill <code>nextToken</code> in the request with the value of <code>nextToken</code>
-        /// from the previous response to continue listing data.
+        /// set the value of this parameter to <code>NULL</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For subsequent calls to the operation, to continue listing data, set <code>nextToken</code>
+        /// in the request to the value of <code>nextToken</code> from the previous response.
         /// </para>
         /// </summary>
         public string NextToken
@@ -80,7 +83,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsSubscriptionArns. 
         /// <para>
-        /// A list of the standards subscription ARNs for the standards to retrieve.
+        /// The list of the standards subscription ARNs for the standards to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]

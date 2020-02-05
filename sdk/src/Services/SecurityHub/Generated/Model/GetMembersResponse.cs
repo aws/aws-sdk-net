@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Members. 
         /// <para>
-        /// A list of details about the Security Hub member accounts.
+        /// The list of details about the Security Hub member accounts.
         /// </para>
         /// </summary>
         public List<Member> Members
@@ -56,8 +56,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UnprocessedAccounts. 
         /// <para>
-        /// A list of account ID and email address pairs of the AWS accounts that couldn't be
-        /// processed.
+        /// The list of AWS accounts that could not be processed. For each account, the list includes
+        /// the account ID and the email address.
         /// </para>
         /// </summary>
         public List<Result> UnprocessedAccounts

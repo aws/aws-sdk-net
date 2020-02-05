@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property InvitationsCount. 
         /// <para>
         /// The number of all membership invitations sent to this Security Hub member account,
-        /// not including the currently accepted invitation. 
+        /// not including the currently accepted invitation.
         /// </para>
         /// </summary>
         public int InvitationsCount

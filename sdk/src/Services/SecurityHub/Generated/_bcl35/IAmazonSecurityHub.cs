@@ -43,30 +43,34 @@ namespace Amazon.SecurityHub
     /// the AWS Region that is currently active or in the specific AWS Region that you specify
     /// in your request. Any configuration or settings change that results from the operation
     /// is applied only to that Region. To make the same change in other Regions, execute
-    /// the same command for each Region to apply the change to. For example, if your Region
-    /// is set to <code>us-west-2</code>, when you use <code>CreateMembers</code> to add a
-    /// member account to Security Hub, the association of the member account with the master
-    /// account is created only in the us-west-2 Region. Security Hub must be enabled for
-    /// the member account in the same Region that the invite was sent from.
+    /// the same command for each Region to apply the change to.
     /// </para>
     ///  
     /// <para>
-    /// The following throttling limits apply to using Security Hub API operations:
+    /// For example, if your Region is set to <code>us-west-2</code>, when you use <code>CreateMembers</code>
+    /// to add a member account to Security Hub, the association of the member account with
+    /// the master account is created only in the <code>us-west-2</code> Region. Security
+    /// Hub must be enabled for the member account in the same Region that the invitation
+    /// was sent from.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following throttling limits apply to using Security Hub API operations.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>GetFindings</code> - RateLimit of 3 requests per second, and a BurstLimit of
-    /// 6 requests per second.
+    ///  <code>GetFindings</code> - <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code>
+    /// of 6 requests per second.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateFindings</code> - RateLimit of 1 request per second, and a BurstLimit
+    ///  <code>UpdateFindings</code> - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code>
     /// of 5 requests per second.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// All other operations - RateLimit of 10 request per second, and a BurstLimit of 30
-    /// requests per second.
+    /// All other operations - <code>RateLimit</code> of 10 request per second. <code>BurstLimit</code>
+    /// of 30 requests per second.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -79,9 +83,13 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Accepts the invitation to be a member account and be monitored by the Security Hub
-        /// master account that the invitation was sent from. When the member account accepts
-        /// the invitation, permission is granted to the master account to view findings generated
-        /// in the member account.
+        /// master account that the invitation was sent from.
+        /// 
+        ///  
+        /// <para>
+        /// When the member account accepts the invitation, permission is granted to the master
+        /// account to view findings generated in the member account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptInvitation service method.</param>
         /// 
@@ -139,8 +147,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Disables the standards specified by the provided <code>StandardsSubscriptionArns</code>.
+        /// 
+        ///  
+        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
         /// Supported in AWS Security Hub</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisableStandards service method.</param>
         /// 
@@ -194,10 +206,17 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Enables the standards specified by the provided <code>standardsArn</code>. In this
-        /// release, only CIS AWS Foundations standards are supported. For more information, see
-        /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
+        /// Enables the standards specified by the provided <code>standardsArn</code>.
+        /// 
+        ///  
+        /// <para>
+        /// In this release, only CIS AWS Foundations standards are supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
         /// Supported in AWS Security Hub</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchEnableStandards service method.</param>
         /// 
@@ -253,8 +272,13 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// Imports security findings generated from an integrated third-party product into Security
         /// Hub. This action is requested by the integrated product to import its findings into
-        /// Security Hub. The maximum allowed size for a finding is 240 Kb. An error is returned
-        /// for any finding larger than 240 Kb.
+        /// Security Hub.
+        /// 
+        ///  
+        /// <para>
+        /// The maximum allowed size for a finding is 240 Kb. An error is returned for any finding
+        /// larger than 240 Kb.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchImportFindings service method.</param>
         /// 
@@ -308,8 +332,13 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Creates a custom action target in Security Hub. You can use custom actions on findings
-        /// and insights in Security Hub to trigger target actions in Amazon CloudWatch Events.
+        /// Creates a custom action target in Security Hub.
+        /// 
+        ///  
+        /// <para>
+        /// You can use custom actions on findings and insights in Security Hub to trigger target
+        /// actions in Amazon CloudWatch Events.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateActionTarget service method.</param>
         /// 
@@ -367,8 +396,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Creates a custom insight in Security Hub. An insight is a consolidation of findings
-        /// that relate to a security issue that requires attention or remediation. Use the <code>GroupByAttribute</code>
-        /// to group the related findings in the insight.
+        /// that relate to a security issue that requires attention or remediation.
+        /// 
+        ///  
+        /// <para>
+        /// To group the related findings in the insight, use the <code>GroupByAttribute</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInsight service method.</param>
         /// 
@@ -428,22 +461,25 @@ namespace Amazon.SecurityHub
         /// Creates a member association in Security Hub between the specified accounts and the
         /// account used to make the request, which is the master account. To successfully create
         /// a member, you must use this action from an account that already has Security Hub enabled.
-        /// You can use the <a>EnableSecurityHub</a> to enable Security Hub.
+        /// To enable Security Hub, you can use the <a>EnableSecurityHub</a> operation.
         /// 
         ///  
         /// <para>
         /// After you use <code>CreateMembers</code> to create member account associations in
-        /// Security Hub, you need to use the <a>InviteMembers</a> action, which invites the accounts
-        /// to enable Security Hub and become member accounts in Security Hub. If the invitation
-        /// is accepted by the account owner, the account becomes a member account in Security
-        /// Hub, and a permission policy is added that permits the master account to view the
-        /// findings generated in the member account. When Security Hub is enabled in the invited
-        /// account, findings start being sent to both the member and master accounts.
+        /// Security Hub, you must use the <a>InviteMembers</a> operation to invite the accounts
+        /// to enable Security Hub and become member accounts in Security Hub.
         /// </para>
         ///  
         /// <para>
-        /// You can remove the association between the master and member accounts by using the
-        /// <a>DisassociateFromMasterAccount</a> or <a>DisassociateMembers</a> operation.
+        /// If the account owner accepts the invitation, the account becomes a member account
+        /// in Security Hub, and a permission policy is added that permits the master account
+        /// to view the findings generated in the member account. When Security Hub is enabled
+        /// in the invited account, findings start to be sent to both the member and master accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove the association between the master and member accounts, use the <a>DisassociateFromMasterAccount</a>
+        /// or <a>DisassociateMembers</a> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
@@ -554,9 +590,13 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Deletes a custom action target from Security Hub. Deleting a custom action target
-        /// doesn't affect any findings or insights that were already sent to Amazon CloudWatch
-        /// Events using the custom action.
+        /// Deletes a custom action target from Security Hub.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a custom action target does not affect any findings or insights that were
+        /// already sent to Amazon CloudWatch Events using the custom action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteActionTarget service method.</param>
         /// 
@@ -891,8 +931,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns information about the products available that you can subscribe to and integrate
-        /// with Security Hub to consolidate findings.
+        /// Returns information about the available products that you can subscribe to and integrate
+        /// with Security Hub in order to consolidate findings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProducts service method.</param>
         /// 
@@ -1005,8 +1045,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Disables the integration of the specified product with Security Hub. Findings from
-        /// that product are no longer sent to Security Hub after the integration is disabled.
+        /// Disables the integration of the specified product with Security Hub. After the integration
+        /// is disabled, findings from that product are no longer sent to Security Hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableImportFindingsForProduct service method.</param>
         /// 
@@ -1065,16 +1105,24 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// Disables Security Hub in your account only in the current Region. To disable Security
         /// Hub in all Regions, you must submit one request per Region where you have enabled
-        /// Security Hub. When you disable Security Hub for a master account, it doesn't disable
-        /// Security Hub for any associated member accounts.
+        /// Security Hub.
         /// 
         ///  
         /// <para>
+        /// When you disable Security Hub for a master account, it doesn't disable Security Hub
+        /// for any associated member accounts.
+        /// </para>
+        ///  
+        /// <para>
         /// When you disable Security Hub, your existing findings and insights and any Security
-        /// Hub configuration settings are deleted after 90 days and can't be recovered. Any standards
-        /// that were enabled are disabled, and your master and member account associations are
-        /// removed. If you want to save your existing findings, you must export them before you
-        /// disable Security Hub.
+        /// Hub configuration settings are deleted after 90 days and cannot be recovered. Any
+        /// standards that were enabled are disabled, and your master and member account associations
+        /// are removed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to save your existing findings, you must export them before you disable
+        /// Security Hub.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHub service method.</param>
@@ -1243,9 +1291,13 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Enables the integration of a partner product with Security Hub. Integrated products
-        /// send findings to Security Hub. When you enable a product integration, a permission
-        /// policy that grants permission for the product to send findings to Security Hub is
-        /// applied.
+        /// send findings to Security Hub.
+        /// 
+        ///  
+        /// <para>
+        /// When you enable a product integration, a permission policy that grants permission
+        /// for the product to send findings to Security Hub is applied.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableImportFindingsForProduct service method.</param>
         /// 
@@ -1303,11 +1355,23 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Enables Security Hub for your account in the current Region or the Region you specify
-        /// in the request. Enabling Security Hub also enables the CIS AWS Foundations standard.
+        /// in the request.
+        /// 
+        ///  
+        /// <para>
+        /// Enabling Security Hub also enables the CIS AWS Foundations standard.
+        /// </para>
+        ///  
+        /// <para>
         /// When you enable Security Hub, you grant to Security Hub the permissions necessary
         /// to gather findings from AWS Config, Amazon GuardDuty, Amazon Inspector, and Amazon
-        /// Macie. To learn more, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
+        /// Macie.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
         /// Up AWS Security Hub</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHub service method.</param>
         /// 
@@ -1471,7 +1535,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Lists the results of the Security Hub insight that the insight ARN specifies.
+        /// Lists the results of the Security Hub insight specified by the insight ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInsightResults service method.</param>
         /// 
@@ -1528,7 +1592,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Lists and describes insights that insight ARNs specify.
+        /// Lists and describes insights for the specified insight ARNs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInsights service method.</param>
         /// 
@@ -1640,7 +1704,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Provides the details for the Security Hub master account to the current member account.
+        /// Provides the details for the Security Hub master account for the current member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMasterAccount service method.</param>
         /// 
@@ -1697,7 +1761,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns the details on the Security Hub member accounts that the account IDs specify.
+        /// Returns the details for the Security Hub member accounts for the specified account
+        /// IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMembers service method.</param>
         /// 
@@ -1755,11 +1820,18 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Invites other AWS accounts to become member accounts for the Security Hub master account
-        /// that the invitation is sent from. Before you can use this action to invite a member,
-        /// you must first create the member account in Security Hub by using the <a>CreateMembers</a>
-        /// action. When the account owner accepts the invitation to become a member account and
-        /// enables Security Hub, the master account can view the findings generated from member
-        /// account.
+        /// that the invitation is sent from.
+        /// 
+        ///  
+        /// <para>
+        /// Before you can use this action to invite a member, you must first use the <a>CreateMembers</a>
+        /// action to create the member account in Security Hub.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the account owner accepts the invitation to become a member account and enables
+        /// Security Hub, the master account can view the findings generated from the member account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteMembers service method.</param>
         /// 
@@ -1816,8 +1888,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Lists all findings-generating solutions (products) whose findings you have subscribed
-        /// to receive in Security Hub.
+        /// Lists all findings-generating solutions (products) that you are subscribed to receive
+        /// findings from in Security Hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnabledProductsForImport service method.</param>
         /// 
@@ -2240,7 +2312,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Updates the Security Hub insight that the insight ARN specifies.
+        /// Updates the Security Hub insight identified by the specified insight ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInsight service method.</param>
         /// 

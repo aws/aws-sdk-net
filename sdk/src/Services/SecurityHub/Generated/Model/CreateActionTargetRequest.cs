@@ -29,8 +29,13 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateActionTarget operation.
-    /// Creates a custom action target in Security Hub. You can use custom actions on findings
-    /// and insights in Security Hub to trigger target actions in Amazon CloudWatch Events.
+    /// Creates a custom action target in Security Hub.
+    /// 
+    ///  
+    /// <para>
+    /// You can use custom actions on findings and insights in Security Hub to trigger target
+    /// actions in Amazon CloudWatch Events.
+    /// </para>
     /// </summary>
     public partial class CreateActionTargetRequest : AmazonSecurityHubRequest
     {

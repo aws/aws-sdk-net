@@ -116,9 +116,12 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Confidence. 
         /// <para>
         /// A finding's confidence. Confidence is defined as the likelihood that a finding accurately
-        /// identifies the behavior or issue that it was intended to identify. Confidence is scored
-        /// on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100
-        /// means 100 percent confidence.
+        /// identifies the behavior or issue that it was intended to identify.
+        /// </para>
+        ///  
+        /// <para>
+        /// Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
+        /// confidence and 100 means 100 percent confidence.
         /// </para>
         /// </summary>
         public int Confidence
@@ -156,9 +159,12 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Criticality. 
         /// <para>
-        /// The level of importance assigned to the resources associated with the finding. A score
-        /// of 0 means that the underlying resources have no criticality, and a score of 100 is
-        /// reserved for the most critical resources.
+        /// The level of importance assigned to the resources associated with the finding.
+        /// </para>
+        ///  
+        /// <para>
+        /// A score of 0 means that the underlying resources have no criticality, and a score
+        /// of 100 is reserved for the most critical resources.
         /// </para>
         /// </summary>
         public int Criticality
@@ -520,7 +526,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ThreatIntelIndicators. 
         /// <para>
-        /// Threat intel details related to a finding.
+        /// Threat intelligence details related to a finding.
         /// </para>
         /// </summary>
         public List<ThreatIntelIndicator> ThreatIntelIndicators

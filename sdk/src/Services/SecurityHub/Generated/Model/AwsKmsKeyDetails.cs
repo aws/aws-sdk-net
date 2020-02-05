@@ -133,11 +133,21 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
-        /// The source of the CMK's key material. When this value is AWS_KMS, AWS KMS created
-        /// the key material. When this value is EXTERNAL, the key material was imported from
-        /// your existing key management infrastructure or the CMK lacks key material. When this
-        /// value is AWS_CLOUDHSM, the key material was created in the AWS CloudHSM cluster associated
-        /// with a custom key store.
+        /// The source of the CMK's key material.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this value is <code>EXTERNAL</code>, the key material was imported from your
+        /// existing key management infrastructure or the CMK lacks key material.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the
+        /// AWS CloudHSM cluster associated with a custom key store.
         /// </para>
         /// </summary>
         public string Origin

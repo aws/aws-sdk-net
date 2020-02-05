@@ -56,6 +56,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsCodeBuildProject())
+            {
+                context.Writer.WritePropertyName("AwsCodeBuildProject");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsCodeBuildProjectDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsCodeBuildProject, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsEc2Instance())
             {
                 context.Writer.WritePropertyName("AwsEc2Instance");
@@ -63,6 +74,39 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsEc2InstanceDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsEc2Instance, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsEc2NetworkInterface())
+            {
+                context.Writer.WritePropertyName("AwsEc2NetworkInterface");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2NetworkInterfaceDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEc2NetworkInterface, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsEc2SecurityGroup())
+            {
+                context.Writer.WritePropertyName("AwsEc2SecurityGroup");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2SecurityGroupDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEc2SecurityGroup, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsElasticsearchDomain())
+            {
+                context.Writer.WritePropertyName("AwsElasticsearchDomain");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsElasticsearchDomainDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsElasticsearchDomain, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -122,6 +166,28 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsLambdaLayerVersion())
+            {
+                context.Writer.WritePropertyName("AwsLambdaLayerVersion");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsLambdaLayerVersionDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsLambdaLayerVersion, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsRdsDbInstance())
+            {
+                context.Writer.WritePropertyName("AwsRdsDbInstance");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsRdsDbInstanceDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsRdsDbInstance, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsS3Bucket())
             {
                 context.Writer.WritePropertyName("AwsS3Bucket");
@@ -151,6 +217,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsSqsQueueDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsSqsQueue, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsWafWebAcl())
+            {
+                context.Writer.WritePropertyName("AwsWafWebAcl");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsWafWebAclDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsWafWebAcl, context);
 
                 context.Writer.WriteObjectEnd();
             }

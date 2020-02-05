@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property DeadLetterTargetArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
-        /// messages after the value of maxReceiveCount is exceeded. 
+        /// messages after the value of <code>maxReceiveCount</code> is exceeded. 
         /// </para>
         /// </summary>
         public string DeadLetterTargetArn

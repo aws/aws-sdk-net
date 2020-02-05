@@ -30,9 +30,13 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the EnableImportFindingsForProduct operation.
     /// Enables the integration of a partner product with Security Hub. Integrated products
-    /// send findings to Security Hub. When you enable a product integration, a permission
-    /// policy that grants permission for the product to send findings to Security Hub is
-    /// applied.
+    /// send findings to Security Hub.
+    /// 
+    ///  
+    /// <para>
+    /// When you enable a product integration, a permission policy that grants permission
+    /// for the product to send findings to Security Hub is applied.
+    /// </para>
     /// </summary>
     public partial class EnableImportFindingsForProductRequest : AmazonSecurityHubRequest
     {

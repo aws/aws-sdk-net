@@ -94,7 +94,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// An optional string that you want CloudFront to prefix to the access log filenames
+        /// An optional string that you want CloudFront to use as a prefix to the access log filenames
         /// for this distribution.
         /// </para>
         /// </summary>

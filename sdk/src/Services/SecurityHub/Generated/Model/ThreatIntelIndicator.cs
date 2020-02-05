@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Details about the threat intel related to a finding.
+    /// Details about the threat intelligence related to a finding.
     /// </summary>
     public partial class ThreatIntelIndicator
     {
@@ -42,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// The category of a threat intel indicator.
+        /// The category of a threat intelligence indicator.
         /// </para>
         /// </summary>
         public ThreatIntelIndicatorCategory Category
@@ -60,7 +60,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property LastObservedAt. 
         /// <para>
-        /// The date and time when the most recent instance of a threat intel indicator was observed.
+        /// The date and time when the most recent instance of a threat intelligence indicator
+        /// was observed.
         /// </para>
         /// </summary>
         public string LastObservedAt
@@ -78,7 +79,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The source of the threat intel indicator.
+        /// The source of the threat intelligence indicator.
         /// </para>
         /// </summary>
         public string Source
@@ -96,7 +97,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SourceUrl. 
         /// <para>
-        /// The URL to the page or site where you can get more information about the threat intel
+        /// The URL to the page or site where you can get more information about the threat intelligence
         /// indicator.
         /// </para>
         /// </summary>
@@ -115,7 +116,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of a threat intel indicator.
+        /// The type of threat intelligence indicator.
         /// </para>
         /// </summary>
         public ThreatIntelIndicatorType Type
@@ -133,7 +134,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of a threat intel indicator.
+        /// The value of a threat intelligence indicator.
         /// </para>
         /// </summary>
         public string Value

@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the GetInsights operation.
-    /// Lists and describes insights that insight ARNs specify.
+    /// Lists and describes insights for the specified insight ARNs.
     /// </summary>
     public partial class GetInsightsRequest : AmazonSecurityHubRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InsightArns. 
         /// <para>
-        /// The ARNs of the insights that you want to describe.
+        /// The ARNs of the insights to describe.
         /// </para>
         /// </summary>
         public List<string> InsightArns
@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items that you want in the response.
+        /// The maximum number of items to return in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -79,8 +79,8 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Paginates results. On your first call to the <code>GetInsights</code> operation, set
         /// the value of this parameter to <code>NULL</code>. For subsequent calls to the operation,
-        /// fill <code>nextToken</code> in the request with the value of <code>nextToken</code>
-        /// from the previous response to continue listing data.
+        /// to continue listing data, set <code>nextToken</code> in the request to the value of
+        /// <code>nextToken</code> from the previous response.
         /// </para>
         /// </summary>
         public string NextToken

@@ -38,9 +38,15 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The state code. The initial state of the load balancer is provisioning. After the
-        /// load balancer is fully set up and ready to route traffic, its state is active. If
-        /// the load balancer could not be set up, its state is failed. 
+        /// The state code. The initial state of the load balancer is provisioning.
+        /// </para>
+        ///  
+        /// <para>
+        /// After the load balancer is fully set up and ready to route traffic, its state is active.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the load balancer could not be set up, its state is failed. 
         /// </para>
         /// </summary>
         public string Code

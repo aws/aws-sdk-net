@@ -30,8 +30,12 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the CreateInsight operation.
     /// Creates a custom insight in Security Hub. An insight is a consolidation of findings
-    /// that relate to a security issue that requires attention or remediation. Use the <code>GroupByAttribute</code>
-    /// to group the related findings in the insight.
+    /// that relate to a security issue that requires attention or remediation.
+    /// 
+    ///  
+    /// <para>
+    /// To group the related findings in the insight, use the <code>GroupByAttribute</code>.
+    /// </para>
     /// </summary>
     public partial class CreateInsightRequest : AmazonSecurityHubRequest
     {
@@ -42,8 +46,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more attributes used to filter the findings included in the insight. Only findings
-        /// that match the criteria defined in the filters are included in the insight.
+        /// One or more attributes used to filter the findings included in the insight. The insight
+        /// only includes findings that match the criteria defined in the filters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

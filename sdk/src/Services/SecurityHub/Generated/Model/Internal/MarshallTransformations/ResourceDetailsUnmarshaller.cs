@@ -70,10 +70,34 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsCloudFrontDistribution = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsCodeBuildProject", targetDepth))
+                {
+                    var unmarshaller = AwsCodeBuildProjectDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsCodeBuildProject = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsEc2Instance", targetDepth))
                 {
                     var unmarshaller = AwsEc2InstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsEc2Instance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsEc2NetworkInterface", targetDepth))
+                {
+                    var unmarshaller = AwsEc2NetworkInterfaceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEc2NetworkInterface = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsEc2SecurityGroup", targetDepth))
+                {
+                    var unmarshaller = AwsEc2SecurityGroupDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEc2SecurityGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsElasticsearchDomain", targetDepth))
+                {
+                    var unmarshaller = AwsElasticsearchDomainDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsElasticsearchDomain = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsElbv2LoadBalancer", targetDepth))
@@ -106,6 +130,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsLambdaFunction = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsLambdaLayerVersion", targetDepth))
+                {
+                    var unmarshaller = AwsLambdaLayerVersionDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsLambdaLayerVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsRdsDbInstance", targetDepth))
+                {
+                    var unmarshaller = AwsRdsDbInstanceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsRdsDbInstance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsS3Bucket", targetDepth))
                 {
                     var unmarshaller = AwsS3BucketDetailsUnmarshaller.Instance;
@@ -122,6 +158,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsSqsQueueDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsSqsQueue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsWafWebAcl", targetDepth))
+                {
+                    var unmarshaller = AwsWafWebAclDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsWafWebAcl = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Container", targetDepth))

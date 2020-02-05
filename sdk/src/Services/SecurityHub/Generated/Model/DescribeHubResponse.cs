@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property HubArn. 
         /// <para>
-        /// The ARN of the Hub resource retrieved.
+        /// The ARN of the Hub resource that was retrieved.
         /// </para>
         /// </summary>
         public string HubArn

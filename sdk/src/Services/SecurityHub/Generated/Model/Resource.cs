@@ -133,7 +133,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the resource that details are provided for.
+        /// The type of the resource that details are provided for. If possible, set <code>Type</code>
+        /// to one of the supported resource types. For example, if the resource is an EC2 instance,
+        /// then set <code>Type</code> to <code>AwsEc2Instance</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the resource does not match any of the provided types, then set <code>Type</code>
+        /// to <code>Other</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

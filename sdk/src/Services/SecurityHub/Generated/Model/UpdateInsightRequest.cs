@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateInsight operation.
-    /// Updates the Security Hub insight that the insight ARN specifies.
+    /// Updates the Security Hub insight identified by the specified insight ARN.
     /// </summary>
     public partial class UpdateInsightRequest : AmazonSecurityHubRequest
     {

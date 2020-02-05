@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// A list of account IDs of the member accounts to delete.
+        /// The list of account IDs for the member accounts to delete.
         /// </para>
         /// </summary>
         public List<string> AccountIds

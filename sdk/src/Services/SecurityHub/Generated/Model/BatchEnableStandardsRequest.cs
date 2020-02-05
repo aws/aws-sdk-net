@@ -29,10 +29,17 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchEnableStandards operation.
-    /// Enables the standards specified by the provided <code>standardsArn</code>. In this
-    /// release, only CIS AWS Foundations standards are supported. For more information, see
-    /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
+    /// Enables the standards specified by the provided <code>standardsArn</code>.
+    /// 
+    ///  
+    /// <para>
+    /// In this release, only CIS AWS Foundations standards are supported.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
     /// Supported in AWS Security Hub</a>.
+    /// </para>
     /// </summary>
     public partial class BatchEnableStandardsRequest : AmazonSecurityHubRequest
     {

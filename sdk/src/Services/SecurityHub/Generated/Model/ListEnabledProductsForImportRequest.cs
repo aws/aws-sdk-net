@@ -29,8 +29,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEnabledProductsForImport operation.
-    /// Lists all findings-generating solutions (products) whose findings you have subscribed
-    /// to receive in Security Hub.
+    /// Lists all findings-generating solutions (products) that you are subscribed to receive
+    /// findings from in Security Hub.
     /// </summary>
     public partial class ListEnabledProductsForImportRequest : AmazonSecurityHubRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items that you want in the response.
+        /// The maximum number of items to return in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -61,8 +61,8 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Paginates results. On your first call to the <code>ListEnabledProductsForImport</code>
         /// operation, set the value of this parameter to <code>NULL</code>. For subsequent calls
-        /// to the operation, fill <code>nextToken</code> in the request with the value of <code>NextToken</code>
-        /// from the previous response to continue listing data.
+        /// to the operation, to continue listing data, set <code>nextToken</code> in the request
+        /// to the value of <code>NextToken</code> from the previous response.
         /// </para>
         /// </summary>
         public string NextToken

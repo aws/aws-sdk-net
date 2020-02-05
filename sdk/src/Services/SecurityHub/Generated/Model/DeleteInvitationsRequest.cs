@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// A list of the account IDs that sent the invitations to delete.
+        /// The list of the account IDs that sent the invitations to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

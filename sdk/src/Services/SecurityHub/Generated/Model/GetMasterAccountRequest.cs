@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMasterAccount operation.
-    /// Provides the details for the Security Hub master account to the current member account.
+    /// Provides the details for the Security Hub master account for the current member account.
     /// </summary>
     public partial class GetMasterAccountRequest : AmazonSecurityHubRequest
     {

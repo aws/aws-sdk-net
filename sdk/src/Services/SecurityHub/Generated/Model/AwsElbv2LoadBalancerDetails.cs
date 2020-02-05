@@ -119,7 +119,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property IpAddressType. 
         /// <para>
         /// The type of IP addresses used by the subnets for your load balancer. The possible
-        /// values are ipv4 (for IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).
+        /// values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for
+        /// IPv4 and IPv6 addresses).
         /// </para>
         /// </summary>
         public string IpAddressType

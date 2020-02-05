@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FailedFindings. 
         /// <para>
-        /// The list of the findings that failed to import.
+        /// The list of findings that failed to import.
         /// </para>
         /// </summary>
         public List<ImportFindingsError> FailedFindings

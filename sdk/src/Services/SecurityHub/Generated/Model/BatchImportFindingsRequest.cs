@@ -31,8 +31,13 @@ namespace Amazon.SecurityHub.Model
     /// Container for the parameters to the BatchImportFindings operation.
     /// Imports security findings generated from an integrated third-party product into Security
     /// Hub. This action is requested by the integrated product to import its findings into
-    /// Security Hub. The maximum allowed size for a finding is 240 Kb. An error is returned
-    /// for any finding larger than 240 Kb.
+    /// Security Hub.
+    /// 
+    ///  
+    /// <para>
+    /// The maximum allowed size for a finding is 240 Kb. An error is returned for any finding
+    /// larger than 240 Kb.
+    /// </para>
     /// </summary>
     public partial class BatchImportFindingsRequest : AmazonSecurityHubRequest
     {
