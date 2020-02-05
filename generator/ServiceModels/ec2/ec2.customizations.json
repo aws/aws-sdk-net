@@ -16,6 +16,12 @@
                 "operation": "addBefore",
                 "newType": "Amazon.EC2.Internal.AmazonEC2ResponseHandler",
                 "targetType": "Amazon.Runtime.Internal.Unmarshaller"
+            },
+			{
+                "operation":"replace",
+                "newType":"Amazon.Runtime.Internal.RetryHandler",
+                "targetType":"Amazon.Runtime.Internal.RetryHandler",
+                "constructorInput":"new Amazon.EC2.Internal.EC2RetryPolicy(this.Config)"
             }
         ]
     },
