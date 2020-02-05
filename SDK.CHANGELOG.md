@@ -1,3 +1,19 @@
+### 3.3.672.0 (2020-02-05 20:20 UTC)
+* DLM (3.3.106.0)
+	* Updated the maximum number of tags that can be added to a snapshot using DLM to 45.
+* EC2 (3.3.156.0)
+	* This release provides support for tagging when you create a VPC endpoint, or VPC endpoint service.
+* ForecastQueryService (3.3.100.65)
+	* Documentation updates for Amazon Forecast.
+* GroundStation (3.3.101.0)
+	* Adds dataflowEndpointRegion property to DataflowEndpointConfig. The dateCreated, lastUpdated, and tags properties on GetSatellite have been deprecated.
+* MediaConvert (3.3.113.0)
+	* AWS Elemental MediaConvert SDK has added support for fine-tuned QVBR quality level.
+* ResourceGroupsTaggingAPI (3.3.103.25)
+	* Documentation-only update that adds services to the list of supported services.
+* SecurityHub (3.3.107.0)
+	* Additional resource types are now supported in the AWS Security Finding Format (ASFF). The following new resource types are added, each having an accompanying resource details object with fields for security finding providers to populate: AwsCodeBuildProject, AwsEc2NetworkInterface, AwsEc2SecurityGroup, AwsElasticsearchDomain, AwsLambdaLayerVersion, AwsRdsDbInstance, and AwsWafWebAcl. The following resource types are added without an accompanying details object: AutoscalingAutoscalingGroup, AwsDynamoDbTable, AwsEc2Eip, AwsEc2Snapshot, AwsEc2Volume, AwsRdsDbSnapshot, AwsRedshiftCluster, and AwsS3Object. The number of allowed resources per finding is increased from 10 to 32. A new field is added in the Compliance object, RelatedRequirements. To learn more, visit our documentation on the ASFF.
+
 ### 3.3.671.0 (2020-02-04 20:49 UTC)
 * CloudFront (3.3.101.96)
 	* Documentation updates for CloudFront

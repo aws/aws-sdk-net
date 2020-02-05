@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.671.0",
+    "ProductVersion" : "3.3.672.0",
     "CoreVersion"    : "3.3.104.22",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.155.0",
+            "Version" : "3.3.156.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.22"
@@ -761,7 +761,7 @@
             "InPreview"               : false
         },
         "ResourceGroupsTaggingAPI"        : {
-            "Version" : "3.3.103.24",
+            "Version" : "3.3.103.25",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.22"
@@ -897,7 +897,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.3.112.4",
+            "Version" : "3.3.113.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.22"
@@ -1153,7 +1153,7 @@
             "InPreview"               : false
         },
         "DLM"                             : {
-            "Version" : "3.3.105.14",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.22"
@@ -1305,7 +1305,7 @@
             "InPreview"               : false
         },
         "SecurityHub"                     : {
-            "Version" : "3.3.106.6",
+            "Version" : "3.3.107.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.22"
@@ -1401,7 +1401,7 @@
             "InPreview"               : false
         },
         "GroundStation"                   : {
-            "Version" : "3.3.100.104",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.22"
@@ -1505,7 +1505,7 @@
             "InPreview"               : false
         },
         "ForecastQueryService"            : {
-            "Version" : "3.3.100.64",
+            "Version" : "3.3.100.65",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.22"
