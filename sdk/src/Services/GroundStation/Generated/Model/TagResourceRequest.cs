@@ -61,6 +61,7 @@ namespace Amazon.GroundStation.Model
         /// Tags assigned to a resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

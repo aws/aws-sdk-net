@@ -35,6 +35,7 @@ namespace Amazon.GroundStation.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private string _satelliteId;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -70,6 +71,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SatelliteId. 
+        /// <para>
+        /// Satellite ID to retrieve on-boarded ground stations.
+        /// </para>
+        /// </summary>
+        public string SatelliteId
+        {
+            get { return this._satelliteId; }
+            set { this._satelliteId = value; }
+        }
+
+        // Check to see if SatelliteId property is set
+        internal bool IsSetSatelliteId()
+        {
+            return this._satelliteId != null;
         }
 
     }

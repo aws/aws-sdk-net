@@ -105,6 +105,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     response.PrePassStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("region", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Region = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("satelliteArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

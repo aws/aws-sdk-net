@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Information about how AWS Ground Station should configure an         antenna for downlink
+    /// Information about how AWS Ground Station should configure an antenna for downlink
     /// during a contact.
     /// </summary>
     public partial class AntennaDownlinkConfig

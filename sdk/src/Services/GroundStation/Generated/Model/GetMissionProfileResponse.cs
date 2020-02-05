@@ -86,8 +86,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property DataflowEdges. 
         /// <para>
-        /// A list of lists of ARNs. Each list of ARNs is an edge, with a from <code>Config</code>
-        /// and a to          <code>Config</code>.
+        /// A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code>
+        /// and a <i>to</i> <code>Config</code>.
         /// </para>
         /// </summary>
         public List<List<string>> DataflowEdges
@@ -143,7 +143,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property MissionProfileId. 
         /// <para>
-        /// ID of a mission profile.
+        /// UUID of a mission profile.
         /// </para>
         /// </summary>
         public string MissionProfileId

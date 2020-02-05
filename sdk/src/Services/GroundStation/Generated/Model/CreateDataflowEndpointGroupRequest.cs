@@ -32,15 +32,15 @@ namespace Amazon.GroundStation.Model
     /// Creates a <code>DataflowEndpoint</code> group containing the specified list of <code>DataflowEndpoint</code>
     /// objects.
     /// 
-    ///          
+    ///  
     /// <para>
     /// The <code>name</code> field in each endpoint is used in your mission profile <code>DataflowEndpointConfig</code>
-    ///          to specify which endpoints to use during a contact.
+    /// to specify which endpoints to use during a contact.
     /// </para>
-    ///           
+    ///  
     /// <para>
     /// When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code>
-    ///          must match a <code>DataflowEndpoint</code> in the same group.
+    /// must match a <code>DataflowEndpoint</code> in the same group.
     /// </para>
     /// </summary>
     public partial class CreateDataflowEndpointGroupRequest : AmazonGroundStationRequest

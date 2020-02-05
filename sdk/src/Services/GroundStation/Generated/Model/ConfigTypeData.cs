@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Object containing the parameters for a <code>Config</code>.
+    /// Object containing the parameters of a <code>Config</code>.
     /// 
-    ///          
+    ///  
     /// <para>
     /// See the subtype definitions for what each type of <code>Config</code> contains.
     /// </para>
@@ -143,7 +143,7 @@ namespace Amazon.GroundStation.Model
         /// <para>
         /// Information about an uplink echo <code>Config</code>.
         /// </para>
-        ///          
+        ///  
         /// <para>
         /// Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified
         /// <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code>

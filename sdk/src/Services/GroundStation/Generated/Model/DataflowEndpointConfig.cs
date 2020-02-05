@@ -33,6 +33,7 @@ namespace Amazon.GroundStation.Model
     public partial class DataflowEndpointConfig
     {
         private string _dataflowEndpointName;
+        private string _dataflowEndpointRegion;
 
         /// <summary>
         /// Gets and sets the property DataflowEndpointName. 
@@ -51,6 +52,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetDataflowEndpointName()
         {
             return this._dataflowEndpointName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataflowEndpointRegion. 
+        /// <para>
+        /// Region of a dataflow endpoint.
+        /// </para>
+        /// </summary>
+        public string DataflowEndpointRegion
+        {
+            get { return this._dataflowEndpointRegion; }
+            set { this._dataflowEndpointRegion = value; }
+        }
+
+        // Check to see if DataflowEndpointRegion property is set
+        internal bool IsSetDataflowEndpointRegion()
+        {
+            return this._dataflowEndpointRegion != null;
         }
 
     }

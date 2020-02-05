@@ -213,6 +213,10 @@ namespace Amazon.GroundStation
         /// </summary>
         public static readonly ContactStatus CANCELLED = new ContactStatus("CANCELLED");
         /// <summary>
+        /// Constant CANCELLING for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus CANCELLING = new ContactStatus("CANCELLING");
+        /// <summary>
         /// Constant COMPLETED for ContactStatus
         /// </summary>
         public static readonly ContactStatus COMPLETED = new ContactStatus("COMPLETED");

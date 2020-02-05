@@ -39,7 +39,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property GroundStationId. 
         /// <para>
-        /// ID of a ground station.
+        /// UUID of a ground station.
         /// </para>
         /// </summary>
         public string GroundStationId

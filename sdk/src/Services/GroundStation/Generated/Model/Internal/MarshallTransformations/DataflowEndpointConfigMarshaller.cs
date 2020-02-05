@@ -51,6 +51,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DataflowEndpointName);
             }
 
+            if(requestObject.IsSetDataflowEndpointRegion())
+            {
+                context.Writer.WritePropertyName("dataflowEndpointRegion");
+                context.Writer.Write(requestObject.DataflowEndpointRegion);
+            }
+
         }
 
         /// <summary>

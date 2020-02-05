@@ -31,7 +31,7 @@ namespace Amazon.GroundStation.Model
     /// Container for the parameters to the GetConfig operation.
     /// Returns <code>Config</code> information.
     /// 
-    ///          
+    ///  
     /// <para>
     /// Only one <code>Config</code> response can be returned.
     /// </para>

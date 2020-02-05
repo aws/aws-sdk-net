@@ -31,10 +31,10 @@ namespace Amazon.GroundStation.Model
     /// Container for the parameters to the CreateMissionProfile operation.
     /// Creates a mission profile.
     /// 
-    ///          
+    ///  
     /// <para>
-    ///             <code>dataflowEdges</code> is a list of lists of strings. Each lower level
-    /// list of strings         has two elements: a <i>from ARN</i> and a <i>to ARN</i>.
+    ///  <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of
+    /// strings has two elements: a <i>from</i> ARN and a <i>to</i> ARN.
     /// </para>
     /// </summary>
     public partial class CreateMissionProfileRequest : AmazonGroundStationRequest
@@ -90,8 +90,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property DataflowEdges. 
         /// <para>
-        /// A list of lists of ARNs. Each list of ARNs is an edge, with a from <code>Config</code>
-        /// and a to          <code>Config</code>.
+        /// A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code>
+        /// and a <i>to</i> <code>Config</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -64,6 +64,9 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetSatelliteId())
+                request.Parameters.Add("satelliteId", StringUtils.FromString(publicRequest.SatelliteId));
             request.ResourcePath = "/groundstation";
             request.MarshallerVersion = 2;
             request.UseQueryString = true;

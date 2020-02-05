@@ -58,7 +58,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property MissionProfileId. 
         /// <para>
-        /// ID of a mission profile.
+        /// UUID of a mission profile.
         /// </para>
         /// </summary>
         public string MissionProfileId

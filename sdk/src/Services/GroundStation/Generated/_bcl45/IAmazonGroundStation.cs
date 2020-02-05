@@ -32,9 +32,9 @@ namespace Amazon.GroundStation
     /// Interface for accessing GroundStation
     ///
     /// Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed
-    /// service that      enables you to control satellite communications, downlink and process
-    /// satellite data, and      scale your satellite operations efficiently and cost-effectively
-    /// without having      to build or manage your own ground station infrastructure.
+    /// service that enables you to control satellite communications, downlink and process
+    /// satellite data, and scale your satellite operations efficiently and cost-effectively
+    /// without having to build or manage your own ground station infrastructure.
     /// </summary>
     public partial interface IAmazonGroundStation : IAmazonService, IDisposable
     {
@@ -92,7 +92,7 @@ namespace Amazon.GroundStation
         /// <summary>
         /// Creates a <code>Config</code> with the specified <code>configData</code> parameters.
         /// 
-        ///          
+        ///  
         /// <para>
         /// Only one type of <code>configData</code> can be specified.
         /// </para>
@@ -106,6 +106,9 @@ namespace Amazon.GroundStation
         /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
         /// One or more parameters are not valid.
         /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceLimitExceededException">
+        /// Account limits for this resource have been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
         /// Resource was not found.
         /// </exception>
@@ -117,7 +120,7 @@ namespace Amazon.GroundStation
         /// <summary>
         /// Creates a <code>Config</code> with the specified <code>configData</code> parameters.
         /// 
-        ///          
+        ///  
         /// <para>
         /// Only one type of <code>configData</code> can be specified.
         /// </para>
@@ -134,6 +137,9 @@ namespace Amazon.GroundStation
         /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
         /// One or more parameters are not valid.
         /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceLimitExceededException">
+        /// Account limits for this resource have been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
         /// Resource was not found.
         /// </exception>
@@ -149,15 +155,15 @@ namespace Amazon.GroundStation
         /// Creates a <code>DataflowEndpoint</code> group containing the specified list of <code>DataflowEndpoint</code>
         /// objects.
         /// 
-        ///          
+        ///  
         /// <para>
         /// The <code>name</code> field in each endpoint is used in your mission profile <code>DataflowEndpointConfig</code>
-        ///          to specify which endpoints to use during a contact.
+        /// to specify which endpoints to use during a contact.
         /// </para>
-        ///           
+        ///  
         /// <para>
         /// When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code>
-        ///          must match a <code>DataflowEndpoint</code> in the same group.
+        /// must match a <code>DataflowEndpoint</code> in the same group.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataflowEndpointGroup service method.</param>
@@ -181,15 +187,15 @@ namespace Amazon.GroundStation
         /// Creates a <code>DataflowEndpoint</code> group containing the specified list of <code>DataflowEndpoint</code>
         /// objects.
         /// 
-        ///          
+        ///  
         /// <para>
         /// The <code>name</code> field in each endpoint is used in your mission profile <code>DataflowEndpointConfig</code>
-        ///          to specify which endpoints to use during a contact.
+        /// to specify which endpoints to use during a contact.
         /// </para>
-        ///           
+        ///  
         /// <para>
         /// When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code>
-        ///          must match a <code>DataflowEndpoint</code> in the same group.
+        /// must match a <code>DataflowEndpoint</code> in the same group.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataflowEndpointGroup service method.</param>
@@ -218,10 +224,10 @@ namespace Amazon.GroundStation
         /// <summary>
         /// Creates a mission profile.
         /// 
-        ///          
+        ///  
         /// <para>
-        ///             <code>dataflowEdges</code> is a list of lists of strings. Each lower level
-        /// list of strings         has two elements: a <i>from ARN</i> and a <i>to ARN</i>.
+        ///  <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of
+        /// strings has two elements: a <i>from</i> ARN and a <i>to</i> ARN.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMissionProfile service method.</param>
@@ -244,10 +250,10 @@ namespace Amazon.GroundStation
         /// <summary>
         /// Creates a mission profile.
         /// 
-        ///          
+        ///  
         /// <para>
-        ///             <code>dataflowEdges</code> is a list of lists of strings. Each lower level
-        /// list of strings         has two elements: a <i>from ARN</i> and a <i>to ARN</i>.
+        ///  <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of
+        /// strings has two elements: a <i>from</i> ARN and a <i>to</i> ARN.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMissionProfile service method.</param>
@@ -460,7 +466,7 @@ namespace Amazon.GroundStation
         /// <summary>
         /// Returns <code>Config</code> information.
         /// 
-        ///          
+        ///  
         /// <para>
         /// Only one <code>Config</code> response can be returned.
         /// </para>
@@ -485,7 +491,7 @@ namespace Amazon.GroundStation
         /// <summary>
         /// Returns <code>Config</code> information.
         /// 
-        ///          
+        ///  
         /// <para>
         /// Only one <code>Config</code> response can be returned.
         /// </para>
@@ -746,10 +752,10 @@ namespace Amazon.GroundStation
         /// <summary>
         /// Returns a list of contacts.
         /// 
-        ///          
+        ///  
         /// <para>
-        /// If <code>statusList</code> contains AVAILABLE, the request must include      <code>groundstation</code>,
-        /// <code>missionprofileArn</code>, and <code>satelliteArn</code>.      
+        /// If <code>statusList</code> contains AVAILABLE, the request must include <code>groundStation</code>,
+        /// <code>missionprofileArn</code>, and <code>satelliteArn</code>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContacts service method.</param>
@@ -772,10 +778,10 @@ namespace Amazon.GroundStation
         /// <summary>
         /// Returns a list of contacts.
         /// 
-        ///          
+        ///  
         /// <para>
-        /// If <code>statusList</code> contains AVAILABLE, the request must include      <code>groundstation</code>,
-        /// <code>missionprofileArn</code>, and <code>satelliteArn</code>.      
+        /// If <code>statusList</code> contains AVAILABLE, the request must include <code>groundStation</code>,
+        /// <code>missionprofileArn</code>, and <code>satelliteArn</code>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContacts service method.</param>
@@ -986,7 +992,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Returns a list of tags or a specified resource.
+        /// Returns a list of tags for a specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1006,7 +1012,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Returns a list of tags or a specified resource.
+        /// Returns a list of tags for a specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1172,10 +1178,10 @@ namespace Amazon.GroundStation
         /// <summary>
         /// Updates the <code>Config</code> used when scheduling contacts.
         /// 
-        ///          
+        ///  
         /// <para>
-        /// Updating a <code>Config</code> will not update the execution parameters         for
-        /// existing future contacts scheduled with this <code>Config</code>.
+        /// Updating a <code>Config</code> will not update the execution parameters for existing
+        /// future contacts scheduled with this <code>Config</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConfig service method.</param>
@@ -1198,10 +1204,10 @@ namespace Amazon.GroundStation
         /// <summary>
         /// Updates the <code>Config</code> used when scheduling contacts.
         /// 
-        ///          
+        ///  
         /// <para>
-        /// Updating a <code>Config</code> will not update the execution parameters         for
-        /// existing future contacts scheduled with this <code>Config</code>.
+        /// Updating a <code>Config</code> will not update the execution parameters for existing
+        /// future contacts scheduled with this <code>Config</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConfig service method.</param>
@@ -1230,10 +1236,10 @@ namespace Amazon.GroundStation
         /// <summary>
         /// Updates a mission profile.
         /// 
-        ///          
+        ///  
         /// <para>
-        /// Updating a mission profile will not update the execution parameters         for existing
-        /// future contacts.
+        /// Updating a mission profile will not update the execution parameters for existing future
+        /// contacts.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMissionProfile service method.</param>
@@ -1256,10 +1262,10 @@ namespace Amazon.GroundStation
         /// <summary>
         /// Updates a mission profile.
         /// 
-        ///          
+        ///  
         /// <para>
-        /// Updating a mission profile will not update the execution parameters         for existing
-        /// future contacts.
+        /// Updating a mission profile will not update the execution parameters for existing future
+        /// contacts.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMissionProfile service method.</param>

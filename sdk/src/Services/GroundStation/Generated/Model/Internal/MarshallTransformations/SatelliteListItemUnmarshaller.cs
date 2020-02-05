@@ -64,6 +64,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("groundStations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.GroundStations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("noradSatelliteID", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

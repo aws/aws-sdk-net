@@ -41,6 +41,7 @@ namespace Amazon.GroundStation.Model
         private string _missionProfileArn;
         private DateTime? _postPassEndTime;
         private DateTime? _prePassStartTime;
+        private string _region;
         private string _satelliteArn;
         private DateTime? _startTime;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -207,6 +208,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetPrePassStartTime()
         {
             return this._prePassStartTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// Region of a contact.
+        /// </para>
+        /// </summary>
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
         }
 
         /// <summary>

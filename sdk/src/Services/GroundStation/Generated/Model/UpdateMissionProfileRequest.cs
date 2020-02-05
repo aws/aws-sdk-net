@@ -31,10 +31,10 @@ namespace Amazon.GroundStation.Model
     /// Container for the parameters to the UpdateMissionProfile operation.
     /// Updates a mission profile.
     /// 
-    ///          
+    ///  
     /// <para>
-    /// Updating a mission profile will not update the execution parameters         for existing
-    /// future contacts.
+    /// Updating a mission profile will not update the execution parameters for existing future
+    /// contacts.
     /// </para>
     /// </summary>
     public partial class UpdateMissionProfileRequest : AmazonGroundStationRequest
@@ -90,8 +90,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property DataflowEdges. 
         /// <para>
-        /// A list of lists of ARNs. Each list of ARNs is an edge, with a from <code>Config</code>
-        /// and a to          <code>Config</code>.
+        /// A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code>
+        /// and a <i>to</i> <code>Config</code>.
         /// </para>
         /// </summary>
         public List<List<string>> DataflowEdges
@@ -129,7 +129,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property MissionProfileId. 
         /// <para>
-        /// ID of a mission profile.
+        /// UUID of a mission profile.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

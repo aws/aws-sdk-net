@@ -4,7 +4,7 @@
     <property>Amazon.GroundStation.Model.CreateConfigRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[ a-zA-Z0-9_:-]+$</pattern>
+    <pattern>^[ a-zA-Z0-9_:-]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.CreateMissionProfileRequest.ContactPostPassDurationSeconds</property>
@@ -25,7 +25,7 @@
     <property>Amazon.GroundStation.Model.CreateMissionProfileRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[ a-zA-Z0-9_:-]+$</pattern>
+    <pattern>^[ a-zA-Z0-9_:-]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.GetMissionProfileResponse.ContactPostPassDurationSeconds</property>
@@ -57,7 +57,7 @@
     <property>Amazon.GroundStation.Model.UpdateConfigRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[ a-zA-Z0-9_:-]+$</pattern>
+    <pattern>^[ a-zA-Z0-9_:-]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.UpdateMissionProfileRequest.ContactPostPassDurationSeconds</property>
@@ -78,23 +78,25 @@
     <property>Amazon.GroundStation.Model.UpdateMissionProfileRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[ a-zA-Z0-9_:-]+$</pattern>
+    <pattern>^[ a-zA-Z0-9_:-]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DataflowEndpoint.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[ a-zA-Z0-9_:-]+$</pattern>
+    <pattern>^[ a-zA-Z0-9_:-]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DecodeConfig.UnvalidatedJSON</property>
     <min>2</min>
     <max>8192</max>
+    <pattern>^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.DemodulationConfig.UnvalidatedJSON</property>
     <min>2</min>
     <max>8192</max>
+    <pattern>^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GroundStation.Model.SatelliteListItem.NoradSatelliteID</property>

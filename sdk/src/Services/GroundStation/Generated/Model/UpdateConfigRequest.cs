@@ -31,10 +31,10 @@ namespace Amazon.GroundStation.Model
     /// Container for the parameters to the UpdateConfig operation.
     /// Updates the <code>Config</code> used when scheduling contacts.
     /// 
-    ///          
+    ///  
     /// <para>
-    /// Updating a <code>Config</code> will not update the execution parameters         for
-    /// existing future contacts scheduled with this <code>Config</code>.
+    /// Updating a <code>Config</code> will not update the execution parameters for existing
+    /// future contacts scheduled with this <code>Config</code>.
     /// </para>
     /// </summary>
     public partial class UpdateConfigRequest : AmazonGroundStationRequest
@@ -47,7 +47,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ConfigData. 
         /// <para>
-        /// Parameters for a <code>Config</code>.
+        /// Parameters of a <code>Config</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

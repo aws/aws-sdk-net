@@ -42,7 +42,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ConfigArn. 
         /// <para>
-        /// ARN of a <code>Config</code>         
+        /// ARN of a <code>Config</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

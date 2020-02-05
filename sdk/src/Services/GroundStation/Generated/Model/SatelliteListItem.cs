@@ -32,9 +32,28 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class SatelliteListItem
     {
+        private List<string> _groundStations = new List<string>();
         private int? _noradSatelliteID;
         private string _satelliteArn;
         private string _satelliteId;
+
+        /// <summary>
+        /// Gets and sets the property GroundStations. 
+        /// <para>
+        /// A list of ground stations to which the satellite is on-boarded.
+        /// </para>
+        /// </summary>
+        public List<string> GroundStations
+        {
+            get { return this._groundStations; }
+            set { this._groundStations = value; }
+        }
+
+        // Check to see if GroundStations property is set
+        internal bool IsSetGroundStations()
+        {
+            return this._groundStations != null && this._groundStations.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property NoradSatelliteID. 
@@ -76,7 +95,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property SatelliteId. 
         /// <para>
-        /// ID of a satellite.
+        /// UUID of a satellite.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

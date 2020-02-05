@@ -70,6 +70,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataflowEndpointName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dataflowEndpointRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataflowEndpointRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

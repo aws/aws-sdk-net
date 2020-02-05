@@ -38,7 +38,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property DataflowEndpointGroupId. 
         /// <para>
-        /// ID of a dataflow endpoint group.
+        /// UUID of a dataflow endpoint group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

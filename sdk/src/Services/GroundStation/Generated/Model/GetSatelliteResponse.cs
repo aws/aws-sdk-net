@@ -32,47 +32,27 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class GetSatelliteResponse : AmazonWebServiceResponse
     {
-        private DateTime? _dateCreated;
-        private DateTime? _lastUpdated;
+        private List<string> _groundStations = new List<string>();
         private int? _noradSatelliteID;
         private string _satelliteArn;
         private string _satelliteId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property DateCreated. 
+        /// Gets and sets the property GroundStations. 
         /// <para>
-        /// When a satellite was created.
+        /// A list of ground stations to which the satellite is on-boarded.
         /// </para>
         /// </summary>
-        public DateTime DateCreated
+        public List<string> GroundStations
         {
-            get { return this._dateCreated.GetValueOrDefault(); }
-            set { this._dateCreated = value; }
+            get { return this._groundStations; }
+            set { this._groundStations = value; }
         }
 
-        // Check to see if DateCreated property is set
-        internal bool IsSetDateCreated()
+        // Check to see if GroundStations property is set
+        internal bool IsSetGroundStations()
         {
-            return this._dateCreated.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property LastUpdated. 
-        /// <para>
-        /// When a satellite was last updated.
-        /// </para>
-        /// </summary>
-        public DateTime LastUpdated
-        {
-            get { return this._lastUpdated.GetValueOrDefault(); }
-            set { this._lastUpdated = value; }
-        }
-
-        // Check to see if LastUpdated property is set
-        internal bool IsSetLastUpdated()
-        {
-            return this._lastUpdated.HasValue; 
+            return this._groundStations != null && this._groundStations.Count > 0; 
         }
 
         /// <summary>
@@ -129,24 +109,6 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetSatelliteId()
         {
             return this._satelliteId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Tags assigned to a satellite.
-        /// </para>
-        /// </summary>
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

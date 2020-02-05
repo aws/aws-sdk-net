@@ -29,7 +29,7 @@ namespace Amazon.GroundStation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Returns a list of tags or a specified resource.
+    /// Returns a list of tags for a specified resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonGroundStationRequest
     {

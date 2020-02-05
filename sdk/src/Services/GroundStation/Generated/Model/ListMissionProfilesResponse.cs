@@ -38,7 +38,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property MissionProfileList. 
         /// <para>
-        /// List of mission profiles
+        /// List of mission profiles.
         /// </para>
         /// </summary>
         public List<MissionProfileListItem> MissionProfileList

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Object that determines whether tracking should be used during a contact         executed
-    /// with this <code>Config</code> in the mission profile.
+    /// Object that determines whether tracking should be used during a contact executed with
+    /// this <code>Config</code> in the mission profile.
     /// </summary>
     public partial class TrackingConfig
     {
