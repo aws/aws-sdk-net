@@ -82,7 +82,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property CorrectionGateLevel. Content measuring above this level
         /// will be corrected to the target level. Content measuring below this level will not
-        /// be corrected. Gating only applies when not using real_time_correction.
+        /// be corrected.
         /// </summary>
         [AWSProperty(Min=-70, Max=0)]
         public int CorrectionGateLevel

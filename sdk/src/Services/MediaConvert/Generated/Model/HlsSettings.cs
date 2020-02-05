@@ -132,8 +132,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentModifier. String concatenated to end of segment
-        /// filenames. Accepts "Format Identifiers":#format_identifier_parameters.
+        /// Gets and sets the property SegmentModifier. Use this setting to add an identifying
+        /// string to the filename of each segment. The service adds this string between the name
+        /// modifier and segment index number. You can use format identifiers in the string. For
+        /// more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
         /// </summary>
         public string SegmentModifier
         {

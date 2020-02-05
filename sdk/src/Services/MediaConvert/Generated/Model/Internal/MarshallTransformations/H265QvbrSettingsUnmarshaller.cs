@@ -76,6 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.QvbrQualityLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("qvbrQualityLevelFineTune", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.QvbrQualityLevelFineTune = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
