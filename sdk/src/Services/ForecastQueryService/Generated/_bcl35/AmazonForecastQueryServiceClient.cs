@@ -239,7 +239,7 @@ namespace Amazon.ForecastQueryService
         #region  QueryForecast
 
         /// <summary>
-        /// Retrieves a forecast filtered by the supplied criteria.
+        /// Retrieves a forecast for a single item, filtered by the supplied criteria.
         /// 
         ///  
         /// <para>
@@ -250,8 +250,13 @@ namespace Amazon.ForecastQueryService
         /// </para>
         ///  
         /// <para>
-        /// By default, the complete date range of the filtered forecast is returned. Optionally,
-        /// you can request a specific date range within the forecast.
+        /// By default, <code>QueryForecast</code> returns the complete date range for the filtered
+        /// forecast. You can request a specific date range.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+        /// operation.
         /// </para>
         ///  <note> 
         /// <para>
@@ -264,7 +269,7 @@ namespace Amazon.ForecastQueryService
         /// 
         /// <returns>The response from the QueryForecast service method, as returned by ForecastQueryService.</returns>
         /// <exception cref="Amazon.ForecastQueryService.Model.InvalidInputException">
-        /// The value that you provided was invalid or too long.
+        /// The value is invalid or is too long.
         /// </exception>
         /// <exception cref="Amazon.ForecastQueryService.Model.InvalidNextTokenException">
         /// The token is not valid. Tokens expire after 24 hours.

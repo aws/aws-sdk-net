@@ -42,13 +42,9 @@ namespace Amazon.ForecastQueryService.Model
         /// </para>
         ///  
         /// <para>
-        /// The <i>string</i> of the string to array map is one of the following values:
+        /// The <i>string</i> of the string-to-array map is one of the following values:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        /// mean
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         /// p10
         /// </para>

@@ -41,7 +41,6 @@ namespace Amazon.ForecastQueryService.Model
         /// The timestamp of the specific forecast.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
         public string Timestamp
         {
             get { return this._timestamp; }

@@ -29,7 +29,7 @@ namespace Amazon.ForecastQueryService.Model
 {
     /// <summary>
     /// Container for the parameters to the QueryForecast operation.
-    /// Retrieves a forecast filtered by the supplied criteria.
+    /// Retrieves a forecast for a single item, filtered by the supplied criteria.
     /// 
     ///  
     /// <para>
@@ -40,8 +40,13 @@ namespace Amazon.ForecastQueryService.Model
     /// </para>
     ///  
     /// <para>
-    /// By default, the complete date range of the filtered forecast is returned. Optionally,
-    /// you can request a specific date range within the forecast.
+    /// By default, <code>QueryForecast</code> returns the complete date range for the filtered
+    /// forecast. You can request a specific date range.
+    /// </para>
+    ///  
+    /// <para>
+    /// To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+    /// operation.
     /// </para>
     ///  <note> 
     /// <para>
@@ -61,11 +66,10 @@ namespace Amazon.ForecastQueryService.Model
         /// <summary>
         /// Gets and sets the property EndDate. 
         /// <para>
-        /// The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z'
-        /// (ISO 8601 format). For example, "1970-01-01T00:00:00Z." 
+        /// The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss
+        /// (ISO 8601 format). For example, 2015-01-01T20:00:00. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
         public string EndDate
         {
             get { return this._endDate; }
@@ -81,35 +85,18 @@ namespace Amazon.ForecastQueryService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filtering criteria to apply when retrieving the forecast. For example:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To get a forecast for a specific item specify the following:
+        /// The filtering criteria to apply when retrieving the forecast. For example, to get
+        /// the forecast for <code>client_21</code> in the electricity usage dataset, specify
+        /// the following:
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"item_id" : "client_1"}</code> 
-        /// </para>
-        ///  </li> </ul> <ul> <li> 
-        /// <para>
-        /// To get a forecast for a specific item sold in a specific location, specify the following:
+        ///  <code>{"item_id" : "client_21"}</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"item_id" : "client_1", "location" : "ny"}</code> 
-        /// </para>
-        ///  </li> </ul> <ul> <li> 
-        /// <para>
-        /// To get a forecast for all blue items sold in a specific location, specify the following:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>{ "location" : "ny", "color":"blue"}</code> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To get the full forecast, use the operation.
+        /// To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -168,11 +155,10 @@ namespace Amazon.ForecastQueryService.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        /// The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z'
-        /// (ISO 8601 format) For example, "1970-01-01T00:00:00Z."
+        /// The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss
+        /// (ISO 8601 format). For example, 2015-01-01T08:00:00.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
         public string StartDate
         {
             get { return this._startDate; }
