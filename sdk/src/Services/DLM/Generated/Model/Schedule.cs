@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies a schedule.
+    /// Specifies a backup schedule.
     /// </summary>
     public partial class Schedule
     {
@@ -159,7 +159,7 @@ namespace Amazon.DLM.Model
         /// to the AWS-added lifecycle tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Min=0, Max=45)]
         public List<Tag> TagsToAdd
         {
             get { return this._tagsToAdd; }
@@ -181,7 +181,7 @@ namespace Amazon.DLM.Model
         /// tags are only valid for EBS Snapshot Management – Instance policies.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Min=0, Max=45)]
         public List<Tag> VariableTags
         {
             get { return this._variableTags; }

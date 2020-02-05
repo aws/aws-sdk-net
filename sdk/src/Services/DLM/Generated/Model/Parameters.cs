@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Optional parameters that can be added to the policy. The set of valid parameters depends
-    /// on the combination of <code>policyType</code> and <code>resourceType</code> values.
+    /// Specifies optional parameters to add to a policy. The set of valid parameters depends
+    /// on the combination of policy type and resource type.
     /// </summary>
     public partial class Parameters
     {
@@ -38,9 +38,9 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property ExcludeBootVolume. 
         /// <para>
-        /// When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots
-        /// calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults
-        /// to false. Only valid for EBS Snapshot Management – Instance policies.
+        /// [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the
+        /// root volume from snapshots created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>.
+        /// The default is false.
         /// </para>
         /// </summary>
         public bool ExcludeBootVolume

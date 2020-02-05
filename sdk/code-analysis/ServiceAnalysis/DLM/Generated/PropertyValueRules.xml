@@ -10,7 +10,7 @@
     <property>Amazon.DLM.Model.CreateLifecyclePolicyRequest.ExecutionRoleArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d+:role/.*</pattern>
+    <pattern>arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.CreateLifecyclePolicyResponse.PolicyId</property>
@@ -34,19 +34,19 @@
     <property>Amazon.DLM.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^arn:aws:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$</pattern>
+    <pattern>^arn:aws(-[a-z]{1,3}){0,2}:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.TagResourceRequest.ResourceArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^arn:aws:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$</pattern>
+    <pattern>^arn:aws(-[a-z]{1,3}){0,2}:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.UntagResourceRequest.ResourceArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^arn:aws:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$</pattern>
+    <pattern>^arn:aws(-[a-z]{1,3}){0,2}:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.UpdateLifecyclePolicyRequest.Description</property>
@@ -58,7 +58,7 @@
     <property>Amazon.DLM.Model.UpdateLifecyclePolicyRequest.ExecutionRoleArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d+:role/.*</pattern>
+    <pattern>arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.UpdateLifecyclePolicyRequest.PolicyId</property>
@@ -105,13 +105,13 @@
     <property>Amazon.DLM.Model.LifecyclePolicy.ExecutionRoleArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d+:role/.*</pattern>
+    <pattern>arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.LifecyclePolicy.PolicyArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^arn:aws:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$</pattern>
+    <pattern>^arn:aws(-[a-z]{1,3}){0,2}:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.LifecyclePolicy.PolicyId</property>

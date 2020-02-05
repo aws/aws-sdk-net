@@ -41,7 +41,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A set of optional parameters that can be provided by the policy. 
+        /// A set of optional parameters for the policy. 
         /// </para>
         /// </summary>
         public Parameters Parameters
@@ -59,8 +59,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// This field determines the valid target resource types and actions a policy can manage.
-        /// This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.
+        /// The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
         /// </para>
         /// </summary>
         public PolicyTypeValues PolicyType
