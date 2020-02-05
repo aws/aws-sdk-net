@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
         private List<string> _securityGroupIds = new List<string>();
         private string _serviceName;
         private List<string> _subnetIds = new List<string>();
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private VpcEndpointType _vpcEndpointType;
         private string _vpcId;
 
@@ -214,6 +215,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSubnetIds()
         {
             return this._subnetIds != null && this._subnetIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to associate with the endpoint.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
         /// <summary>
