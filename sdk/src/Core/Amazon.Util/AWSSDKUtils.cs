@@ -59,11 +59,7 @@ namespace Amazon.Util
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
         private const int DefaultMaxIdleTime = 50 * 1000; // 50 seconds
-#if (BCL || NETSTANDARD)
-        private static readonly Regex CompressWhitespaceRegex = new Regex("\\s+", RegexOptions.Compiled);
-#else
-        private static readonly Regex CompressWhitespaceRegex = new Regex("\\s+");
-#endif
+
         public static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
         public const int DefaultBufferSize = 8192;
@@ -1381,7 +1377,27 @@ namespace Amazon.Util
         /// <returns></returns>
         public static string CompressSpaces(string data)
         {
-            return data == null ? data : CompressWhitespaceRegex.Replace(data, " ");
+            if (data == null)
+            {
+                return null;
+            }
+
+            var stringBuilder = new StringBuilder();
+            var insideWhitespace = false;
+            foreach (var character in data)
+            {
+                if (!char.IsWhiteSpace(character))
+                {
+                    stringBuilder.Append(character);
+                    insideWhitespace = false;
+                }
+                else if (!insideWhitespace)
+                {
+                    stringBuilder.Append(' ');
+                    insideWhitespace = true;
+                }
+            }
+            return stringBuilder.ToString();
         }
 
 #endregion
