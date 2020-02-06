@@ -40,6 +40,7 @@ namespace Amazon.CodeBuild.Model
         private string _description;
         private string _encryptionKey;
         private ProjectEnvironment _environment;
+        private List<ProjectFileSystemLocation> _fileSystemLocations = new List<ProjectFileSystemLocation>();
         private DateTime? _lastModified;
         private LogsConfig _logsConfig;
         private string _name;
@@ -210,6 +211,27 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetEnvironment()
         {
             return this._environment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSystemLocations. 
+        /// <para>
+        ///  An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build
+        /// project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>,
+        /// <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code>
+        /// of a file system created using Amazon Elastic File System. 
+        /// </para>
+        /// </summary>
+        public List<ProjectFileSystemLocation> FileSystemLocations
+        {
+            get { return this._fileSystemLocations; }
+            set { this._fileSystemLocations = value; }
+        }
+
+        // Check to see if FileSystemLocations property is set
+        internal bool IsSetFileSystemLocations()
+        {
+            return this._fileSystemLocations != null && this._fileSystemLocations.Count > 0; 
         }
 
         /// <summary>

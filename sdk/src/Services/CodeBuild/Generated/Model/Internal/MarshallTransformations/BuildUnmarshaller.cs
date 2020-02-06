@@ -130,6 +130,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExportedEnvironmentVariables = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fileSystemLocations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProjectFileSystemLocation, ProjectFileSystemLocationUnmarshaller>(ProjectFileSystemLocationUnmarshaller.Instance);
+                    unmarshalledObject.FileSystemLocations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

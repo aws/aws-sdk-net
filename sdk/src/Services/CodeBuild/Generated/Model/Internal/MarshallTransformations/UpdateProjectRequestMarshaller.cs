@@ -119,6 +119,22 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetFileSystemLocations())
+                {
+                    context.Writer.WritePropertyName("fileSystemLocations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFileSystemLocationsListValue in publicRequest.FileSystemLocations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProjectFileSystemLocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFileSystemLocationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetLogsConfig())
                 {
                     context.Writer.WritePropertyName("logsConfig");
