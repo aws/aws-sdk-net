@@ -1,3 +1,17 @@
+### 3.3.673.0 (2020-02-06 19:14 UTC)
+* AppSync (3.3.104.0)
+	* AWS AppSync now supports X-Ray
+* CodeBuild (3.3.109.0)
+	* AWS CodeBuild adds support for Amazon Elastic File Systems
+* EBS (3.3.100.23)
+	* Documentation updates for EBS direct APIs.
+* EC2 (3.3.157.0)
+	* This release adds platform details and billing info to the DescribeImages API.
+* ECR (3.3.103.11)
+	* This release contains updated text for the GetAuthorizationToken API.
+* LexModelBuildingService (3.3.103.0)
+	* Amazon Lex now supports AMAZON.AlphaNumeric with regular expressions.
+
 ### 3.3.672.0 (2020-02-05 20:20 UTC)
 * DLM (3.3.106.0)
 	* Updated the maximum number of tags that can be added to a snapshot using DLM to 45.

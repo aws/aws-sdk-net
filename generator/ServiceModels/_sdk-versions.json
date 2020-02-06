@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.672.0",
+    "ProductVersion" : "3.3.673.0",
     "CoreVersion"    : "3.3.104.22",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.156.0",
+            "Version" : "3.3.157.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.22"
@@ -489,7 +489,7 @@
             "InPreview"               : false
         },
         "ECR"                             : {
-            "Version" : "3.3.103.10",
+            "Version" : "3.3.103.11",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.22"
@@ -657,7 +657,7 @@
             "InPreview"               : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.3.108.9",
+            "Version" : "3.3.109.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.22"
@@ -777,7 +777,7 @@
             "InPreview"               : false
         },
         "LexModelBuildingService"         : {
-            "Version" : "3.3.102.14",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.22"
@@ -921,7 +921,7 @@
             "InPreview"               : false
         },
         "AppSync"                         : {
-            "Version" : "3.3.103.27",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.22"
@@ -1729,7 +1729,7 @@
             "InPreview"               : false
         },
         "EBS"                             : {
-            "Version" : "3.3.100.22",
+            "Version" : "3.3.100.23",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.22"
