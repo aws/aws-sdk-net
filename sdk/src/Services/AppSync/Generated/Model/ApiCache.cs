@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// 
+    /// The <code>ApiCache</code> object.
     /// </summary>
     public partial class ApiCache
     {

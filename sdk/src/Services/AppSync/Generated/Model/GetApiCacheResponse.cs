@@ -35,7 +35,10 @@ namespace Amazon.AppSync.Model
         private ApiCache _apiCache;
 
         /// <summary>
-        /// Gets and sets the property ApiCache.
+        /// Gets and sets the property ApiCache. 
+        /// <para>
+        /// The <code>ApiCache</code> object.
+        /// </para>
         /// </summary>
         public ApiCache ApiCache
         {

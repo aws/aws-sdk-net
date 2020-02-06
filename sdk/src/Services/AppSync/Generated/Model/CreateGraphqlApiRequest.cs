@@ -40,6 +40,7 @@ namespace Amazon.AppSync.Model
         private OpenIDConnectConfig _openidConnectConfig;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private UserPoolConfig _userPoolConfig;
+        private bool? _xrayEnabled;
 
         /// <summary>
         /// Gets and sets the property AdditionalAuthenticationProviders. 
@@ -168,6 +169,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetUserPoolConfig()
         {
             return this._userPoolConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property XrayEnabled. 
+        /// <para>
+        /// A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.
+        /// </para>
+        /// </summary>
+        public bool XrayEnabled
+        {
+            get { return this._xrayEnabled.GetValueOrDefault(); }
+            set { this._xrayEnabled = value; }
+        }
+
+        // Check to see if XrayEnabled property is set
+        internal bool IsSetXrayEnabled()
+        {
+            return this._xrayEnabled.HasValue; 
         }
 
     }

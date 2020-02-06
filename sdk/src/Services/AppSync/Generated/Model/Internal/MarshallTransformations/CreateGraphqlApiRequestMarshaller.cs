@@ -141,6 +141,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetXrayEnabled())
+                {
+                    context.Writer.WritePropertyName("xrayEnabled");
+                    context.Writer.Write(publicRequest.XrayEnabled);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
