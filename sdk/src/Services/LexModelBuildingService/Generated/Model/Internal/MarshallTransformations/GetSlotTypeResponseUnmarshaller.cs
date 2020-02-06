@@ -87,6 +87,18 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("parentSlotTypeSignature", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ParentSlotTypeSignature = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("slotTypeConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SlotTypeConfiguration, SlotTypeConfigurationUnmarshaller>(SlotTypeConfigurationUnmarshaller.Instance);
+                    response.SlotTypeConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("valueSelectionStrategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

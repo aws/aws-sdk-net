@@ -103,6 +103,28 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetParentSlotTypeSignature())
+                {
+                    context.Writer.WritePropertyName("parentSlotTypeSignature");
+                    context.Writer.Write(publicRequest.ParentSlotTypeSignature);
+                }
+
+                if(publicRequest.IsSetSlotTypeConfigurations())
+                {
+                    context.Writer.WritePropertyName("slotTypeConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSlotTypeConfigurationsListValue in publicRequest.SlotTypeConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SlotTypeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSlotTypeConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetValueSelectionStrategy())
                 {
                     context.Writer.WritePropertyName("valueSelectionStrategy");
