@@ -1381,6 +1381,11 @@ namespace Amazon.Util
                 return null;
             }
 
+            if (data.Length == 0)
+            {
+                return string.Empty;
+            }
+
             var stringBuilder = new StringBuilder();
             var insideWhitespace = false;
             foreach (var character in data)
