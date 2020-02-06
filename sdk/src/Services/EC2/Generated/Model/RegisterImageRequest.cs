@@ -56,7 +56,8 @@ namespace Amazon.EC2.Model
     /// Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and
     /// SUSE Linux Enterprise Server (SLES), use the EC2 billing product code associated with
     /// an AMI to verify the subscription status for package updates. To create a new AMI
-    /// for operating systems that require a billing product code, do the following:
+    /// for operating systems that require a billing product code, instead of instead of registering
+    /// the AMI, do the following to preserve the billing product code association:
     /// </para>
     ///  <ol> <li> 
     /// <para>
@@ -68,8 +69,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Create a new AMI from the instance using <a>CreateImage</a> to preserve the billing
-    /// product code association.
+    /// Create an AMI from the instance using <a>CreateImage</a>.
     /// </para>
     ///  </li> </ol> 
     /// <para>

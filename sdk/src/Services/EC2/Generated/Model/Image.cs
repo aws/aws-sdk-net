@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         private string _name;
         private string _ownerId;
         private PlatformValues _platform;
+        private string _platformDetails;
         private List<ProductCode> _productCodes = new List<ProductCode>();
         private bool? _public;
         private string _ramdiskId;
@@ -55,6 +56,7 @@ namespace Amazon.EC2.Model
         private ImageState _state;
         private StateReason _stateReason;
         private List<Tag> _tags = new List<Tag>();
+        private string _usageOperation;
         private VirtualizationType _virtualizationType;
 
         /// <summary>
@@ -311,6 +313,26 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlatformDetails. 
+        /// <para>
+        /// The platform details associated with the billing code of the AMI. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+        /// Billing Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string PlatformDetails
+        {
+            get { return this._platformDetails; }
+            set { this._platformDetails = value; }
+        }
+
+        // Check to see if PlatformDetails property is set
+        internal bool IsSetPlatformDetails()
+        {
+            return this._platformDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProductCodes. 
         /// <para>
         /// Any product codes associated with the AMI.
@@ -475,6 +497,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageOperation. 
+        /// <para>
+        /// The operation of the Amazon EC2 instance and the billing code associated with the
+        /// AMI. <code>usageOperation</code> corresponds to the <a href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
+        /// column on your AWS Cost and Usage Report. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+        /// Billing Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string UsageOperation
+        {
+            get { return this._usageOperation; }
+            set { this._usageOperation = value; }
+        }
+
+        // Check to see if UsageOperation property is set
+        internal bool IsSetUsageOperation()
+        {
+            return this._usageOperation != null;
         }
 
         /// <summary>
