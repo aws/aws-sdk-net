@@ -29,7 +29,7 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLifecyclePolicyPreview operation.
-    /// Retrieves the results of the specified lifecycle policy preview request.
+    /// Retrieves the results of the lifecycle policy preview request for the specified repository.
     /// </summary>
     public partial class GetLifecyclePolicyPreviewRequest : AmazonECRRequest
     {

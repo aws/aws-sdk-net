@@ -29,8 +29,7 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeImages operation.
-    /// Returns metadata about the images in a repository, including image size, image tags,
-    /// and creation date.
+    /// Returns metadata about the images in a repository.
     /// 
     ///  <note> 
     /// <para>

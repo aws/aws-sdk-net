@@ -31,6 +31,12 @@ namespace Amazon.ECR.Model
     /// Container for the parameters to the UploadLayerPart operation.
     /// Uploads an image layer part to Amazon ECR.
     /// 
+    ///  
+    /// <para>
+    /// When an image is pushed, each new image layer is uploaded in parts. The maximum size
+    /// of each image layer part can be 20971520 bytes (or about 20MB). The UploadLayerPart
+    /// API is called once per each new image layer part.
+    /// </para>
     ///  <note> 
     /// <para>
     /// This operation is used by the Amazon ECR proxy, and it is not intended for general

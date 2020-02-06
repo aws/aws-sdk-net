@@ -29,7 +29,7 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRepositoryPolicy operation.
-    /// Retrieves the repository policy for a specified repository.
+    /// Retrieves the repository policy for the specified repository.
     /// </summary>
     public partial class GetRepositoryPolicyRequest : AmazonECRRequest
     {

@@ -29,8 +29,14 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetImage operation.
-    /// Gets detailed information for specified images within a specified repository. Images
-    /// are specified with either <code>imageTag</code> or <code>imageDigest</code>.
+    /// Gets detailed information for an image. Images are specified with either an <code>imageTag</code>
+    /// or <code>imageDigest</code>.
+    /// 
+    ///  
+    /// <para>
+    /// When an image is pulled, the BatchGetImage API is called once to retrieve the image
+    /// manifest.
+    /// </para>
     /// </summary>
     public partial class BatchGetImageRequest : AmazonECRRequest
     {

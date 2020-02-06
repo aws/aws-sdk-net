@@ -29,8 +29,8 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the StartLifecyclePolicyPreview operation.
-    /// Starts a preview of the specified lifecycle policy. This allows you to see the results
-    /// before creating the lifecycle policy.
+    /// Starts a preview of a lifecycle policy for the specified repository. This allows you
+    /// to see the results before associating the lifecycle policy with the repository.
     /// </summary>
     public partial class StartLifecyclePolicyPreviewRequest : AmazonECRRequest
     {

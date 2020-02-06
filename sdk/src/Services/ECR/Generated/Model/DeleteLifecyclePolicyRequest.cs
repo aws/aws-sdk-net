@@ -29,7 +29,7 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLifecyclePolicy operation.
-    /// Deletes the specified lifecycle policy.
+    /// Deletes the lifecycle policy associated with the specified repository.
     /// </summary>
     public partial class DeleteLifecyclePolicyRequest : AmazonECRRequest
     {

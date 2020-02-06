@@ -29,7 +29,7 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeImageScanFindings operation.
-    /// Describes the image scan findings for the specified image.
+    /// Returns the scan findings for the specified image.
     /// </summary>
     public partial class DescribeImageScanFindingsRequest : AmazonECRRequest
     {

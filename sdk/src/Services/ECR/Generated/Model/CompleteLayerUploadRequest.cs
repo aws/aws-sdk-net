@@ -33,6 +33,11 @@ namespace Amazon.ECR.Model
     /// repository name, and upload ID. You can optionally provide a <code>sha256</code> digest
     /// of the image layer for data validation purposes.
     /// 
+    ///  
+    /// <para>
+    /// When an image is pushed, the CompleteLayerUpload API is called once per each new image
+    /// layer to verify that the upload has completed.
+    /// </para>
     ///  <note> 
     /// <para>
     /// This operation is used by the Amazon ECR proxy, and it is not intended for general

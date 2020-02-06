@@ -31,6 +31,12 @@ namespace Amazon.ECR.Model
     /// Container for the parameters to the PutImage operation.
     /// Creates or updates the image manifest and tags associated with an image.
     /// 
+    ///  
+    /// <para>
+    /// When an image is pushed and all new image layers have been uploaded, the PutImage
+    /// API is called once to create or update the image manifest and tags associated with
+    /// the image.
+    /// </para>
     ///  <note> 
     /// <para>
     /// This operation is used by the Amazon ECR proxy, and it is not intended for general

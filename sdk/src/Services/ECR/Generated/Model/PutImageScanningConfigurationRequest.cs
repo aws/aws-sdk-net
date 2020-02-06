@@ -29,7 +29,7 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the PutImageScanningConfiguration operation.
-    /// Updates the image scanning configuration for a repository.
+    /// Updates the image scanning configuration for the specified repository.
     /// </summary>
     public partial class PutImageScanningConfigurationRequest : AmazonECRRequest
     {
