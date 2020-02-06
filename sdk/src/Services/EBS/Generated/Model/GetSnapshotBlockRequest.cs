@@ -44,8 +44,8 @@ namespace Amazon.EBS.Model
         /// </para>
         ///  
         /// <para>
-        /// Obtain the <code>block index</code> by running the <code>list changed blocks</code>
-        /// or <code>list snapshot blocks</code> operations.
+        /// Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
+        /// <code>ListSnapshotBlocks</code> operations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -68,8 +68,8 @@ namespace Amazon.EBS.Model
         /// </para>
         ///  
         /// <para>
-        /// Obtain the <code>block token</code> by running the <code>list changed blocks</code>
-        /// or <code>list snapshot blocks</code> operations.
+        /// Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+        /// <code>ListSnapshotBlocks</code> operations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

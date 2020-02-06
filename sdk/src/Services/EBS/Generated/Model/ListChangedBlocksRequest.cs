@@ -45,6 +45,12 @@ namespace Amazon.EBS.Model
         /// <para>
         /// The ID of the first snapshot to use for the comparison.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code>
+        /// parameter; otherwise, an error occurs.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string FirstSnapshotId
@@ -102,6 +108,12 @@ namespace Amazon.EBS.Model
         /// <para>
         /// The ID of the second snapshot to use for the comparison.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code>
+        /// parameter; otherwise, an error occurs.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string SecondSnapshotId

@@ -77,7 +77,7 @@ namespace Amazon.EBS.Model
         /// <summary>
         /// Gets and sets the property ExpiryTime. 
         /// <para>
-        /// The time when the <code>block token</code> expires.
+        /// The time when the <code>BlockToken</code> expires.
         /// </para>
         /// </summary>
         public DateTime ExpiryTime

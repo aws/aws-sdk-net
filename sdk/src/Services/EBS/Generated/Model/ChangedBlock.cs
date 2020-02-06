@@ -58,8 +58,8 @@ namespace Amazon.EBS.Model
         /// <summary>
         /// Gets and sets the property FirstBlockToken. 
         /// <para>
-        /// The block token for the block index of the <code>first snapshot ID</code> specified
-        /// in the <code>list changed blocks</code> operation. This value is absent if the first
+        /// The block token for the block index of the <code>FirstSnapshotId</code> specified
+        /// in the <code>ListChangedBlocks</code> operation. This value is absent if the first
         /// snapshot does not have the changed block that is on the second snapshot.
         /// </para>
         /// </summary>
@@ -79,8 +79,8 @@ namespace Amazon.EBS.Model
         /// <summary>
         /// Gets and sets the property SecondBlockToken. 
         /// <para>
-        /// The block token for the block index of the <code>second snapshot ID</code> specified
-        /// in the <code>list changed blocks</code> operation.
+        /// The block token for the block index of the <code>SecondSnapshotId</code> specified
+        /// in the <code>ListChangedBlocks</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

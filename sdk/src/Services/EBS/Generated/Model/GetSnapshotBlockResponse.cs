@@ -58,7 +58,7 @@ namespace Amazon.EBS.Model
         /// <summary>
         /// Gets and sets the property Checksum. 
         /// <para>
-        /// The checksum generated for the block.
+        /// The checksum generated for the block, which is Base64 encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
