@@ -72,6 +72,11 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClientToken);
                 }
 
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                }
                 if(publicRequest.IsSetImageBuildVersionArn())
                 {
                     context.Writer.WritePropertyName("imageBuildVersionArn");

@@ -50,7 +50,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the infrastruction configuration.
+        /// The Amazon Resource Name (ARN) of the infrastructure configuration.
         /// </para>
         /// </summary>
         public string Arn
@@ -104,7 +104,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the infrastruction configuration.
+        /// The description of the infrastructure configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -123,7 +123,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property InstanceProfileName. 
         /// <para>
-        /// The instance profile of the infrastruction configuration.
+        /// The instance profile of the infrastructure configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -142,7 +142,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property InstanceTypes. 
         /// <para>
-        /// The instance types of the infrastruction configuration.
+        /// The instance types of the infrastructure configuration.
         /// </para>
         /// </summary>
         public List<string> InstanceTypes
@@ -160,7 +160,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property KeyPair. 
         /// <para>
-        /// The EC2 key pair of the infrastruction configuration.
+        /// The EC2 key pair of the infrastructure configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -179,7 +179,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Logging. 
         /// <para>
-        /// The logging configuration of the infrastruction configuration.
+        /// The logging configuration of the infrastructure configuration.
         /// </para>
         /// </summary>
         public Logging Logging
@@ -197,7 +197,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the infrastruction configuration.
+        /// The name of the infrastructure configuration.
         /// </para>
         /// </summary>
         public string Name
@@ -215,7 +215,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The security group IDs of the infrastruction configuration.
+        /// The security group IDs of the infrastructure configuration.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -233,7 +233,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// The SNS Topic Amazon Resource Name (ARN) of the infrastruction configuration.
+        /// The SNS topic Amazon Resource Name (ARN) of the infrastructure configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -252,7 +252,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The subnet ID of the infrastruction configuration.
+        /// The subnet ID of the infrastructure configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -271,7 +271,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags of the infrastruction configuration.
+        /// The tags of the infrastructure configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -290,7 +290,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TerminateInstanceOnFailure. 
         /// <para>
-        /// The terminate instance on failure configuration of the infrastruction configuration.
+        /// The terminate instance on failure configuration of the infrastructure configuration.
         /// </para>
         /// </summary>
         public bool TerminateInstanceOnFailure

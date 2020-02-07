@@ -28,7 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// 
+    /// Describes the configuration for a launch permission. The launch permission modification
+    /// request is sent to the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">EC2
+    /// ModifyImageAttribute</a> API on behalf of the user for each Region they have selected
+    /// to distribute the AMI.
     /// </summary>
     public partial class LaunchPermissionConfiguration
     {
@@ -38,7 +41,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property UserGroups. 
         /// <para>
-        ///  
+        /// The name of the group. 
         /// </para>
         /// </summary>
         public List<string> UserGroups
@@ -56,7 +59,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property UserIds. 
         /// <para>
-        ///  
+        ///  The AWS account ID. 
         /// </para>
         /// </summary>
         public List<string> UserIds

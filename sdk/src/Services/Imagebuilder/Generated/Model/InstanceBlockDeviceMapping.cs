@@ -59,7 +59,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Ebs. 
         /// <para>
-        /// Use to manage EBS specific configuration for this mapping.
+        /// Use to manage Amazon EBS-specific configuration for this mapping.
         /// </para>
         /// </summary>
         public EbsInstanceBlockDeviceSpecification Ebs
@@ -80,7 +80,7 @@ namespace Amazon.Imagebuilder.Model
         /// Use to remove a mapping from the parent image.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=0, Max=0)]
         public string NoDevice
         {
             get { return this._noDevice; }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// EBS specific block device mapping specifications.
+    /// Amazon EBS-specific block device mapping specifications.
     /// </summary>
     public partial class EbsInstanceBlockDeviceSpecification
     {

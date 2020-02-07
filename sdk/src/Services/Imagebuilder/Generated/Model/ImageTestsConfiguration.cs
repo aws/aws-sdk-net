@@ -56,7 +56,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TimeoutMinutes. 
         /// <para>
-        /// The maximum time in minutes that tests are permitted to run for.
+        /// The maximum time in minutes that tests are permitted to run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=1440)]

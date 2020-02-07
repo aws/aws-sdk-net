@@ -41,7 +41,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  
+        ///  The filters. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -60,10 +60,11 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImagePipelineArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the image pipeline whose images you wish to view.
+        ///  The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ImagePipelineArn
         {
             get { return this._imagePipelineArn; }

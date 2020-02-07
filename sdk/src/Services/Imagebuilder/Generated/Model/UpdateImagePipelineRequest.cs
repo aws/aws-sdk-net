@@ -104,7 +104,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImagePipelineArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the image pipeline that you wish to update. 
+        ///  The Amazon Resource Name (ARN) of the image pipeline that you want to update. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -127,6 +127,7 @@ namespace Amazon.Imagebuilder.Model
         /// images updated by this image pipeline. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ImageRecipeArn
         {
             get { return this._imageRecipeArn; }
@@ -164,6 +165,7 @@ namespace Amazon.Imagebuilder.Model
         /// to build images updated by this image pipeline. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InfrastructureConfigurationArn
         {
             get { return this._infrastructureConfigurationArn; }

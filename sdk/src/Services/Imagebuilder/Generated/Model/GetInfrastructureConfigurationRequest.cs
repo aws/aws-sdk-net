@@ -29,7 +29,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the GetInfrastructureConfiguration operation.
-    /// Gets a infrastructure configuration.
+    /// Gets an infrastructure configuration.
     /// </summary>
     public partial class GetInfrastructureConfigurationRequest : AmazonImagebuilderRequest
     {
@@ -38,8 +38,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property InfrastructureConfigurationArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the infrastructure configuration that you wish
-        /// to retrieve. 
+        /// The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
+        /// retrieve. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

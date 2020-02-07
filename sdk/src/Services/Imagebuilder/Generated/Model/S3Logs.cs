@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// S3 Logging configuration.
+    /// Amazon S3 logging configuration.
     /// </summary>
     public partial class S3Logs
     {
@@ -38,7 +38,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property S3BucketName. 
         /// <para>
-        /// The S3 bucket in which to store the logs.
+        /// The Amazon S3 bucket in which to store the logs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -57,7 +57,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property S3KeyPrefix. 
         /// <para>
-        /// The S3 path in which to store the logs.
+        /// The Amazon S3 path in which to store the logs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

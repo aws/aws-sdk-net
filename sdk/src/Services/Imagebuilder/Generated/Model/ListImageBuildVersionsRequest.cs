@@ -41,7 +41,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  
+        ///  The filters. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -60,7 +60,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageVersionArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the image whose build versions you wish to retrieve.
+        ///  The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
         /// 
         /// </para>
         /// </summary>

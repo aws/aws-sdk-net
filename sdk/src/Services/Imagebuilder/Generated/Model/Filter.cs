@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// 
+    /// A filter name and value pair that is used to return a more specific list of results
+    /// from a list operation. Filters can be used to match a set of resources by specific
+    /// criteria, such as tags, attributes, or IDs.
     /// </summary>
     public partial class Filter
     {
@@ -38,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  
+        ///  The name of the filter. Filter names are case-sensitive. 
         /// </para>
         /// </summary>
         public string Name
@@ -56,7 +58,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        ///  
+        ///  The filter values. Filter values are case-sensitive. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

@@ -87,7 +87,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property InfrastructureConfigurationArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the infrastructure configuration that you wish
+        ///  The Amazon Resource Name (ARN) of the infrastructure configuration that you want
         /// to update. 
         /// </para>
         /// </summary>
@@ -111,7 +111,7 @@ namespace Amazon.Imagebuilder.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string InstanceProfileName
         {
             get { return this._instanceProfileName; }
@@ -127,8 +127,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property InstanceTypes. 
         /// <para>
-        ///  The instance types of the infrastructure configuration. You may specify one or more
-        /// instance types to use for this build, the service will pick one of these instance
+        ///  The instance types of the infrastructure configuration. You can specify one or more
+        /// instance types to use for this build. The service will pick one of these instance
         /// types based on availability. 
         /// </para>
         /// </summary>
@@ -147,7 +147,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property KeyPair. 
         /// <para>
-        ///  The key pair of the infrastructure configuration. This can be used to log onto and
+        ///  The key pair of the infrastructure configuration. This can be used to log on to and
         /// debug the instance used to create your image. 
         /// </para>
         /// </summary>
@@ -207,7 +207,6 @@ namespace Amazon.Imagebuilder.Model
         ///  The SNS topic on which to send image build events. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
         public string SnsTopicArn
         {
             get { return this._snsTopicArn; }
@@ -243,8 +242,8 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property TerminateInstanceOnFailure. 
         /// <para>
         ///  The terminate instance on failure setting of the infrastructure configuration. Set
-        /// to false if you wish for Image Builder to retain the instance used to configure your
-        /// AMI in the event that the build or test phase of your workflow failed. 
+        /// to false if you want Image Builder to retain the instance used to configure your AMI
+        /// if the build or test phase of your workflow fails. 
         /// </para>
         /// </summary>
         public bool TerminateInstanceOnFailure

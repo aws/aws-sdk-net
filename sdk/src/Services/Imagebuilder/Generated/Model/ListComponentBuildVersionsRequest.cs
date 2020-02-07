@@ -40,7 +40,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ComponentVersionArn. 
         /// <para>
-        ///  The component version arn whose versions you wish to list. 
+        ///  The component version Amazon Resource Name (ARN) whose versions you want to list.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

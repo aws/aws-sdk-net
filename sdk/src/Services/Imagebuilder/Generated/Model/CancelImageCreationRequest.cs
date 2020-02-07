@@ -29,7 +29,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelImageCreation operation.
-    /// CancelImageCreation cancels the creation of Image. This operation may only be used
+    /// CancelImageCreation cancels the creation of Image. This operation can only be used
     /// on images in a non-terminal state.
     /// </summary>
     public partial class CancelImageCreationRequest : AmazonImagebuilderRequest
@@ -43,7 +43,7 @@ namespace Amazon.Imagebuilder.Model
         /// The idempotency token used to make this request idempotent.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
+        [AWSProperty(Min=1, Max=36)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -59,7 +59,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image whose creation you wish to cancel.
+        /// The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

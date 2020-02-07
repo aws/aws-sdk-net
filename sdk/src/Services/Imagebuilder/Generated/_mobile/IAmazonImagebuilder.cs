@@ -31,16 +31,10 @@ namespace Amazon.Imagebuilder
     /// <summary>
     /// Interface for accessing Imagebuilder
     ///
-    /// Amazon Elastic Compute Cloud Image Builder provides a one-stop-shop to automate the
-    /// image management processes. You configure an automated pipeline that creates images
-    /// for use on AWS. As software updates become available, Image Builder automatically
-    /// produces a new image based on a customizable schedule and distributes it to stipulated
-    /// AWS Regions after running tests on it. With the Image Builder, organizations can capture
-    /// their internal or industry-specific compliance policies as a vetted template that
-    /// can be consistently applied to every new image. Built-in integration with AWS Organizations
-    /// provides customers with a centralized way to enforce image distribution and access
-    /// policies across their AWS accounts and Regions. Image Builder supports multiple image
-    /// format AMIs on AWS.
+    /// EC2 Image Builder is a fully managed AWS service that makes it easier to automate
+    /// the creation, management, and deployment of customized, secure, and up-to-date “golden”
+    /// server images that are pre-installed and pre-configured with software and settings
+    /// to meet specific IT standards.
     /// </summary>
     public partial interface IAmazonImagebuilder : IAmazonService, IDisposable
     {
@@ -50,7 +44,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// CancelImageCreation cancels the creation of Image. This operation may only be used
+        /// CancelImageCreation cancels the creation of Image. This operation can only be used
         /// on images in a non-terminal state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelImageCreation service method.</param>
@@ -71,7 +65,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
-        /// You have specified an client token for an operation using parameter values that differ
+        /// You have specified a client token for an operation using parameter values that differ
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
@@ -79,7 +73,7 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
-        /// details, and retry later.
+        /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -97,7 +91,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Creates a new component that can be used to build, validate, test and assess your
+        /// Creates a new component that can be used to build, validate, test, and assess your
         /// image.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComponent service method.</param>
@@ -118,7 +112,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
-        /// You have specified an client token for an operation using parameter values that differ
+        /// You have specified a client token for an operation using parameter values that differ
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
@@ -133,7 +127,7 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
-        /// details, and retry later.
+        /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -151,8 +145,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Creates a new distribution configuration. Distribution configurations define and
-        /// configure the outputs of your pipeline.
+        /// Creates a new distribution configuration. Distribution configurations define and configure
+        /// the outputs of your pipeline.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDistributionConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -172,7 +166,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
-        /// You have specified an client token for an operation using parameter values that differ
+        /// You have specified a client token for an operation using parameter values that differ
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
@@ -187,7 +181,7 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
-        /// details, and retry later.
+        /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -226,7 +220,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
-        /// You have specified an client token for an operation using parameter values that differ
+        /// You have specified a client token for an operation using parameter values that differ
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
@@ -234,7 +228,7 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
-        /// details, and retry later.
+        /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -273,7 +267,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
-        /// You have specified an client token for an operation using parameter values that differ
+        /// You have specified a client token for an operation using parameter values that differ
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
@@ -284,7 +278,7 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
-        /// details, and retry later.
+        /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -302,7 +296,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Creates a new image recipe. Image Recipes defines how images are configured, tested
+        /// Creates a new image recipe. Image recipes define how images are configured, tested,
         /// and assessed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImageRecipe service method.</param>
@@ -323,7 +317,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
-        /// You have specified an client token for an operation using parameter values that differ
+        /// You have specified a client token for an operation using parameter values that differ
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
@@ -337,7 +331,7 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
-        /// details, and retry later.
+        /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -376,7 +370,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
-        /// You have specified an client token for an operation using parameter values that differ
+        /// You have specified a client token for an operation using parameter values that differ
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
@@ -387,7 +381,7 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
-        /// details, and retry later.
+        /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -428,7 +422,7 @@ namespace Amazon.Imagebuilder
         /// You have made a request for an action that is not supported by the service.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
-        /// You have attempted to mutate or delete a resource with a dependency that is prohibitting
+        /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
@@ -470,7 +464,7 @@ namespace Amazon.Imagebuilder
         /// You have made a request for an action that is not supported by the service.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
-        /// You have attempted to mutate or delete a resource with a dependency that is prohibitting
+        /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
@@ -512,7 +506,7 @@ namespace Amazon.Imagebuilder
         /// You have made a request for an action that is not supported by the service.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
-        /// You have attempted to mutate or delete a resource with a dependency that is prohibitting
+        /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
@@ -554,7 +548,7 @@ namespace Amazon.Imagebuilder
         /// You have made a request for an action that is not supported by the service.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
-        /// You have attempted to mutate or delete a resource with a dependency that is prohibitting
+        /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
@@ -596,7 +590,7 @@ namespace Amazon.Imagebuilder
         /// You have made a request for an action that is not supported by the service.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
-        /// You have attempted to mutate or delete a resource with a dependency that is prohibitting
+        /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
@@ -638,7 +632,7 @@ namespace Amazon.Imagebuilder
         /// You have made a request for an action that is not supported by the service.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
-        /// You have attempted to mutate or delete a resource with a dependency that is prohibitting
+        /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
@@ -955,7 +949,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets a infrastructure configuration.
+        /// Gets an infrastructure configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInfrastructureConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1013,7 +1007,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
-        /// You have specified an client token for an operation using parameter values that differ
+        /// You have specified a client token for an operation using parameter values that differ
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
@@ -1028,7 +1022,7 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
-        /// details, and retry later.
+        /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -1597,7 +1591,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
-        /// You have specified an client token for an operation using parameter values that differ
+        /// You have specified a client token for an operation using parameter values that differ
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
@@ -1605,7 +1599,7 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
-        /// details, and retry later.
+        /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -1701,7 +1695,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
-        /// You have specified an client token for an operation using parameter values that differ
+        /// You have specified a client token for an operation using parameter values that differ
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
@@ -1713,7 +1707,7 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
-        /// details, and retry later.
+        /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -1752,7 +1746,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
-        /// You have specified an client token for an operation using parameter values that differ
+        /// You have specified a client token for an operation using parameter values that differ
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
@@ -1760,7 +1754,7 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
-        /// details, and retry later.
+        /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -1799,7 +1793,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
-        /// You have specified an client token for an operation using parameter values that differ
+        /// You have specified a client token for an operation using parameter values that differ
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
@@ -1807,7 +1801,7 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
-        /// details, and retry later.
+        /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.

@@ -215,7 +215,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property InfrastructureConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the infrastruction configuration associated with
+        /// The Amazon Resource Name (ARN) of the infrastructure configuration associated with
         /// this image pipeline.
         /// </para>
         /// </summary>

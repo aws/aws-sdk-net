@@ -80,7 +80,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DistributionConfigurationArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the distribution configuration that you wish to
+        ///  The Amazon Resource Name (ARN) of the distribution configuration that you want to
         /// update. 
         /// </para>
         /// </summary>
@@ -103,6 +103,7 @@ namespace Amazon.Imagebuilder.Model
         ///  The distributions of the distribution configuration. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Distribution> Distributions
         {
             get { return this._distributions; }

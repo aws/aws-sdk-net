@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// A high level overview of a component semantic version.
+    /// A high-level overview of a component semantic version.
     /// </summary>
     public partial class ComponentVersion
     {

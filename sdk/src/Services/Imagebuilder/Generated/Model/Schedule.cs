@@ -39,7 +39,11 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property PipelineExecutionStartCondition. 
         /// <para>
-        ///  The condition configures when the pipeline should trigger a new image build. 
+        ///  The condition configures when the pipeline should trigger a new image build. When
+        /// the <code>pipelineExecutionStartCondition</code> is set to <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>,
+        /// EC2 Image Builder will build a new image only when there are known changes pending.
+        /// When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every
+        /// time the CRON expression matches the current time.
         /// </para>
         /// </summary>
         public PipelineExecutionStartCondition PipelineExecutionStartCondition
@@ -57,8 +61,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        ///  The expression determines how often a pipeline starts the creation of new images.
-        /// 
+        ///  The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

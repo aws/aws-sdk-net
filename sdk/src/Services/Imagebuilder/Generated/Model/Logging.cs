@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Logging configuration defines where Image Builder uploads your logs to.
+    /// Logging configuration defines where Image Builder uploads your logs.
     /// </summary>
     public partial class Logging
     {
@@ -37,7 +37,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property S3Logs. 
         /// <para>
-        /// The S3 logging configuration.
+        /// The Amazon S3 logging configuration.
         /// </para>
         /// </summary>
         public S3Logs S3Logs

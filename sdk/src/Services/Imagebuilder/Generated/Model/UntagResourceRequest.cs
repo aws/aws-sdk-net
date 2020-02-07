@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the resource that you wish to untag. 
+        ///  The Amazon Resource Name (ARN) of the resource that you want to untag. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -232,8 +232,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateInfrastructureConfigurationRequest.SnsTopicArn</property>
-    <min>1</min>
-    <max>1024</max>
+    <pattern>^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateInfrastructureConfigurationRequest.SubnetId</property>
@@ -850,8 +849,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateInfrastructureConfigurationRequest.SnsTopicArn</property>
-    <min>1</min>
-    <max>1024</max>
+    <pattern>^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateInfrastructureConfigurationRequest.SubnetId</property>
@@ -900,7 +898,8 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.AmiDistributionConfiguration.Name</property>
     <min>1</min>
-    <max>1024</max>
+    <max>127</max>
+    <pattern>^[-_A-Za-z0-9{][-_A-Za-z0-9\s:{}]+[-_A-Za-z0-9}]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.Component.Arn</property>
@@ -936,7 +935,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ComponentConfiguration.ComponentArn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/(?:(?:(\d+|x)\.(\d+|x)\.(\d+|x))|(?:\d+\.\d+\.\d+/\d+))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ComponentSummary.Arn</property>
@@ -1218,8 +1217,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.InstanceBlockDeviceMapping.NoDevice</property>
-    <min>1</min>
-    <max>1024</max>
+    <min>0</min>
+    <max>0</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.InstanceBlockDeviceMapping.VirtualName</property>

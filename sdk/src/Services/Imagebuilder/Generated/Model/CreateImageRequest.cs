@@ -83,7 +83,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property ImageRecipeArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of the image recipe that defines how images are configured,
-        /// tested and assessed. 
+        /// tested, and assessed. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

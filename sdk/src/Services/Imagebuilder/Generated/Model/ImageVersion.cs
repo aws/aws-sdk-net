@@ -42,7 +42,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image semantic verion.
+        /// The Amazon Resource Name (ARN) of the image semantic version.
         /// </para>
         /// </summary>
         public string Arn

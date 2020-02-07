@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Image state shows the images status and the reason for that status.
+    /// Image state shows the image status and the reason for that status.
     /// </summary>
     public partial class ImageState
     {

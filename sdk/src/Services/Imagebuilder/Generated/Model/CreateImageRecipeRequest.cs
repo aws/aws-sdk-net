@@ -29,7 +29,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateImageRecipe operation.
-    /// Creates a new image recipe. Image Recipes defines how images are configured, tested
+    /// Creates a new image recipe. Image recipes define how images are configured, tested,
     /// and assessed.
     /// </summary>
     public partial class CreateImageRecipeRequest : AmazonImagebuilderRequest

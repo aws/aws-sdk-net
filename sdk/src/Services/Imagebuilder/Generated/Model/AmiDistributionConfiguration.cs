@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Define and configure the outputs AMIs of the pipeline.
+    /// Define and configure the output AMIs of the pipeline.
     /// </summary>
     public partial class AmiDistributionConfiguration
     {
@@ -40,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property AmiTags. 
         /// <para>
-        ///  The tags to apply to AMIs distributed to this region. 
+        ///  The tags to apply to AMIs distributed to this Region. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -100,7 +100,7 @@ namespace Amazon.Imagebuilder.Model
         ///  The name of the distribution configuration. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=127)]
         public string Name
         {
             get { return this._name; }

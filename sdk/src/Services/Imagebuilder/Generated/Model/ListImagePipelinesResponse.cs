@@ -57,9 +57,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The next token used for paginated responses. When this is not empty then there are
-        /// additional elements that the service that not include in this request. Use this token
-        /// with the next request to retrieve additional object. 
+        ///  The next token used for paginated responses. When this is not empty, there are additional
+        /// elements that the service has not included in this request. Use this token with the
+        /// next request to retrieve additional objects. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

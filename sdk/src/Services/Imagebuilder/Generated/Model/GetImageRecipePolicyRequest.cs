@@ -38,7 +38,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageRecipeArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the image recipe whose policy you wish to retrieve.
+        ///  The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.
         /// 
         /// </para>
         /// </summary>

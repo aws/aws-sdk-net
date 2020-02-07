@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// A high level overview a distribution configuration.
+    /// A high-level overview of a distribution configuration.
     /// </summary>
     public partial class DistributionConfigurationSummary
     {

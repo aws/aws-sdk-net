@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// A high level summary of a component.
+    /// A high-level summary of a component.
     /// </summary>
     public partial class ComponentSummary
     {

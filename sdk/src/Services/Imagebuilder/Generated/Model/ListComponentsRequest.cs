@@ -41,7 +41,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  
+        ///  The filters. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -99,10 +99,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        ///  The owner defines whose components you wish to list. By default this request will
-        /// only show components owned by your account. You may use this field to specify if you
-        /// wish to view components owned by yourself, Amazon, or those components that have been
-        /// shared with you by other customers. 
+        ///  The owner defines which components you want to list. By default, this request will
+        /// only show components owned by your account. You can use this field to specify if you
+        /// want to view components owned by yourself, by Amazon, or those components that have
+        /// been shared with you by other customers. 
         /// </para>
         /// </summary>
         public Ownership Owner
