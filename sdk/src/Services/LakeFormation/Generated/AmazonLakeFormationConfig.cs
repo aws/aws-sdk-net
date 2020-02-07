@@ -32,7 +32,7 @@ namespace Amazon.LakeFormation
     public partial class AmazonLakeFormationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.100.70");
+            InternalSDKUtils.BuildUserAgentString("3.3.100.71");
 
         private string _userAgent = UserAgentString;
 

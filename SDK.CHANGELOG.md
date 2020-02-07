@@ -1,3 +1,16 @@
+### 3.3.674.0 (2020-02-07 19:18 UTC)
+* Imagebuilder (3.3.101.0)
+	* This version of the SDK includes bug fixes and documentation updates.
+* RDS (3.3.117.3)
+	* Documentation updates for RDS: when restoring a DB cluster from a snapshot, must create DB instances
+* RoboMaker (3.3.109.0)
+	* This release adds support for simulation job batches
+* Core 3.3.104.23
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.673.0 (2020-02-06 19:14 UTC)
 * AppSync (3.3.104.0)
 	* AWS AppSync now supports X-Ray
