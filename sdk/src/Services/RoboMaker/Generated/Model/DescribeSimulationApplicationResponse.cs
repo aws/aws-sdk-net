@@ -140,7 +140,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property RobotSoftwareSuite. 
         /// <para>
-        /// Information about the robot software suite.
+        /// Information about the robot software suite (ROS distribution).
         /// </para>
         /// </summary>
         public RobotSoftwareSuite RobotSoftwareSuite

@@ -13,6 +13,12 @@
     <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CancelSimulationJobBatchRequest.Batch</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.CreateDeploymentJobRequest.ClientRequestToken</property>
     <min>1</min>
     <max>64</max>
@@ -487,6 +493,24 @@
     <pattern>[a-zA-Z0-9_\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeSimulationJobBatchRequest.Batch</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeSimulationJobBatchResponse.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeSimulationJobBatchResponse.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\-=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.ListDeploymentJobsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
@@ -555,6 +579,18 @@
     <pattern>[a-zA-Z0-9_.\-\/+=]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.ListSimulationJobBatchesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_.\-\/+=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.ListSimulationJobBatchesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_.\-\/+=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.ListSimulationJobsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
@@ -601,6 +637,24 @@
     <min>1</min>
     <max>1224</max>
     <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.StartSimulationJobBatchRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\-=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.StartSimulationJobBatchResponse.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.StartSimulationJobBatchResponse.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\-=]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.SyncDeploymentJobRequest.ClientRequestToken</property>
@@ -996,6 +1050,18 @@
     <min>1</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.SimulationJobBatchSummary.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.SimulationJobRequest.IamRole</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:aws:iam::\w+:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.SimulationJobSummary.Arn</property>

@@ -439,6 +439,75 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  CancelSimulationJobBatch
+
+
+        /// <summary>
+        /// Cancels a simulation job batch. When you cancel a simulation job batch, you are also
+        /// cancelling all of the active simulation jobs created as part of the batch.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSimulationJobBatch service method.</param>
+        /// 
+        /// <returns>The response from the CancelSimulationJobBatch service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelSimulationJobBatch">REST API Reference for CancelSimulationJobBatch Operation</seealso>
+        public virtual CancelSimulationJobBatchResponse CancelSimulationJobBatch(CancelSimulationJobBatchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelSimulationJobBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelSimulationJobBatchResponseUnmarshaller.Instance;
+
+            return Invoke<CancelSimulationJobBatchResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Cancels a simulation job batch. When you cancel a simulation job batch, you are also
+        /// cancelling all of the active simulation jobs created as part of the batch.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSimulationJobBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelSimulationJobBatch service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelSimulationJobBatch">REST API Reference for CancelSimulationJobBatch Operation</seealso>
+        public virtual Task<CancelSimulationJobBatchResponse> CancelSimulationJobBatchAsync(CancelSimulationJobBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelSimulationJobBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelSimulationJobBatchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelSimulationJobBatchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDeploymentJob
 
 
@@ -1836,18 +1905,73 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  DescribeSimulationJobBatch
+
+
+        /// <summary>
+        /// Describes a simulation job batch.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSimulationJobBatch service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSimulationJobBatch service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationJobBatch">REST API Reference for DescribeSimulationJobBatch Operation</seealso>
+        public virtual DescribeSimulationJobBatchResponse DescribeSimulationJobBatch(DescribeSimulationJobBatchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSimulationJobBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSimulationJobBatchResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSimulationJobBatchResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes a simulation job batch.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSimulationJobBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSimulationJobBatch service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationJobBatch">REST API Reference for DescribeSimulationJobBatch Operation</seealso>
+        public virtual Task<DescribeSimulationJobBatchResponse> DescribeSimulationJobBatchAsync(DescribeSimulationJobBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSimulationJobBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSimulationJobBatchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeSimulationJobBatchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDeploymentJobs
 
 
         /// <summary>
         /// Returns a list of deployment jobs for a fleet. You can optionally provide filters
-        /// to retrieve specific deployment jobs. 
-        /// 
-        ///  <note> 
-        /// <para>
-        ///  
-        /// </para>
-        ///  </note>
+        /// to retrieve specific deployment jobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentJobs service method.</param>
         /// 
@@ -1878,13 +2002,7 @@ namespace Amazon.RoboMaker
 
         /// <summary>
         /// Returns a list of deployment jobs for a fleet. You can optionally provide filters
-        /// to retrieve specific deployment jobs. 
-        /// 
-        ///  <note> 
-        /// <para>
-        ///  
-        /// </para>
-        ///  </note>
+        /// to retrieve specific deployment jobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentJobs service method.</param>
         /// <param name="cancellationToken">
@@ -2181,6 +2299,63 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  ListSimulationJobBatches
+
+
+        /// <summary>
+        /// Returns a list simulation job batches. You can optionally provide filters to retrieve
+        /// specific simulation batch jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSimulationJobBatches service method.</param>
+        /// 
+        /// <returns>The response from the ListSimulationJobBatches service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobBatches">REST API Reference for ListSimulationJobBatches Operation</seealso>
+        public virtual ListSimulationJobBatchesResponse ListSimulationJobBatches(ListSimulationJobBatchesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSimulationJobBatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSimulationJobBatchesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSimulationJobBatchesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list simulation job batches. You can optionally provide filters to retrieve
+        /// specific simulation batch jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSimulationJobBatches service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSimulationJobBatches service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobBatches">REST API Reference for ListSimulationJobBatches Operation</seealso>
+        public virtual Task<ListSimulationJobBatchesResponse> ListSimulationJobBatchesAsync(ListSimulationJobBatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSimulationJobBatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSimulationJobBatchesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSimulationJobBatchesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSimulationJobs
 
 
@@ -2457,6 +2632,85 @@ namespace Amazon.RoboMaker
             options.ResponseUnmarshaller = RestartSimulationJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<RestartSimulationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartSimulationJobBatch
+
+
+        /// <summary>
+        /// Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code>
+        /// objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSimulationJobBatch service method.</param>
+        /// 
+        /// <returns>The response from the StartSimulationJobBatch service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.IdempotentParameterMismatchException">
+        /// The request uses the same client token as a previous, but non-identical request. Do
+        /// not reuse a client token with different requests, unless the requests are identical.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/StartSimulationJobBatch">REST API Reference for StartSimulationJobBatch Operation</seealso>
+        public virtual StartSimulationJobBatchResponse StartSimulationJobBatch(StartSimulationJobBatchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSimulationJobBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSimulationJobBatchResponseUnmarshaller.Instance;
+
+            return Invoke<StartSimulationJobBatchResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code>
+        /// objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSimulationJobBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSimulationJobBatch service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.IdempotentParameterMismatchException">
+        /// The request uses the same client token as a previous, but non-identical request. Do
+        /// not reuse a client token with different requests, unless the requests are identical.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/StartSimulationJobBatch">REST API Reference for StartSimulationJobBatch Operation</seealso>
+        public virtual Task<StartSimulationJobBatchResponse> StartSimulationJobBatchAsync(StartSimulationJobBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSimulationJobBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSimulationJobBatchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartSimulationJobBatchResponse>(request, options, cancellationToken);
         }
 
         #endregion

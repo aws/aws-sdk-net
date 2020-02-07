@@ -599,6 +599,130 @@ namespace Amazon.RoboMaker
 
 
     /// <summary>
+    /// Constants used for properties of type SimulationJobBatchErrorCode.
+    /// </summary>
+    public class SimulationJobBatchErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InternalServiceError for SimulationJobBatchErrorCode
+        /// </summary>
+        public static readonly SimulationJobBatchErrorCode InternalServiceError = new SimulationJobBatchErrorCode("InternalServiceError");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SimulationJobBatchErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SimulationJobBatchErrorCode FindValue(string value)
+        {
+            return FindValue<SimulationJobBatchErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SimulationJobBatchErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SimulationJobBatchStatus.
+    /// </summary>
+    public class SimulationJobBatchStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Canceled for SimulationJobBatchStatus
+        /// </summary>
+        public static readonly SimulationJobBatchStatus Canceled = new SimulationJobBatchStatus("Canceled");
+        /// <summary>
+        /// Constant Canceling for SimulationJobBatchStatus
+        /// </summary>
+        public static readonly SimulationJobBatchStatus Canceling = new SimulationJobBatchStatus("Canceling");
+        /// <summary>
+        /// Constant Completed for SimulationJobBatchStatus
+        /// </summary>
+        public static readonly SimulationJobBatchStatus Completed = new SimulationJobBatchStatus("Completed");
+        /// <summary>
+        /// Constant Completing for SimulationJobBatchStatus
+        /// </summary>
+        public static readonly SimulationJobBatchStatus Completing = new SimulationJobBatchStatus("Completing");
+        /// <summary>
+        /// Constant Failed for SimulationJobBatchStatus
+        /// </summary>
+        public static readonly SimulationJobBatchStatus Failed = new SimulationJobBatchStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for SimulationJobBatchStatus
+        /// </summary>
+        public static readonly SimulationJobBatchStatus InProgress = new SimulationJobBatchStatus("InProgress");
+        /// <summary>
+        /// Constant Pending for SimulationJobBatchStatus
+        /// </summary>
+        public static readonly SimulationJobBatchStatus Pending = new SimulationJobBatchStatus("Pending");
+        /// <summary>
+        /// Constant TimedOut for SimulationJobBatchStatus
+        /// </summary>
+        public static readonly SimulationJobBatchStatus TimedOut = new SimulationJobBatchStatus("TimedOut");
+        /// <summary>
+        /// Constant TimingOut for SimulationJobBatchStatus
+        /// </summary>
+        public static readonly SimulationJobBatchStatus TimingOut = new SimulationJobBatchStatus("TimingOut");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SimulationJobBatchStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SimulationJobBatchStatus FindValue(string value)
+        {
+            return FindValue<SimulationJobBatchStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SimulationJobBatchStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SimulationJobErrorCode.
     /// </summary>
     public class SimulationJobErrorCode : ConstantClass
@@ -629,6 +753,14 @@ namespace Amazon.RoboMaker
         /// </summary>
         public static readonly SimulationJobErrorCode BadPermissionsUserCredentials = new SimulationJobErrorCode("BadPermissionsUserCredentials");
         /// <summary>
+        /// Constant BatchCanceled for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode BatchCanceled = new SimulationJobErrorCode("BatchCanceled");
+        /// <summary>
+        /// Constant BatchTimedOut for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode BatchTimedOut = new SimulationJobErrorCode("BatchTimedOut");
+        /// <summary>
         /// Constant ENILimitExceeded for SimulationJobErrorCode
         /// </summary>
         public static readonly SimulationJobErrorCode ENILimitExceeded = new SimulationJobErrorCode("ENILimitExceeded");
@@ -653,9 +785,17 @@ namespace Amazon.RoboMaker
         /// </summary>
         public static readonly SimulationJobErrorCode InvalidS3Resource = new SimulationJobErrorCode("InvalidS3Resource");
         /// <summary>
+        /// Constant LimitExceeded for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode LimitExceeded = new SimulationJobErrorCode("LimitExceeded");
+        /// <summary>
         /// Constant MismatchedEtag for SimulationJobErrorCode
         /// </summary>
         public static readonly SimulationJobErrorCode MismatchedEtag = new SimulationJobErrorCode("MismatchedEtag");
+        /// <summary>
+        /// Constant RequestThrottled for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode RequestThrottled = new SimulationJobErrorCode("RequestThrottled");
         /// <summary>
         /// Constant ResourceNotFound for SimulationJobErrorCode
         /// </summary>

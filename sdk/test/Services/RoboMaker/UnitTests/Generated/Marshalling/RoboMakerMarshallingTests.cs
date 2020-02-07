@@ -140,6 +140,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("RoboMaker")]
+        public void CancelSimulationJobBatchMarshallTest()
+        {
+            var operation = service_model.FindOperation("CancelSimulationJobBatch");
+
+            var request = InstantiateClassGenerator.Execute<CancelSimulationJobBatchRequest>();
+            var marshaller = new CancelSimulationJobBatchRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CancelSimulationJobBatch", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CancelSimulationJobBatchResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CancelSimulationJobBatchResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("RoboMaker")]
         public void CreateDeploymentJobMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDeploymentJob");
@@ -748,6 +780,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("RoboMaker")]
+        public void DescribeSimulationJobBatchMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeSimulationJobBatch");
+
+            var request = InstantiateClassGenerator.Execute<DescribeSimulationJobBatchRequest>();
+            var marshaller = new DescribeSimulationJobBatchRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeSimulationJobBatch", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeSimulationJobBatchResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DescribeSimulationJobBatchResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("RoboMaker")]
         public void ListDeploymentJobsMarshallTest()
         {
             var operation = service_model.FindOperation("ListDeploymentJobs");
@@ -908,6 +972,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("RoboMaker")]
+        public void ListSimulationJobBatchesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSimulationJobBatches");
+
+            var request = InstantiateClassGenerator.Execute<ListSimulationJobBatchesRequest>();
+            var marshaller = new ListSimulationJobBatchesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListSimulationJobBatches", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListSimulationJobBatchesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListSimulationJobBatchesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("RoboMaker")]
         public void ListSimulationJobsMarshallTest()
         {
             var operation = service_model.FindOperation("ListSimulationJobs");
@@ -1028,6 +1124,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = RestartSimulationJobResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as RestartSimulationJobResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("RoboMaker")]
+        public void StartSimulationJobBatchMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSimulationJobBatch");
+
+            var request = InstantiateClassGenerator.Execute<StartSimulationJobBatchRequest>();
+            var marshaller = new StartSimulationJobBatchRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StartSimulationJobBatch", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StartSimulationJobBatchResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as StartSimulationJobBatchResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

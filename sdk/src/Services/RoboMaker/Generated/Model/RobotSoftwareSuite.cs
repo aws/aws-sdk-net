@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
-    /// Information about a robot software suite.
+    /// Information about a robot software suite (ROS distribution).
     /// </summary>
     public partial class RobotSoftwareSuite
     {
@@ -38,7 +38,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the robot software suite.
+        /// The name of the robot software suite (ROS distribution).
         /// </para>
         /// </summary>
         public RobotSoftwareSuiteType Name
@@ -56,7 +56,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the robot software suite.
+        /// The version of the robot software suite (ROS distribution).
         /// </para>
         /// </summary>
         public RobotSoftwareSuiteVersionType Version

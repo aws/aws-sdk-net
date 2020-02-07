@@ -80,7 +80,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property RobotSoftwareSuite. 
         /// <para>
-        /// The robot software suite of the simulation application.
+        /// The robot software suite (ROS distribution) used by the simulation application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

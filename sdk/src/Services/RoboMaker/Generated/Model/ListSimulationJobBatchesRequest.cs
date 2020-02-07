@@ -28,11 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDeploymentJobs operation.
-    /// Returns a list of deployment jobs for a fleet. You can optionally provide filters
-    /// to retrieve specific deployment jobs.
+    /// Container for the parameters to the ListSimulationJobBatches operation.
+    /// Returns a list simulation job batches. You can optionally provide filters to retrieve
+    /// specific simulation batch jobs.
     /// </summary>
-    public partial class ListDeploymentJobsRequest : AmazonRoboMakerRequest
+    public partial class ListSimulationJobBatchesRequest : AmazonRoboMakerRequest
     {
         private List<Filter> _filters = new List<Filter>();
         private int? _maxResults;
@@ -42,13 +42,6 @@ namespace Amazon.RoboMaker.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// Optional filters to limit results.
-        /// </para>
-        ///  
-        /// <para>
-        /// The filter names <code>status</code> and <code>fleetName</code> are supported. When
-        /// filtering, you must use the complete value of the filtered item. You can use up to
-        /// three filters, but they must be for the same named item. For example, if you are looking
-        /// for items with the status <code>InProgress</code> or the status <code>Pending</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -67,12 +60,10 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code>
+        /// When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code>
         /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns
-        /// up to 200 results and a <code>nextToken</code> value if applicable. 
+        /// remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code>
+        /// request with the returned <code>nextToken</code> value. 
         /// </para>
         /// </summary>
         public int MaxResults
@@ -90,7 +81,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>ListDeploymentJobs</code>
+        /// The <code>nextToken</code> value returned from a previous paginated <code>ListSimulationJobBatches</code>
         /// request where <code>maxResults</code> was used and the results exceeded the value
         /// of that parameter. Pagination continues from the end of the previous results that
         /// returned the <code>nextToken</code> value. 

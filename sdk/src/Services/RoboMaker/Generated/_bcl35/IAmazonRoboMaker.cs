@@ -194,6 +194,60 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  CancelSimulationJobBatch
+
+
+        /// <summary>
+        /// Cancels a simulation job batch. When you cancel a simulation job batch, you are also
+        /// cancelling all of the active simulation jobs created as part of the batch.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSimulationJobBatch service method.</param>
+        /// 
+        /// <returns>The response from the CancelSimulationJobBatch service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelSimulationJobBatch">REST API Reference for CancelSimulationJobBatch Operation</seealso>
+        CancelSimulationJobBatchResponse CancelSimulationJobBatch(CancelSimulationJobBatchRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelSimulationJobBatch operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelSimulationJobBatch operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelSimulationJobBatch
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelSimulationJobBatch">REST API Reference for CancelSimulationJobBatch Operation</seealso>
+        IAsyncResult BeginCancelSimulationJobBatch(CancelSimulationJobBatchRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelSimulationJobBatch operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelSimulationJobBatch.</param>
+        /// 
+        /// <returns>Returns a  CancelSimulationJobBatchResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelSimulationJobBatch">REST API Reference for CancelSimulationJobBatch Operation</seealso>
+        CancelSimulationJobBatchResponse EndCancelSimulationJobBatch(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDeploymentJob
 
 
@@ -1263,18 +1317,62 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  DescribeSimulationJobBatch
+
+
+        /// <summary>
+        /// Describes a simulation job batch.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSimulationJobBatch service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSimulationJobBatch service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationJobBatch">REST API Reference for DescribeSimulationJobBatch Operation</seealso>
+        DescribeSimulationJobBatchResponse DescribeSimulationJobBatch(DescribeSimulationJobBatchRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSimulationJobBatch operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSimulationJobBatch operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSimulationJobBatch
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationJobBatch">REST API Reference for DescribeSimulationJobBatch Operation</seealso>
+        IAsyncResult BeginDescribeSimulationJobBatch(DescribeSimulationJobBatchRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSimulationJobBatch operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSimulationJobBatch.</param>
+        /// 
+        /// <returns>Returns a  DescribeSimulationJobBatchResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationJobBatch">REST API Reference for DescribeSimulationJobBatch Operation</seealso>
+        DescribeSimulationJobBatchResponse EndDescribeSimulationJobBatch(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListDeploymentJobs
 
 
         /// <summary>
         /// Returns a list of deployment jobs for a fleet. You can optionally provide filters
-        /// to retrieve specific deployment jobs. 
-        /// 
-        ///  <note> 
-        /// <para>
-        ///  
-        /// </para>
-        ///  </note>
+        /// to retrieve specific deployment jobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentJobs service method.</param>
         /// 
@@ -1533,6 +1631,54 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  ListSimulationJobBatches
+
+
+        /// <summary>
+        /// Returns a list simulation job batches. You can optionally provide filters to retrieve
+        /// specific simulation batch jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSimulationJobBatches service method.</param>
+        /// 
+        /// <returns>The response from the ListSimulationJobBatches service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobBatches">REST API Reference for ListSimulationJobBatches Operation</seealso>
+        ListSimulationJobBatchesResponse ListSimulationJobBatches(ListSimulationJobBatchesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSimulationJobBatches operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSimulationJobBatches operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSimulationJobBatches
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobBatches">REST API Reference for ListSimulationJobBatches Operation</seealso>
+        IAsyncResult BeginListSimulationJobBatches(ListSimulationJobBatchesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSimulationJobBatches operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSimulationJobBatches.</param>
+        /// 
+        /// <returns>Returns a  ListSimulationJobBatchesResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobBatches">REST API Reference for ListSimulationJobBatches Operation</seealso>
+        ListSimulationJobBatchesResponse EndListSimulationJobBatches(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListSimulationJobs
 
 
@@ -1748,6 +1894,65 @@ namespace Amazon.RoboMaker
         /// <returns>Returns a  RestartSimulationJobResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RestartSimulationJob">REST API Reference for RestartSimulationJob Operation</seealso>
         RestartSimulationJobResponse EndRestartSimulationJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartSimulationJobBatch
+
+
+        /// <summary>
+        /// Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code>
+        /// objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSimulationJobBatch service method.</param>
+        /// 
+        /// <returns>The response from the StartSimulationJobBatch service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.IdempotentParameterMismatchException">
+        /// The request uses the same client token as a previous, but non-identical request. Do
+        /// not reuse a client token with different requests, unless the requests are identical.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/StartSimulationJobBatch">REST API Reference for StartSimulationJobBatch Operation</seealso>
+        StartSimulationJobBatchResponse StartSimulationJobBatch(StartSimulationJobBatchRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSimulationJobBatch operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSimulationJobBatch operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSimulationJobBatch
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/StartSimulationJobBatch">REST API Reference for StartSimulationJobBatch Operation</seealso>
+        IAsyncResult BeginStartSimulationJobBatch(StartSimulationJobBatchRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSimulationJobBatch operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSimulationJobBatch.</param>
+        /// 
+        /// <returns>Returns a  StartSimulationJobBatchResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/StartSimulationJobBatch">REST API Reference for StartSimulationJobBatch Operation</seealso>
+        StartSimulationJobBatchResponse EndStartSimulationJobBatch(IAsyncResult asyncResult);
 
         #endregion
         
