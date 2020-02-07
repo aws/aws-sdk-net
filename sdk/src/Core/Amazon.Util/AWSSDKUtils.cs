@@ -1387,18 +1387,12 @@ namespace Amazon.Util
             }
 
             var stringBuilder = new StringBuilder();
-            var insideWhitespace = false;
+            var isWhiteSpace = false;
             foreach (var character in data)
             {
-                if (!char.IsWhiteSpace(character))
+                if (!isWhiteSpace | !(isWhiteSpace = char.IsWhiteSpace(character)))
                 {
-                    stringBuilder.Append(character);
-                    insideWhitespace = false;
-                }
-                else if (!insideWhitespace)
-                {
-                    stringBuilder.Append(' ');
-                    insideWhitespace = true;
+                    stringBuilder.Append(isWhiteSpace ? ' ' : character);
                 }
             }
             return stringBuilder.ToString();
