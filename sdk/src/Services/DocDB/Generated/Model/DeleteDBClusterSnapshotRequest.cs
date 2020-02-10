@@ -29,12 +29,12 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBClusterSnapshot operation.
-    /// Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation
-    /// is terminated.
+    /// Deletes a cluster snapshot. If the snapshot is being copied, the copy operation is
+    /// terminated.
     /// 
     ///  <note> 
     /// <para>
-    /// The DB cluster snapshot must be in the <code>available</code> state to be deleted.
+    /// The cluster snapshot must be in the <code>available</code> state to be deleted.
     /// </para>
     ///  </note>
     /// </summary>
@@ -45,11 +45,11 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterSnapshotIdentifier. 
         /// <para>
-        /// The identifier of the DB cluster snapshot to delete.
+        /// The identifier of the cluster snapshot to delete.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code>
+        /// Constraints: Must be the name of an existing cluster snapshot in the <code>available</code>
         /// state.
         /// </para>
         /// </summary>

@@ -38,7 +38,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusters. 
         /// <para>
-        /// A list of DB clusters.
+        /// A list of clusters.
         /// </para>
         /// </summary>
         public List<DBCluster> DBClusters

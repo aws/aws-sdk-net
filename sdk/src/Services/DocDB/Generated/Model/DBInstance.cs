@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// Detailed information about a DB instance.
+    /// Detailed information about an instance.
     /// </summary>
     public partial class DBInstance
     {
@@ -80,7 +80,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// Specifies the name of the Availability Zone that the DB instance is located in.
+        /// Specifies the name of the Availability Zone that the instance is located in.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -98,7 +98,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
-        /// Specifies the number of days for which automatic DB snapshots are retained.
+        /// Specifies the number of days for which automatic snapshots are retained.
         /// </para>
         /// </summary>
         public int BackupRetentionPeriod
@@ -134,8 +134,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// Contains the name of the DB cluster that the DB instance is a member of if the DB
-        /// instance is a member of a DB cluster.
+        /// Contains the name of the cluster that the instance is a member of if the instance
+        /// is a member of a cluster.
         /// </para>
         /// </summary>
         public string DBClusterIdentifier
@@ -153,7 +153,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the DB instance.
+        /// The Amazon Resource Name (ARN) for the instance.
         /// </para>
         /// </summary>
         public string DBInstanceArn
@@ -171,7 +171,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// Contains the name of the compute and memory capacity class of the DB instance.
+        /// Contains the name of the compute and memory capacity class of the instance.
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -190,7 +190,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
         /// Contains a user-provided database identifier. This identifier is the unique key that
-        /// identifies a DB instance.
+        /// identifies an instance.
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -226,9 +226,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DbiResourceId. 
         /// <para>
-        /// The AWS Region-unique, immutable identifier for the DB instance. This identifier is
-        /// found in AWS CloudTrail log entries whenever the AWS KMS key for the DB instance is
-        /// accessed.
+        /// The AWS Region-unique, immutable identifier for the instance. This identifier is found
+        /// in AWS CloudTrail log entries whenever the AWS KMS key for the instance is accessed.
         /// </para>
         /// </summary>
         public string DbiResourceId
@@ -246,8 +245,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroup. 
         /// <para>
-        /// Specifies information on the subnet group that is associated with the DB instance,
-        /// including the name, description, and subnets in the subnet group.
+        /// Specifies information on the subnet group that is associated with the instance, including
+        /// the name, description, and subnets in the subnet group.
         /// </para>
         /// </summary>
         public DBSubnetGroup DBSubnetGroup
@@ -265,7 +264,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property EnabledCloudwatchLogsExports. 
         /// <para>
-        /// A list of log types that this DB instance is configured to export to Amazon CloudWatch
+        /// A list of log types that this instance is configured to export to Amazon CloudWatch
         /// Logs.
         /// </para>
         /// </summary>
@@ -302,7 +301,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Provides the name of the database engine to be used for this DB instance.
+        /// Provides the name of the database engine to be used for this instance.
         /// </para>
         /// </summary>
         public string Engine
@@ -338,7 +337,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property InstanceCreateTime. 
         /// <para>
-        /// Provides the date and time that the DB instance was created.
+        /// Provides the date and time that the instance was created.
         /// </para>
         /// </summary>
         public DateTime InstanceCreateTime
@@ -357,7 +356,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         ///  If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier
-        /// for the encrypted DB instance. 
+        /// for the encrypted instance. 
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -393,7 +392,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property PendingModifiedValues. 
         /// <para>
-        /// Specifies that changes to the DB instance are pending. This element is included only
+        /// Specifies that changes to the instance are pending. This element is included only
         /// when changes are pending. Specific changes are identified by subelements.
         /// </para>
         /// </summary>
@@ -506,7 +505,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// Specifies whether or not the DB instance is encrypted.
+        /// Specifies whether or not the instance is encrypted.
         /// </para>
         /// </summary>
         public bool StorageEncrypted
@@ -524,7 +523,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroups. 
         /// <para>
-        /// Provides a list of VPC security group elements that the DB instance belongs to.
+        /// Provides a list of VPC security group elements that the instance belongs to.
         /// </para>
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroups

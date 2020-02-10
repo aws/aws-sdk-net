@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// Contains the name and values of a manual DB cluster snapshot attribute.
+    /// Contains the name and values of a manual cluster snapshot attribute.
     /// 
     ///  
     /// <para>
-    /// Manual DB cluster snapshot attributes are used to authorize other AWS accounts to
-    /// restore a manual DB cluster snapshot.
+    /// Manual cluster snapshot attributes are used to authorize other AWS accounts to restore
+    /// a manual cluster snapshot.
     /// </para>
     /// </summary>
     public partial class DBClusterSnapshotAttribute
@@ -44,12 +44,12 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The name of the manual DB cluster snapshot attribute.
+        /// The name of the manual cluster snapshot attribute.
         /// </para>
         ///  
         /// <para>
         /// The attribute named <code>restore</code> refers to the list of AWS accounts that have
-        /// permission to copy or restore the manual DB cluster snapshot.
+        /// permission to copy or restore the manual cluster snapshot.
         /// </para>
         /// </summary>
         public string AttributeName
@@ -67,15 +67,14 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AttributeValues. 
         /// <para>
-        /// The values for the manual DB cluster snapshot attribute.
+        /// The values for the manual cluster snapshot attribute.
         /// </para>
         ///  
         /// <para>
         /// If the <code>AttributeName</code> field is set to <code>restore</code>, then this
         /// element returns a list of IDs of the AWS accounts that are authorized to copy or restore
-        /// the manual DB cluster snapshot. If a value of <code>all</code> is in the list, then
-        /// the manual DB cluster snapshot is public and available for any AWS account to copy
-        /// or restore.
+        /// the manual cluster snapshot. If a value of <code>all</code> is in the list, then the
+        /// manual cluster snapshot is public and available for any AWS account to copy or restore.
         /// </para>
         /// </summary>
         public List<string> AttributeValues

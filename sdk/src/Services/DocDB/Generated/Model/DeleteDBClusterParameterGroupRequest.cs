@@ -29,8 +29,8 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBClusterParameterGroup operation.
-    /// Deletes a specified DB cluster parameter group. The DB cluster parameter group to
-    /// be deleted can't be associated with any DB clusters.
+    /// Deletes a specified cluster parameter group. The cluster parameter group to be deleted
+    /// can't be associated with any clusters.
     /// </summary>
     public partial class DeleteDBClusterParameterGroupRequest : AmazonDocDBRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        /// The name of the DB cluster parameter group.
+        /// The name of the cluster parameter group.
         /// </para>
         ///  
         /// <para>
@@ -47,15 +47,15 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be the name of an existing DB cluster parameter group.
+        /// Must be the name of an existing cluster parameter group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can't delete a default DB cluster parameter group.
+        /// You can't delete a default cluster parameter group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot be associated with any DB clusters.
+        /// Cannot be associated with any clusters.
         /// </para>
         ///  </li> </ul>
         /// </summary>

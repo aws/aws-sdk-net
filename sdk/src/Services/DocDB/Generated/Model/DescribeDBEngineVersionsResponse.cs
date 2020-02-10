@@ -38,7 +38,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBEngineVersions. 
         /// <para>
-        /// Detailed information about one or more DB engine versions.
+        /// Detailed information about one or more engine versions.
         /// </para>
         /// </summary>
         public List<DBEngineVersion> DBEngineVersions

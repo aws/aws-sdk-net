@@ -29,18 +29,18 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the CopyDBClusterSnapshot operation.
-    /// Copies a snapshot of a DB cluster.
+    /// Copies a snapshot of a cluster.
     /// 
     ///  
     /// <para>
-    /// To copy a DB cluster snapshot from a shared manual DB cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
-    /// must be the Amazon Resource Name (ARN) of the shared DB cluster snapshot.
+    /// To copy a cluster snapshot from a shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
+    /// must be the Amazon Resource Name (ARN) of the shared cluster snapshot.
     /// </para>
     ///  
     /// <para>
-    /// To cancel the copy operation after it is in progress, delete the target DB cluster
-    /// snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that DB
-    /// cluster snapshot is in the <i>copying</i> status.
+    /// To cancel the copy operation after it is in progress, delete the target cluster snapshot
+    /// identified by <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster
+    /// snapshot is in the <i>copying</i> status.
     /// </para>
     /// </summary>
     public partial class CopyDBClusterSnapshotRequest : AmazonDocDBRequest
@@ -55,8 +55,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property CopyTags. 
         /// <para>
-        /// Set to <code>true</code> to copy all tags from the source DB cluster snapshot to the
-        /// target DB cluster snapshot, and otherwise <code>false</code>. The default is <code>false</code>.
+        /// Set to <code>true</code> to copy all tags from the source cluster snapshot to the
+        /// target cluster snapshot, and otherwise <code>false</code>. The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool CopyTags
@@ -74,34 +74,34 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key ID for an encrypted DB cluster snapshot. The AWS KMS key ID is the
-        /// Amazon Resource Name (ARN), AWS KMS key identifier, or the AWS KMS key alias for the
-        /// AWS KMS encryption key. 
+        /// The AWS KMS key ID for an encrypted cluster snapshot. The AWS KMS key ID is the Amazon
+        /// Resource Name (ARN), AWS KMS key identifier, or the AWS KMS key alias for the AWS
+        /// KMS encryption key. 
         /// </para>
         ///  
         /// <para>
-        /// If you copy an encrypted DB cluster snapshot from your AWS account, you can specify
-        /// a value for <code>KmsKeyId</code> to encrypt the copy with a new AWS KMS encryption
+        /// If you copy an encrypted cluster snapshot from your AWS account, you can specify a
+        /// value for <code>KmsKeyId</code> to encrypt the copy with a new AWS KMS encryption
         /// key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the
-        /// DB cluster snapshot is encrypted with the same AWS KMS key as the source DB cluster
-        /// snapshot. 
+        /// cluster snapshot is encrypted with the same AWS KMS key as the source cluster snapshot.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// If you copy an encrypted DB cluster snapshot that is shared from another AWS account,
+        /// If you copy an encrypted cluster snapshot that is shared from another AWS account,
         /// then you must specify a value for <code>KmsKeyId</code>. 
         /// </para>
         ///  
         /// <para>
-        /// To copy an encrypted DB cluster snapshot to another AWS Region, set <code>KmsKeyId</code>
-        /// to the AWS KMS key ID that you want to use to encrypt the copy of the DB cluster snapshot
+        /// To copy an encrypted cluster snapshot to another AWS Region, set <code>KmsKeyId</code>
+        /// to the AWS KMS key ID that you want to use to encrypt the copy of the cluster snapshot
         /// in the destination Region. AWS KMS encryption keys are specific to the AWS Region
         /// that they are created in, and you can't use encryption keys from one Region in another
         /// Region.
         /// </para>
         ///  
         /// <para>
-        /// If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code>
+        /// If you copy an unencrypted cluster snapshot and specify a value for the <code>KmsKeyId</code>
         /// parameter, an error is returned.
         /// </para>
         /// </summary>
@@ -121,9 +121,9 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property PreSignedUrl. 
         /// <para>
         /// The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code>
-        /// API action in the AWS Region that contains the source DB cluster snapshot to copy.
-        /// You must use the <code>PreSignedUrl</code> parameter when copying an encrypted DB
-        /// cluster snapshot from another AWS Region.
+        /// API action in the AWS Region that contains the source cluster snapshot to copy. You
+        /// must use the <code>PreSignedUrl</code> parameter when copying an encrypted cluster
+        /// snapshot from another AWS Region.
         /// </para>
         ///  
         /// <para>
@@ -135,9 +135,9 @@ namespace Amazon.DocDB.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt
-        /// the copy of the DB cluster snapshot in the destination AWS Region. This is the same
-        /// identifier for both the <code>CopyDBClusterSnapshot</code> action that is called in
-        /// the destination AWS Region, and the action contained in the presigned URL.
+        /// the copy of the cluster snapshot in the destination AWS Region. This is the same identifier
+        /// for both the <code>CopyDBClusterSnapshot</code> action that is called in the destination
+        /// AWS Region, and the action contained in the presigned URL.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -146,11 +146,11 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
-        /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
-        /// Amazon Resource Name (ARN) format for the source AWS Region. For example, if you are
-        /// copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your
-        /// <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:my-cluster-snapshot-20161115</code>.
+        ///  <code>SourceDBClusterSnapshotIdentifier</code> - The cluster snapshot identifier
+        /// for the encrypted cluster snapshot to be copied. This identifier must be in the Amazon
+        /// Resource Name (ARN) format for the source AWS Region. For example, if you are copying
+        /// an encrypted cluster snapshot from the us-west-2 AWS Region, then your <code>SourceDBClusterSnapshotIdentifier</code>
+        /// looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:my-cluster-snapshot-20161115</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -169,11 +169,11 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property SourceDBClusterSnapshotIdentifier. 
         /// <para>
-        /// The identifier of the DB cluster snapshot to copy. This parameter is not case sensitive.
+        /// The identifier of the cluster snapshot to copy. This parameter is not case sensitive.
         /// </para>
         ///  
         /// <para>
-        /// You can't copy an encrypted, shared DB cluster snapshot from one AWS Region to another.
+        /// You can't copy an encrypted, shared cluster snapshot from one AWS Region to another.
         /// </para>
         ///  
         /// <para>
@@ -185,13 +185,13 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source snapshot is in the same AWS Region as the copy, specify a valid DB snapshot
+        /// If the source snapshot is in the same AWS Region as the copy, specify a valid snapshot
         /// identifier.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the source snapshot is in a different AWS Region than the copy, specify a valid
-        /// DB cluster snapshot ARN.
+        /// cluster snapshot ARN.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -214,7 +214,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the DB cluster snapshot.
+        /// The tags to be assigned to the cluster snapshot.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -232,8 +232,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property TargetDBClusterSnapshotIdentifier. 
         /// <para>
-        /// The identifier of the new DB cluster snapshot to create from the source DB cluster
-        /// snapshot. This parameter is not case sensitive.
+        /// The identifier of the new cluster snapshot to create from the source cluster snapshot.
+        /// This parameter is not case sensitive.
         /// </para>
         ///  
         /// <para>

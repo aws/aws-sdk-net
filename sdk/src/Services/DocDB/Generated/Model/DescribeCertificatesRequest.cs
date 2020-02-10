@@ -29,8 +29,11 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCertificates operation.
-    /// Returns a list of certificate authority (CA) certificates provided by Amazon RDS for
-    /// this AWS account.
+    /// Returns a list of certificate authority (CA) certificates provided by Amazon DocumentDB
+    /// for this AWS account. For certain management features such as cluster and instance
+    /// lifecycle management, Amazon DocumentDB leverages operational technology that is shared
+    /// with Amazon RDS and Amazon Neptune. Use the <code>filterName=engine,Values=docdb</code>
+    /// filter parameter to return only Amazon DocumentDB clusters.
     /// </summary>
     public partial class DescribeCertificatesRequest : AmazonDocDBRequest
     {

@@ -29,11 +29,11 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreDBClusterToPointInTime operation.
-    /// Restores a DB cluster to an arbitrary point in time. Users can restore to any point
-    /// in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code>
-    /// days. The target DB cluster is created from the source DB cluster with the same configuration
-    /// as the original DB cluster, except that the new DB cluster is created with the default
-    /// DB security group.
+    /// Restores a cluster to an arbitrary point in time. Users can restore to any point in
+    /// time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code>
+    /// days. The target cluster is created from the source cluster with the same configuration
+    /// as the original cluster, except that the new cluster is created with the default security
+    /// group.
     /// </summary>
     public partial class RestoreDBClusterToPointInTimeRequest : AmazonDocDBRequest
     {
@@ -52,7 +52,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The name of the new DB cluster to be created.
+        /// The name of the new cluster to be created.
         /// </para>
         ///  
         /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// The DB subnet group name to use for the new DB cluster.
+        /// The subnet group name to use for the new cluster.
         /// </para>
         ///  
         /// <para>
@@ -153,22 +153,21 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted
-        /// DB cluster.
+        /// The AWS KMS key identifier to use when restoring an encrypted cluster from an encrypted
+        /// cluster.
         /// </para>
         ///  
         /// <para>
         /// The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption
-        /// key. If you are restoring a DB cluster with the same AWS account that owns the AWS
-        /// KMS encryption key used to encrypt the new DB cluster, then you can use the AWS KMS
-        /// key alias instead of the ARN for the AWS KMS encryption key.
+        /// key. If you are restoring a cluster with the same AWS account that owns the AWS KMS
+        /// encryption key used to encrypt the new cluster, then you can use the AWS KMS key alias
+        /// instead of the ARN for the AWS KMS encryption key.
         /// </para>
         ///  
         /// <para>
-        /// You can restore to a new DB cluster and encrypt the new DB cluster with an AWS KMS
-        /// key that is different from the AWS KMS key used to encrypt the source DB cluster.
-        /// The new DB cluster is encrypted with the AWS KMS key identified by the <code>KmsKeyId</code>
-        /// parameter.
+        /// You can restore to a new cluster and encrypt the new cluster with an AWS KMS key that
+        /// is different from the AWS KMS key used to encrypt the source cluster. The new DB cluster
+        /// is encrypted with the AWS KMS key identified by the <code>KmsKeyId</code> parameter.
         /// </para>
         ///  
         /// <para>
@@ -177,17 +176,17 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the DB cluster is encrypted, then the restored DB cluster is encrypted using the
-        /// AWS KMS key that was used to encrypt the source DB cluster.
+        /// If the cluster is encrypted, then the restored cluster is encrypted using the AWS
+        /// KMS key that was used to encrypt the source cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+        /// If the cluster is not encrypted, then the restored cluster is not encrypted.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted,
-        /// then the restore request is rejected.
+        /// If <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then
+        /// the restore request is rejected.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -205,7 +204,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number on which the new DB cluster accepts connections.
+        /// The port number on which the new cluster accepts connections.
         /// </para>
         ///  
         /// <para>
@@ -231,7 +230,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property RestoreToTime. 
         /// <para>
-        /// The date and time to restore the DB cluster to.
+        /// The date and time to restore the cluster to.
         /// </para>
         ///  
         /// <para>
@@ -243,7 +242,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be before the latest restorable time for the DB instance.
+        /// Must be before the latest restorable time for the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -277,7 +276,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property SourceDBClusterIdentifier. 
         /// <para>
-        /// The identifier of the source DB cluster from which to restore.
+        /// The identifier of the source cluster from which to restore.
         /// </para>
         ///  
         /// <para>
@@ -305,7 +304,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the restored DB cluster.
+        /// The tags to be assigned to the restored cluster.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -323,7 +322,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property UseLatestRestorableTime. 
         /// <para>
-        /// A value that is set to <code>true</code> to restore the DB cluster to the latest restorable
+        /// A value that is set to <code>true</code> to restore the cluster to the latest restorable
         /// backup time, and <code>false</code> otherwise. 
         /// </para>
         ///  
@@ -350,7 +349,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A list of VPC security groups that the new DB cluster belongs to.
+        /// A list of VPC security groups that the new cluster belongs to.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

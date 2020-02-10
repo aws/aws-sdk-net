@@ -29,9 +29,9 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
-    /// Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter
+    /// Returns events related to instances, security groups, snapshots, and DB parameter
     /// groups for the past 14 days. You can obtain events specific to a particular DB instance,
-    /// DB security group, DB snapshot, or DB parameter group by providing the name as a parameter.
+    /// security group, snapshot, or parameter group by providing the name as a parameter.
     /// By default, the events of the past hour are returned.
     /// </summary>
     public partial class DescribeEventsRequest : AmazonDocDBRequest

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// Detailed information about the attributes that are associated with a DB cluster snapshot.
+    /// Detailed information about the attributes that are associated with a cluster snapshot.
     /// </summary>
     public partial class DBClusterSnapshotAttributesResult
     {
@@ -38,7 +38,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterSnapshotAttributes. 
         /// <para>
-        /// The list of attributes and values for the DB cluster snapshot.
+        /// The list of attributes and values for the cluster snapshot.
         /// </para>
         /// </summary>
         public List<DBClusterSnapshotAttribute> DBClusterSnapshotAttributes
@@ -56,7 +56,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterSnapshotIdentifier. 
         /// <para>
-        /// The identifier of the DB cluster snapshot that the attributes apply to.
+        /// The identifier of the cluster snapshot that the attributes apply to.
         /// </para>
         /// </summary>
         public string DBClusterSnapshotIdentifier

@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBSubnetGroup operation.
-    /// Deletes a DB subnet group.
+    /// Deletes a subnet group.
     /// 
     ///  <note> 
     /// <para>

@@ -38,7 +38,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroups. 
         /// <para>
-        /// Detailed information about one or more DB subnet groups.
+        /// Detailed information about one or more subnet groups.
         /// </para>
         /// </summary>
         public List<DBSubnetGroup> DBSubnetGroups

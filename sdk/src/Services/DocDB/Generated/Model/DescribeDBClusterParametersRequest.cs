@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBClusterParameters operation.
-    /// Returns the detailed parameter list for a particular DB cluster parameter group.
+    /// Returns the detailed parameter list for a particular cluster parameter group.
     /// </summary>
     public partial class DescribeDBClusterParametersRequest : AmazonDocDBRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        /// The name of a specific DB cluster parameter group to return parameter details for.
+        /// The name of a specific cluster parameter group to return parameter details for.
         /// </para>
         ///  
         /// <para>

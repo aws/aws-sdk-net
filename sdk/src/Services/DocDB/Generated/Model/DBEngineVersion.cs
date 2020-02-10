@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// Detailed information about a DB engine version.
+    /// Detailed information about an engine version.
     /// </summary>
     public partial class DBEngineVersion
     {
@@ -80,7 +80,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupFamily. 
         /// <para>
-        /// The name of the DB parameter group family for the database engine.
+        /// The name of the parameter group family for the database engine.
         /// </para>
         /// </summary>
         public string DBParameterGroupFamily

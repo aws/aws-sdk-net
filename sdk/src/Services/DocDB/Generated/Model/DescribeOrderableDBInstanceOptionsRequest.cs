@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOrderableDBInstanceOptions operation.
-    /// Returns a list of orderable DB instance options for the specified engine.
+    /// Returns a list of orderable instance options for the specified engine.
     /// </summary>
     public partial class DescribeOrderableDBInstanceOptionsRequest : AmazonDocDBRequest
     {
@@ -45,8 +45,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The DB instance class filter value. Specify this parameter to show only the available
-        /// offerings that match the specified DB instance class.
+        /// The instance class filter value. Specify this parameter to show only the available
+        /// offerings that match the specified instance class.
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -64,7 +64,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the engine to retrieve DB instance options for.
+        /// The name of the engine to retrieve instance options for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

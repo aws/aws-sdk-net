@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// Detailed information about a DB cluster snapshot.
+    /// Detailed information about a cluster snapshot.
     /// </summary>
     public partial class DBClusterSnapshot
     {
@@ -53,8 +53,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// Provides the list of Amazon EC2 Availability Zones that instances in the DB cluster
-        /// snapshot can be restored in.
+        /// Provides the list of Amazon EC2 Availability Zones that instances in the cluster snapshot
+        /// can be restored in.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -72,8 +72,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property ClusterCreateTime. 
         /// <para>
-        /// Specifies the time when the DB cluster was created, in Universal Coordinated Time
-        /// (UTC).
+        /// Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).
         /// </para>
         /// </summary>
         public DateTime ClusterCreateTime
@@ -91,8 +90,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot
-        /// was created from.
+        /// Specifies the cluster identifier of the cluster that this cluster snapshot was created
+        /// from.
         /// </para>
         /// </summary>
         public string DBClusterIdentifier
@@ -110,7 +109,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterSnapshotArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the DB cluster snapshot.
+        /// The Amazon Resource Name (ARN) for the cluster snapshot.
         /// </para>
         /// </summary>
         public string DBClusterSnapshotArn
@@ -128,7 +127,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterSnapshotIdentifier. 
         /// <para>
-        /// Specifies the identifier for the DB cluster snapshot.
+        /// Specifies the identifier for the cluster snapshot.
         /// </para>
         /// </summary>
         public string DBClusterSnapshotIdentifier
@@ -164,7 +163,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// Provides the version of the database engine for this DB cluster snapshot.
+        /// Provides the version of the database engine for this cluster snapshot.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -183,7 +182,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier
-        /// for the encrypted DB cluster snapshot.
+        /// for the encrypted cluster snapshot.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -201,7 +200,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// Provides the master user name for the DB cluster snapshot.
+        /// Provides the master user name for the cluster snapshot.
         /// </para>
         /// </summary>
         public string MasterUsername
@@ -237,7 +236,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Specifies the port that the DB cluster was listening on at the time of the snapshot.
+        /// Specifies the port that the cluster was listening on at the time of the snapshot.
         /// </para>
         /// </summary>
         public int Port
@@ -273,7 +272,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property SnapshotType. 
         /// <para>
-        /// Provides the type of the DB cluster snapshot.
+        /// Provides the type of the cluster snapshot.
         /// </para>
         /// </summary>
         public string SnapshotType
@@ -291,8 +290,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property SourceDBClusterSnapshotArn. 
         /// <para>
-        /// If the DB cluster snapshot was copied from a source DB cluster snapshot, the ARN for
-        /// the source DB cluster snapshot; otherwise, a null value.
+        /// If the cluster snapshot was copied from a source cluster snapshot, the ARN for the
+        /// source cluster snapshot; otherwise, a null value.
         /// </para>
         /// </summary>
         public string SourceDBClusterSnapshotArn
@@ -310,7 +309,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies the status of this DB cluster snapshot.
+        /// Specifies the status of this cluster snapshot.
         /// </para>
         /// </summary>
         public string Status
@@ -328,7 +327,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// Specifies whether the DB cluster snapshot is encrypted.
+        /// Specifies whether the cluster snapshot is encrypted.
         /// </para>
         /// </summary>
         public bool StorageEncrypted
@@ -346,8 +345,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// Provides the virtual private cloud (VPC) ID that is associated with the DB cluster
-        /// snapshot.
+        /// Provides the virtual private cloud (VPC) ID that is associated with the cluster snapshot.
         /// </para>
         /// </summary>
         public string VpcId

@@ -38,7 +38,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroups. 
         /// <para>
-        /// A list of DB cluster parameter groups.
+        /// A list of cluster parameter groups.
         /// </para>
         /// </summary>
         public List<DBClusterParameterGroup> DBClusterParameterGroups

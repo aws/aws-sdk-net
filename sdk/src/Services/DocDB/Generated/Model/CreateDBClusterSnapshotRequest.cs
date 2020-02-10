@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBClusterSnapshot operation.
-    /// Creates a snapshot of a DB cluster.
+    /// Creates a snapshot of a cluster.
     /// </summary>
     public partial class CreateDBClusterSnapshotRequest : AmazonDocDBRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The identifier of the DB cluster to create a snapshot for. This parameter is not case
+        /// The identifier of the cluster to create a snapshot for. This parameter is not case
         /// sensitive.
         /// </para>
         ///  
@@ -72,8 +72,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterSnapshotIdentifier. 
         /// <para>
-        /// The identifier of the DB cluster snapshot. This parameter is stored as a lowercase
-        /// string.
+        /// The identifier of the cluster snapshot. This parameter is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -112,7 +111,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the DB cluster snapshot.
+        /// The tags to be assigned to the cluster snapshot.
         /// </para>
         /// </summary>
         public List<Tag> Tags

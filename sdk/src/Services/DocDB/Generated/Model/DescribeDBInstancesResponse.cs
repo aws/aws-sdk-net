@@ -38,7 +38,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstances. 
         /// <para>
-        /// Detailed information about one or more DB instances. 
+        /// Detailed information about one or more instances. 
         /// </para>
         /// </summary>
         public List<DBInstance> DBInstances

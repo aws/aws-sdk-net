@@ -58,7 +58,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property OrderableDBInstanceOptions. 
         /// <para>
-        /// The options that are available for a particular orderable DB instance.
+        /// The options that are available for a particular orderable instance.
         /// </para>
         /// </summary>
         public List<OrderableDBInstanceOption> OrderableDBInstanceOptions

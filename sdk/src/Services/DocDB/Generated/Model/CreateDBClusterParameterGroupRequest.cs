@@ -29,30 +29,30 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBClusterParameterGroup operation.
-    /// Creates a new DB cluster parameter group.
+    /// Creates a new cluster parameter group.
     /// 
     ///  
     /// <para>
-    /// Parameters in a DB cluster parameter group apply to all of the instances in a DB cluster.
+    /// Parameters in a cluster parameter group apply to all of the instances in a DB cluster.
     /// </para>
     ///  
     /// <para>
-    /// A DB cluster parameter group is initially created with the default parameters for
-    /// the database engine used by instances in the DB cluster. To provide custom values
-    /// for any of the parameters, you must modify the group after you create it. After you
-    /// create a DB cluster parameter group, you must associate it with your DB cluster. For
-    /// the new DB cluster parameter group and associated settings to take effect, you must
-    /// then reboot the DB instances in the DB cluster without failover.
+    /// A cluster parameter group is initially created with the default parameters for the
+    /// database engine used by instances in the cluster. To provide custom values for any
+    /// of the parameters, you must modify the group after you create it. After you create
+    /// a DB cluster parameter group, you must associate it with your cluster. For the new
+    /// DB cluster parameter group and associated settings to take effect, you must then reboot
+    /// the instances in the cluster without failover.
     /// </para>
     ///  <important> 
     /// <para>
-    /// After you create a DB cluster parameter group, you should wait at least 5 minutes
-    /// before creating your first DB cluster that uses that DB cluster parameter group as
-    /// the default parameter group. This allows Amazon DocumentDB to fully complete the create
-    /// action before the DB cluster parameter group is used as the default for a new DB cluster.
-    /// This step is especially important for parameters that are critical when creating the
-    /// default database for a DB cluster, such as the character set for the default database
-    /// defined by the <code>character_set_database</code> parameter.
+    /// After you create a cluster parameter group, you should wait at least 5 minutes before
+    /// creating your first cluster that uses that cluster parameter group as the default
+    /// parameter group. This allows Amazon DocumentDB to fully complete the create action
+    /// before the cluster parameter group is used as the default for a new cluster. This
+    /// step is especially important for parameters that are critical when creating the default
+    /// database for a cluster, such as the character set for the default database defined
+    /// by the <code>character_set_database</code> parameter.
     /// </para>
     ///  </important>
     /// </summary>
@@ -66,7 +66,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        /// The name of the DB cluster parameter group.
+        /// The name of the cluster parameter group.
         /// </para>
         ///  
         /// <para>
@@ -98,7 +98,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupFamily. 
         /// <para>
-        /// The DB cluster parameter group family name.
+        /// The cluster parameter group family name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -117,7 +117,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for the DB cluster parameter group.
+        /// The description for the cluster parameter group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -136,7 +136,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the DB cluster parameter group.
+        /// The tags to be assigned to the cluster parameter group.
         /// </para>
         /// </summary>
         public List<Tag> Tags

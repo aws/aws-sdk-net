@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// The version of the database engine that a DB instance can be upgraded to.
+    /// The version of the database engine that an instance can be upgraded to.
     /// </summary>
     public partial class UpgradeTarget
     {
@@ -60,7 +60,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The version of the database engine that a DB instance can be upgraded to.
+        /// The version of the database engine that an instance can be upgraded to.
         /// </para>
         /// </summary>
         public string Description

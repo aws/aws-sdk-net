@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePendingMaintenanceActions operation.
-    /// Returns a list of resources (for example, DB instances) that have at least one pending
+    /// Returns a list of resources (for example, instances) that have at least one pending
     /// maintenance action.
     /// </summary>
     public partial class DescribePendingMaintenanceActionsRequest : AmazonDocDBRequest
@@ -51,14 +51,14 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon
-        /// Resource Names (ARNs). The results list includes only pending maintenance actions
-        /// for the DB clusters identified by these ARNs.
+        ///  <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource
+        /// Names (ARNs). The results list includes only pending maintenance actions for the clusters
+        /// identified by these ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs.
-        /// The results list includes only pending maintenance actions for the DB instances identified
+        ///  <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The
+        /// results list includes only pending maintenance actions for the DB instances identified
         /// by these ARNs.
         /// </para>
         ///  </li> </ul>

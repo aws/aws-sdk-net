@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the CopyDBClusterParameterGroup operation.
-    /// Copies the specified DB cluster parameter group.
+    /// Copies the specified cluster parameter group.
     /// </summary>
     public partial class CopyDBClusterParameterGroupRequest : AmazonDocDBRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property SourceDBClusterParameterGroupIdentifier. 
         /// <para>
-        /// The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group.
+        /// The identifier or Amazon Resource Name (ARN) for the source cluster parameter group.
         /// </para>
         ///  
         /// <para>
@@ -49,18 +49,18 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must specify a valid DB cluster parameter group.
+        /// Must specify a valid cluster parameter group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source DB cluster parameter group is in the same AWS Region as the copy, specify
-        /// a valid DB parameter group identifier; for example, <code>my-db-cluster-param-group</code>,
+        /// If the source cluster parameter group is in the same AWS Region as the copy, specify
+        /// a valid parameter group identifier; for example, <code>my-db-cluster-param-group</code>,
         /// or a valid ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source DB parameter group is in a different AWS Region than the copy, specify
-        /// a valid DB cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
+        /// If the source parameter group is in a different AWS Region than the copy, specify
+        /// a valid cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -98,7 +98,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property TargetDBClusterParameterGroupDescription. 
         /// <para>
-        /// A description for the copied DB cluster parameter group.
+        /// A description for the copied cluster parameter group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -117,7 +117,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property TargetDBClusterParameterGroupIdentifier. 
         /// <para>
-        /// The identifier for the copied DB cluster parameter group.
+        /// The identifier for the copied cluster parameter group.
         /// </para>
         ///  
         /// <para>

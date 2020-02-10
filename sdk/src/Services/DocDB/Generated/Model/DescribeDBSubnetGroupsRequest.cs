@@ -42,7 +42,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// The name of the DB subnet group to return details for.
+        /// The name of the subnet group to return details for.
         /// </para>
         /// </summary>
         public string DBSubnetGroupName

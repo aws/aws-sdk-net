@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// Network information for accessing a DB cluster or DB instance. Client programs must
-    /// specify a valid endpoint to access these Amazon DocumentDB resources.
+    /// Network information for accessing a cluster or instance. Client programs must specify
+    /// a valid endpoint to access these Amazon DocumentDB resources.
     /// </summary>
     public partial class Endpoint
     {
@@ -40,7 +40,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Address. 
         /// <para>
-        /// Specifies the DNS address of the DB instance.
+        /// Specifies the DNS address of the instance.
         /// </para>
         /// </summary>
         public string Address

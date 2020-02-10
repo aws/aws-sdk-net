@@ -48,13 +48,13 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the AddTagsToResource service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
-        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBInstanceNotFoundException">
-        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSnapshotNotFoundException">
-        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
@@ -97,10 +97,10 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the ApplyPendingMaintenanceAction service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
-        /// The DB cluster isn't in a valid state.
+        /// The cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The specified instance isn't in the <i>available</i> state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.ResourceNotFoundException">
         /// The specified resource ID was not found.
@@ -140,19 +140,19 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Copies the specified DB cluster parameter group.
+        /// Copies the specified cluster parameter group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterParameterGroup service method.</param>
         /// 
         /// <returns>The response from the CopyDBClusterParameterGroup service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBParameterGroupAlreadyExistsException">
-        /// A DB parameter group with the same name already exists.
+        /// A parameter group with the same name already exists.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBParameterGroupNotFoundException">
-        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBParameterGroupQuotaExceededException">
-        /// This request would cause you to exceed the allowed number of DB parameter groups.
+        /// This request would cause you to exceed the allowed number of parameter groups.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterParameterGroup">REST API Reference for CopyDBClusterParameterGroup Operation</seealso>
         CopyDBClusterParameterGroupResponse CopyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request);
@@ -189,41 +189,40 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Copies a snapshot of a DB cluster.
+        /// Copies a snapshot of a cluster.
         /// 
         ///  
         /// <para>
-        /// To copy a DB cluster snapshot from a shared manual DB cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
-        /// must be the Amazon Resource Name (ARN) of the shared DB cluster snapshot.
+        /// To copy a cluster snapshot from a shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
+        /// must be the Amazon Resource Name (ARN) of the shared cluster snapshot.
         /// </para>
         ///  
         /// <para>
-        /// To cancel the copy operation after it is in progress, delete the target DB cluster
-        /// snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that DB
-        /// cluster snapshot is in the <i>copying</i> status.
+        /// To cancel the copy operation after it is in progress, delete the target cluster snapshot
+        /// identified by <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster
+        /// snapshot is in the <i>copying</i> status.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterSnapshot service method.</param>
         /// 
         /// <returns>The response from the CopyDBClusterSnapshot service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterSnapshotAlreadyExistsException">
-        /// You already have a DB cluster snapshot with the given identifier.
+        /// You already have a cluster snapshot with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBClusterSnapshotNotFoundException">
-        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
-        /// snapshot.
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterSnapshotStateException">
-        /// The provided value isn't a valid DB cluster snapshot state.
+        /// The provided value isn't a valid cluster snapshot state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
-        /// The DB cluster isn't in a valid state.
+        /// The cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
         /// An error occurred when accessing an AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.SnapshotQuotaExceededException">
-        /// The request would cause you to exceed the allowed number of DB snapshots.
+        /// The request would cause you to exceed the allowed number of snapshots.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">REST API Reference for CopyDBClusterSnapshot Operation</seealso>
         CopyDBClusterSnapshotResponse CopyDBClusterSnapshot(CopyDBClusterSnapshotRequest request);
@@ -260,34 +259,34 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Creates a new Amazon DocumentDB DB cluster.
+        /// Creates a new Amazon DocumentDB cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
         /// 
         /// <returns>The response from the CreateDBCluster service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterAlreadyExistsException">
-        /// You already have a DB cluster with the given identifier.
+        /// You already have a cluster with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
-        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBClusterParameterGroupNotFoundException">
-        /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster
-        /// parameter group.
+        /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter
+        /// group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBClusterQuotaExceededException">
-        /// The DB cluster can't be created because you have reached the maximum allowed quota
-        /// of DB clusters.
+        /// The cluster can't be created because you have reached the maximum allowed quota of
+        /// clusters.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBInstanceNotFoundException">
-        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
-        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
-        /// there is only one Availability Zone.
+        /// Subnets in the subnet group should cover at least two Availability Zones unless there
+        /// is only one Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupNotFoundException">
-        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InsufficientStorageClusterCapacityException">
         /// There is not enough storage available for the current action. You might be able to
@@ -295,20 +294,20 @@ namespace Amazon.DocDB
         /// that have more storage available.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
-        /// The DB cluster isn't in a valid state.
+        /// The cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The specified instance isn't in the <i>available</i> state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBSubnetGroupStateException">
-        /// The DB subnet group can't be deleted because it's in use.
+        /// The subnet group can't be deleted because it's in use.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or multiple subnets were requested that are not
         /// all in a common virtual private cloud (VPC).
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidVPCNetworkStateException">
-        /// The DB subnet group doesn't cover all Availability Zones after it is created because
+        /// The subnet group doesn't cover all Availability Zones after it is created because
         /// of changes that were made.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
@@ -316,7 +315,7 @@ namespace Amazon.DocDB
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
-        /// all DB instances.
+        /// all instances.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
         CreateDBClusterResponse CreateDBCluster(CreateDBClusterRequest request);
@@ -353,30 +352,30 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Creates a new DB cluster parameter group.
+        /// Creates a new cluster parameter group.
         /// 
         ///  
         /// <para>
-        /// Parameters in a DB cluster parameter group apply to all of the instances in a DB cluster.
+        /// Parameters in a cluster parameter group apply to all of the instances in a DB cluster.
         /// </para>
         ///  
         /// <para>
-        /// A DB cluster parameter group is initially created with the default parameters for
-        /// the database engine used by instances in the DB cluster. To provide custom values
-        /// for any of the parameters, you must modify the group after you create it. After you
-        /// create a DB cluster parameter group, you must associate it with your DB cluster. For
-        /// the new DB cluster parameter group and associated settings to take effect, you must
-        /// then reboot the DB instances in the DB cluster without failover.
+        /// A cluster parameter group is initially created with the default parameters for the
+        /// database engine used by instances in the cluster. To provide custom values for any
+        /// of the parameters, you must modify the group after you create it. After you create
+        /// a DB cluster parameter group, you must associate it with your cluster. For the new
+        /// DB cluster parameter group and associated settings to take effect, you must then reboot
+        /// the instances in the cluster without failover.
         /// </para>
         ///  <important> 
         /// <para>
-        /// After you create a DB cluster parameter group, you should wait at least 5 minutes
-        /// before creating your first DB cluster that uses that DB cluster parameter group as
-        /// the default parameter group. This allows Amazon DocumentDB to fully complete the create
-        /// action before the DB cluster parameter group is used as the default for a new DB cluster.
-        /// This step is especially important for parameters that are critical when creating the
-        /// default database for a DB cluster, such as the character set for the default database
-        /// defined by the <code>character_set_database</code> parameter.
+        /// After you create a cluster parameter group, you should wait at least 5 minutes before
+        /// creating your first cluster that uses that cluster parameter group as the default
+        /// parameter group. This allows Amazon DocumentDB to fully complete the create action
+        /// before the cluster parameter group is used as the default for a new cluster. This
+        /// step is especially important for parameters that are critical when creating the default
+        /// database for a cluster, such as the character set for the default database defined
+        /// by the <code>character_set_database</code> parameter.
         /// </para>
         ///  </important>
         /// </summary>
@@ -384,10 +383,10 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the CreateDBClusterParameterGroup service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBParameterGroupAlreadyExistsException">
-        /// A DB parameter group with the same name already exists.
+        /// A parameter group with the same name already exists.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBParameterGroupQuotaExceededException">
-        /// This request would cause you to exceed the allowed number of DB parameter groups.
+        /// This request would cause you to exceed the allowed number of parameter groups.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup">REST API Reference for CreateDBClusterParameterGroup Operation</seealso>
         CreateDBClusterParameterGroupResponse CreateDBClusterParameterGroup(CreateDBClusterParameterGroupRequest request);
@@ -424,25 +423,25 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Creates a snapshot of a DB cluster.
+        /// Creates a snapshot of a cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterSnapshot service method.</param>
         /// 
         /// <returns>The response from the CreateDBClusterSnapshot service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
-        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBClusterSnapshotAlreadyExistsException">
-        /// You already have a DB cluster snapshot with the given identifier.
+        /// You already have a cluster snapshot with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterSnapshotStateException">
-        /// The provided value isn't a valid DB cluster snapshot state.
+        /// The provided value isn't a valid cluster snapshot state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
-        /// The DB cluster isn't in a valid state.
+        /// The cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.SnapshotQuotaExceededException">
-        /// The request would cause you to exceed the allowed number of DB snapshots.
+        /// The request would cause you to exceed the allowed number of snapshots.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterSnapshot">REST API Reference for CreateDBClusterSnapshot Operation</seealso>
         CreateDBClusterSnapshotResponse CreateDBClusterSnapshot(CreateDBClusterSnapshotRequest request);
@@ -479,14 +478,14 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Creates a new DB instance.
+        /// Creates a new instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstance service method.</param>
         /// 
         /// <returns>The response from the CreateDBInstance service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.AuthorizationNotFoundException">
         /// The specified CIDR IP or Amazon EC2 security group isn't authorized for the specified
-        /// DB security group.
+        /// security group.
         /// 
         ///  
         /// <para>
@@ -495,39 +494,39 @@ namespace Amazon.DocDB
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
-        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBInstanceAlreadyExistsException">
-        /// You already have a DB instance with the given identifier.
+        /// You already have a instance with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBParameterGroupNotFoundException">
-        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSecurityGroupNotFoundException">
-        /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
+        /// <code>DBSecurityGroupName</code> doesn't refer to an existing security group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
-        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
-        /// there is only one Availability Zone.
+        /// Subnets in the subnet group should cover at least two Availability Zones unless there
+        /// is only one Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupNotFoundException">
-        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InstanceQuotaExceededException">
-        /// The request would cause you to exceed the allowed number of DB instances.
+        /// The request would cause you to exceed the allowed number of instances.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InsufficientDBInstanceCapacityException">
-        /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// The specified instance class isn't available in the specified Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
-        /// The DB cluster isn't in a valid state.
+        /// The cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or multiple subnets were requested that are not
         /// all in a common virtual private cloud (VPC).
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidVPCNetworkStateException">
-        /// The DB subnet group doesn't cover all Availability Zones after it is created because
+        /// The subnet group doesn't cover all Availability Zones after it is created because
         /// of changes that were made.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
@@ -535,7 +534,7 @@ namespace Amazon.DocDB
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
-        /// all DB instances.
+        /// all instances.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageTypeNotSupportedException">
         /// Storage of the specified <code>StorageType</code> can't be associated with the DB
@@ -576,25 +575,24 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Creates a new DB subnet group. DB subnet groups must contain at least one subnet in
-        /// at least two Availability Zones in the AWS Region.
+        /// Creates a new subnet group. subnet groups must contain at least one subnet in at least
+        /// two Availability Zones in the AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the CreateDBSubnetGroup service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupAlreadyExistsException">
-        /// <code>DBSubnetGroupName</code> is already being used by an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> is already being used by an existing subnet group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
-        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
-        /// there is only one Availability Zone.
+        /// Subnets in the subnet group should cover at least two Availability Zones unless there
+        /// is only one Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupQuotaExceededException">
-        /// The request would cause you to exceed the allowed number of DB subnet groups.
+        /// The request would cause you to exceed the allowed number of subnet groups.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetQuotaExceededException">
-        /// The request would cause you to exceed the allowed number of subnets in a DB subnet
-        /// group.
+        /// The request would cause you to exceed the allowed number of subnets in a subnet group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or multiple subnets were requested that are not
@@ -635,27 +633,27 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Deletes a previously provisioned DB cluster. When you delete a DB cluster, all automated
-        /// backups for that DB cluster are deleted and can't be recovered. Manual DB cluster
-        /// snapshots of the specified DB cluster are not deleted.
+        /// Deletes a previously provisioned cluster. When you delete a cluster, all automated
+        /// backups for that cluster are deleted and can't be recovered. Manual DB cluster snapshots
+        /// of the specified cluster are not deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster service method.</param>
         /// 
         /// <returns>The response from the DeleteDBCluster service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
-        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBClusterSnapshotAlreadyExistsException">
-        /// You already have a DB cluster snapshot with the given identifier.
+        /// You already have a cluster snapshot with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterSnapshotStateException">
-        /// The provided value isn't a valid DB cluster snapshot state.
+        /// The provided value isn't a valid cluster snapshot state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
-        /// The DB cluster isn't in a valid state.
+        /// The cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.SnapshotQuotaExceededException">
-        /// The request would cause you to exceed the allowed number of DB snapshots.
+        /// The request would cause you to exceed the allowed number of snapshots.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBCluster">REST API Reference for DeleteDBCluster Operation</seealso>
         DeleteDBClusterResponse DeleteDBCluster(DeleteDBClusterRequest request);
@@ -692,19 +690,19 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Deletes a specified DB cluster parameter group. The DB cluster parameter group to
-        /// be deleted can't be associated with any DB clusters.
+        /// Deletes a specified cluster parameter group. The cluster parameter group to be deleted
+        /// can't be associated with any clusters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterParameterGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteDBClusterParameterGroup service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBParameterGroupNotFoundException">
-        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBParameterGroupStateException">
-        /// The DB parameter group is in use, or it is in a state that is not valid. If you are
-        /// trying to delete the parameter group, you can't delete it when the parameter group
-        /// is in this state.
+        /// The parameter group is in use, or it is in a state that is not valid. If you are trying
+        /// to delete the parameter group, you can't delete it when the parameter group is in
+        /// this state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterParameterGroup">REST API Reference for DeleteDBClusterParameterGroup Operation</seealso>
         DeleteDBClusterParameterGroupResponse DeleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest request);
@@ -741,12 +739,12 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation
-        /// is terminated.
+        /// Deletes a cluster snapshot. If the snapshot is being copied, the copy operation is
+        /// terminated.
         /// 
         ///  <note> 
         /// <para>
-        /// The DB cluster snapshot must be in the <code>available</code> state to be deleted.
+        /// The cluster snapshot must be in the <code>available</code> state to be deleted.
         /// </para>
         ///  </note>
         /// </summary>
@@ -754,11 +752,10 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the DeleteDBClusterSnapshot service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterSnapshotNotFoundException">
-        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
-        /// snapshot.
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterSnapshotStateException">
-        /// The provided value isn't a valid DB cluster snapshot state.
+        /// The provided value isn't a valid cluster snapshot state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterSnapshot">REST API Reference for DeleteDBClusterSnapshot Operation</seealso>
         DeleteDBClusterSnapshotResponse DeleteDBClusterSnapshot(DeleteDBClusterSnapshotRequest request);
@@ -795,25 +792,25 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Deletes a previously provisioned DB instance.
+        /// Deletes a previously provisioned instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstance service method.</param>
         /// 
         /// <returns>The response from the DeleteDBInstance service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBInstanceNotFoundException">
-        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSnapshotAlreadyExistsException">
         /// <code>DBSnapshotIdentifier</code> is already being used by an existing snapshot.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
-        /// The DB cluster isn't in a valid state.
+        /// The cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The specified instance isn't in the <i>available</i> state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.SnapshotQuotaExceededException">
-        /// The request would cause you to exceed the allowed number of DB snapshots.
+        /// The request would cause you to exceed the allowed number of snapshots.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBInstance">REST API Reference for DeleteDBInstance Operation</seealso>
         DeleteDBInstanceResponse DeleteDBInstance(DeleteDBInstanceRequest request);
@@ -850,7 +847,7 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Deletes a DB subnet group.
+        /// Deletes a subnet group.
         /// 
         ///  <note> 
         /// <para>
@@ -862,13 +859,13 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the DeleteDBSubnetGroup service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupNotFoundException">
-        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBSubnetGroupStateException">
-        /// The DB subnet group can't be deleted because it's in use.
+        /// The subnet group can't be deleted because it's in use.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBSubnetStateException">
-        /// The DB subnet isn't in the <i>available</i> state.
+        /// The subnet isn't in the <i>available</i> state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBSubnetGroup">REST API Reference for DeleteDBSubnetGroup Operation</seealso>
         DeleteDBSubnetGroupResponse DeleteDBSubnetGroup(DeleteDBSubnetGroupRequest request);
@@ -905,8 +902,11 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Returns a list of certificate authority (CA) certificates provided by Amazon RDS for
-        /// this AWS account.
+        /// Returns a list of certificate authority (CA) certificates provided by Amazon DocumentDB
+        /// for this AWS account. For certain management features such as cluster and instance
+        /// lifecycle management, Amazon DocumentDB leverages operational technology that is shared
+        /// with Amazon RDS and Amazon Neptune. Use the <code>filterName=engine,Values=docdb</code>
+        /// filter parameter to return only Amazon DocumentDB clusters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
         /// 
@@ -950,14 +950,14 @@ namespace Amazon.DocDB
 
         /// <summary>
         /// Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code>
-        /// parameter is specified, the list contains only the description of the specified DB
-        /// cluster parameter group.
+        /// parameter is specified, the list contains only the description of the specified cluster
+        /// parameter group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameterGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeDBClusterParameterGroups service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBParameterGroupNotFoundException">
-        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterParameterGroups">REST API Reference for DescribeDBClusterParameterGroups Operation</seealso>
         DescribeDBClusterParameterGroupsResponse DescribeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest request);
@@ -994,13 +994,13 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Returns the detailed parameter list for a particular DB cluster parameter group.
+        /// Returns the detailed parameter list for a particular cluster parameter group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameters service method.</param>
         /// 
         /// <returns>The response from the DescribeDBClusterParameters service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBParameterGroupNotFoundException">
-        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterParameters">REST API Reference for DescribeDBClusterParameters Operation</seealso>
         DescribeDBClusterParametersResponse DescribeDBClusterParameters(DescribeDBClusterParametersRequest request);
@@ -1037,14 +1037,14 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Returns information about provisioned Amazon DocumentDB DB clusters. This API operation
+        /// Returns information about provisioned Amazon DocumentDB clusters. This API operation
         /// supports pagination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusters service method.</param>
         /// 
         /// <returns>The response from the DescribeDBClusters service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
-        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusters">REST API Reference for DescribeDBClusters Operation</seealso>
         DescribeDBClustersResponse DescribeDBClusters(DescribeDBClustersRequest request);
@@ -1081,24 +1081,23 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Returns a list of DB cluster snapshot attribute names and values for a manual DB cluster
+        /// Returns a list of cluster snapshot attribute names and values for a manual DB cluster
         /// snapshot.
         /// 
         ///  
         /// <para>
         /// When you share snapshots with other AWS accounts, <code>DescribeDBClusterSnapshotAttributes</code>
         /// returns the <code>restore</code> attribute and a list of IDs for the AWS accounts
-        /// that are authorized to copy or restore the manual DB cluster snapshot. If <code>all</code>
+        /// that are authorized to copy or restore the manual cluster snapshot. If <code>all</code>
         /// is included in the list of values for the <code>restore</code> attribute, then the
-        /// manual DB cluster snapshot is public and can be copied or restored by all AWS accounts.
+        /// manual cluster snapshot is public and can be copied or restored by all AWS accounts.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshotAttributes service method.</param>
         /// 
         /// <returns>The response from the DescribeDBClusterSnapshotAttributes service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterSnapshotNotFoundException">
-        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
-        /// snapshot.
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshotAttributes">REST API Reference for DescribeDBClusterSnapshotAttributes Operation</seealso>
         DescribeDBClusterSnapshotAttributesResponse DescribeDBClusterSnapshotAttributes(DescribeDBClusterSnapshotAttributesRequest request);
@@ -1135,14 +1134,13 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Returns information about DB cluster snapshots. This API operation supports pagination.
+        /// Returns information about cluster snapshots. This API operation supports pagination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshots service method.</param>
         /// 
         /// <returns>The response from the DescribeDBClusterSnapshots service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterSnapshotNotFoundException">
-        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
-        /// snapshot.
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshots">REST API Reference for DescribeDBClusterSnapshots Operation</seealso>
         DescribeDBClusterSnapshotsResponse DescribeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest request);
@@ -1179,7 +1177,7 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Returns a list of the available DB engines.
+        /// Returns a list of the available engines.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBEngineVersions service method.</param>
         /// 
@@ -1226,7 +1224,7 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the DescribeDBInstances service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBInstanceNotFoundException">
-        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
         DescribeDBInstancesResponse DescribeDBInstances(DescribeDBInstancesRequest request);
@@ -1270,7 +1268,7 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the DescribeDBSubnetGroups service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupNotFoundException">
-        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
         DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest request);
@@ -1389,9 +1387,9 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter
+        /// Returns events related to instances, security groups, snapshots, and DB parameter
         /// groups for the past 14 days. You can obtain events specific to a particular DB instance,
-        /// DB security group, DB snapshot, or DB parameter group by providing the name as a parameter.
+        /// security group, snapshot, or parameter group by providing the name as a parameter.
         /// By default, the events of the past hour are returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
@@ -1432,7 +1430,7 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Returns a list of orderable DB instance options for the specified engine.
+        /// Returns a list of orderable instance options for the specified engine.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableDBInstanceOptions service method.</param>
         /// 
@@ -1472,7 +1470,7 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Returns a list of resources (for example, DB instances) that have at least one pending
+        /// Returns a list of resources (for example, instances) that have at least one pending
         /// maintenance action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePendingMaintenanceActions service method.</param>
@@ -1516,12 +1514,12 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Forces a failover for a DB cluster.
+        /// Forces a failover for a cluster.
         /// 
         ///  
         /// <para>
-        /// A failover for a DB cluster promotes one of the Amazon DocumentDB replicas (read-only
-        /// instances) in the DB cluster to be the primary instance (the cluster writer).
+        /// A failover for a cluster promotes one of the Amazon DocumentDB replicas (read-only
+        /// instances) in the cluster to be the primary instance (the cluster writer).
         /// </para>
         ///  
         /// <para>
@@ -1534,13 +1532,13 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the FailoverDBCluster service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
-        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
-        /// The DB cluster isn't in a valid state.
+        /// The cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The specified instance isn't in the <i>available</i> state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/FailoverDBCluster">REST API Reference for FailoverDBCluster Operation</seealso>
         FailoverDBClusterResponse FailoverDBCluster(FailoverDBClusterRequest request);
@@ -1583,13 +1581,13 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
-        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBInstanceNotFoundException">
-        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSnapshotNotFoundException">
-        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -1626,49 +1624,49 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Modifies a setting for an Amazon DocumentDB DB cluster. You can change one or more
-        /// database configuration parameters by specifying these parameters and the new values
-        /// in the request.
+        /// Modifies a setting for an Amazon DocumentDB cluster. You can change one or more database
+        /// configuration parameters by specifying these parameters and the new values in the
+        /// request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBCluster service method.</param>
         /// 
         /// <returns>The response from the ModifyDBCluster service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterAlreadyExistsException">
-        /// You already have a DB cluster with the given identifier.
+        /// You already have a cluster with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
-        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBClusterParameterGroupNotFoundException">
-        /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster
-        /// parameter group.
+        /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter
+        /// group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupNotFoundException">
-        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
-        /// The DB cluster isn't in a valid state.
+        /// The cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The specified instance isn't in the <i>available</i> state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBSecurityGroupStateException">
-        /// The state of the DB security group doesn't allow deletion.
+        /// The state of the security group doesn't allow deletion.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBSubnetGroupStateException">
-        /// The DB subnet group can't be deleted because it's in use.
+        /// The subnet group can't be deleted because it's in use.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or multiple subnets were requested that are not
         /// all in a common virtual private cloud (VPC).
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidVPCNetworkStateException">
-        /// The DB subnet group doesn't cover all Availability Zones after it is created because
+        /// The subnet group doesn't cover all Availability Zones after it is created because
         /// of changes that were made.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
-        /// all DB instances.
+        /// all instances.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         ModifyDBClusterResponse ModifyDBCluster(ModifyDBClusterRequest request);
@@ -1705,8 +1703,8 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Modifies the parameters of a DB cluster parameter group. To modify more than one
-        /// parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
+        /// Modifies the parameters of a cluster parameter group. To modify more than one parameter,
+        /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
         /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
         /// request. 
         /// 
@@ -1717,13 +1715,13 @@ namespace Amazon.DocDB
         /// </para>
         ///  </note> <important> 
         /// <para>
-        /// After you create a DB cluster parameter group, you should wait at least 5 minutes
-        /// before creating your first DB cluster that uses that DB cluster parameter group as
-        /// the default parameter group. This allows Amazon DocumentDB to fully complete the create
-        /// action before the parameter group is used as the default for a new DB cluster. This
-        /// step is especially important for parameters that are critical when creating the default
-        /// database for a DB cluster, such as the character set for the default database defined
-        /// by the <code>character_set_database</code> parameter.
+        /// After you create a cluster parameter group, you should wait at least 5 minutes before
+        /// creating your first cluster that uses that cluster parameter group as the default
+        /// parameter group. This allows Amazon DocumentDB to fully complete the create action
+        /// before the parameter group is used as the default for a new cluster. This step is
+        /// especially important for parameters that are critical when creating the default database
+        /// for a cluster, such as the character set for the default database defined by the <code>character_set_database</code>
+        /// parameter.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1731,12 +1729,12 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the ModifyDBClusterParameterGroup service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBParameterGroupNotFoundException">
-        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBParameterGroupStateException">
-        /// The DB parameter group is in use, or it is in a state that is not valid. If you are
-        /// trying to delete the parameter group, you can't delete it when the parameter group
-        /// is in this state.
+        /// The parameter group is in use, or it is in a state that is not valid. If you are trying
+        /// to delete the parameter group, you can't delete it when the parameter group is in
+        /// this state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterParameterGroup">REST API Reference for ModifyDBClusterParameterGroup Operation</seealso>
         ModifyDBClusterParameterGroupResponse ModifyDBClusterParameterGroup(ModifyDBClusterParameterGroupRequest request);
@@ -1778,27 +1776,26 @@ namespace Amazon.DocDB
         /// 
         ///  
         /// <para>
-        /// To share a manual DB cluster snapshot with other AWS accounts, specify <code>restore</code>
+        /// To share a manual cluster snapshot with other AWS accounts, specify <code>restore</code>
         /// as the <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter
         /// to add a list of IDs of the AWS accounts that are authorized to restore the manual
-        /// DB cluster snapshot. Use the value <code>all</code> to make the manual DB cluster
-        /// snapshot public, which means that it can be copied or restored by all AWS accounts.
-        /// Do not add the <code>all</code> value for any manual DB cluster snapshots that contain
-        /// private information that you don't want available to all AWS accounts. If a manual
-        /// DB cluster snapshot is encrypted, it can be shared, but only by specifying a list
-        /// of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't
-        /// use <code>all</code> as a value for that parameter in this case.
+        /// cluster snapshot. Use the value <code>all</code> to make the manual cluster snapshot
+        /// public, which means that it can be copied or restored by all AWS accounts. Do not
+        /// add the <code>all</code> value for any manual DB cluster snapshots that contain private
+        /// information that you don't want available to all AWS accounts. If a manual cluster
+        /// snapshot is encrypted, it can be shared, but only by specifying a list of authorized
+        /// AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code>
+        /// as a value for that parameter in this case.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterSnapshotAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifyDBClusterSnapshotAttribute service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterSnapshotNotFoundException">
-        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
-        /// snapshot.
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterSnapshotStateException">
-        /// The provided value isn't a valid DB cluster snapshot state.
+        /// The provided value isn't a valid cluster snapshot state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.SharedSnapshotQuotaExceededException">
         /// You have exceeded the maximum number of accounts that you can share a manual DB snapshot
@@ -1839,7 +1836,7 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Modifies settings for a DB instance. You can change one or more database configuration
+        /// Modifies settings for an instance. You can change one or more database configuration
         /// parameters by specifying these parameters and the new values in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBInstance service method.</param>
@@ -1847,7 +1844,7 @@ namespace Amazon.DocDB
         /// <returns>The response from the ModifyDBInstance service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.AuthorizationNotFoundException">
         /// The specified CIDR IP or Amazon EC2 security group isn't authorized for the specified
-        /// DB security group.
+        /// security group.
         /// 
         ///  
         /// <para>
@@ -1859,36 +1856,36 @@ namespace Amazon.DocDB
         /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBInstanceAlreadyExistsException">
-        /// You already have a DB instance with the given identifier.
+        /// You already have a instance with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBInstanceNotFoundException">
-        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBParameterGroupNotFoundException">
-        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSecurityGroupNotFoundException">
-        /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
+        /// <code>DBSecurityGroupName</code> doesn't refer to an existing security group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBUpgradeDependencyFailureException">
-        /// The DB upgrade failed because a resource that the DB depends on can't be modified.
+        /// The upgrade failed because a resource that the depends on can't be modified.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InsufficientDBInstanceCapacityException">
-        /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// The specified instance class isn't available in the specified Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The specified instance isn't in the <i>available</i> state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBSecurityGroupStateException">
-        /// The state of the DB security group doesn't allow deletion.
+        /// The state of the security group doesn't allow deletion.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidVPCNetworkStateException">
-        /// The DB subnet group doesn't cover all Availability Zones after it is created because
+        /// The subnet group doesn't cover all Availability Zones after it is created because
         /// of changes that were made.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
-        /// all DB instances.
+        /// all instances.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageTypeNotSupportedException">
         /// Storage of the specified <code>StorageType</code> can't be associated with the DB
@@ -1929,29 +1926,28 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet
+        /// Modifies an existing subnet group. subnet groups must contain at least one subnet
         /// in at least two Availability Zones in the AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the ModifyDBSubnetGroup service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
-        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
-        /// there is only one Availability Zone.
+        /// Subnets in the subnet group should cover at least two Availability Zones unless there
+        /// is only one Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupNotFoundException">
-        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetQuotaExceededException">
-        /// The request would cause you to exceed the allowed number of subnets in a DB subnet
-        /// group.
+        /// The request would cause you to exceed the allowed number of subnets in a subnet group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or multiple subnets were requested that are not
         /// all in a common virtual private cloud (VPC).
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.SubnetAlreadyInUseException">
-        /// The DB subnet is already in use in the Availability Zone.
+        /// The subnet is already in use in the Availability Zone.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBSubnetGroup">REST API Reference for ModifyDBSubnetGroup Operation</seealso>
         ModifyDBSubnetGroupResponse ModifyDBSubnetGroup(ModifyDBSubnetGroupRequest request);
@@ -1988,15 +1984,15 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// You might need to reboot your DB instance, usually for maintenance reasons. For example,
-        /// if you make certain changes, or if you change the DB cluster parameter group that
-        /// is associated with the DB instance, you must reboot the instance for the changes to
-        /// take effect. 
+        /// You might need to reboot your instance, usually for maintenance reasons. For example,
+        /// if you make certain changes, or if you change the cluster parameter group that is
+        /// associated with the instance, you must reboot the instance for the changes to take
+        /// effect. 
         /// 
         ///  
         /// <para>
-        /// Rebooting a DB instance restarts the database engine service. Rebooting a DB instance
-        /// results in a momentary outage, during which the DB instance status is set to <i>rebooting</i>.
+        /// Rebooting an instance restarts the database engine service. Rebooting an instance
+        /// results in a momentary outage, during which the instance status is set to <i>rebooting</i>.
         /// 
         /// </para>
         /// </summary>
@@ -2004,10 +2000,10 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the RebootDBInstance service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBInstanceNotFoundException">
-        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The specified instance isn't in the <i>available</i> state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request);
@@ -2050,13 +2046,13 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the RemoveTagsFromResource service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
-        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBInstanceNotFoundException">
-        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSnapshotNotFoundException">
-        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
@@ -2093,10 +2089,10 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Modifies the parameters of a DB cluster parameter group to the default value. To
-        /// reset specific parameters, submit a list of the following: <code>ParameterName</code>
-        /// and <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify
-        /// the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters.
+        /// Modifies the parameters of a cluster parameter group to the default value. To reset
+        /// specific parameters, submit a list of the following: <code>ParameterName</code> and
+        /// <code>ApplyMethod</code>. To reset the entire cluster parameter group, specify the
+        /// <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters.
         /// 
         /// 
         ///  
@@ -2110,12 +2106,12 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the ResetDBClusterParameterGroup service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBParameterGroupNotFoundException">
-        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBParameterGroupStateException">
-        /// The DB parameter group is in use, or it is in a state that is not valid. If you are
-        /// trying to delete the parameter group, you can't delete it when the parameter group
-        /// is in this state.
+        /// The parameter group is in use, or it is in a state that is not valid. If you are trying
+        /// to delete the parameter group, you can't delete it when the parameter group is in
+        /// this state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ResetDBClusterParameterGroup">REST API Reference for ResetDBClusterParameterGroup Operation</seealso>
         ResetDBClusterParameterGroupResponse ResetDBClusterParameterGroup(ResetDBClusterParameterGroupRequest request);
@@ -2152,45 +2148,44 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
+        /// Creates a new cluster from a snapshot or cluster snapshot.
         /// 
         ///  
         /// <para>
-        /// If a DB snapshot is specified, the target DB cluster is created from the source DB
-        /// snapshot with a default configuration and default security group.
+        /// If a snapshot is specified, the target cluster is created from the source DB snapshot
+        /// with a default configuration and default security group.
         /// </para>
         ///  
         /// <para>
-        /// If a DB cluster snapshot is specified, the target DB cluster is created from the source
-        /// DB cluster restore point with the same configuration as the original source DB cluster,
-        /// except that the new DB cluster is created with the default security group.
+        /// If a cluster snapshot is specified, the target cluster is created from the source
+        /// cluster restore point with the same configuration as the original source DB cluster,
+        /// except that the new cluster is created with the default security group.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromSnapshot service method.</param>
         /// 
         /// <returns>The response from the RestoreDBClusterFromSnapshot service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterAlreadyExistsException">
-        /// You already have a DB cluster with the given identifier.
+        /// You already have a cluster with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBClusterQuotaExceededException">
-        /// The DB cluster can't be created because you have reached the maximum allowed quota
-        /// of DB clusters.
+        /// The cluster can't be created because you have reached the maximum allowed quota of
+        /// clusters.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBClusterSnapshotNotFoundException">
-        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
-        /// snapshot.
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSnapshotNotFoundException">
-        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupNotFoundException">
-        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupNotFoundException">
-        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InsufficientDBClusterCapacityException">
-        /// The DB cluster doesn't have enough capacity for the current operation.
+        /// The cluster doesn't have enough capacity for the current operation.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InsufficientStorageClusterCapacityException">
         /// There is not enough storage available for the current action. You might be able to
@@ -2198,10 +2193,10 @@ namespace Amazon.DocDB
         /// that have more storage available.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterSnapshotStateException">
-        /// The provided value isn't a valid DB cluster snapshot state.
+        /// The provided value isn't a valid cluster snapshot state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBSnapshotStateException">
-        /// The state of the DB snapshot doesn't allow deletion.
+        /// The state of the snapshot doesn't allow deletion.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidRestoreException">
         /// You cannot restore from a virtual private cloud (VPC) backup to a non-VPC DB instance.
@@ -2211,7 +2206,7 @@ namespace Amazon.DocDB
         /// all in a common virtual private cloud (VPC).
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidVPCNetworkStateException">
-        /// The DB subnet group doesn't cover all Availability Zones after it is created because
+        /// The subnet group doesn't cover all Availability Zones after it is created because
         /// of changes that were made.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
@@ -2219,11 +2214,11 @@ namespace Amazon.DocDB
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
-        /// all DB instances.
+        /// all instances.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
-        /// all DB instances.
+        /// all instances.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         RestoreDBClusterFromSnapshotResponse RestoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest request);
@@ -2260,34 +2255,33 @@ namespace Amazon.DocDB
 
 
         /// <summary>
-        /// Restores a DB cluster to an arbitrary point in time. Users can restore to any point
-        /// in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code>
-        /// days. The target DB cluster is created from the source DB cluster with the same configuration
-        /// as the original DB cluster, except that the new DB cluster is created with the default
-        /// DB security group.
+        /// Restores a cluster to an arbitrary point in time. Users can restore to any point in
+        /// time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code>
+        /// days. The target cluster is created from the source cluster with the same configuration
+        /// as the original cluster, except that the new cluster is created with the default security
+        /// group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterToPointInTime service method.</param>
         /// 
         /// <returns>The response from the RestoreDBClusterToPointInTime service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterAlreadyExistsException">
-        /// You already have a DB cluster with the given identifier.
+        /// You already have a cluster with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
-        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBClusterQuotaExceededException">
-        /// The DB cluster can't be created because you have reached the maximum allowed quota
-        /// of DB clusters.
+        /// The cluster can't be created because you have reached the maximum allowed quota of
+        /// clusters.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBClusterSnapshotNotFoundException">
-        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
-        /// snapshot.
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.DBSubnetGroupNotFoundException">
-        /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+        /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InsufficientDBClusterCapacityException">
-        /// The DB cluster doesn't have enough capacity for the current operation.
+        /// The cluster doesn't have enough capacity for the current operation.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InsufficientStorageClusterCapacityException">
         /// There is not enough storage available for the current action. You might be able to
@@ -2295,13 +2289,13 @@ namespace Amazon.DocDB
         /// that have more storage available.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterSnapshotStateException">
-        /// The provided value isn't a valid DB cluster snapshot state.
+        /// The provided value isn't a valid cluster snapshot state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
-        /// The DB cluster isn't in a valid state.
+        /// The cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBSnapshotStateException">
-        /// The state of the DB snapshot doesn't allow deletion.
+        /// The state of the snapshot doesn't allow deletion.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidRestoreException">
         /// You cannot restore from a virtual private cloud (VPC) backup to a non-VPC DB instance.
@@ -2311,7 +2305,7 @@ namespace Amazon.DocDB
         /// all in a common virtual private cloud (VPC).
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidVPCNetworkStateException">
-        /// The DB subnet group doesn't cover all Availability Zones after it is created because
+        /// The subnet group doesn't cover all Availability Zones after it is created because
         /// of changes that were made.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.KMSKeyNotAccessibleException">
@@ -2319,7 +2313,7 @@ namespace Amazon.DocDB
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.StorageQuotaExceededException">
         /// The request would cause you to exceed the allowed amount of storage available across
-        /// all DB instances.
+        /// all instances.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         RestoreDBClusterToPointInTimeResponse RestoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest request);
@@ -2364,13 +2358,13 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the StartDBCluster service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
-        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
-        /// The DB cluster isn't in a valid state.
+        /// The cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The specified instance isn't in the <i>available</i> state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
         StartDBClusterResponse StartDBCluster(StartDBClusterRequest request);
@@ -2415,13 +2409,13 @@ namespace Amazon.DocDB
         /// 
         /// <returns>The response from the StopDBCluster service method, as returned by DocDB.</returns>
         /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
-        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
-        /// The DB cluster isn't in a valid state.
+        /// The cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.DocDB.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The specified instance isn't in the <i>available</i> state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StopDBCluster">REST API Reference for StopDBCluster Operation</seealso>
         StopDBClusterResponse StopDBCluster(StopDBClusterRequest request);

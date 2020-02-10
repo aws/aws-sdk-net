@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBClusters operation.
-    /// Returns information about provisioned Amazon DocumentDB DB clusters. This API operation
+    /// Returns information about provisioned Amazon DocumentDB clusters. This API operation
     /// supports pagination.
     /// </summary>
     public partial class DescribeDBClustersRequest : AmazonDocDBRequest
@@ -42,8 +42,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The user-provided DB cluster identifier. If this parameter is specified, information
-        /// from only the specific DB cluster is returned. This parameter isn't case sensitive.
+        /// The user-provided cluster identifier. If this parameter is specified, information
+        /// from only the specific cluster is returned. This parameter isn't case sensitive.
         /// </para>
         ///  
         /// <para>
@@ -70,7 +70,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A filter that specifies one or more DB clusters to describe.
+        /// A filter that specifies one or more clusters to describe.
         /// </para>
         ///  
         /// <para>
@@ -78,9 +78,9 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon
-        /// Resource Names (ARNs). The results list only includes information about the DB clusters
-        /// identified by these ARNs.
+        ///  <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource
+        /// Names (ARNs). The results list only includes information about the clusters identified
+        /// by these ARNs.
         /// </para>
         ///  </li> </ul>
         /// </summary>

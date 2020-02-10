@@ -29,18 +29,18 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreDBClusterFromSnapshot operation.
-    /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
+    /// Creates a new cluster from a snapshot or cluster snapshot.
     /// 
     ///  
     /// <para>
-    /// If a DB snapshot is specified, the target DB cluster is created from the source DB
-    /// snapshot with a default configuration and default security group.
+    /// If a snapshot is specified, the target cluster is created from the source DB snapshot
+    /// with a default configuration and default security group.
     /// </para>
     ///  
     /// <para>
-    /// If a DB cluster snapshot is specified, the target DB cluster is created from the source
-    /// DB cluster restore point with the same configuration as the original source DB cluster,
-    /// except that the new DB cluster is created with the default security group.
+    /// If a cluster snapshot is specified, the target cluster is created from the source
+    /// cluster restore point with the same configuration as the original source DB cluster,
+    /// except that the new cluster is created with the default security group.
     /// </para>
     /// </summary>
     public partial class RestoreDBClusterFromSnapshotRequest : AmazonDocDBRequest
@@ -80,8 +80,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The name of the DB cluster to create from the DB snapshot or DB cluster snapshot.
-        /// This parameter isn't case sensitive.
+        /// The name of the cluster to create from the snapshot or cluster snapshot. This parameter
+        /// isn't case sensitive.
         /// </para>
         ///  
         /// <para>
@@ -120,7 +120,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// The name of the DB subnet group to use for the new DB cluster.
+        /// The name of the subnet group to use for the new cluster.
         /// </para>
         ///  
         /// <para>
@@ -185,7 +185,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The database engine to use for the new DB cluster.
+        /// The database engine to use for the new cluster.
         /// </para>
         ///  
         /// <para>
@@ -212,7 +212,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version of the database engine to use for the new DB cluster.
+        /// The version of the database engine to use for the new cluster.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -230,15 +230,15 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB
-        /// snapshot or DB cluster snapshot.
+        /// The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot
+        /// or cluster snapshot.
         /// </para>
         ///  
         /// <para>
         /// The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption
-        /// key. If you are restoring a DB cluster with the same AWS account that owns the AWS
-        /// KMS encryption key used to encrypt the new DB cluster, then you can use the AWS KMS
-        /// key alias instead of the ARN for the AWS KMS encryption key.
+        /// key. If you are restoring a cluster with the same AWS account that owns the AWS KMS
+        /// encryption key used to encrypt the new cluster, then you can use the AWS KMS key alias
+        /// instead of the ARN for the AWS KMS encryption key.
         /// </para>
         ///  
         /// <para>
@@ -247,14 +247,14 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted,
-        /// then the restored DB cluster is encrypted using the AWS KMS key that was used to encrypt
-        /// the DB snapshot or the DB cluster snapshot.
+        /// If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted,
+        /// then the restored cluster is encrypted using the AWS KMS key that was used to encrypt
+        /// the snapshot or the cluster snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the DB snapshot or the DB cluster snapshot in <code>SnapshotIdentifier</code> is
-        /// not encrypted, then the restored DB cluster is not encrypted.
+        /// If the snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not
+        /// encrypted, then the restored DB cluster is not encrypted.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -273,7 +273,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number on which the new DB cluster accepts connections.
+        /// The port number on which the new cluster accepts connections.
         /// </para>
         ///  
         /// <para>
@@ -281,7 +281,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: The same port as the original DB cluster.
+        /// Default: The same port as the original cluster.
         /// </para>
         /// </summary>
         public int Port
@@ -299,12 +299,12 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
-        /// The identifier for the DB snapshot or DB cluster snapshot to restore from.
+        /// The identifier for the snapshot or cluster snapshot to restore from.
         /// </para>
         ///  
         /// <para>
-        /// You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster
-        /// snapshot. However, you can use only the ARN to specify a DB snapshot.
+        /// You can use either the name or the Amazon Resource Name (ARN) to specify a cluster
+        /// snapshot. However, you can use only the ARN to specify a snapshot.
         /// </para>
         ///  
         /// <para>
@@ -332,7 +332,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the restored DB cluster.
+        /// The tags to be assigned to the restored cluster.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -350,8 +350,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A list of virtual private cloud (VPC) security groups that the new DB cluster will
-        /// belong to.
+        /// A list of virtual private cloud (VPC) security groups that the new cluster will belong
+        /// to.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

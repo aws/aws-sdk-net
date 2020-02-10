@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBEngineVersions operation.
-    /// Returns a list of the available DB engines.
+    /// Returns a list of the available engines.
     /// </summary>
     public partial class DescribeDBEngineVersionsRequest : AmazonDocDBRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupFamily. 
         /// <para>
-        /// The name of a specific DB parameter group family to return details for.
+        /// The name of a specific parameter group family to return details for.
         /// </para>
         ///  
         /// <para>

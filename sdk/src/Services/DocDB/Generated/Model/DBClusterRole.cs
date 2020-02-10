@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Describes an AWS Identity and Access Management (IAM) role that is associated with
-    /// a DB cluster.
+    /// a cluster.
     /// </summary>
     public partial class DBClusterRole
     {
@@ -57,13 +57,13 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Describes the state of association between the IAM role and the DB cluster. The <code>Status</code>
+        /// Describes the state of association between the IAM role and the cluster. The <code>Status</code>
         /// property returns one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The IAM role ARN is associated with the DB cluster and can
-        /// be used to access other AWS services on your behalf.
+        ///  <code>ACTIVE</code> - The IAM role ARN is associated with the cluster and can be
+        /// used to access other AWS services on your behalf.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -71,8 +71,8 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INVALID</code> - The IAM role ARN is associated with the DB cluster, but the
-        /// DB cluster cannot assume the IAM role to access other AWS services on your behalf.
+        ///  <code>INVALID</code> - The IAM role ARN is associated with the cluster, but the cluster
+        /// cannot assume the IAM role to access other AWS services on your behalf.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBInstance operation.
-    /// Creates a new DB instance.
+    /// Creates a new instance.
     /// </summary>
     public partial class CreateDBInstanceRequest : AmazonDocDBRequest
     {
@@ -46,8 +46,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// Indicates that minor engine upgrades are applied automatically to the DB instance
-        /// during the maintenance window.
+        /// Indicates that minor engine upgrades are applied automatically to the instance during
+        /// the maintenance window.
         /// </para>
         ///  
         /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  The Amazon EC2 Availability Zone that the DB instance is created in.
+        ///  The Amazon EC2 Availability Zone that the instance is created in.
         /// </para>
         ///  
         /// <para>
@@ -101,7 +101,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The identifier of the DB cluster that the instance will belong to.
+        /// The identifier of the cluster that the instance will belong to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -120,7 +120,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
+        /// The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.
         /// 
         /// </para>
         /// </summary>
@@ -140,7 +140,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        /// The DB instance identifier. This parameter is stored as a lowercase string.
+        /// The instance identifier. This parameter is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -265,7 +265,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the DB instance. You can assign up to 10 tags to an instance.
+        /// The tags to be assigned to the instance. You can assign up to 10 tags to an instance.
         /// </para>
         /// </summary>
         public List<Tag> Tags

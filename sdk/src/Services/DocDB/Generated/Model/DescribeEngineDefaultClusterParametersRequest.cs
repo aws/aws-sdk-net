@@ -42,7 +42,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupFamily. 
         /// <para>
-        /// The name of the DB cluster parameter group family to return the engine parameter information
+        /// The name of the cluster parameter group family to return the engine parameter information
         /// for.
         /// </para>
         /// </summary>

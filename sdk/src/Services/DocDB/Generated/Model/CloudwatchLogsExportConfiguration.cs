@@ -29,13 +29,13 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// The configuration setting for the log types to be enabled for export to Amazon CloudWatch
-    /// Logs for a specific DB instance or DB cluster.
+    /// Logs for a specific instance or cluster.
     /// 
     ///  
     /// <para>
     /// The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine
     /// which logs are exported (or not exported) to CloudWatch Logs. The values within these
-    /// arrays depend on the DB engine that is being used.
+    /// arrays depend on the engine that is being used.
     /// </para>
     /// </summary>
     public partial class CloudwatchLogsExportConfiguration

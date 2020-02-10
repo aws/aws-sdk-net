@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// Detailed information about a DB cluster.
+    /// Detailed information about a cluster.
     /// </summary>
     public partial class DBCluster
     {
@@ -66,8 +66,8 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property AssociatedRoles. 
         /// <para>
         /// Provides a list of the AWS Identity and Access Management (IAM) roles that are associated
-        /// with the DB cluster. IAM roles that are associated with a DB cluster grant permission
-        /// for the DB cluster to access other AWS services on your behalf.
+        /// with the cluster. IAM roles that are associated with a cluster grant permission for
+        /// the cluster to access other AWS services on your behalf.
         /// </para>
         /// </summary>
         public List<DBClusterRole> AssociatedRoles
@@ -85,8 +85,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// Provides the list of Amazon EC2 Availability Zones that instances in the DB cluster
-        /// can be created in.
+        /// Provides the list of Amazon EC2 Availability Zones that instances in the cluster can
+        /// be created in.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -104,7 +104,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
-        /// Specifies the number of days for which automatic DB snapshots are retained.
+        /// Specifies the number of days for which automatic snapshots are retained.
         /// </para>
         /// </summary>
         public int BackupRetentionPeriod
@@ -122,8 +122,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property ClusterCreateTime. 
         /// <para>
-        /// Specifies the time when the DB cluster was created, in Universal Coordinated Time
-        /// (UTC).
+        /// Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).
         /// </para>
         /// </summary>
         public DateTime ClusterCreateTime
@@ -141,7 +140,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the DB cluster.
+        /// The Amazon Resource Name (ARN) for the cluster.
         /// </para>
         /// </summary>
         public string DBClusterArn
@@ -159,8 +158,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// Contains a user-supplied DB cluster identifier. This identifier is the unique key
-        /// that identifies a DB cluster.
+        /// Contains a user-supplied cluster identifier. This identifier is the unique key that
+        /// identifies a cluster.
         /// </para>
         /// </summary>
         public string DBClusterIdentifier
@@ -178,7 +177,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterMembers. 
         /// <para>
-        /// Provides the list of instances that make up the DB cluster.
+        /// Provides the list of instances that make up the cluster.
         /// </para>
         /// </summary>
         public List<DBClusterMember> DBClusterMembers
@@ -196,7 +195,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroup. 
         /// <para>
-        /// Specifies the name of the DB cluster parameter group for the DB cluster.
+        /// Specifies the name of the cluster parameter group for the cluster.
         /// </para>
         /// </summary>
         public string DBClusterParameterGroup
@@ -214,9 +213,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DbClusterResourceId. 
         /// <para>
-        /// The AWS Region-unique, immutable identifier for the DB cluster. This identifier is
-        /// found in AWS CloudTrail log entries whenever the AWS KMS key for the DB cluster is
-        /// accessed.
+        /// The AWS Region-unique, immutable identifier for the cluster. This identifier is found
+        /// in AWS CloudTrail log entries whenever the AWS KMS key for the cluster is accessed.
         /// </para>
         /// </summary>
         public string DbClusterResourceId
@@ -234,8 +232,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroup. 
         /// <para>
-        /// Specifies information on the subnet group that is associated with the DB cluster,
-        /// including the name, description, and subnets in the subnet group.
+        /// Specifies information on the subnet group that is associated with the cluster, including
+        /// the name, description, and subnets in the subnet group.
         /// </para>
         /// </summary>
         public string DBSubnetGroup
@@ -292,7 +290,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property EnabledCloudwatchLogsExports. 
         /// <para>
-        /// A list of log types that this DB cluster is configured to export to Amazon CloudWatch
+        /// A list of log types that this cluster is configured to export to Amazon CloudWatch
         /// Logs.
         /// </para>
         /// </summary>
@@ -311,7 +309,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// Specifies the connection endpoint for the primary instance of the DB cluster.
+        /// Specifies the connection endpoint for the primary instance of the cluster.
         /// </para>
         /// </summary>
         public string Endpoint
@@ -329,7 +327,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Provides the name of the database engine to be used for this DB cluster.
+        /// Provides the name of the database engine to be used for this cluster.
         /// </para>
         /// </summary>
         public string Engine
@@ -384,7 +382,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier
-        /// for the encrypted DB cluster.
+        /// for the encrypted cluster.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -420,7 +418,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// Contains the master user name for the DB cluster.
+        /// Contains the master user name for the cluster.
         /// </para>
         /// </summary>
         public string MasterUsername
@@ -438,7 +436,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// Specifies whether the DB cluster has instances in multiple Availability Zones.
+        /// Specifies whether the cluster has instances in multiple Availability Zones.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -530,12 +528,12 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property ReaderEndpoint. 
         /// <para>
-        /// The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load
-        /// balances connections across the Amazon DocumentDB replicas that are available in a
-        /// DB cluster. As clients request new connections to the reader endpoint, Amazon DocumentDB
-        /// distributes the connection requests among the Amazon DocumentDB replicas in the DB
-        /// cluster. This functionality can help balance your read workload across multiple Amazon
-        /// DocumentDB replicas in your DB cluster. 
+        /// The reader endpoint for the cluster. The reader endpoint for a cluster load balances
+        /// connections across the Amazon DocumentDB replicas that are available in a cluster.
+        /// As clients request new connections to the reader endpoint, Amazon DocumentDB distributes
+        /// the connection requests among the Amazon DocumentDB replicas in the cluster. This
+        /// functionality can help balance your read workload across multiple Amazon DocumentDB
+        /// replicas in your cluster. 
         /// </para>
         ///  
         /// <para>
@@ -560,7 +558,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies the current state of this DB cluster.
+        /// Specifies the current state of this cluster.
         /// </para>
         /// </summary>
         public string Status
@@ -578,7 +576,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// Specifies whether the DB cluster is encrypted.
+        /// Specifies whether the cluster is encrypted.
         /// </para>
         /// </summary>
         public bool StorageEncrypted
@@ -596,8 +594,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroups. 
         /// <para>
-        /// Provides a list of virtual private cloud (VPC) security groups that the DB cluster
-        /// belongs to.
+        /// Provides a list of virtual private cloud (VPC) security groups that the cluster belongs
+        /// to.
         /// </para>
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroups

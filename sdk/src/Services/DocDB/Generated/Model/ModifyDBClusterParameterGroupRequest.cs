@@ -29,8 +29,8 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBClusterParameterGroup operation.
-    /// Modifies the parameters of a DB cluster parameter group. To modify more than one
-    /// parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
+    /// Modifies the parameters of a cluster parameter group. To modify more than one parameter,
+    /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
     /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
     /// request. 
     /// 
@@ -41,13 +41,13 @@ namespace Amazon.DocDB.Model
     /// </para>
     ///  </note> <important> 
     /// <para>
-    /// After you create a DB cluster parameter group, you should wait at least 5 minutes
-    /// before creating your first DB cluster that uses that DB cluster parameter group as
-    /// the default parameter group. This allows Amazon DocumentDB to fully complete the create
-    /// action before the parameter group is used as the default for a new DB cluster. This
-    /// step is especially important for parameters that are critical when creating the default
-    /// database for a DB cluster, such as the character set for the default database defined
-    /// by the <code>character_set_database</code> parameter.
+    /// After you create a cluster parameter group, you should wait at least 5 minutes before
+    /// creating your first cluster that uses that cluster parameter group as the default
+    /// parameter group. This allows Amazon DocumentDB to fully complete the create action
+    /// before the parameter group is used as the default for a new cluster. This step is
+    /// especially important for parameters that are critical when creating the default database
+    /// for a cluster, such as the character set for the default database defined by the <code>character_set_database</code>
+    /// parameter.
     /// </para>
     ///  </important>
     /// </summary>
@@ -59,7 +59,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        /// The name of the DB cluster parameter group to modify.
+        /// The name of the cluster parameter group to modify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,7 +78,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A list of parameters in the DB cluster parameter group to modify.
+        /// A list of parameters in the cluster parameter group to modify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

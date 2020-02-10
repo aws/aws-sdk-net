@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// Contains the name of a DB cluster parameter group.
+    /// Contains the name of a cluster parameter group.
     /// </summary>
     public partial class ResetDBClusterParameterGroupResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        /// The name of a DB cluster parameter group.
+        /// The name of a cluster parameter group.
         /// </para>
         ///  
         /// <para>

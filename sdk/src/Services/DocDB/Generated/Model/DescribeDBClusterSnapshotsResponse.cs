@@ -38,7 +38,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterSnapshots. 
         /// <para>
-        /// Provides a list of DB cluster snapshots.
+        /// Provides a list of cluster snapshots.
         /// </para>
         /// </summary>
         public List<DBClusterSnapshot> DBClusterSnapshots

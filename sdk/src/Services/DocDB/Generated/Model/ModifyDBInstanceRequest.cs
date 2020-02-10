@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBInstance operation.
-    /// Modifies settings for a DB instance. You can change one or more database configuration
+    /// Modifies settings for an instance. You can change one or more database configuration
     /// parameters by specifying these parameters and the new values in the request.
     /// </summary>
     public partial class ModifyDBInstanceRequest : AmazonDocDBRequest
@@ -48,11 +48,11 @@ namespace Amazon.DocDB.Model
         /// <para>
         /// Specifies whether the modifications in this request and any pending modifications
         /// are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
-        /// setting for the DB instance. 
+        /// setting for the instance. 
         /// </para>
         ///  
         /// <para>
-        ///  If this parameter is set to <code>false</code>, changes to the DB instance are applied
+        ///  If this parameter is set to <code>false</code>, changes to the instance are applied
         /// during the next maintenance window. Some parameter changes can cause an outage and
         /// are applied on the next reboot.
         /// </para>
@@ -76,12 +76,12 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// Indicates that minor version upgrades are applied automatically to the DB instance
-        /// during the maintenance window. Changing this parameter doesn't result in an outage
-        /// except in the following case, and the change is asynchronously applied as soon as
-        /// possible. An outage results if this parameter is set to <code>true</code> during the
-        /// maintenance window, and a newer minor version is available, and Amazon DocumentDB
-        /// has enabled automatic patching for that engine version. 
+        /// Indicates that minor version upgrades are applied automatically to the instance during
+        /// the maintenance window. Changing this parameter doesn't result in an outage except
+        /// in the following case, and the change is asynchronously applied as soon as possible.
+        /// An outage results if this parameter is set to <code>true</code> during the maintenance
+        /// window, and a newer minor version is available, and Amazon DocumentDB has enabled
+        /// automatic patching for that engine version. 
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -117,14 +117,14 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The new compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
-        /// Not all DB instance classes are available in all AWS Regions. 
+        /// The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>.
+        /// Not all instance classes are available in all AWS Regions. 
         /// </para>
         ///  
         /// <para>
-        /// If you modify the DB instance class, an outage occurs during the change. The change
-        /// is applied during the next maintenance window, unless <code>ApplyImmediately</code>
-        /// is specified as <code>true</code> for this request. 
+        /// If you modify the instance class, an outage occurs during the change. The change is
+        /// applied during the next maintenance window, unless <code>ApplyImmediately</code> is
+        /// specified as <code>true</code> for this request. 
         /// </para>
         ///  
         /// <para>
@@ -146,7 +146,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        /// The DB instance identifier. This value is stored as a lowercase string.
+        /// The instance identifier. This value is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -174,11 +174,11 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property NewDBInstanceIdentifier. 
         /// <para>
-        ///  The new DB instance identifier for the DB instance when renaming a DB instance. When
-        /// you change the DB instance identifier, an instance reboot occurs immediately if you
-        /// set <code>Apply Immediately</code> to <code>true</code>. It occurs during the next
-        /// maintenance window if you set <code>Apply Immediately</code> to <code>false</code>.
-        /// This value is stored as a lowercase string. 
+        ///  The new instance identifier for the instance when renaming an instance. When you
+        /// change the instance identifier, an instance reboot occurs immediately if you set <code>Apply
+        /// Immediately</code> to <code>true</code>. It occurs during the next maintenance window
+        /// if you set <code>Apply Immediately</code> to <code>false</code>. This value is stored
+        /// as a lowercase string. 
         /// </para>
         ///  
         /// <para>
@@ -220,7 +220,7 @@ namespace Amazon.DocDB.Model
         /// result in an outage. Changing this parameter doesn't result in an outage except in
         /// the following situation, and the change is asynchronously applied as soon as possible.
         /// If there are pending actions that cause a reboot, and the maintenance window is changed
-        /// to include the current time, changing this parameter causes a reboot of the DB instance.
+        /// to include the current time, changing this parameter causes a reboot of the instance.
         /// If you are moving this window to the current time, there must be at least 30 minutes
         /// between the current time and end of the window to ensure that pending changes are
         /// applied.

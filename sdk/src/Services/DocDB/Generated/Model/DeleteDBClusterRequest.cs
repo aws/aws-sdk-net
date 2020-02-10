@@ -29,9 +29,9 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBCluster operation.
-    /// Deletes a previously provisioned DB cluster. When you delete a DB cluster, all automated
-    /// backups for that DB cluster are deleted and can't be recovered. Manual DB cluster
-    /// snapshots of the specified DB cluster are not deleted.
+    /// Deletes a previously provisioned cluster. When you delete a cluster, all automated
+    /// backups for that cluster are deleted and can't be recovered. Manual DB cluster snapshots
+    /// of the specified cluster are not deleted.
     /// </summary>
     public partial class DeleteDBClusterRequest : AmazonDocDBRequest
     {
@@ -42,8 +42,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case
-        /// sensitive.
+        /// The cluster identifier for the cluster to be deleted. This parameter isn't case sensitive.
         /// </para>
         ///  
         /// <para>
@@ -71,7 +70,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property FinalDBSnapshotIdentifier. 
         /// <para>
-        ///  The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code>
+        ///  The cluster snapshot identifier of the new cluster snapshot created when <code>SkipFinalSnapshot</code>
         /// is set to <code>false</code>. 
         /// </para>
         ///  <note> 
@@ -112,10 +111,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property SkipFinalSnapshot. 
         /// <para>
-        ///  Determines whether a final DB cluster snapshot is created before the DB cluster is
-        /// deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If
-        /// <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster
-        /// is deleted. 
+        ///  Determines whether a final cluster snapshot is created before the cluster is deleted.
+        /// If <code>true</code> is specified, no cluster snapshot is created. If <code>false</code>
+        /// is specified, a cluster snapshot is created before the DB cluster is deleted. 
         /// </para>
         ///  <note> 
         /// <para>

@@ -43,7 +43,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
         /// The user-provided instance identifier. If this parameter is specified, information
-        /// from only the specific DB instance is returned. This parameter isn't case sensitive.
+        /// from only the specific instance is returned. This parameter isn't case sensitive.
         /// </para>
         ///  
         /// <para>
@@ -70,7 +70,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A filter that specifies one or more DB instances to describe.
+        /// A filter that specifies one or more instances to describe.
         /// </para>
         ///  
         /// <para>
@@ -78,14 +78,14 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon
-        /// Resource Names (ARNs). The results list includes only the information about the DB
-        /// instances that are associated with the DB clusters that are identified by these ARNs.
+        ///  <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource
+        /// Names (ARNs). The results list includes only the information about the instances that
+        /// are associated with the clusters that are identified by these ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs.
-        /// The results list includes only the information about the DB instances that are identified
+        ///  <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The
+        /// results list includes only the information about the instances that are identified
         /// by these ARNs.
         /// </para>
         ///  </li> </ul>

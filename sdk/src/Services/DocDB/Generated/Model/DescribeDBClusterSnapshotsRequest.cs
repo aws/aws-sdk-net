@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBClusterSnapshots operation.
-    /// Returns information about DB cluster snapshots. This API operation supports pagination.
+    /// Returns information about cluster snapshots. This API operation supports pagination.
     /// </summary>
     public partial class DescribeDBClusterSnapshotsRequest : AmazonDocDBRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter
+        /// The ID of the cluster to retrieve the list of cluster snapshots for. This parameter
         /// can't be used with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter
         /// is not case sensitive. 
         /// </para>
@@ -74,8 +74,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterSnapshotIdentifier. 
         /// <para>
-        /// A specific DB cluster snapshot identifier to describe. This parameter can't be used
-        /// with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase
+        /// A specific cluster snapshot identifier to describe. This parameter can't be used with
+        /// the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase
         /// string. 
         /// </para>
         ///  
@@ -126,9 +126,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property IncludePublic. 
         /// <para>
-        /// Set to <code>true</code> to include manual DB cluster snapshots that are public and
-        /// can be copied or restored by any AWS account, and otherwise <code>false</code>. The
-        /// default is <code>false</code>.
+        /// Set to <code>true</code> to include manual cluster snapshots that are public and can
+        /// be copied or restored by any AWS account, and otherwise <code>false</code>. The default
+        /// is <code>false</code>.
         /// </para>
         /// </summary>
         public bool IncludePublic
@@ -146,9 +146,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property IncludeShared. 
         /// <para>
-        /// Set to <code>true</code> to include shared manual DB cluster snapshots from other
-        /// AWS accounts that this AWS account has been given permission to copy or restore, and
-        /// otherwise <code>false</code>. The default is <code>false</code>.
+        /// Set to <code>true</code> to include shared manual cluster snapshots from other AWS
+        /// accounts that this AWS account has been given permission to copy or restore, and otherwise
+        /// <code>false</code>. The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool IncludeShared
@@ -214,34 +214,34 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property SnapshotType. 
         /// <para>
-        /// The type of DB cluster snapshots to be returned. You can specify one of the following
+        /// The type of cluster snapshots to be returned. You can specify one of the following
         /// values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>automated</code> - Return all DB cluster snapshots that Amazon DocumentDB has
+        ///  <code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has
         /// automatically created for your AWS account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>manual</code> - Return all DB cluster snapshots that you have manually created
+        ///  <code>manual</code> - Return all cluster snapshots that you have manually created
         /// for your AWS account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>shared</code> - Return all manual DB cluster snapshots that have been shared
-        /// to your AWS account.
+        ///  <code>shared</code> - Return all manual cluster snapshots that have been shared to
+        /// your AWS account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>public</code> - Return all DB cluster snapshots that have been marked as public.
+        ///  <code>public</code> - Return all cluster snapshots that have been marked as public.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you don't specify a <code>SnapshotType</code> value, then both automated and manual
-        /// DB cluster snapshots are returned. You can include shared DB cluster snapshots with
-        /// these results by setting the <code>IncludeShared</code> parameter to <code>true</code>.
-        /// You can include public DB cluster snapshots with these results by setting the <code>IncludePublic</code>
+        /// cluster snapshots are returned. You can include shared cluster snapshots with these
+        /// results by setting the <code>IncludeShared</code> parameter to <code>true</code>.
+        /// You can include public cluster snapshots with these results by setting the <code>IncludePublic</code>
         /// parameter to <code>true</code>.
         /// </para>
         ///  

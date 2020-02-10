@@ -29,8 +29,8 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBSubnetGroup operation.
-    /// Creates a new DB subnet group. DB subnet groups must contain at least one subnet in
-    /// at least two Availability Zones in the AWS Region.
+    /// Creates a new subnet group. subnet groups must contain at least one subnet in at least
+    /// two Availability Zones in the AWS Region.
     /// </summary>
     public partial class CreateDBSubnetGroupRequest : AmazonDocDBRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupDescription. 
         /// <para>
-        /// The description for the DB subnet group.
+        /// The description for the subnet group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// The name for the DB subnet group. This value is stored as a lowercase string.
+        /// The name for the subnet group. This value is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -89,7 +89,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The Amazon EC2 subnet IDs for the DB subnet group.
+        /// The Amazon EC2 subnet IDs for the subnet group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -108,7 +108,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the DB subnet group.
+        /// The tags to be assigned to the subnet group.
         /// </para>
         /// </summary>
         public List<Tag> Tags

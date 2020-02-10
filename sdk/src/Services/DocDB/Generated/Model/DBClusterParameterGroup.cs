@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// Detailed information about a DB cluster parameter group.
+    /// Detailed information about a cluster parameter group.
     /// </summary>
     public partial class DBClusterParameterGroup
     {
@@ -40,7 +40,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the DB cluster parameter group.
+        /// The Amazon Resource Name (ARN) for the cluster parameter group.
         /// </para>
         /// </summary>
         public string DBClusterParameterGroupArn
@@ -58,7 +58,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        /// Provides the name of the DB cluster parameter group.
+        /// Provides the name of the cluster parameter group.
         /// </para>
         /// </summary>
         public string DBClusterParameterGroupName
@@ -76,8 +76,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupFamily. 
         /// <para>
-        /// Provides the name of the DB parameter group family that this DB cluster parameter
-        /// group is compatible with.
+        /// Provides the name of the parameter group family that this cluster parameter group
+        /// is compatible with.
         /// </para>
         /// </summary>
         public string DBParameterGroupFamily
@@ -95,7 +95,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Provides the customer-specified description for this DB cluster parameter group.
+        /// Provides the customer-specified description for this cluster parameter group.
         /// </para>
         /// </summary>
         public string Description

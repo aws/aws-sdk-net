@@ -29,12 +29,12 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the FailoverDBCluster operation.
-    /// Forces a failover for a DB cluster.
+    /// Forces a failover for a cluster.
     /// 
     ///  
     /// <para>
-    /// A failover for a DB cluster promotes one of the Amazon DocumentDB replicas (read-only
-    /// instances) in the DB cluster to be the primary instance (the cluster writer).
+    /// A failover for a cluster promotes one of the Amazon DocumentDB replicas (read-only
+    /// instances) in the cluster to be the primary instance (the cluster writer).
     /// </para>
     ///  
     /// <para>
@@ -51,7 +51,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// A DB cluster identifier to force a failover for. This parameter is not case sensitive.
+        /// A cluster identifier to force a failover for. This parameter is not case sensitive.
         /// </para>
         ///  
         /// <para>
@@ -82,8 +82,8 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify the instance identifier for an Amazon DocumentDB replica in the DB
-        /// cluster. For example, <code>mydbcluster-replica1</code>.
+        /// You must specify the instance identifier for an Amazon DocumentDB replica in the cluster.
+        /// For example, <code>mydbcluster-replica1</code>.
         /// </para>
         /// </summary>
         public string TargetDBInstanceIdentifier

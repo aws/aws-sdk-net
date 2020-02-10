@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// Contains information about an instance that is part of a DB cluster.
+    /// Contains information about an instance that is part of a cluster.
     /// </summary>
     public partial class DBClusterMember
     {
@@ -40,7 +40,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupStatus. 
         /// <para>
-        /// Specifies the status of the DB cluster parameter group for this member of the DB cluster.
+        /// Specifies the status of the cluster parameter group for this member of the DB cluster.
         /// </para>
         /// </summary>
         public string DBClusterParameterGroupStatus
@@ -58,7 +58,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        /// Specifies the instance identifier for this member of the DB cluster.
+        /// Specifies the instance identifier for this member of the cluster.
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -77,7 +77,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property IsClusterWriter. 
         /// <para>
         /// A value that is <code>true</code> if the cluster member is the primary instance for
-        /// the DB cluster and <code>false</code> otherwise.
+        /// the cluster and <code>false</code> otherwise.
         /// </para>
         /// </summary>
         public bool IsClusterWriter

@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBInstance operation.
-    /// Deletes a previously provisioned DB instance.
+    /// Deletes a previously provisioned instance.
     /// </summary>
     public partial class DeleteDBInstanceRequest : AmazonDocDBRequest
     {
@@ -38,8 +38,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        /// The DB instance identifier for the DB instance to be deleted. This parameter isn't
-        /// case sensitive.
+        /// The instance identifier for the instance to be deleted. This parameter isn't case
+        /// sensitive.
         /// </para>
         ///  
         /// <para>
@@ -47,7 +47,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the name of an existing DB instance.
+        /// Must match the name of an existing instance.
         /// </para>
         ///  </li> </ul>
         /// </summary>

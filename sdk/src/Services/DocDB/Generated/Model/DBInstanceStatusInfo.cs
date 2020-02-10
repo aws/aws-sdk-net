@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// Provides a list of status information for a DB instance.
+    /// Provides a list of status information for an instance.
     /// </summary>
     public partial class DBInstanceStatusInfo
     {
@@ -78,7 +78,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status of the DB instance. For a <code>StatusType</code> of read replica, the values
+        /// Status of the instance. For a <code>StatusType</code> of read replica, the values
         /// can be <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.
         /// </para>
         /// </summary>

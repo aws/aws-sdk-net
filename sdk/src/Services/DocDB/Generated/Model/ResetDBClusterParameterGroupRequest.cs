@@ -29,10 +29,10 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetDBClusterParameterGroup operation.
-    /// Modifies the parameters of a DB cluster parameter group to the default value. To
-    /// reset specific parameters, submit a list of the following: <code>ParameterName</code>
-    /// and <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify
-    /// the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters.
+    /// Modifies the parameters of a cluster parameter group to the default value. To reset
+    /// specific parameters, submit a list of the following: <code>ParameterName</code> and
+    /// <code>ApplyMethod</code>. To reset the entire cluster parameter group, specify the
+    /// <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters.
     /// 
     /// 
     ///  
@@ -51,7 +51,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        /// The name of the DB cluster parameter group to reset.
+        /// The name of the cluster parameter group to reset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,9 +70,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A list of parameter names in the DB cluster parameter group to reset to the default
-        /// values. You can't use this parameter if the <code>ResetAllParameters</code> parameter
-        /// is set to <code>true</code>.
+        /// A list of parameter names in the cluster parameter group to reset to the default values.
+        /// You can't use this parameter if the <code>ResetAllParameters</code> parameter is set
+        /// to <code>true</code>.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters
@@ -90,9 +90,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property ResetAllParameters. 
         /// <para>
-        /// A value that is set to <code>true</code> to reset all parameters in the DB cluster
-        /// parameter group to their default values, and <code>false</code> otherwise. You can't
-        /// use this parameter if there is a list of parameter names specified for the <code>Parameters</code>
+        /// A value that is set to <code>true</code> to reset all parameters in the cluster parameter
+        /// group to their default values, and <code>false</code> otherwise. You can't use this
+        /// parameter if there is a list of parameter names specified for the <code>Parameters</code>
         /// parameter.
         /// </para>
         /// </summary>

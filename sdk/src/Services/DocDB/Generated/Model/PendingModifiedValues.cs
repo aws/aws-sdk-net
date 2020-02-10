@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// One or more modified settings for a DB instance. These modified settings have been
+    /// One or more modified settings for an instance. These modified settings have been
     /// requested, but haven't been applied yet.
     /// </summary>
     public partial class PendingModifiedValues
@@ -51,8 +51,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        ///  Contains the new <code>AllocatedStorage</code> size for the DB instance that will
-        /// be applied or is currently being applied. 
+        ///  Contains the new <code>AllocatedStorage</code> size for then instance that will be
+        /// applied or is currently being applied. 
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -107,7 +107,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        ///  Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied
+        ///  Contains the new <code>DBInstanceClass</code> for the instance that will be applied
         /// or is currently being applied. 
         /// </para>
         /// </summary>
@@ -126,8 +126,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will
-        /// be applied or is currently being applied. 
+        ///  Contains the new <code>DBInstanceIdentifier</code> for the instance that will be
+        /// applied or is currently being applied. 
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -145,7 +145,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// The new DB subnet group for the DB instance. 
+        /// The new subnet group for the instance. 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -181,8 +181,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// Specifies the new Provisioned IOPS value for the DB instance that will be applied
-        /// or is currently being applied.
+        /// Specifies the new Provisioned IOPS value for the instance that will be applied or
+        /// is currently being applied.
         /// </para>
         /// </summary>
         public int Iops
@@ -200,7 +200,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        /// The license model for the DB instance.
+        /// The license model for the instance.
         /// </para>
         ///  
         /// <para>
@@ -224,7 +224,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
         /// Contains the pending or currently in-progress change of the master credentials for
-        /// the DB instance.
+        /// the instance.
         /// </para>
         /// </summary>
         public string MasterUserPassword
@@ -242,7 +242,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.
+        /// Indicates that the Single-AZ instance is to change to a Multi-AZ deployment.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -279,7 +279,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Specifies the pending port for the DB instance.
+        /// Specifies the pending port for the instance.
         /// </para>
         /// </summary>
         public int Port
@@ -297,7 +297,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Specifies the storage type to be associated with the DB instance.
+        /// Specifies the storage type to be associated with the instance.
         /// </para>
         /// </summary>
         public string StorageType

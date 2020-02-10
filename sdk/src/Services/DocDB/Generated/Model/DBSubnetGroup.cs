@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// Detailed information about a DB subnet group.
+    /// Detailed information about a subnet group.
     /// </summary>
     public partial class DBSubnetGroup
     {
@@ -60,7 +60,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupDescription. 
         /// <para>
-        /// Provides the description of the DB subnet group.
+        /// Provides the description of the subnet group.
         /// </para>
         /// </summary>
         public string DBSubnetGroupDescription
@@ -78,7 +78,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// The name of the DB subnet group.
+        /// The name of the subnet group.
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -96,7 +96,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property SubnetGroupStatus. 
         /// <para>
-        /// Provides the status of the DB subnet group.
+        /// Provides the status of the subnet group.
         /// </para>
         /// </summary>
         public string SubnetGroupStatus
@@ -114,7 +114,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// Detailed information about one or more subnets within a DB subnet group.
+        /// Detailed information about one or more subnets within a subnet group.
         /// </para>
         /// </summary>
         public List<Subnet> Subnets
@@ -132,7 +132,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// Provides the virtual private cloud (VPC) ID of the DB subnet group.
+        /// Provides the virtual private cloud (VPC) ID of the subnet group.
         /// </para>
         /// </summary>
         public string VpcId

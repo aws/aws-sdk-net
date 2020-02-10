@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBSubnetGroup operation.
-    /// Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet
+    /// Modifies an existing subnet group. subnet groups must contain at least one subnet
     /// in at least two Availability Zones in the AWS Region.
     /// </summary>
     public partial class ModifyDBSubnetGroupRequest : AmazonDocDBRequest
@@ -41,7 +41,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupDescription. 
         /// <para>
-        /// The description for the DB subnet group.
+        /// The description for the subnet group.
         /// </para>
         /// </summary>
         public string DBSubnetGroupDescription
@@ -59,8 +59,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// The name for the DB subnet group. This value is stored as a lowercase string. You
-        /// can't modify the default subnet group. 
+        /// The name for the subnet group. This value is stored as a lowercase string. You can't
+        /// modify the default subnet group. 
         /// </para>
         ///  
         /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The Amazon EC2 subnet IDs for the DB subnet group.
+        /// The Amazon EC2 subnet IDs for the subnet group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

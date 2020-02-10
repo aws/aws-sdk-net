@@ -29,9 +29,9 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBCluster operation.
-    /// Modifies a setting for an Amazon DocumentDB DB cluster. You can change one or more
-    /// database configuration parameters by specifying these parameters and the new values
-    /// in the request.
+    /// Modifies a setting for an Amazon DocumentDB cluster. You can change one or more database
+    /// configuration parameters by specifying these parameters and the new values in the
+    /// request.
     /// </summary>
     public partial class ModifyDBClusterRequest : AmazonDocDBRequest
     {
@@ -54,8 +54,8 @@ namespace Amazon.DocDB.Model
         /// <para>
         /// A value that specifies whether the changes in this request and any pending changes
         /// are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
-        /// setting for the DB cluster. If this parameter is set to <code>false</code>, changes
-        /// to the DB cluster are applied during the next maintenance window.
+        /// setting for the cluster. If this parameter is set to <code>false</code>, changes to
+        /// the cluster are applied during the next maintenance window.
         /// </para>
         ///  
         /// <para>
@@ -118,9 +118,8 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property CloudwatchLogsExportConfiguration. 
         /// <para>
         /// The configuration setting for the log types to be enabled for export to Amazon CloudWatch
-        /// Logs for a specific DB instance or DB cluster. The <code>EnableLogTypes</code> and
-        /// <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported)
-        /// to CloudWatch Logs.
+        /// Logs for a specific instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code>
+        /// arrays determine which logs are exported (or not exported) to CloudWatch Logs.
         /// </para>
         /// </summary>
         public CloudwatchLogsExportConfiguration CloudwatchLogsExportConfiguration
@@ -138,8 +137,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The DB cluster identifier for the cluster that is being modified. This parameter is
-        /// not case sensitive.
+        /// The cluster identifier for the cluster that is being modified. This parameter is not
+        /// case sensitive.
         /// </para>
         ///  
         /// <para>
@@ -167,7 +166,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        /// The name of the DB cluster parameter group to use for the DB cluster.
+        /// The name of the cluster parameter group to use for the cluster.
         /// </para>
         /// </summary>
         public string DBClusterParameterGroupName
@@ -249,8 +248,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property NewDBClusterIdentifier. 
         /// <para>
-        /// The new DB cluster identifier for the DB cluster when renaming a DB cluster. This
-        /// value is stored as a lowercase string.
+        /// The new cluster identifier for the cluster when renaming a cluster. This value is
+        /// stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -288,7 +287,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number on which the DB cluster accepts connections.
+        /// The port number on which the cluster accepts connections.
         /// </para>
         ///  
         /// <para>
@@ -296,7 +295,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: The same port as the original DB cluster.
+        /// Default: The same port as the original cluster.
         /// </para>
         /// </summary>
         public int Port
@@ -395,7 +394,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A list of virtual private cloud (VPC) security groups that the DB cluster will belong
+        /// A list of virtual private cloud (VPC) security groups that the cluster will belong
         /// to.
         /// </para>
         /// </summary>

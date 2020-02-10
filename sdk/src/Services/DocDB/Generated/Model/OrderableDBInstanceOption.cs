@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// The options that are available for a DB instance.
+    /// The options that are available for an instance.
     /// </summary>
     public partial class OrderableDBInstanceOption
     {
@@ -42,7 +42,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// A list of Availability Zones for a DB instance.
+        /// A list of Availability Zones for an instance.
         /// </para>
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones
@@ -60,7 +60,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The DB instance class for a DB instance.
+        /// The instance class for an instance.
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -78,7 +78,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The engine type of a DB instance.
+        /// The engine type of an instance.
         /// </para>
         /// </summary>
         public string Engine
@@ -96,7 +96,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The engine version of a DB instance.
+        /// The engine version of an instance.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -114,7 +114,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        /// The license model for a DB instance.
+        /// The license model for an instance.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -132,7 +132,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Vpc. 
         /// <para>
-        /// Indicates whether a DB instance is in a virtual private cloud (VPC).
+        /// Indicates whether an instance is in a virtual private cloud (VPC).
         /// </para>
         /// </summary>
         public bool Vpc

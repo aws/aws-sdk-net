@@ -29,7 +29,7 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBCluster operation.
-    /// Creates a new Amazon DocumentDB DB cluster.
+    /// Creates a new Amazon DocumentDB cluster.
     /// </summary>
     public partial class CreateDBClusterRequest : AmazonDocDBRequest
     {
@@ -55,7 +55,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// A list of Amazon EC2 Availability Zones that instances in the DB cluster can be created
+        /// A list of Amazon EC2 Availability Zones that instances in the cluster can be created
         /// in.
         /// </para>
         /// </summary>
@@ -106,7 +106,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The DB cluster identifier. This parameter is stored as a lowercase string.
+        /// The cluster identifier. This parameter is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -145,7 +145,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        ///  The name of the DB cluster parameter group to associate with this DB cluster.
+        ///  The name of the cluster parameter group to associate with this cluster.
         /// </para>
         /// </summary>
         public string DBClusterParameterGroupName
@@ -163,7 +163,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// A DB subnet group to associate with this DB cluster.
+        /// A subnet group to associate with this cluster.
         /// </para>
         ///  
         /// <para>
@@ -229,7 +229,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the database engine to be used for this DB cluster.
+        /// The name of the database engine to be used for this cluster.
         /// </para>
         ///  
         /// <para>
@@ -270,14 +270,14 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for an encrypted DB cluster.
+        /// The AWS KMS key identifier for an encrypted cluster.
         /// </para>
         ///  
         /// <para>
         /// The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption
-        /// key. If you are creating a DB cluster using the same AWS account that owns the AWS
-        /// KMS encryption key that is used to encrypt the new DB cluster, you can use the AWS
-        /// KMS key alias instead of the ARN for the AWS KMS encryption key.
+        /// key. If you are creating a cluster using the same AWS account that owns the AWS KMS
+        /// encryption key that is used to encrypt the new cluster, you can use the AWS KMS key
+        /// alias instead of the ARN for the AWS KMS encryption key.
         /// </para>
         ///  
         /// <para>
@@ -301,8 +301,8 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// If you create a replica of an encrypted DB cluster in another AWS Region, you must
-        /// set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region.
+        /// If you create a replica of an encrypted cluster in another AWS Region, you must set
+        /// <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region.
         /// This key is used to encrypt the replica in that AWS Region.
         /// </para>
         /// </summary>
@@ -321,7 +321,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// The name of the master user for the DB cluster.
+        /// The name of the master user for the cluster.
         /// </para>
         ///  
         /// <para>
@@ -381,7 +381,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number on which the instances in the DB cluster accept connections.
+        /// The port number on which the instances in the cluster accept connections.
         /// </para>
         /// </summary>
         public int Port
@@ -480,7 +480,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// Specifies whether the DB cluster is encrypted.
+        /// Specifies whether the cluster is encrypted.
         /// </para>
         /// </summary>
         public bool StorageEncrypted
@@ -498,7 +498,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the DB cluster.
+        /// The tags to be assigned to the cluster.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -516,7 +516,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A list of EC2 VPC security groups to associate with this DB cluster.
+        /// A list of EC2 VPC security groups to associate with this cluster.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds
