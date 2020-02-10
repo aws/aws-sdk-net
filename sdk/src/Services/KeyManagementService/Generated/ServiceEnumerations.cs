@@ -105,6 +105,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly ConnectionErrorCodeType NETWORK_ERRORS = new ConnectionErrorCodeType("NETWORK_ERRORS");
         /// <summary>
+        /// Constant SUBNET_NOT_FOUND for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType SUBNET_NOT_FOUND = new ConnectionErrorCodeType("SUBNET_NOT_FOUND");
+        /// <summary>
         /// Constant USER_LOCKED_OUT for ConnectionErrorCodeType
         /// </summary>
         public static readonly ConnectionErrorCodeType USER_LOCKED_OUT = new ConnectionErrorCodeType("USER_LOCKED_OUT");

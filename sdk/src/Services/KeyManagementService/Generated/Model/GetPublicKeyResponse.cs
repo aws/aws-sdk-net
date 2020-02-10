@@ -135,10 +135,10 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// This value is returned as a binary <a href="https://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf">Distinguished
-        /// Encoding Rules</a> (DER)-encoded object. To decode it, use an ASN.1 parsing tool,
-        /// such as <a href="https://www.openssl.org/docs/man1.0.2/man1/asn1parse.html">OpenSSL
-        /// asn1parse</a>.
+        /// The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code>
+        /// (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>.
+        /// When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
+        /// it is not Base64-encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]
