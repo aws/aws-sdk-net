@@ -1,3 +1,14 @@
+### 3.3.675.0 (2020-02-10 19:20 UTC)
+* DocDB (3.3.102.50)
+	* Added clarifying information that Amazon DocumentDB shares operational technology with Amazon RDS and Amazon Neptune.
+* KeyManagementService (3.3.105.0)
+	* The ConnectCustomKeyStore API now provides a new error code (SUBNET_NOT_FOUND) for customers to better troubleshoot if their "connect-custom-key-store" operation fails.
+* Core 3.3.104.24
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.674.0 (2020-02-07 19:18 UTC)
 * Imagebuilder (3.3.101.0)
 	* This version of the SDK includes bug fixes and documentation updates.

@@ -32,7 +32,7 @@ namespace Amazon.Personalize
     public partial class AmazonPersonalizeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.103.31");
+            InternalSDKUtils.BuildUserAgentString("3.3.103.32");
 
         private string _userAgent = UserAgentString;
 
