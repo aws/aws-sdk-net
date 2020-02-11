@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Support. 
         /// <para>
-        /// Indicates whether IPv6 support is enabled.
+        /// Indicates whether IPv6 support is disabled.
         /// </para>
         /// </summary>
         public Ipv6SupportValue Ipv6Support

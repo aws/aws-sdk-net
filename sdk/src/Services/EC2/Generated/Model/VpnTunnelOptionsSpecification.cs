@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The tunnel options for a VPN connection.
+    /// The tunnel options for a single VPN tunnel.
     /// </summary>
     public partial class VpnTunnelOptionsSpecification
     {

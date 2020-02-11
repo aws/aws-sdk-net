@@ -10926,7 +10926,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
+        /// The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot
         /// owners, or AWS accounts with create volume permissions. If no options are specified,
         /// Amazon EC2 returns all snapshots for which you have create volume permissions.
         /// </para>
@@ -10959,6 +10959,10 @@ namespace Amazon.EC2
         /// value, then that number of results is returned along with a <code>NextToken</code>
         /// value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
         /// retrieve the remaining results.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the state of fast snapshot restores for a snapshot, use <a>DescribeFastSnapshotRestores</a>.
         /// </para>
         ///  
         /// <para>
@@ -11004,7 +11008,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
+        /// The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot
         /// owners, or AWS accounts with create volume permissions. If no options are specified,
         /// Amazon EC2 returns all snapshots for which you have create volume permissions.
         /// </para>
@@ -11037,6 +11041,10 @@ namespace Amazon.EC2
         /// value, then that number of results is returned along with a <code>NextToken</code>
         /// value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
         /// retrieve the remaining results.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the state of fast snapshot restores for a snapshot, use <a>DescribeFastSnapshotRestores</a>.
         /// </para>
         ///  
         /// <para>
@@ -11083,7 +11091,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
+        /// The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot
         /// owners, or AWS accounts with create volume permissions. If no options are specified,
         /// Amazon EC2 returns all snapshots for which you have create volume permissions.
         /// </para>
@@ -11116,6 +11124,10 @@ namespace Amazon.EC2
         /// value, then that number of results is returned along with a <code>NextToken</code>
         /// value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
         /// retrieve the remaining results.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the state of fast snapshot restores for a snapshot, use <a>DescribeFastSnapshotRestores</a>.
         /// </para>
         ///  
         /// <para>
@@ -11165,7 +11177,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
+        /// The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot
         /// owners, or AWS accounts with create volume permissions. If no options are specified,
         /// Amazon EC2 returns all snapshots for which you have create volume permissions.
         /// </para>
@@ -11198,6 +11210,10 @@ namespace Amazon.EC2
         /// value, then that number of results is returned along with a <code>NextToken</code>
         /// value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
         /// retrieve the remaining results.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the state of fast snapshot restores for a snapshot, use <a>DescribeFastSnapshotRestores</a>.
         /// </para>
         ///  
         /// <para>
@@ -13838,6 +13854,11 @@ namespace Amazon.EC2
         /// state. To get the current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>.
         /// To disable fast snapshot restores, use <a>DisableFastSnapshotRestores</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon
+        /// EBS Fast Snapshot Restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableFastSnapshotRestores service method.</param>
         /// 
@@ -13856,6 +13877,11 @@ namespace Amazon.EC2
         /// You get the full benefit of fast snapshot restores after they enter the <code>enabled</code>
         /// state. To get the current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>.
         /// To disable fast snapshot restores, use <a>DisableFastSnapshotRestores</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon
+        /// EBS Fast Snapshot Restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableFastSnapshotRestores service method.</param>
@@ -17516,7 +17542,7 @@ namespace Amazon.EC2
         /// Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and
         /// SUSE Linux Enterprise Server (SLES), use the EC2 billing product code associated with
         /// an AMI to verify the subscription status for package updates. To create a new AMI
-        /// for operating systems that require a billing product code, instead of instead of registering
+        /// for operating systems that require a billing product code, instead of registering
         /// the AMI, do the following to preserve the billing product code association:
         /// </para>
         ///  <ol> <li> 
@@ -17537,7 +17563,9 @@ namespace Amazon.EC2
         /// from an AMI with a billing product code, make sure that the Reserved Instance has
         /// the matching billing product code. If you purchase a Reserved Instance without the
         /// matching billing product code, the Reserved Instance will not be applied to the On-Demand
-        /// Instance. 
+        /// Instance. For information about how to obtain the platform details and billing information
+        /// of an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
+        /// Billing Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -17582,7 +17610,7 @@ namespace Amazon.EC2
         /// Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and
         /// SUSE Linux Enterprise Server (SLES), use the EC2 billing product code associated with
         /// an AMI to verify the subscription status for package updates. To create a new AMI
-        /// for operating systems that require a billing product code, instead of instead of registering
+        /// for operating systems that require a billing product code, instead of registering
         /// the AMI, do the following to preserve the billing product code association:
         /// </para>
         ///  <ol> <li> 
@@ -17603,7 +17631,9 @@ namespace Amazon.EC2
         /// from an AMI with a billing product code, make sure that the Reserved Instance has
         /// the matching billing product code. If you purchase a Reserved Instance without the
         /// matching billing product code, the Reserved Instance will not be applied to the On-Demand
-        /// Instance. 
+        /// Instance. For information about how to obtain the platform details and billing information
+        /// of an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
+        /// Billing Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -18311,8 +18341,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can specify tags for the Spot Instances. You cannot tag other resource types in
-        /// a Spot Fleet request because only the <code>instance</code> resource type is supported.
+        /// You can specify tags for the Spot Fleet and Spot Instances. You cannot tag other resource
+        /// types in a Spot Fleet request because only the <code>spot-fleet-request</code> and
+        /// <code>instance</code> resource types are supported.
         /// </para>
         ///  
         /// <para>
@@ -18357,8 +18388,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can specify tags for the Spot Instances. You cannot tag other resource types in
-        /// a Spot Fleet request because only the <code>instance</code> resource type is supported.
+        /// You can specify tags for the Spot Fleet and Spot Instances. You cannot tag other resource
+        /// types in a Spot Fleet request because only the <code>spot-fleet-request</code> and
+        /// <code>instance</code> resource types are supported.
         /// </para>
         ///  
         /// <para>
@@ -19413,9 +19445,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can't start, stop, or hibernate Spot Instances, and you can't stop or hibernate
-        /// instance store-backed instances. For information about using hibernation for Spot
-        /// Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
+        /// You can't hibernate Spot Instances, and you can't stop or hibernate instance store-backed
+        /// instances. For information about using hibernation for Spot Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
         /// Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
@@ -19475,9 +19506,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can't start, stop, or hibernate Spot Instances, and you can't stop or hibernate
-        /// instance store-backed instances. For information about using hibernation for Spot
-        /// Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
+        /// You can't hibernate Spot Instances, and you can't stop or hibernate instance store-backed
+        /// instances. For information about using hibernation for Spot Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
         /// Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  

@@ -38,7 +38,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource. Currently, the only resource type that is supported is <code>instance</code>.
+        /// The type of resource. Currently, the only resource types that are supported are <code>spot-fleet-request</code>
+        /// and <code>instance</code>.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

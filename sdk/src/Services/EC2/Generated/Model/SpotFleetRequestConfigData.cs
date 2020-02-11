@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         private bool? _replaceUnhealthyInstances;
         private string _spotMaxTotalPrice;
         private string _spotPrice;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private int? _targetCapacity;
         private bool? _terminateInstancesWithExpiration;
         private FleetType _type;
@@ -426,6 +427,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetSpotPrice()
         {
             return this._spotPrice != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The key-value pair for tagging the Spot Fleet request on creation. The value for <code>ResourceType</code>
+        /// must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To
+        /// tag instances at launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+        /// template</a>. For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+        /// Your Resources</a>.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
         /// <summary>

@@ -316,7 +316,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PlatformDetails. 
         /// <para>
         /// The platform details associated with the billing code of the AMI. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
         /// Billing Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -502,10 +502,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UsageOperation. 
         /// <para>
-        /// The operation of the Amazon EC2 instance and the billing code associated with the
-        /// AMI. <code>usageOperation</code> corresponds to the <a href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-        /// column on your AWS Cost and Usage Report. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
-        /// Billing Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// The operation of the Amazon EC2 instance and the billing code that is associated with
+        /// the AMI. <code>usageOperation</code> corresponds to the <a href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
+        /// column on your AWS Cost and Usage Report and in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
+        /// Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
+        /// Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute Cloud
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public string UsageOperation

@@ -138,7 +138,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The ID of the subnet in which to launch the instances.
+        /// The IDs of the subnets in which to launch the instances. Separate multiple subnet
+        /// IDs using commas (for example, <code>subnet-1234abcdeexample1, subnet-0987cdef6example2</code>).
+        /// A request of type <code>instant</code> can have only one subnet ID.
         /// </para>
         /// </summary>
         public string SubnetId

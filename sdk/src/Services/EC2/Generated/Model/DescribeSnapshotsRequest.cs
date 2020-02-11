@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
+    /// The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot
     /// owners, or AWS accounts with create volume permissions. If no options are specified,
     /// Amazon EC2 returns all snapshots for which you have create volume permissions.
     /// </para>
@@ -93,6 +93,10 @@ namespace Amazon.EC2.Model
     /// value, then that number of results is returned along with a <code>NextToken</code>
     /// value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
     /// retrieve the remaining results.
+    /// </para>
+    ///  
+    /// <para>
+    /// To get the state of fast snapshot restores for a snapshot, use <a>DescribeFastSnapshotRestores</a>.
     /// </para>
     ///  
     /// <para>

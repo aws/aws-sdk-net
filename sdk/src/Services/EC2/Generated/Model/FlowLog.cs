@@ -245,9 +245,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// For network interfaces attached to <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-        /// instances</a>, the aggregation interval is always 60 seconds (1 minute), regardless
+        /// When a network interface is attached to a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+        /// instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless
         /// of the specified value.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>60</code> | <code>600</code> 
         /// </para>
         /// </summary>
         public int MaxAggregationInterval

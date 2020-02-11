@@ -469,6 +469,34 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "SpotPrice", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.SpotPrice));
                     }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetTagSpecifications())
+                    {
+                        int publicRequestSpotFleetRequestConfiglistValueIndex = 1;
+                        foreach(var publicRequestSpotFleetRequestConfiglistValue in publicRequest.SpotFleetRequestConfig.TagSpecifications)
+                        {
+                            if(publicRequestSpotFleetRequestConfiglistValue.IsSetResourceType())
+                            {
+                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "TagSpecification" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.ResourceType));
+                            }
+                            if(publicRequestSpotFleetRequestConfiglistValue.IsSetTags())
+                            {
+                                int publicRequestSpotFleetRequestConfiglistValuelistValueIndex = 1;
+                                foreach(var publicRequestSpotFleetRequestConfiglistValuelistValue in publicRequestSpotFleetRequestConfiglistValue.Tags)
+                                {
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetKey())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "TagSpecification" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Tag" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.Key));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetValue())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "TagSpecification" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Tag" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.Value));
+                                    }
+                                    publicRequestSpotFleetRequestConfiglistValuelistValueIndex++;
+                                }
+                            }
+                            publicRequestSpotFleetRequestConfiglistValueIndex++;
+                        }
+                    }
                     if(publicRequest.SpotFleetRequestConfig.IsSetTargetCapacity())
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "TargetCapacity", StringUtils.FromInt(publicRequest.SpotFleetRequestConfig.TargetCapacity));

@@ -111,6 +111,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>fast-restored</code> - Indicates whether the volume was created from a snapshot
+        /// that is enabled for fast snapshot restore (<code>true</code> | <code>false</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>size</code> - The size of the volume, in GiB.
         /// </para>
         ///  </li> <li> 

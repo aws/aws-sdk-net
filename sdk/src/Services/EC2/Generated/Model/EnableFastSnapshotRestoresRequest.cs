@@ -38,6 +38,11 @@ namespace Amazon.EC2.Model
     /// state. To get the current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>.
     /// To disable fast snapshot restores, use <a>DisableFastSnapshotRestores</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon
+    /// EBS Fast Snapshot Restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class EnableFastSnapshotRestoresRequest : AmazonEC2Request
     {

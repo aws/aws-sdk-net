@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         /// Instantiates CreateVolumeRequest with the parameterized properties
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone in which to create the volume.</param>
-        /// <param name="size">The size of the volume, in GiBs. Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code>, 500-16,384 for <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for <code>standard</code>. If you specify a snapshot, the volume size must be equal to or larger than the snapshot size. Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size. <note> At least one of Size or SnapshotId is required. </note></param>
+        /// <param name="size">The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code>, 500-16,384 for <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for <code>standard</code>. If you specify a snapshot, the volume size must be equal to or larger than the snapshot size. Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</param>
         public CreateVolumeRequest(string availabilityZone, int size)
         {
             _availabilityZone = availabilityZone;
@@ -89,7 +89,7 @@ namespace Amazon.EC2.Model
         /// Instantiates CreateVolumeRequest with the parameterized properties
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone in which to create the volume.</param>
-        /// <param name="snapshotId">The snapshot from which to create the volume. <note> At least one of Size or SnapshotId are required. </note></param>
+        /// <param name="snapshotId">The snapshot from which to create the volume. You must specify either a snapshot ID or a volume size.</param>
         public CreateVolumeRequest(string availabilityZone, string snapshotId)
         {
             _availabilityZone = availabilityZone;
@@ -237,7 +237,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        /// The size of the volume, in GiBs.
+        /// The size of the volume, in GiBs. You must specify either a snapshot ID or a volume
+        /// size.
         /// </para>
         ///  
         /// <para>
@@ -251,11 +252,6 @@ namespace Amazon.EC2.Model
         /// Default: If you're creating the volume from a snapshot and don't specify a volume
         /// size, the default is the snapshot size.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// At least one of Size or SnapshotId is required.
-        /// </para>
-        ///  </note>
         /// </summary>
         public int Size
         {
@@ -272,13 +268,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
-        /// The snapshot from which to create the volume.
+        /// The snapshot from which to create the volume. You must specify either a snapshot ID
+        /// or a volume size.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// At least one of Size or SnapshotId are required.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string SnapshotId
         {

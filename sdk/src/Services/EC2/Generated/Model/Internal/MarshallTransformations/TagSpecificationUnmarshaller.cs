@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SpotFleetRequestConfig Object
+    /// Response Unmarshaller for TagSpecification Object
     /// </summary>  
-    public class SpotFleetRequestConfigUnmarshaller : IUnmarshaller<SpotFleetRequestConfig, XmlUnmarshallerContext>, IUnmarshaller<SpotFleetRequestConfig, JsonUnmarshallerContext>
+    public class TagSpecificationUnmarshaller : IUnmarshaller<TagSpecification, XmlUnmarshallerContext>, IUnmarshaller<TagSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SpotFleetRequestConfig Unmarshall(XmlUnmarshallerContext context)
+        public TagSpecification Unmarshall(XmlUnmarshallerContext context)
         {
-            SpotFleetRequestConfig unmarshalledObject = new SpotFleetRequestConfig();
+            TagSpecification unmarshalledObject = new TagSpecification();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,37 +54,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("activityStatus", targetDepth))
+                    if (context.TestExpression("resourceType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ActivityStatus = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("spotFleetRequestConfig", targetDepth))
-                    {
-                        var unmarshaller = SpotFleetRequestConfigDataUnmarshaller.Instance;
-                        unmarshalledObject.ConfigData = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("createTime", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("spotFleetRequestId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SpotFleetRequestId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("spotFleetRequestState", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SpotFleetRequestState = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("tagSet/item", targetDepth))
+                    if (context.TestExpression("tag/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
@@ -106,18 +82,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SpotFleetRequestConfig Unmarshall(JsonUnmarshallerContext context)
+        public TagSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static SpotFleetRequestConfigUnmarshaller _instance = new SpotFleetRequestConfigUnmarshaller();        
+        private static TagSpecificationUnmarshaller _instance = new TagSpecificationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SpotFleetRequestConfigUnmarshaller Instance
+        public static TagSpecificationUnmarshaller Instance
         {
             get
             {

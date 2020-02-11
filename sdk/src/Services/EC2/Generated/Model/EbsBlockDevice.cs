@@ -81,6 +81,10 @@ namespace Amazon.EC2.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
         /// Instance Types</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter is not returned by .
+        /// </para>
         /// </summary>
         public bool Encrypted
         {

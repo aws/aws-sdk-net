@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
     /// Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and
     /// SUSE Linux Enterprise Server (SLES), use the EC2 billing product code associated with
     /// an AMI to verify the subscription status for package updates. To create a new AMI
-    /// for operating systems that require a billing product code, instead of instead of registering
+    /// for operating systems that require a billing product code, instead of registering
     /// the AMI, do the following to preserve the billing product code association:
     /// </para>
     ///  <ol> <li> 
@@ -77,7 +77,9 @@ namespace Amazon.EC2.Model
     /// from an AMI with a billing product code, make sure that the Reserved Instance has
     /// the matching billing product code. If you purchase a Reserved Instance without the
     /// matching billing product code, the Reserved Instance will not be applied to the On-Demand
-    /// Instance. 
+    /// Instance. For information about how to obtain the platform details and billing information
+    /// of an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
+    /// Billing Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>

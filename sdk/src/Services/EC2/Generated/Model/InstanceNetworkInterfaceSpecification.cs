@@ -225,6 +225,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The ID of the network interface.
         /// </para>
+        ///  
+        /// <para>
+        /// If you are creating a Spot Fleet, omit this parameter because you can’t specify a
+        /// network interface ID in a launch specification.
+        /// </para>
         /// </summary>
         public string NetworkInterfaceId
         {

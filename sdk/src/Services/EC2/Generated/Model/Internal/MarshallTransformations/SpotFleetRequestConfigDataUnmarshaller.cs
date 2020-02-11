@@ -158,6 +158,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SpotPrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("tagSpecification/item", targetDepth))
+                    {
+                        var unmarshaller = TagSpecificationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TagSpecifications.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("targetCapacity", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
