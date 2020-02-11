@@ -53,14 +53,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AllowedOAuthFlows. 
         /// <para>
+        /// The allowed OAuth flows.
+        /// </para>
+        ///  
+        /// <para>
         /// Set to <code>code</code> to initiate a code grant flow, which provides an authorization
         /// code as the response. This code can be exchanged for access tokens with the token
         /// endpoint.
         /// </para>
         ///  
         /// <para>
-        /// Set to <code>token</code> to specify that the client should get the access token (and,
-        /// optionally, ID token, based on scopes) directly.
+        /// Set to <code>implicit</code> to specify that the client should get the access token
+        /// (and, optionally, ID token, based on scopes) directly.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set to <code>client_credentials</code> to specify that the client should get the access
+        /// token (and, optionally, ID token, based on scopes) from the token endpoint using a
+        /// combination of client and client_secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
@@ -79,8 +89,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AllowedOAuthFlowsUserPoolClient. 
         /// <para>
-        /// Set to <code>True</code> if the client is allowed to follow the OAuth protocol when
-        /// interacting with Cognito user pools.
+        /// Set to true if the client is allowed to follow the OAuth protocol when interacting
+        /// with Cognito user pools.
         /// </para>
         /// </summary>
         public bool AllowedOAuthFlowsUserPoolClient
@@ -98,9 +108,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AllowedOAuthScopes. 
         /// <para>
-        /// A list of allowed <code>OAuth</code> scopes. Currently supported values are <code>"phone"</code>,
-        /// <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>. In addition
-        /// to these values, custom scopes created in Resource Servers are also supported.
+        /// The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
+        /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
+        /// provided by AWS are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
+        /// in Resource Servers are also supported.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -403,7 +414,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// After January 1st 2020, the value of <code>PreventUserExistenceErrors</code> will
+        /// After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will
         /// default to <code>ENABLED</code> for newly created user pool clients if no value is
         /// provided.
         /// </para>

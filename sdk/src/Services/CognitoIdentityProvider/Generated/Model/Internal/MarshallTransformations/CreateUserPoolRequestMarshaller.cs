@@ -230,6 +230,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetUsernameConfiguration())
+                {
+                    context.Writer.WritePropertyName("UsernameConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UsernameConfigurationTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UsernameConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetUserPoolAddOns())
                 {
                     context.Writer.WritePropertyName("UserPoolAddOns");

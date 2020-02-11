@@ -50,6 +50,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private SmsConfigurationType _smsConfiguration;
         private string _smsVerificationMessage;
         private List<string> _usernameAttributes = new List<string>();
+        private UsernameConfigurationType _usernameConfiguration;
         private UserPoolAddOnsType _userPoolAddOns;
         private Dictionary<string, string> _userPoolTags = new Dictionary<string, string>();
         private VerificationMessageTemplateType _verificationMessageTemplate;
@@ -396,6 +397,27 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetUsernameAttributes()
         {
             return this._usernameAttributes != null && this._usernameAttributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsernameConfiguration. 
+        /// <para>
+        /// You can choose to set case sensitivity on the username input for the selected sign-in
+        /// option. For example, when this is set to <code>False</code>, users will be able to
+        /// sign in using either "username" or "Username". This configuration is immutable once
+        /// it has been set. For more information, see .
+        /// </para>
+        /// </summary>
+        public UsernameConfigurationType UsernameConfiguration
+        {
+            get { return this._usernameConfiguration; }
+            set { this._usernameConfiguration = value; }
+        }
+
+        // Check to see if UsernameConfiguration property is set
+        internal bool IsSetUsernameConfiguration()
+        {
+            return this._usernameConfiguration != null;
         }
 
         /// <summary>

@@ -226,6 +226,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.UsernameAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UsernameConfiguration", targetDepth))
+                {
+                    var unmarshaller = UsernameConfigurationTypeUnmarshaller.Instance;
+                    unmarshalledObject.UsernameConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserPoolAddOns", targetDepth))
                 {
                     var unmarshaller = UserPoolAddOnsTypeUnmarshaller.Instance;
