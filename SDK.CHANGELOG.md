@@ -1,3 +1,11 @@
+### 3.3.676.0 (2020-02-11 19:15 UTC)
+* CloudFormation (3.3.104.0)
+	* This release of AWS CloudFormation StackSets allows you to centrally manage deployments to all the accounts in your organization or specific organizational units (OUs) in AWS Organizations. You will also be able to enable automatic deployments to any new accounts added to your organization or OUs. The permissions needed to deploy across accounts will automatically be taken care of by the StackSets service.
+* CognitoIdentityProvider (3.3.108.0)
+	* Features:This release adds a new setting for a user pool to allow if customer wants their user signup/signin with case insensitive username. The current default setting is case sensitive, and for our next release we will change it to case insensitive.
+* EC2 (3.3.158.0)
+	* Amazon EC2 Now Supports Tagging Spot Fleet.
+
 ### 3.3.675.0 (2020-02-10 19:20 UTC)
 * DocDB (3.3.102.50)
 	* Added clarifying information that Amazon DocumentDB shares operational technology with Amazon RDS and Amazon Neptune.
