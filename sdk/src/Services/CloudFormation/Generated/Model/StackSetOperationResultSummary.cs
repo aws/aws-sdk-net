@@ -35,6 +35,7 @@ namespace Amazon.CloudFormation.Model
     {
         private string _account;
         private AccountGateResult _accountGateResult;
+        private string _organizationalUnitId;
         private string _region;
         private StackSetOperationResultStatus _status;
         private string _statusReason;
@@ -42,7 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// The name of the AWS account for this operation result.
+        /// [Self-managed permissions] The name of the AWS account for this operation result.
         /// </para>
         /// </summary>
         public string Account
@@ -74,6 +75,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAccountGateResult()
         {
             return this._accountGateResult != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnitId. 
+        /// <para>
+        /// [<code>Service-managed</code> permissions] The organization root ID or organizational
+        /// unit (OU) ID for this operation result.
+        /// </para>
+        /// </summary>
+        public string OrganizationalUnitId
+        {
+            get { return this._organizationalUnitId; }
+            set { this._organizationalUnitId = value; }
+        }
+
+        // Check to see if OrganizationalUnitId property is set
+        internal bool IsSetOrganizationalUnitId()
+        {
+            return this._organizationalUnitId != null;
         }
 
         /// <summary>

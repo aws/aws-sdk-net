@@ -47,8 +47,8 @@ namespace Amazon.CloudFormation.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information on how to develop types and ready them for registeration, see
-    /// <a href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
-    /// Providers</a> in the <i>CloudFormation CLI User Guide</i>.
+    /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
+    /// Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -142,6 +142,15 @@ namespace Amazon.CloudFormation.Model
         /// see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
         /// in the <i>CloudFormation CLI User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// As part of registering a resource provider type, CloudFormation must be able to access
+        /// the S3 bucket which contains the schema handler package for that resource provider.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
+        /// Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User
+        /// Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4096)]
         public string SchemaHandlerPackage

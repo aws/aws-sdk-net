@@ -175,7 +175,10 @@ namespace Amazon.CloudFormation.Model
         ///  <code>PUBLIC</code>: The type is publically visible and usable within any Amazon
         /// account.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// The default is <code>PRIVATE</code>.
+        /// </para>
         /// </summary>
         public Visibility Visibility
         {

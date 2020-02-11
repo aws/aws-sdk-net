@@ -44,12 +44,15 @@ namespace Amazon.CloudFormation.Model
     {
         private List<string> _accounts = new List<string>();
         private string _administrationRoleARN;
+        private AutoDeployment _autoDeployment;
         private List<string> _capabilities = new List<string>();
+        private DeploymentTargets _deploymentTargets;
         private string _description;
         private string _executionRoleName;
         private string _operationId;
         private StackSetOperationPreferences _operationPreferences;
         private List<Parameter> _parameters = new List<Parameter>();
+        private PermissionModels _permissionModel;
         private List<string> _regions = new List<string>();
         private string _stackSetName;
         private List<Tag> _tags = new List<Tag>();
@@ -60,8 +63,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// The accounts in which to update associated stack instances. If you specify accounts,
-        /// you must also specify the regions in which to update stack set instances.
+        /// [Self-managed permissions] The accounts in which to update associated stack instances.
+        /// If you specify accounts, you must also specify the regions in which to update stack
+        /// set instances.
         /// </para>
         ///  
         /// <para>
@@ -121,6 +125,31 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAdministrationRoleARN()
         {
             return this._administrationRoleARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoDeployment. 
+        /// <para>
+        /// [<code>Service-managed</code> permissions] Describes whether StackSets automatically
+        /// deploys to AWS Organizations accounts that are added to a target organization or organizational
+        /// unit (OU).
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code>
+        /// or <code>Regions</code>.
+        /// </para>
+        /// </summary>
+        public AutoDeployment AutoDeployment
+        {
+            get { return this._autoDeployment; }
+            set { this._autoDeployment = value; }
+        }
+
+        // Check to see if AutoDeployment property is set
+        internal bool IsSetAutoDeployment()
+        {
+            return this._autoDeployment != null;
         }
 
         /// <summary>
@@ -237,6 +266,40 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetCapabilities()
         {
             return this._capabilities != null && this._capabilities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentTargets. 
+        /// <para>
+        /// [<code>Service-managed</code> permissions] The AWS Organizations accounts in which
+        /// to update associated stack instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code>
+        /// or <code>Regions</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the stack set update includes changes to the template (that is, if <code>TemplateBody</code>
+        /// or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS CloudFormation
+        /// marks all stack instances with a status of <code>OUTDATED</code> prior to updating
+        /// the stack instances in the specified accounts and Regions. If the stack set update
+        /// does not include changes to the template or parameters, AWS CloudFormation updates
+        /// the stack instances in the specified accounts and Regions, while leaving all other
+        /// stack instances with their existing stack instance status.
+        /// </para>
+        /// </summary>
+        public DeploymentTargets DeploymentTargets
+        {
+            get { return this._deploymentTargets; }
+            set { this._deploymentTargets = value; }
+        }
+
+        // Check to see if DeploymentTargets property is set
+        internal bool IsSetDeploymentTargets()
+        {
+            return this._deploymentTargets != null;
         }
 
         /// <summary>
@@ -360,6 +423,41 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PermissionModel. 
+        /// <para>
+        /// Describes how the IAM roles required for stack set operations are created. You cannot
+        /// modify <code>PermissionModel</code> if there are stack instances associated with your
+        /// stack set.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// With <code>self-managed</code> permissions, you must create the administrator and
+        /// execution roles required to deploy to target accounts. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+        /// Self-Managed Stack Set Permissions</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// With <code>service-managed</code> permissions, StackSets automatically creates the
+        /// IAM roles required to deploy to accounts managed by AWS Organizations. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+        /// Service-Managed Stack Set Permissions</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PermissionModels PermissionModel
+        {
+            get { return this._permissionModel; }
+            set { this._permissionModel = value; }
+        }
+
+        // Check to see if PermissionModel property is set
+        internal bool IsSetPermissionModel()
+        {
+            return this._permissionModel != null;
         }
 
         /// <summary>

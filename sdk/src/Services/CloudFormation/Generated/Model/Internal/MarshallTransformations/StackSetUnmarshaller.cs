@@ -60,6 +60,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.AdministrationRoleARN = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AutoDeployment", targetDepth))
+                    {
+                        var unmarshaller = AutoDeploymentUnmarshaller.Instance;
+                        unmarshalledObject.AutoDeployment = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Capabilities/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -79,11 +85,24 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.ExecutionRoleName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OrganizationalUnitIds/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OrganizationalUnitIds.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("Parameters/member", targetDepth))
                     {
                         var unmarshaller = ParameterUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Parameters.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("PermissionModel", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PermissionModel = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StackSetARN", targetDepth))

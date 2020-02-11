@@ -52,7 +52,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+        /// Conditional: You must specify either <code>TypeName</code> and <code>Type</code>,
+        /// or <code>Arn</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -77,6 +78,11 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Currently the only valid value is <code>RESOURCE</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// Conditional: You must specify either <code>TypeName</code> and <code>Type</code>,
+        /// or <code>Arn</code>.
+        /// </para>
         /// </summary>
         public RegistryType Type
         {
@@ -97,7 +103,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+        /// Conditional: You must specify either <code>TypeName</code> and <code>Type</code>,
+        /// or <code>Arn</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=196)]

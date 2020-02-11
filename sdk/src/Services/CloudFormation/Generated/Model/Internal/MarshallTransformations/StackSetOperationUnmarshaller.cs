@@ -72,6 +72,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreationTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DeploymentTargets", targetDepth))
+                    {
+                        var unmarshaller = DeploymentTargetsUnmarshaller.Instance;
+                        unmarshalledObject.DeploymentTargets = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EndTimestamp", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

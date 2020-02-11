@@ -259,7 +259,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeStackInstanceRequest.StackInstanceAccount</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeStackInstanceRequest.StackInstanceRegion</property>
+    <pattern>^[a-zA-Z0-9-]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeStackResourceDriftsRequest.MaxResults</property>
@@ -518,7 +522,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ListStackInstancesRequest.StackInstanceAccount</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackInstancesRequest.StackInstanceRegion</property>
+    <pattern>^[a-zA-Z0-9-]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ListStackInstancesResponse.NextToken</property>
@@ -962,11 +970,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackInstance.Account</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstance.OrganizationalUnitId</property>
+    <pattern>^(ou-[a-z0-9]{4,32}-[a-z0-9]{8,32}|r-[a-z0-9]{4,32})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstance.Region</property>
+    <pattern>^[a-zA-Z0-9-]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackInstanceSummary.Account</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstanceSummary.OrganizationalUnitId</property>
+    <pattern>^(ou-[a-z0-9]{4,32}-[a-z0-9]{8,32}|r-[a-z0-9]{4,32})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstanceSummary.Region</property>
+    <pattern>^[a-zA-Z0-9-]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackResource.Description</property>
@@ -1075,7 +1099,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackSetOperationResultSummary.Account</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetOperationResultSummary.OrganizationalUnitId</property>
+    <pattern>^(ou-[a-z0-9]{4,32}-[a-z0-9]{8,32}|r-[a-z0-9]{4,32})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetOperationResultSummary.Region</property>
+    <pattern>^[a-zA-Z0-9-]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackSetOperationSummary.OperationId</property>

@@ -845,6 +845,56 @@ namespace Amazon.CloudFormation
 
 
     /// <summary>
+    /// Constants used for properties of type PermissionModels.
+    /// </summary>
+    public class PermissionModels : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SELF_MANAGED for PermissionModels
+        /// </summary>
+        public static readonly PermissionModels SELF_MANAGED = new PermissionModels("SELF_MANAGED");
+        /// <summary>
+        /// Constant SERVICE_MANAGED for PermissionModels
+        /// </summary>
+        public static readonly PermissionModels SERVICE_MANAGED = new PermissionModels("SERVICE_MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PermissionModels(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PermissionModels FindValue(string value)
+        {
+            return FindValue<PermissionModels>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PermissionModels(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProvisioningType.
     /// </summary>
     public class ProvisioningType : ConstantClass
@@ -1798,6 +1848,10 @@ namespace Amazon.CloudFormation
         /// Constant FAILED for StackSetOperationStatus
         /// </summary>
         public static readonly StackSetOperationStatus FAILED = new StackSetOperationStatus("FAILED");
+        /// <summary>
+        /// Constant QUEUED for StackSetOperationStatus
+        /// </summary>
+        public static readonly StackSetOperationStatus QUEUED = new StackSetOperationStatus("QUEUED");
         /// <summary>
         /// Constant RUNNING for StackSetOperationStatus
         /// </summary>

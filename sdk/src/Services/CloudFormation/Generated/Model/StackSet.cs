@@ -36,10 +36,13 @@ namespace Amazon.CloudFormation.Model
     public partial class StackSet
     {
         private string _administrationRoleARN;
+        private AutoDeployment _autoDeployment;
         private List<string> _capabilities = new List<string>();
         private string _description;
         private string _executionRoleName;
+        private List<string> _organizationalUnitIds = new List<string>();
         private List<Parameter> _parameters = new List<Parameter>();
+        private PermissionModels _permissionModel;
         private string _stackSetARN;
         private StackSetDriftDetectionDetails _stackSetDriftDetectionDetails;
         private string _stackSetId;
@@ -73,6 +76,26 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAdministrationRoleARN()
         {
             return this._administrationRoleARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoDeployment. 
+        /// <para>
+        /// [<code>Service-managed</code> permissions] Describes whether StackSets automatically
+        /// deploys to AWS Organizations accounts that are added to a target organization or organizational
+        /// unit (OU).
+        /// </para>
+        /// </summary>
+        public AutoDeployment AutoDeployment
+        {
+            get { return this._autoDeployment; }
+            set { this._autoDeployment = value; }
+        }
+
+        // Check to see if AutoDeployment property is set
+        internal bool IsSetAutoDeployment()
+        {
+            return this._autoDeployment != null;
         }
 
         /// <summary>
@@ -141,6 +164,25 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OrganizationalUnitIds. 
+        /// <para>
+        /// [<code>Service-managed</code> permissions] The organization root ID or organizational
+        /// unit (OUs) IDs to which stacks in your stack set have been deployed.
+        /// </para>
+        /// </summary>
+        public List<string> OrganizationalUnitIds
+        {
+            get { return this._organizationalUnitIds; }
+            set { this._organizationalUnitIds = value; }
+        }
+
+        // Check to see if OrganizationalUnitIds property is set
+        internal bool IsSetOrganizationalUnitIds()
+        {
+            return this._organizationalUnitIds != null && this._organizationalUnitIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A list of input parameters for a stack set.
@@ -156,6 +198,39 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PermissionModel. 
+        /// <para>
+        /// Describes how the IAM roles required for stack set operations are created.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// With <code>self-managed</code> permissions, you must create the administrator and
+        /// execution roles required to deploy to target accounts. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+        /// Self-Managed Stack Set Permissions</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// With <code>service-managed</code> permissions, StackSets automatically creates the
+        /// IAM roles required to deploy to accounts managed by AWS Organizations. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+        /// Service-Managed Stack Set Permissions</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PermissionModels PermissionModel
+        {
+            get { return this._permissionModel; }
+            set { this._permissionModel = value; }
+        }
+
+        // Check to see if PermissionModel property is set
+        internal bool IsSetPermissionModel()
+        {
+            return this._permissionModel != null;
         }
 
         /// <summary>

@@ -40,6 +40,7 @@ namespace Amazon.CloudFormation.Model
         private string _account;
         private StackDriftStatus _driftStatus;
         private DateTime? _lastDriftCheckTimestamp;
+        private string _organizationalUnitId;
         private List<Parameter> _parameterOverrides = new List<Parameter>();
         private string _region;
         private string _stackId;
@@ -50,7 +51,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// The name of the AWS account that the stack instance is associated with.
+        /// [Self-managed permissions] The name of the AWS account that the stack instance is
+        /// associated with.
         /// </para>
         /// </summary>
         public string Account
@@ -123,6 +125,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetLastDriftCheckTimestamp()
         {
             return this._lastDriftCheckTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnitId. 
+        /// <para>
+        /// [<code>Service-managed</code> permissions] The organization root ID or organizational
+        /// unit (OU) ID that the stack instance is associated with.
+        /// </para>
+        /// </summary>
+        public string OrganizationalUnitId
+        {
+            get { return this._organizationalUnitId; }
+            set { this._organizationalUnitId = value; }
+        }
+
+        // Check to see if OrganizationalUnitId property is set
+        internal bool IsSetOrganizationalUnitId()
+        {
+            return this._organizationalUnitId != null;
         }
 
         /// <summary>

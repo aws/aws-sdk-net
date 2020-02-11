@@ -46,7 +46,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+        /// Conditional: You must specify either <code>TypeName</code> and <code>Type</code>,
+        /// or <code>Arn</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -66,6 +67,11 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The kind of type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: You must specify either <code>TypeName</code> and <code>Type</code>,
+        /// or <code>Arn</code>.
         /// </para>
         /// </summary>
         public RegistryType Type
@@ -87,7 +93,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+        /// Conditional: You must specify either <code>TypeName</code> and <code>Type</code>,
+        /// or <code>Arn</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=196)]

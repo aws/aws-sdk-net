@@ -67,6 +67,27 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetDeploymentTargets())
+                {
+                    if(publicRequest.DeploymentTargets.IsSetAccounts())
+                    {
+                        int publicRequestDeploymentTargetslistValueIndex = 1;
+                        foreach(var publicRequestDeploymentTargetslistValue in publicRequest.DeploymentTargets.Accounts)
+                        {
+                            request.Parameters.Add("DeploymentTargets" + "." + "Accounts" + "." + "member" + "." + publicRequestDeploymentTargetslistValueIndex, StringUtils.FromString(publicRequestDeploymentTargetslistValue));
+                            publicRequestDeploymentTargetslistValueIndex++;
+                        }
+                    }
+                    if(publicRequest.DeploymentTargets.IsSetOrganizationalUnitIds())
+                    {
+                        int publicRequestDeploymentTargetslistValueIndex = 1;
+                        foreach(var publicRequestDeploymentTargetslistValue in publicRequest.DeploymentTargets.OrganizationalUnitIds)
+                        {
+                            request.Parameters.Add("DeploymentTargets" + "." + "OrganizationalUnitIds" + "." + "member" + "." + publicRequestDeploymentTargetslistValueIndex, StringUtils.FromString(publicRequestDeploymentTargetslistValue));
+                            publicRequestDeploymentTargetslistValueIndex++;
+                        }
+                    }
+                }
                 if(publicRequest.IsSetOperationId())
                 {
                     request.Parameters.Add("OperationId", StringUtils.FromString(publicRequest.OperationId));

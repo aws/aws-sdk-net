@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StackSetOperationResultSummary Object
+    /// Response Unmarshaller for DeploymentTargets Object
     /// </summary>  
-    public class StackSetOperationResultSummaryUnmarshaller : IUnmarshaller<StackSetOperationResultSummary, XmlUnmarshallerContext>, IUnmarshaller<StackSetOperationResultSummary, JsonUnmarshallerContext>
+    public class DeploymentTargetsUnmarshaller : IUnmarshaller<DeploymentTargets, XmlUnmarshallerContext>, IUnmarshaller<DeploymentTargets, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StackSetOperationResultSummary Unmarshall(XmlUnmarshallerContext context)
+        public DeploymentTargets Unmarshall(XmlUnmarshallerContext context)
         {
-            StackSetOperationResultSummary unmarshalledObject = new StackSetOperationResultSummary();
+            DeploymentTargets unmarshalledObject = new DeploymentTargets();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,40 +54,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Account", targetDepth))
+                    if (context.TestExpression("Accounts/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Account = unmarshaller.Unmarshall(context);
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Accounts.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("AccountGateResult", targetDepth))
-                    {
-                        var unmarshaller = AccountGateResultUnmarshaller.Instance;
-                        unmarshalledObject.AccountGateResult = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("OrganizationalUnitId", targetDepth))
+                    if (context.TestExpression("OrganizationalUnitIds/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OrganizationalUnitId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Region", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Region = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StatusReason", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OrganizationalUnitIds.Add(item);
                         continue;
                     }
                 }
@@ -105,18 +83,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StackSetOperationResultSummary Unmarshall(JsonUnmarshallerContext context)
+        public DeploymentTargets Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static StackSetOperationResultSummaryUnmarshaller _instance = new StackSetOperationResultSummaryUnmarshaller();        
+        private static DeploymentTargetsUnmarshaller _instance = new DeploymentTargetsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StackSetOperationResultSummaryUnmarshaller Instance
+        public static DeploymentTargetsUnmarshaller Instance
         {
             get
             {

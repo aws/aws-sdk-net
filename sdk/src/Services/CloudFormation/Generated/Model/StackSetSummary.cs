@@ -32,12 +32,34 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class StackSetSummary
     {
+        private AutoDeployment _autoDeployment;
         private string _description;
         private StackDriftStatus _driftStatus;
         private DateTime? _lastDriftCheckTimestamp;
+        private PermissionModels _permissionModel;
         private string _stackSetId;
         private string _stackSetName;
         private StackSetStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property AutoDeployment. 
+        /// <para>
+        /// [<code>Service-managed</code> permissions] Describes whether StackSets automatically
+        /// deploys to AWS Organizations accounts that are added to a target organizational unit
+        /// (OU).
+        /// </para>
+        /// </summary>
+        public AutoDeployment AutoDeployment
+        {
+            get { return this._autoDeployment; }
+            set { this._autoDeployment = value; }
+        }
+
+        // Check to see if AutoDeployment property is set
+        internal bool IsSetAutoDeployment()
+        {
+            return this._autoDeployment != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -117,6 +139,39 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetLastDriftCheckTimestamp()
         {
             return this._lastDriftCheckTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PermissionModel. 
+        /// <para>
+        /// Describes how the IAM roles required for stack set operations are created.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// With <code>self-managed</code> permissions, you must create the administrator and
+        /// execution roles required to deploy to target accounts. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+        /// Self-Managed Stack Set Permissions</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// With <code>service-managed</code> permissions, StackSets automatically creates the
+        /// IAM roles required to deploy to accounts managed by AWS Organizations. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+        /// Service-Managed Stack Set Permissions</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PermissionModels PermissionModel
+        {
+            get { return this._permissionModel; }
+            set { this._permissionModel = value; }
+        }
+
+        // Check to see if PermissionModel property is set
+        internal bool IsSetPermissionModel()
+        {
+            return this._permissionModel != null;
         }
 
         /// <summary>

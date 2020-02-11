@@ -62,6 +62,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AdministrationRoleARN", StringUtils.FromString(publicRequest.AdministrationRoleARN));
                 }
+                if(publicRequest.IsSetAutoDeployment())
+                {
+                    if(publicRequest.AutoDeployment.IsSetEnabled())
+                    {
+                        request.Parameters.Add("AutoDeployment" + "." + "Enabled", StringUtils.FromBool(publicRequest.AutoDeployment.Enabled));
+                    }
+                    if(publicRequest.AutoDeployment.IsSetRetainStacksOnAccountRemoval())
+                    {
+                        request.Parameters.Add("AutoDeployment" + "." + "RetainStacksOnAccountRemoval", StringUtils.FromBool(publicRequest.AutoDeployment.RetainStacksOnAccountRemoval));
+                    }
+                }
                 if(publicRequest.IsSetCapabilities())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -110,6 +121,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         }
                         publicRequestlistValueIndex++;
                     }
+                }
+                if(publicRequest.IsSetPermissionModel())
+                {
+                    request.Parameters.Add("PermissionModel", StringUtils.FromString(publicRequest.PermissionModel));
                 }
                 if(publicRequest.IsSetStackSetName())
                 {

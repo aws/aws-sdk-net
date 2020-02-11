@@ -71,6 +71,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AdministrationRoleARN", StringUtils.FromString(publicRequest.AdministrationRoleARN));
                 }
+                if(publicRequest.IsSetAutoDeployment())
+                {
+                    if(publicRequest.AutoDeployment.IsSetEnabled())
+                    {
+                        request.Parameters.Add("AutoDeployment" + "." + "Enabled", StringUtils.FromBool(publicRequest.AutoDeployment.Enabled));
+                    }
+                    if(publicRequest.AutoDeployment.IsSetRetainStacksOnAccountRemoval())
+                    {
+                        request.Parameters.Add("AutoDeployment" + "." + "RetainStacksOnAccountRemoval", StringUtils.FromBool(publicRequest.AutoDeployment.RetainStacksOnAccountRemoval));
+                    }
+                }
                 if(publicRequest.IsSetCapabilities())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,6 +89,27 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Capabilities" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetDeploymentTargets())
+                {
+                    if(publicRequest.DeploymentTargets.IsSetAccounts())
+                    {
+                        int publicRequestDeploymentTargetslistValueIndex = 1;
+                        foreach(var publicRequestDeploymentTargetslistValue in publicRequest.DeploymentTargets.Accounts)
+                        {
+                            request.Parameters.Add("DeploymentTargets" + "." + "Accounts" + "." + "member" + "." + publicRequestDeploymentTargetslistValueIndex, StringUtils.FromString(publicRequestDeploymentTargetslistValue));
+                            publicRequestDeploymentTargetslistValueIndex++;
+                        }
+                    }
+                    if(publicRequest.DeploymentTargets.IsSetOrganizationalUnitIds())
+                    {
+                        int publicRequestDeploymentTargetslistValueIndex = 1;
+                        foreach(var publicRequestDeploymentTargetslistValue in publicRequest.DeploymentTargets.OrganizationalUnitIds)
+                        {
+                            request.Parameters.Add("DeploymentTargets" + "." + "OrganizationalUnitIds" + "." + "member" + "." + publicRequestDeploymentTargetslistValueIndex, StringUtils.FromString(publicRequestDeploymentTargetslistValue));
+                            publicRequestDeploymentTargetslistValueIndex++;
+                        }
                     }
                 }
                 if(publicRequest.IsSetDescription())
@@ -147,6 +179,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         }
                         publicRequestlistValueIndex++;
                     }
+                }
+                if(publicRequest.IsSetPermissionModel())
+                {
+                    request.Parameters.Add("PermissionModel", StringUtils.FromString(publicRequest.PermissionModel));
                 }
                 if(publicRequest.IsSetRegions())
                 {

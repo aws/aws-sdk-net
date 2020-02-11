@@ -35,6 +35,7 @@ namespace Amazon.CloudFormation.Model
         private StackSetOperationAction _action;
         private string _administrationRoleARN;
         private DateTime? _creationTimestamp;
+        private DeploymentTargets _deploymentTargets;
         private DateTime? _endTimestamp;
         private string _executionRoleName;
         private string _operationId;
@@ -111,6 +112,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetCreationTimestamp()
         {
             return this._creationTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentTargets. 
+        /// <para>
+        /// [<code>Service-managed</code> permissions] The AWS Organizations accounts affected
+        /// by the stack operation.
+        /// </para>
+        /// </summary>
+        public DeploymentTargets DeploymentTargets
+        {
+            get { return this._deploymentTargets; }
+            set { this._deploymentTargets = value; }
+        }
+
+        // Check to see if DeploymentTargets property is set
+        internal bool IsSetDeploymentTargets()
+        {
+            return this._deploymentTargets != null;
         }
 
         /// <summary>
@@ -276,6 +296,13 @@ namespace Amazon.CloudFormation.Model
         /// set to <code>FAILED</code>. This in turn sets the status of the operation as a whole
         /// to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any remaining
         /// regions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that
+        /// require a sequence of operations. The operation is queued to be performed. For more
+        /// information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
+        /// set operation status codes</a> in the AWS CloudFormation User Guide.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -72,6 +72,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.LastDriftCheckTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OrganizationalUnitId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OrganizationalUnitId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Region", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

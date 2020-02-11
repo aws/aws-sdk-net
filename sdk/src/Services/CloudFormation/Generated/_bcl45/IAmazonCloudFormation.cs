@@ -360,9 +360,9 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Creates stack instances for the specified accounts, within the specified regions.
-        /// A stack instance refers to a stack in a specific account and region. <code>Accounts</code>
-        /// and <code>Regions</code> are required parameters—you must specify at least one account
-        /// and one region.
+        /// A stack instance refers to a stack in a specific account and region. You must specify
+        /// at least one value for either <code>Accounts</code> or <code>DeploymentTargets</code>,
+        /// and you must specify at least one value for <code>Regions</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStackInstances service method.</param>
         /// 
@@ -400,9 +400,9 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Creates stack instances for the specified accounts, within the specified regions.
-        /// A stack instance refers to a stack in a specific account and region. <code>Accounts</code>
-        /// and <code>Regions</code> are required parameters—you must specify at least one account
-        /// and one region.
+        /// A stack instance refers to a stack in a specific account and region. You must specify
+        /// at least one value for either <code>Accounts</code> or <code>DeploymentTargets</code>,
+        /// and you must specify at least one value for <code>Regions</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStackInstances service method.</param>
         /// <param name="cancellationToken">
@@ -2391,7 +2391,7 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Returns a list of registration tokens for the specified type.
+        /// Returns a list of registration tokens for the specified type(s).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTypeRegistrations service method.</param>
         /// 
@@ -2405,7 +2405,7 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Returns a list of registration tokens for the specified type.
+        /// Returns a list of registration tokens for the specified type(s).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTypeRegistrations service method.</param>
         /// <param name="cancellationToken">
@@ -2567,8 +2567,8 @@ namespace Amazon.CloudFormation
         ///  </li> </ul> 
         /// <para>
         /// For more information on how to develop types and ready them for registeration, see
-        /// <a href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
-        /// Providers</a> in the <i>CloudFormation CLI User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
+        /// Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2607,8 +2607,8 @@ namespace Amazon.CloudFormation
         ///  </li> </ul> 
         /// <para>
         /// For more information on how to develop types and ready them for registeration, see
-        /// <a href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
-        /// Providers</a> in the <i>CloudFormation CLI User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
+        /// Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.
         /// </para>
         ///  
         /// <para>

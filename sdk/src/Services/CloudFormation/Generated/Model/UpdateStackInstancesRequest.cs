@@ -59,6 +59,7 @@ namespace Amazon.CloudFormation.Model
     public partial class UpdateStackInstancesRequest : AmazonCloudFormationRequest
     {
         private List<string> _accounts = new List<string>();
+        private DeploymentTargets _deploymentTargets;
         private string _operationId;
         private StackSetOperationPreferences _operationPreferences;
         private List<Parameter> _parameterOverrides = new List<Parameter>();
@@ -68,12 +69,15 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// The names of one or more AWS accounts for which you want to update parameter values
-        /// for stack instances. The overridden parameter values will be applied to all stack
-        /// instances in the specified accounts and regions.
+        /// [Self-managed permissions] The names of one or more AWS accounts for which you want
+        /// to update parameter values for stack instances. The overridden parameter values will
+        /// be applied to all stack instances in the specified accounts and regions.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> Accounts
         {
             get { return this._accounts; }
@@ -84,6 +88,32 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAccounts()
         {
             return this._accounts != null && this._accounts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentTargets. 
+        /// <para>
+        /// [<code>Service-managed</code> permissions] The AWS Organizations accounts for which
+        /// you want to update parameter values for stack instances. If your update targets OUs,
+        /// the overridden parameter values only apply to the accounts that are currently in the
+        /// target OUs and their child OUs. Accounts added to the target OUs and their child OUs
+        /// in the future won't use the overridden values.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
+        /// </para>
+        /// </summary>
+        public DeploymentTargets DeploymentTargets
+        {
+            get { return this._deploymentTargets; }
+            set { this._deploymentTargets = value; }
+        }
+
+        // Check to see if DeploymentTargets property is set
+        internal bool IsSetDeploymentTargets()
+        {
+            return this._deploymentTargets != null;
         }
 
         /// <summary>
