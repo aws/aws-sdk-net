@@ -73,6 +73,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PoolId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("tagSet/item", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("totalAddressCount", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

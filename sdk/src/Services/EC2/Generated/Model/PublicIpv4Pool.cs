@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private List<PublicIpv4PoolRange> _poolAddressRanges = new List<PublicIpv4PoolRange>();
         private string _poolId;
+        private List<Tag> _tags = new List<Tag>();
         private int? _totalAddressCount;
         private int? _totalAvailableAddressCount;
 
@@ -90,6 +91,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPoolId()
         {
             return this._poolId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Any tags for the address pool.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

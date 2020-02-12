@@ -52,6 +52,10 @@ namespace Amazon.EC2.Model
     /// from one network interface to another, check <code>network/interfaces/macs/mac/local-ipv4s</code>
     /// in the instance metadata to confirm that the remapping is complete.
     /// </para>
+    ///  
+    /// <para>
+    /// You must specify either the IP addresses or the IP address count in the request.
+    /// </para>
     /// </summary>
     public partial class AssignPrivateIpAddressesRequest : AmazonEC2Request
     {
