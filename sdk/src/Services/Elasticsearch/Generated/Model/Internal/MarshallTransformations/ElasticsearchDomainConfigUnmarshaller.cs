@@ -76,6 +76,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdvancedOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AdvancedSecurityOptions", targetDepth))
+                {
+                    var unmarshaller = AdvancedSecurityOptionsStatusUnmarshaller.Instance;
+                    unmarshalledObject.AdvancedSecurityOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CognitoOptions", targetDepth))
                 {
                     var unmarshaller = CognitoOptionsStatusUnmarshaller.Instance;

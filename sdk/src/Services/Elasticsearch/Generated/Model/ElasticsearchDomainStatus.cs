@@ -34,6 +34,7 @@ namespace Amazon.Elasticsearch.Model
     {
         private string _accessPolicies;
         private Dictionary<string, string> _advancedOptions = new Dictionary<string, string>();
+        private AdvancedSecurityOptions _advancedSecurityOptions;
         private string _arn;
         private CognitoOptions _cognitoOptions;
         private bool? _created;
@@ -89,6 +90,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetAdvancedOptions()
         {
             return this._advancedOptions != null && this._advancedOptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdvancedSecurityOptions. 
+        /// <para>
+        /// The current status of the Elasticsearch domain's advanced security options.
+        /// </para>
+        /// </summary>
+        public AdvancedSecurityOptions AdvancedSecurityOptions
+        {
+            get { return this._advancedSecurityOptions; }
+            set { this._advancedSecurityOptions = value; }
+        }
+
+        // Check to see if AdvancedSecurityOptions property is set
+        internal bool IsSetAdvancedSecurityOptions()
+        {
+            return this._advancedSecurityOptions != null;
         }
 
         /// <summary>

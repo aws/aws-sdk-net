@@ -86,6 +86,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetAdvancedSecurityOptions())
+                {
+                    context.Writer.WritePropertyName("AdvancedSecurityOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AdvancedSecurityOptionsInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AdvancedSecurityOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCognitoOptions())
                 {
                     context.Writer.WritePropertyName("CognitoOptions");
