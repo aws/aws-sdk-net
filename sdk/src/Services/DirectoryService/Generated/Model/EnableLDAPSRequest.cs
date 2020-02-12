@@ -58,8 +58,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of LDAP security the customer wants to enable. The security can be either
-        /// server or client, but currently only the default <code>Client</code> is supported.
+        /// The type of LDAP security to enable. Currently only the value <code>Client</code>
+        /// is supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

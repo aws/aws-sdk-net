@@ -34,6 +34,7 @@ namespace Amazon.DirectoryService.Model
     {
         private string _certificateId;
         private string _commonName;
+        private DateTime? _expiryDateTime;
         private CertificateState _state;
 
         /// <summary>
@@ -70,6 +71,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetCommonName()
         {
             return this._commonName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpiryDateTime. 
+        /// <para>
+        /// The date and time when the certificate will expire.
+        /// </para>
+        /// </summary>
+        public DateTime ExpiryDateTime
+        {
+            get { return this._expiryDateTime.GetValueOrDefault(); }
+            set { this._expiryDateTime = value; }
+        }
+
+        // Check to see if ExpiryDateTime property is set
+        internal bool IsSetExpiryDateTime()
+        {
+            return this._expiryDateTime.HasValue; 
         }
 
         /// <summary>
