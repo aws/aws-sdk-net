@@ -29,8 +29,8 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRoomMemberships operation.
-    /// Lists the membership details for the specified room, such as the members' IDs, email
-    /// addresses, and names.
+    /// Lists the membership details for the specified room in an Amazon Chime Enterprise
+    /// account, such as the members' IDs, email addresses, and names.
     /// </summary>
     public partial class ListRoomMembershipsRequest : AmazonChimeRequest
     {

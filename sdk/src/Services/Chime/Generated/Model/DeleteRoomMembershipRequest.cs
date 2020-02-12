@@ -29,7 +29,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRoomMembership operation.
-    /// Removes a member from a chat room.
+    /// Removes a member from a chat room in an Amazon Chime Enterprise account.
     /// </summary>
     public partial class DeleteRoomMembershipRequest : AmazonChimeRequest
     {

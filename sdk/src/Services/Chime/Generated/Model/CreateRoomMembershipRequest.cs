@@ -29,9 +29,9 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRoomMembership operation.
-    /// Adds a member to a chat room. A member can be either a user or a bot. The member role
-    /// designates whether the member is a chat room administrator or a general chat room
-    /// member.
+    /// Adds a member to a chat room in an Amazon Chime Enterprise account. A member can be
+    /// either a user or a bot. The member role designates whether the member is a chat room
+    /// administrator or a general chat room member.
     /// </summary>
     public partial class CreateRoomMembershipRequest : AmazonChimeRequest
     {

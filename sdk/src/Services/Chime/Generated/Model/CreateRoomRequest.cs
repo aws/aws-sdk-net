@@ -29,7 +29,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRoom operation.
-    /// Creates a chat room for the specified Amazon Chime account.
+    /// Creates a chat room for the specified Amazon Chime Enterprise account.
     /// </summary>
     public partial class CreateRoomRequest : AmazonChimeRequest
     {

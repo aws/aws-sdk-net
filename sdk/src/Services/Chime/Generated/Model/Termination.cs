@@ -78,7 +78,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CpsLimit. 
         /// <para>
-        /// The limit on calls per second. Max value based on account service limit. Default value
+        /// The limit on calls per second. Max value based on account service quota. Default value
         /// of 1.
         /// </para>
         /// </summary>
