@@ -29,7 +29,14 @@ namespace Amazon.Neptune.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBInstances operation.
-    /// Returns information about provisioned instances. This API supports pagination.
+    /// Returns information about provisioned instances, and supports pagination.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation can also return information for Amazon RDS instances and Amazon DocDB
+    /// instances.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeDBInstancesRequest : AmazonNeptuneRequest
     {
@@ -83,11 +90,14 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon
-        /// Resource Names (ARNs). The results list will only include information about the DB
-        /// instances identified by these ARNs.
+        ///  <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and
+        /// restricts the results list to DB instances created by that engine.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For example, to invoke this API from the AWS CLI and filter so that only Neptune DB
+        /// instances are returned, you could use the following command:
+        /// </para>
         /// </summary>
         public List<Filter> Filters
         {

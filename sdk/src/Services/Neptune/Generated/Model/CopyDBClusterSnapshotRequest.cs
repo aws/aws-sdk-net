@@ -36,10 +36,6 @@ namespace Amazon.Neptune.Model
     /// To copy a DB cluster snapshot from a shared manual DB cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
     /// must be the Amazon Resource Name (ARN) of the shared DB cluster snapshot.
     /// </para>
-    ///  
-    /// <para>
-    /// You can't copy from one AWS Region to another.
-    /// </para>
     /// </summary>
     public partial class CopyDBClusterSnapshotRequest : AmazonNeptuneRequest
     {

@@ -310,10 +310,6 @@ namespace Amazon.Neptune
         /// To copy a DB cluster snapshot from a shared manual DB cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
         /// must be the Amazon Resource Name (ARN) of the shared DB cluster snapshot.
         /// </para>
-        ///  
-        /// <para>
-        /// You can't copy from one AWS Region to another.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterSnapshot service method.</param>
         /// 
@@ -426,6 +422,13 @@ namespace Amazon.Neptune
         /// <para>
         /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
         /// cluster as a Read Replica of another DB cluster or Amazon Neptune DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that when you create a new cluster using <code>CreateDBCluster</code> directly,
+        /// deletion protection is disabled by default (when you create a new production cluster
+        /// in the console, deletion protection is enabled by default). You can only delete a
+        /// DB cluster if its <code>DeletionProtection</code> field is set to <code>false</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
@@ -968,6 +971,12 @@ namespace Amazon.Neptune
         /// The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete
         /// a DB cluster, all automated backups for that DB cluster are deleted and can't be recovered.
         /// Manual DB cluster snapshots of the specified DB cluster are not deleted.
+        /// 
+        ///  
+        /// <para>
+        /// Note that the DB Cluster cannot be deleted if deletion protection is enabled. To delete
+        /// it, you must first set its <code>DeletionProtection</code> field to <code>False</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster service method.</param>
         /// 
@@ -1144,7 +1153,8 @@ namespace Amazon.Neptune
         /// </para>
         ///  
         /// <para>
-        /// You can't delete a DB instance if it is the only instance in the DB cluster.
+        /// You can't delete a DB instance if it is the only instance in the DB cluster, or if
+        /// it has deletion protection enabled.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstance service method.</param>
@@ -1438,7 +1448,14 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Returns information about provisioned DB clusters. This API supports pagination.
+        /// Returns information about provisioned DB clusters, and supports pagination.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation can also return information for Amazon RDS clusters and Amazon DocDB
+        /// clusters.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusters service method.</param>
         /// 
@@ -1623,7 +1640,14 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Returns information about provisioned instances. This API supports pagination.
+        /// Returns information about provisioned instances, and supports pagination.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation can also return information for Amazon RDS instances and Amazon DocDB
+        /// instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBInstances service method.</param>
         /// 
@@ -3357,6 +3381,112 @@ namespace Amazon.Neptune
         /// <returns>Returns a  RestoreDBClusterToPointInTimeResult from Neptune.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         RestoreDBClusterToPointInTimeResponse EndRestoreDBClusterToPointInTime(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartDBCluster
+
+
+        /// <summary>
+        /// Starts an Amazon Neptune DB cluster that was stopped using the AWS console, the AWS
+        /// CLI stop-db-cluster command, or the StopDBCluster API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the StartDBCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
+        StartDBClusterResponse StartDBCluster(StartDBClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDBCluster operation on AmazonNeptuneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDBCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
+        IAsyncResult BeginStartDBCluster(StartDBClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartDBCluster.</param>
+        /// 
+        /// <returns>Returns a  StartDBClusterResult from Neptune.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
+        StartDBClusterResponse EndStartDBCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopDBCluster
+
+
+        /// <summary>
+        /// Stops an Amazon Neptune DB cluster. When you stop a DB cluster, Neptune retains the
+        /// DB cluster's metadata, including its endpoints and DB parameter groups.
+        /// 
+        ///  
+        /// <para>
+        /// Neptune also retains the transaction logs so you can do a point-in-time restore if
+        /// necessary.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the StopDBCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StopDBCluster">REST API Reference for StopDBCluster Operation</seealso>
+        StopDBClusterResponse StopDBCluster(StopDBClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopDBCluster operation on AmazonNeptuneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopDBCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StopDBCluster">REST API Reference for StopDBCluster Operation</seealso>
+        IAsyncResult BeginStopDBCluster(StopDBClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopDBCluster.</param>
+        /// 
+        /// <returns>Returns a  StopDBClusterResult from Neptune.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StopDBCluster">REST API Reference for StopDBCluster Operation</seealso>
+        StopDBClusterResponse EndStopDBCluster(IAsyncResult asyncResult);
 
         #endregion
         

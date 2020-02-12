@@ -29,7 +29,14 @@ namespace Amazon.Neptune.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBClusters operation.
-    /// Returns information about provisioned DB clusters. This API supports pagination.
+    /// Returns information about provisioned DB clusters, and supports pagination.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation can also return information for Amazon RDS clusters and Amazon DocDB
+    /// clusters.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeDBClustersRequest : AmazonNeptuneRequest
     {
@@ -81,7 +88,16 @@ namespace Amazon.Neptune.Model
         /// Resource Names (ARNs). The results list will only include information about the DB
         /// clusters identified by these ARNs.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and
+        /// restricts the results list to DB clusters created by that engine.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For example, to invoke this API from the AWS CLI and filter so that only Neptune DB
+        /// clusters are returned, you could use the following command:
+        /// </para>
         /// </summary>
         public List<Filter> Filters
         {

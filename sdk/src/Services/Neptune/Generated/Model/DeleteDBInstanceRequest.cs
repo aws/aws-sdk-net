@@ -49,7 +49,8 @@ namespace Amazon.Neptune.Model
     /// </para>
     ///  
     /// <para>
-    /// You can't delete a DB instance if it is the only instance in the DB cluster.
+    /// You can't delete a DB instance if it is the only instance in the DB cluster, or if
+    /// it has deletion protection enabled.
     /// </para>
     /// </summary>
     public partial class DeleteDBInstanceRequest : AmazonNeptuneRequest

@@ -425,8 +425,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// Indicates if the DB instance has deletion protection enabled. The database can't be
-        /// deleted when deletion protection is enabled. 
+        /// Indicates whether or not the DB instance has deletion protection enabled. The instance
+        /// can't be deleted when deletion protection is enabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+        /// a DB Instance</a>.
         /// </para>
         /// </summary>
         public bool DeletionProtection

@@ -186,7 +186,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// A value that indicates whether the DB cluster has deletion protection enabled. The
         /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection is disabled. 
+        /// protection is disabled.
         /// </para>
         /// </summary>
         public bool DeletionProtection

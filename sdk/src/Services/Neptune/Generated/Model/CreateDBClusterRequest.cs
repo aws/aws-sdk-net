@@ -36,6 +36,13 @@ namespace Amazon.Neptune.Model
     /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
     /// cluster as a Read Replica of another DB cluster or Amazon Neptune DB instance.
     /// </para>
+    ///  
+    /// <para>
+    /// Note that when you create a new cluster using <code>CreateDBCluster</code> directly,
+    /// deletion protection is disabled by default (when you create a new production cluster
+    /// in the console, deletion protection is enabled by default). You can only delete a
+    /// DB cluster if its <code>DeletionProtection</code> field is set to <code>false</code>.
+    /// </para>
     /// </summary>
     public partial class CreateDBClusterRequest : AmazonNeptuneRequest
     {
@@ -249,7 +256,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// A value that indicates whether the DB cluster has deletion protection enabled. The
         /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection is disabled. 
+        /// protection is enabled.
         /// </para>
         /// </summary>
         public bool DeletionProtection
