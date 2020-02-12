@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         private string _logUri;
         private double? _maxCapacity;
         private int? _maxRetries;
+        private Dictionary<string, string> _nonOverridableArguments = new Dictionary<string, string>();
         private NotificationProperty _notificationProperty;
         private int? _numberOfWorkers;
         private string _role;
@@ -287,6 +288,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetMaxRetries()
         {
             return this._maxRetries.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NonOverridableArguments. 
+        /// <para>
+        /// Non-overridable arguments for this job, specified as name-value pairs.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> NonOverridableArguments
+        {
+            get { return this._nonOverridableArguments; }
+            set { this._nonOverridableArguments = value; }
+        }
+
+        // Check to see if NonOverridableArguments property is set
+        internal bool IsSetNonOverridableArguments()
+        {
+            return this._nonOverridableArguments != null && this._nonOverridableArguments.Count > 0; 
         }
 
         /// <summary>

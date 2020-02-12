@@ -142,6 +142,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NonOverridableArguments", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.NonOverridableArguments = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NotificationProperty", targetDepth))
                 {
                     var unmarshaller = NotificationPropertyUnmarshaller.Instance;

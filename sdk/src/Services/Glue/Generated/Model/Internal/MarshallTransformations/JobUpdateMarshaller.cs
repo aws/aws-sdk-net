@@ -128,6 +128,20 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MaxRetries);
             }
 
+            if(requestObject.IsSetNonOverridableArguments())
+            {
+                context.Writer.WritePropertyName("NonOverridableArguments");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectNonOverridableArgumentsKvp in requestObject.NonOverridableArguments)
+                {
+                    context.Writer.WritePropertyName(requestObjectNonOverridableArgumentsKvp.Key);
+                    var requestObjectNonOverridableArgumentsValue = requestObjectNonOverridableArgumentsKvp.Value;
+
+                        context.Writer.Write(requestObjectNonOverridableArgumentsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNotificationProperty())
             {
                 context.Writer.WritePropertyName("NotificationProperty");
