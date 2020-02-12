@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.676.0",
+    "ProductVersion" : "3.3.677.0",
     "CoreVersion"    : "3.3.104.24",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.158.0",
+            "Version" : "3.3.159.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.24"
@@ -393,7 +393,7 @@
             "InPreview"               : false
         },
         "DirectoryService"          : {
-            "Version" : "3.3.102.7",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.24"
@@ -425,7 +425,7 @@
             "InPreview"               : false
         },
         "Elasticsearch"             : {
-            "Version" : "3.3.103.24",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.24"
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.112.29",
+            "Version" : "3.3.113.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.24"
@@ -1033,7 +1033,7 @@
             "InPreview"               : false
         },
         "WorkMail"                        : {
-            "Version" : "3.3.102.2",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.24"
@@ -1121,7 +1121,7 @@
             "InPreview"               : false
         },
         "Neptune"                         : {
-            "Version" : "3.3.102.6",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.24"
@@ -1169,7 +1169,7 @@
             "InPreview"               : false
         },
         "Chime"                           : {
-            "Version" : "3.3.106.9",
+            "Version" : "3.3.106.10",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.24"

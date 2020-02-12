@@ -1,3 +1,19 @@
+### 3.3.677.0 (2020-02-12 19:15 UTC)
+* Chime (3.3.106.10)
+	* Documentation updates for Amazon Chime
+* DirectoryService (3.3.103.0)
+	* Release to add the ExpirationDateTime as an output to ListCertificates so as to ease customers to look into their certificate lifetime and make timely decisions about renewing them.
+* EC2 (3.3.159.0)
+	* This release adds support for tagging public IPv4 pools.
+* Elasticsearch (3.3.104.0)
+	* Amazon Elasticsearch Service now offers fine-grained access control, which adds multiple capabilities to give tighter control over data. New features include the ability to use roles to define granular permissions for indices, documents, or fields and to extend Kibana with read-only views and secure multi-tenant support.
+* Glue (3.3.113.0)
+	* Adding ability to add arguments that cannot be overridden to AWS Glue jobs
+* Neptune (3.3.103.0)
+	* This launch enables Neptune start-db-cluster and stop-db-cluster. Stopping and starting Amazon Neptune clusters helps you manage costs for development and test environments. You can temporarily stop all the DB instances in your cluster, instead of setting up and tearing down all the DB instances each time that you use the cluster.
+* WorkMail (3.3.103.0)
+	* This release adds support for access control rules management  in Amazon WorkMail.
+
 ### 3.3.676.0 (2020-02-11 19:15 UTC)
 * CloudFormation (3.3.104.0)
 	* This release of AWS CloudFormation StackSets allows you to centrally manage deployments to all the accounts in your organization or specific organizational units (OUs) in AWS Organizations. You will also be able to enable automatic deployments to any new accounts added to your organization or OUs. The permissions needed to deploy across accounts will automatically be taken care of by the StackSets service.
