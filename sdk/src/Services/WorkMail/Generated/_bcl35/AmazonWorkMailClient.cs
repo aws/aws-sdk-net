@@ -757,6 +757,68 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  DeleteAccessControlRule
+
+        /// <summary>
+        /// Deletes an access control rule for the specified WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessControlRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessControlRule service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAccessControlRule">REST API Reference for DeleteAccessControlRule Operation</seealso>
+        public virtual DeleteAccessControlRuleResponse DeleteAccessControlRule(DeleteAccessControlRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessControlRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessControlRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessControlRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccessControlRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessControlRule operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessControlRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAccessControlRule">REST API Reference for DeleteAccessControlRule Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAccessControlRule(DeleteAccessControlRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessControlRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessControlRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccessControlRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessControlRule.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccessControlRuleResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAccessControlRule">REST API Reference for DeleteAccessControlRule Operation</seealso>
+        public virtual DeleteAccessControlRuleResponse EndDeleteAccessControlRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAccessControlRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteAlias
 
         /// <summary>
@@ -1627,6 +1689,75 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  GetAccessControlEffect
+
+        /// <summary>
+        /// Gets the effects of an organization's access control rules as they apply to a specified
+        /// IPv4 address, access protocol action, or user ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessControlEffect service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessControlEffect service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect">REST API Reference for GetAccessControlEffect Operation</seealso>
+        public virtual GetAccessControlEffectResponse GetAccessControlEffect(GetAccessControlEffectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessControlEffectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessControlEffectResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessControlEffectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessControlEffect operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessControlEffect operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessControlEffect
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect">REST API Reference for GetAccessControlEffect Operation</seealso>
+        public virtual IAsyncResult BeginGetAccessControlEffect(GetAccessControlEffectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessControlEffectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessControlEffectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessControlEffect operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessControlEffect.</param>
+        /// 
+        /// <returns>Returns a  GetAccessControlEffectResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect">REST API Reference for GetAccessControlEffect Operation</seealso>
+        public virtual GetAccessControlEffectResponse EndGetAccessControlEffect(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccessControlEffectResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetMailboxDetails
 
         /// <summary>
@@ -1688,6 +1819,68 @@ namespace Amazon.WorkMail
         public virtual GetMailboxDetailsResponse EndGetMailboxDetails(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMailboxDetailsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAccessControlRules
+
+        /// <summary>
+        /// Lists the access control rules for the specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessControlRules service method.</param>
+        /// 
+        /// <returns>The response from the ListAccessControlRules service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAccessControlRules">REST API Reference for ListAccessControlRules Operation</seealso>
+        public virtual ListAccessControlRulesResponse ListAccessControlRules(ListAccessControlRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessControlRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessControlRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccessControlRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccessControlRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessControlRules operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccessControlRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAccessControlRules">REST API Reference for ListAccessControlRules Operation</seealso>
+        public virtual IAsyncResult BeginListAccessControlRules(ListAccessControlRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessControlRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessControlRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccessControlRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccessControlRules.</param>
+        /// 
+        /// <returns>Returns a  ListAccessControlRulesResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAccessControlRules">REST API Reference for ListAccessControlRules Operation</seealso>
+        public virtual ListAccessControlRulesResponse EndListAccessControlRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAccessControlRulesResponse>(asyncResult);
         }
 
         #endregion
@@ -2290,6 +2483,80 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  PutAccessControlRule
+
+        /// <summary>
+        /// Adds a new access control rule for the specified organization. The rule allows or
+        /// denies access to the organization for the specified IPv4 addresses, access protocol
+        /// actions, and user IDs. Adding a new rule with the same name as an existing rule replaces
+        /// the older rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessControlRule service method.</param>
+        /// 
+        /// <returns>The response from the PutAccessControlRule service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule">REST API Reference for PutAccessControlRule Operation</seealso>
+        public virtual PutAccessControlRuleResponse PutAccessControlRule(PutAccessControlRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccessControlRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccessControlRuleResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccessControlRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAccessControlRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessControlRule operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccessControlRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule">REST API Reference for PutAccessControlRule Operation</seealso>
+        public virtual IAsyncResult BeginPutAccessControlRule(PutAccessControlRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccessControlRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccessControlRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAccessControlRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccessControlRule.</param>
+        /// 
+        /// <returns>Returns a  PutAccessControlRuleResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule">REST API Reference for PutAccessControlRule Operation</seealso>
+        public virtual PutAccessControlRuleResponse EndPutAccessControlRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutAccessControlRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutMailboxPermissions
 
         /// <summary>
@@ -2369,7 +2636,7 @@ namespace Amazon.WorkMail
         /// by associating a mailbox and calendaring capabilities. It performs no change if the
         /// user, group, or resource is enabled and fails if the user, group, or resource is deleted.
         /// This operation results in the accumulation of costs. For more information, see <a
-        /// href="https://aws.amazon.com//workmail/pricing">Pricing</a>. The equivalent console
+        /// href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console
         /// functionality for this operation is <i>Enable</i>. 
         /// 
         ///  

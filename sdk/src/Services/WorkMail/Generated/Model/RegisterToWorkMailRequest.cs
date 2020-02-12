@@ -33,7 +33,7 @@ namespace Amazon.WorkMail.Model
     /// by associating a mailbox and calendaring capabilities. It performs no change if the
     /// user, group, or resource is enabled and fails if the user, group, or resource is deleted.
     /// This operation results in the accumulation of costs. For more information, see <a
-    /// href="https://aws.amazon.com//workmail/pricing">Pricing</a>. The equivalent console
+    /// href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console
     /// functionality for this operation is <i>Enable</i>. 
     /// 
     ///  
