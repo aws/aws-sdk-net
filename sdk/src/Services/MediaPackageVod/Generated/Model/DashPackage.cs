@@ -34,7 +34,9 @@ namespace Amazon.MediaPackageVod.Model
     {
         private List<DashManifest> _dashManifests = new List<DashManifest>();
         private DashEncryption _encryption;
+        private List<string> _periodTriggers = new List<string>();
         private int? _segmentDurationSeconds;
+        private SegmentTemplateFormat _segmentTemplateFormat;
 
         /// <summary>
         /// Gets and sets the property DashManifests. A list of DASH manifest configurations.
@@ -68,6 +70,25 @@ namespace Amazon.MediaPackageVod.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PeriodTriggers. A list of triggers that controls when the
+        /// outgoing Dynamic Adaptive Streaming over HTTP (DASH)Media Presentation Description
+        /// (MPD) will be partitioned into multiple periods. If empty, the content will notbe
+        /// partitioned into more than one period. If the list contains "ADS", new periods will
+        /// be created wherethe Asset contains SCTE-35 ad markers.
+        /// </summary>
+        public List<string> PeriodTriggers
+        {
+            get { return this._periodTriggers; }
+            set { this._periodTriggers = value; }
+        }
+
+        // Check to see if PeriodTriggers property is set
+        internal bool IsSetPeriodTriggers()
+        {
+            return this._periodTriggers != null && this._periodTriggers.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SegmentDurationSeconds. Duration (in seconds) of each segment.
         /// Actual segments will berounded to the nearest multiple of the source segment duration.
         /// </summary>
@@ -81,6 +102,26 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetSegmentDurationSeconds()
         {
             return this._segmentDurationSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentTemplateFormat. Determines the type of SegmentTemplate
+        /// included in the Media Presentation Description (MPD).  When set to NUMBER_WITH_TIMELINE,
+        /// a full timeline is presented in each SegmentTemplate, with $Number$ media URLs.  When
+        /// set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+        /// $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in
+        /// each SegmentTemplate, with $Number$ media URLs.
+        /// </summary>
+        public SegmentTemplateFormat SegmentTemplateFormat
+        {
+            get { return this._segmentTemplateFormat; }
+            set { this._segmentTemplateFormat = value; }
+        }
+
+        // Check to see if SegmentTemplateFormat property is set
+        internal bool IsSetSegmentTemplateFormat()
+        {
+            return this._segmentTemplateFormat != null;
         }
 
     }

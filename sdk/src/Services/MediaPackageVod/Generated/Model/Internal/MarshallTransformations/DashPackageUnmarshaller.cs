@@ -76,10 +76,22 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("periodTriggers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PeriodTriggers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("segmentDurationSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.SegmentDurationSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("segmentTemplateFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SegmentTemplateFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

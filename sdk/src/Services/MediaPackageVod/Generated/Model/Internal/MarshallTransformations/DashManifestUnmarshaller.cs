@@ -64,6 +64,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("manifestLayout", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManifestLayout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("manifestName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

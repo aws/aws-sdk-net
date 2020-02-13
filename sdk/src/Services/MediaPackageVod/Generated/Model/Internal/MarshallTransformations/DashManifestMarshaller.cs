@@ -45,6 +45,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DashManifest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetManifestLayout())
+            {
+                context.Writer.WritePropertyName("manifestLayout");
+                context.Writer.Write(requestObject.ManifestLayout);
+            }
+
             if(requestObject.IsSetManifestName())
             {
                 context.Writer.WritePropertyName("manifestName");

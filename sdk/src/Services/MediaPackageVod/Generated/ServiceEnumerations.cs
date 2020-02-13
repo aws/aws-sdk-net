@@ -25,6 +25,52 @@ namespace Amazon.MediaPackageVod
 {
 
     /// <summary>
+    /// Constants used for properties of type __PeriodTriggersElement.
+    /// </summary>
+    public class __PeriodTriggersElement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADS for __PeriodTriggersElement
+        /// </summary>
+        public static readonly __PeriodTriggersElement ADS = new __PeriodTriggersElement("ADS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public __PeriodTriggersElement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static __PeriodTriggersElement FindValue(string value)
+        {
+            return FindValue<__PeriodTriggersElement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator __PeriodTriggersElement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AdMarkers.
     /// </summary>
     public class AdMarkers : ConstantClass
@@ -129,6 +175,56 @@ namespace Amazon.MediaPackageVod
 
 
     /// <summary>
+    /// Constants used for properties of type ManifestLayout.
+    /// </summary>
+    public class ManifestLayout : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPACT for ManifestLayout
+        /// </summary>
+        public static readonly ManifestLayout COMPACT = new ManifestLayout("COMPACT");
+        /// <summary>
+        /// Constant FULL for ManifestLayout
+        /// </summary>
+        public static readonly ManifestLayout FULL = new ManifestLayout("FULL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManifestLayout(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManifestLayout FindValue(string value)
+        {
+            return FindValue<ManifestLayout>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManifestLayout(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Profile.
     /// </summary>
     public class Profile : ConstantClass
@@ -172,6 +268,60 @@ namespace Amazon.MediaPackageVod
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Profile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SegmentTemplateFormat.
+    /// </summary>
+    public class SegmentTemplateFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NUMBER_WITH_DURATION for SegmentTemplateFormat
+        /// </summary>
+        public static readonly SegmentTemplateFormat NUMBER_WITH_DURATION = new SegmentTemplateFormat("NUMBER_WITH_DURATION");
+        /// <summary>
+        /// Constant NUMBER_WITH_TIMELINE for SegmentTemplateFormat
+        /// </summary>
+        public static readonly SegmentTemplateFormat NUMBER_WITH_TIMELINE = new SegmentTemplateFormat("NUMBER_WITH_TIMELINE");
+        /// <summary>
+        /// Constant TIME_WITH_TIMELINE for SegmentTemplateFormat
+        /// </summary>
+        public static readonly SegmentTemplateFormat TIME_WITH_TIMELINE = new SegmentTemplateFormat("TIME_WITH_TIMELINE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SegmentTemplateFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SegmentTemplateFormat FindValue(string value)
+        {
+            return FindValue<SegmentTemplateFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SegmentTemplateFormat(string value)
         {
             return FindValue(value);
         }

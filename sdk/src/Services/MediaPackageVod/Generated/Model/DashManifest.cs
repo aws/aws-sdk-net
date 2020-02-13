@@ -32,10 +32,29 @@ namespace Amazon.MediaPackageVod.Model
     /// </summary>
     public partial class DashManifest
     {
+        private ManifestLayout _manifestLayout;
         private string _manifestName;
         private int? _minBufferTimeSeconds;
         private Profile _profile;
         private StreamSelection _streamSelection;
+
+        /// <summary>
+        /// Gets and sets the property ManifestLayout. Determines the position of some tags in
+        /// the Media Presentation Description (MPD).  When set to FULL, elements like SegmentTemplate
+        /// and ContentProtection are included in each Representation.  When set to COMPACT, duplicate
+        /// elements are combined and presented at the AdaptationSet level.
+        /// </summary>
+        public ManifestLayout ManifestLayout
+        {
+            get { return this._manifestLayout; }
+            set { this._manifestLayout = value; }
+        }
+
+        // Check to see if ManifestLayout property is set
+        internal bool IsSetManifestLayout()
+        {
+            return this._manifestLayout != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ManifestName. An optional string to include in the name
