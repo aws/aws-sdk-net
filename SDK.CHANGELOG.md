@@ -1,3 +1,7 @@
+### 3.3.677.1 (2020-02-12 23:11 UTC)
+* SecurityToken (3.3.104.30)
+	* Improves performance and prevents errors for users with limited privileges when configuring a Security Token Service client.
+
 ### 3.3.677.0 (2020-02-12 19:15 UTC)
 * Chime (3.3.106.10)
 	* Documentation updates for Amazon Chime

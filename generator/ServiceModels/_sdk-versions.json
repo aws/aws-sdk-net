@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.677.0",
+    "ProductVersion" : "3.3.677.1",
     "CoreVersion"    : "3.3.104.24",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -321,7 +321,7 @@
             "InPreview"               : false
         },
         "SecurityToken"        : {
-            "Version" : "3.3.104.29",
+            "Version" : "3.3.104.30",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.24"
