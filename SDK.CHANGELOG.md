@@ -1,3 +1,12 @@
+### 3.3.678.0 (2020-02-13 19:10 UTC)
+* MediaPackageVod (3.3.104.0)
+	* Adds support for DASH with multiple media presentation description periods triggered by presence of SCTE-35 ad markers in the manifest.Also adds optional configuration for DASH SegmentTemplateFormat to refer to segments by Number with Duration, Number with Timeline or Time with Timeline and compact the manifest by combining duplicate SegmentTemplate tags.
+* Core 3.3.104.25
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.677.1 (2020-02-12 23:11 UTC)
 * SecurityToken (3.3.104.30)
 	* Improves performance and prevents errors for users with limited privileges when configuring a Security Token Service client.
