@@ -28,36 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// This is the response object from the GetInsights operation.
+    /// Container for the parameters to the DescribeStandards operation.
+    /// Returns a list of the available standards in Security Hub.
+    /// 
+    ///  
+    /// <para>
+    /// For each standard, the results include the standard ARN, the name, and a description.
+    /// 
+    /// </para>
     /// </summary>
-    public partial class GetInsightsResponse : AmazonWebServiceResponse
+    public partial class DescribeStandardsRequest : AmazonSecurityHubRequest
     {
-        private List<Insight> _insights = new List<Insight>();
+        private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Insights. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The insights returned by the operation.
+        /// The maximum number of standards to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<Insight> Insights
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
         {
-            get { return this._insights; }
-            set { this._insights = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if Insights property is set
-        internal bool IsSetInsights()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._insights != null && this._insights.Count > 0; 
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token to use to request the next page of results.
+        /// The token that is required for pagination. On your first call to the <code>DescribeStandards</code>
+        /// operation, set the value of this parameter to <code>NULL</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For subsequent calls to the operation, to continue listing data, set the value of
+        /// this parameter to the value returned from the previous response.
         /// </para>
         /// </summary>
         public string NextToken

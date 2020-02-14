@@ -65,9 +65,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// For requests to get the next page of results, the pagination token that was returned
-        /// with the previous set of results. The initial request does not include a pagination
-        /// token.
+        /// The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code>
+        /// operation, set the value of this parameter to <code>NULL</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For subsequent calls to the operation, to continue listing data, set the value of
+        /// this parameter to the value returned from the previous response.
         /// </para>
         /// </summary>
         public string NextToken

@@ -33,8 +33,8 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
-    /// Supported in AWS Security Hub</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+    /// Standards</a> section of the <i>AWS Security Hub User Guide</i>.
     /// </para>
     /// </summary>
     public partial class BatchDisableStandardsRequest : AmazonSecurityHubRequest

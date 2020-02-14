@@ -42,12 +42,6 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The ARN of a standard.
         /// </para>
-        ///  
-        /// <para>
-        /// In this release, Security Hub supports only the CIS AWS Foundations standard, which
-        /// uses the following ARN: <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</code>
-        /// 
-        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string StandardsArn

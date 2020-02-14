@@ -56,8 +56,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If there are more compliance standards control remaining in the results, then this
-        /// is the pagination token to use to request the next page of compliance standard controls.
+        /// The pagination token to use to request the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

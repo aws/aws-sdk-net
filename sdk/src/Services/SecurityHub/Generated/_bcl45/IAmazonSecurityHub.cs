@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub
     ///
     /// Security Hub provides you with a comprehensive view of the security state of your
     /// AWS environment and resources. It also provides you with the compliance status of
-    /// your environment based on CIS AWS Foundations compliance checks. Security Hub collects
+    /// your environment based on controls from supported standards. Security Hub collects
     /// security data from AWS accounts, services, and integrated third-party products and
     /// helps you analyze security trends in your environment to identify the highest priority
     /// security issues. For more information about Security Hub, see the <i> <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS
@@ -49,11 +49,11 @@ namespace Amazon.SecurityHub
     /// </para>
     ///  
     /// <para>
-    /// For example, if your Region is set to <code>us-west-2</code>, when you use <code>CreateMembers</code>
-    /// to add a member account to Security Hub, the association of the member account with
-    /// the master account is created only in the <code>us-west-2</code> Region. Security
-    /// Hub must be enabled for the member account in the same Region that the invitation
-    /// was sent from.
+    /// For example, if your Region is set to <code>us-west-2</code>, when you use <code>
+    /// <a>CreateMembers</a> </code> to add a member account to Security Hub, the association
+    /// of the member account with the master account is created only in the <code>us-west-2</code>
+    /// Region. Security Hub must be enabled for the member account in the same Region that
+    /// the invitation was sent from.
     /// </para>
     ///  
     /// <para>
@@ -61,17 +61,17 @@ namespace Amazon.SecurityHub
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>GetFindings</code> - <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code>
-    /// of 6 requests per second.
+    ///  <code> <a>GetFindings</a> </code> - <code>RateLimit</code> of 3 requests per second.
+    /// <code>BurstLimit</code> of 6 requests per second.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateFindings</code> - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code>
-    /// of 5 requests per second.
+    ///  <code> <a>UpdateFindings</a> </code> - <code>RateLimit</code> of 1 request per second.
+    /// <code>BurstLimit</code> of 5 requests per second.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// All other operations - <code>RateLimit</code> of 10 request per second. <code>BurstLimit</code>
+    /// All other operations - <code>RateLimit</code> of 10 requests per second. <code>BurstLimit</code>
     /// of 30 requests per second.
     /// </para>
     ///  </li> </ul>
@@ -164,8 +164,8 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
-        /// Supported in AWS Security Hub</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+        /// Standards</a> section of the <i>AWS Security Hub User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisableStandards service method.</param>
@@ -195,8 +195,8 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
-        /// Supported in AWS Security Hub</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+        /// Standards</a> section of the <i>AWS Security Hub User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisableStandards service method.</param>
@@ -228,16 +228,13 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Enables the standards specified by the provided <code>standardsArn</code>.
+        /// Enables the standards specified by the provided <code>StandardsArn</code>. To obtain
+        /// the ARN for a standard, use the <code> <a>DescribeStandards</a> </code> operation.
         /// 
         ///  
         /// <para>
-        /// In this release, only CIS AWS Foundations standards are supported.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
-        /// Supported in AWS Security Hub</a>.
+        /// For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+        /// Standards</a> section of the <i>AWS Security Hub User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchEnableStandards service method.</param>
@@ -263,16 +260,13 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Enables the standards specified by the provided <code>standardsArn</code>.
+        /// Enables the standards specified by the provided <code>StandardsArn</code>. To obtain
+        /// the ARN for a standard, use the <code> <a>DescribeStandards</a> </code> operation.
         /// 
         ///  
         /// <para>
-        /// In this release, only CIS AWS Foundations standards are supported.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
-        /// Supported in AWS Security Hub</a>.
+        /// For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+        /// Standards</a> section of the <i>AWS Security Hub User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchEnableStandards service method.</param>
@@ -527,13 +521,13 @@ namespace Amazon.SecurityHub
         /// Creates a member association in Security Hub between the specified accounts and the
         /// account used to make the request, which is the master account. To successfully create
         /// a member, you must use this action from an account that already has Security Hub enabled.
-        /// To enable Security Hub, you can use the <a>EnableSecurityHub</a> operation.
+        /// To enable Security Hub, you can use the <code> <a>EnableSecurityHub</a> </code> operation.
         /// 
         ///  
         /// <para>
         /// After you use <code>CreateMembers</code> to create member account associations in
-        /// Security Hub, you must use the <a>InviteMembers</a> operation to invite the accounts
-        /// to enable Security Hub and become member accounts in Security Hub.
+        /// Security Hub, you must use the <code> <a>InviteMembers</a> </code> operation to invite
+        /// the accounts to enable Security Hub and become member accounts in Security Hub.
         /// </para>
         ///  
         /// <para>
@@ -544,8 +538,8 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// To remove the association between the master and member accounts, use the <a>DisassociateFromMasterAccount</a>
-        /// or <a>DisassociateMembers</a> operation.
+        /// To remove the association between the master and member accounts, use the <code> <a>DisassociateFromMasterAccount</a>
+        /// </code> or <code> <a>DisassociateMembers</a> </code> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
@@ -577,13 +571,13 @@ namespace Amazon.SecurityHub
         /// Creates a member association in Security Hub between the specified accounts and the
         /// account used to make the request, which is the master account. To successfully create
         /// a member, you must use this action from an account that already has Security Hub enabled.
-        /// To enable Security Hub, you can use the <a>EnableSecurityHub</a> operation.
+        /// To enable Security Hub, you can use the <code> <a>EnableSecurityHub</a> </code> operation.
         /// 
         ///  
         /// <para>
         /// After you use <code>CreateMembers</code> to create member account associations in
-        /// Security Hub, you must use the <a>InviteMembers</a> operation to invite the accounts
-        /// to enable Security Hub and become member accounts in Security Hub.
+        /// Security Hub, you must use the <code> <a>InviteMembers</a> </code> operation to invite
+        /// the accounts to enable Security Hub and become member accounts in Security Hub.
         /// </para>
         ///  
         /// <para>
@@ -594,8 +588,8 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// To remove the association between the master and member accounts, use the <a>DisassociateFromMasterAccount</a>
-        /// or <a>DisassociateMembers</a> operation.
+        /// To remove the association between the master and member accounts, use the <code> <a>DisassociateFromMasterAccount</a>
+        /// </code> or <code> <a>DisassociateMembers</a> </code> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
@@ -1108,6 +1102,66 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  DescribeStandards
+
+
+        /// <summary>
+        /// Returns a list of the available standards in Security Hub.
+        /// 
+        ///  
+        /// <para>
+        /// For each standard, the results include the standard ARN, the name, and a description.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStandards service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStandards service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandards">REST API Reference for DescribeStandards Operation</seealso>
+        DescribeStandardsResponse DescribeStandards(DescribeStandardsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of the available standards in Security Hub.
+        /// 
+        ///  
+        /// <para>
+        /// For each standard, the results include the standard ARN, the name, and a description.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStandards service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStandards service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandards">REST API Reference for DescribeStandards Operation</seealso>
+        Task<DescribeStandardsResponse> DescribeStandardsAsync(DescribeStandardsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeStandardsControls
 
 
@@ -1541,18 +1595,22 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// Enabling Security Hub also enables the CIS AWS Foundations standard.
-        /// </para>
-        ///  
-        /// <para>
         /// When you enable Security Hub, you grant to Security Hub the permissions necessary
         /// to gather findings from AWS Config, Amazon GuardDuty, Amazon Inspector, and Amazon
         /// Macie.
         /// </para>
         ///  
         /// <para>
+        /// When you use the <code>EnableSecurityHub</code> operation to enable Security Hub,
+        /// you also automatically enable the CIS AWS Foundations standard. You do not enable
+        /// the Payment Card Industry Data Security Standard (PCI DSS) standard. To enable a standard,
+        /// use the <code> <a>BatchEnableStandards</a> </code> operation. To disable a standard,
+        /// use the <code> <a>BatchDisableStandards</a> </code> operation.
+        /// </para>
+        ///  
+        /// <para>
         /// To learn more, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
-        /// Up AWS Security Hub</a>.
+        /// Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHub service method.</param>
@@ -1585,18 +1643,22 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// Enabling Security Hub also enables the CIS AWS Foundations standard.
-        /// </para>
-        ///  
-        /// <para>
         /// When you enable Security Hub, you grant to Security Hub the permissions necessary
         /// to gather findings from AWS Config, Amazon GuardDuty, Amazon Inspector, and Amazon
         /// Macie.
         /// </para>
         ///  
         /// <para>
+        /// When you use the <code>EnableSecurityHub</code> operation to enable Security Hub,
+        /// you also automatically enable the CIS AWS Foundations standard. You do not enable
+        /// the Payment Card Industry Data Security Standard (PCI DSS) standard. To enable a standard,
+        /// use the <code> <a>BatchEnableStandards</a> </code> operation. To disable a standard,
+        /// use the <code> <a>BatchDisableStandards</a> </code> operation.
+        /// </para>
+        ///  
+        /// <para>
         /// To learn more, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
-        /// Up AWS Security Hub</a>.
+        /// Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHub service method.</param>
@@ -2055,8 +2117,8 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// Before you can use this action to invite a member, you must first use the <a>CreateMembers</a>
-        /// action to create the member account in Security Hub.
+        /// Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a>
+        /// </code> action to create the member account in Security Hub.
         /// </para>
         ///  
         /// <para>
@@ -2095,8 +2157,8 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// Before you can use this action to invite a member, you must first use the <a>CreateMembers</a>
-        /// action to create the member account in Security Hub.
+        /// Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a>
+        /// </code> action to create the member account in Security Hub.
         /// </para>
         ///  
         /// <para>

@@ -94,6 +94,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.DisabledReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RelatedRequirements", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.RelatedRequirements = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RemediationUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

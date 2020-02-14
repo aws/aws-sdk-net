@@ -59,10 +59,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Paginates results. On your first call to the <code>ListMembers</code> operation, set
-        /// the value of this parameter to <code>NULL</code>. For subsequent calls to the operation,
-        /// to continue listing data, set <code>nextToken</code> in the request to the value of
-        /// <code>nextToken</code> from the previous response.
+        /// The token that is required for pagination. On your first call to the <code>ListMembers</code>
+        /// operation, set the value of this parameter to <code>NULL</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For subsequent calls to the operation, to continue listing data, set the value of
+        /// this parameter to the value returned from the previous response.
         /// </para>
         /// </summary>
         public string NextToken
@@ -85,13 +88,13 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>onlyAssociated</code> is set to <code>TRUE</code>, the response includes
+        /// If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes
         /// member accounts whose relationship status with the master is set to <code>ENABLED</code>
         /// or <code>DISABLED</code>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>onlyAssociated</code> is set to <code>FALSE</code>, the response includes
+        /// If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes
         /// all existing member accounts. 
         /// </para>
         /// </summary>

@@ -78,13 +78,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Paginates results. On your first call to the <code>GetFindings</code> operation, set
-        /// the value of this parameter to <code>NULL</code>.
+        /// The token that is required for pagination. On your first call to the <code>GetFindings</code>
+        /// operation, set the value of this parameter to <code>NULL</code>.
         /// </para>
         ///  
         /// <para>
-        /// For subsequent calls to the operation, to continue listing data, set <code>nextToken</code>
-        /// in the request to the value of <code>nextToken</code> from the previous response.
+        /// For subsequent calls to the operation, to continue listing data, set the value of
+        /// this parameter to the value returned from the previous response.
         /// </para>
         /// </summary>
         public string NextToken

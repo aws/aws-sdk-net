@@ -32,13 +32,13 @@ namespace Amazon.SecurityHub.Model
     /// Creates a member association in Security Hub between the specified accounts and the
     /// account used to make the request, which is the master account. To successfully create
     /// a member, you must use this action from an account that already has Security Hub enabled.
-    /// To enable Security Hub, you can use the <a>EnableSecurityHub</a> operation.
+    /// To enable Security Hub, you can use the <code> <a>EnableSecurityHub</a> </code> operation.
     /// 
     ///  
     /// <para>
     /// After you use <code>CreateMembers</code> to create member account associations in
-    /// Security Hub, you must use the <a>InviteMembers</a> operation to invite the accounts
-    /// to enable Security Hub and become member accounts in Security Hub.
+    /// Security Hub, you must use the <code> <a>InviteMembers</a> </code> operation to invite
+    /// the accounts to enable Security Hub and become member accounts in Security Hub.
     /// </para>
     ///  
     /// <para>
@@ -49,8 +49,8 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  
     /// <para>
-    /// To remove the association between the master and member accounts, use the <a>DisassociateFromMasterAccount</a>
-    /// or <a>DisassociateMembers</a> operation.
+    /// To remove the association between the master and member accounts, use the <code> <a>DisassociateFromMasterAccount</a>
+    /// </code> or <code> <a>DisassociateMembers</a> </code> operation.
     /// </para>
     /// </summary>
     public partial class CreateMembersRequest : AmazonSecurityHubRequest

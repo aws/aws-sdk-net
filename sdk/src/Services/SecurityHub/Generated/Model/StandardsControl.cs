@@ -37,6 +37,7 @@ namespace Amazon.SecurityHub.Model
         private DateTime? _controlStatusUpdatedAt;
         private string _description;
         private string _disabledReason;
+        private List<string> _relatedRequirements = new List<string>();
         private string _remediationUrl;
         private SeverityRating _severityRating;
         private string _standardsControlArn;
@@ -136,9 +137,27 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RelatedRequirements. 
+        /// <para>
+        /// The list of requirements that are related to this control.
+        /// </para>
+        /// </summary>
+        public List<string> RelatedRequirements
+        {
+            get { return this._relatedRequirements; }
+            set { this._relatedRequirements = value; }
+        }
+
+        // Check to see if RelatedRequirements property is set
+        internal bool IsSetRelatedRequirements()
+        {
+            return this._relatedRequirements != null && this._relatedRequirements.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RemediationUrl. 
         /// <para>
-        /// A link to remediation information for the control in the Security Hub user documentation
+        /// A link to remediation information for the control in the Security Hub user documentation.
         /// </para>
         /// </summary>
         public string RemediationUrl

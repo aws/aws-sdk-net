@@ -34,8 +34,8 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// Before you can use this action to invite a member, you must first use the <a>CreateMembers</a>
-    /// action to create the member account in Security Hub.
+    /// Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a>
+    /// </code> action to create the member account in Security Hub.
     /// </para>
     ///  
     /// <para>

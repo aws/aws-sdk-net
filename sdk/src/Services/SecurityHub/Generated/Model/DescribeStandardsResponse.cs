@@ -28,31 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// This is the response object from the GetInsights operation.
+    /// This is the response object from the DescribeStandards operation.
     /// </summary>
-    public partial class GetInsightsResponse : AmazonWebServiceResponse
+    public partial class DescribeStandardsResponse : AmazonWebServiceResponse
     {
-        private List<Insight> _insights = new List<Insight>();
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property Insights. 
-        /// <para>
-        /// The insights returned by the operation.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<Insight> Insights
-        {
-            get { return this._insights; }
-            set { this._insights = value; }
-        }
-
-        // Check to see if Insights property is set
-        internal bool IsSetInsights()
-        {
-            return this._insights != null && this._insights.Count > 0; 
-        }
+        private List<Standard> _standards = new List<Standard>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,6 +51,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Standards. 
+        /// <para>
+        /// A list of available standards.
+        /// </para>
+        /// </summary>
+        public List<Standard> Standards
+        {
+            get { return this._standards; }
+            set { this._standards = value; }
+        }
+
+        // Check to see if Standards property is set
+        internal bool IsSetStandards()
+        {
+            return this._standards != null && this._standards.Count > 0; 
         }
 
     }
