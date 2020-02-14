@@ -38,6 +38,7 @@ namespace Amazon.MediaTailor.Model
         private HlsConfiguration _hlsConfiguration;
         private LivePreRollConfiguration _livePreRollConfiguration;
         private string _name;
+        private int? _personalizationThresholdSeconds;
         private string _playbackConfigurationArn;
         private string _playbackEndpointPrefix;
         private string _sessionInitializationEndpointPrefix;
@@ -156,6 +157,25 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PersonalizationThresholdSeconds. 
+        /// <para>
+        /// The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int PersonalizationThresholdSeconds
+        {
+            get { return this._personalizationThresholdSeconds.GetValueOrDefault(); }
+            set { this._personalizationThresholdSeconds = value; }
+        }
+
+        // Check to see if PersonalizationThresholdSeconds property is set
+        internal bool IsSetPersonalizationThresholdSeconds()
+        {
+            return this._personalizationThresholdSeconds.HasValue; 
         }
 
         /// <summary>

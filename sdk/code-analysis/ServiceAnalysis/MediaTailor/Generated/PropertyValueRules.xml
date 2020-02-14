@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.MediaTailor.Model.GetPlaybackConfigurationResponse.PersonalizationThresholdSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaTailor.Model.ListPlaybackConfigurationsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaTailor.Model.PutPlaybackConfigurationRequest.PersonalizationThresholdSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaTailor.Model.PutPlaybackConfigurationResponse.PersonalizationThresholdSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaTailor.Model.PlaybackConfiguration.PersonalizationThresholdSeconds</property>
+    <min>1</min>
   </property-value-rule>
 </property-value-rules>

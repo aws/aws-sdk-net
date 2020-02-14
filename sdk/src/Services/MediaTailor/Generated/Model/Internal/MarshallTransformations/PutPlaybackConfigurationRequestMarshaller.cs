@@ -111,6 +111,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPersonalizationThresholdSeconds())
+                {
+                    context.Writer.WritePropertyName("PersonalizationThresholdSeconds");
+                    context.Writer.Write(publicRequest.PersonalizationThresholdSeconds);
+                }
+
                 if(publicRequest.IsSetSlateAdUrl())
                 {
                     context.Writer.WritePropertyName("SlateAdUrl");

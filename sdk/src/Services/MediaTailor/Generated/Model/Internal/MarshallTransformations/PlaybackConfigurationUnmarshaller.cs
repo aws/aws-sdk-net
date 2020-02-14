@@ -94,6 +94,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PersonalizationThresholdSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PersonalizationThresholdSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PlaybackConfigurationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
