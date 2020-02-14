@@ -32,9 +32,29 @@ namespace Amazon.Shield.Model
     /// </summary>
     public partial class Protection
     {
+        private List<string> _healthCheckIds = new List<string>();
         private string _id;
         private string _name;
         private string _resourceArn;
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckIds. 
+        /// <para>
+        /// The unique identifier (ID) for the Route 53 health check that's associated with the
+        /// protection. 
+        /// </para>
+        /// </summary>
+        public List<string> HealthCheckIds
+        {
+            get { return this._healthCheckIds; }
+            set { this._healthCheckIds = value; }
+        }
+
+        // Check to see if HealthCheckIds property is set
+        internal bool IsSetHealthCheckIds()
+        {
+            return this._healthCheckIds != null && this._healthCheckIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 

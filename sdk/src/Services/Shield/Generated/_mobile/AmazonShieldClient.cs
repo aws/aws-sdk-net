@@ -284,9 +284,8 @@ namespace Amazon.Shield
         /// <returns>The response from the AssociateDRTLogBucket service method, as returned by Shield.</returns>
         /// <exception cref="Amazon.Shield.Model.AccessDeniedForDependencyException">
         /// In order to grant the necessary access to the DDoS Response Team, the user submitting
-        /// <code>AssociateDRTRole</code> must have the <code>iam:PassRole</code> permission.
-        /// This error indicates the user did not have the appropriate permissions. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
+        /// the request must have the <code>iam:PassRole</code> permission. This error indicates
+        /// the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
         /// a User Permissions to Pass a Role to an AWS Service</a>.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InternalErrorException">
@@ -398,9 +397,8 @@ namespace Amazon.Shield
         /// <returns>The response from the AssociateDRTRole service method, as returned by Shield.</returns>
         /// <exception cref="Amazon.Shield.Model.AccessDeniedForDependencyException">
         /// In order to grant the necessary access to the DDoS Response Team, the user submitting
-        /// <code>AssociateDRTRole</code> must have the <code>iam:PassRole</code> permission.
-        /// This error indicates the user did not have the appropriate permissions. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
+        /// the request must have the <code>iam:PassRole</code> permission. This error indicates
+        /// the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
         /// a User Permissions to Pass a Role to an AWS Service</a>.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InternalErrorException">
@@ -428,6 +426,76 @@ namespace Amazon.Shield
             options.ResponseUnmarshaller = AssociateDRTRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateDRTRoleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateHealthCheck
+
+        internal virtual AssociateHealthCheckResponse AssociateHealthCheck(AssociateHealthCheckRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateHealthCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateHealthCheckResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateHealthCheckResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds health-based detection to the Shield Advanced protection for a resource. Shield
+        /// Advanced health-based detection uses the health of your AWS resource to improve responsiveness
+        /// and accuracy in attack detection and mitigation. 
+        /// 
+        ///  
+        /// <para>
+        /// You define the health check in Route 53 and then associate it with your Shield Advanced
+        /// protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
+        /// Advanced Health-Based Detection</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS
+        /// WAF and AWS Shield Developer Guide</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateHealthCheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateHealthCheck service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
+        /// Exception that indicates that the operation would exceed a limit.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>Type</code> is the type of limit that would be exceeded.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Limit</code> is the threshold that would be exceeded.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
+        /// Exception that indicates that the protection state has been modified by another client.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateHealthCheck">REST API Reference for AssociateHealthCheck Operation</seealso>
+        public virtual Task<AssociateHealthCheckResponse> AssociateHealthCheckAsync(AssociateHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateHealthCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateHealthCheckResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateHealthCheckResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -912,9 +980,8 @@ namespace Amazon.Shield
         /// <returns>The response from the DisassociateDRTLogBucket service method, as returned by Shield.</returns>
         /// <exception cref="Amazon.Shield.Model.AccessDeniedForDependencyException">
         /// In order to grant the necessary access to the DDoS Response Team, the user submitting
-        /// <code>AssociateDRTRole</code> must have the <code>iam:PassRole</code> permission.
-        /// This error indicates the user did not have the appropriate permissions. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
+        /// the request must have the <code>iam:PassRole</code> permission. This error indicates
+        /// the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
         /// a User Permissions to Pass a Role to an AWS Service</a>.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InternalErrorException">
@@ -1000,6 +1067,64 @@ namespace Amazon.Shield
             options.ResponseUnmarshaller = DisassociateDRTRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateDRTRoleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateHealthCheck
+
+        internal virtual DisassociateHealthCheckResponse DisassociateHealthCheck(DisassociateHealthCheckRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateHealthCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateHealthCheckResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateHealthCheckResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes health-based detection from the Shield Advanced protection for a resource.
+        /// Shield Advanced health-based detection uses the health of your AWS resource to improve
+        /// responsiveness and accuracy in attack detection and mitigation. 
+        /// 
+        ///  
+        /// <para>
+        /// You define the health check in Route 53 and then associate or disassociate it with
+        /// your Shield Advanced protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
+        /// Advanced Health-Based Detection</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS
+        /// WAF and AWS Shield Developer Guide</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateHealthCheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateHealthCheck service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
+        /// Exception that indicates that the protection state has been modified by another client.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateHealthCheck">REST API Reference for DisassociateHealthCheck Operation</seealso>
+        public virtual Task<DisassociateHealthCheckResponse> DisassociateHealthCheckAsync(DisassociateHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateHealthCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateHealthCheckResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateHealthCheckResponse>(request, options, cancellationToken);
         }
 
         #endregion
