@@ -113,7 +113,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the instance.
+        /// The ID of the instance. If you are detaching a Multi-Attach enabled volume, you must
+        /// specify an instance ID.
         /// </para>
         /// </summary>
         public string InstanceId

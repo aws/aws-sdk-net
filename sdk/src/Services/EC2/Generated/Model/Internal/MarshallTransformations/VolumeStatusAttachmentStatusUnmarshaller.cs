@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VolumeStatusEvent Object
+    /// Response Unmarshaller for VolumeStatusAttachmentStatus Object
     /// </summary>  
-    public class VolumeStatusEventUnmarshaller : IUnmarshaller<VolumeStatusEvent, XmlUnmarshallerContext>, IUnmarshaller<VolumeStatusEvent, JsonUnmarshallerContext>
+    public class VolumeStatusAttachmentStatusUnmarshaller : IUnmarshaller<VolumeStatusAttachmentStatus, XmlUnmarshallerContext>, IUnmarshaller<VolumeStatusAttachmentStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VolumeStatusEvent Unmarshall(XmlUnmarshallerContext context)
+        public VolumeStatusAttachmentStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            VolumeStatusEvent unmarshalledObject = new VolumeStatusEvent();
+            VolumeStatusAttachmentStatus unmarshalledObject = new VolumeStatusAttachmentStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,40 +54,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("description", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("eventId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.EventId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("eventType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.EventType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("instanceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("notAfter", targetDepth))
+                    if (context.TestExpression("ioPerformance", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.NotAfter = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("notBefore", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.NotBefore = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IoPerformance = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -105,18 +81,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VolumeStatusEvent Unmarshall(JsonUnmarshallerContext context)
+        public VolumeStatusAttachmentStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static VolumeStatusEventUnmarshaller _instance = new VolumeStatusEventUnmarshaller();        
+        private static VolumeStatusAttachmentStatusUnmarshaller _instance = new VolumeStatusAttachmentStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VolumeStatusEventUnmarshaller Instance
+        public static VolumeStatusAttachmentStatusUnmarshaller Instance
         {
             get
             {

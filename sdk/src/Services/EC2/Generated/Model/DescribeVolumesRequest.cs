@@ -111,6 +111,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>multi-attach-enabled</code> - Indicates whether the volume is enabled for Multi-Attach
+        /// (<code>true</code> | <code>false</code>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>fast-restored</code> - Indicates whether the volume was created from a snapshot
         /// that is enabled for fast snapshot restore (<code>true</code> | <code>false</code>).
         /// </para>

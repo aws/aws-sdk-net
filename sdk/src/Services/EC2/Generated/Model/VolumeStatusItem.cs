@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class VolumeStatusItem
     {
         private List<VolumeStatusAction> _actions = new List<VolumeStatusAction>();
+        private List<VolumeStatusAttachmentStatus> _attachmentStatuses = new List<VolumeStatusAttachmentStatus>();
         private string _availabilityZone;
         private List<VolumeStatusEvent> _events = new List<VolumeStatusEvent>();
         private string _outpostArn;
@@ -55,6 +56,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetActions()
         {
             return this._actions != null && this._actions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachmentStatuses. 
+        /// <para>
+        /// Information about the instances to which the volume is attached.
+        /// </para>
+        /// </summary>
+        public List<VolumeStatusAttachmentStatus> AttachmentStatuses
+        {
+            get { return this._attachmentStatuses; }
+            set { this._attachmentStatuses = value; }
+        }
+
+        // Check to see if AttachmentStatuses property is set
+        internal bool IsSetAttachmentStatuses()
+        {
+            return this._attachmentStatuses != null && this._attachmentStatuses.Count > 0; 
         }
 
         /// <summary>

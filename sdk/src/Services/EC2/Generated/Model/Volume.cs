@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private bool? _fastRestored;
         private int? _iops;
         private string _kmsKeyId;
+        private bool? _multiAttachEnabled;
         private string _outpostArn;
         private int? _size;
         private string _snapshotId;
@@ -190,6 +191,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAttachEnabled. 
+        /// <para>
+        /// Indicates whether Amazon EBS Multi-Attach is enabled.
+        /// </para>
+        /// </summary>
+        public bool MultiAttachEnabled
+        {
+            get { return this._multiAttachEnabled.GetValueOrDefault(); }
+            set { this._multiAttachEnabled = value; }
+        }
+
+        // Check to see if MultiAttachEnabled property is set
+        internal bool IsSetMultiAttachEnabled()
+        {
+            return this._multiAttachEnabled.HasValue; 
         }
 
         /// <summary>

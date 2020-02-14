@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private string _eventId;
         private string _eventType;
+        private string _instanceId;
         private DateTime? _notAfter;
         private DateTime? _notBefore;
 
@@ -90,6 +91,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetEventType()
         {
             return this._eventType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance associated with the event.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
         }
 
         /// <summary>

@@ -59,10 +59,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
-        /// <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>,
-        /// <code>original-size</code>, <code>original-iops</code>, <code>original-volume-type</code>,
-        /// <code>start-time</code>. 
+        /// The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code>
+        /// | <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code>
+        /// | <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code>
+        /// | <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+        /// 
         /// </para>
         /// </summary>
         public List<Filter> Filters
