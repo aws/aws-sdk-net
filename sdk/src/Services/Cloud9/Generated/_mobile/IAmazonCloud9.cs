@@ -82,6 +82,18 @@ namespace Amazon.Cloud9
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>ListTagsForResource</code>: Gets the tags for an environment.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TagResource</code>: Adds tags to an environment.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UntagResource</code>: Removes tags from an environment.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>UpdateEnvironment</code>: Changes the settings of an existing environment.
     /// </para>
     ///  </li> <li> 
@@ -405,6 +417,94 @@ namespace Amazon.Cloud9
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         Task<ListEnvironmentsResponse> ListEnvironmentsAsync(ListEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// Gets a list of the tags associated with an AWS Cloud9 development environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Cloud9.</returns>
+        /// <exception cref="Amazon.Cloud9.Model.BadRequestException">
+        /// The target request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Cloud9.Model.InternalServerErrorException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Cloud9.Model.NotFoundException">
+        /// The target resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Adds tags to an AWS Cloud9 development environment.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Tags that you add to an AWS Cloud9 environment by using this method will NOT be automatically
+        /// propagated to underlying resources.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Cloud9.</returns>
+        /// <exception cref="Amazon.Cloud9.Model.BadRequestException">
+        /// The target request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Cloud9.Model.InternalServerErrorException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Cloud9.Model.NotFoundException">
+        /// The target resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Removes tags from an AWS Cloud9 development environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Cloud9.</returns>
+        /// <exception cref="Amazon.Cloud9.Model.BadRequestException">
+        /// The target request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Cloud9.Model.InternalServerErrorException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Cloud9.Model.NotFoundException">
+        /// The target resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

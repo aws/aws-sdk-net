@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateEnvironmentEC2 Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateEnvironmentEC2RequestMarshaller : IMarshaller<IRequest, CreateEnvironmentEC2Request> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateEnvironmentEC2Request)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateEnvironmentEC2Request publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Cloud9");
-            string target = "AWSCloud9WorkspaceManagementService.CreateEnvironmentEC2";
+            string target = "AWSCloud9WorkspaceManagementService.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-23";            
@@ -68,51 +68,15 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutomaticStopTimeMinutes())
+                if(publicRequest.IsSetResourceARN())
                 {
-                    context.Writer.WritePropertyName("automaticStopTimeMinutes");
-                    context.Writer.Write(publicRequest.AutomaticStopTimeMinutes);
-                }
-
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetInstanceType())
-                {
-                    context.Writer.WritePropertyName("instanceType");
-                    context.Writer.Write(publicRequest.InstanceType);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOwnerArn())
-                {
-                    context.Writer.WritePropertyName("ownerArn");
-                    context.Writer.Write(publicRequest.OwnerArn);
-                }
-
-                if(publicRequest.IsSetSubnetId())
-                {
-                    context.Writer.WritePropertyName("subnetId");
-                    context.Writer.Write(publicRequest.SubnetId);
+                    context.Writer.WritePropertyName("ResourceARN");
+                    context.Writer.Write(publicRequest.ResourceARN);
                 }
 
                 if(publicRequest.IsSetTags())
                 {
-                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WritePropertyName("Tags");
                     context.Writer.WriteArrayStart();
                     foreach(var publicRequestTagsListValue in publicRequest.Tags)
                     {
@@ -135,9 +99,9 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateEnvironmentEC2RequestMarshaller _instance = new CreateEnvironmentEC2RequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateEnvironmentEC2RequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -145,7 +109,7 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateEnvironmentEC2RequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

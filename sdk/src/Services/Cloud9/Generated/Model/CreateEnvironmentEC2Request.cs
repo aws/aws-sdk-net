@@ -41,6 +41,7 @@ namespace Amazon.Cloud9.Model
         private string _name;
         private string _ownerArn;
         private string _subnetId;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AutomaticStopTimeMinutes. 
@@ -185,6 +186,26 @@ namespace Amazon.Cloud9.Model
         internal bool IsSetSubnetId()
         {
             return this._subnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of key-value pairs that will be associated with the new AWS Cloud9 development
+        /// environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

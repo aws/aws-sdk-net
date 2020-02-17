@@ -25,7 +25,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.CreateEnvironmentEC2Request.OwnerArn</property>
-    <pattern>^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=/:,.@-]{1,64}\/[\w+=/:,.@-]{1,64}))$</pattern>
+    <pattern>^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.CreateEnvironmentEC2Request.SubnetId</property>
@@ -42,7 +42,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.CreateEnvironmentMembershipRequest.UserArn</property>
-    <pattern>^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=/:,.@-]{1,64}\/[\w+=/:,.@-]{1,64}))$</pattern>
+    <pattern>^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.DeleteEnvironmentRequest.EnvironmentId</property>
@@ -54,7 +54,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.DeleteEnvironmentMembershipRequest.UserArn</property>
-    <pattern>^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=/:,.@-]{1,64}\/[\w+=/:,.@-]{1,64}))$</pattern>
+    <pattern>^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.DescribeEnvironmentMembershipsRequest.EnvironmentId</property>
@@ -67,7 +67,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.DescribeEnvironmentMembershipsRequest.UserArn</property>
-    <pattern>^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=/:,.@-]{1,64}\/[\w+=/:,.@-]{1,64}))$</pattern>
+    <pattern>^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.DescribeEnvironmentStatusRequest.EnvironmentId</property>
@@ -77,6 +77,18 @@
     <property>Amazon.Cloud9.Model.ListEnvironmentsRequest.MaxResults</property>
     <min>0</min>
     <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Cloud9.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <pattern>arn:aws:cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Cloud9.Model.TagResourceRequest.ResourceARN</property>
+    <pattern>arn:aws:cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Cloud9.Model.UntagResourceRequest.ResourceARN</property>
+    <pattern>arn:aws:cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.UpdateEnvironmentRequest.Description</property>
@@ -97,7 +109,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.UpdateEnvironmentMembershipRequest.UserArn</property>
-    <pattern>^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=/:,.@-]{1,64}\/[\w+=/:,.@-]{1,64}))$</pattern>
+    <pattern>^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.Environment.Description</property>
@@ -118,6 +130,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Cloud9.Model.EnvironmentMember.UserArn</property>
-    <pattern>^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=/:,.@-]{1,64}\/[\w+=/:,.@-]{1,64}))$</pattern>
+    <pattern>^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Cloud9.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Cloud9.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>
