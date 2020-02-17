@@ -1,3 +1,18 @@
+### 3.3.680.0 (2020-02-17 19:13 UTC)
+* Cloud9 (3.3.102.0)
+	* AWS Cloud9 now supports the ability to tag Cloud9 development environments. 
+* DynamoDBv2 (3.3.105.0)
+	* Amazon DynamoDB enables you to restore your DynamoDB backup or table data across AWS Regions such that the restored table is created in a different AWS Region from where the source table or backup resides. You can do cross-region restores between AWS commercial Regions, AWS China Regions, and AWS GovCloud (US) Regions. 
+* EC2 (3.3.161.0)
+	* Documentation updates for EC2
+* Rekognition (3.3.104.0)
+	* This update adds the ability to detect text in videos and adds filters to image and video text detection.
+* Core 3.3.104.26
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.679.0 (2020-02-14 19:33 UTC)
 * EC2 (3.3.160.0)
 	* You can now enable Multi-Attach on Provisioned IOPS io1 volumes through the create-volume API.
