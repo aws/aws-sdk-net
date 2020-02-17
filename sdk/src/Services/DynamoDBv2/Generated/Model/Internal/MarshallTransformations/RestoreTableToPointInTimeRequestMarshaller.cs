@@ -123,10 +123,27 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RestoreDateTime);
                 }
 
+                if(publicRequest.IsSetSourceTableArn())
+                {
+                    context.Writer.WritePropertyName("SourceTableArn");
+                    context.Writer.Write(publicRequest.SourceTableArn);
+                }
+
                 if(publicRequest.IsSetSourceTableName())
                 {
                     context.Writer.WritePropertyName("SourceTableName");
                     context.Writer.Write(publicRequest.SourceTableName);
+                }
+
+                if(publicRequest.IsSetSSESpecificationOverride())
+                {
+                    context.Writer.WritePropertyName("SSESpecificationOverride");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SSESpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SSESpecificationOverride, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTargetTableName())

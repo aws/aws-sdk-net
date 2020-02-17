@@ -66,7 +66,15 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of table names to return.
+        /// The maximum number of table names to return, if the parameter is not specified DynamoDB
+        /// defaults to 100.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the number of global tables DynamoDB finds reaches this limit, it stops the operation
+        /// and returns the table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code>
+        /// to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code>
+        /// parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -74,6 +74,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<GlobalSecondaryIndex> _globalSecondaryIndexOverride = new List<GlobalSecondaryIndex>();
         private List<LocalSecondaryIndex> _localSecondaryIndexOverride = new List<LocalSecondaryIndex>();
         private ProvisionedThroughput _provisionedThroughputOverride;
+        private SSESpecification _sseSpecificationOverride;
         private string _targetTableName;
 
         /// <summary>
@@ -169,6 +170,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetProvisionedThroughputOverride()
         {
             return this._provisionedThroughputOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSESpecificationOverride. 
+        /// <para>
+        /// The new server-side encryption settings for the restored table.
+        /// </para>
+        /// </summary>
+        public SSESpecification SSESpecificationOverride
+        {
+            get { return this._sseSpecificationOverride; }
+            set { this._sseSpecificationOverride = value; }
+        }
+
+        // Check to see if SSESpecificationOverride property is set
+        internal bool IsSetSSESpecificationOverride()
+        {
+            return this._sseSpecificationOverride != null;
         }
 
         /// <summary>

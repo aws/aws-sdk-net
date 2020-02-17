@@ -107,7 +107,9 @@ namespace Amazon.DynamoDBv2.Model
         private List<LocalSecondaryIndex> _localSecondaryIndexOverride = new List<LocalSecondaryIndex>();
         private ProvisionedThroughput _provisionedThroughputOverride;
         private DateTime? _restoreDateTime;
+        private string _sourceTableArn;
         private string _sourceTableName;
+        private SSESpecification _sseSpecificationOverride;
         private string _targetTableName;
         private bool? _useLatestRestorableTime;
 
@@ -206,12 +208,30 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceTableArn. 
+        /// <para>
+        /// The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).
+        /// </para>
+        /// </summary>
+        public string SourceTableArn
+        {
+            get { return this._sourceTableArn; }
+            set { this._sourceTableArn = value; }
+        }
+
+        // Check to see if SourceTableArn property is set
+        internal bool IsSetSourceTableArn()
+        {
+            return this._sourceTableArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceTableName. 
         /// <para>
         /// Name of the source table that is being restored.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Min=3, Max=255)]
         public string SourceTableName
         {
             get { return this._sourceTableName; }
@@ -222,6 +242,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetSourceTableName()
         {
             return this._sourceTableName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSESpecificationOverride. 
+        /// <para>
+        /// The new server-side encryption settings for the restored table.
+        /// </para>
+        /// </summary>
+        public SSESpecification SSESpecificationOverride
+        {
+            get { return this._sseSpecificationOverride; }
+            set { this._sseSpecificationOverride = value; }
+        }
+
+        // Check to see if SSESpecificationOverride property is set
+        internal bool IsSetSSESpecificationOverride()
+        {
+            return this._sseSpecificationOverride != null;
         }
 
         /// <summary>
