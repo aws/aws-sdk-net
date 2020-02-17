@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DetectText Request Marshaller
+    /// StartTextDetection Request Marshaller
     /// </summary>       
-    public class DetectTextRequestMarshaller : IMarshaller<IRequest, DetectTextRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StartTextDetectionRequestMarshaller : IMarshaller<IRequest, StartTextDetectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DetectTextRequest)input);
+            return this.Marshall((StartTextDetectionRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DetectTextRequest publicRequest)
+        public IRequest Marshall(StartTextDetectionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Rekognition");
-            string target = "RekognitionService.DetectText";
+            string target = "RekognitionService.StartTextDetection";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-27";            
@@ -68,24 +68,47 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetClientRequestToken())
+                {
+                    context.Writer.WritePropertyName("ClientRequestToken");
+                    context.Writer.Write(publicRequest.ClientRequestToken);
+                }
+
                 if(publicRequest.IsSetFilters())
                 {
                     context.Writer.WritePropertyName("Filters");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = DetectTextFiltersMarshaller.Instance;
+                    var marshaller = StartTextDetectionFiltersMarshaller.Instance;
                     marshaller.Marshall(publicRequest.Filters, context);
 
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetImage())
+                if(publicRequest.IsSetJobTag())
                 {
-                    context.Writer.WritePropertyName("Image");
+                    context.Writer.WritePropertyName("JobTag");
+                    context.Writer.Write(publicRequest.JobTag);
+                }
+
+                if(publicRequest.IsSetNotificationChannel())
+                {
+                    context.Writer.WritePropertyName("NotificationChannel");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = ImageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Image, context);
+                    var marshaller = NotificationChannelMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NotificationChannel, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVideo())
+                {
+                    context.Writer.WritePropertyName("Video");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VideoMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Video, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -99,9 +122,9 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DetectTextRequestMarshaller _instance = new DetectTextRequestMarshaller();        
+        private static StartTextDetectionRequestMarshaller _instance = new StartTextDetectionRequestMarshaller();        
 
-        internal static DetectTextRequestMarshaller GetInstance()
+        internal static StartTextDetectionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +132,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DetectTextRequestMarshaller Instance
+        public static StartTextDetectionRequestMarshaller Instance
         {
             get
             {

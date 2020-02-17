@@ -28,47 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// This is the response object from the DetectText operation.
+    /// Information about text detected in a video. Incudes the detected text, the time in
+    /// milliseconds from the start of the video that the text was detected, and where it
+    /// was detected on the screen.
     /// </summary>
-    public partial class DetectTextResponse : AmazonWebServiceResponse
+    public partial class TextDetectionResult
     {
-        private List<TextDetection> _textDetections = new List<TextDetection>();
-        private string _textModelVersion;
+        private TextDetection _textDetection;
+        private long? _timestamp;
 
         /// <summary>
-        /// Gets and sets the property TextDetections. 
+        /// Gets and sets the property TextDetection. 
         /// <para>
-        /// An array of text that was detected in the input image.
+        /// Details about text detected in a video.
         /// </para>
         /// </summary>
-        public List<TextDetection> TextDetections
+        public TextDetection TextDetection
         {
-            get { return this._textDetections; }
-            set { this._textDetections = value; }
+            get { return this._textDetection; }
+            set { this._textDetection = value; }
         }
 
-        // Check to see if TextDetections property is set
-        internal bool IsSetTextDetections()
+        // Check to see if TextDetection property is set
+        internal bool IsSetTextDetection()
         {
-            return this._textDetections != null && this._textDetections.Count > 0; 
+            return this._textDetection != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TextModelVersion. 
+        /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The model version used to detect text.
+        /// The time, in milliseconds from the start of the video, that the text was detected.
         /// </para>
         /// </summary>
-        public string TextModelVersion
+        public long Timestamp
         {
-            get { return this._textModelVersion; }
-            set { this._textModelVersion = value; }
+            get { return this._timestamp.GetValueOrDefault(); }
+            set { this._timestamp = value; }
         }
 
-        // Check to see if TextModelVersion property is set
-        internal bool IsSetTextModelVersion()
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
         {
-            return this._textModelVersion != null;
+            return this._timestamp.HasValue; 
         }
 
     }

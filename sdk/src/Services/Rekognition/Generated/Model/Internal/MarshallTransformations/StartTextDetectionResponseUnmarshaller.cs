@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DetectText operation
+    /// Response Unmarshaller for StartTextDetection operation
     /// </summary>  
-    public class DetectTextResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartTextDetectionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,16 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DetectTextResponse response = new DetectTextResponse();
+            StartTextDetectionResponse response = new StartTextDetectionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("TextDetections", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<TextDetection, TextDetectionUnmarshaller>(TextDetectionUnmarshaller.Instance);
-                    response.TextDetections = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TextModelVersion", targetDepth))
+                if (context.TestExpression("JobId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TextModelVersion = unmarshaller.Unmarshall(context);
+                    response.JobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,17 +76,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             {
                 return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ImageTooLargeException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("IdempotentParameterMismatchException"))
             {
-                return new ImageTooLargeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new IdempotentParameterMismatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
             {
                 return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidImageFormatException"))
-            {
-                return new InvalidImageFormatException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
             {
@@ -102,6 +92,10 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             {
                 return new InvalidS3ObjectException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+            {
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ProvisionedThroughputExceededException"))
             {
                 return new ProvisionedThroughputExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -110,12 +104,16 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             {
                 return new ThrottlingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("VideoTooLargeException"))
+            {
+                return new VideoTooLargeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRekognitionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DetectTextResponseUnmarshaller _instance = new DetectTextResponseUnmarshaller();        
+        private static StartTextDetectionResponseUnmarshaller _instance = new StartTextDetectionResponseUnmarshaller();        
 
-        internal static DetectTextResponseUnmarshaller GetInstance()
+        internal static StartTextDetectionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -123,7 +121,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DetectTextResponseUnmarshaller Instance
+        public static StartTextDetectionResponseUnmarshaller Instance
         {
             get
             {

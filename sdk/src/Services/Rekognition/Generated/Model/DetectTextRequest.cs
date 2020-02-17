@@ -76,7 +76,27 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DetectTextRequest : AmazonRekognitionRequest
     {
+        private DetectTextFilters _filters;
         private Image _image;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// Optional parameters that let you set the criteria that the text must meet to be included
+        /// in your response.
+        /// </para>
+        /// </summary>
+        public DetectTextFilters Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Image. 
