@@ -123,6 +123,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 return new DBProxyTargetNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBProxyStateFault"))
+            {
+                return new InvalidDBProxyStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static DescribeDBProxyTargetsResponseUnmarshaller _instance = new DescribeDBProxyTargetsResponseUnmarshaller();        

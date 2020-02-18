@@ -64,6 +64,7 @@ namespace Amazon.RDS.Model
         private string _dbClusterResourceId;
         private string _dbSubnetGroup;
         private bool? _deletionProtection;
+        private List<DomainMembership> _domainMemberships = new List<DomainMembership>();
         private DateTime? _earliestBacktrackTime;
         private DateTime? _earliestRestorableTime;
         private List<string> _enabledCloudwatchLogsExports = new List<string>();
@@ -581,6 +582,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDeletionProtection()
         {
             return this._deletionProtection.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainMemberships. 
+        /// <para>
+        /// The Active Directory Domain membership records associated with the DB cluster.
+        /// </para>
+        /// </summary>
+        public List<DomainMembership> DomainMemberships
+        {
+            get { return this._domainMemberships; }
+            set { this._domainMemberships = value; }
+        }
+
+        // Check to see if DomainMemberships property is set
+        internal bool IsSetDomainMemberships()
+        {
+            return this._domainMemberships != null && this._domainMemberships.Count > 0; 
         }
 
         /// <summary>

@@ -2033,6 +2033,9 @@ namespace Amazon.RDS
         /// The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned
         /// by your AWS account in the specified AWS Region.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets">REST API Reference for DeregisterDBProxyTargets Operation</seealso>
         Task<DeregisterDBProxyTargetsResponse> DeregisterDBProxyTargetsAsync(DeregisterDBProxyTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -2617,9 +2620,16 @@ namespace Amazon.RDS
         /// </param>
         /// 
         /// <returns>The response from the DescribeDBProxyTargetGroups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// the specified AWS Region.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
         /// The specified target group isn't available for a proxy owned by your AWS account in
         /// the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups">REST API Reference for DescribeDBProxyTargetGroups Operation</seealso>
         Task<DescribeDBProxyTargetGroupsResponse> DescribeDBProxyTargetGroupsAsync(DescribeDBProxyTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2658,6 +2668,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetNotFoundException">
         /// The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned
         /// by your AWS account in the specified AWS Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets">REST API Reference for DescribeDBProxyTargets Operation</seealso>
         Task<DescribeDBProxyTargetsResponse> DescribeDBProxyTargetsAsync(DescribeDBProxyTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -3956,6 +3969,9 @@ namespace Amazon.RDS
         /// The specified target group isn't available for a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup">REST API Reference for ModifyDBProxyTargetGroup Operation</seealso>
         Task<ModifyDBProxyTargetGroupResponse> ModifyDBProxyTargetGroupAsync(ModifyDBProxyTargetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -4355,6 +4371,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
+        /// The requested operation can't be performed while the proxy is in this state.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets">REST API Reference for RegisterDBProxyTargets Operation</seealso>
         Task<RegisterDBProxyTargetsResponse> RegisterDBProxyTargetsAsync(RegisterDBProxyTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -4682,28 +4701,30 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot. This action only
-        /// applies to Aurora DB clusters.
+        /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
         /// 
         ///  
         /// <para>
-        /// The target DB cluster is created from the source snapshot with a default configuration.
+        /// If a DB snapshot is specified, the target DB cluster is created from the source DB
+        /// snapshot with a default configuration and default security group.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a DB cluster snapshot is specified, the target DB cluster is created from the source
+        /// DB cluster restore point with the same configuration as the original source DB cluster.
         /// If you don't specify a security group, the new DB cluster is associated with the default
         /// security group.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This action only restores the DB cluster, not the DB instances for that DB cluster.
-        /// You must invoke the <code>CreateDBInstance</code> action to create DB instances for
-        /// the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>.
-        /// You can create DB instances only after the <code>RestoreDBClusterFromSnapshot</code>
-        /// action has completed and the DB cluster is available.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
         /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This action only applies to Aurora DB clusters.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromSnapshot service method.</param>
         /// <param name="cancellationToken">

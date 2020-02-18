@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// An Active Directory Domain membership record associated with the DB instance.
+    /// An Active Directory Domain membership record associated with the DB instance or cluster.
     /// </summary>
     public partial class DomainMembership
     {
@@ -94,8 +94,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the DB instance's Active Directory Domain membership, such as joined,
-        /// pending-join, failed etc).
+        /// The status of the Active Directory Domain membership for the DB instance or cluster.
+        /// Values include joined, pending-join, failed, and so on.
         /// </para>
         /// </summary>
         public string Status

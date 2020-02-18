@@ -215,6 +215,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DeletionProtection = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DomainMemberships/DomainMembership", targetDepth))
+                    {
+                        var unmarshaller = DomainMembershipUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DomainMemberships.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("EarliestBacktrackTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

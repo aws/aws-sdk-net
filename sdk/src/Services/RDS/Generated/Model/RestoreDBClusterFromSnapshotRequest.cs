@@ -29,28 +29,30 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreDBClusterFromSnapshot operation.
-    /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot. This action only
-    /// applies to Aurora DB clusters.
+    /// Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
     /// 
     ///  
     /// <para>
-    /// The target DB cluster is created from the source snapshot with a default configuration.
+    /// If a DB snapshot is specified, the target DB cluster is created from the source DB
+    /// snapshot with a default configuration and default security group.
+    /// </para>
+    ///  
+    /// <para>
+    /// If a DB cluster snapshot is specified, the target DB cluster is created from the source
+    /// DB cluster restore point with the same configuration as the original source DB cluster.
     /// If you don't specify a security group, the new DB cluster is associated with the default
     /// security group.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// This action only restores the DB cluster, not the DB instances for that DB cluster.
-    /// You must invoke the <code>CreateDBInstance</code> action to create DB instances for
-    /// the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>.
-    /// You can create DB instances only after the <code>RestoreDBClusterFromSnapshot</code>
-    /// action has completed and the DB cluster is available.
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
     /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This action only applies to Aurora DB clusters.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RestoreDBClusterFromSnapshotRequest : AmazonRDSRequest
     {
@@ -62,6 +64,8 @@ namespace Amazon.RDS.Model
         private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
         private bool? _deletionProtection;
+        private string _domain;
+        private string _domainIAMRoleName;
         private List<string> _enableCloudwatchLogsExports = new List<string>();
         private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
@@ -288,6 +292,44 @@ namespace Amazon.RDS.Model
         internal bool IsSetDeletionProtection()
         {
             return this._deletionProtection.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// Specify the Active Directory directory ID to restore the DB cluster in. The domain
+        /// must be created prior to this operation. 
+        /// </para>
+        /// </summary>
+        public string Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainIAMRoleName. 
+        /// <para>
+        /// Specify the name of the IAM role to be used when making API calls to the Directory
+        /// Service.
+        /// </para>
+        /// </summary>
+        public string DomainIAMRoleName
+        {
+            get { return this._domainIAMRoleName; }
+            set { this._domainIAMRoleName = value; }
+        }
+
+        // Check to see if DomainIAMRoleName property is set
+        internal bool IsSetDomainIAMRoleName()
+        {
+            return this._domainIAMRoleName != null;
         }
 
         /// <summary>
