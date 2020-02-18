@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.680.0",
+    "ProductVersion" : "3.3.681.0",
     "CoreVersion"    : "3.3.104.26",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -13,7 +13,7 @@
             "InPreview"               : false
         },
         "AutoScaling" : {
-            "Version" : "3.3.101.33",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.26"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.117.6",
+            "Version" : "3.3.118.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.26"
@@ -1169,7 +1169,7 @@
             "InPreview"               : false
         },
         "Chime"                           : {
-            "Version" : "3.3.106.12",
+            "Version" : "3.3.107.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.26"

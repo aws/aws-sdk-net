@@ -1,3 +1,11 @@
+### 3.3.681.0 (2020-02-18 19:11 UTC)
+* AutoScaling (3.3.102.0)
+	* Amazon EC2 Auto Scaling now supports the ability to enable/disable target tracking, step scaling, and simple scaling policies.
+* Chime (3.3.107.0)
+	* Added AudioFallbackUrl to support Chime SDK client.
+* RDS (3.3.118.0)
+	* This release supports Microsoft Active Directory authentication for Amazon Aurora.
+
 ### 3.3.680.0 (2020-02-17 19:13 UTC)
 * Cloud9 (3.3.102.0)
 	* AWS Cloud9 now supports the ability to tag Cloud9 development environments. 
