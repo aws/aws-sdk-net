@@ -70,6 +70,11 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
+        /// Weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// Valid Range: Minimum value of 1. Maximum value of 999.
         /// </para>
         /// </summary>

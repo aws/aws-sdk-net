@@ -70,6 +70,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Cooldown", StringUtils.FromInt(publicRequest.Cooldown));
                 }
+                if(publicRequest.IsSetEnabled())
+                {
+                    request.Parameters.Add("Enabled", StringUtils.FromBool(publicRequest.Enabled));
+                }
                 if(publicRequest.IsSetEstimatedInstanceWarmup())
                 {
                     request.Parameters.Add("EstimatedInstanceWarmup", StringUtils.FromInt(publicRequest.EstimatedInstanceWarmup));

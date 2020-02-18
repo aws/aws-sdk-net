@@ -79,6 +79,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.Cooldown = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Enabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EstimatedInstanceWarmup", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

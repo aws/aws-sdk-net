@@ -36,6 +36,7 @@ namespace Amazon.AutoScaling.Model
         private List<Alarm> _alarms = new List<Alarm>();
         private string _autoScalingGroupName;
         private int? _cooldown;
+        private bool? _enabled;
         private int? _estimatedInstanceWarmup;
         private string _metricAggregationType;
         private int? _minAdjustmentMagnitude;
@@ -122,6 +123,21 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetCooldown()
         {
             return this._cooldown.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Enabled.
+        /// </summary>
+        public bool Enabled
+        {
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
+        }
+
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
+        {
+            return this._enabled.HasValue; 
         }
 
         /// <summary>
