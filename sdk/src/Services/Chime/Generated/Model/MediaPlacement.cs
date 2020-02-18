@@ -33,12 +33,32 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class MediaPlacement
     {
+        private string _audioFallbackUrl;
         private string _audioHostUrl;
         private string _screenDataUrl;
         private string _screenSharingUrl;
         private string _screenViewingUrl;
         private string _signalingUrl;
         private string _turnControlUrl;
+
+        /// <summary>
+        /// Gets and sets the property AudioFallbackUrl. 
+        /// <para>
+        /// The audio fallback URL.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=4096)]
+        public string AudioFallbackUrl
+        {
+            get { return this._audioFallbackUrl; }
+            set { this._audioFallbackUrl = value; }
+        }
+
+        // Check to see if AudioFallbackUrl property is set
+        internal bool IsSetAudioFallbackUrl()
+        {
+            return this._audioFallbackUrl != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AudioHostUrl. 

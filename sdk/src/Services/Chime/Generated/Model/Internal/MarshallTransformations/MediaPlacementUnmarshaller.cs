@@ -64,6 +64,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AudioFallbackUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioFallbackUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AudioHostUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
