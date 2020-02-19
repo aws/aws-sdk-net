@@ -29,10 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the PutScalingPolicy operation.
-    /// Creates or updates a scaling policy for an Auto Scaling group. To update an existing
-    /// scaling policy, use the existing policy name and set the parameters to change. Any
-    /// existing parameter not changed in an update to an existing policy is not changed in
-    /// this update request.
+    /// Creates or updates a scaling policy for an Auto Scaling group.
     /// 
     ///  
     /// <para>
@@ -130,7 +127,13 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Indicates whether the scaling policy is enabled or disabled. The default is enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling
+        /// a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
+        /// Guide</i>.
+        /// </para>
         /// </summary>
         public bool Enabled
         {

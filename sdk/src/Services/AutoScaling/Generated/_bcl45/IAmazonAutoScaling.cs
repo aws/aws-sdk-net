@@ -489,7 +489,7 @@ namespace Amazon.AutoScaling
         /// If you exceed your maximum limit of Auto Scaling groups, the call fails. For information
         /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
         /// updating this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-        /// EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoScalingGroup service method.</param>
@@ -523,7 +523,7 @@ namespace Amazon.AutoScaling
         /// If you exceed your maximum limit of Auto Scaling groups, the call fails. For information
         /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
         /// updating this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-        /// EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoScalingGroup service method.</param>
@@ -563,7 +563,7 @@ namespace Amazon.AutoScaling
         /// If you exceed your maximum limit of launch configurations, the call fails. For information
         /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
         /// updating this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-        /// EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -599,7 +599,7 @@ namespace Amazon.AutoScaling
         /// If you exceed your maximum limit of launch configurations, the call fails. For information
         /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
         /// updating this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-        /// EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1088,12 +1088,12 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the current Amazon EC2 Auto Scaling resource limits for your AWS account.
+        /// Describes the current Amazon EC2 Auto Scaling resource quotas for your AWS account.
         /// 
         ///  
         /// <para>
-        /// For information about requesting an increase in these limits, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-        /// EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// For information about requesting an increase, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+        /// EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -1107,12 +1107,12 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the current Amazon EC2 Auto Scaling resource limits for your AWS account.
+        /// Describes the current Amazon EC2 Auto Scaling resource quotas for your AWS account.
         /// 
         ///  
         /// <para>
-        /// For information about requesting an increase in these limits, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-        /// EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// For information about requesting an increase, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+        /// EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
@@ -1127,12 +1127,12 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the current Amazon EC2 Auto Scaling resource limits for your AWS account.
+        /// Describes the current Amazon EC2 Auto Scaling resource quotas for your AWS account.
         /// 
         ///  
         /// <para>
-        /// For information about requesting an increase in these limits, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-        /// EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// For information about requesting an increase, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+        /// EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1150,12 +1150,12 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the current Amazon EC2 Auto Scaling resource limits for your AWS account.
+        /// Describes the current Amazon EC2 Auto Scaling resource quotas for your AWS account.
         /// 
         ///  
         /// <para>
-        /// For information about requesting an increase in these limits, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-        /// EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// For information about requesting an increase, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+        /// EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
@@ -3088,10 +3088,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Creates or updates a scaling policy for an Auto Scaling group. To update an existing
-        /// scaling policy, use the existing policy name and set the parameters to change. Any
-        /// existing parameter not changed in an update to an existing policy is not changed in
-        /// this update request.
+        /// Creates or updates a scaling policy for an Auto Scaling group.
         /// 
         ///  
         /// <para>
@@ -3121,10 +3118,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Creates or updates a scaling policy for an Auto Scaling group. To update an existing
-        /// scaling policy, use the existing policy name and set the parameters to change. Any
-        /// existing parameter not changed in an update to an existing policy is not changed in
-        /// this update request.
+        /// Creates or updates a scaling policy for an Auto Scaling group.
         /// 
         ///  
         /// <para>
@@ -3630,11 +3624,24 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Terminates the specified instance and optionally adjusts the desired group size.
+        /// Terminates the specified instance and optionally adjusts the desired group size. This
+        /// call simply makes a termination request. The instance is not terminated immediately.
+        /// When an instance is terminated, the instance status changes to <code>terminated</code>.
+        /// You can't connect to or start an instance after you've terminated it.
         /// 
         ///  
         /// <para>
-        /// This call simply makes a termination request. The instance is not terminated immediately.
+        /// If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto
+        /// Scaling launches instances to replace the ones that are terminated. 
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, Amazon EC2 Auto Scaling balances instances across all Availability Zones.
+        /// If you decrement the desired capacity, your Auto Scaling group can become unbalanced
+        /// between Availability Zones. Amazon EC2 Auto Scaling tries to rebalance the group,
+        /// and rebalancing might terminate instances in other zones. For more information, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html#AutoScalingBehavior.InstanceUsage">Rebalancing
+        /// Activities</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateInstanceInAutoScalingGroup service method.</param>
@@ -3653,11 +3660,24 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Terminates the specified instance and optionally adjusts the desired group size.
+        /// Terminates the specified instance and optionally adjusts the desired group size. This
+        /// call simply makes a termination request. The instance is not terminated immediately.
+        /// When an instance is terminated, the instance status changes to <code>terminated</code>.
+        /// You can't connect to or start an instance after you've terminated it.
         /// 
         ///  
         /// <para>
-        /// This call simply makes a termination request. The instance is not terminated immediately.
+        /// If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto
+        /// Scaling launches instances to replace the ones that are terminated. 
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, Amazon EC2 Auto Scaling balances instances across all Availability Zones.
+        /// If you decrement the desired capacity, your Auto Scaling group can become unbalanced
+        /// between Availability Zones. Amazon EC2 Auto Scaling tries to rebalance the group,
+        /// and rebalancing might terminate instances in other zones. For more information, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html#AutoScalingBehavior.InstanceUsage">Rebalancing
+        /// Activities</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateInstanceInAutoScalingGroup service method.</param>

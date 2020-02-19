@@ -126,7 +126,10 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).
+        /// </para>
         /// </summary>
         public bool Enabled
         {

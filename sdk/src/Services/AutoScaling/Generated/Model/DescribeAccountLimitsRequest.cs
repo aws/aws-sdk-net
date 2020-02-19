@@ -29,12 +29,12 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountLimits operation.
-    /// Describes the current Amazon EC2 Auto Scaling resource limits for your AWS account.
+    /// Describes the current Amazon EC2 Auto Scaling resource quotas for your AWS account.
     /// 
     ///  
     /// <para>
-    /// For information about requesting an increase in these limits, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-    /// EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// For information about requesting an increase, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+    /// EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeAccountLimitsRequest : AmazonAutoScalingRequest
