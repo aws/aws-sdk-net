@@ -30,6 +30,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the ListFunctions operation.
     /// Returns a list of Lambda functions, with the version-specific configuration of each.
+    /// Lambda returns up to 50 functions per call.
     /// 
     ///  
     /// <para>
@@ -106,7 +107,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// Specify a value between 1 and 50 to limit the number of functions in the response.
+        /// The maximum number of functions to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]

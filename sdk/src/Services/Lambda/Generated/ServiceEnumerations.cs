@@ -488,6 +488,10 @@ namespace Amazon.Lambda
         /// Constant Ruby25 for Runtime
         /// </summary>
         public static readonly Runtime Ruby25 = new Runtime("ruby2.5");
+        /// <summary>
+        /// Constant Ruby27 for Runtime
+        /// </summary>
+        public static readonly Runtime Ruby27 = new Runtime("ruby2.7");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

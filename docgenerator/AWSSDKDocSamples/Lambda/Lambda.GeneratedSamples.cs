@@ -44,7 +44,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
                 MemorySize = 128,
                 Publish = true,
                 Role = "arn:aws:iam::123456789012:role/service-role/role-name", // replace with the actual arn of the execution role you created
-                Runtime = "nodejs8.10",
+                Runtime = "nodejs12.x",
                 Timeout = 15,
                 VpcConfig = new VpcConfig {  }
             });
@@ -288,7 +288,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             var response = client.ListFunctions(new ListFunctionsRequest 
             {
                 Marker = "",
-                MaxItems = 123
+                MaxItems = 25
             });
 
             List<FunctionConfiguration> functions = response.Functions;
@@ -305,7 +305,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             {
                 FunctionName = "myFunction",
                 Marker = "",
-                MaxItems = 123
+                MaxItems = 25
             });
 
             string nextMarker = response.NextMarker;

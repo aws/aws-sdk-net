@@ -30,7 +30,8 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the ListVersionsByFunction operation.
     /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
-    /// with the version-specific configuration of each.
+    /// with the version-specific configuration of each. Lambda returns up to 50 versions
+    /// per call.
     /// </summary>
     public partial class ListVersionsByFunctionRequest : AmazonLambdaRequest
     {
@@ -98,7 +99,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// Limit the number of versions that are returned.
+        /// The maximum number of versions to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]

@@ -29,8 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFunctionConcurrency operation.
-    /// Returns details about the concurrency configuration for a function. To set a concurrency
-    /// limit for a function, use <a>PutFunctionConcurrency</a>.
+    /// Returns details about the reserved concurrency configuration for a function. To set
+    /// a concurrency limit for a function, use <a>PutFunctionConcurrency</a>.
     /// </summary>
     public partial class GetFunctionConcurrencyRequest : AmazonLambdaRequest
     {

@@ -794,8 +794,8 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns details about the concurrency configuration for a function. To set a concurrency
-        /// limit for a function, use <a>PutFunctionConcurrency</a>.
+        /// Returns details about the reserved concurrency configuration for a function. To set
+        /// a concurrency limit for a function, use <a>PutFunctionConcurrency</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFunctionConcurrency service method.</param>
         /// <param name="cancellationToken">
@@ -1369,6 +1369,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Returns a list of Lambda functions, with the version-specific configuration of each.
+        /// Lambda returns up to 50 functions per call.
         /// 
         ///  
         /// <para>
@@ -1397,6 +1398,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Returns a list of Lambda functions, with the version-specific configuration of each.
+        /// Lambda returns up to 50 functions per call.
         /// 
         ///  
         /// <para>
@@ -1556,7 +1558,8 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
-        /// with the version-specific configuration of each.
+        /// with the version-specific configuration of each. Lambda returns up to 50 versions
+        /// per call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVersionsByFunction service method.</param>
         /// <param name="cancellationToken">
@@ -1734,7 +1737,10 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Configures options for <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
-        /// invocation</a> on a function, version, or alias.
+        /// invocation</a> on a function, version, or alias. If a configuration already exists
+        /// for a function, version, or alias, this operation overwrites it. If you exclude any
+        /// settings, they are removed. To set one option without affecting existing settings
+        /// for other options, use <a>PutFunctionEventInvokeConfig</a>.
         /// 
         ///  
         /// <para>
@@ -1742,6 +1748,14 @@ namespace Amazon.Lambda
         /// an error. It retains events in a queue for up to six hours. When an event fails all
         /// processing attempts or stays in the asynchronous invocation queue for too long, Lambda
         /// discards it. To retain discarded events, configure a dead-letter queue with <a>UpdateFunctionConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To send an invocation record to a queue, topic, function, or event bus, specify a
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>.
+        /// You can configure separate destinations for successful invocations (on-success) and
+        /// events that fail all processing attempts (on-failure). You can configure destinations
+        /// in addition to or instead of a dead-letter queue.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutFunctionEventInvokeConfig service method.</param>
