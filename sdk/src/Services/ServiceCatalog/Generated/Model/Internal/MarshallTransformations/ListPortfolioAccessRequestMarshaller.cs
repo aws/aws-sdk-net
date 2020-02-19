@@ -74,6 +74,24 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AcceptLanguage);
                 }
 
+                if(publicRequest.IsSetOrganizationParentId())
+                {
+                    context.Writer.WritePropertyName("OrganizationParentId");
+                    context.Writer.Write(publicRequest.OrganizationParentId);
+                }
+
+                if(publicRequest.IsSetPageSize())
+                {
+                    context.Writer.WritePropertyName("PageSize");
+                    context.Writer.Write(publicRequest.PageSize);
+                }
+
+                if(publicRequest.IsSetPageToken())
+                {
+                    context.Writer.WritePropertyName("PageToken");
+                    context.Writer.Write(publicRequest.PageToken);
+                }
+
                 if(publicRequest.IsSetPortfolioId())
                 {
                     context.Writer.WritePropertyName("PortfolioId");

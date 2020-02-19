@@ -29,7 +29,8 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeServiceActionExecutionParameters operation.
-    /// 
+    /// Finds the default parameters for a specific self-service action on a specific provisioned
+    /// product and returns a map of the results to the user.
     /// </summary>
     public partial class DescribeServiceActionExecutionParametersRequest : AmazonServiceCatalogRequest
     {
@@ -38,7 +39,23 @@ namespace Amazon.ServiceCatalog.Model
         private string _serviceActionId;
 
         /// <summary>
-        /// Gets and sets the property AcceptLanguage.
+        /// Gets and sets the property AcceptLanguage. 
+        /// <para>
+        /// The language code.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>en</code> - English (default)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>jp</code> - Japanese
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>zh</code> - Chinese
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=100)]
         public string AcceptLanguage
@@ -54,7 +71,10 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProvisionedProductId.
+        /// Gets and sets the property ProvisionedProductId. 
+        /// <para>
+        /// The identifier of the provisioned product.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string ProvisionedProductId
@@ -70,7 +90,10 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceActionId.
+        /// Gets and sets the property ServiceActionId. 
+        /// <para>
+        /// The self-service action identifier.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string ServiceActionId

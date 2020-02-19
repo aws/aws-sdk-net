@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// 
+    /// Details of an execution parameter value that is passed to a self-service action when
+    /// executed on a provisioned product.
     /// </summary>
     public partial class ExecutionParameter
     {
@@ -37,7 +38,10 @@ namespace Amazon.ServiceCatalog.Model
         private string _type;
 
         /// <summary>
-        /// Gets and sets the property DefaultValues.
+        /// Gets and sets the property DefaultValues. 
+        /// <para>
+        /// The default values for the execution parameter.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]
         public List<string> DefaultValues
@@ -53,7 +57,10 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the execution parameter.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public string Name
@@ -69,7 +76,10 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The execution parameter type.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string Type

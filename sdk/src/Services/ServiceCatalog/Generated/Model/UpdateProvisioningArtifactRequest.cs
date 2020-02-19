@@ -84,6 +84,11 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// Indicates whether the product version is active.
         /// </para>
+        ///  
+        /// <para>
+        /// Inactive provisioning artifacts are invisible to end users. End users cannot launch
+        /// or update a provisioned product from an inactive provisioning artifact.
+        /// </para>
         /// </summary>
         public bool Active
         {

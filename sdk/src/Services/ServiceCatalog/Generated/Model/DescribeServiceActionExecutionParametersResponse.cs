@@ -35,7 +35,10 @@ namespace Amazon.ServiceCatalog.Model
         private List<ExecutionParameter> _serviceActionParameters = new List<ExecutionParameter>();
 
         /// <summary>
-        /// Gets and sets the property ServiceActionParameters.
+        /// Gets and sets the property ServiceActionParameters. 
+        /// <para>
+        /// The parameters of the self-service action.
+        /// </para>
         /// </summary>
         public List<ExecutionParameter> ServiceActionParameters
         {

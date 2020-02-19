@@ -1962,7 +1962,8 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// 
+        /// Finds the default parameters for a specific self-service action on a specific provisioned
+        /// product and returns a map of the results to the user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeServiceActionExecutionParameters service method.</param>
         /// <param name="cancellationToken">
@@ -2689,6 +2690,9 @@ namespace Amazon.ServiceCatalog
         /// </param>
         /// 
         /// <returns>The response from the ListPortfolioAccess service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>

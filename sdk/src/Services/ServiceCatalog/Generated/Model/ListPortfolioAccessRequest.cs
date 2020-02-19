@@ -34,6 +34,9 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ListPortfolioAccessRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
+        private string _organizationParentId;
+        private int? _pageSize;
+        private string _pageToken;
         private string _portfolioId;
 
         /// <summary>
@@ -66,6 +69,65 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetAcceptLanguage()
         {
             return this._acceptLanguage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationParentId. 
+        /// <para>
+        /// The ID of an organization node the portfolio is shared with. All children of this
+        /// node with an inherited portfolio share will be returned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string OrganizationParentId
+        {
+            get { return this._organizationParentId; }
+            set { this._organizationParentId = value; }
+        }
+
+        // Check to see if OrganizationParentId property is set
+        internal bool IsSetOrganizationParentId()
+        {
+            return this._organizationParentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PageSize. 
+        /// <para>
+        /// The maximum number of items to return with this call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public int PageSize
+        {
+            get { return this._pageSize.GetValueOrDefault(); }
+            set { this._pageSize = value; }
+        }
+
+        // Check to see if PageSize property is set
+        internal bool IsSetPageSize()
+        {
+            return this._pageSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PageToken. 
+        /// <para>
+        /// The page token for the next set of results. To retrieve the first set of results,
+        /// use null.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2024)]
+        public string PageToken
+        {
+            get { return this._pageToken; }
+            set { this._pageToken = value; }
+        }
+
+        // Check to see if PageToken property is set
+        internal bool IsSetPageToken()
+        {
+            return this._pageToken != null;
         }
 
         /// <summary>

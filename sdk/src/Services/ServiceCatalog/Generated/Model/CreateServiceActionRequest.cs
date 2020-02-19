@@ -101,7 +101,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.
+        /// For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
