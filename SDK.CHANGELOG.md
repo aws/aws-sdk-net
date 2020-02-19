@@ -1,3 +1,16 @@
+### 3.3.682.0 (2020-02-19 19:12 UTC)
+* AutoScaling (3.3.102.1)
+	* Doc update for EC2 Auto Scaling: Add Enabled parameter for PutScalingPolicy
+* Lambda (3.3.108.0)
+	* AWS Lambda now supports Ruby 2.7
+* ServiceCatalog (3.3.109.0)
+	* "ListPortfolioAccess" API now has a new optional parameter "OrganizationParentId". When it is provided and if the portfolio with the "PortfolioId" given was shared with an organization or organizational unit with "OrganizationParentId", all accounts in the organization sub-tree under parent which inherit an organizational portfolio share will be listed, rather than all accounts with external shares. To accommodate long lists returned from the new option, the API now supports pagination.
+* Core 3.3.104.27
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.681.0 (2020-02-18 19:11 UTC)
 * AutoScaling (3.3.102.0)
 	* Amazon EC2 Auto Scaling now supports the ability to enable/disable target tracking, step scaling, and simple scaling policies.
