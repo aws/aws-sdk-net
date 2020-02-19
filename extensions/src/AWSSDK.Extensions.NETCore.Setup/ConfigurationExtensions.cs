@@ -39,7 +39,7 @@ namespace Microsoft.Extensions.Configuration
         public const string DEFAULT_CONFIG_SECTION = "AWS";
 
         /// <summary>
-        /// Constructs an AWSOptions class with the options specifed in the "AWS" section in the IConfiguration object.
+        /// Constructs an AWSOptions class with the options specified in the "AWS" section in the IConfiguration object.
         /// </summary>
         /// <param name="config"></param>
         /// <returns>The AWSOptions containing the values set in configuration system.</returns>
@@ -49,7 +49,7 @@ namespace Microsoft.Extensions.Configuration
         }
 
         /// <summary>
-        /// Constructs an AWSOptions class with the options specifed in the "AWS" section in the IConfiguration object.
+        /// Constructs an AWSOptions class with the options specified in the "AWS" section in the IConfiguration object.
         /// </summary>
         /// <param name="config"></param>
         /// <param name="configSection">The config section to extract AWS options from.</param>
