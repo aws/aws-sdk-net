@@ -242,6 +242,10 @@ namespace Amazon.SavingsPlans
         /// Constant Fargate for SavingsPlanProductType
         /// </summary>
         public static readonly SavingsPlanProductType Fargate = new SavingsPlanProductType("Fargate");
+        /// <summary>
+        /// Constant Lambda for SavingsPlanProductType
+        /// </summary>
+        public static readonly SavingsPlanProductType Lambda = new SavingsPlanProductType("Lambda");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -494,6 +498,10 @@ namespace Amazon.SavingsPlans
         /// Constant AmazonECS for SavingsPlanRateServiceCode
         /// </summary>
         public static readonly SavingsPlanRateServiceCode AmazonECS = new SavingsPlanRateServiceCode("AmazonECS");
+        /// <summary>
+        /// Constant AWSLambda for SavingsPlanRateServiceCode
+        /// </summary>
+        public static readonly SavingsPlanRateServiceCode AWSLambda = new SavingsPlanRateServiceCode("AWSLambda");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -540,6 +548,14 @@ namespace Amazon.SavingsPlans
         /// Constant Hrs for SavingsPlanRateUnit
         /// </summary>
         public static readonly SavingsPlanRateUnit Hrs = new SavingsPlanRateUnit("Hrs");
+        /// <summary>
+        /// Constant LambdaGBSecond for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit LambdaGBSecond = new SavingsPlanRateUnit("Lambda-GB-Second");
+        /// <summary>
+        /// Constant Request for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit Request = new SavingsPlanRateUnit("Request");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
