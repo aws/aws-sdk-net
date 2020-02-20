@@ -42,7 +42,8 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// Either the JSON Schema content or an AWS Lambda function name.
+        /// Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda
+        /// function.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=32768)]

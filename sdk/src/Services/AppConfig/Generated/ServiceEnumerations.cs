@@ -155,6 +155,10 @@ namespace Amazon.AppConfig
     {
 
         /// <summary>
+        /// Constant EXPONENTIAL for GrowthType
+        /// </summary>
+        public static readonly GrowthType EXPONENTIAL = new GrowthType("EXPONENTIAL");
+        /// <summary>
         /// Constant LINEAR for GrowthType
         /// </summary>
         public static readonly GrowthType LINEAR = new GrowthType("LINEAR");
