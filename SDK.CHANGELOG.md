@@ -1,3 +1,11 @@
+### 3.3.683.0 (2020-02-20 19:10 UTC)
+* AppConfig (3.3.101.0)
+	* This release adds exponential growth type support for deployment strategies.
+* Pinpoint (3.3.106.0)
+	* As of this release of the Amazon Pinpoint API, the Title property is optional for the CampaignEmailMessage object. 
+* SavingsPlans (3.3.102.0)
+	* Added support for AWS Lambda in Compute Savings Plans
+
 ### 3.3.682.0 (2020-02-19 19:12 UTC)
 * AutoScaling (3.3.102.1)
 	* Doc update for EC2 Auto Scaling: Add Enabled parameter for PutScalingPolicy
