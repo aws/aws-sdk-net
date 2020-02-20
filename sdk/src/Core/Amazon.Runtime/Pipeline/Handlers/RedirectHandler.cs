@@ -106,7 +106,10 @@ namespace Amazon.Runtime.Internal
             if (response.StatusCode >= HttpStatusCode.Ambiguous &&
                 response.StatusCode < HttpStatusCode.BadRequest)
             {
-                if (response.StatusCode == HttpStatusCode.TemporaryRedirect &&
+                // HTTP 302, 303,and 307 are all valid Redirect Mechanisms
+                if ((response.StatusCode == HttpStatusCode.Redirect ||
+                     response.StatusCode == HttpStatusCode.RedirectMethod ||
+                     response.StatusCode == HttpStatusCode.TemporaryRedirect ) &&
                     response.IsHeaderPresent(HeaderKeys.LocationHeader))
                 {
                     var requestContext = executionContext.RequestContext;

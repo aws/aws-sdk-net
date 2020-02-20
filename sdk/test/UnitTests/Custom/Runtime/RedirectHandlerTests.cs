@@ -33,7 +33,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void TestRedirect()
+        public void TestRedirectWith307()
         {
             var context = CreateTestContext();
             var httpResponse = context.ResponseContext.HttpResponse;
@@ -62,6 +62,72 @@ namespace AWSSDK.UnitTests
             RuntimePipeline.InvokeSync(context);
             Assert.AreEqual(2, Tester.CallCount);
         }
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestRedirectWith303()
+        {
+            var context = CreateTestContext();
+            var httpResponse = context.ResponseContext.HttpResponse;
+            Tester.Reset();
+            Tester.Action2 = (callCount, executionContext) =>
+            {
+                if (callCount == 1)
+                {
+                    executionContext.ResponseContext.HttpResponse = new HttpWebRequestResponseData(
+                        HttpWebResponseHelper.Create(HttpStatusCode.RedirectMethod,
+                            new WebHeaderCollection { { "location", RedirectLocation } }));
+                }
+                else
+                {
+                    executionContext.ResponseContext.HttpResponse = httpResponse;
+                }
+            };
+            Tester.Validate = (int callCount) =>
+            {
+                if (callCount == 2)
+                {
+                    Assert.AreEqual(RedirectLocation, context.RequestContext.Request.Endpoint.AbsoluteUri);
+                }
+            };
+
+            RuntimePipeline.InvokeSync(context);
+            Assert.AreEqual(2, Tester.CallCount);
+        }        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestRedirectWith302()
+        {
+            var context = CreateTestContext();
+            var httpResponse = context.ResponseContext.HttpResponse;
+            Tester.Reset();
+            Tester.Action2 = (callCount, executionContext) =>
+            {
+                if (callCount == 1)
+                {
+                    executionContext.ResponseContext.HttpResponse = new HttpWebRequestResponseData(
+                        HttpWebResponseHelper.Create(HttpStatusCode.Redirect,
+                            new WebHeaderCollection { { "location", RedirectLocation } }));
+                }
+                else
+                {
+                    executionContext.ResponseContext.HttpResponse = httpResponse;
+                }
+            };
+            Tester.Validate = (int callCount) =>
+            {
+                if (callCount == 2)
+                {
+                    Assert.AreEqual(RedirectLocation, context.RequestContext.Request.Endpoint.AbsoluteUri);
+                }
+            };
+
+            RuntimePipeline.InvokeSync(context);
+            Assert.AreEqual(2, Tester.CallCount);
+        }
+
 
 
 #if BCL45
@@ -70,7 +136,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         [TestCategory(@"Runtime\Async45")]
-        public async Task TestRedirectAsync()
+        public async Task TestRedirectAsync307()
         {
             var context = CreateTestContext();
             var httpResponse = context.ResponseContext.HttpResponse;
@@ -100,12 +166,79 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(2, Tester.CallCount);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestCategory(@"Runtime\Async45")]
+        public async Task TestRedirectAsync303()
+        {
+            var context = CreateTestContext();
+            var httpResponse = context.ResponseContext.HttpResponse;
+            Tester.Reset();
+            Tester.Action2 = (callCount, executionContext) =>
+            {
+                if (callCount == 1)
+                {
+                    executionContext.ResponseContext.HttpResponse = new HttpWebRequestResponseData(
+                        HttpWebResponseHelper.Create(HttpStatusCode.RedirectMethod,
+                                new WebHeaderCollection { { "location", RedirectLocation } }));
+                }
+                else
+                {
+                    executionContext.ResponseContext.HttpResponse = httpResponse;
+                }
+            };
+            Tester.Validate = (int callCount) =>
+            {
+                if (callCount == 2)
+                {
+                    Assert.AreEqual(RedirectLocation, context.RequestContext.Request.Endpoint.AbsoluteUri);
+                }
+            };
+
+            await RuntimePipeline.InvokeAsync<AmazonWebServiceResponse>(context);
+            Assert.AreEqual(2, Tester.CallCount);
+        }
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestCategory(@"Runtime\Async45")]
+        public async Task TestRedirectAsync302()
+        {
+            var context = CreateTestContext();
+            var httpResponse = context.ResponseContext.HttpResponse;
+            Tester.Reset();
+            Tester.Action2 = (callCount, executionContext) =>
+            {
+                if (callCount == 1)
+                {
+                    executionContext.ResponseContext.HttpResponse = new HttpWebRequestResponseData(
+                        HttpWebResponseHelper.Create(HttpStatusCode.Redirect,
+                                new WebHeaderCollection { { "location", RedirectLocation } }));
+                }
+                else
+                {
+                    executionContext.ResponseContext.HttpResponse = httpResponse;
+                }
+            };
+            Tester.Validate = (int callCount) =>
+            {
+                if (callCount == 2)
+                {
+                    Assert.AreEqual(RedirectLocation, context.RequestContext.Request.Endpoint.AbsoluteUri);
+                }
+            };
+
+            await RuntimePipeline.InvokeAsync<AmazonWebServiceResponse>(context);
+            Assert.AreEqual(2, Tester.CallCount);
+        }        
+
 #elif !BCL45 && BCL
 
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         [TestCategory(@"Runtime\Async35")]
-        public void TestRedirectAsync()
+        public void TestRedirectAsync307()
         {
             var context = CreateAsyncTestContext();        
             var httpResponse = context.ResponseContext.HttpResponse;
@@ -135,7 +268,75 @@ namespace AWSSDK.UnitTests
             asyncResult.AsyncWaitHandle.WaitOne();
             Assert.AreEqual(2, Tester.CallCount);
         }
+        
+        [TestMethod][TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestCategory(@"Runtime\Async35")]
+        public void TestRedirectAsync303()
+        {
+            var context = CreateAsyncTestContext();        
+            var httpResponse = context.ResponseContext.HttpResponse;
+            Tester.Reset();
+            Tester.Action2 = (callCount, executionContext) =>
+            {
+                if (callCount == 1)
+                {
+                    executionContext.ResponseContext.HttpResponse = new HttpWebRequestResponseData(
+                        HttpWebResponseHelper.Create(HttpStatusCode.RedirectMethod,
+                            new WebHeaderCollection { { "location", RedirectLocation } }));
+                }
+                else
+                {
+                    executionContext.ResponseContext.HttpResponse = httpResponse;
+                }
+            };
+            Tester.Validate = (int callCount) =>
+            {
+                if (callCount == 2)
+                {
+                    Assert.AreEqual(RedirectLocation, context.RequestContext.Request.Endpoint.AbsoluteUri);
+                }
+            };
 
+            var asyncResult = RuntimePipeline.InvokeAsync(context);
+            asyncResult.AsyncWaitHandle.WaitOne();
+            Assert.AreEqual(2, Tester.CallCount);
+        }
+        
+        [TestMethod][TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestCategory(@"Runtime\Async35")]
+        public void TestRedirectAsync302()
+        {
+            var context = CreateAsyncTestContext();        
+            var httpResponse = context.ResponseContext.HttpResponse;
+            Tester.Reset();
+            Tester.Action2 = (callCount, executionContext) =>
+            {
+                if (callCount == 1)
+                {
+                    executionContext.ResponseContext.HttpResponse = new HttpWebRequestResponseData(
+                        HttpWebResponseHelper.Create(HttpStatusCode.Redirect,
+                            new WebHeaderCollection { { "location", RedirectLocation } }));
+                }
+                else
+                {
+                    executionContext.ResponseContext.HttpResponse = httpResponse;
+                }
+            };
+            Tester.Validate = (int callCount) =>
+            {
+                if (callCount == 2)
+                {
+                    Assert.AreEqual(RedirectLocation, context.RequestContext.Request.Endpoint.AbsoluteUri);
+                }
+            };
+
+            var asyncResult = RuntimePipeline.InvokeAsync(context);
+            asyncResult.AsyncWaitHandle.WaitOne();
+            Assert.AreEqual(2, Tester.CallCount);
+        }
+        
 #endif
 
     }
