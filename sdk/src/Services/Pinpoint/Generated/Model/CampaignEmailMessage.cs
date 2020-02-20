@@ -100,7 +100,6 @@ namespace Amazon.Pinpoint.Model
         /// The subject line, or title, of the email.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }
