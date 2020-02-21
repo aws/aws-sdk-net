@@ -347,7 +347,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.GetComponentPolicyResponse.Policy</property>
     <min>1</min>
-    <max>1024</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.GetComponentPolicyResponse.RequestId</property>
@@ -388,7 +388,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.GetImagePolicyResponse.Policy</property>
     <min>1</min>
-    <max>1024</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.GetImagePolicyResponse.RequestId</property>
@@ -411,7 +411,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.GetImageRecipePolicyResponse.Policy</property>
     <min>1</min>
-    <max>1024</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.GetImageRecipePolicyResponse.RequestId</property>
@@ -677,7 +677,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.PutComponentPolicyRequest.Policy</property>
     <min>1</min>
-    <max>1024</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.PutComponentPolicyResponse.ComponentArn</property>
@@ -695,7 +695,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.PutImagePolicyRequest.Policy</property>
     <min>1</min>
-    <max>1024</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.PutImagePolicyResponse.ImageArn</property>
@@ -713,7 +713,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.PutImageRecipePolicyRequest.Policy</property>
     <min>1</min>
-    <max>1024</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.PutImageRecipePolicyResponse.ImageRecipeArn</property>

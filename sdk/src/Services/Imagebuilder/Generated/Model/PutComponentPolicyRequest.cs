@@ -62,7 +62,7 @@ namespace Amazon.Imagebuilder.Model
         ///  The policy to apply. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=30000)]
         public string Policy
         {
             get { return this._policy; }

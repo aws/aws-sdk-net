@@ -41,7 +41,7 @@ namespace Amazon.Imagebuilder.Model
         ///  The image recipe policy object. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=30000)]
         public string Policy
         {
             get { return this._policy; }

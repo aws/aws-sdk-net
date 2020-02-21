@@ -41,7 +41,7 @@ namespace Amazon.Imagebuilder.Model
         ///  The component policy. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=30000)]
         public string Policy
         {
             get { return this._policy; }
