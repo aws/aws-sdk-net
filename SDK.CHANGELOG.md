@@ -1,3 +1,11 @@
+### 3.3.684.0 (2020-02-21 19:10 UTC)
+* Imagebuilder (3.3.102.0)
+	* This release of EC2 Image Builder increases the maximum policy document size for Image Builder resource-based policy APIs.
+* Redshift (3.3.106.0)
+	* Extend elastic resize to support resizing clusters to different instance types.
+* WAFV2 (3.3.100.31)
+	* Documentation updates for AWS WAF (wafv2) to correct the guidance for associating a web ACL to a CloudFront distribution.
+
 ### 3.3.683.0 (2020-02-20 19:10 UTC)
 * AppConfig (3.3.101.0)
 	* This release adds exponential growth type support for deployment strategies.

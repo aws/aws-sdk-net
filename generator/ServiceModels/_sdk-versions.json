@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.683.0",
+    "ProductVersion" : "3.3.684.0",
     "CoreVersion"    : "3.3.104.27",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -289,7 +289,7 @@
             "InPreview"               : false
         },
         "Redshift"             : {
-            "Version" : "3.3.105.30",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.27"
@@ -1609,7 +1609,7 @@
             "InPreview"               : false
         },
         "WAFV2"                           : {
-            "Version" : "3.3.100.30",
+            "Version" : "3.3.100.31",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.27"
@@ -1641,7 +1641,7 @@
             "InPreview"               : false
         },
         "Imagebuilder"                    : {
-            "Version" : "3.3.101.4",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.27"
