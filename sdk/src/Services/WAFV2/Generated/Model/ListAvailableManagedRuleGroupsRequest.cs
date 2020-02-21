@@ -39,8 +39,8 @@ namespace Amazon.WAFV2.Model
     ///  </note> 
     /// <para>
     /// Retrieves an array of managed rule groups that are available for you to use. This
-    /// list includes all AWS managed rule groups and the AWS Marketplace managed rule groups
-    /// that you're subscribed to.
+    /// list includes all AWS Managed Rules rule groups and the AWS Marketplace managed rule
+    /// groups that you're subscribed to.
     /// </para>
     /// </summary>
     public partial class ListAvailableManagedRuleGroupsRequest : AmazonWAFV2Request

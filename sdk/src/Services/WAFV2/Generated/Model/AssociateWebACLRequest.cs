@@ -44,7 +44,7 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  
     /// <para>
-    /// For AWS CloudFront, you can associate the Web ACL by providing the <code>Id</code>
+    /// For AWS CloudFront, you can associate the Web ACL by providing the <code>ARN</code>
     /// of the <a>WebACL</a> to the CloudFront API call <code>UpdateDistribution</code>. For
     /// information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
     /// </para>
@@ -65,17 +65,12 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For a CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
+        /// For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
         /// </code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an Application Load Balancer: <code>arn:aws:elasticloadbalancing: <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>
-        /// /<i>load-balancer-id</i> </code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i> ::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+        /// For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
         /// </code> 
         /// </para>
         ///  </li> </ul>

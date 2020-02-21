@@ -37,9 +37,9 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// In a <code>WebACL</code>, this is the action that you want AWS WAF to perform when
-    /// a web request doesn't match any of the rules in the <code>WebACL</code>. The default
-    /// action must be a terminating action, so count is not allowed.
+    /// In a <a>WebACL</a>, this is the action that you want AWS WAF to perform when a web
+    /// request doesn't match any of the rules in the <code>WebACL</code>. The default action
+    /// must be a terminating action, so count is not allowed.
     /// </para>
     /// </summary>
     public partial class DefaultAction

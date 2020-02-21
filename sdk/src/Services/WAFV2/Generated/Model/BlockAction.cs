@@ -39,6 +39,11 @@ namespace Amazon.WAFV2.Model
     /// <para>
     /// Specifies that AWS WAF should block requests.
     /// </para>
+    ///  
+    /// <para>
+    /// This is used only in the context of other settings, for example to specify values
+    /// for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. 
+    /// </para>
     /// </summary>
     public partial class BlockAction
     {

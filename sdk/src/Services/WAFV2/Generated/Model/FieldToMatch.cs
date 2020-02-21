@@ -80,12 +80,12 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS
-        /// WAF for inspection. If you don't need to inspect more than 8 KB, you can guarantee
-        /// that you don't allow additional bytes in by combining a statement that inspects the
-        /// body of the web request, such as <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>,
-        /// with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body
-        /// of the request. AWS WAF doesn't support inspecting the entire contents of web requests
-        /// whose bodies exceed the 8 KB limit.
+        /// WAF for inspection by the underlying host service. If you don't need to inspect more
+        /// than 8 KB, you can guarantee that you don't allow additional bytes in by combining
+        /// a statement that inspects the body of the web request, such as <a>ByteMatchStatement</a>
+        /// or <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
+        /// that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't support
+        /// inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.
         /// </para>
         /// </summary>
         public Body Body
@@ -163,6 +163,11 @@ namespace Amazon.WAFV2.Model
         /// Inspect a single query argument. Provide the name of the query argument to inspect,
         /// such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters
         /// long and isn't case sensitive. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This is used only to indicate the web request component for AWS WAF to inspect, in
+        /// the <a>FieldToMatch</a> specification. 
         /// </para>
         /// </summary>
         public SingleQueryArgument SingleQueryArgument

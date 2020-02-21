@@ -1237,6 +1237,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField MANAGED_RULE_SET_STATEMENT = new ParameterExceptionField("MANAGED_RULE_SET_STATEMENT");
         /// <summary>
+        /// Constant METRIC_NAME for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField METRIC_NAME = new ParameterExceptionField("METRIC_NAME");
+        /// <summary>
         /// Constant NOT_STATEMENT for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField NOT_STATEMENT = new ParameterExceptionField("NOT_STATEMENT");

@@ -40,6 +40,11 @@ namespace Amazon.WAFV2.Model
     /// The HTTP method of a web request. The method indicates the type of operation that
     /// the request is asking the origin to perform. 
     /// </para>
+    ///  
+    /// <para>
+    /// This is used only to indicate the web request component for AWS WAF to inspect, in
+    /// the <a>FieldToMatch</a> specification. 
+    /// </para>
     /// </summary>
     public partial class Method
     {

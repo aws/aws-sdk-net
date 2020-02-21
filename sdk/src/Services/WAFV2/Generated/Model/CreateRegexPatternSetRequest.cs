@@ -38,7 +38,8 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Creates a <a>RegexPatternSet</a> per the specifications provided.
+    /// Creates a <a>RegexPatternSet</a>, which you reference in a <a>RegexPatternSetReferenceStatement</a>,
+    /// to have AWS WAF inspect a web request component for the specified patterns.
     /// </para>
     /// </summary>
     public partial class CreateRegexPatternSetRequest : AmazonWAFV2Request

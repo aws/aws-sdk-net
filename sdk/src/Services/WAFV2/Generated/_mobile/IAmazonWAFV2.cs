@@ -140,7 +140,7 @@ namespace Amazon.WAFV2
         /// </para>
         ///  
         /// <para>
-        /// For AWS CloudFront, you can associate the Web ACL by providing the <code>Id</code>
+        /// For AWS CloudFront, you can associate the Web ACL by providing the <code>ARN</code>
         /// of the <a>WebACL</a> to the CloudFront API call <code>UpdateDistribution</code>. For
         /// information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
         /// </para>
@@ -267,6 +267,9 @@ namespace Amazon.WAFV2
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
         /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
         /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
         /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
@@ -371,7 +374,8 @@ namespace Amazon.WAFV2
         /// </para>
         ///  </note> 
         /// <para>
-        /// Creates a <a>RegexPatternSet</a> per the specifications provided.
+        /// Creates a <a>RegexPatternSet</a>, which you reference in a <a>RegexPatternSetReferenceStatement</a>,
+        /// to have AWS WAF inspect a web request component for the specified patterns.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRegexPatternSet service method.</param>
@@ -511,6 +515,9 @@ namespace Amazon.WAFV2
         /// that has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
@@ -611,6 +618,9 @@ namespace Amazon.WAFV2
         /// that has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationException">
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
@@ -649,6 +659,10 @@ namespace Amazon.WAFV2
         /// </param>
         /// 
         /// <returns>The response from the DeleteIPSet service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
+        /// AWS WAF couldn’t perform the operation because your resource is being used by another
+        /// resource or it’s associated with another resource.
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
@@ -761,6 +775,10 @@ namespace Amazon.WAFV2
         /// </param>
         /// 
         /// <returns>The response from the DeleteRegexPatternSet service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
+        /// AWS WAF couldn’t perform the operation because your resource is being used by another
+        /// resource or it’s associated with another resource.
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
@@ -833,6 +851,10 @@ namespace Amazon.WAFV2
         /// </param>
         /// 
         /// <returns>The response from the DeleteRuleGroup service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
+        /// AWS WAF couldn’t perform the operation because your resource is being used by another
+        /// resource or it’s associated with another resource.
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but AWS WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
@@ -1042,9 +1064,9 @@ namespace Amazon.WAFV2
         /// </para>
         ///  
         /// <para>
-        /// For AWS CloudFront, you can disassociate the Web ACL by providing an empty <code>WebACLId</code>
-        /// in the CloudFront API call <code>UpdateDistribution</code>. For information, see <a
-        /// href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
+        /// For AWS CloudFront, you can disassociate the Web ACL by providing an empty web ACL
+        /// ARN in the CloudFront API call <code>UpdateDistribution</code>. For information, see
+        /// <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateWebACL service method.</param>
@@ -1576,8 +1598,8 @@ namespace Amazon.WAFV2
         ///  </note> 
         /// <para>
         /// Retrieves an array of managed rule groups that are available for you to use. This
-        /// list includes all AWS managed rule groups and the AWS Marketplace managed rule groups
-        /// that you're subscribed to.
+        /// list includes all AWS Managed Rules rule groups and the AWS Marketplace managed rule
+        /// groups that you're subscribed to.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAvailableManagedRuleGroups service method.</param>
@@ -2516,6 +2538,9 @@ namespace Amazon.WAFV2
         /// that has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
         /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
         /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
         /// </exception>
@@ -2608,6 +2633,9 @@ namespace Amazon.WAFV2
         /// AWS WAF couldn’t save your changes because you tried to update or delete a resource
         /// that has changed since you last retrieved it. Get the resource again, make any changes
         /// you need to make to the new copy, and retry your operation.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFSubscriptionNotFoundException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
         /// AWS WAF couldn’t retrieve the resource that you requested. Retry your request.

@@ -38,8 +38,13 @@ namespace Amazon.WAFV2.Model
     ///  </note> 
     /// <para>
     /// Specifies that AWS WAF should do nothing. This is generally used to try out a rule
-    /// without performing any actions. You set the <code>OverrideAction</code> on the <a>Rule</a>,
-    /// and override the actions that are set at the statement level. 
+    /// without performing any actions. You set the <code>OverrideAction</code> on the <a>Rule</a>.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// This is used only in the context of other settings, for example to specify values
+    /// for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. 
     /// </para>
     /// </summary>
     public partial class NoneAction

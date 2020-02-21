@@ -40,6 +40,11 @@ namespace Amazon.WAFV2.Model
     /// One of the headers in a web request, identified by name, for example, <code>User-Agent</code>
     /// or <code>Referer</code>. This setting isn't case sensitive.
     /// </para>
+    ///  
+    /// <para>
+    /// This is used only to indicate the web request component for AWS WAF to inspect, in
+    /// the <a>FieldToMatch</a> specification. 
+    /// </para>
     /// </summary>
     public partial class SingleHeader
     {

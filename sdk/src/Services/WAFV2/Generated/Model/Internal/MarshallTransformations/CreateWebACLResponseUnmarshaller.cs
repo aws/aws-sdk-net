@@ -100,6 +100,10 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             {
                 return new WAFOptimisticLockException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFSubscriptionNotFoundException"))
+            {
+                return new WAFSubscriptionNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFTagOperationException"))
             {
                 return new WAFTagOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

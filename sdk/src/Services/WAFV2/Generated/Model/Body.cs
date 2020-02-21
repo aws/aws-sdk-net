@@ -39,6 +39,11 @@ namespace Amazon.WAFV2.Model
     /// <para>
     /// The body of a web request. This immediately follows the request headers.
     /// </para>
+    ///  
+    /// <para>
+    /// This is used only to indicate the web request component for AWS WAF to inspect, in
+    /// the <a>FieldToMatch</a> specification. 
+    /// </para>
     /// </summary>
     public partial class Body
     {
