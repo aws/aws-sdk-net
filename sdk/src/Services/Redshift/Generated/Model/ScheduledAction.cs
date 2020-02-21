@@ -118,7 +118,7 @@ namespace Amazon.Redshift.Model
         ///  
         /// <para>
         /// Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-        /// Year)</code>". For example, "<code>cron(0, 10, *, *, MON, *)</code>". For more information,
+        /// Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
         /// Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
         /// </para>

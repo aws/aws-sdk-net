@@ -35,6 +35,10 @@ namespace Amazon.Redshift
         /// </summary>
         public static readonly ActionType RecommendNodeConfig = new ActionType("recommend-node-config");
         /// <summary>
+        /// Constant ResizeCluster for ActionType
+        /// </summary>
+        public static readonly ActionType ResizeCluster = new ActionType("resize-cluster");
+        /// <summary>
         /// Constant RestoreCluster for ActionType
         /// </summary>
         public static readonly ActionType RestoreCluster = new ActionType("restore-cluster");

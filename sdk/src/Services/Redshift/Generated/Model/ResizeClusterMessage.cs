@@ -120,7 +120,6 @@ namespace Amazon.Redshift.Model
         /// The new number of nodes for the cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int NumberOfNodes
         {
             get { return this._numberOfNodes.GetValueOrDefault(); }
