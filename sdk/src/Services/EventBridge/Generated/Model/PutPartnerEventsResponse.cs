@@ -57,8 +57,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property FailedEntryCount. 
         /// <para>
-        /// The number of events from this operation that couldn't be written to the partner event
-        /// bus.
+        /// The number of events from this operation that could not be written to the partner
+        /// event bus.
         /// </para>
         /// </summary>
         public int FailedEntryCount

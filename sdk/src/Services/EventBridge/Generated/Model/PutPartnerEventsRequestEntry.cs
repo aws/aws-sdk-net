@@ -41,8 +41,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Detail. 
         /// <para>
-        /// A valid JSON object. There is no other schema imposed. The JSON object can contain
-        /// fields and nested subobjects. This field is required.
+        /// A valid JSON string. There is no other schema imposed. The JSON string may contain
+        /// fields and nested subobjects.
         /// </para>
         /// </summary>
         public string Detail
@@ -60,8 +60,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property DetailType. 
         /// <para>
-        /// A free-form string used to decide which fields to expect in the event detail. This
-        /// field is required.
+        /// A free-form string used to decide what fields to expect in the event detail.
         /// </para>
         /// </summary>
         public string DetailType
@@ -79,8 +78,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// AWS resources, identified by Amazon Resource Name (ARN), that the event primarily
-        /// concerns. Any number, including zero, can be present.
+        /// AWS resources, identified by Amazon Resource Name (ARN), which the event primarily
+        /// concerns. Any number, including zero, may be present.
         /// </para>
         /// </summary>
         public List<string> Resources
@@ -98,9 +97,10 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The event source that is generating the evntry. This field is required.
+        /// The event source that is generating the evntry.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Source
         {
             get { return this._source; }

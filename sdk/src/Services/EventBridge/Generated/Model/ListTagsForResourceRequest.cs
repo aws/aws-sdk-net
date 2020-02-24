@@ -29,8 +29,8 @@ namespace Amazon.EventBridge.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Displays the tags associated with an EventBridge resource. In EventBridge, rules can
-    /// be tagged.
+    /// Displays the tags associated with an EventBridge resource. In EventBridge, rules and
+    /// event buses can be tagged.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonEventBridgeRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the rule for which you want to view tags.
+        /// The ARN of the EventBridge resource for which you want to view tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]

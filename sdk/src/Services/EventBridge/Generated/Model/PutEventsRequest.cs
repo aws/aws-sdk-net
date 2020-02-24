@@ -29,8 +29,7 @@ namespace Amazon.EventBridge.Model
 {
     /// <summary>
     /// Container for the parameters to the PutEvents operation.
-    /// Sends custom events to EventBridge so that they can be matched to rules. These events
-    /// can be from your custom applications and services.
+    /// Sends custom events to Amazon EventBridge so that they can be matched to rules.
     /// </summary>
     public partial class PutEventsRequest : AmazonEventBridgeRequest
     {

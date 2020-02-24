@@ -29,13 +29,13 @@ namespace Amazon.EventBridge.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRules operation.
-    /// Lists your EventBridge rules. You can either list all the rules or provide a prefix
-    /// to match to the rule names.
+    /// Lists your Amazon EventBridge rules. You can either list all the rules or you can
+    /// provide a prefix to match to the rule names.
     /// 
     ///  
     /// <para>
-    ///  <code>ListRules</code> doesn't list the targets of a rule. To see the targets associated
-    /// with a rule, use <a>ListTargetsByRule</a>.
+    /// ListRules does not list the targets of a rule. To see the targets associated with
+    /// a rule, use <a>ListTargetsByRule</a>.
     /// </para>
     /// </summary>
     public partial class ListRulesRequest : AmazonEventBridgeRequest

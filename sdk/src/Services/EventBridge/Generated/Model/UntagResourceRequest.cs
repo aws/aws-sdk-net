@@ -29,8 +29,8 @@ namespace Amazon.EventBridge.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes one or more tags from the specified EventBridge resource. In EventBridge,
-    /// rules can be tagged.
+    /// Removes one or more tags from the specified EventBridge resource. In CloudWatch Events,
+    /// rules and event buses can be tagged.
     /// </summary>
     public partial class UntagResourceRequest : AmazonEventBridgeRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the rule that you're removing tags from.
+        /// The ARN of the EventBridge resource from which you are removing tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]

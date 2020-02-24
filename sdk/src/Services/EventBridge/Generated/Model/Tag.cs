@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// A key-value pair associated with an AWS resource. In EventBridge, rules support tagging.
+    /// A key-value pair associated with an AWS resource. In EventBridge, rules and event
+    /// buses support tagging.
     /// </summary>
     public partial class Tag
     {
@@ -38,8 +39,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// A string that you can use to assign a value. The combination of tag keys and values
-        /// can help you organize and categorize your resources.
+        /// A string you can use to assign a value. The combination of tag keys and values can
+        /// help you organize and categorize your resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

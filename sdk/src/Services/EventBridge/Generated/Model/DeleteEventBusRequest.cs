@@ -30,14 +30,8 @@ namespace Amazon.EventBridge.Model
     /// <summary>
     /// Container for the parameters to the DeleteEventBus operation.
     /// Deletes the specified custom event bus or partner event bus. All rules associated
-    /// with this event bus are also deleted. You can't delete your account's default event
+    /// with this event bus need to be deleted. You can't delete your account's default event
     /// bus.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This operation is performed by AWS customers, not by SaaS partners.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class DeleteEventBusRequest : AmazonEventBridgeRequest
     {

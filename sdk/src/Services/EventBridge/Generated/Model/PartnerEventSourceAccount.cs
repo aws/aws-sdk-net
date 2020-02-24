@@ -59,7 +59,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The date and time when the event source was created.
+        /// The date and time the event source was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -77,7 +77,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property ExpirationTime. 
         /// <para>
-        /// The date and time when the event source will expire if the AWS account doesn't create
+        /// The date and time that the event source will expire, if the AWS account doesn't create
         /// a matching event bus for it.
         /// </para>
         /// </summary>
@@ -96,11 +96,11 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the event source. If it's <code>ACTIVE</code>, you have already created
-        /// a matching event bus for this event source, and that event bus is active. If it's
-        /// <code>PENDING</code>, either you haven't yet created a matching event bus, or that
-        /// event bus is deactivated. If it's <code>DELETED</code>, you have created a matching
-        /// event bus, but the event source has since been deleted.
+        /// The state of the event source. If it is ACTIVE, you have already created a matching
+        /// event bus for this event source, and that event bus is active. If it is PENDING, either
+        /// you haven't yet created a matching event bus, or that event bus is deactivated. If
+        /// it is DELETED, you have created a matching event bus, but the event source has since
+        /// been deleted.
         /// </para>
         /// </summary>
         public EventSourceState State

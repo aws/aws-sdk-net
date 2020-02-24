@@ -29,8 +29,8 @@ namespace Amazon.EventBridge.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRuleNamesByTarget operation.
-    /// Lists the rules for the specified target. You can see which rules can invoke a specific
-    /// target in your account.
+    /// Lists the rules for the specified target. You can see which of the rules in Amazon
+    /// EventBridge can invoke a specific target in your account.
     /// </summary>
     public partial class ListRuleNamesByTargetRequest : AmazonEventBridgeRequest
     {

@@ -30,13 +30,7 @@ namespace Amazon.EventBridge.Model
     /// <summary>
     /// Container for the parameters to the ListPartnerEventSourceAccounts operation.
     /// An SaaS partner can use this operation to display the AWS account ID that a particular
-    /// partner event source name is associated with.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This operation is used by SaaS partners, not by AWS customers.
-    /// </para>
-    ///  </note>
+    /// partner event source name is associated with. This operation is not used by AWS customers.
     /// </summary>
     public partial class ListPartnerEventSourceAccountsRequest : AmazonEventBridgeRequest
     {
@@ -67,8 +61,8 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a <code>NextToken</code> that you can use in a subsequent operation to
-        /// retrieve the next set of results.
+        /// also returns a NextToken which you can use in a subsequent operation to retrieve the
+        /// next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
