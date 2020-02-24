@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.684.0",
+    "ProductVersion" : "3.3.685.0",
     "CoreVersion"    : "3.3.104.27",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -497,7 +497,7 @@
             "InPreview"               : false
         },
         "CloudWatchEvents"                : {
-            "Version" : "3.3.101.88",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.27"
@@ -585,7 +585,7 @@
             "InPreview"               : false
         },
         "Snowball"                        : {
-            "Version" : "3.3.101.53",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.27"
@@ -1297,7 +1297,7 @@
             "InPreview"               : false
         },
         "FSx"                             : {
-            "Version" : "3.3.103.17",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.27"
@@ -1353,7 +1353,7 @@
             "InPreview"               : false
         },
         "DocDB"                           : {
-            "Version" : "3.3.102.53",
+            "Version" : "3.3.102.54",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.27"
@@ -1417,7 +1417,7 @@
             "InPreview"               : false
         },
         "IoTEvents"                       : {
-            "Version" : "3.3.102.46",
+            "Version" : "3.3.102.47",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.27"
@@ -1481,7 +1481,7 @@
             "InPreview"               : false
         },
         "EventBridge"                     : {
-            "Version" : "3.3.100.88",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.27"

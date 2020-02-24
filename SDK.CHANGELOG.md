@@ -1,3 +1,17 @@
+### 3.3.685.0 (2020-02-24 19:12 UTC)
+* CloudWatchEvents (3.3.102.0)
+	* This release allows you to create and manage tags for event buses.
+* DocDB (3.3.102.54)
+	* Documentation updates for docdb
+* EventBridge (3.3.101.0)
+	* This release allows you to create and manage tags for event buses.
+* FSx (3.3.104.0)
+	* Announcing persistent file systems for Amazon FSx for Lustre that are ideal for longer-term storage and workloads, and a new generation of scratch file systems that offer higher burst throughput for spiky workloads.
+* IoTEvents (3.3.102.47)
+	* Documentation updates for iotcolumbo
+* Snowball (3.3.102.0)
+	* AWS Snowball adds a field for entering your GSTIN when creating AWS Snowball jobs in the Asia Pacific (Mumbai) region. 
+
 ### 3.3.684.0 (2020-02-21 19:10 UTC)
 * Imagebuilder (3.3.102.0)
 	* This release of EC2 Image Builder increases the maximum policy document size for Image Builder resource-based policy APIs.
