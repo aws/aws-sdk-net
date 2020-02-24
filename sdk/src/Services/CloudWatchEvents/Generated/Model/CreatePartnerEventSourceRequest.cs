@@ -29,13 +29,10 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePartnerEventSource operation.
-    /// Called by an SaaS partner to create a partner event source.
+    /// Called by an SaaS partner to create a partner event source. This operation is not
+    /// used by AWS customers.
     /// 
-    ///  <note> 
-    /// <para>
-    /// This operation is not used by AWS customers.
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// Each partner event source can be used by one AWS account to create a matching partner
     /// event bus in that AWS account. A SaaS partner must create one partner event source
@@ -43,8 +40,8 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  
     /// <para>
-    /// A partner event source creates events based on resources in the SaaS partner's service
-    /// or application.
+    /// A partner event source creates events based on resources within the SaaS partner's
+    /// service or application.
     /// </para>
     ///  
     /// <para>
@@ -58,27 +55,17 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>aws.partner/<i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>
-    /// 
+    ///  <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code> 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
     ///  <i>partner_name</i> is determined during partner registration and identifies the
-    /// partner to AWS customers.
+    /// partner to AWS customers. <i>event_namespace</i> is determined by the partner and
+    /// is a way for the partner to categorize their events. <i>event_name</i> is determined
+    /// by the partner, and should uniquely identify an event-generating resource within the
+    /// partner system. The combination of <i>event_namespace</i> and <i>event_name</i> should
+    /// help AWS customers decide whether to create an event bus to receive these events.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// For <i>event_namespace</i>, we recommend that partners use a string that identifies
-    /// the AWS customer within the partner's system. This should not be the customer's AWS
-    /// account ID.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <i>event_name</i> is determined by the partner, and should uniquely identify an event-generating
-    /// resource within the partner system. This should help AWS customers decide whether
-    /// to create an event bus to receive these events.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class CreatePartnerEventSourceRequest : AmazonCloudWatchEventsRequest
     {
@@ -88,8 +75,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// The AWS account ID of the customer who is permitted to create a matching partner event
-        /// bus for this partner event source.
+        /// The AWS account ID that is permitted to create a matching partner event bus for this
+        /// partner event source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

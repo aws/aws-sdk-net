@@ -40,7 +40,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property InputPathsMap. 
         /// <para>
         /// Map of JSON paths to be extracted from the event. You can then insert these in the
-        /// template in <code>InputTemplate</code> to produce the output to be sent to the target.
+        /// template in <code>InputTemplate</code> to produce the output you want to be sent to
+        /// the target.
         /// </para>
         ///  
         /// <para>
@@ -50,7 +51,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// </para>
         ///  
         /// <para>
-        /// The keys can't start with <code>"AWS"</code>.
+        /// The keys cannot start with "AWS." 
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
@@ -71,8 +72,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <para>
         /// Input template where you specify placeholders that will be filled with the values
         /// of the keys from <code>InputPathsMap</code> to customize the data sent to the target.
-        /// Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt;.
-        /// The InputTemplate must be valid JSON.
+        /// Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The
+        /// InputTemplate must be valid JSON.
         /// </para>
         ///  
         /// <para>
@@ -81,11 +82,11 @@ namespace Amazon.CloudWatchEvents.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The placeholder can't be used as an object key
+        /// The placeholder cannot be used as an object key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Object values can't include quote marks
+        /// Object values cannot include quote marks.
         /// </para>
         ///  </li> </ul> 
         /// <para>

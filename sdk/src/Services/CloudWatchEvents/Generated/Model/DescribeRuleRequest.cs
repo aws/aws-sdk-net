@@ -33,8 +33,8 @@ namespace Amazon.CloudWatchEvents.Model
     /// 
     ///  
     /// <para>
-    ///  <code>DescribeRule</code> doesn't list the targets of a rule. To see the targets
-    /// associated with a rule, use <a>ListTargetsByRule</a>.
+    /// DescribeRule does not list the targets of a rule. To see the targets associated with
+    /// a rule, use <a>ListTargetsByRule</a>.
     /// </para>
     /// </summary>
     public partial class DescribeRuleRequest : AmazonCloudWatchEventsRequest

@@ -30,17 +30,17 @@ namespace Amazon.CloudWatchEvents.Model
     /// <summary>
     /// Container for the parameters to the PutPermission operation.
     /// Running <code>PutPermission</code> permits the specified AWS account or AWS organization
-    /// to put events to the specified <i>event bus</i>. Rules in your account are triggered
-    /// by these events arriving to an event bus in your account. 
+    /// to put events to the specified <i>event bus</i>. CloudWatch Events rules in your account
+    /// are triggered by these events arriving to an event bus in your account. 
     /// 
     ///  
     /// <para>
     /// For another account to send events to your account, that external account must have
-    /// a rule with your account's event bus as a target.
+    /// an EventBridge rule with your account's event bus as a target.
     /// </para>
     ///  
     /// <para>
-    /// To enable multiple AWS accounts to put events to an event bus, run <code>PutPermission</code>
+    /// To enable multiple AWS accounts to put events to your event bus, run <code>PutPermission</code>
     /// once for each of these accounts. Or, if all the accounts are members of the same AWS
     /// organization, you can run <code>PutPermission</code> once specifying <code>Principal</code>
     /// as "*" and specifying the AWS organization ID in <code>Condition</code>, to grant
@@ -55,7 +55,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  
     /// <para>
-    /// The permission policy on an event bus can't exceed 10 KB in size.
+    /// The permission policy on the default event bus cannot exceed 10 KB in size.
     /// </para>
     /// </summary>
     public partial class PutPermissionRequest : AmazonCloudWatchEventsRequest
@@ -69,7 +69,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action that you're enabling the other account to perform. Currently, this must
+        /// The action that you are enabling the other account to perform. Currently, this must
         /// be <code>events:PutEvents</code>.
         /// </para>
         /// </summary>
@@ -92,18 +92,18 @@ namespace Amazon.CloudWatchEvents.Model
         /// This parameter enables you to limit the permission to accounts that fulfill a certain
         /// condition, such as being a member of a certain AWS organization. For more information
         /// about AWS Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
-        /// Is AWS Organizations?</a> in the <i>AWS Organizations User Guide</i>.
+        /// Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>Condition</code> with an AWS organization ID and specify "*"
+        /// If you specify <code>Condition</code> with an AWS organization ID, and specify "*"
         /// as the value for <code>Principal</code>, you grant permission to all the accounts
         /// in the named organization.
         /// </para>
         ///  
         /// <para>
-        /// The <code>Condition</code> is a JSON string that must contain <code>Type</code>, <code>Key</code>,
-        /// and <code>Value</code> fields.
+        /// The <code>Condition</code> is a JSON string which must contain <code>Type</code>,
+        /// <code>Key</code>, and <code>Value</code> fields.
         /// </para>
         /// </summary>
         public Condition Condition
@@ -147,10 +147,10 @@ namespace Amazon.CloudWatchEvents.Model
         ///  
         /// <para>
         /// If you specify "*" without specifying <code>Condition</code>, avoid creating rules
-        /// that might match undesirable events. To create more secure rules, make sure that the
+        /// that may match undesirable events. To create more secure rules, make sure that the
         /// event pattern for each rule contains an <code>account</code> field with a specific
-        /// account ID to receive events from. Rules with an account field don't match any events
-        /// sent from other accounts.
+        /// account ID from which to receive events. Rules with an account field do not match
+        /// any events sent from other accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=12)]
@@ -169,7 +169,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property StatementId. 
         /// <para>
-        /// An identifier string for the external account that you're granting permissions to.
+        /// An identifier string for the external account that you are granting permissions to.
         /// If you later want to revoke the permission for this external account, specify this
         /// <code>StatementId</code> when you run <a>RemovePermission</a>.
         /// </para>

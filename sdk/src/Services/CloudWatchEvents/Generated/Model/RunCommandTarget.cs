@@ -30,7 +30,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// <summary>
     /// Information about the EC2 instances that are to be sent the command, specified as
     /// key-value pairs. Each <code>RunCommandTarget</code> block can include only one key,
-    /// but this key can specify multiple values.
+    /// but this key may specify multiple values.
     /// </summary>
     public partial class RunCommandTarget
     {

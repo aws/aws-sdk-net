@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// Represents an event that a partner tried to generate but failed.
+    /// Represents an event that a partner tried to generate, but failed.
     /// </summary>
     public partial class PutPartnerEventsResultEntry
     {

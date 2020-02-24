@@ -42,7 +42,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Detail. 
         /// <para>
-        /// A valid JSON string. There is no other schema imposed. The JSON string can contain
+        /// A valid JSON string. There is no other schema imposed. The JSON string may contain
         /// fields and nested subobjects.
         /// </para>
         /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property DetailType. 
         /// <para>
-        /// Free-form string used to decide which fields to expect in the event detail.
+        /// Free-form string used to decide what fields to expect in the event detail.
         /// </para>
         /// </summary>
         public string DetailType
@@ -80,7 +80,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property EventBusName. 
         /// <para>
         /// The event bus that will receive the event. Only the rules that are associated with
-        /// this event bus can match the event.
+        /// this event bus will be able to match the event.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -99,8 +99,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// AWS resources, identified by Amazon Resource Name (ARN), that the event primarily
-        /// concerns. Any number, including zero, can be present.
+        /// AWS resources, identified by Amazon Resource Name (ARN), which the event primarily
+        /// concerns. Any number, including zero, may be present.
         /// </para>
         /// </summary>
         public List<string> Resources
@@ -118,7 +118,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The source of the event. This field is required.
+        /// The source of the event.
         /// </para>
         /// </summary>
         public string Source
@@ -136,8 +136,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Time. 
         /// <para>
-        /// The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>.
-        /// If no timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.
+        /// The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>.
+        /// If no time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
         /// </para>
         /// </summary>
         public DateTime Time

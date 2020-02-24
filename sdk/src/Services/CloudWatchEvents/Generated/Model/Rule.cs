@@ -102,8 +102,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property EventPattern. 
         /// <para>
-        /// The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-        /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
+        /// and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         /// </summary>
         public string EventPattern
@@ -121,7 +121,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property ManagedBy. 
         /// <para>
-        /// If an AWS service created the rule on behalf of your account, this field displays
+        /// If the rule was created on behalf of your account by an AWS service, this field displays
         /// the principal name of the service that created the rule.
         /// </para>
         /// </summary>
@@ -179,8 +179,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or <code>"rate(5
-        /// minutes)"</code>.
+        /// The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

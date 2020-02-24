@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// Managed rules are rules created and managed by another AWS service on your behalf.
     /// These rules are created by those other AWS services to support functionality in those
     /// services. You can delete these rules using the <code>Force</code> option, but you
-    /// should do so only if you're sure that the other service isn't still using that rule.
+    /// should do so only if you are sure the other service is not still using that rule.
     /// </para>
     /// </summary>
     public partial class DeleteRuleRequest : AmazonCloudWatchEventsRequest

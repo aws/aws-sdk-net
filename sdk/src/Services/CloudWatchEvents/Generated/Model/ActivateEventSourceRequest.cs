@@ -31,12 +31,6 @@ namespace Amazon.CloudWatchEvents.Model
     /// Container for the parameters to the ActivateEventSource operation.
     /// Activates a partner event source that has been deactivated. Once activated, your matching
     /// event bus will start receiving events from the event source.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This operation is performed by AWS customers, not by SaaS partners.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ActivateEventSourceRequest : AmazonCloudWatchEventsRequest
     {

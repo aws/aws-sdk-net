@@ -31,12 +31,6 @@ namespace Amazon.CloudWatchEvents.Model
     /// Container for the parameters to the ListEventSources operation.
     /// You can use this to see all the partner event sources that have been shared with your
     /// AWS account. For more information about partner event sources, see <a>CreateEventBus</a>.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This operation is run by AWS customers, not by SaaS partners.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ListEventSourcesRequest : AmazonCloudWatchEventsRequest
     {
@@ -48,8 +42,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a <code>NextToken</code> that you can use in a subsequent operation to
-        /// retrieve the next set of results.
+        /// also returns a NextToken which you can use in a subsequent operation to retrieve the
+        /// next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

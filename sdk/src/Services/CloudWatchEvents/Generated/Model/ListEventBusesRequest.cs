@@ -31,12 +31,6 @@ namespace Amazon.CloudWatchEvents.Model
     /// Container for the parameters to the ListEventBuses operation.
     /// Lists all the event buses in your account, including the default event bus, custom
     /// event buses, and partner event buses.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This operation is run by AWS customers, not by SaaS partners.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ListEventBusesRequest : AmazonCloudWatchEventsRequest
     {
@@ -48,8 +42,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a <code>NextToken</code> that you can use in a subsequent operation to
-        /// retrieve the next set of results.
+        /// also returns a NextToken which you can use in a subsequent operation to retrieve the
+        /// next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

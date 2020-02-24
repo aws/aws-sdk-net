@@ -29,7 +29,7 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableRule operation.
-    /// Enables the specified rule. If the rule doesn't exist, the operation fails.
+    /// Enables the specified rule. If the rule does not exist, the operation fails.
     /// 
     ///  
     /// <para>

@@ -30,24 +30,19 @@ namespace Amazon.CloudWatchEvents.Model
     /// <summary>
     /// Container for the parameters to the CreateEventBus operation.
     /// Creates a new event bus within your account. This can be a custom event bus which
-    /// you can use to receive events from your own custom applications and services, or it
-    /// can be a partner event bus which can be matched to a partner event source.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This operation is used by AWS customers, not by SaaS partners.
-    /// </para>
-    ///  </note>
+    /// you can use to receive events from your custom applications and services, or it can
+    /// be a partner event bus which can be matched to a partner event source.
     /// </summary>
     public partial class CreateEventBusRequest : AmazonCloudWatchEventsRequest
     {
         private string _eventSourceName;
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property EventSourceName. 
         /// <para>
-        /// If you're creating a partner event bus, this specifies the partner event source that
+        /// If you are creating a partner event bus, this specifies the partner event source that
         /// the new event bus will be matched with.
         /// </para>
         /// </summary>
@@ -71,15 +66,14 @@ namespace Amazon.CloudWatchEvents.Model
         /// </para>
         ///  
         /// <para>
-        /// The names of custom event buses can't contain the <code>/</code> character. You can't
-        /// use the name <code>default</code> for a custom event bus because this name is already
-        /// used for your account's default event bus.
+        /// Event bus names cannot contain the / character. You can't use the name <code>default</code>
+        /// for a custom event bus, as this name is already used for your account's default event
+        /// bus.
         /// </para>
         ///  
         /// <para>
         /// If this is a partner event bus, the name must exactly match the name of the partner
-        /// event source that this event bus is matched to. This name will include the <code>/</code>
-        /// character.
+        /// event source that this event bus is matched to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -93,6 +87,24 @@ namespace Amazon.CloudWatchEvents.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to associate with the event bus.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

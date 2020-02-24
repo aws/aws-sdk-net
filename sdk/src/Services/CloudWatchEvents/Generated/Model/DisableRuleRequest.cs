@@ -29,7 +29,7 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableRule operation.
-    /// Disables the specified rule. A disabled rule won't match any events and won't self-trigger
+    /// Disables the specified rule. A disabled rule won't match any events, and won't self-trigger
     /// if it has a schedule expression.
     /// 
     ///  

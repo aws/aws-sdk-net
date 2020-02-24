@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// This parameter contains the criteria (either <code>InstanceIds</code> or a tag) used
-    /// to specify which EC2 instances are to be sent the command.
+    /// This parameter contains the criteria (either InstanceIds or a tag) used to specify
+    /// which EC2 instances are to be sent the command.
     /// </summary>
     public partial class RunCommandParameters
     {
@@ -38,8 +38,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property RunCommandTargets. 
         /// <para>
-        /// Currently, we support including only one <code>RunCommandTarget</code> block, which
-        /// specifies either an array of <code>InstanceIds</code> or a tag.
+        /// Currently, we support including only one RunCommandTarget block, which specifies either
+        /// an array of InstanceIds or a tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

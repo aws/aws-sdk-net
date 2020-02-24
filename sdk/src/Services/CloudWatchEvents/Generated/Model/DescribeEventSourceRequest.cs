@@ -31,12 +31,6 @@ namespace Amazon.CloudWatchEvents.Model
     /// Container for the parameters to the DescribeEventSource operation.
     /// This operation lists details about a partner event source that is shared with your
     /// account.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This operation is run by AWS customers, not by SaaS partners.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class DescribeEventSourceRequest : AmazonCloudWatchEventsRequest
     {
