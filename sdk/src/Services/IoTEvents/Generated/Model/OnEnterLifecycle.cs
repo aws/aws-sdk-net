@@ -38,7 +38,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// Specifies the actions that are performed when the state is entered and the <code>"condition"</code>
+        /// Specifies the actions that are performed when the state is entered and the <code>condition</code>
         /// is TRUE.
         /// </para>
         /// </summary>

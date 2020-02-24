@@ -30,9 +30,9 @@ namespace Amazon.IoTEvents
     /// Interface for accessing IoTEvents
     ///
     /// AWS IoT Events monitors your equipment or device fleets for failures or changes in
-    /// operation, and triggers actions when such events occur. AWS IoT Events API commands
-    /// enable you to create, read, update and delete inputs and detector models, and to list
-    /// their versions.
+    /// operation, and triggers actions when such events occur. You can use AWS IoT Events
+    /// API commands to create, read, update, and delete inputs and detector models, and to
+    /// list their versions.
     /// </summary>
     public partial interface IAmazonIoTEvents : IAmazonService, IDisposable
     {
@@ -274,7 +274,7 @@ namespace Amazon.IoTEvents
 
 
         /// <summary>
-        /// Describes a detector model. If the <code>"version"</code> parameter is not specified,
+        /// Describes a detector model. If the <code>version</code> parameter is not specified,
         /// information about the latest version is returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDetectorModel service method.</param>
@@ -663,10 +663,10 @@ namespace Amazon.IoTEvents
         /// 
         ///  
         /// <para>
-        /// If you update the value of any <code>"loggingOptions"</code> field, it takes up to
-        /// one minute for the change to take effect. Also, if you change the policy attached
-        /// to the role you specified in the <code>"roleArn"</code> field (for example, to correct
-        /// an invalid policy) it takes up to five minutes for that change to take effect.
+        /// If you update the value of any <code>loggingOptions</code> field, it takes up to one
+        /// minute for the change to take effect. If you change the policy attached to the role
+        /// you specified in the <code>roleArn</code> field (for example, to correct an invalid
+        /// policy), it takes up to five minutes for that change to take effect.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLoggingOptions service method.</param>

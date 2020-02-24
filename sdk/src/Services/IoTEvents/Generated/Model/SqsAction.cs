@@ -58,7 +58,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property UseBase64. 
         /// <para>
-        /// Set this to TRUE if you want the data to be Base-64 encoded before it is written to
+        /// Set this to TRUE if you want the data to be base-64 encoded before it is written to
         /// the queue. Otherwise, set this to FALSE.
         /// </para>
         /// </summary>

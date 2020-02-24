@@ -29,7 +29,7 @@ namespace Amazon.IoTEvents.Model
 {
     /// <summary>
     /// Sends information about the detector model instance and the event that triggered the
-    /// action to a Kinesis Data Firehose delivery stream.
+    /// action to an Amazon Kinesis Data Firehose delivery stream.
     /// </summary>
     public partial class FirehoseAction
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// Information required to publish the MQTT message via the AWS IoT message broker.
+    /// Information required to publish the MQTT message through the AWS IoT message broker.
     /// </summary>
     public partial class IotTopicPublishAction
     {
@@ -37,7 +37,9 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property MqttTopic. 
         /// <para>
-        /// The MQTT topic of the message.
+        /// The MQTT topic of the message. You can use a string expression that includes variables
+        /// (<code>$variable.&lt;variable-name&gt;</code>) and input values (<code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>)
+        /// as the topic string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

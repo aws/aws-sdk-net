@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// An action to be performed when the <code>"condition"</code> is TRUE.
+    /// An action to be performed when the <code>condition</code> is TRUE.
     /// </summary>
     public partial class Action
     {
@@ -65,7 +65,7 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property Firehose. 
         /// <para>
         /// Sends information about the detector model instance and the event that triggered the
-        /// action to a Kinesis Data Firehose delivery stream.
+        /// action to an Amazon Kinesis Data Firehose delivery stream.
         /// </para>
         /// </summary>
         public FirehoseAction Firehose
@@ -83,7 +83,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property IotEvents. 
         /// <para>
-        /// Sends an IoT Events input, passing in information about the detector model instance
+        /// Sends an AWS IoT Events input, passing in information about the detector model instance
         /// and the event that triggered the action.
         /// </para>
         /// </summary>

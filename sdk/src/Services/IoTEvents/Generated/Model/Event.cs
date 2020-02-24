@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// Specifies the <code>"actions"</code> to be performed when the <code>"condition"</code>
+    /// Specifies the <code>actions</code> to be performed when the <code>condition</code>
     /// evaluates to TRUE.
     /// </summary>
     public partial class Event
@@ -58,9 +58,9 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
-        /// [Optional] The Boolean expression that when TRUE causes the <code>"actions"</code>
-        /// to be performed. If not present, the actions are performed (=TRUE); if the expression
-        /// result is not a Boolean value, the actions are NOT performed (=FALSE).
+        /// Optional. The Boolean expression that, when TRUE, causes the <code>actions</code>
+        /// to be performed. If not present, the actions are performed (=TRUE). If the expression
+        /// result is not a Boolean value, the actions are not performed (=FALSE).
         /// </para>
         /// </summary>
         [AWSProperty(Max=512)]

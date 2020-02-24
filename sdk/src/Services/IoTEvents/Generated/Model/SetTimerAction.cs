@@ -39,7 +39,7 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property Seconds. 
         /// <para>
         /// The number of seconds until the timer expires. The minimum value is 60 seconds to
-        /// ensure accuracy.
+        /// ensure accuracy. The maximum value is 31622400 seconds. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
