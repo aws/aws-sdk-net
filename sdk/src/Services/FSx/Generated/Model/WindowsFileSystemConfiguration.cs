@@ -92,7 +92,9 @@ namespace Amazon.FSx.Model
         /// This value defaults to false. If it's set to true, all tags on the file system are
         /// copied to all automatic backups and any user-initiated backups where the user doesn't
         /// specify any tags. If this value is true, and you specify one or more tags, only the
-        /// specified tags are copied to backups.
+        /// specified tags are copied to backups. If you specify one or more tags when creating
+        /// a user-initiated backup, no tags are copied from the file system, regardless of this
+        /// value.
         /// </para>
         /// </summary>
         public bool CopyTagsToBackups

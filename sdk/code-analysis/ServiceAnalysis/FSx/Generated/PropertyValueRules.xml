@@ -295,6 +295,11 @@
     <pattern>^.{3,900}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.CreateFileSystemLustreConfiguration.PerUnitStorageThroughput</property>
+    <min>50</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemLustreConfiguration.WeeklyMaintenanceStartTime</property>
     <min>7</min>
     <max>7</max>
@@ -485,6 +490,22 @@
     <property>Amazon.FSx.Model.InvalidNetworkSettings.Message</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.InvalidPerUnitStorageThroughput.Message</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.LustreFileSystemConfiguration.MountName</property>
+    <min>1</min>
+    <max>8</max>
+    <pattern>^([A-Za-z0-9_-]{1,8})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.LustreFileSystemConfiguration.PerUnitStorageThroughput</property>
+    <min>50</min>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.LustreFileSystemConfiguration.WeeklyMaintenanceStartTime</property>

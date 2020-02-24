@@ -569,6 +569,60 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type LustreDeploymentType.
+    /// </summary>
+    public class LustreDeploymentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PERSISTENT_1 for LustreDeploymentType
+        /// </summary>
+        public static readonly LustreDeploymentType PERSISTENT_1 = new LustreDeploymentType("PERSISTENT_1");
+        /// <summary>
+        /// Constant SCRATCH_1 for LustreDeploymentType
+        /// </summary>
+        public static readonly LustreDeploymentType SCRATCH_1 = new LustreDeploymentType("SCRATCH_1");
+        /// <summary>
+        /// Constant SCRATCH_2 for LustreDeploymentType
+        /// </summary>
+        public static readonly LustreDeploymentType SCRATCH_2 = new LustreDeploymentType("SCRATCH_2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LustreDeploymentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LustreDeploymentType FindValue(string value)
+        {
+            return FindValue<LustreDeploymentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LustreDeploymentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReportFormat.
     /// </summary>
     public class ReportFormat : ConstantClass

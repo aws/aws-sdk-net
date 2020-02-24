@@ -601,8 +601,12 @@ namespace Amazon.FSx
         /// specified. <code>InvalidSecurityGroupIds</code> returns the list of IDs for security
         /// groups that are either invalid or not part of the VPC specified.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidPerUnitStorageThroughputException">
+        /// An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create
+        /// your file system again, using a valid value.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.MissingFileSystemConfigurationException">
-        /// File system configuration is required for this operation.
+        /// A file system configuration is required for this operation.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
@@ -729,7 +733,7 @@ namespace Amazon.FSx
         /// groups that are either invalid or not part of the VPC specified.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.MissingFileSystemConfigurationException">
-        /// File system configuration is required for this operation.
+        /// A file system configuration is required for this operation.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
@@ -1511,7 +1515,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.MissingFileSystemConfigurationException">
-        /// File system configuration is required for this operation.
+        /// A file system configuration is required for this operation.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.

@@ -106,7 +106,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemType. 
         /// <para>
-        /// The type of Amazon FSx file system to create.
+        /// The type of Amazon FSx file system to create, either <code>WINDOWS</code> or <code>LUSTRE</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -185,8 +185,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// For Lustre file systems, valid values are 1,200, 2,400, 3,600, then continuing in
-        /// increments of 3600 GiB.
+        /// For <code>SCRATCH_1</code> Lustre file systems, valid values are 1,200, 2,400, 3,600,
+        /// then continuing in increments of 3600 GiB. For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
+        /// file systems, valid values are 1200, 2400, then continuing in increments of 2400 GiB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -207,7 +208,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Specifies the IDs of the subnets that the file system will be accessible from. For
         /// Windows <code>MULTI_AZ_1</code> file system deployment types, provide exactly two
-        /// subnet IDs, one for the preferred file server and one for the standy file server.
+        /// subnet IDs, one for the preferred file server and one for the standby file server.
         /// You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration
         /// &gt; PreferredSubnetID</code> property.
         /// </para>

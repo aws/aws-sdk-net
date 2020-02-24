@@ -45,6 +45,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateFileSystemLustreConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDeploymentType())
+            {
+                context.Writer.WritePropertyName("DeploymentType");
+                context.Writer.Write(requestObject.DeploymentType);
+            }
+
             if(requestObject.IsSetExportPath())
             {
                 context.Writer.WritePropertyName("ExportPath");
@@ -61,6 +67,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ImportPath");
                 context.Writer.Write(requestObject.ImportPath);
+            }
+
+            if(requestObject.IsSetPerUnitStorageThroughput())
+            {
+                context.Writer.WritePropertyName("PerUnitStorageThroughput");
+                context.Writer.Write(requestObject.PerUnitStorageThroughput);
             }
 
             if(requestObject.IsSetWeeklyMaintenanceStartTime())

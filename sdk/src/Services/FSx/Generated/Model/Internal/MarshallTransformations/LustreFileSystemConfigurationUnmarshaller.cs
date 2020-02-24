@@ -70,6 +70,24 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataRepositoryConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeploymentType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MountName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MountName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PerUnitStorageThroughput", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PerUnitStorageThroughput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WeeklyMaintenanceStartTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

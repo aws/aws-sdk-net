@@ -100,6 +100,10 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             {
                 return new InvalidNetworkSettingsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPerUnitStorageThroughput"))
+            {
+                return new InvalidPerUnitStorageThroughputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("MissingFileSystemConfiguration"))
             {
                 return new MissingFileSystemConfigurationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

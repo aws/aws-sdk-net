@@ -33,10 +33,52 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class CreateFileSystemLustreConfiguration
     {
+        private LustreDeploymentType _deploymentType;
         private string _exportPath;
         private int? _importedFileChunkSize;
         private string _importPath;
+        private int? _perUnitStorageThroughput;
         private string _weeklyMaintenanceStartTime;
+
+        /// <summary>
+        /// Gets and sets the property DeploymentType. 
+        /// <para>
+        /// (Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+        /// when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code>
+        /// deployment type provides in-transit encryption of data and higher burst throughput
+        /// capacity than <code>SCRATCH_1</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads
+        /// and encryption of data in transit. To learn more about deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+        /// FSx for Lustre Deployment Options</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Encryption of data in-transit is automatically enabled when you access a <code>SCRATCH_2</code>
+        /// or <code>PERSISTENT_1</code> file system from Amazon EC2 instances that <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-
+        /// protection.html">support this feature</a>. (Default = <code>SCRATCH_1</code>) 
+        /// </para>
+        ///  
+        /// <para>
+        /// Encryption of data in-transit for <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
+        /// deployment types is supported when accessed from supported instance types in supported
+        /// AWS Regions. To learn more, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
+        /// Data in Transit</a>.
+        /// </para>
+        /// </summary>
+        public LustreDeploymentType DeploymentType
+        {
+            get { return this._deploymentType; }
+            set { this._deploymentType = value; }
+        }
+
+        // Check to see if DeploymentType property is set
+        internal bool IsSetDeploymentType()
+        {
+            return this._deploymentType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExportPath. 
@@ -82,7 +124,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// The chunk size default is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
+        /// The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
         /// GiB). Amazon S3 objects have a maximum size of 5 TB.
         /// </para>
         /// </summary>
@@ -121,6 +163,35 @@ namespace Amazon.FSx.Model
         internal bool IsSetImportPath()
         {
             return this._importPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerUnitStorageThroughput. 
+        /// <para>
+        ///  (Optional) For the <code>PERSISTENT_1</code> deployment type, describes the amount
+        /// of read and write throughput for each 1 tebibyte of storage, in MB/s/TiB. File system
+        /// throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB)
+        /// by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle system, provisioning
+        /// 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of ﬁle system throughput.
+        /// You pay for the amount of throughput that you provision. (Default = 200 MB/s/TiB)
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are 50, 100, 200.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=200)]
+        public int PerUnitStorageThroughput
+        {
+            get { return this._perUnitStorageThroughput.GetValueOrDefault(); }
+            set { this._perUnitStorageThroughput = value; }
+        }
+
+        // Check to see if PerUnitStorageThroughput property is set
+        internal bool IsSetPerUnitStorageThroughput()
+        {
+            return this._perUnitStorageThroughput.HasValue; 
         }
 
         /// <summary>

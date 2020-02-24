@@ -33,6 +33,9 @@ namespace Amazon.FSx.Model
     public partial class LustreFileSystemConfiguration
     {
         private DataRepositoryConfiguration _dataRepositoryConfiguration;
+        private LustreDeploymentType _deploymentType;
+        private string _mountName;
+        private int? _perUnitStorageThroughput;
         private string _weeklyMaintenanceStartTime;
 
         /// <summary>
@@ -48,6 +51,72 @@ namespace Amazon.FSx.Model
         internal bool IsSetDataRepositoryConfiguration()
         {
             return this._dataRepositoryConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentType. 
+        /// <para>
+        /// The deployment type of the FSX for Lustre file system.
+        /// </para>
+        /// </summary>
+        public LustreDeploymentType DeploymentType
+        {
+            get { return this._deploymentType; }
+            set { this._deploymentType = value; }
+        }
+
+        // Check to see if DeploymentType property is set
+        internal bool IsSetDeploymentType()
+        {
+            return this._deploymentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MountName. 
+        /// <para>
+        /// You use the <code>MountName</code> value when mounting the file system.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>".
+        /// For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, this value
+        /// is a string that is unique within an AWS Region. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=8)]
+        public string MountName
+        {
+            get { return this._mountName; }
+            set { this._mountName = value; }
+        }
+
+        // Check to see if MountName property is set
+        internal bool IsSetMountName()
+        {
+            return this._mountName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerUnitStorageThroughput. 
+        /// <para>
+        ///  Per unit storage throughput represents the megabytes per second of read or write
+        /// throughput per 1 tebibyte of storage provisioned. File system throughput capacity
+        /// is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). This option
+        /// is only valid for <code>PERSISTENT_1</code> deployment types. Valid values are 50,
+        /// 100, 200. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=200)]
+        public int PerUnitStorageThroughput
+        {
+            get { return this._perUnitStorageThroughput.GetValueOrDefault(); }
+            set { this._perUnitStorageThroughput = value; }
+        }
+
+        // Check to see if PerUnitStorageThroughput property is set
+        internal bool IsSetPerUnitStorageThroughput()
+        {
+            return this._perUnitStorageThroughput.HasValue; 
         }
 
         /// <summary>
