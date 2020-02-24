@@ -74,7 +74,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the name of an existing <code>DBClusterParameterGroup</code>.
+        /// Must not match the name of an existing <code>DBClusterParameterGroup</code>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

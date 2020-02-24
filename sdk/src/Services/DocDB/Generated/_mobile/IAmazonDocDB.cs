@@ -597,10 +597,7 @@ namespace Amazon.DocDB
 
         /// <summary>
         /// Returns a list of certificate authority (CA) certificates provided by Amazon DocumentDB
-        /// for this AWS account. For certain management features such as cluster and instance
-        /// lifecycle management, Amazon DocumentDB leverages operational technology that is shared
-        /// with Amazon RDS and Amazon Neptune. Use the <code>filterName=engine,Values=docdb</code>
-        /// filter parameter to return only Amazon DocumentDB clusters.
+        /// for this AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
         /// <param name="cancellationToken">
@@ -666,7 +663,10 @@ namespace Amazon.DocDB
 
         /// <summary>
         /// Returns information about provisioned Amazon DocumentDB clusters. This API operation
-        /// supports pagination.
+        /// supports pagination. For certain management features such as cluster and instance
+        /// lifecycle management, Amazon DocumentDB leverages operational technology that is shared
+        /// with Amazon RDS and Amazon Neptune. Use the <code>filterName=engine,Values=docdb</code>
+        /// filter parameter to return only Amazon DocumentDB clusters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusters service method.</param>
         /// <param name="cancellationToken">
