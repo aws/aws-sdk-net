@@ -51,6 +51,7 @@ namespace Amazon.Snowball.Model
         private ShippingDetails _shippingDetails;
         private SnowballCapacity _snowballCapacityPreference;
         private SnowballType _snowballType;
+        private TaxDocuments _taxDocuments;
 
         /// <summary>
         /// Gets and sets the property AddressId. 
@@ -379,6 +380,24 @@ namespace Amazon.Snowball.Model
         internal bool IsSetSnowballType()
         {
             return this._snowballType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaxDocuments. 
+        /// <para>
+        /// The metadata associated with the tax documents required in your AWS Region.
+        /// </para>
+        /// </summary>
+        public TaxDocuments TaxDocuments
+        {
+            get { return this._taxDocuments; }
+            set { this._taxDocuments = value; }
+        }
+
+        // Check to see if TaxDocuments property is set
+        internal bool IsSetTaxDocuments()
+        {
+            return this._taxDocuments != null;
         }
 
     }

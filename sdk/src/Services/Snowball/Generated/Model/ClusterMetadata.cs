@@ -45,6 +45,7 @@ namespace Amazon.Snowball.Model
         private string _roleARN;
         private ShippingOption _shippingOption;
         private SnowballType _snowballType;
+        private TaxDocuments _taxDocuments;
 
         /// <summary>
         /// Gets and sets the property AddressId. 
@@ -304,6 +305,11 @@ namespace Amazon.Snowball.Model
         /// The type of AWS Snowball device to use for this cluster. Currently, the only supported
         /// device type for cluster jobs is <code>EDGE</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
+        /// Edge Device Options</a> in the Snowball Edge Developer Guide.
+        /// </para>
         /// </summary>
         public SnowballType SnowballType
         {
@@ -315,6 +321,24 @@ namespace Amazon.Snowball.Model
         internal bool IsSetSnowballType()
         {
             return this._snowballType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaxDocuments. 
+        /// <para>
+        /// The tax documents required in your AWS Region.
+        /// </para>
+        /// </summary>
+        public TaxDocuments TaxDocuments
+        {
+            get { return this._taxDocuments; }
+            set { this._taxDocuments = value; }
+        }
+
+        // Check to see if TaxDocuments property is set
+        internal bool IsSetTaxDocuments()
+        {
+            return this._taxDocuments != null;
         }
 
     }

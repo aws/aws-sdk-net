@@ -166,6 +166,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     unmarshalledObject.SnowballType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TaxDocuments", targetDepth))
+                {
+                    var unmarshaller = TaxDocumentsUnmarshaller.Instance;
+                    unmarshalledObject.TaxDocuments = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

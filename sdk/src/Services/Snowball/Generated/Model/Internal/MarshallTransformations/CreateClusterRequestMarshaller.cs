@@ -138,6 +138,17 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SnowballType);
                 }
 
+                if(publicRequest.IsSetTaxDocuments())
+                {
+                    context.Writer.WritePropertyName("TaxDocuments");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TaxDocumentsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TaxDocuments, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
