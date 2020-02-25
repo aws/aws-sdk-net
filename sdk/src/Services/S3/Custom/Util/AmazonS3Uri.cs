@@ -167,7 +167,7 @@ namespace Amazon.S3.Util
         {
             try
             {
-                return TryParseAmazonS3Uri(new Uri(s), out amazonS3Uri);
+                return TryParseAmazonS3Uri(new Uri(uri), out amazonS3Uri);
             }
             catch (UriFormatException)
             {
