@@ -1079,7 +1079,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Constant Cognito for IdentityProviderTypeType
         /// </summary>
-        public static readonly IdentityProviderTypeType Cognito = new IdentityProviderTypeType("Cognito");
+        public static readonly IdentityProviderTypeType Cognito = new IdentityProviderTypeType("COGNITO");
         /// <summary>
         /// Constant Facebook for IdentityProviderTypeType
         /// </summary>
