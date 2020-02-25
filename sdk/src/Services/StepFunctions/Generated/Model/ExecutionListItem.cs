@@ -42,7 +42,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property ExecutionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the execution.
+        /// The Amazon Resource Name (ARN) that id entifies the execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -87,7 +87,11 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z,
+        /// - and _.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]
         public string Name

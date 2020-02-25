@@ -33,6 +33,7 @@ namespace Amazon.StepFunctions.Model
     public partial class DescribeStateMachineForExecutionResponse : AmazonWebServiceResponse
     {
         private string _definition;
+        private LoggingConfiguration _loggingConfiguration;
         private string _name;
         private string _roleArn;
         private string _stateMachineArn;
@@ -56,6 +57,21 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetDefinition()
         {
             return this._definition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfiguration.
+        /// </summary>
+        public LoggingConfiguration LoggingConfiguration
+        {
+            get { return this._loggingConfiguration; }
+            set { this._loggingConfiguration = value; }
+        }
+
+        // Check to see if LoggingConfiguration property is set
+        internal bool IsSetLoggingConfiguration()
+        {
+            return this._loggingConfiguration != null;
         }
 
         /// <summary>

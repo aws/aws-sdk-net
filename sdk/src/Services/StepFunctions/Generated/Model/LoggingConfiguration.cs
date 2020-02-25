@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// 
+    /// The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
     /// </summary>
     public partial class LoggingConfiguration
     {
@@ -39,8 +39,8 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Destinations. 
         /// <para>
-        /// An object that describes where your execution history events will be logged. Limited
-        /// to size 1. Required, if your log level is not set to <code>OFF</code>.
+        /// An array of objects that describes where your execution history events will be logged.
+        /// Limited to size 1. Required, if your log level is not set to <code>OFF</code>.
         /// </para>
         /// </summary>
         public List<LogDestination> Destinations
@@ -58,7 +58,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property IncludeExecutionData. 
         /// <para>
-        /// Determines whether execution history data is included in your log. When set to <code>FALSE</code>,
+        /// Determines whether execution data is included in your log. When set to <code>FALSE</code>,
         /// data is excluded.
         /// </para>
         /// </summary>

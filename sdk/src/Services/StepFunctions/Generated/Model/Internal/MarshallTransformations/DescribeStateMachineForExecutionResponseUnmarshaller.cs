@@ -57,6 +57,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     response.Definition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("loggingConfiguration", targetDepth))
+                {
+                    var unmarshaller = LoggingConfigurationUnmarshaller.Instance;
+                    response.LoggingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

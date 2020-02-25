@@ -30,6 +30,11 @@ namespace Amazon.StepFunctions.Model
     /// <summary>
     /// Container for the parameters to the StopExecution operation.
     /// Stops an execution.
+    /// 
+    ///  
+    /// <para>
+    /// This API action is not supported by <code>EXPRESS</code> state machines.
+    /// </para>
     /// </summary>
     public partial class StopExecutionRequest : AmazonStepFunctionsRequest
     {

@@ -124,7 +124,11 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z,
+        /// - and _.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]
         public string Name
@@ -197,7 +201,10 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public StateMachineType Type

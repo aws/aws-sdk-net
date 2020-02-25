@@ -29,10 +29,10 @@ namespace Amazon.StepFunctions.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStateMachine operation.
-    /// Updates an existing state machine by modifying its <code>definition</code> and/or
-    /// <code>roleArn</code>. Running executions will continue to use the previous <code>definition</code>
-    /// and <code>roleArn</code>. You must include at least one of <code>definition</code>
-    /// or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
+    /// Updates an existing state machine by modifying its <code>definition</code>, <code>roleArn</code>,
+    /// or <code>loggingConfiguration</code>. Running executions will continue to use the
+    /// previous <code>definition</code> and <code>roleArn</code>. You must include at least
+    /// one of <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
     /// error.
     /// 
     ///  <note> 
@@ -72,7 +72,10 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoggingConfiguration.
+        /// Gets and sets the property LoggingConfiguration. 
+        /// <para>
+        /// The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
+        /// </para>
         /// </summary>
         public LoggingConfiguration LoggingConfiguration
         {

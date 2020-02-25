@@ -38,7 +38,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property ExecutionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the execution.
+        /// The Amazon Resource Name (ARN) that id entifies the execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

@@ -373,7 +373,9 @@ namespace Amazon.StepFunctions
         /// Creates a state machine. A state machine consists of a collection of states that can
         /// do work (<code>Task</code> states), determine to which states to transition next (<code>Choice</code>
         /// states), stop an execution with an error (<code>Fail</code> states), and so on. State
-        /// machines are specified using a JSON-based, structured language.
+        /// machines are specified using a JSON-based, structured language. For more information,
+        /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+        /// States Language</a> in the AWS Step Functions User Guide.
         /// 
         ///  <note> 
         /// <para>
@@ -384,11 +386,11 @@ namespace Amazon.StepFunctions
         /// <para>
         ///  <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create
         /// a duplicate resource if it was already created. <code>CreateStateMachine</code>'s
-        /// idempotency check is based on the state machine <code>name</code> and <code>definition</code>.
-        /// If a following request has a different <code>roleArn</code> or <code>tags</code>,
-        /// Step Functions will ignore these differences and treat it as an idempotent request
-        /// of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
-        /// be updated, even if they are different.
+        /// idempotency check is based on the state machine <code>name</code>, <code>definition</code>,
+        /// <code>type</code>, and <code>LoggingConfiguration</code>. If a following request has
+        /// a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore
+        /// these differences and treat it as an idempotent request of the previous. In this case,
+        /// <code>roleArn</code> and <code>tags</code> will not be updated, even if they are different.
         /// </para>
         ///  </note>
         /// </summary>
@@ -440,7 +442,9 @@ namespace Amazon.StepFunctions
         /// Creates a state machine. A state machine consists of a collection of states that can
         /// do work (<code>Task</code> states), determine to which states to transition next (<code>Choice</code>
         /// states), stop an execution with an error (<code>Fail</code> states), and so on. State
-        /// machines are specified using a JSON-based, structured language.
+        /// machines are specified using a JSON-based, structured language. For more information,
+        /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+        /// States Language</a> in the AWS Step Functions User Guide.
         /// 
         ///  <note> 
         /// <para>
@@ -451,11 +455,11 @@ namespace Amazon.StepFunctions
         /// <para>
         ///  <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create
         /// a duplicate resource if it was already created. <code>CreateStateMachine</code>'s
-        /// idempotency check is based on the state machine <code>name</code> and <code>definition</code>.
-        /// If a following request has a different <code>roleArn</code> or <code>tags</code>,
-        /// Step Functions will ignore these differences and treat it as an idempotent request
-        /// of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
-        /// be updated, even if they are different.
+        /// idempotency check is based on the state machine <code>name</code>, <code>definition</code>,
+        /// <code>type</code>, and <code>LoggingConfiguration</code>. If a following request has
+        /// a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore
+        /// these differences and treat it as an idempotent request of the previous. In this case,
+        /// <code>roleArn</code> and <code>tags</code> will not be updated, even if they are different.
         /// </para>
         ///  </note>
         /// </summary>
@@ -559,12 +563,13 @@ namespace Amazon.StepFunctions
 
         /// <summary>
         /// Deletes a state machine. This is an asynchronous operation: It sets the state machine's
-        /// status to <code>DELETING</code> and begins the deletion process. Each state machine
-        /// execution is deleted the next time it makes a state transition.
+        /// status to <code>DELETING</code> and begins the deletion process. 
         /// 
         ///  <note> 
         /// <para>
-        /// The state machine itself is deleted after all executions are completed or deleted.
+        /// For <code>EXPRESS</code>state machines, the deletion will happen eventually (usually
+        /// less than a minute). Running executions may emit logs after <code>DeleteStateMachine</code>
+        /// API is called.
         /// </para>
         ///  </note>
         /// </summary>
@@ -587,12 +592,13 @@ namespace Amazon.StepFunctions
 
         /// <summary>
         /// Deletes a state machine. This is an asynchronous operation: It sets the state machine's
-        /// status to <code>DELETING</code> and begins the deletion process. Each state machine
-        /// execution is deleted the next time it makes a state transition.
+        /// status to <code>DELETING</code> and begins the deletion process. 
         /// 
         ///  <note> 
         /// <para>
-        /// The state machine itself is deleted after all executions are completed or deleted.
+        /// For <code>EXPRESS</code>state machines, the deletion will happen eventually (usually
+        /// less than a minute). Running executions may emit logs after <code>DeleteStateMachine</code>
+        /// API is called.
         /// </para>
         ///  </note>
         /// </summary>
@@ -695,7 +701,10 @@ namespace Amazon.StepFunctions
         /// This operation is eventually consistent. The results are best effort and may not reflect
         /// very recent updates and changes.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// This API action is not supported by <code>EXPRESS</code> state machines.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExecution service method.</param>
         /// 
@@ -725,7 +734,10 @@ namespace Amazon.StepFunctions
         /// This operation is eventually consistent. The results are best effort and may not reflect
         /// very recent updates and changes.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// This API action is not supported by <code>EXPRESS</code> state machines.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExecution service method.</param>
         /// <param name="cancellationToken">
@@ -829,7 +841,10 @@ namespace Amazon.StepFunctions
         /// This operation is eventually consistent. The results are best effort and may not reflect
         /// very recent updates and changes.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// This API action is not supported by <code>EXPRESS</code> state machines.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStateMachineForExecution service method.</param>
         /// 
@@ -859,7 +874,10 @@ namespace Amazon.StepFunctions
         /// This operation is eventually consistent. The results are best effort and may not reflect
         /// very recent updates and changes.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// This API action is not supported by <code>EXPRESS</code> state machines.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStateMachineForExecution service method.</param>
         /// <param name="cancellationToken">
@@ -996,6 +1014,10 @@ namespace Amazon.StepFunctions
         /// unchanged. Each pagination token expires after 24 hours. Using an expired pagination
         /// token will return an <i>HTTP 400 InvalidToken</i> error.
         /// </para>
+        ///  
+        /// <para>
+        /// This API action is not supported by <code>EXPRESS</code> state machines.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetExecutionHistory service method.</param>
         /// 
@@ -1032,6 +1054,10 @@ namespace Amazon.StepFunctions
         /// again using the returned token to retrieve the next page. Keep all other arguments
         /// unchanged. Each pagination token expires after 24 hours. Using an expired pagination
         /// token will return an <i>HTTP 400 InvalidToken</i> error.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API action is not supported by <code>EXPRESS</code> state machines.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetExecutionHistory service method.</param>
@@ -1158,7 +1184,10 @@ namespace Amazon.StepFunctions
         /// This operation is eventually consistent. The results are best effort and may not reflect
         /// very recent updates and changes.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// This API action is not supported by <code>EXPRESS</code> state machines.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
         /// 
@@ -1203,7 +1232,10 @@ namespace Amazon.StepFunctions
         /// This operation is eventually consistent. The results are best effort and may not reflect
         /// very recent updates and changes.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// This API action is not supported by <code>EXPRESS</code> state machines.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
         /// <param name="cancellationToken">
@@ -1726,6 +1758,11 @@ namespace Amazon.StepFunctions
 
         /// <summary>
         /// Stops an execution.
+        /// 
+        ///  
+        /// <para>
+        /// This API action is not supported by <code>EXPRESS</code> state machines.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopExecution service method.</param>
         /// 
@@ -1749,6 +1786,11 @@ namespace Amazon.StepFunctions
 
         /// <summary>
         /// Stops an execution.
+        /// 
+        ///  
+        /// <para>
+        /// This API action is not supported by <code>EXPRESS</code> state machines.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopExecution service method.</param>
         /// <param name="cancellationToken">
@@ -1918,10 +1960,10 @@ namespace Amazon.StepFunctions
 
 
         /// <summary>
-        /// Updates an existing state machine by modifying its <code>definition</code> and/or
-        /// <code>roleArn</code>. Running executions will continue to use the previous <code>definition</code>
-        /// and <code>roleArn</code>. You must include at least one of <code>definition</code>
-        /// or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
+        /// Updates an existing state machine by modifying its <code>definition</code>, <code>roleArn</code>,
+        /// or <code>loggingConfiguration</code>. Running executions will continue to use the
+        /// previous <code>definition</code> and <code>roleArn</code>. You must include at least
+        /// one of <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
         /// error.
         /// 
         ///  <note> 
@@ -1967,10 +2009,10 @@ namespace Amazon.StepFunctions
 
 
         /// <summary>
-        /// Updates an existing state machine by modifying its <code>definition</code> and/or
-        /// <code>roleArn</code>. Running executions will continue to use the previous <code>definition</code>
-        /// and <code>roleArn</code>. You must include at least one of <code>definition</code>
-        /// or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
+        /// Updates an existing state machine by modifying its <code>definition</code>, <code>roleArn</code>,
+        /// or <code>loggingConfiguration</code>. Running executions will continue to use the
+        /// previous <code>definition</code> and <code>roleArn</code>. You must include at least
+        /// one of <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
         /// error.
         /// 
         ///  <note> 

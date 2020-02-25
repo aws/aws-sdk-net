@@ -32,7 +32,9 @@ namespace Amazon.StepFunctions.Model
     /// Creates a state machine. A state machine consists of a collection of states that can
     /// do work (<code>Task</code> states), determine to which states to transition next (<code>Choice</code>
     /// states), stop an execution with an error (<code>Fail</code> states), and so on. State
-    /// machines are specified using a JSON-based, structured language.
+    /// machines are specified using a JSON-based, structured language. For more information,
+    /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+    /// States Language</a> in the AWS Step Functions User Guide.
     /// 
     ///  <note> 
     /// <para>
@@ -43,11 +45,11 @@ namespace Amazon.StepFunctions.Model
     /// <para>
     ///  <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create
     /// a duplicate resource if it was already created. <code>CreateStateMachine</code>'s
-    /// idempotency check is based on the state machine <code>name</code> and <code>definition</code>.
-    /// If a following request has a different <code>roleArn</code> or <code>tags</code>,
-    /// Step Functions will ignore these differences and treat it as an idempotent request
-    /// of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
-    /// be updated, even if they are different.
+    /// idempotency check is based on the state machine <code>name</code>, <code>definition</code>,
+    /// <code>type</code>, and <code>LoggingConfiguration</code>. If a following request has
+    /// a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore
+    /// these differences and treat it as an idempotent request of the previous. In this case,
+    /// <code>roleArn</code> and <code>tags</code> will not be updated, even if they are different.
     /// </para>
     ///  </note>
     /// </summary>
@@ -85,6 +87,13 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// Defines what execution history events are logged and where they are logged.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// By default, the <code>level</code> is set to <code>OFF</code>. For more information
+        /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
+        /// Levels</a> in the AWS Step Functions User Guide.
+        /// </para>
+        ///  </note>
         /// </summary>
         public LoggingConfiguration LoggingConfiguration
         {
@@ -127,7 +136,11 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z,
+        /// - and _.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]
         public string Name
@@ -194,8 +207,9 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Determines whether a Standard or Express state machine is created. If not set, Standard
-        /// is created.
+        /// Determines whether a Standard or Express state machine is created. The default is
+        /// <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine
+        /// once it has been created.
         /// </para>
         /// </summary>
         public StateMachineType Type
