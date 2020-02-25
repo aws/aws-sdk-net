@@ -209,7 +209,10 @@ namespace Amazon.SecretsManager.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OwningService.
+        /// Gets and sets the property OwningService. 
+        /// <para>
+        /// Returns the name of the service that created this secret.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string OwningService

@@ -214,7 +214,10 @@ namespace Amazon.SecretsManager.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OwningService.
+        /// Gets and sets the property OwningService. 
+        /// <para>
+        /// Returns the name of the service that created the secret.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string OwningService
@@ -232,7 +235,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property RotationEnabled. 
         /// <para>
-        /// Indicated whether automatic, scheduled rotation is enabled for this secret.
+        /// Indicates whether automatic, scheduled rotation is enabled for this secret.
         /// </para>
         /// </summary>
         public bool RotationEnabled
