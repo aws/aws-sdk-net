@@ -1,3 +1,18 @@
+### 3.3.686.0 (2020-02-25 19:10 UTC)
+* Kafka (3.3.107.0)
+	* Amazon MSK has added support for Broker Log delivery to CloudWatch, S3, and Firehose.
+* Outposts (3.3.101.0)
+	* This release adds DeleteSite and DeleteOutpost. 
+* SecretsManager (3.3.102.0)
+	* This release increases the maximum allowed size of SecretString or SecretBinary from 10KB to 64KB in the CreateSecret, UpdateSecret, PutSecretValue and GetSecretValue APIs.
+* StepFunctions (3.3.104.0)
+	* This release adds support for CloudWatch Logs for Standard Workflows.
+* Core 3.3.104.28
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.685.0 (2020-02-24 19:12 UTC)
 * CloudWatchEvents (3.3.102.0)
 	* This release allows you to create and manage tags for event buses.
