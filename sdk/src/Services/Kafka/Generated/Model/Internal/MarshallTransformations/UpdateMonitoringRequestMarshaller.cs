@@ -81,6 +81,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnhancedMonitoring);
                 }
 
+                if(publicRequest.IsSetLoggingInfo())
+                {
+                    context.Writer.WritePropertyName("loggingInfo");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LoggingInfoMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LoggingInfo, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOpenMonitoring())
                 {
                     context.Writer.WritePropertyName("openMonitoring");

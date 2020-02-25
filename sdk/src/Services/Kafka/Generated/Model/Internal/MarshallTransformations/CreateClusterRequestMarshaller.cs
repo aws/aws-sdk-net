@@ -128,6 +128,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KafkaVersion);
                 }
 
+                if(publicRequest.IsSetLoggingInfo())
+                {
+                    context.Writer.WritePropertyName("loggingInfo");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LoggingInfoMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LoggingInfo, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetNumberOfBrokerNodes())
                 {
                     context.Writer.WritePropertyName("numberOfBrokerNodes");

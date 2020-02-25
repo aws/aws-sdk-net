@@ -38,6 +38,7 @@ namespace Amazon.Kafka.Model
         private string _clusterArn;
         private string _currentVersion;
         private EnhancedMonitoring _enhancedMonitoring;
+        private LoggingInfo _loggingInfo;
         private OpenMonitoringInfo _openMonitoring;
 
         /// <summary>
@@ -97,6 +98,21 @@ namespace Amazon.Kafka.Model
         internal bool IsSetEnhancedMonitoring()
         {
             return this._enhancedMonitoring != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingInfo.
+        /// </summary>
+        public LoggingInfo LoggingInfo
+        {
+            get { return this._loggingInfo; }
+            set { this._loggingInfo = value; }
+        }
+
+        // Check to see if LoggingInfo property is set
+        internal bool IsSetLoggingInfo()
+        {
+            return this._loggingInfo != null;
         }
 
         /// <summary>

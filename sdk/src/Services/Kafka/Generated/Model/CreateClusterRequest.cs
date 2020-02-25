@@ -40,6 +40,7 @@ namespace Amazon.Kafka.Model
         private EncryptionInfo _encryptionInfo;
         private EnhancedMonitoring _enhancedMonitoring;
         private string _kafkaVersion;
+        private LoggingInfo _loggingInfo;
         private int? _numberOfBrokerNodes;
         private OpenMonitoringInfo _openMonitoring;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -172,6 +173,21 @@ namespace Amazon.Kafka.Model
         internal bool IsSetKafkaVersion()
         {
             return this._kafkaVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingInfo.
+        /// </summary>
+        public LoggingInfo LoggingInfo
+        {
+            get { return this._loggingInfo; }
+            set { this._loggingInfo = value; }
+        }
+
+        // Check to see if LoggingInfo property is set
+        internal bool IsSetLoggingInfo()
+        {
+            return this._loggingInfo != null;
         }
 
         /// <summary>
