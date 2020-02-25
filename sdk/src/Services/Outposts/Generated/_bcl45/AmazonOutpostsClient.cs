@@ -313,6 +313,136 @@ namespace Amazon.Outposts
 
         #endregion
         
+        #region  DeleteOutpost
+
+
+        /// <summary>
+        /// Deletes the Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOutpost service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOutpost service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost">REST API Reference for DeleteOutpost Operation</seealso>
+        public virtual DeleteOutpostResponse DeleteOutpost(DeleteOutpostRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOutpostRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOutpostResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOutpostResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOutpost service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteOutpost service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost">REST API Reference for DeleteOutpost Operation</seealso>
+        public virtual Task<DeleteOutpostResponse> DeleteOutpostAsync(DeleteOutpostRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOutpostRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOutpostResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteOutpostResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSite
+
+
+        /// <summary>
+        /// Deletes the site.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSite service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSite service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite">REST API Reference for DeleteSite Operation</seealso>
+        public virtual DeleteSiteResponse DeleteSite(DeleteSiteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSiteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSiteResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSiteResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the site.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSite service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSite service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite">REST API Reference for DeleteSite Operation</seealso>
+        public virtual Task<DeleteSiteResponse> DeleteSiteAsync(DeleteSiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSiteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSiteResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteSiteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetOutpost
 
 

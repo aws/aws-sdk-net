@@ -31,6 +31,18 @@
     <pattern>os-[a-f0-9]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.DeleteOutpostRequest.OutpostId</property>
+    <min>1</min>
+    <max>180</max>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.DeleteSiteRequest.SiteId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>os-[a-f0-9]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.GetOutpostRequest.OutpostId</property>
     <min>1</min>
     <max>180</max>

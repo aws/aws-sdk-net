@@ -309,6 +309,138 @@ namespace Amazon.Outposts
 
         #endregion
         
+        #region  DeleteOutpost
+
+        /// <summary>
+        /// Deletes the Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOutpost service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOutpost service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost">REST API Reference for DeleteOutpost Operation</seealso>
+        public virtual DeleteOutpostResponse DeleteOutpost(DeleteOutpostRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOutpostRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOutpostResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOutpostResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOutpost operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOutpost operation on AmazonOutpostsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteOutpost
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost">REST API Reference for DeleteOutpost Operation</seealso>
+        public virtual IAsyncResult BeginDeleteOutpost(DeleteOutpostRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOutpostRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOutpostResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteOutpost operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOutpost.</param>
+        /// 
+        /// <returns>Returns a  DeleteOutpostResult from Outposts.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost">REST API Reference for DeleteOutpost Operation</seealso>
+        public virtual DeleteOutpostResponse EndDeleteOutpost(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteOutpostResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteSite
+
+        /// <summary>
+        /// Deletes the site.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSite service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSite service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite">REST API Reference for DeleteSite Operation</seealso>
+        public virtual DeleteSiteResponse DeleteSite(DeleteSiteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSiteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSiteResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSiteResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSite operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSite operation on AmazonOutpostsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSite
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite">REST API Reference for DeleteSite Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSite(DeleteSiteRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSiteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSiteResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSite operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSite.</param>
+        /// 
+        /// <returns>Returns a  DeleteSiteResult from Outposts.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite">REST API Reference for DeleteSite Operation</seealso>
+        public virtual DeleteSiteResponse EndDeleteSite(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSiteResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetOutpost
 
         /// <summary>
