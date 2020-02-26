@@ -314,16 +314,23 @@ namespace Amazon.SageMaker
         /// endpoint configuration with the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
         /// API. 
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        ///  Use this API only for hosting models using Amazon SageMaker hosting services. 
+        ///  Use this API to deploy models using Amazon SageMaker hosting services. 
         /// </para>
         ///  
         /// <para>
-        ///  You must not delete an <code>EndpointConfig</code> in use by an endpoint that is
-        /// live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations
-        /// are being performed on the endpoint. To update an endpoint, you must create a new
-        /// <code>EndpointConfig</code>.
+        /// For an example that calls this method when deploying a model to Amazon SageMaker hosting
+        /// services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
+        /// the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto 3)).</a>
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  You must not delete an <code>EndpointConfig</code> that is in use by an endpoint
+        /// that is live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code>
+        /// operations are being performed on the endpoint. To update an endpoint, you must create
+        /// a new <code>EndpointConfig</code>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -341,11 +348,6 @@ namespace Amazon.SageMaker
         /// SageMaker can then process incoming requests for inferences. To check the status of
         /// an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
         /// API.
-        /// </para>
-        ///  
-        /// <para>
-        /// For an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise
-        /// 1: Using the K-Means Algorithm Provided by Amazon SageMaker</a>. 
         /// </para>
         ///  
         /// <para>
@@ -386,15 +388,15 @@ namespace Amazon.SageMaker
         /// 
         ///  <note> 
         /// <para>
-        ///  Use this API only if you want to use Amazon SageMaker hosting services to deploy
-        /// models into production. 
+        ///  Use this API if you want to use Amazon SageMaker hosting services to deploy models
+        /// into production. 
         /// </para>
         ///  </note> 
         /// <para>
-        /// In the request, you define one or more <code>ProductionVariant</code>s, each of which
-        /// identifies a model. Each <code>ProductionVariant</code> parameter also describes the
-        /// resources that you want Amazon SageMaker to provision. This includes the number and
-        /// type of ML compute instances to deploy. 
+        /// In the request, you define a <code>ProductionVariant</code>, for each model that you
+        /// want to deploy. Each <code>ProductionVariant</code> parameter also describes the resources
+        /// that you want Amazon SageMaker to provision. This includes the number and type of
+        /// ML compute instances to deploy. 
         /// </para>
         ///  
         /// <para>
@@ -403,6 +405,13 @@ namespace Amazon.SageMaker
         /// that you want to host two models, A and B, and you assign traffic weight 2 for model
         /// A and 1 for model B. Amazon SageMaker distributes two-thirds of the traffic to Model
         /// A, and one-third to model B. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example that calls this method when deploying a model to Amazon SageMaker hosting
+        /// services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
+        /// the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto 3)).</a>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEndpointConfig service method.</param>
@@ -631,9 +640,9 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a model in Amazon SageMaker. In the request, you name the model and describe
-        /// a primary container. For the primary container, you specify the docker image containing
-        /// inference code, artifacts (from prior training), and custom environment map that the
-        /// inference code uses when you deploy the model for predictions.
+        /// a primary container. For the primary container, you specify the Docker image that
+        /// contains inference code, artifacts (from prior training), and a custom environment
+        /// map that the inference code uses when you deploy the model for predictions.
         /// 
         ///  
         /// <para>
@@ -646,6 +655,13 @@ namespace Amazon.SageMaker
         /// API, and then create an endpoint with the <code>CreateEndpoint</code> API. Amazon
         /// SageMaker then deploys all of the containers that you defined for the model in the
         /// hosting environment. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example that calls this method when deploying a model to Amazon SageMaker hosting
+        /// services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
+        /// the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto 3)).</a>
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -2262,6 +2278,13 @@ namespace Amazon.SageMaker
         /// component is associated with. Before you can delete a component, you must disassociate
         /// the component from all trials it is associated with. To associate a trial component
         /// with a trial, call the <a>AssociateTrialComponent</a> API.
+        /// 
+        ///  
+        /// <para>
+        /// To get a list of the trials a component is associated with, use the <a>Search</a>
+        /// API. Specify <code>ExperimentTrialComponent</code> for the <code>Resource</code> parameter.
+        /// The list appears in the response under <code>Results.TrialComponent.Parents</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateTrialComponent service method.</param>
         /// <param name="cancellationToken">
@@ -2851,9 +2874,10 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Lists the trials in your account. Specify an experiment name to limit the list to
-        /// the trials that are part of that experiment. The list can be filtered to show only
-        /// trials that were created in a specific time range. The list can be sorted by trial
-        /// name or creation time.
+        /// the trials that are part of that experiment. Specify a trial component name to limit
+        /// the list to the trials that associated with that trial component. The list can be
+        /// filtered to show only trials that were created in a specific time range. The list
+        /// can be sorted by trial name or creation time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrials service method.</param>
         /// <param name="cancellationToken">

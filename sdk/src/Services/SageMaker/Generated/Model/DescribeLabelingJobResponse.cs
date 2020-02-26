@@ -179,7 +179,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Box bounding labeling jobs (all): 10 lables
+        /// Box bounding labeling jobs (all): 10 labels
         /// </para>
         ///  </li> </ul> 
         /// <para>

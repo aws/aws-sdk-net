@@ -110,6 +110,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SortOrder);
                 }
 
+                if(publicRequest.IsSetTrialComponentName())
+                {
+                    context.Writer.WritePropertyName("TrialComponentName");
+                    context.Writer.Write(publicRequest.TrialComponentName);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

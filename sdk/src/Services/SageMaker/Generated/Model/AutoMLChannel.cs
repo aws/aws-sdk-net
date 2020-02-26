@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TargetAttributeName. 
         /// <para>
-        /// The name of the target variable in supervised learning, a.k.a. ‘y’.
+        /// The name of the target variable in supervised learning, a.k.a. 'y'.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

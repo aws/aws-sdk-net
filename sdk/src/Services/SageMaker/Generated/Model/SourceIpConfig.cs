@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Maximum: 4 CIDR values
+        /// Maximum: Four CIDR values
         /// </para>
         ///  <note> 
         /// <para>

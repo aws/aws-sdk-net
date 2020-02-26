@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the experiment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=82)]
         public string ExperimentName
         {
             get { return this._experimentName; }
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// Display name for the trial component.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=82)]
         public string TrialComponentDisplayName
         {
             get { return this._trialComponentDisplayName; }
@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the trial.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=82)]
         public string TrialName
         {
             get { return this._trialName; }

@@ -5937,9 +5937,17 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TargetDevice Aisage = new TargetDevice("aisage");
         /// <summary>
+        /// Constant Amba_cv22 for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Amba_cv22 = new TargetDevice("amba_cv22");
+        /// <summary>
         /// Constant Deeplens for TargetDevice
         /// </summary>
         public static readonly TargetDevice Deeplens = new TargetDevice("deeplens");
+        /// <summary>
+        /// Constant Imx8qm for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Imx8qm = new TargetDevice("imx8qm");
         /// <summary>
         /// Constant Jetson_nano for TargetDevice
         /// </summary>
@@ -5952,6 +5960,10 @@ namespace Amazon.SageMaker
         /// Constant Jetson_tx2 for TargetDevice
         /// </summary>
         public static readonly TargetDevice Jetson_tx2 = new TargetDevice("jetson_tx2");
+        /// <summary>
+        /// Constant Jetson_xavier for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Jetson_xavier = new TargetDevice("jetson_xavier");
         /// <summary>
         /// Constant Lambda for TargetDevice
         /// </summary>
@@ -6802,6 +6814,60 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UserProfileStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VariantPropertyType.
+    /// </summary>
+    public class VariantPropertyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DataCaptureConfig for VariantPropertyType
+        /// </summary>
+        public static readonly VariantPropertyType DataCaptureConfig = new VariantPropertyType("DataCaptureConfig");
+        /// <summary>
+        /// Constant DesiredInstanceCount for VariantPropertyType
+        /// </summary>
+        public static readonly VariantPropertyType DesiredInstanceCount = new VariantPropertyType("DesiredInstanceCount");
+        /// <summary>
+        /// Constant DesiredWeight for VariantPropertyType
+        /// </summary>
+        public static readonly VariantPropertyType DesiredWeight = new VariantPropertyType("DesiredWeight");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VariantPropertyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VariantPropertyType FindValue(string value)
+        {
+            return FindValue<VariantPropertyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VariantPropertyType(string value)
         {
             return FindValue(value);
         }

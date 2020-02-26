@@ -53,6 +53,8 @@ namespace Amazon.SageMaker.Model
     {
         private string _endpointConfigName;
         private string _endpointName;
+        private List<VariantProperty> _excludeRetainedVariantProperties = new List<VariantProperty>();
+        private bool? _retainAllVariantProperties;
 
         /// <summary>
         /// Gets and sets the property EndpointConfigName. 
@@ -90,6 +92,52 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEndpointName()
         {
             return this._endpointName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExcludeRetainedVariantProperties. 
+        /// <para>
+        /// When you are updating endpoint resources with <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-RetainAllVariantProperties">RetainAllVariantProperties</a>,
+        /// whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code>
+        /// specifies the list of type <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_VariantProperty.html">VariantProperty</a>
+        /// to override with the values provided by <code>EndpointConfig</code>. If you don't
+        /// specify a value for <code>ExcludeAllVariantProperties</code>, no variant properties
+        /// are overridden. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<VariantProperty> ExcludeRetainedVariantProperties
+        {
+            get { return this._excludeRetainedVariantProperties; }
+            set { this._excludeRetainedVariantProperties = value; }
+        }
+
+        // Check to see if ExcludeRetainedVariantProperties property is set
+        internal bool IsSetExcludeRetainedVariantProperties()
+        {
+            return this._excludeRetainedVariantProperties != null && this._excludeRetainedVariantProperties.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetainAllVariantProperties. 
+        /// <para>
+        /// When updating endpoint resources, enables or disables the retention of variant properties,
+        /// such as the instance count or the variant weight. To retain the variant properties
+        /// of an endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>.
+        /// To use the variant properties specified in a new <code>EndpointConfig</code> call
+        /// when updating an endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool RetainAllVariantProperties
+        {
+            get { return this._retainAllVariantProperties.GetValueOrDefault(); }
+            set { this._retainAllVariantProperties = value; }
+        }
+
+        // Check to see if RetainAllVariantProperties property is set
+        internal bool IsSetRetainAllVariantProperties()
+        {
+            return this._retainAllVariantProperties.HasValue; 
         }
 
     }

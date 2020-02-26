@@ -80,6 +80,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EndpointName);
                 }
 
+                if(publicRequest.IsSetExcludeRetainedVariantProperties())
+                {
+                    context.Writer.WritePropertyName("ExcludeRetainedVariantProperties");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestExcludeRetainedVariantPropertiesListValue in publicRequest.ExcludeRetainedVariantProperties)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VariantPropertyMarshaller.Instance;
+                        marshaller.Marshall(publicRequestExcludeRetainedVariantPropertiesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetRetainAllVariantProperties())
+                {
+                    context.Writer.WritePropertyName("RetainAllVariantProperties");
+                    context.Writer.Write(publicRequest.RetainAllVariantProperties);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

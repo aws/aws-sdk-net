@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Maximum: 4 CIDR values
+        /// Maximum: Four CIDR values
         /// </para>
         /// </summary>
         public SourceIpConfig SourceIpConfig
@@ -79,7 +79,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property WorkforceName. 
         /// <para>
         /// The name of the private workforce whose access you want to restrict. <code>WorkforceName</code>
-        /// is automatically set to <code>"default"</code> when a workforce is created and cannot
+        /// is automatically set to <code>default</code> when a workforce is created and cannot
         /// be modified. 
         /// </para>
         /// </summary>

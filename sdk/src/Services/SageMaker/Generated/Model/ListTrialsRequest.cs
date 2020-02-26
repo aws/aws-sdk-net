@@ -30,9 +30,10 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the ListTrials operation.
     /// Lists the trials in your account. Specify an experiment name to limit the list to
-    /// the trials that are part of that experiment. The list can be filtered to show only
-    /// trials that were created in a specific time range. The list can be sorted by trial
-    /// name or creation time.
+    /// the trials that are part of that experiment. Specify a trial component name to limit
+    /// the list to the trials that associated with that trial component. The list can be
+    /// filtered to show only trials that were created in a specific time range. The list
+    /// can be sorted by trial name or creation time.
     /// </summary>
     public partial class ListTrialsRequest : AmazonSageMakerRequest
     {
@@ -43,6 +44,7 @@ namespace Amazon.SageMaker.Model
         private string _nextToken;
         private SortTrialsBy _sortBy;
         private SortOrder _sortOrder;
+        private string _trialComponentName;
 
         /// <summary>
         /// Gets and sets the property CreatedAfter. 
@@ -172,6 +174,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSortOrder()
         {
             return this._sortOrder != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrialComponentName. 
+        /// <para>
+        /// A filter that returns only trials that are associated with the specified trial component.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=82)]
+        public string TrialComponentName
+        {
+            get { return this._trialComponentName; }
+            set { this._trialComponentName = value; }
+        }
+
+        // Check to see if TrialComponentName property is set
+        internal bool IsSetTrialComponentName()
+        {
+            return this._trialComponentName != null;
         }
 
     }

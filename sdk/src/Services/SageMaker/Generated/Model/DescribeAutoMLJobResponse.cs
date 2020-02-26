@@ -351,8 +351,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResolvedAttributes. 
         /// <para>
-        /// This contains ProblemType, AutoMLJobObjective and CompletionCriteria. They’re auto-inferred
-        /// values, if not provided by you. If you do provide them, then they’ll be the same as
+        /// This contains ProblemType, AutoMLJobObjective and CompletionCriteria. They're auto-inferred
+        /// values, if not provided by you. If you do provide them, then they'll be the same as
         /// provided.
         /// </para>
         /// </summary>

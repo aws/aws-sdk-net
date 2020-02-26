@@ -2018,6 +2018,12 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListTrialsRequest.TrialComponentName</property>
+    <min>1</min>
+    <max>82</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTrialsResponse.NextToken</property>
     <max>8192</max>
     <pattern>.*</pattern>
@@ -2820,19 +2826,19 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ExperimentConfig.ExperimentName</property>
     <min>1</min>
-    <max>64</max>
+    <max>82</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ExperimentConfig.TrialComponentDisplayName</property>
     <min>1</min>
-    <max>64</max>
+    <max>82</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ExperimentConfig.TrialName</property>
     <min>1</min>
-    <max>64</max>
+    <max>82</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
