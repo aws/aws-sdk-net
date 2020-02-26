@@ -302,7 +302,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Hypervisor. 
         /// <para>
-        /// The hypervisor type of the instance.
+        /// The hypervisor type of the instance. The value <code>xen</code> is used for both Xen
+        /// and Nitro hypervisors.
         /// </para>
         /// </summary>
         public HypervisorType Hypervisor
