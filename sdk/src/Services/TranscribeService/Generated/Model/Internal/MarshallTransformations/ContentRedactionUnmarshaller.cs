@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Transcript Object
+    /// Response Unmarshaller for ContentRedaction Object
     /// </summary>  
-    public class TranscriptUnmarshaller : IUnmarshaller<Transcript, XmlUnmarshallerContext>, IUnmarshaller<Transcript, JsonUnmarshallerContext>
+    public class ContentRedactionUnmarshaller : IUnmarshaller<ContentRedaction, XmlUnmarshallerContext>, IUnmarshaller<ContentRedaction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Transcript IUnmarshaller<Transcript, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ContentRedaction IUnmarshaller<ContentRedaction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Transcript Unmarshall(JsonUnmarshallerContext context)
+        public ContentRedaction Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Transcript unmarshalledObject = new Transcript();
+            ContentRedaction unmarshalledObject = new ContentRedaction();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("RedactedTranscriptFileUri", targetDepth))
+                if (context.TestExpression("RedactionOutput", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RedactedTranscriptFileUri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RedactionOutput = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TranscriptFileUri", targetDepth))
+                if (context.TestExpression("RedactionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TranscriptFileUri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RedactionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         }
 
 
-        private static TranscriptUnmarshaller _instance = new TranscriptUnmarshaller();        
+        private static ContentRedactionUnmarshaller _instance = new ContentRedactionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TranscriptUnmarshaller Instance
+        public static ContentRedactionUnmarshaller Instance
         {
             get
             {

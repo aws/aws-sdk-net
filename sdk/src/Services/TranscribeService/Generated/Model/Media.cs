@@ -37,13 +37,12 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaFileUri. 
         /// <para>
-        /// The S3 location of the input media file. The URI must be in the same region as the
-        /// API endpoint that you are calling. The general form is:
+        /// The S3 object location of the input media file. The URI must be in the same region
+        /// as the API endpoint that you are calling. The general form is:
         /// </para>
         ///  
         /// <para>
-        ///  <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-        /// </code> 
+        ///  <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code> 
         /// </para>
         ///  
         /// <para>
@@ -51,12 +50,11 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code> 
+        ///  <code>s3://examplebucket/example.mp4</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
-        /// 
+        ///  <code>s3://examplebucket/mediadocs/example.mp4</code> 
         /// </para>
         ///  
         /// <para>

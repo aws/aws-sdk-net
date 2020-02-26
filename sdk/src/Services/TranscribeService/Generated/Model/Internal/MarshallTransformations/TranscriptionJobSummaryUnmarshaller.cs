@@ -70,6 +70,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompletionTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContentRedaction", targetDepth))
+                {
+                    var unmarshaller = ContentRedactionUnmarshaller.Instance;
+                    unmarshalledObject.ContentRedaction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

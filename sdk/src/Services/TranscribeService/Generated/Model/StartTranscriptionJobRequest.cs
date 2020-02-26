@@ -33,6 +33,7 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class StartTranscriptionJobRequest : AmazonTranscribeServiceRequest
     {
+        private ContentRedaction _contentRedaction;
         private JobExecutionSettings _jobExecutionSettings;
         private LanguageCode _languageCode;
         private Media _media;
@@ -42,6 +43,24 @@ namespace Amazon.TranscribeService.Model
         private string _outputEncryptionKMSKeyId;
         private Settings _settings;
         private string _transcriptionJobName;
+
+        /// <summary>
+        /// Gets and sets the property ContentRedaction. 
+        /// <para>
+        /// An object that contains the request parameters for content redaction.
+        /// </para>
+        /// </summary>
+        public ContentRedaction ContentRedaction
+        {
+            get { return this._contentRedaction; }
+            set { this._contentRedaction = value; }
+        }
+
+        // Check to see if ContentRedaction property is set
+        internal bool IsSetContentRedaction()
+        {
+            return this._contentRedaction != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobExecutionSettings. 
@@ -152,10 +171,13 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription
+        /// If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcript
         /// in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation,
-        /// the operation returns this location in the <code>TranscriptFileUri</code> field. The
-        /// S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket.
+        /// the operation returns this location in the <code>TranscriptFileUri</code> field. If
+        /// you enable content redaction, the redacted transcript appears in <code>RedactedTranscriptFileUri</code>.
+        /// If you enable content redaction and choose to output an unredacted transcript, that
+        /// transcript's location still appears in the <code>TranscriptFileUri</code>. The S3
+        /// bucket must have permissions that allow Amazon Transcribe to put files in the bucket.
         /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
         /// Required for IAM User Roles</a>.
         /// </para>

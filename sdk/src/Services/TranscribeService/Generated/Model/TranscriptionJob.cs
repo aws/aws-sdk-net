@@ -34,6 +34,7 @@ namespace Amazon.TranscribeService.Model
     public partial class TranscriptionJob
     {
         private DateTime? _completionTime;
+        private ContentRedaction _contentRedaction;
         private DateTime? _creationTime;
         private string _failureReason;
         private JobExecutionSettings _jobExecutionSettings;
@@ -63,6 +64,24 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetCompletionTime()
         {
             return this._completionTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentRedaction. 
+        /// <para>
+        /// An object that describes content redaction settings for the transcription job.
+        /// </para>
+        /// </summary>
+        public ContentRedaction ContentRedaction
+        {
+            get { return this._contentRedaction; }
+            set { this._contentRedaction = value; }
+        }
+
+        // Check to see if ContentRedaction property is set
+        internal bool IsSetContentRedaction()
+        {
+            return this._contentRedaction != null;
         }
 
         /// <summary>

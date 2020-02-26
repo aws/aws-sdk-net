@@ -299,6 +299,102 @@ namespace Amazon.TranscribeService
 
 
     /// <summary>
+    /// Constants used for properties of type RedactionOutput.
+    /// </summary>
+    public class RedactionOutput : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Redacted for RedactionOutput
+        /// </summary>
+        public static readonly RedactionOutput Redacted = new RedactionOutput("redacted");
+        /// <summary>
+        /// Constant Redacted_and_unredacted for RedactionOutput
+        /// </summary>
+        public static readonly RedactionOutput Redacted_and_unredacted = new RedactionOutput("redacted_and_unredacted");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RedactionOutput(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RedactionOutput FindValue(string value)
+        {
+            return FindValue<RedactionOutput>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RedactionOutput(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RedactionType.
+    /// </summary>
+    public class RedactionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PII for RedactionType
+        /// </summary>
+        public static readonly RedactionType PII = new RedactionType("PII");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RedactionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RedactionType FindValue(string value)
+        {
+            return FindValue<RedactionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RedactionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TranscriptionJobStatus.
     /// </summary>
     public class TranscriptionJobStatus : ConstantClass
