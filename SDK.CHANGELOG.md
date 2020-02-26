@@ -1,3 +1,18 @@
+### 3.3.687.0 (2020-02-26 19:13 UTC)
+* EC2 (3.3.162.0)
+	* This release changes the RunInstances CLI and SDK's so that if you do not specify a client token, a randomly generated token is used for the request to ensure idempotency.
+* SageMaker (3.3.111.0)
+	* SageMaker UpdateEndpoint API now supports retained variant properties, e.g., instance count, variant weight. SageMaker ListTrials API filter by TrialComponentName. Make ExperimentConfig name length limits consistent with CreateExperiment, CreateTrial, and CreateTrialComponent APIs.
+* SecurityHub (3.3.109.0)
+	* Security Hub has added to the DescribeProducts API operation a new response field called IntegrationTypes. The IntegrationTypes field lists the types of actions that a product performs relative to Security Hub such as send findings to Security Hub and receive findings from Security Hub.
+* TranscribeService (3.3.114.0)
+	* Amazon Transcribe's Automatic Content Redaction feature enables you to automatically redact sensitive personally identifiable information (PII) from transcription results. It replaces each instance of an identified PII utterance with a [PII] tag in the transcript.
+* Core 3.3.104.29
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.686.0 (2020-02-25 19:10 UTC)
 * Kafka (3.3.107.0)
 	* Amazon MSK has added support for Broker Log delivery to CloudWatch, S3, and Firehose.
