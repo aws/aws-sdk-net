@@ -158,7 +158,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ComplianceStatus. 
         /// <para>
         /// Exclusive to findings that are generated as the result of a check run against a specific
-        /// rule in a supported standard, such as CIS AWS Foundations. Contains compliance-related
+        /// rule in a supported standard, such as CIS AWS Foundations. Contains security standard-related
         /// finding details.
         /// </para>
         /// </summary>

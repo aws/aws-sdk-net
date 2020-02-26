@@ -43,9 +43,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>nodejs8.10</code> | <code>nodejs10.x</code> | <code>nodejs12.x</code>
-        /// | <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code>
-        /// | <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code>
+        /// Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code>
+        /// | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code>
+        /// | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code>
         /// | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code> 
         /// </para>
         /// </summary>

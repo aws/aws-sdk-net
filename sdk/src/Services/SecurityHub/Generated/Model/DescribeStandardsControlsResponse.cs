@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Controls. 
         /// <para>
-        /// A list of compliance standards controls.
+        /// A list of security standards controls.
         /// </para>
         /// </summary>
         public List<StandardsControl> Controls

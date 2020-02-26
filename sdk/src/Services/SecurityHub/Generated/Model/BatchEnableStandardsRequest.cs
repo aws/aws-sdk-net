@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+    /// For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
     /// Standards</a> section of the <i>AWS Security Hub User Guide</i>.
     /// </para>
     /// </summary>
@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsSubscriptionRequests. 
         /// <para>
-        /// The list of standards compliance checks to enable.
+        /// The list of standards checks to enable.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]

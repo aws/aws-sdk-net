@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStandardsControls operation.
-    /// Returns a list of compliance standards controls.
+    /// Returns a list of security standards controls.
     /// 
     ///  
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of compliance standard controls to return.
+        /// The maximum number of security standard controls to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

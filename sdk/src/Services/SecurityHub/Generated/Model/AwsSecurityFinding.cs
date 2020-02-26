@@ -30,13 +30,13 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Provides consistent format for the contents of the Security Hub-aggregated findings.
     /// <code>AwsSecurityFinding</code> format enables you to share findings between AWS security
-    /// services and third-party solutions, and compliance checks.
+    /// services and third-party solutions, and security standards checks.
     /// 
     ///  <note> 
     /// <para>
     /// A finding is a potential security issue generated either by AWS services (Amazon GuardDuty,
     /// Amazon Inspector, and Amazon Macie) or by the integrated third-party solutions and
-    /// compliance checks.
+    /// standards checks.
     /// </para>
     ///  </note>
     /// </summary>
@@ -96,8 +96,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Compliance. 
         /// <para>
         /// This data type is exclusive to findings that are generated as the result of a check
-        /// run against a specific rule in a supported standard, such as CIS AWS Foundations.
-        /// Contains compliance-related finding details.
+        /// run against a specific rule in a supported security standard, such as CIS AWS Foundations.
+        /// Contains security standard-related finding details.
         /// </para>
         /// </summary>
         public Compliance Compliance

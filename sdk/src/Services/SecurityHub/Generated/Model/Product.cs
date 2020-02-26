@@ -36,6 +36,7 @@ namespace Amazon.SecurityHub.Model
         private List<string> _categories = new List<string>();
         private string _companyName;
         private string _description;
+        private List<string> _integrationTypes = new List<string>();
         private string _marketplaceUrl;
         private string _productArn;
         private string _productName;
@@ -111,6 +112,35 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntegrationTypes. 
+        /// <para>
+        /// The types of integration that the product supports. Available values are the following.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends
+        /// findings to Security Hub.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration
+        /// receives findings from Security Hub.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<string> IntegrationTypes
+        {
+            get { return this._integrationTypes; }
+            set { this._integrationTypes = value; }
+        }
+
+        // Check to see if IntegrationTypes property is set
+        internal bool IsSetIntegrationTypes()
+        {
+            return this._integrationTypes != null && this._integrationTypes.Count > 0; 
         }
 
         /// <summary>

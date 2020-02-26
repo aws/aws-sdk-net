@@ -39,8 +39,8 @@ namespace Amazon.SecurityHub
     /// Implementation for accessing SecurityHub
     ///
     /// Security Hub provides you with a comprehensive view of the security state of your
-    /// AWS environment and resources. It also provides you with the compliance status of
-    /// your environment based on controls from supported standards. Security Hub collects
+    /// AWS environment and resources. It also provides you with the readiness status of your
+    /// environment based on controls from supported security standards. Security Hub collects
     /// security data from AWS accounts, services, and integrated third-party products and
     /// helps you analyze security trends in your environment to identify the highest priority
     /// security issues. For more information about Security Hub, see the <i> <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS
@@ -378,7 +378,7 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+        /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
         /// Standards</a> section of the <i>AWS Security Hub User Guide</i>.
         /// </para>
         /// </summary>
@@ -415,7 +415,7 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+        /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
         /// Standards</a> section of the <i>AWS Security Hub User Guide</i>.
         /// </para>
         /// </summary>
@@ -460,7 +460,7 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+        /// For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
         /// Standards</a> section of the <i>AWS Security Hub User Guide</i>.
         /// </para>
         /// </summary>
@@ -498,7 +498,7 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+        /// For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
         /// Standards</a> section of the <i>AWS Security Hub User Guide</i>.
         /// </para>
         /// </summary>
@@ -1575,7 +1575,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns a list of compliance standards controls.
+        /// Returns a list of security standards controls.
         /// 
         ///  
         /// <para>
@@ -1611,7 +1611,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns a list of compliance standards controls.
+        /// Returns a list of security standards controls.
         /// 
         ///  
         /// <para>
@@ -3413,7 +3413,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Used to control whether an individual compliance standard control is enabled or disabled.
+        /// Used to control whether an individual security standard control is enabled or disabled.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStandardsControl service method.</param>
         /// 
@@ -3443,7 +3443,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Used to control whether an individual compliance standard control is enabled or disabled.
+        /// Used to control whether an individual security standard control is enabled or disabled.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStandardsControl service method.</param>
         /// <param name="cancellationToken">

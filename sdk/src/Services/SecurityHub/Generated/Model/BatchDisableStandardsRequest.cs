@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+    /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
     /// Standards</a> section of the <i>AWS Security Hub User Guide</i>.
     /// </para>
     /// </summary>

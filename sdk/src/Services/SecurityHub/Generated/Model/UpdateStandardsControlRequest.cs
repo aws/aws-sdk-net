@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStandardsControl operation.
-    /// Used to control whether an individual compliance standard control is enabled or disabled.
+    /// Used to control whether an individual security standard control is enabled or disabled.
     /// </summary>
     public partial class UpdateStandardsControlRequest : AmazonSecurityHubRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ControlStatus. 
         /// <para>
-        /// The updated status of the compliance standard control.
+        /// The updated status of the security standard control.
         /// </para>
         /// </summary>
         public ControlStatus ControlStatus
@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DisabledReason. 
         /// <para>
-        /// A description of the reason why you are disabling a compliance standard control.
+        /// A description of the reason why you are disabling a security standard control.
         /// </para>
         /// </summary>
         public string DisabledReason
@@ -76,7 +76,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsControlArn. 
         /// <para>
-        /// The ARN of the compliance standard control to enable or disable.
+        /// The ARN of the security standard control to enable or disable.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

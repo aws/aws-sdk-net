@@ -88,6 +88,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IntegrationTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.IntegrationTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MarketplaceUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

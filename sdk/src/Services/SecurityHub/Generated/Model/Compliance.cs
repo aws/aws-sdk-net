@@ -29,8 +29,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Exclusive to findings that are generated as the result of a check run against a specific
-    /// rule in a supported standard, such as CIS AWS Foundations. Contains compliance-related
-    /// finding details.
+    /// rule in a supported security standard, such as CIS AWS Foundations. Contains security
+    /// standard-related finding details.
     /// 
     ///  
     /// <para>
@@ -42,7 +42,7 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>PASSED</code> - Compliance check passed for all evaluated resources.
+    ///  <code>PASSED</code> - Standards check passed for all evaluated resources.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>FAILED</code> - Compliance check failed for at least one evaluated resource.
+    ///  <code>FAILED</code> - Standards check failed for at least one evaluated resource.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The result of a compliance check.
+        /// The result of a standards check.
         /// </para>
         /// </summary>
         public ComplianceStatus Status

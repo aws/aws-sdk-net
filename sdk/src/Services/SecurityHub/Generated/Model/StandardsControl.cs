@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Details for an individual compliance standard control.
+    /// Details for an individual security standard control.
     /// </summary>
     public partial class StandardsControl
     {
@@ -46,7 +46,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ControlId. 
         /// <para>
-        /// The identifier of the compliance standard control.
+        /// The identifier of the security standard control.
         /// </para>
         /// </summary>
         public string ControlId
@@ -64,7 +64,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ControlStatus. 
         /// <para>
-        /// The current status of the compliance standard control. Indicates whether the control
+        /// The current status of the security standard control. Indicates whether the control
         /// is enabled or disabled. Security Hub does not check against disabled controls.
         /// </para>
         /// </summary>
@@ -83,7 +83,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ControlStatusUpdatedAt. 
         /// <para>
-        /// The date and time that the status of the compliance standard control was most recently
+        /// The date and time that the status of the security standard control was most recently
         /// updated.
         /// </para>
         /// </summary>
@@ -102,7 +102,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The longer description of the compliance standard control. Provides information about
+        /// The longer description of the security standard control. Provides information about
         /// what the control is checking for.
         /// </para>
         /// </summary>
@@ -175,12 +175,12 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SeverityRating. 
         /// <para>
-        /// The severity of findings generated from this compliance standard control.
+        /// The severity of findings generated from this security standard control.
         /// </para>
         ///  
         /// <para>
         /// The finding severity is based on an assessment of how easy it would be to compromise
-        /// AWS resources if the compliance issue is detected.
+        /// AWS resources if the issue is detected.
         /// </para>
         /// </summary>
         public SeverityRating SeverityRating
@@ -198,7 +198,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsControlArn. 
         /// <para>
-        /// The ARN of the compliance standard control.
+        /// The ARN of the security standard control.
         /// </para>
         /// </summary>
         public string StandardsControlArn
@@ -216,7 +216,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// The title of the compliance standard control.
+        /// The title of the security standard control.
         /// </para>
         /// </summary>
         public string Title
