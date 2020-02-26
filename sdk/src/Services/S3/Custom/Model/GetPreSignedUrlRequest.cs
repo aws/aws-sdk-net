@@ -47,7 +47,7 @@ namespace Amazon.S3.Model
         HttpVerb verb;
         string versionId;
         string uploadId;
-        int partNumber;
+        int? partNumber;
         ServerSideEncryptionMethod encryption;
         RequestPayer requestPayer;
         private string serverSideEncryptionKeyManagementServiceKeyId;
@@ -236,7 +236,7 @@ namespace Amazon.S3.Model
         /// </summary>
         public int PartNumber
         {
-            get { return this.partNumber; }
+            get { return this.partNumber ?? default(int); }
             set { this.partNumber = value; }
         }
 
@@ -246,7 +246,7 @@ namespace Amazon.S3.Model
         /// <returns>true if PartNumber property is set.</returns>
         internal bool IsSetPartNumber()
         {
-            return this.partNumber != 0;
+            return this.partNumber.HasValue;
         }
 
         #endregion

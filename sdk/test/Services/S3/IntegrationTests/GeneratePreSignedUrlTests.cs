@@ -16,11 +16,14 @@ using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Net;
-using Amazon.Util;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -32,6 +35,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     {
         private const string TestContent = "This is the content body!";
         private const string TestKey = "key";
+
+        private const long MegSize = 1048576;
 
         [TestMethod]
         [TestCategory("S3")]
@@ -178,6 +183,83 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             wex = Assert.ThrowsException<WebException>(() => wc.DownloadString(badValueURL));
             // And that exception should be permission denied:
             Assert.IsTrue(wex.Message.Contains("403"));
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MultipartUploadPresignedUrl()
+        {
+            var key = "multipart";
+            var client = new AmazonS3Client(RegionEndpoint.USEast1);
+            var bucketName = CreateBucketAndObject(client);
+            var totalMegs = 15;
+            var initiateMultipartResponse = client.InitiateMultipartUpload(new InitiateMultipartUploadRequest()
+            {
+                BucketName = bucketName,
+                Key = key,
+                ContentType = "text/plain"
+            });
+
+            var abortedMessage = "";
+            var partETags = new List<PartETag>();
+            try
+            {
+                for (var part = 1; part <= totalMegs / 5; part++)
+                {
+                    var url = client.GetPreSignedURL(new GetPreSignedUrlRequest
+                    {
+                        BucketName = bucketName,
+                        Key = key,
+                        Expires = DateTime.Now.AddDays(1),
+                        PartNumber = part,
+                        UploadId = initiateMultipartResponse.UploadId,
+                        Verb = HttpVerb.PUT,
+                        ContentType = "text/plain",
+                        Protocol = Protocol.HTTPS
+                    });
+
+                    WebRequest request = WebRequest.Create(url);
+                    request.ContentLength = MegSize * 5;
+                    request.Method = "PUT";
+                    request.ContentType = "text/plain";
+                    using (var dataStream = request.GetRequestStream())
+                    {
+                        var random = new Random();
+                        var buffer = new byte[MegSize * 5];
+                        random.NextBytes(buffer);
+                        dataStream.Write(buffer, 0, (int)(MegSize * 5));
+                    }
+                    WebResponse response = request.GetResponse();
+                    partETags.Add(new PartETag(part, response.Headers["ETag"]));
+                }
+
+                client.CompleteMultipartUpload(new CompleteMultipartUploadRequest()
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    UploadId = initiateMultipartResponse.UploadId,
+                    PartETags = partETags
+                });
+            }
+            catch (Exception e)
+            {
+                abortedMessage = e.StackTrace;
+                client.AbortMultipartUpload(new AbortMultipartUploadRequest()
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    UploadId = initiateMultipartResponse.UploadId
+                });
+            }
+            finally
+            {
+                DeleteBucket(client, bucketName);
+
+                if (!string.IsNullOrEmpty(abortedMessage))
+                {
+                    Assert.Inconclusive(abortedMessage);
+                }
+            }
         }
 
         private void DeleteBucket(AmazonS3Client client, string bucketName)
