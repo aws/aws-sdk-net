@@ -46,6 +46,8 @@ namespace Amazon.S3.Model
         Protocol protocol;
         HttpVerb verb;
         string versionId;
+        string uploadId;
+        int? partNumber;
         ServerSideEncryptionMethod encryption;
         RequestPayer requestPayer;
         private string serverSideEncryptionKeyManagementServiceKeyId;
@@ -201,6 +203,50 @@ namespace Amazon.S3.Model
         internal bool IsSetVersionId()
         {
             return !System.String.IsNullOrEmpty(this.versionId);
+        }
+
+        #endregion
+
+        #region UploadId
+
+        /// <summary>
+        /// The upload id for the multipart upload for which a pre-signed url should be created.
+        /// </summary>
+        public string UploadId
+        {
+            get { return this.uploadId; }
+            set { this.uploadId = value; }
+        }
+
+        /// <summary>
+        /// Checks if UploadId property is set.
+        /// </summary>
+        /// <returns>true if UploadId property is set.</returns>
+        internal bool IsSetUploadId()
+        {
+            return !System.String.IsNullOrEmpty(this.uploadId);
+        }
+
+        #endregion
+
+        #region PartNumber
+
+        /// <summary>
+        /// The part number for the multipart upload for which a pre-signed url should be created.
+        /// </summary>
+        public int PartNumber
+        {
+            get { return this.partNumber ?? default(int); }
+            set { this.partNumber = value; }
+        }
+
+        /// <summary>
+        /// Checks if PartNumber property is set.
+        /// </summary>
+        /// <returns>true if PartNumber property is set.</returns>
+        internal bool IsSetPartNumber()
+        {
+            return this.partNumber.HasValue;
         }
 
         #endregion
