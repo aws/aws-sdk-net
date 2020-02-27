@@ -121,6 +121,60 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type AlarmState.
+    /// </summary>
+    public class AlarmState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALARM for AlarmState
+        /// </summary>
+        public static readonly AlarmState ALARM = new AlarmState("ALARM");
+        /// <summary>
+        /// Constant INSUFFICIENT_DATA for AlarmState
+        /// </summary>
+        public static readonly AlarmState INSUFFICIENT_DATA = new AlarmState("INSUFFICIENT_DATA");
+        /// <summary>
+        /// Constant OK for AlarmState
+        /// </summary>
+        public static readonly AlarmState OK = new AlarmState("OK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AlarmState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AlarmState FindValue(string value)
+        {
+            return FindValue<AlarmState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AlarmState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutoSnapshotStatus.
     /// </summary>
     public class AutoSnapshotStatus : ConstantClass
@@ -268,6 +322,214 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CloudFormationStackRecordSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComparisonOperator.
+    /// </summary>
+    public class ComparisonOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GreaterThanOrEqualToThreshold for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator GreaterThanOrEqualToThreshold = new ComparisonOperator("GreaterThanOrEqualToThreshold");
+        /// <summary>
+        /// Constant GreaterThanThreshold for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator GreaterThanThreshold = new ComparisonOperator("GreaterThanThreshold");
+        /// <summary>
+        /// Constant LessThanOrEqualToThreshold for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator LessThanOrEqualToThreshold = new ComparisonOperator("LessThanOrEqualToThreshold");
+        /// <summary>
+        /// Constant LessThanThreshold for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator LessThanThreshold = new ComparisonOperator("LessThanThreshold");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComparisonOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComparisonOperator FindValue(string value)
+        {
+            return FindValue<ComparisonOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComparisonOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContactMethodStatus.
+    /// </summary>
+    public class ContactMethodStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Invalid for ContactMethodStatus
+        /// </summary>
+        public static readonly ContactMethodStatus Invalid = new ContactMethodStatus("Invalid");
+        /// <summary>
+        /// Constant PendingVerification for ContactMethodStatus
+        /// </summary>
+        public static readonly ContactMethodStatus PendingVerification = new ContactMethodStatus("PendingVerification");
+        /// <summary>
+        /// Constant Valid for ContactMethodStatus
+        /// </summary>
+        public static readonly ContactMethodStatus Valid = new ContactMethodStatus("Valid");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactMethodStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactMethodStatus FindValue(string value)
+        {
+            return FindValue<ContactMethodStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactMethodStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContactMethodVerificationProtocol.
+    /// </summary>
+    public class ContactMethodVerificationProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Email for ContactMethodVerificationProtocol
+        /// </summary>
+        public static readonly ContactMethodVerificationProtocol Email = new ContactMethodVerificationProtocol("Email");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactMethodVerificationProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactMethodVerificationProtocol FindValue(string value)
+        {
+            return FindValue<ContactMethodVerificationProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactMethodVerificationProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContactProtocol.
+    /// </summary>
+    public class ContactProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Email for ContactProtocol
+        /// </summary>
+        public static readonly ContactProtocol Email = new ContactProtocol("Email");
+        /// <summary>
+        /// Constant SMS for ContactProtocol
+        /// </summary>
+        public static readonly ContactProtocol SMS = new ContactProtocol("SMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactProtocol FindValue(string value)
+        {
+            return FindValue<ContactProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactProtocol(string value)
         {
             return FindValue(value);
         }
@@ -1403,6 +1665,140 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type MetricName.
+    /// </summary>
+    public class MetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ClientTLSNegotiationErrorCount for MetricName
+        /// </summary>
+        public static readonly MetricName ClientTLSNegotiationErrorCount = new MetricName("ClientTLSNegotiationErrorCount");
+        /// <summary>
+        /// Constant CPUUtilization for MetricName
+        /// </summary>
+        public static readonly MetricName CPUUtilization = new MetricName("CPUUtilization");
+        /// <summary>
+        /// Constant DatabaseConnections for MetricName
+        /// </summary>
+        public static readonly MetricName DatabaseConnections = new MetricName("DatabaseConnections");
+        /// <summary>
+        /// Constant DiskQueueDepth for MetricName
+        /// </summary>
+        public static readonly MetricName DiskQueueDepth = new MetricName("DiskQueueDepth");
+        /// <summary>
+        /// Constant FreeStorageSpace for MetricName
+        /// </summary>
+        public static readonly MetricName FreeStorageSpace = new MetricName("FreeStorageSpace");
+        /// <summary>
+        /// Constant HealthyHostCount for MetricName
+        /// </summary>
+        public static readonly MetricName HealthyHostCount = new MetricName("HealthyHostCount");
+        /// <summary>
+        /// Constant HTTPCode_Instance_2XX_Count for MetricName
+        /// </summary>
+        public static readonly MetricName HTTPCode_Instance_2XX_Count = new MetricName("HTTPCode_Instance_2XX_Count");
+        /// <summary>
+        /// Constant HTTPCode_Instance_3XX_Count for MetricName
+        /// </summary>
+        public static readonly MetricName HTTPCode_Instance_3XX_Count = new MetricName("HTTPCode_Instance_3XX_Count");
+        /// <summary>
+        /// Constant HTTPCode_Instance_4XX_Count for MetricName
+        /// </summary>
+        public static readonly MetricName HTTPCode_Instance_4XX_Count = new MetricName("HTTPCode_Instance_4XX_Count");
+        /// <summary>
+        /// Constant HTTPCode_Instance_5XX_Count for MetricName
+        /// </summary>
+        public static readonly MetricName HTTPCode_Instance_5XX_Count = new MetricName("HTTPCode_Instance_5XX_Count");
+        /// <summary>
+        /// Constant HTTPCode_LB_4XX_Count for MetricName
+        /// </summary>
+        public static readonly MetricName HTTPCode_LB_4XX_Count = new MetricName("HTTPCode_LB_4XX_Count");
+        /// <summary>
+        /// Constant HTTPCode_LB_5XX_Count for MetricName
+        /// </summary>
+        public static readonly MetricName HTTPCode_LB_5XX_Count = new MetricName("HTTPCode_LB_5XX_Count");
+        /// <summary>
+        /// Constant InstanceResponseTime for MetricName
+        /// </summary>
+        public static readonly MetricName InstanceResponseTime = new MetricName("InstanceResponseTime");
+        /// <summary>
+        /// Constant NetworkIn for MetricName
+        /// </summary>
+        public static readonly MetricName NetworkIn = new MetricName("NetworkIn");
+        /// <summary>
+        /// Constant NetworkOut for MetricName
+        /// </summary>
+        public static readonly MetricName NetworkOut = new MetricName("NetworkOut");
+        /// <summary>
+        /// Constant NetworkReceiveThroughput for MetricName
+        /// </summary>
+        public static readonly MetricName NetworkReceiveThroughput = new MetricName("NetworkReceiveThroughput");
+        /// <summary>
+        /// Constant NetworkTransmitThroughput for MetricName
+        /// </summary>
+        public static readonly MetricName NetworkTransmitThroughput = new MetricName("NetworkTransmitThroughput");
+        /// <summary>
+        /// Constant RejectedConnectionCount for MetricName
+        /// </summary>
+        public static readonly MetricName RejectedConnectionCount = new MetricName("RejectedConnectionCount");
+        /// <summary>
+        /// Constant RequestCount for MetricName
+        /// </summary>
+        public static readonly MetricName RequestCount = new MetricName("RequestCount");
+        /// <summary>
+        /// Constant StatusCheckFailed for MetricName
+        /// </summary>
+        public static readonly MetricName StatusCheckFailed = new MetricName("StatusCheckFailed");
+        /// <summary>
+        /// Constant StatusCheckFailed_Instance for MetricName
+        /// </summary>
+        public static readonly MetricName StatusCheckFailed_Instance = new MetricName("StatusCheckFailed_Instance");
+        /// <summary>
+        /// Constant StatusCheckFailed_System for MetricName
+        /// </summary>
+        public static readonly MetricName StatusCheckFailed_System = new MetricName("StatusCheckFailed_System");
+        /// <summary>
+        /// Constant UnhealthyHostCount for MetricName
+        /// </summary>
+        public static readonly MetricName UnhealthyHostCount = new MetricName("UnhealthyHostCount");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricName FindValue(string value)
+        {
+            return FindValue<MetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MetricStatistic.
     /// </summary>
     public class MetricStatistic : ConstantClass
@@ -1761,6 +2157,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType CloseInstancePublicPorts = new OperationType("CloseInstancePublicPorts");
         /// <summary>
+        /// Constant CreateContactMethod for OperationType
+        /// </summary>
+        public static readonly OperationType CreateContactMethod = new OperationType("CreateContactMethod");
+        /// <summary>
         /// Constant CreateDisk for OperationType
         /// </summary>
         public static readonly OperationType CreateDisk = new OperationType("CreateDisk");
@@ -1808,6 +2208,14 @@ namespace Amazon.Lightsail
         /// Constant CreateRelationalDatabaseSnapshot for OperationType
         /// </summary>
         public static readonly OperationType CreateRelationalDatabaseSnapshot = new OperationType("CreateRelationalDatabaseSnapshot");
+        /// <summary>
+        /// Constant DeleteAlarm for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteAlarm = new OperationType("DeleteAlarm");
+        /// <summary>
+        /// Constant DeleteContactMethod for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteContactMethod = new OperationType("DeleteContactMethod");
         /// <summary>
         /// Constant DeleteDisk for OperationType
         /// </summary>
@@ -1873,9 +2281,21 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType EnableAddOn = new OperationType("EnableAddOn");
         /// <summary>
+        /// Constant GetAlarms for OperationType
+        /// </summary>
+        public static readonly OperationType GetAlarms = new OperationType("GetAlarms");
+        /// <summary>
+        /// Constant GetContactMethods for OperationType
+        /// </summary>
+        public static readonly OperationType GetContactMethods = new OperationType("GetContactMethods");
+        /// <summary>
         /// Constant OpenInstancePublicPorts for OperationType
         /// </summary>
         public static readonly OperationType OpenInstancePublicPorts = new OperationType("OpenInstancePublicPorts");
+        /// <summary>
+        /// Constant PutAlarm for OperationType
+        /// </summary>
+        public static readonly OperationType PutAlarm = new OperationType("PutAlarm");
         /// <summary>
         /// Constant PutInstancePublicPorts for OperationType
         /// </summary>
@@ -1893,6 +2313,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType ReleaseStaticIp = new OperationType("ReleaseStaticIp");
         /// <summary>
+        /// Constant SendContactMethodVerification for OperationType
+        /// </summary>
+        public static readonly OperationType SendContactMethodVerification = new OperationType("SendContactMethodVerification");
+        /// <summary>
         /// Constant StartInstance for OperationType
         /// </summary>
         public static readonly OperationType StartInstance = new OperationType("StartInstance");
@@ -1908,6 +2332,10 @@ namespace Amazon.Lightsail
         /// Constant StopRelationalDatabase for OperationType
         /// </summary>
         public static readonly OperationType StopRelationalDatabase = new OperationType("StopRelationalDatabase");
+        /// <summary>
+        /// Constant TestAlarm for OperationType
+        /// </summary>
+        public static readonly OperationType TestAlarm = new OperationType("TestAlarm");
         /// <summary>
         /// Constant UpdateDomainEntry for OperationType
         /// </summary>
@@ -2443,9 +2871,17 @@ namespace Amazon.Lightsail
     {
 
         /// <summary>
+        /// Constant Alarm for ResourceType
+        /// </summary>
+        public static readonly ResourceType Alarm = new ResourceType("Alarm");
+        /// <summary>
         /// Constant CloudFormationStackRecord for ResourceType
         /// </summary>
         public static readonly ResourceType CloudFormationStackRecord = new ResourceType("CloudFormationStackRecord");
+        /// <summary>
+        /// Constant ContactMethod for ResourceType
+        /// </summary>
+        public static readonly ResourceType ContactMethod = new ResourceType("ContactMethod");
         /// <summary>
         /// Constant Disk for ResourceType
         /// </summary>
@@ -2528,6 +2964,64 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TreatMissingData.
+    /// </summary>
+    public class TreatMissingData : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Breaching for TreatMissingData
+        /// </summary>
+        public static readonly TreatMissingData Breaching = new TreatMissingData("breaching");
+        /// <summary>
+        /// Constant Ignore for TreatMissingData
+        /// </summary>
+        public static readonly TreatMissingData Ignore = new TreatMissingData("ignore");
+        /// <summary>
+        /// Constant Missing for TreatMissingData
+        /// </summary>
+        public static readonly TreatMissingData Missing = new TreatMissingData("missing");
+        /// <summary>
+        /// Constant NotBreaching for TreatMissingData
+        /// </summary>
+        public static readonly TreatMissingData NotBreaching = new TreatMissingData("notBreaching");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TreatMissingData(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TreatMissingData FindValue(string value)
+        {
+            return FindValue<TreatMissingData>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TreatMissingData(string value)
         {
             return FindValue(value);
         }

@@ -37,7 +37,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// An array of key-value pairs that contains information about the operation.
+        /// An array of objects that describe the result of the action, such as the status of
+        /// the request, the time stamp of the request, and the resources affected by the request.
         /// </para>
         /// </summary>
         public Operation Operation

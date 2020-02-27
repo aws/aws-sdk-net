@@ -38,8 +38,13 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// A token used for advancing to a specific page of results for your <code>get relational
-        /// database</code> request.
+        /// The token to advance to the next page of results from your request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get a page token, perform an initial <code>GetRelationalDatabases</code> request.
+        /// If your results are paginated, the response will return a next page token that you
+        /// can specify as the page token in a subsequent request.
         /// </para>
         /// </summary>
         public string PageToken

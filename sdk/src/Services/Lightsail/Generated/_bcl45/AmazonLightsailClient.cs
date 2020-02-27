@@ -619,15 +619,15 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// Once you create and validate your certificate, you can attach it to your load balancer.
-        /// You can also use this API to rotate the certificates on your account. Use the <code>attach
-        /// load balancer tls certificate</code> operation with the non-attached certificate,
-        /// and it will replace the existing one and become the attached certificate.
+        /// You can also use this API to rotate the certificates on your account. Use the <code>AttachLoadBalancerTlsCertificate</code>
+        /// action with the non-attached certificate, and it will replace the existing one and
+        /// become the attached certificate.
         /// </para>
         ///  
         /// <para>
-        /// The <code>attach load balancer tls certificate</code> operation supports tag-based
-        /// access control via resource tags applied to the resource identified by <code>load
-        /// balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// The <code>AttachLoadBalancerTlsCertificate</code> operation supports tag-based access
+        /// control via resource tags applied to the resource identified by <code>load balancer
+        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -683,15 +683,15 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// Once you create and validate your certificate, you can attach it to your load balancer.
-        /// You can also use this API to rotate the certificates on your account. Use the <code>attach
-        /// load balancer tls certificate</code> operation with the non-attached certificate,
-        /// and it will replace the existing one and become the attached certificate.
+        /// You can also use this API to rotate the certificates on your account. Use the <code>AttachLoadBalancerTlsCertificate</code>
+        /// action with the non-attached certificate, and it will replace the existing one and
+        /// become the attached certificate.
         /// </para>
         ///  
         /// <para>
-        /// The <code>attach load balancer tls certificate</code> operation supports tag-based
-        /// access control via resource tags applied to the resource identified by <code>load
-        /// balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// The <code>AttachLoadBalancerTlsCertificate</code> operation supports tag-based access
+        /// control via resource tags applied to the resource identified by <code>load balancer
+        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -1222,6 +1222,121 @@ namespace Amazon.Lightsail
             options.ResponseUnmarshaller = CreateCloudFormationStackResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateCloudFormationStackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateContactMethod
+
+
+        /// <summary>
+        /// Creates an email or SMS text message contact method.
+        /// 
+        ///  
+        /// <para>
+        /// A contact method is used to send you notifications about your Amazon Lightsail resources.
+        /// You can add one email address and one mobile phone number contact method in each AWS
+        /// Region. However, SMS text messaging is not supported in some AWS Regions, and SMS
+        /// text messages cannot be sent to some countries/regions. For more information, see
+        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactMethod service method.</param>
+        /// 
+        /// <returns>The response from the CreateContactMethod service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContactMethod">REST API Reference for CreateContactMethod Operation</seealso>
+        public virtual CreateContactMethodResponse CreateContactMethod(CreateContactMethodRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContactMethodRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactMethodResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactMethodResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an email or SMS text message contact method.
+        /// 
+        ///  
+        /// <para>
+        /// A contact method is used to send you notifications about your Amazon Lightsail resources.
+        /// You can add one email address and one mobile phone number contact method in each AWS
+        /// Region. However, SMS text messaging is not supported in some AWS Regions, and SMS
+        /// text messages cannot be sent to some countries/regions. For more information, see
+        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactMethod service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContactMethod service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContactMethod">REST API Reference for CreateContactMethod Operation</seealso>
+        public virtual Task<CreateContactMethodResponse> CreateContactMethodAsync(CreateContactMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContactMethodRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactMethodResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateContactMethodResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2492,9 +2607,9 @@ namespace Amazon.Lightsail
         /// </para>
         ///  
         /// <para>
-        /// The <code>create load balancer tls certificate</code> operation supports tag-based
-        /// access control via resource tags applied to the resource identified by <code>load
-        /// balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access
+        /// control via resource tags applied to the resource identified by <code>load balancer
+        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -2552,9 +2667,9 @@ namespace Amazon.Lightsail
         /// </para>
         ///  
         /// <para>
-        /// The <code>create load balancer tls certificate</code> operation supports tag-based
-        /// access control via resource tags applied to the resource identified by <code>load
-        /// balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access
+        /// control via resource tags applied to the resource identified by <code>load balancer
+        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -2974,6 +3089,117 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  DeleteAlarm
+
+
+        /// <summary>
+        /// Deletes an alarm.
+        /// 
+        ///  
+        /// <para>
+        /// An alarm is used to monitor a single metric for one of your resources. When a metric
+        /// condition is met, the alarm can notify you by email, SMS text message, and a banner
+        /// displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarm service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAlarm service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAlarm">REST API Reference for DeleteAlarm Operation</seealso>
+        public virtual DeleteAlarmResponse DeleteAlarm(DeleteAlarmRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlarmResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAlarmResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an alarm.
+        /// 
+        ///  
+        /// <para>
+        /// An alarm is used to monitor a single metric for one of your resources. When a metric
+        /// condition is met, the alarm can notify you by email, SMS text message, and a banner
+        /// displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAlarm service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAlarm">REST API Reference for DeleteAlarm Operation</seealso>
+        public virtual Task<DeleteAlarmResponse> DeleteAlarmAsync(DeleteAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlarmResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAlarmResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAutoSnapshot
 
 
@@ -3069,6 +3295,121 @@ namespace Amazon.Lightsail
             options.ResponseUnmarshaller = DeleteAutoSnapshotResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteAutoSnapshotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteContactMethod
+
+
+        /// <summary>
+        /// Deletes a contact method.
+        /// 
+        ///  
+        /// <para>
+        /// A contact method is used to send you notifications about your Amazon Lightsail resources.
+        /// You can add one email address and one mobile phone number contact method in each AWS
+        /// Region. However, SMS text messaging is not supported in some AWS Regions, and SMS
+        /// text messages cannot be sent to some countries/regions. For more information, see
+        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactMethod service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContactMethod service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContactMethod">REST API Reference for DeleteContactMethod Operation</seealso>
+        public virtual DeleteContactMethodResponse DeleteContactMethod(DeleteContactMethodRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContactMethodRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactMethodResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactMethodResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a contact method.
+        /// 
+        ///  
+        /// <para>
+        /// A contact method is used to send you notifications about your Amazon Lightsail resources.
+        /// You can add one email address and one mobile phone number contact method in each AWS
+        /// Region. However, SMS text messaging is not supported in some AWS Regions, and SMS
+        /// text messages cannot be sent to some countries/regions. For more information, see
+        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactMethod service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContactMethod service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContactMethod">REST API Reference for DeleteContactMethod Operation</seealso>
+        public virtual Task<DeleteContactMethodResponse> DeleteContactMethodAsync(DeleteContactMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContactMethodRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactMethodResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteContactMethodResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4188,9 +4529,9 @@ namespace Amazon.Lightsail
         /// 
         ///  
         /// <para>
-        /// The <code>delete load balancer tls certificate</code> operation supports tag-based
-        /// access control via resource tags applied to the resource identified by <code>load
-        /// balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// The <code>DeleteLoadBalancerTlsCertificate</code> operation supports tag-based access
+        /// control via resource tags applied to the resource identified by <code>load balancer
+        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -4244,9 +4585,9 @@ namespace Amazon.Lightsail
         /// 
         ///  
         /// <para>
-        /// The <code>delete load balancer tls certificate</code> operation supports tag-based
-        /// access control via resource tags applied to the resource identified by <code>load
-        /// balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// The <code>DeleteLoadBalancerTlsCertificate</code> operation supports tag-based access
+        /// control via resource tags applied to the resource identified by <code>load balancer
+        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -5449,6 +5790,121 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  GetAlarms
+
+
+        /// <summary>
+        /// Returns information about the configured alarms. Specify an alarm name in your request
+        /// to return information about a specific alarm, or specify a monitored resource name
+        /// to return information about all alarms for a specific resource.
+        /// 
+        ///  
+        /// <para>
+        /// An alarm is used to monitor a single metric for one of your resources. When a metric
+        /// condition is met, the alarm can notify you by email, SMS text message, and a banner
+        /// displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAlarms service method.</param>
+        /// 
+        /// <returns>The response from the GetAlarms service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAlarms">REST API Reference for GetAlarms Operation</seealso>
+        public virtual GetAlarmsResponse GetAlarms(GetAlarmsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAlarmsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAlarmsResponseUnmarshaller.Instance;
+
+            return Invoke<GetAlarmsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about the configured alarms. Specify an alarm name in your request
+        /// to return information about a specific alarm, or specify a monitored resource name
+        /// to return information about all alarms for a specific resource.
+        /// 
+        ///  
+        /// <para>
+        /// An alarm is used to monitor a single metric for one of your resources. When a metric
+        /// condition is met, the alarm can notify you by email, SMS text message, and a banner
+        /// displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAlarms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAlarms service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAlarms">REST API Reference for GetAlarms Operation</seealso>
+        public virtual Task<GetAlarmsResponse> GetAlarmsAsync(GetAlarmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAlarmsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAlarmsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAlarmsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAutoSnapshots
 
 
@@ -5897,6 +6353,123 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  GetContactMethods
+
+
+        /// <summary>
+        /// Returns information about the configured contact methods. Specify a protocol in your
+        /// request to return information about a specific contact method.
+        /// 
+        ///  
+        /// <para>
+        /// A contact method is used to send you notifications about your Amazon Lightsail resources.
+        /// You can add one email address and one mobile phone number contact method in each AWS
+        /// Region. However, SMS text messaging is not supported in some AWS Regions, and SMS
+        /// text messages cannot be sent to some countries/regions. For more information, see
+        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContactMethods service method.</param>
+        /// 
+        /// <returns>The response from the GetContactMethods service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContactMethods">REST API Reference for GetContactMethods Operation</seealso>
+        public virtual GetContactMethodsResponse GetContactMethods(GetContactMethodsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContactMethodsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactMethodsResponseUnmarshaller.Instance;
+
+            return Invoke<GetContactMethodsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about the configured contact methods. Specify a protocol in your
+        /// request to return information about a specific contact method.
+        /// 
+        ///  
+        /// <para>
+        /// A contact method is used to send you notifications about your Amazon Lightsail resources.
+        /// You can add one email address and one mobile phone number contact method in each AWS
+        /// Region. However, SMS text messaging is not supported in some AWS Regions, and SMS
+        /// text messages cannot be sent to some countries/regions. For more information, see
+        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContactMethods service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetContactMethods service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContactMethods">REST API Reference for GetContactMethods Operation</seealso>
+        public virtual Task<GetContactMethodsResponse> GetContactMethodsAsync(GetContactMethodsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContactMethodsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactMethodsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetContactMethodsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDisk
 
 
@@ -6005,13 +6578,6 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Returns information about all block storage disks in your AWS account and region.
-        /// 
-        ///  
-        /// <para>
-        /// If you are describing a long list of disks, you can paginate the output to make the
-        /// list more manageable. You can use the pageToken and nextPageToken values to retrieve
-        /// the next items in the list.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDisks service method.</param>
         /// 
@@ -6060,13 +6626,6 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Returns information about all block storage disks in your AWS account and region.
-        /// 
-        ///  
-        /// <para>
-        /// If you are describing a long list of disks, you can paginate the output to make the
-        /// list more manageable. You can use the pageToken and nextPageToken values to retrieve
-        /// the next items in the list.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDisks service method.</param>
         /// <param name="cancellationToken">
@@ -6226,13 +6785,6 @@ namespace Amazon.Lightsail
         /// <summary>
         /// Returns information about all block storage disk snapshots in your AWS account and
         /// region.
-        /// 
-        ///  
-        /// <para>
-        /// If you are describing a long list of disk snapshots, you can paginate the output to
-        /// make the list more manageable. You can use the pageToken and nextPageToken values
-        /// to retrieve the next items in the list.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDiskSnapshots service method.</param>
         /// 
@@ -6282,13 +6834,6 @@ namespace Amazon.Lightsail
         /// <summary>
         /// Returns information about all block storage disk snapshots in your AWS account and
         /// region.
-        /// 
-        ///  
-        /// <para>
-        /// If you are describing a long list of disk snapshots, you can paginate the output to
-        /// make the list more manageable. You can use the pageToken and nextPageToken values
-        /// to retrieve the next items in the list.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDiskSnapshots service method.</param>
         /// <param name="cancellationToken">
@@ -7925,13 +8470,6 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Returns information about all load balancers in an account.
-        /// 
-        ///  
-        /// <para>
-        /// If you are describing a long list of load balancers, you can paginate the output to
-        /// make the list more manageable. You can use the pageToken and nextPageToken values
-        /// to retrieve the next items in the list.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLoadBalancers service method.</param>
         /// 
@@ -7980,13 +8518,6 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Returns information about all load balancers in an account.
-        /// 
-        ///  
-        /// <para>
-        /// If you are describing a long list of load balancers, you can paginate the output to
-        /// make the list more manageable. You can use the pageToken and nextPageToken values
-        /// to retrieve the next items in the list.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLoadBalancers service method.</param>
         /// <param name="cancellationToken">
@@ -10518,6 +11049,141 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  PutAlarm
+
+
+        /// <summary>
+        /// Creates or updates an alarm, and associates it with the specified metric.
+        /// 
+        ///  
+        /// <para>
+        /// An alarm is used to monitor a single metric for one of your resources. When a metric
+        /// condition is met, the alarm can notify you by email, SMS text message, and a banner
+        /// displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this action creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>.
+        /// The alarm is then evaluated and its state is set appropriately. Any actions associated
+        /// with the new state are then executed.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you update an existing alarm, its state is left unchanged, but the update completely
+        /// overwrites the previous configuration of the alarm. The alarm is then evaluated with
+        /// the updated configuration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAlarm service method.</param>
+        /// 
+        /// <returns>The response from the PutAlarm service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutAlarm">REST API Reference for PutAlarm Operation</seealso>
+        public virtual PutAlarmResponse PutAlarm(PutAlarmRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAlarmResponseUnmarshaller.Instance;
+
+            return Invoke<PutAlarmResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates or updates an alarm, and associates it with the specified metric.
+        /// 
+        ///  
+        /// <para>
+        /// An alarm is used to monitor a single metric for one of your resources. When a metric
+        /// condition is met, the alarm can notify you by email, SMS text message, and a banner
+        /// displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this action creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>.
+        /// The alarm is then evaluated and its state is set appropriately. Any actions associated
+        /// with the new state are then executed.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you update an existing alarm, its state is left unchanged, but the update completely
+        /// overwrites the previous configuration of the alarm. The alarm is then evaluated with
+        /// the updated configuration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAlarm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAlarm service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutAlarm">REST API Reference for PutAlarm Operation</seealso>
+        public virtual Task<PutAlarmResponse> PutAlarmAsync(PutAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAlarmResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAlarmResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutInstancePublicPorts
 
 
@@ -10976,6 +11642,147 @@ namespace Amazon.Lightsail
             options.ResponseUnmarshaller = ReleaseStaticIpResponseUnmarshaller.Instance;
             
             return InvokeAsync<ReleaseStaticIpResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SendContactMethodVerification
+
+
+        /// <summary>
+        /// Sends a verification request to an email contact method to ensure it’s owned by the
+        /// requester. SMS contact methods don’t need to be verified.
+        /// 
+        ///  
+        /// <para>
+        /// A contact method is used to send you notifications about your Amazon Lightsail resources.
+        /// You can add one email address and one mobile phone number contact method in each AWS
+        /// Region. However, SMS text messaging is not supported in some AWS Regions, and SMS
+        /// text messages cannot be sent to some countries/regions. For more information, see
+        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A verification request is sent to the contact method when you initially create it.
+        /// Use this action to send another verification request if a previous verification request
+        /// was deleted, or has expired.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Notifications are not sent to an email contact method until after it is verified,
+        /// and confirmed as valid.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendContactMethodVerification service method.</param>
+        /// 
+        /// <returns>The response from the SendContactMethodVerification service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SendContactMethodVerification">REST API Reference for SendContactMethodVerification Operation</seealso>
+        public virtual SendContactMethodVerificationResponse SendContactMethodVerification(SendContactMethodVerificationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendContactMethodVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendContactMethodVerificationResponseUnmarshaller.Instance;
+
+            return Invoke<SendContactMethodVerificationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Sends a verification request to an email contact method to ensure it’s owned by the
+        /// requester. SMS contact methods don’t need to be verified.
+        /// 
+        ///  
+        /// <para>
+        /// A contact method is used to send you notifications about your Amazon Lightsail resources.
+        /// You can add one email address and one mobile phone number contact method in each AWS
+        /// Region. However, SMS text messaging is not supported in some AWS Regions, and SMS
+        /// text messages cannot be sent to some countries/regions. For more information, see
+        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A verification request is sent to the contact method when you initially create it.
+        /// Use this action to send another verification request if a previous verification request
+        /// was deleted, or has expired.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Notifications are not sent to an email contact method until after it is verified,
+        /// and confirmed as valid.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendContactMethodVerification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendContactMethodVerification service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SendContactMethodVerification">REST API Reference for SendContactMethodVerification Operation</seealso>
+        public virtual Task<SendContactMethodVerificationResponse> SendContactMethodVerificationAsync(SendContactMethodVerificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendContactMethodVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendContactMethodVerificationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendContactMethodVerificationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -11613,6 +12420,123 @@ namespace Amazon.Lightsail
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TestAlarm
+
+
+        /// <summary>
+        /// Tests an alarm by displaying a banner on the Amazon Lightsail console. If a notification
+        /// trigger is configured for the specified alarm, the test also sends a notification
+        /// to the notification protocol (<code>Email</code> and/or <code>SMS</code>) configured
+        /// for the alarm.
+        /// 
+        ///  
+        /// <para>
+        /// An alarm is used to monitor a single metric for one of your resources. When a metric
+        /// condition is met, the alarm can notify you by email, SMS text message, and a banner
+        /// displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestAlarm service method.</param>
+        /// 
+        /// <returns>The response from the TestAlarm service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TestAlarm">REST API Reference for TestAlarm Operation</seealso>
+        public virtual TestAlarmResponse TestAlarm(TestAlarmRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestAlarmResponseUnmarshaller.Instance;
+
+            return Invoke<TestAlarmResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Tests an alarm by displaying a banner on the Amazon Lightsail console. If a notification
+        /// trigger is configured for the specified alarm, the test also sends a notification
+        /// to the notification protocol (<code>Email</code> and/or <code>SMS</code>) configured
+        /// for the alarm.
+        /// 
+        ///  
+        /// <para>
+        /// An alarm is used to monitor a single metric for one of your resources. When a metric
+        /// condition is met, the alarm can notify you by email, SMS text message, and a banner
+        /// displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+        /// in Amazon Lightsail</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestAlarm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TestAlarm service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TestAlarm">REST API Reference for TestAlarm Operation</seealso>
+        public virtual Task<TestAlarmResponse> TestAlarmAsync(TestAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestAlarmResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TestAlarmResponse>(request, options, cancellationToken);
         }
 
         #endregion

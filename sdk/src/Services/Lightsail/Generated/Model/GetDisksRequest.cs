@@ -30,13 +30,6 @@ namespace Amazon.Lightsail.Model
     /// <summary>
     /// Container for the parameters to the GetDisks operation.
     /// Returns information about all block storage disks in your AWS account and region.
-    /// 
-    ///  
-    /// <para>
-    /// If you are describing a long list of disks, you can paginate the output to make the
-    /// list more manageable. You can use the pageToken and nextPageToken values to retrieve
-    /// the next items in the list.
-    /// </para>
     /// </summary>
     public partial class GetDisksRequest : AmazonLightsailRequest
     {
@@ -45,7 +38,13 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// A token used for advancing to the next page of results from your GetDisks request.
+        /// The token to advance to the next page of results from your request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get a page token, perform an initial <code>GetDisks</code> request. If your results
+        /// are paginated, the response will return a next page token that you can specify as
+        /// the page token in a subsequent request.
         /// </para>
         /// </summary>
         public string PageToken

@@ -30,13 +30,6 @@ namespace Amazon.Lightsail.Model
     /// <summary>
     /// Container for the parameters to the GetLoadBalancers operation.
     /// Returns information about all load balancers in an account.
-    /// 
-    ///  
-    /// <para>
-    /// If you are describing a long list of load balancers, you can paginate the output to
-    /// make the list more manageable. You can use the pageToken and nextPageToken values
-    /// to retrieve the next items in the list.
-    /// </para>
     /// </summary>
     public partial class GetLoadBalancersRequest : AmazonLightsailRequest
     {
@@ -45,7 +38,13 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// A token used for paginating the results from your GetLoadBalancers request.
+        /// The token to advance to the next page of results from your request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get a page token, perform an initial <code>GetLoadBalancers</code> request. If
+        /// your results are paginated, the response will return a next page token that you can
+        /// specify as the page token in a subsequent request.
         /// </para>
         /// </summary>
         public string PageToken

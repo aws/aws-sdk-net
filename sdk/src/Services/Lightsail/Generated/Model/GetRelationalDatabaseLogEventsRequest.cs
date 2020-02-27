@@ -103,8 +103,14 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// A token used for advancing to a specific page of results for your <code>get relational
-        /// database log events</code> request.
+        /// The token to advance to the next or previous page of results from your request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code>
+        /// request. If your results are paginated, the response will return a next forward token
+        /// and/or next backward token that you can specify as the page token in a subsequent
+        /// request.
         /// </para>
         /// </summary>
         public string PageToken

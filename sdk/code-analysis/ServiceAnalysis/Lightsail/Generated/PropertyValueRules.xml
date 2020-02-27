@@ -49,6 +49,11 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateContactMethodRequest.ContactEndpoint</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateDiskRequest.AvailabilityZone</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -166,6 +171,10 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.DeleteAlarmRequest.AlarmName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteAutoSnapshotRequest.Date</property>
     <pattern>^[0-9]{4}-[0-9]{2}-[0-9]{2}$</pattern>
   </property-value-rule>
@@ -243,6 +252,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.ExportSnapshotRequest.SourceSnapshotName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetAlarmsRequest.AlarmName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetAlarmsRequest.MonitoredResourceName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -369,6 +386,14 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.PutAlarmRequest.AlarmName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.PutAlarmRequest.MonitoredResourceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.PutInstancePublicPortsRequest.InstanceName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
@@ -413,6 +438,10 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.TestAlarmRequest.AlarmName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.UntagResourceRequest.ResourceArn</property>
     <pattern>^arn:(aws[^:]*):([a-zA-Z0-9-]+):([a-z0-9-]+):([0-9]+):([a-zA-Z]+)/([a-zA-Z0-9-]+)$</pattern>
   </property-value-rule>
@@ -444,6 +473,19 @@
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AddOn.SnapshotTimeOfDay</property>
     <pattern>^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.Alarm.Arn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.Alarm.Name</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.Alarm.Period</property>
+    <min>60</min>
+    <max>86400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AutoSnapshotAddOnRequest.SnapshotTimeOfDay</property>
@@ -488,6 +530,18 @@
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CloudFormationStackRecordSourceInfo.Name</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.ContactMethod.Arn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.ContactMethod.ContactEndpoint</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.ContactMethod.Name</property>
+    <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DestinationInfo.Id</property>
@@ -755,6 +809,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificateSummary.Name</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.MonitoredResourceInfo.Arn</property>
+    <pattern>^arn:(aws[^:]*):([a-zA-Z0-9-]+):([a-z0-9-]+):([0-9]+):([a-zA-Z]+)/([a-zA-Z0-9-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.MonitoredResourceInfo.Name</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>

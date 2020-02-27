@@ -37,8 +37,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Operations. 
         /// <para>
-        /// An array of key-value pairs containing information about the static IP address you
-        /// allocated.
+        /// An array of objects that describe the result of the action, such as the status of
+        /// the request, the time stamp of the request, and the resources affected by the request.
         /// </para>
         /// </summary>
         public List<Operation> Operations

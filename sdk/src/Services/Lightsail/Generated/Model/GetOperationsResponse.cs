@@ -38,7 +38,16 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// A token used for advancing to the next page of results from your get operations request.
+        /// The token to advance to the next page of resutls from your request.
+        /// </para>
+        ///  
+        /// <para>
+        /// A next page token is not returned if there are no more results to display.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the next page of results, perform another <code>GetOperations</code> request
+        /// and specify the next page token using the <code>pageToken</code> parameter.
         /// </para>
         /// </summary>
         public string NextPageToken
@@ -56,8 +65,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Operations. 
         /// <para>
-        /// An array of key-value pairs containing information about the results of your get operations
-        /// request.
+        /// An array of objects that describe the result of the action, such as the status of
+        /// the request, the time stamp of the request, and the resources affected by the request.
         /// </para>
         /// </summary>
         public List<Operation> Operations

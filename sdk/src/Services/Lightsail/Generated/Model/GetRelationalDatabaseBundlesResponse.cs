@@ -56,8 +56,16 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// A token used for advancing to the next page of results of your get relational database
-        /// bundles request.
+        /// The token to advance to the next page of resutls from your request.
+        /// </para>
+        ///  
+        /// <para>
+        /// A next page token is not returned if there are no more results to display.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code>
+        /// request and specify the next page token using the <code>pageToken</code> parameter.
         /// </para>
         /// </summary>
         public string NextPageToken
