@@ -63,8 +63,7 @@ namespace Amazon.Runtime
                 logger.InfoFormat("Region {0} found using {1} setting in application configuration file.", region.SystemName, AWSConfigs.AWSRegionKey);
             }
             else
-                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                                                    "The app.config/web.config files for the application did not contain region information"));
+                throw new InvalidOperationException("The app.config/web.config files for the application did not contain region information");
         }
     }
 
@@ -113,8 +112,7 @@ namespace Amazon.Runtime
 
             if (region == null)
             {
-                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                    "EC2 instance metadata was not available or did not contain region information.", AWSConfigs.AWSRegionKey));
+                throw new InvalidOperationException("EC2 instance metadata was not available or did not contain region information.");
             }
 
             this.Region = region;
