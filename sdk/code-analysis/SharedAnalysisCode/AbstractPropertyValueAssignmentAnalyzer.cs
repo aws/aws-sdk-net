@@ -115,12 +115,12 @@ namespace Amazon.CodeAnalysis.Shared
                 {
                     this._patternRule = new DiagnosticDescriptor(
                         string.Format("{0}1002", GetServiceName()),
-                        "Property value does match required pattern",
+                        "Property value does not match required pattern",
                         "Value \"{0}\" does not match required pattern \"{1}\" for property {2}",
                         Category,
                         DiagnosticSeverity.Warning,
                         isEnabledByDefault: true,
-                        description: "Property value does match required pattern");
+                        description: "Property value does not match required pattern");
                 }
                 return this._patternRule;
             }
