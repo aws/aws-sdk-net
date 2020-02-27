@@ -29,7 +29,6 @@ using System.Net;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
 #if PCL || NETSTANDARD
 using System.Net.Http;
@@ -59,11 +58,7 @@ namespace Amazon.Util
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
         private const int DefaultMaxIdleTime = 50 * 1000; // 50 seconds
-#if (BCL || NETSTANDARD)
-        private static readonly Regex CompressWhitespaceRegex = new Regex("\\s+", RegexOptions.Compiled);
-#else
-        private static readonly Regex CompressWhitespaceRegex = new Regex("\\s+");
-#endif
+
         public static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
         public const int DefaultBufferSize = 8192;
@@ -1381,7 +1376,26 @@ namespace Amazon.Util
         /// <returns></returns>
         public static string CompressSpaces(string data)
         {
-            return data == null ? data : CompressWhitespaceRegex.Replace(data, " ");
+            if (data == null)
+            {
+                return null;
+            }
+
+            if (data.Length == 0)
+            {
+                return string.Empty;
+            }
+
+            var stringBuilder = new StringBuilder();
+            var isWhiteSpace = false;
+            foreach (var character in data)
+            {
+                if (!isWhiteSpace | !(isWhiteSpace = char.IsWhiteSpace(character)))
+                {
+                    stringBuilder.Append(isWhiteSpace ? ' ' : character);
+                }
+            }
+            return stringBuilder.ToString();
         }
 
 #endregion
