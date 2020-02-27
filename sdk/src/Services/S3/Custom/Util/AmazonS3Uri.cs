@@ -165,7 +165,15 @@ namespace Amazon.S3.Util
         /// <returns>true if the string is an AmazonS3Endpoint, and the out paramter has been filled in, false otherwise</returns>
         public static bool TryParseAmazonS3Uri(string uri, out AmazonS3Uri amazonS3Uri)
         {
-            return TryParseAmazonS3Uri(new Uri(uri), out amazonS3Uri);
+            try
+            {
+                return TryParseAmazonS3Uri(new Uri(uri), out amazonS3Uri);
+            }
+            catch (UriFormatException)
+            {
+                amazonS3Uri = null;
+                return false;
+            }
         }
 
         /// <summary>
