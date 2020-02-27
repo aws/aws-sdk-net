@@ -44,7 +44,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 TestHashRangeTable(hashRangeTable, conversion);
 
                 // Test using multiple test batch writer
-                TestMultiTableDocumentBatchWrite(hashTable);
+                TestMultiTableDocumentBatchWrite(hashTable, hashRangeTable);
 
                 // Test large batch writes and gets
                 TestLargeBatchOperations(hashTable);
@@ -613,7 +613,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(0, items.Count);
         }
 
-        private void TestMultiTableDocumentBatchWrite(Table hashTable)
+        private void TestMultiTableDocumentBatchWrite(Table hashTable, Table hashRangeTable)
         {
             var multiTableDocumentBatchWrite = new MultiTableDocumentBatchWrite();
 
@@ -623,9 +623,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var doc1b = new Document();
             doc1b["Id"] = 5102;
             doc1b["Data"] = Guid.NewGuid().ToString();
-            var writer1 = new DocumentBatchWrite(hashTable);
-            writer1.AddDocumentToPut(doc1a);
-            writer1.AddDocumentToPut(doc1b);
+            {
+                var writer = new DocumentBatchWrite(hashTable);
+                writer.AddDocumentToPut(doc1a);
+                writer.AddDocumentToPut(doc1b);
+                multiTableDocumentBatchWrite.AddBatch(writer);
+            }
 
             var doc2a = new Document();
             doc2a["Id"] = 5201;
@@ -633,12 +636,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var doc2b = new Document();
             doc2b["Id"] = 5202;
             doc2b["Data"] = Guid.NewGuid().ToString();
-            var writer2 = new DocumentBatchWrite(hashTable);
-            writer1.AddDocumentToPut(doc2a);
-            writer1.AddDocumentToPut(doc2b);
+            {
+                var writer = new DocumentBatchWrite(hashTable);
+                writer.AddDocumentToPut(doc2a);
+                writer.AddDocumentToPut(doc2b);
+                multiTableDocumentBatchWrite.AddBatch(writer);
+            }
 
-            multiTableDocumentBatchWrite.AddBatch(writer1);
-            multiTableDocumentBatchWrite.AddBatch(writer2);
+            var doc3a = new Document();
+            doc3a["Name"] = "Gunnar";
+            doc3a["Age"] = 77;
+            doc3a["Job"] = "Retired";
+            doc3a["Data"] = Guid.NewGuid().ToString();
+            {
+                var writer = new DocumentBatchWrite(hashRangeTable);
+                writer.AddDocumentToPut(doc3a);
+                multiTableDocumentBatchWrite.AddBatch(writer);
+            }
+
 
             multiTableDocumentBatchWrite.Execute();
 
@@ -656,13 +671,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             getDoc = hashTable.GetItem(5202);
             Assert.AreEqual(doc2b["Data"].AsString(), getDoc["Data"].AsString());
 
+            getDoc = hashRangeTable.GetItem("Gunnar", 77);
+            Assert.AreEqual(doc3a["Data"].AsString(), getDoc["Data"].AsString());
+
             multiTableDocumentBatchWrite = new MultiTableDocumentBatchWrite();
-            var deleteWriter = new DocumentBatchWrite(hashTable);
-            deleteWriter.AddItemToDelete(doc1a);
-            deleteWriter.AddItemToDelete(doc1b);
-            deleteWriter.AddItemToDelete(doc2a);
-            deleteWriter.AddItemToDelete(doc2b);
-            multiTableDocumentBatchWrite.AddBatch(deleteWriter);
+            {
+                var deleteWriter = new DocumentBatchWrite(hashTable);
+                deleteWriter.AddItemToDelete(doc1a);
+                deleteWriter.AddItemToDelete(doc1b);
+                deleteWriter.AddItemToDelete(doc2a);
+                deleteWriter.AddItemToDelete(doc2b);
+                multiTableDocumentBatchWrite.AddBatch(deleteWriter);
+            }
+            {
+                var deleteWriter = new DocumentBatchWrite(hashRangeTable);
+                deleteWriter.AddItemToDelete(doc3a);
+                multiTableDocumentBatchWrite.AddBatch(deleteWriter);
+            }
             multiTableDocumentBatchWrite.Execute();
         }
 

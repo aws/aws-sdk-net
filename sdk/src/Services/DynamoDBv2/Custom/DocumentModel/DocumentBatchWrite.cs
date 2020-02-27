@@ -626,12 +626,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     if (result.ContainsKey(tableName))
                     {
                         result[tableName].Add(writeRequests);
-                        continue;
                     }
-
-                    QuickList<WriteRequestDocument> qlWriteRequests = new QuickList<WriteRequestDocument>(writeRequests);
-                    result.Add(tableName, qlWriteRequests);
-                    tableMap.Add(tableName, batch.TargetTable);
+                    else
+                    {
+                        QuickList<WriteRequestDocument> qlWriteRequests = new QuickList<WriteRequestDocument>(writeRequests);
+                        result.Add(tableName, qlWriteRequests);
+                        tableMap.Add(tableName, batch.TargetTable);
+                    }
                 }
             }
 
