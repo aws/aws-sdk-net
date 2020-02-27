@@ -6342,6 +6342,11 @@
             "us-isob-east-1": {}
           }
         },
+        "ssm": {
+          "endpoints": {
+            "us-isob-east-1": {}
+          }
+        },
         "states": {
           "endpoints": {
             "us-isob-east-1": {}
