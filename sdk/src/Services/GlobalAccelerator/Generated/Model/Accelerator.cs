@@ -89,14 +89,15 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         ///  
         /// <para>
-        /// The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit
-        /// random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+        /// The naming convention for the DNS name is the following: A lowercase letter a, followed
+        /// by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
+        /// a1234567890abcdef.awsglobalaccelerator.com.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">Support
-        /// for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer
-        /// Guide</i>.
+        /// For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
+        /// Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

@@ -76,8 +76,12 @@ namespace Amazon.GlobalAccelerator.Model
         /// <para>
         /// An ID for the endpoint. If the endpoint is a Network Load Balancer or Application
         /// Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint
-        /// is an Elastic IP address, this is the Elastic IP address allocation ID. An Application
-        /// Load Balancer can be either internal or internet-facing.
+        /// is an Elastic IP address, this is the Elastic IP address allocation ID. For EC2 instances,
+        /// this is the EC2 instance ID. 
+        /// </para>
+        ///  
+        /// <para>
+        /// An Application Load Balancer can be either internal or internet-facing.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

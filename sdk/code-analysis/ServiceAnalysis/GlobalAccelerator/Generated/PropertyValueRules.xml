@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.AdvertiseByoipCidrRequest.Cidr</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.CreateAcceleratorRequest.IdempotencyToken</property>
     <max>255</max>
   </property-value-rule>
@@ -65,6 +69,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.DeprovisionByoipCidrRequest.Cidr</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.DescribeAcceleratorRequest.AcceleratorArn</property>
     <max>255</max>
   </property-value-rule>
@@ -91,6 +99,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListAcceleratorsResponse.NextToken</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.ListByoipCidrsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.ListByoipCidrsRequest.NextToken</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.ListByoipCidrsResponse.NextToken</property>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -126,6 +147,25 @@
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.ListListenersResponse.NextToken</property>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.ProvisionByoipCidrRequest.Cidr</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.UpdateAcceleratorRequest.AcceleratorArn</property>
@@ -180,6 +220,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.WithdrawByoipCidrRequest.Cidr</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.Accelerator.AcceleratorArn</property>
     <max>255</max>
   </property-value-rule>
@@ -197,6 +241,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.AcceleratorAttributes.FlowLogsS3Prefix</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.ByoipCidr.Cidr</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.CidrAuthorizationContext.Message</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.CidrAuthorizationContext.Signature</property>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -270,5 +326,15 @@
     <property>Amazon.GlobalAccelerator.Model.PortRange.ToPort</property>
     <min>1</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>

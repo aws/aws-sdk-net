@@ -29,7 +29,8 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccelerators operation.
-    /// List the accelerators for an AWS account.
+    /// List the accelerators for an AWS account. To see an AWS CLI example of listing the
+    /// accelerators for an AWS account, scroll down to <b>Example</b>.
     /// </summary>
     public partial class ListAcceleratorsRequest : AmazonGlobalAcceleratorRequest
     {

@@ -86,6 +86,11 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdempotencyToken);
                 }
 
+                else if(!(publicRequest.IsSetIdempotencyToken()))
+                {
+                    context.Writer.WritePropertyName("IdempotencyToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                }
                 if(publicRequest.IsSetPortRanges())
                 {
                     context.Writer.WritePropertyName("PortRanges");

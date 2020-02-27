@@ -80,6 +80,22 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdempotencyToken);
                 }
 
+                else if(!(publicRequest.IsSetIdempotencyToken()))
+                {
+                    context.Writer.WritePropertyName("IdempotencyToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                }
+                if(publicRequest.IsSetIpAddresses())
+                {
+                    context.Writer.WritePropertyName("IpAddresses");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestIpAddressesListValue in publicRequest.IpAddresses)
+                    {
+                            context.Writer.Write(publicRequestIpAddressesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetIpAddressType())
                 {
                     context.Writer.WritePropertyName("IpAddressType");
@@ -90,6 +106,22 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

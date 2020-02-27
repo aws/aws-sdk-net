@@ -29,7 +29,8 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEndpointGroups operation.
-    /// List the endpoint groups that are associated with a listener.
+    /// List the endpoint groups that are associated with a listener. To see an AWS CLI example
+    /// of listing the endpoint groups for listener, scroll down to <b>Example</b>.
     /// </summary>
     public partial class ListEndpointGroupsRequest : AmazonGlobalAcceleratorRequest
     {

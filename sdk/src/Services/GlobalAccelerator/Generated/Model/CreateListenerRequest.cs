@@ -110,7 +110,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// is, the uniqueness—of the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Max=255)]
         public string IdempotencyToken
         {
             get { return this._idempotencyToken; }

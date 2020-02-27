@@ -107,8 +107,17 @@ namespace Amazon.GlobalAccelerator.Model
         /// Gets and sets the property FlowLogsS3Prefix. 
         /// <para>
         /// Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute
-        /// is required if <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify
-        /// a prefix, the flow logs are stored in the root of the bucket.
+        /// is required if <code>FlowLogsEnabled</code> is <code>true</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don’t specify a prefix, the flow logs are stored in the root of the bucket.
+        /// If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure
+        /// will include a double slash (//), like the following:
+        /// </para>
+        ///  
+        /// <para>
+        /// s3-bucket_name//AWSLogs/aws_account_id
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

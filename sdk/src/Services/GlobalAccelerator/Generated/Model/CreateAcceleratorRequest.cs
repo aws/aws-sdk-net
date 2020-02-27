@@ -34,9 +34,16 @@ namespace Amazon.GlobalAccelerator.Model
     /// includes endpoints, such as Network Load Balancers. To see an AWS CLI example of creating
     /// an accelerator, scroll down to <b>Example</b>.
     /// 
+    ///  
+    /// <para>
+    /// If you bring your own IP address ranges to AWS Global Accelerator (BYOIP), you can
+    /// assign IP addresses from your own pool to your accelerator as the static IP address
+    /// entry points. Only one IP address from each of your IP address ranges can be used
+    /// for each accelerator.
+    /// </para>
     ///  <important> 
     /// <para>
-    /// You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+    /// You must specify the US West (Oregon) Region to create or update accelerators.
     /// </para>
     ///  </important>
     /// </summary>
@@ -44,8 +51,10 @@ namespace Amazon.GlobalAccelerator.Model
     {
         private bool? _enabled;
         private string _idempotencyToken;
+        private List<string> _ipAddresses = new List<string>();
         private IpAddressType _ipAddressType;
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -78,7 +87,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// is, the uniqueness—of an accelerator.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Max=255)]
         public string IdempotencyToken
         {
             get { return this._idempotencyToken; }
@@ -89,6 +98,38 @@ namespace Amazon.GlobalAccelerator.Model
         internal bool IsSetIdempotencyToken()
         {
             return this._idempotencyToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddresses. 
+        /// <para>
+        /// Optionally, if you've added your own IP address pool to Global Accelerator, you can
+        /// choose IP addresses from your own pool to use for the accelerator's static IP addresses.
+        /// You can specify one or two addresses, separated by a comma. Do not include the /32
+        /// suffix.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify only one IP address from your IP address range, Global Accelerator
+        /// assigns a second static IP address for the accelerator from the AWS IP address pool.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+        /// Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2)]
+        public List<string> IpAddresses
+        {
+            get { return this._ipAddresses; }
+            set { this._ipAddresses = value; }
+        }
+
+        // Check to see if IpAddresses property is set
+        internal bool IsSetIpAddresses()
+        {
+            return this._ipAddresses != null && this._ipAddresses.Count > 0; 
         }
 
         /// <summary>
@@ -127,6 +168,29 @@ namespace Amazon.GlobalAccelerator.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Create tags for an accelerator.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

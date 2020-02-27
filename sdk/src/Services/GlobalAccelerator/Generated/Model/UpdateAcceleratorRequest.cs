@@ -34,7 +34,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// 
     ///  <important> 
     /// <para>
-    /// You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+    /// You must specify the US West (Oregon) Region to create or update accelerators.
     /// </para>
     ///  </important>
     /// </summary>

@@ -75,6 +75,92 @@ namespace Amazon.GlobalAccelerator
 
 
     /// <summary>
+    /// Constants used for properties of type ByoipCidrState.
+    /// </summary>
+    public class ByoipCidrState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADVERTISING for ByoipCidrState
+        /// </summary>
+        public static readonly ByoipCidrState ADVERTISING = new ByoipCidrState("ADVERTISING");
+        /// <summary>
+        /// Constant DEPROVISIONED for ByoipCidrState
+        /// </summary>
+        public static readonly ByoipCidrState DEPROVISIONED = new ByoipCidrState("DEPROVISIONED");
+        /// <summary>
+        /// Constant FAILED_ADVERTISING for ByoipCidrState
+        /// </summary>
+        public static readonly ByoipCidrState FAILED_ADVERTISING = new ByoipCidrState("FAILED_ADVERTISING");
+        /// <summary>
+        /// Constant FAILED_DEPROVISION for ByoipCidrState
+        /// </summary>
+        public static readonly ByoipCidrState FAILED_DEPROVISION = new ByoipCidrState("FAILED_DEPROVISION");
+        /// <summary>
+        /// Constant FAILED_PROVISION for ByoipCidrState
+        /// </summary>
+        public static readonly ByoipCidrState FAILED_PROVISION = new ByoipCidrState("FAILED_PROVISION");
+        /// <summary>
+        /// Constant FAILED_WITHDRAW for ByoipCidrState
+        /// </summary>
+        public static readonly ByoipCidrState FAILED_WITHDRAW = new ByoipCidrState("FAILED_WITHDRAW");
+        /// <summary>
+        /// Constant PENDING_ADVERTISING for ByoipCidrState
+        /// </summary>
+        public static readonly ByoipCidrState PENDING_ADVERTISING = new ByoipCidrState("PENDING_ADVERTISING");
+        /// <summary>
+        /// Constant PENDING_DEPROVISIONING for ByoipCidrState
+        /// </summary>
+        public static readonly ByoipCidrState PENDING_DEPROVISIONING = new ByoipCidrState("PENDING_DEPROVISIONING");
+        /// <summary>
+        /// Constant PENDING_PROVISIONING for ByoipCidrState
+        /// </summary>
+        public static readonly ByoipCidrState PENDING_PROVISIONING = new ByoipCidrState("PENDING_PROVISIONING");
+        /// <summary>
+        /// Constant PENDING_WITHDRAWING for ByoipCidrState
+        /// </summary>
+        public static readonly ByoipCidrState PENDING_WITHDRAWING = new ByoipCidrState("PENDING_WITHDRAWING");
+        /// <summary>
+        /// Constant READY for ByoipCidrState
+        /// </summary>
+        public static readonly ByoipCidrState READY = new ByoipCidrState("READY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ByoipCidrState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ByoipCidrState FindValue(string value)
+        {
+            return FindValue<ByoipCidrState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ByoipCidrState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClientAffinity.
     /// </summary>
     public class ClientAffinity : ConstantClass
