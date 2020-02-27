@@ -1,3 +1,14 @@
+### 3.3.688.0 (2020-02-27 19:14 UTC)
+* GlobalAccelerator (3.3.103.0)
+	* This release adds support for adding tags to accelerators and bringing your own IP address to AWS Global Accelerator (BYOIP).
+* Lightsail (3.3.103.0)
+	* Adds support to create notification contacts in Amazon Lightsail, and to create instance, database, and load balancer metric alarms that notify you based on the value of a metric relative to a threshold that you specify.
+* Core 3.3.104.30
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.687.0 (2020-02-26 19:13 UTC)
 * EC2 (3.3.162.0)
 	* This release changes the RunInstances CLI and SDK's so that if you do not specify a client token, a randomly generated token is used for the request to ensure idempotency.
