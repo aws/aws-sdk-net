@@ -43,6 +43,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Test operations on hash-and-range-key table
                 TestHashRangeTable(hashRangeTable, conversion);
 
+                // Test using multiple test batch writer
+                TestMultiTableDocumentBatchWrite(hashTable, hashRangeTable);
+
                 // Test large batch writes and gets
                 TestLargeBatchOperations(hashTable);
 
@@ -608,6 +611,84 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Scan table to confirm it is empty
             var items = hashTable.Scan(new ScanFilter()).GetRemaining();
             Assert.AreEqual(0, items.Count);
+        }
+
+        private void TestMultiTableDocumentBatchWrite(Table hashTable, Table hashRangeTable)
+        {
+            var multiTableDocumentBatchWrite = new MultiTableDocumentBatchWrite();
+
+            var doc1a = new Document();
+            doc1a["Id"] = 5101;
+            doc1a["Data"] = Guid.NewGuid().ToString();
+            var doc1b = new Document();
+            doc1b["Id"] = 5102;
+            doc1b["Data"] = Guid.NewGuid().ToString();
+            {
+                var writer = new DocumentBatchWrite(hashTable);
+                writer.AddDocumentToPut(doc1a);
+                writer.AddDocumentToPut(doc1b);
+                multiTableDocumentBatchWrite.AddBatch(writer);
+            }
+
+            var doc2a = new Document();
+            doc2a["Id"] = 5201;
+            doc2a["Data"] = Guid.NewGuid().ToString();
+            var doc2b = new Document();
+            doc2b["Id"] = 5202;
+            doc2b["Data"] = Guid.NewGuid().ToString();
+            {
+                var writer = new DocumentBatchWrite(hashTable);
+                writer.AddDocumentToPut(doc2a);
+                writer.AddDocumentToPut(doc2b);
+                multiTableDocumentBatchWrite.AddBatch(writer);
+            }
+
+            var doc3a = new Document();
+            doc3a["Name"] = "Gunnar";
+            doc3a["Age"] = 77;
+            doc3a["Job"] = "Retired";
+            doc3a["Data"] = Guid.NewGuid().ToString();
+            {
+                var writer = new DocumentBatchWrite(hashRangeTable);
+                writer.AddDocumentToPut(doc3a);
+                multiTableDocumentBatchWrite.AddBatch(writer);
+            }
+
+
+            multiTableDocumentBatchWrite.Execute();
+
+            Document getDoc;
+
+            getDoc = hashTable.GetItem(5101);
+            Assert.AreEqual(doc1a["Data"].AsString(), getDoc["Data"].AsString());
+
+            getDoc = hashTable.GetItem(5102);
+            Assert.AreEqual(doc1b["Data"].AsString(), getDoc["Data"].AsString());
+
+            getDoc = hashTable.GetItem(5201);
+            Assert.AreEqual(doc2a["Data"].AsString(), getDoc["Data"].AsString());
+
+            getDoc = hashTable.GetItem(5202);
+            Assert.AreEqual(doc2b["Data"].AsString(), getDoc["Data"].AsString());
+
+            getDoc = hashRangeTable.GetItem("Gunnar", 77);
+            Assert.AreEqual(doc3a["Data"].AsString(), getDoc["Data"].AsString());
+
+            multiTableDocumentBatchWrite = new MultiTableDocumentBatchWrite();
+            {
+                var deleteWriter = new DocumentBatchWrite(hashTable);
+                deleteWriter.AddItemToDelete(doc1a);
+                deleteWriter.AddItemToDelete(doc1b);
+                deleteWriter.AddItemToDelete(doc2a);
+                deleteWriter.AddItemToDelete(doc2b);
+                multiTableDocumentBatchWrite.AddBatch(deleteWriter);
+            }
+            {
+                var deleteWriter = new DocumentBatchWrite(hashRangeTable);
+                deleteWriter.AddItemToDelete(doc3a);
+                multiTableDocumentBatchWrite.AddBatch(deleteWriter);
+            }
+            multiTableDocumentBatchWrite.Execute();
         }
 
         private void TestExpressionsOnDelete(Table hashTable)

@@ -593,9 +593,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 var table = batch.TargetTable;
                 var tableName = table.TableName;
 
-                if (result.ContainsKey(tableName))
-                    throw new AmazonDynamoDBException("More than one batch request against a single table is not supported.");
-
                 List<WriteRequestDocument> writeRequests = new List<WriteRequestDocument>();
                 if (batch.ToDelete != null)
                 {
@@ -626,9 +623,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                 if (writeRequests.Count > 0)
                 {
-                    QuickList<WriteRequestDocument> qlWriteRequests = new QuickList<WriteRequestDocument>(writeRequests);
-                    result.Add(tableName, qlWriteRequests);
-                    tableMap.Add(tableName, batch.TargetTable);
+                    if (result.ContainsKey(tableName))
+                    {
+                        result[tableName].Add(writeRequests);
+                    }
+                    else
+                    {
+                        QuickList<WriteRequestDocument> qlWriteRequests = new QuickList<WriteRequestDocument>(writeRequests);
+                        result.Add(tableName, qlWriteRequests);
+                        tableMap.Add(tableName, batch.TargetTable);
+                    }
                 }
             }
 
@@ -646,6 +650,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public QuickList(IEnumerable<T> items)
         {
             List = new List<T>(items);
+        }
+
+        public void Add(IEnumerable<T> items)
+        {
+            List.AddRange(items);
         }
 
         public int Count
