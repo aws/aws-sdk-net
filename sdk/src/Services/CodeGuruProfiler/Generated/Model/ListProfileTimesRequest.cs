@@ -45,7 +45,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time of the time range to list profiles until.
+        /// The end time of the time range from which to list the profiles.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,15 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of profile time results returned by <code>ListProfileTimes</code>
+        /// in paginated output. When this parameter is used, <code>ListProfileTimes</code> only
+        /// returns <code>maxResults</code> results in a single page with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListProfileTimes</code> request with the returned <code>nextToken</code>
+        /// value. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
@@ -78,7 +86,19 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code>
+        /// request where <code>maxResults</code> was used and the results exceeded the value
+        /// of that parameter. Pagination continues from the end of the previous results that
+        /// returned the <code>nextToken</code> value. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This token should be treated as an opaque identifier that is only used to retrieve
+        /// the next items in a list and not for other programmatic purposes.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string NextToken
@@ -96,8 +116,8 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property OrderBy. 
         /// <para>
-        /// The order (ascending or descending by start time of the profile) to list the profiles
-        /// by. Defaults to TIMESTAMP_DESCENDING.
+        /// The order (ascending or descending by start time of the profile) to use when listing
+        /// profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. 
         /// </para>
         /// </summary>
         public OrderBy OrderBy
@@ -115,7 +135,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// The aggregation period to list the profiles for.
+        /// The aggregation period.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -132,7 +152,10 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProfilingGroupName.
+        /// Gets and sets the property ProfilingGroupName. 
+        /// <para>
+        /// The name of the profiling group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string ProfilingGroupName
@@ -150,7 +173,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start time of the time range to list the profiles from.
+        /// The start time of the time range from which to list the profiles.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

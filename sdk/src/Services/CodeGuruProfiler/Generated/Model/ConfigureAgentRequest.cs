@@ -29,7 +29,7 @@ namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfigureAgent operation.
-    /// Provides the configuration to use for an agent of the profiling group.
+    /// 
     /// </summary>
     public partial class ConfigureAgentRequest : AmazonCodeGuruProfilerRequest
     {

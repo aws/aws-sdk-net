@@ -29,14 +29,17 @@ namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProfilingGroup operation.
-    /// Describe a profiling group.
+    /// Describes a profiling group.
     /// </summary>
     public partial class DescribeProfilingGroupRequest : AmazonCodeGuruProfilerRequest
     {
         private string _profilingGroupName;
 
         /// <summary>
-        /// Gets and sets the property ProfilingGroupName.
+        /// Gets and sets the property ProfilingGroupName. 
+        /// <para>
+        /// The profiling group name.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string ProfilingGroupName

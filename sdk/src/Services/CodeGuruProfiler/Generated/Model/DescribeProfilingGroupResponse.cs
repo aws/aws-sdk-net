@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// Response for DescribeProfilingGroup operation.
+    /// The structure representing the describeProfilingGroupResponse.
     /// </summary>
     public partial class DescribeProfilingGroupResponse : AmazonWebServiceResponse
     {
         private ProfilingGroupDescription _profilingGroup;
 
         /// <summary>
-        /// Gets and sets the property ProfilingGroup.
+        /// Gets and sets the property ProfilingGroup. 
+        /// <para>
+        /// Information about a profiling group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ProfilingGroupDescription ProfilingGroup

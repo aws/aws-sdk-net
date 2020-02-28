@@ -29,7 +29,7 @@ namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProfilingGroup operation.
-    /// Update a profiling group.
+    /// Updates a profiling group.
     /// </summary>
     public partial class UpdateProfilingGroupRequest : AmazonCodeGuruProfilerRequest
     {
@@ -37,10 +37,7 @@ namespace Amazon.CodeGuruProfiler.Model
         private string _profilingGroupName;
 
         /// <summary>
-        /// Gets and sets the property AgentOrchestrationConfig. 
-        /// <para>
-        /// Remote configuration to configure the agents of the profiling group.
-        /// </para>
+        /// Gets and sets the property AgentOrchestrationConfig.
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentOrchestrationConfig AgentOrchestrationConfig
@@ -56,7 +53,10 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProfilingGroupName.
+        /// Gets and sets the property ProfilingGroupName. 
+        /// <para>
+        /// The name of the profiling group to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string ProfilingGroupName

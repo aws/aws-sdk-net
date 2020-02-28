@@ -29,7 +29,7 @@ namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
     /// Container for the parameters to the PostAgentProfile operation.
-    /// Submit profile collected by an agent belonging to a profiling group for aggregation.
+    /// 
     /// </summary>
     public partial class PostAgentProfileRequest : AmazonCodeGuruProfilerRequest
     {
@@ -55,12 +55,7 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContentType. 
-        /// <para>
-        /// The content type of the agent profile in the payload. Recommended to send the profile
-        /// gzipped with content-type application/octet-stream. Other accepted values are application/x-amzn-ion
-        /// and application/json for unzipped Ion and JSON respectively.
-        /// </para>
+        /// Gets and sets the property ContentType.
         /// </summary>
         [AWSProperty(Required=true)]
         public string ContentType
@@ -76,10 +71,7 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProfileToken. 
-        /// <para>
-        /// Client generated token to deduplicate the agent profile during aggregation.
-        /// </para>
+        /// Gets and sets the property ProfileToken.
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string ProfileToken

@@ -29,13 +29,23 @@ namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
     /// Container for the parameters to the GetProfile operation.
-    /// Get the aggregated profile of a profiling group for the specified time range. If the
-    /// requested time range does not align with the available aggregated profiles, it will
-    /// be expanded to attain alignment. If aggregated profiles are available only for part
+    /// Gets the aggregated profile of a profiling group for the specified time range. If
+    /// the requested time range does not align with the available aggregated profiles, it
+    /// is expanded to attain alignment. If aggregated profiles are available only for part
     /// of the period requested, the profile is returned from the earliest available to the
-    /// latest within the requested time range. For instance, if the requested time range
-    /// is from 00:00 to 00:20 and the available profiles are from 00:15 to 00:25, then the
-    /// returned profile will be from 00:15 to 00:20.
+    /// latest within the requested time range. 
+    /// 
+    ///  
+    /// <para>
+    /// For example, if the requested time range is from 00:00 to 00:20 and the available
+    /// profiles are from 00:15 to 00:25, the returned profile will be from 00:15 to 00:20.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// You must specify exactly two of the following parameters: <code>startTime</code>,
+    /// <code>period</code>, and <code>endTime</code>. 
+    /// </para>
     /// </summary>
     public partial class GetProfileRequest : AmazonCodeGuruProfilerRequest
     {
@@ -49,8 +59,8 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Accept. 
         /// <para>
-        /// The format of the profile to return. Supports application/json or application/x-amzn-ion.
-        /// Defaults to application/x-amzn-ion.
+        /// The format of the profile to return. You can choose <code>application/json</code>
+        /// or the default <code>application/x-amzn-ion</code>. 
         /// </para>
         /// </summary>
         public string Accept
@@ -66,11 +76,10 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndTime. 
+        /// Gets and sets the property EndTime.  
         /// <para>
-        /// The end time of the profile to get. Either period or endTime must be specified. Must
-        /// be greater than start and the overall time range to be in the past and not larger
-        /// than a week.
+        /// You must specify exactly two of the following parameters: <code>startTime</code>,
+        /// <code>period</code>, and <code>endTime</code>. 
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -86,7 +95,10 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxDepth.
+        /// Gets and sets the property MaxDepth. 
+        /// <para>
+        /// The maximum depth of the graph.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
         public int MaxDepth
@@ -104,9 +116,13 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// The period of the profile to get. Exactly two of <code>startTime</code>, <code>period</code>
-        /// and <code>endTime</code> must be specified. Must be positive and the overall time
-        /// range to be in the past and not larger than a week.
+        /// The period of the profile to get. The time range must be in the past and not longer
+        /// than one week. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify exactly two of the following parameters: <code>startTime</code>,
+        /// <code>period</code>, and <code>endTime</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -123,7 +139,10 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProfilingGroupName.
+        /// Gets and sets the property ProfilingGroupName. 
+        /// <para>
+        /// The name of the profiling group to get.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string ProfilingGroupName
@@ -142,6 +161,11 @@ namespace Amazon.CodeGuruProfiler.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The start time of the profile to get.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify exactly two of the following parameters: <code>startTime</code>,
+        /// <code>period</code>, and <code>endTime</code>. 
         /// </para>
         /// </summary>
         public DateTime StartTime

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// The time range of an aggregated profile.
+    /// Information about the time range of the latest available aggregated profile.
     /// </summary>
     public partial class AggregatedProfileTime
     {
@@ -38,7 +38,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// The aggregation period of the aggregated profile.
+        /// The time period.
         /// </para>
         /// </summary>
         public AggregationPeriod Period
@@ -56,7 +56,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Start. 
         /// <para>
-        /// The start time of the aggregated profile.
+        /// The start time.
         /// </para>
         /// </summary>
         public DateTime Start

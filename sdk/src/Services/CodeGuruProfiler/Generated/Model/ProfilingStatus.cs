@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// The status of profiling of a profiling group.
+    /// Information about the profiling status.
     /// </summary>
     public partial class ProfilingStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property LatestAgentOrchestratedAt. 
         /// <para>
-        /// Timestamp of when the last interaction of the agent with configureAgent API for orchestration.
+        /// The time, in milliseconds since the epoch, when the latest agent was orchestrated.
         /// </para>
         /// </summary>
         public DateTime LatestAgentOrchestratedAt
@@ -57,7 +57,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property LatestAgentProfileReportedAt. 
         /// <para>
-        /// Timestamp of when the latest agent profile was successfully reported.
+        /// The time, in milliseconds since the epoch, when the latest agent was reported..
         /// </para>
         /// </summary>
         public DateTime LatestAgentProfileReportedAt
@@ -75,7 +75,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property LatestAggregatedProfile. 
         /// <para>
-        /// The time range of latest aggregated profile available.
+        /// The latest aggregated profile
         /// </para>
         /// </summary>
         public AggregatedProfileTime LatestAggregatedProfile

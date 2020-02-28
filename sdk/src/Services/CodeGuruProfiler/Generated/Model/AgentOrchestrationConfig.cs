@@ -28,18 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// Configuration to orchestrate agents to create and report agent profiles of the profiling
-    /// group. Agents are orchestrated if they follow the agent orchestration protocol.
+    /// 
     /// </summary>
     public partial class AgentOrchestrationConfig
     {
         private bool? _profilingEnabled;
 
         /// <summary>
-        /// Gets and sets the property ProfilingEnabled. 
-        /// <para>
-        /// If the agents should be enabled to create and report profiles.
-        /// </para>
+        /// Gets and sets the property ProfilingEnabled.
         /// </summary>
         [AWSProperty(Required=true)]
         public bool ProfilingEnabled

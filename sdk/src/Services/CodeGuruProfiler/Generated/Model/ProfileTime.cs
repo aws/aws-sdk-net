@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// Periods of time used for aggregation of profiles, represented using ISO 8601 format.
+    /// Information about the profile time.
     /// </summary>
     public partial class ProfileTime
     {

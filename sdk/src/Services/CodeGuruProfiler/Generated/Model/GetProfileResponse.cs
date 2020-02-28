@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// Response for GetProfile operation.
+    /// The structure representing the getProfileResponse.
     /// </summary>
     public partial class GetProfileResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property ContentEncoding. 
         /// <para>
-        /// The content encoding of the profile in the payload.
+        /// The content encoding of the profile.
         /// </para>
         /// </summary>
         public string ContentEncoding
@@ -57,8 +57,8 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The content type of the profile in the payload. Will be application/json or application/x-amzn-ion
-        /// based on Accept header in the request.
+        /// The content type of the profile in the payload. It is either <code>application/json</code>
+        /// or the default <code>application/x-amzn-ion</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -75,7 +75,10 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Profile.
+        /// Gets and sets the property Profile. 
+        /// <para>
+        /// Information about the profile.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public MemoryStream Profile

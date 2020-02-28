@@ -55,7 +55,10 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Arn.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) identifying the profiling group.
+        /// </para>
         /// </summary>
         public string Arn
         {
@@ -72,7 +75,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp of when the profiling group was created.
+        /// The time, in milliseconds since the epoch, when the profiling group was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -88,7 +91,10 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the profiling group.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string Name
@@ -104,7 +110,10 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProfilingStatus.
+        /// Gets and sets the property ProfilingStatus. 
+        /// <para>
+        /// The status of the profiling group.
+        /// </para>
         /// </summary>
         public ProfilingStatus ProfilingStatus
         {
@@ -121,7 +130,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The timestamp of when the profiling group was last updated.
+        /// The time, in milliseconds since the epoch, when the profiling group was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

@@ -38,7 +38,7 @@ namespace Amazon.CodeGuruProfiler
     /// <summary>
     /// Implementation for accessing CodeGuruProfiler
     ///
-    /// Example service documentation.
+    /// This section provides documentation for the Amazon CodeGuru Profiler API operations.
     /// </summary>
     public partial class AmazonCodeGuruProfilerClient : AmazonServiceClient, IAmazonCodeGuruProfiler
     {
@@ -257,7 +257,7 @@ namespace Amazon.CodeGuruProfiler
 
 
         /// <summary>
-        /// Provides the configuration to use for an agent of the profiling group.
+        /// 
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfigureAgent service method.</param>
         /// <param name="cancellationToken">
@@ -266,16 +266,16 @@ namespace Amazon.CodeGuruProfiler
         /// 
         /// <returns>The response from the ConfigureAgent service method, as returned by CodeGuruProfiler.</returns>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The resource specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
-        /// The input fails to satisfy the constraints of the API.
+        /// The parameter is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ConfigureAgent">REST API Reference for ConfigureAgent Operation</seealso>
         public virtual Task<ConfigureAgentResponse> ConfigureAgentAsync(ConfigureAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -303,7 +303,7 @@ namespace Amazon.CodeGuruProfiler
 
 
         /// <summary>
-        /// Create a profiling group.
+        /// Creates a profiling group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProfilingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -312,19 +312,22 @@ namespace Amazon.CodeGuruProfiler
         /// 
         /// <returns>The response from the CreateProfilingGroup service method, as returned by CodeGuruProfiler.</returns>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ConflictException">
-        /// Request can can cause an inconsistent state for the resource.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ServiceQuotaExceededException">
-        /// Request would cause a service quota to be exceeded.
+        /// You have exceeded your service quota. To perform the requested action, remove some
+        /// of the relevant resources, or use <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
+        /// Quotas</a> to request a service quota increase.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
-        /// The input fails to satisfy the constraints of the API.
+        /// The parameter is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/CreateProfilingGroup">REST API Reference for CreateProfilingGroup Operation</seealso>
         public virtual Task<CreateProfilingGroupResponse> CreateProfilingGroupAsync(CreateProfilingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -352,7 +355,7 @@ namespace Amazon.CodeGuruProfiler
 
 
         /// <summary>
-        /// Delete a profiling group.
+        /// Deletes a profiling group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProfilingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -361,16 +364,16 @@ namespace Amazon.CodeGuruProfiler
         /// 
         /// <returns>The response from the DeleteProfilingGroup service method, as returned by CodeGuruProfiler.</returns>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The resource specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
-        /// The input fails to satisfy the constraints of the API.
+        /// The parameter is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DeleteProfilingGroup">REST API Reference for DeleteProfilingGroup Operation</seealso>
         public virtual Task<DeleteProfilingGroupResponse> DeleteProfilingGroupAsync(DeleteProfilingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -398,7 +401,7 @@ namespace Amazon.CodeGuruProfiler
 
 
         /// <summary>
-        /// Describe a profiling group.
+        /// Describes a profiling group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProfilingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -407,16 +410,16 @@ namespace Amazon.CodeGuruProfiler
         /// 
         /// <returns>The response from the DescribeProfilingGroup service method, as returned by CodeGuruProfiler.</returns>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The resource specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
-        /// The input fails to satisfy the constraints of the API.
+        /// The parameter is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DescribeProfilingGroup">REST API Reference for DescribeProfilingGroup Operation</seealso>
         public virtual Task<DescribeProfilingGroupResponse> DescribeProfilingGroupAsync(DescribeProfilingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -444,13 +447,23 @@ namespace Amazon.CodeGuruProfiler
 
 
         /// <summary>
-        /// Get the aggregated profile of a profiling group for the specified time range. If the
-        /// requested time range does not align with the available aggregated profiles, it will
-        /// be expanded to attain alignment. If aggregated profiles are available only for part
+        /// Gets the aggregated profile of a profiling group for the specified time range. If
+        /// the requested time range does not align with the available aggregated profiles, it
+        /// is expanded to attain alignment. If aggregated profiles are available only for part
         /// of the period requested, the profile is returned from the earliest available to the
-        /// latest within the requested time range. For instance, if the requested time range
-        /// is from 00:00 to 00:20 and the available profiles are from 00:15 to 00:25, then the
-        /// returned profile will be from 00:15 to 00:20.
+        /// latest within the requested time range. 
+        /// 
+        ///  
+        /// <para>
+        /// For example, if the requested time range is from 00:00 to 00:20 and the available
+        /// profiles are from 00:15 to 00:25, the returned profile will be from 00:15 to 00:20.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify exactly two of the following parameters: <code>startTime</code>,
+        /// <code>period</code>, and <code>endTime</code>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProfile service method.</param>
         /// <param name="cancellationToken">
@@ -459,16 +472,16 @@ namespace Amazon.CodeGuruProfiler
         /// 
         /// <returns>The response from the GetProfile service method, as returned by CodeGuruProfiler.</returns>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The resource specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
-        /// The input fails to satisfy the constraints of the API.
+        /// The parameter is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetProfile">REST API Reference for GetProfile Operation</seealso>
         public virtual Task<GetProfileResponse> GetProfileAsync(GetProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -506,16 +519,16 @@ namespace Amazon.CodeGuruProfiler
         /// 
         /// <returns>The response from the ListProfileTimes service method, as returned by CodeGuruProfiler.</returns>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The resource specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
-        /// The input fails to satisfy the constraints of the API.
+        /// The parameter is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfileTimes">REST API Reference for ListProfileTimes Operation</seealso>
         public virtual Task<ListProfileTimesResponse> ListProfileTimesAsync(ListProfileTimesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -543,7 +556,7 @@ namespace Amazon.CodeGuruProfiler
 
 
         /// <summary>
-        /// List profiling groups in the account.
+        /// Lists profiling groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProfilingGroups service method.</param>
         /// <param name="cancellationToken">
@@ -552,10 +565,10 @@ namespace Amazon.CodeGuruProfiler
         /// 
         /// <returns>The response from the ListProfilingGroups service method, as returned by CodeGuruProfiler.</returns>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfilingGroups">REST API Reference for ListProfilingGroups Operation</seealso>
         public virtual Task<ListProfilingGroupsResponse> ListProfilingGroupsAsync(ListProfilingGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -583,7 +596,7 @@ namespace Amazon.CodeGuruProfiler
 
 
         /// <summary>
-        /// Submit profile collected by an agent belonging to a profiling group for aggregation.
+        /// 
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PostAgentProfile service method.</param>
         /// <param name="cancellationToken">
@@ -592,16 +605,16 @@ namespace Amazon.CodeGuruProfiler
         /// 
         /// <returns>The response from the PostAgentProfile service method, as returned by CodeGuruProfiler.</returns>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The resource specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
-        /// The input fails to satisfy the constraints of the API.
+        /// The parameter is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PostAgentProfile">REST API Reference for PostAgentProfile Operation</seealso>
         public virtual Task<PostAgentProfileResponse> PostAgentProfileAsync(PostAgentProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -629,7 +642,7 @@ namespace Amazon.CodeGuruProfiler
 
 
         /// <summary>
-        /// Update a profiling group.
+        /// Updates a profiling group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProfilingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -638,19 +651,20 @@ namespace Amazon.CodeGuruProfiler
         /// 
         /// <returns>The response from the UpdateProfilingGroup service method, as returned by CodeGuruProfiler.</returns>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ConflictException">
-        /// Request can can cause an inconsistent state for the resource.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The resource specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
-        /// The input fails to satisfy the constraints of the API.
+        /// The parameter is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UpdateProfilingGroup">REST API Reference for UpdateProfilingGroup Operation</seealso>
         public virtual Task<UpdateProfilingGroupResponse> UpdateProfilingGroupAsync(UpdateProfilingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

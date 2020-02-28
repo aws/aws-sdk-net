@@ -29,7 +29,7 @@ namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProfilingGroups operation.
-    /// List profiling groups in the account.
+    /// Lists profiling groups.
     /// </summary>
     public partial class ListProfilingGroupsRequest : AmazonCodeGuruProfilerRequest
     {
@@ -40,8 +40,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property IncludeDescription. 
         /// <para>
-        /// If set to true, returns the full description of the profiling groups instead of the
-        /// names. Defaults to false.
+        /// A Boolean value indicating whether to include a description.
         /// </para>
         /// </summary>
         public bool IncludeDescription
@@ -57,7 +56,15 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of profiling groups results returned by <code>ListProfilingGroups</code>
+        /// in paginated output. When this parameter is used, <code>ListProfilingGroups</code>
+        /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code>
+        /// value. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
@@ -73,7 +80,19 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code>
+        /// request where <code>maxResults</code> was used and the results exceeded the value
+        /// of that parameter. Pagination continues from the end of the previous results that
+        /// returned the <code>nextToken</code> value. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This token should be treated as an opaque identifier that is only used to retrieve
+        /// the next items in a list and not for other programmatic purposes.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string NextToken

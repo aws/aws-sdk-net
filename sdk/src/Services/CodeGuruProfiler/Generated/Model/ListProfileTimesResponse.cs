@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// Response for ListProfileTimes operation.
+    /// The structure representing the listProfileTimesResponse.
     /// </summary>
     public partial class ListProfileTimesResponse : AmazonWebServiceResponse
     {
@@ -36,7 +36,13 @@ namespace Amazon.CodeGuruProfiler.Model
         private List<ProfileTime> _profileTimes = new List<ProfileTime>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code>
+        /// request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>,
+        /// this value can be used to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string NextToken
@@ -54,8 +60,8 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property ProfileTimes. 
         /// <para>
-        /// List of start times of the available profiles for the aggregation period in the specified
-        /// time range.
+        /// The list of start times of the available profiles for the aggregation period in the
+        /// specified time range. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

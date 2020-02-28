@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// Response for PostAgentProfile operation.
+    /// The structure representing the postAgentProfileResponse.
     /// </summary>
     public partial class PostAgentProfileResponse : AmazonWebServiceResponse
     {

@@ -29,7 +29,7 @@ namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateProfilingGroup operation.
-    /// Create a profiling group.
+    /// Creates a profiling group.
     /// </summary>
     public partial class CreateProfilingGroupRequest : AmazonCodeGuruProfilerRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.CodeGuruProfiler.Model
         private string _profilingGroupName;
 
         /// <summary>
-        /// Gets and sets the property AgentOrchestrationConfig.
+        /// Gets and sets the property AgentOrchestrationConfig. 
+        /// <para>
+        /// The agent orchestration configuration.
+        /// </para>
         /// </summary>
         public AgentOrchestrationConfig AgentOrchestrationConfig
         {
@@ -53,7 +56,16 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter specifies a unique identifier for the new profiling group that helps
+        /// ensure idempotency.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string ClientToken
@@ -69,7 +81,10 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProfilingGroupName.
+        /// Gets and sets the property ProfilingGroupName. 
+        /// <para>
+        /// The name of the profiling group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string ProfilingGroupName

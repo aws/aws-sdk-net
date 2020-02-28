@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// The configuration for the agent to use.
+    /// 
     /// </summary>
     public partial class AgentConfiguration
     {
@@ -36,11 +36,7 @@ namespace Amazon.CodeGuruProfiler.Model
         private bool? _shouldProfile;
 
         /// <summary>
-        /// Gets and sets the property PeriodInSeconds. 
-        /// <para>
-        /// Specifies the period to follow the configuration (to profile or not) and call back
-        /// to get a new configuration.
-        /// </para>
+        /// Gets and sets the property PeriodInSeconds.
         /// </summary>
         [AWSProperty(Required=true)]
         public int PeriodInSeconds
@@ -56,10 +52,7 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ShouldProfile. 
-        /// <para>
-        /// Specifies if the profiling should be enabled by the agent.
-        /// </para>
+        /// Gets and sets the property ShouldProfile.
         /// </summary>
         [AWSProperty(Required=true)]
         public bool ShouldProfile

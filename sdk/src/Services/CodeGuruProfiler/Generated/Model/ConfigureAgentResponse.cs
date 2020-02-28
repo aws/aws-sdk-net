@@ -28,17 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// Response for ConfigureAgent operation.
+    /// The structure representing the configureAgentResponse.
     /// </summary>
     public partial class ConfigureAgentResponse : AmazonWebServiceResponse
     {
         private AgentConfiguration _configuration;
 
         /// <summary>
-        /// Gets and sets the property Configuration. 
-        /// <para>
-        /// The configuration for the agent to use.
-        /// </para>
+        /// Gets and sets the property Configuration.
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentConfiguration Configuration

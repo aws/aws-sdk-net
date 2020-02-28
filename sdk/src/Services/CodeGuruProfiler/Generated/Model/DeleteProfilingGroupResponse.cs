@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// Response for DeleteProfilingGroup operation.
+    /// The structure representing the deleteProfilingGroupResponse.
     /// </summary>
     public partial class DeleteProfilingGroupResponse : AmazonWebServiceResponse
     {

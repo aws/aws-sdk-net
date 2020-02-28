@@ -29,14 +29,17 @@ namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProfilingGroup operation.
-    /// Delete a profiling group.
+    /// Deletes a profiling group.
     /// </summary>
     public partial class DeleteProfilingGroupRequest : AmazonCodeGuruProfilerRequest
     {
         private string _profilingGroupName;
 
         /// <summary>
-        /// Gets and sets the property ProfilingGroupName.
+        /// Gets and sets the property ProfilingGroupName. 
+        /// <para>
+        /// The profiling group name to delete.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string ProfilingGroupName

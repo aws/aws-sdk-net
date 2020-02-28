@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// Response for ListProfilingGroups operation.
+    /// The structure representing the listProfilingGroupsResponse.
     /// </summary>
     public partial class ListProfilingGroupsResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,13 @@ namespace Amazon.CodeGuruProfiler.Model
         private List<ProfilingGroupDescription> _profilingGroups = new List<ProfilingGroupDescription>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code>
+        /// request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>,
+        /// this value can be used to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string NextToken
@@ -53,7 +59,10 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProfilingGroupNames.
+        /// Gets and sets the property ProfilingGroupNames. 
+        /// <para>
+        /// Information about profiling group names.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> ProfilingGroupNames
@@ -69,7 +78,10 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProfilingGroups.
+        /// Gets and sets the property ProfilingGroups. 
+        /// <para>
+        /// Information about profiling groups.
+        /// </para>
         /// </summary>
         public List<ProfilingGroupDescription> ProfilingGroups
         {
