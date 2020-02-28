@@ -43,6 +43,10 @@ namespace Amazon.AppMesh.Model
     /// If your route matches a request, you can distribute traffic to one or more target
     ///         virtual nodes with relative weighting.
     /// </para>
+    ///          
+    /// <para>
+    /// For more information about routes, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/routes.html">Routes</a>.
+    /// </para>
     /// </summary>
     public partial class CreateRouteRequest : AmazonAppMeshRequest
     {

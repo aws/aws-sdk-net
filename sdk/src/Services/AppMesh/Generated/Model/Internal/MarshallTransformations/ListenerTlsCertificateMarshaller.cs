@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VirtualServiceBackend Marshaller
+    /// ListenerTlsCertificate Marshaller
     /// </summary>       
-    public class VirtualServiceBackendMarshaller : IRequestMarshaller<VirtualServiceBackend, JsonMarshallerContext> 
+    public class ListenerTlsCertificateMarshaller : IRequestMarshaller<ListenerTlsCertificate, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,28 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VirtualServiceBackend requestObject, JsonMarshallerContext context)
+        public void Marshall(ListenerTlsCertificate requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetClientPolicy())
+            if(requestObject.IsSetAcm())
             {
-                context.Writer.WritePropertyName("clientPolicy");
+                context.Writer.WritePropertyName("acm");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = ClientPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.ClientPolicy, context);
+                var marshaller = ListenerTlsAcmCertificateMarshaller.Instance;
+                marshaller.Marshall(requestObject.Acm, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetVirtualServiceName())
+            if(requestObject.IsSetFile())
             {
-                context.Writer.WritePropertyName("virtualServiceName");
-                context.Writer.Write(requestObject.VirtualServiceName);
+                context.Writer.WritePropertyName("file");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ListenerTlsFileCertificateMarshaller.Instance;
+                marshaller.Marshall(requestObject.File, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -67,7 +72,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static VirtualServiceBackendMarshaller Instance = new VirtualServiceBackendMarshaller();
+        public readonly static ListenerTlsCertificateMarshaller Instance = new ListenerTlsCertificateMarshaller();
 
     }
 }

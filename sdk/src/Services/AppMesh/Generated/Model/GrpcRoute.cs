@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents a GRPC route type.
+    /// An object that represents a gRPC route type.
     /// </summary>
     public partial class GrpcRoute
     {

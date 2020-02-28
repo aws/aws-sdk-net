@@ -41,7 +41,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property GrpcRoute. 
         /// <para>
-        /// An object that represents the specification of a GRPC route.
+        /// An object that represents the specification of a gRPC route.
         /// </para>
         /// </summary>
         public GrpcRoute GrpcRoute
@@ -59,7 +59,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Http2Route. 
         /// <para>
-        /// An object that represents the specification of an HTTP2 route.
+        /// An object that represents the specification of an HTTP/2 route.
         /// </para>
         /// </summary>
         public HttpRoute Http2Route

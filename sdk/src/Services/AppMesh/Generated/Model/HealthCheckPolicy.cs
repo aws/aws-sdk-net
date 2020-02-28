@@ -82,8 +82,9 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The destination path for the health check request. This is required only if the  
-        ///       specified protocol is HTTP. If the protocol is TCP, this parameter is ignored.
+        /// The destination path for the health check request. This value is only used if the
+        /// specified          protocol is HTTP or HTTP/2. For any other protocol, this value
+        /// is ignored.
         /// </para>
         /// </summary>
         public string Path
@@ -121,7 +122,9 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol for the health check request.
+        /// The protocol for the health check request. If you specify <code>grpc</code>, then
+        /// your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC
+        /// Health Checking Protocol</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

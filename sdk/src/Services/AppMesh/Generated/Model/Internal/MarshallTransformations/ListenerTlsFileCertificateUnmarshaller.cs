@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VirtualServiceBackend Object
+    /// Response Unmarshaller for ListenerTlsFileCertificate Object
     /// </summary>  
-    public class VirtualServiceBackendUnmarshaller : IUnmarshaller<VirtualServiceBackend, XmlUnmarshallerContext>, IUnmarshaller<VirtualServiceBackend, JsonUnmarshallerContext>
+    public class ListenerTlsFileCertificateUnmarshaller : IUnmarshaller<ListenerTlsFileCertificate, XmlUnmarshallerContext>, IUnmarshaller<ListenerTlsFileCertificate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VirtualServiceBackend IUnmarshaller<VirtualServiceBackend, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ListenerTlsFileCertificate IUnmarshaller<ListenerTlsFileCertificate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VirtualServiceBackend Unmarshall(JsonUnmarshallerContext context)
+        public ListenerTlsFileCertificate Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VirtualServiceBackend unmarshalledObject = new VirtualServiceBackend();
+            ListenerTlsFileCertificate unmarshalledObject = new ListenerTlsFileCertificate();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("clientPolicy", targetDepth))
-                {
-                    var unmarshaller = ClientPolicyUnmarshaller.Instance;
-                    unmarshalledObject.ClientPolicy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("virtualServiceName", targetDepth))
+                if (context.TestExpression("certificateChain", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualServiceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificateChain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("privateKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrivateKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         }
 
 
-        private static VirtualServiceBackendUnmarshaller _instance = new VirtualServiceBackendUnmarshaller();        
+        private static ListenerTlsFileCertificateUnmarshaller _instance = new ListenerTlsFileCertificateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VirtualServiceBackendUnmarshaller Instance
+        public static ListenerTlsFileCertificateUnmarshaller Instance
         {
             get
             {

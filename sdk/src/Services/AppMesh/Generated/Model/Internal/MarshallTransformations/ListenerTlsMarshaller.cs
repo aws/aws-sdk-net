@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VirtualServiceBackend Marshaller
+    /// ListenerTls Marshaller
     /// </summary>       
-    public class VirtualServiceBackendMarshaller : IRequestMarshaller<VirtualServiceBackend, JsonMarshallerContext> 
+    public class ListenerTlsMarshaller : IRequestMarshaller<ListenerTls, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,23 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VirtualServiceBackend requestObject, JsonMarshallerContext context)
+        public void Marshall(ListenerTls requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetClientPolicy())
+            if(requestObject.IsSetCertificate())
             {
-                context.Writer.WritePropertyName("clientPolicy");
+                context.Writer.WritePropertyName("certificate");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = ClientPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.ClientPolicy, context);
+                var marshaller = ListenerTlsCertificateMarshaller.Instance;
+                marshaller.Marshall(requestObject.Certificate, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetVirtualServiceName())
+            if(requestObject.IsSetMode())
             {
-                context.Writer.WritePropertyName("virtualServiceName");
-                context.Writer.Write(requestObject.VirtualServiceName);
+                context.Writer.WritePropertyName("mode");
+                context.Writer.Write(requestObject.Mode);
             }
 
         }
@@ -67,7 +67,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static VirtualServiceBackendMarshaller Instance = new VirtualServiceBackendMarshaller();
+        public readonly static ListenerTlsMarshaller Instance = new ListenerTlsMarshaller();
 
     }
 }

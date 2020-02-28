@@ -64,6 +64,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("backendDefaults", targetDepth))
+                {
+                    var unmarshaller = BackendDefaultsUnmarshaller.Instance;
+                    unmarshalledObject.BackendDefaults = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("backends", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Backend, BackendUnmarshaller>(BackendUnmarshaller.Instance);

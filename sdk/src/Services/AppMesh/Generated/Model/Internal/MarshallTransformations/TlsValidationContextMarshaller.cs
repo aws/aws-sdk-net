@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VirtualServiceBackend Marshaller
+    /// TlsValidationContext Marshaller
     /// </summary>       
-    public class VirtualServiceBackendMarshaller : IRequestMarshaller<VirtualServiceBackend, JsonMarshallerContext> 
+    public class TlsValidationContextMarshaller : IRequestMarshaller<TlsValidationContext, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VirtualServiceBackend requestObject, JsonMarshallerContext context)
+        public void Marshall(TlsValidationContext requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetClientPolicy())
+            if(requestObject.IsSetTrust())
             {
-                context.Writer.WritePropertyName("clientPolicy");
+                context.Writer.WritePropertyName("trust");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = ClientPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.ClientPolicy, context);
+                var marshaller = TlsValidationContextTrustMarshaller.Instance;
+                marshaller.Marshall(requestObject.Trust, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetVirtualServiceName())
-            {
-                context.Writer.WritePropertyName("virtualServiceName");
-                context.Writer.Write(requestObject.VirtualServiceName);
             }
 
         }
@@ -67,7 +61,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static VirtualServiceBackendMarshaller Instance = new VirtualServiceBackendMarshaller();
+        public readonly static TlsValidationContextMarshaller Instance = new TlsValidationContextMarshaller();
 
     }
 }

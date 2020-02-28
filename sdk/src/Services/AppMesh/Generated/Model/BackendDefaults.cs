@@ -28,17 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents a virtual service backend for a virtual node.
+    /// An object that represents the default properties for a backend.
     /// </summary>
-    public partial class VirtualServiceBackend
+    public partial class BackendDefaults
     {
         private ClientPolicy _clientPolicy;
-        private string _virtualServiceName;
 
         /// <summary>
         /// Gets and sets the property ClientPolicy. 
         /// <para>
-        /// A reference to an object that represents the client policy for a backend.
+        /// A reference to an object that represents a client policy.
         /// </para>
         /// </summary>
         public ClientPolicy ClientPolicy
@@ -51,25 +50,6 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetClientPolicy()
         {
             return this._clientPolicy != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VirtualServiceName. 
-        /// <para>
-        /// The name of the virtual service that is acting as a virtual node backend.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string VirtualServiceName
-        {
-            get { return this._virtualServiceName; }
-            set { this._virtualServiceName = value; }
-        }
-
-        // Check to see if VirtualServiceName property is set
-        internal bool IsSetVirtualServiceName()
-        {
-            return this._virtualServiceName != null;
         }
 
     }

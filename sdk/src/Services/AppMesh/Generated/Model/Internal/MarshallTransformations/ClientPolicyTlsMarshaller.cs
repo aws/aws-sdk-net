@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VirtualServiceBackend Marshaller
+    /// ClientPolicyTls Marshaller
     /// </summary>       
-    public class VirtualServiceBackendMarshaller : IRequestMarshaller<VirtualServiceBackend, JsonMarshallerContext> 
+    public class ClientPolicyTlsMarshaller : IRequestMarshaller<ClientPolicyTls, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,34 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VirtualServiceBackend requestObject, JsonMarshallerContext context)
+        public void Marshall(ClientPolicyTls requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetClientPolicy())
+            if(requestObject.IsSetEnforce())
             {
-                context.Writer.WritePropertyName("clientPolicy");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ClientPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.ClientPolicy, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("enforce");
+                context.Writer.Write(requestObject.Enforce);
             }
 
-            if(requestObject.IsSetVirtualServiceName())
+            if(requestObject.IsSetPorts())
             {
-                context.Writer.WritePropertyName("virtualServiceName");
-                context.Writer.Write(requestObject.VirtualServiceName);
+                context.Writer.WritePropertyName("ports");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPortsListValue in requestObject.Ports)
+                {
+                        context.Writer.Write(requestObjectPortsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetValidation())
+            {
+                context.Writer.WritePropertyName("validation");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TlsValidationContextMarshaller.Instance;
+                marshaller.Marshall(requestObject.Validation, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -67,7 +78,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static VirtualServiceBackendMarshaller Instance = new VirtualServiceBackendMarshaller();
+        public readonly static ClientPolicyTlsMarshaller Instance = new ClientPolicyTlsMarshaller();
 
     }
 }

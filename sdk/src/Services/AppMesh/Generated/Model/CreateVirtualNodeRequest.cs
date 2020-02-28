@@ -59,7 +59,11 @@ namespace Amazon.AppMesh.Model
     ///            the <code>node.cluster</code> value that is set by               <code>APPMESH_VIRTUAL_NODE_NAME</code>
     /// with the               <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.
     /// </para>
-    ///          </note>
+    ///          </note>         
+    /// <para>
+    /// For more information about virtual nodes, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_nodes.html">Virtual
+    /// Nodes</a>.
+    /// </para>
     /// </summary>
     public partial class CreateVirtualNodeRequest : AmazonAppMeshRequest
     {

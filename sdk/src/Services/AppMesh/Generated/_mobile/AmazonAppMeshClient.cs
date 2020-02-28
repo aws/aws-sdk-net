@@ -363,6 +363,10 @@ namespace Amazon.AppMesh
         /// If your route matches a request, you can distribute traffic to one or more target
         ///         virtual nodes with relative weighting.
         /// </para>
+        ///          
+        /// <para>
+        /// For more information about routes, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/routes.html">Routes</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoute service method.</param>
         /// <param name="cancellationToken">
@@ -455,7 +459,11 @@ namespace Amazon.AppMesh
         ///            the <code>node.cluster</code> value that is set by               <code>APPMESH_VIRTUAL_NODE_NAME</code>
         /// with the               <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.
         /// </para>
-        ///          </note>
+        ///          </note>         
+        /// <para>
+        /// For more information about virtual nodes, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_nodes.html">Virtual
+        /// Nodes</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVirtualNode service method.</param>
         /// <param name="cancellationToken">
@@ -531,6 +539,11 @@ namespace Amazon.AppMesh
         /// After         you create your virtual router, create and associate routes for your
         /// virtual router that         direct incoming requests to different virtual nodes.
         /// </para>
+        ///          
+        /// <para>
+        /// For more information about virtual routers, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_routers.html">Virtual
+        /// Routers</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVirtualRouter service method.</param>
         /// <param name="cancellationToken">
@@ -602,6 +615,11 @@ namespace Amazon.AppMesh
         /// call your virtual         service by its <code>virtualServiceName</code>, and those
         /// requests are routed to the         virtual node or virtual router that is specified
         /// as the provider for the virtual         service.
+        /// </para>
+        ///          
+        /// <para>
+        /// For more information about virtual services, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_services.html">Virtual
+        /// Services</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVirtualService service method.</param>

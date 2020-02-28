@@ -28,48 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents a virtual service backend for a virtual node.
+    /// An object that represents a Transport Layer Security (TLS) validation context trust.
     /// </summary>
-    public partial class VirtualServiceBackend
+    public partial class TlsValidationContextTrust
     {
-        private ClientPolicy _clientPolicy;
-        private string _virtualServiceName;
+        private TlsValidationContextAcmTrust _acm;
+        private TlsValidationContextFileTrust _file;
 
         /// <summary>
-        /// Gets and sets the property ClientPolicy. 
+        /// Gets and sets the property Acm. 
         /// <para>
-        /// A reference to an object that represents the client policy for a backend.
+        /// A reference to an object that represents a TLS validation context trust for an AWS
+        /// Certicate Manager (ACM) certificate.
         /// </para>
         /// </summary>
-        public ClientPolicy ClientPolicy
+        public TlsValidationContextAcmTrust Acm
         {
-            get { return this._clientPolicy; }
-            set { this._clientPolicy = value; }
+            get { return this._acm; }
+            set { this._acm = value; }
         }
 
-        // Check to see if ClientPolicy property is set
-        internal bool IsSetClientPolicy()
+        // Check to see if Acm property is set
+        internal bool IsSetAcm()
         {
-            return this._clientPolicy != null;
+            return this._acm != null;
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualServiceName. 
+        /// Gets and sets the property File. 
         /// <para>
-        /// The name of the virtual service that is acting as a virtual node backend.
+        /// An object that represents a TLS validation context trust for a local file.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string VirtualServiceName
+        public TlsValidationContextFileTrust File
         {
-            get { return this._virtualServiceName; }
-            set { this._virtualServiceName = value; }
+            get { return this._file; }
+            set { this._file = value; }
         }
 
-        // Check to see if VirtualServiceName property is set
-        internal bool IsSetVirtualServiceName()
+        // Check to see if File property is set
+        internal bool IsSetFile()
         {
-            return this._virtualServiceName != null;
+            return this._file != null;
         }
 
     }

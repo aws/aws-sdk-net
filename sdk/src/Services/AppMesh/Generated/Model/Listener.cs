@@ -34,6 +34,7 @@ namespace Amazon.AppMesh.Model
     {
         private HealthCheckPolicy _healthCheck;
         private PortMapping _portMapping;
+        private ListenerTls _tls;
 
         /// <summary>
         /// Gets and sets the property HealthCheck. 
@@ -70,6 +71,25 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetPortMapping()
         {
             return this._portMapping != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tls. 
+        /// <para>
+        /// A reference to an object that represents the Transport Layer Security (TLS) properties
+        /// for a listener.
+        /// </para>
+        /// </summary>
+        public ListenerTls Tls
+        {
+            get { return this._tls; }
+            set { this._tls = value; }
+        }
+
+        // Check to see if Tls property is set
+        internal bool IsSetTls()
+        {
+            return this._tls != null;
         }
 
     }

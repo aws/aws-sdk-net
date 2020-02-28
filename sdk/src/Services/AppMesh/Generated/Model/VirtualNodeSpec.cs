@@ -32,10 +32,29 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class VirtualNodeSpec
     {
+        private BackendDefaults _backendDefaults;
         private List<Backend> _backends = new List<Backend>();
         private List<Listener> _listeners = new List<Listener>();
         private Logging _logging;
         private ServiceDiscovery _serviceDiscovery;
+
+        /// <summary>
+        /// Gets and sets the property BackendDefaults. 
+        /// <para>
+        /// A reference to an object that represents the defaults for backends.
+        /// </para>
+        /// </summary>
+        public BackendDefaults BackendDefaults
+        {
+            get { return this._backendDefaults; }
+            set { this._backendDefaults = value; }
+        }
+
+        // Check to see if BackendDefaults property is set
+        internal bool IsSetBackendDefaults()
+        {
+            return this._backendDefaults != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Backends. 
@@ -43,7 +62,6 @@ namespace Amazon.AppMesh.Model
         /// The backends that the virtual node is expected to send outbound traffic to.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=25)]
         public List<Backend> Backends
         {
             get { return this._backends; }
@@ -59,8 +77,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Listeners. 
         /// <para>
-        /// The listeners that the virtual node is expected to receive inbound traffic from. 
-        ///        You can specify one listener.
+        /// The listener that the virtual node is expected to receive inbound traffic from.  
+        ///       You can specify one listener.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -98,7 +116,8 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property ServiceDiscovery. 
         /// <para>
         /// The service discovery information for the virtual node. If your virtual node does
-        /// not         expect ingress traffic, you can omit this parameter.
+        /// not         expect ingress traffic, you can omit this parameter. If you specify a
+        /// <code>listener</code>,         then you must specify service discovery information.
         /// </para>
         /// </summary>
         public ServiceDiscovery ServiceDiscovery

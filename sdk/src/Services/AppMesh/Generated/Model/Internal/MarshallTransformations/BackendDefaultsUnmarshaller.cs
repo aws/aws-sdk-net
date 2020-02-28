@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VirtualServiceBackend Object
+    /// Response Unmarshaller for BackendDefaults Object
     /// </summary>  
-    public class VirtualServiceBackendUnmarshaller : IUnmarshaller<VirtualServiceBackend, XmlUnmarshallerContext>, IUnmarshaller<VirtualServiceBackend, JsonUnmarshallerContext>
+    public class BackendDefaultsUnmarshaller : IUnmarshaller<BackendDefaults, XmlUnmarshallerContext>, IUnmarshaller<BackendDefaults, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VirtualServiceBackend IUnmarshaller<VirtualServiceBackend, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BackendDefaults IUnmarshaller<BackendDefaults, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VirtualServiceBackend Unmarshall(JsonUnmarshallerContext context)
+        public BackendDefaults Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VirtualServiceBackend unmarshalledObject = new VirtualServiceBackend();
+            BackendDefaults unmarshalledObject = new BackendDefaults();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,24 +70,18 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClientPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("virtualServiceName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualServiceName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static VirtualServiceBackendUnmarshaller _instance = new VirtualServiceBackendUnmarshaller();        
+        private static BackendDefaultsUnmarshaller _instance = new BackendDefaultsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VirtualServiceBackendUnmarshaller Instance
+        public static BackendDefaultsUnmarshaller Instance
         {
             get
             {

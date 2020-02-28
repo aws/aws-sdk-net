@@ -45,6 +45,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VirtualNodeSpec requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBackendDefaults())
+            {
+                context.Writer.WritePropertyName("backendDefaults");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BackendDefaultsMarshaller.Instance;
+                marshaller.Marshall(requestObject.BackendDefaults, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetBackends())
             {
                 context.Writer.WritePropertyName("backends");

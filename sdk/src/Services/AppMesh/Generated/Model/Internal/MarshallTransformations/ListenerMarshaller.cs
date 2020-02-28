@@ -67,6 +67,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTls())
+            {
+                context.Writer.WritePropertyName("tls");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ListenerTlsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Tls, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

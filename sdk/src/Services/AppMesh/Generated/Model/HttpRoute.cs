@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents an HTTP or HTTP2 route type.
+    /// An object that represents an HTTP or HTTP/2 route type.
     /// </summary>
     public partial class HttpRoute
     {

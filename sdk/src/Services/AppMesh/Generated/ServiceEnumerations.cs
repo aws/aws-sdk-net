@@ -315,6 +315,60 @@ namespace Amazon.AppMesh
 
 
     /// <summary>
+    /// Constants used for properties of type ListenerTlsMode.
+    /// </summary>
+    public class ListenerTlsMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ListenerTlsMode
+        /// </summary>
+        public static readonly ListenerTlsMode DISABLED = new ListenerTlsMode("DISABLED");
+        /// <summary>
+        /// Constant PERMISSIVE for ListenerTlsMode
+        /// </summary>
+        public static readonly ListenerTlsMode PERMISSIVE = new ListenerTlsMode("PERMISSIVE");
+        /// <summary>
+        /// Constant STRICT for ListenerTlsMode
+        /// </summary>
+        public static readonly ListenerTlsMode STRICT = new ListenerTlsMode("STRICT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListenerTlsMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListenerTlsMode FindValue(string value)
+        {
+            return FindValue<ListenerTlsMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListenerTlsMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MeshStatusCode.
     /// </summary>
     public class MeshStatusCode : ConstantClass

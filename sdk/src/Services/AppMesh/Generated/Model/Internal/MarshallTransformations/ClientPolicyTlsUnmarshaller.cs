@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VirtualServiceBackend Object
+    /// Response Unmarshaller for ClientPolicyTls Object
     /// </summary>  
-    public class VirtualServiceBackendUnmarshaller : IUnmarshaller<VirtualServiceBackend, XmlUnmarshallerContext>, IUnmarshaller<VirtualServiceBackend, JsonUnmarshallerContext>
+    public class ClientPolicyTlsUnmarshaller : IUnmarshaller<ClientPolicyTls, XmlUnmarshallerContext>, IUnmarshaller<ClientPolicyTls, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VirtualServiceBackend IUnmarshaller<VirtualServiceBackend, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ClientPolicyTls IUnmarshaller<ClientPolicyTls, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VirtualServiceBackend Unmarshall(JsonUnmarshallerContext context)
+        public ClientPolicyTls Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VirtualServiceBackend unmarshalledObject = new VirtualServiceBackend();
+            ClientPolicyTls unmarshalledObject = new ClientPolicyTls();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("clientPolicy", targetDepth))
+                if (context.TestExpression("enforce", targetDepth))
                 {
-                    var unmarshaller = ClientPolicyUnmarshaller.Instance;
-                    unmarshalledObject.ClientPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enforce = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("virtualServiceName", targetDepth))
+                if (context.TestExpression("ports", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualServiceName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    unmarshalledObject.Ports = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("validation", targetDepth))
+                {
+                    var unmarshaller = TlsValidationContextUnmarshaller.Instance;
+                    unmarshalledObject.Validation = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         }
 
 
-        private static VirtualServiceBackendUnmarshaller _instance = new VirtualServiceBackendUnmarshaller();        
+        private static ClientPolicyTlsUnmarshaller _instance = new ClientPolicyTlsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VirtualServiceBackendUnmarshaller Instance
+        public static ClientPolicyTlsUnmarshaller Instance
         {
             get
             {

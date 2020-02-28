@@ -42,6 +42,11 @@ namespace Amazon.AppMesh.Model
     /// After         you create your virtual router, create and associate routes for your
     /// virtual router that         direct incoming requests to different virtual nodes.
     /// </para>
+    ///          
+    /// <para>
+    /// For more information about virtual routers, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_routers.html">Virtual
+    /// Routers</a>.
+    /// </para>
     /// </summary>
     public partial class CreateVirtualRouterRequest : AmazonAppMeshRequest
     {

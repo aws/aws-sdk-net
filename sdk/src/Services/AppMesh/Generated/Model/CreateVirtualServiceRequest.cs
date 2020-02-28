@@ -39,6 +39,11 @@ namespace Amazon.AppMesh.Model
     /// requests are routed to the         virtual node or virtual router that is specified
     /// as the provider for the virtual         service.
     /// </para>
+    ///          
+    /// <para>
+    /// For more information about virtual services, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_services.html">Virtual
+    /// Services</a>.
+    /// </para>
     /// </summary>
     public partial class CreateVirtualServiceRequest : AmazonAppMeshRequest
     {
