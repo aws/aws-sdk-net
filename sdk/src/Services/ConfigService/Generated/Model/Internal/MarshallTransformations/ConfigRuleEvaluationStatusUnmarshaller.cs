@@ -94,6 +94,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.FirstEvaluationStarted = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastDeactivatedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastDeactivatedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

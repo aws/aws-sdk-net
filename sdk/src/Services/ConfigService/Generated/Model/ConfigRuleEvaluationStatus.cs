@@ -44,6 +44,7 @@ namespace Amazon.ConfigService.Model
         private string _configRuleName;
         private DateTime? _firstActivatedTime;
         private bool? _firstEvaluationStarted;
+        private DateTime? _lastDeactivatedTime;
         private string _lastErrorCode;
         private string _lastErrorMessage;
         private DateTime? _lastFailedEvaluationTime;
@@ -93,7 +94,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the AWS Config rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=128)]
         public string ConfigRuleName
         {
             get { return this._configRuleName; }
@@ -152,6 +153,21 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetFirstEvaluationStarted()
         {
             return this._firstEvaluationStarted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastDeactivatedTime.
+        /// </summary>
+        public DateTime LastDeactivatedTime
+        {
+            get { return this._lastDeactivatedTime.GetValueOrDefault(); }
+            set { this._lastDeactivatedTime = value; }
+        }
+
+        // Check to see if LastDeactivatedTime property is set
+        internal bool IsSetLastDeactivatedTime()
+        {
+            return this._lastDeactivatedTime.HasValue; 
         }
 
         /// <summary>

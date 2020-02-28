@@ -1595,6 +1595,38 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSEC2VPNGateway = new ResourceType("AWS::EC2::VPNGateway");
         /// <summary>
+        /// Constant AWSECRRepository for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSECRRepository = new ResourceType("AWS::ECR::Repository");
+        /// <summary>
+        /// Constant AWSECSCluster for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSECSCluster = new ResourceType("AWS::ECS::Cluster");
+        /// <summary>
+        /// Constant AWSECSPrimaryTaskSet for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSECSPrimaryTaskSet = new ResourceType("AWS::ECS::PrimaryTaskSet");
+        /// <summary>
+        /// Constant AWSECSService for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSECSService = new ResourceType("AWS::ECS::Service");
+        /// <summary>
+        /// Constant AWSECSTaskDefinition for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSECSTaskDefinition = new ResourceType("AWS::ECS::TaskDefinition");
+        /// <summary>
+        /// Constant AWSECSTaskSet for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSECSTaskSet = new ResourceType("AWS::ECS::TaskSet");
+        /// <summary>
+        /// Constant AWSEKSCluster for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEKSCluster = new ResourceType("AWS::EKS::Cluster");
+        /// <summary>
+        /// Constant AWSEKSNodegroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEKSNodegroup = new ResourceType("AWS::EKS::Nodegroup");
+        /// <summary>
         /// Constant AWSElasticBeanstalkApplication for ResourceType
         /// </summary>
         public static readonly ResourceType AWSElasticBeanstalkApplication = new ResourceType("AWS::ElasticBeanstalk::Application");
@@ -1615,6 +1647,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSElasticLoadBalancingV2LoadBalancer = new ResourceType("AWS::ElasticLoadBalancingV2::LoadBalancer");
         /// <summary>
+        /// Constant AWSElasticsearchDomain for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSElasticsearchDomain = new ResourceType("AWS::Elasticsearch::Domain");
+        /// <summary>
         /// Constant AWSIAMGroup for ResourceType
         /// </summary>
         public static readonly ResourceType AWSIAMGroup = new ResourceType("AWS::IAM::Group");
@@ -1631,6 +1667,50 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSIAMUser = new ResourceType("AWS::IAM::User");
         /// <summary>
+        /// Constant AWSKinesisAnalyticsApplication for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKinesisAnalyticsApplication = new ResourceType("AWS::KinesisAnalytics::Application");
+        /// <summary>
+        /// Constant AWSKinesisAnalyticsApplicationOutput for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKinesisAnalyticsApplicationOutput = new ResourceType("AWS::KinesisAnalytics::ApplicationOutput");
+        /// <summary>
+        /// Constant AWSKinesisAnalyticsApplicationReferenceDataSource for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKinesisAnalyticsApplicationReferenceDataSource = new ResourceType("AWS::KinesisAnalytics::ApplicationReferenceDataSource");
+        /// <summary>
+        /// Constant AWSKinesisAnalyticsV2Application for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKinesisAnalyticsV2Application = new ResourceType("AWS::KinesisAnalyticsV2::Application");
+        /// <summary>
+        /// Constant AWSKinesisAnalyticsV2ApplicationCloudWatchLoggingOption for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKinesisAnalyticsV2ApplicationCloudWatchLoggingOption = new ResourceType("AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption");
+        /// <summary>
+        /// Constant AWSKinesisAnalyticsV2ApplicationOutput for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKinesisAnalyticsV2ApplicationOutput = new ResourceType("AWS::KinesisAnalyticsV2::ApplicationOutput");
+        /// <summary>
+        /// Constant AWSKinesisAnalyticsV2ApplicationReferenceDataSource for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKinesisAnalyticsV2ApplicationReferenceDataSource = new ResourceType("AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource");
+        /// <summary>
+        /// Constant AWSKinesisFirehoseDeliveryStream for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKinesisFirehoseDeliveryStream = new ResourceType("AWS::KinesisFirehose::DeliveryStream");
+        /// <summary>
+        /// Constant AWSKinesisStream for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKinesisStream = new ResourceType("AWS::Kinesis::Stream");
+        /// <summary>
+        /// Constant AWSKinesisStreamConsumer for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKinesisStreamConsumer = new ResourceType("AWS::Kinesis::StreamConsumer");
+        /// <summary>
+        /// Constant AWSKMSKey for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKMSKey = new ResourceType("AWS::KMS::Key");
+        /// <summary>
         /// Constant AWSLambdaAlias for ResourceType
         /// </summary>
         public static readonly ResourceType AWSLambdaAlias = new ResourceType("AWS::Lambda::Alias");
@@ -1646,6 +1726,10 @@ namespace Amazon.ConfigService
         /// Constant AWSMobileHubProject for ResourceType
         /// </summary>
         public static readonly ResourceType AWSMobileHubProject = new ResourceType("AWS::MobileHub::Project");
+        /// <summary>
+        /// Constant AWSQLDBLedger for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSQLDBLedger = new ResourceType("AWS::QLDB::Ledger");
         /// <summary>
         /// Constant AWSRDSDBCluster for ResourceType
         /// </summary>
@@ -1719,6 +1803,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSS3Bucket = new ResourceType("AWS::S3::Bucket");
         /// <summary>
+        /// Constant AWSSecretsManagerSecret for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSecretsManagerSecret = new ResourceType("AWS::SecretsManager::Secret");
+        /// <summary>
         /// Constant AWSServiceCatalogCloudFormationProduct for ResourceType
         /// </summary>
         public static readonly ResourceType AWSServiceCatalogCloudFormationProduct = new ResourceType("AWS::ServiceCatalog::CloudFormationProduct");
@@ -1738,6 +1826,14 @@ namespace Amazon.ConfigService
         /// Constant AWSShieldRegionalProtection for ResourceType
         /// </summary>
         public static readonly ResourceType AWSShieldRegionalProtection = new ResourceType("AWS::ShieldRegional::Protection");
+        /// <summary>
+        /// Constant AWSSNSTopic for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSNSTopic = new ResourceType("AWS::SNS::Topic");
+        /// <summary>
+        /// Constant AWSSQSQueue for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSQSQueue = new ResourceType("AWS::SQS::Queue");
         /// <summary>
         /// Constant AWSSSMAssociationCompliance for ResourceType
         /// </summary>
@@ -1778,6 +1874,26 @@ namespace Amazon.ConfigService
         /// Constant AWSWAFRuleGroup for ResourceType
         /// </summary>
         public static readonly ResourceType AWSWAFRuleGroup = new ResourceType("AWS::WAF::RuleGroup");
+        /// <summary>
+        /// Constant AWSWAFv2IPSet for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFv2IPSet = new ResourceType("AWS::WAFv2::IPSet");
+        /// <summary>
+        /// Constant AWSWAFv2ManagedRuleSet for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFv2ManagedRuleSet = new ResourceType("AWS::WAFv2::ManagedRuleSet");
+        /// <summary>
+        /// Constant AWSWAFv2RegexPatternSet for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFv2RegexPatternSet = new ResourceType("AWS::WAFv2::RegexPatternSet");
+        /// <summary>
+        /// Constant AWSWAFv2RuleGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFv2RuleGroup = new ResourceType("AWS::WAFv2::RuleGroup");
+        /// <summary>
+        /// Constant AWSWAFv2WebACL for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFv2WebACL = new ResourceType("AWS::WAFv2::WebACL");
         /// <summary>
         /// Constant AWSWAFWebACL for ResourceType
         /// </summary>

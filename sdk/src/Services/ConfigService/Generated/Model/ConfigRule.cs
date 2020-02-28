@@ -65,6 +65,7 @@ namespace Amazon.ConfigService.Model
         /// The Amazon Resource Name (ARN) of the AWS Config rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ConfigRuleArn
         {
             get { return this._configRuleArn; }
@@ -83,6 +84,7 @@ namespace Amazon.ConfigService.Model
         /// The ID of the AWS Config rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ConfigRuleId
         {
             get { return this._configRuleId; }
@@ -102,7 +104,7 @@ namespace Amazon.ConfigService.Model
         /// a new rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=128)]
         public string ConfigRuleName
         {
             get { return this._configRuleName; }

@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the AWS Config rule that you want to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ConfigRuleName
         {
             get { return this._configRuleName; }

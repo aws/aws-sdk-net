@@ -84,7 +84,7 @@ namespace Amazon.ConfigService.Model
         /// and <code>AggregatorAuthorization</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
