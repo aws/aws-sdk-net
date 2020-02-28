@@ -70,7 +70,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags. Each resource can have a maximum of 10 tags.
+        /// The tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

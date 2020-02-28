@@ -57,7 +57,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property SslPolicies. 
         /// <para>
-        /// Information about the policies.
+        /// Information about the security policies.
         /// </para>
         /// </summary>
         public List<SslPolicy> SslPolicies

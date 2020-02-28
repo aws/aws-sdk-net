@@ -42,7 +42,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The following attribute is supported by both Application Load Balancers and Network
+        /// The following attributes are supported by both Application Load Balancers and Network
         /// Load Balancers:
         /// </para>
         ///  <ul> <li> 
@@ -52,6 +52,17 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
         /// default value is 300 seconds. If the target is a Lambda function, this attribute is
         /// not supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+        /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>stickiness.type</code> - The type of sticky sessions. The possible values are
+        /// <code>lb_cookie</code> for Application Load Balancers or <code>source_ip</code> for
+        /// Network Load Balancers.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -70,16 +81,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// a newly registered target receives a linearly increasing share of the traffic to the
         /// target group. After this time period ends, the target receives its full share of traffic.
         /// The range is 30-900 seconds (15 minutes). Slow start mode is disabled by default.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
-        /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>stickiness.type</code> - The type of sticky sessions. The possible value is
-        /// <code>lb_cookie</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

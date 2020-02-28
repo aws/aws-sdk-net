@@ -85,7 +85,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value
-        /// is <code>true</code> or <code>false</code>. The default is <code>true</code>.
+        /// is <code>true</code> or <code>false</code>. The default is <code>true</code>. Elastic
+        /// Load Balancing requires that message header names contain only alphanumeric characters
+        /// and hyphens.
         /// </para>
         ///  </li> </ul> 
         /// <para>

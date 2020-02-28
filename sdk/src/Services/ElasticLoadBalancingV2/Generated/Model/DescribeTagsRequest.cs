@@ -39,7 +39,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the resources.
+        /// The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources
+        /// in a single call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
