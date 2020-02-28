@@ -1,7 +1,25 @@
 ### 3.3.688.1 (2020-02-28 00:58 UTC)
-* Core 3.3.104.31
-	* Merge multiple PR. Change to be updated after release.
-	* All services packages updated to require new Core
+* AWSSDK.Extensions.NETCore.Setup (3.3.101.0)
+  * Make the library compatible with the 3.5.0-beta version of the AWS SDK for .NET.
+  * PR [#1531](https://github.com/aws/aws-sdk-net/pull/1531): Fix typo in xml documentation: Thanks [Steve Gordon](https://github.com/stevejgordon).
+* EC2 (3.3.162.2)
+  * Add the exception EC2ThrottledException to list of retryable errors.
+* S3 (3.3.110.29)
+  * PR [#1479](https://github.com/aws/aws-sdk-net/pull/1479): Added UploadId and PartNumber to GetPreSignedUrl. Thanks [taylorjp](https://github.com/taylorjp).
+  * PR [#1427](https://github.com/aws/aws-sdk-net/pull/1427): Prevent `TryParseAmazonS3Uri` from ever throwing exceptions. Thanks [OlegBoulanov](https://github.com/OlegBoulanov)
+  * PR [#1480](https://github.com/aws/aws-sdk-net/pull/1480): Added .json entry in extensionToMime dictionary. Thanks [Damian Hickey](https://github.com/damianh).
+  * PR [#1467](https://github.com/aws/aws-sdk-net/pull/1467): Fixed issue with `S3DirectoryInfo` not properly decoding the S3 key causing an exception when calling `MoveTo`. Thanks [Rocher Laurent](https://github.com/lrocher).
+* DynamoDBv2 (3.3.105.5)
+  * PR [#1108](https://github.com/aws/aws-sdk-net/pull/1108): Allow assigning null to property values on a `Document`. Thanks [Jens-Peter Olsson](https://github.com/jens-peterolsson).  
+  * PR [#1457](https://github.com/aws/aws-sdk-net/pull/1457): Allow multiple batches against a single table when using `Amazon.DynamoDBv2.DocumentModel.MultiTableDocumentBatchWrite`. Thanks [Viktor Stenqvist](https://github.com/Yottster).
+  * PR [#1082](https://github.com/aws/aws-sdk-net/pull/1082): Correct xml documentation for `Amazon.DynamoDBv2.DataModel.MultiTableBatchWrite`. Thanks [Ryan Williams](https://github.com/ryanwilliams83).
+* Core (3.3.104.31)
+  * PR [#1517](https://github.com/aws/aws-sdk-net/pull/1517): Fixed diagnostic tile for code analyzer. Thanks [Simon Potter](https://github.com/sjp).
+  * PR [#1520](https://github.com/aws/aws-sdk-net/pull/1520): Performance improvement compressing whitespaces during signing of the request. Thanks [Petr Kovalev](https://github.com/Petr-Kovalev).
+  * PR [#1489](https://github.com/aws/aws-sdk-net/pull/1489): Improve `Arn.TryParse()` to avoid throwing and catching unnecessary exceptions. Thanks [gbent](https://github.com/gbent).
+  * PR [#1405](https://github.com/aws/aws-sdk-net/pull/1405): Fixed incorrect usage of `string.Format` when reporting errors from `AWSRegion`. Thanks [Damir Ainullin](https://github.com/DamirAinullin). 
+  * PR [#1406](https://github.com/aws/aws-sdk-net/pull/1406): Simplifed logic checking to see if a `SettingsCollection` is empty. Thanks [Damir Ainullin](https://github.com/DamirAinullin).
+  * All services packages updated to require new Core
 
 ### 3.3.688.0 (2020-02-27 19:14 UTC)
 * GlobalAccelerator (3.3.103.0)
