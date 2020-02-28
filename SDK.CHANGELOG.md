@@ -1,3 +1,23 @@
+### 3.3.689.0 (2020-02-28 19:18 UTC)
+* AccessAnalyzer (3.3.102.0)
+	* This release includes improvements and fixes bugs for the IAM Access Analyzer feature.
+* AppMesh (3.3.107.0)
+	* App Mesh now supports Transport Layer Security (TLS) between Virtual Nodes in a Mesh. Customers can use managed certificates from an AWS Certificate Manager Private Certificate Authority or bring their own certificates from the local file system to encrypt traffic between their workloads. See https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html for details.
+* AugmentedAIRuntime (3.3.101.0)
+	* This release updates Amazon Augmented AI ListHumanLoops API, DescribeHumanLoop response, StartHumanLoop response and type names of SDK fields. 
+* CodeGuruProfiler (3.3.100.32)
+	* Documentation updates for Amazon CodeGuru Profiler
+* ConfigService (3.3.107.0)
+	* Accepts a structured query language (SQL) SELECT command and an aggregator name, performs the corresponding search on resources aggregated by the aggregator, and returns resource configurations matching the properties.
+* ElasticLoadBalancingV2 (3.3.104.35)
+	* Added a target group attribute to support sticky sessions for Network Load Balancers.
+* Glue (3.3.114.0)
+	* AWS Glue adds resource tagging support for Machine Learning Transforms and adds a new API, ListMLTransforms to support tag filtering.  With this feature, customers can use tags in AWS Glue to organize and control access to Machine Learning Transforms. 
+* QuickSight (3.3.103.0)
+	* Added SearchDashboards API that allows listing of dashboards that a specific user has access to.
+* WorkDocs (3.3.100.139)
+	* Documentation updates for workdocs
+
 ### 3.3.688.1 (2020-02-28 00:58 UTC)
 * AWSSDK.Extensions.NETCore.Setup (3.3.101.0)
   * Make the library compatible with the 3.5.0-beta version of the AWS SDK for .NET.
