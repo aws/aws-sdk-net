@@ -169,7 +169,7 @@ namespace Amazon.S3.Util
             {
                 return TryParseAmazonS3Uri(new Uri(uri), out amazonS3Uri);
             }
-            catch (UriFormatException)
+            catch (Exception)
             {
                 amazonS3Uri = null;
                 return false;
