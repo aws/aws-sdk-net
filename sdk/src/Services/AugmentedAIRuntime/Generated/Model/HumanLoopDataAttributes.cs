@@ -28,29 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AugmentedAIRuntime.Model
 {
     /// <summary>
-    /// Contains information about why a human loop was triggered. If at least one activation
-    /// reason is evaluated to be true, the human loop is activated.
+    /// Attributes of the data specified by the customer. Use these to describe the data to
+    /// be labeled.
     /// </summary>
-    public partial class HumanLoopActivationReason
+    public partial class HumanLoopDataAttributes
     {
-        private bool? _conditionsMatched;
+        private List<string> _contentClassifiers = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ConditionsMatched. 
+        /// Gets and sets the property ContentClassifiers. 
         /// <para>
-        /// True if the specified conditions were matched to trigger the human loop.
+        /// Declares that your content is free of personally identifiable information or adult
+        /// content.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your
+        /// task based on this information.
         /// </para>
         /// </summary>
-        public bool ConditionsMatched
+        [AWSProperty(Required=true, Max=256)]
+        public List<string> ContentClassifiers
         {
-            get { return this._conditionsMatched.GetValueOrDefault(); }
-            set { this._conditionsMatched = value; }
+            get { return this._contentClassifiers; }
+            set { this._contentClassifiers = value; }
         }
 
-        // Check to see if ConditionsMatched property is set
-        internal bool IsSetConditionsMatched()
+        // Check to see if ContentClassifiers property is set
+        internal bool IsSetContentClassifiers()
         {
-            return this._conditionsMatched.HasValue; 
+            return this._contentClassifiers != null && this._contentClassifiers.Count > 0; 
         }
 
     }

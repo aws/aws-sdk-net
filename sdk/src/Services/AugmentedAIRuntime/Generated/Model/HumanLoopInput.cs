@@ -28,16 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AugmentedAIRuntime.Model
 {
     /// <summary>
-    /// An object containing the input.
+    /// An object containing the human loop input in JSON format.
     /// </summary>
-    public partial class HumanLoopInputContent
+    public partial class HumanLoopInput
     {
         private string _inputContent;
 
         /// <summary>
         /// Gets and sets the property InputContent. 
         /// <para>
-        /// Serialized input from the human loop.
+        /// Serialized input from the human loop. The input must be a string representation of
+        /// a file in JSON format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=4194304)]

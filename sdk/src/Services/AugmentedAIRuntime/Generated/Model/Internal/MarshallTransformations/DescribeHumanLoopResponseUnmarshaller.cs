@@ -51,10 +51,10 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreationTimestamp", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTimestamp = unmarshaller.Unmarshall(context);
+                    response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FailureCode", targetDepth))
@@ -81,12 +81,6 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
                     response.HumanLoopArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("HumanLoopInput", targetDepth))
-                {
-                    var unmarshaller = HumanLoopInputContentUnmarshaller.Instance;
-                    response.HumanLoopInput = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("HumanLoopName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -95,7 +89,7 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HumanLoopOutput", targetDepth))
                 {
-                    var unmarshaller = HumanLoopOutputContentUnmarshaller.Instance;
+                    var unmarshaller = HumanLoopOutputUnmarshaller.Instance;
                     response.HumanLoopOutput = unmarshaller.Unmarshall(context);
                     continue;
                 }

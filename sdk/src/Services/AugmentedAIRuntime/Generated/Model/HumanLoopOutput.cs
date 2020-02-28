@@ -28,32 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AugmentedAIRuntime.Model
 {
     /// <summary>
-    /// Attributes of the data specified by the customer. Use these to describe the data to
-    /// be labeled.
+    /// Information about where the human output will be stored.
     /// </summary>
-    public partial class HumanReviewDataAttributes
+    public partial class HumanLoopOutput
     {
-        private List<string> _contentClassifiers = new List<string>();
+        private string _outputS3Uri;
 
         /// <summary>
-        /// Gets and sets the property ContentClassifiers. 
+        /// Gets and sets the property OutputS3Uri. 
         /// <para>
-        /// Declares that your content is free of personally identifiable information or adult
-        /// content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers that can
-        /// view your task based on this information.
+        /// The location of the Amazon S3 object where Amazon Augmented AI stores your human loop
+        /// output.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
-        public List<string> ContentClassifiers
+        [AWSProperty(Required=true)]
+        public string OutputS3Uri
         {
-            get { return this._contentClassifiers; }
-            set { this._contentClassifiers = value; }
+            get { return this._outputS3Uri; }
+            set { this._outputS3Uri = value; }
         }
 
-        // Check to see if ContentClassifiers property is set
-        internal bool IsSetContentClassifiers()
+        // Check to see if OutputS3Uri property is set
+        internal bool IsSetOutputS3Uri()
         {
-            return this._contentClassifiers != null && this._contentClassifiers.Count > 0; 
+            return this._outputS3Uri != null;
         }
 
     }

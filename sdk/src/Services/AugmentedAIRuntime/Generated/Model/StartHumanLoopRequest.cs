@@ -33,9 +33,9 @@ namespace Amazon.AugmentedAIRuntime.Model
     /// </summary>
     public partial class StartHumanLoopRequest : AmazonAugmentedAIRuntimeRequest
     {
-        private HumanReviewDataAttributes _dataAttributes;
+        private HumanLoopDataAttributes _dataAttributes;
         private string _flowDefinitionArn;
-        private HumanLoopInputContent _humanLoopInput;
+        private HumanLoopInput _humanLoopInput;
         private string _humanLoopName;
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// Attributes of the data specified by the customer.
         /// </para>
         /// </summary>
-        public HumanReviewDataAttributes DataAttributes
+        public HumanLoopDataAttributes DataAttributes
         {
             get { return this._dataAttributes; }
             set { this._dataAttributes = value; }
@@ -82,7 +82,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public HumanLoopInputContent HumanLoopInput
+        public HumanLoopInput HumanLoopInput
         {
             get { return this._humanLoopInput; }
             set { this._humanLoopInput = value; }

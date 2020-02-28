@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HumanLoopActivationResults Object
+    /// Response Unmarshaller for HumanLoopOutput Object
     /// </summary>  
-    public class HumanLoopActivationResultsUnmarshaller : IUnmarshaller<HumanLoopActivationResults, XmlUnmarshallerContext>, IUnmarshaller<HumanLoopActivationResults, JsonUnmarshallerContext>
+    public class HumanLoopOutputUnmarshaller : IUnmarshaller<HumanLoopOutput, XmlUnmarshallerContext>, IUnmarshaller<HumanLoopOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        HumanLoopActivationResults IUnmarshaller<HumanLoopActivationResults, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HumanLoopOutput IUnmarshaller<HumanLoopOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HumanLoopActivationResults Unmarshall(JsonUnmarshallerContext context)
+        public HumanLoopOutput Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            HumanLoopActivationResults unmarshalledObject = new HumanLoopActivationResults();
+            HumanLoopOutput unmarshalledObject = new HumanLoopOutput();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("HumanLoopActivationConditionsEvaluationResults", targetDepth))
+                if (context.TestExpression("OutputS3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HumanLoopActivationConditionsEvaluationResults = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HumanLoopActivationReason", targetDepth))
-                {
-                    var unmarshaller = HumanLoopActivationReasonUnmarshaller.Instance;
-                    unmarshalledObject.HumanLoopActivationReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputS3Uri = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static HumanLoopActivationResultsUnmarshaller _instance = new HumanLoopActivationResultsUnmarshaller();        
+        private static HumanLoopOutputUnmarshaller _instance = new HumanLoopOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HumanLoopActivationResultsUnmarshaller Instance
+        public static HumanLoopOutputUnmarshaller Instance
         {
             get
             {

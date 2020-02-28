@@ -32,26 +32,7 @@ namespace Amazon.AugmentedAIRuntime.Model
     /// </summary>
     public partial class StartHumanLoopResponse : AmazonWebServiceResponse
     {
-        private HumanLoopActivationResults _humanLoopActivationResults;
         private string _humanLoopArn;
-
-        /// <summary>
-        /// Gets and sets the property HumanLoopActivationResults. 
-        /// <para>
-        /// An object containing information about the human loop activation.
-        /// </para>
-        /// </summary>
-        public HumanLoopActivationResults HumanLoopActivationResults
-        {
-            get { return this._humanLoopActivationResults; }
-            set { this._humanLoopActivationResults = value; }
-        }
-
-        // Check to see if HumanLoopActivationResults property is set
-        internal bool IsSetHumanLoopActivationResults()
-        {
-            return this._humanLoopActivationResults != null;
-        }
 
         /// <summary>
         /// Gets and sets the property HumanLoopArn. 

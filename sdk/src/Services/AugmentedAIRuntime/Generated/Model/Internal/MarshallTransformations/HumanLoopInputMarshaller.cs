@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// HumanReviewDataAttributes Marshaller
+    /// HumanLoopInput Marshaller
     /// </summary>       
-    public class HumanReviewDataAttributesMarshaller : IRequestMarshaller<HumanReviewDataAttributes, JsonMarshallerContext> 
+    public class HumanLoopInputMarshaller : IRequestMarshaller<HumanLoopInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,17 +43,12 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(HumanReviewDataAttributes requestObject, JsonMarshallerContext context)
+        public void Marshall(HumanLoopInput requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetContentClassifiers())
+            if(requestObject.IsSetInputContent())
             {
-                context.Writer.WritePropertyName("ContentClassifiers");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectContentClassifiersListValue in requestObject.ContentClassifiers)
-                {
-                        context.Writer.Write(requestObjectContentClassifiersListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("InputContent");
+                context.Writer.Write(requestObject.InputContent);
             }
 
         }
@@ -61,7 +56,7 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static HumanReviewDataAttributesMarshaller Instance = new HumanReviewDataAttributesMarshaller();
+        public readonly static HumanLoopInputMarshaller Instance = new HumanLoopInputMarshaller();
 
     }
 }

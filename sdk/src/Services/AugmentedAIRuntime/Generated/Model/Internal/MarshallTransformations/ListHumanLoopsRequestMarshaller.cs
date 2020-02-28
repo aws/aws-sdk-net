@@ -65,6 +65,9 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetCreationTimeBefore())
                 request.Parameters.Add("CreationTimeBefore", StringUtils.FromDateTimeToISO8601(publicRequest.CreationTimeBefore));
             
+            if (publicRequest.IsSetFlowDefinitionArn())
+                request.Parameters.Add("FlowDefinitionArn", StringUtils.FromString(publicRequest.FlowDefinitionArn));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

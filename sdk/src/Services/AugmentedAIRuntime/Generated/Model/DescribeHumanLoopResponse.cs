@@ -32,33 +32,32 @@ namespace Amazon.AugmentedAIRuntime.Model
     /// </summary>
     public partial class DescribeHumanLoopResponse : AmazonWebServiceResponse
     {
-        private DateTime? _creationTimestamp;
+        private DateTime? _creationTime;
         private string _failureCode;
         private string _failureReason;
         private string _flowDefinitionArn;
         private string _humanLoopArn;
-        private HumanLoopInputContent _humanLoopInput;
         private string _humanLoopName;
-        private HumanLoopOutputContent _humanLoopOutput;
+        private HumanLoopOutput _humanLoopOutput;
         private HumanLoopStatus _humanLoopStatus;
 
         /// <summary>
-        /// Gets and sets the property CreationTimestamp. 
+        /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The timestamp when Amazon Augmented AI created the human loop.
+        /// The creation time when Amazon Augmented AI created the human loop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTimestamp
+        public DateTime CreationTime
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
-            set { this._creationTimestamp = value; }
+            get { return this._creationTime.GetValueOrDefault(); }
+            set { this._creationTime = value; }
         }
 
-        // Check to see if CreationTimestamp property is set
-        internal bool IsSetCreationTimestamp()
+        // Check to see if CreationTime property is set
+        internal bool IsSetCreationTime()
         {
-            return this._creationTimestamp.HasValue; 
+            return this._creationTime.HasValue; 
         }
 
         /// <summary>
@@ -137,25 +136,6 @@ namespace Amazon.AugmentedAIRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HumanLoopInput. 
-        /// <para>
-        /// An object containing information about the human loop input.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public HumanLoopInputContent HumanLoopInput
-        {
-            get { return this._humanLoopInput; }
-            set { this._humanLoopInput = value; }
-        }
-
-        // Check to see if HumanLoopInput property is set
-        internal bool IsSetHumanLoopInput()
-        {
-            return this._humanLoopInput != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property HumanLoopName. 
         /// <para>
         /// The name of the human loop.
@@ -180,7 +160,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// An object containing information about the output of the human loop.
         /// </para>
         /// </summary>
-        public HumanLoopOutputContent HumanLoopOutput
+        public HumanLoopOutput HumanLoopOutput
         {
             get { return this._humanLoopOutput; }
             set { this._humanLoopOutput = value; }

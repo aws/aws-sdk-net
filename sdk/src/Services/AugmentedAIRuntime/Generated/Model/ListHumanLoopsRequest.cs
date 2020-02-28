@@ -29,12 +29,14 @@ namespace Amazon.AugmentedAIRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the ListHumanLoops operation.
-    /// Returns information about human loops, given the specified parameters.
+    /// Returns information about human loops, given the specified parameters. If a human
+    /// loop was deleted, it will not be included.
     /// </summary>
     public partial class ListHumanLoopsRequest : AmazonAugmentedAIRuntimeRequest
     {
         private DateTime? _creationTimeAfter;
         private DateTime? _creationTimeBefore;
+        private string _flowDefinitionArn;
         private int? _maxResults;
         private string _nextToken;
         private SortOrder _sortOrder;
@@ -42,8 +44,8 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property CreationTimeAfter. 
         /// <para>
-        /// (Optional) The timestamp of the date when you want the human loops to begin. For example,
-        /// <code>1551000000</code>.
+        /// (Optional) The timestamp of the date when you want the human loops to begin in ISO
+        /// 8601 format. For example, <code>2020-02-24</code>.
         /// </para>
         /// </summary>
         public DateTime CreationTimeAfter
@@ -61,8 +63,8 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// <summary>
         /// Gets and sets the property CreationTimeBefore. 
         /// <para>
-        /// (Optional) The timestamp of the date before which you want the human loops to begin.
-        /// For example, <code>1550000000</code>.
+        /// (Optional) The timestamp of the date before which you want the human loops to begin
+        /// in ISO 8601 format. For example, <code>2020-02-24</code>.
         /// </para>
         /// </summary>
         public DateTime CreationTimeBefore
@@ -75,6 +77,25 @@ namespace Amazon.AugmentedAIRuntime.Model
         internal bool IsSetCreationTimeBefore()
         {
             return this._creationTimeBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlowDefinitionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a flow definition.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
+        public string FlowDefinitionArn
+        {
+            get { return this._flowDefinitionArn; }
+            set { this._flowDefinitionArn = value; }
+        }
+
+        // Check to see if FlowDefinitionArn property is set
+        internal bool IsSetFlowDefinitionArn()
+        {
+            return this._flowDefinitionArn != null;
         }
 
         /// <summary>

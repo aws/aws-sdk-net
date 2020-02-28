@@ -51,12 +51,6 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("HumanLoopActivationResults", targetDepth))
-                {
-                    var unmarshaller = HumanLoopActivationResultsUnmarshaller.Instance;
-                    response.HumanLoopActivationResults = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("HumanLoopArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -78,6 +72,10 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+            {
+                return new ConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
             {
                 return new InternalServerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

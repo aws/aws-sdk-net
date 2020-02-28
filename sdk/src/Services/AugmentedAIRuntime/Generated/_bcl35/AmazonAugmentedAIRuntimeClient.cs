@@ -68,9 +68,9 @@ namespace Amazon.AugmentedAIRuntime
     ///  
     /// <para>
     /// You can find additional Augmented AI API documentation in the following reference
-    /// guides: <a href="https://aws.amazon.com/rekognition/latest/dg/API_Reference.html">Amazon
-    /// Rekognition</a>, <a href="https://aws.amazon.com/sagemaker/latest/dg/API_Reference.html">Amazon
-    /// SageMaker</a>, and <a href="https://aws.amazon.com/textract/latest/dg/API_Reference.html">Amazon
+    /// guides: <a href="https://docs.aws.amazon.com/rekognition/latest/dg/API_Reference.html">Amazon
+    /// Rekognition</a>, <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_Reference.html">Amazon
+    /// SageMaker</a>, and <a href="https://docs.aws.amazon.com/textract/latest/dg/API_Reference.html">Amazon
     /// Textract</a>.
     /// </para>
     /// </summary>
@@ -408,7 +408,8 @@ namespace Amazon.AugmentedAIRuntime
         #region  ListHumanLoops
 
         /// <summary>
-        /// Returns information about human loops, given the specified parameters.
+        /// Returns information about human loops, given the specified parameters. If a human
+        /// loop was deleted, it will not be included.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHumanLoops service method.</param>
         /// 
@@ -476,6 +477,10 @@ namespace Amazon.AugmentedAIRuntime
         /// <param name="request">Container for the necessary parameters to execute the StartHumanLoop service method.</param>
         /// 
         /// <returns>The response from the StartHumanLoop service method, as returned by AugmentedAIRuntime.</returns>
+        /// <exception cref="Amazon.AugmentedAIRuntime.Model.ConflictException">
+        /// Your request has the same name as another active human loop but has different input
+        /// data. You cannot start two human loops with the same name and different input data.
+        /// </exception>
         /// <exception cref="Amazon.AugmentedAIRuntime.Model.InternalServerException">
         /// Your request could not be processed.
         /// </exception>

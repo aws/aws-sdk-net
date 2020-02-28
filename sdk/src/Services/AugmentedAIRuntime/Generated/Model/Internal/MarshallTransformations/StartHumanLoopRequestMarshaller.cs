@@ -71,7 +71,7 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("DataAttributes");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = HumanReviewDataAttributesMarshaller.Instance;
+                    var marshaller = HumanLoopDataAttributesMarshaller.Instance;
                     marshaller.Marshall(publicRequest.DataAttributes, context);
 
                     context.Writer.WriteObjectEnd();
@@ -88,7 +88,7 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("HumanLoopInput");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = HumanLoopInputContentMarshaller.Instance;
+                    var marshaller = HumanLoopInputMarshaller.Instance;
                     marshaller.Marshall(publicRequest.HumanLoopInput, context);
 
                     context.Writer.WriteObjectEnd();
