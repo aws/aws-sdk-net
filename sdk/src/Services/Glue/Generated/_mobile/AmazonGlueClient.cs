@@ -4517,6 +4517,56 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListMLTransforms
+
+        internal virtual ListMLTransformsResponse ListMLTransforms(ListMLTransformsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMLTransformsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMLTransformsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMLTransformsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a sortable, filterable list of existing AWS Glue machine learning transforms
+        /// in this AWS account, or the resources with the specified tag. This operation takes
+        /// the optional <code>Tags</code> field, which you can use as a filter of the responses
+        /// so that tagged resources can be retrieved as a group. If you choose to use tag filtering,
+        /// only resources with the tags are retrieved.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMLTransforms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMLTransforms service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms">REST API Reference for ListMLTransforms Operation</seealso>
+        public virtual Task<ListMLTransformsResponse> ListMLTransformsAsync(ListMLTransformsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMLTransformsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMLTransformsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMLTransformsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTriggers
 
         internal virtual ListTriggersResponse ListTriggers(ListTriggersRequest request)

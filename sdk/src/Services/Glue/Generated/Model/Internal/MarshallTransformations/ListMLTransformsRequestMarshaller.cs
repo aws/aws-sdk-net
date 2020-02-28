@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateMLTransform Request Marshaller
+    /// ListMLTransforms Request Marshaller
     /// </summary>       
-    public class CreateMLTransformRequestMarshaller : IMarshaller<IRequest, CreateMLTransformRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListMLTransformsRequestMarshaller : IMarshaller<IRequest, ListMLTransformsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateMLTransformRequest)input);
+            return this.Marshall((ListMLTransformsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateMLTransformRequest publicRequest)
+        public IRequest Marshall(ListMLTransformsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glue");
-            string target = "AWSGlue.CreateMLTransform";
+            string target = "AWSGlue.ListMLTransforms";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";            
@@ -68,73 +68,38 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                if(publicRequest.IsSetFilter())
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetGlueVersion())
-                {
-                    context.Writer.WritePropertyName("GlueVersion");
-                    context.Writer.Write(publicRequest.GlueVersion);
-                }
-
-                if(publicRequest.IsSetInputRecordTables())
-                {
-                    context.Writer.WritePropertyName("InputRecordTables");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputRecordTablesListValue in publicRequest.InputRecordTables)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = GlueTableMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInputRecordTablesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetMaxCapacity())
-                {
-                    context.Writer.WritePropertyName("MaxCapacity");
-                    context.Writer.Write(publicRequest.MaxCapacity);
-                }
-
-                if(publicRequest.IsSetMaxRetries())
-                {
-                    context.Writer.WritePropertyName("MaxRetries");
-                    context.Writer.Write(publicRequest.MaxRetries);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNumberOfWorkers())
-                {
-                    context.Writer.WritePropertyName("NumberOfWorkers");
-                    context.Writer.Write(publicRequest.NumberOfWorkers);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
+                    context.Writer.WritePropertyName("Filter");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = TransformParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Parameters, context);
+                    var marshaller = TransformFilterCriteriaMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Filter, context);
 
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRole())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetSort())
+                {
+                    context.Writer.WritePropertyName("Sort");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TransformSortCriteriaMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Sort, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTags())
@@ -151,18 +116,6 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTimeout())
-                {
-                    context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout);
-                }
-
-                if(publicRequest.IsSetWorkerType())
-                {
-                    context.Writer.WritePropertyName("WorkerType");
-                    context.Writer.Write(publicRequest.WorkerType);
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -172,9 +125,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateMLTransformRequestMarshaller _instance = new CreateMLTransformRequestMarshaller();        
+        private static ListMLTransformsRequestMarshaller _instance = new ListMLTransformsRequestMarshaller();        
 
-        internal static CreateMLTransformRequestMarshaller GetInstance()
+        internal static ListMLTransformsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -182,7 +135,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateMLTransformRequestMarshaller Instance
+        public static ListMLTransformsRequestMarshaller Instance
         {
             get
             {

@@ -4843,6 +4843,62 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListMLTransforms
+
+
+        /// <summary>
+        /// Retrieves a sortable, filterable list of existing AWS Glue machine learning transforms
+        /// in this AWS account, or the resources with the specified tag. This operation takes
+        /// the optional <code>Tags</code> field, which you can use as a filter of the responses
+        /// so that tagged resources can be retrieved as a group. If you choose to use tag filtering,
+        /// only resources with the tags are retrieved.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMLTransforms service method.</param>
+        /// 
+        /// <returns>The response from the ListMLTransforms service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms">REST API Reference for ListMLTransforms Operation</seealso>
+        ListMLTransformsResponse ListMLTransforms(ListMLTransformsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMLTransforms operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMLTransforms operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMLTransforms
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms">REST API Reference for ListMLTransforms Operation</seealso>
+        IAsyncResult BeginListMLTransforms(ListMLTransformsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMLTransforms operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMLTransforms.</param>
+        /// 
+        /// <returns>Returns a  ListMLTransformsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms">REST API Reference for ListMLTransforms Operation</seealso>
+        ListMLTransformsResponse EndListMLTransforms(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTriggers
 
 

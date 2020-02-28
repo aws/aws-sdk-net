@@ -58,6 +58,7 @@ namespace Amazon.Glue.Model
         private int? _numberOfWorkers;
         private TransformParameters _parameters;
         private string _role;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private int? _timeout;
         private WorkerType _workerType;
 
@@ -291,6 +292,28 @@ namespace Amazon.Glue.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to use with this machine learning transform. You may use tags to limit access
+        /// to the machine learning transform. For more information about tags in AWS Glue, see
+        /// <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+        /// AWS Glue</a> in the developer guide.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
