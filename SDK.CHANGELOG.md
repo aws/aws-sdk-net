@@ -1,3 +1,7 @@
+### 3.3.690.0 (2020-02-29 00:40 UTC)
+* ConfigService (3.3.108.0)
+	* Correcting list of supported resource types.
+
 ### 3.3.689.0 (2020-02-28 19:18 UTC)
 * AccessAnalyzer (3.3.102.0)
 	* This release includes improvements and fixes bugs for the IAM Access Analyzer feature.
