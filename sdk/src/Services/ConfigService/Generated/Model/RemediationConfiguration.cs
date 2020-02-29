@@ -190,7 +190,6 @@ namespace Amazon.ConfigService.Model
         /// The type of a resource. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }
@@ -273,7 +272,6 @@ namespace Amazon.ConfigService.Model
         /// Version of the target. For example, version of the SSM document.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
         public string TargetVersion
         {
             get { return this._targetVersion; }

@@ -76,11 +76,6 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ConfigService.Model.DeleteRemediationConfigurationRequest.ResourceType</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ConfigService.Model.DeleteRemediationExceptionsRequest.ConfigRuleName</property>
     <min>1</min>
     <max>128</max>
@@ -1064,22 +1059,12 @@
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ConfigService.Model.RemediationConfiguration.ResourceType</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ConfigService.Model.RemediationConfiguration.RetryAttemptSeconds</property>
     <min>1</min>
     <max>2678000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.RemediationConfiguration.TargetId</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ConfigService.Model.RemediationConfiguration.TargetVersion</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
