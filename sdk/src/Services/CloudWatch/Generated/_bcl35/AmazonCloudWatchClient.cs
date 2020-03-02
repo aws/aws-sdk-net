@@ -256,8 +256,36 @@ namespace Amazon.CloudWatch
         #region  DeleteAlarms
 
         /// <summary>
-        /// Deletes the specified alarms. You can delete up to 50 alarms in one operation. In
-        /// the event of an error, no alarms are deleted.
+        /// Deletes the specified alarms. You can delete up to 100 alarms in one operation. However,
+        /// this total can include no more than one composite alarm. For example, you could delete
+        /// 99 metric alarms and one composite alarms with one operation, but you can't delete
+        /// two composite alarms with one operation.
+        /// 
+        ///  
+        /// <para>
+        ///  In the event of an error, no alarms are deleted.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// It is possible to create a loop or cycle of composite alarms, where composite alarm
+        /// A depends on composite alarm B, and composite alarm B also depends on composite alarm
+        /// A. In this scenario, you can't delete any composite alarm that is part of the cycle
+        /// because there is always still a composite alarm that depends on that alarm that you
+        /// want to delete.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get out of such a situation, you must break the cycle by changing the rule of one
+        /// of the composite alarms in the cycle to remove a dependency that creates the cycle.
+        /// The simplest change to make to break a cycle is to change the <code>AlarmRule</code>
+        /// of one of the alarms to <code>False</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle
+        /// in the evaluation path. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlarms service method.</param>
         /// 
@@ -511,8 +539,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Retrieves the history for the specified alarm. You can filter the results by date
-        /// range or item type. If an alarm name is not specified, the histories for all alarms
-        /// are returned.
+        /// range or item type. If an alarm name is not specified, the histories for either all
+        /// metric alarms or all composite alarms are returned.
         /// 
         ///  
         /// <para>
@@ -532,8 +560,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Retrieves the history for the specified alarm. You can filter the results by date
-        /// range or item type. If an alarm name is not specified, the histories for all alarms
-        /// are returned.
+        /// range or item type. If an alarm name is not specified, the histories for either all
+        /// metric alarms or all composite alarms are returned.
         /// 
         ///  
         /// <para>
@@ -595,9 +623,8 @@ namespace Amazon.CloudWatch
         #region  DescribeAlarms
 
         /// <summary>
-        /// Retrieves the specified alarms. If no alarms are specified, all alarms are returned.
-        /// Alarms can be retrieved by using only a prefix for the alarm name, the alarm state,
-        /// or a prefix for any action.
+        /// Retrieves the specified alarms. You can filter the results by specifying a a prefix
+        /// for the alarm name, the alarm state, or a prefix for any action.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAlarms service method, as returned by CloudWatch.</returns>
@@ -611,9 +638,8 @@ namespace Amazon.CloudWatch
         }
 
         /// <summary>
-        /// Retrieves the specified alarms. If no alarms are specified, all alarms are returned.
-        /// Alarms can be retrieved by using only a prefix for the alarm name, the alarm state,
-        /// or a prefix for any action.
+        /// Retrieves the specified alarms. You can filter the results by specifying a a prefix
+        /// for the alarm name, the alarm state, or a prefix for any action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarms service method.</param>
         /// 
@@ -1270,7 +1296,7 @@ namespace Amazon.CloudWatch
         #region  GetMetricData
 
         /// <summary>
-        /// You can use the <code>GetMetricData</code> API to retrieve as many as 100 different
+        /// You can use the <code>GetMetricData</code> API to retrieve as many as 500 different
         /// metrics in a single request, with a total of as many as 100,800 data points. You can
         /// also optionally perform math expressions on the values of the returned statistics,
         /// to create new time series that represent new insights into your data. For example,
@@ -1674,8 +1700,9 @@ namespace Amazon.CloudWatch
         #region  ListMetrics
 
         /// <summary>
-        /// List the specified metrics. You can use the returned metrics with <a>GetMetricData</a>
-        /// or <a>GetMetricStatistics</a> to obtain statistical data.
+        /// List the specified metrics. You can use the returned metrics with <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
+        /// to obtain statistical data.
         /// 
         ///  
         /// <para>
@@ -1685,8 +1712,8 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// After you create a metric, allow up to fifteen minutes before the metric appears.
-        /// Statistics about the metric, however, are available sooner using <a>GetMetricData</a>
-        /// or <a>GetMetricStatistics</a>.
+        /// Statistics about the metric, however, are available sooner using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
         /// </para>
         /// </summary>
         /// 
@@ -1704,8 +1731,9 @@ namespace Amazon.CloudWatch
         }
 
         /// <summary>
-        /// List the specified metrics. You can use the returned metrics with <a>GetMetricData</a>
-        /// or <a>GetMetricStatistics</a> to obtain statistical data.
+        /// List the specified metrics. You can use the returned metrics with <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
+        /// to obtain statistical data.
         /// 
         ///  
         /// <para>
@@ -1715,8 +1743,8 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// After you create a metric, allow up to fifteen minutes before the metric appears.
-        /// Statistics about the metric, however, are available sooner using <a>GetMetricData</a>
-        /// or <a>GetMetricStatistics</a>.
+        /// Statistics about the metric, however, are available sooner using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMetrics service method.</param>
@@ -1906,6 +1934,117 @@ namespace Amazon.CloudWatch
         public virtual PutAnomalyDetectorResponse EndPutAnomalyDetector(IAsyncResult asyncResult)
         {
             return EndInvoke<PutAnomalyDetectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutCompositeAlarm
+
+        /// <summary>
+        /// Creates or updates a <i>composite alarm</i>. When you create a composite alarm, you
+        /// specify a rule expression for the alarm that takes into account the alarm states of
+        /// other alarms that you have created. The composite alarm goes into ALARM state only
+        /// if all conditions of the rule are met.
+        /// 
+        ///  
+        /// <para>
+        /// The alarms specified in a composite alarm's rule expression can include metric alarms
+        /// and other composite alarms.
+        /// </para>
+        ///  
+        /// <para>
+        /// Using composite alarms can reduce alarm noise. You can create multiple metric alarms,
+        /// and also create a composite alarm and set up alerts only for the composite alarm.
+        /// For example, you could create a composite alarm that goes into ALARM state only when
+        /// more than one of the underlying metric alarms are in ALARM state.
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently, the only alarm actions that can be taken by composite alarms are notifying
+        /// SNS topics.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// It is possible to create a loop or cycle of composite alarms, where composite alarm
+        /// A depends on composite alarm B, and composite alarm B also depends on composite alarm
+        /// A. In this scenario, you can't delete any composite alarm that is part of the cycle
+        /// because there is always still a composite alarm that depends on that alarm that you
+        /// want to delete.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get out of such a situation, you must break the cycle by changing the rule of one
+        /// of the composite alarms in the cycle to remove a dependency that creates the cycle.
+        /// The simplest change to make to break a cycle is to change the <code>AlarmRule</code>
+        /// of one of the alarms to <code>False</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle
+        /// in the evaluation path. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>.
+        /// The alarm is then evaluated and its state is set appropriately. Any actions associated
+        /// with the new state are then executed. For a composite alarm, this initial time after
+        /// creation is the only time that the alarm can be in <code>INSUFFICIENT_DATA</code>
+        /// state.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you update an existing alarm, its state is left unchanged, but the update completely
+        /// overwrites the previous configuration of the alarm.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutCompositeAlarm service method.</param>
+        /// 
+        /// <returns>The response from the PutCompositeAlarm service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The quota for alarms for this customer has already been reached.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutCompositeAlarm">REST API Reference for PutCompositeAlarm Operation</seealso>
+        public virtual PutCompositeAlarmResponse PutCompositeAlarm(PutCompositeAlarmRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutCompositeAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutCompositeAlarmResponseUnmarshaller.Instance;
+
+            return Invoke<PutCompositeAlarmResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutCompositeAlarm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutCompositeAlarm operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutCompositeAlarm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutCompositeAlarm">REST API Reference for PutCompositeAlarm Operation</seealso>
+        public virtual IAsyncResult BeginPutCompositeAlarm(PutCompositeAlarmRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutCompositeAlarmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutCompositeAlarmResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutCompositeAlarm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutCompositeAlarm.</param>
+        /// 
+        /// <returns>Returns a  PutCompositeAlarmResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutCompositeAlarm">REST API Reference for PutCompositeAlarm Operation</seealso>
+        public virtual PutCompositeAlarmResponse EndPutCompositeAlarm(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutCompositeAlarmResponse>(asyncResult);
         }
 
         #endregion
@@ -2198,7 +2337,7 @@ namespace Amazon.CloudWatch
         /// Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data
         /// points with the specified metric. If the specified metric does not exist, CloudWatch
         /// creates the metric. When CloudWatch creates a metric, it can take up to fifteen minutes
-        /// for the metric to appear in calls to <a>ListMetrics</a>.
+        /// for the metric to appear in calls to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
         /// 
         ///  
         /// <para>
@@ -2232,8 +2371,11 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// Data points with time stamps from 24 hours ago or longer can take at least 48 hours
-        /// to become available for <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the
-        /// time they are submitted.
+        /// to become available for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
+        /// from the time they are submitted. Data points with time stamps between 3 and 24 hours
+        /// ago can take as much as 2 hours to become available for for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
         /// </para>
         ///  
         /// <para>
@@ -2321,9 +2463,27 @@ namespace Amazon.CloudWatch
         /// differs from the previous value, the action configured for the appropriate state is
         /// invoked. For example, if your alarm is configured to send an Amazon SNS message when
         /// an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code>
-        /// sends an SNS message. The alarm returns to its actual state (often within seconds).
-        /// Because the alarm state change happens quickly, it is typically only visible in the
-        /// alarm's <b>History</b> tab in the Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.
+        /// sends an SNS message.
+        /// 
+        ///  
+        /// <para>
+        /// Metric alarms returns to their actual state quickly, often within seconds. Because
+        /// the metric alarm state change happens quickly, it is typically only visible in the
+        /// alarm's <b>History</b> tab in the Amazon CloudWatch console or through <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html">DescribeAlarmHistory</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use <code>SetAlarmState</code> on a composite alarm, the composite alarm is
+        /// not guaranteed to return to its actual state. It will return to its actual state only
+        /// once any of its children alarms change state. It is also re-evaluated if you update
+        /// its configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// If an alarm triggers EC2 Auto Scaling policies or application Auto Scaling policies,
+        /// you must include information in the <code>StateReasonData</code> parameter to enable
+        /// the policy to take the correct action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetAlarmState service method.</param>
         /// 

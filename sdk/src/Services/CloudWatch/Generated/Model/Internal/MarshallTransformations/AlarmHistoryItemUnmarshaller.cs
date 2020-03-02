@@ -60,6 +60,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         unmarshalledObject.AlarmName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AlarmType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AlarmType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HistoryData", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

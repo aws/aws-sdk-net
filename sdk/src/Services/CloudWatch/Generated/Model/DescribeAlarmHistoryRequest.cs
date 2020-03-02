@@ -30,8 +30,8 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// Container for the parameters to the DescribeAlarmHistory operation.
     /// Retrieves the history for the specified alarm. You can filter the results by date
-    /// range or item type. If an alarm name is not specified, the histories for all alarms
-    /// are returned.
+    /// range or item type. If an alarm name is not specified, the histories for either all
+    /// metric alarms or all composite alarms are returned.
     /// 
     ///  
     /// <para>
@@ -41,10 +41,12 @@ namespace Amazon.CloudWatch.Model
     public partial class DescribeAlarmHistoryRequest : AmazonCloudWatchRequest
     {
         private string _alarmName;
+        private List<string> _alarmTypes = new List<string>();
         private DateTime? _endDateUtc;
         private HistoryItemType _historyItemType;
         private int? _maxRecords;
         private string _nextToken;
+        private ScanBy _scanBy;
         private DateTime? _startDateUtc;
 
         /// <summary>
@@ -64,6 +66,25 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetAlarmName()
         {
             return this._alarmName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AlarmTypes. 
+        /// <para>
+        /// Use this parameter to specify whether you want the operation to return metric alarms
+        /// or composite alarms. If you omit this parameter, only metric alarms are returned.
+        /// </para>
+        /// </summary>
+        public List<string> AlarmTypes
+        {
+            get { return this._alarmTypes; }
+            set { this._alarmTypes = value; }
+        }
+
+        // Check to see if AlarmTypes property is set
+        internal bool IsSetAlarmTypes()
+        {
+            return this._alarmTypes != null && this._alarmTypes.Count > 0; 
         }
 
         /// <summary>
@@ -137,6 +158,26 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanBy. 
+        /// <para>
+        /// Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code>
+        /// to have the newest event history returned first, and specify <code>TimestampAscending</code>
+        /// to have the oldest history returned first.
+        /// </para>
+        /// </summary>
+        public ScanBy ScanBy
+        {
+            get { return this._scanBy; }
+            set { this._scanBy = value; }
+        }
+
+        // Check to see if ScanBy property is set
+        internal bool IsSetScanBy()
+        {
+            return this._scanBy != null;
         }
 
         /// <summary>

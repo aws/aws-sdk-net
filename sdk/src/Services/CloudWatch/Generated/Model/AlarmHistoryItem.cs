@@ -33,6 +33,7 @@ namespace Amazon.CloudWatch.Model
     public partial class AlarmHistoryItem
     {
         private string _alarmName;
+        private AlarmType _alarmType;
         private string _historyData;
         private HistoryItemType _historyItemType;
         private string _historySummary;
@@ -55,6 +56,24 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetAlarmName()
         {
             return this._alarmName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AlarmType. 
+        /// <para>
+        /// The type of alarm, either metric alarm or composite alarm.
+        /// </para>
+        /// </summary>
+        public AlarmType AlarmType
+        {
+            get { return this._alarmType; }
+            set { this._alarmType = value; }
+        }
+
+        // Check to see if AlarmType property is set
+        internal bool IsSetAlarmType()
+        {
+            return this._alarmType != null;
         }
 
         /// <summary>

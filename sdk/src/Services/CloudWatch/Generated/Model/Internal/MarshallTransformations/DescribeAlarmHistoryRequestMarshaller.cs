@@ -62,6 +62,15 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AlarmName", StringUtils.FromString(publicRequest.AlarmName));
                 }
+                if(publicRequest.IsSetAlarmTypes())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AlarmTypes)
+                    {
+                        request.Parameters.Add("AlarmTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetEndDateUtc())
                 {
                     request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601(publicRequest.EndDateUtc));
@@ -77,6 +86,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+                if(publicRequest.IsSetScanBy())
+                {
+                    request.Parameters.Add("ScanBy", StringUtils.FromString(publicRequest.ScanBy));
                 }
                 if(publicRequest.IsSetStartDateUtc())
                 {

@@ -557,6 +557,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudWatch")]
+        public void PutCompositeAlarmMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutCompositeAlarm");
+
+            var request = InstantiateClassGenerator.Execute<PutCompositeAlarmRequest>();
+            var marshaller = new PutCompositeAlarmRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
         public void PutDashboardMarshallTest()
         {
             var operation = service_model.FindOperation("PutDashboard");

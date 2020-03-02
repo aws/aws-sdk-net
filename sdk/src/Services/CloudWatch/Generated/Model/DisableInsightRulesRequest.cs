@@ -40,7 +40,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property RuleNames. 
         /// <para>
         /// An array of the rule names to disable. If you need to find out the names of your rules,
-        /// use <a>DescribeInsightRules</a>.
+        /// use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

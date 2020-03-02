@@ -68,7 +68,8 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
+        /// For more information about the syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+        /// Body Structure and Syntax</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

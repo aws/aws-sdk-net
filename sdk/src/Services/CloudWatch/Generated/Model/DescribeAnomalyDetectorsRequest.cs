@@ -65,8 +65,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in one operation. The maximum value you can
-        /// specify is 10.
+        /// The maximum number of results to return in one operation. The maximum value that you
+        /// can specify is 100.
         /// </para>
         ///  
         /// <para>

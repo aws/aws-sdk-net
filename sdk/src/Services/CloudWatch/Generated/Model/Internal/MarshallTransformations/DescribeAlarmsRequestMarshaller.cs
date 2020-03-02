@@ -75,6 +75,19 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetAlarmTypes())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AlarmTypes)
+                    {
+                        request.Parameters.Add("AlarmTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetChildrenOfAlarmName())
+                {
+                    request.Parameters.Add("ChildrenOfAlarmName", StringUtils.FromString(publicRequest.ChildrenOfAlarmName));
+                }
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
@@ -82,6 +95,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+                if(publicRequest.IsSetParentsOfAlarmName())
+                {
+                    request.Parameters.Add("ParentsOfAlarmName", StringUtils.FromString(publicRequest.ParentsOfAlarmName));
                 }
                 if(publicRequest.IsSetStateValue())
                 {

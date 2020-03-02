@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeAlarms operation
+    /// Response Unmarshaller for PutCompositeAlarm operation
     /// </summary>  
-    public class DescribeAlarmsResponseUnmarshaller : XmlResponseUnmarshaller
+    public class PutCompositeAlarmResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            DescribeAlarmsResponse response = new DescribeAlarmsResponse();
+            PutCompositeAlarmResponse response = new PutCompositeAlarmResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("DescribeAlarmsResult", 2))
+                    if(context.TestExpression("PutCompositeAlarmResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,8 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeAlarmsResponse response)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
+        private static void UnmarshallResult(XmlUnmarshallerContext context, PutCompositeAlarmResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,26 +82,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("CompositeAlarms/member", targetDepth))
-                    {
-                        var unmarshaller = CompositeAlarmUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.CompositeAlarms.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("MetricAlarms/member", targetDepth))
-                    {
-                        var unmarshaller = MetricAlarmUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.MetricAlarms.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("NextToken", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.NextToken = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                 } 
            }
 
@@ -118,15 +99,15 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextToken"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceeded"))
             {
-                return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonCloudWatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static DescribeAlarmsResponseUnmarshaller _instance = new DescribeAlarmsResponseUnmarshaller();        
+        private static PutCompositeAlarmResponseUnmarshaller _instance = new PutCompositeAlarmResponseUnmarshaller();        
 
-        internal static DescribeAlarmsResponseUnmarshaller GetInstance()
+        internal static PutCompositeAlarmResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -134,7 +115,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeAlarmsResponseUnmarshaller Instance
+        public static PutCompositeAlarmResponseUnmarshaller Instance
         {
             get
             {

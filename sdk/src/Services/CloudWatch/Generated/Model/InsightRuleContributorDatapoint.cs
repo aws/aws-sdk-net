@@ -32,7 +32,8 @@ namespace Amazon.CloudWatch.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a>GetInsightRuleReport</a> and <a>InsightRuleContributor</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a>
+    /// and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html">InsightRuleContributor</a>.
     /// </para>
     /// </summary>
     public partial class InsightRuleContributorDatapoint

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// Represents an alarm.
+    /// The details about a metric alarm.
     /// </summary>
     public partial class MetricAlarm
     {

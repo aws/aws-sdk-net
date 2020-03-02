@@ -32,13 +32,32 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DescribeAlarmsResponse : AmazonWebServiceResponse
     {
+        private List<CompositeAlarm> _compositeAlarms = new List<CompositeAlarm>();
         private List<MetricAlarm> _metricAlarms = new List<MetricAlarm>();
         private string _nextToken;
 
         /// <summary>
+        /// Gets and sets the property CompositeAlarms. 
+        /// <para>
+        /// The information about any composite alarms returned by the operation.
+        /// </para>
+        /// </summary>
+        public List<CompositeAlarm> CompositeAlarms
+        {
+            get { return this._compositeAlarms; }
+            set { this._compositeAlarms = value; }
+        }
+
+        // Check to see if CompositeAlarms property is set
+        internal bool IsSetCompositeAlarms()
+        {
+            return this._compositeAlarms != null && this._compositeAlarms.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MetricAlarms. 
         /// <para>
-        /// The information for the specified alarms.
+        /// The information about any metric alarms returned by the operation.
         /// </para>
         /// </summary>
         public List<MetricAlarm> MetricAlarms

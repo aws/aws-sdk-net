@@ -32,9 +32,19 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DescribeAlarmsRequest.ChildrenOfAlarmName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.DescribeAlarmsRequest.MaxRecords</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DescribeAlarmsRequest.ParentsOfAlarmName</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.DescribeAlarmsForMetricRequest.ExtendedStatistic</property>
@@ -132,6 +142,21 @@
     <min>1</min>
     <max>255</max>
     <pattern>[^:].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutCompositeAlarmRequest.AlarmDescription</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutCompositeAlarmRequest.AlarmName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutCompositeAlarmRequest.AlarmRule</property>
+    <min>1</min>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutInsightRuleRequest.RuleDefinition</property>
@@ -259,6 +284,36 @@
     <min>1</min>
     <max>255</max>
     <pattern>[^:].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.CompositeAlarm.AlarmArn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.CompositeAlarm.AlarmDescription</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.CompositeAlarm.AlarmName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.CompositeAlarm.AlarmRule</property>
+    <min>1</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.CompositeAlarm.StateReason</property>
+    <min>0</min>
+    <max>1023</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.CompositeAlarm.StateReasonData</property>
+    <min>0</min>
+    <max>4000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.Dimension.Name</property>
