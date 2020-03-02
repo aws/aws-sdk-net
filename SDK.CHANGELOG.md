@@ -1,3 +1,14 @@
+### 3.3.691.0 (2020-03-02 19:19 UTC)
+* CloudWatch (3.3.106.0)
+	* Introducing Amazon CloudWatch Composite Alarms
+* ComprehendMedical (3.3.103.0)
+	* New Time Expression feature, part of DetectEntitiesV2 API will provide temporal relations to existing NERe entities such as Medication, Test, Treatment, Procedure and Medical conditions. 
+* Core 3.3.104.32
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.690.0 (2020-02-29 00:40 UTC)
 * ConfigService (3.3.108.0)
 	* Correcting list of supported resource types.
