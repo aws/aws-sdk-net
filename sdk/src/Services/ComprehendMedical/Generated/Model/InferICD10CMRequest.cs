@@ -31,7 +31,8 @@ namespace Amazon.ComprehendMedical.Model
     /// Container for the parameters to the InferICD10CM operation.
     /// InferICD10CM detects medical conditions as entities listed in a patient record and
     /// links those entities to normalized concept identifiers in the ICD-10-CM knowledge
-    /// base from the Centers for Disease Control.
+    /// base from the Centers for Disease Control. Amazon Comprehend Medical only detects
+    /// medical entities in English language texts.
     /// </summary>
     public partial class InferICD10CMRequest : AmazonComprehendMedicalRequest
     {

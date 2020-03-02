@@ -29,8 +29,9 @@ namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
     /// Container for the parameters to the DetectPHI operation.
-    /// Inspects the clinical text for protected health information (PHI) entities and entity
-    /// category, location, and confidence score on that information.
+    /// Inspects the clinical text for protected health information (PHI) entities and returns
+    /// the entity category, location, and confidence score for each entity. Amazon Comprehend
+    /// Medical only detects entities in English language texts.
     /// </summary>
     public partial class DetectPHIRequest : AmazonComprehendMedicalRequest
     {

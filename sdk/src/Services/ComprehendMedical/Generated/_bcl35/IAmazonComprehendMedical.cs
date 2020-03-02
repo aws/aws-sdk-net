@@ -231,7 +231,8 @@ namespace Amazon.ComprehendMedical
         /// <summary>
         /// Inspects the clinical text for a variety of medical entities and returns specific
         /// information about them such as entity category, location, and confidence score on
-        /// that information.
+        /// that information. Amazon Comprehend Medical only detects medical entities in English
+        /// language texts.
         /// 
         ///  
         /// <para>
@@ -308,8 +309,9 @@ namespace Amazon.ComprehendMedical
 
 
         /// <summary>
-        /// Inspects the clinical text for protected health information (PHI) entities and entity
-        /// category, location, and confidence score on that information.
+        /// Inspects the clinical text for protected health information (PHI) entities and returns
+        /// the entity category, location, and confidence score for each entity. Amazon Comprehend
+        /// Medical only detects entities in English language texts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectPHI service method.</param>
         /// 
@@ -375,7 +377,8 @@ namespace Amazon.ComprehendMedical
         /// <summary>
         /// InferICD10CM detects medical conditions as entities listed in a patient record and
         /// links those entities to normalized concept identifiers in the ICD-10-CM knowledge
-        /// base from the Centers for Disease Control.
+        /// base from the Centers for Disease Control. Amazon Comprehend Medical only detects
+        /// medical entities in English language texts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InferICD10CM service method.</param>
         /// 
@@ -441,7 +444,8 @@ namespace Amazon.ComprehendMedical
         /// <summary>
         /// InferRxNorm detects medications as entities listed in a patient record and links to
         /// the normalized concept identifiers in the RxNorm database from the National Library
-        /// of Medicine.
+        /// of Medicine. Amazon Comprehend Medical only detects medical entities in English language
+        /// texts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InferRxNorm service method.</param>
         /// 

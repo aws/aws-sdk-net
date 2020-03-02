@@ -36,9 +36,11 @@ namespace Amazon.ComprehendMedical.Model
     public partial class Attribute
     {
         private int? _beginOffset;
+        private EntityType _category;
         private int? _endOffset;
         private int? _id;
         private float? _relationshipScore;
+        private RelationshipType _relationshipType;
         private float? _score;
         private string _text;
         private List<Trait> _traits = new List<Trait>();
@@ -61,6 +63,24 @@ namespace Amazon.ComprehendMedical.Model
         internal bool IsSetBeginOffset()
         {
             return this._beginOffset.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        ///  The category of attribute. 
+        /// </para>
+        /// </summary>
+        public EntityType Category
+        {
+            get { return this._category; }
+            set { this._category = value; }
+        }
+
+        // Check to see if Category property is set
+        internal bool IsSetCategory()
+        {
+            return this._category != null;
         }
 
         /// <summary>
@@ -118,6 +138,26 @@ namespace Amazon.ComprehendMedical.Model
         internal bool IsSetRelationshipScore()
         {
             return this._relationshipScore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelationshipType. 
+        /// <para>
+        /// The type of relationship between the entity and attribute. Type for the relationship
+        /// is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the
+        /// <code>Date_Expression</code>. 
+        /// </para>
+        /// </summary>
+        public RelationshipType RelationshipType
+        {
+            get { return this._relationshipType; }
+            set { this._relationshipType = value; }
+        }
+
+        // Check to see if RelationshipType property is set
+        internal bool IsSetRelationshipType()
+        {
+            return this._relationshipType != null;
         }
 
         /// <summary>

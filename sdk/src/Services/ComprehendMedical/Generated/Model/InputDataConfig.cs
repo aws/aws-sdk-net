@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// The input properties for an entities detection job
+    /// The input properties for an entities detection job.
     /// </summary>
     public partial class InputDataConfig
     {

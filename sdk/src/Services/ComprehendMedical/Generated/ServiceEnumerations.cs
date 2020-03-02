@@ -193,6 +193,30 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly EntitySubType TEST_VALUE = new EntitySubType("TEST_VALUE");
         /// <summary>
+        /// Constant TIME_EXPRESSION for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType TIME_EXPRESSION = new EntitySubType("TIME_EXPRESSION");
+        /// <summary>
+        /// Constant TIME_TO_DX_NAME for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType TIME_TO_DX_NAME = new EntitySubType("TIME_TO_DX_NAME");
+        /// <summary>
+        /// Constant TIME_TO_MEDICATION_NAME for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType TIME_TO_MEDICATION_NAME = new EntitySubType("TIME_TO_MEDICATION_NAME");
+        /// <summary>
+        /// Constant TIME_TO_PROCEDURE_NAME for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType TIME_TO_PROCEDURE_NAME = new EntitySubType("TIME_TO_PROCEDURE_NAME");
+        /// <summary>
+        /// Constant TIME_TO_TEST_NAME for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType TIME_TO_TEST_NAME = new EntitySubType("TIME_TO_TEST_NAME");
+        /// <summary>
+        /// Constant TIME_TO_TREATMENT_NAME for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType TIME_TO_TREATMENT_NAME = new EntitySubType("TIME_TO_TREATMENT_NAME");
+        /// <summary>
         /// Constant TREATMENT_NAME for EntitySubType
         /// </summary>
         public static readonly EntitySubType TREATMENT_NAME = new EntitySubType("TREATMENT_NAME");
@@ -262,6 +286,10 @@ namespace Amazon.ComprehendMedical
         /// Constant TEST_TREATMENT_PROCEDURE for EntityType
         /// </summary>
         public static readonly EntityType TEST_TREATMENT_PROCEDURE = new EntityType("TEST_TREATMENT_PROCEDURE");
+        /// <summary>
+        /// Constant TIME_EXPRESSION for EntityType
+        /// </summary>
+        public static readonly EntityType TIME_EXPRESSION = new EntityType("TIME_EXPRESSION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -620,6 +648,116 @@ namespace Amazon.ComprehendMedical
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RelationshipType.
+    /// </summary>
+    public class RelationshipType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACUITY for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType ACUITY = new RelationshipType("ACUITY");
+        /// <summary>
+        /// Constant ADMINISTERED_VIA for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType ADMINISTERED_VIA = new RelationshipType("ADMINISTERED_VIA");
+        /// <summary>
+        /// Constant DIRECTION for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType DIRECTION = new RelationshipType("DIRECTION");
+        /// <summary>
+        /// Constant DOSAGE for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType DOSAGE = new RelationshipType("DOSAGE");
+        /// <summary>
+        /// Constant DURATION for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType DURATION = new RelationshipType("DURATION");
+        /// <summary>
+        /// Constant EVERY for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType EVERY = new RelationshipType("EVERY");
+        /// <summary>
+        /// Constant FOR for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType FOR = new RelationshipType("FOR");
+        /// <summary>
+        /// Constant FORM for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType FORM = new RelationshipType("FORM");
+        /// <summary>
+        /// Constant FREQUENCY for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType FREQUENCY = new RelationshipType("FREQUENCY");
+        /// <summary>
+        /// Constant NEGATIVE for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType NEGATIVE = new RelationshipType("NEGATIVE");
+        /// <summary>
+        /// Constant OVERLAP for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType OVERLAP = new RelationshipType("OVERLAP");
+        /// <summary>
+        /// Constant RATE for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType RATE = new RelationshipType("RATE");
+        /// <summary>
+        /// Constant ROUTE_OR_MODE for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType ROUTE_OR_MODE = new RelationshipType("ROUTE_OR_MODE");
+        /// <summary>
+        /// Constant STRENGTH for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType STRENGTH = new RelationshipType("STRENGTH");
+        /// <summary>
+        /// Constant TEST_UNITS for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType TEST_UNITS = new RelationshipType("TEST_UNITS");
+        /// <summary>
+        /// Constant TEST_VALUE for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType TEST_VALUE = new RelationshipType("TEST_VALUE");
+        /// <summary>
+        /// Constant WITH_DOSAGE for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType WITH_DOSAGE = new RelationshipType("WITH_DOSAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RelationshipType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RelationshipType FindValue(string value)
+        {
+            return FindValue<RelationshipType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RelationshipType(string value)
         {
             return FindValue(value);
         }

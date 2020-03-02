@@ -70,6 +70,12 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
                     unmarshalledObject.BeginOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Category", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Category = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndOffset", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;
                     unmarshalledObject.RelationshipScore = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RelationshipType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RelationshipType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Score", targetDepth))
