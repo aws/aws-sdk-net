@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.691.0",
+    "ProductVersion" : "3.3.692.0",
     "CoreVersion"    : "3.3.104.32",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.162.3",
+            "Version" : "3.3.163.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.32"

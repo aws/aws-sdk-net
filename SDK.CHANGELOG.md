@@ -1,3 +1,7 @@
+### 3.3.692.0 (2020-03-03 19:10 UTC)
+* EC2 (3.3.163.0)
+	* Amazon VPC Flow Logs adds support for tags and tagging on resource creation.
+
 ### 3.3.691.0 (2020-03-02 19:19 UTC)
 * CloudWatch (3.3.106.0)
 	* Introducing Amazon CloudWatch Composite Alarms
