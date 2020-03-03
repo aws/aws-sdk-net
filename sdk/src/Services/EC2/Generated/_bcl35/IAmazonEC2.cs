@@ -18757,9 +18757,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can specify tags for the Spot Fleet request and instances launched by the fleet.
-        /// You cannot tag other resource types in a Spot Fleet request because only the <code>spot-fleet-request</code>
-        /// and <code>instance</code> resource types are supported.
+        /// You can specify tags for the Spot Fleet and Spot Instances. You cannot tag other resource
+        /// types in a Spot Fleet request because only the <code>spot-fleet-request</code> and
+        /// <code>instance</code> resource types are supported.
         /// </para>
         ///  
         /// <para>

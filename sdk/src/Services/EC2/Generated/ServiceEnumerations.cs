@@ -8471,6 +8471,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType Vpc = new ResourceType("vpc");
         /// <summary>
+        /// Constant VpcFlowLog for ResourceType
+        /// </summary>
+        public static readonly ResourceType VpcFlowLog = new ResourceType("vpc-flow-log");
+        /// <summary>
         /// Constant VpcPeeringConnection for ResourceType
         /// </summary>
         public static readonly ResourceType VpcPeeringConnection = new ResourceType("vpc-peering-connection");
