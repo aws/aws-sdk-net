@@ -57,6 +57,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HtmlPart);
             }
 
+            if(requestObject.IsSetRecommenderId())
+            {
+                context.Writer.WritePropertyName("RecommenderId");
+                context.Writer.Write(requestObject.RecommenderId);
+            }
+
             if(requestObject.IsSetSubject())
             {
                 context.Writer.WritePropertyName("Subject");

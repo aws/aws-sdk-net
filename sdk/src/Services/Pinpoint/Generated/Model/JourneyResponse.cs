@@ -364,8 +364,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A string-to-string map of key-value pairs that identifies the tags that are associated
-        /// with the journey. Each tag consists of a required tag key and an associated tag value.
+        /// This object is not used or supported.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

@@ -134,8 +134,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TreatmentName. 
         /// <para>
-        /// The custom name of the treatment. A treatment is a variation of a campaign that's
-        /// used for A/B testing of a campaign.
+        /// A custom name for the treatment. A treatment is a variation of a campaign that's used
+        /// for A/B testing of a campaign.
         /// </para>
         /// </summary>
         public string TreatmentName

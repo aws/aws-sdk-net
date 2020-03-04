@@ -46,7 +46,10 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the message template.
+        /// The Amazon Resource Name (ARN) of the message template. This value isn't included
+        /// in a TemplateResponse object. To retrieve the ARN of a template, use the GetEmailTemplate,
+        /// GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type
+        /// of template that you want to retrieve the ARN for.
         /// </para>
         /// </summary>
         public string Arn
@@ -84,9 +87,10 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property DefaultSubstitutions. 
         /// <para>
         /// The JSON object that specifies the default values that are used for message variables
-        /// in the message template. This object is a set of key-value pairs. Each key defines
-        /// a message variable in the template. The corresponding value defines the default value
-        /// for that variable.
+        /// in the message template. This object isn't included in a TemplateResponse object.
+        /// To retrieve this object for a template, use the GetEmailTemplate, GetPushTemplate,
+        /// GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that
+        /// you want to retrieve the object for.
         /// </para>
         /// </summary>
         public string DefaultSubstitutions
@@ -123,9 +127,11 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A string-to-string map of key-value pairs that identifies the tags that are associated
-        /// with the message template. Each tag consists of a required tag key and an associated
-        /// tag value.
+        /// A map of key-value pairs that identifies the tags that are associated with the message
+        /// template. This object isn't included in a TemplateResponse object. To retrieve this
+        /// object for a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate,
+        /// or GetVoiceTemplate operation, depending on the type of template that you want to
+        /// retrieve the object for.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -143,7 +149,10 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TemplateDescription. 
         /// <para>
-        /// The custom description of the message template.
+        /// The custom description of the message template. This value isn't included in a TemplateResponse
+        /// object. To retrieve the description of a template, use the GetEmailTemplate, GetPushTemplate,
+        /// GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that
+        /// you want to retrieve the description for.
         /// </para>
         /// </summary>
         public string TemplateDescription

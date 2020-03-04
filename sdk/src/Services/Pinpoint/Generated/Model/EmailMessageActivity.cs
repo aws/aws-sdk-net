@@ -103,10 +103,10 @@ namespace Amazon.Pinpoint.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for this property, Amazon Pinpoint uses the <i>active</i>
-        /// version of the template. The <i>active</i> version is typically the version of a template
-        /// that's been most recently reviewed and approved for use, depending on your workflow.
-        /// It isn't necessarily the latest version of a template.
+        /// If you don't specify a value for this property, Amazon Pinpoint uses the <i>active
+        /// version</i> of the template. The <i>active version</i> is typically the version of
+        /// a template that's been most recently reviewed and approved for use, depending on your
+        /// workflow. It isn't necessarily the latest version of a template.
         /// </para>
         /// </summary>
         public string TemplateVersion

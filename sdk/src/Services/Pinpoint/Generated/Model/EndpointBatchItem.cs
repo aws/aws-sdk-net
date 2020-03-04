@@ -74,15 +74,16 @@ namespace Amazon.Pinpoint.Model
         /// <para>
         /// One or more custom attributes that describe the endpoint by associating a name with
         /// an array of values. For example, the value of a custom attribute named Interests might
-        /// be: ["science", "music", "travel"]. You can use these attributes as filter criteria
-        /// when you create segments.
+        /// be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria
+        /// when you create segments. Attribute names are case sensitive.
         /// </para>
         ///  
         /// <para>
-        /// When you define the name of a custom attribute, avoid using the following characters:
-        /// number sign (#), colon (:), question mark (?), backslash (\), and slash (/). The Amazon
-        /// Pinpoint console can't display attribute names that contain these characters. This
-        /// limitation doesn't apply to attribute values.
+        /// An attribute name can contain up to 50 characters. An attribute value can contain
+        /// up to 100 characters. When you define the name of a custom attribute, avoid using
+        /// the following characters: number sign (#), colon (:), question mark (?), backslash
+        /// (\), and slash (/). The Amazon Pinpoint console can't display attribute names that
+        /// contain these characters. This restriction doesn't apply to attribute values.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Attributes
@@ -274,8 +275,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// One or more custom user attributes that your app reports to Amazon Pinpoint for the
-        /// user who's associated with the endpoint.
+        /// One or more custom user attributes that describe the user who's associated with the
+        /// endpoint.
         /// </para>
         /// </summary>
         public EndpointUser User

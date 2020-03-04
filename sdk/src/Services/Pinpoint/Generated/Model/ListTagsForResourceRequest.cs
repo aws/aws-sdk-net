@@ -30,7 +30,7 @@ namespace Amazon.Pinpoint.Model
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
     /// Retrieves all the tags (keys and values) that are associated with an application,
-    /// campaign, journey, message template, or segment.
+    /// campaign, message template, or segment.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonPinpointRequest
     {

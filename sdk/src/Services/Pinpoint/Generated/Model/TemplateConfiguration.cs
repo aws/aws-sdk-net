@@ -94,7 +94,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property VoiceTemplate. 
         /// <para>
-        /// The voice template to use for the message.
+        /// The voice template to use for the message. This object isn't supported for campaigns.
         /// </para>
         /// </summary>
         public Template VoiceTemplate

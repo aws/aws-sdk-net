@@ -218,7 +218,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The URL to open in a recipient's default mobile browser, if a recipient taps a a push
+        /// The URL to open in a recipient's default mobile browser, if a recipient taps a push
         /// notification that's based on the message template and the value of the Action property
         /// is URL.
         /// </para>

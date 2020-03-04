@@ -158,7 +158,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The scheduled time, in ISO 8601 format, when the campaign began or will begin.
+        /// The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE,
+        /// to start the campaign immediately; or, a specific time in ISO 8601 format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

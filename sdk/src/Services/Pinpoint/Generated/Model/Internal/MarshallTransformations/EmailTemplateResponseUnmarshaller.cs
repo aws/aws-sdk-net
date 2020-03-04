@@ -94,6 +94,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RecommenderId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecommenderId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Subject", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

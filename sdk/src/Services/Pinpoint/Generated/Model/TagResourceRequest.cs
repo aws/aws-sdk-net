@@ -29,8 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds one or more tags (keys and values) to an application, campaign, journey, message
-    /// template, or segment.
+    /// Adds one or more tags (keys and values) to an application, campaign, message template,
+    /// or segment.
     /// </summary>
     public partial class TagResourceRequest : AmazonPinpointRequest
     {

@@ -39,6 +39,7 @@ namespace Amazon.Pinpoint.Model
         private DefaultPushNotificationTemplate _default;
         private string _defaultSubstitutions;
         private AndroidPushNotificationTemplate _gcm;
+        private string _recommenderId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _templateDescription;
 
@@ -159,6 +160,27 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetGCM()
         {
             return this._gcm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommenderId. 
+        /// <para>
+        /// The unique identifier for the recommender model to use for the message template. Amazon
+        /// Pinpoint uses this value to determine how to retrieve and process data from a recommender
+        /// model when it sends messages that use the template, if the template contains message
+        /// variables for recommendation data.
+        /// </para>
+        /// </summary>
+        public string RecommenderId
+        {
+            get { return this._recommenderId; }
+            set { this._recommenderId = value; }
+        }
+
+        // Check to see if RecommenderId property is set
+        internal bool IsSetRecommenderId()
+        {
+            return this._recommenderId != null;
         }
 
         /// <summary>

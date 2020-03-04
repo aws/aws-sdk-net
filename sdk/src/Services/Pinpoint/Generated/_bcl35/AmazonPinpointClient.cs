@@ -259,6 +259,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -327,6 +330,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -464,6 +470,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -533,6 +542,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -600,6 +612,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -715,6 +730,78 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  CreateRecommenderConfiguration
+
+        /// <summary>
+        /// Creates an Amazon Pinpoint configuration for a recommender model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecommenderConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateRecommenderConfiguration service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual CreateRecommenderConfigurationResponse CreateRecommenderConfiguration(CreateRecommenderConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRecommenderConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRecommenderConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecommenderConfiguration operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRecommenderConfiguration
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginCreateRecommenderConfiguration(CreateRecommenderConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRecommenderConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRecommenderConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateRecommenderConfigurationResult from Pinpoint.</returns>
+        public virtual CreateRecommenderConfigurationResponse EndCreateRecommenderConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateRecommenderConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateSegment
 
         /// <summary>
@@ -737,6 +824,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -941,6 +1031,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -1009,6 +1102,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -1081,6 +1177,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -1149,6 +1248,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -1221,6 +1323,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -1288,6 +1393,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -1360,6 +1468,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -1427,6 +1538,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -1499,6 +1613,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -1566,6 +1683,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -1637,6 +1757,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -1704,6 +1827,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -1776,6 +1902,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -1843,6 +1972,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -1915,6 +2047,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -1961,6 +2096,78 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteRecommenderConfiguration
+
+        /// <summary>
+        /// Deletes an Amazon Pinpoint configuration for a recommender model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommenderConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRecommenderConfiguration service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual DeleteRecommenderConfigurationResponse DeleteRecommenderConfiguration(DeleteRecommenderConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRecommenderConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRecommenderConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommenderConfiguration operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRecommenderConfiguration
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteRecommenderConfiguration(DeleteRecommenderConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRecommenderConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRecommenderConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteRecommenderConfigurationResult from Pinpoint.</returns>
+        public virtual DeleteRecommenderConfigurationResponse EndDeleteRecommenderConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRecommenderConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteSegment
 
         /// <summary>
@@ -1982,6 +2189,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -2054,6 +2264,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -2123,6 +2336,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -2190,6 +2406,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -2262,6 +2481,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -2329,6 +2551,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -2400,6 +2625,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -2467,6 +2695,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -2539,6 +2770,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -2607,6 +2841,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -2679,6 +2916,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -2746,6 +2986,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -2817,6 +3060,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -2884,6 +3130,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -2956,6 +3205,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -3023,6 +3275,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -3094,6 +3349,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -3163,6 +3421,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -3230,6 +3491,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -3302,6 +3566,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -3370,6 +3637,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -3442,6 +3712,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -3511,6 +3784,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -3578,6 +3854,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -3650,6 +3929,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -3720,6 +4002,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -3787,6 +4072,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -3859,6 +4147,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -3929,6 +4220,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -3996,6 +4290,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -4068,6 +4365,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -4138,6 +4438,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -4205,6 +4508,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -4277,6 +4583,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -4345,6 +4654,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -4417,6 +4729,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -4487,6 +4802,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -4533,6 +4851,151 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetRecommenderConfiguration
+
+        /// <summary>
+        /// Retrieves information about an Amazon Pinpoint configuration for a recommender model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommenderConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetRecommenderConfiguration service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual GetRecommenderConfigurationResponse GetRecommenderConfiguration(GetRecommenderConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRecommenderConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetRecommenderConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRecommenderConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommenderConfiguration operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRecommenderConfiguration
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetRecommenderConfiguration(GetRecommenderConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRecommenderConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRecommenderConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRecommenderConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetRecommenderConfigurationResult from Pinpoint.</returns>
+        public virtual GetRecommenderConfigurationResponse EndGetRecommenderConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRecommenderConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetRecommenderConfigurations
+
+        /// <summary>
+        /// Retrieves information about all the recommender model configurations that are associated
+        /// with your Amazon Pinpoint account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommenderConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the GetRecommenderConfigurations service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual GetRecommenderConfigurationsResponse GetRecommenderConfigurations(GetRecommenderConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRecommenderConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetRecommenderConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRecommenderConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommenderConfigurations operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRecommenderConfigurations
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetRecommenderConfigurations(GetRecommenderConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRecommenderConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRecommenderConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRecommenderConfigurations.</param>
+        /// 
+        /// <returns>Returns a  GetRecommenderConfigurationsResult from Pinpoint.</returns>
+        public virtual GetRecommenderConfigurationsResponse EndGetRecommenderConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRecommenderConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetSegment
 
         /// <summary>
@@ -4555,6 +5018,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -4626,6 +5092,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -4693,6 +5162,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -4765,6 +5237,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -4833,6 +5308,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -4905,6 +5383,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -4972,6 +5453,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -5044,6 +5528,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -5114,6 +5601,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -5181,6 +5671,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -5253,6 +5746,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -5323,6 +5819,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -5373,7 +5872,7 @@ namespace Amazon.Pinpoint
 
         /// <summary>
         /// Retrieves all the tags (keys and values) that are associated with an application,
-        /// campaign, journey, message template, or segment.
+        /// campaign, message template, or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -5511,6 +6010,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -5578,6 +6080,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -5650,6 +6155,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -5718,6 +6226,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -5790,6 +6301,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -5857,6 +6371,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -5928,6 +6445,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -5977,8 +6497,8 @@ namespace Amazon.Pinpoint
         #region  TagResource
 
         /// <summary>
-        /// Adds one or more tags (keys and values) to an application, campaign, journey, message
-        /// template, or segment.
+        /// Adds one or more tags (keys and values) to an application, campaign, message template,
+        /// or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -6029,8 +6549,8 @@ namespace Amazon.Pinpoint
         #region  UntagResource
 
         /// <summary>
-        /// Removes one or more tags (keys and values) from an application, campaign, journey,
-        /// message template, or segment.
+        /// Removes one or more tags (keys and values) from an application, campaign, message
+        /// template, or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -6100,6 +6620,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -6172,6 +6695,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -6240,6 +6766,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -6312,6 +6841,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -6382,6 +6914,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -6449,6 +6984,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -6521,6 +7059,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -6588,6 +7129,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -6660,6 +7204,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -6728,6 +7275,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -6799,6 +7349,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -6873,6 +7426,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -6941,6 +7497,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -7012,6 +7571,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -7079,6 +7641,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -7151,6 +7716,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -7197,6 +7765,78 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  UpdateRecommenderConfiguration
+
+        /// <summary>
+        /// Updates an Amazon Pinpoint configuration for a recommender model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecommenderConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRecommenderConfiguration service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual UpdateRecommenderConfigurationResponse UpdateRecommenderConfiguration(UpdateRecommenderConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRecommenderConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRecommenderConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRecommenderConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRecommenderConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecommenderConfiguration operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRecommenderConfiguration
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginUpdateRecommenderConfiguration(UpdateRecommenderConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRecommenderConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRecommenderConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRecommenderConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRecommenderConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateRecommenderConfigurationResult from Pinpoint.</returns>
+        public virtual UpdateRecommenderConfigurationResponse EndUpdateRecommenderConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRecommenderConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateSegment
 
         /// <summary>
@@ -7219,6 +7859,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -7291,6 +7934,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -7360,6 +8006,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -7427,6 +8076,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -7499,6 +8151,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
         /// Provides information about an API request or response.
         /// </exception>
@@ -7567,6 +8222,9 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">

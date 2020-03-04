@@ -180,7 +180,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The custom name of the campaign.
+        /// A custom name for the campaign.
         /// </para>
         /// </summary>
         public string Name
@@ -307,7 +307,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TreatmentName. 
         /// <para>
-        /// The custom name of a variation of the campaign to use for A/B testing.
+        /// A custom name for a variation of the campaign to use for A/B testing.
         /// </para>
         /// </summary>
         public string TreatmentName

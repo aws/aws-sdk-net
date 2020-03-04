@@ -84,8 +84,8 @@ namespace Amazon.Pinpoint.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will attempt to deliver
-        /// the message again later.
+        /// TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send
+        /// the message again.
         /// </para>
         /// </li> <li>
         /// <para>

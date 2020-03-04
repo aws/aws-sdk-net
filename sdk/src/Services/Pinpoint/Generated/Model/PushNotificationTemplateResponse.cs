@@ -42,6 +42,7 @@ namespace Amazon.Pinpoint.Model
         private string _defaultSubstitutions;
         private AndroidPushNotificationTemplate _gcm;
         private string _lastModifiedDate;
+        private string _recommenderId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _templateDescription;
         private string _templateName;
@@ -220,6 +221,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetLastModifiedDate()
         {
             return this._lastModifiedDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommenderId. 
+        /// <para>
+        /// The unique identifier for the recommender model that's used by the message template.
+        /// </para>
+        /// </summary>
+        public string RecommenderId
+        {
+            get { return this._recommenderId; }
+            set { this._recommenderId = value; }
+        }
+
+        // Check to see if RecommenderId property is set
+        internal bool IsSetRecommenderId()
+        {
+            return this._recommenderId != null;
         }
 
         /// <summary>

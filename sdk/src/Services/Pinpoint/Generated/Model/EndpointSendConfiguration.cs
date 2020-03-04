@@ -60,9 +60,13 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Context. 
         /// <para>
-        /// A map of custom attributes to attach to the message for the address. For a push notification,
-        /// this payload is added to the data.pinpoint object. For an email or text message, this
-        /// payload is added to email/SMS delivery receipt event attributes.
+        /// A map of custom attributes to attach to the message for the address. Attribute names
+        /// are case sensitive.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a push notification, this payload is added to the data.pinpoint object. For an
+        /// email or text message, this payload is added to email/SMS delivery receipt event attributes.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Context

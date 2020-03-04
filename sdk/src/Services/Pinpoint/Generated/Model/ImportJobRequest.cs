@@ -194,8 +194,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property SegmentName. 
         /// <para>
-        /// The custom name for the segment that's created by the import job, if the value of
-        /// the DefineSegment property is true.
+        /// A custom name for the segment that's created by the import job, if the value of the
+        /// DefineSegment property is true.
         /// </para>
         /// </summary>
         public string SegmentName
