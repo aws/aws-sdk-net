@@ -1,3 +1,7 @@
+### 3.3.693.0 (2020-03-04 19:11 UTC)
+* Pinpoint (3.3.107.0)
+	* This release of the Amazon Pinpoint API introduces support for integrating recommender models with email, push notification, and SMS message templates. You can now use these types of templates to connect to recommender models and add personalized recommendations to messages that you send from campaigns and journeys.
+
 ### 3.3.692.0 (2020-03-03 19:10 UTC)
 * EC2 (3.3.163.0)
 	* Amazon VPC Flow Logs adds support for tags and tagging on resource creation.

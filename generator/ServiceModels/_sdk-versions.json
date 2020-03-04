@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.692.0",
+    "ProductVersion" : "3.3.693.0",
     "CoreVersion"    : "3.3.104.32",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -665,7 +665,7 @@
             "InPreview"               : false
         },
         "Pinpoint"                        : {
-            "Version" : "3.3.106.5",
+            "Version" : "3.3.107.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.32"
