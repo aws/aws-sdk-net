@@ -34,6 +34,7 @@ namespace Amazon.GuardDuty.Model
     {
         private bool? _blocked;
         private string _connectionDirection;
+        private LocalIpDetails _localIpDetails;
         private LocalPortDetails _localPortDetails;
         private string _protocol;
         private RemoteIpDetails _remoteIpDetails;
@@ -73,6 +74,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetConnectionDirection()
         {
             return this._connectionDirection != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalIpDetails. 
+        /// <para>
+        /// Local IP information of the connection.
+        /// </para>
+        /// </summary>
+        public LocalIpDetails LocalIpDetails
+        {
+            get { return this._localIpDetails; }
+            set { this._localIpDetails = value; }
+        }
+
+        // Check to see if LocalIpDetails property is set
+        internal bool IsSetLocalIpDetails()
+        {
+            return this._localIpDetails != null;
         }
 
         /// <summary>

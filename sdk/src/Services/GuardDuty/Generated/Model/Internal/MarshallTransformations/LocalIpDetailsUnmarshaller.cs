@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PortProbeDetail Object
+    /// Response Unmarshaller for LocalIpDetails Object
     /// </summary>  
-    public class PortProbeDetailUnmarshaller : IUnmarshaller<PortProbeDetail, XmlUnmarshallerContext>, IUnmarshaller<PortProbeDetail, JsonUnmarshallerContext>
+    public class LocalIpDetailsUnmarshaller : IUnmarshaller<LocalIpDetails, XmlUnmarshallerContext>, IUnmarshaller<LocalIpDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PortProbeDetail IUnmarshaller<PortProbeDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LocalIpDetails IUnmarshaller<LocalIpDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PortProbeDetail Unmarshall(JsonUnmarshallerContext context)
+        public LocalIpDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PortProbeDetail unmarshalledObject = new PortProbeDetail();
+            LocalIpDetails unmarshalledObject = new LocalIpDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("localIpDetails", targetDepth))
+                if (context.TestExpression("ipAddressV4", targetDepth))
                 {
-                    var unmarshaller = LocalIpDetailsUnmarshaller.Instance;
-                    unmarshalledObject.LocalIpDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("localPortDetails", targetDepth))
-                {
-                    var unmarshaller = LocalPortDetailsUnmarshaller.Instance;
-                    unmarshalledObject.LocalPortDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("remoteIpDetails", targetDepth))
-                {
-                    var unmarshaller = RemoteIpDetailsUnmarshaller.Instance;
-                    unmarshalledObject.RemoteIpDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpAddressV4 = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static PortProbeDetailUnmarshaller _instance = new PortProbeDetailUnmarshaller();        
+        private static LocalIpDetailsUnmarshaller _instance = new LocalIpDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PortProbeDetailUnmarshaller Instance
+        public static LocalIpDetailsUnmarshaller Instance
         {
             get
             {

@@ -76,6 +76,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectionDirection = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("localIpDetails", targetDepth))
+                {
+                    var unmarshaller = LocalIpDetailsUnmarshaller.Instance;
+                    unmarshalledObject.LocalIpDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("localPortDetails", targetDepth))
                 {
                     var unmarshaller = LocalPortDetailsUnmarshaller.Instance;
