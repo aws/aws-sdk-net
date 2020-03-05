@@ -88,6 +88,7 @@ namespace Amazon.EKS.Model
     public partial class CreateClusterRequest : AmazonEKSRequest
     {
         private string _clientRequestToken;
+        private List<EncryptionConfig> _encryptionConfig = new List<EncryptionConfig>();
         private Logging _logging;
         private string _name;
         private VpcConfigRequest _resourcesVpcConfig;
@@ -112,6 +113,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfig. 
+        /// <para>
+        /// The encryption configuration for the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<EncryptionConfig> EncryptionConfig
+        {
+            get { return this._encryptionConfig; }
+            set { this._encryptionConfig = value; }
+        }
+
+        // Check to see if EncryptionConfig property is set
+        internal bool IsSetEncryptionConfig()
+        {
+            return this._encryptionConfig != null && this._encryptionConfig.Count > 0; 
         }
 
         /// <summary>

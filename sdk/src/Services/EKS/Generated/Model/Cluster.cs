@@ -36,6 +36,7 @@ namespace Amazon.EKS.Model
         private Certificate _certificateAuthority;
         private string _clientRequestToken;
         private DateTime? _createdAt;
+        private List<EncryptionConfig> _encryptionConfig = new List<EncryptionConfig>();
         private string _endpoint;
         private Identity _identity;
         private Logging _logging;
@@ -118,6 +119,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfig. 
+        /// <para>
+        /// The encryption configuration for the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<EncryptionConfig> EncryptionConfig
+        {
+            get { return this._encryptionConfig; }
+            set { this._encryptionConfig = value; }
+        }
+
+        // Check to see if EncryptionConfig property is set
+        internal bool IsSetEncryptionConfig()
+        {
+            return this._encryptionConfig != null && this._encryptionConfig.Count > 0; 
         }
 
         /// <summary>

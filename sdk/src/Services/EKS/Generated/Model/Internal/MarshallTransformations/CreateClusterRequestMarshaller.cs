@@ -77,6 +77,22 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetEncryptionConfig())
+                {
+                    context.Writer.WritePropertyName("encryptionConfig");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEncryptionConfigListValue in publicRequest.EncryptionConfig)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EncryptionConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEncryptionConfigListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetLogging())
                 {
                     context.Writer.WritePropertyName("logging");
