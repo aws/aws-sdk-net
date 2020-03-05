@@ -1,3 +1,18 @@
+### 3.3.694.0 (2020-03-05 19:21 UTC)
+* EC2 (3.3.164.0)
+	* You can now create AWS Client VPN Endpoints with a specified VPC and Security Group. Additionally, you can modify these attributes when modifying the endpoint. 
+* EKS (3.3.108.0)
+	* Amazon EKS now supports adding a KMS key to your cluster for envelope encryption of Kubernetes secrets.
+* GuardDuty (3.3.105.0)
+	* Add a new finding field for EC2 findings indicating the instance's local IP address involved in the threat.
+* OpsWorksCM (3.3.105.0)
+	* Updated the Tag regex pattern to align with AWS tagging APIs.
+* Core 3.3.104.33
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.693.0 (2020-03-04 19:11 UTC)
 * Pinpoint (3.3.107.0)
 	* This release of the Amazon Pinpoint API introduces support for integrating recommender models with email, push notification, and SMS message templates. You can now use these types of templates to connect to recommender models and add personalized recommendations to messages that you send from campaigns and journeys.
