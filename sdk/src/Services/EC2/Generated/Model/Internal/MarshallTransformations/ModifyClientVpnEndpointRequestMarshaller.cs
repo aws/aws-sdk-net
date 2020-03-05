@@ -97,6 +97,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("DnsServers" + "." + "Enabled", StringUtils.FromBool(publicRequest.DnsServers.Enabled));
                     }
                 }
+                if(publicRequest.IsSetSecurityGroupIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SecurityGroupIds)
+                    {
+                        request.Parameters.Add("SecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetServerCertificateArn())
                 {
                     request.Parameters.Add("ServerCertificateArn", StringUtils.FromString(publicRequest.ServerCertificateArn));
@@ -104,6 +113,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSplitTunnel())
                 {
                     request.Parameters.Add("SplitTunnel", StringUtils.FromBool(publicRequest.SplitTunnel));
+                }
+                if(publicRequest.IsSetVpcId())
+                {
+                    request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
                 }
                 if(publicRequest.IsSetVpnPort())
                 {

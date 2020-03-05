@@ -117,6 +117,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DnsServers.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("securityGroupIdSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SecurityGroupIds.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("serverCertificateArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -146,6 +153,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.TransportProtocol = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("vpnPort", targetDepth))

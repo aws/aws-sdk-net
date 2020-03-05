@@ -41,10 +41,12 @@ namespace Amazon.EC2.Model
         private ConnectionLogOptions _connectionLogOptions;
         private string _description;
         private List<string> _dnsServers = new List<string>();
+        private List<string> _securityGroupIds = new List<string>();
         private string _serverCertificateArn;
         private bool? _splitTunnel;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private TransportProtocol _transportProtocol;
+        private string _vpcId;
         private int? _vpnPort;
 
         /// <summary>
@@ -189,6 +191,25 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecurityGroupIds. 
+        /// <para>
+        /// The IDs of one or more security groups to apply to the target network. You must also
+        /// specify the ID of the VPC that contains the security groups.
+        /// </para>
+        /// </summary>
+        public List<string> SecurityGroupIds
+        {
+            get { return this._securityGroupIds; }
+            set { this._securityGroupIds = value; }
+        }
+
+        // Check to see if SecurityGroupIds property is set
+        internal bool IsSetSecurityGroupIds()
+        {
+            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerCertificateArn. 
         /// <para>
         /// The ARN of the server certificate. For more information, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS
@@ -273,6 +294,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetTransportProtocol()
         {
             return this._transportProtocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the VPC to associate with the Client VPN endpoint. If no security group
+        /// IDs are specified in the request, the default security group for the VPC is applied.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
         }
 
         /// <summary>

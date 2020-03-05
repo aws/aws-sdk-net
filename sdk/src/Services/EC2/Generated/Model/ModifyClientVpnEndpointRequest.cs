@@ -29,9 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyClientVpnEndpoint operation.
-    /// Modifies the specified Client VPN endpoint. You can only modify an endpoint's server
-    /// certificate information, client connection logging information, DNS server, and description.
-    /// Modifying the DNS server resets existing client connections.
+    /// Modifies the specified Client VPN endpoint. Modifying the DNS server resets existing
+    /// client connections.
     /// </summary>
     public partial class ModifyClientVpnEndpointRequest : AmazonEC2Request
     {
@@ -39,8 +38,10 @@ namespace Amazon.EC2.Model
         private ConnectionLogOptions _connectionLogOptions;
         private string _description;
         private DnsServersOptionsModifyStructure _dnsServers;
+        private List<string> _securityGroupIds = new List<string>();
         private string _serverCertificateArn;
         private bool? _splitTunnel;
+        private string _vpcId;
         private int? _vpnPort;
 
         /// <summary>
@@ -140,6 +141,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecurityGroupIds. 
+        /// <para>
+        /// The IDs of one or more security groups to apply to the target network.
+        /// </para>
+        /// </summary>
+        public List<string> SecurityGroupIds
+        {
+            get { return this._securityGroupIds; }
+            set { this._securityGroupIds = value; }
+        }
+
+        // Check to see if SecurityGroupIds property is set
+        internal bool IsSetSecurityGroupIds()
+        {
+            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerCertificateArn. 
         /// <para>
         /// The ARN of the server certificate to be used. The server certificate must be provisioned
@@ -179,6 +198,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSplitTunnel()
         {
             return this._splitTunnel.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the VPC to associate with the Client VPN endpoint.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
         }
 
         /// <summary>

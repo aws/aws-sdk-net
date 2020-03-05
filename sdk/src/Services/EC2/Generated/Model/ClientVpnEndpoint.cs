@@ -42,11 +42,13 @@ namespace Amazon.EC2.Model
         private string _description;
         private string _dnsName;
         private List<string> _dnsServers = new List<string>();
+        private List<string> _securityGroupIds = new List<string>();
         private string _serverCertificateArn;
         private bool? _splitTunnel;
         private ClientVpnEndpointStatus _status;
         private List<Tag> _tags = new List<Tag>();
         private TransportProtocol _transportProtocol;
+        private string _vpcId;
         private int? _vpnPort;
         private VpnProtocol _vpnProtocol;
 
@@ -233,6 +235,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecurityGroupIds. 
+        /// <para>
+        /// The IDs of the security groups for the target network.
+        /// </para>
+        /// </summary>
+        public List<string> SecurityGroupIds
+        {
+            get { return this._securityGroupIds; }
+            set { this._securityGroupIds = value; }
+        }
+
+        // Check to see if SecurityGroupIds property is set
+        internal bool IsSetSecurityGroupIds()
+        {
+            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerCertificateArn. 
         /// <para>
         /// The ARN of the server certificate.
@@ -325,6 +345,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTransportProtocol()
         {
             return this._transportProtocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the VPC.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
         }
 
         /// <summary>
