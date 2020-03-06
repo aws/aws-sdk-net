@@ -59,6 +59,7 @@ namespace Amazon.RoboMaker.Model
         /// The version of the rendering engine.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4)]
         public string Version
         {
             get { return this._version; }

@@ -83,6 +83,11 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClientRequestToken);
                 }
 
+                else if(!(publicRequest.IsSetClientRequestToken()))
+                {
+                    context.Writer.WritePropertyName("clientRequestToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                }
                 if(publicRequest.IsSetCreateSimulationJobRequests())
                 {
                     context.Writer.WritePropertyName("createSimulationJobRequests");

@@ -88,6 +88,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.PortForwardingConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("streamUI", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.StreamUI = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

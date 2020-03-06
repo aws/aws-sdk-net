@@ -210,6 +210,7 @@ namespace Amazon.RoboMaker.Model
         /// see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting.html">Troubleshooting</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }

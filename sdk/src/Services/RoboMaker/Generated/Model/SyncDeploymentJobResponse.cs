@@ -196,6 +196,7 @@ namespace Amazon.RoboMaker.Model
         /// The failure reason if the job fails.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }

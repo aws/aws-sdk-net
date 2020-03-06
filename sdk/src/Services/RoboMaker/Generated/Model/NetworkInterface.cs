@@ -42,6 +42,7 @@ namespace Amazon.RoboMaker.Model
         /// The ID of the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string NetworkInterfaceId
         {
             get { return this._networkInterfaceId; }
@@ -60,6 +61,7 @@ namespace Amazon.RoboMaker.Model
         /// The IPv4 address of the network interface within the subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string PrivateIpAddress
         {
             get { return this._privateIpAddress; }
@@ -78,6 +80,7 @@ namespace Amazon.RoboMaker.Model
         /// The IPv4 public address of the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string PublicIpAddress
         {
             get { return this._publicIpAddress; }

@@ -182,6 +182,7 @@ namespace Amazon.RoboMaker.Model
         /// The reason the simulation job batch failed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }

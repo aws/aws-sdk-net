@@ -197,6 +197,7 @@ namespace Amazon.RoboMaker.Model
         /// The failure reason of the deployment job if it failed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }

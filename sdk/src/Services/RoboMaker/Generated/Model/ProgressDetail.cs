@@ -126,6 +126,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the deployment job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string TargetResource
         {
             get { return this._targetResource; }

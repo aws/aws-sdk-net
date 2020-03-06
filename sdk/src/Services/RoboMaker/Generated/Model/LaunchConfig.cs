@@ -36,6 +36,7 @@ namespace Amazon.RoboMaker.Model
         private string _launchFile;
         private string _packageName;
         private PortForwardingConfig _portForwardingConfig;
+        private bool? _streamui;
 
         /// <summary>
         /// Gets and sets the property EnvironmentVariables. 
@@ -110,6 +111,27 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetPortForwardingConfig()
         {
             return this._portForwardingConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamUI. 
+        /// <para>
+        /// Boolean indicating whether a streaming session will be configured for the application.
+        /// If <code>True</code>, AWS RoboMaker will configure a connection so you can interact
+        /// with your application as it is running in the simulation. You must configure and luanch
+        /// the component. It must have a graphical user interface. 
+        /// </para>
+        /// </summary>
+        public bool StreamUI
+        {
+            get { return this._streamui.GetValueOrDefault(); }
+            set { this._streamui = value; }
+        }
+
+        // Check to see if StreamUI property is set
+        internal bool IsSetStreamUI()
+        {
+            return this._streamui.HasValue; 
         }
 
     }

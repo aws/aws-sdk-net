@@ -59,6 +59,7 @@ namespace Amazon.RoboMaker.Model
         /// The version of the simulation software suite.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Version
         {
             get { return this._version; }

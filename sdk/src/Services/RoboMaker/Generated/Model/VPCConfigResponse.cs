@@ -99,6 +99,7 @@ namespace Amazon.RoboMaker.Model
         /// The VPC ID associated with your simulation job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string VpcId
         {
             get { return this._vpcId; }

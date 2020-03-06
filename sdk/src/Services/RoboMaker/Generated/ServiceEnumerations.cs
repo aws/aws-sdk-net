@@ -121,6 +121,14 @@ namespace Amazon.RoboMaker
         /// </summary>
         public static readonly DeploymentJobErrorCode InternalServerError = new DeploymentJobErrorCode("InternalServerError");
         /// <summary>
+        /// Constant InvalidGreengrassGroup for DeploymentJobErrorCode
+        /// </summary>
+        public static readonly DeploymentJobErrorCode InvalidGreengrassGroup = new DeploymentJobErrorCode("InvalidGreengrassGroup");
+        /// <summary>
+        /// Constant LambdaDeleted for DeploymentJobErrorCode
+        /// </summary>
+        public static readonly DeploymentJobErrorCode LambdaDeleted = new DeploymentJobErrorCode("LambdaDeleted");
+        /// <summary>
         /// Constant MissingRobotApplicationArchitecture for DeploymentJobErrorCode
         /// </summary>
         public static readonly DeploymentJobErrorCode MissingRobotApplicationArchitecture = new DeploymentJobErrorCode("MissingRobotApplicationArchitecture");

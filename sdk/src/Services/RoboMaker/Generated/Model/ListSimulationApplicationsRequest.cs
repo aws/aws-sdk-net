@@ -114,6 +114,7 @@ namespace Amazon.RoboMaker.Model
         /// The version qualifier of the simulation application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string VersionQualifier
         {
             get { return this._versionQualifier; }

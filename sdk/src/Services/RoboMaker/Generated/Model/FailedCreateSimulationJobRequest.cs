@@ -79,6 +79,7 @@ namespace Amazon.RoboMaker.Model
         /// The failure reason of the simulation job request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
