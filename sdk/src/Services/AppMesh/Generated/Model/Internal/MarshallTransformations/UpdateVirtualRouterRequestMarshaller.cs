@@ -65,6 +65,9 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetVirtualRouterName())
                 throw new AmazonAppMeshException("Request object does not have required field VirtualRouterName set");
             request.AddPathResource("{virtualRouterName}", StringUtils.FromString(publicRequest.VirtualRouterName));
+            
+            if (publicRequest.IsSetMeshOwner())
+                request.Parameters.Add("meshOwner", StringUtils.FromString(publicRequest.MeshOwner));
             request.ResourcePath = "/v20190125/meshes/{meshName}/virtualRouters/{virtualRouterName}";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
@@ -100,6 +103,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            request.UseQueryString = true;
 
             return request;
         }

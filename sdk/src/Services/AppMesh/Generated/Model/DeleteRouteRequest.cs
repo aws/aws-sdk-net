@@ -34,6 +34,7 @@ namespace Amazon.AppMesh.Model
     public partial class DeleteRouteRequest : AmazonAppMeshRequest
     {
         private string _meshName;
+        private string _meshOwner;
         private string _routeName;
         private string _virtualRouterName;
 
@@ -54,6 +55,28 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetMeshName()
         {
             return this._meshName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MeshOwner. 
+        /// <para>
+        /// The AWS IAM account ID of the service mesh owner. If the account ID is not your own,
+        /// then it's               the ID of the account that shared the mesh with your account.
+        /// For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+        /// with Shared Meshes</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string MeshOwner
+        {
+            get { return this._meshOwner; }
+            set { this._meshOwner = value; }
+        }
+
+        // Check to see if MeshOwner property is set
+        internal bool IsSetMeshOwner()
+        {
+            return this._meshOwner != null;
         }
 
         /// <summary>

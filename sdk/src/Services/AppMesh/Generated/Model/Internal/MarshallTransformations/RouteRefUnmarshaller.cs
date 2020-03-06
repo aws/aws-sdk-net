@@ -76,6 +76,18 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.MeshName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("meshOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MeshOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourceOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("routeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

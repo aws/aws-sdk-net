@@ -68,6 +68,9 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetLimit())
                 request.Parameters.Add("limit", StringUtils.FromInt(publicRequest.Limit));
             
+            if (publicRequest.IsSetMeshOwner())
+                request.Parameters.Add("meshOwner", StringUtils.FromString(publicRequest.MeshOwner));
+            
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes";

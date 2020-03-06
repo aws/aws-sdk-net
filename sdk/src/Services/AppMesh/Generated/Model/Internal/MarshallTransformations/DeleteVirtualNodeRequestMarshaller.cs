@@ -64,8 +64,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetVirtualNodeName())
                 throw new AmazonAppMeshException("Request object does not have required field VirtualNodeName set");
             request.AddPathResource("{virtualNodeName}", StringUtils.FromString(publicRequest.VirtualNodeName));
+            
+            if (publicRequest.IsSetMeshOwner())
+                request.Parameters.Add("meshOwner", StringUtils.FromString(publicRequest.MeshOwner));
             request.ResourcePath = "/v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName}";
             request.MarshallerVersion = 2;
+            request.UseQueryString = true;
 
             return request;
         }

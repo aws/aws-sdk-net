@@ -61,8 +61,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetMeshName())
                 throw new AmazonAppMeshException("Request object does not have required field MeshName set");
             request.AddPathResource("{meshName}", StringUtils.FromString(publicRequest.MeshName));
+            
+            if (publicRequest.IsSetMeshOwner())
+                request.Parameters.Add("meshOwner", StringUtils.FromString(publicRequest.MeshOwner));
             request.ResourcePath = "/v20190125/meshes/{meshName}";
             request.MarshallerVersion = 2;
+            request.UseQueryString = true;
 
             return request;
         }

@@ -82,6 +82,18 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("meshOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MeshOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourceOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("uid", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

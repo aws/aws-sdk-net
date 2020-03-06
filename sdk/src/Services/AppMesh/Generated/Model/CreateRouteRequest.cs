@@ -45,13 +45,14 @@ namespace Amazon.AppMesh.Model
     /// </para>
     ///          
     /// <para>
-    /// For more information about routes, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/routes.html">Routes</a>.
+    /// For more information about routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html">Routes</a>.
     /// </para>
     /// </summary>
     public partial class CreateRouteRequest : AmazonAppMeshRequest
     {
         private string _clientToken;
         private string _meshName;
+        private string _meshOwner;
         private string _routeName;
         private RouteSpec _spec;
         private List<TagRef> _tags = new List<TagRef>();
@@ -93,6 +94,29 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetMeshName()
         {
             return this._meshName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MeshOwner. 
+        /// <para>
+        /// The AWS IAM account ID of the service mesh owner. If the account ID is not your own,
+        /// then               the account that you specify must share the mesh with your account
+        /// before you can create              the resource in the service mesh. For more information
+        /// about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+        /// with Shared Meshes</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string MeshOwner
+        {
+            get { return this._meshOwner; }
+            set { this._meshOwner = value; }
+        }
+
+        // Check to see if MeshOwner property is set
+        internal bool IsSetMeshOwner()
+        {
+            return this._meshOwner != null;
         }
 
         /// <summary>
@@ -158,7 +182,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property VirtualRouterName. 
         /// <para>
-        /// The name of the virtual router in which to create the route.
+        /// The name of the virtual router in which to create the route. If the virtual router
+        /// is in a shared mesh,         then you must be the owner of the virtual router resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

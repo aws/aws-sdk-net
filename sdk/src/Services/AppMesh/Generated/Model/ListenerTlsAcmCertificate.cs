@@ -39,8 +39,8 @@ namespace Amazon.AppMesh.Model
         /// <para>
         /// The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific
         /// requirements and you must have proxy authorization enabled. For more information,
-        /// see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">TLS
-        /// Encryption</a>.
+        /// see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">Transport
+        /// Layer Security (TLS)</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

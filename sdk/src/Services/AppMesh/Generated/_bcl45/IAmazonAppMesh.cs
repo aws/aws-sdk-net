@@ -180,7 +180,7 @@ namespace Amazon.AppMesh
         /// </para>
         ///          
         /// <para>
-        /// For more information about routes, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/routes.html">Routes</a>.
+        /// For more information about routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html">Routes</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoute service method.</param>
@@ -237,7 +237,7 @@ namespace Amazon.AppMesh
         /// </para>
         ///          
         /// <para>
-        /// For more information about routes, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/routes.html">Routes</a>.
+        /// For more information about routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html">Routes</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoute service method.</param>
@@ -316,7 +316,7 @@ namespace Amazon.AppMesh
         /// </para>
         ///          </note>         
         /// <para>
-        /// For more information about virtual nodes, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_nodes.html">Virtual
+        /// For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
         /// Nodes</a>.
         /// </para>
         /// </summary>
@@ -390,7 +390,7 @@ namespace Amazon.AppMesh
         /// </para>
         ///          </note>         
         /// <para>
-        /// For more information about virtual nodes, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_nodes.html">Virtual
+        /// For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
         /// Nodes</a>.
         /// </para>
         /// </summary>
@@ -453,7 +453,7 @@ namespace Amazon.AppMesh
         /// </para>
         ///          
         /// <para>
-        /// For more information about virtual routers, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_routers.html">Virtual
+        /// For more information about virtual routers, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html">Virtual
         /// Routers</a>.
         /// </para>
         /// </summary>
@@ -510,7 +510,7 @@ namespace Amazon.AppMesh
         /// </para>
         ///          
         /// <para>
-        /// For more information about virtual routers, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_routers.html">Virtual
+        /// For more information about virtual routers, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html">Virtual
         /// Routers</a>.
         /// </para>
         /// </summary>
@@ -570,7 +570,7 @@ namespace Amazon.AppMesh
         /// </para>
         ///          
         /// <para>
-        /// For more information about virtual services, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_services.html">Virtual
+        /// For more information about virtual services, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html">Virtual
         /// Services</a>.
         /// </para>
         /// </summary>
@@ -624,7 +624,7 @@ namespace Amazon.AppMesh
         /// </para>
         ///          
         /// <para>
-        /// For more information about virtual services, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_services.html">Virtual
+        /// For more information about virtual services, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html">Virtual
         /// Services</a>.
         /// </para>
         /// </summary>

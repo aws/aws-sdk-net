@@ -61,7 +61,7 @@ namespace Amazon.AppMesh.Model
     /// </para>
     ///          </note>         
     /// <para>
-    /// For more information about virtual nodes, see <a href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_nodes.html">Virtual
+    /// For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
     /// Nodes</a>.
     /// </para>
     /// </summary>
@@ -69,6 +69,7 @@ namespace Amazon.AppMesh.Model
     {
         private string _clientToken;
         private string _meshName;
+        private string _meshOwner;
         private VirtualNodeSpec _spec;
         private List<TagRef> _tags = new List<TagRef>();
         private string _virtualNodeName;
@@ -109,6 +110,29 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetMeshName()
         {
             return this._meshName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MeshOwner. 
+        /// <para>
+        /// The AWS IAM account ID of the service mesh owner. If the account ID is not your own,
+        /// then               the account that you specify must share the mesh with your account
+        /// before you can create              the resource in the service mesh. For more information
+        /// about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+        /// with Shared Meshes</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string MeshOwner
+        {
+            get { return this._meshOwner; }
+            set { this._meshOwner = value; }
+        }
+
+        // Check to see if MeshOwner property is set
+        internal bool IsSetMeshOwner()
+        {
+            return this._meshOwner != null;
         }
 
         /// <summary>
