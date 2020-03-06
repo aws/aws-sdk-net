@@ -41,6 +41,7 @@ namespace Amazon.GuardDuty.Model
         private string _instanceType;
         private string _launchTime;
         private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
+        private string _outpostArn;
         private string _platform;
         private List<ProductCode> _productCodes = new List<ProductCode>();
         private List<Tag> _tags = new List<Tag>();
@@ -205,6 +206,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetNetworkInterfaces()
         {
             return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS Outposts
+        /// instances.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>

@@ -118,6 +118,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.NetworkInterfaces = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("outpostArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("platform", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
