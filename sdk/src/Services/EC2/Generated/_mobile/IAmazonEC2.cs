@@ -8876,6 +8876,25 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  ModifyAvailabilityZoneGroup
+
+
+
+        /// <summary>
+        /// Enables or disables a Zone Group for your account. To use Local Zones, you must first
+        /// enable the Zone Group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAvailabilityZoneGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyAvailabilityZoneGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAvailabilityZoneGroup">REST API Reference for ModifyAvailabilityZoneGroup Operation</seealso>
+        Task<ModifyAvailabilityZoneGroupResponse> ModifyAvailabilityZoneGroupAsync(ModifyAvailabilityZoneGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ModifyCapacityReservation
 
 

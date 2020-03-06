@@ -15521,6 +15521,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyAvailabilityZoneGroup
+
+
+        /// <summary>
+        /// Enables or disables a Zone Group for your account. To use Local Zones, you must first
+        /// enable the Zone Group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAvailabilityZoneGroup service method.</param>
+        /// 
+        /// <returns>The response from the ModifyAvailabilityZoneGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAvailabilityZoneGroup">REST API Reference for ModifyAvailabilityZoneGroup Operation</seealso>
+        ModifyAvailabilityZoneGroupResponse ModifyAvailabilityZoneGroup(ModifyAvailabilityZoneGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyAvailabilityZoneGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAvailabilityZoneGroup operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyAvailabilityZoneGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAvailabilityZoneGroup">REST API Reference for ModifyAvailabilityZoneGroup Operation</seealso>
+        IAsyncResult BeginModifyAvailabilityZoneGroup(ModifyAvailabilityZoneGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyAvailabilityZoneGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyAvailabilityZoneGroup.</param>
+        /// 
+        /// <returns>Returns a  ModifyAvailabilityZoneGroupResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAvailabilityZoneGroup">REST API Reference for ModifyAvailabilityZoneGroup Operation</seealso>
+        ModifyAvailabilityZoneGroupResponse EndModifyAvailabilityZoneGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyCapacityReservation
 
 

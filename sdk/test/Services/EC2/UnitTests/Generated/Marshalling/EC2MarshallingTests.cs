@@ -7266,6 +7266,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void ModifyAvailabilityZoneGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyAvailabilityZoneGroup");
+
+            var request = InstantiateClassGenerator.Execute<ModifyAvailabilityZoneGroupRequest>();
+            var marshaller = new ModifyAvailabilityZoneGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyAvailabilityZoneGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyAvailabilityZoneGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void ModifyCapacityReservationMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyCapacityReservation");
