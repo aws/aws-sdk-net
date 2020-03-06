@@ -33,6 +33,7 @@ namespace Amazon.Signer.Model
     public partial class SigningPlatformOverrides
     {
         private SigningConfigurationOverrides _signingConfiguration;
+        private ImageFormat _signingImageFormat;
 
         /// <summary>
         /// Gets and sets the property SigningConfiguration. 
@@ -51,6 +52,29 @@ namespace Amazon.Signer.Model
         internal bool IsSetSigningConfiguration()
         {
             return this._signingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SigningImageFormat. 
+        /// <para>
+        /// A signed image is a JSON object. When overriding the default signing platform configuration,
+        /// a customer can select either of two signing formats, <code>JSONEmbedded</code> or
+        /// <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for
+        /// future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded
+        /// in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing
+        /// image.
+        /// </para>
+        /// </summary>
+        public ImageFormat SigningImageFormat
+        {
+            get { return this._signingImageFormat; }
+            set { this._signingImageFormat = value; }
+        }
+
+        // Check to see if SigningImageFormat property is set
+        internal bool IsSetSigningImageFormat()
+        {
+            return this._signingImageFormat != null;
         }
 
     }

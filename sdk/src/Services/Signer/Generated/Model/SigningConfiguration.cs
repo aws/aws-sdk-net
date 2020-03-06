@@ -57,7 +57,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property HashAlgorithmOptions. 
         /// <para>
-        /// The hash algorithm options that are available for a a code signing job.
+        /// The hash algorithm options that are available for a code signing job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

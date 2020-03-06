@@ -64,7 +64,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property PlatformId. 
         /// <para>
-        /// The ID of the signing profile to be created.
+        /// The ID of the signing platform to be created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -86,7 +86,7 @@ namespace Amazon.Signer.Model
         /// The name of the signing profile to be created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=20)]
+        [AWSProperty(Required=true, Min=2, Max=64)]
         public string ProfileName
         {
             get { return this._profileName; }
@@ -141,7 +141,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to be associated with the signing profile being created.
+        /// Tags to be associated with the signing profile that is being created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

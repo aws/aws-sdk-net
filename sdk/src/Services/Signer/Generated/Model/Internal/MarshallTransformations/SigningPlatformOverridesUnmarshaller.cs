@@ -70,6 +70,12 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     unmarshalledObject.SigningConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("signingImageFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SigningImageFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

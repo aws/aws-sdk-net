@@ -142,7 +142,7 @@ namespace Amazon.Signer.Model
         /// The name of the profile that initiated the signing operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=20)]
+        [AWSProperty(Min=2, Max=64)]
         public string ProfileName
         {
             get { return this._profileName; }
@@ -194,7 +194,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property SigningMaterial. 
         /// <para>
-        /// Amazon Resource Name (ARN) of your code signing certificate.
+        /// The Amazon Resource Name (ARN) of your code signing certificate.
         /// </para>
         /// </summary>
         public SigningMaterial SigningMaterial

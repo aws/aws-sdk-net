@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// Contains information about the signing configurations and parameters that is used
+    /// Contains information about the signing configurations and parameters that are used
     /// to perform a code signing job.
     /// </summary>
     public partial class SigningPlatform

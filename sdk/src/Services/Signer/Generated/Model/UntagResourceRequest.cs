@@ -29,8 +29,8 @@ namespace Amazon.Signer.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Remove one or more tags from a signing profile. Specify a list of tag keys to remove
-    /// the tags.
+    /// Removes one or more tags from a signing profile. To remove the tags, specify a list
+    /// of tag keys.
     /// </summary>
     public partial class UntagResourceRequest : AmazonSignerRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) for the signing profile .
+        /// The Amazon Resource Name (ARN) for the signing profile.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// A list of tag keys to be removed from the signing profile .
+        /// A list of tag keys to be removed from the signing profile.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

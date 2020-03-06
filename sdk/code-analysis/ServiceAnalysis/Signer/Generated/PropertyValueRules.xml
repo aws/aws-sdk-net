@@ -3,25 +3,25 @@
   <property-value-rule>
     <property>Amazon.Signer.Model.CancelSigningProfileRequest.ProfileName</property>
     <min>2</min>
-    <max>20</max>
+    <max>64</max>
     <pattern>^[a-zA-Z0-9_]{2,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signer.Model.DescribeSigningJobResponse.ProfileName</property>
     <min>2</min>
-    <max>20</max>
+    <max>64</max>
     <pattern>^[a-zA-Z0-9_]{2,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signer.Model.GetSigningProfileRequest.ProfileName</property>
     <min>2</min>
-    <max>20</max>
+    <max>64</max>
     <pattern>^[a-zA-Z0-9_]{2,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signer.Model.GetSigningProfileResponse.ProfileName</property>
     <min>2</min>
-    <max>20</max>
+    <max>64</max>
     <pattern>^[a-zA-Z0-9_]{2,}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -42,19 +42,19 @@
   <property-value-rule>
     <property>Amazon.Signer.Model.PutSigningProfileRequest.ProfileName</property>
     <min>2</min>
-    <max>20</max>
+    <max>64</max>
     <pattern>^[a-zA-Z0-9_]{2,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signer.Model.StartSigningJobRequest.ProfileName</property>
     <min>2</min>
-    <max>20</max>
+    <max>64</max>
     <pattern>^[a-zA-Z0-9_]{2,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signer.Model.SigningProfile.ProfileName</property>
     <min>2</min>
-    <max>20</max>
+    <max>64</max>
     <pattern>^[a-zA-Z0-9_]{2,}</pattern>
   </property-value-rule>
 </property-value-rules>

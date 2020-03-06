@@ -31,8 +31,8 @@ namespace Amazon.Signer.Model
     /// Container for the parameters to the TagResource operation.
     /// Adds one or more tags to a signing profile. Tags are labels that you can use to identify
     /// and organize your AWS resources. Each tag consists of a key and an optional value.
-    /// You specify the signing profile using its Amazon Resource Name (ARN). You specify
-    /// the tag by using a key-value pair.
+    /// To specify the signing profile, use its Amazon Resource Name (ARN). To specify the
+    /// tag, use a key-value pair.
     /// </summary>
     public partial class TagResourceRequest : AmazonSignerRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) for the signing profile.
+        /// The Amazon Resource Name (ARN) for the signing profile.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

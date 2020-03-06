@@ -43,7 +43,7 @@ namespace Amazon.Signer.Model
         /// The name of the signing profile to be canceled.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=20)]
+        [AWSProperty(Required=true, Min=2, Max=64)]
         public string ProfileName
         {
             get { return this._profileName; }

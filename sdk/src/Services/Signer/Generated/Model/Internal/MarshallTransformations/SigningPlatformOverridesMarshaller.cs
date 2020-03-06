@@ -56,6 +56,12 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSigningImageFormat())
+            {
+                context.Writer.WritePropertyName("signingImageFormat");
+                context.Writer.Write(requestObject.SigningImageFormat);
+            }
+
         }
 
         /// <summary>

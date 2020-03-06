@@ -180,6 +180,14 @@ namespace Amazon.Signer
         /// Constant JSON for ImageFormat
         /// </summary>
         public static readonly ImageFormat JSON = new ImageFormat("JSON");
+        /// <summary>
+        /// Constant JSONDetached for ImageFormat
+        /// </summary>
+        public static readonly ImageFormat JSONDetached = new ImageFormat("JSONDetached");
+        /// <summary>
+        /// Constant JSONEmbedded for ImageFormat
+        /// </summary>
+        public static readonly ImageFormat JSONEmbedded = new ImageFormat("JSONEmbedded");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -38,7 +38,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property DefaultFormat. 
         /// <para>
-        /// The default format of a code signing signing image.
+        /// The default format of a code signing image.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -57,7 +57,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property SupportedFormats. 
         /// <para>
-        /// The supported formats of a code signing signing image.
+        /// The supported formats of a code signing image.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -119,7 +119,7 @@ namespace Amazon.Signer.Model
         /// The name of the signing profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=20)]
+        [AWSProperty(Min=2, Max=64)]
         public string ProfileName
         {
             get { return this._profileName; }
