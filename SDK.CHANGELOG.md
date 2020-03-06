@@ -1,3 +1,20 @@
+### 3.3.695.0 (2020-03-06 19:18 UTC)
+* AppMesh (3.3.108.0)
+	* App Mesh now supports sharing a Mesh with other AWS accounts. Customers can use AWS Resource Access Manager to share their Mesh with other accounts in their organization to connection applications within a single service mesh. See https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html for details.
+* EC2 (3.3.165.0)
+	* This release provides customers with a self-service option to enable Local Zones.
+* GuardDuty (3.3.106.0)
+	* Amazon GuardDuty findings now include the OutpostArn if the finding is generated for an AWS Outposts EC2 host.
+* RoboMaker (3.3.110.0)
+	* Added support for streaming a GUI from robot and simulation applications
+* Signer (3.3.102.0)
+	* This release enables signing image format override in PutSigningProfile requests, adding two more enum fields, JSONEmbedded and JSONDetached. This release also extends the length limit of SigningProfile name from 20 to 64.
+* Core 3.3.104.34
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.694.0 (2020-03-05 19:21 UTC)
 * EC2 (3.3.164.0)
 	* You can now create AWS Client VPN Endpoints with a specified VPC and Security Group. Additionally, you can modify these attributes when modifying the endpoint. 
