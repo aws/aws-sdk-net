@@ -132,6 +132,9 @@ namespace Amazon.Runtime.Internal.Util
         {
             // Store a copy of the file for checking concurrency
             OriginalContents = "";
+
+            if (!File.Exists(FilePath)) return;
+
             try
             {
                 OriginalContents = File.ReadAllText(FilePath);
