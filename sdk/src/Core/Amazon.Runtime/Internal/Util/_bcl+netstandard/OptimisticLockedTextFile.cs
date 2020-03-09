@@ -132,17 +132,21 @@ namespace Amazon.Runtime.Internal.Util
         {
             // Store a copy of the file for checking concurrency
             OriginalContents = "";
-            try
+
+            if (File.Exists(FilePath))
             {
-                OriginalContents = File.ReadAllText(FilePath);
-            }
-            catch (FileNotFoundException)
-            {
-                // This is OK.  The Persist() method will create it if necessary.
-            }
-            catch (DirectoryNotFoundException)
-            {
-                // This is OK.  The Persist() method will create it if necessary.
+                try
+                {
+                    OriginalContents = File.ReadAllText(FilePath);
+                }
+                catch (FileNotFoundException)
+                {
+                    // This is OK.  The Persist() method will create it if necessary.
+                }
+                catch (DirectoryNotFoundException)
+                {
+                    // This is OK.  The Persist() method will create it if necessary.
+                }
             }
 
             // Parse the lines ourselves since we need to preserve the line endings.
