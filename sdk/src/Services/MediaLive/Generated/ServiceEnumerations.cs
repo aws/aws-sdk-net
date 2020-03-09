@@ -9167,6 +9167,60 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type PreferredChannelPipeline.
+    /// </summary>
+    public class PreferredChannelPipeline : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CURRENTLY_ACTIVE for PreferredChannelPipeline
+        /// </summary>
+        public static readonly PreferredChannelPipeline CURRENTLY_ACTIVE = new PreferredChannelPipeline("CURRENTLY_ACTIVE");
+        /// <summary>
+        /// Constant PIPELINE_0 for PreferredChannelPipeline
+        /// </summary>
+        public static readonly PreferredChannelPipeline PIPELINE_0 = new PreferredChannelPipeline("PIPELINE_0");
+        /// <summary>
+        /// Constant PIPELINE_1 for PreferredChannelPipeline
+        /// </summary>
+        public static readonly PreferredChannelPipeline PIPELINE_1 = new PreferredChannelPipeline("PIPELINE_1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreferredChannelPipeline(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreferredChannelPipeline FindValue(string value)
+        {
+            return FindValue<PreferredChannelPipeline>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreferredChannelPipeline(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReservationCodec.
     /// </summary>
     public class ReservationCodec : ConstantClass

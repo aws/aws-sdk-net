@@ -45,6 +45,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MultiplexProgramSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetPreferredChannelPipeline())
+            {
+                context.Writer.WritePropertyName("preferredChannelPipeline");
+                context.Writer.Write(requestObject.PreferredChannelPipeline);
+            }
+
             if(requestObject.IsSetProgramNumber())
             {
                 context.Writer.WritePropertyName("programNumber");

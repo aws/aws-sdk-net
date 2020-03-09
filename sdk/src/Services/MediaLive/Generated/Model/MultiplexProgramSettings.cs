@@ -32,9 +32,26 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class MultiplexProgramSettings
     {
+        private PreferredChannelPipeline _preferredChannelPipeline;
         private int? _programNumber;
         private MultiplexProgramServiceDescriptor _serviceDescriptor;
         private MultiplexVideoSettings _videoSettings;
+
+        /// <summary>
+        /// Gets and sets the property PreferredChannelPipeline. Indicates which pipeline is preferred
+        /// by the multiplex for program ingest.
+        /// </summary>
+        public PreferredChannelPipeline PreferredChannelPipeline
+        {
+            get { return this._preferredChannelPipeline; }
+            set { this._preferredChannelPipeline = value; }
+        }
+
+        // Check to see if PreferredChannelPipeline property is set
+        internal bool IsSetPreferredChannelPipeline()
+        {
+            return this._preferredChannelPipeline != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ProgramNumber. Unique program number.
