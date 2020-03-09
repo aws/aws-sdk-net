@@ -149,6 +149,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExtraConnectionAttributes);
                 }
 
+                if(publicRequest.IsSetKafkaSettings())
+                {
+                    context.Writer.WritePropertyName("KafkaSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KafkaSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.KafkaSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKinesisSettings())
                 {
                     context.Writer.WritePropertyName("KinesisSettings");

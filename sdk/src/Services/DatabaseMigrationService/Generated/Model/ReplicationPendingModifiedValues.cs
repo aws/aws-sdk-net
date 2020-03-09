@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Provides information about the values of pending modifications to a replication instance.
+    /// This data type is an object of the <code>ReplicationInstance</code> user-defined data
+    /// type.
     /// </summary>
     public partial class ReplicationPendingModifiedValues
     {
@@ -76,7 +78,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        ///  Specifies whether the replication instance is a Multi-AZ deployment. You cannot set
+        ///  Specifies whether the replication instance is a Multi-AZ deployment. You can't set
         /// the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
         /// 
         /// </para>

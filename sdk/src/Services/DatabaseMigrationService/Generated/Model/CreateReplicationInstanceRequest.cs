@@ -80,8 +80,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// Indicates whether minor engine upgrades will be applied automatically to the replication
-        /// instance during the maintenance window. This parameter defaults to <code>true</code>.
+        /// A value that indicates whether minor engine upgrades are applied automatically to
+        /// the replication instance during the maintenance window. This parameter defaults to
+        /// <code>true</code>.
         /// </para>
         ///  
         /// <para>
@@ -103,7 +104,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The AWS Availability Zone where the replication instance will be created. The default
+        /// The Availability Zone where the replication instance will be created. The default
         /// value is a random, system-chosen Availability Zone in the endpoint's AWS Region, for
         /// example: <code>us-east-1d</code> 
         /// </para>
@@ -187,7 +188,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        ///  Specifies whether the replication instance is a Multi-AZ deployment. You cannot set
+        ///  Specifies whether the replication instance is a Multi-AZ deployment. You can't set
         /// the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
         /// 
         /// </para>
@@ -304,7 +305,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// Can't end with a hyphen or contain two consecutive hyphens.
         /// </para>
         ///  </li> </ul> 
         /// <para>

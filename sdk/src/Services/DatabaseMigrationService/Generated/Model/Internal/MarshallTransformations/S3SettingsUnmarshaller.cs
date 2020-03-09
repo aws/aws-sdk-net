@@ -76,6 +76,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.BucketName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CdcInsertsAndUpdates", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CdcInsertsAndUpdates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CdcInsertsOnly", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

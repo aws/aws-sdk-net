@@ -400,6 +400,10 @@ namespace Amazon.DatabaseMigrationService
         /// Constant Json for MessageFormatValue
         /// </summary>
         public static readonly MessageFormatValue Json = new MessageFormatValue("json");
+        /// <summary>
+        /// Constant JsonUnformatted for MessageFormatValue
+        /// </summary>
+        public static readonly MessageFormatValue JsonUnformatted = new MessageFormatValue("json-unformatted");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

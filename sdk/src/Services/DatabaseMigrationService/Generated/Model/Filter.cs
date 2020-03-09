@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Identifies the name and value of a source filter object used to limit the number and
+    /// type of records transferred from your source to your target.
     /// </summary>
     public partial class Filter
     {

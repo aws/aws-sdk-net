@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Provides information that defines a replication instance.
     /// </summary>
     public partial class ReplicationInstance
     {
@@ -215,7 +215,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        ///  Specifies whether the replication instance is a Multi-AZ deployment. You cannot set
+        ///  Specifies whether the replication instance is a Multi-AZ deployment. You can't set
         /// the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
         /// 
         /// </para>
@@ -480,7 +480,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SecondaryAvailabilityZone. 
         /// <para>
-        /// The availability zone of the standby replication instance in a Multi-AZ deployment.
+        /// The Availability Zone of the standby replication instance in a Multi-AZ deployment.
         /// </para>
         /// </summary>
         public string SecondaryAvailabilityZone

@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Describes a maintenance action pending for an AWS DMS resource, including when and
+    /// how it will be applied. This data type is a response element to the <code>DescribePendingMaintenanceActions</code>
+    /// operation.
     /// </summary>
     public partial class PendingMaintenanceAction
     {
@@ -60,10 +62,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AutoAppliedAfterDate. 
         /// <para>
-        /// The date of the maintenance window when the action will be applied. The maintenance
-        /// action will be applied to the resource during its first maintenance window after this
-        /// date. If this date is specified, any <code>next-maintenance</code> opt-in requests
-        /// are ignored.
+        /// The date of the maintenance window when the action is to be applied. The maintenance
+        /// action is applied to the resource during its first maintenance window after this date.
+        /// If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.
         /// </para>
         /// </summary>
         public DateTime AutoAppliedAfterDate
@@ -83,9 +84,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The effective date when the pending maintenance action will be applied to the resource.
         /// This date takes into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code>
-        /// API, the <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>.
-        /// This value is blank if an opt-in request has not been received and nothing has been
-        /// specified as <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.
+        /// API operation, and also the <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code>
+        /// parameter values. This value is blank if an opt-in request has not been received and
+        /// nothing has been specified for <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.
         /// </para>
         /// </summary>
         public DateTime CurrentApplyDate
@@ -122,9 +123,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ForcedApplyDate. 
         /// <para>
         /// The date when the maintenance action will be automatically applied. The maintenance
-        /// action will be applied to the resource on this date regardless of the maintenance
-        /// window for the resource. If this date is specified, any <code>immediate</code> opt-in
-        /// requests are ignored.
+        /// action is applied to the resource on this date regardless of the maintenance window
+        /// for the resource. If this date is specified, any <code>immediate</code> opt-in requests
+        /// are ignored.
         /// </para>
         /// </summary>
         public DateTime ForcedApplyDate
@@ -142,7 +143,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property OptInStatus. 
         /// <para>
-        /// Indicates the type of opt-in request that has been received for the resource.
+        /// The type of opt-in request that has been received for the resource.
         /// </para>
         /// </summary>
         public string OptInStatus

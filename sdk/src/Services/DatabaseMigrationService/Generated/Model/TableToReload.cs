@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Provides the name of the schema and table to be reloaded.
     /// </summary>
     public partial class TableToReload
     {

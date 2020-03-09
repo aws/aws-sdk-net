@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// In response to a request by the <code>DescribeReplicationSubnetGroup</code> operation,
+    /// this object identifies a subnet by its given Availability Zone, subnet identifier,
+    /// and status.
     /// </summary>
     public partial class Subnet
     {

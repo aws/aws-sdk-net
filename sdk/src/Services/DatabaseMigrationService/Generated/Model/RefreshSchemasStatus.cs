@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Provides information that describes status of a schema at an endpoint specified by
+    /// the <code>DescribeRefreshSchemaStatus</code> operation.
     /// </summary>
     public partial class RefreshSchemasStatus
     {

@@ -28,15 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Provides a collection of table statistics in response to a request by the <code>DescribeTableStatistics</code>
+    /// operation.
     /// </summary>
     public partial class TableStatistics
     {
         private long? _ddls;
         private long? _deletes;
         private long? _fullLoadCondtnlChkFailedRows;
+        private DateTime? _fullLoadEndTime;
         private long? _fullLoadErrorRows;
+        private bool? _fullLoadReloaded;
         private long? _fullLoadRows;
+        private DateTime? _fullLoadStartTime;
         private long? _inserts;
         private DateTime? _lastUpdateTime;
         private string _schemaName;
@@ -52,7 +56,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Ddls. 
         /// <para>
-        /// The Data Definition Language (DDL) used to build and modify the structure of your
+        /// The data definition language (DDL) used to build and modify the structure of your
         /// tables.
         /// </para>
         /// </summary>
@@ -89,8 +93,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property FullLoadCondtnlChkFailedRows. 
         /// <para>
-        /// The number of rows that failed conditional checks during the Full Load operation (valid
-        /// only for DynamoDB as a target migrations).
+        /// The number of rows that failed conditional checks during the full load operation (valid
+        /// only for migrations where DynamoDB is the target).
         /// </para>
         /// </summary>
         public long FullLoadCondtnlChkFailedRows
@@ -106,10 +110,28 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FullLoadEndTime. 
+        /// <para>
+        /// The time when the full load operation completed.
+        /// </para>
+        /// </summary>
+        public DateTime FullLoadEndTime
+        {
+            get { return this._fullLoadEndTime.GetValueOrDefault(); }
+            set { this._fullLoadEndTime = value; }
+        }
+
+        // Check to see if FullLoadEndTime property is set
+        internal bool IsSetFullLoadEndTime()
+        {
+            return this._fullLoadEndTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FullLoadErrorRows. 
         /// <para>
-        /// The number of rows that failed to load during the Full Load operation (valid only
-        /// for DynamoDB as a target migrations).
+        /// The number of rows that failed to load during the full load operation (valid only
+        /// for migrations where DynamoDB is the target).
         /// </para>
         /// </summary>
         public long FullLoadErrorRows
@@ -125,9 +147,28 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FullLoadReloaded. 
+        /// <para>
+        /// A value that indicates if the table was reloaded (<code>true</code>) or loaded as
+        /// part of a new full load operation (<code>false</code>).
+        /// </para>
+        /// </summary>
+        public bool FullLoadReloaded
+        {
+            get { return this._fullLoadReloaded.GetValueOrDefault(); }
+            set { this._fullLoadReloaded = value; }
+        }
+
+        // Check to see if FullLoadReloaded property is set
+        internal bool IsSetFullLoadReloaded()
+        {
+            return this._fullLoadReloaded.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FullLoadRows. 
         /// <para>
-        /// The number of rows added during the Full Load operation.
+        /// The number of rows added during the full load operation.
         /// </para>
         /// </summary>
         public long FullLoadRows
@@ -140,6 +181,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetFullLoadRows()
         {
             return this._fullLoadRows.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FullLoadStartTime. 
+        /// <para>
+        /// The time when the full load operation started.
+        /// </para>
+        /// </summary>
+        public DateTime FullLoadStartTime
+        {
+            get { return this._fullLoadStartTime.GetValueOrDefault(); }
+            set { this._fullLoadStartTime = value; }
+        }
+
+        // Check to see if FullLoadStartTime property is set
+        internal bool IsSetFullLoadStartTime()
+        {
+            return this._fullLoadStartTime.HasValue; 
         }
 
         /// <summary>
@@ -163,7 +222,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property LastUpdateTime. 
         /// <para>
-        /// The last time the table was updated.
+        /// The last time a table was updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdateTime
@@ -298,41 +357,42 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// The parameter can have the following values
+        /// This parameter can have the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Not enabled—Validation is not enabled for the table in the migration task.
+        /// Not enabled - Validation isn't enabled for the table in the migration task.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Pending records—Some records in the table are waiting for validation.
+        /// Pending records - Some records in the table are waiting for validation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Mismatched records—Some records in the table do not match between the source and target.
+        /// Mismatched records - Some records in the table don't match between the source and
+        /// target.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Suspended records—Some records in the table could not be validated.
+        /// Suspended records - Some records in the table couldn't be validated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// No primary key—The table could not be validated because it had no primary key.
+        /// No primary key - The table couldn't be validated because it has no primary key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Table error—The table was not validated because it was in an error state and some
-        /// data was not migrated.
+        /// Table error - The table wasn't validated because it's in an error state and some data
+        /// wasn't migrated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Validated—All rows in the table were validated. If the table is updated, the status
+        /// Validated - All rows in the table are validated. If the table is updated, the status
         /// can change from Validated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Error—The table could not be validated because of an unexpected error.
+        /// Error - The table couldn't be validated because of an unexpected error.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -369,7 +429,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ValidationSuspendedRecords. 
         /// <para>
-        /// The number of records that could not be validated.
+        /// The number of records that couldn't be validated.
         /// </para>
         /// </summary>
         public long ValidationSuspendedRecords

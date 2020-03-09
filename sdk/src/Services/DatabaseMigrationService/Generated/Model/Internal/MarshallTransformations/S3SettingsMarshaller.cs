@@ -57,6 +57,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BucketName);
             }
 
+            if(requestObject.IsSetCdcInsertsAndUpdates())
+            {
+                context.Writer.WritePropertyName("CdcInsertsAndUpdates");
+                context.Writer.Write(requestObject.CdcInsertsAndUpdates);
+            }
+
             if(requestObject.IsSetCdcInsertsOnly())
             {
                 context.Writer.WritePropertyName("CdcInsertsOnly");

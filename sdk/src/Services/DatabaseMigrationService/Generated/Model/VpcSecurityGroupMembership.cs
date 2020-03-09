@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Describes status of a security group associated with the virtual private cloud hosting
+    /// your replication and DB instances.
     /// </summary>
     public partial class VpcSecurityGroupMembership
     {

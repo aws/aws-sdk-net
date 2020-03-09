@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// In response to a request by the <code>DescribeReplicationTasks</code> operation, this
+    /// object provides a collection of statistics about a replication task.
     /// </summary>
     public partial class ReplicationTaskStats
     {
@@ -119,7 +120,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property FullLoadStartDate. 
         /// <para>
-        /// The date the the replication task full load was started.
+        /// The date the replication task full load was started.
         /// </para>
         /// </summary>
         public DateTime FullLoadStartDate

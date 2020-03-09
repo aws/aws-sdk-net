@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Provides information that defines a MongoDB endpoint.
     /// </summary>
     public partial class MongoDbSettings
     {
@@ -57,7 +57,7 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  
         /// <para>
         /// DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1.
-        /// This setting is not used when authType=No.
+        /// This setting isn't used when authType=No.
         /// </para>
         /// </summary>
         public AuthMechanismValue AuthMechanism
@@ -75,7 +75,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AuthSource. 
         /// <para>
-        ///  The MongoDB database name. This setting is not used when <code>authType=NO</code>.
+        ///  The MongoDB database name. This setting isn't used when <code>authType=NO</code>.
         /// 
         /// </para>
         ///  

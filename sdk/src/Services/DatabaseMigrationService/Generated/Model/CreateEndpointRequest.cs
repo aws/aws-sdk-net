@@ -43,6 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _engineName;
         private string _externalTableDefinition;
         private string _extraConnectionAttributes;
+        private KafkaSettings _kafkaSettings;
         private KinesisSettings _kinesisSettings;
         private string _kmsKeyId;
         private MongoDbSettings _mongoDbSettings;
@@ -142,8 +143,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DynamoDbSettings. 
         /// <para>
-        /// Settings in JSON format for the target Amazon DynamoDB endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+        /// Settings in JSON format for the target Amazon DynamoDB endpoint. For information about
+        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
         /// Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service
         /// User Guide.</i> 
         /// </para>
@@ -184,9 +185,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointIdentifier. 
         /// <para>
-        /// The database endpoint identifier. Identifiers must begin with a letter; must contain
-        /// only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain
-        /// two consecutive hyphens.
+        /// The database endpoint identifier. Identifiers must begin with a letter and must contain
+        /// only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two
+        /// consecutive hyphens.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -225,10 +226,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property EngineName. 
         /// <para>
         /// The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code>
-        /// value, include <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
-        /// <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>,
-        /// <code>db2</code>, <code>azuredb</code>, <code>sybase</code>, <code>dynamodb</code>,
-        /// <code>mongodb</code>, and <code>sqlserver</code>.
+        /// value, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>,
+        /// <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+        /// <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+        /// <code>"elasticsearch"</code>, <code>"documentdb"</code>, and <code>"sqlserver"</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -286,10 +288,31 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KafkaSettings. 
+        /// <para>
+        /// Settings in JSON format for the target Apache Kafka endpoint. For information about
+        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
+        /// Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database Migration
+        /// User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public KafkaSettings KafkaSettings
+        {
+            get { return this._kafkaSettings; }
+            set { this._kafkaSettings = value; }
+        }
+
+        // Check to see if KafkaSettings property is set
+        internal bool IsSetKafkaSettings()
+        {
+            return this._kafkaSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KinesisSettings. 
         /// <para>
-        /// Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more
-        /// information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+        /// Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
+        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
         /// Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database
         /// Migration User Guide.</i> 
         /// </para>
@@ -339,8 +362,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MongoDbSettings. 
         /// <para>
         /// Settings in JSON format for the source MongoDB endpoint. For more information about
-        /// the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-        /// Using MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS Database
+        /// the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using
+        /// MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS Database
         /// Migration Service User Guide.</i> 
         /// </para>
         /// </summary>

@@ -142,6 +142,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExtraConnectionAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KafkaSettings", targetDepth))
+                {
+                    var unmarshaller = KafkaSettingsUnmarshaller.Instance;
+                    unmarshalledObject.KafkaSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KinesisSettings", targetDepth))
                 {
                     var unmarshaller = KinesisSettingsUnmarshaller.Instance;

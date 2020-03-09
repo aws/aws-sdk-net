@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Provides information that defines an Amazon Redshift endpoint.
     /// </summary>
     public partial class RedshiftSettings
     {

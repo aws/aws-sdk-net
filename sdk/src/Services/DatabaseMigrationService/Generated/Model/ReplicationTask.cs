@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Provides information that describes a replication task created by the <code>CreateReplicationTask</code>
+    /// operation.
     /// </summary>
     public partial class ReplicationTask
     {

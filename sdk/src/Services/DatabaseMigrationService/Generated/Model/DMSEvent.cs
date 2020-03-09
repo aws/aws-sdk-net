@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Describes an identifiable significant activity that affects a replication instance
+    /// or task. This object can provide the message, the available event categories, the
+    /// date and source of the event, and the AWS DMS resource type.
     /// </summary>
     public partial class DMSEvent
     {

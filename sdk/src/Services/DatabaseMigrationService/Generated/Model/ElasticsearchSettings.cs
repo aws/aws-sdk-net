@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Provides information that defines an Elasticsearch endpoint.
     /// </summary>
     public partial class ElasticsearchSettings
     {
@@ -59,7 +59,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ErrorRetryDuration. 
         /// <para>
-        /// The maximum number of seconds that DMS retries failed API requests to the Elasticsearch
+        /// The maximum number of seconds for which DMS retries failed API requests to the Elasticsearch
         /// cluster.
         /// </para>
         /// </summary>

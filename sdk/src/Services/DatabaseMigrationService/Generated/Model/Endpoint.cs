@@ -28,7 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
+    /// Describes an endpoint of a database instance in response to operations such as the
+    /// following:
     /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>CreateEndpoint</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DescribeEndpoint</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DescribeEndpointTypes</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ModifyEndpoint</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Endpoint
     {
@@ -45,6 +64,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _externalId;
         private string _externalTableDefinition;
         private string _extraConnectionAttributes;
+        private KafkaSettings _kafkaSettings;
         private KinesisSettings _kinesisSettings;
         private string _kmsKeyId;
         private MongoDbSettings _mongoDbSettings;
@@ -199,9 +219,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointIdentifier. 
         /// <para>
-        /// The database endpoint identifier. Identifiers must begin with a letter; must contain
-        /// only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain
-        /// two consecutive hyphens.
+        /// The database endpoint identifier. Identifiers must begin with a letter and must contain
+        /// only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two
+        /// consecutive hyphens.
         /// </para>
         /// </summary>
         public string EndpointIdentifier
@@ -256,9 +276,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The database engine name. Valid values, depending on the EndpointType, include mysql,
-        /// oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb,
-        /// sybase, dynamodb, mongodb, and sqlserver.
+        /// The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+        /// <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+        /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+        /// <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+        /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+        /// and <code>"sqlserver"</code>.
         /// </para>
         /// </summary>
         public string EngineName
@@ -330,9 +353,28 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KafkaSettings. 
+        /// <para>
+        /// The settings for the Apache Kafka target endpoint. For more information, see the <code>KafkaSettings</code>
+        /// structure.
+        /// </para>
+        /// </summary>
+        public KafkaSettings KafkaSettings
+        {
+            get { return this._kafkaSettings; }
+            set { this._kafkaSettings = value; }
+        }
+
+        // Check to see if KafkaSettings property is set
+        internal bool IsSetKafkaSettings()
+        {
+            return this._kafkaSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KinesisSettings. 
         /// <para>
-        /// The settings for the Amazon Kinesis source endpoint. For more information, see the
+        /// The settings for the Amazon Kinesis target endpoint. For more information, see the
         /// <code>KinesisSettings</code> structure.
         /// </para>
         /// </summary>

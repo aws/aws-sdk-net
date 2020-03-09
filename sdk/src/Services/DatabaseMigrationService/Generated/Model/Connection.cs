@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Status of the connection between an endpoint and a replication instance, including
+    /// Amazon Resource Names (ARNs) and the last error message issued.
     /// </summary>
     public partial class Connection
     {
@@ -42,7 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+        /// The ARN string that uniquely identifies the endpoint.
         /// </para>
         /// </summary>
         public string EndpointArn
@@ -60,9 +61,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointIdentifier. 
         /// <para>
-        /// The identifier of the endpoint. Identifiers must begin with a letter; must contain
-        /// only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain
-        /// two consecutive hyphens.
+        /// The identifier of the endpoint. Identifiers must begin with a letter and must contain
+        /// only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two
+        /// consecutive hyphens.
         /// </para>
         /// </summary>
         public string EndpointIdentifier
@@ -98,7 +99,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationInstanceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the replication instance.
+        /// The ARN of the replication instance.
         /// </para>
         /// </summary>
         public string ReplicationInstanceArn

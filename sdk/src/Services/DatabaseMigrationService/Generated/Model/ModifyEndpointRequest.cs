@@ -44,6 +44,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _engineName;
         private string _externalTableDefinition;
         private string _extraConnectionAttributes;
+        private KafkaSettings _kafkaSettings;
         private KinesisSettings _kinesisSettings;
         private MongoDbSettings _mongoDbSettings;
         private string _password;
@@ -102,7 +103,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+        /// serviceAccessRoleArn - The AWS Identity and Access Management (IAM) role that has
+        /// permission to access the Amazon S3 bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -111,20 +113,18 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  </li> <li> 
         /// <para>
         /// compressionType - An optional parameter to use GZIP to compress the target files.
-        /// Set to NONE (the default) or do not use to leave the files uncompressed.
+        /// Either set this parameter to NONE (the default) or don't use it to leave the files
+        /// uncompressed.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+        /// Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string
+        /// ,BucketName=string,CompressionType=string</code> 
         /// </para>
         ///  
         /// <para>
-        /// JSON syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip"
-        /// } 
+        /// JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
+        /// "BucketName": "string", "CompressionType": "none"|"gzip" } </code> 
         /// </para>
         /// </summary>
         public DmsTransferSettings DmsTransferSettings
@@ -142,8 +142,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DynamoDbSettings. 
         /// <para>
-        /// Settings in JSON format for the target Amazon DynamoDB endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+        /// Settings in JSON format for the target Amazon DynamoDB endpoint. For information about
+        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
         /// Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service
         /// User Guide.</i> 
         /// </para>
@@ -203,9 +203,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointIdentifier. 
         /// <para>
-        /// The database endpoint identifier. Identifiers must begin with a letter; must contain
-        /// only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain
-        /// two consecutive hyphens.
+        /// The database endpoint identifier. Identifiers must begin with a letter and must contain
+        /// only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two
+        /// consecutive hyphens.
         /// </para>
         /// </summary>
         public string EndpointIdentifier
@@ -242,8 +242,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property EngineName. 
         /// <para>
         /// The type of engine for the endpoint. Valid values, depending on the EndpointType,
-        /// include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3,
-        /// db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+        /// include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
+        /// <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>,
+        /// <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+        /// <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+        /// <code>"elasticsearch"</code>, <code>"documentdb"</code>, and <code>"sqlserver"</code>.
         /// </para>
         /// </summary>
         public string EngineName
@@ -296,10 +299,31 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KafkaSettings. 
+        /// <para>
+        /// Settings in JSON format for the target Apache Kafka endpoint. For information about
+        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
+        /// Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database Migration
+        /// User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public KafkaSettings KafkaSettings
+        {
+            get { return this._kafkaSettings; }
+            set { this._kafkaSettings = value; }
+        }
+
+        // Check to see if KafkaSettings property is set
+        internal bool IsSetKafkaSettings()
+        {
+            return this._kafkaSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KinesisSettings. 
         /// <para>
-        /// Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more
-        /// information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+        /// Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
+        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
         /// Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database
         /// Migration User Guide.</i> 
         /// </para>

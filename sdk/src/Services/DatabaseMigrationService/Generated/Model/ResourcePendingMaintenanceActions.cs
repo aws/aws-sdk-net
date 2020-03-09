@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// 
+    /// Identifies an AWS DMS resource and any pending actions for it.
     /// </summary>
     public partial class ResourcePendingMaintenanceActions
     {

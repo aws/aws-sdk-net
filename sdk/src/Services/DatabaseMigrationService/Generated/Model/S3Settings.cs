@@ -34,6 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private string _bucketFolder;
         private string _bucketName;
+        private bool? _cdcInsertsAndUpdates;
         private bool? _cdcInsertsOnly;
         private CompressionTypeValue _compressionType;
         private string _csvDelimiter;
@@ -58,7 +59,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         ///  An optional parameter to set a folder name in the S3 bucket. If provided, tables
         /// are created in the path <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>.
-        /// If this parameter is not specified, then the path used is <code> <i>schema_name</i>/<i>table_name</i>/</code>.
+        /// If this parameter isn't specified, then the path used is <code> <i>schema_name</i>/<i>table_name</i>/</code>.
         /// 
         /// </para>
         /// </summary>
@@ -93,6 +94,53 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CdcInsertsAndUpdates. 
+        /// <para>
+        /// A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations
+        /// to .csv or .parquet (columnar storage) output files. The default setting is <code>false</code>,
+        /// but when <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>,
+        /// INSERTs and UPDATEs from the source database are migrated to the .csv or .parquet
+        /// file. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the
+        /// value of the <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code>
+        /// is set to <code>true</code>, the first field of every CDC record is set to either
+        /// <code>I</code> or <code>U</code> to indicate INSERT and UPDATE operations at the source.
+        /// But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC records
+        /// are written without an indication of INSERT or UPDATE operations at the source. For
+        /// more information about how these settings work together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
+        /// Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service
+        /// User Guide.</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions
+        /// 3.3.1 and later.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set
+        /// to <code>true</code> for the same endpoint. Set either <code>CdcInsertsOnly</code>
+        /// or <code>CdcInsertsAndUpdates</code> to <code>true</code> for the same endpoint, but
+        /// not both.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool CdcInsertsAndUpdates
+        {
+            get { return this._cdcInsertsAndUpdates.GetValueOrDefault(); }
+            set { this._cdcInsertsAndUpdates = value; }
+        }
+
+        // Check to see if CdcInsertsAndUpdates property is set
+        internal bool IsSetCdcInsertsAndUpdates()
+        {
+            return this._cdcInsertsAndUpdates.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property CdcInsertsOnly. 
         /// <para>
         /// A value that enables a change data capture (CDC) load to write only INSERT operations
@@ -116,8 +164,15 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code>
-        /// parameters in versions 3.1.4 and later. 
+        /// AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code>
+        /// and <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set
+        /// to <code>true</code> for the same endpoint. Set either <code>CdcInsertsOnly</code>
+        /// or <code>CdcInsertsAndUpdates</code> to <code>true</code> for the same endpoint, but
+        /// not both.
         /// </para>
         ///  </note>
         /// </summary>
@@ -136,9 +191,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CompressionType. 
         /// <para>
-        ///  An optional parameter to use GZIP to compress the target files. Set to GZIP to compress
-        /// the target files. Set to NONE (the default) or do not use to leave the files uncompressed.
-        /// Applies to both .csv and .parquet file formats. 
+        /// An optional parameter to use GZIP to compress the target files. Set to GZIP to compress
+        /// the target files. Either set this parameter to NONE (the default) or don't use it
+        /// to leave the files uncompressed. This parameter applies to both .csv and .parquet
+        /// file formats. 
         /// </para>
         /// </summary>
         public CompressionTypeValue CompressionType
@@ -423,9 +479,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This setting works together with the <code>CdcInsertsOnly</code> parameter for output
-        /// to .csv files only. For more information about how these settings work together, see
-        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
+        /// This setting works together with the <code>CdcInsertsOnly</code> and the <code>CdcInsertsAndUpdates</code>
+        /// parameters for output to .csv files only. For more information about how these settings
+        /// work together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
         /// Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service
         /// User Guide.</i>.
         /// </para>
