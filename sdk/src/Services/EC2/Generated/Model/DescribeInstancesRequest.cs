@@ -135,7 +135,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> |
-        /// <code>xen</code>).
+        /// <code>xen</code>). The value <code>xen</code> is used for both Xen and Nitro hypervisors.
         /// </para>
         ///  </li> <li> 
         /// <para>

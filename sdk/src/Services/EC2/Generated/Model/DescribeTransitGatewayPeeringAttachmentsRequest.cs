@@ -41,8 +41,33 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// One or more filters. The possible values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>local-owner-id</code> - The ID of your AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>remote-owner-id</code> - The ID of the AWS account in the remote Region that
+        /// owns the transit gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>state</code> - The state of the peering attachment (<code>available</code>
+        /// | <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>modifying</code>
+        /// | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+        /// | <code>rejected</code> | <code>rejecting</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>transit-gateway-id</code> - The ID of the transit gateway.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

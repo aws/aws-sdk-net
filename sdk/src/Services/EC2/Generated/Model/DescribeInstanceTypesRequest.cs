@@ -67,12 +67,12 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type
-        /// is EBS-optimized. (<code>true</code> | <code>false</code>)
+        /// is EBS-optimized. (<code>supported</code> | <code>unsupported</code> | <code>default</code>)
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported.
-        /// (<code>true</code> | <code>false</code>)
+        /// (<code>supported</code> | <code>unsupported</code>)
         /// </para>
         ///  </li> <li> 
         /// <para>

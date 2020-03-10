@@ -14206,6 +14206,13 @@ namespace Amazon.EC2
         /// Exports routes from the specified transit gateway route table to the specified S3
         /// bucket. By default, all routes are exported. Alternatively, you can filter by CIDR
         /// range.
+        /// 
+        ///  
+        /// <para>
+        /// The routes are saved to the specified bucket in a JSON file. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-route-tables.html#tgw-export-route-tables">Export
+        /// Route Tables to Amazon S3</a> in <i>Transit Gateways</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportTransitGatewayRoutes service method.</param>
         /// 
@@ -14219,6 +14226,13 @@ namespace Amazon.EC2
         /// Exports routes from the specified transit gateway route table to the specified S3
         /// bucket. By default, all routes are exported. Alternatively, you can filter by CIDR
         /// range.
+        /// 
+        ///  
+        /// <para>
+        /// The routes are saved to the specified bucket in a JSON file. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-route-tables.html#tgw-export-route-tables">Export
+        /// Route Tables to Amazon S3</a> in <i>Transit Gateways</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportTransitGatewayRoutes service method.</param>
         /// <param name="cancellationToken">
@@ -15105,8 +15119,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Enables or disables a Zone Group for your account. To use Local Zones, you must first
-        /// enable the Zone Group.
+        /// Enables or disables an Availability Zone group for your account.
+        /// 
+        ///  
+        /// <para>
+        /// Use <a href="https://docs.aws.amazon.com/AWSEC2ApiDocReef/build/server-root/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">describe-availability-zones</a>
+        /// to view the value for <code>GroupName</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyAvailabilityZoneGroup service method.</param>
         /// 
@@ -15117,8 +15136,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Enables or disables a Zone Group for your account. To use Local Zones, you must first
-        /// enable the Zone Group.
+        /// Enables or disables an Availability Zone group for your account.
+        /// 
+        ///  
+        /// <para>
+        /// Use <a href="https://docs.aws.amazon.com/AWSEC2ApiDocReef/build/server-root/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">describe-availability-zones</a>
+        /// to view the value for <code>GroupName</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyAvailabilityZoneGroup service method.</param>
         /// <param name="cancellationToken">
@@ -18411,9 +18435,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can specify tags for the Spot Fleet and Spot Instances. You cannot tag other resource
-        /// types in a Spot Fleet request because only the <code>spot-fleet-request</code> and
-        /// <code>instance</code> resource types are supported.
+        /// You can specify tags for the Spot Fleet request and instances launched by the fleet.
+        /// You cannot tag other resource types in a Spot Fleet request because only the <code>spot-fleet-request</code>
+        /// and <code>instance</code> resource types are supported.
         /// </para>
         ///  
         /// <para>
@@ -18458,9 +18482,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can specify tags for the Spot Fleet and Spot Instances. You cannot tag other resource
-        /// types in a Spot Fleet request because only the <code>spot-fleet-request</code> and
-        /// <code>instance</code> resource types are supported.
+        /// You can specify tags for the Spot Fleet request and instances launched by the fleet.
+        /// You cannot tag other resource types in a Spot Fleet request because only the <code>spot-fleet-request</code>
+        /// and <code>instance</code> resource types are supported.
         /// </para>
         ///  
         /// <para>
@@ -19515,8 +19539,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can't hibernate Spot Instances, and you can't stop or hibernate instance store-backed
-        /// instances. For information about using hibernation for Spot Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
+        /// You can't stop or hibernate instance store-backed instances. You can't use the Stop
+        /// action to hibernate Spot Instances, but you can specify that Amazon EC2 should hibernate
+        /// Spot Instances when they are interrupted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
         /// Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
@@ -19576,8 +19601,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can't hibernate Spot Instances, and you can't stop or hibernate instance store-backed
-        /// instances. For information about using hibernation for Spot Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
+        /// You can't stop or hibernate instance store-backed instances. You can't use the Stop
+        /// action to hibernate Spot Instances, but you can specify that Amazon EC2 should hibernate
+        /// Spot Instances when they are interrupted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
         /// Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  

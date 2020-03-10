@@ -29,8 +29,13 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyAvailabilityZoneGroup operation.
-    /// Enables or disables a Zone Group for your account. To use Local Zones, you must first
-    /// enable the Zone Group.
+    /// Enables or disables an Availability Zone group for your account.
+    /// 
+    ///  
+    /// <para>
+    /// Use <a href="https://docs.aws.amazon.com/AWSEC2ApiDocReef/build/server-root/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">describe-availability-zones</a>
+    /// to view the value for <code>GroupName</code>.
+    /// </para>
     /// </summary>
     public partial class ModifyAvailabilityZoneGroupRequest : AmazonEC2Request
     {
@@ -40,7 +45,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The names of the Zone Group.
+        /// The name of the Availability Zone Group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,8 +64,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OptInStatus. 
         /// <para>
-        /// Indicates whether to enable or disable Zone Group membership. The valid values are
-        /// <code>opted-in</code>.
+        /// Indicates whether to enable or disable membership. The valid values are <code>opted-in</code>.
+        /// You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">AWS
+        /// Support</a> to disable an Availability Zone group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

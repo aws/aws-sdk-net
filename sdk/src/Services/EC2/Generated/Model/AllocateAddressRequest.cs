@@ -137,7 +137,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcs.html">DescribeVpcs</a>
+        /// A network border group is a unique set of Availability Zones or Local Zones from where
+        /// AWS advertises IP addresses and limits the addresses to the group. IP addresses cannot
+        /// move between network border groups.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
         /// to view the network border groups.
         /// </para>
         ///  <note> 

@@ -435,7 +435,10 @@ namespace Amazon.EC2.Model
         /// The key-value pair for tagging the Spot Fleet request on creation. The value for <code>ResourceType</code>
         /// must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To
         /// tag instances at launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-        /// template</a>. For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+        /// template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
+        /// <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>).
+        /// For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
         /// Your Resources</a>.
         /// </para>
         /// </summary>
