@@ -45,6 +45,12 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SetTimerAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDurationExpression())
+            {
+                context.Writer.WritePropertyName("durationExpression");
+                context.Writer.Write(requestObject.DurationExpression);
+            }
+
             if(requestObject.IsSetSeconds())
             {
                 context.Writer.WritePropertyName("seconds");

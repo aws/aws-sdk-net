@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// Information needed to reset the timer.
+    /// Information required to reset the timer. The timer is reset to the previously evaluated
+    /// result of the duration.
     /// </summary>
     public partial class ResetTimerAction
     {

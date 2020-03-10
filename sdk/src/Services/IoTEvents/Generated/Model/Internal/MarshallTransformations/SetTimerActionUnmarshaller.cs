@@ -64,6 +64,12 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("durationExpression", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DurationExpression = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("seconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

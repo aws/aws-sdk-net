@@ -260,6 +260,16 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTEvents.Model.SetTimerAction.DurationExpression</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.SetTimerAction.Seconds</property>
+    <min>1</min>
+    <max>31622400</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTEvents.Model.SetTimerAction.TimerName</property>
     <min>1</min>
     <max>128</max>
