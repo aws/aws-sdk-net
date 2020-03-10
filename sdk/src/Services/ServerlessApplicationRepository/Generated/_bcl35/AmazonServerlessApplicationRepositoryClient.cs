@@ -1114,6 +1114,81 @@ namespace Amazon.ServerlessApplicationRepository
 
         #endregion
         
+        #region  UnshareApplication
+
+        /// <summary>
+        /// Unshares an application from an AWS Organization.
+        /// 
+        /// 
+        /// <para>
+        /// This operation can be called only from the organization's master account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnshareApplication service method.</param>
+        /// 
+        /// <returns>The response from the UnshareApplication service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UnshareApplication">REST API Reference for UnshareApplication Operation</seealso>
+        public virtual UnshareApplicationResponse UnshareApplication(UnshareApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnshareApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnshareApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<UnshareApplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UnshareApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UnshareApplication operation on AmazonServerlessApplicationRepositoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnshareApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UnshareApplication">REST API Reference for UnshareApplication Operation</seealso>
+        public virtual IAsyncResult BeginUnshareApplication(UnshareApplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnshareApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnshareApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UnshareApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnshareApplication.</param>
+        /// 
+        /// <returns>Returns a  UnshareApplicationResult from ServerlessApplicationRepository.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UnshareApplication">REST API Reference for UnshareApplication Operation</seealso>
+        public virtual UnshareApplicationResponse EndUnshareApplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UnshareApplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateApplication
 
         /// <summary>

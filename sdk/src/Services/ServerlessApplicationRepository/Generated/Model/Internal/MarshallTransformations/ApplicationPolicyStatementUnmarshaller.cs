@@ -70,6 +70,12 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                     unmarshalledObject.Actions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("principalOrgIDs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PrincipalOrgIDs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("principals", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

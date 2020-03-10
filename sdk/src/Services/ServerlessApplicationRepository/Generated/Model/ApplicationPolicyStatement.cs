@@ -33,6 +33,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
     public partial class ApplicationPolicyStatement
     {
         private List<string> _actions = new List<string>();
+        private List<string> _principalOrgIDs = new List<string>();
         private List<string> _principals = new List<string>();
         private string _statementId;
 
@@ -54,6 +55,25 @@ namespace Amazon.ServerlessApplicationRepository.Model
         internal bool IsSetActions()
         {
             return this._actions != null && this._actions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrincipalOrgIDs. 
+        /// <para>
+        /// An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a>
+        /// global condition key.
+        /// </para>
+        /// </summary>
+        public List<string> PrincipalOrgIDs
+        {
+            get { return this._principalOrgIDs; }
+            set { this._principalOrgIDs = value; }
+        }
+
+        // Check to see if PrincipalOrgIDs property is set
+        internal bool IsSetPrincipalOrgIDs()
+        {
+            return this._principalOrgIDs != null && this._principalOrgIDs.Count > 0; 
         }
 
         /// <summary>

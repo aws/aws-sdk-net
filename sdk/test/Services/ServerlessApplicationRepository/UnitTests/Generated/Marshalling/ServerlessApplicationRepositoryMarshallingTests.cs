@@ -413,6 +413,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ServerlessApplicationRepository")]
+        public void UnshareApplicationMarshallTest()
+        {
+            var operation = service_model.FindOperation("UnshareApplication");
+
+            var request = InstantiateClassGenerator.Execute<UnshareApplicationRequest>();
+            var marshaller = new UnshareApplicationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UnshareApplication", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ServerlessApplicationRepository")]
         public void UpdateApplicationMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateApplication");

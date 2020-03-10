@@ -56,6 +56,17 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetPrincipalOrgIDs())
+            {
+                context.Writer.WritePropertyName("principalOrgIDs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPrincipalOrgIDsListValue in requestObject.PrincipalOrgIDs)
+                {
+                        context.Writer.Write(requestObjectPrincipalOrgIDsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetPrincipals())
             {
                 context.Writer.WritePropertyName("principals");
