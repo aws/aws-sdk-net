@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.696.0",
+    "ProductVersion" : "3.3.697.0",
     "CoreVersion"    : "3.3.104.34",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.166.0",
+            "Version" : "3.3.167.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.34"
@@ -449,7 +449,7 @@
             "InPreview"               : false
         },
         "AWSMarketplaceCommerceAnalytics" : {
-            "Version" : "3.3.103.15",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.34"
@@ -1009,7 +1009,7 @@
             "InPreview"               : false
         },
         "ServerlessApplicationRepository" : {
-            "Version" : "3.3.101.36",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.34"
@@ -1417,7 +1417,7 @@
             "InPreview"               : false
         },
         "IoTEvents"                       : {
-            "Version" : "3.3.102.54",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.34"

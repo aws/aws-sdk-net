@@ -1,3 +1,13 @@
+### 3.3.697.0 (2020-03-10 19:56 UTC)
+* AWSMarketplaceCommerceAnalytics (3.3.104.0)
+	* Change the disbursement data set to look past 31 days instead until the beginning of the month.
+* EC2 (3.3.167.0)
+	* Documentation updates for EC2
+* IoTEvents (3.3.103.0)
+	* API update that adds a new parameter, durationExpression, to SetTimerAction, and deprecates seconds
+* ServerlessApplicationRepository (3.3.102.0)
+	* AWS Serverless Application Repository now supports sharing applications privately with AWS Organizations.
+
 ### 3.3.696.0 (2020-03-09 18:12 UTC)
 * DatabaseMigrationService (3.3.104.0)
 	* Added new settings for Kinesis target to include detailed transaction info; to capture table DDL details; to use single-line unformatted json, which can be directly queried by AWS Athena if data is streamed into S3 through AWS Kinesis Firehose. Added CdcInsertsAndUpdates in S3 target settings to allow capture ongoing insertions and updates only.
