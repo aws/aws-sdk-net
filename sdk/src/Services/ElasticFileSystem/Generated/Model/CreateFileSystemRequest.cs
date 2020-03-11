@@ -189,6 +189,11 @@ namespace Amazon.ElasticFileSystem.Model
         /// If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a>
         /// parameter must be set to true.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string KmsKeyId
