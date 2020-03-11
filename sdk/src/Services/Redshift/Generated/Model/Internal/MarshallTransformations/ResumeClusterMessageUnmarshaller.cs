@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ScheduledActionType Object
+    /// Response Unmarshaller for ResumeClusterMessage Object
     /// </summary>  
-    public class ScheduledActionTypeUnmarshaller : IUnmarshaller<ScheduledActionType, XmlUnmarshallerContext>, IUnmarshaller<ScheduledActionType, JsonUnmarshallerContext>
+    public class ResumeClusterMessageUnmarshaller : IUnmarshaller<ResumeClusterMessage, XmlUnmarshallerContext>, IUnmarshaller<ResumeClusterMessage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ScheduledActionType Unmarshall(XmlUnmarshallerContext context)
+        public ResumeClusterMessage Unmarshall(XmlUnmarshallerContext context)
         {
-            ScheduledActionType unmarshalledObject = new ScheduledActionType();
+            ResumeClusterMessage unmarshalledObject = new ResumeClusterMessage();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,22 +54,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("PauseCluster", targetDepth))
+                    if (context.TestExpression("ClusterIdentifier", targetDepth))
                     {
-                        var unmarshaller = PauseClusterMessageUnmarshaller.Instance;
-                        unmarshalledObject.PauseCluster = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ResizeCluster", targetDepth))
-                    {
-                        var unmarshaller = ResizeClusterMessageUnmarshaller.Instance;
-                        unmarshalledObject.ResizeCluster = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ResumeCluster", targetDepth))
-                    {
-                        var unmarshaller = ResumeClusterMessageUnmarshaller.Instance;
-                        unmarshalledObject.ResumeCluster = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClusterIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -87,18 +75,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ScheduledActionType Unmarshall(JsonUnmarshallerContext context)
+        public ResumeClusterMessage Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ScheduledActionTypeUnmarshaller _instance = new ScheduledActionTypeUnmarshaller();        
+        private static ResumeClusterMessageUnmarshaller _instance = new ResumeClusterMessageUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ScheduledActionTypeUnmarshaller Instance
+        public static ResumeClusterMessageUnmarshaller Instance
         {
             get
             {

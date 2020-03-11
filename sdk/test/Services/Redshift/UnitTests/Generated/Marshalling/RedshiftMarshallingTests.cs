@@ -1832,6 +1832,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void PauseClusterMarshallTest()
+        {
+            var operation = service_model.FindOperation("PauseCluster");
+
+            var request = InstantiateClassGenerator.Execute<PauseClusterRequest>();
+            var marshaller = new PauseClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = PauseClusterResponseUnmarshaller.Instance.Unmarshall(context)
+                as PauseClusterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void PurchaseReservedNodeOfferingMarshallTest()
         {
             var operation = service_model.FindOperation("PurchaseReservedNodeOffering");
@@ -1967,6 +1991,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = RestoreTableFromClusterSnapshotResponseUnmarshaller.Instance.Unmarshall(context)
                 as RestoreTableFromClusterSnapshotResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ResumeClusterMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResumeCluster");
+
+            var request = InstantiateClassGenerator.Execute<ResumeClusterRequest>();
+            var marshaller = new ResumeClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ResumeClusterResponseUnmarshaller.Instance.Unmarshall(context)
+                as ResumeClusterResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

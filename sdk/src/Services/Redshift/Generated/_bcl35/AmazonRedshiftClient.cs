@@ -5081,6 +5081,9 @@ namespace Amazon.Redshift
         /// The cluster does not have read bucket or put object permissions on the S3 bucket specified
         /// when enabling logging.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidS3BucketNameException">
         /// The S3 bucket name is invalid. For more information about naming rules, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
         /// Restrictions and Limitations</a> in the Amazon Simple Storage Service (S3) Developer
@@ -5672,6 +5675,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the ModifyClusterMaintenance service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterMaintenance">REST API Reference for ModifyClusterMaintenance Operation</seealso>
         public virtual ModifyClusterMaintenanceResponse ModifyClusterMaintenance(ModifyClusterMaintenanceRequest request)
@@ -6299,6 +6305,66 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  PauseCluster
+
+        /// <summary>
+        /// Pauses a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PauseCluster service method.</param>
+        /// 
+        /// <returns>The response from the PauseCluster service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PauseCluster">REST API Reference for PauseCluster Operation</seealso>
+        public virtual PauseClusterResponse PauseCluster(PauseClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PauseClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseClusterResponseUnmarshaller.Instance;
+
+            return Invoke<PauseClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PauseCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PauseCluster operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPauseCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PauseCluster">REST API Reference for PauseCluster Operation</seealso>
+        public virtual IAsyncResult BeginPauseCluster(PauseClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PauseClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PauseCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPauseCluster.</param>
+        /// 
+        /// <returns>Returns a  PauseClusterResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PauseCluster">REST API Reference for PauseCluster Operation</seealso>
+        public virtual PauseClusterResponse EndPauseCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PauseClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PurchaseReservedNodeOffering
 
         /// <summary>
@@ -6869,6 +6935,66 @@ namespace Amazon.Redshift
         public virtual RestoreTableFromClusterSnapshotResponse EndRestoreTableFromClusterSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<RestoreTableFromClusterSnapshotResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ResumeCluster
+
+        /// <summary>
+        /// Resumes a paused cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeCluster service method.</param>
+        /// 
+        /// <returns>The response from the ResumeCluster service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResumeCluster">REST API Reference for ResumeCluster Operation</seealso>
+        public virtual ResumeClusterResponse ResumeCluster(ResumeClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeClusterResponseUnmarshaller.Instance;
+
+            return Invoke<ResumeClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResumeCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResumeCluster operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResumeCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResumeCluster">REST API Reference for ResumeCluster Operation</seealso>
+        public virtual IAsyncResult BeginResumeCluster(ResumeClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResumeCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResumeCluster.</param>
+        /// 
+        /// <returns>Returns a  ResumeClusterResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResumeCluster">REST API Reference for ResumeCluster Operation</seealso>
+        public virtual ResumeClusterResponse EndResumeCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ResumeClusterResponse>(asyncResult);
         }
 
         #endregion

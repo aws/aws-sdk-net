@@ -88,6 +88,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTargetAction())
                 {
+                    if(publicRequest.TargetAction.IsSetPauseCluster())
+                    {
+                        if(publicRequest.TargetAction.PauseCluster.IsSetClusterIdentifier())
+                        {
+                            request.Parameters.Add("TargetAction" + "." + "PauseCluster" + "." + "ClusterIdentifier", StringUtils.FromString(publicRequest.TargetAction.PauseCluster.ClusterIdentifier));
+                        }
+                    }
                     if(publicRequest.TargetAction.IsSetResizeCluster())
                     {
                         if(publicRequest.TargetAction.ResizeCluster.IsSetClassic())
@@ -109,6 +116,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         if(publicRequest.TargetAction.ResizeCluster.IsSetNumberOfNodes())
                         {
                             request.Parameters.Add("TargetAction" + "." + "ResizeCluster" + "." + "NumberOfNodes", StringUtils.FromInt(publicRequest.TargetAction.ResizeCluster.NumberOfNodes));
+                        }
+                    }
+                    if(publicRequest.TargetAction.IsSetResumeCluster())
+                    {
+                        if(publicRequest.TargetAction.ResumeCluster.IsSetClusterIdentifier())
+                        {
+                            request.Parameters.Add("TargetAction" + "." + "ResumeCluster" + "." + "ClusterIdentifier", StringUtils.FromString(publicRequest.TargetAction.ResumeCluster.ClusterIdentifier));
                         }
                     }
                 }

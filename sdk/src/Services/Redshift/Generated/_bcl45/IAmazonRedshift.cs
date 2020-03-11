@@ -4781,6 +4781,9 @@ namespace Amazon.Redshift
         /// The cluster does not have read bucket or put object permissions on the S3 bucket specified
         /// when enabling logging.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidS3BucketNameException">
         /// The S3 bucket name is invalid. For more information about naming rules, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
         /// Restrictions and Limitations</a> in the Amazon Simple Storage Service (S3) Developer
@@ -4814,6 +4817,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InsufficientS3BucketPolicyException">
         /// The cluster does not have read bucket or put object permissions on the S3 bucket specified
         /// when enabling logging.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidS3BucketNameException">
         /// The S3 bucket name is invalid. For more information about naming rules, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
@@ -5413,6 +5419,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterMaintenance">REST API Reference for ModifyClusterMaintenance Operation</seealso>
         ModifyClusterMaintenanceResponse ModifyClusterMaintenance(ModifyClusterMaintenanceRequest request);
 
@@ -5429,6 +5438,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the ModifyClusterMaintenance service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterMaintenance">REST API Reference for ModifyClusterMaintenance Operation</seealso>
         Task<ModifyClusterMaintenanceResponse> ModifyClusterMaintenanceAsync(ModifyClusterMaintenanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5952,6 +5964,46 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotSchedule">REST API Reference for ModifySnapshotSchedule Operation</seealso>
         Task<ModifySnapshotScheduleResponse> ModifySnapshotScheduleAsync(ModifySnapshotScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PauseCluster
+
+
+        /// <summary>
+        /// Pauses a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PauseCluster service method.</param>
+        /// 
+        /// <returns>The response from the PauseCluster service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PauseCluster">REST API Reference for PauseCluster Operation</seealso>
+        PauseClusterResponse PauseCluster(PauseClusterRequest request);
+
+
+
+        /// <summary>
+        /// Pauses a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PauseCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PauseCluster service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PauseCluster">REST API Reference for PauseCluster Operation</seealso>
+        Task<PauseClusterResponse> PauseClusterAsync(PauseClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6620,6 +6672,46 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreTableFromClusterSnapshot">REST API Reference for RestoreTableFromClusterSnapshot Operation</seealso>
         Task<RestoreTableFromClusterSnapshotResponse> RestoreTableFromClusterSnapshotAsync(RestoreTableFromClusterSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ResumeCluster
+
+
+        /// <summary>
+        /// Resumes a paused cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeCluster service method.</param>
+        /// 
+        /// <returns>The response from the ResumeCluster service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResumeCluster">REST API Reference for ResumeCluster Operation</seealso>
+        ResumeClusterResponse ResumeCluster(ResumeClusterRequest request);
+
+
+
+        /// <summary>
+        /// Resumes a paused cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResumeCluster service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResumeCluster">REST API Reference for ResumeCluster Operation</seealso>
+        Task<ResumeClusterResponse> ResumeClusterAsync(ResumeClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -463,9 +463,17 @@ namespace Amazon.Redshift
     {
 
         /// <summary>
+        /// Constant PauseCluster for ScheduledActionTypeValues
+        /// </summary>
+        public static readonly ScheduledActionTypeValues PauseCluster = new ScheduledActionTypeValues("PauseCluster");
+        /// <summary>
         /// Constant ResizeCluster for ScheduledActionTypeValues
         /// </summary>
         public static readonly ScheduledActionTypeValues ResizeCluster = new ScheduledActionTypeValues("ResizeCluster");
+        /// <summary>
+        /// Constant ResumeCluster for ScheduledActionTypeValues
+        /// </summary>
+        public static readonly ScheduledActionTypeValues ResumeCluster = new ScheduledActionTypeValues("ResumeCluster");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

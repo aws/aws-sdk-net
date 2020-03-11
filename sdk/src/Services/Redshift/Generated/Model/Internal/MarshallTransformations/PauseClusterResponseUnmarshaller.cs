@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModifyClusterMaintenance operation
+    /// Response Unmarshaller for PauseCluster operation
     /// </summary>  
-    public class ModifyClusterMaintenanceResponseUnmarshaller : XmlResponseUnmarshaller
+    public class PauseClusterResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            ModifyClusterMaintenanceResponse response = new ModifyClusterMaintenanceResponse();
+            PauseClusterResponse response = new PauseClusterResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("ModifyClusterMaintenanceResult", 2))
+                    if(context.TestExpression("PauseClusterResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, ModifyClusterMaintenanceResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, PauseClusterResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -114,9 +114,9 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static ModifyClusterMaintenanceResponseUnmarshaller _instance = new ModifyClusterMaintenanceResponseUnmarshaller();        
+        private static PauseClusterResponseUnmarshaller _instance = new PauseClusterResponseUnmarshaller();        
 
-        internal static ModifyClusterMaintenanceResponseUnmarshaller GetInstance()
+        internal static PauseClusterResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -124,7 +124,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModifyClusterMaintenanceResponseUnmarshaller Instance
+        public static PauseClusterResponseUnmarshaller Instance
         {
             get
             {

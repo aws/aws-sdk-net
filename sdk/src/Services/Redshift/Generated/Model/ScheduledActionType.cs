@@ -33,7 +33,27 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class ScheduledActionType
     {
+        private PauseClusterMessage _pauseCluster;
         private ResizeClusterMessage _resizeCluster;
+        private ResumeClusterMessage _resumeCluster;
+
+        /// <summary>
+        /// Gets and sets the property PauseCluster. 
+        /// <para>
+        /// An action that runs a <code>PauseCluster</code> API operation. 
+        /// </para>
+        /// </summary>
+        public PauseClusterMessage PauseCluster
+        {
+            get { return this._pauseCluster; }
+            set { this._pauseCluster = value; }
+        }
+
+        // Check to see if PauseCluster property is set
+        internal bool IsSetPauseCluster()
+        {
+            return this._pauseCluster != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ResizeCluster. 
@@ -51,6 +71,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetResizeCluster()
         {
             return this._resizeCluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResumeCluster. 
+        /// <para>
+        /// An action that runs a <code>ResumeCluster</code> API operation. 
+        /// </para>
+        /// </summary>
+        public ResumeClusterMessage ResumeCluster
+        {
+            get { return this._resumeCluster; }
+            set { this._resumeCluster = value; }
+        }
+
+        // Check to see if ResumeCluster property is set
+        internal bool IsSetResumeCluster()
+        {
+            return this._resumeCluster != null;
         }
 
     }

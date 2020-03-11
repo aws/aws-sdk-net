@@ -388,6 +388,10 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>paused</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>rebooting</code> 
         /// </para>
         ///  </li> <li> 
