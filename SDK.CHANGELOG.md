@@ -1,3 +1,9 @@
+### 3.3.698.0 (2020-03-11 18:16 UTC)
+* ElasticFileSystem (3.3.104.20)
+	* Documentation updates for elasticfilesystem
+* Redshift (3.3.107.0)
+	* Amazon Redshift now supports operations to pause and resume a cluster on demand or on a schedule.
+
 ### 3.3.697.0 (2020-03-10 19:56 UTC)
 * AWSMarketplaceCommerceAnalytics (3.3.104.0)
 	* Change the disbursement data set to look past 31 days instead until the beginning of the month.

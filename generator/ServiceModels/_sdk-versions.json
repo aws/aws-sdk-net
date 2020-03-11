@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.697.0",
+    "ProductVersion" : "3.3.698.0",
     "CoreVersion"    : "3.3.104.34",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -289,7 +289,7 @@
             "InPreview"               : false
         },
         "Redshift"             : {
-            "Version" : "3.3.106.7",
+            "Version" : "3.3.107.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.34"
@@ -401,7 +401,7 @@
             "InPreview"               : false
         },
         "ElasticFileSystem"         : {
-            "Version" : "3.3.104.19",
+            "Version" : "3.3.104.20",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.34"
