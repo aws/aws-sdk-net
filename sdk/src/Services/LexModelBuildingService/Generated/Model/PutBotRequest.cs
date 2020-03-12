@@ -65,6 +65,7 @@ namespace Amazon.LexModelBuildingService.Model
         private Locale _locale;
         private string _name;
         private ProcessBehavior _processBehavior;
+        private List<Tag> _tags = new List<Tag>();
         private string _voiceId;
 
         /// <summary>
@@ -426,6 +427,27 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetProcessBehavior()
         {
             return this._processBehavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags to add to the bot. You can only add tags when you create a bot, you
+        /// can't use the <code>PutBot</code> operation to update the tags on a bot. To update
+        /// tags, use the <code>TagResource</code> operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

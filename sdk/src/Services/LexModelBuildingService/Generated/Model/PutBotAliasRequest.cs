@@ -46,6 +46,7 @@ namespace Amazon.LexModelBuildingService.Model
         private ConversationLogsRequest _conversationLogs;
         private string _description;
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property BotName. 
@@ -169,6 +170,27 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags to add to the bot alias. You can only add tags when you create an alias,
+        /// you can't use the <code>PutBotAlias</code> operation to update the tags on a bot alias.
+        /// To update tags, use the <code>TagResource</code> operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -47,6 +47,7 @@ namespace Amazon.LexModelBuildingService.Model
         private Locale _locale;
         private string _name;
         private Status _status;
+        private List<Tag> _tags = new List<Tag>();
         private string _version;
         private string _voiceId;
 
@@ -376,6 +377,25 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags associated with the bot.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

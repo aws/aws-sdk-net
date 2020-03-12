@@ -502,6 +502,11 @@
     <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.PutBotRequest.Description</property>
     <min>0</min>
     <max>200</max>
@@ -658,6 +663,16 @@
     <min>1</min>
     <max>100</max>
     <pattern>[a-zA-Z_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.BotAliasMetadata.BotName</property>
@@ -898,6 +913,16 @@
     <property>Amazon.LexModelBuildingService.Model.Statement.ResponseCard</property>
     <min>1</min>
     <max>50000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.UtteranceData.UtteranceString</property>

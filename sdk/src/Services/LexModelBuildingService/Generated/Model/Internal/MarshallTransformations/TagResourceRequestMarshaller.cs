@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutBotAlias Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class PutBotAliasRequestMarshaller : IMarshaller<IRequest, PutBotAliasRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutBotAliasRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,55 +52,23 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutBotAliasRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LexModelBuildingService");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";            
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetBotName())
-                throw new AmazonLexModelBuildingServiceException("Request object does not have required field BotName set");
-            request.AddPathResource("{botName}", StringUtils.FromString(publicRequest.BotName));
-            if (!publicRequest.IsSetName())
-                throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
-            request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
-            request.ResourcePath = "/bots/{botName}/aliases/{name}";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonLexModelBuildingServiceException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tags/{resourceArn}";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBotVersion())
-                {
-                    context.Writer.WritePropertyName("botVersion");
-                    context.Writer.Write(publicRequest.BotVersion);
-                }
-
-                if(publicRequest.IsSetChecksum())
-                {
-                    context.Writer.WritePropertyName("checksum");
-                    context.Writer.Write(publicRequest.Checksum);
-                }
-
-                if(publicRequest.IsSetConversationLogs())
-                {
-                    context.Writer.WritePropertyName("conversationLogs");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConversationLogsRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConversationLogs, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -126,9 +94,9 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static PutBotAliasRequestMarshaller _instance = new PutBotAliasRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static PutBotAliasRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -136,7 +104,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutBotAliasRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {
