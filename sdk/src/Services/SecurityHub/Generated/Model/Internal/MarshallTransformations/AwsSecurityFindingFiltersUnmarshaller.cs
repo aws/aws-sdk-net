@@ -562,6 +562,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.WorkflowState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WorkflowStatus", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.WorkflowStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

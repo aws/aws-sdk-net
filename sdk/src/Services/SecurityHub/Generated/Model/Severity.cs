@@ -32,16 +32,82 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class Severity
     {
+        private SeverityLabel _label;
         private int? _normalized;
         private double? _product;
 
         /// <summary>
+        /// Gets and sets the property Label. 
+        /// <para>
+        /// The severity value of the finding. The allowed values are the following.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>INFORMATIONAL</code> - No issue was found.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LOW</code> - The issue does not require action on its own.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MEDIUM</code> - The issue must be addressed but not urgently.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HIGH</code> - The issue must be addressed as a priority.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SeverityLabel Label
+        {
+            get { return this._label; }
+            set { this._label = value; }
+        }
+
+        // Check to see if Label property is set
+        internal bool IsSetLabel()
+        {
+            return this._label != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Normalized. 
         /// <para>
-        /// The normalized severity of a finding.
+        /// Deprecated. This attribute is being deprecated. Instead of providing <code>Normalized</code>,
+        /// provide <code>Label</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code>
+        /// is set automatically as follows. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// 0 - <code>INFORMATIONAL</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 1–39 - <code>LOW</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 40–69 - <code>MEDIUM</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 70–89 - <code>HIGH</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 90–100 - <code>CRITICAL</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int Normalized
         {
             get { return this._normalized.GetValueOrDefault(); }

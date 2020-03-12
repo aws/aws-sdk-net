@@ -64,6 +64,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CreatedAt", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OwnerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OwnerName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServerSideEncryptionConfiguration", targetDepth))
+                {
+                    var unmarshaller = AwsS3BucketServerSideEncryptionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ServerSideEncryptionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

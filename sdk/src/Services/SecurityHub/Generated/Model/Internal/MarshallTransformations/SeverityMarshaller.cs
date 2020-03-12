@@ -45,6 +45,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Severity requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetLabel())
+            {
+                context.Writer.WritePropertyName("Label");
+                context.Writer.Write(requestObject.Label);
+            }
+
             if(requestObject.IsSetNormalized())
             {
                 context.Writer.WritePropertyName("Normalized");

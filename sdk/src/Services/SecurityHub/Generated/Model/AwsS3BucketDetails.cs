@@ -32,8 +32,28 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsS3BucketDetails
     {
+        private string _createdAt;
         private string _ownerId;
         private string _ownerName;
+        private AwsS3BucketServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The date and time when the S3 bucket was created.
+        /// </para>
+        /// </summary>
+        public string CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OwnerId. 
@@ -69,6 +89,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetOwnerName()
         {
             return this._ownerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerSideEncryptionConfiguration. 
+        /// <para>
+        /// The encryption rules that are applied to the S3 bucket.
+        /// </para>
+        /// </summary>
+        public AwsS3BucketServerSideEncryptionConfiguration ServerSideEncryptionConfiguration
+        {
+            get { return this._serverSideEncryptionConfiguration; }
+            set { this._serverSideEncryptionConfiguration = value; }
+        }
+
+        // Check to see if ServerSideEncryptionConfiguration property is set
+        internal bool IsSetServerSideEncryptionConfiguration()
+        {
+            return this._serverSideEncryptionConfiguration != null;
         }
 
     }

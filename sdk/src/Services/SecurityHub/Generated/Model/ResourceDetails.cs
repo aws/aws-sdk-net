@@ -63,6 +63,7 @@ namespace Amazon.SecurityHub.Model
         private AwsLambdaLayerVersionDetails _awsLambdaLayerVersion;
         private AwsRdsDbInstanceDetails _awsRdsDbInstance;
         private AwsS3BucketDetails _awsS3Bucket;
+        private AwsS3ObjectDetails _awsS3Object;
         private AwsSnsTopicDetails _awsSnsTopic;
         private AwsSqsQueueDetails _awsSqsQueue;
         private AwsWafWebAclDetails _awsWafWebAcl;
@@ -319,6 +320,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsS3Bucket()
         {
             return this._awsS3Bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsS3Object. 
+        /// <para>
+        /// Details about an Amazon S3 object related to a finding.
+        /// </para>
+        /// </summary>
+        public AwsS3ObjectDetails AwsS3Object
+        {
+            get { return this._awsS3Object; }
+            set { this._awsS3Object = value; }
+        }
+
+        // Check to see if AwsS3Object property is set
+        internal bool IsSetAwsS3Object()
+        {
+            return this._awsS3Object != null;
         }
 
         /// <summary>

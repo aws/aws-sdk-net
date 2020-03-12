@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Severity Object
+    /// Response Unmarshaller for Workflow Object
     /// </summary>  
-    public class SeverityUnmarshaller : IUnmarshaller<Severity, XmlUnmarshallerContext>, IUnmarshaller<Severity, JsonUnmarshallerContext>
+    public class WorkflowUnmarshaller : IUnmarshaller<Workflow, XmlUnmarshallerContext>, IUnmarshaller<Workflow, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Severity IUnmarshaller<Severity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Workflow IUnmarshaller<Workflow, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Severity Unmarshall(JsonUnmarshallerContext context)
+        public Workflow Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Severity unmarshalledObject = new Severity();
+            Workflow unmarshalledObject = new Workflow();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Label", targetDepth))
+                if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Label = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Normalized", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Normalized = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Product", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.Product = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static SeverityUnmarshaller _instance = new SeverityUnmarshaller();        
+        private static WorkflowUnmarshaller _instance = new WorkflowUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SeverityUnmarshaller Instance
+        public static WorkflowUnmarshaller Instance
         {
             get
             {

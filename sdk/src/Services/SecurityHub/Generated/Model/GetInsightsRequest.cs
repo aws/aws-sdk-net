@@ -40,7 +40,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InsightArns. 
         /// <para>
-        /// The ARNs of the insights to describe.
+        /// The ARNs of the insights to describe. If you do not provide any insight ARNs, then
+        /// <code>GetInsights</code> returns all of your custom insights. It does not return any
+        /// managed insights.
         /// </para>
         /// </summary>
         public List<string> InsightArns

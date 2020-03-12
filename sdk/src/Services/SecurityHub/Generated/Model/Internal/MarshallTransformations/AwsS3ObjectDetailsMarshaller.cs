@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AwsS3BucketDetails Marshaller
+    /// AwsS3ObjectDetails Marshaller
     /// </summary>       
-    public class AwsS3BucketDetailsMarshaller : IRequestMarshaller<AwsS3BucketDetails, JsonMarshallerContext> 
+    public class AwsS3ObjectDetailsMarshaller : IRequestMarshaller<AwsS3ObjectDetails, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,42 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AwsS3BucketDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(AwsS3ObjectDetails requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCreatedAt())
+            if(requestObject.IsSetContentType())
             {
-                context.Writer.WritePropertyName("CreatedAt");
-                context.Writer.Write(requestObject.CreatedAt);
+                context.Writer.WritePropertyName("ContentType");
+                context.Writer.Write(requestObject.ContentType);
             }
 
-            if(requestObject.IsSetOwnerId())
+            if(requestObject.IsSetETag())
             {
-                context.Writer.WritePropertyName("OwnerId");
-                context.Writer.Write(requestObject.OwnerId);
+                context.Writer.WritePropertyName("ETag");
+                context.Writer.Write(requestObject.ETag);
             }
 
-            if(requestObject.IsSetOwnerName())
+            if(requestObject.IsSetLastModified())
             {
-                context.Writer.WritePropertyName("OwnerName");
-                context.Writer.Write(requestObject.OwnerName);
+                context.Writer.WritePropertyName("LastModified");
+                context.Writer.Write(requestObject.LastModified);
             }
 
-            if(requestObject.IsSetServerSideEncryptionConfiguration())
+            if(requestObject.IsSetServerSideEncryption())
             {
-                context.Writer.WritePropertyName("ServerSideEncryptionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("ServerSideEncryption");
+                context.Writer.Write(requestObject.ServerSideEncryption);
+            }
 
-                var marshaller = AwsS3BucketServerSideEncryptionConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ServerSideEncryptionConfiguration, context);
+            if(requestObject.IsSetSSEKMSKeyId())
+            {
+                context.Writer.WritePropertyName("SSEKMSKeyId");
+                context.Writer.Write(requestObject.SSEKMSKeyId);
+            }
 
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetVersionId())
+            {
+                context.Writer.WritePropertyName("VersionId");
+                context.Writer.Write(requestObject.VersionId);
             }
 
         }
@@ -79,7 +86,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static AwsS3BucketDetailsMarshaller Instance = new AwsS3BucketDetailsMarshaller();
+        public readonly static AwsS3ObjectDetailsMarshaller Instance = new AwsS3ObjectDetailsMarshaller();
 
     }
 }

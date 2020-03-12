@@ -1373,6 +1373,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetWorkflowStatus())
+            {
+                context.Writer.WritePropertyName("WorkflowStatus");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectWorkflowStatusListValue in requestObject.WorkflowStatus)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectWorkflowStatusListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

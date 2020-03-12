@@ -310,6 +310,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.VerificationState);
             }
 
+            if(requestObject.IsSetWorkflow())
+            {
+                context.Writer.WritePropertyName("Workflow");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = WorkflowMarshaller.Instance;
+                marshaller.Marshall(requestObject.Workflow, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetWorkflowState())
             {
                 context.Writer.WritePropertyName("WorkflowState");

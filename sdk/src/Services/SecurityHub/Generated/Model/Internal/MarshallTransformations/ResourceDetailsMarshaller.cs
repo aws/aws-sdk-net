@@ -199,6 +199,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsS3Object())
+            {
+                context.Writer.WritePropertyName("AwsS3Object");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsS3ObjectDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsS3Object, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsSnsTopic())
             {
                 context.Writer.WritePropertyName("AwsSnsTopic");

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Severity Object
+    /// Response Unmarshaller for AwsS3BucketServerSideEncryptionByDefault Object
     /// </summary>  
-    public class SeverityUnmarshaller : IUnmarshaller<Severity, XmlUnmarshallerContext>, IUnmarshaller<Severity, JsonUnmarshallerContext>
+    public class AwsS3BucketServerSideEncryptionByDefaultUnmarshaller : IUnmarshaller<AwsS3BucketServerSideEncryptionByDefault, XmlUnmarshallerContext>, IUnmarshaller<AwsS3BucketServerSideEncryptionByDefault, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Severity IUnmarshaller<Severity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsS3BucketServerSideEncryptionByDefault IUnmarshaller<AwsS3BucketServerSideEncryptionByDefault, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Severity Unmarshall(JsonUnmarshallerContext context)
+        public AwsS3BucketServerSideEncryptionByDefault Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Severity unmarshalledObject = new Severity();
+            AwsS3BucketServerSideEncryptionByDefault unmarshalledObject = new AwsS3BucketServerSideEncryptionByDefault();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Label", targetDepth))
+                if (context.TestExpression("KMSMasterKeyID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Label = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KMSMasterKeyID = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Normalized", targetDepth))
+                if (context.TestExpression("SSEAlgorithm", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Normalized = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Product", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.Product = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SSEAlgorithm = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static SeverityUnmarshaller _instance = new SeverityUnmarshaller();        
+        private static AwsS3BucketServerSideEncryptionByDefaultUnmarshaller _instance = new AwsS3BucketServerSideEncryptionByDefaultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SeverityUnmarshaller Instance
+        public static AwsS3BucketServerSideEncryptionByDefaultUnmarshaller Instance
         {
             get
             {

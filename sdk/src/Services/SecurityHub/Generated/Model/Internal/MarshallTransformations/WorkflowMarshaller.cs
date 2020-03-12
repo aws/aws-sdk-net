@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AwsS3BucketDetails Marshaller
+    /// Workflow Marshaller
     /// </summary>       
-    public class AwsS3BucketDetailsMarshaller : IRequestMarshaller<AwsS3BucketDetails, JsonMarshallerContext> 
+    public class WorkflowMarshaller : IRequestMarshaller<Workflow, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AwsS3BucketDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(Workflow requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCreatedAt())
+            if(requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("CreatedAt");
-                context.Writer.Write(requestObject.CreatedAt);
-            }
-
-            if(requestObject.IsSetOwnerId())
-            {
-                context.Writer.WritePropertyName("OwnerId");
-                context.Writer.Write(requestObject.OwnerId);
-            }
-
-            if(requestObject.IsSetOwnerName())
-            {
-                context.Writer.WritePropertyName("OwnerName");
-                context.Writer.Write(requestObject.OwnerName);
-            }
-
-            if(requestObject.IsSetServerSideEncryptionConfiguration())
-            {
-                context.Writer.WritePropertyName("ServerSideEncryptionConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AwsS3BucketServerSideEncryptionConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ServerSideEncryptionConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Status");
+                context.Writer.Write(requestObject.Status);
             }
 
         }
@@ -79,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static AwsS3BucketDetailsMarshaller Instance = new AwsS3BucketDetailsMarshaller();
+        public readonly static WorkflowMarshaller Instance = new WorkflowMarshaller();
 
     }
 }

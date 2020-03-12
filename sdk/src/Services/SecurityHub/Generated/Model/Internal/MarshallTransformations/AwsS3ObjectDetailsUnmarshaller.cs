@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Severity Object
+    /// Response Unmarshaller for AwsS3ObjectDetails Object
     /// </summary>  
-    public class SeverityUnmarshaller : IUnmarshaller<Severity, XmlUnmarshallerContext>, IUnmarshaller<Severity, JsonUnmarshallerContext>
+    public class AwsS3ObjectDetailsUnmarshaller : IUnmarshaller<AwsS3ObjectDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsS3ObjectDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Severity IUnmarshaller<Severity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsS3ObjectDetails IUnmarshaller<AwsS3ObjectDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,51 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Severity Unmarshall(JsonUnmarshallerContext context)
+        public AwsS3ObjectDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Severity unmarshalledObject = new Severity();
+            AwsS3ObjectDetails unmarshalledObject = new AwsS3ObjectDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Label", targetDepth))
+                if (context.TestExpression("ContentType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Label = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContentType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Normalized", targetDepth))
+                if (context.TestExpression("ETag", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Normalized = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ETag = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Product", targetDepth))
+                if (context.TestExpression("LastModified", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.Product = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServerSideEncryption", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServerSideEncryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SSEKMSKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SSEKMSKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VersionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VersionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +106,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static SeverityUnmarshaller _instance = new SeverityUnmarshaller();        
+        private static AwsS3ObjectDetailsUnmarshaller _instance = new AwsS3ObjectDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SeverityUnmarshaller Instance
+        public static AwsS3ObjectDetailsUnmarshaller Instance
         {
             get
             {

@@ -148,6 +148,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsS3Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsS3Object", targetDepth))
+                {
+                    var unmarshaller = AwsS3ObjectDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsS3Object = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsSnsTopic", targetDepth))
                 {
                     var unmarshaller = AwsSnsTopicDetailsUnmarshaller.Instance;

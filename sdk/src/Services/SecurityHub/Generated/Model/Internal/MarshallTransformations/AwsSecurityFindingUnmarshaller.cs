@@ -238,6 +238,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.VerificationState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Workflow", targetDepth))
+                {
+                    var unmarshaller = WorkflowUnmarshaller.Instance;
+                    unmarshalledObject.Workflow = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WorkflowState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
