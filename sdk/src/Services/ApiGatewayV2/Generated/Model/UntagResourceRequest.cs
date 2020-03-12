@@ -56,9 +56,9 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys.             
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The Tag keys to delete.
+        /// The Tag keys to delete
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

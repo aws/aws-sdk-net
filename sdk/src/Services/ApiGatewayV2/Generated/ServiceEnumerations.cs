@@ -459,13 +459,13 @@ namespace Amazon.ApiGatewayV2
         /// </summary>
         public static readonly LoggingLevel ERROR = new LoggingLevel("ERROR");
         /// <summary>
-        /// Constant False for LoggingLevel
-        /// </summary>
-        public static readonly LoggingLevel False = new LoggingLevel("false");
-        /// <summary>
         /// Constant INFO for LoggingLevel
         /// </summary>
         public static readonly LoggingLevel INFO = new LoggingLevel("INFO");
+        /// <summary>
+        /// Constant OFF for LoggingLevel
+        /// </summary>
+        public static readonly LoggingLevel OFF = new LoggingLevel("OFF");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -650,6 +650,114 @@ namespace Amazon.ApiGatewayV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SecurityPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcLinkStatus.
+    /// </summary>
+    public class VpcLinkStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for VpcLinkStatus
+        /// </summary>
+        public static readonly VpcLinkStatus AVAILABLE = new VpcLinkStatus("AVAILABLE");
+        /// <summary>
+        /// Constant DELETING for VpcLinkStatus
+        /// </summary>
+        public static readonly VpcLinkStatus DELETING = new VpcLinkStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for VpcLinkStatus
+        /// </summary>
+        public static readonly VpcLinkStatus FAILED = new VpcLinkStatus("FAILED");
+        /// <summary>
+        /// Constant INACTIVE for VpcLinkStatus
+        /// </summary>
+        public static readonly VpcLinkStatus INACTIVE = new VpcLinkStatus("INACTIVE");
+        /// <summary>
+        /// Constant PENDING for VpcLinkStatus
+        /// </summary>
+        public static readonly VpcLinkStatus PENDING = new VpcLinkStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcLinkStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcLinkStatus FindValue(string value)
+        {
+            return FindValue<VpcLinkStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcLinkStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcLinkVersion.
+    /// </summary>
+    public class VpcLinkVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant V2 for VpcLinkVersion
+        /// </summary>
+        public static readonly VpcLinkVersion V2 = new VpcLinkVersion("V2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcLinkVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcLinkVersion FindValue(string value)
+        {
+            return FindValue<VpcLinkVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcLinkVersion(string value)
         {
             return FindValue(value);
         }

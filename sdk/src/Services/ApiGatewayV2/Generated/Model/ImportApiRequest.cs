@@ -40,7 +40,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property Basepath. 
         /// <para>
-        /// Represents the base path of the imported API. Supported only for HTTP APIs.
+        /// Specifies how to interpret the base path of the API during import. Valid values are
+        /// ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set
+        /// the OpenAPI basePath Property</a>. Supported only for HTTP APIs.
         /// </para>
         /// </summary>
         public string Basepath

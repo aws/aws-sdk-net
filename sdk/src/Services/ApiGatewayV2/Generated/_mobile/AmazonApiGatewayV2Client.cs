@@ -785,6 +785,87 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  CreateVpcLink
+
+        internal virtual CreateVpcLinkResponse CreateVpcLink(CreateVpcLinkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcLinkResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcLinkResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a VPC link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcLink service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpcLink service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual Task<CreateVpcLinkResponse> CreateVpcLinkAsync(CreateVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcLinkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVpcLinkResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAccessLogSettings
+
+        internal virtual DeleteAccessLogSettingsResponse DeleteAccessLogSettings(DeleteAccessLogSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessLogSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessLogSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessLogSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the AccessLogSettings for a Stage. To disable access logging for a Stage,
+        /// delete its AccessLogSettings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessLogSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccessLogSettings service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual Task<DeleteAccessLogSettingsResponse> DeleteAccessLogSettingsAsync(DeleteAccessLogSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessLogSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessLogSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAccessLogSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteApi
 
         internal virtual DeleteApiResponse DeleteApi(DeleteApiRequest request)
@@ -1189,6 +1270,46 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  DeleteRouteRequestParameter
+
+        internal virtual DeleteRouteRequestParameterResponse DeleteRouteRequestParameter(DeleteRouteRequestParameterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRouteRequestParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouteRequestParameterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRouteRequestParameterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a route request parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteRequestParameter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRouteRequestParameter service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual Task<DeleteRouteRequestParameterResponse> DeleteRouteRequestParameterAsync(DeleteRouteRequestParameterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRouteRequestParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouteRequestParameterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRouteRequestParameterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteRouteResponse
 
         internal virtual DeleteRouteResponseResponse DeleteRouteResponse(DeleteRouteResponseRequest request)
@@ -1305,6 +1426,46 @@ namespace Amazon.ApiGatewayV2
             options.ResponseUnmarshaller = DeleteStageResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteStageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVpcLink
+
+        internal virtual DeleteVpcLinkResponse DeleteVpcLink(DeleteVpcLinkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcLinkResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcLinkResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a VPC link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcLink service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVpcLink service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual Task<DeleteVpcLinkResponse> DeleteVpcLinkAsync(DeleteVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcLinkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVpcLinkResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2326,6 +2487,86 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  GetVpcLink
+
+        internal virtual GetVpcLinkResponse GetVpcLink(GetVpcLinkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcLinkResponseUnmarshaller.Instance;
+
+            return Invoke<GetVpcLinkResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a VPC link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcLink service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVpcLink service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual Task<GetVpcLinkResponse> GetVpcLinkAsync(GetVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcLinkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetVpcLinkResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetVpcLinks
+
+        internal virtual GetVpcLinksResponse GetVpcLinks(GetVpcLinksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVpcLinksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcLinksResponseUnmarshaller.Instance;
+
+            return Invoke<GetVpcLinksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a collection of VPC links.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcLinks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVpcLinks service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual Task<GetVpcLinksResponse> GetVpcLinksAsync(GetVpcLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVpcLinksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcLinksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetVpcLinksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ImportApi
 
         internal virtual ImportApiResponse ImportApi(ImportApiRequest request)
@@ -3057,6 +3298,50 @@ namespace Amazon.ApiGatewayV2
             options.ResponseUnmarshaller = UpdateStageResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateStageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateVpcLink
+
+        internal virtual UpdateVpcLinkResponse UpdateVpcLink(UpdateVpcLinkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVpcLinkResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVpcLinkResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a VPC link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcLink service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVpcLink service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual Task<UpdateVpcLinkResponse> UpdateVpcLinkAsync(UpdateVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVpcLinkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateVpcLinkResponse>(request, options, cancellationToken);
         }
 
         #endregion

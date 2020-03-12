@@ -153,6 +153,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     response.TimeoutInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("tlsConfig", targetDepth))
+                {
+                    var unmarshaller = TlsConfigUnmarshaller.Instance;
+                    response.TlsConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

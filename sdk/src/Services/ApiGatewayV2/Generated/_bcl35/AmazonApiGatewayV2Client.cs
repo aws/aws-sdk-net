@@ -976,6 +976,123 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  CreateVpcLink
+
+        /// <summary>
+        /// Creates a VPC link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcLink service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcLink service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual CreateVpcLinkResponse CreateVpcLink(CreateVpcLinkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcLinkResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcLinkResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcLink operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcLink
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginCreateVpcLink(CreateVpcLinkRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcLinkResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcLink.</param>
+        /// 
+        /// <returns>Returns a  CreateVpcLinkResult from ApiGatewayV2.</returns>
+        public virtual CreateVpcLinkResponse EndCreateVpcLink(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVpcLinkResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAccessLogSettings
+
+        /// <summary>
+        /// Deletes the AccessLogSettings for a Stage. To disable access logging for a Stage,
+        /// delete its AccessLogSettings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessLogSettings service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessLogSettings service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual DeleteAccessLogSettingsResponse DeleteAccessLogSettings(DeleteAccessLogSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessLogSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessLogSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessLogSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccessLogSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessLogSettings operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessLogSettings
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteAccessLogSettings(DeleteAccessLogSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessLogSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessLogSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccessLogSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessLogSettings.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccessLogSettingsResult from ApiGatewayV2.</returns>
+        public virtual DeleteAccessLogSettingsResponse EndDeleteAccessLogSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAccessLogSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteApi
 
         /// <summary>
@@ -1560,6 +1677,64 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  DeleteRouteRequestParameter
+
+        /// <summary>
+        /// Deletes a route request parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteRequestParameter service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRouteRequestParameter service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual DeleteRouteRequestParameterResponse DeleteRouteRequestParameter(DeleteRouteRequestParameterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRouteRequestParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouteRequestParameterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRouteRequestParameterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRouteRequestParameter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteRequestParameter operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRouteRequestParameter
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteRouteRequestParameter(DeleteRouteRequestParameterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRouteRequestParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouteRequestParameterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRouteRequestParameter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRouteRequestParameter.</param>
+        /// 
+        /// <returns>Returns a  DeleteRouteRequestParameterResult from ApiGatewayV2.</returns>
+        public virtual DeleteRouteRequestParameterResponse EndDeleteRouteRequestParameter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRouteRequestParameterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteRouteResponse
 
         /// <summary>
@@ -1730,6 +1905,64 @@ namespace Amazon.ApiGatewayV2
         public virtual DeleteStageResponse EndDeleteStage(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVpcLink
+
+        /// <summary>
+        /// Deletes a VPC link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcLink service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcLink service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual DeleteVpcLinkResponse DeleteVpcLink(DeleteVpcLinkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcLinkResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcLinkResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcLink operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcLink
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteVpcLink(DeleteVpcLinkRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcLinkResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcLink.</param>
+        /// 
+        /// <returns>Returns a  DeleteVpcLinkResult from ApiGatewayV2.</returns>
+        public virtual DeleteVpcLinkResponse EndDeleteVpcLink(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVpcLinkResponse>(asyncResult);
         }
 
         #endregion
@@ -3183,6 +3416,122 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  GetVpcLink
+
+        /// <summary>
+        /// Gets a VPC link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcLink service method.</param>
+        /// 
+        /// <returns>The response from the GetVpcLink service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual GetVpcLinkResponse GetVpcLink(GetVpcLinkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcLinkResponseUnmarshaller.Instance;
+
+            return Invoke<GetVpcLinkResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcLink operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVpcLink
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetVpcLink(GetVpcLinkRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcLinkResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVpcLink.</param>
+        /// 
+        /// <returns>Returns a  GetVpcLinkResult from ApiGatewayV2.</returns>
+        public virtual GetVpcLinkResponse EndGetVpcLink(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVpcLinkResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetVpcLinks
+
+        /// <summary>
+        /// Gets a collection of VPC links.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcLinks service method.</param>
+        /// 
+        /// <returns>The response from the GetVpcLinks service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual GetVpcLinksResponse GetVpcLinks(GetVpcLinksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVpcLinksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcLinksResponseUnmarshaller.Instance;
+
+            return Invoke<GetVpcLinksResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVpcLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcLinks operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVpcLinks
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetVpcLinks(GetVpcLinksRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVpcLinksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcLinksResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVpcLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVpcLinks.</param>
+        /// 
+        /// <returns>Returns a  GetVpcLinksResult from ApiGatewayV2.</returns>
+        public virtual GetVpcLinksResponse EndGetVpcLinks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVpcLinksResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ImportApi
 
         /// <summary>
@@ -4184,6 +4533,68 @@ namespace Amazon.ApiGatewayV2
         public virtual UpdateStageResponse EndUpdateStage(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateStageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateVpcLink
+
+        /// <summary>
+        /// Updates a VPC link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcLink service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVpcLink service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        public virtual UpdateVpcLinkResponse UpdateVpcLink(UpdateVpcLinkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVpcLinkResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVpcLinkResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcLink operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVpcLink
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginUpdateVpcLink(UpdateVpcLinkRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVpcLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVpcLinkResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVpcLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVpcLink.</param>
+        /// 
+        /// <returns>Returns a  UpdateVpcLinkResult from ApiGatewayV2.</returns>
+        public virtual UpdateVpcLinkResponse EndUpdateVpcLink(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateVpcLinkResponse>(asyncResult);
         }
 
         #endregion

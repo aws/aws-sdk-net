@@ -98,7 +98,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ThrottlingBurstLimit. 
         /// <para>
-        /// Specifies the throttling burst limit. Supported only for WebSocket APIs.
+        /// Specifies the throttling burst limit.
         /// </para>
         /// </summary>
         public int ThrottlingBurstLimit
@@ -116,7 +116,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ThrottlingRateLimit. 
         /// <para>
-        /// Specifies the throttling rate limit. Supported only for WebSocket APIs.
+        /// Specifies the throttling rate limit.
         /// </para>
         /// </summary>
         public double ThrottlingRateLimit

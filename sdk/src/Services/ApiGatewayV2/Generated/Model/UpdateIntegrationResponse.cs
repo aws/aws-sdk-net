@@ -49,6 +49,7 @@ namespace Amazon.ApiGatewayV2.Model
         private Dictionary<string, string> _requestTemplates = new Dictionary<string, string>();
         private string _templateSelectionExpression;
         private int? _timeoutInMillis;
+        private TlsConfig _tlsConfig;
 
         /// <summary>
         /// Gets and sets the property ApiGatewayManaged. 
@@ -73,7 +74,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The connection ID.
+        /// The ID of the VPC link for a private integration. Supported only for HTTP APIs.
         /// </para>
         /// </summary>
         public string ConnectionId
@@ -91,8 +92,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ConnectionType. 
         /// <para>
-        /// The type of the network connection to the integration endpoint. Currently the only
-        /// valid value is INTERNET, for connections through the public routable internet.
+        /// The type of the network connection to the integration endpoint. Specify INTERNET for
+        /// connections through the public routable internet or VPC_LINK for private connections
+        /// between API Gateway and resources in a VPC. The default value is INTERNET.
         /// </para>
         /// </summary>
         public ConnectionType ConnectionType
@@ -263,8 +265,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// </para>
         ///  
         /// <para>
-        /// HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the
-        /// client request passed through as-is. This is also referred to as HTTP proxy integration.
+        /// HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with
+        /// the client request passed through as-is. This is also referred to as HTTP proxy integration.
         /// </para>
         ///  
         /// <para>
@@ -287,7 +289,20 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property IntegrationUri. 
         /// <para>
-        /// For a Lambda proxy integration, this is the URI of the Lambda function.
+        /// For a Lambda integration, specify the URI of a Lambda function.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an HTTP integration, specify a fully-qualified URL.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an HTTP API private integration, specify the ARN of an Application Load Balancer
+        /// listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify
+        /// the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify
+        /// resources. You can use query parameters to target specific resources. To learn more,
+        /// see <a href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+        /// For private integrations, all resources must be owned by the same AWS account.
         /// </para>
         /// </summary>
         public string IntegrationUri
@@ -342,7 +357,6 @@ namespace Amazon.ApiGatewayV2.Model
         /// Gets and sets the property PayloadFormatVersion. 
         /// <para>
         /// Specifies the format of the payload sent to an integration. Required for HTTP APIs.
-        /// Currently, the only supported value is 1.0.
         /// </para>
         /// </summary>
         public string PayloadFormatVersion
@@ -442,6 +456,25 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetTimeoutInMillis()
         {
             return this._timeoutInMillis.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TlsConfig. 
+        /// <para>
+        /// The TLS configuration for a private integration. If you specify a TLS configuration,
+        /// private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.
+        /// </para>
+        /// </summary>
+        public TlsConfig TlsConfig
+        {
+            get { return this._tlsConfig; }
+            set { this._tlsConfig = value; }
+        }
+
+        // Check to see if TlsConfig property is set
+        internal bool IsSetTlsConfig()
+        {
+            return this._tlsConfig != null;
         }
 
     }

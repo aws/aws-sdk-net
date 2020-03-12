@@ -169,6 +169,17 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TimeoutInMillis);
                 }
 
+                if(publicRequest.IsSetTlsConfig())
+                {
+                    context.Writer.WritePropertyName("tlsConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TlsConfigInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TlsConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
