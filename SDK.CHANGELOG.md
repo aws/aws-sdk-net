@@ -1,3 +1,20 @@
+### 3.3.699.0 (2020-03-12 19:47 UTC)
+* ApiGatewayV2 (3.3.105.0)
+	* Amazon API Gateway HTTP APIs is now generally available. HTTP APIs offer the core functionality of REST API at up to 71% lower price compared to REST API, 60% lower p99 latency, and is significantly easier to use. As part of general availability, we added new features to route requests to private backends such as private ALBs, NLBs, and IP/ports. We also brought over a set of features from REST API such as Stage Variables, and Stage/Route level throttling. Custom domain names can also now be used with both REST And HTTP APIs.
+* EC2 (3.3.168.0)
+	* Documentation updates for EC2
+* IoT (3.3.107.0)
+	* As part of this release, we are extending capability of AWS IoT Rules Engine to support IoT Cloudwatch log action. The IoT Cloudwatch log rule action lets you send messages from IoT sensors and applications to Cloudwatch logs for troubleshooting and debugging.
+* LexModelBuildingService (3.3.104.0)
+	* Amazon Lex now supports tagging for bots, bot aliases and bot channels. 
+* SecurityHub (3.3.110.0)
+	* The AWS Security Finding Format is being augmented with the following changes. 21 new resource types without corresponding details objects are added. Another new resource type, AwsS3Object, has an accompanying details object. Severity.Label is a new string field that indicates the severity of a finding. The available values are: INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL. The new string field Workflow.Status indicates the status of the investigation into a finding. The available values are: NEW, NOTIFIED, RESOLVED, SUPPRESSED.
+* Core 3.3.104.35
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.698.0 (2020-03-11 18:16 UTC)
 * ElasticFileSystem (3.3.104.20)
 	* Documentation updates for elasticfilesystem
