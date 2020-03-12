@@ -33,6 +33,7 @@ namespace Amazon.IoT.Model
     public partial class Action
     {
         private CloudwatchAlarmAction _cloudwatchAlarm;
+        private CloudwatchLogsAction _cloudwatchLogs;
         private CloudwatchMetricAction _cloudwatchMetric;
         private DynamoDBAction _dynamodb;
         private DynamoDBv2Action _dynamodBv2;
@@ -67,6 +68,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetCloudwatchAlarm()
         {
             return this._cloudwatchAlarm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudwatchLogs. 
+        /// <para>
+        /// Send data to CloudWatch logs.
+        /// </para>
+        /// </summary>
+        public CloudwatchLogsAction CloudwatchLogs
+        {
+            get { return this._cloudwatchLogs; }
+            set { this._cloudwatchLogs = value; }
+        }
+
+        // Check to see if CloudwatchLogs property is set
+        internal bool IsSetCloudwatchLogs()
+        {
+            return this._cloudwatchLogs != null;
         }
 
         /// <summary>

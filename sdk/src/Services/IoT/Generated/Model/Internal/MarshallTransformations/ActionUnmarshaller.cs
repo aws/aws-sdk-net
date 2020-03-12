@@ -70,6 +70,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudwatchAlarm = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cloudwatchLogs", targetDepth))
+                {
+                    var unmarshaller = CloudwatchLogsActionUnmarshaller.Instance;
+                    unmarshalledObject.CloudwatchLogs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("cloudwatchMetric", targetDepth))
                 {
                     var unmarshaller = CloudwatchMetricActionUnmarshaller.Instance;

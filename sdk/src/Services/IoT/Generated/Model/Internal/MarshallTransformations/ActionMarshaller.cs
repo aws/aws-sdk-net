@@ -56,6 +56,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCloudwatchLogs())
+            {
+                context.Writer.WritePropertyName("cloudwatchLogs");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CloudwatchLogsActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.CloudwatchLogs, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCloudwatchMetric())
             {
                 context.Writer.WritePropertyName("cloudwatchMetric");

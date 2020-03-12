@@ -57,7 +57,11 @@ namespace Amazon.IoT.Model
         /// <para>
         ///  <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint
+        /// type to avoid issues related to the widespread distrust of Symantec certificate authorities.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
         public string EndpointType
