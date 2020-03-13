@@ -42,7 +42,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Application. 
         /// <para>
-        /// The application to get.
+        /// The application to get. Specify either the application name or the application ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -100,7 +100,8 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The configuration to get.
+        /// The configuration to get. Specify either the configuration name or the configuration
+        /// ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -119,7 +120,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// The environment to get.
+        /// The environment to get. Specify either the environment name or the environment ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

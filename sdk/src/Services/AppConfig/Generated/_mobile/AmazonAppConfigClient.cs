@@ -356,8 +356,8 @@ namespace Amazon.AppConfig
 
         /// <summary>
         /// Information that enables AppConfig to access the configuration source. Valid configuration
-        /// sources include Systems Manager (SSM) documents and SSM Parameter Store parameters.
-        /// A configuration profile includes the following information.
+        /// sources include Systems Manager (SSM) documents, SSM Parameter Store parameters, and
+        /// Amazon S3 objects. A configuration profile includes the following information.
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -373,7 +373,11 @@ namespace Amazon.AppConfig
         /// A validator for the configuration data. Available validators include either a JSON
         /// Schema or an AWS Lambda function.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html">Create
+        /// a Configuration and a Configuration Profile</a> in the <i>AWS AppConfig User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationProfile service method.</param>
         /// <param name="cancellationToken">
