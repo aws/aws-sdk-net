@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.699.0",
+    "ProductVersion" : "3.3.699.1",
     "CoreVersion"    : "3.3.104.35",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1617,7 +1617,7 @@
             "InPreview"               : false
         },
         "AppConfig"                       : {
-            "Version" : "3.3.101.8",
+            "Version" : "3.3.101.9",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.104.35"
