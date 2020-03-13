@@ -30,7 +30,7 @@ namespace Amazon.Lex.Model
     /// <summary>
     /// This is the response object from the PutSession operation.
     /// </summary>
-    public partial class PutSessionResponse : AmazonWebServiceResponse
+    public partial class PutSessionResponse : AmazonWebServiceResponse, IDisposable
     {
         private Stream _audioStream;
         private string _contentType;
@@ -283,5 +283,33 @@ namespace Amazon.Lex.Model
             return this._slotToElicit != null;
         }
 
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                this._audioStream?.Dispose();
+                this._audioStream = null;
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
     }
 }

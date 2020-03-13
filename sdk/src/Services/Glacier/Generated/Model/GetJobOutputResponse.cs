@@ -30,7 +30,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Contains the Amazon S3 Glacier response to your request.
     /// </summary>
-    public partial class GetJobOutputResponse : AmazonWebServiceResponse
+    public partial class GetJobOutputResponse : AmazonWebServiceResponse, IDisposable
     {
         private string _acceptRanges;
         private string _archiveDescription;
@@ -195,5 +195,33 @@ namespace Amazon.Glacier.Model
             return this._status.HasValue; 
         }
 
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                this._body?.Dispose();
+                this._body = null;
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
     }
 }

@@ -30,7 +30,7 @@ namespace Amazon.MediaStoreData.Model
     /// <summary>
     /// This is the response object from the GetObject operation.
     /// </summary>
-    public partial class GetObjectResponse : AmazonWebServiceResponse
+    public partial class GetObjectResponse : AmazonWebServiceResponse, IDisposable
     {
         private Stream _body;
         private string _cacheControl;
@@ -195,5 +195,33 @@ namespace Amazon.MediaStoreData.Model
             return this._statusCode.HasValue; 
         }
 
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                this._body?.Dispose();
+                this._body = null;
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
     }
 }

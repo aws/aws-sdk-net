@@ -48,8 +48,20 @@ namespace <#=this.Config.Namespace#>.Model
     [Obsolete("<#=this.Structure.DeprecationMessage#>")]
 <#
 		}
+        bool hasStreamingMember = this.Structure?.Members.Any(member => member.IsStreaming) ?? false;
+        if (this.StructureType == StructureType.Response && hasStreamingMember) 
+        {
 #>
-	public partial class <#=this.ClassName#><#=this.BaseClassString#>
+    public partial class <#=this.ClassName#><#=this.BaseClassString#>, IDisposable
+<#
+        }
+        else
+        {
+#>
+    public partial class <#=this.ClassName#><#=this.BaseClassString#>
+<#
+        }
+#>
 	{
 <#
         if(this.Structure != null)
@@ -332,6 +344,52 @@ namespace <#=this.Config.Namespace#>.Model
         {
 #>
 
+<#
+        }
+        if (this.StructureType == StructureType.Response && hasStreamingMember) 
+        {
+#>
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+<#
+                if (this.Structure != null) 
+                {
+                    foreach (var member in this.Structure.Members) 
+                    {
+                        if (member.IsStreaming) 
+                        {
+#>
+                this.<#=member.VariableName#>?.Dispose();
+                this.<#=member.VariableName#> = null;
+<#
+                        }
+                    }
+                }
+#>
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
 <#
         }
 #>

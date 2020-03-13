@@ -30,7 +30,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// <summary>
     /// This is the response object from the GetMediaForFragmentList operation.
     /// </summary>
-    public partial class GetMediaForFragmentListResponse : AmazonWebServiceResponse
+    public partial class GetMediaForFragmentListResponse : AmazonWebServiceResponse, IDisposable
     {
         private string _contentType;
         private Stream _payload;
@@ -104,5 +104,33 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
             return this._payload != null;
         }
 
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                this._payload?.Dispose();
+                this._payload = null;
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
     }
 }

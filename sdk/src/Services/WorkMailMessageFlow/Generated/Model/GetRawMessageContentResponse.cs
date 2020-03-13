@@ -30,7 +30,7 @@ namespace Amazon.WorkMailMessageFlow.Model
     /// <summary>
     /// This is the response object from the GetRawMessageContent operation.
     /// </summary>
-    public partial class GetRawMessageContentResponse : AmazonWebServiceResponse
+    public partial class GetRawMessageContentResponse : AmazonWebServiceResponse, IDisposable
     {
         private Stream _messageContent;
 
@@ -53,5 +53,33 @@ namespace Amazon.WorkMailMessageFlow.Model
             return this._messageContent != null;
         }
 
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                this._messageContent?.Dispose();
+                this._messageContent = null;
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
     }
 }
