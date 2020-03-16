@@ -38,8 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use when requesting the next set of items. If there are no additional
-        /// items to return, the string is empty.
+        /// The token to use when requesting the next set of items.
         /// </para>
         /// </summary>
         public string NextToken

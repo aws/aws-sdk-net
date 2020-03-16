@@ -76,6 +76,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.BucketName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DestinationDataSharing", targetDepth))
+                {
+                    var unmarshaller = ResourceDataSyncDestinationDataSharingUnmarshaller.Instance;
+                    unmarshalledObject.DestinationDataSharing = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

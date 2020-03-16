@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private string _awskmsKeyARN;
         private string _bucketName;
+        private ResourceDataSyncDestinationDataSharing _destinationDataSharing;
         private string _prefix;
         private string _region;
         private ResourceDataSyncS3Format _syncFormat;
@@ -75,6 +76,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetBucketName()
         {
             return this._bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationDataSharing. 
+        /// <para>
+        /// Enables destination data sharing. By default, this field is <code>null</code>.
+        /// </para>
+        /// </summary>
+        public ResourceDataSyncDestinationDataSharing DestinationDataSharing
+        {
+            get { return this._destinationDataSharing; }
+            set { this._destinationDataSharing = value; }
+        }
+
+        // Check to see if DestinationDataSharing property is set
+        internal bool IsSetDestinationDataSharing()
+        {
+            return this._destinationDataSharing != null;
         }
 
         /// <summary>

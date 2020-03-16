@@ -62,8 +62,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ApproveUntilDate. 
         /// <para>
-        /// The cutoff date for auto approval of released patches. Any patches released on or
-        /// before this date will be installed automatically
+        /// Example API
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

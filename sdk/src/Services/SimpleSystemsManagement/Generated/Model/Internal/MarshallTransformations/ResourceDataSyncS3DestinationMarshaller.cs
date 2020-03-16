@@ -57,6 +57,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BucketName);
             }
 
+            if(requestObject.IsSetDestinationDataSharing())
+            {
+                context.Writer.WritePropertyName("DestinationDataSharing");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ResourceDataSyncDestinationDataSharingMarshaller.Instance;
+                marshaller.Marshall(requestObject.DestinationDataSharing, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("Prefix");
