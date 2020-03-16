@@ -40,6 +40,7 @@ namespace Amazon.ElastiCache.Model
         private bool? _clusterEnabled;
         private Endpoint _configurationEndpoint;
         private string _description;
+        private GlobalReplicationGroupInfo _globalReplicationGroupInfo;
         private string _kmsKeyId;
         private List<string> _memberClusters = new List<string>();
         private List<NodeGroup> _nodeGroups = new List<NodeGroup>();
@@ -238,6 +239,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalReplicationGroupInfo. 
+        /// <para>
+        /// The name of the Global Datastore and role of this replication group in the Global
+        /// Datastore.
+        /// </para>
+        /// </summary>
+        public GlobalReplicationGroupInfo GlobalReplicationGroupInfo
+        {
+            get { return this._globalReplicationGroupInfo; }
+            set { this._globalReplicationGroupInfo = value; }
+        }
+
+        // Check to see if GlobalReplicationGroupInfo property is set
+        internal bool IsSetGlobalReplicationGroupInfo()
+        {
+            return this._globalReplicationGroupInfo != null;
         }
 
         /// <summary>

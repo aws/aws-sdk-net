@@ -284,6 +284,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElastiCache")]
+        public void CreateGlobalReplicationGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateGlobalReplicationGroup");
+
+            var request = InstantiateClassGenerator.Execute<CreateGlobalReplicationGroupRequest>();
+            var marshaller = new CreateGlobalReplicationGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateGlobalReplicationGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateGlobalReplicationGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
         public void CreateReplicationGroupMarshallTest()
         {
             var operation = service_model.FindOperation("CreateReplicationGroup");
@@ -323,6 +347,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = CreateSnapshotResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreateSnapshotResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
+        public void DecreaseNodeGroupsInGlobalReplicationGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("DecreaseNodeGroupsInGlobalReplicationGroup");
+
+            var request = InstantiateClassGenerator.Execute<DecreaseNodeGroupsInGlobalReplicationGroupRequest>();
+            var marshaller = new DecreaseNodeGroupsInGlobalReplicationGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DecreaseNodeGroupsInGlobalReplicationGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as DecreaseNodeGroupsInGlobalReplicationGroupResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -429,6 +477,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
+        public void DeleteGlobalReplicationGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteGlobalReplicationGroup");
+
+            var request = InstantiateClassGenerator.Execute<DeleteGlobalReplicationGroupRequest>();
+            var marshaller = new DeleteGlobalReplicationGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteGlobalReplicationGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteGlobalReplicationGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -677,6 +749,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElastiCache")]
+        public void DescribeGlobalReplicationGroupsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeGlobalReplicationGroups");
+
+            var request = InstantiateClassGenerator.Execute<DescribeGlobalReplicationGroupsRequest>();
+            var marshaller = new DescribeGlobalReplicationGroupsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeGlobalReplicationGroupsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeGlobalReplicationGroupsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
         public void DescribeReplicationGroupsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeReplicationGroups");
@@ -812,6 +908,78 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeUpdateActionsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeUpdateActionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
+        public void DisassociateGlobalReplicationGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateGlobalReplicationGroup");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateGlobalReplicationGroupRequest>();
+            var marshaller = new DisassociateGlobalReplicationGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DisassociateGlobalReplicationGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisassociateGlobalReplicationGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
+        public void FailoverGlobalReplicationGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("FailoverGlobalReplicationGroup");
+
+            var request = InstantiateClassGenerator.Execute<FailoverGlobalReplicationGroupRequest>();
+            var marshaller = new FailoverGlobalReplicationGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = FailoverGlobalReplicationGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as FailoverGlobalReplicationGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
+        public void IncreaseNodeGroupsInGlobalReplicationGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("IncreaseNodeGroupsInGlobalReplicationGroup");
+
+            var request = InstantiateClassGenerator.Execute<IncreaseNodeGroupsInGlobalReplicationGroupRequest>();
+            var marshaller = new IncreaseNodeGroupsInGlobalReplicationGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = IncreaseNodeGroupsInGlobalReplicationGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as IncreaseNodeGroupsInGlobalReplicationGroupResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -965,6 +1133,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElastiCache")]
+        public void ModifyGlobalReplicationGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyGlobalReplicationGroup");
+
+            var request = InstantiateClassGenerator.Execute<ModifyGlobalReplicationGroupRequest>();
+            var marshaller = new ModifyGlobalReplicationGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyGlobalReplicationGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyGlobalReplicationGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
         public void ModifyReplicationGroupMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyReplicationGroup");
@@ -1028,6 +1220,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = PurchaseReservedCacheNodesOfferingResponseUnmarshaller.Instance.Unmarshall(context)
                 as PurchaseReservedCacheNodesOfferingResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
+        public void RebalanceSlotsInGlobalReplicationGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("RebalanceSlotsInGlobalReplicationGroup");
+
+            var request = InstantiateClassGenerator.Execute<RebalanceSlotsInGlobalReplicationGroupRequest>();
+            var marshaller = new RebalanceSlotsInGlobalReplicationGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RebalanceSlotsInGlobalReplicationGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as RebalanceSlotsInGlobalReplicationGroupResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

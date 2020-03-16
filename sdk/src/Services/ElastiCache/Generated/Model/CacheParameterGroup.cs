@@ -35,6 +35,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheParameterGroupFamily;
         private string _cacheParameterGroupName;
         private string _description;
+        private bool? _isGlobal;
 
         /// <summary>
         /// Gets and sets the property CacheParameterGroupFamily. 
@@ -95,6 +96,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsGlobal. 
+        /// <para>
+        /// Indicates whether the parameter group is associated with a Global Datastore
+        /// </para>
+        /// </summary>
+        public bool IsGlobal
+        {
+            get { return this._isGlobal.GetValueOrDefault(); }
+            set { this._isGlobal = value; }
+        }
+
+        // Check to see if IsGlobal property is set
+        internal bool IsSetIsGlobal()
+        {
+            return this._isGlobal.HasValue; 
         }
 
     }

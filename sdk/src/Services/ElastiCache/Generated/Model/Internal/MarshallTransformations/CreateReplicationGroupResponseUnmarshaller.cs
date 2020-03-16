@@ -124,6 +124,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 return new ClusterQuotaForCustomerExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("GlobalReplicationGroupNotFoundFault"))
+            {
+                return new GlobalReplicationGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientCacheClusterCapacity"))
             {
                 return new InsufficientCacheClusterCapacityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -131,6 +135,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCacheClusterState"))
             {
                 return new InvalidCacheClusterStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGlobalReplicationGroupState"))
+            {
+                return new InvalidGlobalReplicationGroupStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombination"))
             {

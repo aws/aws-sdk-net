@@ -787,6 +787,76 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  CreateGlobalReplicationGroup
+
+
+        /// <summary>
+        /// Global Datastore for Redis offers fully managed, fast, reliable and secure cross-region
+        /// replication. Using Global Datastore for Redis, you can create cross-region read replica
+        /// clusters for ElastiCache for Redis to enable low-latency reads and disaster recovery
+        /// across regions. For more information, see <a href="/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters.html">Replication
+        /// Across Regions Using Global Datastore</a>. 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The <b>GlobalReplicationGroupId</b> is the name of the Global Datastore.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <b>PrimaryReplicationGroupId</b> represents the name of the primary cluster that
+        /// accepts writes and will replicate updates to the secondary cluster.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalReplicationGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupAlreadyExistsException">
+        /// The Global Datastore name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateGlobalReplicationGroup">REST API Reference for CreateGlobalReplicationGroup Operation</seealso>
+        CreateGlobalReplicationGroupResponse CreateGlobalReplicationGroup(CreateGlobalReplicationGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalReplicationGroup operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGlobalReplicationGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateGlobalReplicationGroup">REST API Reference for CreateGlobalReplicationGroup Operation</seealso>
+        IAsyncResult BeginCreateGlobalReplicationGroup(CreateGlobalReplicationGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGlobalReplicationGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateGlobalReplicationGroupResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateGlobalReplicationGroup">REST API Reference for CreateGlobalReplicationGroup Operation</seealso>
+        CreateGlobalReplicationGroupResponse EndCreateGlobalReplicationGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateReplicationGroup
 
 
@@ -794,6 +864,11 @@ namespace Amazon.ElastiCache
         /// Creates a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication
         /// group.
         /// 
+        ///  
+        /// <para>
+        /// This API can be used to create a standalone regional replication group or a secondary
+        /// replication group associated with a Global Datastore.
+        /// </para>
         ///  
         /// <para>
         /// A Redis (cluster mode disabled) replication group is a collection of clusters, where
@@ -845,6 +920,9 @@ namespace Amazon.ElastiCache
         /// The request cannot be processed because it would exceed the allowed number of clusters
         /// per customer.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
+        /// The Global Datastore does not exist
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
         /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
@@ -852,6 +930,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
         /// The requested cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
+        /// The Global Datastore is not available
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -1000,11 +1081,63 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  DecreaseNodeGroupsInGlobalReplicationGroup
+
+
+        /// <summary>
+        /// Decreases the number of node groups in a Global Datastore
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DecreaseNodeGroupsInGlobalReplicationGroup service method.</param>
+        /// 
+        /// <returns>The response from the DecreaseNodeGroupsInGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
+        /// The Global Datastore does not exist
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
+        /// The Global Datastore is not available
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DecreaseNodeGroupsInGlobalReplicationGroup">REST API Reference for DecreaseNodeGroupsInGlobalReplicationGroup Operation</seealso>
+        DecreaseNodeGroupsInGlobalReplicationGroupResponse DecreaseNodeGroupsInGlobalReplicationGroup(DecreaseNodeGroupsInGlobalReplicationGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DecreaseNodeGroupsInGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DecreaseNodeGroupsInGlobalReplicationGroup operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDecreaseNodeGroupsInGlobalReplicationGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DecreaseNodeGroupsInGlobalReplicationGroup">REST API Reference for DecreaseNodeGroupsInGlobalReplicationGroup Operation</seealso>
+        IAsyncResult BeginDecreaseNodeGroupsInGlobalReplicationGroup(DecreaseNodeGroupsInGlobalReplicationGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DecreaseNodeGroupsInGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDecreaseNodeGroupsInGlobalReplicationGroup.</param>
+        /// 
+        /// <returns>Returns a  DecreaseNodeGroupsInGlobalReplicationGroupResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DecreaseNodeGroupsInGlobalReplicationGroup">REST API Reference for DecreaseNodeGroupsInGlobalReplicationGroup Operation</seealso>
+        DecreaseNodeGroupsInGlobalReplicationGroupResponse EndDecreaseNodeGroupsInGlobalReplicationGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DecreaseReplicaCount
 
 
         /// <summary>
-        /// Dynamically decreases the number of replics in a Redis (cluster mode disabled) replication
+        /// Dynamically decreases the number of replicas in a Redis (cluster mode disabled) replication
         /// group or the number of replica nodes in one or more node groups (shards) of a Redis
         /// (cluster mode enabled) replication group. This operation is performed with no cluster
         /// down time.
@@ -1351,6 +1484,82 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  DeleteCacheSubnetGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">REST API Reference for DeleteCacheSubnetGroup Operation</seealso>
         DeleteCacheSubnetGroupResponse EndDeleteCacheSubnetGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteGlobalReplicationGroup
+
+
+        /// <summary>
+        /// Deleting a Global Datastore is a two-step process: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// First, you must <a>DisassociateGlobalReplicationGroup</a> to remove the secondary
+        /// clusters in the Global Datastore.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Once the Global Datastore contains only the primary cluster, you can use DeleteGlobalReplicationGroup
+        /// API to delete the Global Datastore while retainining the primary cluster using Retain…=
+        /// true.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Since the Global Datastore has only a primary cluster, you can delete the Global Datastore
+        /// while retaining the primary by setting <code>RetainPrimaryCluster=true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you receive a successful response from this operation, Amazon ElastiCache immediately
+        /// begins deleting the selected resources; you cannot cancel or revert this operation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is valid for Redis only.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlobalReplicationGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
+        /// The Global Datastore does not exist
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
+        /// The Global Datastore is not available
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteGlobalReplicationGroup">REST API Reference for DeleteGlobalReplicationGroup Operation</seealso>
+        DeleteGlobalReplicationGroupResponse DeleteGlobalReplicationGroup(DeleteGlobalReplicationGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlobalReplicationGroup operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGlobalReplicationGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteGlobalReplicationGroup">REST API Reference for DeleteGlobalReplicationGroup Operation</seealso>
+        IAsyncResult BeginDeleteGlobalReplicationGroup(DeleteGlobalReplicationGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGlobalReplicationGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteGlobalReplicationGroupResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteGlobalReplicationGroup">REST API Reference for DeleteGlobalReplicationGroup Operation</seealso>
+        DeleteGlobalReplicationGroupResponse EndDeleteGlobalReplicationGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2052,6 +2261,56 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  DescribeGlobalReplicationGroups
+
+
+        /// <summary>
+        /// Returns information about a particular global replication group. If no identifier
+        /// is specified, returns information about all Global Datastores.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalReplicationGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGlobalReplicationGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
+        /// The Global Datastore does not exist
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeGlobalReplicationGroups">REST API Reference for DescribeGlobalReplicationGroups Operation</seealso>
+        DescribeGlobalReplicationGroupsResponse DescribeGlobalReplicationGroups(DescribeGlobalReplicationGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGlobalReplicationGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalReplicationGroups operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGlobalReplicationGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeGlobalReplicationGroups">REST API Reference for DescribeGlobalReplicationGroups Operation</seealso>
+        IAsyncResult BeginDescribeGlobalReplicationGroups(DescribeGlobalReplicationGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeGlobalReplicationGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeGlobalReplicationGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeGlobalReplicationGroupsResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeGlobalReplicationGroups">REST API Reference for DescribeGlobalReplicationGroups Operation</seealso>
+        DescribeGlobalReplicationGroupsResponse EndDescribeGlobalReplicationGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeReplicationGroups
 
 
@@ -2449,6 +2708,161 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  DisassociateGlobalReplicationGroup
+
+
+        /// <summary>
+        /// Remove a secondary cluster from the Global Datastore using the Global Datastore name.
+        /// The secondary cluster will no longer receive updates from the primary cluster, but
+        /// will remain as a standalone cluster in that AWS region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateGlobalReplicationGroup service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
+        /// The Global Datastore does not exist
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
+        /// The Global Datastore is not available
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DisassociateGlobalReplicationGroup">REST API Reference for DisassociateGlobalReplicationGroup Operation</seealso>
+        DisassociateGlobalReplicationGroupResponse DisassociateGlobalReplicationGroup(DisassociateGlobalReplicationGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateGlobalReplicationGroup operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateGlobalReplicationGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DisassociateGlobalReplicationGroup">REST API Reference for DisassociateGlobalReplicationGroup Operation</seealso>
+        IAsyncResult BeginDisassociateGlobalReplicationGroup(DisassociateGlobalReplicationGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateGlobalReplicationGroup.</param>
+        /// 
+        /// <returns>Returns a  DisassociateGlobalReplicationGroupResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DisassociateGlobalReplicationGroup">REST API Reference for DisassociateGlobalReplicationGroup Operation</seealso>
+        DisassociateGlobalReplicationGroupResponse EndDisassociateGlobalReplicationGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  FailoverGlobalReplicationGroup
+
+
+        /// <summary>
+        /// Used to failover the primary region to a selected secondary region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalReplicationGroup service method.</param>
+        /// 
+        /// <returns>The response from the FailoverGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
+        /// The Global Datastore does not exist
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
+        /// The Global Datastore is not available
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/FailoverGlobalReplicationGroup">REST API Reference for FailoverGlobalReplicationGroup Operation</seealso>
+        FailoverGlobalReplicationGroupResponse FailoverGlobalReplicationGroup(FailoverGlobalReplicationGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the FailoverGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalReplicationGroup operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndFailoverGlobalReplicationGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/FailoverGlobalReplicationGroup">REST API Reference for FailoverGlobalReplicationGroup Operation</seealso>
+        IAsyncResult BeginFailoverGlobalReplicationGroup(FailoverGlobalReplicationGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  FailoverGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginFailoverGlobalReplicationGroup.</param>
+        /// 
+        /// <returns>Returns a  FailoverGlobalReplicationGroupResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/FailoverGlobalReplicationGroup">REST API Reference for FailoverGlobalReplicationGroup Operation</seealso>
+        FailoverGlobalReplicationGroupResponse EndFailoverGlobalReplicationGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  IncreaseNodeGroupsInGlobalReplicationGroup
+
+
+        /// <summary>
+        /// Increase the number of node groups in the Global Datastore
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the IncreaseNodeGroupsInGlobalReplicationGroup service method.</param>
+        /// 
+        /// <returns>The response from the IncreaseNodeGroupsInGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
+        /// The Global Datastore does not exist
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
+        /// The Global Datastore is not available
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/IncreaseNodeGroupsInGlobalReplicationGroup">REST API Reference for IncreaseNodeGroupsInGlobalReplicationGroup Operation</seealso>
+        IncreaseNodeGroupsInGlobalReplicationGroupResponse IncreaseNodeGroupsInGlobalReplicationGroup(IncreaseNodeGroupsInGlobalReplicationGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the IncreaseNodeGroupsInGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the IncreaseNodeGroupsInGlobalReplicationGroup operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndIncreaseNodeGroupsInGlobalReplicationGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/IncreaseNodeGroupsInGlobalReplicationGroup">REST API Reference for IncreaseNodeGroupsInGlobalReplicationGroup Operation</seealso>
+        IAsyncResult BeginIncreaseNodeGroupsInGlobalReplicationGroup(IncreaseNodeGroupsInGlobalReplicationGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  IncreaseNodeGroupsInGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginIncreaseNodeGroupsInGlobalReplicationGroup.</param>
+        /// 
+        /// <returns>Returns a  IncreaseNodeGroupsInGlobalReplicationGroupResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/IncreaseNodeGroupsInGlobalReplicationGroup">REST API Reference for IncreaseNodeGroupsInGlobalReplicationGroup Operation</seealso>
+        IncreaseNodeGroupsInGlobalReplicationGroupResponse EndIncreaseNodeGroupsInGlobalReplicationGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  IncreaseReplicaCount
 
 
@@ -2754,6 +3168,9 @@ namespace Amazon.ElastiCache
         /// The current state of the cache parameter group does not allow the requested operation
         /// to occur.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
+        /// The Global Datastore is not available
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
@@ -2841,6 +3258,55 @@ namespace Amazon.ElastiCache
         /// <returns>Returns a  ModifyCacheSubnetGroupResult from ElastiCache.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup">REST API Reference for ModifyCacheSubnetGroup Operation</seealso>
         ModifyCacheSubnetGroupResponse EndModifyCacheSubnetGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyGlobalReplicationGroup
+
+
+        /// <summary>
+        /// Modifies the settings for a Global Datastore.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyGlobalReplicationGroup service method.</param>
+        /// 
+        /// <returns>The response from the ModifyGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
+        /// The Global Datastore does not exist
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
+        /// The Global Datastore is not available
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyGlobalReplicationGroup">REST API Reference for ModifyGlobalReplicationGroup Operation</seealso>
+        ModifyGlobalReplicationGroupResponse ModifyGlobalReplicationGroup(ModifyGlobalReplicationGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyGlobalReplicationGroup operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyGlobalReplicationGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyGlobalReplicationGroup">REST API Reference for ModifyGlobalReplicationGroup Operation</seealso>
+        IAsyncResult BeginModifyGlobalReplicationGroup(ModifyGlobalReplicationGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyGlobalReplicationGroup.</param>
+        /// 
+        /// <returns>Returns a  ModifyGlobalReplicationGroupResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyGlobalReplicationGroup">REST API Reference for ModifyGlobalReplicationGroup Operation</seealso>
+        ModifyGlobalReplicationGroupResponse EndModifyGlobalReplicationGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3084,6 +3550,55 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  RebalanceSlotsInGlobalReplicationGroup
+
+
+        /// <summary>
+        /// Redistribute slots to ensure unifirom distribution across existing shards in the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebalanceSlotsInGlobalReplicationGroup service method.</param>
+        /// 
+        /// <returns>The response from the RebalanceSlotsInGlobalReplicationGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
+        /// The Global Datastore does not exist
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
+        /// The Global Datastore is not available
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebalanceSlotsInGlobalReplicationGroup">REST API Reference for RebalanceSlotsInGlobalReplicationGroup Operation</seealso>
+        RebalanceSlotsInGlobalReplicationGroupResponse RebalanceSlotsInGlobalReplicationGroup(RebalanceSlotsInGlobalReplicationGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RebalanceSlotsInGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RebalanceSlotsInGlobalReplicationGroup operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebalanceSlotsInGlobalReplicationGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebalanceSlotsInGlobalReplicationGroup">REST API Reference for RebalanceSlotsInGlobalReplicationGroup Operation</seealso>
+        IAsyncResult BeginRebalanceSlotsInGlobalReplicationGroup(RebalanceSlotsInGlobalReplicationGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RebalanceSlotsInGlobalReplicationGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebalanceSlotsInGlobalReplicationGroup.</param>
+        /// 
+        /// <returns>Returns a  RebalanceSlotsInGlobalReplicationGroupResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebalanceSlotsInGlobalReplicationGroup">REST API Reference for RebalanceSlotsInGlobalReplicationGroup Operation</seealso>
+        RebalanceSlotsInGlobalReplicationGroupResponse EndRebalanceSlotsInGlobalReplicationGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RebootCacheCluster
 
 
@@ -3225,6 +3740,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheParameterGroupStateException">
         /// The current state of the cache parameter group does not allow the requested operation
         /// to occur.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
+        /// The Global Datastore is not available
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.

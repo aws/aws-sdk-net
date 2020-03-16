@@ -34,6 +34,11 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  
     /// <para>
+    /// This API can be used to create a standalone regional replication group or a secondary
+    /// replication group associated with a Global Datastore.
+    /// </para>
+    ///  
+    /// <para>
     /// A Redis (cluster mode disabled) replication group is a collection of clusters, where
     /// one of the clusters is a read/write primary and the others are read-only replicas.
     /// Writes to the primary are asynchronously propagated to the replicas.
@@ -74,6 +79,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheSubnetGroupName;
         private string _engine;
         private string _engineVersion;
+        private string _globalReplicationGroupId;
         private string _kmsKeyId;
         private List<NodeGroupConfiguration> _nodeGroupConfiguration = new List<NodeGroupConfiguration>();
         private string _notificationTopicArn;
@@ -275,6 +281,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         ///  <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
         /// <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>T3 node types:</b> <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code>
         /// 
         /// </para>
         ///  
@@ -512,9 +523,27 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GlobalReplicationGroupId. 
+        /// <para>
+        /// The name of the Global Datastore
+        /// </para>
+        /// </summary>
+        public string GlobalReplicationGroupId
+        {
+            get { return this._globalReplicationGroupId; }
+            set { this._globalReplicationGroupId = value; }
+        }
+
+        // Check to see if GlobalReplicationGroupId property is set
+        internal bool IsSetGlobalReplicationGroupId()
+        {
+            return this._globalReplicationGroupId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the KMS key used to encrypt the disk on the cluster.
+        /// The ID of the KMS key used to encrypt the disk in the cluster.
         /// </para>
         /// </summary>
         public string KmsKeyId
