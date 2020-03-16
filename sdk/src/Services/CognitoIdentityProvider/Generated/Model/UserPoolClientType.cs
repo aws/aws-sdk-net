@@ -134,6 +134,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The Amazon Pinpoint analytics configuration for the user pool client.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Cognito User Pools only supports sending events to Amazon Pinpoint projects in the
+        /// US East (N. Virginia) us-east-1 Region, regardless of the region in which the user
+        /// pool resides.
+        /// </para>
+        ///  </note>
         /// </summary>
         public AnalyticsConfigurationType AnalyticsConfiguration
         {

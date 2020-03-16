@@ -180,7 +180,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IDPSignOut <i>optional</i> 
+        /// IDPSignout <i>optional</i> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

@@ -64,6 +64,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CompromisedCredentialsDetected", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CompromisedCredentialsDetected = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RiskDecision", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

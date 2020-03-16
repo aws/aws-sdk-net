@@ -32,8 +32,27 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class EventRiskType
     {
+        private bool? _compromisedCredentialsDetected;
         private RiskDecisionType _riskDecision;
         private RiskLevelType _riskLevel;
+
+        /// <summary>
+        /// Gets and sets the property CompromisedCredentialsDetected. 
+        /// <para>
+        /// Indicates whether compromised credentials were detected during an authentication event.
+        /// </para>
+        /// </summary>
+        public bool CompromisedCredentialsDetected
+        {
+            get { return this._compromisedCredentialsDetected.GetValueOrDefault(); }
+            set { this._compromisedCredentialsDetected = value; }
+        }
+
+        // Check to see if CompromisedCredentialsDetected property is set
+        internal bool IsSetCompromisedCredentialsDetected()
+        {
+            return this._compromisedCredentialsDetected.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property RiskDecision. 
