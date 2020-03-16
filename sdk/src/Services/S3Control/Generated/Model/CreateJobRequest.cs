@@ -42,6 +42,7 @@ namespace Amazon.S3Control.Model
         private int? _priority;
         private JobReport _report;
         private string _roleArn;
+        private List<S3Tag> _tags = new List<S3Tag>();
 
         /// <summary>
         /// Gets and sets the property AccountId.
@@ -214,6 +215,24 @@ namespace Amazon.S3Control.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An optional set of tags to associate with the job when it is created.
+        /// </para>
+        /// </summary>
+        public List<S3Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

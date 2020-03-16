@@ -165,6 +165,50 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  DeleteJobTagging
+
+
+        /// <summary>
+        /// Delete the tags on a Amazon S3 batch operations job, if any.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobTagging service method.</param>
+        /// 
+        /// <returns>The response from the DeleteJobTagging service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        DeleteJobTaggingResponse DeleteJobTagging(DeleteJobTaggingRequest request);
+
+
+
+        /// <summary>
+        /// Delete the tags on a Amazon S3 batch operations job, if any.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobTagging service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteJobTagging service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        Task<DeleteJobTaggingResponse> DeleteJobTaggingAsync(DeleteJobTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeletePublicAccessBlock
 
 
@@ -327,6 +371,50 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetJobTagging
+
+
+        /// <summary>
+        /// Retrieve the tags on a Amazon S3 batch operations job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobTagging service method.</param>
+        /// 
+        /// <returns>The response from the GetJobTagging service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        GetJobTaggingResponse GetJobTagging(GetJobTaggingRequest request);
+
+
+
+        /// <summary>
+        /// Retrieve the tags on a Amazon S3 batch operations job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobTagging service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJobTagging service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        Task<GetJobTaggingResponse> GetJobTaggingAsync(GetJobTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetPublicAccessBlock
 
 
@@ -472,6 +560,56 @@ namespace Amazon.S3Control
         /// 
         /// <returns>The response from the PutAccessPointPolicy service method, as returned by S3Control.</returns>
         Task<PutAccessPointPolicyResponse> PutAccessPointPolicyAsync(PutAccessPointPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutJobTagging
+
+
+        /// <summary>
+        /// Replace the set of tags on a Amazon S3 batch operations job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutJobTagging service method.</param>
+        /// 
+        /// <returns>The response from the PutJobTagging service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyTagsException">
+        /// 
+        /// </exception>
+        PutJobTaggingResponse PutJobTagging(PutJobTaggingRequest request);
+
+
+
+        /// <summary>
+        /// Replace the set of tags on a Amazon S3 batch operations job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutJobTagging service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutJobTagging service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyTagsException">
+        /// 
+        /// </exception>
+        Task<PutJobTaggingResponse> PutJobTaggingAsync(PutJobTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

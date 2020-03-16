@@ -462,6 +462,66 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  DeleteJobTagging
+
+        /// <summary>
+        /// Delete the tags on a Amazon S3 batch operations job, if any.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobTagging service method.</param>
+        /// 
+        /// <returns>The response from the DeleteJobTagging service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public virtual DeleteJobTaggingResponse DeleteJobTagging(DeleteJobTaggingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteJobTaggingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteJobTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobTagging operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteJobTagging
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteJobTagging(DeleteJobTaggingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTaggingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteJobTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteJobTagging.</param>
+        /// 
+        /// <returns>Returns a  DeleteJobTaggingResult from S3Control.</returns>
+        public virtual DeleteJobTaggingResponse EndDeleteJobTagging(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteJobTaggingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePublicAccessBlock
 
         /// <summary>
@@ -733,6 +793,66 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetJobTagging
+
+        /// <summary>
+        /// Retrieve the tags on a Amazon S3 batch operations job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobTagging service method.</param>
+        /// 
+        /// <returns>The response from the GetJobTagging service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public virtual GetJobTaggingResponse GetJobTagging(GetJobTaggingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<GetJobTaggingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetJobTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetJobTagging operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJobTagging
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetJobTagging(GetJobTaggingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobTaggingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetJobTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJobTagging.</param>
+        /// 
+        /// <returns>Returns a  GetJobTaggingResult from S3Control.</returns>
+        public virtual GetJobTaggingResponse EndGetJobTagging(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetJobTaggingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetPublicAccessBlock
 
         /// <summary>
@@ -955,6 +1075,69 @@ namespace Amazon.S3Control
         public virtual PutAccessPointPolicyResponse EndPutAccessPointPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutAccessPointPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutJobTagging
+
+        /// <summary>
+        /// Replace the set of tags on a Amazon S3 batch operations job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutJobTagging service method.</param>
+        /// 
+        /// <returns>The response from the PutJobTagging service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyTagsException">
+        /// 
+        /// </exception>
+        public virtual PutJobTaggingResponse PutJobTagging(PutJobTaggingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutJobTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutJobTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<PutJobTaggingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutJobTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutJobTagging operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutJobTagging
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginPutJobTagging(PutJobTaggingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutJobTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutJobTaggingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutJobTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutJobTagging.</param>
+        /// 
+        /// <returns>Returns a  PutJobTaggingResult from S3Control.</returns>
+        public virtual PutJobTaggingResponse EndPutJobTagging(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutJobTaggingResponse>(asyncResult);
         }
 
         #endregion

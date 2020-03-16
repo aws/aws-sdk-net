@@ -126,6 +126,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("S3Control")]
+        public void DeleteJobTaggingMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteJobTagging");
+
+            var request = InstantiateClassGenerator.Execute<DeleteJobTaggingRequest>();
+            var marshaller = new DeleteJobTaggingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteJobTagging", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteJobTaggingResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteJobTaggingResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
         public void DeletePublicAccessBlockMarshallTest()
         {
             var operation = service_model.FindOperation("DeletePublicAccessBlock");
@@ -267,6 +298,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("S3Control")]
+        public void GetJobTaggingMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetJobTagging");
+
+            var request = InstantiateClassGenerator.Execute<GetJobTaggingRequest>();
+            var marshaller = new GetJobTaggingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetJobTagging", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetJobTaggingResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetJobTaggingResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
         public void GetPublicAccessBlockMarshallTest()
         {
             var operation = service_model.FindOperation("GetPublicAccessBlock");
@@ -370,6 +432,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("PutAccessPointPolicy", request, internalRequest, service_model);            
 
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void PutJobTaggingMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutJobTagging");
+
+            var request = InstantiateClassGenerator.Execute<PutJobTaggingRequest>();
+            var marshaller = new PutJobTaggingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutJobTagging", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutJobTaggingResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutJobTaggingResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         

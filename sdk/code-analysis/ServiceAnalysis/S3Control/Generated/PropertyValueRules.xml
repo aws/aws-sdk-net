@@ -62,6 +62,15 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteJobTaggingRequest.AccountId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteJobTaggingRequest.JobId</property>
+    <min>5</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.DeletePublicAccessBlockRequest.AccountId</property>
     <max>64</max>
   </property-value-rule>
@@ -110,6 +119,15 @@
     <property>Amazon.S3Control.Model.GetAccessPointPolicyStatusRequest.Name</property>
     <min>3</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetJobTaggingRequest.AccountId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetJobTaggingRequest.JobId</property>
+    <min>5</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.GetPublicAccessBlockRequest.AccountId</property>
@@ -166,6 +184,15 @@
     <property>Amazon.S3Control.Model.PutAccessPointPolicyRequest.Name</property>
     <min>3</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.PutJobTaggingRequest.AccountId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.PutJobTaggingRequest.JobId</property>
+    <min>5</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutPublicAccessBlockRequest.AccountId</property>
@@ -455,6 +482,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.TooManyRequestsException.Message</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.TooManyTagsException.Message</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>

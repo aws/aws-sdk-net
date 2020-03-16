@@ -397,6 +397,48 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  DeleteJobTagging
+
+        internal virtual DeleteJobTaggingResponse DeleteJobTagging(DeleteJobTaggingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteJobTaggingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete the tags on a Amazon S3 batch operations job, if any.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobTagging service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteJobTagging service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public virtual Task<DeleteJobTaggingResponse> DeleteJobTaggingAsync(DeleteJobTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTaggingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteJobTaggingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeletePublicAccessBlock
 
         internal virtual DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request)
@@ -578,6 +620,48 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetJobTagging
+
+        internal virtual GetJobTaggingResponse GetJobTagging(GetJobTaggingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<GetJobTaggingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve the tags on a Amazon S3 batch operations job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobTagging service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJobTagging service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public virtual Task<GetJobTaggingResponse> GetJobTaggingAsync(GetJobTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobTaggingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetJobTaggingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPublicAccessBlock
 
         internal virtual GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request)
@@ -728,6 +812,51 @@ namespace Amazon.S3Control
             options.ResponseUnmarshaller = PutAccessPointPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutAccessPointPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutJobTagging
+
+        internal virtual PutJobTaggingResponse PutJobTagging(PutJobTaggingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutJobTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutJobTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<PutJobTaggingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Replace the set of tags on a Amazon S3 batch operations job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutJobTagging service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutJobTagging service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyTagsException">
+        /// 
+        /// </exception>
+        public virtual Task<PutJobTaggingResponse> PutJobTaggingAsync(PutJobTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutJobTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutJobTaggingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutJobTaggingResponse>(request, options, cancellationToken);
         }
 
         #endregion
