@@ -1,3 +1,20 @@
+### 3.3.700.0 (2020-03-16 18:12 UTC)
+* CognitoIdentityProvider (3.3.109.0)
+	* Additional response field "CompromisedCredentialsDetected" added to AdminListUserAuthEvents.
+* ECS (3.3.115.0)
+	* This release adds the ability to update the task placement strategy and constraints for Amazon ECS services.
+* ElastiCache (3.3.108.0)
+	* Amazon ElastiCache now supports Global Datastore for Redis. Global Datastore for Redis offers fully managed, fast, reliable and secure cross-region replication. Using Global Datastore for Redis, you can create cross-region read replica clusters for ElastiCache for Redis to enable low-latency reads and disaster recovery across regions. You can create, modify and describe a Global Datastore, as well as add or remove regions from your Global Datastore and promote a region as primary in Global Datastore.
+* S3Control (3.3.103.0)
+	* Amazon S3 now supports Batch Operations job tagging.
+* SimpleSystemsManagement (3.3.119.0)
+	* Resource data sync for AWS Systems Manager Inventory now includes destination data sharing. This feature enables you to synchronize inventory data from multiple AWS accounts into a central Amazon S3 bucket. To use this feature, all AWS accounts must be listed in AWS Organizations.
+* Core 3.3.104.36
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.699.1 (2020-03-13 18:09 UTC)
 * AppConfig (3.3.101.9)
 	* This release adds S3 as a configuration source provider.
