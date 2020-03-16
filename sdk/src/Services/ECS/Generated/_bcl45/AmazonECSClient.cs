@@ -448,7 +448,7 @@ namespace Amazon.ECS
         /// Runs and maintains a desired number of tasks from a specified task definition. If
         /// the number of tasks running in a service drops below the <code>desiredCount</code>,
         /// Amazon ECS runs another copy of the task in the specified cluster. To update an existing
-        /// service, see <a>UpdateService</a>.
+        /// service, see the UpdateService action.
         /// 
         ///  
         /// <para>
@@ -620,7 +620,7 @@ namespace Amazon.ECS
         /// Runs and maintains a desired number of tasks from a specified task definition. If
         /// the number of tasks running in a service drops below the <code>desiredCount</code>,
         /// Amazon ECS runs another copy of the task in the specified cluster. To update an existing
-        /// service, see <a>UpdateService</a>.
+        /// service, see the UpdateService action.
         /// 
         ///  
         /// <para>

@@ -165,6 +165,8 @@ namespace Amazon.ECS.Model
         private bool? _forceNewDeployment;
         private int? _healthCheckGracePeriodSeconds;
         private NetworkConfiguration _networkConfiguration;
+        private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
+        private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
         private string _platformVersion;
         private string _service;
         private string _taskDefinition;
@@ -310,6 +312,58 @@ namespace Amazon.ECS.Model
         internal bool IsSetNetworkConfiguration()
         {
             return this._networkConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementConstraints. 
+        /// <para>
+        /// An array of task placement constraint objects to update the service to use. If no
+        /// value is specified, the existing placement constraints for the service will remain
+        /// unchanged. If this value is specified, it will override any existing placement constraints
+        /// defined for the service. To remove all existing placement constraints, specify an
+        /// empty array.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify a maximum of 10 constraints per task (this limit includes constraints
+        /// in the task definition and those specified at runtime).
+        /// </para>
+        /// </summary>
+        public List<PlacementConstraint> PlacementConstraints
+        {
+            get { return this._placementConstraints; }
+            set { this._placementConstraints = value; }
+        }
+
+        // Check to see if PlacementConstraints property is set
+        internal bool IsSetPlacementConstraints()
+        {
+            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementStrategy. 
+        /// <para>
+        /// The task placement strategy objects to update the service to use. If no value is specified,
+        /// the existing placement strategy for the service will remain unchanged. If this value
+        /// is specified, it will override the existing placement strategy defined for the service.
+        /// To remove an existing placement strategy, specify an empty object.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify a maximum of five strategy rules per service.
+        /// </para>
+        /// </summary>
+        public List<PlacementStrategy> PlacementStrategy
+        {
+            get { return this._placementStrategy; }
+            set { this._placementStrategy = value; }
+        }
+
+        // Check to see if PlacementStrategy property is set
+        internal bool IsSetPlacementStrategy()
+        {
+            return this._placementStrategy != null && this._placementStrategy.Count > 0; 
         }
 
         /// <summary>

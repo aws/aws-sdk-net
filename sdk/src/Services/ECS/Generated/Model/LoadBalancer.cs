@@ -28,7 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Details on the load balancer or load balancers to use with a service or task set.
+    /// The load balancer configuration to use with a service or task set.
+    /// 
+    ///  
+    /// <para>
+    /// For specific notes and restrictions regarding the use of load balancers with services
+    /// and task sets, see the CreateService and CreateTaskSet actions.
+    /// </para>
     /// </summary>
     public partial class LoadBalancer
     {
@@ -85,7 +91,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// A load balancer name is only specified when using a Classic Load Balancer. If you
-        /// are using an Application Load Balancer or a Network Load Balancer this should be omitted.
+        /// are using an Application Load Balancer or a Network Load Balancer the load balancer
+        /// name parameter should be omitted.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -109,7 +116,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// A target group ARN is only specified when using an Application Load Balancer or Network
-        /// Load Balancer. If you are using a Classic Load Balancer this should be omitted.
+        /// Load Balancer. If you are using a Classic Load Balancer the target group ARN should
+        /// be omitted.
         /// </para>
         ///  
         /// <para>
