@@ -14,17 +14,17 @@ samples:
 publisher-url: http://aws.amazon.com/mobile/sdk/
 packages:
   android:
-  - AWSSDK.Core, Version=3.3.104.36
-  - AWSSDK.SimpleNotificationService,Version=3.3.101.132
+  - AWSSDK.Core, Version=3.3.104.37
+  - AWSSDK.SimpleNotificationService,Version=3.3.101.133
   ios-unified:
-  - AWSSDK.Core, Version=3.3.104.36
-  - AWSSDK.SimpleNotificationService,Version=3.3.101.132
+  - AWSSDK.Core, Version=3.3.104.37
+  - AWSSDK.SimpleNotificationService,Version=3.3.101.133
   winphone-8.0:
-  - AWSSDK.Core, Version=3.3.104.36
-  - AWSSDK.SimpleNotificationService,Version=3.3.101.132
+  - AWSSDK.Core, Version=3.3.104.37
+  - AWSSDK.SimpleNotificationService,Version=3.3.101.133
   winphone-8.1:
-  - AWSSDK.Core, Version=3.3.104.36
-  - AWSSDK.SimpleNotificationService,Version=3.3.101.132
-version: 3.3.101.132
+  - AWSSDK.Core, Version=3.3.104.37
+  - AWSSDK.SimpleNotificationService,Version=3.3.101.133
+version: 3.3.101.133
 is-shell: true
 no_build: true

@@ -1,3 +1,12 @@
+### 3.3.701.0 (2020-03-17 18:16 UTC)
+* MediaConvert (3.3.114.0)
+	* AWS Elemental MediaConvert SDK has added support for: AV1 encoding in File Group MP4, DASH and CMAF DASH outputs; PCM/WAV audio output in MPEG2-TS containers; and Opus audio in Webm inputs.
+* Core 3.3.104.37
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.700.0 (2020-03-16 18:12 UTC)
 * CognitoIdentityProvider (3.3.109.0)
 	* Additional response field "CompromisedCredentialsDetected" added to AdminListUserAuthEvents.
