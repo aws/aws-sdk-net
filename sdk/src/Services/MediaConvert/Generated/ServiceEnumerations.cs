@@ -1537,6 +1537,268 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type Av1AdaptiveQuantization.
+    /// </summary>
+    public class Av1AdaptiveQuantization : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for Av1AdaptiveQuantization
+        /// </summary>
+        public static readonly Av1AdaptiveQuantization HIGH = new Av1AdaptiveQuantization("HIGH");
+        /// <summary>
+        /// Constant HIGHER for Av1AdaptiveQuantization
+        /// </summary>
+        public static readonly Av1AdaptiveQuantization HIGHER = new Av1AdaptiveQuantization("HIGHER");
+        /// <summary>
+        /// Constant LOW for Av1AdaptiveQuantization
+        /// </summary>
+        public static readonly Av1AdaptiveQuantization LOW = new Av1AdaptiveQuantization("LOW");
+        /// <summary>
+        /// Constant MAX for Av1AdaptiveQuantization
+        /// </summary>
+        public static readonly Av1AdaptiveQuantization MAX = new Av1AdaptiveQuantization("MAX");
+        /// <summary>
+        /// Constant MEDIUM for Av1AdaptiveQuantization
+        /// </summary>
+        public static readonly Av1AdaptiveQuantization MEDIUM = new Av1AdaptiveQuantization("MEDIUM");
+        /// <summary>
+        /// Constant OFF for Av1AdaptiveQuantization
+        /// </summary>
+        public static readonly Av1AdaptiveQuantization OFF = new Av1AdaptiveQuantization("OFF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Av1AdaptiveQuantization(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1AdaptiveQuantization FindValue(string value)
+        {
+            return FindValue<Av1AdaptiveQuantization>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1AdaptiveQuantization(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Av1FramerateControl.
+    /// </summary>
+    public class Av1FramerateControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INITIALIZE_FROM_SOURCE for Av1FramerateControl
+        /// </summary>
+        public static readonly Av1FramerateControl INITIALIZE_FROM_SOURCE = new Av1FramerateControl("INITIALIZE_FROM_SOURCE");
+        /// <summary>
+        /// Constant SPECIFIED for Av1FramerateControl
+        /// </summary>
+        public static readonly Av1FramerateControl SPECIFIED = new Av1FramerateControl("SPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Av1FramerateControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1FramerateControl FindValue(string value)
+        {
+            return FindValue<Av1FramerateControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1FramerateControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Av1FramerateConversionAlgorithm.
+    /// </summary>
+    public class Av1FramerateConversionAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUPLICATE_DROP for Av1FramerateConversionAlgorithm
+        /// </summary>
+        public static readonly Av1FramerateConversionAlgorithm DUPLICATE_DROP = new Av1FramerateConversionAlgorithm("DUPLICATE_DROP");
+        /// <summary>
+        /// Constant INTERPOLATE for Av1FramerateConversionAlgorithm
+        /// </summary>
+        public static readonly Av1FramerateConversionAlgorithm INTERPOLATE = new Av1FramerateConversionAlgorithm("INTERPOLATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Av1FramerateConversionAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1FramerateConversionAlgorithm FindValue(string value)
+        {
+            return FindValue<Av1FramerateConversionAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1FramerateConversionAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Av1RateControlMode.
+    /// </summary>
+    public class Av1RateControlMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant QVBR for Av1RateControlMode
+        /// </summary>
+        public static readonly Av1RateControlMode QVBR = new Av1RateControlMode("QVBR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Av1RateControlMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1RateControlMode FindValue(string value)
+        {
+            return FindValue<Av1RateControlMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1RateControlMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Av1SpatialAdaptiveQuantization.
+    /// </summary>
+    public class Av1SpatialAdaptiveQuantization : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for Av1SpatialAdaptiveQuantization
+        /// </summary>
+        public static readonly Av1SpatialAdaptiveQuantization DISABLED = new Av1SpatialAdaptiveQuantization("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for Av1SpatialAdaptiveQuantization
+        /// </summary>
+        public static readonly Av1SpatialAdaptiveQuantization ENABLED = new Av1SpatialAdaptiveQuantization("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Av1SpatialAdaptiveQuantization(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1SpatialAdaptiveQuantization FindValue(string value)
+        {
+            return FindValue<Av1SpatialAdaptiveQuantization>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1SpatialAdaptiveQuantization(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BillingTagsSource.
     /// </summary>
     public class BillingTagsSource : ConstantClass
@@ -14848,6 +15110,10 @@ namespace Amazon.MediaConvert
     public class VideoCodec : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AV1 for VideoCodec
+        /// </summary>
+        public static readonly VideoCodec AV1 = new VideoCodec("AV1");
         /// <summary>
         /// Constant FRAME_CAPTURE for VideoCodec
         /// </summary>

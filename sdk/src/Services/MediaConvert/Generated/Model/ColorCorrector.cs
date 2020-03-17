@@ -58,9 +58,10 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property ColorSpaceConversion. Specify the color space you want
         /// for this output. The service supports conversion between HDR formats, between SDR
-        /// formats, and from SDR to HDR. The service doesn't support conversion from HDR to SDR.
-        /// SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an
-        /// HDR format, but visually appears the same as an unconverted output.
+        /// formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade
+        /// the dynamic range. The converted video has an HDR format, but visually appears the
+        /// same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
+        /// to approximate the outcome of manually regrading from HDR to SDR.
         /// </summary>
         public ColorSpaceConversion ColorSpaceConversion
         {

@@ -45,6 +45,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VideoCodecSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAv1Settings())
+            {
+                context.Writer.WritePropertyName("av1Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Av1SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Av1Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCodec())
             {
                 context.Writer.WritePropertyName("codec");

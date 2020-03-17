@@ -119,6 +119,36 @@
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Av1QvbrSettings.QvbrQualityLevel</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Av1Settings.FramerateDenominator</property>
+    <min>1</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Av1Settings.FramerateNumerator</property>
+    <min>1</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Av1Settings.MaxBitrate</property>
+    <min>1000</min>
+    <max>1152000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Av1Settings.NumberBFramesBetweenReferenceFrames</property>
+    <min>7</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Av1Settings.Slices</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.AvailBlanking.AvailBlankingImage</property>
     <min>14</min>
     <pattern>^((s3://(.*?)\.(bmp|BMP|png|PNG))|(https?://(.*?)\.(bmp|BMP|png|PNG)(\?([^&amp;=]+=[^&amp;]+&amp;)*[^&amp;=]+=[^&amp;]+)?))$</pattern>

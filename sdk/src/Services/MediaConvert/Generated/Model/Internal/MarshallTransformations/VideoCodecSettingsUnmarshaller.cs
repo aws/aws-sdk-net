@@ -64,6 +64,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("av1Settings", targetDepth))
+                {
+                    var unmarshaller = Av1SettingsUnmarshaller.Instance;
+                    unmarshalledObject.Av1Settings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("codec", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
