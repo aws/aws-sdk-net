@@ -139,7 +139,7 @@ namespace Amazon.Runtime
         /// https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/http-stack?context=xamarin%2Fcross-platform&tabs=macos#ssltls-implementation-build-option
         /// for guidance on creating HttpClients for your platform.
         /// </summary>
-        public HttpClientFactory HttpClientFactory { get; set; }
+        public HttpClientFactory HttpClientFactory { get; set; } = AWSConfigs.HttpClientFactory;
 #endif
 
         /// <summary>

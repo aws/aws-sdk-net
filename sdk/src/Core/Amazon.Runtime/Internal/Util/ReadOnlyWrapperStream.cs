@@ -22,6 +22,10 @@
 
 using System;
 using System.IO;
+#if AWS_ASYNC_API
+using System.Threading;
+using System.Threading.Tasks;
+#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -98,6 +102,46 @@ namespace Amazon.Runtime.Internal.Util
             throw new NotSupportedException();
         }
 
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Asynchronously clears all buffers for this stream and causes any buffered data
+        /// to be written to the underlying device.
+        /// </summary>
+        /// <param name="cancellationToken">
+        /// The token to monitor for cancellation requests. The default value is
+        /// System.Threading.CancellationToken.None.
+        /// </param>
+        /// <returns>
+        /// A task that represents the asynchronous flush operation.
+        /// </returns>
+        public override Task FlushAsync(CancellationToken cancellationToken)
+        {
+            throw new NotSupportedException();
+        }
+
+        /// <summary>
+        /// Asynchronously writes a sequence of bytes to the current stream and advances the
+        /// current position within this stream by the number of bytes written.
+        /// </summary>
+        /// <param name="buffer">
+        /// An array of bytes. This method copies count bytes from buffer to the current stream.
+        /// </param>
+        /// <param name="offset">
+        /// The zero-based byte offset in buffer at which to begin copying bytes to the
+        /// current stream.
+        /// </param>
+        /// <param name="count">The number of bytes to be written to the current stream.</param>
+        /// <param name="cancellationToken">
+        /// The token to monitor for cancellation requests. The default value is
+        /// System.Threading.CancellationToken.None.
+        /// </param>
+        /// <returns>A task that represents the asynchronous write operation.</returns>
+        public override Task WriteAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        {
+            throw new NotSupportedException();
+        }
+#endif
+
         #endregion
     }
 
@@ -129,15 +173,27 @@ namespace Amazon.Runtime.Internal.Util
 
         public override int Read(byte[] buffer, int offset, int count)
         {
-            long bytesToRead = Math.Min(count, RemainingSize);
+            int bytesToRead = count < this.RemainingSize ? count : (int)this.RemainingSize;
             if (bytesToRead <= 0)
                 return 0;
-            bytesToRead = Math.Min(bytesToRead, int.MaxValue);
 
-            int result = base.Read(buffer, offset, (int)bytesToRead);
+            int result = base.Read(buffer, offset, bytesToRead);
             _currentPosition += result;
             return result;
         }
+
+#if AWS_ASYNC_API
+        public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        {
+            int bytesToRead = count < this.RemainingSize ? count : (int)this.RemainingSize;
+            if (bytesToRead <= 0)
+                return 0;
+
+            int result = await base.ReadAsync(buffer, offset, bytesToRead, cancellationToken).ConfigureAwait(false);
+            _currentPosition += result;
+            return result;
+        }
+#endif
 
         public override long Length
         {
@@ -155,6 +211,6 @@ namespace Amazon.Runtime.Internal.Util
             }
         }
 
-        #endregion
+#endregion
     }
 }

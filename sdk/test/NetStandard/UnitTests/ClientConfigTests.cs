@@ -48,7 +48,8 @@ namespace UnitTests
             "HttpClientFactory",
             "DisableHostPrefixInjection",
             "EndpointDiscoveryEnabled",
-            "EndpointDiscoveryCacheLimit"
+            "EndpointDiscoveryCacheLimit",
+            "UseAlternateUserAgentHeader"
         };
 
         [Fact]

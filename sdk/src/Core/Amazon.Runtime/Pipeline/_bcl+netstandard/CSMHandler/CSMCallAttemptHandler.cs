@@ -127,7 +127,8 @@ namespace Amazon.Runtime.Internal
             requestContext.CSMCallAttempt.Service = requestContext.CSMCallEvent.Service;
             requestContext.CSMCallAttempt.Fqdn = requestContext.Request.GetHeaderValue(HeaderKeys.HostHeader);
 
-            requestContext.CSMCallAttempt.UserAgent = requestContext.Request.GetHeaderValue(HeaderKeys.UserAgentHeader);
+            bool useAlternateUserAgentHeader = (requestContext.ClientConfig as ClientConfig)?.UseAlternateUserAgentHeader ?? false;
+            requestContext.CSMCallAttempt.UserAgent = requestContext.Request.GetHeaderValue(useAlternateUserAgentHeader ? HeaderKeys.XAmzUserAgentHeader : HeaderKeys.UserAgentHeader);
 
             requestContext.CSMCallAttempt.SessionToken = requestContext.Request.GetHeaderValue(HeaderKeys.XAmzSecurityTokenHeader);
 

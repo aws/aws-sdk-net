@@ -47,6 +47,9 @@ namespace Amazon.Runtime
         private bool throttleRetries = true;
 
         private bool useHttp = false;
+#if BCL || NETSTANDARD
+        private bool useAlternateUserAgentHeader = AWSConfigs.UseAlternateUserAgentHeader;
+#endif
         private string serviceURL = null;
         private string authRegion = null;
         private string authServiceName = null;
@@ -105,6 +108,22 @@ namespace Amazon.Runtime
         /// Gets and sets of the UserAgent property.
         /// </summary>
         public abstract string UserAgent { get; }
+
+#if BCL || NETSTANDARD
+        /// <summary>
+        /// When set to true, the service client will use the  x-amz-user-agent
+        /// header instead of the User-Agent header to report version and
+        /// environment information to the AWS service.
+        ///
+        /// Note: This is especially useful when using a platform like WebAssembly
+        /// which doesn't allow to specify the User-Agent header.
+        /// </summary>
+        public bool UseAlternateUserAgentHeader
+        {
+            get { return this.useAlternateUserAgentHeader; }
+            set { this.useAlternateUserAgentHeader = value; }
+        }
+#endif
 
         /// <summary>
         /// Gets and sets the RegionEndpoint property.  The region constant that 

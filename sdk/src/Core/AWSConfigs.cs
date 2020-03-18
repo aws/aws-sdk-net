@@ -431,6 +431,22 @@ namespace Amazon
         /// </summary>
         public static ProxyConfig ProxyConfig { get { return _rootConfig.Proxy; } }
 
+#if BCL || NETSTANDARD
+        /// <summary>
+        /// When set to true, the service client will use the  x-amz-user-agent
+        /// header instead of the User-Agent header to report version and
+        /// environment information to the AWS service.
+        ///
+        /// Note: This is especially useful when using a platform like WebAssembly
+        /// which doesn't allow to specify the User-Agent header.
+        /// </summary>
+        public static bool UseAlternateUserAgentHeader
+        {
+            get { return _rootConfig.UseAlternateUserAgentHeader; }
+            set { _rootConfig.UseAlternateUserAgentHeader = value; }
+        }
+#endif
+
         /// <summary>
         /// Configuration for the region endpoint section of AWS configuration.
         /// Changes may not take effect until a new client is constructed.

@@ -24,7 +24,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
-
+using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
@@ -44,6 +44,8 @@ namespace Amazon
         {
             return false;
         }
+
+        public static HttpClientFactory HttpClientFactory { get; set; }
 
 #region TraceListeners
 #if !NETSTANDARD13

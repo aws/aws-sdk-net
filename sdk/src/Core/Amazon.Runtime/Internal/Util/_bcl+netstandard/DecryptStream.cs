@@ -24,6 +24,10 @@ using System;
 using System.IO;
 using Amazon.Runtime;
 using System.Security.Cryptography;
+#if AWS_ASYNC_API
+using System.Threading;
+using System.Threading.Tasks;
+#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -83,6 +87,39 @@ namespace Amazon.Runtime.Internal.Util
             int result = this.CryptoStream.Read(buffer, offset, count);
             return result;
         }
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Asynchronously reads a sequence of bytes from the current stream and advances
+        /// the position within the stream by the number of bytes read.
+        /// </summary>
+        /// <param name="buffer">
+        /// An array of bytes. When this method returns, the buffer contains the specified
+        /// byte array with the values between offset and (offset + count - 1) replaced
+        /// by the bytes read from the current source.
+        /// </param>
+        /// <param name="offset">
+        /// The zero-based byte offset in buffer at which to begin storing the data read
+        /// from the current stream.
+        /// </param>
+        /// <param name="count">
+        /// The maximum number of bytes to be read from the current stream.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// The token to monitor for cancellation requests. The default value is
+        /// System.Threading.CancellationToken.None.
+        /// </param>
+        /// <returns>
+        /// The total number of bytes read into the buffer. This can be less than the
+        /// number of bytes requested if that many bytes are not currently available,
+        /// or zero (0) if the end of the stream has been reached.
+        /// </returns>
+        public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        {
+            int result = await this.CryptoStream.ReadAsync(buffer, offset, count, cancellationToken);
+            return result;
+        }
+#endif
 
 #if BCL
         public override void Close()

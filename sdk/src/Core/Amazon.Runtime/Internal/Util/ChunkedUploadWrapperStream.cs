@@ -21,12 +21,15 @@
  */
 
 using System;
+using System.Globalization;
 using System.IO;
 using System.Text;
-
 using Amazon.Util;
 using Amazon.Runtime.Internal.Auth;
-using System.Globalization;
+#if AWS_ASYNC_API
+using System.Threading;
+using System.Threading.Tasks;
+#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -108,6 +111,8 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns></returns>
         public override int Read(byte[] buffer, int offset, int count)
         {
+            int bytesRead = 0;
+
             // if we've no output and it was the special termination chunk,
             // we're done otherwise fill the input buffer with enough data
             // for the next chunk (or with whatever is left) and construct
@@ -117,7 +122,16 @@ namespace Amazon.Runtime.Internal.Util
                 if (_wrappedStreamConsumed && _outputBufferIsTerminatingChunk)
                     return 0;
 
-                var bytesRead = FillInputBuffer();
+                bytesRead = FillInputBuffer();
+            }
+
+            return AdjustBufferAfterReading(buffer, offset, count, bytesRead);
+        }
+
+        private int AdjustBufferAfterReading(byte[] buffer, int offset, int count, int bytesRead)
+        {
+            if (_outputBufferPos == -1)
+            {
                 ConstructOutputBufferChunk(bytesRead);
                 _outputBufferIsTerminatingChunk = (_wrappedStreamConsumed && bytesRead == 0);
             }
@@ -133,6 +147,73 @@ namespace Amazon.Runtime.Internal.Util
 
             return count;
         }
+
+#if AWS_ASYNC_API
+        public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        {
+            int bytesRead = 0;
+
+            // if we've no output and it was the special termination chunk,
+            // we're done otherwise fill the input buffer with enough data
+            // for the next chunk (or with whatever is left) and construct
+            // the chunk in the output buffer ready for streaming
+            if (_outputBufferPos == -1)
+            {
+                if (_wrappedStreamConsumed && _outputBufferIsTerminatingChunk)
+                    return 0;
+
+                bytesRead = await FillInputBufferAsync(cancellationToken).ConfigureAwait(false);
+            }
+
+            return AdjustBufferAfterReading(buffer, offset, count, bytesRead);
+        }
+
+        /// <summary>
+        /// Attempt to read sufficient data for a whole chunk from the wrapped stream,
+        /// returning the number of bytes successfully read to be processed into a chunk
+        /// </summary>
+        private async Task<int> FillInputBufferAsync(CancellationToken cancellationToken)
+        {
+            if (_wrappedStreamConsumed)
+                return 0;
+
+            var inputBufferPos = 0;
+
+            if (_readStrategy == ReadStrategy.ReadDirect)
+            {
+                while (inputBufferPos < _inputBuffer.Length && !_wrappedStreamConsumed)
+                {
+                    // chunk buffer size may not align exactly with underlying buffer size
+                    var chunkBufferRemaining = _inputBuffer.Length - inputBufferPos;
+                    if (chunkBufferRemaining > _wrappedStreamBufferSize)
+                        chunkBufferRemaining = _wrappedStreamBufferSize;
+
+                    var bytesRead = await BaseStream.ReadAsync(_inputBuffer, inputBufferPos, chunkBufferRemaining, cancellationToken).ConfigureAwait(false);
+                    if (bytesRead == 0)
+                        _wrappedStreamConsumed = true;
+                    else
+                        inputBufferPos += bytesRead;
+                }
+            }
+            else
+            {
+                var readBuffer = new byte[_wrappedStreamBufferSize];
+                while (inputBufferPos < _inputBuffer.Length && !_wrappedStreamConsumed)
+                {
+                    var bytesRead = await BaseStream.ReadAsync(readBuffer, 0, _wrappedStreamBufferSize, cancellationToken).ConfigureAwait(false);
+                    if (bytesRead == 0)
+                        _wrappedStreamConsumed = true;
+                    else
+                    {
+                        Buffer.BlockCopy(readBuffer, 0, _inputBuffer, inputBufferPos, bytesRead);
+                        inputBufferPos += bytesRead;
+                    }
+                }
+            }
+
+            return inputBufferPos;
+        }
+#endif
 
         /// <summary>
         /// Results of the header-signing portion of the request

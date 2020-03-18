@@ -17,6 +17,7 @@ using Amazon.Runtime.Internal.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using System.Diagnostics;
 using Amazon.Util;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -1414,13 +1415,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var readCount = base.Read(buffer, offset, count);
                 TotalReadBytes += readCount;
 
+                ValidateRead(MaxReadBytes, TotalReadBytes, MinRewinds, Rewinds);
+
+                return readCount;
+            }
+
+            public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+            {
+                if (OnRead != null)
+                    OnRead(this, null);
+
+                var readCount = await base.ReadAsync(buffer, offset, count, cancellationToken);
+                TotalReadBytes += readCount;
+
+                ValidateRead(MaxReadBytes, TotalReadBytes, MinRewinds, Rewinds);
+
+                return readCount;
+            }
+
+            private void ValidateRead(int MaxReadBytes, int TotalReadBytes, int MinRewinds, int Rewinds)
+            {
                 bool throwBasedOnReadBytes = MaxReadBytes >= 0 && TotalReadBytes >= MaxReadBytes;
                 bool suppressThrowBasedOnRewinds = MinRewinds >= 0 && Rewinds >= MinRewinds;
 
                 if (throwBasedOnReadBytes && !suppressThrowBasedOnRewinds)
                     throw new IOException("Fake Exception");
-
-                return readCount;
             }
 
             public override long Seek(long offset, SeekOrigin origin)

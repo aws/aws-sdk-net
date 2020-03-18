@@ -19,6 +19,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+#if AWS_ASYNC_API
+using System.Threading.Tasks;
+#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -119,6 +122,29 @@ namespace Amazon.Runtime.Internal.Util
         {
             throw new NotImplementedException();
         }
+
+#if AWS_ASYNC_API
+        public override Task FlushAsync(CancellationToken cancellationToken)
+        {
+            return BaseStream.FlushAsync(cancellationToken);
+        }
+
+        public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        {
+            int bytesRead = await BaseStream.ReadAsync(buffer, offset, count, cancellationToken).ConfigureAwait(false);
+            if (this.OnRead != null)
+            {
+                this.OnRead(bytesRead);
+            }
+
+            return bytesRead;
+        }
+
+        public override Task WriteAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+#endif
 
 #if !PCL && !NETSTANDARD
         public override IAsyncResult BeginRead(byte[] buffer, int offset, int count, AsyncCallback callback, Object state)

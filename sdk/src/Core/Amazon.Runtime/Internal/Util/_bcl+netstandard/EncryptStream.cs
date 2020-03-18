@@ -25,6 +25,10 @@ using System.IO;
 using Amazon.Runtime;
 using System.Collections;
 using System.Diagnostics;
+#if AWS_ASYNC_API
+using System.Threading;
+using System.Threading.Tasks;
+#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -91,6 +95,52 @@ namespace Amazon.Runtime.Internal.Util
             int maxBytesRead = count - (count % internalEncryptionBlockSize);
             int readBytes = base.Read(buffer, offset, maxBytesRead);
 
+            return Append(buffer, offset, previousPosition, readBytes);
+        }
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Asynchronously reads a sequence of bytes from the current stream, advances
+        /// the position within the stream by the number of bytes read, and monitors
+        /// cancellation requests.
+        /// </summary>
+        /// <param name="buffer">
+        /// An array of bytes. When this method returns, the buffer contains the specified
+        /// byte array with the values between offset and (offset + count - 1) replaced
+        /// by the bytes read from the current source.
+        /// </param>
+        /// <param name="offset">
+        /// The zero-based byte offset in buffer at which to begin storing the data read
+        /// from the current stream.
+        /// </param>
+        /// <param name="count">
+        /// The maximum number of bytes to be read from the current stream.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// The token to monitor for cancellation requests. The default value is
+        /// System.Threading.CancellationToken.None.
+        /// </param>
+        /// <returns>
+        /// A task that represents the asynchronous read operation. The value of the TResult
+        /// parameter contains the total number of bytes read into the buffer. This can be
+        /// less than the number of bytes requested if that many bytes are not currently
+        /// available, or zero (0) if the end of the stream has been reached.
+        /// </returns>
+        public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        {
+            if (performedLastBlockTransform)
+                return 0;
+
+            long previousPosition = this.Position;
+            int maxBytesRead = count - (count % internalEncryptionBlockSize);
+            int readBytes = await base.ReadAsync(buffer, offset, maxBytesRead, cancellationToken).ConfigureAwait(false);
+
+            return Append(buffer, offset, previousPosition, readBytes);
+        }
+#endif
+
+        private int Append(byte[] buffer, int offset, long previousPosition, int readBytes)
+        {
             if (readBytes == 0)
             {
                 byte[] finalBytes = Algorithm.AppendLastBlock(buffer, offset, 0);
@@ -100,7 +150,7 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             long currentPosition = previousPosition;
-           
+
             while (this.Position - currentPosition >= internalEncryptionBlockSize)
             {
                 currentPosition += Algorithm.AppendBlock(buffer, offset, internalEncryptionBlockSize, internalBuffer, 0);

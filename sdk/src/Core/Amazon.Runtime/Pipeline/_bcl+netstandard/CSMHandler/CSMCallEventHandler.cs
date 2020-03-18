@@ -113,8 +113,10 @@ namespace Amazon.Runtime.Internal
             executionContext.RequestContext.CSMCallEvent.Api = executionContext.RequestContext.CSMCallAttempt.Api;
             executionContext.RequestContext.CSMCallEvent.Region = executionContext.RequestContext.CSMCallAttempt.Region;
             executionContext.RequestContext.CSMCallEvent.Latency = stopWatch.ElapsedMilliseconds;
-            executionContext.RequestContext.CSMCallEvent.UserAgent = executionContext.RequestContext.Request.GetHeaderValue(HeaderKeys.UserAgentHeader);
             executionContext.RequestContext.CSMCallEvent.FinalHttpStatusCode = executionContext.RequestContext.CSMCallAttempt.HttpStatusCode;
+
+            bool useAlternateUserAgentHeader = (executionContext.RequestContext.ClientConfig as ClientConfig)?.UseAlternateUserAgentHeader ?? false;
+            executionContext.RequestContext.CSMCallEvent.UserAgent = executionContext.RequestContext.Request.GetHeaderValue(useAlternateUserAgentHeader ? HeaderKeys.XAmzUserAgentHeader : HeaderKeys.UserAgentHeader);
         }
 
         /// <summary>

@@ -24,6 +24,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Amazon.Runtime;
+#if AWS_ASYNC_API
+using System.Threading;
+using System.Threading.Tasks;
+#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -76,7 +80,21 @@ namespace Amazon.Runtime.Internal.Util
         public override int Read(byte[] buffer, int offset, int count)
         {
             var numberOfBytesRead = base.Read(buffer, offset, count);
+            UpdateCacheAfterReading(buffer, offset, numberOfBytesRead);
+            return numberOfBytesRead;
+        }
 
+#if AWS_ASYNC_API
+        public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        {
+            var numberOfBytesRead = await base.ReadAsync(buffer, offset, count, cancellationToken).ConfigureAwait(false);
+            UpdateCacheAfterReading(buffer, offset, numberOfBytesRead);
+            return numberOfBytesRead;
+        }
+#endif
+
+        private void UpdateCacheAfterReading(byte[] buffer, int offset, int numberOfBytesRead)
+        {
             // Limit the cached bytes to _cacheLimit
             if (_cachedBytes < _cacheLimit)
             {
@@ -88,10 +106,7 @@ namespace Amazon.Runtime.Internal.Util
                 AllReadBytes.AddRange(readBytes);
                 _cachedBytes += bytesToCache;
             }
-
-            return numberOfBytesRead;
         }
-
 
         /// <summary>
         /// Gets a value indicating whether the current stream supports seeking.
