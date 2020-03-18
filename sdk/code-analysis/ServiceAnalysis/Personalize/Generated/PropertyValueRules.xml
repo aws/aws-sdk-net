@@ -533,6 +533,11 @@
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Personalize.Model.BatchInferenceJobSummary.SolutionVersionArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Personalize.Model.BatchInferenceJobSummary.Status</property>
     <max>256</max>
   </property-value-rule>

@@ -46,6 +46,7 @@ namespace Amazon.Personalize.Model
         private string _status;
         private double? _trainingHours;
         private TrainingMode _trainingMode;
+        private TunedHPOParams _tunedhpoParams;
 
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
@@ -339,6 +340,25 @@ namespace Amazon.Personalize.Model
         internal bool IsSetTrainingMode()
         {
             return this._trainingMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TunedHPOParams. 
+        /// <para>
+        /// If hyperparameter optimization was performed, contains the hyperparameter values of
+        /// the best performing model.
+        /// </para>
+        /// </summary>
+        public TunedHPOParams TunedHPOParams
+        {
+            get { return this._tunedhpoParams; }
+            set { this._tunedhpoParams = value; }
+        }
+
+        // Check to see if TunedHPOParams property is set
+        internal bool IsSetTunedHPOParams()
+        {
+            return this._tunedhpoParams != null;
         }
 
     }

@@ -38,6 +38,7 @@ namespace Amazon.Personalize.Model
         private string _failureReason;
         private string _jobName;
         private DateTime? _lastUpdatedDateTime;
+        private string _solutionVersionArn;
         private string _status;
 
         /// <summary>
@@ -130,6 +131,25 @@ namespace Amazon.Personalize.Model
         internal bool IsSetLastUpdatedDateTime()
         {
             return this._lastUpdatedDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SolutionVersionArn. 
+        /// <para>
+        /// The ARN of the solution version used by the batch inference job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string SolutionVersionArn
+        {
+            get { return this._solutionVersionArn; }
+            set { this._solutionVersionArn = value; }
+        }
+
+        // Check to see if SolutionVersionArn property is set
+        internal bool IsSetSolutionVersionArn()
+        {
+            return this._solutionVersionArn != null;
         }
 
         /// <summary>

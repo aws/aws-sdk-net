@@ -77,7 +77,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The data type of the metric.
+        /// The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
