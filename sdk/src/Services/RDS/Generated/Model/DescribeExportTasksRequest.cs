@@ -37,7 +37,7 @@ namespace Amazon.RDS.Model
         private string _exportTaskIdentifier;
         private List<Filter> _filters = new List<Filter>();
         private string _marker;
-        private string _maxRecords;
+        private int? _maxRecords;
         private string _sourceArn;
 
         /// <summary>
@@ -136,16 +136,17 @@ namespace Amazon.RDS.Model
         /// Constraints: Minimum 20, maximum 100.
         /// </para>
         /// </summary>
-        public string MaxRecords
+        [AWSProperty(Min=20, Max=100)]
+        public int MaxRecords
         {
-            get { return this._maxRecords; }
+            get { return this._maxRecords.GetValueOrDefault(); }
             set { this._maxRecords = value; }
         }
 
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this._maxRecords != null;
+            return this._maxRecords.HasValue; 
         }
 
         /// <summary>

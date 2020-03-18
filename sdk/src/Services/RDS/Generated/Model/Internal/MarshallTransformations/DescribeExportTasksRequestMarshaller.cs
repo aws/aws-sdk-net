@@ -89,7 +89,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetMaxRecords())
                 {
-                    request.Parameters.Add("MaxRecords", StringUtils.FromString(publicRequest.MaxRecords));
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
                 if(publicRequest.IsSetSourceArn())
                 {
