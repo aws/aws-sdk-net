@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateFlow Request Marshaller
+    /// AddFlowSources Request Marshaller
     /// </summary>       
-    public class CreateFlowRequestMarshaller : IMarshaller<IRequest, CreateFlowRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AddFlowSourcesRequestMarshaller : IMarshaller<IRequest, AddFlowSourcesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateFlowRequest)input);
+            return this.Marshall((AddFlowSourcesRequest)input);
         }
 
         /// <summary>
@@ -52,86 +52,23 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateFlowRequest publicRequest)
+        public IRequest Marshall(AddFlowSourcesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaConnect");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/v1/flows";
+            if (!publicRequest.IsSetFlowArn())
+                throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
+            request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
+            request.ResourcePath = "/v1/flows/{flowArn}/source";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAvailabilityZone())
-                {
-                    context.Writer.WritePropertyName("availabilityZone");
-                    context.Writer.Write(publicRequest.AvailabilityZone);
-                }
-
-                if(publicRequest.IsSetEntitlements())
-                {
-                    context.Writer.WritePropertyName("entitlements");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEntitlementsListValue in publicRequest.Entitlements)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = GrantEntitlementRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEntitlementsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOutputs())
-                {
-                    context.Writer.WritePropertyName("outputs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AddOutputRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOutputsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SetSourceRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Source, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceFailoverConfig())
-                {
-                    context.Writer.WritePropertyName("sourceFailoverConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FailoverConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceFailoverConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetSources())
                 {
                     context.Writer.WritePropertyName("sources");
@@ -157,9 +94,9 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateFlowRequestMarshaller _instance = new CreateFlowRequestMarshaller();        
+        private static AddFlowSourcesRequestMarshaller _instance = new AddFlowSourcesRequestMarshaller();        
 
-        internal static CreateFlowRequestMarshaller GetInstance()
+        internal static AddFlowSourcesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -167,7 +104,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateFlowRequestMarshaller Instance
+        public static AddFlowSourcesRequestMarshaller Instance
         {
             get
             {

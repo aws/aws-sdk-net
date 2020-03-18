@@ -30,7 +30,7 @@ namespace Amazon.MediaConnect.Model
     /// <summary>
     /// Container for the parameters to the CreateFlow operation.
     /// Creates a new flow. The request must include one source. The request optionally can
-    /// include outputs (up to 20) and entitlements (up to 50).
+    /// include outputs (up to 50) and entitlements (up to 50).
     /// </summary>
     public partial class CreateFlowRequest : AmazonMediaConnectRequest
     {
@@ -39,6 +39,8 @@ namespace Amazon.MediaConnect.Model
         private string _name;
         private List<AddOutputRequest> _outputs = new List<AddOutputRequest>();
         private SetSourceRequest _source;
+        private FailoverConfig _sourceFailoverConfig;
+        private List<SetSourceRequest> _sources = new List<SetSourceRequest>();
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. The Availability Zone that you want to
@@ -107,7 +109,6 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Source.
         /// </summary>
-        [AWSProperty(Required=true)]
         public SetSourceRequest Source
         {
             get { return this._source; }
@@ -118,6 +119,36 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetSource()
         {
             return this._source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceFailoverConfig.
+        /// </summary>
+        public FailoverConfig SourceFailoverConfig
+        {
+            get { return this._sourceFailoverConfig; }
+            set { this._sourceFailoverConfig = value; }
+        }
+
+        // Check to see if SourceFailoverConfig property is set
+        internal bool IsSetSourceFailoverConfig()
+        {
+            return this._sourceFailoverConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sources.
+        /// </summary>
+        public List<SetSourceRequest> Sources
+        {
+            get { return this._sources; }
+            set { this._sources = value; }
+        }
+
+        // Check to see if Sources property is set
+        internal bool IsSetSources()
+        {
+            return this._sources != null && this._sources.Count > 0; 
         }
 
     }

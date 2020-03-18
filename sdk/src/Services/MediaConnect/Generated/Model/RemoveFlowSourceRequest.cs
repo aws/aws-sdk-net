@@ -28,16 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Container for the parameters to the AddFlowOutputs operation.
-    /// Adds outputs to an existing flow. You can create up to 50 outputs per flow.
+    /// Container for the parameters to the RemoveFlowSource operation.
+    /// Removes a source from an existing flow. This request can be made only if there is
+    /// more than one source on the flow.
     /// </summary>
-    public partial class AddFlowOutputsRequest : AmazonMediaConnectRequest
+    public partial class RemoveFlowSourceRequest : AmazonMediaConnectRequest
     {
         private string _flowArn;
-        private List<AddOutputRequest> _outputs = new List<AddOutputRequest>();
+        private string _sourceArn;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The flow that you want to add outputs to.
+        /// Gets and sets the property FlowArn. The flow that you want to remove a source from.
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -53,19 +54,19 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Outputs. A list of outputs that you want to add.
+        /// Gets and sets the property SourceArn. The ARN of the source that you want to remove.
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<AddOutputRequest> Outputs
+        public string SourceArn
         {
-            get { return this._outputs; }
-            set { this._outputs = value; }
+            get { return this._sourceArn; }
+            set { this._sourceArn = value; }
         }
 
-        // Check to see if Outputs property is set
-        internal bool IsSetOutputs()
+        // Check to see if SourceArn property is set
+        internal bool IsSetSourceArn()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._sourceArn != null;
         }
 
     }

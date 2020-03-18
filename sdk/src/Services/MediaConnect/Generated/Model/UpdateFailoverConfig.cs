@@ -28,44 +28,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Container for the parameters to the AddFlowOutputs operation.
-    /// Adds outputs to an existing flow. You can create up to 50 outputs per flow.
+    /// The settings for source failover
     /// </summary>
-    public partial class AddFlowOutputsRequest : AmazonMediaConnectRequest
+    public partial class UpdateFailoverConfig
     {
-        private string _flowArn;
-        private List<AddOutputRequest> _outputs = new List<AddOutputRequest>();
+        private int? _recoveryWindow;
+        private State _state;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The flow that you want to add outputs to.
+        /// Gets and sets the property RecoveryWindow. Recovery window time to look for dash-7
+        /// packets
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string FlowArn
+        public int RecoveryWindow
         {
-            get { return this._flowArn; }
-            set { this._flowArn = value; }
+            get { return this._recoveryWindow.GetValueOrDefault(); }
+            set { this._recoveryWindow = value; }
         }
 
-        // Check to see if FlowArn property is set
-        internal bool IsSetFlowArn()
+        // Check to see if RecoveryWindow property is set
+        internal bool IsSetRecoveryWindow()
         {
-            return this._flowArn != null;
+            return this._recoveryWindow.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Outputs. A list of outputs that you want to add.
+        /// Gets and sets the property State.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<AddOutputRequest> Outputs
+        public State State
         {
-            get { return this._outputs; }
-            set { this._outputs = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
-        // Check to see if Outputs property is set
-        internal bool IsSetOutputs()
+        // Check to see if State property is set
+        internal bool IsSetState()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._state != null;
         }
 
     }

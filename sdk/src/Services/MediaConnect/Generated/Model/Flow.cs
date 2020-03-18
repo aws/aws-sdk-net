@@ -40,6 +40,8 @@ namespace Amazon.MediaConnect.Model
         private string _name;
         private List<Output> _outputs = new List<Output>();
         private Source _source;
+        private FailoverConfig _sourceFailoverConfig;
+        private List<Source> _sources = new List<Source>();
         private Status _status;
 
         /// <summary>
@@ -171,6 +173,36 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetSource()
         {
             return this._source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceFailoverConfig.
+        /// </summary>
+        public FailoverConfig SourceFailoverConfig
+        {
+            get { return this._sourceFailoverConfig; }
+            set { this._sourceFailoverConfig = value; }
+        }
+
+        // Check to see if SourceFailoverConfig property is set
+        internal bool IsSetSourceFailoverConfig()
+        {
+            return this._sourceFailoverConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sources.
+        /// </summary>
+        public List<Source> Sources
+        {
+            get { return this._sources; }
+            set { this._sources = value; }
+        }
+
+        // Check to see if Sources property is set
+        internal bool IsSetSources()
+        {
+            return this._sources != null && this._sources.Count > 0; 
         }
 
         /// <summary>

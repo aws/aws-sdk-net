@@ -112,6 +112,18 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sourceFailoverConfig", targetDepth))
+                {
+                    var unmarshaller = FailoverConfigUnmarshaller.Instance;
+                    unmarshalledObject.SourceFailoverConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Source, SourceUnmarshaller>(SourceUnmarshaller.Instance);
+                    unmarshalledObject.Sources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -28,18 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Container for the parameters to the AddFlowOutputs operation.
-    /// Adds outputs to an existing flow. You can create up to 50 outputs per flow.
+    /// This is the response object from the AddFlowSources operation.
     /// </summary>
-    public partial class AddFlowOutputsRequest : AmazonMediaConnectRequest
+    public partial class AddFlowSourcesResponse : AmazonWebServiceResponse
     {
         private string _flowArn;
-        private List<AddOutputRequest> _outputs = new List<AddOutputRequest>();
+        private List<Source> _sources = new List<Source>();
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The flow that you want to add outputs to.
+        /// Gets and sets the property FlowArn. The ARN of the flow that these sources were added
+        /// to.
         /// </summary>
-        [AWSProperty(Required=true)]
         public string FlowArn
         {
             get { return this._flowArn; }
@@ -53,19 +52,18 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Outputs. A list of outputs that you want to add.
+        /// Gets and sets the property Sources. The details of the newly added sources.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<AddOutputRequest> Outputs
+        public List<Source> Sources
         {
-            get { return this._outputs; }
-            set { this._outputs = value; }
+            get { return this._sources; }
+            set { this._sources = value; }
         }
 
-        // Check to see if Outputs property is set
-        internal bool IsSetOutputs()
+        // Check to see if Sources property is set
+        internal bool IsSetSources()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._sources != null && this._sources.Count > 0; 
         }
 
     }
