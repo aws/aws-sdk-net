@@ -1,3 +1,16 @@
+### 3.3.702.0 (2020-03-18 18:13 UTC)
+* MediaConnect (3.3.106.0)
+	* Feature adds the ability for a flow to have multiple redundant sources that provides resiliency to a source failing. The new APIs added to enable the feature are, AddFlowSources, RemoveFlowSource and UpdateFlow.
+* Personalize (3.3.104.0)
+	* [Personalize] Adds support for returning hyperparameter values of the best performing model in a HPO job.
+* RDS (3.3.119.0)
+	* Updated the MaxRecords type in DescribeExportTasks to Integer.
+* Core 3.3.104.38
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.701.0 (2020-03-17 18:16 UTC)
 * MediaConvert (3.3.114.0)
 	* AWS Elemental MediaConvert SDK has added support for: AV1 encoding in File Group MP4, DASH and CMAF DASH outputs; PCM/WAV audio output in MPEG2-TS containers; and Opus audio in Webm inputs.
