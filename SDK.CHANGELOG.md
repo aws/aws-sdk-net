@@ -1,3 +1,9 @@
+### 3.3.702.1 (2020-03-19 18:10 UTC)
+* CertificateManager (3.3.101.43)
+	* AWS Certificate Manager documentation updated on API calls ImportCertificate and ListCertificate. Specific updates included input constraints, private key size for import and next token size for list.
+* Outposts (3.3.101.11)
+	* Documentation updates for AWS Outposts.
+
 ### 3.3.702.0 (2020-03-18 18:13 UTC)
 * MediaConnect (3.3.106.0)
 	* Feature adds the ability for a flow to have multiple redundant sources that provides resiliency to a source failing. The new APIs added to enable the feature are, AddFlowSources, RemoveFlowSource and UpdateFlow.
