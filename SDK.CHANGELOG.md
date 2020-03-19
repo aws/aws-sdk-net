@@ -1,3 +1,24 @@
+### 3.3.703.0 (2020-03-19 22:06 UTC)
+* EBS (3.3.100.40)
+	* Make streaming response disposable.
+* Glacier (3.3.100.146)
+	* Make streaming response disposable.
+* KinesisVideoArchivedMedia (3.3.102.62)
+	* Make streaming response disposable.
+* KinesisVideoMedia (3.3.100.147)
+	* Make streaming response disposable.
+* Lex (3.3.104.42)
+	* Make streaming response disposable.
+* MediaStoreData (3.3.101.122)
+	* Make streaming response disposable.
+* Polly (3.3.103.57)
+	* Make streaming response disposable.
+* WorkMailMessageFlow (3.3.100.73)
+	* Make streaming response disposable.
+* Core 3.3.105.0
+	* Adding support for Blazor WebAssembly. Adding async implementations to wrapper streams. Prevent double encoding of all S3 requests using a different service URL.
+	* All services packages updated to require new Core
+
 ### 3.3.702.1 (2020-03-19 18:10 UTC)
 * CertificateManager (3.3.101.43)
 	* AWS Certificate Manager documentation updated on API calls ImportCertificate and ListCertificate. Specific updates included input constraints, private key size for import and next token size for list.
