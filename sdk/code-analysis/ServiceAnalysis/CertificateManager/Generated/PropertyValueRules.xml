@@ -84,7 +84,7 @@
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.ImportCertificateRequest.PrivateKey</property>
     <min>1</min>
-    <max>524288</max>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.ImportCertificateResponse.CertificateArn</property>
@@ -100,13 +100,13 @@
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.ListCertificatesRequest.NextToken</property>
     <min>1</min>
-    <max>320</max>
+    <max>10000</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.ListCertificatesResponse.NextToken</property>
     <min>1</min>
-    <max>320</max>
+    <max>10000</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>

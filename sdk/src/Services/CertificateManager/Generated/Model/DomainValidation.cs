@@ -66,6 +66,13 @@ namespace Amazon.CertificateManager.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
         /// DNS to Validate Domain Ownership</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Note: The CNAME information that you need does not include the name of your domain.
+        /// If you include&#x2028; your domain name in the DNS database CNAME record, validation
+        /// fails.&#x2028; For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com",
+        /// only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.
+        /// </para>
         /// </summary>
         public ResourceRecord ResourceRecord
         {

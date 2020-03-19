@@ -60,7 +60,7 @@ namespace Amazon.CertificateManager.Model
         /// the <code>NextToken</code> parameter in a subsequent pagination request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=320)]
+        [AWSProperty(Min=1, Max=10000)]
         public string NextToken
         {
             get { return this._nextToken; }
