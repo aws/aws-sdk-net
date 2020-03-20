@@ -35,6 +35,8 @@ namespace Amazon.ServiceCatalog.Model
         private string _constraintId;
         private string _description;
         private string _owner;
+        private string _portfolioId;
+        private string _productId;
         private string _type;
 
         /// <summary>
@@ -91,6 +93,46 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetOwner()
         {
             return this._owner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortfolioId. 
+        /// <para>
+        /// The identifier of the portfolio the product resides in. The constraint applies only
+        /// to the instance of the product that lives within this portfolio.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string PortfolioId
+        {
+            get { return this._portfolioId; }
+            set { this._portfolioId = value; }
+        }
+
+        // Check to see if PortfolioId property is set
+        internal bool IsSetPortfolioId()
+        {
+            return this._portfolioId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductId. 
+        /// <para>
+        /// The identifier of the product the constraint applies to. Note that a constraint applies
+        /// to a specific instance of a product within a certain portfolio.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string ProductId
+        {
+            get { return this._productId; }
+            set { this._productId = value; }
+        }
+
+        // Check to see if ProductId property is set
+        internal bool IsSetProductId()
+        {
+            return this._productId != null;
         }
 
         /// <summary>
