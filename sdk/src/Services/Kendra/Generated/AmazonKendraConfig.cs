@@ -32,7 +32,7 @@ namespace Amazon.Kendra
     public partial class AmazonKendraConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.101.38");
+            InternalSDKUtils.BuildUserAgentString("3.3.101.39");
 
         private string _userAgent = UserAgentString;
 

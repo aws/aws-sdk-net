@@ -1,3 +1,12 @@
+### 3.3.704.0 (2020-03-20 18:11 UTC)
+* ServiceCatalog (3.3.110.0)
+	* Added "productId" and "portfolioId" to responses from CreateConstraint, UpdateConstraint, ListConstraintsForPortfolio, and DescribeConstraint APIs
+* Core 3.3.105.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.703.0 (2020-03-19 22:06 UTC)
 * EBS (3.3.100.40)
 	* Make streaming response disposable.
