@@ -420,12 +420,12 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMillis. 
         /// <para>
-        /// Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds
-        /// or 29 seconds for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds
-        /// for HTTP APIs.
+        /// Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50
+        /// and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket
+        /// APIs and 30 seconds for HTTP APIs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=50, Max=29000)]
+        [AWSProperty(Min=50, Max=30000)]
         public int TimeoutInMillis
         {
             get { return this._timeoutInMillis.GetValueOrDefault(); }
