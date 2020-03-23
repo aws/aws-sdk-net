@@ -1,3 +1,11 @@
+### 3.3.705.0 (2020-03-23 18:17 UTC)
+* ApiGatewayV2 (3.3.106.0)
+	* Documentation updates to reflect that the default timeout for integrations is now 30 seconds for HTTP APIs.
+* EKS (3.3.109.0)
+	* Adding new error code IamLimitExceeded for Nodegroups in EKS
+* Route53 (3.3.102.94)
+	* Documentation updates for Route 53.
+
 ### 3.3.704.0 (2020-03-20 18:11 UTC)
 * ServiceCatalog (3.3.110.0)
 	* Added "productId" and "portfolioId" to responses from CreateConstraint, UpdateConstraint, ListConstraintsForPortfolio, and DescribeConstraint APIs
