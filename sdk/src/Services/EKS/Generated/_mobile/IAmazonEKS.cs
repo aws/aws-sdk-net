@@ -300,7 +300,7 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// If you have managed node groups or Fargate profiles attached to the cluster, you must
-        /// delete them first. For more information, see <a>DeleteNodegroup</a> and<a>DeleteFargateProfile</a>.
+        /// delete them first. For more information, see <a>DeleteNodegroup</a> and <a>DeleteFargateProfile</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>

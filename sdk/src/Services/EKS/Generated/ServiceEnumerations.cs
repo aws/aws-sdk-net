@@ -393,6 +393,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly NodegroupIssueCode IamInstanceProfileNotFound = new NodegroupIssueCode("IamInstanceProfileNotFound");
         /// <summary>
+        /// Constant IamLimitExceeded for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode IamLimitExceeded = new NodegroupIssueCode("IamLimitExceeded");
+        /// <summary>
         /// Constant IamNodeRoleNotFound for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode IamNodeRoleNotFound = new NodegroupIssueCode("IamNodeRoleNotFound");

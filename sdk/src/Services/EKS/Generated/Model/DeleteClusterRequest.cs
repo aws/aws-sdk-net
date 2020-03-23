@@ -42,7 +42,7 @@ namespace Amazon.EKS.Model
     ///  
     /// <para>
     /// If you have managed node groups or Fargate profiles attached to the cluster, you must
-    /// delete them first. For more information, see <a>DeleteNodegroup</a> and<a>DeleteFargateProfile</a>.
+    /// delete them first. For more information, see <a>DeleteNodegroup</a> and <a>DeleteFargateProfile</a>.
     /// </para>
     /// </summary>
     public partial class DeleteClusterRequest : AmazonEKSRequest
