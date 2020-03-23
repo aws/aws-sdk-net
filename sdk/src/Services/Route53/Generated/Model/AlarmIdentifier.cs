@@ -44,9 +44,9 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// For the current list of CloudWatch regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon
-        /// CloudWatch</a> in the <i>AWS Regions and Endpoints</i> chapter of the <i>Amazon Web
-        /// Services General Reference</i>.
+        /// For the current list of CloudWatch regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon
+        /// CloudWatch</a> in the <i>AWS Service Endpoints</i> chapter of the <i>Amazon Web Services
+        /// General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -75,7 +75,7 @@ namespace Amazon.Route53.Model
         ///  <ul> <li> 
         /// <para>
         /// Standard-resolution metrics. High-resolution metrics aren't supported. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics">High-Resolution
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics">High-Resolution
         /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         ///  </li> <li> 

@@ -70,7 +70,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ContinentCode. 
         /// <para>
-        /// Amazon Route 53 supports the following continent codes:
+        /// For geolocation resource record sets, a two-letter abbreviation that identifies a
+        /// continent. Amazon Route 53 supports the following continent codes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -138,11 +139,15 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property SubdivisionCode. 
         /// <para>
-        /// Amazon Route 53 uses the one- to three-letter subdivision codes that are specified
-        /// in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-        /// alpha-2</a>. Route 53 doesn't support subdivision codes for all countries. If you
-        /// specify <code>subdivisioncode</code>, you must also specify <code>countrycode</code>.
-        /// 
+        /// For <code>SubdivisionCode</code>, Amazon Route 53 supports only states of the United
+        /// States. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix
+        /// B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service
+        /// website. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <code>subdivisioncode</code>, you must also specify <code>US</code>
+        /// for <code>CountryCode</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]

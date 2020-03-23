@@ -170,7 +170,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property StartRecordName. 
         /// <para>
         /// The first name in the lexicographic ordering of resource record sets that you want
-        /// to list.
+        /// to list. If the specified record name doesn't exist, the results begin with the first
+        /// resource record set that has a name greater than the value of <code>name</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -226,11 +227,11 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon S3 bucket</b>: A
+        ///  <b>S3 bucket</b>: A
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon VPC interface VPC endpoint</b>: A
+        ///  <b>VPC interface VPC endpoint</b>: A
         /// </para>
         ///  </li> <li> 
         /// <para>

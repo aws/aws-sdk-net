@@ -33,7 +33,7 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// For more information about updating health checks, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
+    /// For more information about updating health checks, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
     /// Updating, and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -208,8 +208,14 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port on the endpoint on which you want Amazon Route 53 to perform health checks.
+        /// The port on the endpoint that you want Amazon Route 53 to perform health checks on.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code>
+        /// of <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
         public int Port
@@ -361,7 +367,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property SearchString. 
         /// <para>
-        /// If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>,
+        /// If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>,
         /// the string that you want Amazon Route 53 to search for in the response body from the
         /// specified resource. If the string appears in the response body, Route 53 considers
         /// the resource healthy. (You can't change the value of <code>Type</code> when you update
@@ -386,7 +392,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The number of consecutive health checks that an endpoint must pass or fail for Amazon
         /// Route 53 to change the current status of the endpoint from unhealthy to healthy or
-        /// vice versa. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+        /// vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
         /// Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route
         /// 53 Developer Guide</i>.
         /// </para>

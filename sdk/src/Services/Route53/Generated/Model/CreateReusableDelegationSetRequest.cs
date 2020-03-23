@@ -30,9 +30,14 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the CreateReusableDelegationSet operation.
     /// Creates a delegation set (a group of four name servers) that can be reused by multiple
-    /// hosted zones. If a hosted zoned ID is specified, <code>CreateReusableDelegationSet</code>
-    /// marks the delegation set associated with that zone as reusable.
+    /// hosted zones that were created by the same AWS account. 
     /// 
+    ///  
+    /// <para>
+    /// You can also create a reusable delegation set that uses the four name servers that
+    /// are associated with an existing hosted zone. Specify the hosted zone ID in the <code>CreateReusableDelegationSet</code>
+    /// request.
+    /// </para>
     ///  <note> 
     /// <para>
     /// You can't associate a reusable delegation set with a private hosted zone.
@@ -40,7 +45,7 @@ namespace Amazon.Route53.Model
     ///  </note> 
     /// <para>
     /// For information about using a reusable delegation set to configure white label name
-    /// servers, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
+    /// servers, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
     /// White Label Name Servers</a>.
     /// </para>
     ///  

@@ -54,8 +54,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates ResourceRecordSet with the parameterized properties
         /// </summary>
-        /// <param name="name">For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.  <b>ChangeResourceRecordSets Only</b>  Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical. For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>. You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example, <code>*.example.com</code>. Note the following: <ul> <li> The * must replace the entire label. For example, you can't specify <code>*prod.example.com</code> or <code>prod*.example.com</code>. </li> <li> The * can't replace any of the middle labels, for example, marketing.*.example.com. </li> <li> If you include * in any position other than the leftmost label in a domain name, DNS treats it as an * character (ASCII 42), not as a wildcard. <important> You can't use the * wildcard for resource records sets that have a type of NS. </important> </li> </ul> You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</param>
-        /// <param name="type">The DNS record type. For information about different record types and how data is encoded for them, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>. Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>  Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group. Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>  <note> SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer recommend that you create resource record sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it." In RFC 7208, see section 14.1, <a href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record Type</a>. </note> Values for alias resource record sets: <ul> <li>  <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>  </li> <li>  <b>CloudFront distributions:</b> <code>A</code>  If IPv6 is enabled for the distribution, create two resource record sets to route traffic to your distribution, one with a value of <code>A</code> and one with a value of <code>AAAA</code>.  </li> <li>  <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>  </li> <li>  <b>ELB load balancers:</b> <code>A</code> | <code>AAAA</code>  </li> <li>  <b>Amazon S3 buckets:</b> <code>A</code>  </li> <li>  <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>  </li> <li>  <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>. <note> If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record. </note> </li> </ul></param>
+        /// <param name="name">For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.  <b>ChangeResourceRecordSets Only</b>  Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical. For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>. You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example, <code>*.example.com</code>. Note the following: <ul> <li> The * must replace the entire label. For example, you can't specify <code>*prod.example.com</code> or <code>prod*.example.com</code>. </li> <li> The * can't replace any of the middle labels, for example, marketing.*.example.com. </li> <li> If you include * in any position other than the leftmost label in a domain name, DNS treats it as an * character (ASCII 42), not as a wildcard. <important> You can't use the * wildcard for resource records sets that have a type of NS. </important> </li> </ul> You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</param>
+        /// <param name="type">The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>. Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>  Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group. Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>  <note> SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer recommend that you create resource record sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it." In RFC 7208, see section 14.1, <a href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record Type</a>. </note> Values for alias resource record sets: <ul> <li>  <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>  </li> <li>  <b>CloudFront distributions:</b> <code>A</code>  If IPv6 is enabled for the distribution, create two resource record sets to route traffic to your distribution, one with a value of <code>A</code> and one with a value of <code>AAAA</code>.  </li> <li>  <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>  </li> <li>  <b>ELB load balancers:</b> <code>A</code> | <code>AAAA</code>  </li> <li>  <b>Amazon S3 buckets:</b> <code>A</code>  </li> <li>  <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>  </li> <li>  <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>. <note> If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record. </note> </li> </ul></param>
         public ResourceRecordSet(string name, RRType type)
         {
             _name = name;
@@ -85,7 +85,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>,
         /// and <code>-</code> (hyphen) and how to specify internationalized domain names, see
-        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
         /// Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  
@@ -135,7 +135,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The DNS record type. For information about different record types and how data is
-        /// encoded for them, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
+        /// encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
         /// DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  
@@ -191,7 +191,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>
+        ///  <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -307,7 +307,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The effect of setting <code>Weight</code> to <code>0</code> is different when you
         /// associate health checks with weighted resource record sets. For more information,
-        /// see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options
+        /// see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options
         /// for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon
         /// Route 53 Developer Guide</i>.
         /// </para>
@@ -336,8 +336,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Creating latency and latency alias resource record sets in private hosted zones is
-        /// not supported.
+        /// Although creating latency and latency alias resource record sets in a private hosted
+        /// zone is allowed, it's not supported.
         /// </para>
         ///  </note> 
         /// <para>
@@ -396,8 +396,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Creating geolocation and geolocation alias resource record sets in private hosted
-        /// zones is not supported.
+        /// Although creating geolocation and geolocation alias resource record sets in a private
+        /// hosted zone is allowed, it's not supported.
         /// </para>
         ///  </note> 
         /// <para>
@@ -424,11 +424,12 @@ namespace Amazon.Route53.Model
         /// aren't mapped to geographic locations, so even if you create geolocation resource
         /// record sets that cover all seven continents, Route 53 will receive some DNS queries
         /// from locations that it can't identify. We recommend that you create a resource record
-        /// set for which the value of <code>CountryCode</code> is <code>*</code>, which handles
-        /// both queries that come from locations for which you haven't created geolocation resource
-        /// record sets and queries from IP addresses that aren't mapped to a location. If you
-        /// don't create a <code>*</code> resource record set, Route 53 returns a "no answer"
-        /// response for queries from those locations.
+        /// set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups
+        /// of queries are routed to the resource that you specify in this record: queries that
+        /// come from locations for which you haven't created geolocation resource record sets
+        /// and queries from IP addresses that aren't mapped to a location. If you don't create
+        /// a <code>*</code> resource record set, Route 53 returns a "no answer" response for
+        /// queries from those locations.
         /// </para>
         ///  </important> 
         /// <para>
@@ -506,12 +507,12 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
+        ///  <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
         /// 53 Health Checks and DNS Failover</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
+        ///  <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
         /// Failover in a Private Hosted Zone</a> 
         /// </para>
         ///  </li> </ul>
@@ -677,7 +678,7 @@ namespace Amazon.Route53.Model
         ///  </li> <li> 
         /// <para>
         /// For information about creating failover resource record sets in a private hosted zone,
-        /// see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
+        /// see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
         /// Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  </li> </ul>
@@ -739,12 +740,12 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
+        ///  <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
         /// 53 Health Checks and DNS Failover</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
+        ///  <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
         /// Failover in a Private Hosted Zone</a> 
         /// </para>
         ///  </li> </ul> 

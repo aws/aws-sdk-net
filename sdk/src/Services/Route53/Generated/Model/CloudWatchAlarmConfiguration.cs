@@ -145,7 +145,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Namespace. 
         /// <para>
         /// The namespace of the metric that the alarm is associated with. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
         /// CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch
         /// User Guide</i>.
         /// </para>
@@ -187,7 +187,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Dimensions. 
         /// <para>
         /// For the metric that the CloudWatch alarm is associated with, a complex type that contains
-        /// information about the dimensions for the metric. For information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+        /// information about the dimensions for the metric. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
         /// CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch
         /// User Guide</i>.
         /// </para>

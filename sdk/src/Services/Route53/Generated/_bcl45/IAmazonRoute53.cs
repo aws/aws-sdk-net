@@ -43,20 +43,30 @@ namespace Amazon.Route53
         /// <summary>
         /// Associates an Amazon VPC with a private hosted zone. 
         /// 
-        ///  <important> 
+        ///  <note> 
         /// <para>
         /// To perform the association, the VPC and the private hosted zone must already exist.
-        /// You can't convert a public hosted zone into a private hosted zone.
+        /// Also, you can't convert a public hosted zone into a private hosted zone.
         /// </para>
-        ///  </important> <note> 
+        ///  </note> 
         /// <para>
-        /// If you want to associate a VPC that was created by using one AWS account with a private
-        /// hosted zone that was created by using a different account, the AWS account that created
-        /// the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code>
-        /// request. Then the account that created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
+        /// If you want to associate a VPC that was created by one AWS account with a private
+        /// hosted zone that was created by a different account, do one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the AWS account that created the private hosted zone to submit a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html">CreateVPCAssociationAuthorization</a>
+        /// request. Then use the account that created the VPC to submit an <code>AssociateVPCWithHostedZone</code>
         /// request.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// If a subnet in the VPC was shared with another account, you can use the account that
+        /// the subnet was shared with to submit an <code>AssociateVPCWithHostedZone</code> request.
+        /// For more information about sharing subnets, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working
+        /// with Shared VPCs</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateVPCWithHostedZone service method.</param>
         /// 
@@ -118,20 +128,30 @@ namespace Amazon.Route53
         /// <summary>
         /// Associates an Amazon VPC with a private hosted zone. 
         /// 
-        ///  <important> 
+        ///  <note> 
         /// <para>
         /// To perform the association, the VPC and the private hosted zone must already exist.
-        /// You can't convert a public hosted zone into a private hosted zone.
+        /// Also, you can't convert a public hosted zone into a private hosted zone.
         /// </para>
-        ///  </important> <note> 
+        ///  </note> 
         /// <para>
-        /// If you want to associate a VPC that was created by using one AWS account with a private
-        /// hosted zone that was created by using a different account, the AWS account that created
-        /// the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code>
-        /// request. Then the account that created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
+        /// If you want to associate a VPC that was created by one AWS account with a private
+        /// hosted zone that was created by a different account, do one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the AWS account that created the private hosted zone to submit a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html">CreateVPCAssociationAuthorization</a>
+        /// request. Then use the account that created the VPC to submit an <code>AssociateVPCWithHostedZone</code>
         /// request.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// If a subnet in the VPC was shared with another account, you can use the account that
+        /// the subnet was shared with to submit an <code>AssociateVPCWithHostedZone</code> request.
+        /// For more information about sharing subnets, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working
+        /// with Shared VPCs</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateVPCWithHostedZone service method.</param>
         /// <param name="cancellationToken">
@@ -242,7 +262,7 @@ namespace Amazon.Route53
         /// then associate the traffic policy with one or more domain names (such as example.com)
         /// or subdomain names (such as www.example.com), in the same hosted zone or in multiple
         /// hosted zones. You can roll back the updates if the new configuration isn't performing
-        /// as expected. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
+        /// as expected. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
         /// Traffic Flow to Route DNS Traffic</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  
@@ -386,7 +406,7 @@ namespace Amazon.Route53
         /// then associate the traffic policy with one or more domain names (such as example.com)
         /// or subdomain names (such as www.example.com), in the same hosted zone or in multiple
         /// hosted zones. You can roll back the updates if the new configuration isn't performing
-        /// as expected. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
+        /// as expected. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
         /// Traffic Flow to Route DNS Traffic</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  
@@ -614,7 +634,7 @@ namespace Amazon.Route53
         /// a CloudWatch metric that checks the status of the Amazon EC2 <code>StatusCheckFailed</code>
         /// metric, add an alarm to the metric, and then create a health check that is based on
         /// the state of the alarm. For information about creating CloudWatch metrics and alarms
-        /// by using the CloudWatch console, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
+        /// by using the CloudWatch console, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
         /// CloudWatch User Guide</a>.
         /// </para>
         ///  </li> </ul>
@@ -715,7 +735,7 @@ namespace Amazon.Route53
         /// a CloudWatch metric that checks the status of the Amazon EC2 <code>StatusCheckFailed</code>
         /// metric, add an alarm to the metric, and then create a health check that is based on
         /// the state of the alarm. For information about creating CloudWatch metrics and alarms
-        /// by using the CloudWatch console, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
+        /// by using the CloudWatch console, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
         /// CloudWatch User Guide</a>.
         /// </para>
         ///  </li> </ul>
@@ -804,9 +824,8 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For public hosted zones, Amazon Route 53 automatically creates a default SOA record
-        /// and four NS records for the zone. For more information about SOA and NS records, see
-        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
+        /// For public hosted zones, Route 53 automatically creates a default SOA record and four
+        /// NS records for the zone. For more information about SOA and NS records, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
         /// and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route
         /// 53 Developer Guide</i>.
         /// </para>
@@ -820,7 +839,7 @@ namespace Amazon.Route53
         /// <para>
         /// If your domain is registered with a registrar other than Route 53, you must update
         /// the name servers with your registrar to make Route 53 the DNS service for the domain.
-        /// For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating
         /// DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53
         /// Developer Guide</i>. 
         /// </para>
@@ -942,9 +961,8 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For public hosted zones, Amazon Route 53 automatically creates a default SOA record
-        /// and four NS records for the zone. For more information about SOA and NS records, see
-        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
+        /// For public hosted zones, Route 53 automatically creates a default SOA record and four
+        /// NS records for the zone. For more information about SOA and NS records, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
         /// and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route
         /// 53 Developer Guide</i>.
         /// </para>
@@ -958,7 +976,7 @@ namespace Amazon.Route53
         /// <para>
         /// If your domain is registered with a registrar other than Route 53, you must update
         /// the name servers with your registrar to make Route 53 the DNS service for the domain.
-        /// For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating
         /// DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53
         /// Developer Guide</i>. 
         /// </para>
@@ -1444,9 +1462,14 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Creates a delegation set (a group of four name servers) that can be reused by multiple
-        /// hosted zones. If a hosted zoned ID is specified, <code>CreateReusableDelegationSet</code>
-        /// marks the delegation set associated with that zone as reusable.
+        /// hosted zones that were created by the same AWS account. 
         /// 
+        ///  
+        /// <para>
+        /// You can also create a reusable delegation set that uses the four name servers that
+        /// are associated with an existing hosted zone. Specify the hosted zone ID in the <code>CreateReusableDelegationSet</code>
+        /// request.
+        /// </para>
         ///  <note> 
         /// <para>
         /// You can't associate a reusable delegation set with a private hosted zone.
@@ -1454,7 +1477,7 @@ namespace Amazon.Route53
         ///  </note> 
         /// <para>
         /// For information about using a reusable delegation set to configure white label name
-        /// servers, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
+        /// servers, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
         /// White Label Name Servers</a>.
         /// </para>
         ///  
@@ -1555,9 +1578,14 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Creates a delegation set (a group of four name servers) that can be reused by multiple
-        /// hosted zones. If a hosted zoned ID is specified, <code>CreateReusableDelegationSet</code>
-        /// marks the delegation set associated with that zone as reusable.
+        /// hosted zones that were created by the same AWS account. 
         /// 
+        ///  
+        /// <para>
+        /// You can also create a reusable delegation set that uses the four name servers that
+        /// are associated with an existing hosted zone. Specify the hosted zone ID in the <code>CreateReusableDelegationSet</code>
+        /// request.
+        /// </para>
         ///  <note> 
         /// <para>
         /// You can't associate a reusable delegation set with a private hosted zone.
@@ -1565,7 +1593,7 @@ namespace Amazon.Route53
         ///  </note> 
         /// <para>
         /// For information about using a reusable delegation set to configure white label name
-        /// servers, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
+        /// servers, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
         /// White Label Name Servers</a>.
         /// </para>
         ///  
@@ -2057,10 +2085,17 @@ namespace Amazon.Route53
         /// check is associated with one or more resource record sets. If you delete a health
         /// check and you don't update the associated resource record sets, the future status
         /// of the health check can't be predicted and may change. This will affect the routing
-        /// of DNS queries for your DNS failover configuration. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
+        /// of DNS queries for your DNS failover configuration. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
         /// and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// If you're using AWS Cloud Map and you configured Cloud Map to create a Route 53 health
+        /// check when you register an instance, you can't use the Route 53 <code>DeleteHealthCheck</code>
+        /// command to delete the health check. The health check is deleted automatically when
+        /// you deregister the instance; there can be a delay of several hours before the health
+        /// check is deleted from Route 53. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHealthCheck service method.</param>
         /// 
@@ -2088,10 +2123,17 @@ namespace Amazon.Route53
         /// check is associated with one or more resource record sets. If you delete a health
         /// check and you don't update the associated resource record sets, the future status
         /// of the health check can't be predicted and may change. This will affect the routing
-        /// of DNS queries for your DNS failover configuration. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
+        /// of DNS queries for your DNS failover configuration. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
         /// and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// If you're using AWS Cloud Map and you configured Cloud Map to create a Route 53 health
+        /// check when you register an instance, you can't use the Route 53 <code>DeleteHealthCheck</code>
+        /// command to delete the health check. The health check is deleted automatically when
+        /// you deregister the instance; there can be a delay of several hours before the health
+        /// check is deleted from Route 53. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHealthCheck service method.</param>
         /// <param name="cancellationToken">
@@ -2879,7 +2921,7 @@ namespace Amazon.Route53
         /// <para>
         ///  <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json,
         /// which includes IP address ranges for all AWS services. For more information, see <a
-        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
+        /// href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
         /// Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53 Developer
         /// Guide</i>.
         /// </para>
@@ -2898,7 +2940,7 @@ namespace Amazon.Route53
         /// <para>
         ///  <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json,
         /// which includes IP address ranges for all AWS services. For more information, see <a
-        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
+        /// href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
         /// Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53 Developer
         /// Guide</i>.
         /// </para>
@@ -2958,7 +3000,9 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchGeoLocationException">
-        /// Amazon Route 53 doesn't support the specified geographic location.
+        /// Amazon Route 53 doesn't support the specified geographic location. For a list of supported
+        /// geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a>
+        /// data type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation">REST API Reference for GetGeoLocation Operation</seealso>
         GetGeoLocationResponse GetGeoLocation(GetGeoLocationRequest request);
@@ -3008,7 +3052,9 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchGeoLocationException">
-        /// Amazon Route 53 doesn't support the specified geographic location.
+        /// Amazon Route 53 doesn't support the specified geographic location. For a list of supported
+        /// geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a>
+        /// data type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation">REST API Reference for GetGeoLocation Operation</seealso>
         Task<GetGeoLocationResponse> GetGeoLocationAsync(GetGeoLocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3641,6 +3687,11 @@ namespace Amazon.Route53
         /// that country are listed in alphabetical order immediately after the corresponding
         /// country.
         /// </para>
+        ///  
+        /// <para>
+        /// For a list of supported geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a>
+        /// data type.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListGeoLocations service method, as returned by Route53.</returns>
@@ -3660,6 +3711,11 @@ namespace Amazon.Route53
         /// subdivisions for a country (for example, states or provinces), the subdivisions for
         /// that country are listed in alphabetical order immediately after the corresponding
         /// country.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of supported geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a>
+        /// data type.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGeoLocations service method.</param>
@@ -3681,6 +3737,11 @@ namespace Amazon.Route53
         /// subdivisions for a country (for example, states or provinces), the subdivisions for
         /// that country are listed in alphabetical order immediately after the corresponding
         /// country.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of supported geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a>
+        /// data type.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -3705,6 +3766,11 @@ namespace Amazon.Route53
         /// subdivisions for a country (for example, states or provinces), the subdivisions for
         /// that country are listed in alphabetical order immediately after the corresponding
         /// country.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of supported geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a>
+        /// data type.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGeoLocations service method.</param>
@@ -3952,7 +4018,7 @@ namespace Amazon.Route53
         /// <para>
         /// The labels are reversed and alphabetized using the escaped value. For more information
         /// about valid domain name formats, including internationalized domain names, see <a
-        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+        /// href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
         /// Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  
@@ -4044,7 +4110,7 @@ namespace Amazon.Route53
         /// <para>
         /// The labels are reversed and alphabetized using the escaped value. For more information
         /// about valid domain name formats, including internationalized domain names, see <a
-        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+        /// href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
         /// Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  
@@ -5038,7 +5104,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For more information about updating health checks, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
+        /// For more information about updating health checks, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
         /// Updating, and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -5065,7 +5131,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For more information about updating health checks, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
+        /// For more information about updating health checks, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
         /// Updating, and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         /// </summary>

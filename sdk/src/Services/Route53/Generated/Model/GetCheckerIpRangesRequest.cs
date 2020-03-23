@@ -33,7 +33,7 @@ namespace Amazon.Route53.Model
     /// <para>
     ///  <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json,
     /// which includes IP address ranges for all AWS services. For more information, see <a
-    /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
+    /// href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
     /// Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53 Developer
     /// Guide</i>.
     /// </para>

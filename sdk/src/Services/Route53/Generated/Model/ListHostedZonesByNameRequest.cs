@@ -62,7 +62,7 @@ namespace Amazon.Route53.Model
     /// <para>
     /// The labels are reversed and alphabetized using the escaped value. For more information
     /// about valid domain name formats, including internationalized domain names, see <a
-    /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+    /// href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
     /// Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
     /// </para>
     ///  

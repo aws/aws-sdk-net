@@ -74,7 +74,7 @@ namespace Amazon.Route53.Model
     /// then associate the traffic policy with one or more domain names (such as example.com)
     /// or subdomain names (such as www.example.com), in the same hosted zone or in multiple
     /// hosted zones. You can roll back the updates if the new configuration isn't performing
-    /// as expected. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
+    /// as expected. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
     /// Traffic Flow to Route DNS Traffic</a> in the <i>Amazon Route 53 Developer Guide</i>.
     /// </para>
     ///  
