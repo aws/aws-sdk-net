@@ -28,12 +28,49 @@ using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Internal.Settings
 {
-    public class PersistenceManager
+    public interface IPersistenceManager
+    {
+        SettingsCollection GetSettings(string type);
+
+        void SaveSettings(string type, SettingsCollection settings);
+    }
+
+    public class InMemoryPersistenceManager: IPersistenceManager
+    {
+        private readonly Dictionary<string, SettingsCollection> _settingsDictionary = new Dictionary<string, SettingsCollection>();
+
+        public SettingsCollection GetSettings(string type)
+        {
+            return _settingsDictionary[type];
+        }
+
+        public void SaveSettings(string type, SettingsCollection settings)
+        {
+            _settingsDictionary[type] = settings;
+        }
+    }
+
+    public class PersistenceManager: IPersistenceManager
     {
         #region Private members
 
-        static readonly PersistenceManager INSTANCE = new PersistenceManager();
-        readonly HashSet<string> _encryptedKeys;
+        static IPersistenceManager INSTANCE;
+        static readonly HashSet<string> ENCRYPTEDKEYS = new HashSet<string>
+        {
+            SettingsConstants.AccessKeyField,
+            SettingsConstants.SecretKeyField,
+            SettingsConstants.SessionTokenField,
+            SettingsConstants.ExternalIDField,
+            SettingsConstants.MfaSerialField,
+            SettingsConstants.SecretKeyRepository,
+            SettingsConstants.EC2InstanceUserName,
+            SettingsConstants.EC2InstancePassword,
+            SettingsConstants.ProxyUsernameEncrypted,
+            SettingsConstants.ProxyPasswordEncrypted,
+            SettingsConstants.UserIdentityField,
+            SettingsConstants.RoleSession
+        };
+
         readonly Dictionary<string, SettingsWatcher> _watchers = new Dictionary<string, SettingsWatcher>();
 
         // static but not readonly - allows for unit testing
@@ -58,33 +95,26 @@ namespace Amazon.Runtime.Internal.Settings
                 Directory.CreateDirectory(SettingsStoreFolder);
         }
 
-        private PersistenceManager()
-        {
-            this._encryptedKeys = new HashSet<string>
-            {
-                SettingsConstants.AccessKeyField,
-                SettingsConstants.SecretKeyField,
-                SettingsConstants.SessionTokenField,
-                SettingsConstants.ExternalIDField,
-                SettingsConstants.MfaSerialField,
-                SettingsConstants.SecretKeyRepository,
-                SettingsConstants.EC2InstanceUserName,
-                SettingsConstants.EC2InstancePassword,
-                SettingsConstants.ProxyUsernameEncrypted,
-                SettingsConstants.ProxyPasswordEncrypted,
-                SettingsConstants.UserIdentityField,
-                SettingsConstants.RoleSession
-            };
-        }
-
         #endregion
 
 
         #region Public methods
 
-        public static PersistenceManager Instance
+        public static IPersistenceManager Instance
         {
-            get { return INSTANCE; }
+            get
+            {
+                if (INSTANCE == null)
+                {
+                    INSTANCE = new PersistenceManager();
+                }
+
+                return INSTANCE;
+            }
+            set
+            {
+                INSTANCE = value;
+            }
         }
 
         public SettingsCollection GetSettings(string type)
@@ -143,9 +173,9 @@ namespace Amazon.Runtime.Internal.Settings
             }
         }
 
-        internal bool IsEncrypted(string key)
+        internal static bool IsEncrypted(string key)
         {
-            return this._encryptedKeys.Contains(key);
+            return ENCRYPTEDKEYS.Contains(key);
         }
 
 #endregion
