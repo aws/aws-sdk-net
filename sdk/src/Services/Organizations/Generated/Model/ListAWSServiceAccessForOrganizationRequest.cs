@@ -42,7 +42,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's master account.
+    /// This operation can be called only from the organization's master account or by a member
+    /// account that is a delegated administrator for an AWS service.
     /// </para>
     /// </summary>
     public partial class ListAWSServiceAccessForOrganizationRequest : AmazonOrganizationsRequest
@@ -53,9 +54,9 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// (Optional) Use this to limit the number of results you want included per page in the
-        /// response. If you do not include this parameter, it defaults to a value that is specific
-        /// to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+        /// The total number of results that you want included on each page of the response. If
+        /// you do not include this parameter, it defaults to a value that is specific to the
+        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
         /// response element is present and has a value (is not null). Include that value as the
         /// <code>NextToken</code> request parameter in the next call to the operation to get
         /// the next part of the results. Note that Organizations might return fewer results than
@@ -79,10 +80,10 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Use this parameter if you receive a <code>NextToken</code> response in a previous
-        /// request that indicates that there is more output available. Set it to the value of
-        /// the previous call's <code>NextToken</code> response to indicate where the output should
-        /// continue from.
+        /// The parameter for receiving additional results if you receive a <code>NextToken</code>
+        /// response in a previous request. A <code>NextToken</code> response indicates that more
+        /// output is available. Set this parameter to the value of the previous call's <code>NextToken</code>
+        /// response to indicate where the output should continue from.
         /// </para>
         /// </summary>
         public string NextToken

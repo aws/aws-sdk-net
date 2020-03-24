@@ -76,11 +76,12 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  <important> <ul> <li> 
     /// <para>
-    /// When you create an account in an organization, the information required for the account
-    /// to operate as a standalone account is <i>not</i> automatically collected. For example,
-    /// information about the payment method and signing the end user license agreement (EULA)
-    /// is not collected. If you must remove an account from your organization later, you
-    /// can do so only after you provide the missing information. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
+    /// When you create an account in an organization using the AWS Organizations console,
+    /// API, or CLI commands, the information required for the account to operate as a standalone
+    /// account, such as a payment method and signing the end user license agreement (EULA)
+    /// is <i>not</i> automatically collected. If you must remove an account from your organization
+    /// later, you can do so only after you provide the missing information. Follow the steps
+    /// at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
     /// To leave an organization as a member account</a> in the <i>AWS Organizations User
     /// Guide</i>.
     /// </para>
@@ -176,9 +177,9 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify this parameter, the value defaults to <code>ALLOW</code>. This
-        /// value allows IAM users and roles with the required permissions to access billing information
-        /// for the new account.
+        /// If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and
+        /// IAM users and roles with the required permissions can access billing information for
+        /// the new account.
         /// </para>
         /// </summary>
         public IAMUserAccessToBilling IamUserAccessToBilling
@@ -212,13 +213,21 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// For more information about how to use this role to access the member account, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
+        /// the following links:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
         /// and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations
-        /// User Guide</i>. Also see steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-        /// Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
+        /// User Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
+        /// Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>
         /// 
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate
         /// this parameter. The pattern can include uppercase letters, lowercase letters, digits

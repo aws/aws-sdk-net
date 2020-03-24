@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// A structure that contains details of a service principal that is enabled to integrate
-    /// with AWS Organizations.
+    /// A structure that contains details of a service principal that represents an AWS service
+    /// that is enabled to integrate with AWS Organizations.
     /// </summary>
     public partial class EnabledServicePrincipal
     {

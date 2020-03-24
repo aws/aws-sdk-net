@@ -29,11 +29,12 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccount operation.
-    /// Retrieves AWS Organizations related information about the specified account.
+    /// Retrieves AWS Organizations-related information about the specified account.
     /// 
     ///  
     /// <para>
-    /// This operation can be called only from the organization's master account.
+    /// This operation can be called only from the organization's master account or by a member
+    /// account that is a delegated administrator for an AWS service.
     /// </para>
     /// </summary>
     public partial class DescribeAccountRequest : AmazonOrganizationsRequest

@@ -135,7 +135,7 @@ namespace Amazon.Organizations.Model
         ///  </li> <li> 
         /// <para>
         /// INTERNAL_FAILURE: The account could not be created because of an internal failure.
-        /// Try again later. If the problem persists, contact AWS Support.
+        /// Try again later. If the problem persists, contact Customer Support.
         /// </para>
         ///  </li> </ul>
         /// </summary>

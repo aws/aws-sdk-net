@@ -336,6 +336,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Organizations")]
+        public void DeregisterDelegatedAdministratorMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeregisterDelegatedAdministratorRequest>();
+            var marshaller = new DeregisterDelegatedAdministratorRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeregisterDelegatedAdministratorRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Organizations")]
         public void DescribeAccountMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeAccountRequest>();
@@ -858,6 +874,64 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Organizations")]
+        public void ListDelegatedAdministratorsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDelegatedAdministratorsRequest>();
+            var marshaller = new ListDelegatedAdministratorsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListDelegatedAdministratorsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListDelegatedAdministrators").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListDelegatedAdministratorsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListDelegatedAdministratorsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Organizations")]
+        public void ListDelegatedServicesForAccountMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDelegatedServicesForAccountRequest>();
+            var marshaller = new ListDelegatedServicesForAccountRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListDelegatedServicesForAccountRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListDelegatedServicesForAccount").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListDelegatedServicesForAccountResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListDelegatedServicesForAccountResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Organizations")]
         public void ListHandshakesForAccountMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<ListHandshakesForAccountRequest>();
@@ -1127,6 +1201,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
             Comparer.CompareObjectToJson<MoveAccountRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Organizations")]
+        public void RegisterDelegatedAdministratorMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<RegisterDelegatedAdministratorRequest>();
+            var marshaller = new RegisterDelegatedAdministratorRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<RegisterDelegatedAdministratorRequest>(request,jsonRequest);
 
         }
 

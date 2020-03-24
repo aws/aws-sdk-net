@@ -305,9 +305,21 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ACCOUNT_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ACCOUNT_NUMBER_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR = new ConstraintViolationExceptionReason("CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR");
+        /// <summary>
+        /// Constant CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG = new ConstraintViolationExceptionReason("CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG");
+        /// <summary>
         /// Constant CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION = new ConstraintViolationExceptionReason("CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION");
+        /// <summary>
+        /// Constant DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE = new ConstraintViolationExceptionReason("DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE");
         /// <summary>
         /// Constant EMAIL_VERIFICATION_CODE_EXPIRED for ConstraintViolationExceptionReason
         /// </summary>
@@ -332,6 +344,10 @@ namespace Amazon.Organizations
         /// Constant MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED = new ConstraintViolationExceptionReason("MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED");
+        /// <summary>
+        /// Constant MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED");
         /// <summary>
         /// Constant MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
