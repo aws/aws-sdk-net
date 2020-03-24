@@ -39,9 +39,7 @@ namespace Amazon.Util.Internal
 
         public bool CorrectForClockSkew { get; set; }
 
-#if BCL || NETSTANDARD
         public bool UseAlternateUserAgentHeader { get; set; }
-#endif
 
         public string ApplicationName { get; set; }
 

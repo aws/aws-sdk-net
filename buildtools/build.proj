@@ -130,14 +130,6 @@
     </Target>
 
     <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;copy-service-models;keyscan;consolidate-docartifacts;save-build"/>
-    <Target Name="override-endpoints-file">
-        <Message Text="Applying overrides to the endpoints-original.json file and save it as endpoints.json" Importance="normal" />
-
-        <EndpointOverriderTask 
-            EndpointsJsonSourceLocation = "..\sdk\src\Core\endpoints-original.json"
-            EndpointsOverrideLocation = ".\CustomTasks\Endpoint\endpoints-override.json"
-        />  
-    </Target>
 
     <Target Name="full-build-service" DependsOnTargets="test-sdk-service"/>
 

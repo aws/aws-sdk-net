@@ -43,13 +43,9 @@ namespace Amazon.Runtime
 
         private RegionEndpoint regionEndpoint = null;
         private bool probeForRegionEndpoint = true;
-
         private bool throttleRetries = true;
-
         private bool useHttp = false;
-#if BCL || NETSTANDARD
         private bool useAlternateUserAgentHeader = AWSConfigs.UseAlternateUserAgentHeader;
-#endif
         private string serviceURL = null;
         private string authRegion = null;
         private string authServiceName = null;
@@ -109,7 +105,6 @@ namespace Amazon.Runtime
         /// </summary>
         public abstract string UserAgent { get; }
 
-#if BCL || NETSTANDARD
         /// <summary>
         /// When set to true, the service client will use the  x-amz-user-agent
         /// header instead of the User-Agent header to report version and
@@ -123,7 +118,6 @@ namespace Amazon.Runtime
             get { return this.useAlternateUserAgentHeader; }
             set { this.useAlternateUserAgentHeader = value; }
         }
-#endif
 
         /// <summary>
         /// Gets and sets the RegionEndpoint property.  The region constant that 
