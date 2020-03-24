@@ -1515,8 +1515,8 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Lists the Amazon EKS node groups associated with the specified cluster in your AWS
-        /// account in the specified Region.
+        /// Lists the Amazon EKS managed node groups associated with the specified cluster in
+        /// your AWS account in the specified Region. Self-managed node groups are not listed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNodegroups service method.</param>
         /// 
@@ -1552,8 +1552,8 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Lists the Amazon EKS node groups associated with the specified cluster in your AWS
-        /// account in the specified Region.
+        /// Lists the Amazon EKS managed node groups associated with the specified cluster in
+        /// your AWS account in the specified Region. Self-managed node groups are not listed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNodegroups service method.</param>
         /// <param name="cancellationToken">
