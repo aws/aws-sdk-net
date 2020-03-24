@@ -1,3 +1,18 @@
+### 3.3.706.0 (2020-03-24 18:19 UTC)
+* Athena (3.3.103.44)
+	* Documentation updates for Athena, including QueryExecutionStatus QUEUED and RUNNING states. QUEUED now indicates that the query has been submitted to the service. RUNNING indicates that the query is in execution phase.
+* EKS (3.3.110.0)
+	* Adding new error codes: Ec2SubnetInvalidConfiguration and NodeCreationFailure for Nodegroups in EKS
+* Organizations (3.3.105.0)
+	* Introduces actions for giving a member account administrative Organizations permissions for an AWS service. You can run this action only for AWS services that support this feature.
+* RDSDataService (3.3.103.43)
+	* Documentation updates for rds-data
+* Core 3.3.105.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.705.0 (2020-03-23 18:17 UTC)
 * ApiGatewayV2 (3.3.106.0)
 	* Documentation updates to reflect that the default timeout for integrations is now 30 seconds for HTTP APIs.
