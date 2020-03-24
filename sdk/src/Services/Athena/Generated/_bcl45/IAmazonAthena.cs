@@ -577,7 +577,8 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Provides a list of available query IDs only for queries saved in the specified workgroup.
-        /// Requires that you have access to the workgroup.
+        /// Requires that you have access to the workgroup. If a workgroup is not specified, lists
+        /// the saved queries for the primary workgroup.
         /// 
         ///  
         /// <para>
@@ -602,7 +603,8 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Provides a list of available query IDs only for queries saved in the specified workgroup.
-        /// Requires that you have access to the workgroup.
+        /// Requires that you have access to the workgroup. If a workgroup is not specified, lists
+        /// the saved queries for the primary workgroup.
         /// 
         ///  
         /// <para>
@@ -633,7 +635,9 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Provides a list of available query execution IDs for the queries in the specified
-        /// workgroup. Requires you to have access to the workgroup in which the queries ran.
+        /// workgroup. If a workgroup is not specified, returns a list of query execution IDs
+        /// for the primary workgroup. Requires you to have access to the workgroup in which the
+        /// queries ran.
         /// 
         ///  
         /// <para>
@@ -658,7 +662,9 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Provides a list of available query execution IDs for the queries in the specified
-        /// workgroup. Requires you to have access to the workgroup in which the queries ran.
+        /// workgroup. If a workgroup is not specified, returns a list of query execution IDs
+        /// for the primary workgroup. Requires you to have access to the workgroup in which the
+        /// queries ran.
         /// 
         ///  
         /// <para>

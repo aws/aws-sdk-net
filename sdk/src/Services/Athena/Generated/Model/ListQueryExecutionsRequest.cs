@@ -30,7 +30,9 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Container for the parameters to the ListQueryExecutions operation.
     /// Provides a list of available query execution IDs for the queries in the specified
-    /// workgroup. Requires you to have access to the workgroup in which the queries ran.
+    /// workgroup. If a workgroup is not specified, returns a list of query execution IDs
+    /// for the primary workgroup. Requires you to have access to the workgroup in which the
+    /// queries ran.
     /// 
     ///  
     /// <para>
@@ -85,7 +87,9 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property WorkGroup. 
         /// <para>
-        /// The name of the workgroup from which queries are being returned.
+        /// The name of the workgroup from which queries are returned. If a workgroup is not specified,
+        /// a list of available query execution IDs for the queries in the primary workgroup is
+        /// returned.
         /// </para>
         /// </summary>
         public string WorkGroup

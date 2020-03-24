@@ -30,7 +30,8 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Container for the parameters to the ListNamedQueries operation.
     /// Provides a list of available query IDs only for queries saved in the specified workgroup.
-    /// Requires that you have access to the workgroup.
+    /// Requires that you have access to the workgroup. If a workgroup is not specified, lists
+    /// the saved queries for the primary workgroup.
     /// 
     ///  
     /// <para>
@@ -85,7 +86,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property WorkGroup. 
         /// <para>
-        /// The name of the workgroup from which the named queries are being returned.
+        /// The name of the workgroup from which the named queries are returned. If a workgroup
+        /// is not specified, the saved queries for the primary workgroup are returned.
         /// </para>
         /// </summary>
         public string WorkGroup
