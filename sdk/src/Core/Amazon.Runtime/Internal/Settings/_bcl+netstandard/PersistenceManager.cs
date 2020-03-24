@@ -41,7 +41,10 @@ namespace Amazon.Runtime.Internal.Settings
 
         public SettingsCollection GetSettings(string type)
         {
-            return _settingsDictionary[type];
+            if (_settingsDictionary.ContainsKey(type))
+                return _settingsDictionary[type];
+
+            return new SettingsCollection();
         }
 
         public void SaveSettings(string type, SettingsCollection settings)
