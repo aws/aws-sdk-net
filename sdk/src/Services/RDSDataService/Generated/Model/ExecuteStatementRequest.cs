@@ -38,8 +38,8 @@ namespace Amazon.RDSDataService.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// The response size limit is 1 MB or 1,000 records. If the call returns more than 1
-    /// MB of response data or over 1,000 records, the call is terminated.
+    /// The response size limit is 1 MB. If the call returns more than 1 MB of response data,
+    /// the call is terminated.
     /// </para>
     /// </summary>
     public partial class ExecuteStatementRequest : AmazonRDSDataServiceRequest
@@ -123,6 +123,11 @@ namespace Amazon.RDSDataService.Model
         /// <para>
         /// The parameters for the SQL statement.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Array parameters are not supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<SqlParameter> Parameters
         {
