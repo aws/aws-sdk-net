@@ -28,31 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// Hyperledger Fabric configuration properties for the network.
+    /// A collection of log configurations.
     /// </summary>
-    public partial class NetworkFabricConfiguration
+    public partial class LogConfigurations
     {
-        private Edition _edition;
+        private LogConfiguration _cloudwatch;
 
         /// <summary>
-        /// Gets and sets the property Edition. 
+        /// Gets and sets the property Cloudwatch. 
         /// <para>
-        /// The edition of Amazon Managed Blockchain that the network uses. For more information,
-        /// see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain
-        /// Pricing</a>.
+        /// Parameters for publishing logs to Amazon CloudWatch Logs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public Edition Edition
+        public LogConfiguration Cloudwatch
         {
-            get { return this._edition; }
-            set { this._edition = value; }
+            get { return this._cloudwatch; }
+            set { this._cloudwatch = value; }
         }
 
-        // Check to see if Edition property is set
-        internal bool IsSetEdition()
+        // Check to see if Cloudwatch property is set
+        internal bool IsSetCloudwatch()
         {
-            return this._edition != null;
+            return this._cloudwatch != null;
         }
 
     }

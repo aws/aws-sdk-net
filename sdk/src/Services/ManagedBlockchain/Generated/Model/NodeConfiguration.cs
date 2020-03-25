@@ -34,6 +34,7 @@ namespace Amazon.ManagedBlockchain.Model
     {
         private string _availabilityZone;
         private string _instanceType;
+        private NodeLogPublishingConfiguration _logPublishingConfiguration;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -71,6 +72,21 @@ namespace Amazon.ManagedBlockchain.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogPublishingConfiguration.
+        /// </summary>
+        public NodeLogPublishingConfiguration LogPublishingConfiguration
+        {
+            get { return this._logPublishingConfiguration; }
+            set { this._logPublishingConfiguration = value; }
+        }
+
+        // Check to see if LogPublishingConfiguration property is set
+        internal bool IsSetLogPublishingConfiguration()
+        {
+            return this._logPublishingConfiguration != null;
         }
 
     }

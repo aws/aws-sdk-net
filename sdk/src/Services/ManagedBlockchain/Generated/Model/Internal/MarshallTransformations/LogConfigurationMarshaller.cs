@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// NodeConfiguration Marshaller
+    /// LogConfiguration Marshaller
     /// </summary>       
-    public class NodeConfigurationMarshaller : IRequestMarshaller<NodeConfiguration, JsonMarshallerContext> 
+    public class LogConfigurationMarshaller : IRequestMarshaller<LogConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,12 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NodeConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(LogConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAvailabilityZone())
+            if(requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("AvailabilityZone");
-                context.Writer.Write(requestObject.AvailabilityZone);
-            }
-
-            if(requestObject.IsSetInstanceType())
-            {
-                context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
-            }
-
-            if(requestObject.IsSetLogPublishingConfiguration())
-            {
-                context.Writer.WritePropertyName("LogPublishingConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = NodeLogPublishingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.LogPublishingConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Enabled");
+                context.Writer.Write(requestObject.Enabled);
             }
 
         }
@@ -73,7 +56,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static NodeConfigurationMarshaller Instance = new NodeConfigurationMarshaller();
+        public readonly static LogConfigurationMarshaller Instance = new LogConfigurationMarshaller();
 
     }
 }

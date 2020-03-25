@@ -28,32 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// Hyperledger Fabric configuration properties for the network.
+    /// This is the response object from the UpdateMember operation.
     /// </summary>
-    public partial class NetworkFabricConfiguration
+    public partial class UpdateMemberResponse : AmazonWebServiceResponse
     {
-        private Edition _edition;
-
-        /// <summary>
-        /// Gets and sets the property Edition. 
-        /// <para>
-        /// The edition of Amazon Managed Blockchain that the network uses. For more information,
-        /// see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain
-        /// Pricing</a>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public Edition Edition
-        {
-            get { return this._edition; }
-            set { this._edition = value; }
-        }
-
-        // Check to see if Edition property is set
-        internal bool IsSetEdition()
-        {
-            return this._edition != null;
-        }
 
     }
 }

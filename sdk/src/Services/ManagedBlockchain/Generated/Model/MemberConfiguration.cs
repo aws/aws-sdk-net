@@ -34,6 +34,7 @@ namespace Amazon.ManagedBlockchain.Model
     {
         private string _description;
         private MemberFrameworkConfiguration _frameworkConfiguration;
+        private MemberLogPublishingConfiguration _logPublishingConfiguration;
         private string _name;
 
         /// <summary>
@@ -72,6 +73,21 @@ namespace Amazon.ManagedBlockchain.Model
         internal bool IsSetFrameworkConfiguration()
         {
             return this._frameworkConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogPublishingConfiguration.
+        /// </summary>
+        public MemberLogPublishingConfiguration LogPublishingConfiguration
+        {
+            get { return this._logPublishingConfiguration; }
+            set { this._logPublishingConfiguration = value; }
+        }
+
+        // Check to see if LogPublishingConfiguration property is set
+        internal bool IsSetLogPublishingConfiguration()
+        {
+            return this._logPublishingConfiguration != null;
         }
 
         /// <summary>

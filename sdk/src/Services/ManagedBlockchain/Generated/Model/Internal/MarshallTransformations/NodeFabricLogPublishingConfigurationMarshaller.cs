@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MemberConfiguration Marshaller
+    /// NodeFabricLogPublishingConfiguration Marshaller
     /// </summary>       
-    public class MemberConfigurationMarshaller : IRequestMarshaller<MemberConfiguration, JsonMarshallerContext> 
+    public class NodeFabricLogPublishingConfigurationMarshaller : IRequestMarshaller<NodeFabricLogPublishingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,40 +43,28 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MemberConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(NodeFabricLogPublishingConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDescription())
+            if(requestObject.IsSetChaincodeLogs())
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
-            }
-
-            if(requestObject.IsSetFrameworkConfiguration())
-            {
-                context.Writer.WritePropertyName("FrameworkConfiguration");
+                context.Writer.WritePropertyName("ChaincodeLogs");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = MemberFrameworkConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.FrameworkConfiguration, context);
+                var marshaller = LogConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ChaincodeLogs, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetLogPublishingConfiguration())
+            if(requestObject.IsSetPeerLogs())
             {
-                context.Writer.WritePropertyName("LogPublishingConfiguration");
+                context.Writer.WritePropertyName("PeerLogs");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = MemberLogPublishingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.LogPublishingConfiguration, context);
+                var marshaller = LogConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.PeerLogs, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
             }
 
         }
@@ -84,7 +72,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static MemberConfigurationMarshaller Instance = new MemberConfigurationMarshaller();
+        public readonly static NodeFabricLogPublishingConfigurationMarshaller Instance = new NodeFabricLogPublishingConfigurationMarshaller();
 
     }
 }

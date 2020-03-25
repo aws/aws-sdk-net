@@ -273,6 +273,31 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.UpdateMemberRequest.MemberId</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.UpdateMemberRequest.NetworkId</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.UpdateNodeRequest.MemberId</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.UpdateNodeRequest.NetworkId</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.UpdateNodeRequest.NodeId</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.VoteOnProposalRequest.NetworkId</property>
     <min>1</min>
     <max>32</max>

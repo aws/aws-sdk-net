@@ -266,7 +266,8 @@ namespace Amazon.ManagedBlockchain.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code>
-        /// in a proposal that was approved could not be completed because of an error.
+        /// in a proposal that was approved could not be completed because of an error. The <code>ACTION_FAILED</code>
+        /// status occurs even if only one ProposalAction fails and other actions are successful.
         /// </para>
         ///  </li> </ul>
         /// </summary>

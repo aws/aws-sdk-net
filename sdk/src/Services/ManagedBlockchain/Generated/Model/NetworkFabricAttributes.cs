@@ -39,7 +39,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// Gets and sets the property Edition. 
         /// <para>
         /// The edition of Amazon Managed Blockchain that Hyperledger Fabric uses. For more information,
-        /// see <a href="https://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain
+        /// see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain
         /// Pricing</a>.
         /// </para>
         /// </summary>

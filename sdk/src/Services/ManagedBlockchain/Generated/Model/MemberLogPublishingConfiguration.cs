@@ -28,31 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// Hyperledger Fabric configuration properties for the network.
+    /// Configuration properties for logging events associated with a member of a Managed
+    /// Blockchain network.
     /// </summary>
-    public partial class NetworkFabricConfiguration
+    public partial class MemberLogPublishingConfiguration
     {
-        private Edition _edition;
+        private MemberFabricLogPublishingConfiguration _fabric;
 
         /// <summary>
-        /// Gets and sets the property Edition. 
+        /// Gets and sets the property Fabric. 
         /// <para>
-        /// The edition of Amazon Managed Blockchain that the network uses. For more information,
-        /// see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain
-        /// Pricing</a>.
+        /// Configuration properties for logging events associated with a member of a Managed
+        /// Blockchain network using the Hyperledger Fabric framework.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public Edition Edition
+        public MemberFabricLogPublishingConfiguration Fabric
         {
-            get { return this._edition; }
-            set { this._edition = value; }
+            get { return this._fabric; }
+            set { this._fabric = value; }
         }
 
-        // Check to see if Edition property is set
-        internal bool IsSetEdition()
+        // Check to see if Fabric property is set
+        internal bool IsSetFabric()
         {
-            return this._edition != null;
+            return this._fabric != null;
         }
 
     }

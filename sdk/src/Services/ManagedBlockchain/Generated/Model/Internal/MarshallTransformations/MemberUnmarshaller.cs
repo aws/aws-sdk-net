@@ -88,6 +88,12 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LogPublishingConfiguration", targetDepth))
+                {
+                    var unmarshaller = MemberLogPublishingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LogPublishingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

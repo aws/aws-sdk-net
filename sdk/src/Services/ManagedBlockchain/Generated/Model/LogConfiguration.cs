@@ -28,31 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// Hyperledger Fabric configuration properties for the network.
+    /// A configuration for logging events.
     /// </summary>
-    public partial class NetworkFabricConfiguration
+    public partial class LogConfiguration
     {
-        private Edition _edition;
+        private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property Edition. 
+        /// Gets and sets the property Enabled. 
         /// <para>
-        /// The edition of Amazon Managed Blockchain that the network uses. For more information,
-        /// see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain
-        /// Pricing</a>.
+        /// Indicates whether logging is enabled.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public Edition Edition
+        public bool Enabled
         {
-            get { return this._edition; }
-            set { this._edition = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
-        // Check to see if Edition property is set
-        internal bool IsSetEdition()
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
         {
-            return this._edition != null;
+            return this._enabled.HasValue; 
         }
 
     }
