@@ -87,6 +87,122 @@ namespace Amazon.Elasticsearch
 
 
     /// <summary>
+    /// Constants used for properties of type DescribePackagesFilterName.
+    /// </summary>
+    public class DescribePackagesFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PackageID for DescribePackagesFilterName
+        /// </summary>
+        public static readonly DescribePackagesFilterName PackageID = new DescribePackagesFilterName("PackageID");
+        /// <summary>
+        /// Constant PackageName for DescribePackagesFilterName
+        /// </summary>
+        public static readonly DescribePackagesFilterName PackageName = new DescribePackagesFilterName("PackageName");
+        /// <summary>
+        /// Constant PackageStatus for DescribePackagesFilterName
+        /// </summary>
+        public static readonly DescribePackagesFilterName PackageStatus = new DescribePackagesFilterName("PackageStatus");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DescribePackagesFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DescribePackagesFilterName FindValue(string value)
+        {
+            return FindValue<DescribePackagesFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DescribePackagesFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DomainPackageStatus.
+    /// </summary>
+    public class DomainPackageStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DomainPackageStatus
+        /// </summary>
+        public static readonly DomainPackageStatus ACTIVE = new DomainPackageStatus("ACTIVE");
+        /// <summary>
+        /// Constant ASSOCIATING for DomainPackageStatus
+        /// </summary>
+        public static readonly DomainPackageStatus ASSOCIATING = new DomainPackageStatus("ASSOCIATING");
+        /// <summary>
+        /// Constant ASSOCIATION_FAILED for DomainPackageStatus
+        /// </summary>
+        public static readonly DomainPackageStatus ASSOCIATION_FAILED = new DomainPackageStatus("ASSOCIATION_FAILED");
+        /// <summary>
+        /// Constant DISSOCIATING for DomainPackageStatus
+        /// </summary>
+        public static readonly DomainPackageStatus DISSOCIATING = new DomainPackageStatus("DISSOCIATING");
+        /// <summary>
+        /// Constant DISSOCIATION_FAILED for DomainPackageStatus
+        /// </summary>
+        public static readonly DomainPackageStatus DISSOCIATION_FAILED = new DomainPackageStatus("DISSOCIATION_FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainPackageStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainPackageStatus FindValue(string value)
+        {
+            return FindValue<DomainPackageStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainPackageStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ESPartitionInstanceType.
     /// </summary>
     public class ESPartitionInstanceType : ConstantClass
@@ -512,6 +628,126 @@ namespace Amazon.Elasticsearch
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OptionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackageStatus.
+    /// </summary>
+    public class PackageStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for PackageStatus
+        /// </summary>
+        public static readonly PackageStatus AVAILABLE = new PackageStatus("AVAILABLE");
+        /// <summary>
+        /// Constant COPY_FAILED for PackageStatus
+        /// </summary>
+        public static readonly PackageStatus COPY_FAILED = new PackageStatus("COPY_FAILED");
+        /// <summary>
+        /// Constant COPYING for PackageStatus
+        /// </summary>
+        public static readonly PackageStatus COPYING = new PackageStatus("COPYING");
+        /// <summary>
+        /// Constant DELETE_FAILED for PackageStatus
+        /// </summary>
+        public static readonly PackageStatus DELETE_FAILED = new PackageStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETED for PackageStatus
+        /// </summary>
+        public static readonly PackageStatus DELETED = new PackageStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for PackageStatus
+        /// </summary>
+        public static readonly PackageStatus DELETING = new PackageStatus("DELETING");
+        /// <summary>
+        /// Constant VALIDATING for PackageStatus
+        /// </summary>
+        public static readonly PackageStatus VALIDATING = new PackageStatus("VALIDATING");
+        /// <summary>
+        /// Constant VALIDATION_FAILED for PackageStatus
+        /// </summary>
+        public static readonly PackageStatus VALIDATION_FAILED = new PackageStatus("VALIDATION_FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageStatus FindValue(string value)
+        {
+            return FindValue<PackageStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackageType.
+    /// </summary>
+    public class PackageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TXTDICTIONARY for PackageType
+        /// </summary>
+        public static readonly PackageType TXTDICTIONARY = new PackageType("TXT-DICTIONARY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageType FindValue(string value)
+        {
+            return FindValue<PackageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageType(string value)
         {
             return FindValue(value);
         }

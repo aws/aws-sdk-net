@@ -326,6 +326,89 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  AssociatePackage
+
+
+        /// <summary>
+        /// Associates a package with an Amazon ES domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePackage service method.</param>
+        /// 
+        /// <returns>The response from the AssociatePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual AssociatePackageResponse AssociatePackage(AssociatePackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePackageResponseUnmarshaller.Instance;
+
+            return Invoke<AssociatePackageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates a package with an Amazon ES domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePackage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociatePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual Task<AssociatePackageResponse> AssociatePackageAsync(AssociatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePackageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociatePackageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelElasticsearchServiceSoftwareUpdate
 
 
@@ -492,6 +575,97 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  CreatePackage
+
+
+        /// <summary>
+        /// Create a package for use with Amazon ES domains.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackage service method.</param>
+        /// 
+        /// <returns>The response from the CreatePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InvalidTypeException">
+        /// An exception for trying to create or access sub-resource that is either invalid or
+        /// not supported. Gives http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceAlreadyExistsException">
+        /// An exception for creating a resource that already exists. Gives http status code of
+        /// 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual CreatePackageResponse CreatePackage(CreatePackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePackageResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePackageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Create a package for use with Amazon ES domains.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InvalidTypeException">
+        /// An exception for trying to create or access sub-resource that is either invalid or
+        /// not supported. Gives http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceAlreadyExistsException">
+        /// An exception for creating a resource that already exists. Gives http status code of
+        /// 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual Task<CreatePackageResponse> CreatePackageAsync(CreatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePackageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePackageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteElasticsearchDomain
 
 
@@ -624,6 +798,89 @@ namespace Amazon.Elasticsearch
             options.ResponseUnmarshaller = DeleteElasticsearchServiceRoleResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteElasticsearchServiceRoleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePackage
+
+
+        /// <summary>
+        /// Delete the package.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
+        /// 
+        /// <returns>The response from the DeletePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual DeletePackageResponse DeletePackage(DeletePackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePackageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Delete the package.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual Task<DeletePackageResponse> DeletePackageAsync(DeletePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePackageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -914,6 +1171,83 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  DescribePackages
+
+
+        /// <summary>
+        /// Describes all packages available to Amazon ES. Includes options for filtering, limiting
+        /// the number of results, and pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePackages service method.</param>
+        /// 
+        /// <returns>The response from the DescribePackages service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual DescribePackagesResponse DescribePackages(DescribePackagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePackagesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePackagesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes all packages available to Amazon ES. Includes options for filtering, limiting
+        /// the number of results, and pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePackages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePackages service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual Task<DescribePackagesResponse> DescribePackagesAsync(DescribePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePackagesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribePackagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeReservedElasticsearchInstanceOfferings
 
 
@@ -1048,6 +1382,89 @@ namespace Amazon.Elasticsearch
             options.ResponseUnmarshaller = DescribeReservedElasticsearchInstancesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeReservedElasticsearchInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DissociatePackage
+
+
+        /// <summary>
+        /// Dissociates a package from the Amazon ES domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DissociatePackage service method.</param>
+        /// 
+        /// <returns>The response from the DissociatePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual DissociatePackageResponse DissociatePackage(DissociatePackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DissociatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DissociatePackageResponseUnmarshaller.Instance;
+
+            return Invoke<DissociatePackageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Dissociates a package from the Amazon ES domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DissociatePackage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DissociatePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual Task<DissociatePackageResponse> DissociatePackageAsync(DissociatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DissociatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DissociatePackageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DissociatePackageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1336,6 +1753,81 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  ListDomainsForPackage
+
+
+        /// <summary>
+        /// Lists all Amazon ES domains associated with the package.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainsForPackage service method.</param>
+        /// 
+        /// <returns>The response from the ListDomainsForPackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual ListDomainsForPackageResponse ListDomainsForPackage(ListDomainsForPackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainsForPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainsForPackageResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainsForPackageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all Amazon ES domains associated with the package.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainsForPackage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomainsForPackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual Task<ListDomainsForPackageResponse> ListDomainsForPackageAsync(ListDomainsForPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainsForPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainsForPackageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDomainsForPackageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListElasticsearchInstanceTypes
 
 
@@ -1466,6 +1958,81 @@ namespace Amazon.Elasticsearch
             options.ResponseUnmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListElasticsearchVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPackagesForDomain
+
+
+        /// <summary>
+        /// Lists all packages associated with the Amazon ES domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPackagesForDomain service method.</param>
+        /// 
+        /// <returns>The response from the ListPackagesForDomain service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual ListPackagesForDomainResponse ListPackagesForDomain(ListPackagesForDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPackagesForDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPackagesForDomainResponseUnmarshaller.Instance;
+
+            return Invoke<ListPackagesForDomainResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all packages associated with the Amazon ES domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPackagesForDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPackagesForDomain service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual Task<ListPackagesForDomainResponse> ListPackagesForDomainAsync(ListPackagesForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPackagesForDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPackagesForDomainResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPackagesForDomainResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -320,6 +320,79 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  AssociatePackage
+
+        /// <summary>
+        /// Associates a package with an Amazon ES domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePackage service method.</param>
+        /// 
+        /// <returns>The response from the AssociatePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual AssociatePackageResponse AssociatePackage(AssociatePackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePackageResponseUnmarshaller.Instance;
+
+            return Invoke<AssociatePackageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePackage operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociatePackage
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginAssociatePackage(AssociatePackageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePackageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociatePackage.</param>
+        /// 
+        /// <returns>Returns a  AssociatePackageResult from Elasticsearch.</returns>
+        public virtual AssociatePackageResponse EndAssociatePackage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociatePackageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelElasticsearchServiceSoftwareUpdate
 
         /// <summary>
@@ -466,6 +539,83 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  CreatePackage
+
+        /// <summary>
+        /// Create a package for use with Amazon ES domains.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackage service method.</param>
+        /// 
+        /// <returns>The response from the CreatePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InvalidTypeException">
+        /// An exception for trying to create or access sub-resource that is either invalid or
+        /// not supported. Gives http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceAlreadyExistsException">
+        /// An exception for creating a resource that already exists. Gives http status code of
+        /// 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual CreatePackageResponse CreatePackage(CreatePackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePackageResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePackageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackage operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePackage
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginCreatePackage(CreatePackageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePackageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePackage.</param>
+        /// 
+        /// <returns>Returns a  CreatePackageResult from Elasticsearch.</returns>
+        public virtual CreatePackageResponse EndCreatePackage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePackageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteElasticsearchDomain
 
         /// <summary>
@@ -593,6 +743,79 @@ namespace Amazon.Elasticsearch
         public virtual DeleteElasticsearchServiceRoleResponse EndDeleteElasticsearchServiceRole(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteElasticsearchServiceRoleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePackage
+
+        /// <summary>
+        /// Delete the package.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
+        /// 
+        /// <returns>The response from the DeletePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual DeletePackageResponse DeletePackage(DeletePackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePackageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePackage
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeletePackage(DeletePackageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePackage.</param>
+        /// 
+        /// <returns>Returns a  DeletePackageResult from Elasticsearch.</returns>
+        public virtual DeletePackageResponse EndDeletePackage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePackageResponse>(asyncResult);
         }
 
         #endregion
@@ -866,6 +1089,76 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  DescribePackages
+
+        /// <summary>
+        /// Describes all packages available to Amazon ES. Includes options for filtering, limiting
+        /// the number of results, and pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePackages service method.</param>
+        /// 
+        /// <returns>The response from the DescribePackages service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual DescribePackagesResponse DescribePackages(DescribePackagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePackagesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePackagesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePackages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePackages operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePackages
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDescribePackages(DescribePackagesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePackagesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePackages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePackages.</param>
+        /// 
+        /// <returns>Returns a  DescribePackagesResult from Elasticsearch.</returns>
+        public virtual DescribePackagesResponse EndDescribePackages(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribePackagesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeReservedElasticsearchInstanceOfferings
 
         /// <summary>
@@ -994,6 +1287,79 @@ namespace Amazon.Elasticsearch
         public virtual DescribeReservedElasticsearchInstancesResponse EndDescribeReservedElasticsearchInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReservedElasticsearchInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DissociatePackage
+
+        /// <summary>
+        /// Dissociates a package from the Amazon ES domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DissociatePackage service method.</param>
+        /// 
+        /// <returns>The response from the DissociatePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual DissociatePackageResponse DissociatePackage(DissociatePackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DissociatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DissociatePackageResponseUnmarshaller.Instance;
+
+            return Invoke<DissociatePackageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DissociatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DissociatePackage operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDissociatePackage
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDissociatePackage(DissociatePackageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DissociatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DissociatePackageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DissociatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDissociatePackage.</param>
+        /// 
+        /// <returns>Returns a  DissociatePackageResult from Elasticsearch.</returns>
+        public virtual DissociatePackageResponse EndDissociatePackage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DissociatePackageResponse>(asyncResult);
         }
 
         #endregion
@@ -1266,6 +1632,75 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  ListDomainsForPackage
+
+        /// <summary>
+        /// Lists all Amazon ES domains associated with the package.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainsForPackage service method.</param>
+        /// 
+        /// <returns>The response from the ListDomainsForPackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual ListDomainsForPackageResponse ListDomainsForPackage(ListDomainsForPackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainsForPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainsForPackageResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainsForPackageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDomainsForPackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainsForPackage operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomainsForPackage
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginListDomainsForPackage(ListDomainsForPackageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainsForPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainsForPackageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDomainsForPackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomainsForPackage.</param>
+        /// 
+        /// <returns>Returns a  ListDomainsForPackageResult from Elasticsearch.</returns>
+        public virtual ListDomainsForPackageResponse EndListDomainsForPackage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDomainsForPackageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListElasticsearchInstanceTypes
 
         /// <summary>
@@ -1392,6 +1827,75 @@ namespace Amazon.Elasticsearch
         public virtual ListElasticsearchVersionsResponse EndListElasticsearchVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListElasticsearchVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPackagesForDomain
+
+        /// <summary>
+        /// Lists all packages associated with the Amazon ES domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPackagesForDomain service method.</param>
+        /// 
+        /// <returns>The response from the ListPackagesForDomain service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual ListPackagesForDomainResponse ListPackagesForDomain(ListPackagesForDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPackagesForDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPackagesForDomainResponseUnmarshaller.Instance;
+
+            return Invoke<ListPackagesForDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPackagesForDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPackagesForDomain operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPackagesForDomain
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginListPackagesForDomain(ListPackagesForDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPackagesForDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPackagesForDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPackagesForDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPackagesForDomain.</param>
+        /// 
+        /// <returns>Returns a  ListPackagesForDomainResult from Elasticsearch.</returns>
+        public virtual ListPackagesForDomainResponse EndListPackagesForDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPackagesForDomainResponse>(asyncResult);
         }
 
         #endregion
