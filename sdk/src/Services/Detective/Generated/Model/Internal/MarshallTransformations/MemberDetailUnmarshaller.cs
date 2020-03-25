@@ -70,6 +70,12 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DisabledReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DisabledReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EmailAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +98,18 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MasterId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PercentOfGraphUtilization", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.PercentOfGraphUtilization = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PercentOfGraphUtilizationUpdatedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.PercentOfGraphUtilizationUpdatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

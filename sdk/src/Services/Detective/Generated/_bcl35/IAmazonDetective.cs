@@ -182,6 +182,14 @@ namespace Amazon.Detective
         /// </para>
         ///  
         /// <para>
+        /// Before you try to enable Detective, make sure that your account has been enrolled
+        /// in Amazon GuardDuty for at least 48 hours. If you do not meet this requirement, you
+        /// cannot enable Detective. If you do meet the GuardDuty prerequisite, then when you
+        /// make the request to enable Detective, it checks whether your data volume is within
+        /// the Detective quota. If it exceeds the quota, then you cannot enable Detective. 
+        /// </para>
+        ///  
+        /// <para>
         /// The operation also enables Detective for the calling account in the currently selected
         /// Region. It returns the ARN of the new behavior graph.
         /// </para>
@@ -205,6 +213,26 @@ namespace Amazon.Detective
         /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ServiceQuotaExceededException">
+        /// This request cannot be completed for one of the following reasons.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The request would cause the number of member accounts in the behavior graph to exceed
+        /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request would cause the data rate for the behavior graph to exceed the maximum
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detective is unable to verify the data rate for the member account. This is usually
+        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateGraph">REST API Reference for CreateGraph Operation</seealso>
         CreateGraphResponse CreateGraph(CreateGraphRequest request);
@@ -285,8 +313,24 @@ namespace Amazon.Detective
         /// The request refers to a nonexistent resource.
         /// </exception>
         /// <exception cref="Amazon.Detective.Model.ServiceQuotaExceededException">
-        /// This request would cause the number of member accounts in the behavior graph to exceed
+        /// This request cannot be completed for one of the following reasons.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The request would cause the number of member accounts in the behavior graph to exceed
         /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request would cause the data rate for the behavior graph to exceed the maximum
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detective is unable to verify the data rate for the member account. This is usually
+        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Detective.Model.ValidationException">
         /// The request parameters are invalid.
@@ -783,6 +827,93 @@ namespace Amazon.Detective
         /// <returns>Returns a  RejectInvitationResult from Detective.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/RejectInvitation">REST API Reference for RejectInvitation Operation</seealso>
         RejectInvitationResponse EndRejectInvitation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartMonitoringMember
+
+
+        /// <summary>
+        /// Sends a request to enable data ingest for a member account that has a status of <code>ACCEPTED_BUT_DISABLED</code>.
+        /// 
+        ///  
+        /// <para>
+        /// For valid member accounts, the status is updated as follows.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If Detective enabled the member account, then the new status is <code>ENABLED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If Detective cannot enable the member account, the status remains <code>ACCEPTED_BUT_DISABLED</code>.
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMonitoringMember service method.</param>
+        /// 
+        /// <returns>The response from the StartMonitoringMember service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.ConflictException">
+        /// The request attempted an invalid action.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ServiceQuotaExceededException">
+        /// This request cannot be completed for one of the following reasons.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The request would cause the number of member accounts in the behavior graph to exceed
+        /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request would cause the data rate for the behavior graph to exceed the maximum
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detective is unable to verify the data rate for the member account. This is usually
+        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartMonitoringMember">REST API Reference for StartMonitoringMember Operation</seealso>
+        StartMonitoringMemberResponse StartMonitoringMember(StartMonitoringMemberRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMonitoringMember operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMonitoringMember operation on AmazonDetectiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMonitoringMember
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartMonitoringMember">REST API Reference for StartMonitoringMember Operation</seealso>
+        IAsyncResult BeginStartMonitoringMember(StartMonitoringMemberRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMonitoringMember operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMonitoringMember.</param>
+        /// 
+        /// <returns>Returns a  StartMonitoringMemberResult from Detective.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartMonitoringMember">REST API Reference for StartMonitoringMember Operation</seealso>
+        StartMonitoringMemberResponse EndStartMonitoringMember(IAsyncResult asyncResult);
 
         #endregion
         

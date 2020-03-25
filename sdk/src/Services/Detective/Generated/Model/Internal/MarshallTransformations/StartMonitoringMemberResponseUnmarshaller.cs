@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Detective.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateGraph operation
+    /// Response Unmarshaller for StartMonitoringMember operation
     /// </summary>  
-    public class CreateGraphResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartMonitoringMemberResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,19 +45,8 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateGraphResponse response = new CreateGraphResponse();
+            StartMonitoringMemberResponse response = new StartMonitoringMemberResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("GraphArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.GraphArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -80,16 +69,24 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             {
                 return new InternalServerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
             {
                 return new ServiceQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+            {
+                return new ValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonDetectiveException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateGraphResponseUnmarshaller _instance = new CreateGraphResponseUnmarshaller();        
+        private static StartMonitoringMemberResponseUnmarshaller _instance = new StartMonitoringMemberResponseUnmarshaller();        
 
-        internal static CreateGraphResponseUnmarshaller GetInstance()
+        internal static StartMonitoringMemberResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -97,7 +94,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateGraphResponseUnmarshaller Instance
+        public static StartMonitoringMemberResponseUnmarshaller Instance
         {
             get
             {

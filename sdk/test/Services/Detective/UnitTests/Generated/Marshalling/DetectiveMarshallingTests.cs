@@ -331,5 +331,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         }
 
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Detective")]
+        public void StartMonitoringMemberMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartMonitoringMember");
+
+            var request = InstantiateClassGenerator.Execute<StartMonitoringMemberRequest>();
+            var marshaller = new StartMonitoringMemberRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StartMonitoringMember", request, internalRequest, service_model);            
+
+        }
+
             }
 }
