@@ -281,6 +281,30 @@
               },
               "hostname": "api.ecr.eu-west-3.amazonaws.com"
             },
+            "fips-us-east-1": {
+              "credentialScope": {
+                "region": "us-east-1"
+              },
+              "hostname": "ecr-fips.us-east-1.amazonaws.com"
+            },
+            "fips-us-east-2": {
+              "credentialScope": {
+                "region": "us-east-2"
+              },
+              "hostname": "ecr-fips.us-east-2.amazonaws.com"
+            },
+            "fips-us-west-1": {
+              "credentialScope": {
+                "region": "us-west-1"
+              },
+              "hostname": "ecr-fips.us-west-1.amazonaws.com"
+            },
+            "fips-us-west-2": {
+              "credentialScope": {
+                "region": "us-west-2"
+              },
+              "hostname": "ecr-fips.us-west-2.amazonaws.com"
+            },
             "me-south-1": {
               "credentialScope": {
                 "region": "me-south-1"
@@ -609,6 +633,36 @@
             "eu-west-1": {},
             "eu-west-2": {},
             "eu-west-3": {},
+            "fips-ca-central-1": {
+              "credentialScope": {
+                "region": "ca-central-1"
+              },
+              "hostname": "batch-fips.ca-central-1.amazonaws.com"
+            },
+            "fips-us-east-1": {
+              "credentialScope": {
+                "region": "us-east-1"
+              },
+              "hostname": "batch-fips.us-east-1.amazonaws.com"
+            },
+            "fips-us-east-2": {
+              "credentialScope": {
+                "region": "us-east-2"
+              },
+              "hostname": "batch-fips.us-east-2.amazonaws.com"
+            },
+            "fips-us-west-1": {
+              "credentialScope": {
+                "region": "us-west-1"
+              },
+              "hostname": "batch-fips.us-west-1.amazonaws.com"
+            },
+            "fips-us-west-2": {
+              "credentialScope": {
+                "region": "us-west-2"
+              },
+              "hostname": "batch-fips.us-west-2.amazonaws.com"
+            },
             "me-south-1": {},
             "sa-east-1": {},
             "us-east-1": {},
@@ -799,6 +853,30 @@
             "eu-west-1": {},
             "eu-west-2": {},
             "eu-west-3": {},
+            "fips-us-east-1": {
+              "credentialScope": {
+                "region": "us-east-1"
+              },
+              "hostname": "cloudtrail-fips.us-east-1.amazonaws.com"
+            },
+            "fips-us-east-2": {
+              "credentialScope": {
+                "region": "us-east-2"
+              },
+              "hostname": "cloudtrail-fips.us-east-2.amazonaws.com"
+            },
+            "fips-us-west-1": {
+              "credentialScope": {
+                "region": "us-west-1"
+              },
+              "hostname": "cloudtrail-fips.us-west-1.amazonaws.com"
+            },
+            "fips-us-west-2": {
+              "credentialScope": {
+                "region": "us-west-2"
+              },
+              "hostname": "cloudtrail-fips.us-west-2.amazonaws.com"
+            },
             "me-south-1": {},
             "sa-east-1": {},
             "us-east-1": {},
@@ -1300,6 +1378,7 @@
         },
         "discovery": {
           "endpoints": {
+            "ap-southeast-2": {},
             "eu-central-1": {},
             "us-west-2": {}
           }
@@ -1644,6 +1723,30 @@
             "eu-west-1": {},
             "eu-west-2": {},
             "eu-west-3": {},
+            "fips-us-east-1": {
+              "credentialScope": {
+                "region": "us-east-1"
+              },
+              "hostname": "elasticloadbalancing-fips.us-east-1.amazonaws.com"
+            },
+            "fips-us-east-2": {
+              "credentialScope": {
+                "region": "us-east-2"
+              },
+              "hostname": "elasticloadbalancing-fips.us-east-2.amazonaws.com"
+            },
+            "fips-us-west-1": {
+              "credentialScope": {
+                "region": "us-west-1"
+              },
+              "hostname": "elasticloadbalancing-fips.us-west-1.amazonaws.com"
+            },
+            "fips-us-west-2": {
+              "credentialScope": {
+                "region": "us-west-2"
+              },
+              "hostname": "elasticloadbalancing-fips.us-west-2.amazonaws.com"
+            },
             "me-south-1": {},
             "sa-east-1": {},
             "us-east-1": {},
@@ -2199,6 +2302,30 @@
             "eu-north-1": {},
             "eu-west-1": {},
             "eu-west-2": {},
+            "fips-us-east-1": {
+              "credentialScope": {
+                "region": "us-east-1"
+              },
+              "hostname": "inspector-fips.us-east-1.amazonaws.com"
+            },
+            "fips-us-east-2": {
+              "credentialScope": {
+                "region": "us-east-2"
+              },
+              "hostname": "inspector-fips.us-east-2.amazonaws.com"
+            },
+            "fips-us-west-1": {
+              "credentialScope": {
+                "region": "us-west-1"
+              },
+              "hostname": "inspector-fips.us-west-1.amazonaws.com"
+            },
+            "fips-us-west-2": {
+              "credentialScope": {
+                "region": "us-west-2"
+              },
+              "hostname": "inspector-fips.us-west-2.amazonaws.com"
+            },
             "us-east-1": {},
             "us-east-2": {},
             "us-west-1": {},
@@ -2697,6 +2824,7 @@
         },
         "mgh": {
           "endpoints": {
+            "ap-southeast-2": {},
             "eu-central-1": {},
             "us-west-2": {}
           }
@@ -4279,6 +4407,30 @@
             "eu-west-1": {},
             "eu-west-2": {},
             "eu-west-3": {},
+            "fips-us-east-1": {
+              "credentialScope": {
+                "region": "us-east-1"
+              },
+              "hostname": "states-fips.us-east-1.amazonaws.com"
+            },
+            "fips-us-east-2": {
+              "credentialScope": {
+                "region": "us-east-2"
+              },
+              "hostname": "states-fips.us-east-2.amazonaws.com"
+            },
+            "fips-us-west-1": {
+              "credentialScope": {
+                "region": "us-west-1"
+              },
+              "hostname": "states-fips.us-west-1.amazonaws.com"
+            },
+            "fips-us-west-2": {
+              "credentialScope": {
+                "region": "us-west-2"
+              },
+              "hostname": "states-fips.us-west-2.amazonaws.com"
+            },
             "me-south-1": {},
             "sa-east-1": {},
             "us-east-1": {},
@@ -4456,6 +4608,30 @@
             "eu-west-1": {},
             "eu-west-2": {},
             "eu-west-3": {},
+            "fips-us-east-1": {
+              "credentialScope": {
+                "region": "us-east-1"
+              },
+              "hostname": "swf-fips.us-east-1.amazonaws.com"
+            },
+            "fips-us-east-2": {
+              "credentialScope": {
+                "region": "us-east-2"
+              },
+              "hostname": "swf-fips.us-east-2.amazonaws.com"
+            },
+            "fips-us-west-1": {
+              "credentialScope": {
+                "region": "us-west-1"
+              },
+              "hostname": "swf-fips.us-west-1.amazonaws.com"
+            },
+            "fips-us-west-2": {
+              "credentialScope": {
+                "region": "us-west-2"
+              },
+              "hostname": "swf-fips.us-west-2.amazonaws.com"
+            },
             "me-south-1": {},
             "sa-east-1": {},
             "us-east-1": {},
@@ -4504,6 +4680,30 @@
             "eu-west-1": {},
             "eu-west-2": {},
             "eu-west-3": {},
+            "fips-us-east-1": {
+              "credentialScope": {
+                "region": "us-east-1"
+              },
+              "hostname": "fips.transcribe.us-east-1.amazonaws.com"
+            },
+            "fips-us-east-2": {
+              "credentialScope": {
+                "region": "us-east-2"
+              },
+              "hostname": "fips.transcribe.us-east-2.amazonaws.com"
+            },
+            "fips-us-west-1": {
+              "credentialScope": {
+                "region": "us-west-1"
+              },
+              "hostname": "fips.transcribe.us-west-1.amazonaws.com"
+            },
+            "fips-us-west-2": {
+              "credentialScope": {
+                "region": "us-west-2"
+              },
+              "hostname": "fips.transcribe.us-west-2.amazonaws.com"
+            },
             "me-south-1": {},
             "sa-east-1": {},
             "us-east-1": {},
@@ -5354,6 +5554,18 @@
         },
         "api.ecr": {
           "endpoints": {
+            "fips-us-gov-east-1": {
+              "credentialScope": {
+                "region": "us-gov-east-1"
+              },
+              "hostname": "ecr-fips.us-gov-east-1.amazonaws.com"
+            },
+            "fips-us-gov-west-1": {
+              "credentialScope": {
+                "region": "us-gov-west-1"
+              },
+              "hostname": "ecr-fips.us-gov-west-1.amazonaws.com"
+            },
             "us-gov-east-1": {
               "credentialScope": {
                 "region": "us-gov-east-1"
@@ -5453,8 +5665,18 @@
         },
         "batch": {
           "endpoints": {
-            "us-gov-east-1": {},
-            "us-gov-west-1": {}
+            "us-gov-east-1": {
+              "credentialScope": {
+                "region": "us-gov-east-1"
+              },
+              "hostname": "batch.us-gov-east-1.amazonaws.com"
+            },
+            "us-gov-west-1": {
+              "credentialScope": {
+                "region": "us-gov-west-1"
+              },
+              "hostname": "batch.us-gov-west-1.amazonaws.com"
+            }
           }
         },
         "clouddirectory": {
@@ -5762,6 +5984,18 @@
         },
         "inspector": {
           "endpoints": {
+            "fips-us-gov-east-1": {
+              "credentialScope": {
+                "region": "us-gov-east-1"
+              },
+              "hostname": "inspector-fips.us-gov-east-1.amazonaws.com"
+            },
+            "fips-us-gov-west-1": {
+              "credentialScope": {
+                "region": "us-gov-west-1"
+              },
+              "hostname": "inspector-fips.us-gov-west-1.amazonaws.com"
+            },
             "us-gov-east-1": {},
             "us-gov-west-1": {}
           }
@@ -6129,6 +6363,18 @@
         },
         "states": {
           "endpoints": {
+            "fips-us-gov-east-1": {
+              "credentialScope": {
+                "region": "us-gov-east-1"
+              },
+              "hostname": "states-fips.us-gov-east-1.amazonaws.com"
+            },
+            "fips-us-gov-west-1": {
+              "credentialScope": {
+                "region": "us-gov-west-1"
+              },
+              "hostname": "states.us-gov-west-1.amazonaws.com"
+            },
             "us-gov-east-1": {},
             "us-gov-west-1": {}
           }
@@ -6181,8 +6427,18 @@
         },
         "swf": {
           "endpoints": {
-            "us-gov-east-1": {},
-            "us-gov-west-1": {}
+            "us-gov-east-1": {
+              "credentialScope": {
+                "region": "us-gov-east-1"
+              },
+              "hostname": "swf.us-gov-east-1.amazonaws.com"
+            },
+            "us-gov-west-1": {
+              "credentialScope": {
+                "region": "us-gov-west-1"
+              },
+              "hostname": "swf.us-gov-west-1.amazonaws.com"
+            }
           }
         },
         "tagging": {
@@ -6198,6 +6454,18 @@
             ]
           },
           "endpoints": {
+            "fips-us-gov-east-1": {
+              "credentialScope": {
+                "region": "us-gov-east-1"
+              },
+              "hostname": "fips.transcribe.us-gov-east-1.amazonaws.com"
+            },
+            "fips-us-gov-west-1": {
+              "credentialScope": {
+                "region": "us-gov-west-1"
+              },
+              "hostname": "fips.transcribe.us-gov-west-1.amazonaws.com"
+            },
             "us-gov-east-1": {},
             "us-gov-west-1": {}
           }
