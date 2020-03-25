@@ -32,12 +32,34 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class SavingsPlansPurchaseRecommendation
     {
+        private AccountScope _accountScope;
         private LookbackPeriodInDays _lookbackPeriodInDays;
         private PaymentOption _paymentOption;
         private List<SavingsPlansPurchaseRecommendationDetail> _savingsPlansPurchaseRecommendationDetails = new List<SavingsPlansPurchaseRecommendationDetail>();
         private SavingsPlansPurchaseRecommendationSummary _savingsPlansPurchaseRecommendationSummary;
         private SupportedSavingsPlansType _savingsPlansType;
         private TermInYears _termInYears;
+
+        /// <summary>
+        /// Gets and sets the property AccountScope. 
+        /// <para>
+        /// The account scope that you want your recommendations for. Amazon Web Services calculates
+        /// recommendations including the payer account and linked accounts if the value is set
+        /// to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated
+        /// for individual linked accounts only.
+        /// </para>
+        /// </summary>
+        public AccountScope AccountScope
+        {
+            get { return this._accountScope; }
+            set { this._accountScope = value; }
+        }
+
+        // Check to see if AccountScope property is set
+        internal bool IsSetAccountScope()
+        {
+            return this._accountScope != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LookbackPeriodInDays. 

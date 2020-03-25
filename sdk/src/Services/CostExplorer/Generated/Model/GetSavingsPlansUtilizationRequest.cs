@@ -78,7 +78,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>GetSavingsPlansUtilization</code> uses the same <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        ///  <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
         /// object as the other operations, but only <code>AND</code> is supported among each
         /// dimension.
         /// </para>

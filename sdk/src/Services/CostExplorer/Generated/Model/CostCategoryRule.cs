@@ -32,7 +32,7 @@ namespace Amazon.CostExplorer.Model
     /// <para>
     ///  <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is
     /// subject to change. Your use of Cost Categories is subject to the Beta Service Participation
-    /// terms of the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+    /// terms of the <a href="http://aws.amazon.com/service-terms/">AWS Service Terms</a>
     /// (Section 1.10).</b> </i> 
     /// </para>
     ///  </important> 
@@ -49,7 +49,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Rule. 
         /// <para>
-        /// An <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
         /// object used to categorize costs. This supports dimensions, Tags, and nested expressions.
         /// Currently the only dimensions supported is <code>LINKED_ACCOUNT</code>.
         /// </para>

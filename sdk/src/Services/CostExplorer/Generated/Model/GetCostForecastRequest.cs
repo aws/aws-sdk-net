@@ -88,7 +88,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Metric. 
         /// <para>
         /// Which metric Cost Explorer uses to create your forecast. For more information about
-        /// blended and unblended rates, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+        /// blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
         /// does the "blended" annotation appear on some line items in my bill?</a>. 
         /// </para>
         ///  

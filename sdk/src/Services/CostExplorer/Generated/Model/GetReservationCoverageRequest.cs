@@ -153,7 +153,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>GetReservationCoverage</code> uses the same <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        ///  <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
         /// object as the other operations, but only <code>AND</code> is supported among each
         /// dimension. You can nest only one level deep. If there are multiple values for a dimension,
         /// they are OR'd together.
