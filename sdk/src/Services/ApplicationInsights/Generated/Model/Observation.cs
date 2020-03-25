@@ -32,7 +32,21 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class Observation
     {
+        private string _cloudWatchEventDetailType;
+        private string _cloudWatchEventId;
+        private CloudWatchEventSource _cloudWatchEventSource;
+        private string _codeDeployApplication;
+        private string _codeDeployDeploymentGroup;
+        private string _codeDeployDeploymentId;
+        private string _codeDeployInstanceGroupId;
+        private string _codeDeployState;
+        private string _ec2State;
         private DateTime? _endTime;
+        private string _healthEventArn;
+        private string _healthEventDescription;
+        private string _healthEventTypeCategory;
+        private string _healthEventTypeCode;
+        private string _healthService;
         private string _id;
         private DateTime? _lineTime;
         private LogFilter _logFilter;
@@ -45,6 +59,180 @@ namespace Amazon.ApplicationInsights.Model
         private DateTime? _startTime;
         private string _unit;
         private double? _value;
+        private int? _xRayErrorPercent;
+        private int? _xRayFaultPercent;
+        private string _xRayNodeName;
+        private string _xRayNodeType;
+        private long? _xRayRequestAverageLatency;
+        private int? _xRayRequestCount;
+        private int? _xRayThrottlePercent;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchEventDetailType. 
+        /// <para>
+        ///  The detail type of the CloudWatch Event-based observation, for example, <code>EC2
+        /// Instance State-change Notification</code>. 
+        /// </para>
+        /// </summary>
+        public string CloudWatchEventDetailType
+        {
+            get { return this._cloudWatchEventDetailType; }
+            set { this._cloudWatchEventDetailType = value; }
+        }
+
+        // Check to see if CloudWatchEventDetailType property is set
+        internal bool IsSetCloudWatchEventDetailType()
+        {
+            return this._cloudWatchEventDetailType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchEventId. 
+        /// <para>
+        ///  The ID of the CloudWatch Event-based observation related to the detected problem.
+        /// 
+        /// </para>
+        /// </summary>
+        public string CloudWatchEventId
+        {
+            get { return this._cloudWatchEventId; }
+            set { this._cloudWatchEventId = value; }
+        }
+
+        // Check to see if CloudWatchEventId property is set
+        internal bool IsSetCloudWatchEventId()
+        {
+            return this._cloudWatchEventId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchEventSource. 
+        /// <para>
+        ///  The source of the CloudWatch Event. 
+        /// </para>
+        /// </summary>
+        public CloudWatchEventSource CloudWatchEventSource
+        {
+            get { return this._cloudWatchEventSource; }
+            set { this._cloudWatchEventSource = value; }
+        }
+
+        // Check to see if CloudWatchEventSource property is set
+        internal bool IsSetCloudWatchEventSource()
+        {
+            return this._cloudWatchEventSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeDeployApplication. 
+        /// <para>
+        ///  The CodeDeploy application to which the deployment belongs. 
+        /// </para>
+        /// </summary>
+        public string CodeDeployApplication
+        {
+            get { return this._codeDeployApplication; }
+            set { this._codeDeployApplication = value; }
+        }
+
+        // Check to see if CodeDeployApplication property is set
+        internal bool IsSetCodeDeployApplication()
+        {
+            return this._codeDeployApplication != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeDeployDeploymentGroup. 
+        /// <para>
+        ///  The deployment group to which the CodeDeploy deployment belongs. 
+        /// </para>
+        /// </summary>
+        public string CodeDeployDeploymentGroup
+        {
+            get { return this._codeDeployDeploymentGroup; }
+            set { this._codeDeployDeploymentGroup = value; }
+        }
+
+        // Check to see if CodeDeployDeploymentGroup property is set
+        internal bool IsSetCodeDeployDeploymentGroup()
+        {
+            return this._codeDeployDeploymentGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeDeployDeploymentId. 
+        /// <para>
+        ///  The deployment ID of the CodeDeploy-based observation related to the detected problem.
+        /// 
+        /// </para>
+        /// </summary>
+        public string CodeDeployDeploymentId
+        {
+            get { return this._codeDeployDeploymentId; }
+            set { this._codeDeployDeploymentId = value; }
+        }
+
+        // Check to see if CodeDeployDeploymentId property is set
+        internal bool IsSetCodeDeployDeploymentId()
+        {
+            return this._codeDeployDeploymentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeDeployInstanceGroupId. 
+        /// <para>
+        ///  The instance group to which the CodeDeploy instance belongs. 
+        /// </para>
+        /// </summary>
+        public string CodeDeployInstanceGroupId
+        {
+            get { return this._codeDeployInstanceGroupId; }
+            set { this._codeDeployInstanceGroupId = value; }
+        }
+
+        // Check to see if CodeDeployInstanceGroupId property is set
+        internal bool IsSetCodeDeployInstanceGroupId()
+        {
+            return this._codeDeployInstanceGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeDeployState. 
+        /// <para>
+        ///  The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code>
+        /// FAILURE</code>. 
+        /// </para>
+        /// </summary>
+        public string CodeDeployState
+        {
+            get { return this._codeDeployState; }
+            set { this._codeDeployState = value; }
+        }
+
+        // Check to see if CodeDeployState property is set
+        internal bool IsSetCodeDeployState()
+        {
+            return this._codeDeployState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ec2State. 
+        /// <para>
+        ///  The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public string Ec2State
+        {
+            get { return this._ec2State; }
+            set { this._ec2State = value; }
+        }
+
+        // Check to see if Ec2State property is set
+        internal bool IsSetEc2State()
+        {
+            return this._ec2State != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndTime. 
@@ -62,6 +250,98 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthEventArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the AWS Health Event-based observation.
+        /// </para>
+        /// </summary>
+        public string HealthEventArn
+        {
+            get { return this._healthEventArn; }
+            set { this._healthEventArn = value; }
+        }
+
+        // Check to see if HealthEventArn property is set
+        internal bool IsSetHealthEventArn()
+        {
+            return this._healthEventArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthEventDescription. 
+        /// <para>
+        ///  The description of the AWS Health event provided by the service, such as Amazon EC2.
+        /// 
+        /// </para>
+        /// </summary>
+        public string HealthEventDescription
+        {
+            get { return this._healthEventDescription; }
+            set { this._healthEventDescription = value; }
+        }
+
+        // Check to see if HealthEventDescription property is set
+        internal bool IsSetHealthEventDescription()
+        {
+            return this._healthEventDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthEventTypeCategory. 
+        /// <para>
+        ///  The category of the AWS Health event, such as <code>issue</code>. 
+        /// </para>
+        /// </summary>
+        public string HealthEventTypeCategory
+        {
+            get { return this._healthEventTypeCategory; }
+            set { this._healthEventTypeCategory = value; }
+        }
+
+        // Check to see if HealthEventTypeCategory property is set
+        internal bool IsSetHealthEventTypeCategory()
+        {
+            return this._healthEventTypeCategory != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthEventTypeCode. 
+        /// <para>
+        ///  The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public string HealthEventTypeCode
+        {
+            get { return this._healthEventTypeCode; }
+            set { this._healthEventTypeCode = value; }
+        }
+
+        // Check to see if HealthEventTypeCode property is set
+        internal bool IsSetHealthEventTypeCode()
+        {
+            return this._healthEventTypeCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthService. 
+        /// <para>
+        ///  The service to which the AWS Health Event belongs, such as EC2. 
+        /// </para>
+        /// </summary>
+        public string HealthService
+        {
+            get { return this._healthService; }
+            set { this._healthService = value; }
+        }
+
+        // Check to see if HealthService property is set
+        internal bool IsSetHealthService()
+        {
+            return this._healthService != null;
         }
 
         /// <summary>
@@ -279,6 +559,132 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetValue()
         {
             return this._value.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property XRayErrorPercent. 
+        /// <para>
+        ///  The X-Ray request error percentage for this node. 
+        /// </para>
+        /// </summary>
+        public int XRayErrorPercent
+        {
+            get { return this._xRayErrorPercent.GetValueOrDefault(); }
+            set { this._xRayErrorPercent = value; }
+        }
+
+        // Check to see if XRayErrorPercent property is set
+        internal bool IsSetXRayErrorPercent()
+        {
+            return this._xRayErrorPercent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property XRayFaultPercent. 
+        /// <para>
+        ///  The X-Ray request fault percentage for this node. 
+        /// </para>
+        /// </summary>
+        public int XRayFaultPercent
+        {
+            get { return this._xRayFaultPercent.GetValueOrDefault(); }
+            set { this._xRayFaultPercent = value; }
+        }
+
+        // Check to see if XRayFaultPercent property is set
+        internal bool IsSetXRayFaultPercent()
+        {
+            return this._xRayFaultPercent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property XRayNodeName. 
+        /// <para>
+        ///  The name of the X-Ray node. 
+        /// </para>
+        /// </summary>
+        public string XRayNodeName
+        {
+            get { return this._xRayNodeName; }
+            set { this._xRayNodeName = value; }
+        }
+
+        // Check to see if XRayNodeName property is set
+        internal bool IsSetXRayNodeName()
+        {
+            return this._xRayNodeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property XRayNodeType. 
+        /// <para>
+        ///  The type of the X-Ray node. 
+        /// </para>
+        /// </summary>
+        public string XRayNodeType
+        {
+            get { return this._xRayNodeType; }
+            set { this._xRayNodeType = value; }
+        }
+
+        // Check to see if XRayNodeType property is set
+        internal bool IsSetXRayNodeType()
+        {
+            return this._xRayNodeType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property XRayRequestAverageLatency. 
+        /// <para>
+        ///  The X-Ray node request average latency for this node. 
+        /// </para>
+        /// </summary>
+        public long XRayRequestAverageLatency
+        {
+            get { return this._xRayRequestAverageLatency.GetValueOrDefault(); }
+            set { this._xRayRequestAverageLatency = value; }
+        }
+
+        // Check to see if XRayRequestAverageLatency property is set
+        internal bool IsSetXRayRequestAverageLatency()
+        {
+            return this._xRayRequestAverageLatency.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property XRayRequestCount. 
+        /// <para>
+        ///  The X-Ray request count for this node. 
+        /// </para>
+        /// </summary>
+        public int XRayRequestCount
+        {
+            get { return this._xRayRequestCount.GetValueOrDefault(); }
+            set { this._xRayRequestCount = value; }
+        }
+
+        // Check to see if XRayRequestCount property is set
+        internal bool IsSetXRayRequestCount()
+        {
+            return this._xRayRequestCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property XRayThrottlePercent. 
+        /// <para>
+        ///  The X-Ray request throttle percentage for this node. 
+        /// </para>
+        /// </summary>
+        public int XRayThrottlePercent
+        {
+            get { return this._xRayThrottlePercent.GetValueOrDefault(); }
+            set { this._xRayThrottlePercent = value; }
+        }
+
+        // Check to see if XRayThrottlePercent property is set
+        internal bool IsSetXRayThrottlePercent()
+        {
+            return this._xRayThrottlePercent.HasValue; 
         }
 
     }

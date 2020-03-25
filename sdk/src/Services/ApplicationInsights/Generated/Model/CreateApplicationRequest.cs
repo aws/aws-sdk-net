@@ -33,10 +33,31 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class CreateApplicationRequest : AmazonApplicationInsightsRequest
     {
+        private bool? _cweMonitorEnabled;
         private bool? _opsCenterEnabled;
         private string _opsItemSNSTopicArn;
         private string _resourceGroupName;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property CWEMonitorEnabled. 
+        /// <para>
+        ///  Indicates whether Application Insights can listen to CloudWatch events for the application
+        /// resources, such as <code>instance terminated</code>, <code>failed deployment</code>,
+        /// and others. 
+        /// </para>
+        /// </summary>
+        public bool CWEMonitorEnabled
+        {
+            get { return this._cweMonitorEnabled.GetValueOrDefault(); }
+            set { this._cweMonitorEnabled = value; }
+        }
+
+        // Check to see if CWEMonitorEnabled property is set
+        internal bool IsSetCWEMonitorEnabled()
+        {
+            return this._cweMonitorEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property OpsCenterEnabled. 

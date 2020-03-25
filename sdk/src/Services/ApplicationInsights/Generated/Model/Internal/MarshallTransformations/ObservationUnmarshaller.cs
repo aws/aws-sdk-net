@@ -64,10 +64,94 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CloudWatchEventDetailType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CloudWatchEventDetailType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CloudWatchEventId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CloudWatchEventId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CloudWatchEventSource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CloudWatchEventSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CodeDeployApplication", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CodeDeployApplication = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CodeDeployDeploymentGroup", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CodeDeployDeploymentGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CodeDeployDeploymentId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CodeDeployDeploymentId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CodeDeployInstanceGroupId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CodeDeployInstanceGroupId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CodeDeployState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CodeDeployState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Ec2State", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Ec2State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HealthEventArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HealthEventArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HealthEventDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HealthEventDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HealthEventTypeCategory", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HealthEventTypeCategory = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HealthEventTypeCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HealthEventTypeCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HealthService", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HealthService = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))
@@ -140,6 +224,48 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("XRayErrorPercent", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.XRayErrorPercent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("XRayFaultPercent", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.XRayFaultPercent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("XRayNodeName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.XRayNodeName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("XRayNodeType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.XRayNodeType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("XRayRequestAverageLatency", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.XRayRequestAverageLatency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("XRayRequestCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.XRayRequestCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("XRayThrottlePercent", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.XRayThrottlePercent = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
