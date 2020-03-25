@@ -1,3 +1,22 @@
+### 3.3.707.0 (2020-03-25 18:17 UTC)
+* ApplicationInsights (3.3.104.0)
+	* Amazon CloudWatch Application Insights for .NET and SQL Server now integrates with Amazon CloudWatch Events (AWS CodeDeploy, AWS Health and Amazon EC2 state changes). This feature enables customers to view events related to problems detected by CloudWatch Application Insights, and reduce mean-time-to-resolution (MTTR).
+* CostExplorer (3.3.107.0)
+	* Customers can now receive Savings Plans recommendations at the member (linked) account level.
+* Detective (3.3.101.0)
+	* The new ACCEPTED_BUT_DISABLED member account status indicates that a member account that accepted the invitation is blocked from contributing data to the behavior graph. The reason is provided in the new DISABLED_REASON property. The new StartMonitoringMember operation enables a blocked member account.
+* Elasticsearch (3.3.105.0)
+	* Adding support for customer packages (dictionary files) to Amazon Elasticsearch Service
+* ManagedBlockchain (3.3.101.0)
+	* Amazon Managed Blockchain now has support to publish Hyperledger Fabric peer node, chaincode, and certificate authority (CA) logs to Amazon CloudWatch Logs.
+* XRay (3.3.102.0)
+	* GetTraceSummaries - Now provides additional root cause attribute ClientImpacting which indicates whether root cause impacted trace client.
+* Core 3.3.105.3
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.706.0 (2020-03-24 18:19 UTC)
 * Athena (3.3.103.44)
 	* Documentation updates for Athena, including QueryExecutionStatus QUEUED and RUNNING states. QUEUED now indicates that the query has been submitted to the service. RUNNING indicates that the query is in execution phase.
