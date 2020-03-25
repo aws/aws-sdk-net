@@ -32,7 +32,26 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class ErrorRootCause
     {
+        private bool? _clientImpacting;
         private List<ErrorRootCauseService> _services = new List<ErrorRootCauseService>();
+
+        /// <summary>
+        /// Gets and sets the property ClientImpacting. 
+        /// <para>
+        /// A flag that denotes that the root cause impacts the trace client.
+        /// </para>
+        /// </summary>
+        public bool ClientImpacting
+        {
+            get { return this._clientImpacting.GetValueOrDefault(); }
+            set { this._clientImpacting = value; }
+        }
+
+        // Check to see if ClientImpacting property is set
+        internal bool IsSetClientImpacting()
+        {
+            return this._clientImpacting.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Services. 
