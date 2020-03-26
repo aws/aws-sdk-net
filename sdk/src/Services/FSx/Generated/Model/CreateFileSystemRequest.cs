@@ -78,6 +78,7 @@ namespace Amazon.FSx.Model
         private CreateFileSystemLustreConfiguration _lustreConfiguration;
         private List<string> _securityGroupIds = new List<string>();
         private int? _storageCapacity;
+        private StorageType _storageType;
         private List<string> _subnetIds = new List<string>();
         private List<Tag> _tags = new List<Tag>();
         private CreateFileSystemWindowsConfiguration _windowsConfiguration;
@@ -177,18 +178,35 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// The storage capacity of the file system being created.
+        /// Sets the storage capacity of the file system that you're creating.
         /// </para>
         ///  
         /// <para>
-        /// For Windows file systems, valid values are 32 GiB - 65,536 GiB.
+        /// For Lustre file systems:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For <code>SCRATCH_1</code> Lustre file systems, valid values are 1,200, 2,400, 3,600,
-        /// then continuing in increments of 3600 GiB. For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
-        /// file systems, valid values are 1200, 2400, then continuing in increments of 2400 GiB.
+        /// For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values
+        /// are 1.2, 2.4, and increments of 2.4 TiB.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments
+        /// of 3.6 TiB.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For Windows file systems:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If <code>StorageType=SSD</code>, valid values are 32 GiB - 65,536 GiB (64 TiB).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64 TiB).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
         public int StorageCapacity
@@ -204,6 +222,40 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// Sets the storage type for the Amazon FSx for Windows file system you're creating.
+        /// Valid values are <code>SSD</code> and <code>HDD</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all
+        /// Windows deployment types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code>
+        /// and <code>MULTI_AZ_1</code> Windows file system deployment types. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+        /// Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public StorageType StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
         /// Specifies the IDs of the subnets that the file system will be accessible from. For
@@ -214,9 +266,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file
-        /// systems, provide exactly one subnet ID. The file server is launched in that subnet's
-        /// Availability Zone.
+        /// For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment
+        /// types and Lustre file systems, provide exactly one subnet ID. The file server is launched
+        /// in that subnet's Availability Zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=50)]
@@ -255,8 +307,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property WindowsConfiguration. 
         /// <para>
-        /// The Microsoft Windows configuration for the file system being created. This value
-        /// is required if <code>FileSystemType</code> is set to <code>WINDOWS</code>.
+        /// The Microsoft Windows configuration for the file system being created. 
         /// </para>
         /// </summary>
         public CreateFileSystemWindowsConfiguration WindowsConfiguration

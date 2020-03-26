@@ -773,6 +773,56 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type StorageType.
+    /// </summary>
+    public class StorageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HDD for StorageType
+        /// </summary>
+        public static readonly StorageType HDD = new StorageType("HDD");
+        /// <summary>
+        /// Constant SSD for StorageType
+        /// </summary>
+        public static readonly StorageType SSD = new StorageType("SSD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageType FindValue(string value)
+        {
+            return FindValue<StorageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WindowsDeploymentType.
     /// </summary>
     public class WindowsDeploymentType : ConstantClass
@@ -786,6 +836,10 @@ namespace Amazon.FSx
         /// Constant SINGLE_AZ_1 for WindowsDeploymentType
         /// </summary>
         public static readonly WindowsDeploymentType SINGLE_AZ_1 = new WindowsDeploymentType("SINGLE_AZ_1");
+        /// <summary>
+        /// Constant SINGLE_AZ_2 for WindowsDeploymentType
+        /// </summary>
+        public static readonly WindowsDeploymentType SINGLE_AZ_2 = new WindowsDeploymentType("SINGLE_AZ_2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

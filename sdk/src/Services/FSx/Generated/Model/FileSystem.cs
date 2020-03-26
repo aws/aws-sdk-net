@@ -44,6 +44,7 @@ namespace Amazon.FSx.Model
         private string _ownerId;
         private string _resourceARN;
         private int? _storageCapacity;
+        private StorageType _storageType;
         private List<string> _subnetIds = new List<string>();
         private List<Tag> _tags = new List<Tag>();
         private string _vpcId;
@@ -313,11 +314,39 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The storage type of the file system. Valid values are <code>SSD</code> and <code>HDD</code>.
+        /// If set to <code>SSD</code>, the file system uses solid state drive storage. If set
+        /// to <code>HDD</code>, the file system uses hard disk drive storage. 
+        /// </para>
+        /// </summary>
+        public StorageType StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The ID of the subnet to contain the endpoint for the file system. One and only one
-        /// is supported. The file system is launched in the Availability Zone associated with
-        /// this subnet.
+        /// Specifies the IDs of the subnets that the file system is accessible from. For Windows
+        /// <code>MULTI_AZ_1</code> file system deployment type, there are two subnet IDs, one
+        /// for the preferred file server and one for the standby file server. The preferred file
+        /// server subnet identified in the <code>PreferredSubnetID</code> property. All other
+        /// file systems have only one subnet ID.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Lustre file systems, and Single-AZ Windows file systems, this is the ID of the
+        /// subnet that contains the endpoint for the file system. For <code>MULTI_AZ_1</code>
+        /// Windows file systems, the endpoint for the file system is available in the <code>PreferredSubnetID</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

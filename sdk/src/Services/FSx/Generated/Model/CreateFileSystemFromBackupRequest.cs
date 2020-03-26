@@ -78,6 +78,7 @@ namespace Amazon.FSx.Model
         private string _backupId;
         private string _clientRequestToken;
         private List<string> _securityGroupIds = new List<string>();
+        private StorageType _storageType;
         private List<string> _subnetIds = new List<string>();
         private List<Tag> _tags = new List<Tag>();
         private CreateFileSystemWindowsConfiguration _windowsConfiguration;
@@ -124,7 +125,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// A list of IDs for the security groups that apply to the specified network interfaces
         /// created for file system access. These security groups apply to all network interfaces.
-        /// This value isn't returned in later describe requests.
+        /// This value isn't returned in later DescribeFileSystem requests.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -141,11 +142,61 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// Sets the storage type for the Windows file system you're creating from a backup. Valid
+        /// values are <code>SSD</code> and <code>HDD</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Set to <code>SSD</code> to use solid state drive storage. Supported on all Windows
+        /// deployment types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set to <code>HDD</code> to use hard disk drive storage. Supported on <code>SINGLE_AZ_2</code>
+        /// and <code>MULTI_AZ_1</code> Windows file system deployment types. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  Default value is <code>SSD</code>. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// HDD and SSD storage types have different minimum storage capacity requirements. A
+        /// restored file system's storage capacity is tied to the file system that was backed
+        /// up. You can create a file system that uses HDD storage from a backup of a file system
+        /// that used SSD storage only if the original SSD file system had a storage capacity
+        /// of at least 2000 GiB. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public StorageType StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// A list of IDs for the subnets that the file system will be accessible from. Currently,
-        /// you can specify only one subnet. The file server is also launched in that subnet's
-        /// Availability Zone.
+        /// Specifies the IDs of the subnets that the file system will be accessible from. For
+        /// Windows <code>MULTI_AZ_1</code> file system deployment types, provide exactly two
+        /// subnet IDs, one for the preferred file server and one for the standby file server.
+        /// You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration
+        /// &gt; PreferredSubnetID</code> property.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types
+        /// and Lustre file systems, provide exactly one subnet ID. The file server is launched
+        /// in that subnet's Availability Zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=50)]

@@ -37,8 +37,8 @@ namespace Amazon.FSx.Model
     /// operation will fail if a data repository is not linked to the FSx file system. To
     /// learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using
     /// Data Repository Tasks</a>. To learn more about linking a data repository to your file
-    /// system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/getting-started-step1.html">Step
-    /// 1: Create Your Amazon FSx for Lustre File System</a>.
+    /// system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repository.html#export-prefix">Setting
+    /// the Export Prefix</a>.
     /// </summary>
     public partial class CreateDataRepositoryTaskRequest : AmazonFSxRequest
     {
@@ -85,7 +85,11 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property Paths. 
         /// <para>
         /// (Optional) The path or paths on the Amazon FSx file system to use when the data repository
-        /// task is processed. The default path is the file system root directory.
+        /// task is processed. The default path is the file system root directory. The paths you
+        /// provide need to be relative to the mount point of the file system. If the mount point
+        /// is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on
+        /// the file system you want to export, then the path to provide is <code>path1</code>.
+        /// If a path that you provide isn't valid, the task fails.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -106,7 +110,9 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Defines whether or not Amazon FSx provides a CompletionReport once the task has completed.
         /// A CompletionReport provides a detailed report on the files that Amazon FSx processed
-        /// that meet the criteria specified by the <code>Scope</code> parameter. 
+        /// that meet the criteria specified by the <code>Scope</code> parameter. For more information,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working
+        /// with Task Completion Reports</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -46,7 +46,7 @@
     <property>Amazon.FSx.Model.CreateFileSystemRequest.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89aAbB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}|arn:aws[a-z-]{0,7}:kms:[a-z]{2}-[a-z-]{4,}-\d+:\d{12}:(key|alias)\/([a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89aAbB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}|[a-zA-Z0-9:\/_-]+)|alias\/[a-zA-Z0-9:\/_-]+$</pattern>
+    <pattern>^.{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemRequest.StorageCapacity</property>
@@ -162,7 +162,7 @@
     <property>Amazon.FSx.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>8</min>
     <max>512</max>
-    <pattern>^arn:aws[a-z-]{0,7}:[A-Za-z0-9][A-za-z0-9_/.-]{0,62}:[A-za-z0-9_/.-]{0,63}:[A-za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.-]{0,127}$</pattern>
+    <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.ListTagsForResourceResponse.NextToken</property>
@@ -174,13 +174,13 @@
     <property>Amazon.FSx.Model.TagResourceRequest.ResourceARN</property>
     <min>8</min>
     <max>512</max>
-    <pattern>^arn:aws[a-z-]{0,7}:[A-Za-z0-9][A-za-z0-9_/.-]{0,62}:[A-za-z0-9_/.-]{0,63}:[A-za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.-]{0,127}$</pattern>
+    <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UntagResourceRequest.ResourceARN</property>
     <min>8</min>
     <max>512</max>
-    <pattern>^arn:aws[a-z-]{0,7}:[A-Za-z0-9][A-za-z0-9_/.-]{0,62}:[A-za-z0-9_/.-]{0,63}:[A-za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.-]{0,127}$</pattern>
+    <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemRequest.ClientRequestToken</property>
@@ -227,7 +227,7 @@
     <property>Amazon.FSx.Model.Backup.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89aAbB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}|arn:aws[a-z-]{0,7}:kms:[a-z]{2}-[a-z-]{4,}-\d+:\d{12}:(key|alias)\/([a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89aAbB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}|[a-zA-Z0-9:\/_-]+)|alias\/[a-zA-Z0-9:\/_-]+$</pattern>
+    <pattern>^.{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.Backup.ProgressPercent</property>
@@ -238,7 +238,7 @@
     <property>Amazon.FSx.Model.Backup.ResourceARN</property>
     <min>8</min>
     <max>512</max>
-    <pattern>^arn:aws[a-z-]{0,7}:[A-Za-z0-9][A-za-z0-9_/.-]{0,62}:[A-za-z0-9_/.-]{0,63}:[A-za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.-]{0,127}$</pattern>
+    <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.BackupFailureDetails.Message</property>
@@ -366,7 +366,7 @@
     <property>Amazon.FSx.Model.DataRepositoryTask.ResourceARN</property>
     <min>8</min>
     <max>512</max>
-    <pattern>^arn:aws[a-z-]{0,7}:[A-Za-z0-9][A-za-z0-9_/.-]{0,62}:[A-za-z0-9_/.-]{0,63}:[A-za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.-]{0,127}$</pattern>
+    <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.DataRepositoryTask.TaskId</property>
@@ -416,7 +416,7 @@
     <property>Amazon.FSx.Model.FileSystem.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89aAbB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}|arn:aws[a-z-]{0,7}:kms:[a-z]{2}-[a-z-]{4,}-\d+:\d{12}:(key|alias)\/([a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89aAbB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}|[a-zA-Z0-9:\/_-]+)|alias\/[a-zA-Z0-9:\/_-]+$</pattern>
+    <pattern>^.{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.FileSystem.OwnerId</property>
@@ -428,7 +428,7 @@
     <property>Amazon.FSx.Model.FileSystem.ResourceARN</property>
     <min>8</min>
     <max>512</max>
-    <pattern>^arn:aws[a-z-]{0,7}:[A-Za-z0-9][A-za-z0-9_/.-]{0,62}:[A-za-z0-9_/.-]{0,63}:[A-za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.-]{0,127}$</pattern>
+    <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.FileSystem.StorageCapacity</property>
@@ -527,7 +527,7 @@
     <property>Amazon.FSx.Model.NotServiceResourceError.ResourceARN</property>
     <min>8</min>
     <max>512</max>
-    <pattern>^arn:aws[a-z-]{0,7}:[A-Za-z0-9][A-za-z0-9_/.-]{0,62}:[A-za-z0-9_/.-]{0,63}:[A-za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.-]{0,127}$</pattern>
+    <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.ResourceDoesNotSupportTagging.Message</property>
@@ -538,7 +538,7 @@
     <property>Amazon.FSx.Model.ResourceDoesNotSupportTagging.ResourceARN</property>
     <min>8</min>
     <max>512</max>
-    <pattern>^arn:aws[a-z-]{0,7}:[A-Za-z0-9][A-za-z0-9_/.-]{0,62}:[A-za-z0-9_/.-]{0,63}:[A-za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.-]{0,127}$</pattern>
+    <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.ResourceNotFound.Message</property>
@@ -549,7 +549,7 @@
     <property>Amazon.FSx.Model.ResourceNotFound.ResourceARN</property>
     <min>8</min>
     <max>512</max>
-    <pattern>^arn:aws[a-z-]{0,7}:[A-Za-z0-9][A-za-z0-9_/.-]{0,62}:[A-za-z0-9_/.-]{0,63}:[A-za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.-]{0,127}$</pattern>
+    <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryAttributes.DomainName</property>
