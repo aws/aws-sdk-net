@@ -32,7 +32,7 @@ namespace Amazon.SecurityHub
     public partial class AmazonSecurityHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.110.7");
+            InternalSDKUtils.BuildUserAgentString("3.3.111.0");
 
         private string _userAgent = UserAgentString;
 

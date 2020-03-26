@@ -32,7 +32,7 @@ namespace Amazon.DocDB
     public partial class AmazonDocDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.102.69");
+            InternalSDKUtils.BuildUserAgentString("3.3.102.70");
 
         private string _userAgent = UserAgentString;
 

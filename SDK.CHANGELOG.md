@@ -1,3 +1,16 @@
+### 3.3.708.0 (2020-03-26 18:13 UTC)
+* FSx (3.3.105.0)
+	* This release includes two changes: a new lower-cost, storage type called HDD (Hard Disk Drive), and a new generation of the Single-AZ deployment type called Single AZ 2. The HDD storage type can be selected on Multi AZ 1 and Single AZ 2 deployment types.
+* SageMaker (3.3.112.0)
+	* This release updates Amazon Augmented AI CreateFlowDefinition API and DescribeFlowDefinition response.
+* SecurityHub (3.3.111.0)
+	* Security Hub has now made it easier to opt out of default standards when you enable Security Hub. We added a new Boolean parameter to EnableSecurityHub called EnableDefaultStandards. If that parameter is true, Security Hub's default standards are enabled. A new Boolean parameter for standards, EnabledByDefault, indicates whether a standard is a default standard. Today, the only default standard is CIS AWS Foundations Benchmark v1.2. Additional default standards will be added in the future.To learn more, visit our documentation on the EnableSecurityHub API action.
+* Core 3.3.105.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.707.0 (2020-03-25 18:17 UTC)
 * ApplicationInsights (3.3.104.0)
 	* Amazon CloudWatch Application Insights for .NET and SQL Server now integrates with Amazon CloudWatch Events (AWS CodeDeploy, AWS Health and Amazon EC2 state changes). This feature enables customers to view events related to problems detected by CloudWatch Application Insights, and reduce mean-time-to-resolution (MTTR).
