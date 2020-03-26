@@ -33,6 +33,7 @@ namespace Amazon.SecurityHub.Model
     public partial class Standard
     {
         private string _description;
+        private bool? _enabledByDefault;
         private string _name;
         private string _standardsArn;
 
@@ -52,6 +53,32 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnabledByDefault. 
+        /// <para>
+        /// Whether the standard is enabled by default. When Security Hub is enabled from the
+        /// console, if a standard is enabled by default, the check box for that standard is selected
+        /// by default.
+        /// </para>
+        ///  
+        /// <para>
+        /// When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation,
+        /// the standard is enabled by default unless <code>EnableDefaultStandards</code> is set
+        /// to <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool EnabledByDefault
+        {
+            get { return this._enabledByDefault.GetValueOrDefault(); }
+            set { this._enabledByDefault = value; }
+        }
+
+        // Check to see if EnabledByDefault property is set
+        internal bool IsSetEnabledByDefault()
+        {
+            return this._enabledByDefault.HasValue; 
         }
 
         /// <summary>
