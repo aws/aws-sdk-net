@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Defines under what conditions SageMaker creates a human loop. Used within .
+    /// Defines under what conditions SageMaker creates a human loop. Used within . See for
+    /// the required format of activation conditions.
     /// </summary>
     public partial class HumanLoopActivationConditionsConfig
     {
@@ -39,7 +40,10 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// JSON expressing use-case specific conditions declaratively. If any condition is matched,
         /// atomic tasks are created against the configured work team. The set of conditions is
-        /// different for Rekognition and Textract.
+        /// different for Rekognition and Textract. For more information about how to structure
+        /// the JSON, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON
+        /// Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon
+        /// SageMaker Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10240)]

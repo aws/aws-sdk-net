@@ -32,8 +32,7 @@ namespace Amazon.SageMaker.Model
     /// Creates an endpoint configuration that Amazon SageMaker hosting services uses to deploy
     /// models. In the configuration, you identify one or more models, created using the <code>CreateModel</code>
     /// API, to deploy and the resources that you want Amazon SageMaker to provision. Then
-    /// you call the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-    /// API.
+    /// you call the <a>CreateEndpoint</a> API.
     /// 
     ///  <note> 
     /// <para>
@@ -89,7 +88,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndpointConfigName. 
         /// <para>
-        /// The name of the endpoint configuration. You specify this name in a <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+        /// The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a>
         /// request. 
         /// </para>
         /// </summary>

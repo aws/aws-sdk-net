@@ -29,8 +29,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListModels operation.
-    /// Lists models created with the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
-    /// API.
+    /// Lists models created with the <a>CreateModel</a> API.
     /// </summary>
     public partial class ListModelsRequest : AmazonSageMakerRequest
     {

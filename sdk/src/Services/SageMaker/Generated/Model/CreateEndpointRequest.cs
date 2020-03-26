@@ -31,8 +31,7 @@ namespace Amazon.SageMaker.Model
     /// Container for the parameters to the CreateEndpoint operation.
     /// Creates an endpoint using the endpoint configuration specified in the request. Amazon
     /// SageMaker uses the endpoint to provision resources and deploy models. You create the
-    /// endpoint configuration with the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
-    /// API. 
+    /// endpoint configuration with the <a>CreateEndpointConfig</a> API. 
     /// 
     ///  
     /// <para>
@@ -66,8 +65,7 @@ namespace Amazon.SageMaker.Model
     /// When Amazon SageMaker receives the request, it sets the endpoint status to <code>Creating</code>.
     /// After it creates the endpoint, it sets the status to <code>InService</code>. Amazon
     /// SageMaker can then process incoming requests for inferences. To check the status of
-    /// an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-    /// API.
+    /// an endpoint, use the <a>DescribeEndpoint</a> API.
     /// </para>
     ///  
     /// <para>
@@ -89,7 +87,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndpointConfigName. 
         /// <para>
-        /// The name of an endpoint configuration. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+        /// The name of an endpoint configuration. For more information, see <a>CreateEndpointConfig</a>.
         /// 
         /// </para>
         /// </summary>

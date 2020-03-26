@@ -37,8 +37,13 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3DataSource. 
         /// <para>
-        /// The Amazon S3 location of the data.
+        /// The Amazon S3 location of the input data.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The input data must be in CSV format and contain at least 1000 rows.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public AutoMLS3DataSource S3DataSource

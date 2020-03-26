@@ -30,6 +30,18 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the CreateAutoMLJob operation.
     /// Creates an AutoPilot job.
+    /// 
+    ///  
+    /// <para>
+    /// After you run an AutoPilot job, you can find the best performing model by calling
+    /// , and then deploy that model by following the steps described in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html">Step
+    /// 6.1: Deploy the Model to Amazon SageMaker Hosting Services</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about how to use AutoPilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Use
+    /// AutoPilot to Automate Model Development</a>.
+    /// </para>
     /// </summary>
     public partial class CreateAutoMLJobRequest : AmazonSageMakerRequest
     {
@@ -122,7 +134,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+        /// Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum
+        /// of 1000 rows.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

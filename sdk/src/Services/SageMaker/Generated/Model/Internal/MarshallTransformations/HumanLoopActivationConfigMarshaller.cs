@@ -56,17 +56,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetHumanLoopRequestSource())
-            {
-                context.Writer.WritePropertyName("HumanLoopRequestSource");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = HumanLoopRequestSourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.HumanLoopRequestSource, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
         }
 
         /// <summary>

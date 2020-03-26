@@ -493,6 +493,18 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates an AutoPilot job.
+        /// 
+        ///  
+        /// <para>
+        /// After you run an AutoPilot job, you can find the best performing model by calling
+        /// , and then deploy that model by following the steps described in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html">Step
+        /// 6.1: Deploy the Model to Amazon SageMaker Hosting Services</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how to use AutoPilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Use
+        /// AutoPilot to Automate Model Development</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoMLJob service method.</param>
         /// 
@@ -517,6 +529,18 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates an AutoPilot job.
+        /// 
+        ///  
+        /// <para>
+        /// After you run an AutoPilot job, you can find the best performing model by calling
+        /// , and then deploy that model by following the steps described in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html">Step
+        /// 6.1: Deploy the Model to Amazon SageMaker Hosting Services</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how to use AutoPilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Use
+        /// AutoPilot to Automate Model Development</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoMLJob service method.</param>
         /// <param name="cancellationToken">
@@ -820,8 +844,7 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Creates an endpoint using the endpoint configuration specified in the request. Amazon
         /// SageMaker uses the endpoint to provision resources and deploy models. You create the
-        /// endpoint configuration with the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
-        /// API. 
+        /// endpoint configuration with the <a>CreateEndpointConfig</a> API. 
         /// 
         ///  
         /// <para>
@@ -855,8 +878,7 @@ namespace Amazon.SageMaker
         /// When Amazon SageMaker receives the request, it sets the endpoint status to <code>Creating</code>.
         /// After it creates the endpoint, it sets the status to <code>InService</code>. Amazon
         /// SageMaker can then process incoming requests for inferences. To check the status of
-        /// an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-        /// API.
+        /// an endpoint, use the <a>DescribeEndpoint</a> API.
         /// </para>
         ///  
         /// <para>
@@ -890,8 +912,7 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Creates an endpoint using the endpoint configuration specified in the request. Amazon
         /// SageMaker uses the endpoint to provision resources and deploy models. You create the
-        /// endpoint configuration with the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
-        /// API. 
+        /// endpoint configuration with the <a>CreateEndpointConfig</a> API. 
         /// 
         ///  
         /// <para>
@@ -925,8 +946,7 @@ namespace Amazon.SageMaker
         /// When Amazon SageMaker receives the request, it sets the endpoint status to <code>Creating</code>.
         /// After it creates the endpoint, it sets the status to <code>InService</code>. Amazon
         /// SageMaker can then process incoming requests for inferences. To check the status of
-        /// an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-        /// API.
+        /// an endpoint, use the <a>DescribeEndpoint</a> API.
         /// </para>
         ///  
         /// <para>
@@ -968,8 +988,7 @@ namespace Amazon.SageMaker
         /// Creates an endpoint configuration that Amazon SageMaker hosting services uses to deploy
         /// models. In the configuration, you identify one or more models, created using the <code>CreateModel</code>
         /// API, to deploy and the resources that you want Amazon SageMaker to provision. Then
-        /// you call the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-        /// API.
+        /// you call the <a>CreateEndpoint</a> API.
         /// 
         ///  <note> 
         /// <para>
@@ -1021,8 +1040,7 @@ namespace Amazon.SageMaker
         /// Creates an endpoint configuration that Amazon SageMaker hosting services uses to deploy
         /// models. In the configuration, you identify one or more models, created using the <code>CreateModel</code>
         /// API, to deploy and the resources that you want Amazon SageMaker to provision. Then
-        /// you call the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-        /// API.
+        /// you call the <a>CreateEndpoint</a> API.
         /// 
         ///  <note> 
         /// <para>
@@ -2102,9 +2120,9 @@ namespace Amazon.SageMaker
         /// </para>
         ///  <note> 
         /// <para>
-        /// The URL that you get from a call to is valid only for 5 minutes. If you try to use
-        /// the URL after the 5-minute limit expires, you are directed to the AWS console sign-in
-        /// page.
+        /// The URL that you get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid
+        /// only for 5 minutes. If you try to use the URL after the 5-minute limit expires, you
+        /// are directed to the AWS console sign-in page.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2140,9 +2158,9 @@ namespace Amazon.SageMaker
         /// </para>
         ///  <note> 
         /// <para>
-        /// The URL that you get from a call to is valid only for 5 minutes. If you try to use
-        /// the URL after the 5-minute limit expires, you are directed to the AWS console sign-in
-        /// page.
+        /// The URL that you get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid
+        /// only for 5 minutes. If you try to use the URL after the 5-minute limit expires, you
+        /// are directed to the AWS console sign-in page.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3294,9 +3312,9 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that
-        /// was created in Amazon SageMaker when you called the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
-        /// API. It does not delete model artifacts, inference code, or the IAM role that you
-        /// specified when creating the model.
+        /// was created in Amazon SageMaker when you called the <a>CreateModel</a> API. It does
+        /// not delete model artifacts, inference code, or the IAM role that you specified when
+        /// creating the model.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteModel service method.</param>
         /// 
@@ -3314,9 +3332,9 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that
-        /// was created in Amazon SageMaker when you called the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
-        /// API. It does not delete model artifacts, inference code, or the IAM role that you
-        /// specified when creating the model.
+        /// was created in Amazon SageMaker when you called the <a>CreateModel</a> API. It does
+        /// not delete model artifacts, inference code, or the IAM role that you specified when
+        /// creating the model.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteModel service method.</param>
         /// <param name="cancellationToken">
@@ -5878,8 +5896,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Lists models created with the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
-        /// API.
+        /// Lists models created with the <a>CreateModel</a> API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListModels service method.</param>
         /// 
@@ -5896,8 +5913,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Lists models created with the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
-        /// API.
+        /// Lists models created with the <a>CreateModel</a> API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListModels service method.</param>
         /// <param name="cancellationToken">
@@ -7404,8 +7420,7 @@ namespace Amazon.SageMaker
         /// <para>
         /// When Amazon SageMaker receives the request, it sets the endpoint status to <code>Updating</code>.
         /// After updating the endpoint, it sets the status to <code>InService</code>. To check
-        /// the status of an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-        /// API. 
+        /// the status of an endpoint, use the <a>DescribeEndpoint</a> API. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -7443,8 +7458,7 @@ namespace Amazon.SageMaker
         /// <para>
         /// When Amazon SageMaker receives the request, it sets the endpoint status to <code>Updating</code>.
         /// After updating the endpoint, it sets the status to <code>InService</code>. To check
-        /// the status of an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-        /// API. 
+        /// the status of an endpoint, use the <a>DescribeEndpoint</a> API. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -7485,8 +7499,7 @@ namespace Amazon.SageMaker
         /// or capacity of one variant associated with an existing endpoint. When it receives
         /// the request, Amazon SageMaker sets the endpoint status to <code>Updating</code>. After
         /// updating the endpoint, it sets the status to <code>InService</code>. To check the
-        /// status of an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-        /// API.
+        /// status of an endpoint, use the <a>DescribeEndpoint</a> API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpointWeightsAndCapacities service method.</param>
         /// 
@@ -7511,8 +7524,7 @@ namespace Amazon.SageMaker
         /// or capacity of one variant associated with an existing endpoint. When it receives
         /// the request, Amazon SageMaker sets the endpoint status to <code>Updating</code>. After
         /// updating the endpoint, it sets the status to <code>InService</code>. To check the
-        /// status of an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-        /// API.
+        /// status of an endpoint, use the <a>DescribeEndpoint</a> API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpointWeightsAndCapacities service method.</param>
         /// <param name="cancellationToken">

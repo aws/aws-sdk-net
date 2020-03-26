@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies the training algorithm to use in a <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html">CreateTrainingJob</a>
-    /// request.
+    /// Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.
     /// 
     ///  
     /// <para>

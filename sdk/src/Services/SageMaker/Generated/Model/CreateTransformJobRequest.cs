@@ -97,8 +97,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// To enable the batch strategy, you must set the <code>SplitType</code> property of
-        /// the <a>DataProcessing</a> object to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.
+        /// To enable the batch strategy, you must set the <code>SplitType</code> property to
+        /// <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.
         /// </para>
         ///  
         /// <para>

@@ -2297,10 +2297,6 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly FlowDefinitionStatus Active = new FlowDefinitionStatus("Active");
         /// <summary>
-        /// Constant Deleted for FlowDefinitionStatus
-        /// </summary>
-        public static readonly FlowDefinitionStatus Deleted = new FlowDefinitionStatus("Deleted");
-        /// <summary>
         /// Constant Deleting for FlowDefinitionStatus
         /// </summary>
         public static readonly FlowDefinitionStatus Deleting = new FlowDefinitionStatus("Deleting");
@@ -3938,6 +3934,10 @@ namespace Amazon.SageMaker
         /// Constant GreaterThanOrEqualTo for Operator
         /// </summary>
         public static readonly Operator GreaterThanOrEqualTo = new Operator("GreaterThanOrEqualTo");
+        /// <summary>
+        /// Constant In for Operator
+        /// </summary>
+        public static readonly Operator In = new Operator("In");
         /// <summary>
         /// Constant LessThan for Operator
         /// </summary>
@@ -6020,6 +6020,10 @@ namespace Amazon.SageMaker
         /// Constant Sbe_c for TargetDevice
         /// </summary>
         public static readonly TargetDevice Sbe_c = new TargetDevice("sbe_c");
+        /// <summary>
+        /// Constant Sitara_am57x for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Sitara_am57x = new TargetDevice("sitara_am57x");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

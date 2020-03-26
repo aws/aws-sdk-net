@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ContentSha256. 
         /// <para>
-        /// The SHA 256 hash that you used to create the request signature.
+        /// The SHA-256 digest of the contents of the template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128000)]

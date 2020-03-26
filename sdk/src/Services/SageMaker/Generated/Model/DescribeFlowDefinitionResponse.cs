@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private FlowDefinitionStatus _flowDefinitionStatus;
         private HumanLoopActivationConfig _humanLoopActivationConfig;
         private HumanLoopConfig _humanLoopConfig;
+        private HumanLoopRequestSource _humanLoopRequestSource;
         private FlowDefinitionOutputConfig _outputConfig;
         private string _roleArn;
 
@@ -170,6 +171,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHumanLoopConfig()
         {
             return this._humanLoopConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HumanLoopRequestSource.
+        /// </summary>
+        public HumanLoopRequestSource HumanLoopRequestSource
+        {
+            get { return this._humanLoopRequestSource; }
+            set { this._humanLoopRequestSource = value; }
+        }
+
+        // Check to see if HumanLoopRequestSource property is set
+        internal bool IsSetHumanLoopRequestSource()
+        {
+            return this._humanLoopRequestSource != null;
         }
 
         /// <summary>
