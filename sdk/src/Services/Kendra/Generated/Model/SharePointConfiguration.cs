@@ -34,10 +34,13 @@ namespace Amazon.Kendra.Model
     {
         private bool? _crawlAttachments;
         private string _documentTitleFieldName;
+        private List<string> _exclusionPatterns = new List<string>();
         private List<DataSourceToIndexFieldMapping> _fieldMappings = new List<DataSourceToIndexFieldMapping>();
+        private List<string> _inclusionPatterns = new List<string>();
         private string _secretArn;
         private SharePointVersion _sharePointVersion;
         private List<string> _urls = new List<string>();
+        private bool? _useChangeLog;
         private DataSourceVpcConfiguration _vpcConfiguration;
 
         /// <summary>
@@ -79,6 +82,32 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExclusionPatterns. 
+        /// <para>
+        /// A list of regular expression patterns. Documents that match the patterns are excluded
+        /// from the index. Documents that don't match the patterns are included in the index.
+        /// If a document matches both an exclusion pattern and an inclusion pattern, the document
+        /// is not included in the index.
+        /// </para>
+        ///  
+        /// <para>
+        /// The regex is applied to the display URL of the SharePoint document.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> ExclusionPatterns
+        {
+            get { return this._exclusionPatterns; }
+            set { this._exclusionPatterns = value; }
+        }
+
+        // Check to see if ExclusionPatterns property is set
+        internal bool IsSetExclusionPatterns()
+        {
+            return this._exclusionPatterns != null && this._exclusionPatterns.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FieldMappings. 
         /// <para>
         /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint
@@ -99,6 +128,32 @@ namespace Amazon.Kendra.Model
         internal bool IsSetFieldMappings()
         {
             return this._fieldMappings != null && this._fieldMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InclusionPatterns. 
+        /// <para>
+        /// A list of regular expression patterns. Documents that match the patterns are included
+        /// in the index. Documents that don't match the patterns are excluded from the index.
+        /// If a document matches both an inclusion pattern and an exclusion pattern, the document
+        /// is not included in the index.
+        /// </para>
+        ///  
+        /// <para>
+        /// The regex is applied to the display URL of the SharePoint document.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> InclusionPatterns
+        {
+            get { return this._inclusionPatterns; }
+            set { this._inclusionPatterns = value; }
+        }
+
+        // Check to see if InclusionPatterns property is set
+        internal bool IsSetInclusionPatterns()
+        {
+            return this._inclusionPatterns != null && this._inclusionPatterns.Count > 0; 
         }
 
         /// <summary>
@@ -161,6 +216,27 @@ namespace Amazon.Kendra.Model
         internal bool IsSetUrls()
         {
             return this._urls != null && this._urls.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseChangeLog. 
+        /// <para>
+        /// Set to <code>TRUE</code> to use the Microsoft SharePoint change log to determine the
+        /// documents that need to be updated in the index. Depending on the size of the SharePoint
+        /// change log, it may take longer for Amazon Kendra to use the change log than it takes
+        /// it to determine the changed documents using the Amazon Kendra document crawler.
+        /// </para>
+        /// </summary>
+        public bool UseChangeLog
+        {
+            get { return this._useChangeLog.GetValueOrDefault(); }
+            set { this._useChangeLog = value; }
+        }
+
+        // Check to see if UseChangeLog property is set
+        internal bool IsSetUseChangeLog()
+        {
+            return this._useChangeLog.HasValue; 
         }
 
         /// <summary>

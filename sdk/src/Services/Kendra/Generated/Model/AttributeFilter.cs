@@ -29,6 +29,25 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Provides filtering the query results based on document attributes.
+    /// 
+    ///  
+    /// <para>
+    /// When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters
+    /// you can use a total of 3 layers. For example, you can use:
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    ///  <code>&lt;AndAllFilters&gt;</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code> &lt;OrAllFilters&gt;</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code> &lt;EqualTo&gt;</code> 
+    /// </para>
+    ///  </li> </ol>
     /// </summary>
     public partial class AttributeFilter
     {

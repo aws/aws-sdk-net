@@ -83,7 +83,14 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Blob. 
         /// <para>
-        /// The contents of the document as a base-64 encoded string.
+        /// The contents of the document. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code
+        /// might not need to encode the document file bytes if you're using an AWS SDK to call
+        /// Amazon Kendra operations. If you are calling the Amazon Kendra endpoint directly using
+        /// REST, you must base64 encode the contents before sending.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=153600)]

@@ -42,10 +42,32 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class CreateIndexRequest : AmazonKendraRequest
     {
+        private string _clientToken;
         private string _description;
         private string _name;
         private string _roleArn;
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A token that you provide to identify the request to create an index. Multiple calls
+        /// to the <code>CreateIndex</code> operation with the same client token will create only
+        /// one index.”
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

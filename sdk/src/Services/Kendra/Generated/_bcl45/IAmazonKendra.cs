@@ -414,6 +414,9 @@ namespace Amazon.Kendra
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// 
         /// </exception>
@@ -453,6 +456,9 @@ namespace Amazon.Kendra
         /// 
         /// <returns>The response from the CreateIndex service method, as returned by Kendra.</returns>
         /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
