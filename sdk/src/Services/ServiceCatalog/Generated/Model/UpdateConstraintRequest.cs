@@ -116,6 +116,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <dl> <dt>LAUNCH</dt> <dd> 
         /// <para>
+        /// You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code>
+        /// but can't use both.
+        /// </para>
+        ///  
+        /// <para>
         /// Specify the <code>RoleArn</code> property as follows:
         /// </para>
         ///  
@@ -123,6 +128,26 @@ namespace Amazon.ServiceCatalog.Model
         ///  <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> 
         /// </para>
         ///  
+        /// <para>
+        /// Specify the <code>LocalRoleName</code> property as follows:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify the <code>LocalRoleName</code> property, when an account uses the launch
+        /// constraint, the IAM role with that name in the account will be used. This allows launch-role
+        /// constraints to be account-agnostic so the administrator can create fewer resources
+        /// per shared account.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The given role name must exist in the account used to create the launch constraint
+        /// and the account of the user who launches a product with this launch constraint.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
         /// </para>
