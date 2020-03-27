@@ -85,17 +85,7 @@ namespace Amazon.Runtime.Internal.Settings
         #region Constructor
         static PersistenceManager()
         {
-#if BCL
-            SettingsStoreFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData) + "/AWSToolkit";
-#else
-            SettingsStoreFolder = System.Environment.GetEnvironmentVariable("HOME");
-            if (string.IsNullOrEmpty(SettingsStoreFolder))
-                SettingsStoreFolder = System.Environment.GetEnvironmentVariable("USERPROFILE");
 
-            SettingsStoreFolder = Path.Combine(SettingsStoreFolder, "AppData/Local/AWSToolkit");
-#endif
-            if (!Directory.Exists(SettingsStoreFolder))
-                Directory.CreateDirectory(SettingsStoreFolder);
         }
 
         #endregion
@@ -109,6 +99,18 @@ namespace Amazon.Runtime.Internal.Settings
             {
                 if (INSTANCE == null)
                 {
+#if BCL
+            SettingsStoreFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData) + "/AWSToolkit";
+#else
+                    SettingsStoreFolder = System.Environment.GetEnvironmentVariable("HOME");
+                    if (string.IsNullOrEmpty(SettingsStoreFolder))
+                        SettingsStoreFolder = System.Environment.GetEnvironmentVariable("USERPROFILE");
+
+                    SettingsStoreFolder = Path.Combine(SettingsStoreFolder, "AppData/Local/AWSToolkit");
+#endif
+                    if (!Directory.Exists(SettingsStoreFolder))
+                        Directory.CreateDirectory(SettingsStoreFolder);
+
                     INSTANCE = new PersistenceManager();
                 }
 

@@ -18,7 +18,7 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
-    <NetStandardImplicitPackageVersion  Condition="'$(TargetFramework)' == 'netstandard1.3'">1.6.0</NetStandardImplicitPackageVersion>
+    <NetStandardImplicitPackageVersion Condition="'$(TargetFramework)' == 'netstandard1.3'">1.6.0</NetStandardImplicitPackageVersion>
   </PropertyGroup>
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
@@ -34,28 +34,30 @@
   </Choose>
 
   <ItemGroup>
-    <Compile Remove="**/_pcl/**"/>
-    <Compile Remove="**/_pcl-sl/**"/>
-    <Compile Remove="**/_bcl35/**"/>
-    <Compile Remove="**/_bcl45/**"/>
-    <Compile Remove="**/_bcl/**"/>
-    <Compile Remove="**/_bcl+sl/**"/>
-    <Compile Remove="**/_bcl+unity/**"/>
-    <Compile Remove="**/_unity/**"/>
-    <Compile Remove="**/_android/**"/>
-    <Compile Remove="**/_ios/**"/>
-    <Compile Remove="**/_pclReference/**"/>
-    <Compile Remove="**/_win8/**"/>
-    <Compile Remove="**/_winPhone81/**"/>
-    <Compile Remove="**/_winPhoneSilverlight8/**"/>
-    <Compile Remove="**/_winstorage/**"/>
-    <Compile Remove="**/Custom/SyncManager/**"/>
-    <Compile Remove="**/obj/**"/>
+    <Compile Remove="**/_pcl/**" />
+    <Compile Remove="**/_pcl-sl/**" />
+    <Compile Remove="**/_bcl35/**" />
+    <Compile Remove="**/_bcl45/**" />
+    <Compile Remove="**/_bcl/**" />
+    <Compile Remove="**/_bcl+sl/**" />
+    <Compile Remove="**/_bcl+unity/**" />
+    <Compile Remove="**/_unity/**" />
+    <Compile Remove="**/_android/**" />
+    <Compile Remove="**/_ios/**" />
+    <Compile Remove="**/_pclReference/**" />
+    <Compile Remove="**/_win8/**" />
+    <Compile Remove="**/_winPhone81/**" />
+    <Compile Remove="**/_winPhoneSilverlight8/**" />
+    <Compile Remove="**/_winstorage/**" />
+    <Compile Remove="**/Custom/SyncManager/**" />
+    <Compile Remove="**/obj/**" />
     <None Remove="**/obj/**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\AWSSDK.Core.NetStandard.csproj"/>
+    <ProjectReference Include="..\..\Core\AWSSDK.Core.NetStandard.csproj">
+      <Private>false</Private>
+    </ProjectReference>
   </ItemGroup>
 
   <ItemGroup>
