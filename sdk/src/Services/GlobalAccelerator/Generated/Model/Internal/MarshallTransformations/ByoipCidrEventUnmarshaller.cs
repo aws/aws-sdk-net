@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ByoipCidr Object
+    /// Response Unmarshaller for ByoipCidrEvent Object
     /// </summary>  
-    public class ByoipCidrUnmarshaller : IUnmarshaller<ByoipCidr, XmlUnmarshallerContext>, IUnmarshaller<ByoipCidr, JsonUnmarshallerContext>
+    public class ByoipCidrEventUnmarshaller : IUnmarshaller<ByoipCidrEvent, XmlUnmarshallerContext>, IUnmarshaller<ByoipCidrEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ByoipCidr IUnmarshaller<ByoipCidr, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ByoipCidrEvent IUnmarshaller<ByoipCidrEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ByoipCidr Unmarshall(JsonUnmarshallerContext context)
+        public ByoipCidrEvent Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ByoipCidr unmarshalledObject = new ByoipCidr();
+            ByoipCidrEvent unmarshalledObject = new ByoipCidrEvent();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Cidr", targetDepth))
+                if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Cidr = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Events", targetDepth))
+                if (context.TestExpression("Timestamp", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ByoipCidrEvent, ByoipCidrEventUnmarshaller>(ByoipCidrEventUnmarshaller.Instance);
-                    unmarshalledObject.Events = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         }
 
 
-        private static ByoipCidrUnmarshaller _instance = new ByoipCidrUnmarshaller();        
+        private static ByoipCidrEventUnmarshaller _instance = new ByoipCidrEventUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ByoipCidrUnmarshaller Instance
+        public static ByoipCidrEventUnmarshaller Instance
         {
             get
             {

@@ -29,7 +29,7 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Information about an IP address range that is provisioned for use with your AWS resources
-    /// through bring your own IP addresses (BYOIP).
+    /// through bring your own IP address (BYOIP).
     /// 
     ///  
     /// <para>
@@ -100,6 +100,7 @@ namespace Amazon.GlobalAccelerator.Model
     public partial class ByoipCidr
     {
         private string _cidr;
+        private List<ByoipCidrEvent> _events = new List<ByoipCidrEvent>();
         private ByoipCidrState _state;
 
         /// <summary>
@@ -119,6 +120,25 @@ namespace Amazon.GlobalAccelerator.Model
         internal bool IsSetCidr()
         {
             return this._cidr != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Events. 
+        /// <para>
+        /// A history of status changes for an IP address range that that you bring to AWS Global
+        /// Accelerator through bring your own IP address (BYOIP).
+        /// </para>
+        /// </summary>
+        public List<ByoipCidrEvent> Events
+        {
+            get { return this._events; }
+            set { this._events = value; }
+        }
+
+        // Check to see if Events property is set
+        internal bool IsSetEvents()
+        {
+            return this._events != null && this._events.Count > 0; 
         }
 
         /// <summary>

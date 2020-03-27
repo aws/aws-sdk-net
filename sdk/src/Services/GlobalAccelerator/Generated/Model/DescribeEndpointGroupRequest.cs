@@ -29,7 +29,8 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEndpointGroup operation.
-    /// Describe an endpoint group.
+    /// Describe an endpoint group. To see an AWS CLI example of describing an endpoint group,
+    /// scroll down to <b>Example</b>.
     /// </summary>
     public partial class DescribeEndpointGroupRequest : AmazonGlobalAcceleratorRequest
     {

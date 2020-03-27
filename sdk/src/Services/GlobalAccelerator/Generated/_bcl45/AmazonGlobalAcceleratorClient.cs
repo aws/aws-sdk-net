@@ -1181,7 +1181,8 @@ namespace Amazon.GlobalAccelerator
 
 
         /// <summary>
-        /// Describe an endpoint group.
+        /// Describe an endpoint group. To see an AWS CLI example of describing an endpoint group,
+        /// scroll down to <b>Example</b>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointGroup service method.</param>
         /// 
@@ -1207,7 +1208,8 @@ namespace Amazon.GlobalAccelerator
 
 
         /// <summary>
-        /// Describe an endpoint group.
+        /// Describe an endpoint group. To see an AWS CLI example of describing an endpoint group,
+        /// scroll down to <b>Example</b>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1362,7 +1364,8 @@ namespace Amazon.GlobalAccelerator
 
 
         /// <summary>
-        /// Lists the IP address ranges that were specified in calls to <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>.
+        /// Lists the IP address ranges that were specified in calls to <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>,
+        /// including the current state and a history of state changes.
         /// 
         ///  
         /// <para>
@@ -1396,7 +1399,8 @@ namespace Amazon.GlobalAccelerator
 
 
         /// <summary>
-        /// Lists the IP address ranges that were specified in calls to <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>.
+        /// Lists the IP address ranges that were specified in calls to <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>,
+        /// including the current state and a history of state changes.
         /// 
         ///  
         /// <para>
