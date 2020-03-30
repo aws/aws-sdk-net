@@ -1,3 +1,12 @@
+### 3.3.710.0 (2020-03-30 18:17 UTC)
+* AccessAnalyzer (3.3.103.0)
+	* This release adds support for the creation and management of IAM Access Analyzer analyzers with type organization. An analyzer with type organization continuously monitors all supported resources within the AWS organization and reports findings when they allow access from outside the organization.
+* Core 3.3.105.6
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.709.0 (2020-03-27 18:16 UTC)
 * GlobalAccelerator (3.3.104.0)
 	* This update adds an event history to the ListByoipCidr API call. This enables you to see the changes that you've made for an IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).
