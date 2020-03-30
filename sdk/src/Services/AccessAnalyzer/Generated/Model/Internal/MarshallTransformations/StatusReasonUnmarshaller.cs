@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AnalyzedResourceSummary Object
+    /// Response Unmarshaller for StatusReason Object
     /// </summary>  
-    public class AnalyzedResourceSummaryUnmarshaller : IUnmarshaller<AnalyzedResourceSummary, XmlUnmarshallerContext>, IUnmarshaller<AnalyzedResourceSummary, JsonUnmarshallerContext>
+    public class StatusReasonUnmarshaller : IUnmarshaller<StatusReason, XmlUnmarshallerContext>, IUnmarshaller<StatusReason, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AnalyzedResourceSummary IUnmarshaller<AnalyzedResourceSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StatusReason IUnmarshaller<StatusReason, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AnalyzedResourceSummary Unmarshall(JsonUnmarshallerContext context)
+        public StatusReason Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AnalyzedResourceSummary unmarshalledObject = new AnalyzedResourceSummary();
+            StatusReason unmarshalledObject = new StatusReason();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("resourceArn", targetDepth))
+                if (context.TestExpression("code", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceOwnerAccount", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceOwnerAccount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         }
 
 
-        private static AnalyzedResourceSummaryUnmarshaller _instance = new AnalyzedResourceSummaryUnmarshaller();        
+        private static StatusReasonUnmarshaller _instance = new StatusReasonUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AnalyzedResourceSummaryUnmarshaller Instance
+        public static StatusReasonUnmarshaller Instance
         {
             get
             {

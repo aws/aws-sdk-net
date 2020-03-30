@@ -37,6 +37,8 @@ namespace Amazon.AccessAnalyzer.Model
         private string _lastResourceAnalyzed;
         private DateTime? _lastResourceAnalyzedAt;
         private string _name;
+        private AnalyzerStatus _status;
+        private StatusReason _statusReason;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private Type _type;
 
@@ -131,6 +133,52 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the analyzer. An <code>Active</code> analyzer successfully monitors
+        /// supported resources and generates new findings. The analyzer is <code>Disabled</code>
+        /// when a user action, such as removing trusted access for IAM Access Analyzer from AWS
+        /// Organizations, causes the analyzer to stop generating new findings. The status is
+        /// <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code>
+        /// when the analyzer creation has failed. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public AnalyzerStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// The <code>statusReason</code> provides more details about the current status of the
+        /// analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code>
+        /// status is displayed. For an analyzer with organization as the type, this failure can
+        /// be due to an issue with creating the service-linked roles required in the member accounts
+        /// of the AWS organization.
+        /// </para>
+        /// </summary>
+        public StatusReason StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
         /// <summary>

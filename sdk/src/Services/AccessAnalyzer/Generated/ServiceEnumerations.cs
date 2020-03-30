@@ -25,6 +25,64 @@ namespace Amazon.AccessAnalyzer
 {
 
     /// <summary>
+    /// Constants used for properties of type AnalyzerStatus.
+    /// </summary>
+    public class AnalyzerStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AnalyzerStatus
+        /// </summary>
+        public static readonly AnalyzerStatus ACTIVE = new AnalyzerStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for AnalyzerStatus
+        /// </summary>
+        public static readonly AnalyzerStatus CREATING = new AnalyzerStatus("CREATING");
+        /// <summary>
+        /// Constant DISABLED for AnalyzerStatus
+        /// </summary>
+        public static readonly AnalyzerStatus DISABLED = new AnalyzerStatus("DISABLED");
+        /// <summary>
+        /// Constant FAILED for AnalyzerStatus
+        /// </summary>
+        public static readonly AnalyzerStatus FAILED = new AnalyzerStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyzerStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyzerStatus FindValue(string value)
+        {
+            return FindValue<AnalyzerStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyzerStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FindingStatus.
     /// </summary>
     public class FindingStatus : ConstantClass
@@ -179,6 +237,64 @@ namespace Amazon.AccessAnalyzer
 
 
     /// <summary>
+    /// Constants used for properties of type ReasonCode.
+    /// </summary>
+    public class ReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_SERVICE_ACCESS_DISABLED for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode AWS_SERVICE_ACCESS_DISABLED = new ReasonCode("AWS_SERVICE_ACCESS_DISABLED");
+        /// <summary>
+        /// Constant DELEGATED_ADMINISTRATOR_DEREGISTERED for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode DELEGATED_ADMINISTRATOR_DEREGISTERED = new ReasonCode("DELEGATED_ADMINISTRATOR_DEREGISTERED");
+        /// <summary>
+        /// Constant ORGANIZATION_DELETED for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode ORGANIZATION_DELETED = new ReasonCode("ORGANIZATION_DELETED");
+        /// <summary>
+        /// Constant SERVICE_LINKED_ROLE_CREATION_FAILED for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode SERVICE_LINKED_ROLE_CREATION_FAILED = new ReasonCode("SERVICE_LINKED_ROLE_CREATION_FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReasonCode FindValue(string value)
+        {
+            return FindValue<ReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -254,6 +370,10 @@ namespace Amazon.AccessAnalyzer
         /// Constant ACCOUNT for Type
         /// </summary>
         public static readonly Type ACCOUNT = new Type("ACCOUNT");
+        /// <summary>
+        /// Constant ORGANIZATION for Type
+        /// </summary>
+        public static readonly Type ORGANIZATION = new Type("ORGANIZATION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

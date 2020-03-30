@@ -41,6 +41,7 @@ namespace Amazon.AccessAnalyzer.Model
         private bool? _isPublic;
         private Dictionary<string, string> _principal = new Dictionary<string, string>();
         private string _resource;
+        private string _resourceOwnerAccount;
         private ResourceType _resourceType;
         private FindingStatus _status;
         private DateTime? _updatedAt;
@@ -211,6 +212,25 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetResource()
         {
             return this._resource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwnerAccount. 
+        /// <para>
+        /// The AWS account ID that owns the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string ResourceOwnerAccount
+        {
+            get { return this._resourceOwnerAccount; }
+            set { this._resourceOwnerAccount = value; }
+        }
+
+        // Check to see if ResourceOwnerAccount property is set
+        internal bool IsSetResourceOwnerAccount()
+        {
+            return this._resourceOwnerAccount != null;
         }
 
         /// <summary>

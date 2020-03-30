@@ -100,6 +100,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("resourceOwnerAccount", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceOwnerAccount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
