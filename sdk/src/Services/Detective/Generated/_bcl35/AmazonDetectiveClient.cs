@@ -35,19 +35,12 @@ namespace Amazon.Detective
     /// <summary>
     /// Implementation for accessing Detective
     ///
-    /// <important> 
-    /// <para>
-    /// Amazon Detective is currently in preview. The Detective API can only be used by accounts
-    /// that are admitted into the preview.
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// Detective uses machine learning and purpose-built visualizations to help you analyze
     /// and investigate security issues across your Amazon Web Services (AWS) workloads. Detective
     /// automatically extracts time-based events such as login attempts, API calls, and network
     /// traffic from AWS CloudTrail and Amazon Virtual Private Cloud (Amazon VPC) flow logs.
     /// It also extracts findings detected by Amazon GuardDuty.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// The Detective API primarily supports the creation and management of behavior graphs.
@@ -307,13 +300,9 @@ namespace Amazon.Detective
         #region  AcceptInvitation
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Accepts an invitation for the member account to contribute data to a behavior graph.
         /// This operation can only be called by an invited member account. 
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// The request provides the ARN of behavior graph.
@@ -387,13 +376,9 @@ namespace Amazon.Detective
         #region  CreateGraph
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Creates a new behavior graph for the calling account, and sets that account as the
         /// master account. This operation is called by the account that is enabling Detective.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// Before you try to enable Detective, make sure that your account has been enrolled
@@ -497,14 +482,10 @@ namespace Amazon.Detective
         #region  CreateMembers
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Sends a request to invite the specified AWS accounts to be member accounts in the
         /// behavior graph. This operation can only be called by the master account for a behavior
         /// graph. 
-        /// </para>
+        /// 
         ///  
         /// <para>
         ///  <code>CreateMembers</code> verifies the accounts and then sends invitations to the
@@ -612,13 +593,9 @@ namespace Amazon.Detective
         #region  DeleteGraph
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Disables the specified behavior graph and queues it to be deleted. This operation
         /// removes the graph from each member account's list of behavior graphs.
-        /// </para>
+        /// 
         ///  
         /// <para>
         ///  <code>DeleteGraph</code> can only be called by the master account for a behavior
@@ -686,15 +663,10 @@ namespace Amazon.Detective
         #region  DeleteMembers
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Deletes one or more member accounts from the master account behavior graph. This operation
         /// can only be called by a Detective master account. That account cannot use <code>DeleteMembers</code>
         /// to delete their own account from the behavior graph. To disable a behavior graph,
         /// the master account uses the <code>DeleteGraph</code> API method.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
         /// 
@@ -760,13 +732,8 @@ namespace Amazon.Detective
         #region  DisassociateMembership
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Removes the member account from the specified behavior graph. This operation can only
         /// be called by a member account that has the <code>ENABLED</code> status.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembership service method.</param>
         /// 
@@ -832,12 +799,7 @@ namespace Amazon.Detective
         #region  GetMembers
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Returns the membership details for specified member accounts for a behavior graph.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMembers service method.</param>
         /// 
@@ -900,13 +862,9 @@ namespace Amazon.Detective
         #region  ListGraphs
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Returns the list of behavior graphs that the calling account is a master of. This
         /// operation can only be called by a master account.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// Because an account can currently only be the master of one behavior graph within a
@@ -971,13 +929,9 @@ namespace Amazon.Detective
         #region  ListInvitations
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Retrieves the list of open and accepted behavior graph invitations for the member
         /// account. This operation can only be called by a member account.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// Open invitations are invitations that the member account has not responded to.
@@ -1047,13 +1001,8 @@ namespace Amazon.Detective
         #region  ListMembers
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Retrieves the list of member accounts for a behavior graph. Does not return member
         /// accounts that were removed from the behavior graph.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// 
@@ -1116,13 +1065,8 @@ namespace Amazon.Detective
         #region  RejectInvitation
 
         /// <summary>
-        /// Amazon Detective is currently in preview.
-        /// 
-        ///  
-        /// <para>
         /// Rejects an invitation to contribute the account data to a behavior graph. This operation
         /// must be called by a member account that has the <code>INVITED</code> status.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectInvitation service method.</param>
         /// 

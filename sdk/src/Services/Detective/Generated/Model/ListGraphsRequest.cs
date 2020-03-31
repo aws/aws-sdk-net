@@ -29,13 +29,9 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGraphs operation.
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// Returns the list of behavior graphs that the calling account is a master of. This
     /// operation can only be called by a master account.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Because an account can currently only be the master of one behavior graph within a

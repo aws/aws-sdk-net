@@ -28,12 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// Details about a member account that was invited to contribute to a behavior graph.
-    /// </para>
     /// </summary>
     public partial class MemberDetail
     {
@@ -71,7 +66,7 @@ namespace Amazon.Detective.Model
         /// Gets and sets the property DisabledReason. 
         /// <para>
         /// For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason
-        /// that the member account is blocked.
+        /// that the member account is not enabled.
         /// </para>
         ///  
         /// <para>
@@ -80,12 +75,12 @@ namespace Amazon.Detective.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause
-        /// the data rate for the behavior graph to be too high.
+        /// the data volume for the behavior graph to be too high.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data
-        /// rate for the member account. This is usually because the member account is not enrolled
+        /// volume for the member account. This is usually because the member account is not enrolled
         /// in Amazon GuardDuty. 
         /// </para>
         ///  </li> </ul>
@@ -257,8 +252,8 @@ namespace Amazon.Detective.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the
-        /// invitation, but is blocked from contributing data to the behavior graph. <code>DisabledReason</code>
-        /// provides the reason why the member account is blocked.
+        /// invitation but is prevented from contributing data to the behavior graph. <code>DisabledReason</code>
+        /// provides the reason why the member account is not enabled.
         /// </para>
         ///  </li> </ul> 
         /// <para>

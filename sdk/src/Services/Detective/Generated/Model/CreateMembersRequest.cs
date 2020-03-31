@@ -29,14 +29,10 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMembers operation.
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// Sends a request to invite the specified AWS accounts to be member accounts in the
     /// behavior graph. This operation can only be called by the master account for a behavior
     /// graph. 
-    /// </para>
+    /// 
     ///  
     /// <para>
     ///  <code>CreateMembers</code> verifies the accounts and then sends invitations to the

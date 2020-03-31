@@ -29,13 +29,9 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGraph operation.
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// Creates a new behavior graph for the calling account, and sets that account as the
     /// master account. This operation is called by the account that is enabling Detective.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Before you try to enable Detective, make sure that your account has been enrolled

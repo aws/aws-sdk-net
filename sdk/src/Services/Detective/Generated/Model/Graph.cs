@@ -28,12 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// A behavior graph in Detective.
-    /// </para>
     /// </summary>
     public partial class Graph
     {

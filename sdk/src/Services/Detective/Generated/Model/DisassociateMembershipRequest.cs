@@ -29,13 +29,8 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateMembership operation.
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// Removes the member account from the specified behavior graph. This operation can only
     /// be called by a member account that has the <code>ENABLED</code> status.
-    /// </para>
     /// </summary>
     public partial class DisassociateMembershipRequest : AmazonDetectiveRequest
     {

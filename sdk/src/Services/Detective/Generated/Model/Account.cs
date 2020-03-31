@@ -28,12 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// An AWS account that is the master of or a member of a behavior graph.
-    /// </para>
     /// </summary>
     public partial class Account
     {

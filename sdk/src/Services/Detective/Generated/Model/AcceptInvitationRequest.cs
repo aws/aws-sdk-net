@@ -29,13 +29,9 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the AcceptInvitation operation.
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// Accepts an invitation for the member account to contribute data to a behavior graph.
     /// This operation can only be called by an invited member account. 
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// The request provides the ARN of behavior graph.

@@ -28,13 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// Amazon Detective is currently in preview.
-    /// 
-    ///  
-    /// <para>
     /// A member account that was included in a request but for which the request could not
     /// be processed.
-    /// </para>
     /// </summary>
     public partial class UnprocessedAccount
     {
