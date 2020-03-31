@@ -70,6 +70,7 @@ namespace Amazon.MediaStore.Model
         /// Resources in MediaStore</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

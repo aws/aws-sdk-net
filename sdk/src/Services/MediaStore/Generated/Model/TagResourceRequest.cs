@@ -71,7 +71,7 @@ namespace Amazon.MediaStore.Model
         /// tags: customer:CompanyA, priority:Medium, and type:Contract.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

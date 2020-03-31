@@ -31,6 +31,12 @@
     <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaStore.Model.DeleteMetricPolicyRequest.ContainerName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaStore.Model.DescribeContainerRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
@@ -65,6 +71,12 @@
     <min>0</min>
     <max>8192</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.GetMetricPolicyRequest.ContainerName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.ListContainersRequest.MaxResults</property>
@@ -118,6 +130,12 @@
     <min>0</min>
     <max>8192</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.PutMetricPolicyRequest.ContainerName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.StartAccessLoggingRequest.ContainerName</property>
@@ -202,6 +220,18 @@
     <pattern>[ \w:\.\?-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaStore.Model.MetricPolicyRule.ObjectGroup</property>
+    <min>1</min>
+    <max>900</max>
+    <pattern>/?(?:[A-Za-z0-9_=:\.\-\~\*]+/){0,10}(?:[A-Za-z0-9_=:\.\-\~\*]+)?/?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.MetricPolicyRule.ObjectGroupName</property>
+    <min>1</min>
+    <max>30</max>
+    <pattern>[a-zA-Z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaStore.Model.PolicyNotFoundException.Message</property>
     <min>1</min>
     <max>255</max>
@@ -211,10 +241,12 @@
     <property>Amazon.MediaStore.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
+    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]*</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -28,29 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaStore.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsForResource operation.
+    /// This is the response object from the GetMetricPolicy operation.
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class GetMetricPolicyResponse : AmazonWebServiceResponse
     {
-        private List<Tag> _tags = new List<Tag>();
+        private MetricPolicy _metricPolicy;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property MetricPolicy. 
         /// <para>
-        /// An array of key:value pairs that are assigned to the container.
+        /// The metric policy that is associated with the specific container.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
-        public List<Tag> Tags
+        [AWSProperty(Required=true)]
+        public MetricPolicy MetricPolicy
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._metricPolicy; }
+            set { this._metricPolicy = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if MetricPolicy property is set
+        internal bool IsSetMetricPolicy()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._metricPolicy != null;
         }
 
     }

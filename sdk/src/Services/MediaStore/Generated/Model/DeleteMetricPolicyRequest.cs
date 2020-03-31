@@ -28,29 +28,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaStore.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsForResource operation.
+    /// Container for the parameters to the DeleteMetricPolicy operation.
+    /// Deletes the metric policy that is associated with the specified container. If there
+    /// is no metric policy associated with the container, MediaStore doesn't send metrics
+    /// to CloudWatch.
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class DeleteMetricPolicyRequest : AmazonMediaStoreRequest
     {
-        private List<Tag> _tags = new List<Tag>();
+        private string _containerName;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property ContainerName. 
         /// <para>
-        /// An array of key:value pairs that are assigned to the container.
+        /// The name of the container that is associated with the metric policy that you want
+        /// to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
-        public List<Tag> Tags
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string ContainerName
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._containerName; }
+            set { this._containerName = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if ContainerName property is set
+        internal bool IsSetContainerName()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._containerName != null;
         }
 
     }

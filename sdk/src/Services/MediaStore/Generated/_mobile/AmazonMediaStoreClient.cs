@@ -480,6 +480,54 @@ namespace Amazon.MediaStore
 
         #endregion
         
+        #region  DeleteMetricPolicy
+
+        internal virtual DeleteMetricPolicyResponse DeleteMetricPolicy(DeleteMetricPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMetricPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMetricPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMetricPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the metric policy that is associated with the specified container. If there
+        /// is no metric policy associated with the container, MediaStore doesn't send metrics
+        /// to CloudWatch.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMetricPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.PolicyNotFoundException">
+        /// The policy that you specified in the request does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteMetricPolicy">REST API Reference for DeleteMetricPolicy Operation</seealso>
+        public virtual Task<DeleteMetricPolicyResponse> DeleteMetricPolicyAsync(DeleteMetricPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMetricPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMetricPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteMetricPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeContainer
 
         internal virtual DescribeContainerResponse DescribeContainer(DescribeContainerRequest request)
@@ -668,6 +716,52 @@ namespace Amazon.MediaStore
             options.ResponseUnmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetLifecyclePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMetricPolicy
+
+        internal virtual GetMetricPolicyResponse GetMetricPolicy(GetMetricPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetricPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetricPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetMetricPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the metric policy for the specified container.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMetricPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.PolicyNotFoundException">
+        /// The policy that you specified in the request does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetMetricPolicy">REST API Reference for GetMetricPolicy Operation</seealso>
+        public virtual Task<GetMetricPolicyResponse> GetMetricPolicyAsync(GetMetricPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetricPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetricPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMetricPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -926,6 +1020,51 @@ namespace Amazon.MediaStore
             options.ResponseUnmarshaller = PutLifecyclePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutLifecyclePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutMetricPolicy
+
+        internal virtual PutMetricPolicyResponse PutMetricPolicy(PutMetricPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutMetricPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutMetricPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutMetricPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The metric policy that you want to add to the container. A metric policy allows AWS
+        /// Elemental MediaStore to send metrics to Amazon CloudWatch. It takes up to 20 minutes
+        /// for the new policy to take effect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMetricPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutMetricPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutMetricPolicy">REST API Reference for PutMetricPolicy Operation</seealso>
+        public virtual Task<PutMetricPolicyResponse> PutMetricPolicyAsync(PutMetricPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutMetricPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutMetricPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutMetricPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
