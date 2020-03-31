@@ -197,6 +197,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey CONFIG_FILES = new ConnectionPropertyKey("CONFIG_FILES");
         /// <summary>
+        /// Constant CONNECTION_URL for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey CONNECTION_URL = new ConnectionPropertyKey("CONNECTION_URL");
+        /// <summary>
         /// Constant CUSTOM_JDBC_CERT for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey CUSTOM_JDBC_CERT = new ConnectionPropertyKey("CUSTOM_JDBC_CERT");
@@ -302,6 +306,10 @@ namespace Amazon.Glue
         /// Constant JDBC for ConnectionType
         /// </summary>
         public static readonly ConnectionType JDBC = new ConnectionType("JDBC");
+        /// <summary>
+        /// Constant MONGODB for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType MONGODB = new ConnectionType("MONGODB");
         /// <summary>
         /// Constant SFTP for ConnectionType
         /// </summary>

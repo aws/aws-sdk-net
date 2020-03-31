@@ -99,7 +99,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC connection.
+        ///  <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -129,6 +129,11 @@ namespace Amazon.Glue.Model
         /// used for domain match or distinguished name match to prevent a man-in-the-middle attack.
         /// In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft
         /// SQL Server, this is used as the <code>hostNameInCertificate</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data
+        /// source.
         /// </para>
         ///  </li> </ul>
         /// </summary>
