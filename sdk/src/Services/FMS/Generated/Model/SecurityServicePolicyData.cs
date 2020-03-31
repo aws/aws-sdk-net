@@ -43,11 +43,27 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// Example: <code>WAFV2</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\":
+        /// [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\",
+        /// \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\":
+        /// \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\"
+        /// } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\":
+        /// \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\":
+        /// \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\":
+        /// [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\":
+        /// { \"type\": \"BLOCK\" }}" </code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Example: <code>WAF</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\",
+        ///  <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\",
         /// \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
         /// 
         /// </para>
@@ -90,7 +106,7 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=4096)]
         public string ManagedServiceData
         {
             get { return this._managedServiceData; }

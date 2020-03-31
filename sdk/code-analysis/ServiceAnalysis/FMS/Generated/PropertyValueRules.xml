@@ -302,7 +302,8 @@
   <property-value-rule>
     <property>Amazon.FMS.Model.SecurityServicePolicyData.ManagedServiceData</property>
     <min>1</min>
-    <max>1024</max>
+    <max>4096</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.Tag.Key</property>

@@ -266,6 +266,10 @@ namespace Amazon.FMS
         /// Constant WAF for SecurityServiceType
         /// </summary>
         public static readonly SecurityServiceType WAF = new SecurityServiceType("WAF");
+        /// <summary>
+        /// Constant WAFV2 for SecurityServiceType
+        /// </summary>
+        public static readonly SecurityServiceType WAFV2 = new SecurityServiceType("WAFV2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
