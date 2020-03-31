@@ -52,6 +52,7 @@ namespace Amazon.StorageGateway.Model
     public partial class CreateSMBFileShareRequest : AmazonStorageGatewayRequest
     {
         private List<string> _adminUserList = new List<string>();
+        private string _auditDestinationARN;
         private string _authentication;
         private string _clientToken;
         private string _defaultStorageClass;
@@ -93,6 +94,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetAdminUserList()
         {
             return this._adminUserList != null && this._adminUserList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuditDestinationARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the storage used for the audit logs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string AuditDestinationARN
+        {
+            get { return this._auditDestinationARN; }
+            set { this._auditDestinationARN = value; }
+        }
+
+        // Check to see if AuditDestinationARN property is set
+        internal bool IsSetAuditDestinationARN()
+        {
+            return this._auditDestinationARN != null;
         }
 
         /// <summary>
@@ -164,8 +184,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the file gateway on which you want to create a file
-        /// share.
+        /// The ARN of the file gateway on which you want to create a file share.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=50, Max=500)]

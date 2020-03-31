@@ -252,6 +252,10 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.AuditDestinationARN</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.Authentication</property>
     <min>5</min>
     <max>15</max>
@@ -1271,6 +1275,10 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.AuditDestinationARN</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.DefaultStorageClass</property>
     <min>5</min>
     <max>20</max>
@@ -1526,6 +1534,10 @@
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.Squash</property>
     <min>5</min>
     <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.AuditDestinationARN</property>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.Authentication</property>

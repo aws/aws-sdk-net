@@ -79,6 +79,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetAuditDestinationARN())
+                {
+                    context.Writer.WritePropertyName("AuditDestinationARN");
+                    context.Writer.Write(publicRequest.AuditDestinationARN);
+                }
+
                 if(publicRequest.IsSetDefaultStorageClass())
                 {
                     context.Writer.WritePropertyName("DefaultStorageClass");
