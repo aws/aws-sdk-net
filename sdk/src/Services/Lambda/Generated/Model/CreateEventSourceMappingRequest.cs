@@ -260,7 +260,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumBatchingWindowInSeconds. 
         /// <para>
-        /// The maximum amount of time to gather records before invoking the function, in seconds.
+        /// (Streams) The maximum amount of time to gather records before invoking the function,
+        /// in seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]

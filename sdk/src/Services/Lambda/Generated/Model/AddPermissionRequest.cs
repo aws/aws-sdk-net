@@ -39,10 +39,10 @@ namespace Amazon.Lambda.Model
     /// To grant permission to another account, specify the account ID as the <code>Principal</code>.
     /// For AWS services, the principal is a domain-style identifier defined by the service,
     /// like <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For AWS services,
-    /// you can also specify the ARN or owning account of the associated resource as the <code>SourceArn</code>
-    /// or <code>SourceAccount</code>. If you grant permission to a service principal without
-    /// specifying the source, other accounts could potentially configure resources in their
-    /// account to invoke your Lambda function.
+    /// you can also specify the ARN of the associated resource as the <code>SourceArn</code>.
+    /// If you grant permission to a service principal without specifying the source, other
+    /// accounts could potentially configure resources in their account to invoke your Lambda
+    /// function.
     /// </para>
     ///  
     /// <para>
@@ -204,12 +204,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SourceAccount. 
         /// <para>
-        /// For AWS services, the ID of the account that owns the resource. Use this instead of
-        /// <code>SourceArn</code> to grant permission to resources that are owned by another
-        /// account (for example, all of an account's Amazon S3 buckets). Or use it together with
+        /// For Amazon S3, the ID of the account that owns the resource. Use this together with
         /// <code>SourceArn</code> to ensure that the resource is owned by the specified account.
-        /// For example, an Amazon S3 bucket could be deleted by its owner and recreated by another
-        /// account.
+        /// It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by
+        /// another account.
         /// </para>
         /// </summary>
         public string SourceAccount
