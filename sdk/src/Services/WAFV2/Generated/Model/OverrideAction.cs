@@ -28,19 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// <note> 
+    /// The override action to apply to the rules in a rule group. Used only for rule statements
+    /// that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+    /// 
+    /// 
+    ///  
     /// <para>
-    /// This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November,
-    /// 2019. For information, including how to migrate your AWS WAF resources from the prior
-    /// release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF Developer Guide</a>. 
+    /// Set the override action to none to leave the rule actions in effect. Set it to count
+    /// to only count matches, regardless of the rule action settings. 
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
-    /// The action to use to override the rule's <code>Action</code> setting. You can use
-    /// no override action, in which case the rule action is in effect, or count, in which
-    /// case, if the rule matches a web request, it only counts the match.
+    /// In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting
+    /// or the rule <code>Action</code> setting, but not both:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If the rule statement references a rule group, use this override action setting and
+    /// not the action setting. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If the rule statement does not reference a rule group, use the rule action setting
+    /// and not this rule override action setting. 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class OverrideAction
     {

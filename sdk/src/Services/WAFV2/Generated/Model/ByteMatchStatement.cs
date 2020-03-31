@@ -159,7 +159,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values depend on the areas that you specify for inspection in <code>FieldToMatch</code>:
+        /// Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -221,9 +221,9 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Text transformations eliminate some of the unusual formatting that attackers use in
         /// web requests in an effort to bypass detection. If you specify one or more transformations
-        /// in a rule statement, AWS WAF performs all transformations on the content identified
-        /// by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting
-        /// the content for a match.
+        /// in a rule statement, AWS WAF performs all transformations on the content of the request
+        /// component identified by <code>FieldToMatch</code>, starting from the lowest priority
+        /// setting, before inspecting the content for a match.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

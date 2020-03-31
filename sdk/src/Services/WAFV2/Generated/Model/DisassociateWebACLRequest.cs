@@ -43,9 +43,9 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  
     /// <para>
-    /// For AWS CloudFront, you can disassociate the Web ACL by providing an empty web ACL
-    /// ARN in the CloudFront API call <code>UpdateDistribution</code>. For information, see
-    /// <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
+    /// For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution
+    /// configuration. To disassociate a Web ACL, provide an empty web ACL ID in the CloudFront
+    /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
     /// </para>
     /// </summary>
     public partial class DisassociateWebACLRequest : AmazonWAFV2Request

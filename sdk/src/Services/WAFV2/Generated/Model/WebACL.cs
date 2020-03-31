@@ -54,7 +54,10 @@ namespace Amazon.WAFV2.Model
         private DefaultAction _defaultAction;
         private string _description;
         private string _id;
+        private bool? _managedByFirewallManager;
         private string _name;
+        private List<FirewallManagerRuleGroup> _postProcessFirewallManagerRuleGroups = new List<FirewallManagerRuleGroup>();
+        private List<FirewallManagerRuleGroup> _preProcessFirewallManagerRuleGroups = new List<FirewallManagerRuleGroup>();
         private List<Rule> _rules = new List<Rule>();
         private VisibilityConfig _visibilityConfig;
 
@@ -129,8 +132,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A friendly description of the Web ACL. You cannot change the description of a Web
-        /// ACL after you create it.
+        /// A description of the Web ACL that helps with identification. You cannot change the
+        /// description of a Web ACL after you create it.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -168,10 +171,30 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagedByFirewallManager. 
+        /// <para>
+        /// Indicates whether this web ACL is managed by AWS Firewall Manager. If true, then only
+        /// AWS Firewall Manager can delete the web ACL or any Firewall Manager rule groups in
+        /// the web ACL. 
+        /// </para>
+        /// </summary>
+        public bool ManagedByFirewallManager
+        {
+            get { return this._managedByFirewallManager.GetValueOrDefault(); }
+            set { this._managedByFirewallManager = value; }
+        }
+
+        // Check to see if ManagedByFirewallManager property is set
+        internal bool IsSetManagedByFirewallManager()
+        {
+            return this._managedByFirewallManager.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name of the Web ACL. You cannot change the name of a Web ACL after you
-        /// create it.
+        /// The name of the Web ACL. You cannot change the name of a Web ACL after you create
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -185,6 +208,62 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostProcessFirewallManagerRuleGroups. 
+        /// <para>
+        /// The last set of rules for AWS WAF to process in the web ACL. This is defined in an
+        /// AWS Firewall Manager WAF policy and contains only rule group references. You can't
+        /// alter these. Any rules and rule groups that you define for the web ACL are prioritized
+        /// before these. 
+        /// </para>
+        ///  
+        /// <para>
+        /// In the Firewall Manager WAF policy, the Firewall Manager administrator can define
+        /// a set of rule groups to run first in the web ACL and a set of rule groups to run last.
+        /// Within each set, the administrator prioritizes the rule groups, to determine their
+        /// relative processing order.
+        /// </para>
+        /// </summary>
+        public List<FirewallManagerRuleGroup> PostProcessFirewallManagerRuleGroups
+        {
+            get { return this._postProcessFirewallManagerRuleGroups; }
+            set { this._postProcessFirewallManagerRuleGroups = value; }
+        }
+
+        // Check to see if PostProcessFirewallManagerRuleGroups property is set
+        internal bool IsSetPostProcessFirewallManagerRuleGroups()
+        {
+            return this._postProcessFirewallManagerRuleGroups != null && this._postProcessFirewallManagerRuleGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreProcessFirewallManagerRuleGroups. 
+        /// <para>
+        /// The first set of rules for AWS WAF to process in the web ACL. This is defined in an
+        /// AWS Firewall Manager WAF policy and contains only rule group references. You can't
+        /// alter these. Any rules and rule groups that you define for the web ACL are prioritized
+        /// after these. 
+        /// </para>
+        ///  
+        /// <para>
+        /// In the Firewall Manager WAF policy, the Firewall Manager administrator can define
+        /// a set of rule groups to run first in the web ACL and a set of rule groups to run last.
+        /// Within each set, the administrator prioritizes the rule groups, to determine their
+        /// relative processing order.
+        /// </para>
+        /// </summary>
+        public List<FirewallManagerRuleGroup> PreProcessFirewallManagerRuleGroups
+        {
+            get { return this._preProcessFirewallManagerRuleGroups; }
+            set { this._preProcessFirewallManagerRuleGroups = value; }
+        }
+
+        // Check to see if PreProcessFirewallManagerRuleGroups property is set
+        internal bool IsSetPreProcessFirewallManagerRuleGroups()
+        {
+            return this._preProcessFirewallManagerRuleGroups != null && this._preProcessFirewallManagerRuleGroups.Count > 0; 
         }
 
         /// <summary>

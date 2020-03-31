@@ -53,8 +53,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A friendly description of the set. You cannot change the description of a set after
-        /// you create it.
+        /// A description of the set that helps with identification. You cannot change the description
+        /// of a set after you create it.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -118,7 +118,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name of the set. You cannot change the name after you create the set.
+        /// The name of the set. You cannot change the name after you create the set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -137,7 +137,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property RegularExpressionList.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public List<Regex> RegularExpressionList
         {
             get { return this._regularExpressionList; }
@@ -164,7 +164,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+        /// CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
         /// --region=us-east-1</code>. 
         /// </para>
         ///  </li> <li> 

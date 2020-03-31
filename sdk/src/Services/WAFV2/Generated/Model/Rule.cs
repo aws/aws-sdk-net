@@ -55,9 +55,31 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action that AWS WAF should take on a web request when it matches the rule's statement.
+        /// The action that AWS WAF should take on a web request when it matches the rule statement.
         /// Settings at the web ACL level can override the rule action setting. 
         /// </para>
+        ///  
+        /// <para>
+        /// This is used only for rules whose statements do not reference a rule group. Rule statements
+        /// that reference a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code>
+        /// setting, but not both:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the rule statement does not reference a rule group, use this rule action setting
+        /// and not the rule override action setting. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the rule statement references a rule group, use the override action setting and
+        /// not this action setting. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public RuleAction Action
         {
@@ -74,8 +96,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name of the rule. You can't change the name of a <code>Rule</code> after
-        /// you create it. 
+        /// The name of the rule. You can't change the name of a <code>Rule</code> after you create
+        /// it. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -94,10 +116,31 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property OverrideAction. 
         /// <para>
-        /// The action to use to override the rule's <code>Action</code> setting. You can use
-        /// no override action, in which case the rule action is in effect, or count action, in
-        /// which case, if the rule matches a web request, it only counts the match.
+        /// The override action to apply to the rules in a rule group. Used only for rule statements
+        /// that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+        /// 
         /// </para>
+        ///  
+        /// <para>
+        /// Set the override action to none to leave the rule actions in effect. Set it to count
+        /// to only count matches, regardless of the rule action settings. 
+        /// </para>
+        ///  
+        /// <para>
+        /// In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting
+        /// or the rule <code>Action</code> setting, but not both:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the rule statement references a rule group, use this override action setting and
+        /// not the action setting. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the rule statement does not reference a rule group, use the rule action setting
+        /// and not this rule override action setting. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public OverrideAction OverrideAction
         {

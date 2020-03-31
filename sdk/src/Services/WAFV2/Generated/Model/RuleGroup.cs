@@ -110,8 +110,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A friendly description of the rule group. You cannot change the description of a rule
-        /// group after you create it.
+        /// A description of the rule group that helps with identification. You cannot change
+        /// the description of a rule group after you create it.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -150,8 +150,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name of the rule group. You cannot change the name of a rule group after
-        /// you create it.
+        /// The name of the rule group. You cannot change the name of a rule group after you create
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -70,8 +70,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name of the Web ACL. You cannot change the name of a Web ACL after you
-        /// create it.
+        /// The name of the Web ACL. You cannot change the name of a Web ACL after you create
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -101,7 +101,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+        /// CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
         /// --region=us-east-1</code>. 
         /// </para>
         ///  </li> <li> 

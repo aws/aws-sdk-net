@@ -1,0 +1,91 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the wafv2-2019-07-29.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.WAFV2.Model
+{
+    /// <summary>
+    /// Container for the parameters to the DeleteFirewallManagerRuleGroups operation.
+    /// Deletes all rule groups that are managed by AWS Firewall Manager for the specified
+    /// web ACL. 
+    /// 
+    ///  
+    /// <para>
+    /// You can only use this if <code>ManagedByFirewallManager</code> is false in the specified
+    /// <a>WebACL</a>. 
+    /// </para>
+    /// </summary>
+    public partial class DeleteFirewallManagerRuleGroupsRequest : AmazonWAFV2Request
+    {
+        private string _webACLArn;
+        private string _webACLLockToken;
+
+        /// <summary>
+        /// Gets and sets the property WebACLArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the web ACL.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
+        public string WebACLArn
+        {
+            get { return this._webACLArn; }
+            set { this._webACLArn = value; }
+        }
+
+        // Check to see if WebACLArn property is set
+        internal bool IsSetWebACLArn()
+        {
+            return this._webACLArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebACLLockToken. 
+        /// <para>
+        /// A token used for optimistic locking. AWS WAF returns a token to your get and list
+        /// requests, to mark the state of the entity at the time of the request. To make changes
+        /// to the entity associated with the token, you provide the token to operations like
+        /// update and delete. AWS WAF uses the token to ensure that no changes have been made
+        /// to the entity since you last retrieved it. If a change has been made, the update fails
+        /// with a <code>WAFOptimisticLockException</code>. If this happens, perform another get,
+        /// and use the new token returned by that operation. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
+        public string WebACLLockToken
+        {
+            get { return this._webACLLockToken; }
+            set { this._webACLLockToken = value; }
+        }
+
+        // Check to see if WebACLLockToken property is set
+        internal bool IsSetWebACLLockToken()
+        {
+            return this._webACLLockToken != null;
+        }
+
+    }
+}

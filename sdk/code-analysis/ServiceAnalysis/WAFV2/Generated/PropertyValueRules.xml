@@ -69,6 +69,24 @@
     <pattern>^[\w\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.DeleteFirewallManagerRuleGroupsRequest.WebACLArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.DeleteFirewallManagerRuleGroupsRequest.WebACLLockToken</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.DeleteFirewallManagerRuleGroupsResponse.NextWebACLLockToken</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.DeleteIPSetRequest.Id</property>
     <min>1</min>
     <max>36</max>
@@ -88,6 +106,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.DeleteLoggingConfigurationRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.DeletePermissionPolicyRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>.*\S.*</pattern>
@@ -191,6 +215,16 @@
     <min>20</min>
     <max>2048</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetPermissionPolicyRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetPermissionPolicyResponse.Policy</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.GetRateBasedStatementManagedKeysRequest.RuleName</property>
@@ -419,6 +453,16 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.PutPermissionPolicyRequest.Policy</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.PutPermissionPolicyRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.TagResourceRequest.ResourceARN</property>
     <min>20</min>
     <max>2048</max>
@@ -555,6 +599,16 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.FirewallManagerRuleGroup.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.FirewallManagerRuleGroup.Priority</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.IPSet.ARN</property>

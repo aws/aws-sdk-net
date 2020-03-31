@@ -80,6 +80,10 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             {
                 return new WAFInternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidOperationException"))
+            {
+                return new WAFInvalidOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidParameterException"))
             {
                 return new WAFInvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -87,6 +91,10 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFLimitsExceededException"))
             {
                 return new WAFLimitsExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
+            {
+                return new WAFNonexistentItemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFOptimisticLockException"))
             {

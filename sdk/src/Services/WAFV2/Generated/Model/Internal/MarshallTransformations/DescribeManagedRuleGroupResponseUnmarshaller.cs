@@ -82,6 +82,10 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             {
                 return new WAFInternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidOperationException"))
+            {
+                return new WAFInvalidOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidParameterException"))
             {
                 return new WAFInvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
