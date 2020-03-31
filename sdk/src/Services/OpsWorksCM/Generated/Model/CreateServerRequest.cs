@@ -165,11 +165,10 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property CustomCertificate. 
         /// <para>
-        /// Supported on servers running Chef Automate 2. A PEM-formatted HTTPS certificate. The
-        /// value can be be a single, self-signed certificate, or a certificate chain. If you
-        /// specify a custom certificate, you must also specify values for <code>CustomDomain</code>
-        /// and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code>
-        /// value:
+        /// A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate,
+        /// or a certificate chain. If you specify a custom certificate, you must also specify
+        /// values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following
+        /// are requirements for the <code>CustomCertificate</code> value:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -213,13 +212,13 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property CustomDomain. 
         /// <para>
-        /// Supported on servers running Chef Automate 2. An optional public endpoint of a server,
-        /// such as <code>https://aws.my-company.com</code>. To access the server, create a CNAME
-        /// DNS record in your preferred DNS service that points the custom domain to the endpoint
-        /// that is generated when the server is created (the value of the CreateServer Endpoint
-        /// attribute). You cannot access the server by using the generated <code>Endpoint</code>
-        /// value if the server is using a custom domain. If you specify a custom domain, you
-        /// must also specify values for <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.
+        /// An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>.
+        /// To access the server, create a CNAME DNS record in your preferred DNS service that
+        /// points the custom domain to the endpoint that is generated when the server is created
+        /// (the value of the CreateServer Endpoint attribute). You cannot access the server by
+        /// using the generated <code>Endpoint</code> value if the server is using a custom domain.
+        /// If you specify a custom domain, you must also specify values for <code>CustomCertificate</code>
+        /// and <code>CustomPrivateKey</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=253)]
@@ -238,10 +237,10 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property CustomPrivateKey. 
         /// <para>
-        /// Supported on servers running Chef Automate 2. A private key in PEM format for connecting
-        /// to the server by using HTTPS. The private key must not be encrypted; it cannot be
-        /// protected by a password or passphrase. If you specify a custom private key, you must
-        /// also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.
+        /// A private key in PEM format for connecting to the server by using HTTPS. The private
+        /// key must not be encrypted; it cannot be protected by a password or passphrase. If
+        /// you specify a custom private key, you must also specify values for <code>CustomDomain</code>
+        /// and <code>CustomCertificate</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -375,7 +374,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property EngineVersion. 
         /// <para>
         ///  The major release version of the engine that you want to use. For a Chef server,
-        /// the valid value for EngineVersion is currently <code>12</code>. For a Puppet server,
+        /// the valid value for EngineVersion is currently <code>2</code>. For a Puppet server,
         /// the valid value is <code>2017</code>. 
         /// </para>
         /// </summary>
@@ -472,8 +471,8 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The specified time is in coordinated universal time (UTC). The default value is a
-        /// random, daily start time.
+        ///  <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated
+        /// universal time (UTC). The default value is a random, daily start time.
         /// </para>
         ///  
         /// <para>
@@ -504,9 +503,10 @@ namespace Amazon.OpsWorksCM.Model
         /// <para>
         ///  The start time for a one-hour period each week during which AWS OpsWorks CM performs
         /// maintenance on the instance. Valid values must be specified in the following format:
-        /// <code>DDD:HH:MM</code>. The specified time is in coordinated universal time (UTC).
-        /// The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
-        /// <code>TimeWindowDefinition</code> for more information. 
+        /// <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The
+        /// specified time is in coordinated universal time (UTC). The default value is a random
+        /// one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code>
+        /// for more information. 
         /// </para>
         ///  
         /// <para>
@@ -644,13 +644,13 @@ namespace Amazon.OpsWorksCM.Model
         ///  </li> <li> 
         /// <para>
         /// The key can be a maximum of 127 characters, and can contain only Unicode letters,
-        /// numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
+        /// numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The value can be a maximum 255 characters, and contain only Unicode letters, numbers,
-        /// or separators, or the following special characters: <code>+ - = . _ : /</code> 
+        /// or separators, or the following special characters: <code>+ - = . _ : / @</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
