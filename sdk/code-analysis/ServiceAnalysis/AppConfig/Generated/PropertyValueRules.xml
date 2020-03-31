@@ -853,6 +853,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.DeploymentEvent.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.DeploymentSummary.ConfigurationName</property>
     <min>1</min>
     <max>64</max>

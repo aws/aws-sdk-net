@@ -117,6 +117,12 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                     response.EnvironmentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EventLog", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DeploymentEvent, DeploymentEventUnmarshaller>(DeploymentEventUnmarshaller.Instance);
+                    response.EventLog = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FinalBakeTimeInMinutes", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
