@@ -32,7 +32,7 @@ namespace Amazon.FMS
     public partial class AmazonFMSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.103.31");
+            InternalSDKUtils.BuildUserAgentString("3.3.104.0");
 
         private string _userAgent = UserAgentString;
 

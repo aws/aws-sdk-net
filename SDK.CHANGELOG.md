@@ -1,3 +1,36 @@
+### 3.3.711.0 (2020-03-31 18:16 UTC)
+* AppConfig (3.3.102.0)
+	* This release adds an event log to deployments. In the case of a deployment rollback, the event log details the rollback reason.
+* Detective (3.3.101.4)
+	* Removing the notes that Detective is in preview, in preparation for the Detective GA release.
+* ElasticInference (3.3.101.0)
+	* This release includes improvements for the Amazon Elastic Inference service.
+* FMS (3.3.104.0)
+	* This release contains FMS wafv2 support.
+* Glue (3.3.115.0)
+	* Add two enums for MongoDB connection: Added "CONNECTION_URL" to "ConnectionPropertyKey" and added "MONGODB" to "ConnectionType"
+* Lambda (3.3.109.0)
+	* AWS Lambda now supports .NET Core 3.1
+* MediaStore (3.3.103.0)
+	* This release adds support for CloudWatch Metrics. You can now set a policy on your container to dictate which metrics MediaStore sends to CloudWatch.
+* OpsWorksCM (3.3.105.13)
+	* Documentation updates for OpsWorks-CM CreateServer values.
+* Organizations (3.3.105.5)
+	* Documentation updates for AWS Organizations
+* Pinpoint (3.3.108.0)
+	* This release of the Amazon Pinpoint API introduces MMS support for SMS messages.
+* Rekognition (3.3.105.0)
+	* This release adds DeleteProject and DeleteProjectVersion APIs to Amazon Rekognition Custom Labels.
+* StorageGateway (3.3.112.0)
+	* Adding audit logging support for SMB File Shares
+* WAFV2 (3.3.101.0)
+	* Added support for AWS Firewall Manager for WAFv2 and PermissionPolicy APIs for WAFv2.
+* Core 3.3.105.7
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.710.0 (2020-03-30 18:17 UTC)
 * AccessAnalyzer (3.3.103.0)
 	* This release adds support for the creation and management of IAM Access Analyzer analyzers with type organization. An analyzer with type organization continuously monitors all supported resources within the AWS organization and reports findings when they allow access from outside the organization.
