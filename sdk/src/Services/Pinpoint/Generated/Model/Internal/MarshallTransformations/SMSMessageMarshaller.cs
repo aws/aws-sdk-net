@@ -57,6 +57,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Keyword);
             }
 
+            if(requestObject.IsSetMediaUrl())
+            {
+                context.Writer.WritePropertyName("MediaUrl");
+                context.Writer.Write(requestObject.MediaUrl);
+            }
+
             if(requestObject.IsSetMessageType())
             {
                 context.Writer.WritePropertyName("MessageType");
