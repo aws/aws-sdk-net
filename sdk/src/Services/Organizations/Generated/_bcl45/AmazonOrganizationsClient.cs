@@ -6868,9 +6868,10 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// You can run this action only for AWS services that support this feature. For a current
-        /// list of services that support it, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html#services-that-support-delegated-admin">AWS
-        /// Services That Support Using Delegated Administrators</a> in the <i>AWS Organizations
-        /// User Guide.</i> 
+        /// list of services that support it, see the column <i>Supports Delegated Administrator</i>
+        /// in the table at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
+        /// Services that you can use with AWS Organizations</a> in the <i>AWS Organizations User
+        /// Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -7195,9 +7196,10 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// You can run this action only for AWS services that support this feature. For a current
-        /// list of services that support it, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html#services-that-support-delegated-admin">AWS
-        /// Services That Support Using Delegated Administrators</a> in the <i>AWS Organizations
-        /// User Guide.</i> 
+        /// list of services that support it, see the column <i>Supports Delegated Administrator</i>
+        /// in the table at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
+        /// Services that you can use with AWS Organizations</a> in the <i>AWS Organizations User
+        /// Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -21502,9 +21504,10 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// You can run this action only for AWS services that support this feature. For a current
-        /// list of services that support it, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html#services-that-support-delegated-admin">AWS
-        /// Services That Support Using Delegated Administrators</a> in the <i>AWS Organizations
-        /// User Guide.</i> 
+        /// list of services that support it, see the column <i>Supports Delegated Administrator</i>
+        /// in the table at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
+        /// Services that you can use with AWS Organizations</a> in the <i>AWS Organizations User
+        /// Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -21830,9 +21833,10 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// You can run this action only for AWS services that support this feature. For a current
-        /// list of services that support it, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html#services-that-support-delegated-admin">AWS
-        /// Services That Support Using Delegated Administrators</a> in the <i>AWS Organizations
-        /// User Guide.</i> 
+        /// list of services that support it, see the column <i>Supports Delegated Administrator</i>
+        /// in the table at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
+        /// Services that you can use with AWS Organizations</a> in the <i>AWS Organizations User
+        /// Guide.</i> 
         /// </para>
         ///  
         /// <para>
