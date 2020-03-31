@@ -51,7 +51,7 @@ namespace Amazon.ElasticInference
         {
             get
             {
-                return "api.elastic-inference";
+                return "elastic-inference";
             }
         }
 
