@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Behavior Marshaller
+    /// MetricToRetain Marshaller
     /// </summary>       
-    public class BehaviorMarshaller : IRequestMarshaller<Behavior, JsonMarshallerContext> 
+    public class MetricToRetainMarshaller : IRequestMarshaller<MetricToRetain, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,19 +43,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Behavior requestObject, JsonMarshallerContext context)
+        public void Marshall(MetricToRetain requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCriteria())
-            {
-                context.Writer.WritePropertyName("criteria");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = BehaviorCriteriaMarshaller.Instance;
-                marshaller.Marshall(requestObject.Criteria, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
             if(requestObject.IsSetMetric())
             {
                 context.Writer.WritePropertyName("metric");
@@ -73,18 +62,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static BehaviorMarshaller Instance = new BehaviorMarshaller();
+        public readonly static MetricToRetainMarshaller Instance = new MetricToRetainMarshaller();
 
     }
 }

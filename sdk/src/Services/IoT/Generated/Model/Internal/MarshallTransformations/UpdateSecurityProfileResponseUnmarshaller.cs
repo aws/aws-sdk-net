@@ -57,6 +57,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     response.AdditionalMetricsToRetain = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("additionalMetricsToRetainV2", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MetricToRetain, MetricToRetainUnmarshaller>(MetricToRetainUnmarshaller.Instance);
+                    response.AdditionalMetricsToRetainV2 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("alertTargets", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, AlertTarget, StringUnmarshaller, AlertTargetUnmarshaller>(StringUnmarshaller.Instance, AlertTargetUnmarshaller.Instance);

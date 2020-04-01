@@ -28,49 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Describes an action that sends data to CloudWatch Logs.
+    /// This is the response object from the CreateDimension operation.
     /// </summary>
-    public partial class CloudwatchLogsAction
+    public partial class CreateDimensionResponse : AmazonWebServiceResponse
     {
-        private string _logGroupName;
-        private string _roleArn;
+        private string _arn;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property LogGroupName. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The CloudWatch log group to which the action sends data.
+        /// The ARN (Amazon resource name) of the created dimension.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string LogGroupName
+        public string Arn
         {
-            get { return this._logGroupName; }
-            set { this._logGroupName = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if LogGroupName property is set
-        internal bool IsSetLogGroupName()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._logGroupName != null;
+            return this._arn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property RoleArn. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The IAM role that allows access to the CloudWatch log.
+        /// A unique identifier for the dimension.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string RoleArn
+        [AWSProperty(Min=1, Max=128)]
+        public string Name
         {
-            get { return this._roleArn; }
-            set { this._roleArn = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if RoleArn property is set
-        internal bool IsSetRoleArn()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._roleArn != null;
+            return this._name != null;
         }
 
     }

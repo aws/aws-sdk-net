@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListSecurityProfiles operation
+    /// Response Unmarshaller for DeleteDimension operation
     /// </summary>  
-    public class ListSecurityProfilesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteDimensionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListSecurityProfilesResponse response = new ListSecurityProfilesResponse();
+            DeleteDimensionResponse response = new DeleteDimensionResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("nextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("securityProfileIdentifiers", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<SecurityProfileIdentifier, SecurityProfileIdentifierUnmarshaller>(SecurityProfileIdentifierUnmarshaller.Instance);
-                    response.SecurityProfileIdentifiers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -86,10 +69,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-            {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
             {
                 return new ThrottlingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -97,9 +76,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             return new AmazonIoTException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListSecurityProfilesResponseUnmarshaller _instance = new ListSecurityProfilesResponseUnmarshaller();        
+        private static DeleteDimensionResponseUnmarshaller _instance = new DeleteDimensionResponseUnmarshaller();        
 
-        internal static ListSecurityProfilesResponseUnmarshaller GetInstance()
+        internal static DeleteDimensionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -107,7 +86,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListSecurityProfilesResponseUnmarshaller Instance
+        public static DeleteDimensionResponseUnmarshaller Instance
         {
             get
             {

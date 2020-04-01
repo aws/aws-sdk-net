@@ -28,40 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListSecurityProfiles operation.
-    /// Lists the Device Defender security profiles you have created. You can use filters
-    /// to list only those security profiles associated with a thing group or only those associated
-    /// with your account.
+    /// Container for the parameters to the ListDimensions operation.
+    /// List the set of dimensions that are defined for your AWS account.
     /// </summary>
-    public partial class ListSecurityProfilesRequest : AmazonIoTRequest
+    public partial class ListDimensionsRequest : AmazonIoTRequest
     {
-        private string _dimensionName;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property DimensionName. 
-        /// <para>
-        /// A filter to limit results to the security profiles that use the defined dimension.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string DimensionName
-        {
-            get { return this._dimensionName; }
-            set { this._dimensionName = value; }
-        }
-
-        // Check to see if DimensionName property is set
-        internal bool IsSetDimensionName()
-        {
-            return this._dimensionName != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return at one time.
+        /// The maximum number of results to retrieve at one time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]

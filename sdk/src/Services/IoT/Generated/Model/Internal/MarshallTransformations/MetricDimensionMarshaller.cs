@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Behavior Marshaller
+    /// MetricDimension Marshaller
     /// </summary>       
-    public class BehaviorMarshaller : IRequestMarshaller<Behavior, JsonMarshallerContext> 
+    public class MetricDimensionMarshaller : IRequestMarshaller<MetricDimension, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,40 +43,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Behavior requestObject, JsonMarshallerContext context)
+        public void Marshall(MetricDimension requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCriteria())
+            if(requestObject.IsSetDimensionName())
             {
-                context.Writer.WritePropertyName("criteria");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = BehaviorCriteriaMarshaller.Instance;
-                marshaller.Marshall(requestObject.Criteria, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("dimensionName");
+                context.Writer.Write(requestObject.DimensionName);
             }
 
-            if(requestObject.IsSetMetric())
+            if(requestObject.IsSetOperator())
             {
-                context.Writer.WritePropertyName("metric");
-                context.Writer.Write(requestObject.Metric);
-            }
-
-            if(requestObject.IsSetMetricDimension())
-            {
-                context.Writer.WritePropertyName("metricDimension");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = MetricDimensionMarshaller.Instance;
-                marshaller.Marshall(requestObject.MetricDimension, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WritePropertyName("operator");
+                context.Writer.Write(requestObject.Operator);
             }
 
         }
@@ -84,7 +62,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static BehaviorMarshaller Instance = new BehaviorMarshaller();
+        public readonly static MetricDimensionMarshaller Instance = new MetricDimensionMarshaller();
 
     }
 }

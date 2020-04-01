@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListSecurityProfiles Request Marshaller
+    /// DescribeDimension Request Marshaller
     /// </summary>       
-    public class ListSecurityProfilesRequestMarshaller : IMarshaller<IRequest, ListSecurityProfilesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeDimensionRequestMarshaller : IMarshaller<IRequest, DescribeDimensionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListSecurityProfilesRequest)input);
+            return this.Marshall((DescribeDimensionRequest)input);
         }
 
         /// <summary>
@@ -52,30 +52,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListSecurityProfilesRequest publicRequest)
+        public IRequest Marshall(DescribeDimensionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
-            
-            if (publicRequest.IsSetDimensionName())
-                request.Parameters.Add("dimensionName", StringUtils.FromString(publicRequest.DimensionName));
-            
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/security-profiles";
+            if (!publicRequest.IsSetName())
+                throw new AmazonIoTException("Request object does not have required field Name set");
+            request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
+            request.ResourcePath = "/dimensions/{name}";
             request.MarshallerVersion = 2;
-            request.UseQueryString = true;
 
             return request;
         }
-        private static ListSecurityProfilesRequestMarshaller _instance = new ListSecurityProfilesRequestMarshaller();        
+        private static DescribeDimensionRequestMarshaller _instance = new DescribeDimensionRequestMarshaller();        
 
-        internal static ListSecurityProfilesRequestMarshaller GetInstance()
+        internal static DescribeDimensionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -83,7 +76,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListSecurityProfilesRequestMarshaller Instance
+        public static DescribeDimensionRequestMarshaller Instance
         {
             get
             {

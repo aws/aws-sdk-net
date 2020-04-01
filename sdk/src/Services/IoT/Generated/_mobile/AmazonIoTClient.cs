@@ -49,6 +49,17 @@ namespace Amazon.IoT
     /// </para>
     ///  
     /// <para>
+    /// The service endpoints that expose this API are listed in <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html">AWS
+    /// IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has
+    /// the resources you want to access.
+    /// </para>
+    ///  
+    /// <para>
+    /// The service name used by <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">AWS
+    /// Signature Version 4</a> to sign the request is: <i>execute-api</i>.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information about how AWS IoT works, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer
     /// Guide</a>.
     /// </para>
@@ -1625,6 +1636,58 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = CreateCertificateFromCsrResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCertificateFromCsrResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDimension
+
+        internal virtual CreateDimensionResponse CreateDimension(CreateDimensionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDimensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDimensionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDimensionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create a dimension that you can use to limit the scope of a metric used in a security
+        /// profile for AWS IoT Device Defender. For example, using a <code>TOPIC_FILTER</code>
+        /// dimension, you can narrow down the scope of the metric only to MQTT topics whose name
+        /// match the pattern specified in the dimension.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDimension service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDimension service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDimension">REST API Reference for CreateDimension Operation</seealso>
+        public virtual Task<CreateDimensionResponse> CreateDimensionAsync(CreateDimensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDimensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDimensionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDimensionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3296,6 +3359,49 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCertificateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDimension
+
+        internal virtual DeleteDimensionResponse DeleteDimension(DeleteDimensionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDimensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDimensionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDimensionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the specified dimension from your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDimension service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDimension service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDimension">REST API Reference for DeleteDimension Operation</seealso>
+        public virtual Task<DeleteDimensionResponse> DeleteDimensionAsync(DeleteDimensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDimensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDimensionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDimensionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5102,6 +5208,52 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = DescribeDefaultAuthorizerResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDefaultAuthorizerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDimension
+
+        internal virtual DescribeDimensionResponse DescribeDimension(DescribeDimensionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDimensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDimensionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDimensionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides details about a dimension that is defined in your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDimension service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDimension service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDimension">REST API Reference for DescribeDimension Operation</seealso>
+        public virtual Task<DescribeDimensionResponse> DescribeDimensionAsync(DescribeDimensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDimensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDimensionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDimensionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7805,6 +7957,49 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListDimensions
+
+        internal virtual ListDimensionsResponse ListDimensions(ListDimensionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDimensionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDimensionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDimensionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List the set of dimensions that are defined for your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDimensions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDimensions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDimensions">REST API Reference for ListDimensions Operation</seealso>
+        public virtual Task<ListDimensionsResponse> ListDimensionsAsync(ListDimensionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDimensionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDimensionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDimensionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDomainConfigurations
 
         internal virtual ListDomainConfigurationsResponse ListDomainConfigurations(ListDomainConfigurationsRequest request)
@@ -8829,6 +9024,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ThrottlingException">
         /// The rate exceeds the limit.
@@ -11448,6 +11646,53 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = UpdateCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateCertificateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDimension
+
+        internal virtual UpdateDimensionResponse UpdateDimension(UpdateDimensionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDimensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDimensionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDimensionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the definition for a dimension. You cannot change the type of a dimension
+        /// after it is created (you can delete it and re-create it).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDimension service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDimension service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDimension">REST API Reference for UpdateDimension Operation</seealso>
+        public virtual Task<UpdateDimensionResponse> UpdateDimensionAsync(UpdateDimensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDimensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDimensionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDimensionResponse>(request, options, cancellationToken);
         }
 
         #endregion

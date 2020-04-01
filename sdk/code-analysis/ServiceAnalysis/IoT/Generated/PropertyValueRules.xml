@@ -189,6 +189,24 @@
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreateDimensionRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateDimensionRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateDimensionResponse.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreateDomainConfigurationRequest.DomainConfigurationName</property>
     <min>1</min>
     <max>128</max>
@@ -577,6 +595,12 @@
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DeleteDimensionRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DeleteDomainConfigurationRequest.DomainConfigurationName</property>
     <min>1</min>
     <max>128</max>
@@ -763,6 +787,18 @@
     <min>64</min>
     <max>64</max>
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeDimensionRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeDimensionResponse.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeDomainConfigurationRequest.DomainConfigurationName</property>
@@ -1303,6 +1339,11 @@
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ListDimensionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ListDomainConfigurationsRequest.Marker</property>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
@@ -1471,6 +1512,12 @@
     <property>Amazon.IoT.Model.ListScheduledAuditsRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListSecurityProfilesRequest.DimensionName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListSecurityProfilesRequest.MaxResults</property>
@@ -1892,6 +1939,18 @@
     <min>64</min>
     <max>64</max>
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateDimensionRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateDimensionResponse.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.UpdateDomainConfigurationRequest.DomainConfigurationName</property>
@@ -2417,6 +2476,12 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.KeyPair.PublicKey</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.MetricDimension.DimensionName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.MetricValue.Count</property>

@@ -1215,6 +1215,102 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type DimensionType.
+    /// </summary>
+    public class DimensionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TOPIC_FILTER for DimensionType
+        /// </summary>
+        public static readonly DimensionType TOPIC_FILTER = new DimensionType("TOPIC_FILTER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DimensionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DimensionType FindValue(string value)
+        {
+            return FindValue<DimensionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DimensionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DimensionValueOperator.
+    /// </summary>
+    public class DimensionValueOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IN for DimensionValueOperator
+        /// </summary>
+        public static readonly DimensionValueOperator IN = new DimensionValueOperator("IN");
+        /// <summary>
+        /// Constant NOT_IN for DimensionValueOperator
+        /// </summary>
+        public static readonly DimensionValueOperator NOT_IN = new DimensionValueOperator("NOT_IN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DimensionValueOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DimensionValueOperator FindValue(string value)
+        {
+            return FindValue<DimensionValueOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DimensionValueOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DomainConfigurationStatus.
     /// </summary>
     public class DomainConfigurationStatus : ConstantClass

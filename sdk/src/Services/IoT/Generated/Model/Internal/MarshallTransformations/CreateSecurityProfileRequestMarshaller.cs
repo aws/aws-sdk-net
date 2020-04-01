@@ -80,6 +80,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetAdditionalMetricsToRetainV2())
+                {
+                    context.Writer.WritePropertyName("additionalMetricsToRetainV2");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAdditionalMetricsToRetainV2ListValue in publicRequest.AdditionalMetricsToRetainV2)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MetricToRetainMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAdditionalMetricsToRetainV2ListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetAlertTargets())
                 {
                     context.Writer.WritePropertyName("alertTargets");

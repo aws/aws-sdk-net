@@ -34,6 +34,7 @@ namespace Amazon.IoT.Model
     public partial class CreateSecurityProfileRequest : AmazonIoTRequest
     {
         private List<string> _additionalMetricsToRetain = new List<string>();
+        private List<MetricToRetain> _additionalMetricsToRetainV2 = new List<MetricToRetain>();
         private Dictionary<string, AlertTarget> _alertTargets = new Dictionary<string, AlertTarget>();
         private List<Behavior> _behaviors = new List<Behavior>();
         private string _securityProfileDescription;
@@ -47,7 +48,13 @@ namespace Amazon.IoT.Model
         /// any metric used in the profile's <code>behaviors</code>, but it is also retained for
         /// any metric specified here.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This API field is deprecated. Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a>
+        /// instead.
+        /// </para>
         /// </summary>
+        [Obsolete("Use additionalMetricsToRetainV2.")]
         public List<string> AdditionalMetricsToRetain
         {
             get { return this._additionalMetricsToRetain; }
@@ -58,6 +65,26 @@ namespace Amazon.IoT.Model
         internal bool IsSetAdditionalMetricsToRetain()
         {
             return this._additionalMetricsToRetain != null && this._additionalMetricsToRetain.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalMetricsToRetainV2. 
+        /// <para>
+        /// A list of metrics whose data is retained (stored). By default, data is retained for
+        /// any metric used in the profile's <code>behaviors</code>, but it is also retained for
+        /// any metric specified here.
+        /// </para>
+        /// </summary>
+        public List<MetricToRetain> AdditionalMetricsToRetainV2
+        {
+            get { return this._additionalMetricsToRetainV2; }
+            set { this._additionalMetricsToRetainV2 = value; }
+        }
+
+        // Check to see if AdditionalMetricsToRetainV2 property is set
+        internal bool IsSetAdditionalMetricsToRetainV2()
+        {
+            return this._additionalMetricsToRetainV2 != null && this._additionalMetricsToRetainV2.Count > 0; 
         }
 
         /// <summary>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Behavior Object
+    /// Response Unmarshaller for MetricDimension Object
     /// </summary>  
-    public class BehaviorUnmarshaller : IUnmarshaller<Behavior, XmlUnmarshallerContext>, IUnmarshaller<Behavior, JsonUnmarshallerContext>
+    public class MetricDimensionUnmarshaller : IUnmarshaller<MetricDimension, XmlUnmarshallerContext>, IUnmarshaller<MetricDimension, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Behavior IUnmarshaller<Behavior, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MetricDimension IUnmarshaller<MetricDimension, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Behavior Unmarshall(JsonUnmarshallerContext context)
+        public MetricDimension Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Behavior unmarshalledObject = new Behavior();
+            MetricDimension unmarshalledObject = new MetricDimension();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("criteria", targetDepth))
-                {
-                    var unmarshaller = BehaviorCriteriaUnmarshaller.Instance;
-                    unmarshalledObject.Criteria = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("metric", targetDepth))
+                if (context.TestExpression("dimensionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Metric = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DimensionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("metricDimension", targetDepth))
-                {
-                    var unmarshaller = MetricDimensionUnmarshaller.Instance;
-                    unmarshalledObject.MetricDimension = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("operator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Operator = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static BehaviorUnmarshaller _instance = new BehaviorUnmarshaller();        
+        private static MetricDimensionUnmarshaller _instance = new MetricDimensionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BehaviorUnmarshaller Instance
+        public static MetricDimensionUnmarshaller Instance
         {
             get
             {

@@ -28,24 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListSecurityProfiles operation.
-    /// Lists the Device Defender security profiles you have created. You can use filters
-    /// to list only those security profiles associated with a thing group or only those associated
-    /// with your account.
+    /// The dimension of a metric.
     /// </summary>
-    public partial class ListSecurityProfilesRequest : AmazonIoTRequest
+    public partial class MetricDimension
     {
         private string _dimensionName;
-        private int? _maxResults;
-        private string _nextToken;
+        private DimensionValueOperator _operator;
 
         /// <summary>
         /// Gets and sets the property DimensionName. 
         /// <para>
-        /// A filter to limit results to the security profiles that use the defined dimension.
+        /// A unique identifier for the dimension.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DimensionName
         {
             get { return this._dimensionName; }
@@ -59,40 +55,26 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property Operator. 
         /// <para>
-        /// The maximum number of results to return at one time.
+        /// Defines how the <code>dimensionValues</code> of a dimension are interpreted. For example,
+        /// for DimensionType TOPIC_FILTER, with <code>IN</code> operator, a message will be counted
+        /// only if its topic matches one of the topic filters. With <code>NOT_IN</code> Operator,
+        /// a message will be counted only if it doesn't match any of the topic filters. The operator
+        /// is optional: if it's not provided (is <code>null</code>), it will be interpreted as
+        /// <code>IN</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=250)]
-        public int MaxResults
+        public DimensionValueOperator Operator
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._operator; }
+            set { this._operator = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
         {
-            return this._maxResults.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The token for the next set of results.
-        /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
+            return this._operator != null;
         }
 
     }

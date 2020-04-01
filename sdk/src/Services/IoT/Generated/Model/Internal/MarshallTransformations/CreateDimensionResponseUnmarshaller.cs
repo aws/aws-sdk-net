@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListSecurityProfiles operation
+    /// Response Unmarshaller for CreateDimension operation
     /// </summary>  
-    public class ListSecurityProfilesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateDimensionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListSecurityProfilesResponse response = new ListSecurityProfilesResponse();
+            CreateDimensionResponse response = new CreateDimensionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
+                    response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("securityProfileIdentifiers", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SecurityProfileIdentifier, SecurityProfileIdentifierUnmarshaller>(SecurityProfileIdentifierUnmarshaller.Instance);
-                    response.SecurityProfileIdentifiers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -86,9 +86,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
             {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceAlreadyExistsException"))
+            {
+                return new ResourceAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
             {
@@ -97,9 +101,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             return new AmazonIoTException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListSecurityProfilesResponseUnmarshaller _instance = new ListSecurityProfilesResponseUnmarshaller();        
+        private static CreateDimensionResponseUnmarshaller _instance = new CreateDimensionResponseUnmarshaller();        
 
-        internal static ListSecurityProfilesResponseUnmarshaller GetInstance()
+        internal static CreateDimensionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -107,7 +111,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListSecurityProfilesResponseUnmarshaller Instance
+        public static CreateDimensionResponseUnmarshaller Instance
         {
             get
             {

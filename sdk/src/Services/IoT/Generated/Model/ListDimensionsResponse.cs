@@ -28,59 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListSecurityProfiles operation.
-    /// Lists the Device Defender security profiles you have created. You can use filters
-    /// to list only those security profiles associated with a thing group or only those associated
-    /// with your account.
+    /// This is the response object from the ListDimensions operation.
     /// </summary>
-    public partial class ListSecurityProfilesRequest : AmazonIoTRequest
+    public partial class ListDimensionsResponse : AmazonWebServiceResponse
     {
-        private string _dimensionName;
-        private int? _maxResults;
+        private List<string> _dimensionNames = new List<string>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property DimensionName. 
+        /// Gets and sets the property DimensionNames. 
         /// <para>
-        /// A filter to limit results to the security profiles that use the defined dimension.
+        /// A list of the names of the defined dimensions. Use <code>DescribeDimension</code>
+        /// to get details for a dimension.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string DimensionName
+        public List<string> DimensionNames
         {
-            get { return this._dimensionName; }
-            set { this._dimensionName = value; }
+            get { return this._dimensionNames; }
+            set { this._dimensionNames = value; }
         }
 
-        // Check to see if DimensionName property is set
-        internal bool IsSetDimensionName()
+        // Check to see if DimensionNames property is set
+        internal bool IsSetDimensionNames()
         {
-            return this._dimensionName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of results to return at one time.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=250)]
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
+            return this._dimensionNames != null && this._dimensionNames.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results.
+        /// A token that can be used to retrieve the next set of results, or <code>null</code>
+        /// if there are no additional results.
         /// </para>
         /// </summary>
         public string NextToken

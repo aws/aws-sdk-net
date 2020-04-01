@@ -28,32 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// A Device Defender security profile behavior.
+    /// The metric you want to retain. Dimensions are optional.
     /// </summary>
-    public partial class Behavior
+    public partial class MetricToRetain
     {
-        private BehaviorCriteria _criteria;
         private string _metric;
         private MetricDimension _metricDimension;
-        private string _name;
-
-        /// <summary>
-        /// Gets and sets the property Criteria. 
-        /// <para>
-        /// The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.
-        /// </para>
-        /// </summary>
-        public BehaviorCriteria Criteria
-        {
-            get { return this._criteria; }
-            set { this._criteria = value; }
-        }
-
-        // Check to see if Criteria property is set
-        internal bool IsSetCriteria()
-        {
-            return this._criteria != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Metric. 
@@ -61,6 +41,7 @@ namespace Amazon.IoT.Model
         /// What is measured by the behavior.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Metric
         {
             get { return this._metric; }
@@ -76,9 +57,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property MetricDimension. 
         /// <para>
-        /// The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code>
-        /// dimension, you can narrow down the scope of the metric only to MQTT topics whose name
-        /// match the pattern specified in the dimension.
+        /// The dimension of a metric.
         /// </para>
         /// </summary>
         public MetricDimension MetricDimension
@@ -91,25 +70,6 @@ namespace Amazon.IoT.Model
         internal bool IsSetMetricDimension()
         {
             return this._metricDimension != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name you have given to the behavior.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
         }
 
     }

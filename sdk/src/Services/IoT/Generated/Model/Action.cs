@@ -73,7 +73,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CloudwatchLogs. 
         /// <para>
-        /// Send data to CloudWatch logs.
+        /// Send data to CloudWatch Logs.
         /// </para>
         /// </summary>
         public CloudwatchLogsAction CloudwatchLogs
