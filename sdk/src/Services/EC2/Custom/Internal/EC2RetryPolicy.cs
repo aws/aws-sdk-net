@@ -36,7 +36,41 @@ namespace Amazon.EC2.Internal
         public EC2RetryPolicy(IClientConfig config) :
             base(config)
         {
-            ErrorCodesToRetryOn.Add("EC2ThrottledException");
-        }        
+            ThrottlingErrorCodes.Add("EC2ThrottledException");
+        }
+    }
+
+    /// <summary>
+    /// Custom EC2 retry policy.
+    /// This policy adds service specific error codes to retry on.
+    /// </summary>
+    public class EC2StandardRetryPolicy : StandardRetryPolicy
+    {
+        /// <summary>
+        /// Constructor for EC2StandardRetryPolicy.
+        /// </summary>
+        /// <param name="config">The IClientConfig object</param>
+        public EC2StandardRetryPolicy(IClientConfig config) :
+            base(config)
+        {
+            ThrottlingErrorCodes.Add("EC2ThrottledException");
+        }
+    }
+
+    /// <summary>
+    /// Custom EC2 retry policy.
+    /// This policy adds service specific error codes to retry on.
+    /// </summary>
+    public class EC2AdaptiveRetryPolicy : AdaptiveRetryPolicy
+    {
+        /// <summary>
+        /// Constructor for EC2AdaptiveRetryPolicy.
+        /// </summary>
+        /// <param name="config">The IClientConfig object</param>
+        public EC2AdaptiveRetryPolicy(IClientConfig config) :
+            base(config)
+        {
+            ThrottlingErrorCodes.Add("EC2ThrottledException");
+        }
     }
 }

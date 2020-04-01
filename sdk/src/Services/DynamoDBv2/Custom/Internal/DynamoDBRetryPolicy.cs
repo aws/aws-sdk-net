@@ -37,7 +37,18 @@ namespace Amazon.DynamoDBv2.Internal
         public DynamoDBRetryPolicy(IClientConfig config) :
             base(config)
         {
-            ErrorCodesToRetryOn.Add("TransactionInProgressException");
+            ThrottlingErrorCodes.Add("TransactionInProgressException");
+               
+            //When derived from DefaultRetryPolicy, we are in legacy retry 
+            //mode. When in legacy retry mode MaxErrorRetry used to be set
+            //to 10 in the DynamoDB and DynamoDBStreams configs. This
+            //can no longer be set in the configs because the retry mode
+            //may not be known at that point where standard and adaptive 
+            //retry modes are not to have this default.
+            if(!config.IsMaxErrorRetrySet)
+            {
+                this.MaxRetries = 10;
+            }
         }
 
         /// <summary>

@@ -262,6 +262,7 @@ namespace AWSSDK.UnitTests
             FallbackCredentialsFactory.Reset();
             FallbackRegionFactory.Reset();
             FallbackEndpointDiscoveryEnabledFactory.Reset();
+            FallbackInternalConfigurationFactory.Reset();
         }
 
         public void Dispose()
@@ -274,6 +275,7 @@ namespace AWSSDK.UnitTests
             FallbackCredentialsFactory.Reset();
             FallbackRegionFactory.Reset();
             FallbackEndpointDiscoveryEnabledFactory.Reset();
+            FallbackInternalConfigurationFactory.Reset();
         }
     }
 }

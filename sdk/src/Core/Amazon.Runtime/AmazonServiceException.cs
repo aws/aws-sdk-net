@@ -126,6 +126,18 @@ namespace Amazon.Runtime
             set { this.statusCode = value; }
         }
 
+        /// <summary>
+        /// Flag indicating if the exception is retryable and the associated retry
+        /// details. A null value indicates that the exception is not retryable.
+        /// </summary>
+        public virtual RetryableDetails Retryable
+        {
+            get
+            {
+                return null;
+            }
+        }
+
 
 #if !PCL && !NETSTANDARD
         /// <summary>
@@ -175,5 +187,23 @@ namespace Amazon.Runtime
             }
         }
 #endif
+    }
+
+    /// <summary>
+    /// Class containing the retryable details for an AmazonServiceException
+    /// </summary>
+    public class RetryableDetails
+    {
+        public RetryableDetails(bool throttling)
+        {
+            Throttling = throttling;
+        }
+
+        /// <summary>
+        /// This property indicates that this exception is a 
+        /// throttling exception and should be subject to congestion
+        /// control throttling.
+        /// </summary>
+        public bool Throttling { get; private set; }
     }
 }

@@ -226,7 +226,29 @@ namespace <#=this.Config.Namespace#>
             var pipelineOverrides = this.Config.ServiceModel.Customizations.PipelineOverride;
             foreach(var o in pipelineOverrides.Overrides )
             {
+                if(!string.IsNullOrEmpty(o.Condition))
+                {
+#>
+            if(<#=o.Condition#>)
+            {
+<#
                 if(o.OverrideMethod == "remove")
+                {
+#>
+                pipeline.<#=o.FormattedOverrideMethod#>();
+<#
+                }
+                else
+                {
+#>
+                pipeline.<#=o.FormattedOverrideMethod#>(new <#=o.NewType#>(<#=o.ConstructorInput#>));
+<#
+                }
+#>
+            }
+<#
+                }
+                else if(o.OverrideMethod == "remove")
                 {
 #>
             pipeline.<#=o.FormattedOverrideMethod#>();

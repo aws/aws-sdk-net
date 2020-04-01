@@ -28,6 +28,15 @@ namespace <#=this.Config.Namespace#>.Model
 #>
     public class <#=this.Exception.Name#> : <#=BaseException#> 
     {
+<#
+        if(this.Exception.Structure.IsRetryable)
+        {
+#>
+        private RetryableDetails _retryableDetails = new RetryableDetails(<#=this.Exception.Structure.Throttling.ToString().ToLower()#>);
+
+<#
+        }
+#>
         /// <summary>
         /// Constructs a new <#=this.Exception.Name#> with the specified error
         /// message.
@@ -172,7 +181,25 @@ namespace <#=this.Config.Namespace#>.Model
 		}
 #>
 #endif
-    }
+<#
+        if(this.Exception.Structure.IsRetryable)
+        {
+#>
+
+        /// <summary>
+        /// Flag indicating if the exception is retryable and the associated retry
+        /// details. A null value indicates that the exception is not retryable.
+        /// </summary>
+        public override RetryableDetails Retryable
+        {
+            get
+            {
+                return _retryableDetails;
+            }
+        }
+<#
+        }
+#>	}
 }
 
 <#+

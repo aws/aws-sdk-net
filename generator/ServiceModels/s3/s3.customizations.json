@@ -8,10 +8,25 @@
             { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3ExceptionHandler", "targetType": "Amazon.Runtime.Internal.ErrorCallbackHandler" },
             { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3RedirectHandler", "targetType": "Amazon.Runtime.Internal.Unmarshaller" },
             {
+                "condition":"this.Config.RetryMode == RequestRetryMode.Legacy",
                 "operation": "replace",
                 "newType": "Amazon.Runtime.Internal.RetryHandler",
                 "targetType": "Amazon.Runtime.Internal.RetryHandler",
                 "constructorInput": "new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config)"
+            },
+            {
+                "condition":"this.Config.RetryMode == RequestRetryMode.Standard",
+                "operation": "replace",
+                "newType": "Amazon.Runtime.Internal.RetryHandler",
+                "targetType": "Amazon.Runtime.Internal.RetryHandler",
+                "constructorInput": "new Amazon.S3.Internal.AmazonS3StandardRetryPolicy(this.Config)"
+            },
+            {
+                "condition":"this.Config.RetryMode == RequestRetryMode.Adaptive",
+                "operation": "replace",
+                "newType": "Amazon.Runtime.Internal.RetryHandler",
+                "targetType": "Amazon.Runtime.Internal.RetryHandler",
+                "constructorInput": "new Amazon.S3.Internal.AmazonS3AdaptiveRetryPolicy(this.Config)"
             }
         ]
     },

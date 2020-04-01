@@ -161,6 +161,32 @@ namespace AWSSDK.UnitTests
             .AppendLine("endpoint_discovery_enabled=notvalid")
             .ToString();
 
+        private static readonly string RetriesLegacyModeProfileText = new StringBuilder()
+            .AppendLine("[retries_legacymode_profile_text]")            
+            .Append("retry_mode=legacy")
+            .ToString();
+
+        private static readonly string RetriesStandardModeProfileText = new StringBuilder()
+            .AppendLine("[retries_standardmode_profile_text]")            
+            .Append("retry_mode=standard")
+            .ToString();
+
+        private static readonly string RetriesAdaptiveModeProfileText = new StringBuilder()
+            .AppendLine("[retries_adaptivemode_profile_text]")            
+            .Append("retry_mode=adaptive")
+            .ToString();
+
+        private static readonly string RetriesInvalidModeProfileText = new StringBuilder()
+            .AppendLine("[retries_invalidmode_profile_text]")            
+            .Append("retry_mode=invalid_mode")
+            .ToString();
+
+        private static readonly string RetriesMaxAttemptsProfileText = new StringBuilder()
+            .AppendLine("[retries_max_attempts_profile_text]")
+            .Append("max_attempts=100")            
+            .ToString();       
+
+
         private static readonly CredentialProfileOptions SAMLRoleProfileOptions = new CredentialProfileOptions()
         {
             EndpointName = "endpoint_name",
@@ -248,6 +274,8 @@ namespace AWSSDK.UnitTests
         private static readonly CredentialProfileOptions RegionOnlyProfileOptions = new CredentialProfileOptions();
 
         private static readonly CredentialProfileOptions EndpointDiscoveryEnabledOnlyProfileOptions = new CredentialProfileOptions();
+
+        private static readonly CredentialProfileOptions RetriesOnlyProfileOptions = new CredentialProfileOptions();
 
         private static readonly string OtherProfileTextForCopyAndRename = new StringBuilder()
             .AppendLine("[other_profile]")
@@ -420,6 +448,89 @@ namespace AWSSDK.UnitTests
                 Assert.IsFalse(tester.CredentialsFile.TryGetProfile("endpoint_discovery_enabled_only_profile", out profile1));
             }
         }
+
+        [TestMethod]
+        public void ReadRetriesLegacyModeProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(RetriesLegacyModeProfileText))
+            {
+                tester.TestTryGetProfile("retries_legacymode_profile_text", true, false);
+            }
+        }
+
+        [TestMethod]
+        public void WriteRetriesLegacyModeProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture())
+            {
+                tester.AssertWriteProfileRetryMode("retries_legacymode_profile_text", RetriesOnlyProfileOptions, RequestRetryMode.Legacy, RetriesLegacyModeProfileText);
+            }
+        }
+
+        [TestMethod]
+        public void ReadRetriesStandardModeProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(RetriesStandardModeProfileText))
+            {
+                tester.TestTryGetProfile("retries_standardmode_profile_text", true, false);
+            }
+        }
+
+        [TestMethod]
+        public void WriteRetriesStandardModeProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture())
+            {
+                tester.AssertWriteProfileRetryMode("retries_standardmode_profile_text", RetriesOnlyProfileOptions, RequestRetryMode.Standard, RetriesStandardModeProfileText);
+            }
+        }
+
+        [TestMethod]
+        public void ReadRetriesAdaptiveModeProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(RetriesAdaptiveModeProfileText))
+            {
+                tester.TestTryGetProfile("retries_adaptivemode_profile_text", true, false);
+            }
+        }
+
+        [TestMethod]
+        public void WriteRetriesAdaptiveModeProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture())
+            {
+                tester.AssertWriteProfileRetryMode("retries_adaptivemode_profile_text", RetriesOnlyProfileOptions, RequestRetryMode.Adaptive, RetriesAdaptiveModeProfileText);
+            }
+        }
+
+        [TestMethod]
+        public void ReadRetriesInvalidModeProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(RetriesInvalidModeProfileText))
+            {
+                CredentialProfile profile1;
+                Assert.IsFalse(tester.CredentialsFile.TryGetProfile("retries_invalidmode_profile_text", out profile1));
+            }
+        }
+
+        [TestMethod]
+        public void ReadRetriesMaxAttemptsProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(RetriesMaxAttemptsProfileText))
+            {
+                tester.TestTryGetProfile("retries_max_attempts_profile_text", true, false);
+            }
+        }
+
+        [TestMethod]
+        public void WriteRetriesMaxAttemptsProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture())
+            {
+                tester.AssertWriteProfileMaxAttempts("retries_max_attempts_profile_text", RetriesOnlyProfileOptions, 100, RetriesMaxAttemptsProfileText);
+            }
+        }
+
 
         [TestMethod]
         public void ReadInvalidProfile()

@@ -405,6 +405,7 @@ namespace ServiceClientGenerator
         public const string TargetTypeKey = "targetType";
         public const string NewTypeKey = "newType";
         public const string ConstructorInputKey = "constructorInput";
+        public const string ConditionKey = "condition";
         public const string NoArgOverloadsKey = "noArgOverloads";
         public const string SuppressResultGenerationKey = "suppressResultGeneration";
         public const string UseNullableTypeKey = "useNullableType";
@@ -513,7 +514,8 @@ namespace ServiceClientGenerator
                                 OverrideMethod = jsonData[OperationKey] != null ? jsonData[OperationKey].ToString() : null,
                                 TargetType = jsonData[TargetTypeKey] != null ? jsonData[TargetTypeKey].ToString() : null,
                                 NewType = jsonData[NewTypeKey] != null ? jsonData[NewTypeKey].ToString() : null,
-                                ConstructorInput = jsonData[ConstructorInputKey] != null ? jsonData[ConstructorInputKey].ToString() : ""
+                                ConstructorInput = jsonData[ConstructorInputKey] != null ? jsonData[ConstructorInputKey].ToString() : "",
+                                Condition = jsonData[ConditionKey] != null ? jsonData[ConditionKey].ToString() : ""
                             });
                     }
                 }
@@ -553,7 +555,8 @@ namespace ServiceClientGenerator
                                 OverrideMethod = jsonData[OperationKey] != null ? jsonData[OperationKey].ToString() : null,
                                 TargetType = jsonData[TargetTypeKey] != null ? jsonData[TargetTypeKey].ToString() : null,
                                 NewType = jsonData[NewTypeKey] != null ? jsonData[NewTypeKey].ToString() : null,
-                                ConstructorInput = jsonData[ConstructorInputKey] != null ? jsonData[ConstructorInputKey].ToString() : ""
+                                ConstructorInput = jsonData[ConstructorInputKey] != null ? jsonData[ConstructorInputKey].ToString() : "",
+                                Condition = jsonData[ConditionKey] != null ? jsonData[ConditionKey].ToString() : ""
                             });
                     }
                 }
@@ -1639,6 +1642,17 @@ namespace ServiceClientGenerator
                 /// Overrides the constructor input in the pipeline
                 /// </summary>
                 public string ConstructorInput { get; set; }
+
+                /// <summary>
+                /// Overrides the condition of the override input in the pipeline.
+                /// A condition on an override allows a customization that is only
+                /// executed when a defined condition is met. The condition must be
+                /// any code that would be valid within the Amazon[ServiceName]Client
+                /// class for the ServiceName where the override is being made. For 
+                /// example, a valid condition is: 
+                /// "if(this.Config.RetryMode == RequestRetryMode.Legacy)"
+                /// </summary>
+                public string Condition { get; set; }
 
                 /// <summary>
                 /// Proceses the override method and provides what type of override should be generated based on the string

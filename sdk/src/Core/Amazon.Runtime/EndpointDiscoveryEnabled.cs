@@ -29,6 +29,7 @@ namespace Amazon.Runtime
     /// Determines the endpoint discovery enabled value based on an environment variable. If no value is found in the
     /// environment then an InvalidOperationException is thrown.
     /// </summary>
+    [Obsolete("This class has been deprecated in favor of EnvironmentVariableAWSConfiguration.")]
     public class EnvironmentVariableAWSEndpointDiscoveryEnabled
     {
         public const string ENVIRONMENT_VARIABLE_AWS_ENABLE_ENDPOINT_DISCOVERY = "AWS_ENABLE_ENDPOINT_DISCOVERY";
@@ -60,11 +61,12 @@ namespace Amazon.Runtime
             logger.InfoFormat("Endpoint discovery enabled found using environment variable.");
         }
     }
-        
+
     /// <summary>
     /// Determines endpoint discovery enabled based on a <see cref="CredentialProfile"/> stored in an <see cref="ICredentialProfileSource"/>.
     /// If the profile doesn't exist or there is no endpoint discovery enabled information an InvalidOperationException is thrown.
     /// </summary>
+    [Obsolete("This class has been deprecated in favor of ProfileAWSConfiguration.")]
     public class ProfileAWSEndpointDiscoveryEnabled
     {
         public bool Enabled { get; private set; }
@@ -112,7 +114,7 @@ namespace Amazon.Runtime
             else
             {
                 this.Enabled = enabled.Value;
-                var logger = Logger.GetLogger(typeof(ProfileAWSRegion));
+                var logger = Logger.GetLogger(typeof(ProfileAWSEndpointDiscoveryEnabled));
                 logger.InfoFormat("endpoint_discovery_enabled found in profile '" + profileName + "' in store " + source.GetType());
             }
         }
@@ -122,6 +124,7 @@ namespace Amazon.Runtime
     /// <summary>
     /// Probing mechanism to determine the endpoint discovery enabled value from various sources.
     /// </summary>
+    [Obsolete("This class has been deprecated in favor of FallbackConfigurationFactory.")]
     public static class FallbackEndpointDiscoveryEnabledFactory
     {
 #if BCL || NETSTANDARD

@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -67,12 +67,13 @@ namespace Amazon.Runtime.Internal
             var requestContext = executionContext.RequestContext;
             var responseContext = executionContext.ResponseContext;
             bool shouldRetry = false;
+            this.RetryPolicy.ObtainSendToken(executionContext, null);
             do
             {
                 try
-                {
-                    base.InvokeSync(executionContext);
-                    this.RetryPolicy.NotifySuccess(executionContext);
+                {                    
+                    base.InvokeSync(executionContext);                    
+                    this.RetryPolicy.NotifySuccess(executionContext);                    
                     return;
                 }
                 catch (Exception exception)
@@ -89,6 +90,8 @@ namespace Amazon.Runtime.Internal
                         requestContext.Metrics.SetCounter(Metric.AttemptCount, requestContext.Retries);
                         LogForRetry(requestContext, exception);
                     }
+
+                    this.RetryPolicy.ObtainSendToken(executionContext, exception);
                 }
 
                 PrepareForRetry(requestContext);
@@ -114,11 +117,14 @@ namespace Amazon.Runtime.Internal
             var requestContext = executionContext.RequestContext;
             var responseContext = executionContext.ResponseContext;
             bool shouldRetry = false;
+            await this.RetryPolicy.ObtainSendTokenAsync(executionContext, null).ConfigureAwait(false);
+
             do
             {
-                System.Runtime.ExceptionServices.ExceptionDispatchInfo capturedException = null;
+                System.Runtime.ExceptionServices.ExceptionDispatchInfo capturedException = null;                
+
                 try
-                {
+                {                
                     T result = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
                     this.RetryPolicy.NotifySuccess(executionContext);
                     return result;
@@ -142,6 +148,8 @@ namespace Amazon.Runtime.Internal
                         requestContext.Metrics.SetCounter(Metric.AttemptCount, requestContext.Retries);
                         LogForRetry(requestContext, capturedException.SourceException);
                     }
+
+                    await this.RetryPolicy.ObtainSendTokenAsync(executionContext, capturedException.SourceException).ConfigureAwait(false);
                 }
 
                 PrepareForRetry(requestContext);

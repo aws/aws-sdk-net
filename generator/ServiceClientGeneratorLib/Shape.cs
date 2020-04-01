@@ -20,6 +20,8 @@ namespace ServiceClientGenerator
         public const string MembersKey = "members";
         public const string PayloadKey = "payload";
         public const string ExceptionKey = "exception";
+        public const string RetryableKey = "retryable";
+        public const string ThrottlingKey = "throttling";
         public const string RequiresLengthKey = "requiresLength";
         public const string StreamingKey = "streaming";
         public const string TypeKey = "type";
@@ -342,6 +344,29 @@ namespace ServiceClientGenerator
                 var exception = this.data[ExceptionKey];
                 if (exception == null || !exception.IsBoolean) return false;
                 return (bool)exception;
+            }
+        }
+
+        /// <summary>
+        /// Determines if the exception is marked retryable
+        /// </summary>
+        public bool IsRetryable
+        {
+            get
+            {
+                return this.data[RetryableKey] != null;
+            }
+        }
+
+        /// <summary>
+        /// Determines if a retryable exception is marked as throttling
+        /// </summary>
+        public bool Throttling
+        {
+            get
+            {
+                var throttling = this.data[RetryableKey]?[ThrottlingKey];
+                return (bool)(throttling ?? false);
             }
         }
 

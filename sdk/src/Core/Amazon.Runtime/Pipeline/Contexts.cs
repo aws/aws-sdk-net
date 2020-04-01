@@ -39,6 +39,7 @@ namespace Amazon.Runtime
         bool IsSigned { get; set; }
         bool IsAsync { get; }
         int Retries { get; set; }
+        CapacityManager.CapacityType LastCapacityType { get; set; }
         int EndpointDiscoveryRetries { get; set; }
 
 #if AWS_ASYNC_API
@@ -116,6 +117,7 @@ namespace Amazon.Runtime.Internal
         public RequestMetrics Metrics { get; private set; }
         public IClientConfig ClientConfig { get; set; }
         public int Retries { get; set; }
+        public CapacityManager.CapacityType LastCapacityType { get; set; } = CapacityManager.CapacityType.Increment;
         public int EndpointDiscoveryRetries { get; set; }
         public bool IsSigned { get; set; }
         public bool IsAsync { get; set; }

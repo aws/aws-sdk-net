@@ -146,9 +146,26 @@ namespace Amazon.Runtime
         int BufferSize { get; }
 
         /// <summary>
-        /// Gets the MaxErrorRetry property.
+        /// Returns the flag indicating how many retry HTTP requests an SDK should
+        /// make for a single SDK operation invocation before giving up. This flag will 
+        /// return 4 when the RetryMode is set to "Legacy" which is the default. For
+        /// RetryMode values of "Standard" or "Adaptive" this flag will return 2. In 
+        /// addition to the values returned that are dependant on the RetryMode, the
+        /// value can be set to a specific value by using the AWS_MAX_ATTEMPTS environment
+        /// variable, max_attempts in the shared configuration file, or by setting a
+        /// value directly on this property. When using AWS_MAX_ATTEMPTS or max_attempts
+        /// the value returned from this property will be one less than the value entered
+        /// because this flag is the number of retry requests, not total requests. To 
+        /// learn more about the RetryMode property that affects the values returned by 
+        /// this flag, see <see cref="RetryMode"/>.
         /// </summary>
         int MaxErrorRetry { get; }
+
+
+        /// <summary>
+        /// Determines if MaxErrorRetry has been manually set.
+        /// </summary>
+        bool IsMaxErrorRetrySet { get; }
 
         /// <summary>
         /// Gets the interval at which progress update events are raised
@@ -243,6 +260,23 @@ namespace Amazon.Runtime
         /// Returns the maximum number of discovered endpoints that can be stored within the cache for the client. The default limit is 1000 cache entries.
         /// </summary>
         int EndpointDiscoveryCacheLimit { get; }
+
+        /// <summary>
+        /// Returns the flag indicating the current mode in use for request 
+        /// retries and influences the value returned from <see cref="MaxErrorRetry"/>.
+        /// The default value is RequestRetryMode.Legacy. This flag can be configured
+        /// by using the AWS_RETRY_MODE environment variable, retry_mode in the
+        /// shared configuration file, or by setting this value directly.
+        /// </summary>
+        RequestRetryMode RetryMode { get; }
+                
+        /// <summary>
+        /// Under Adaptive retry mode, this flag determines if the client should wait for
+        /// a send token to become available or don't block and fail the request immediately
+        /// if a send token is not available.
+        /// </summary>
+        bool FastFailRequests { get;  }
+
 #if BCL
         /// <summary>
         /// Gets the TCP keep-alive values to use for service requests. Enabling TCP keep-alive sends periodic TCP keep-alive probe packets, to prevent disconnection due to 

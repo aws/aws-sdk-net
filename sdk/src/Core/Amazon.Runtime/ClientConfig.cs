@@ -21,6 +21,7 @@ using System.Text;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using System.Globalization;
+using Amazon.Runtime.Internal;
 
 #if NETSTANDARD
 using System.Runtime.InteropServices;
@@ -54,8 +55,7 @@ namespace Amazon.Runtime
         private string authRegion = null;
         private string authServiceName = null;
         private string signatureVersion = "4";
-        private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
-        private int maxErrorRetry = 4;
+        private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;        
         private bool readEntireResponse = false;
         private bool logResponse = false;
         private int bufferSize = AWSSDKUtils.DefaultBufferSize;
@@ -71,6 +71,10 @@ namespace Amazon.Runtime
         private bool disableHostPrefixInjection = false;
         private bool? endpointDiscoveryEnabled = null;
         private int endpointDiscoveryCacheLimit = 1000;
+        private RequestRetryMode? retryMode = null;
+        private int? maxRetries = null;
+        private const int MaxRetriesDefault = 2;
+        private const int MaxRetriesLegacyDefault = 4;
 #if BCL
         private readonly TcpKeepAlive tcpKeepAlive = new TcpKeepAlive();
 #endif
@@ -241,12 +245,54 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Gets and sets of the MaxErrorRetry property.
+        /// Returns the flag indicating how many retry HTTP requests an SDK should
+        /// make for a single SDK operation invocation before giving up. This flag will 
+        /// return 4 when the RetryMode is set to "Legacy" which is the default. For
+        /// RetryMode values of "Standard" or "Adaptive" this flag will return 2. In 
+        /// addition to the values returned that are dependant on the RetryMode, the
+        /// value can be set to a specific value by using the AWS_MAX_ATTEMPTS environment
+        /// variable, max_attempts in the shared configuration file, or by setting a
+        /// value directly on this property. When using AWS_MAX_ATTEMPTS or max_attempts
+        /// the value returned from this property will be one less than the value entered
+        /// because this flag is the number of retry requests, not total requests. To 
+        /// learn more about the RetryMode property that affects the values returned by 
+        /// this flag, see <see cref="RetryMode"/>.
         /// </summary>
         public int MaxErrorRetry
         {
-            get { return this.maxErrorRetry; }
-            set { this.maxErrorRetry = value; }
+            get
+            {
+                if (!this.maxRetries.HasValue)
+                {
+                    //For legacy mode there was no MaxAttempts shared config or 
+                    //environment variables so use the legacy default value.
+                    if(RetryMode == RequestRetryMode.Legacy)
+                    {
+                        return MaxRetriesLegacyDefault;
+                    }
+
+                    //For standard and adaptive modes first check the environment variables
+                    //and shared config for a value. Otherwise default to the new default value.
+                    //In the shared config or environment variable MaxAttempts is the total number 
+                    //of attempts. This will include the initial call and must be deducted from
+                    //from the number of actual retries.
+                    return FallbackInternalConfigurationFactory.MaxAttempts - 1 ?? MaxRetriesDefault;
+                }
+
+                return this.maxRetries.Value;
+            }
+            set { this.maxRetries = value; }
+        }
+
+        /// <summary>
+        /// Determines if MaxErrorRetry has been manually set.
+        /// </summary>
+        public bool IsMaxErrorRetrySet
+        {
+            get
+            {
+                return this.maxRetries.HasValue;
+            }
         }
 
         /// <summary>
@@ -549,15 +595,7 @@ namespace Amazon.Runtime
             {
                 if (!this.endpointDiscoveryEnabled.HasValue)
                 {
-                    var endpointDiscoveryEnabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
-                    if (endpointDiscoveryEnabled != null)
-                    {
-                        return endpointDiscoveryEnabled.Value;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    return FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled ?? false;                    
                 }
 
                 return this.endpointDiscoveryEnabled.Value;
@@ -573,6 +611,34 @@ namespace Amazon.Runtime
             get { return this.endpointDiscoveryCacheLimit; }
             set { this.endpointDiscoveryCacheLimit = value; }
         }
+
+        /// <summary>
+        /// Returns the flag indicating the current mode in use for request 
+        /// retries and influences the value returned from <see cref="MaxErrorRetry"/>.
+        /// The default value is RequestRetryMode.Legacy. This flag can be configured
+        /// by using the AWS_RETRY_MODE environment variable, retry_mode in the
+        /// shared configuration file, or by setting this value directly.
+        /// </summary>
+        public RequestRetryMode RetryMode
+        {
+            get
+            {
+                if (!this.retryMode.HasValue)
+                {
+                    return FallbackInternalConfigurationFactory.RetryMode ?? RequestRetryMode.Legacy;
+                }
+
+                return this.retryMode.Value;
+            }
+            set { this.retryMode = value; }
+        }
+        
+        /// <summary>
+        /// Under Adaptive retry mode, this flag determines if the client should wait for
+        /// a send token to become available or don't block and fail the request immediately
+        /// if a send token is not available.
+        /// </summary>
+        public bool FastFailRequests { get; set; } = false;
 
         /// <summary>
         /// Throw an exception if the boxed TimeSpan parameter doesn't have a value or is out of range.

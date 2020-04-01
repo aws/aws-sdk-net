@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,53 +24,48 @@ using System.Threading;
 namespace Amazon.Runtime.Internal
 {
     /// <summary>
-    /// The default implementation of the legacy retry policy.
+    /// The default implementation of the standard retry policy.
     /// </summary>
-    public partial class DefaultRetryPolicy : RetryPolicy
+    public partial class StandardRetryPolicy : RetryPolicy
     {
+        private static Random _randomJitter = new Random();
+                
         //The status code returned from a service request when an invalid endpoint is used.
         private const int INVALID_ENDPOINT_EXCEPTION_STATUSCODE = 421;        
-        //Holds on to the singleton instance.
-        private static readonly CapacityManager _capacityManagerInstance = new CapacityManager(throttleRetryCount: 100, throttleRetryCost: 5, throttleCost: 1);
-
-        private static readonly HashSet<string> _netStandardRetryErrorMessages = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-        {
-            "The server returned an invalid or unrecognized response",
-            "The connection with the server was terminated abnormally",
-            "An error occurred while sending the request.",
-            "Failed sending data to the peer"
-        };
+        
+        protected static CapacityManager CapacityManagerInstance { get; set; } = new CapacityManager(throttleRetryCount: 100, throttleRetryCost: 5, throttleCost: 1, timeoutRetryCost: 10);
 
         /// <summary>
         /// The maximum value of exponential backoff in milliseconds, which will be used to wait
-        /// before retrying a request. The default is 30000 milliseconds.
+        /// before retrying a request. The default is 20000 milliseconds.
         /// </summary>
-        public int MaxBackoffInMilliseconds { get; set; } = 30000;
-                                
+        public int MaxBackoffInMilliseconds { get; set; } = 20000;
+
+
         /// <summary>
-        /// Constructor for DefaultRetryPolicy.
+        /// Constructor for StandardRetryPolicy.
         /// </summary>
         /// <param name="maxRetries">The maximum number of retries before throwing
         /// back a exception. This does not count the initial request.</param>
-        public DefaultRetryPolicy(int maxRetries)
+        public StandardRetryPolicy(int maxRetries)
         {
             this.MaxRetries = maxRetries;
         }
 
         /// <summary>
-        /// Constructor for DefaultRetryPolicy.
+        /// Constructor for StandardRetryPolicy.
         /// </summary>
         /// <param name="config">The Client config object. This is used to 
         /// retrieve the maximum number of retries  before throwing
         /// back a exception(This does not count the initial request) and
         /// the service URL for the request.</param>
-        public DefaultRetryPolicy(IClientConfig config)
+        public StandardRetryPolicy(IClientConfig config)
         {
             this.MaxRetries = config.MaxErrorRetry;
             if (config.ThrottleRetries)
             {
                 string serviceURL = config.DetermineServiceURL();
-                RetryCapacity = _capacityManagerInstance.GetRetryCapacity(serviceURL);
+                RetryCapacity = CapacityManagerInstance.GetRetryCapacity(serviceURL);
             } 
         }
 
@@ -94,7 +89,7 @@ namespace Amazon.Runtime.Internal
         {
             return RetryForExceptionSync(exception, executionContext);
         }
-        
+
         /// <summary>
         /// Virtual method that gets called when a retry request is initiated. If retry throttling is
         /// enabled, the value returned is true if the required capacity is retured, false otherwise. 
@@ -133,10 +128,12 @@ namespace Amazon.Runtime.Internal
         {
             if (!bypassAcquireCapacity && executionContext.RequestContext.ClientConfig.ThrottleRetries && RetryCapacity != null)
             {
-                return _capacityManagerInstance.TryAcquireCapacity(RetryCapacity, executionContext.RequestContext.LastCapacityType);
+                return CapacityManagerInstance.TryAcquireCapacity(RetryCapacity, executionContext.RequestContext.LastCapacityType);
             }
-            
-            return true;            
+            else
+            {
+                return true;
+            }
         }
 
         /// <summary>
@@ -149,7 +146,8 @@ namespace Amazon.Runtime.Internal
         {
             if(executionContext.RequestContext.ClientConfig.ThrottleRetries && RetryCapacity != null)
             {
-                _capacityManagerInstance.ReleaseCapacity(executionContext.RequestContext.LastCapacityType, RetryCapacity);
+                var requestContext = executionContext.RequestContext;
+                CapacityManagerInstance.ReleaseCapacity(requestContext.LastCapacityType, RetryCapacity);
             }
         }
         /// <summary>
@@ -158,7 +156,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="exception">The exception thrown by the previous request.</param>
         /// <returns>Return true if the request should be retried.</returns>
-        private bool RetryForExceptionSync(Exception exception)
+        protected bool RetryForExceptionSync(Exception exception)
         {
             return RetryForExceptionSync(exception, null);
         }
@@ -169,7 +167,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="exception">The exception thrown by the previous request.</param>
         /// <param name="executionContext">Request context containing the state of the request.</param>
         /// <returns>Return true if the request should be retried.</returns>
-        private bool RetryForExceptionSync(Exception exception, IExecutionContext executionContext)
+        protected bool RetryForExceptionSync(Exception exception, IExecutionContext executionContext)
         {
             // AmazonServiceException is thrown by ErrorHandler if it is this type of exception.
             var serviceException = exception as AmazonServiceException;
@@ -191,11 +189,11 @@ namespace Amazon.Runtime.Internal
             if (IsTransientError(executionContext, exception) || IsServiceTimeoutError(exception))
             {
                 return true;
-            }                        
-
+            }
+            
             //Check for Invalid Endpoint Exception indicating that the Endpoint Discovery
             //endpoint used was invalid for the request. One retry attempt is allowed for this
-            //type of exception.            
+            //type of exception.
             if (serviceException?.StatusCode == (HttpStatusCode)INVALID_ENDPOINT_EXCEPTION_STATUSCODE)
             {
                 if (executionContext.RequestContext.EndpointDiscoveryRetries < 1)
@@ -221,16 +219,17 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
-        /// Waits before retrying a request. The default policy implements a exponential backoff.
+        /// Waits before retrying a request. The default policy implements a exponential backoff with 
+        /// jitter algorithm.
         /// </summary>
         /// <param name="executionContext">Request context containing the state of the request.</param>
         public override void WaitBeforeRetry(IExecutionContext executionContext)
         {
-            DefaultRetryPolicy.WaitBeforeRetry(executionContext.RequestContext.Retries, this.MaxBackoffInMilliseconds);
+            StandardRetryPolicy.WaitBeforeRetry(executionContext.RequestContext.Retries, this.MaxBackoffInMilliseconds);
         }
-
+        
         /// <summary>
-        /// Waits for an amount of time using an exponential backoff algorithm.
+        /// Waits for an amount of time using an exponential backoff with jitter algorithm.
         /// </summary>
         /// <param name="retries">The request retry index. The first request is expected to be 0 while 
         /// the first retry will be 1.</param>
@@ -240,36 +239,13 @@ namespace Amazon.Runtime.Internal
             AWSSDKUtils.Sleep(CalculateRetryDelay(retries, maxBackoffInMilliseconds));
         }        
 
-        private static int CalculateRetryDelay(int retries, int maxBackoffInMilliseconds)
+        protected static int CalculateRetryDelay(int retries, int maxBackoffInMilliseconds)
         {
-            int delay;
-            
-            if (retries < 12 )  delay = Convert.ToInt32(Math.Pow(4, retries) * 100.0);
-            else                delay = Int32.MaxValue;
-
-            if (retries > 0 && (delay > maxBackoffInMilliseconds || delay <= 0))
-                delay = maxBackoffInMilliseconds;
-            return delay;
-        }
-
-        [Obsolete("This method is no longer used within DefaultRetryPolicy")]
-        protected static bool ContainErrorMessage(Exception exception)
-        {
-            return ContainErrorMessage(exception, _netStandardRetryErrorMessages);            
-        }
-
-        [Obsolete("This method has been moved to AWSSDK.Runtime.Internal.Util.ExceptionUtils")]
-        protected static bool IsInnerException<T>(Exception exception)
-            where T : Exception
-        {
-            return ExceptionUtils.IsInnerException<T>(exception);            
-        }
-
-        [Obsolete("This method has been moved to AWSSDK.Runtime.Internal.Util.ExceptionUtils")]
-        protected static bool IsInnerException<T>(Exception exception, out T inner)
-            where T : Exception
-        {
-            return ExceptionUtils.IsInnerException<T>(exception, out inner);
+            double jitter;
+            lock (_randomJitter) {                
+                jitter = _randomJitter.NextDouble();
+            }
+            return Convert.ToInt32(Math.Min(jitter * Math.Pow(2, retries - 1) * 1000.0, maxBackoffInMilliseconds));
         }
     }
 }

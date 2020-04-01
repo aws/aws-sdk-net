@@ -484,6 +484,23 @@ namespace Amazon.Runtime
             var errorCallbackHandler = new ErrorCallbackHandler();
             errorCallbackHandler.OnError = this.ProcessExceptionHandlers;
 
+            //Determine which retry policy to use based on the retry mode
+            RetryPolicy retryPolicy;
+            switch (this.Config.RetryMode)
+            {
+                case RequestRetryMode.Adaptive:
+                    retryPolicy = new AdaptiveRetryPolicy(this.Config);
+                    break;
+                case RequestRetryMode.Standard:
+                    retryPolicy = new StandardRetryPolicy(this.Config);
+                    break;
+                case RequestRetryMode.Legacy:
+                    retryPolicy = new DefaultRetryPolicy(this.Config);
+                    break;
+                default:
+                    throw new InvalidOperationException("Unknown retry mode");
+            }
+
             // Build default runtime pipeline.
             this.RuntimePipeline = new RuntimePipeline(new List<IPipelineHandler>
                 {
@@ -496,7 +513,7 @@ namespace Amazon.Runtime
                     //credentials, retrying of requests for 421 web exceptions, and the current set regional endpoint.
                     new EndpointDiscoveryHandler(), 
                     new CredentialsRetriever(this.Credentials),                                        
-                    new RetryHandler(new DefaultRetryPolicy(this.Config)),
+                    new RetryHandler(retryPolicy),
                     postMarshallHandler,
                     new EndpointResolver(),
                     new Marshaller(),

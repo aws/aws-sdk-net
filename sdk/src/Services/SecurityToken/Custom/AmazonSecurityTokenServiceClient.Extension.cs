@@ -200,7 +200,18 @@ namespace Amazon.SecurityToken
         /// <param name="pipeline">The client runtime pipeline</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            pipeline.ReplaceHandler<RetryHandler>(new RetryHandler(new SecurityTokenServiceRetryPolicy(this.Config)));
+            if(this.Config.RetryMode == RequestRetryMode.Legacy)
+            {
+                pipeline.ReplaceHandler<RetryHandler>(new RetryHandler(new SecurityTokenServiceRetryPolicy(this.Config)));
+            }
+            else if (this.Config.RetryMode == RequestRetryMode.Standard)
+            {
+                pipeline.ReplaceHandler<RetryHandler>(new RetryHandler(new SecurityTokenServiceStandardRetryPolicy(this.Config)));
+            }
+            else if (this.Config.RetryMode == RequestRetryMode.Adaptive)
+            {
+                pipeline.ReplaceHandler<RetryHandler>(new RetryHandler(new SecurityTokenServiceAdaptiveRetryPolicy(this.Config)));
+            }
         }
 #endif
     }
