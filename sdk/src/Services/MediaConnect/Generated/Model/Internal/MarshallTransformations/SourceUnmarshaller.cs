@@ -118,6 +118,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Transport = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vpcInterfaceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcInterfaceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("whitelistCidr", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

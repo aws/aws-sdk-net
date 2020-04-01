@@ -108,6 +108,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("MediaConnect")]
+        public void AddFlowVpcInterfacesMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddFlowVpcInterfaces");
+
+            var request = InstantiateClassGenerator.Execute<AddFlowVpcInterfacesRequest>();
+            var marshaller = new AddFlowVpcInterfacesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("AddFlowVpcInterfaces", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = AddFlowVpcInterfacesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as AddFlowVpcInterfacesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaConnect")]
         public void CreateFlowMarshallTest()
         {
             var operation = service_model.FindOperation("CreateFlow");
@@ -388,6 +420,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = RemoveFlowSourceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as RemoveFlowSourceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaConnect")]
+        public void RemoveFlowVpcInterfaceMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveFlowVpcInterface");
+
+            var request = InstantiateClassGenerator.Execute<RemoveFlowVpcInterfaceRequest>();
+            var marshaller = new RemoveFlowVpcInterfaceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("RemoveFlowVpcInterface", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = RemoveFlowVpcInterfaceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as RemoveFlowVpcInterfaceResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

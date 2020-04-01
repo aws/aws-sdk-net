@@ -41,6 +41,7 @@ namespace Amazon.MediaConnect.Model
         private string _name;
         private string _sourceArn;
         private Transport _transport;
+        private string _vpcInterfaceName;
         private string _whitelistCidr;
 
         /// <summary>
@@ -187,6 +188,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetTransport()
         {
             return this._transport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcInterfaceName. The name of the VPC Interface this Source
+        /// is configured with.
+        /// </summary>
+        public string VpcInterfaceName
+        {
+            get { return this._vpcInterfaceName; }
+            set { this._vpcInterfaceName = value; }
+        }
+
+        // Check to see if VpcInterfaceName property is set
+        internal bool IsSetVpcInterfaceName()
+        {
+            return this._vpcInterfaceName != null;
         }
 
         /// <summary>

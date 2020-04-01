@@ -41,6 +41,7 @@ namespace Amazon.MediaConnect.Model
         private SetSourceRequest _source;
         private FailoverConfig _sourceFailoverConfig;
         private List<SetSourceRequest> _sources = new List<SetSourceRequest>();
+        private List<VpcInterfaceRequest> _vpcInterfaces = new List<VpcInterfaceRequest>();
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. The Availability Zone that you want to
@@ -149,6 +150,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetSources()
         {
             return this._sources != null && this._sources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcInterfaces. The VPC interfaces you want on the flow.
+        /// </summary>
+        public List<VpcInterfaceRequest> VpcInterfaces
+        {
+            get { return this._vpcInterfaces; }
+            set { this._vpcInterfaces = value; }
+        }
+
+        // Check to see if VpcInterfaces property is set
+        internal bool IsSetVpcInterfaces()
+        {
+            return this._vpcInterfaces != null && this._vpcInterfaces.Count > 0; 
         }
 
     }

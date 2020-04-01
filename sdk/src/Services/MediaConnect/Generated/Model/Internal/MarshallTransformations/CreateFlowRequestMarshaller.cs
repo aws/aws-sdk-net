@@ -148,6 +148,22 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetVpcInterfaces())
+                {
+                    context.Writer.WritePropertyName("vpcInterfaces");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestVpcInterfacesListValue in publicRequest.VpcInterfaces)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VpcInterfaceRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequestVpcInterfacesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

@@ -43,6 +43,7 @@ namespace Amazon.MediaConnect.Model
         private FailoverConfig _sourceFailoverConfig;
         private List<Source> _sources = new List<Source>();
         private Status _status;
+        private List<VpcInterface> _vpcInterfaces = new List<VpcInterface>();
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. The Availability Zone that you want to
@@ -219,6 +220,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcInterfaces. The VPC Interfaces for this flow.
+        /// </summary>
+        public List<VpcInterface> VpcInterfaces
+        {
+            get { return this._vpcInterfaces; }
+            set { this._vpcInterfaces = value; }
+        }
+
+        // Check to see if VpcInterfaces property is set
+        internal bool IsSetVpcInterfaces()
+        {
+            return this._vpcInterfaces != null && this._vpcInterfaces.Count > 0; 
         }
 
     }

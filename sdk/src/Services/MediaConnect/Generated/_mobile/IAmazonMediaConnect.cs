@@ -124,6 +124,48 @@ namespace Amazon.MediaConnect
 
         #endregion
                 
+        #region  AddFlowVpcInterfaces
+
+
+
+        /// <summary>
+        /// Adds VPC interfaces to flow
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddFlowVpcInterfaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddFlowVpcInterfaces service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowVpcInterfaces">REST API Reference for AddFlowVpcInterfaces Operation</seealso>
+        Task<AddFlowVpcInterfacesResponse> AddFlowVpcInterfacesAsync(AddFlowVpcInterfacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateFlow
 
 
@@ -483,6 +525,51 @@ namespace Amazon.MediaConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowSource">REST API Reference for RemoveFlowSource Operation</seealso>
         Task<RemoveFlowSourceResponse> RemoveFlowSourceAsync(RemoveFlowSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RemoveFlowVpcInterface
+
+
+
+        /// <summary>
+        /// Removes a VPC Interface from an existing flow. This request can be made only on a
+        /// VPC interface that does not have a Source or Output associated with it. If the VPC
+        /// interface is referenced by a Source or Output, you must first delete or update the
+        /// Source or Output to no longer reference the VPC interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveFlowVpcInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveFlowVpcInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowVpcInterface">REST API Reference for RemoveFlowVpcInterface Operation</seealso>
+        Task<RemoveFlowVpcInterfaceResponse> RemoveFlowVpcInterfaceAsync(RemoveFlowVpcInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

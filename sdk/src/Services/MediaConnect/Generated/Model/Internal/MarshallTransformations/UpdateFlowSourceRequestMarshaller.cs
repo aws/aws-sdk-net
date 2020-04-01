@@ -125,6 +125,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StreamId);
                 }
 
+                if(publicRequest.IsSetVpcInterfaceName())
+                {
+                    context.Writer.WritePropertyName("vpcInterfaceName");
+                    context.Writer.Write(publicRequest.VpcInterfaceName);
+                }
+
                 if(publicRequest.IsSetWhitelistCidr())
                 {
                     context.Writer.WritePropertyName("whitelistCidr");
