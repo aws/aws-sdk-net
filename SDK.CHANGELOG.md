@@ -1,3 +1,14 @@
+### 3.3.712.0 (2020-04-01 18:14 UTC)
+* IoT (3.3.108.0)
+	* This release introduces Dimensions for AWS IoT Device Defender. Dimensions can be used in Security Profiles to collect and monitor fine-grained metrics.
+* MediaConnect (3.3.107.0)
+	* You can now send content from your virtual private cloud (VPC) to your MediaConnect flow without going over the public internet.
+* Core 3.3.105.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.711.0 (2020-03-31 18:16 UTC)
 * AppConfig (3.3.102.0)
 	* This release adds an event log to deployments. In the case of a deployment rollback, the event log details the rollback reason.
