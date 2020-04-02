@@ -30,7 +30,8 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// Container for the parameters to the TagResource operation.
     /// Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Currently,
-    /// the only CloudWatch resources that can be tagged are alarms.
+    /// the only CloudWatch resources that can be tagged are alarms and Contributor Insights
+    /// rules.
     /// 
     ///  
     /// <para>
@@ -53,7 +54,7 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
-    /// You can associate as many as 50 tags with a resource.
+    /// You can associate as many as 50 tags with a CloudWatch resource.
     /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonCloudWatchRequest
@@ -64,8 +65,23 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
+        /// The ARN of the CloudWatch resource that you're adding tags to.
+        /// </para>
+        ///  
+        /// <para>
+        /// The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
         /// </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i>
+        /// </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies">
+        /// Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General
+        /// Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

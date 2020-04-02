@@ -12,6 +12,10 @@
     <pattern>[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DeleteAnomalyDetectorRequest.Stat</property>
+    <pattern>(SampleCount|Average|Sum|Minimum|Maximum|p(\d{1,2}|100)(\.\d{0,2})?|[ou]\d+(\.\d*)?)(_E|_L|_H)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest.AlarmName</property>
     <min>1</min>
     <max>255</max>
@@ -142,6 +146,10 @@
     <min>1</min>
     <max>255</max>
     <pattern>[^:].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutAnomalyDetectorRequest.Stat</property>
+    <pattern>(SampleCount|Average|Sum|Minimum|Maximum|p(\d{1,2}|100)(\.\d{0,2})?|[ou]\d+(\.\d*)?)(_E|_L|_H)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutCompositeAlarmRequest.AlarmDescription</property>
@@ -284,6 +292,15 @@
     <min>1</min>
     <max>255</max>
     <pattern>[^:].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.AnomalyDetector.Stat</property>
+    <pattern>(SampleCount|Average|Sum|Minimum|Maximum|p(\d{1,2}|100)(\.\d{0,2})?|[ou]\d+(\.\d*)?)(_E|_L|_H)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.AnomalyDetectorConfiguration.MetricTimezone</property>
+    <max>50</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.CompositeAlarm.AlarmArn</property>

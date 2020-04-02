@@ -45,6 +45,7 @@ namespace Amazon.CloudWatch.Model
         private string _ruleDefinition;
         private string _ruleName;
         private string _ruleState;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property RuleDefinition. 
@@ -103,6 +104,42 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetRuleState()
         {
             return this._ruleState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of key-value pairs to associate with the Contributor Insights rule. You can
+        /// associate as many as 50 tags with a rule.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tags can help you organize and categorize your resources. You can also use them to
+        /// scope user permissions, by granting a user permission to access or change only the
+        /// resources that have certain tag values.
+        /// </para>
+        ///  
+        /// <para>
+        /// To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code>
+        /// permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using this operation to update an existing Contributor Insights rule, any
+        /// tags you specify in this parameter are ignored. To change the tags of an existing
+        /// rule, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

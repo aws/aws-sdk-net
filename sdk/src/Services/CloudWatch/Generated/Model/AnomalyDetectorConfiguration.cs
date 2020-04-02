@@ -71,6 +71,7 @@ namespace Amazon.CloudWatch.Model
         /// database</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public string MetricTimezone
         {
             get { return this._metricTimezone; }
