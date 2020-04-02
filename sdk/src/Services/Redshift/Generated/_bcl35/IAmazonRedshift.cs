@@ -1272,7 +1272,8 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Creates a snapshot schedule with the rate of every 12 hours.
+        /// Create a snapshot schedule that can be associated to a cluster and which overrides
+        /// the default system backup schedule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotSchedule service method.</param>
         /// 
@@ -5228,6 +5229,10 @@ namespace Amazon.Redshift
         ///  </li> <li> 
         /// <para>
         /// ds2.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ra3.4xlarge
         /// </para>
         ///  </li> <li> 
         /// <para>

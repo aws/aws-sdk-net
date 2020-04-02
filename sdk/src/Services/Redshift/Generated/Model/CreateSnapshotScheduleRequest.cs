@@ -29,7 +29,8 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSnapshotSchedule operation.
-    /// Creates a snapshot schedule with the rate of every 12 hours.
+    /// Create a snapshot schedule that can be associated to a cluster and which overrides
+    /// the default system backup schedule.
     /// </summary>
     public partial class CreateSnapshotScheduleRequest : AmazonRedshiftRequest
     {

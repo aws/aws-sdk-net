@@ -60,6 +60,10 @@ namespace Amazon.Redshift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// ra3.4xlarge
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// ra3.16xlarge
     /// </para>
     ///  </li> </ul> </li> <li> 
