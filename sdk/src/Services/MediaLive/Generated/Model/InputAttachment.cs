@@ -32,9 +32,27 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class InputAttachment
     {
+        private AutomaticInputFailoverSettings _automaticInputFailoverSettings;
         private string _inputAttachmentName;
         private string _inputId;
         private InputSettings _inputSettings;
+
+        /// <summary>
+        /// Gets and sets the property AutomaticInputFailoverSettings. User-specified settings
+        /// for defining what the conditions are for declaring the input unhealthy and failing
+        /// over to a different input.
+        /// </summary>
+        public AutomaticInputFailoverSettings AutomaticInputFailoverSettings
+        {
+            get { return this._automaticInputFailoverSettings; }
+            set { this._automaticInputFailoverSettings = value; }
+        }
+
+        // Check to see if AutomaticInputFailoverSettings property is set
+        internal bool IsSetAutomaticInputFailoverSettings()
+        {
+            return this._automaticInputFailoverSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InputAttachmentName. User-specified name for the attachment.

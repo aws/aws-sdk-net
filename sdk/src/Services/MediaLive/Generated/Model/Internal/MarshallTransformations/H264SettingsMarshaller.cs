@@ -110,6 +110,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FlickerAq);
             }
 
+            if(requestObject.IsSetForceFieldPictures())
+            {
+                context.Writer.WritePropertyName("forceFieldPictures");
+                context.Writer.Write(requestObject.ForceFieldPictures);
+            }
+
             if(requestObject.IsSetFramerateControl())
             {
                 context.Writer.WritePropertyName("framerateControl");

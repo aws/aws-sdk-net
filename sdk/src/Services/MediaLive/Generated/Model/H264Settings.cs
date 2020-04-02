@@ -42,6 +42,7 @@ namespace Amazon.MediaLive.Model
         private H264EntropyEncoding _entropyEncoding;
         private FixedAfd _fixedAfd;
         private H264FlickerAq _flickerAq;
+        private H264ForceFieldPictures _forceFieldPictures;
         private H264FramerateControl _framerateControl;
         private int? _framerateDenominator;
         private int? _framerateNumerator;
@@ -233,6 +234,26 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetFlickerAq()
         {
             return this._flickerAq != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForceFieldPictures. This setting applies only when scan
+        /// type is "interlaced." It controls whether coding is on a field basis or a frame basis.
+        /// (When the video is progressive, the coding is always on a frame basis.)enabled: Always
+        /// code on a field basis, so that odd and even sets of fields are coded separately.disabled:
+        /// Code the two sets of fields separately (on a field basis) or together (on a frame
+        /// basis, using PAFF or MBAFF), depending on what is most appropriate for the content.
+        /// </summary>
+        public H264ForceFieldPictures ForceFieldPictures
+        {
+            get { return this._forceFieldPictures; }
+            set { this._forceFieldPictures = value; }
+        }
+
+        // Check to see if ForceFieldPictures property is set
+        internal bool IsSetForceFieldPictures()
+        {
+            return this._forceFieldPictures != null;
         }
 
         /// <summary>

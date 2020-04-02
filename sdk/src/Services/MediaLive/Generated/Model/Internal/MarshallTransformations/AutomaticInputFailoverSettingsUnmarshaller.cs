@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InputAttachment Object
+    /// Response Unmarshaller for AutomaticInputFailoverSettings Object
     /// </summary>  
-    public class InputAttachmentUnmarshaller : IUnmarshaller<InputAttachment, XmlUnmarshallerContext>, IUnmarshaller<InputAttachment, JsonUnmarshallerContext>
+    public class AutomaticInputFailoverSettingsUnmarshaller : IUnmarshaller<AutomaticInputFailoverSettings, XmlUnmarshallerContext>, IUnmarshaller<AutomaticInputFailoverSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InputAttachment IUnmarshaller<InputAttachment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AutomaticInputFailoverSettings IUnmarshaller<AutomaticInputFailoverSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InputAttachment Unmarshall(JsonUnmarshallerContext context)
+        public AutomaticInputFailoverSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            InputAttachment unmarshalledObject = new InputAttachment();
+            AutomaticInputFailoverSettings unmarshalledObject = new AutomaticInputFailoverSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("automaticInputFailoverSettings", targetDepth))
-                {
-                    var unmarshaller = AutomaticInputFailoverSettingsUnmarshaller.Instance;
-                    unmarshalledObject.AutomaticInputFailoverSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputAttachmentName", targetDepth))
+                if (context.TestExpression("inputPreference", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputAttachmentName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputPreference = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("inputId", targetDepth))
+                if (context.TestExpression("secondaryInputId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputSettings", targetDepth))
-                {
-                    var unmarshaller = InputSettingsUnmarshaller.Instance;
-                    unmarshalledObject.InputSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecondaryInputId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static InputAttachmentUnmarshaller _instance = new InputAttachmentUnmarshaller();        
+        private static AutomaticInputFailoverSettingsUnmarshaller _instance = new AutomaticInputFailoverSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InputAttachmentUnmarshaller Instance
+        public static AutomaticInputFailoverSettingsUnmarshaller Instance
         {
             get
             {

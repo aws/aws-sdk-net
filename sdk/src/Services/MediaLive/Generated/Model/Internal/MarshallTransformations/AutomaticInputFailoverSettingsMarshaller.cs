@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InputAttachment Marshaller
+    /// AutomaticInputFailoverSettings Marshaller
     /// </summary>       
-    public class InputAttachmentMarshaller : IRequestMarshaller<InputAttachment, JsonMarshallerContext> 
+    public class AutomaticInputFailoverSettingsMarshaller : IRequestMarshaller<AutomaticInputFailoverSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,40 +43,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InputAttachment requestObject, JsonMarshallerContext context)
+        public void Marshall(AutomaticInputFailoverSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAutomaticInputFailoverSettings())
+            if(requestObject.IsSetInputPreference())
             {
-                context.Writer.WritePropertyName("automaticInputFailoverSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AutomaticInputFailoverSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.AutomaticInputFailoverSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("inputPreference");
+                context.Writer.Write(requestObject.InputPreference);
             }
 
-            if(requestObject.IsSetInputAttachmentName())
+            if(requestObject.IsSetSecondaryInputId())
             {
-                context.Writer.WritePropertyName("inputAttachmentName");
-                context.Writer.Write(requestObject.InputAttachmentName);
-            }
-
-            if(requestObject.IsSetInputId())
-            {
-                context.Writer.WritePropertyName("inputId");
-                context.Writer.Write(requestObject.InputId);
-            }
-
-            if(requestObject.IsSetInputSettings())
-            {
-                context.Writer.WritePropertyName("inputSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = InputSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.InputSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("secondaryInputId");
+                context.Writer.Write(requestObject.SecondaryInputId);
             }
 
         }
@@ -84,7 +62,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static InputAttachmentMarshaller Instance = new InputAttachmentMarshaller();
+        public readonly static AutomaticInputFailoverSettingsMarshaller Instance = new AutomaticInputFailoverSettingsMarshaller();
 
     }
 }

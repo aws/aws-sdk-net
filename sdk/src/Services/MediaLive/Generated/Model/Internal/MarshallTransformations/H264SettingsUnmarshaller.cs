@@ -124,6 +124,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.FlickerAq = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("forceFieldPictures", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ForceFieldPictures = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("framerateControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

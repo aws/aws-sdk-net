@@ -3745,6 +3745,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type H264ForceFieldPictures.
+    /// </summary>
+    public class H264ForceFieldPictures : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for H264ForceFieldPictures
+        /// </summary>
+        public static readonly H264ForceFieldPictures DISABLED = new H264ForceFieldPictures("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for H264ForceFieldPictures
+        /// </summary>
+        public static readonly H264ForceFieldPictures ENABLED = new H264ForceFieldPictures("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H264ForceFieldPictures(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H264ForceFieldPictures FindValue(string value)
+        {
+            return FindValue<H264ForceFieldPictures>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H264ForceFieldPictures(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type H264FramerateControl.
     /// </summary>
     public class H264FramerateControl : ConstantClass
@@ -7068,6 +7118,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InputMaximumBitrate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputPreference.
+    /// </summary>
+    public class InputPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUAL_INPUT_PREFERENCE for InputPreference
+        /// </summary>
+        public static readonly InputPreference EQUAL_INPUT_PREFERENCE = new InputPreference("EQUAL_INPUT_PREFERENCE");
+        /// <summary>
+        /// Constant PRIMARY_INPUT_PREFERRED for InputPreference
+        /// </summary>
+        public static readonly InputPreference PRIMARY_INPUT_PREFERRED = new InputPreference("PRIMARY_INPUT_PREFERRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputPreference FindValue(string value)
+        {
+            return FindValue<InputPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputPreference(string value)
         {
             return FindValue(value);
         }
