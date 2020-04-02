@@ -55,7 +55,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The DB cluster is a Read Replica of another Amazon Aurora DB cluster.
+    /// The DB cluster is a read replica of another Amazon Aurora DB cluster.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
     ///  </li> </ul> 
     /// <para>
     /// To delete a DB instance in this case, first call the <code>PromoteReadReplicaDBCluster</code>
-    /// API action to promote the DB cluster so it's no longer a Read Replica. After the promotion
+    /// API action to promote the DB cluster so it's no longer a read replica. After the promotion
     /// completes, then call the <code>DeleteDBInstance</code> API action to delete the final
     /// instance in the DB cluster.
     /// </para>
@@ -168,7 +168,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified when deleting a Read Replica.
+        /// Can't be specified when deleting a read replica.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -199,7 +199,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify skip when deleting a Read Replica.
+        /// Specify skip when deleting a read replica.
         /// </para>
         ///  <note> 
         /// <para>

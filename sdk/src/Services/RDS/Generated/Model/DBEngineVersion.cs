@@ -223,6 +223,13 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A list of the supported DB engine modes.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>global</code> engine mode only applies for global database clusters created
+        /// with Aurora MySQL version 5.6.10a. For higher Aurora MySQL versions, the clusters
+        /// in a global database use <code>provisioned</code> engine mode. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> SupportedEngineModes
         {
@@ -301,7 +308,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsReadReplica. 
         /// <para>
-        /// Indicates whether the database engine version supports Read Replicas.
+        /// Indicates whether the database engine version supports read replicas.
         /// </para>
         /// </summary>
         public bool SupportsReadReplica

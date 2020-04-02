@@ -123,9 +123,9 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ReadReplicasPerMaster</code> - The number of Read Replicas per DB instance.
-    /// The used value is the highest number of Read Replicas for a DB instance in the account.
-    /// Other DB instances in the account might have a lower number of Read Replicas.
+    ///  <code>ReadReplicasPerMaster</code> - The number of read replicas per DB instance.
+    /// The used value is the highest number of read replicas for a DB instance in the account.
+    /// Other DB instances in the account might have a lower number of read replicas.
     /// </para>
     ///  </li> <li> 
     /// <para>

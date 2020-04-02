@@ -355,7 +355,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be set to 0 if the DB instance is a source to Read Replicas
+        /// Can't be set to 0 if the DB instance is a source to read replicas
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -772,7 +772,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For Oracle DB instance, Amazon RDS can use Kerberos Authentication to authenticate
+        /// For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
         /// users that connect to the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
         /// Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS
         /// User Guide</i>.
@@ -1572,7 +1572,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
+        ///  Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -1588,7 +1588,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
+        ///  Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -1604,7 +1604,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
+        ///  Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -1620,7 +1620,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
+        ///  Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -1632,9 +1632,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>,
-        /// <code>47001</code>, <code>49152</code>, and <code>49152</code> through <code>49156</code>.
-        /// 
+        ///  Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>,
+        /// <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
         /// </para>
         ///  
         /// <para>
@@ -1646,7 +1645,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
+        ///  Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>

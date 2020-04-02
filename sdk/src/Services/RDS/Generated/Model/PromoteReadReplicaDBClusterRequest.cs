@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the PromoteReadReplicaDBCluster operation.
-    /// Promotes a Read Replica DB cluster to a standalone DB cluster.
+    /// Promotes a read replica DB cluster to a standalone DB cluster.
     /// 
     ///  <note> 
     /// <para>
@@ -44,7 +44,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The identifier of the DB cluster Read Replica to promote. This parameter isn't case-sensitive.
+        /// The identifier of the DB cluster read replica to promote. This parameter isn't case-sensitive.
         /// 
         /// </para>
         ///  
@@ -53,7 +53,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the identifier of an existing DBCluster Read Replica.
+        /// Must match the identifier of an existing DB cluster read replica.
         /// </para>
         ///  </li> </ul> 
         /// <para>

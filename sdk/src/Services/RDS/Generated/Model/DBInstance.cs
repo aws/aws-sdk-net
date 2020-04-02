@@ -351,6 +351,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specifies the current state of this database.
         /// </para>
+        ///  
+        /// <para>
+        /// For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+        /// Instance Status</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
         /// </summary>
         public string DBInstanceStatus
         {
@@ -1053,14 +1058,14 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ReadReplicaDBClusterIdentifiers. 
         /// <para>
         /// Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance
-        /// is replicated as a Read Replica. For example, when you create an Aurora Read Replica
-        /// of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the Aurora Read Replica
-        /// is shown. This output does not contain information about cross region Aurora Read
-        /// Replicas.
+        /// is replicated as a read replica. For example, when you create an Aurora read replica
+        /// of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica
+        /// is shown. This output does not contain information about cross region Aurora read
+        /// replicas.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, each RDS DB instance can have only one Aurora Read Replica.
+        /// Currently, each RDS DB instance can have only one Aurora read replica.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1079,7 +1084,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReadReplicaDBInstanceIdentifiers. 
         /// <para>
-        /// Contains one or more identifiers of the Read Replicas associated with this DB instance.
+        /// Contains one or more identifiers of the read replicas associated with this DB instance.
         /// </para>
         /// </summary>
         public List<string> ReadReplicaDBInstanceIdentifiers
@@ -1097,7 +1102,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReadReplicaSourceDBInstanceIdentifier. 
         /// <para>
-        /// Contains the identifier of the source DB instance if this DB instance is a Read Replica.
+        /// Contains the identifier of the source DB instance if this DB instance is a read replica.
         /// </para>
         /// </summary>
         public string ReadReplicaSourceDBInstanceIdentifier
@@ -1134,7 +1139,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StatusInfos. 
         /// <para>
-        /// The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
+        /// The status of a read replica. If the instance isn't a read replica, this is blank.
         /// </para>
         /// </summary>
         public List<DBInstanceStatusInfo> StatusInfos

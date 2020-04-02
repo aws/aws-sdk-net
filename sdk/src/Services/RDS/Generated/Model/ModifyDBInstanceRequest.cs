@@ -238,17 +238,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6
+        /// Can be specified for a MySQL read replica only if the source is running MySQL 5.6
         /// or later
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can be specified for a PostgreSQL Read Replica only if the source is running PostgreSQL
+        /// Can be specified for a PostgreSQL read replica only if the source is running PostgreSQL
         /// 9.3.5
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be set to 0 if the DB instance is a source to Read Replicas
+        /// Can't be set to 0 if the DB instance is a source to read replicas
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -498,7 +498,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
+        ///  Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -510,7 +510,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
+        ///  Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -522,7 +522,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
+        ///  Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -538,7 +538,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
+        ///  Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -550,9 +550,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>,
-        /// <code>47001</code>, <code>49152</code>, and <code>49152</code> through <code>49156</code>.
-        /// 
+        ///  Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>,
+        /// <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
         /// </para>
         ///  
         /// <para>
@@ -564,7 +563,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
+        ///  Valid values: <code>1150-65535</code> 
         /// </para>
         /// </summary>
         public int DBPortNumber
@@ -823,7 +822,7 @@ namespace Amazon.RDS.Model
         /// degradation. While the migration takes place, nightly backups for the instance are
         /// suspended. No other Amazon RDS operations can take place for the instance, including
         /// modifying the instance, rebooting the instance, deleting the instance, creating a
-        /// Read Replica for the instance, and creating a DB snapshot of the instance. 
+        /// read replica for the instance, and creating a DB snapshot of the instance. 
         /// </para>
         ///  
         /// <para>
@@ -1366,7 +1365,7 @@ namespace Amazon.RDS.Model
         /// degradation. While the migration takes place, nightly backups for the instance are
         /// suspended. No other Amazon RDS operations can take place for the instance, including
         /// modifying the instance, rebooting the instance, deleting the instance, creating a
-        /// Read Replica for the instance, and creating a DB snapshot of the instance. 
+        /// read replica for the instance, and creating a DB snapshot of the instance. 
         /// </para>
         ///  
         /// <para>

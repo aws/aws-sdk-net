@@ -704,6 +704,15 @@ namespace Amazon.RDS.Model
         /// The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
         /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>global</code> engine mode only applies for global database clusters created
+        /// with Aurora MySQL version 5.6.10a. For higher Aurora MySQL versions, the clusters
+        /// in a global database use <code>provisioned</code> engine mode. To check if a DB cluster
+        /// is part of a global database, use <code>DescribeGlobalClusters</code> instead of checking
+        /// the <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public string EngineMode
         {
@@ -981,7 +990,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReadReplicaIdentifiers. 
         /// <para>
-        /// Contains one or more identifiers of the Read Replicas associated with this DB cluster.
+        /// Contains one or more identifiers of the read replicas associated with this DB cluster.
         /// </para>
         /// </summary>
         public List<string> ReadReplicaIdentifiers
@@ -999,7 +1008,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReplicationSourceIdentifier. 
         /// <para>
-        /// Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+        /// Contains the identifier of the source DB cluster if this DB cluster is a read replica.
         /// </para>
         /// </summary>
         public string ReplicationSourceIdentifier

@@ -29,8 +29,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBSnapshot operation.
-    /// Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new
-    /// engine version. 
+    /// Updates a manual DB snapshot with a new engine version. The snapshot can be encrypted
+    /// or unencrypted, but not shared or public. 
     /// 
     ///  
     /// <para>

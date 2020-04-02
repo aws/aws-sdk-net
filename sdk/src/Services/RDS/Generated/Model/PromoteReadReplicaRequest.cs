@@ -29,16 +29,16 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the PromoteReadReplica operation.
-    /// Promotes a Read Replica DB instance to a standalone DB instance.
+    /// Promotes a read replica DB instance to a standalone DB instance.
     /// 
     ///  <note> <ul> <li> 
     /// <para>
     /// Backup duration is a function of the amount of changes to the database since the previous
-    /// backup. If you plan to promote a Read Replica to a standalone instance, we recommend
+    /// backup. If you plan to promote a read replica to a standalone instance, we recommend
     /// that you enable backups and complete at least one backup prior to promotion. In addition,
-    /// a Read Replica cannot be promoted to a standalone instance when it is in the <code>backing-up</code>
-    /// status. If you have enabled backups on your Read Replica, configure the automated
-    /// backup window so that daily backups do not interfere with Read Replica promotion.
+    /// a read replica cannot be promoted to a standalone instance when it is in the <code>backing-up</code>
+    /// status. If you have enabled backups on your read replica, configure the automated
+    /// backup window so that daily backups do not interfere with read replica promotion.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be set to 0 if the DB instance is a source to Read Replicas.
+        /// Can't be set to 0 if the DB instance is a source to read replicas.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -100,7 +100,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the identifier of an existing Read Replica DB instance.
+        /// Must match the identifier of an existing read replica DB instance.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
-    /// cluster as a Read Replica of another DB cluster or Amazon RDS MySQL DB instance. For
+    /// cluster as a read replica of another DB cluster or Amazon RDS MySQL DB instance. For
     /// cross-region replication where the DB cluster identified by <code>ReplicationSourceIdentifier</code>
     /// is encrypted, you must also specify the <code>PreSignedUrl</code> parameter.
     /// </para>
@@ -346,9 +346,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate
-        /// users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using
-        /// Kerberos Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
-        /// 
+        /// users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+        /// Authentication</a> in the <i>Amazon Aurora User Guide</i>. 
         /// </para>
         /// </summary>
         public string Domain
@@ -487,7 +486,13 @@ namespace Amazon.RDS.Model
         /// The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
         /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <code>global</code> engine mode only applies for global database clusters created
+        /// with Aurora MySQL version 5.6.10a. For higher Aurora MySQL versions, the clusters
+        /// in a global database use <code>provisioned</code> engine mode. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Limitations and requirements apply to some DB engine modes. For more information,
         /// see the following sections in the <i>Amazon Aurora User Guide</i>:
@@ -644,9 +649,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you create a Read Replica of an encrypted DB cluster in another AWS Region, you
+        /// If you create a read replica of an encrypted DB cluster in another AWS Region, you
         /// must set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS
-        /// Region. This key is used to encrypt the Read Replica in that AWS Region.
+        /// Region. This key is used to encrypt the read replica in that AWS Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -879,7 +884,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica
+        ///  <code>DestinationRegion</code> - The name of the AWS Region that Aurora read replica
         /// will be created in.
         /// </para>
         ///  </li> <li> 
@@ -922,7 +927,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ReplicationSourceIdentifier. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB
-        /// cluster is created as a Read Replica.
+        /// cluster is created as a read replica.
         /// </para>
         /// </summary>
         public string ReplicationSourceIdentifier
