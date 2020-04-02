@@ -1,3 +1,20 @@
+### 3.3.713.0 (2020-04-02 18:14 UTC)
+* CloudWatch (3.3.107.0)
+	* Amazon CloudWatch Contributor Insights adds support for tags and tagging on resource creation. 
+* GameLift (3.3.106.0)
+	* Public preview of GameLift FleetIQ as a standalone feature. GameLift FleetIQ makes it possible to use low-cost Spot instances by limiting the chance of interruptions affecting game sessions. FleetIQ is a feature of the managed GameLift service, and can now be used with game hosting in EC2 Auto Scaling groups that you manage in your own account.
+* MediaLive (3.3.109.0)
+	* AWS Elemental MediaLive now supports Automatic Input Failover. This feature provides resiliency upstream of the channel, before ingest starts.
+* RDS (3.3.119.10)
+	* Documentation updates for RDS: creating read replicas is now supported for SQL Server DB instances
+* Redshift (3.3.107.14)
+	* Documentation updates for redshift
+* Core 3.3.105.9
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.712.0 (2020-04-01 18:14 UTC)
 * IoT (3.3.108.0)
 	* This release introduces Dimensions for AWS IoT Device Defender. Dimensions can be used in Security Profiles to collect and monitor fine-grained metrics.
