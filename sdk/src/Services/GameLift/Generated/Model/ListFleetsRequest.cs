@@ -29,13 +29,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFleets operation.
-    /// Retrieves a collection of fleet records for this AWS account. You can filter the result
-    /// set to find only those fleets that are deployed with a specific build or script. Use
-    /// the pagination parameters to retrieve results in sequential pages.
+    /// Retrieves a collection of fleet resources for this AWS account. You can filter the
+    /// result set to find only those fleets that are deployed with a specific build or script.
+    /// Use the pagination parameters to retrieve results in sequential pages.
     /// 
     ///  <note> 
     /// <para>
-    /// Fleet records are not listed in a particular order.
+    /// Fleet resources are not listed in a particular order.
     /// </para>
     ///  </note> 
     /// <para>
@@ -43,8 +43,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-    /// Set Up Fleets</a>.
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+    /// up GameLift Fleets</a> 
     /// </para>
     ///  
     /// <para>
@@ -72,17 +72,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Manage fleet actions:
+    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListFleetsRequest : AmazonGameLiftRequest
     {
@@ -95,8 +87,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property BuildId. 
         /// <para>
         /// A unique identifier for a build to return fleets for. Use this parameter to return
-        /// only fleets using the specified build. Use either the build ID or ARN value.To retrieve
-        /// all fleets, leave this parameter empty.
+        /// only fleets using a specified build. Use either the build ID or ARN value. To retrieve
+        /// all fleets, do not include either a BuildId and ScriptID parameter.
         /// </para>
         /// </summary>
         public string BuildId
@@ -156,8 +148,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ScriptId. 
         /// <para>
         /// A unique identifier for a Realtime script to return fleets for. Use this parameter
-        /// to return only fleets using the specified script. Use either the script ID or ARN
-        /// value.To retrieve all fleets, leave this parameter empty.
+        /// to return only fleets using a specified script. Use either the script ID or ARN value.
+        /// To retrieve all fleets, leave this parameter empty.
         /// </para>
         /// </summary>
         public string ScriptId

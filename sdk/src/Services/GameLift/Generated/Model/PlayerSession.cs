@@ -146,7 +146,6 @@ namespace Amazon.GameLift.Model
         /// associated with the GameLift fleet that the player's game session is running on. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
         public string FleetArn
         {
             get { return this._fleetArn; }

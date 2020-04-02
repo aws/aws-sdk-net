@@ -41,8 +41,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// This action removes the fleet's resources and the fleet record. Once a fleet is deleted,
-    /// you can no longer use that fleet.
+    /// This action removes the fleet and its resources. Once a fleet is deleted, you can
+    /// no longer use any of the resource in that fleet.
     /// </para>
     ///  
     /// <para>
@@ -50,8 +50,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-    /// Working with Fleets</a>.
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+    /// up GameLift Fleets</a> 
     /// </para>
     ///  
     /// <para>
@@ -79,17 +79,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Manage fleet actions:
+    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteFleetRequest : AmazonGameLiftRequest
     {

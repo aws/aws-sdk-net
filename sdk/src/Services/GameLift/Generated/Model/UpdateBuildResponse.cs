@@ -37,7 +37,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Build. 
         /// <para>
-        /// The updated build record.
+        /// The updated build resource.
         /// </para>
         /// </summary>
         public Build Build

@@ -29,21 +29,25 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleetPortSettings operation.
-    /// Retrieves the inbound connection permissions for a fleet. Connection permissions include
-    /// a range of IP addresses and port settings that incoming traffic can use to access
-    /// server processes in the fleet. To get a fleet's inbound connection permissions, specify
-    /// a fleet ID. If successful, a collection of <a>IpPermission</a> objects is returned
-    /// for the requested fleet ID. If the requested fleet has been deleted, the result set
-    /// is empty.
+    /// Retrieves a fleet's inbound connection permissions. Connection permissions specify
+    /// the range of IP addresses and port settings that incoming traffic can use to access
+    /// server processes in the fleet. Game sessions that are running on instances in the
+    /// fleet use connections that fall in this range. 
     /// 
+    ///  
+    /// <para>
+    /// To get a fleet's inbound connection permissions, specify the fleet's unique identifier.
+    /// If successful, a collection of <a>IpPermission</a> objects is returned for the requested
+    /// fleet ID. If the requested fleet has been deleted, the result set is empty.
+    /// </para>
     ///  
     /// <para>
     ///  <b>Learn more</b> 
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-    /// Working with Fleets</a>.
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+    /// up GameLift Fleets</a> 
     /// </para>
     ///  
     /// <para>
@@ -99,17 +103,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Manage fleet actions:
+    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeFleetPortSettingsRequest : AmazonGameLiftRequest
     {

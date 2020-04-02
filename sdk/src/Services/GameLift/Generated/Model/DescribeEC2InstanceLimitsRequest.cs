@@ -33,17 +33,17 @@ namespace Amazon.GameLift.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// maximum number of instances allowed per AWS account (service limit)
+    /// Maximum number of instances allowed per AWS account (service limit).
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// current usage level for the AWS account
+    /// Current usage for the AWS account.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Service limits vary depending on Region. Available Regions for Amazon GameLift can
-    /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
-    /// in the upper right corner).
+    /// To learn more about the capabilities of each instance type, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
+    /// EC2 Instance Types</a>. Note that the instance types offered may vary depending on
+    /// the region.
     /// </para>
     ///  
     /// <para>
@@ -51,8 +51,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-    /// Working with Fleets</a>.
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+    /// up GameLift Fleets</a> 
     /// </para>
     ///  
     /// <para>
@@ -72,69 +72,17 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Describe fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
     ///  <a>DescribeFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetUtilization</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetEvents</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    /// Update fleets:
-    /// </para>
-    ///  <ul> <li> 
     /// <para>
     ///  <a>UpdateFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
+    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    /// Manage fleet actions:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeEC2InstanceLimitsRequest : AmazonGameLiftRequest
     {

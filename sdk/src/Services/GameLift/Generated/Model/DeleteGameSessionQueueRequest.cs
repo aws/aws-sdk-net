@@ -33,6 +33,19 @@ namespace Amazon.GameLift.Model
     /// requests that reference this queue will fail. To delete a queue, specify the queue
     /// name.
     /// 
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">
+    /// Using Multi-Region Queues</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateGameSessionQueue</a> 

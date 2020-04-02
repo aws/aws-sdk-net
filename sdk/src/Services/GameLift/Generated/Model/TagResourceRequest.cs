@@ -66,7 +66,7 @@ namespace Amazon.GameLift.Model
     ///  </li> </ul> 
     /// <para>
     /// To add a tag to a resource, specify the unique ARN value for the resource and provide
-    /// a trig list containing one or more tags. The operation succeeds even if the list includes
+    /// a tag list containing one or more tags. The operation succeeds even if the list includes
     /// tags that are already assigned to the specified resource. 
     /// </para>
     ///  

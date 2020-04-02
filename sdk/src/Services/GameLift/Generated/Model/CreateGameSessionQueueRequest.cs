@@ -64,6 +64,24 @@ namespace Amazon.GameLift.Model
     /// To create a new queue, provide a name, timeout value, a list of destinations and,
     /// if desired, a set of latency policies. If successful, a new queue object is returned.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-design.html">
+    /// Design a Game Session Queue</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-creating.html">
+    /// Create a Game Session Queue</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateGameSessionQueue</a> 
@@ -117,7 +135,7 @@ namespace Amazon.GameLift.Model
         /// unique within each Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

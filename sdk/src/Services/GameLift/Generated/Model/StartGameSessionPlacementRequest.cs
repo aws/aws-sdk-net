@@ -229,7 +229,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionQueueName. 
         /// <para>
-        /// Name of the queue to use to place the new game session. You can use either the qieue
+        /// Name of the queue to use to place the new game session. You can use either the queue
         /// name or ARN value. 
         /// </para>
         /// </summary>

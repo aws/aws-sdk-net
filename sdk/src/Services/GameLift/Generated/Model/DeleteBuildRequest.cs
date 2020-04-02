@@ -29,14 +29,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBuild operation.
-    /// Deletes a build. This action permanently deletes the build record and any uploaded
-    /// build files.
+    /// Deletes a build. This action permanently deletes the build resource and any uploaded
+    /// build files. Deleting a build does not affect the status of any active fleets using
+    /// the build, but you can no longer create new fleets with the deleted build.
     /// 
     ///  
     /// <para>
-    /// To delete a build, specify its ID. Deleting a build does not affect the status of
-    /// any active fleets using the build, but you can no longer create new fleets with the
-    /// deleted build.
+    /// To delete a build, specify the build ID. 
     /// </para>
     ///  
     /// <para>
@@ -44,8 +43,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
-    /// Working with Builds</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
+    /// Upload a Custom Server Build</a> 
     /// </para>
     ///  
     /// <para>

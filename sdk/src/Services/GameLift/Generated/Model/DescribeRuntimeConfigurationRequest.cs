@@ -29,17 +29,28 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRuntimeConfiguration operation.
-    /// Retrieves the current runtime configuration for the specified fleet. The runtime configuration
-    /// tells Amazon GameLift how to launch server processes on instances in the fleet.
+    /// Retrieves a fleet's runtime configuration settings. The runtime configuration tells
+    /// Amazon GameLift which server processes to run (and how) on each instance in the fleet.
     /// 
+    ///  
+    /// <para>
+    /// To get a runtime configuration, specify the fleet's unique identifier. If successful,
+    /// a <a>RuntimeConfiguration</a> object is returned for the requested fleet. If the requested
+    /// fleet has been deleted, the result set is empty.
+    /// </para>
     ///  
     /// <para>
     ///  <b>Learn more</b> 
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-    /// Working with Fleets</a>.
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+    /// up GameLift Fleets</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">Running
+    /// Multiple Processes on a Fleet</a> 
     /// </para>
     ///  
     /// <para>
@@ -95,17 +106,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Manage fleet actions:
+    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeRuntimeConfigurationRequest : AmazonGameLiftRequest
     {

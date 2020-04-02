@@ -29,14 +29,18 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleetCapacity operation.
-    /// Retrieves the current status of fleet capacity for one or more fleets. This information
-    /// includes the number of instances that have been requested for the fleet and the number
-    /// currently active. You can request capacity for all fleets, or specify a list of one
-    /// or more fleet IDs. When requesting multiple fleets, use the pagination parameters
-    /// to retrieve results as a set of sequential pages. If successful, a <a>FleetCapacity</a>
-    /// object is returned for each requested fleet ID. When specifying a list of fleet IDs,
-    /// attribute objects are returned only for fleets that currently exist. 
+    /// Retrieves the current capacity statistics for one or more fleets. These statistics
+    /// present a snapshot of the fleet's instances and provide insight on current or imminent
+    /// scaling activity. To get statistics on game hosting activity in the fleet, see <a>DescribeFleetUtilization</a>.
     /// 
+    ///  
+    /// <para>
+    /// You can request capacity for all fleets or specify a list of one or more fleet identifiers.
+    /// When requesting multiple fleets, use the pagination parameters to retrieve results
+    /// as a set of sequential pages. If successful, a <a>FleetCapacity</a> object is returned
+    /// for each requested fleet ID. When a list of fleet IDs is provided, attribute objects
+    /// are returned only for fleets that currently exist.
+    /// </para>
     ///  <note> 
     /// <para>
     /// Some API actions may limit the number of fleet IDs allowed in one request. If a request
@@ -48,8 +52,13 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-    /// Working with Fleets</a>.
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+    /// up GameLift Fleets</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
+    /// Metrics for Fleets</a> 
     /// </para>
     ///  
     /// <para>
@@ -105,17 +114,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Manage fleet actions:
+    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeFleetCapacityRequest : AmazonGameLiftRequest
     {

@@ -236,7 +236,7 @@ namespace Amazon.GameLift.Model
         /// unique within each Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=128)]
         public string GameSessionQueueName
         {
             get { return this._gameSessionQueueName; }

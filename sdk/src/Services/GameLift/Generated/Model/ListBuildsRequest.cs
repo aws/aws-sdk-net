@@ -29,14 +29,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBuilds operation.
-    /// Retrieves build records for all builds associated with the AWS account in use. You
+    /// Retrieves build resources for all builds associated with the AWS account in use. You
     /// can limit results to builds that are in a specific status by using the <code>Status</code>
     /// parameter. Use the pagination parameters to retrieve results in a set of sequential
     /// pages. 
     /// 
     ///  <note> 
     /// <para>
-    /// Build records are not listed in any particular order.
+    /// Build resources are not listed in any particular order.
     /// </para>
     ///  </note> 
     /// <para>
@@ -44,8 +44,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
-    /// Working with Builds</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
+    /// Upload a Custom Server Build</a> 
     /// </para>
     ///  
     /// <para>

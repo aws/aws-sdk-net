@@ -37,10 +37,10 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// To create a new fleet, you must provide the following: (1) a fleet name, (2) an EC2
-    /// instance type and fleet type (spot or on-demand), (3) the build ID for your game build
-    /// or script ID if using Realtime Servers, and (4) a runtime configuration, which determines
-    /// how game servers will run on each instance in the fleet. 
+    /// To create a new fleet, provide the following: (1) a fleet name, (2) an EC2 instance
+    /// type and fleet type (spot or on-demand), (3) the build ID for your game build or script
+    /// ID if using Realtime Servers, and (4) a runtime configuration, which determines how
+    /// game servers will run on each instance in the fleet. 
     /// </para>
     ///  
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Creates a fleet record. Status: <code>NEW</code>.
+    /// Creates a fleet resource. Status: <code>NEW</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -84,13 +84,13 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-    /// Setting Up Fleets</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+    /// Up Fleets</a> 
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">
-    /// Debug Fleet Creation Issues</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug
+    /// Fleet Creation Issues</a> 
     /// </para>
     ///  
     /// <para>
@@ -118,17 +118,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Manage fleet actions:
+    ///  <a>StartFleetActions</a> or <a>StopFleetActions</a> 
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopFleetActions</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateFleetRequest : AmazonGameLiftRequest
     {

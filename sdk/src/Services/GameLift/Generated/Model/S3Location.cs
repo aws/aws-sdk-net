@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// The location in Amazon S3 where build or script files are stored for access by Amazon
-    /// GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and
-    /// <a>UpdateScript</a> requests.
+    /// The location in S3 where build or script files are stored for access by Amazon GameLift.
+    /// This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and <a>UpdateScript</a>
+    /// requests.
     /// </summary>
     public partial class S3Location
     {
@@ -42,7 +42,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// An Amazon S3 bucket identifier. This is the name of the S3 bucket.
+        /// An S3 bucket identifier. This is the name of the S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
