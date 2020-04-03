@@ -64,6 +64,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("compute", targetDepth))
+                {
+                    var unmarshaller = ComputeUnmarshaller.Instance;
+                    unmarshalledObject.Compute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dataSources", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DataSourceConfig, DataSourceConfigUnmarshaller>(DataSourceConfigUnmarshaller.Instance);

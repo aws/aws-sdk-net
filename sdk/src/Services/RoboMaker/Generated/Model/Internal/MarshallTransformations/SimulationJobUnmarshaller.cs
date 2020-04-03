@@ -76,6 +76,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClientRequestToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("compute", targetDepth))
+                {
+                    var unmarshaller = ComputeResponseUnmarshaller.Instance;
+                    unmarshalledObject.Compute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dataSources", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DataSource, DataSourceUnmarshaller>(DataSourceUnmarshaller.Instance);

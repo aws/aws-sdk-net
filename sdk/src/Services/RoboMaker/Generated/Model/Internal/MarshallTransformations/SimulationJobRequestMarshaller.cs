@@ -45,6 +45,17 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SimulationJobRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCompute())
+            {
+                context.Writer.WritePropertyName("compute");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ComputeMarshaller.Instance;
+                marshaller.Marshall(requestObject.Compute, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDataSources())
             {
                 context.Writer.WritePropertyName("dataSources");
