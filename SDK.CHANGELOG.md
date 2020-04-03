@@ -1,3 +1,20 @@
+### 3.3.714.0 (2020-04-03 15:43 UTC)
+* DynamoDBv2 (3.3.105.23)
+	* Updated to use new Core, version 3.3.106.0
+	* Adjustments to custom retry policies to support retry improvements.
+* EC2 (3.3.168.14)
+	* Updated to use new Core, version 3.3.106.0
+	* Adjustments to custom retry policies to support retry improvements.
+* S3 (3.3.110.47)
+	* Updated to use new Core, version 3.3.106.0
+	* Adjustments to custom retry policies to support retry improvements.
+* SecurityToken (3.3.104.55)
+	* Updated to use new Core, version 3.3.106.0
+	* Adjustments to custom retry policies to support retry improvements.
+* Core 3.3.106.0
+	* Improvements to the retry logic now supporting Legacy, Standard, and Adaptive modes; Improves performance when profiles are not found by adding validation logic instead of throwing/catching exception.
+	* All services packages updated to require new Core
+
 ### 3.3.713.0 (2020-04-02 18:14 UTC)
 * CloudWatch (3.3.107.0)
 	* Amazon CloudWatch Contributor Insights adds support for tags and tagging on resource creation. 
