@@ -79,8 +79,7 @@ namespace Amazon.PersonalizeRuntime.Model
         /// <para>
         /// The contextual metadata to use when getting recommendations. Contextual metadata includes
         /// any interaction information that might be relevant when getting a user's recommendations,
-        /// such as the user's current location or device type. For more information, see Contextual
-        /// Metadata.
+        /// such as the user's current location or device type.
         /// </para>
         /// </summary>
         [AWSProperty(Max=150)]

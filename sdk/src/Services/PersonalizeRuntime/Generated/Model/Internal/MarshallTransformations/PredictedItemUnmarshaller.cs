@@ -70,6 +70,12 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.ItemId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("score", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Score = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
