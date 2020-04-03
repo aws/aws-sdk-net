@@ -1,3 +1,14 @@
+### 3.3.715.0 (2020-04-03 18:09 UTC)
+* PersonalizeRuntime (3.3.103.0)
+	* Amazon Personalize: Add new response field "score" to each item returned by GetRecommendations and GetPersonalizedRanking (HRNN-based recipes only)
+* RoboMaker (3.3.111.0)
+	* Added support for limiting simulation unit usage, giving more predictable control over simulation cost
+* Core 3.3.106.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.714.0 (2020-04-03 15:43 UTC)
 * DynamoDBv2 (3.3.105.23)
 	* Updated to use new Core, version 3.3.106.0
