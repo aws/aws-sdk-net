@@ -37,8 +37,10 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The job ID that you can use in the <a>GetServiceLastAccessedDetails</a> or <a>GetServiceLastAccessedDetailsWithEntities</a>
-        /// operations.
+        /// The <code>JobId</code> that you can use in the <a>GetServiceLastAccessedDetails</a>
+        /// or <a>GetServiceLastAccessedDetailsWithEntities</a> operations. The <code>JobId</code>
+        /// returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same
+        /// role within a session, or by the same user when used to call <code>GetServiceLastAccessedDetail</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
