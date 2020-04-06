@@ -187,6 +187,56 @@ namespace Amazon.Chime
 
 
     /// <summary>
+    /// Constants used for properties of type Capability.
+    /// </summary>
+    public class Capability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SMS for Capability
+        /// </summary>
+        public static readonly Capability SMS = new Capability("SMS");
+        /// <summary>
+        /// Constant Voice for Capability
+        /// </summary>
+        public static readonly Capability Voice = new Capability("Voice");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Capability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Capability FindValue(string value)
+        {
+            return FindValue<Capability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Capability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EmailStatus.
     /// </summary>
     public class EmailStatus : ConstantClass
@@ -332,6 +382,56 @@ namespace Amazon.Chime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GeoMatchLevel.
+    /// </summary>
+    public class GeoMatchLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AreaCode for GeoMatchLevel
+        /// </summary>
+        public static readonly GeoMatchLevel AreaCode = new GeoMatchLevel("AreaCode");
+        /// <summary>
+        /// Constant Country for GeoMatchLevel
+        /// </summary>
+        public static readonly GeoMatchLevel Country = new GeoMatchLevel("Country");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GeoMatchLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GeoMatchLevel FindValue(string value)
+        {
+            return FindValue<GeoMatchLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GeoMatchLevel(string value)
         {
             return FindValue(value);
         }
@@ -498,6 +598,56 @@ namespace Amazon.Chime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MemberType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NumberSelectionBehavior.
+    /// </summary>
+    public class NumberSelectionBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AvoidSticky for NumberSelectionBehavior
+        /// </summary>
+        public static readonly NumberSelectionBehavior AvoidSticky = new NumberSelectionBehavior("AvoidSticky");
+        /// <summary>
+        /// Constant PreferSticky for NumberSelectionBehavior
+        /// </summary>
+        public static readonly NumberSelectionBehavior PreferSticky = new NumberSelectionBehavior("PreferSticky");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NumberSelectionBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NumberSelectionBehavior FindValue(string value)
+        {
+            return FindValue<NumberSelectionBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NumberSelectionBehavior(string value)
         {
             return FindValue(value);
         }
@@ -892,6 +1042,60 @@ namespace Amazon.Chime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PhoneNumberType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProxySessionStatus.
+    /// </summary>
+    public class ProxySessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Closed for ProxySessionStatus
+        /// </summary>
+        public static readonly ProxySessionStatus Closed = new ProxySessionStatus("Closed");
+        /// <summary>
+        /// Constant InProgress for ProxySessionStatus
+        /// </summary>
+        public static readonly ProxySessionStatus InProgress = new ProxySessionStatus("InProgress");
+        /// <summary>
+        /// Constant Open for ProxySessionStatus
+        /// </summary>
+        public static readonly ProxySessionStatus Open = new ProxySessionStatus("Open");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProxySessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProxySessionStatus FindValue(string value)
+        {
+            return FindValue<ProxySessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProxySessionStatus(string value)
         {
             return FindValue(value);
         }
