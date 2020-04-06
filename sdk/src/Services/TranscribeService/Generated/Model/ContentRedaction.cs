@@ -29,12 +29,6 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Settings for content redaction within a transcription job.
-    /// 
-    ///  
-    /// <para>
-    /// You can redact transcripts in US English (en-us). For more information see: <a href="https://docs.aws.amazon.com/transcribe/latest/dg/content-redaction.html">Automatic
-    /// Content Redaction</a> 
-    /// </para>
     /// </summary>
     public partial class ContentRedaction
     {
@@ -44,19 +38,18 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property RedactionOutput. 
         /// <para>
-        /// Request parameter where you choose whether to output only the redacted transcript
-        /// or generate an additional unredacted transcript.
+        /// The output transcript file stored in either the default S3 bucket or in a bucket you
+        /// specify.
         /// </para>
         ///  
         /// <para>
-        /// When you choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only
-        /// the redacted transcript and related information.
+        /// When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted
+        /// transcript.
         /// </para>
         ///  
         /// <para>
-        /// When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON
-        /// file with the unredacted transcript and related information in addition to the JSON
-        /// file with the redacted transcript.
+        /// When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both
+        /// the redacted and unredacted transcripts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

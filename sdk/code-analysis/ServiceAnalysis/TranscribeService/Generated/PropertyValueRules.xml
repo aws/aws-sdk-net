@@ -37,6 +37,12 @@
     <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TranscribeService.Model.DeleteMedicalTranscriptionJobRequest.MedicalTranscriptionJobName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeService.Model.DeleteTranscriptionJobRequest.TranscriptionJobName</property>
     <min>1</min>
     <max>200</max>
@@ -50,6 +56,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.DeleteVocabularyFilterRequest.VocabularyFilterName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.GetMedicalTranscriptionJobRequest.MedicalTranscriptionJobName</property>
     <min>1</min>
     <max>200</max>
     <pattern>^[0-9a-zA-Z._-]+</pattern>
@@ -95,6 +107,27 @@
     <min>1</min>
     <max>200</max>
     <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.ListMedicalTranscriptionJobsRequest.JobNameContains</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.ListMedicalTranscriptionJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.ListMedicalTranscriptionJobsRequest.NextToken</property>
+    <max>8192</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.ListMedicalTranscriptionJobsResponse.NextToken</property>
+    <max>8192</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.ListTranscriptionJobsRequest.JobNameContains</property>
@@ -158,6 +191,28 @@
     <property>Amazon.TranscribeService.Model.ListVocabularyFiltersResponse.NextToken</property>
     <max>8192</max>
     <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.StartMedicalTranscriptionJobRequest.MediaSampleRateHertz</property>
+    <min>8000</min>
+    <max>48000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.StartMedicalTranscriptionJobRequest.MedicalTranscriptionJobName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.StartMedicalTranscriptionJobRequest.OutputBucketName</property>
+    <max>64</max>
+    <pattern>[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.StartMedicalTranscriptionJobRequest.OutputEncryptionKMSKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.StartTranscriptionJobRequest.MediaSampleRateHertz</property>
@@ -226,6 +281,39 @@
     <min>1</min>
     <max>2000</max>
     <pattern>(s3://|http(s*)://).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.MedicalTranscript.TranscriptFileUri</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>(s3://|http(s*)://).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.MedicalTranscriptionJob.MediaSampleRateHertz</property>
+    <min>8000</min>
+    <max>48000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.MedicalTranscriptionJob.MedicalTranscriptionJobName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.MedicalTranscriptionJobSummary.MedicalTranscriptionJobName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.MedicalTranscriptionSetting.MaxAlternatives</property>
+    <min>2</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.MedicalTranscriptionSetting.MaxSpeakerLabels</property>
+    <min>2</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.Settings.MaxAlternatives</property>

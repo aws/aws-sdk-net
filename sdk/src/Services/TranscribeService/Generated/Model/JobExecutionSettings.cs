@@ -40,9 +40,9 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// Indicates whether a job should be queued by Amazon Transcribe when the concurrent
         /// execution limit is exceeded. When the <code>AllowDeferredExecution</code> field is
-        /// true, jobs are queued and will be executed when the number of executing jobs falls
-        /// below the concurrent execution limit. If the field is false, Amazon Transcribe returns
-        /// a <code>LimitExceededException</code> exception.
+        /// true, jobs are queued and executed when the number of executing jobs falls below the
+        /// concurrent execution limit. If the field is false, Amazon Transcribe returns a <code>LimitExceededException</code>
+        /// exception.
         /// </para>
         ///  
         /// <para>
@@ -66,9 +66,9 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains
-        /// the input files. Amazon Transcribe will assume this role to read queued media files.
-        /// If you have specified an output S3 bucket for the transcription results, this role
-        /// should have access to the output bucket as well.
+        /// the input files. Amazon Transcribe assumes this role to read queued media files. If
+        /// you have specified an output S3 bucket for the transcription results, this role should
+        /// have access to the output bucket as well.
         /// </para>
         ///  
         /// <para>

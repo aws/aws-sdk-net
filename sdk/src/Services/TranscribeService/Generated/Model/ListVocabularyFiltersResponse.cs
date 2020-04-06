@@ -61,7 +61,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilters. 
         /// <para>
-        /// The list of vocabulary filters. It will contain at most <code>MaxResults</code> number
+        /// The list of vocabulary filters. It contains at most <code>MaxResults</code> number
         /// of filters. If there are more filters, call the <code>ListVocabularyFilters</code>
         /// operation again with the <code>NextToken</code> parameter in the request set to the
         /// value of the <code>NextToken</code> field in the response.
