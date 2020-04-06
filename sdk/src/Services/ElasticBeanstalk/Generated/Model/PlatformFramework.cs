@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// A framework supported by the custom platform.
+    /// A framework supported by the platform.
     /// </summary>
     public partial class PlatformFramework
     {

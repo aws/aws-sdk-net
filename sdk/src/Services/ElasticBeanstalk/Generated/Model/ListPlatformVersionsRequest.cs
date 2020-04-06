@@ -29,7 +29,15 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPlatformVersions operation.
-    /// Lists the available platforms.
+    /// Lists the platform versions available for your account in an AWS Region. Provides
+    /// summary information about each platform version. Compare to <a>DescribePlatformVersion</a>,
+    /// which provides full details about a single platform version.
+    /// 
+    ///  
+    /// <para>
+    /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+    /// Elastic Beanstalk Platforms Glossary</a>.
+    /// </para>
     /// </summary>
     public partial class ListPlatformVersionsRequest : AmazonElasticBeanstalkRequest
     {
@@ -40,8 +48,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// List only the platforms where the platform member value relates to one of the supplied
-        /// values.
+        /// Criteria for restricting the resulting list of platform versions. The filter is interpreted
+        /// as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.
         /// </para>
         /// </summary>
         public List<PlatformFilter> Filters
@@ -59,7 +67,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// The maximum number of platform values returned in one call.
+        /// The maximum number of platform version values returned in one call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -78,8 +86,13 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The starting index into the remaining list of platforms. Use the <code>NextToken</code>
-        /// value from a previous <code>ListPlatformVersion</code> call.
+        /// For a paginated request. Specify a token from a previous response page to retrieve
+        /// the next response page. All other parameter values must be identical to the ones specified
+        /// in the initial request.
+        /// </para>
+        ///  
+        /// <para>
+        /// If no <code>NextToken</code> is specified, the first page is retrieved.
         /// </para>
         /// </summary>
         public string NextToken

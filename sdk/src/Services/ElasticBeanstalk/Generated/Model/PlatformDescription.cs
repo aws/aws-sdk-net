@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Detailed information about a platform.
+    /// Detailed information about a platform version.
     /// </summary>
     public partial class PlatformDescription
     {
@@ -41,7 +41,10 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _operatingSystemName;
         private string _operatingSystemVersion;
         private string _platformArn;
+        private string _platformBranchLifecycleState;
+        private string _platformBranchName;
         private string _platformCategory;
+        private string _platformLifecycleState;
         private string _platformName;
         private string _platformOwner;
         private PlatformStatus _platformStatus;
@@ -54,7 +57,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property CustomAmiList. 
         /// <para>
-        /// The custom AMIs supported by the platform.
+        /// The custom AMIs supported by the platform version.
         /// </para>
         /// </summary>
         public List<CustomAmi> CustomAmiList
@@ -72,7 +75,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property DateCreated. 
         /// <para>
-        /// The date when the platform was created.
+        /// The date when the platform version was created.
         /// </para>
         /// </summary>
         public DateTime DateCreated
@@ -90,7 +93,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property DateUpdated. 
         /// <para>
-        /// The date when the platform was last updated.
+        /// The date when the platform version was last updated.
         /// </para>
         /// </summary>
         public DateTime DateUpdated
@@ -108,7 +111,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the platform.
+        /// The description of the platform version.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -127,7 +130,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Frameworks. 
         /// <para>
-        /// The frameworks supported by the platform.
+        /// The frameworks supported by the platform version.
         /// </para>
         /// </summary>
         public List<PlatformFramework> Frameworks
@@ -145,7 +148,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Maintainer. 
         /// <para>
-        /// Information about the maintainer of the platform.
+        /// Information about the maintainer of the platform version.
         /// </para>
         /// </summary>
         public string Maintainer
@@ -163,7 +166,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property OperatingSystemName. 
         /// <para>
-        /// The operating system used by the platform.
+        /// The operating system used by the platform version.
         /// </para>
         /// </summary>
         public string OperatingSystemName
@@ -181,7 +184,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property OperatingSystemVersion. 
         /// <para>
-        /// The version of the operating system used by the platform.
+        /// The version of the operating system used by the platform version.
         /// </para>
         /// </summary>
         public string OperatingSystemVersion
@@ -199,7 +202,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property PlatformArn. 
         /// <para>
-        /// The ARN of the platform.
+        /// The ARN of the platform version.
         /// </para>
         /// </summary>
         public string PlatformArn
@@ -215,9 +218,50 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlatformBranchLifecycleState. 
+        /// <para>
+        /// The state of the platform version's branch in its lifecycle.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code>
+        /// | <code>Retired</code> 
+        /// </para>
+        /// </summary>
+        public string PlatformBranchLifecycleState
+        {
+            get { return this._platformBranchLifecycleState; }
+            set { this._platformBranchLifecycleState = value; }
+        }
+
+        // Check to see if PlatformBranchLifecycleState property is set
+        internal bool IsSetPlatformBranchLifecycleState()
+        {
+            return this._platformBranchLifecycleState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformBranchName. 
+        /// <para>
+        /// The platform branch to which the platform version belongs.
+        /// </para>
+        /// </summary>
+        public string PlatformBranchName
+        {
+            get { return this._platformBranchName; }
+            set { this._platformBranchName = value; }
+        }
+
+        // Check to see if PlatformBranchName property is set
+        internal bool IsSetPlatformBranchName()
+        {
+            return this._platformBranchName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PlatformCategory. 
         /// <para>
-        /// The category of the platform.
+        /// The category of the platform version.
         /// </para>
         /// </summary>
         public string PlatformCategory
@@ -233,9 +277,37 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlatformLifecycleState. 
+        /// <para>
+        /// The state of the platform version in its lifecycle.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values: <code>Recommended</code> | <code>null</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If a null value is returned, the platform version isn't the recommended one for its
+        /// branch. Each platform branch has a single recommended platform version, typically
+        /// the most recent one.
+        /// </para>
+        /// </summary>
+        public string PlatformLifecycleState
+        {
+            get { return this._platformLifecycleState; }
+            set { this._platformLifecycleState = value; }
+        }
+
+        // Check to see if PlatformLifecycleState property is set
+        internal bool IsSetPlatformLifecycleState()
+        {
+            return this._platformLifecycleState != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PlatformName. 
         /// <para>
-        /// The name of the platform.
+        /// The name of the platform version.
         /// </para>
         /// </summary>
         public string PlatformName
@@ -253,7 +325,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property PlatformOwner. 
         /// <para>
-        /// The AWS account ID of the person who created the platform.
+        /// The AWS account ID of the person who created the platform version.
         /// </para>
         /// </summary>
         public string PlatformOwner
@@ -271,7 +343,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property PlatformStatus. 
         /// <para>
-        /// The status of the platform.
+        /// The status of the platform version.
         /// </para>
         /// </summary>
         public PlatformStatus PlatformStatus
@@ -289,7 +361,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The version of the platform.
+        /// The version of the platform version.
         /// </para>
         /// </summary>
         public string PlatformVersion
@@ -307,7 +379,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ProgrammingLanguages. 
         /// <para>
-        /// The programming languages supported by the platform.
+        /// The programming languages supported by the platform version.
         /// </para>
         /// </summary>
         public List<PlatformProgrammingLanguage> ProgrammingLanguages
@@ -325,7 +397,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
-        /// The name of the solution stack used by the platform.
+        /// The name of the solution stack used by the platform version.
         /// </para>
         /// </summary>
         public string SolutionStackName
@@ -343,7 +415,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SupportedAddonList. 
         /// <para>
-        /// The additions supported by the platform.
+        /// The additions supported by the platform version.
         /// </para>
         /// </summary>
         public List<string> SupportedAddonList
@@ -361,7 +433,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SupportedTierList. 
         /// <para>
-        /// The tiers supported by the platform.
+        /// The tiers supported by the platform version.
         /// </para>
         /// </summary>
         public List<string> SupportedTierList

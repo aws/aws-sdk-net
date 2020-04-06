@@ -29,7 +29,8 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEnvironment operation.
-    /// Launches an environment for the specified application using the specified configuration.
+    /// Launches an AWS Elastic Beanstalk environment for the specified application using
+    /// the specified configuration.
     /// </summary>
     public partial class CreateEnvironmentRequest : AmazonElasticBeanstalkRequest
     {
@@ -55,8 +56,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates CreateEnvironmentRequest with the parameterized properties
         /// </summary>
-        /// <param name="applicationName">The name of the application that contains the version to be deployed.  If no application is found with this name, <code>CreateEnvironment</code> returns an <code>InvalidParameterValue</code> error. </param>
-        /// <param name="environmentName">A unique name for the deployment environment. Used in the application URL. Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It cannot start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.  Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</param>
+        /// <param name="applicationName">The name of the application that is associated with this environment.</param>
+        /// <param name="environmentName">A unique name for the environment. Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.  If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</param>
         public CreateEnvironmentRequest(string applicationName, string environmentName)
         {
             _applicationName = applicationName;
@@ -66,12 +67,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of the application that contains the version to be deployed.
-        /// </para>
-        ///  
-        /// <para>
-        ///  If no application is found with this name, <code>CreateEnvironment</code> returns
-        /// an <code>InvalidParameterValue</code> error. 
+        /// The name of the application that is associated with this environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -90,9 +86,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property CNAMEPrefix. 
         /// <para>
-        /// If specified, the environment attempts to use this value as the prefix for the CNAME.
-        /// If not specified, the CNAME is generated automatically by appending a random alphanumeric
-        /// string to the environment name.
+        /// If specified, the environment attempts to use this value as the prefix for the CNAME
+        /// in your Elastic Beanstalk environment URL. If not specified, the CNAME is generated
+        /// automatically by appending a random alphanumeric string to the environment name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=63)]
@@ -111,7 +107,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Describes this environment.
+        /// Your description for this environment.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -130,19 +126,19 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        /// A unique name for the deployment environment. Used in the application URL.
+        /// A unique name for the environment.
         /// </para>
         ///  
         /// <para>
         /// Constraint: Must be from 4 to 40 characters in length. The name can contain only letters,
-        /// numbers, and hyphens. It cannot start or end with a hyphen. This name must be unique
+        /// numbers, and hyphens. It can't start or end with a hyphen. This name must be unique
         /// within a region in your account. If the specified name already exists in the region,
-        /// AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. 
+        /// Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. 
         /// </para>
         ///  
         /// <para>
-        /// Default: If the CNAME parameter is not specified, the environment name becomes part
-        /// of the CNAME, and therefore part of the visible URL for your application.
+        /// If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name
+        /// becomes part of the CNAME, and therefore part of the visible URL for your application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=40)]
@@ -222,8 +218,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property PlatformArn. 
         /// <para>
-        /// The ARN of the platform.
+        /// The Amazon Resource Name (ARN) of the custom platform to use with the environment.
+        /// For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
+        /// Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string PlatformArn
         {
@@ -240,15 +243,18 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
-        /// This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk
-        /// sets the configuration values to the default values associated with the specified
-        /// solution stack.
+        /// The name of an Elastic Beanstalk solution stack (platform version) to use with the
+        /// environment. If specified, Elastic Beanstalk sets the configuration values to the
+        /// default values associated with the specified solution stack. For a list of current
+        /// solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic
+        /// Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
-        /// Beanstalk Supported Platforms</a>.
+        /// If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code>
+        /// or <code>TemplateName</code>.
         /// </para>
+        ///  </note>
         /// </summary>
         public string SolutionStackName
         {
@@ -283,10 +289,13 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        ///  The name of the configuration template to use in deployment. If no configuration
-        /// template is found with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-        /// error. 
+        /// The name of the Elastic Beanstalk configuration template to use with the environment.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string TemplateName
@@ -304,7 +313,10 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Tier. 
         /// <para>
-        /// This specifies the tier to use for creating this environment.
+        /// Specifies the tier to use in creating this environment. The environment tier that
+        /// you choose determines whether Elastic Beanstalk provisions resources to support a
+        /// web application that handles HTTP(S) requests or a web application that handles background-processing
+        /// tasks.
         /// </para>
         /// </summary>
         public EnvironmentTier Tier
@@ -326,14 +338,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  If the specified application has no associated application versions, AWS Elastic
-        /// Beanstalk <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code>
-        /// error. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: If not specified, AWS Elastic Beanstalk attempts to launch the sample application
-        /// in the container.
+        /// Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

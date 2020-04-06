@@ -110,10 +110,28 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.PlatformArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PlatformBranchLifecycleState", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PlatformBranchLifecycleState = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PlatformBranchName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PlatformBranchName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PlatformCategory", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.PlatformCategory = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PlatformLifecycleState", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PlatformLifecycleState = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PlatformName", targetDepth))

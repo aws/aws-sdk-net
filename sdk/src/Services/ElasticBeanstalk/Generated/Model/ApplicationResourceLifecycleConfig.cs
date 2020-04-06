@@ -29,8 +29,8 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// The resource lifecycle configuration for an application. Defines lifecycle settings
-    /// for resources that belong to the application, and the service role that Elastic Beanstalk
-    /// assumes in order to apply lifecycle settings. The version lifecycle configuration
+    /// for resources that belong to the application, and the service role that AWS Elastic
+    /// Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration
     /// defines lifecycle settings for application versions.
     /// </summary>
     public partial class ApplicationResourceLifecycleConfig
@@ -69,7 +69,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property VersionLifecycleConfig. 
         /// <para>
-        /// The application version lifecycle configuration.
+        /// Defines lifecycle settings for application versions.
         /// </para>
         /// </summary>
         public ApplicationVersionLifecycleConfig VersionLifecycleConfig

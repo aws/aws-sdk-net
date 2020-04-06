@@ -29,7 +29,14 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePlatformVersion operation.
-    /// Describes the version of the platform.
+    /// Describes a platform version. Provides full details. Compare to <a>ListPlatformVersions</a>,
+    /// which provides summary information about a list of platform versions.
+    /// 
+    ///  
+    /// <para>
+    /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+    /// Elastic Beanstalk Platforms Glossary</a>.
+    /// </para>
     /// </summary>
     public partial class DescribePlatformVersionRequest : AmazonElasticBeanstalkRequest
     {
@@ -38,7 +45,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property PlatformArn. 
         /// <para>
-        /// The ARN of the version of the platform.
+        /// The ARN of the platform version.
         /// </para>
         /// </summary>
         public string PlatformArn

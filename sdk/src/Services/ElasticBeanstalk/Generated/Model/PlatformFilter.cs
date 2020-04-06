@@ -28,15 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Specify criteria to restrict the results when listing custom platforms.
+    /// Describes criteria to restrict the results when listing platform versions.
     /// 
     ///  
     /// <para>
-    /// The filter is evaluated as the expression:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>Type</code> <code>Operator</code> <code>Values[i]</code> 
+    /// The filter is evaluated as follows: <code>Type Operator Values[1]</code> 
     /// </para>
     /// </summary>
     public partial class PlatformFilter
@@ -52,9 +48,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>=</code> (equal to) | <code>!=</code> (not equal to) | <code>&lt;</code>
-        /// (less than) | <code>&lt;=</code> (less than or equal to) | <code>&gt;</code> (greater
-        /// than) | <code>&gt;=</code> (greater than or equal to) | <code>contains</code> | <code>begins_with</code>
+        /// Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code>
+        /// | <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code>
         /// | <code>ends_with</code> 
         /// </para>
         /// </summary>
@@ -73,12 +68,14 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The custom platform attribute to which the filter values are applied.
+        /// The platform version attribute to which the filter values are applied.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code>
-        /// | <code>PlatformOwner</code> 
+        /// Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code>
+        /// | <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code>
+        /// | <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code>
+        /// | <code>OperatingSystemName</code> 
         /// </para>
         /// </summary>
         public string Type
@@ -96,8 +93,33 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The list of values applied to the custom platform attribute.
+        /// The list of values applied to the filtering platform version attribute. Only one value
+        /// is supported for all current operators.
         /// </para>
+        ///  
+        /// <para>
+        /// The following list shows valid filter values for some filter attributes.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code>
+        /// | <code>Deleting</code> | <code>Deleted</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PlatformLifecycleState</code>: <code>recommended</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code>
+        /// | <code>WorkerDaemon/SQSD</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> Values
         {

@@ -38,7 +38,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resouce for which a tag list was requested.
+        /// The Amazon Resource Name (ARN) of the resource for which a tag list was requested.
         /// </para>
         /// </summary>
         public string ResourceArn

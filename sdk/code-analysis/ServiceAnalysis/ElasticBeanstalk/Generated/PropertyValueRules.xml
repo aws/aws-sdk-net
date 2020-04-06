@@ -304,6 +304,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.ListPlatformBranchesRequest.MaxRecords</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.ListPlatformVersionsRequest.MaxRecords</property>
     <min>1</min>
   </property-value-rule>

@@ -29,7 +29,7 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// A specification identifying an individual configuration option along with its current
-    /// value. For a list of possible option values, go to <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
+    /// value. For a list of possible namespaces and option values, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
     /// Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
     /// </summary>
     public partial class ConfigurationOptionSetting
@@ -47,7 +47,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates ConfigurationOptionSetting with the parameterized properties
         /// </summary>
-        /// <param name="awsNamespace">A unique namespace identifying the option's associated AWS resource.</param>
+        /// <param name="awsNamespace">A unique namespace that identifies the option's associated AWS resource.</param>
         /// <param name="optionName">The name of the configuration option.</param>
         /// <param name="value">The current value for the configuration option.</param>
         public ConfigurationOptionSetting(string awsNamespace, string optionName, string value)
@@ -60,7 +60,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// A unique namespace identifying the option's associated AWS resource.
+        /// A unique namespace that identifies the option's associated AWS resource.
         /// </para>
         /// </summary>
         public string Namespace
@@ -96,7 +96,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// A unique resource name for a time-based scaling configuration option.
+        /// A unique resource name for the option setting. Use it for a time–based scaling configuration
+        /// option.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

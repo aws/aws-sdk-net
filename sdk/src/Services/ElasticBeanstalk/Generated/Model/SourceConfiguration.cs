@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// A specification for an environment configuration
+    /// A specification for an environment configuration.
     /// </summary>
     public partial class SourceConfiguration
     {

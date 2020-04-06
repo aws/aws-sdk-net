@@ -311,9 +311,9 @@ namespace Amazon.ElasticBeanstalk
         /// </para>
         ///  <note> 
         /// <para>
-        /// Once you create an application version with a specified Amazon S3 bucket and key location,
-        /// you cannot change that Amazon S3 location. If you change the Amazon S3 location, you
-        /// receive an exception when you attempt to launch an environment from the application
+        /// After you create an application version with a specified Amazon S3 bucket and key
+        /// location, you can't change that Amazon S3 location. If you change the Amazon S3 location,
+        /// you receive an exception when you attempt to launch an environment from the application
         /// version.
         /// </para>
         ///  </note>
@@ -386,9 +386,10 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Creates a configuration template. Templates are associated with a specific application
-        /// and are used to deploy different versions of the application with the same configuration
-        /// settings.
+        /// Creates an AWS Elastic Beanstalk configuration template, associated with a specific
+        /// Elastic Beanstalk application. You define application configuration settings in a
+        /// configuration template. You can then use the configuration template to deploy different
+        /// versions of the application with the same configuration settings.
         /// 
         ///  
         /// <para>
@@ -460,7 +461,8 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Launches an environment for the specified application using the specified configuration.
+        /// Launches an AWS Elastic Beanstalk environment for the specified application using
+        /// the specified configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// 
@@ -1512,7 +1514,14 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Describes the version of the platform.
+        /// Describes a platform version. Provides full details. Compare to <a>ListPlatformVersions</a>,
+        /// which provides summary information about a list of platform versions.
+        /// 
+        ///  
+        /// <para>
+        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+        /// Elastic Beanstalk Platforms Glossary</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlatformVersion service method.</param>
         /// 
@@ -1604,11 +1613,66 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  ListPlatformBranches
+
+
+        /// <summary>
+        /// Lists the platform branches available for your account in an AWS Region. Provides
+        /// summary information about each platform branch.
+        /// 
+        ///  
+        /// <para>
+        /// For definitions of platform branch and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+        /// Elastic Beanstalk Platforms Glossary</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformBranches service method.</param>
+        /// 
+        /// <returns>The response from the ListPlatformBranches service method, as returned by ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformBranches">REST API Reference for ListPlatformBranches Operation</seealso>
+        ListPlatformBranchesResponse ListPlatformBranches(ListPlatformBranchesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPlatformBranches operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformBranches operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPlatformBranches
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformBranches">REST API Reference for ListPlatformBranches Operation</seealso>
+        IAsyncResult BeginListPlatformBranches(ListPlatformBranchesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPlatformBranches operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPlatformBranches.</param>
+        /// 
+        /// <returns>Returns a  ListPlatformBranchesResult from ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformBranches">REST API Reference for ListPlatformBranches Operation</seealso>
+        ListPlatformBranchesResponse EndListPlatformBranches(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListPlatformVersions
 
 
         /// <summary>
-        /// Lists the available platforms.
+        /// Lists the platform versions available for your account in an AWS Region. Provides
+        /// summary information about each platform version. Compare to <a>DescribePlatformVersion</a>,
+        /// which provides full details about a single platform version.
+        /// 
+        ///  
+        /// <para>
+        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+        /// Elastic Beanstalk Platforms Glossary</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlatformVersions service method.</param>
         /// 
@@ -1654,14 +1718,14 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Returns the tags applied to an AWS Elastic Beanstalk resource. The response contains
+        /// Return the tags applied to an AWS Elastic Beanstalk resource. The response contains
         /// a list of tag key-value pairs.
         /// 
         ///  
         /// <para>
-        /// Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
-        /// For details about environment tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
-        /// Resources in Your Elastic Beanstalk Environment</a>.
+        /// Elastic Beanstalk supports tagging of all of its resources. For details about resource
+        /// tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+        /// Application Resources</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -2260,9 +2324,9 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  
         /// <para>
-        /// Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
-        /// For details about environment tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
-        /// Resources in Your Elastic Beanstalk Environment</a>.
+        /// Elastic Beanstalk supports tagging of all of its resources. For details about resource
+        /// tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+        /// Application Resources</a>.
         /// </para>
         ///  
         /// <para>

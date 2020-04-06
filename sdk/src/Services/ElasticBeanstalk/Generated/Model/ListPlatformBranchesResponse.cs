@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// This is the response object from the ListPlatformVersions operation.
+    /// This is the response object from the ListPlatformBranches operation.
     /// </summary>
-    public partial class ListPlatformVersionsResponse : AmazonWebServiceResponse
+    public partial class ListPlatformBranchesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PlatformSummary> _platformSummaryList = new List<PlatformSummary>();
+        private List<PlatformBranchSummary> _platformBranchSummaryList = new List<PlatformBranchSummary>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -55,21 +55,21 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PlatformSummaryList. 
+        /// Gets and sets the property PlatformBranchSummaryList. 
         /// <para>
-        /// Summary information about the platform versions.
+        /// Summary information about the platform branches.
         /// </para>
         /// </summary>
-        public List<PlatformSummary> PlatformSummaryList
+        public List<PlatformBranchSummary> PlatformBranchSummaryList
         {
-            get { return this._platformSummaryList; }
-            set { this._platformSummaryList = value; }
+            get { return this._platformBranchSummaryList; }
+            set { this._platformBranchSummaryList = value; }
         }
 
-        // Check to see if PlatformSummaryList property is set
-        internal bool IsSetPlatformSummaryList()
+        // Check to see if PlatformBranchSummaryList property is set
+        internal bool IsSetPlatformBranchSummaryList()
         {
-            return this._platformSummaryList != null && this._platformSummaryList.Count > 0; 
+            return this._platformBranchSummaryList != null && this._platformBranchSummaryList.Count > 0; 
         }
 
     }
