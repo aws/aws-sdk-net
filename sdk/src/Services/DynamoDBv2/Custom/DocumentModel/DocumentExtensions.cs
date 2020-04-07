@@ -7,10 +7,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
 {
     public static class DocumentExtensions
     {
-
         /// <summary>
         /// <para>
-        /// Converts the current <see cref="IEnumerable{Document}"/> into a matching JSON string.
+        /// Converts the current <see cref="IEnumerable{T}"/> of <see cref="Document"/> into a matching JSON string.
         /// </para>
         /// <para>
         /// DynamoDB types are a superset of JSON types, thus the following DynamoDB cannot
@@ -32,7 +31,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// <para>
-        /// Converts the current <see cref="IEnumerable{Document}"/> into a matching pretty JSON string.
+        /// Converts the current <see cref="IEnumerable{T}"/> of <see cref="Document"/> into a matching pretty JSON string.
         /// </para>
         /// <para>
         /// DynamoDB types are a superset of JSON types, thus the following DynamoDB cannot
