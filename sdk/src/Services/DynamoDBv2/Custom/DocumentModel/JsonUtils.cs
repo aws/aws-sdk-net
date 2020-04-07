@@ -256,7 +256,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         // Writes a JSON representation of the given DynamoDBEntry
-        private static void WriteJson(DynamoDBEntry entry, JsonWriter writer, DynamoDBEntryConversion conversion)
+        internal static void WriteJson(DynamoDBEntry entry, JsonWriter writer, DynamoDBEntryConversion conversion)
         {
             entry = entry.ToConvertedEntry(conversion);
 
