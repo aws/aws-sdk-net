@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.716.0",
+    "ProductVersion" : "3.3.717.0",
     "CoreVersion"    : "3.3.106.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -481,7 +481,7 @@
             "InPreview"               : false
         },
         "APIGateway"                      : {
-            "Version" : "3.3.103.82",
+            "Version" : "3.3.103.83",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.2"
@@ -1289,7 +1289,7 @@
             "InPreview"               : false
         },
         "MediaConnect"                    : {
-            "Version" : "3.3.107.4",
+            "Version" : "3.3.108.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.2"
@@ -1697,7 +1697,7 @@
             "InPreview"               : false
         },
         "CodeGuruReviewer"                : {
-            "Version" : "3.3.100.51",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.106.2"
