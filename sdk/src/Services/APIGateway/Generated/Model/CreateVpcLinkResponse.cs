@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// A API Gateway VPC link for a <a>RestApi</a> to access resources in an Amazon Virtual
+    /// An API Gateway VPC link for a <a>RestApi</a> to access resources in an Amazon Virtual
     /// Private Cloud (VPC).
     /// 
     ///  <div class="remarks"> 
@@ -171,8 +171,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property TargetArns. 
         /// <para>
-        /// The ARNs of network load balancers of the VPC targeted by the VPC link. The network
-        /// load balancers must be owned by the same AWS account of the API owner.
+        /// The ARN of the network load balancer of the VPC targeted by the VPC link. The network
+        /// load balancer must be owned by the same AWS account of the API owner.
         /// </para>
         /// </summary>
         public List<string> TargetArns

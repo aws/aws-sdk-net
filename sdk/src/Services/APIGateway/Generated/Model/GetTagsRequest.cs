@@ -77,7 +77,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded.
+        /// [Required] The ARN of a resource that can be tagged.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

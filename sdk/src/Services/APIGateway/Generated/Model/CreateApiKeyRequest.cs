@@ -103,7 +103,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property GenerateDistinctId. 
         /// <para>
         /// Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier
-        /// is distinct from the created API key value.
+        /// is distinct from the created API key value. This parameter is deprecated and should
+        /// not be used.
         /// </para>
         /// </summary>
         public bool GenerateDistinctId
