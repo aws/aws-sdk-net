@@ -37,6 +37,7 @@
     <property>Amazon.CodeGuruReviewer.Model.CodeCommitRepository.Name</property>
     <min>1</min>
     <max>100</max>
+    <pattern>^\S[\w.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociation.AssociationArn</property>
@@ -53,11 +54,13 @@
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociation.Name</property>
     <min>1</min>
     <max>100</max>
+    <pattern>^\S[\w.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociation.Owner</property>
     <min>1</min>
     <max>100</max>
+    <pattern>^\S(.*\S)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociation.StateReason</property>
@@ -79,10 +82,12 @@
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociationSummary.Name</property>
     <min>1</min>
     <max>100</max>
+    <pattern>^\S[\w.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociationSummary.Owner</property>
     <min>1</min>
     <max>100</max>
+    <pattern>^\S(.*\S)?$</pattern>
   </property-value-rule>
 </property-value-rules>
