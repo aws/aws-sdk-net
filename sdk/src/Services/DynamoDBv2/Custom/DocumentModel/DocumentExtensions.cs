@@ -59,9 +59,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
             writer.PrettyPrint = prettyPrint;
 
             writer.WriteArrayStart();
-            foreach (var document in documents)
+            if (documents != null)
             {
-                JsonUtils.WriteJson(document, writer, DynamoDBEntryConversion.V2);
+                foreach (var document in documents)
+                {
+                    if (document != null)
+                    {
+                        JsonUtils.WriteJson(document, writer, DynamoDBEntryConversion.V2);
+                    }
+                }
             }
             writer.WriteArrayEnd();
 
