@@ -42,6 +42,7 @@ namespace Amazon.MediaConnect.Model
         private string _outputArn;
         private int? _port;
         private Transport _transport;
+        private VpcInterfaceAttachment _vpcInterfaceAttachment;
 
         /// <summary>
         /// Gets and sets the property DataTransferSubscriberFeePercent. Percentage from 0-100
@@ -201,6 +202,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetTransport()
         {
             return this._transport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcInterfaceAttachment. The name of the VPC interface attachment
+        /// to use for this output.
+        /// </summary>
+        public VpcInterfaceAttachment VpcInterfaceAttachment
+        {
+            get { return this._vpcInterfaceAttachment; }
+            set { this._vpcInterfaceAttachment = value; }
+        }
+
+        // Check to see if VpcInterfaceAttachment property is set
+        internal bool IsSetVpcInterfaceAttachment()
+        {
+            return this._vpcInterfaceAttachment != null;
         }
 
     }
