@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         private string _category;
         private DateTime? _createdAt;
         private string _description;
+        private List<HopDestination> _hopDestinations = new List<HopDestination>();
         private DateTime? _lastUpdated;
         private string _name;
         private int? _priority;
@@ -124,6 +125,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HopDestinations. Optional list of hop destinations.
+        /// </summary>
+        public List<HopDestination> HopDestinations
+        {
+            get { return this._hopDestinations; }
+            set { this._hopDestinations = value; }
+        }
+
+        // Check to see if HopDestinations property is set
+        internal bool IsSetHopDestinations()
+        {
+            return this._hopDestinations != null && this._hopDestinations.Count > 0; 
         }
 
         /// <summary>

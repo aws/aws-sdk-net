@@ -41,6 +41,7 @@ namespace Amazon.MediaConvert.Model
         private JobPhase _currentPhase;
         private int? _errorCode;
         private string _errorMessage;
+        private List<HopDestination> _hopDestinations = new List<HopDestination>();
         private string _id;
         private int? _jobPercentComplete;
         private string _jobTemplate;
@@ -48,6 +49,7 @@ namespace Amazon.MediaConvert.Model
         private List<OutputGroupDetail> _outputGroupDetails = new List<OutputGroupDetail>();
         private int? _priority;
         private string _queue;
+        private List<QueueTransition> _queueTransitions = new List<QueueTransition>();
         private int? _retryCount;
         private string _role;
         private JobSettings _settings;
@@ -115,11 +117,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BillingTagsSource. Optional. Choose a tag type that AWS
-        /// Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs
-        /// on any billing report that you set up. Any transcoding outputs that don't have an
-        /// associated tag will appear in your billing report unsorted. If you don't choose a
-        /// valid value for this field, your job outputs will appear on the billing report unsorted.
+        /// Gets and sets the property BillingTagsSource. The tag type that AWS Billing and Cost
+        /// Management will use to sort your AWS Elemental MediaConvert costs on any billing report
+        /// that you set up.
         /// </summary>
         public BillingTagsSource BillingTagsSource
         {
@@ -193,6 +193,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetErrorMessage()
         {
             return this._errorMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HopDestinations. Optional list of hop destinations.
+        /// </summary>
+        public List<HopDestination> HopDestinations
+        {
+            get { return this._hopDestinations; }
+            set { this._hopDestinations = value; }
+        }
+
+        // Check to see if HopDestinations property is set
+        internal bool IsSetHopDestinations()
+        {
+            return this._hopDestinations != null && this._hopDestinations.Count > 0; 
         }
 
         /// <summary>
@@ -297,9 +312,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Queue. Optional. When you create a job, you can specify
-        /// a queue to send it to. If you don't specify, the job will go to the default queue.
-        /// For more about queues, see the User Guide topic at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+        /// Gets and sets the property Queue. When you create a job, you can specify a queue to
+        /// send it to. If you don't specify, the job will go to the default queue. For more about
+        /// queues, see the User Guide topic at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
         /// </summary>
         public string Queue
         {
@@ -311,6 +326,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetQueue()
         {
             return this._queue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueueTransitions. The job's queue hopping history.
+        /// </summary>
+        public List<QueueTransition> QueueTransitions
+        {
+            get { return this._queueTransitions; }
+            set { this._queueTransitions = value; }
+        }
+
+        // Check to see if QueueTransitions property is set
+        internal bool IsSetQueueTransitions()
+        {
+            return this._queueTransitions != null && this._queueTransitions.Count > 0; 
         }
 
         /// <summary>

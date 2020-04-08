@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
         private AccelerationSettings _accelerationSettings;
         private BillingTagsSource _billingTagsSource;
         private string _clientRequestToken;
+        private List<HopDestination> _hopDestinations = new List<HopDestination>();
         private string _jobTemplate;
         private int? _priority;
         private string _queue;
@@ -48,10 +49,10 @@ namespace Amazon.MediaConvert.Model
         private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property AccelerationSettings. Accelerated transcoding can significantly
-        /// speed up jobs with long, visually complex content. Outputs that use this feature incur
-        /// pro-tier pricing. For information about feature limitations, see the AWS Elemental
-        /// MediaConvert User Guide.
+        /// Gets and sets the property AccelerationSettings. Optional. Accelerated transcoding
+        /// can significantly speed up jobs with long, visually complex content. Outputs that
+        /// use this feature incur pro-tier pricing. For information about feature limitations,
+        /// see the AWS Elemental MediaConvert User Guide.
         /// </summary>
         public AccelerationSettings AccelerationSettings
         {
@@ -85,7 +86,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientRequestToken. Idempotency token for CreateJob operation.
+        /// Gets and sets the property ClientRequestToken. Optional. Idempotency token for CreateJob
+        /// operation.
         /// </summary>
         public string ClientRequestToken
         {
@@ -100,8 +102,26 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property JobTemplate. When you create a job, you can either specify
-        /// a job template or specify the transcoding settings individually
+        /// Gets and sets the property HopDestinations. Optional. Use queue hopping to avoid overly
+        /// long waits in the backlog of the queue that you submit your job to. Specify an alternate
+        /// queue and the maximum time that your job will wait in the initial queue before hopping.
+        /// For more information about this feature, see the AWS Elemental MediaConvert User Guide.
+        /// </summary>
+        public List<HopDestination> HopDestinations
+        {
+            get { return this._hopDestinations; }
+            set { this._hopDestinations = value; }
+        }
+
+        // Check to see if HopDestinations property is set
+        internal bool IsSetHopDestinations()
+        {
+            return this._hopDestinations != null && this._hopDestinations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobTemplate. Optional. When you create a job, you can either
+        /// specify a job template or specify the transcoding settings individually.
         /// </summary>
         public string JobTemplate
         {
@@ -116,11 +136,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Priority. Specify the relative priority for this job. In
-        /// any given queue, the service begins processing the job with the highest value first.
-        /// When more than one job has the same priority, the service begins processing the job
-        /// that you submitted first. If you don't specify a priority, the service uses the default
-        /// value 0.
+        /// Gets and sets the property Priority. Optional. Specify the relative priority for this
+        /// job. In any given queue, the service begins processing the job with the highest value
+        /// first. When more than one job has the same priority, the service begins processing
+        /// the job that you submitted first. If you don't specify a priority, the service uses
+        /// the default value 0.
         /// </summary>
         [AWSProperty(Min=-50, Max=50)]
         public int Priority
@@ -188,11 +208,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SimulateReservedQueue. Enable this setting when you run
-        /// a test job to estimate how many reserved transcoding slots (RTS) you need. When this
-        /// is enabled, MediaConvert runs your job from an on-demand queue with similar performance
-        /// to what you will see with one RTS in a reserved queue. This setting is disabled by
-        /// default.
+        /// Gets and sets the property SimulateReservedQueue. Optional. Enable this setting when
+        /// you run a test job to estimate how many reserved transcoding slots (RTS) you need.
+        /// When this is enabled, MediaConvert runs your job from an on-demand queue with similar
+        /// performance to what you will see with one RTS in a reserved queue. This setting is
+        /// disabled by default.
         /// </summary>
         public SimulateReservedQueue SimulateReservedQueue
         {
@@ -207,11 +227,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusUpdateInterval. Specify how often MediaConvert sends
-        /// STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between
-        /// status updates. MediaConvert sends an update at this interval from the time the service
-        /// begins processing your job to the time it completes the transcode or encounters an
-        /// error.
+        /// Gets and sets the property StatusUpdateInterval. Optional. Specify how often MediaConvert
+        /// sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds,
+        /// between status updates. MediaConvert sends an update at this interval from the time
+        /// the service begins processing your job to the time it completes the transcode or encounters
+        /// an error.
         /// </summary>
         public StatusUpdateInterval StatusUpdateInterval
         {
@@ -226,8 +246,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. The tags that you want to add to the resource. You
-        /// can tag resources with a key-value pair or with only a key.
+        /// Gets and sets the property Tags. Optional. The tags that you want to add to the resource.
+        /// You can tag resources with a key-value pair or with only a key.
         /// </summary>
         public Dictionary<string, string> Tags
         {
@@ -242,8 +262,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserMetadata. User-defined metadata that you want to associate
-        /// with an MediaConvert job. You specify metadata in key/value pairs.
+        /// Gets and sets the property UserMetadata. Optional. User-defined metadata that you
+        /// want to associate with an MediaConvert job. You specify metadata in key/value pairs.
         /// </summary>
         public Dictionary<string, string> UserMetadata
         {

@@ -94,6 +94,22 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetHopDestinations())
+                {
+                    context.Writer.WritePropertyName("hopDestinations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestHopDestinationsListValue in publicRequest.HopDestinations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HopDestinationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestHopDestinationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetJobTemplate())
                 {
                     context.Writer.WritePropertyName("jobTemplate");

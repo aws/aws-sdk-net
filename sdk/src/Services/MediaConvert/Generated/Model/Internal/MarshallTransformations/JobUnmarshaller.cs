@@ -112,6 +112,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hopDestinations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HopDestination, HopDestinationUnmarshaller>(HopDestinationUnmarshaller.Instance);
+                    unmarshalledObject.HopDestinations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -152,6 +158,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Queue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("queueTransitions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<QueueTransition, QueueTransitionUnmarshaller>(QueueTransitionUnmarshaller.Instance);
+                    unmarshalledObject.QueueTransitions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("retryCount", targetDepth))

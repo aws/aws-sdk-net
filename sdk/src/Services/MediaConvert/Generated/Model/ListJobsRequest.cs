@@ -60,8 +60,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. Use this string, provided with the response
-        /// to a previous request, to request the next batch of jobs.
+        /// Gets and sets the property NextToken. Optional. Use this string, provided with the
+        /// response to a previous request, to request the next batch of jobs.
         /// </summary>
         public string NextToken
         {
@@ -76,9 +76,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Order. When you request lists of resources, you can optionally
-        /// specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by
-        /// resource.
+        /// Gets and sets the property Order. Optional. When you request lists of resources, you
+        /// can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies
+        /// by resource.
         /// </summary>
         public Order Order
         {
@@ -93,8 +93,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Queue. Provide a queue name to get back only jobs from
-        /// that queue.
+        /// Gets and sets the property Queue. Optional. Provide a queue name to get back only
+        /// jobs from that queue.
         /// </summary>
         public string Queue
         {
@@ -109,8 +109,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. A job's status can be SUBMITTED, PROGRESSING, COMPLETE,
-        /// CANCELED, or ERROR.
+        /// Gets and sets the property Status. Optional. A job's status can be SUBMITTED, PROGRESSING,
+        /// COMPLETE, CANCELED, or ERROR.
         /// </summary>
         public JobStatus Status
         {

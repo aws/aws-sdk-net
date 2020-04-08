@@ -108,9 +108,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Order. When you request lists of resources, you can optionally
-        /// specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by
-        /// resource.
+        /// Gets and sets the property Order. Optional. When you request lists of resources, you
+        /// can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies
+        /// by resource.
         /// </summary>
         public Order Order
         {
