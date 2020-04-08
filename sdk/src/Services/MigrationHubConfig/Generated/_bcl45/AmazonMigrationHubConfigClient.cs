@@ -42,35 +42,32 @@ namespace Amazon.MigrationHubConfig
     /// your Migration Hub home region. You can use these APIs to determine a home region,
     /// as well as to create and work with controls that describe the home region.
     /// 
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// You can use these APIs within your home region only. If you call these APIs from outside
-    /// your home region, your calls are rejected, except for the ability to register your
-    /// agents and connectors. 
+    /// You must make API calls for write actions (create, notify, associate, disassociate,
+    /// import, or put) while in your home region, or a <code>HomeRegionNotSetException</code>
+    /// error is returned.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    ///  You must call <code>GetHomeRegion</code> at least once before you call any other
-    /// AWS Application Discovery Service and AWS Migration Hub APIs, to obtain the account's
-    /// Migration Hub home region.
+    /// API calls for read actions (list, describe, stop, and delete) are permitted outside
+    /// of your home region.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// The <code>StartDataCollection</code> API call in AWS Application Discovery Service
-    /// allows your agents and connectors to begin collecting data that flows directly into
-    /// the home region, and it will prevent you from enabling data collection information
-    /// to be sent outside the home region. 
+    /// If you call a write API outside the home region, an <code>InvalidInputException</code>
+    /// is returned.
     /// </para>
-    ///  
+    ///  </li> <li> 
+    /// <para>
+    /// You can call <code>GetHomeRegion</code> action to obtain the account's Migration Hub
+    /// home region.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// For specific API usage, see the sections that follow in this AWS Migration Hub Home
     /// Region API reference. 
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// The Migration Hub Home Region APIs do not support AWS Organizations.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class AmazonMigrationHubConfigClient : AmazonServiceClient, IAmazonMigrationHubConfig
     {
@@ -296,6 +293,9 @@ namespace Amazon.MigrationHubConfig
         /// <exception cref="Amazon.MigrationHubConfig.Model.ServiceUnavailableException">
         /// Exception raised when a request fails due to temporary unavailability of the service.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHubConfig.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/CreateHomeRegionControl">REST API Reference for CreateHomeRegionControl Operation</seealso>
         public virtual CreateHomeRegionControlResponse CreateHomeRegionControl(CreateHomeRegionControlRequest request)
         {
@@ -333,6 +333,9 @@ namespace Amazon.MigrationHubConfig
         /// <exception cref="Amazon.MigrationHubConfig.Model.ServiceUnavailableException">
         /// Exception raised when a request fails due to temporary unavailability of the service.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHubConfig.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/CreateHomeRegionControl">REST API Reference for CreateHomeRegionControl Operation</seealso>
         public virtual Task<CreateHomeRegionControlResponse> CreateHomeRegionControlAsync(CreateHomeRegionControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -349,8 +352,8 @@ namespace Amazon.MigrationHubConfig
 
 
         /// <summary>
-        /// This API permits filtering on the <code>ControlId</code>, <code>HomeRegion</code>,
-        /// and <code>RegionControlScope</code> fields.
+        /// This API permits filtering on the <code>ControlId</code> and <code>HomeRegion</code>
+        /// fields.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHomeRegionControls service method.</param>
         /// 
@@ -368,6 +371,9 @@ namespace Amazon.MigrationHubConfig
         /// <exception cref="Amazon.MigrationHubConfig.Model.ServiceUnavailableException">
         /// Exception raised when a request fails due to temporary unavailability of the service.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHubConfig.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DescribeHomeRegionControls">REST API Reference for DescribeHomeRegionControls Operation</seealso>
         public virtual DescribeHomeRegionControlsResponse DescribeHomeRegionControls(DescribeHomeRegionControlsRequest request)
         {
@@ -380,8 +386,8 @@ namespace Amazon.MigrationHubConfig
 
 
         /// <summary>
-        /// This API permits filtering on the <code>ControlId</code>, <code>HomeRegion</code>,
-        /// and <code>RegionControlScope</code> fields.
+        /// This API permits filtering on the <code>ControlId</code> and <code>HomeRegion</code>
+        /// fields.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHomeRegionControls service method.</param>
         /// <param name="cancellationToken">
@@ -401,6 +407,9 @@ namespace Amazon.MigrationHubConfig
         /// </exception>
         /// <exception cref="Amazon.MigrationHubConfig.Model.ServiceUnavailableException">
         /// Exception raised when a request fails due to temporary unavailability of the service.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubConfig.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DescribeHomeRegionControls">REST API Reference for DescribeHomeRegionControls Operation</seealso>
         public virtual Task<DescribeHomeRegionControlsResponse> DescribeHomeRegionControlsAsync(DescribeHomeRegionControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -440,6 +449,9 @@ namespace Amazon.MigrationHubConfig
         /// <exception cref="Amazon.MigrationHubConfig.Model.ServiceUnavailableException">
         /// Exception raised when a request fails due to temporary unavailability of the service.
         /// </exception>
+        /// <exception cref="Amazon.MigrationHubConfig.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/GetHomeRegion">REST API Reference for GetHomeRegion Operation</seealso>
         public virtual GetHomeRegionResponse GetHomeRegion(GetHomeRegionRequest request)
         {
@@ -476,6 +488,9 @@ namespace Amazon.MigrationHubConfig
         /// </exception>
         /// <exception cref="Amazon.MigrationHubConfig.Model.ServiceUnavailableException">
         /// Exception raised when a request fails due to temporary unavailability of the service.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubConfig.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/GetHomeRegion">REST API Reference for GetHomeRegion Operation</seealso>
         public virtual Task<GetHomeRegionResponse> GetHomeRegionAsync(GetHomeRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
