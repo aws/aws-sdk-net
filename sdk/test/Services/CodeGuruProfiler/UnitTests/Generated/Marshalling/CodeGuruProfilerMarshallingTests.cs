@@ -172,6 +172,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("CodeGuruProfiler")]
+        public void GetPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetPolicyRequest>();
+            var marshaller = new GetPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetPolicy", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetPolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CodeGuruProfiler")]
         public void GetProfileMarshallTest()
         {
             var operation = service_model.FindOperation("GetProfile");
@@ -294,6 +326,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PostAgentProfileResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PostAgentProfileResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CodeGuruProfiler")]
+        public void PutPermissionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutPermission");
+
+            var request = InstantiateClassGenerator.Execute<PutPermissionRequest>();
+            var marshaller = new PutPermissionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutPermission", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutPermissionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutPermissionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CodeGuruProfiler")]
+        public void RemovePermissionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemovePermission");
+
+            var request = InstantiateClassGenerator.Execute<RemovePermissionRequest>();
+            var marshaller = new RemovePermissionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("RemovePermission", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as RemovePermissionResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

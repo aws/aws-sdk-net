@@ -37,6 +37,16 @@
     <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.GetPolicyRequest.ProfilingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.GetPolicyResponse.RevisionId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.GetProfileRequest.MaxDepth</property>
     <min>1</min>
     <max>10000</max>
@@ -103,6 +113,34 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.PutPermissionRequest.ProfilingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.PutPermissionRequest.RevisionId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.PutPermissionResponse.RevisionId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.RemovePermissionRequest.ProfilingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.RemovePermissionRequest.RevisionId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.RemovePermissionResponse.RevisionId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.UpdateProfilingGroupRequest.ProfilingGroupName</property>
