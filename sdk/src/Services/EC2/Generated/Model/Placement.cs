@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates Placement with the parameterized properties
         /// </summary>
-        /// <param name="availabilityZone">The Availability Zone of the instance. If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria for the Region. This parameter is not supported by .</param>
+        /// <param name="availabilityZone">The Availability Zone of the instance. If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria for the Region. This parameter is not supported by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</param>
         public Placement(string availabilityZone)
         {
             _availabilityZone = availabilityZone;
@@ -59,11 +59,12 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Affinity. 
         /// <para>
         /// The affinity setting for the instance on the Dedicated Host. This parameter is not
-        /// supported for the <a>ImportInstance</a> command.
+        /// supported for the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+        /// command.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not supported by .
+        /// This parameter is not supported by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
         /// </para>
         /// </summary>
         public string Affinity
@@ -90,7 +91,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not supported by .
+        /// This parameter is not supported by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -127,11 +128,12 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property HostId. 
         /// <para>
         /// The ID of the Dedicated Host on which the instance resides. This parameter is not
-        /// supported for the <a>ImportInstance</a> command.
+        /// supported for the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+        /// command.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not supported by .
+        /// This parameter is not supported by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
         /// </para>
         /// </summary>
         public string HostId
@@ -154,7 +156,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not supported by .
+        /// This parameter is not supported by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
         /// </para>
         /// </summary>
         public string HostResourceGroupArn
@@ -177,7 +179,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not supported by .
+        /// This parameter is not supported by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
         /// </para>
         /// </summary>
         public int PartitionNumber
@@ -199,7 +201,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not supported by .
+        /// This parameter is not supported by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
         /// </para>
         /// </summary>
         public string SpreadDomain
@@ -219,11 +221,12 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The tenancy of the instance (if the instance is running in a VPC). An instance with
         /// a tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code>
-        /// tenancy is not supported for the <a>ImportInstance</a> command.
+        /// tenancy is not supported for the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+        /// command.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not supported by .
+        /// This parameter is not supported by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
         /// </para>
         /// </summary>
         public Tenancy Tenancy

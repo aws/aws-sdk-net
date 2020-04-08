@@ -6862,6 +6862,48 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeregisterInstanceEventNotificationAttributes
+
+
+        /// <summary>
+        /// Deregisters tag keys to prevent tags that have the specified tag keys from being included
+        /// in scheduled event notifications for resources in the Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
+        /// Scheduled Event Notifications</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterInstanceEventNotificationAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">REST API Reference for DeregisterInstanceEventNotificationAttributes Operation</seealso>
+        DeregisterInstanceEventNotificationAttributesResponse DeregisterInstanceEventNotificationAttributes(DeregisterInstanceEventNotificationAttributesRequest request);
+
+
+
+        /// <summary>
+        /// Deregisters tag keys to prevent tags that have the specified tag keys from being included
+        /// in scheduled event notifications for resources in the Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
+        /// Scheduled Event Notifications</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterInstanceEventNotificationAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">REST API Reference for DeregisterInstanceEventNotificationAttributes Operation</seealso>
+        Task<DeregisterInstanceEventNotificationAttributesResponse> DeregisterInstanceEventNotificationAttributesAsync(DeregisterInstanceEventNotificationAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeregisterTransitGatewayMulticastGroupMembers
 
 
@@ -8904,6 +8946,36 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeInstanceCreditSpecifications service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">REST API Reference for DescribeInstanceCreditSpecifications Operation</seealso>
         Task<DescribeInstanceCreditSpecificationsResponse> DescribeInstanceCreditSpecificationsAsync(DescribeInstanceCreditSpecificationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeInstanceEventNotificationAttributes
+
+
+        /// <summary>
+        /// Describes the tag keys that are registered to appear in scheduled event notifications
+        /// for resources in the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceEventNotificationAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes">REST API Reference for DescribeInstanceEventNotificationAttributes Operation</seealso>
+        DescribeInstanceEventNotificationAttributesResponse DescribeInstanceEventNotificationAttributes(DescribeInstanceEventNotificationAttributesRequest request);
+
+
+
+        /// <summary>
+        /// Describes the tag keys that are registered to appear in scheduled event notifications
+        /// for resources in the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceEventNotificationAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes">REST API Reference for DescribeInstanceEventNotificationAttributes Operation</seealso>
+        Task<DescribeInstanceEventNotificationAttributesResponse> DescribeInstanceEventNotificationAttributesAsync(DescribeInstanceEventNotificationAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -11448,8 +11520,8 @@ namespace Amazon.EC2
         /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
         /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
-        /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
-        /// where the instance lifecycle is <code>spot</code>.
+        /// Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
+        /// with a filter to look for instances where the instance lifecycle is <code>spot</code>.
         /// </para>
         ///  
         /// <para>
@@ -11480,8 +11552,8 @@ namespace Amazon.EC2
         /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
         /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
-        /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
-        /// where the instance lifecycle is <code>spot</code>.
+        /// Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
+        /// with a filter to look for instances where the instance lifecycle is <code>spot</code>.
         /// </para>
         ///  
         /// <para>
@@ -11513,8 +11585,8 @@ namespace Amazon.EC2
         /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
         /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
-        /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
-        /// where the instance lifecycle is <code>spot</code>.
+        /// Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
+        /// with a filter to look for instances where the instance lifecycle is <code>spot</code>.
         /// </para>
         ///  
         /// <para>
@@ -11549,8 +11621,8 @@ namespace Amazon.EC2
         /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
         /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
-        /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
-        /// where the instance lifecycle is <code>spot</code>.
+        /// Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
+        /// with a filter to look for instances where the instance lifecycle is <code>spot</code>.
         /// </para>
         ///  
         /// <para>
@@ -17747,6 +17819,48 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  RegisterInstanceEventNotificationAttributes
+
+
+        /// <summary>
+        /// Registers a set of tag keys to include in scheduled event notifications for your resources.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
+        /// Scheduled Event Notifications</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To remove tags, use .
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterInstanceEventNotificationAttributes service method.</param>
+        /// 
+        /// <returns>The response from the RegisterInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">REST API Reference for RegisterInstanceEventNotificationAttributes Operation</seealso>
+        RegisterInstanceEventNotificationAttributesResponse RegisterInstanceEventNotificationAttributes(RegisterInstanceEventNotificationAttributesRequest request);
+
+
+
+        /// <summary>
+        /// Registers a set of tag keys to include in scheduled event notifications for your resources.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
+        /// Scheduled Event Notifications</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To remove tags, use .
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterInstanceEventNotificationAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">REST API Reference for RegisterInstanceEventNotificationAttributes Operation</seealso>
+        Task<RegisterInstanceEventNotificationAttributesResponse> RegisterInstanceEventNotificationAttributesAsync(RegisterInstanceEventNotificationAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RegisterTransitGatewayMulticastGroupMembers
 
 
@@ -18977,7 +19091,6 @@ namespace Amazon.EC2
         /// <summary>
         /// Launches the specified number of instances using an AMI for which you have permissions.
         /// 
-        /// 
         ///  
         /// <para>
         /// You can specify a number of options, or leave the default options. The following rules
@@ -19066,7 +19179,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Launches the specified number of instances using an AMI for which you have permissions.
-        /// 
         /// 
         ///  
         /// <para>

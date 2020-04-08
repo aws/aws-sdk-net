@@ -31,7 +31,6 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the RunInstances operation.
     /// Launches the specified number of instances using an AMI for which you have permissions.
     /// 
-    /// 
     ///  
     /// <para>
     /// You can specify a number of options, or leave the default options. The following rules

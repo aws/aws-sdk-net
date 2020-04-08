@@ -7173,6 +7173,53 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeregisterInstanceEventNotificationAttributes
+
+
+        /// <summary>
+        /// Deregisters tag keys to prevent tags that have the specified tag keys from being included
+        /// in scheduled event notifications for resources in the Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
+        /// Scheduled Event Notifications</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterInstanceEventNotificationAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">REST API Reference for DeregisterInstanceEventNotificationAttributes Operation</seealso>
+        DeregisterInstanceEventNotificationAttributesResponse DeregisterInstanceEventNotificationAttributes(DeregisterInstanceEventNotificationAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterInstanceEventNotificationAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterInstanceEventNotificationAttributes operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterInstanceEventNotificationAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">REST API Reference for DeregisterInstanceEventNotificationAttributes Operation</seealso>
+        IAsyncResult BeginDeregisterInstanceEventNotificationAttributes(DeregisterInstanceEventNotificationAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterInstanceEventNotificationAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterInstanceEventNotificationAttributes.</param>
+        /// 
+        /// <returns>Returns a  DeregisterInstanceEventNotificationAttributesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">REST API Reference for DeregisterInstanceEventNotificationAttributes Operation</seealso>
+        DeregisterInstanceEventNotificationAttributesResponse EndDeregisterInstanceEventNotificationAttributes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeregisterTransitGatewayMulticastGroupMembers
 
 
@@ -9262,6 +9309,47 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeInstanceCreditSpecificationsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">REST API Reference for DescribeInstanceCreditSpecifications Operation</seealso>
         DescribeInstanceCreditSpecificationsResponse EndDescribeInstanceCreditSpecifications(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeInstanceEventNotificationAttributes
+
+
+        /// <summary>
+        /// Describes the tag keys that are registered to appear in scheduled event notifications
+        /// for resources in the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceEventNotificationAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes">REST API Reference for DescribeInstanceEventNotificationAttributes Operation</seealso>
+        DescribeInstanceEventNotificationAttributesResponse DescribeInstanceEventNotificationAttributes(DescribeInstanceEventNotificationAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceEventNotificationAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceEventNotificationAttributes operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceEventNotificationAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes">REST API Reference for DescribeInstanceEventNotificationAttributes Operation</seealso>
+        IAsyncResult BeginDescribeInstanceEventNotificationAttributes(DescribeInstanceEventNotificationAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceEventNotificationAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceEventNotificationAttributes.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceEventNotificationAttributesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes">REST API Reference for DescribeInstanceEventNotificationAttributes Operation</seealso>
+        DescribeInstanceEventNotificationAttributesResponse EndDescribeInstanceEventNotificationAttributes(IAsyncResult asyncResult);
 
         #endregion
         
@@ -11567,8 +11655,8 @@ namespace Amazon.EC2
         /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
         /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
-        /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
-        /// where the instance lifecycle is <code>spot</code>.
+        /// Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
+        /// with a filter to look for instances where the instance lifecycle is <code>spot</code>.
         /// </para>
         ///  
         /// <para>
@@ -11598,8 +11686,8 @@ namespace Amazon.EC2
         /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
         /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
-        /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
-        /// where the instance lifecycle is <code>spot</code>.
+        /// Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
+        /// with a filter to look for instances where the instance lifecycle is <code>spot</code>.
         /// </para>
         ///  
         /// <para>
@@ -18066,6 +18154,53 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  RegisterInstanceEventNotificationAttributes
+
+
+        /// <summary>
+        /// Registers a set of tag keys to include in scheduled event notifications for your resources.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
+        /// Scheduled Event Notifications</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To remove tags, use .
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterInstanceEventNotificationAttributes service method.</param>
+        /// 
+        /// <returns>The response from the RegisterInstanceEventNotificationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">REST API Reference for RegisterInstanceEventNotificationAttributes Operation</seealso>
+        RegisterInstanceEventNotificationAttributesResponse RegisterInstanceEventNotificationAttributes(RegisterInstanceEventNotificationAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterInstanceEventNotificationAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterInstanceEventNotificationAttributes operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterInstanceEventNotificationAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">REST API Reference for RegisterInstanceEventNotificationAttributes Operation</seealso>
+        IAsyncResult BeginRegisterInstanceEventNotificationAttributes(RegisterInstanceEventNotificationAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterInstanceEventNotificationAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterInstanceEventNotificationAttributes.</param>
+        /// 
+        /// <returns>Returns a  RegisterInstanceEventNotificationAttributesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">REST API Reference for RegisterInstanceEventNotificationAttributes Operation</seealso>
+        RegisterInstanceEventNotificationAttributesResponse EndRegisterInstanceEventNotificationAttributes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RegisterTransitGatewayMulticastGroupMembers
 
 
@@ -19385,7 +19520,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Launches the specified number of instances using an AMI for which you have permissions.
-        /// 
         /// 
         ///  
         /// <para>
