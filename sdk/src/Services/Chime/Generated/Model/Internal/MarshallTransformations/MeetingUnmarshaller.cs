@@ -64,6 +64,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ExternalMeetingId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExternalMeetingId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MediaPlacement", targetDepth))
                 {
                     var unmarshaller = MediaPlacementUnmarshaller.Instance;

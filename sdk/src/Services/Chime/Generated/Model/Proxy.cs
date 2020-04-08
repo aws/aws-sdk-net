@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// 
+    /// The proxy configuration for an Amazon Chime Voice Connector.
     /// </summary>
     public partial class Proxy
     {
@@ -38,7 +38,10 @@ namespace Amazon.Chime.Model
         private List<string> _phoneNumberCountries = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property DefaultSessionExpiryMinutes.
+        /// Gets and sets the property DefaultSessionExpiryMinutes. 
+        /// <para>
+        /// The default number of minutes allowed for proxy sessions.
+        /// </para>
         /// </summary>
         public int DefaultSessionExpiryMinutes
         {
@@ -53,7 +56,11 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Disabled.
+        /// Gets and sets the property Disabled. 
+        /// <para>
+        /// When true, stops proxy sessions from being created on the specified Amazon Chime Voice
+        /// Connector.
+        /// </para>
         /// </summary>
         public bool Disabled
         {
@@ -68,7 +75,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FallBackPhoneNumber.
+        /// Gets and sets the property FallBackPhoneNumber. 
+        /// <para>
+        /// The phone number to route calls to after a proxy session expires.
+        /// </para>
         /// </summary>
         public string FallBackPhoneNumber
         {
@@ -83,7 +93,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberCountries.
+        /// Gets and sets the property PhoneNumberCountries. 
+        /// <para>
+        /// The countries for proxy phone numbers to be selected from.
+        /// </para>
         /// </summary>
         public List<string> PhoneNumberCountries
         {

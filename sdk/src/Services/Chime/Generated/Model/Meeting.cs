@@ -32,9 +32,29 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class Meeting
     {
+        private string _externalMeetingId;
         private MediaPlacement _mediaPlacement;
         private string _mediaRegion;
         private string _meetingId;
+
+        /// <summary>
+        /// Gets and sets the property ExternalMeetingId. 
+        /// <para>
+        /// The external meeting ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=64)]
+        public string ExternalMeetingId
+        {
+            get { return this._externalMeetingId; }
+            set { this._externalMeetingId = value; }
+        }
+
+        // Check to see if ExternalMeetingId property is set
+        internal bool IsSetExternalMeetingId()
+        {
+            return this._externalMeetingId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MediaPlacement. 

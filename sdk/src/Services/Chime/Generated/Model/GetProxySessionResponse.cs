@@ -35,7 +35,10 @@ namespace Amazon.Chime.Model
         private ProxySession _proxySession;
 
         /// <summary>
-        /// Gets and sets the property ProxySession.
+        /// Gets and sets the property ProxySession. 
+        /// <para>
+        /// The proxy session details.
+        /// </para>
         /// </summary>
         public ProxySession ProxySession
         {

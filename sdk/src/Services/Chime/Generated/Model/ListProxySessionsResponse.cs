@@ -36,7 +36,10 @@ namespace Amazon.Chime.Model
         private List<ProxySession> _proxySessions = new List<ProxySession>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to retrieve the next page of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=65535)]
         public string NextToken
@@ -52,7 +55,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProxySessions.
+        /// Gets and sets the property ProxySessions. 
+        /// <para>
+        /// The proxy session details.
+        /// </para>
         /// </summary>
         public List<ProxySession> ProxySessions
         {

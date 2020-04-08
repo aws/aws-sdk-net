@@ -29,14 +29,17 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVoiceConnectorProxy operation.
-    /// 
+    /// Deletes the proxy configuration from the specified Amazon Chime Voice Connector.
     /// </summary>
     public partial class DeleteVoiceConnectorProxyRequest : AmazonChimeRequest
     {
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Amazon Chime Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string VoiceConnectorId

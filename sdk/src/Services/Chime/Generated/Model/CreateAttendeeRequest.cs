@@ -37,6 +37,7 @@ namespace Amazon.Chime.Model
     {
         private string _externalUserId;
         private string _meetingId;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ExternalUserId. 
@@ -75,6 +76,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetMeetingId()
         {
             return this._meetingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tag key-value pairs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

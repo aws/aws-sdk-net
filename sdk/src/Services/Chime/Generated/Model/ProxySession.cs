@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// 
+    /// The proxy session for an Amazon Chime Voice Connector.
     /// </summary>
     public partial class ProxySession
     {
@@ -47,7 +47,10 @@ namespace Amazon.Chime.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property Capabilities.
+        /// Gets and sets the property Capabilities. 
+        /// <para>
+        /// The proxy session capabilities.
+        /// </para>
         /// </summary>
         public List<string> Capabilities
         {
@@ -62,7 +65,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedTimestamp.
+        /// Gets and sets the property CreatedTimestamp. 
+        /// <para>
+        /// The created timestamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
         {
@@ -77,7 +83,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndedTimestamp.
+        /// Gets and sets the property EndedTimestamp. 
+        /// <para>
+        /// The ended timestamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime EndedTimestamp
         {
@@ -92,7 +101,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExpiryMinutes.
+        /// Gets and sets the property ExpiryMinutes. 
+        /// <para>
+        /// The number of minutes allowed for the proxy session.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public int ExpiryMinutes
@@ -108,7 +120,11 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GeoMatchLevel.
+        /// Gets and sets the property GeoMatchLevel. 
+        /// <para>
+        /// The preference for matching the country or area code of the proxy phone number with
+        /// that of the first participant.
+        /// </para>
         /// </summary>
         public GeoMatchLevel GeoMatchLevel
         {
@@ -123,7 +139,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GeoMatchParams.
+        /// Gets and sets the property GeoMatchParams. 
+        /// <para>
+        /// The country and area code for the proxy phone number.
+        /// </para>
         /// </summary>
         public GeoMatchParams GeoMatchParams
         {
@@ -138,7 +157,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the proxy session.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
         public string Name
@@ -154,7 +176,11 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NumberSelectionBehavior.
+        /// Gets and sets the property NumberSelectionBehavior. 
+        /// <para>
+        /// The preference for proxy phone number reuse, or stickiness, between the same participants
+        /// across sessions.
+        /// </para>
         /// </summary>
         public NumberSelectionBehavior NumberSelectionBehavior
         {
@@ -169,7 +195,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Participants.
+        /// Gets and sets the property Participants. 
+        /// <para>
+        /// The proxy session participants.
+        /// </para>
         /// </summary>
         public List<Participant> Participants
         {
@@ -184,7 +213,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProxySessionId.
+        /// Gets and sets the property ProxySessionId. 
+        /// <para>
+        /// The proxy session ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string ProxySessionId
@@ -200,7 +232,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the proxy session.
+        /// </para>
         /// </summary>
         public ProxySessionStatus Status
         {
@@ -215,7 +250,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedTimestamp.
+        /// Gets and sets the property UpdatedTimestamp. 
+        /// <para>
+        /// The updated timestamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp
         {
@@ -230,7 +268,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Amazon Chime voice connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string VoiceConnectorId

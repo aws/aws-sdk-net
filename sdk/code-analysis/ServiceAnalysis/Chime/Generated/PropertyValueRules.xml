@@ -70,6 +70,11 @@
     <pattern>[-_a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.CreateMeetingRequest.ExternalMeetingId</property>
+    <min>2</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.CreateMeetingRequest.MeetingHostId</property>
     <min>2</min>
     <max>64</max>
@@ -361,6 +366,14 @@
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.ListAttendeeTagsRequest.AttendeeId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListAttendeeTagsRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.ListBotsRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -373,6 +386,10 @@
     <property>Amazon.Chime.Model.ListMeetingsRequest.MaxResults</property>
     <min>1</min>
     <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListMeetingTagsRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.ListPhoneNumberOrdersRequest.MaxResults</property>
@@ -424,6 +441,11 @@
     <property>Amazon.Chime.Model.ListRoomsRequest.MaxResults</property>
     <min>1</min>
     <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.ListUsersRequest.AccountId</property>
@@ -528,6 +550,40 @@
     <min>3</min>
     <max>3</max>
     <pattern>^8(00|33|44|55|66|77|88)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.TagAttendeeRequest.AttendeeId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.TagAttendeeRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.TagMeetingRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UntagAttendeeRequest.AttendeeId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UntagAttendeeRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UntagMeetingRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UntagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.UpdateAccountRequest.AccountId</property>
@@ -686,6 +742,11 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.Meeting.ExternalMeetingId</property>
+    <min>2</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.Meeting.MeetingId</property>
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
@@ -809,6 +870,16 @@
   <property-value-rule>
     <property>Amazon.Chime.Model.StreamingConfiguration.DataRetentionInHours</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.Tag.Value</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.Termination.CpsLimit</property>

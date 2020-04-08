@@ -29,7 +29,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the GetProxySession operation.
-    /// 
+    /// Gets the specified proxy session details for the specified Amazon Chime Voice Connector.
     /// </summary>
     public partial class GetProxySessionRequest : AmazonChimeRequest
     {
@@ -37,7 +37,10 @@ namespace Amazon.Chime.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property ProxySessionId.
+        /// Gets and sets the property ProxySessionId. 
+        /// <para>
+        /// The proxy session ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string ProxySessionId
@@ -53,7 +56,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Amazon Chime voice connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string VoiceConnectorId

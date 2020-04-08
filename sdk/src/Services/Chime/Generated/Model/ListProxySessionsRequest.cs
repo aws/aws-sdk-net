@@ -29,7 +29,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProxySessions operation.
-    /// 
+    /// Lists the proxy sessions for the specified Amazon Chime Voice Connector.
     /// </summary>
     public partial class ListProxySessionsRequest : AmazonChimeRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.Chime.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single call.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=99)]
         public int MaxResults
@@ -55,7 +58,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to retrieve the next page of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=65535)]
         public string NextToken
@@ -71,7 +77,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The proxy session status.
+        /// </para>
         /// </summary>
         public ProxySessionStatus Status
         {
@@ -86,7 +95,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Amazon Chime voice connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string VoiceConnectorId

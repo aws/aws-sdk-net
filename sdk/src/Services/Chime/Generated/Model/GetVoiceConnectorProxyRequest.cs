@@ -29,14 +29,17 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVoiceConnectorProxy operation.
-    /// 
+    /// Gets the proxy configuration details for the specified Amazon Chime Voice Connector.
     /// </summary>
     public partial class GetVoiceConnectorProxyRequest : AmazonChimeRequest
     {
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Amazon Chime voice connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string VoiceConnectorId

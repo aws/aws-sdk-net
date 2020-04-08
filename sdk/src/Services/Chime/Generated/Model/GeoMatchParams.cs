@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// 
+    /// The country and area code for a proxy phone number in a proxy phone session.
     /// </summary>
     public partial class GeoMatchParams
     {
@@ -36,7 +36,10 @@ namespace Amazon.Chime.Model
         private string _country;
 
         /// <summary>
-        /// Gets and sets the property AreaCode.
+        /// Gets and sets the property AreaCode. 
+        /// <para>
+        /// The area code.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AreaCode
@@ -52,7 +55,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Country.
+        /// Gets and sets the property Country. 
+        /// <para>
+        /// The country.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Country

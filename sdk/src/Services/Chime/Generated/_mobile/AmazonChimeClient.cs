@@ -1288,7 +1288,8 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// 
+        /// Creates a proxy session on the specified Amazon Chime Voice Connector for the specified
+        /// participant phone numbers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProxySession service method.</param>
         /// <param name="cancellationToken">
@@ -1976,7 +1977,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// 
+        /// Deletes the specified proxy session from the specified Amazon Chime Voice Connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProxySession service method.</param>
         /// <param name="cancellationToken">
@@ -2322,7 +2323,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// 
+        /// Deletes the proxy configuration from the specified Amazon Chime Voice Connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorProxy service method.</param>
         /// <param name="cancellationToken">
@@ -3341,7 +3342,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// 
+        /// Gets the specified proxy session details for the specified Amazon Chime Voice Connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProxySession service method.</param>
         /// <param name="cancellationToken">
@@ -3801,7 +3802,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// 
+        /// Gets the proxy configuration details for the specified Amazon Chime Voice Connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorProxy service method.</param>
         /// <param name="cancellationToken">
@@ -4188,6 +4189,62 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  ListAttendeeTags
+
+        internal virtual ListAttendeeTagsResponse ListAttendeeTags(ListAttendeeTagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAttendeeTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttendeeTagsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAttendeeTagsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the tags applied to an Amazon Chime SDK attendee resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttendeeTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAttendeeTags service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendeeTags">REST API Reference for ListAttendeeTags Operation</seealso>
+        public virtual Task<ListAttendeeTagsResponse> ListAttendeeTagsAsync(ListAttendeeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAttendeeTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttendeeTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAttendeeTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListBots
 
         internal virtual ListBotsResponse ListBots(ListBotsRequest request)
@@ -4296,6 +4353,62 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = ListMeetingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListMeetingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMeetingTags
+
+        internal virtual ListMeetingTagsResponse ListMeetingTags(ListMeetingTagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMeetingTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMeetingTagsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMeetingTagsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the tags applied to an Amazon Chime SDK meeting resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMeetingTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMeetingTags service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetingTags">REST API Reference for ListMeetingTags Operation</seealso>
+        public virtual Task<ListMeetingTagsResponse> ListMeetingTagsAsync(ListMeetingTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMeetingTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMeetingTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMeetingTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4421,7 +4534,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// 
+        /// Lists the proxy sessions for the specified Amazon Chime Voice Connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProxySessions service method.</param>
         /// <param name="cancellationToken">
@@ -4574,6 +4687,59 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = ListRoomsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRoomsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the tags applied to an Amazon Chime SDK meeting resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5039,7 +5205,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// 
+        /// Puts the specified proxy configuration to the specified Amazon Chime Voice Connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorProxy service method.</param>
         /// <param name="cancellationToken">
@@ -5486,6 +5652,342 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  TagAttendee
+
+        internal virtual TagAttendeeResponse TagAttendee(TagAttendeeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagAttendeeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagAttendeeResponseUnmarshaller.Instance;
+
+            return Invoke<TagAttendeeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Applies the specified tags to the specified Amazon Chime SDK attendee.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagAttendee service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagAttendee service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagAttendee">REST API Reference for TagAttendee Operation</seealso>
+        public virtual Task<TagAttendeeResponse> TagAttendeeAsync(TagAttendeeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagAttendeeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagAttendeeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagAttendeeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagMeeting
+
+        internal virtual TagMeetingResponse TagMeeting(TagMeetingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagMeetingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagMeetingResponseUnmarshaller.Instance;
+
+            return Invoke<TagMeetingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Applies the specified tags to the specified Amazon Chime SDK meeting.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagMeeting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagMeeting service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagMeeting">REST API Reference for TagMeeting Operation</seealso>
+        public virtual Task<TagMeetingResponse> TagMeetingAsync(TagMeetingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagMeetingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagMeetingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagMeetingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Applies the specified tags to the specified Amazon Chime SDK meeting resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagAttendee
+
+        internal virtual UntagAttendeeResponse UntagAttendee(UntagAttendeeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagAttendeeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagAttendeeResponseUnmarshaller.Instance;
+
+            return Invoke<UntagAttendeeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Untags the specified tags from the specified Amazon Chime SDK attendee.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagAttendee service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagAttendee service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagAttendee">REST API Reference for UntagAttendee Operation</seealso>
+        public virtual Task<UntagAttendeeResponse> UntagAttendeeAsync(UntagAttendeeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagAttendeeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagAttendeeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagAttendeeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagMeeting
+
+        internal virtual UntagMeetingResponse UntagMeeting(UntagMeetingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagMeetingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagMeetingResponseUnmarshaller.Instance;
+
+            return Invoke<UntagMeetingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Untags the specified tags from the specified Amazon Chime SDK meeting.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagMeeting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagMeeting service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagMeeting">REST API Reference for UntagMeeting Operation</seealso>
+        public virtual Task<UntagMeetingResponse> UntagMeetingAsync(UntagMeetingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagMeetingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagMeetingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagMeetingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Untags the specified tags from the specified Amazon Chime SDK meeting resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateAccount
 
         internal virtual UpdateAccountResponse UpdateAccount(UpdateAccountRequest request)
@@ -5854,7 +6356,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// 
+        /// Updates the specified proxy session details, such as voice or SMS capabilities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProxySession service method.</param>
         /// <param name="cancellationToken">
