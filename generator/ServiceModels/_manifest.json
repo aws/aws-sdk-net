@@ -11,6 +11,20 @@
             "frameworkReferences" : [
                 {"name": "System.Configuration"},
                 {"name": "System.Data.Entity", "hintPath" : "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\v3.5\\System.Data.Entity.dll"}
+            ],
+            "packageReferences": [
+                {
+                    "include": "Microsoft.CodeAnalysis.FxCopAnalyzers",
+                    "version": "2.9.3",
+                    "privateAssets": "all",
+                    "analyzer": true
+                },
+                {
+                    "include": "Microsoft.DotNet.Analyzers.Compatibility",
+                    "version": "0.2.12-alpha",
+                    "privateAssets": "all",
+                    "analyzer": true
+                }
             ]
         },
         {
@@ -22,6 +36,20 @@
             "nugetTargetPlatform": "net45",
             "frameworkReferences" : [
                 {"name": "System.Configuration"}
+            ],
+            "packageReferences": [
+              {
+                "include": "Microsoft.CodeAnalysis.FxCopAnalyzers",
+                "version": "2.9.3",
+                "privateAssets": "all",
+                "analyzer": true
+              },
+              {
+                "include": "Microsoft.DotNet.Analyzers.Compatibility",
+                "version": "0.2.12-alpha",
+                "privateAssets": "all",
+                "analyzer": true
+              }
             ]
         },
         {
@@ -121,7 +149,21 @@
             "template": "VS2017ProjectFile",
             "binSubFolder" : "",
             "configurations" : [],
-            "excludeFolders": ["_pcl", "_pcl-sl", "_bcl35", "_bcl45", "_bcl", "_bcl+sl", "_bcl+unity", "_unity", "_android", "_ios", "_pclReference", "_win8", "_winPhone81", "_winPhoneSilverlight8", "_winstorage", "Custom/SyncManager", "obj"]
+            "excludeFolders": ["_pcl", "_pcl-sl", "_bcl35", "_bcl45", "_bcl", "_bcl+sl", "_bcl+unity", "_unity", "_android", "_ios", "_pclReference", "_win8", "_winPhone81", "_winPhoneSilverlight8", "_winstorage", "Custom/SyncManager", "obj"],
+            "packageReferences": [
+              {
+                "include": "Microsoft.CodeAnalysis.FxCopAnalyzers",
+                "version": "2.9.3",
+                "privateAssets": "all",
+                "analyzer": true
+              },
+              {
+                "include": "Microsoft.DotNet.Analyzers.Compatibility",
+                "version": "0.2.12-alpha",
+                "privateAssets": "all",
+                "analyzer": true
+              }
+            ]
         }        
     ],
     "unittestprojects":[

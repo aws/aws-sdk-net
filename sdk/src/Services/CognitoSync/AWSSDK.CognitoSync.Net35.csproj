@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+   <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
     <TargetFramework>net35</TargetFramework>
     <DefineConstants>$(DefineConstants);BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
     <DebugType>portable</DebugType>
@@ -19,6 +20,13 @@
     <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->
     <FrameworkPathOverride>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5\Profile\Client</FrameworkPathOverride>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">
+    <CodeAnalysisRuleSet>..\..\..\AWSDotNetSDK.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'true' ">
+    <CodeAnalysisRuleSet>..\..\..\AWSDotNetSDKForBuild.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
@@ -32,6 +40,9 @@
     </Otherwise>
   </Choose>
 
+  <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+    <Analyzer Include= "..\..\..\..\buildtools\CustomRoslynAnalyzers.dll" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Remove="**/_android/**"/>
     <Compile Remove="**/_async/**"/>
@@ -56,8 +67,10 @@
     <ProjectReference Include="..\..\Core\AWSSDK.Core.Net35.csproj"/>
   </ItemGroup>
 
+  <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+  </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.Data.SQLite" Version="1.0.97.0"/>
+        <PackageReference Include="System.Data.SQLite" Version="1.0.97.0"/>
   </ItemGroup>
 
   <ItemGroup>

@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
     <TargetFramework>net45</TargetFramework>
     <DefineConstants>DEBUG;TRACE;;BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
     <DebugType>portable</DebugType>
@@ -17,6 +18,13 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
     <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">
+    <CodeAnalysisRuleSet>..\..\AWSDotNetSDK.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'true' ">
+    <CodeAnalysisRuleSet>..\..\AWSDotNetSDKForBuild.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <Choose>
@@ -53,6 +61,19 @@
     <EmbeddedResource Include="endpoints.json">
         <LogicalName>Amazon.endpoints.json</LogicalName>
     </EmbeddedResource>
+  </ItemGroup>
+
+<ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.3">
+        <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.DotNet.Analyzers.Compatibility" Version="0.2.12-alpha">
+        <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+    <Analyzer Include= "..\..\..\buildtools\CustomRoslynAnalyzers.dll" />
   </ItemGroup>
 
   <ItemGroup>

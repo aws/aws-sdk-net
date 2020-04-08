@@ -71,9 +71,13 @@ namespace ServiceClientGenerator
                     projectProperties.KeyFilePath = @"..\..\awssdk.dll.snk";
                     projectProperties.SupressWarnings = "419,1570,1591";
                     projectProperties.NugetPackagesLocation = @"..\..\packages\";
+                    projectProperties.FxcopAnalyzerRuleSetFilePath = @"..\..\AWSDotNetSDK.ruleset";
+                    projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = @"..\..\AWSDotNetSDKForBuild.ruleset";
                     projectProperties.TargetFrameworks = projectFileConfiguration.TargetFrameworkVersions;
                     projectProperties.DefineConstants = projectFileConfiguration.CompilationConstants;
                     projectProperties.BinSubfolder = projectFileConfiguration.BinSubFolder;
+                    projectProperties.PackageReferences = projectFileConfiguration.PackageReferences;
+                    projectProperties.CustomRoslynAnalyzersDllDirectory = @"..\..\..\buildtools\CustomRoslynAnalyzers.dll";
 
                     var projectConfigurationData = new ProjectConfigurationData { ProjectGuid = projectGuid };
                     var projectName = Path.GetFileNameWithoutExtension(projectFilename);
@@ -167,9 +171,13 @@ namespace ServiceClientGenerator
                 projectProperties.AssemblyName = assemblyName;
                 projectProperties.SourceDirectories = GetProjectSourceFolders(projectFileConfiguration, serviceFilesRoot);
                 projectProperties.NugetPackagesLocation = @"..\..\..\packages\";
+                projectProperties.FxcopAnalyzerRuleSetFilePath = @"..\..\..\AWSDotNetSDK.ruleset";
+                projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = @"..\..\..\AWSDotNetSDKForBuild.ruleset";
                 projectProperties.TargetFrameworks = projectFileConfiguration.TargetFrameworkVersions;
                 projectProperties.DefineConstants = projectFileConfiguration.CompilationConstants;
                 projectProperties.BinSubfolder = projectFileConfiguration.BinSubFolder;
+                projectProperties.PackageReferences = projectFileConfiguration.PackageReferences;
+                projectProperties.CustomRoslynAnalyzersDllDirectory = @"..\..\..\..\buildtools\CustomRoslynAnalyzers.dll";
 
                 var projectConfigurationData = new ProjectConfigurationData { ProjectGuid = projectGuid };
                 var projectName = Path.GetFileNameWithoutExtension(projectFilename);
@@ -272,6 +280,10 @@ namespace ServiceClientGenerator
             projectProperties.ReferenceDependencies = projectFileConfiguration.DllReferences;
             projectProperties.SupressWarnings       = projectFileConfiguration.NoWarn;
             projectProperties.SignBinaries          = true;
+            projectProperties.PackageReferences = projectFileConfiguration.PackageReferences;
+            projectProperties.FxcopAnalyzerRuleSetFilePath = @"..\..\..\AWSDotNetSDK.ruleset";
+            projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = @"..\..\..\AWSDotNetSDKForBuild.ruleset";
+            projectProperties.CustomRoslynAnalyzersDllDirectory = @"..\..\..\..\buildtools\CustomRoslynAnalyzers.dll";
 
             List<Dependency> dependencies;
             List<PackageReference> references = new List<PackageReference>();
@@ -477,12 +489,19 @@ namespace ServiceClientGenerator
         {
             public string Include { get; set; }
             public string Version { get; set; }
+            public string PrivateAssets { get; set; } = "none";
+            public string IncludeAssets { get; set; }
+            public bool IsAnalyzer { get; set; }
+            public bool HasPrivateAssets => PrivateAssets != "" && PrivateAssets != "none";
             public static PackageReference ParseJson(Json.LitJson.JsonData data)
             {
                 return new PackageReference
                 {
                     Include = data.SafeGetString("include"),
                     Version = data.SafeGetString("version"),
+                    PrivateAssets = data.SafeGetString("privateAssets"),
+                    IncludeAssets = data.SafeGetString("includeAssets"),
+                    IsAnalyzer = data.SafeGet("analyzer") != null ? (bool) data.SafeGet("analyzer") : false
                 };
             }
         }

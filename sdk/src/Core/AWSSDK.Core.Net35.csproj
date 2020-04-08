@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
     <TargetFramework>net35</TargetFramework>
     <DefineConstants>DEBUG;TRACE;;BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
     <DebugType>portable</DebugType>
@@ -20,6 +21,13 @@
 
     <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->
     <FrameworkPathOverride Condition="'$(TargetFramework)' == 'net35'">C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5\Profile\Client</FrameworkPathOverride>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">
+    <CodeAnalysisRuleSet>..\..\AWSDotNetSDK.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'true' ">
+    <CodeAnalysisRuleSet>..\..\AWSDotNetSDKForBuild.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <Choose>
@@ -57,6 +65,19 @@
     <EmbeddedResource Include="endpoints.json">
         <LogicalName>Amazon.endpoints.json</LogicalName>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.3">
+        <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.DotNet.Analyzers.Compatibility" Version="0.2.12-alpha">
+        <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+    <Analyzer Include= "..\..\..\buildtools\CustomRoslynAnalyzers.dll" />
   </ItemGroup>
 
   <ItemGroup>

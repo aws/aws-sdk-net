@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+   <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
     <TargetFramework>net45</TargetFramework>
     <DefineConstants>$(DefineConstants);TRACE;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE;DEBUG</DefineConstants>
     <DebugType>portable</DebugType>
@@ -30,13 +31,15 @@
     <ProjectReference Include="..\..\..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net45.csproj"/>
   </ItemGroup>
 
+  <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+  </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Moq" Version="4.8.3"/>
-    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0"/>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0"/>
-    <PackageReference Include="MSTest.TestFramework" Version="1.4.0"/>
-    <PackageReference Include="AutoFixture" Version="3.51.0"/>
-    <PackageReference Include="AutoFixture.AutoMoq" Version="3.51.0"/>
+        <PackageReference Include="Moq" Version="4.8.3"/>
+        <PackageReference Include="MSTest.TestAdapter" Version="1.4.0"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0"/>
+        <PackageReference Include="MSTest.TestFramework" Version="1.4.0"/>
+        <PackageReference Include="AutoFixture" Version="3.51.0"/>
+        <PackageReference Include="AutoFixture.AutoMoq" Version="3.51.0"/>
   </ItemGroup>
 
   <ItemGroup>
