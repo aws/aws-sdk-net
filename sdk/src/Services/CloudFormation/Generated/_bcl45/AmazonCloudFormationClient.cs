@@ -620,8 +620,8 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Creates stack instances for the specified accounts, within the specified regions.
-        /// A stack instance refers to a stack in a specific account and region. You must specify
+        /// Creates stack instances for the specified accounts, within the specified Regions.
+        /// A stack instance refers to a stack in a specific account and Region. You must specify
         /// at least one value for either <code>Accounts</code> or <code>DeploymentTargets</code>,
         /// and you must specify at least one value for <code>Regions</code>.
         /// </summary>
@@ -666,8 +666,8 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Creates stack instances for the specified accounts, within the specified regions.
-        /// A stack instance refers to a stack in a specific account and region. You must specify
+        /// Creates stack instances for the specified accounts, within the specified Regions.
+        /// A stack instance refers to a stack in a specific account and Region. You must specify
         /// at least one value for either <code>Accounts</code> or <code>DeploymentTargets</code>,
         /// and you must specify at least one value for <code>Regions</code>.
         /// </summary>
@@ -906,7 +906,7 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Deletes stack instances for the specified accounts, in the specified regions.
+        /// Deletes stack instances for the specified accounts, in the specified Regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStackInstances service method.</param>
         /// 
@@ -940,7 +940,7 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Deletes stack instances for the specified accounts, in the specified regions.
+        /// Deletes stack instances for the specified accounts, in the specified Regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStackInstances service method.</param>
         /// <param name="cancellationToken">
@@ -1350,7 +1350,7 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the stack instance that's associated with the specified stack set, AWS account,
-        /// and region.
+        /// and Region.
         /// 
         ///  
         /// <para>
@@ -1379,7 +1379,7 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the stack instance that's associated with the specified stack set, AWS account,
-        /// and region.
+        /// and Region.
         /// 
         ///  
         /// <para>
@@ -2703,7 +2703,7 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Lists all exported output values in the account and region in which you call this
+        /// Lists all exported output values in the account and Region in which you call this
         /// action. Use this action to see the exported output values that you can import into
         /// other stacks. To import values, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
         /// <code>Fn::ImportValue</code> </a> function. 
@@ -2729,7 +2729,7 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Lists all exported output values in the account and region in which you call this
+        /// Lists all exported output values in the account and Region in which you call this
         /// action. Use this action to see the exported output values that you can import into
         /// other stacks. To import values, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
         /// <code>Fn::ImportValue</code> </a> function. 
@@ -2821,7 +2821,7 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns summary information about stack instances that are associated with the specified
         /// stack set. You can filter for stack instances that are associated with a specific
-        /// AWS account name or region.
+        /// AWS account name or Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStackInstances service method.</param>
         /// 
@@ -2843,7 +2843,7 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns summary information about stack instances that are associated with the specified
         /// stack set. You can filter for stack instances that are associated with a specific
-        /// AWS account name or region.
+        /// AWS account name or Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStackInstances service method.</param>
         /// <param name="cancellationToken">
@@ -3376,6 +3376,12 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
+        /// You can have a maximum of 50 resource type versions registered at a time. This maximum
+        /// is per account and per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
+        /// to deregister specific resource type versions if necessary.
+        /// </para>
+        ///  
+        /// <para>
         /// Once you have initiated a registration request using <code> <a>RegisterType</a> </code>,
         /// you can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
         /// of the registration request.
@@ -3419,6 +3425,12 @@ namespace Amazon.CloudFormation
         /// For more information on how to develop types and ready them for registeration, see
         /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
         /// Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have a maximum of 50 resource type versions registered at a time. This maximum
+        /// is per account and per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
+        /// to deregister specific resource type versions if necessary.
         /// </para>
         ///  
         /// <para>
@@ -3742,12 +3754,12 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Updates the parameter values for stack instances for the specified accounts, within
-        /// the specified regions. A stack instance refers to a stack in a specific account and
-        /// region. 
+        /// the specified Regions. A stack instance refers to a stack in a specific account and
+        /// Region. 
         /// 
         ///  
         /// <para>
-        /// You can only update stack instances in regions and accounts where they already exist;
+        /// You can only update stack instances in Regions and accounts where they already exist;
         /// to create additional stack instances, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.
         /// 
         /// </para>
@@ -3804,12 +3816,12 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Updates the parameter values for stack instances for the specified accounts, within
-        /// the specified regions. A stack instance refers to a stack in a specific account and
-        /// region. 
+        /// the specified Regions. A stack instance refers to a stack in a specific account and
+        /// Region. 
         /// 
         ///  
         /// <para>
-        /// You can only update stack instances in regions and accounts where they already exist;
+        /// You can only update stack instances in Regions and accounts where they already exist;
         /// to create additional stack instances, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.
         /// 
         /// </para>
@@ -3873,7 +3885,7 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Updates the stack set, and associated stack instances in the specified accounts and
-        /// regions.
+        /// Regions.
         /// 
         ///  
         /// <para>
@@ -3919,7 +3931,7 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Updates the stack set, and associated stack instances in the specified accounts and
-        /// regions.
+        /// Regions.
         /// 
         ///  
         /// <para>

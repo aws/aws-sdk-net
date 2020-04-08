@@ -427,7 +427,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name that is associated with the stack. The name must be unique in the region
+        /// The name that is associated with the stack. The name must be unique in the Region
         /// in which you are creating the stack.
         /// </para>
         ///  <note> 
@@ -476,7 +476,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property StackPolicyURL. 
         /// <para>
         /// Location of a file containing the stack policy. The URL must point to a policy (maximum
-        /// size: 16 KB) located in an S3 bucket in the same region as the stack. You can specify
+        /// size: 16 KB) located in an S3 bucket in the same Region as the stack. You can specify
         /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter,
         /// but not both.
         /// </para>

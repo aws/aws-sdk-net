@@ -30,7 +30,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the UpdateStackSet operation.
     /// Updates the stack set, and associated stack instances in the specified accounts and
-    /// regions.
+    /// Regions.
     /// 
     ///  
     /// <para>
@@ -63,9 +63,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// [Self-managed permissions] The accounts in which to update associated stack instances.
-        /// If you specify accounts, you must also specify the regions in which to update stack
-        /// set instances.
+        /// [<code>Self-managed</code> permissions] The accounts in which to update associated
+        /// stack instances. If you specify accounts, you must also specify the Regions in which
+        /// to update stack set instances.
         /// </para>
         ///  
         /// <para>
@@ -77,9 +77,9 @@ namespace Amazon.CloudFormation.Model
         /// If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code>
         /// or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code>
         /// property, AWS CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
-        /// prior to updating the stack instances in the specified accounts and regions. If the
+        /// prior to updating the stack instances in the specified accounts and Regions. If the
         /// stack set update does not include changes to the template or parameters, AWS CloudFormation
-        /// updates the stack instances in the specified accounts and regions, while leaving all
+        /// updates the stack instances in the specified accounts and Regions, while leaving all
         /// other stack instances with their existing stack instance status. 
         /// </para>
         /// </summary>
@@ -463,7 +463,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// The regions in which to update associated stack instances. If you specify regions,
+        /// The Regions in which to update associated stack instances. If you specify Regions,
         /// you must also specify accounts in which to update stack set instances.
         /// </para>
         ///  
@@ -476,9 +476,9 @@ namespace Amazon.CloudFormation.Model
         /// If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code>
         /// or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code>
         /// property, AWS CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
-        /// prior to updating the stack instances in the specified accounts and regions. If the
+        /// prior to updating the stack instances in the specified accounts and Regions. If the
         /// stack set update does not include changes to the template or parameters, AWS CloudFormation
-        /// updates the stack instances in the specified accounts and regions, while leaving all
+        /// updates the stack instances in the specified accounts and Regions, while leaving all
         /// other stack instances with their existing stack instance status. 
         /// </para>
         /// </summary>

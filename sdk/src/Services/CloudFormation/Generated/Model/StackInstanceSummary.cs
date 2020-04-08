@@ -45,8 +45,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// [Self-managed permissions] The name of the AWS account that the stack instance is
-        /// associated with.
+        /// [<code>Self-managed</code> permissions] The name of the AWS account that the stack
+        /// instance is associated with.
         /// </para>
         /// </summary>
         public string Account
@@ -124,8 +124,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitId. 
         /// <para>
-        /// [<code>Service-managed</code> permissions] The organization root ID or organizational
-        /// unit (OU) ID that the stack instance is associated with.
+        /// Reserved for internal use. No data returned.
         /// </para>
         /// </summary>
         public string OrganizationalUnitId
@@ -143,7 +142,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The name of the AWS region that the stack instance is associated with.
+        /// The name of the AWS Region that the stack instance is associated with.
         /// </para>
         /// </summary>
         public string Region

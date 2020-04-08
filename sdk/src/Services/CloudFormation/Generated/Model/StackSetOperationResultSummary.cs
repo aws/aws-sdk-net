@@ -29,7 +29,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// The structure that contains information about a specified operation's results for
-    /// a given account in a given region.
+    /// a given account in a given Region.
     /// </summary>
     public partial class StackSetOperationResultSummary
     {
@@ -43,7 +43,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// [Self-managed permissions] The name of the AWS account for this operation result.
+        /// [<code>Self-managed</code> permissions] The name of the AWS account for this operation
+        /// result.
         /// </para>
         /// </summary>
         public string Account
@@ -80,8 +81,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitId. 
         /// <para>
-        /// [<code>Service-managed</code> permissions] The organization root ID or organizational
-        /// unit (OU) ID for this operation result.
+        /// Reserved for internal use. No data returned.
         /// </para>
         /// </summary>
         public string OrganizationalUnitId
@@ -99,7 +99,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The name of the AWS region for this operation result.
+        /// The name of the AWS Region for this operation result.
         /// </para>
         /// </summary>
         public string Region
@@ -117,36 +117,36 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The result status of the stack set operation for the given account in the given region.
+        /// The result status of the stack set operation for the given account in the given Region.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CANCELLED</code>: The operation in the specified account and region has been
+        ///  <code>CANCELLED</code>: The operation in the specified account and Region has been
         /// cancelled. This is either because a user has stopped the stack set operation, or because
         /// the failure tolerance of the stack set operation has been exceeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: The operation in the specified account and region failed. 
+        ///  <code>FAILED</code>: The operation in the specified account and Region failed. 
         /// </para>
         ///  
         /// <para>
-        /// If the stack set operation fails in enough accounts within a region, the failure tolerance
+        /// If the stack set operation fails in enough accounts within a Region, the failure tolerance
         /// for the stack set operation as a whole might be exceeded. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RUNNING</code>: The operation in the specified account and region is currently
+        ///  <code>RUNNING</code>: The operation in the specified account and Region is currently
         /// in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code>: The operation in the specified account and region has yet to
+        ///  <code>PENDING</code>: The operation in the specified account and Region has yet to
         /// start. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCEEDED</code>: The operation in the specified account and region completed
+        ///  <code>SUCCEEDED</code>: The operation in the specified account and Region completed
         /// successfully.
         /// </para>
         ///  </li> </ul>

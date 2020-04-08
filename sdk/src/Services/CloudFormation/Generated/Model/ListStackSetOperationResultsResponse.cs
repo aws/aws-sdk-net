@@ -61,7 +61,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Summaries. 
         /// <para>
         /// A list of <code>StackSetOperationResultSummary</code> structures that contain information
-        /// about the specified operation results, for accounts and regions that are included
+        /// about the specified operation results, for accounts and Regions that are included
         /// in the operation.
         /// </para>
         /// </summary>

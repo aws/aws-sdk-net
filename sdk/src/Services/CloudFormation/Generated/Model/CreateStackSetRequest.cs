@@ -81,11 +81,6 @@ namespace Amazon.CloudFormation.Model
         /// are added to the target organization or organizational unit (OU). Specify only if
         /// <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.
         /// </para>
-        ///  
-        /// <para>
-        /// If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code>
-        /// or <code>Regions</code>.
-        /// </para>
         /// </summary>
         public AutoDeployment AutoDeployment
         {
@@ -342,7 +337,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name to associate with the stack set. The name must be unique in the region where
+        /// The name to associate with the stack set. The name must be unique in the Region where
         /// you create your stack set.
         /// </para>
         ///  <note> 

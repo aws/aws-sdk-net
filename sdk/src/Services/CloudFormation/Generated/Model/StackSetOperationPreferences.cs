@@ -49,9 +49,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property FailureToleranceCount. 
         /// <para>
-        /// The number of accounts, per region, for which this operation can fail before AWS CloudFormation
-        /// stops the operation in that region. If the operation is stopped in a region, AWS CloudFormation
-        /// doesn't attempt the operation in any subsequent regions.
+        /// The number of accounts, per Region, for which this operation can fail before AWS CloudFormation
+        /// stops the operation in that Region. If the operation is stopped in a Region, AWS CloudFormation
+        /// doesn't attempt the operation in any subsequent Regions.
         /// </para>
         ///  
         /// <para>
@@ -75,9 +75,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property FailureTolerancePercentage. 
         /// <para>
-        /// The percentage of accounts, per region, for which this stack operation can fail before
-        /// AWS CloudFormation stops the operation in that region. If the operation is stopped
-        /// in a region, AWS CloudFormation doesn't attempt the operation in any subsequent regions.
+        /// The percentage of accounts, per Region, for which this stack operation can fail before
+        /// AWS CloudFormation stops the operation in that Region. If the operation is stopped
+        /// in a Region, AWS CloudFormation doesn't attempt the operation in any subsequent Regions.
         /// </para>
         ///  
         /// <para>
@@ -174,7 +174,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RegionOrder. 
         /// <para>
-        /// The order of the regions in where you want to perform the stack operation.
+        /// The order of the Regions in where you want to perform the stack operation.
         /// </para>
         /// </summary>
         public List<string> RegionOrder

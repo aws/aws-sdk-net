@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// An AWS CloudFormation stack, in a specific account and region, that's part of a stack
+    /// An AWS CloudFormation stack, in a specific account and Region, that's part of a stack
     /// set operation. A stack instance is a reference to an attempted or actual stack in
-    /// a given account within a given region. A stack instance can exist without a stack—for
+    /// a given account within a given Region. A stack instance can exist without a stack—for
     /// example, if the stack couldn't be created for some reason. A stack instance is associated
     /// with only one stack set. Each stack instance contains the ID of its associated stack
     /// set, as well as the ID of the actual stack and the stack status.
@@ -51,8 +51,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// [Self-managed permissions] The name of the AWS account that the stack instance is
-        /// associated with.
+        /// [<code>Self-managed</code> permissions] The name of the AWS account that the stack
+        /// instance is associated with.
         /// </para>
         /// </summary>
         public string Account
@@ -130,8 +130,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitId. 
         /// <para>
-        /// [<code>Service-managed</code> permissions] The organization root ID or organizational
-        /// unit (OU) ID that the stack instance is associated with.
+        /// Reserved for internal use. No data returned.
         /// </para>
         /// </summary>
         public string OrganizationalUnitId
@@ -168,7 +167,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The name of the AWS region that the stack instance is associated with.
+        /// The name of the AWS Region that the stack instance is associated with.
         /// </para>
         /// </summary>
         public string Region

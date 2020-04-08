@@ -31,7 +31,7 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the ListStackInstances operation.
     /// Returns summary information about stack instances that are associated with the specified
     /// stack set. You can filter for stack instances that are associated with a specific
-    /// AWS account name or region.
+    /// AWS account name or Region.
     /// </summary>
     public partial class ListStackInstancesRequest : AmazonCloudFormationRequest
     {
@@ -107,7 +107,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackInstanceRegion. 
         /// <para>
-        /// The name of the region where you want to list stack instances. 
+        /// The name of the Region where you want to list stack instances. 
         /// </para>
         /// </summary>
         public string StackInstanceRegion
