@@ -528,38 +528,55 @@ namespace SDKDocGenerator.Writers
 
             var docs35 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net35"), wrapper);
             var docs45 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net45"), wrapper);
-            var docsCore = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netstandard1.3"), wrapper);
+            var docsCore13 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netstandard1.3"), wrapper);
+            var docsCore20 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netstandard2.0"), wrapper);
             var docsPCL = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("pcl"), wrapper);
             var docsUnity = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("unity"), wrapper);
 
             // If there is no documentation then assume it is available for all platforms, excluding Unity.
-            var boolNoDocs = docs35 == null && docs45 == null && docsCore == null && docsPCL == null && docsUnity == null;
+            var boolNoDocs = docs35 == null && docs45 == null && docsCore13 == null && docsCore20 == null && docsPCL == null && docsUnity == null;
 
             // .NET core Framework
-            if (boolNoDocs || (wrapper != null && docsCore != null))
-                writer.WriteLine("<p><strong>.NET Standard: </strong><br/>Supported in: 1.3<br/>");
 
-            // .NET Framework
-            StringBuilder sb = new StringBuilder();
-            if (boolNoDocs || (wrapper != null && docs45 != null))
-                sb.Append("4.5");
-            if (boolNoDocs || (wrapper != null && docs35 != null))
+            StringBuilder sbNETStandard = new StringBuilder();
+            if (boolNoDocs || (wrapper != null && docsCore20 != null))
+                sbNETStandard.Append("2.0");
+            if (boolNoDocs || (wrapper != null && docsCore13 != null))
             {
-                if (sb.Length > 0)
-                    sb.Append(", ");
-                sb.Append("4.0, 3.5");
+                if (sbNETStandard.Length > 0)
+                {
+                    sbNETStandard.Append(", ");
+                }
+
+                sbNETStandard.Append("1.3");
             }
 
-            if (sb.Length > 0)
+            if(sbNETStandard.Length > 0)
             {
-                writer.WriteLine("<p><strong>.NET Framework: </strong><br/>Supported in: {0}<br/>", sb.ToString());
+                writer.WriteLine("<p><strong>.NET Standard: </strong><br/>Supported in: {0}<br/>", sbNETStandard.ToString());
+            }
+
+
+            // .NET Framework
+            StringBuilder sbFramework = new StringBuilder();
+            if (boolNoDocs || (wrapper != null && docs45 != null))
+                sbFramework.Append("4.5");
+            if (boolNoDocs || (wrapper != null && docs35 != null))
+            {
+                if (sbFramework.Length > 0)
+                    sbFramework.Append(", ");
+                sbFramework.Append("4.0, 3.5");
+            }
+
+            if (sbFramework.Length > 0)
+            {
+                writer.WriteLine("<p><strong>.NET Framework: </strong><br/>Supported in: {0}<br/>", sbFramework.ToString());
             }
 
             if (boolNoDocs || docsPCL != null || _referAsyncAlternativePCL)
             {
                 writer.WriteLine("<p><strong>Portable Class Library: </strong><br/>");
                 writer.WriteLine("Supported in: Windows Store Apps<br/>");
-                writer.WriteLine("Supported in: Windows Phone 8.1<br/>");
                 writer.WriteLine("Supported in: Xamarin Android<br/>");
                 writer.WriteLine("Supported in: Xamarin iOS (Unified)<br/>");
                 writer.WriteLine("Supported in: Xamarin.Forms<br/>");
