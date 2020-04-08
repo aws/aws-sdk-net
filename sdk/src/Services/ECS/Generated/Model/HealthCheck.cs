@@ -35,6 +35,56 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
+    /// You can view the health status of both individual containers and a task with the DescribeTasks
+    /// API operation or when viewing the task details in the console.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following describes the possible <code>healthStatus</code> values for a container:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>HEALTHY</code>-The container health check has passed successfully.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UNHEALTHY</code>-The container health check has failed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UNKNOWN</code>-The container health check is being evaluated or there is no
+    /// container health check defined.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The following describes the possible <code>healthStatus</code> values for a task.
+    /// The container health check status of nonessential containers do not have an effect
+    /// on the health status of a task.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>HEALTHY</code>-All essential containers within the task have passed their health
+    /// checks.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UNHEALTHY</code>-One or more essential containers have failed their health
+    /// check.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UNKNOWN</code>-The essential containers within the task are still having their
+    /// health checks evaluated or there are no container health checks defined.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If a task is run manually, and not as part of a service, the task will continue its
+    /// lifecycle regardless of its health status. For tasks that are part of a service, if
+    /// the task reports as unhealthy then the task will be stopped and the service scheduler
+    /// will replace it.
+    /// </para>
+    ///  
+    /// <para>
     /// The following are notes about container health check support:
     /// </para>
     ///  <ul> <li> 

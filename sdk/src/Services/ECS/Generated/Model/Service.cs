@@ -480,8 +480,9 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each
-        /// container instance in your cluster. When you are using this strategy, do not specify
-        /// a desired number of tasks or any task placement strategies.
+        /// active container instance that meets all of the task placement constraints that you
+        /// specify in your cluster. The service scheduler also evaluates the task placement constraints
+        /// for running tasks and will stop tasks that do not meet the placement constraints.
         /// </para>
         ///  <note> 
         /// <para>

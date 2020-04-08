@@ -495,8 +495,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property HealthCheck. 
         /// <para>
-        /// The health check command and associated configuration parameters for the container.
-        /// This parameter maps to <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+        /// The container health check command and associated configuration parameters for the
+        /// container. This parameter maps to <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>HEALTHCHECK</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.

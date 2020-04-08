@@ -28,22 +28,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// This parameter is specified when you are using an Amazon Elastic File System (Amazon
-    /// EFS) file storage. Amazon EFS file systems are only supported when you are using the
-    /// EC2 launch type.
-    /// 
-    ///  <important> 
-    /// <para>
-    ///  <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined
-    /// by and subject to the Beta Service Participation Service Terms located at <a href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
-    /// ("Beta Terms"). These Beta Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
-    /// </para>
-    ///  </important>
+    /// This parameter is specified when you are using an Amazon Elastic File System file
+    /// system for task storage. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon
+    /// EFS Volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class EFSVolumeConfiguration
     {
+        private EFSAuthorizationConfig _authorizationConfig;
         private string _fileSystemId;
         private string _rootDirectory;
+        private EFSTransitEncryption _transitEncryption;
+        private int? _transitEncryptionPort;
+
+        /// <summary>
+        /// Gets and sets the property AuthorizationConfig. 
+        /// <para>
+        /// The authorization configuration details for the Amazon EFS file system.
+        /// </para>
+        /// </summary>
+        public EFSAuthorizationConfig AuthorizationConfig
+        {
+            get { return this._authorizationConfig; }
+            set { this._authorizationConfig = value; }
+        }
+
+        // Check to see if AuthorizationConfig property is set
+        internal bool IsSetAuthorizationConfig()
+        {
+            return this._authorizationConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FileSystemId. 
@@ -68,7 +81,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property RootDirectory. 
         /// <para>
         /// The directory within the Amazon EFS file system to mount as the root directory inside
-        /// the host.
+        /// the host. If this parameter is omitted, the root of the Amazon EFS volume will be
+        /// used. Specifying <code>/</code> will have the same effect as omitting this parameter.
         /// </para>
         /// </summary>
         public string RootDirectory
@@ -81,6 +95,50 @@ namespace Amazon.ECS.Model
         internal bool IsSetRootDirectory()
         {
             return this._rootDirectory != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryption. 
+        /// <para>
+        /// Whether or not to enable encryption for Amazon EFS data in transit between the Amazon
+        /// ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS
+        /// IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code>
+        /// is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
+        /// Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.
+        /// </para>
+        /// </summary>
+        public EFSTransitEncryption TransitEncryption
+        {
+            get { return this._transitEncryption; }
+            set { this._transitEncryption = value; }
+        }
+
+        // Check to see if TransitEncryption property is set
+        internal bool IsSetTransitEncryption()
+        {
+            return this._transitEncryption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionPort. 
+        /// <para>
+        /// The port to use when sending encrypted data between the Amazon ECS host and the Amazon
+        /// EFS server. If you do not specify a transit encryption port, it will use the port
+        /// selection strategy that the Amazon EFS mount helper uses. For more information, see
+        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
+        /// Helper</a> in the <i>Amazon Elastic File System User Guide</i>.
+        /// </para>
+        /// </summary>
+        public int TransitEncryptionPort
+        {
+            get { return this._transitEncryptionPort.GetValueOrDefault(); }
+            set { this._transitEncryptionPort = value; }
+        }
+
+        // Check to see if TransitEncryptionPort property is set
+        internal bool IsSetTransitEncryptionPort()
+        {
+            return this._transitEncryptionPort.HasValue; 
         }
 
     }

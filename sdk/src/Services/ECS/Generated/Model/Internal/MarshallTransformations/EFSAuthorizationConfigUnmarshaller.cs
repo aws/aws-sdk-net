@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EFSVolumeConfiguration Object
+    /// Response Unmarshaller for EFSAuthorizationConfig Object
     /// </summary>  
-    public class EFSVolumeConfigurationUnmarshaller : IUnmarshaller<EFSVolumeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<EFSVolumeConfiguration, JsonUnmarshallerContext>
+    public class EFSAuthorizationConfigUnmarshaller : IUnmarshaller<EFSAuthorizationConfig, XmlUnmarshallerContext>, IUnmarshaller<EFSAuthorizationConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EFSVolumeConfiguration IUnmarshaller<EFSVolumeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EFSAuthorizationConfig IUnmarshaller<EFSAuthorizationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EFSVolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public EFSAuthorizationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EFSVolumeConfiguration unmarshalledObject = new EFSVolumeConfiguration();
+            EFSAuthorizationConfig unmarshalledObject = new EFSAuthorizationConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("authorizationConfig", targetDepth))
-                {
-                    var unmarshaller = EFSAuthorizationConfigUnmarshaller.Instance;
-                    unmarshalledObject.AuthorizationConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("fileSystemId", targetDepth))
+                if (context.TestExpression("accessPointId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FileSystemId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessPointId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("rootDirectory", targetDepth))
+                if (context.TestExpression("iam", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RootDirectory = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("transitEncryption", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransitEncryption = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("transitEncryptionPort", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TransitEncryptionPort = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Iam = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static EFSVolumeConfigurationUnmarshaller _instance = new EFSVolumeConfigurationUnmarshaller();        
+        private static EFSAuthorizationConfigUnmarshaller _instance = new EFSAuthorizationConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EFSVolumeConfigurationUnmarshaller Instance
+        public static EFSAuthorizationConfigUnmarshaller Instance
         {
             get
             {

@@ -29,29 +29,39 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateService operation.
+    /// <important> 
+    /// <para>
+    /// Updating the task placement strategies and constraints on an Amazon ECS service remains
+    /// in preview and is a Beta Service as defined by and subject to the Beta Service Participation
+    /// Service Terms located at <a href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
+    /// ("Beta Terms"). These Beta Terms apply to your participation in this preview.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Modifies the parameters of a service.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// For services using the rolling update (<code>ECS</code>) deployment controller, the
-    /// desired count, deployment configuration, network configuration, or task definition
-    /// used can be updated.
+    /// desired count, deployment configuration, network configuration, task placement constraints
+    /// and strategies, or task definition used can be updated.
     /// </para>
     ///  
     /// <para>
     /// For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller,
-    /// only the desired count, deployment configuration, and health check grace period can
-    /// be updated using this API. If the network configuration, platform version, or task
-    /// definition need to be updated, a new AWS CodeDeploy deployment should be created.
-    /// For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+    /// only the desired count, deployment configuration, task placement constraints and strategies,
+    /// and health check grace period can be updated using this API. If the network configuration,
+    /// platform version, or task definition need to be updated, a new AWS CodeDeploy deployment
+    /// should be created. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
     /// in the <i>AWS CodeDeploy API Reference</i>.
     /// </para>
     ///  
     /// <para>
     /// For services using an external deployment controller, you can update only the desired
-    /// count and health check grace period using this API. If the launch type, load balancer,
-    /// network configuration, platform version, or task definition need to be updated, you
-    /// should create a new task set. For more information, see <a>CreateTaskSet</a>.
+    /// count, task placement constraints and strategies, and health check grace period using
+    /// this API. If the launch type, load balancer, network configuration, platform version,
+    /// or task definition need to be updated, you should create a new task set. For more
+    /// information, see <a>CreateTaskSet</a>.
     /// </para>
     ///  
     /// <para>
@@ -179,9 +189,36 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// If the service is using the default capacity provider strategy for the cluster, the
-        /// service can be updated to use one or more capacity providers. However, when a service
-        /// is using a non-default capacity provider strategy, the service cannot be updated to
-        /// use the cluster's default capacity provider strategy.
+        /// service can be updated to use one or more capacity providers as opposed to the default
+        /// capacity provider strategy. However, when a service is using a capacity provider strategy
+        /// that is not the default capacity provider strategy, the service cannot be updated
+        /// to use the cluster's default capacity provider strategy.
+        /// </para>
+        ///  
+        /// <para>
+        /// A capacity provider strategy consists of one or more capacity providers along with
+        /// the <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+        /// must be associated with the cluster to be used in a capacity provider strategy. The
+        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider with
+        /// a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code>
+        /// status can be used.
+        /// </para>
+        ///  
+        /// <para>
+        /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
+        /// must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a>
+        /// API operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are
+        /// available to all accounts and only need to be associated with a cluster to be used.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+        /// available capacity providers for a cluster after the cluster is created.
         /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
