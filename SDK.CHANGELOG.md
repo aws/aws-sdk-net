@@ -1,3 +1,7 @@
+### 3.3.718.1 (2020-04-08 23:40 UTC)
+* Core 3.3.106.4
+	* Remove FxCop and migrate to Roslyn Analyzer; Updated doc generator to include .NET Standard 2.0
+
 ### 3.3.718.0 (2020-04-08 18:29 UTC)
 * Chime (3.3.109.0)
 	* feature: Chime: This release introduces the ability to tag Amazon Chime SDK meeting resources.  You can use tags to organize and identify your resources for cost allocation. 

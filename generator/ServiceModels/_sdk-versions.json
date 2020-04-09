@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.718.0",
-    "CoreVersion"    : "3.3.106.3",
+    "ProductVersion" : "3.3.718.1",
+    "CoreVersion"    : "3.3.106.4",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
